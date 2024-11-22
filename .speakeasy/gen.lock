@@ -1,3 +1,3543 @@
 lockVersion: 2.0.0
 id: 8ee5821f-25ad-41d5-94bd-080f4048f5d5
-management: {}
+management:
+  docChecksum: 9c53ced7cb6a03a041a95a6f2fc9b92d
+  docVersion: 0.0.0
+  speakeasyVersion: internal
+  generationVersion: internal
+  releaseVersion: 0.1.0
+  configChecksum: 55474d45994f1f4392cd40bd5a96374f
+features:
+  typescript:
+    additionalDependencies: 0.1.0
+    constsAndDefaults: 0.1.11
+    core: 3.18.7
+    defaultEnabledRetries: 0.1.0
+    devContainers: 2.90.0
+    enumUnions: 0.1.0
+    envVarSecurityUsage: 0.1.2
+    globalSecurity: 2.82.11
+    globalSecurityCallbacks: 0.1.0
+    globalSecurityFlattening: 0.1.0
+    globalServerURLs: 2.82.4
+    methodArguments: 0.1.2
+    responseFormat: 0.2.3
+    retries: 2.83.0
+    sdkHooks: 0.2.0
+    tests: 0.7.0
+    unions: 2.85.8
+    uploadStreams: 0.1.0
+generatedFiles:
+  - .devcontainer/README.md
+  - .devcontainer/devcontainer.json
+  - .devcontainer/setup.sh
+  - .eslintrc.cjs
+  - .gitattributes
+  - .npmignore
+  - CONTRIBUTING.md
+  - FUNCTIONS.md
+  - RUNTIMES.md
+  - USAGE.md
+  - docs/lib/utils/retryconfig.md
+  - docs/models/components/actortarget.md
+  - docs/models/components/allowincoming.md
+  - docs/models/components/appbskyactordefsadultcontentpref.md
+  - docs/models/components/appbskyactordefsbskyappprogressguide.md
+  - docs/models/components/appbskyactordefsbskyappstatepref.md
+  - docs/models/components/appbskyactordefscontentlabelpref.md
+  - docs/models/components/appbskyactordefsfeedviewpref.md
+  - docs/models/components/appbskyactordefshiddenpostspref.md
+  - docs/models/components/appbskyactordefsinterestspref.md
+  - docs/models/components/appbskyactordefsknownfollowers.md
+  - docs/models/components/appbskyactordefslabelerprefitem.md
+  - docs/models/components/appbskyactordefslabelerspref.md
+  - docs/models/components/appbskyactordefsmutedword.md
+  - docs/models/components/appbskyactordefsmutedwordspref.md
+  - docs/models/components/appbskyactordefsmutedwordtarget.md
+  - docs/models/components/appbskyactordefsnux.md
+  - docs/models/components/appbskyactordefspersonaldetailspref.md
+  - docs/models/components/appbskyactordefspreferences.md
+  - docs/models/components/appbskyactordefsprofileassociated.md
+  - docs/models/components/appbskyactordefsprofileassociatedchat.md
+  - docs/models/components/appbskyactordefsprofileview.md
+  - docs/models/components/appbskyactordefsprofileviewbasic.md
+  - docs/models/components/appbskyactordefsprofileviewdetailed.md
+  - docs/models/components/appbskyactordefssavedfeed.md
+  - docs/models/components/appbskyactordefssavedfeedspref.md
+  - docs/models/components/appbskyactordefssavedfeedsprefv2.md
+  - docs/models/components/appbskyactordefsthreadviewpref.md
+  - docs/models/components/appbskyactordefsviewerstate.md
+  - docs/models/components/appbskyembeddefsaspectratio.md
+  - docs/models/components/appbskyembedexternalview.md
+  - docs/models/components/appbskyembedexternalviewexternal.md
+  - docs/models/components/appbskyembedimagesview.md
+  - docs/models/components/appbskyembedimagesviewimage.md
+  - docs/models/components/appbskyembedrecord.md
+  - docs/models/components/appbskyembedrecordview.md
+  - docs/models/components/appbskyembedrecordviewblocked.md
+  - docs/models/components/appbskyembedrecordviewdetached.md
+  - docs/models/components/appbskyembedrecordviewnotfound.md
+  - docs/models/components/appbskyembedrecordviewrecord.md
+  - docs/models/components/appbskyembedrecordwithmediaview.md
+  - docs/models/components/appbskyembedvideoview.md
+  - docs/models/components/appbskyfeeddefsblockedauthor.md
+  - docs/models/components/appbskyfeeddefsblockedpost.md
+  - docs/models/components/appbskyfeeddefsfeedviewpost.md
+  - docs/models/components/appbskyfeeddefsgeneratorview.md
+  - docs/models/components/appbskyfeeddefsgeneratorviewerstate.md
+  - docs/models/components/appbskyfeeddefsinteraction.md
+  - docs/models/components/appbskyfeeddefsnotfoundpost.md
+  - docs/models/components/appbskyfeeddefspostview.md
+  - docs/models/components/appbskyfeeddefsreasonpin.md
+  - docs/models/components/appbskyfeeddefsreasonrepost.md
+  - docs/models/components/appbskyfeeddefsreplyref.md
+  - docs/models/components/appbskyfeeddefsskeletonfeedpost.md
+  - docs/models/components/appbskyfeeddefsskeletonfeedpostreason.md
+  - docs/models/components/appbskyfeeddefsskeletonreasonpin.md
+  - docs/models/components/appbskyfeeddefsskeletonreasonrepost.md
+  - docs/models/components/appbskyfeeddefsthreadgateview.md
+  - docs/models/components/appbskyfeeddefsthreadviewpost.md
+  - docs/models/components/appbskyfeeddefsthreadviewpostparent.md
+  - docs/models/components/appbskyfeeddefsviewerstate.md
+  - docs/models/components/appbskyfeeddescribefeedgeneratorfeed.md
+  - docs/models/components/appbskyfeeddescribefeedgeneratorlinks.md
+  - docs/models/components/appbskyfeedgetlikeslike.md
+  - docs/models/components/appbskygraphdefslistitemview.md
+  - docs/models/components/appbskygraphdefslistview.md
+  - docs/models/components/appbskygraphdefslistviewbasic.md
+  - docs/models/components/appbskygraphdefslistviewerstate.md
+  - docs/models/components/appbskygraphdefsnotfoundactor.md
+  - docs/models/components/appbskygraphdefsrelationship.md
+  - docs/models/components/appbskygraphdefsstarterpackview.md
+  - docs/models/components/appbskygraphdefsstarterpackviewbasic.md
+  - docs/models/components/appbskylabelerdefslabelerpolicies.md
+  - docs/models/components/appbskylabelerdefslabelerview.md
+  - docs/models/components/appbskylabelerdefslabelerviewdetailed.md
+  - docs/models/components/appbskylabelerdefslabelerviewerstate.md
+  - docs/models/components/appbskynotificationlistnotificationsnotification.md
+  - docs/models/components/appbskynotificationlistnotificationsnotificationreason.md
+  - docs/models/components/appbskyrichtextfacet.md
+  - docs/models/components/appbskyrichtextfacetbyteslice.md
+  - docs/models/components/appbskyrichtextfacetlink.md
+  - docs/models/components/appbskyrichtextfacetmention.md
+  - docs/models/components/appbskyrichtextfacettag.md
+  - docs/models/components/appbskyvideodefsjobstatus.md
+  - docs/models/components/blurs.md
+  - docs/models/components/chatbskyactordefsprofileviewbasic.md
+  - docs/models/components/chatbskyconvodefsconvoview.md
+  - docs/models/components/chatbskyconvodefsdeletedmessageview.md
+  - docs/models/components/chatbskyconvodefslogbeginconvo.md
+  - docs/models/components/chatbskyconvodefslogcreatemessage.md
+  - docs/models/components/chatbskyconvodefslogdeletemessage.md
+  - docs/models/components/chatbskyconvodefslogdeletemessagemessage.md
+  - docs/models/components/chatbskyconvodefslogleaveconvo.md
+  - docs/models/components/chatbskyconvodefsmessageinput.md
+  - docs/models/components/chatbskyconvodefsmessageinputembed.md
+  - docs/models/components/chatbskyconvodefsmessageref.md
+  - docs/models/components/chatbskyconvodefsmessageview.md
+  - docs/models/components/chatbskyconvodefsmessageviewembed.md
+  - docs/models/components/chatbskyconvodefsmessageviewsender.md
+  - docs/models/components/chatbskyconvosendmessagebatchbatchitem.md
+  - docs/models/components/chatbskymoderationgetactormetadatametadata.md
+  - docs/models/components/comatprotoadmindefsaccountview.md
+  - docs/models/components/comatprotoadmindefsrepoblobref.md
+  - docs/models/components/comatprotoadmindefsreporef.md
+  - docs/models/components/comatprotoadmindefsstatusattr.md
+  - docs/models/components/comatprotoadmindefsthreatsignature.md
+  - docs/models/components/comatprotolabeldefslabel.md
+  - docs/models/components/comatprotolabeldefslabelvalue.md
+  - docs/models/components/comatprotolabeldefslabelvaluedefinition.md
+  - docs/models/components/comatprotolabeldefslabelvaluedefinitionstrings.md
+  - docs/models/components/comatprotorepoapplywritescreate.md
+  - docs/models/components/comatprotorepoapplywritescreateresult.md
+  - docs/models/components/comatprotorepoapplywritesdelete.md
+  - docs/models/components/comatprotorepoapplywritesdeleteresult.md
+  - docs/models/components/comatprotorepoapplywritesupdate.md
+  - docs/models/components/comatprotorepoapplywritesupdateresult.md
+  - docs/models/components/comatprotorepoapplywritesupdateresultvalidationstatus.md
+  - docs/models/components/comatprotorepodefscommitmeta.md
+  - docs/models/components/comatprotorepolistmissingblobsrecordblob.md
+  - docs/models/components/comatprotorepolistrecordsrecord.md
+  - docs/models/components/comatprotorepostrongref.md
+  - docs/models/components/comatprotoservercreateapppasswordapppassword.md
+  - docs/models/components/comatprotoservercreateinvitecodesaccountcodes.md
+  - docs/models/components/comatprotoserverdefsinvitecode.md
+  - docs/models/components/comatprotoserverdefsinvitecodeuse.md
+  - docs/models/components/comatprotoserverdescribeservercontact.md
+  - docs/models/components/comatprotoserverdescribeserverlinks.md
+  - docs/models/components/comatprotoserverlistapppasswordsapppassword.md
+  - docs/models/components/comatprotosynclistreposrepo.md
+  - docs/models/components/defaultsetting.md
+  - docs/models/components/details.md
+  - docs/models/components/embed.md
+  - docs/models/components/embeds.md
+  - docs/models/components/event.md
+  - docs/models/components/features.md
+  - docs/models/components/hosting.md
+  - docs/models/components/lastmessage.md
+  - docs/models/components/managerrole.md
+  - docs/models/components/media.md
+  - docs/models/components/message.md
+  - docs/models/components/op.md
+  - docs/models/components/parent.md
+  - docs/models/components/reason.md
+  - docs/models/components/recordt.md
+  - docs/models/components/replies.md
+  - docs/models/components/role.md
+  - docs/models/components/root.md
+  - docs/models/components/scope.md
+  - docs/models/components/security.md
+  - docs/models/components/severity.md
+  - docs/models/components/sort.md
+  - docs/models/components/state.md
+  - docs/models/components/status.md
+  - docs/models/components/subject.md
+  - docs/models/components/toolsozonecommunicationdefstemplateview.md
+  - docs/models/components/toolsozonemoderationdefsaccountevent.md
+  - docs/models/components/toolsozonemoderationdefsaccounteventstatus.md
+  - docs/models/components/toolsozonemoderationdefsaccounthosting.md
+  - docs/models/components/toolsozonemoderationdefsaccounthostingstatus.md
+  - docs/models/components/toolsozonemoderationdefsblobview.md
+  - docs/models/components/toolsozonemoderationdefsidentityevent.md
+  - docs/models/components/toolsozonemoderationdefsimagedetails.md
+  - docs/models/components/toolsozonemoderationdefsmoderation.md
+  - docs/models/components/toolsozonemoderationdefsmoderationdetail.md
+  - docs/models/components/toolsozonemoderationdefsmodeventacknowledge.md
+  - docs/models/components/toolsozonemoderationdefsmodeventcomment.md
+  - docs/models/components/toolsozonemoderationdefsmodeventdivert.md
+  - docs/models/components/toolsozonemoderationdefsmodeventemail.md
+  - docs/models/components/toolsozonemoderationdefsmodeventescalate.md
+  - docs/models/components/toolsozonemoderationdefsmodeventlabel.md
+  - docs/models/components/toolsozonemoderationdefsmodeventmute.md
+  - docs/models/components/toolsozonemoderationdefsmodeventmutereporter.md
+  - docs/models/components/toolsozonemoderationdefsmodeventreport.md
+  - docs/models/components/toolsozonemoderationdefsmodeventresolveappeal.md
+  - docs/models/components/toolsozonemoderationdefsmodeventreversetakedown.md
+  - docs/models/components/toolsozonemoderationdefsmodeventtag.md
+  - docs/models/components/toolsozonemoderationdefsmodeventtakedown.md
+  - docs/models/components/toolsozonemoderationdefsmodeventunmute.md
+  - docs/models/components/toolsozonemoderationdefsmodeventunmutereporter.md
+  - docs/models/components/toolsozonemoderationdefsmodeventview.md
+  - docs/models/components/toolsozonemoderationdefsmodeventviewdetail.md
+  - docs/models/components/toolsozonemoderationdefsmodeventviewdetailevent.md
+  - docs/models/components/toolsozonemoderationdefsmodeventviewdetailsubject.md
+  - docs/models/components/toolsozonemoderationdefsmodeventviewevent.md
+  - docs/models/components/toolsozonemoderationdefsrecordevent.md
+  - docs/models/components/toolsozonemoderationdefsrecordhosting.md
+  - docs/models/components/toolsozonemoderationdefsrecordhostingstatus.md
+  - docs/models/components/toolsozonemoderationdefsrecordview.md
+  - docs/models/components/toolsozonemoderationdefsrecordviewdetail.md
+  - docs/models/components/toolsozonemoderationdefsrecordviewnotfound.md
+  - docs/models/components/toolsozonemoderationdefsrepoview.md
+  - docs/models/components/toolsozonemoderationdefsrepoviewdetail.md
+  - docs/models/components/toolsozonemoderationdefsrepoviewnotfound.md
+  - docs/models/components/toolsozonemoderationdefssubjectreviewstate.md
+  - docs/models/components/toolsozonemoderationdefssubjectstatusview.md
+  - docs/models/components/toolsozonemoderationdefssubjectstatusviewsubject.md
+  - docs/models/components/toolsozonemoderationdefsvideodetails.md
+  - docs/models/components/toolsozoneservergetconfigserviceconfig.md
+  - docs/models/components/toolsozoneservergetconfigviewerconfig.md
+  - docs/models/components/toolsozonesetdefsset.md
+  - docs/models/components/toolsozonesetdefssetview.md
+  - docs/models/components/toolsozonesettingdefsoption.md
+  - docs/models/components/toolsozonesignaturedefssigdetail.md
+  - docs/models/components/toolsozonesignaturefindrelatedaccountsrelatedaccount.md
+  - docs/models/components/toolsozoneteamdefsmember.md
+  - docs/models/components/toolsozoneteamdefsmemberrole.md
+  - docs/models/components/type.md
+  - docs/models/components/validationstatus.md
+  - docs/models/components/visibility.md
+  - docs/models/errors/appbskyactorgetpreferencesappbskyactorresponsebody.md
+  - docs/models/errors/appbskyactorgetpreferencesresponsebody.md
+  - docs/models/errors/appbskyactorgetprofileappbskyactorresponsebody.md
+  - docs/models/errors/appbskyactorgetprofileerror.md
+  - docs/models/errors/appbskyactorgetprofileresponsebody.md
+  - docs/models/errors/appbskyactorgetprofilesappbskyactorresponsebody.md
+  - docs/models/errors/appbskyactorgetprofileserror.md
+  - docs/models/errors/appbskyactorgetprofilesresponsebody.md
+  - docs/models/errors/appbskyactorgetsuggestionsappbskyactorresponsebody.md
+  - docs/models/errors/appbskyactorgetsuggestionserror.md
+  - docs/models/errors/appbskyactorgetsuggestionsresponsebody.md
+  - docs/models/errors/appbskyactorputpreferencesappbskyactorresponsebody.md
+  - docs/models/errors/appbskyactorputpreferenceserror.md
+  - docs/models/errors/appbskyactorputpreferencesresponsebody.md
+  - docs/models/errors/appbskyactorsearchactorsappbskyactorresponsebody.md
+  - docs/models/errors/appbskyactorsearchactorserror.md
+  - docs/models/errors/appbskyactorsearchactorsresponsebody.md
+  - docs/models/errors/appbskyactorsearchactorstypeaheadappbskyactorresponsebody.md
+  - docs/models/errors/appbskyactorsearchactorstypeaheaderror.md
+  - docs/models/errors/appbskyactorsearchactorstypeaheadresponsebody.md
+  - docs/models/errors/appbskyfeeddescribefeedgeneratorappbskyfeedresponsebody.md
+  - docs/models/errors/appbskyfeeddescribefeedgeneratorerror.md
+  - docs/models/errors/appbskyfeeddescribefeedgeneratorresponsebody.md
+  - docs/models/errors/appbskyfeedgetactorfeedsappbskyfeedresponsebody.md
+  - docs/models/errors/appbskyfeedgetactorfeedserror.md
+  - docs/models/errors/appbskyfeedgetactorfeedsresponsebody.md
+  - docs/models/errors/appbskyfeedgetactorlikesappbskyfeedresponsebody.md
+  - docs/models/errors/appbskyfeedgetactorlikeserror.md
+  - docs/models/errors/appbskyfeedgetactorlikesresponsebody.md
+  - docs/models/errors/appbskyfeedgetauthorfeedappbskyfeedresponsebody.md
+  - docs/models/errors/appbskyfeedgetauthorfeederror.md
+  - docs/models/errors/appbskyfeedgetauthorfeedresponsebody.md
+  - docs/models/errors/appbskyfeedgetfeedappbskyfeedresponsebody.md
+  - docs/models/errors/appbskyfeedgetfeederror.md
+  - docs/models/errors/appbskyfeedgetfeedgeneratorappbskyfeedresponsebody.md
+  - docs/models/errors/appbskyfeedgetfeedgeneratorerror.md
+  - docs/models/errors/appbskyfeedgetfeedgeneratorresponsebody.md
+  - docs/models/errors/appbskyfeedgetfeedgeneratorsappbskyfeedresponsebody.md
+  - docs/models/errors/appbskyfeedgetfeedgeneratorserror.md
+  - docs/models/errors/appbskyfeedgetfeedgeneratorsresponsebody.md
+  - docs/models/errors/appbskyfeedgetfeedresponsebody.md
+  - docs/models/errors/appbskyfeedgetfeedskeletonappbskyfeedresponsebody.md
+  - docs/models/errors/appbskyfeedgetfeedskeletonerror.md
+  - docs/models/errors/appbskyfeedgetfeedskeletonresponsebody.md
+  - docs/models/errors/appbskyfeedgetlikesappbskyfeedresponsebody.md
+  - docs/models/errors/appbskyfeedgetlikeserror.md
+  - docs/models/errors/appbskyfeedgetlikesresponsebody.md
+  - docs/models/errors/appbskyfeedgetlistfeedappbskyfeedresponsebody.md
+  - docs/models/errors/appbskyfeedgetlistfeederror.md
+  - docs/models/errors/appbskyfeedgetlistfeedresponsebody.md
+  - docs/models/errors/appbskyfeedgetpostsappbskyfeedresponsebody.md
+  - docs/models/errors/appbskyfeedgetpostserror.md
+  - docs/models/errors/appbskyfeedgetpostsresponsebody.md
+  - docs/models/errors/appbskyfeedgetpostthreadappbskyfeedresponsebody.md
+  - docs/models/errors/appbskyfeedgetpostthreaderror.md
+  - docs/models/errors/appbskyfeedgetpostthreadresponsebody.md
+  - docs/models/errors/appbskyfeedgetquotesappbskyfeedresponsebody.md
+  - docs/models/errors/appbskyfeedgetquoteserror.md
+  - docs/models/errors/appbskyfeedgetquotesresponsebody.md
+  - docs/models/errors/appbskyfeedgetrepostedbyappbskyfeedresponsebody.md
+  - docs/models/errors/appbskyfeedgetrepostedbyerror.md
+  - docs/models/errors/appbskyfeedgetrepostedbyresponsebody.md
+  - docs/models/errors/appbskyfeedgetsuggestedfeedsappbskyfeedresponsebody.md
+  - docs/models/errors/appbskyfeedgetsuggestedfeedserror.md
+  - docs/models/errors/appbskyfeedgetsuggestedfeedsresponsebody.md
+  - docs/models/errors/appbskyfeedgettimelineappbskyfeedresponsebody.md
+  - docs/models/errors/appbskyfeedgettimelineerror.md
+  - docs/models/errors/appbskyfeedgettimelineresponsebody.md
+  - docs/models/errors/appbskyfeedsearchpostsappbskyfeedresponsebody.md
+  - docs/models/errors/appbskyfeedsearchpostserror.md
+  - docs/models/errors/appbskyfeedsearchpostsresponsebody.md
+  - docs/models/errors/appbskyfeedsendinteractionsappbskyfeedresponsebody.md
+  - docs/models/errors/appbskyfeedsendinteractionserror.md
+  - docs/models/errors/appbskyfeedsendinteractionsresponsebody.md
+  - docs/models/errors/appbskygraphgetactorstarterpacksappbskygraphresponsebody.md
+  - docs/models/errors/appbskygraphgetactorstarterpackserror.md
+  - docs/models/errors/appbskygraphgetactorstarterpacksresponsebody.md
+  - docs/models/errors/appbskygraphgetblocksappbskygraphresponsebody.md
+  - docs/models/errors/appbskygraphgetblockserror.md
+  - docs/models/errors/appbskygraphgetblocksresponsebody.md
+  - docs/models/errors/appbskygraphgetfollowersappbskygraphresponsebody.md
+  - docs/models/errors/appbskygraphgetfollowerserror.md
+  - docs/models/errors/appbskygraphgetfollowersresponsebody.md
+  - docs/models/errors/appbskygraphgetfollowsappbskygraphresponsebody.md
+  - docs/models/errors/appbskygraphgetfollowserror.md
+  - docs/models/errors/appbskygraphgetfollowsresponsebody.md
+  - docs/models/errors/appbskygraphgetknownfollowersappbskygraphresponsebody.md
+  - docs/models/errors/appbskygraphgetknownfollowerserror.md
+  - docs/models/errors/appbskygraphgetknownfollowersresponsebody.md
+  - docs/models/errors/appbskygraphgetlistappbskygraphresponsebody.md
+  - docs/models/errors/appbskygraphgetlistblocksappbskygraphresponsebody.md
+  - docs/models/errors/appbskygraphgetlistblockserror.md
+  - docs/models/errors/appbskygraphgetlistblocksresponsebody.md
+  - docs/models/errors/appbskygraphgetlisterror.md
+  - docs/models/errors/appbskygraphgetlistmutesappbskygraphresponsebody.md
+  - docs/models/errors/appbskygraphgetlistmuteserror.md
+  - docs/models/errors/appbskygraphgetlistmutesresponsebody.md
+  - docs/models/errors/appbskygraphgetlistresponsebody.md
+  - docs/models/errors/appbskygraphgetlistsappbskygraphresponsebody.md
+  - docs/models/errors/appbskygraphgetlistserror.md
+  - docs/models/errors/appbskygraphgetlistsresponsebody.md
+  - docs/models/errors/appbskygraphgetmutesappbskygraphresponsebody.md
+  - docs/models/errors/appbskygraphgetmuteserror.md
+  - docs/models/errors/appbskygraphgetmutesresponsebody.md
+  - docs/models/errors/appbskygraphgetrelationshipsappbskygraphresponsebody.md
+  - docs/models/errors/appbskygraphgetrelationshipserror.md
+  - docs/models/errors/appbskygraphgetrelationshipsresponsebody.md
+  - docs/models/errors/appbskygraphgetstarterpackappbskygraphresponsebody.md
+  - docs/models/errors/appbskygraphgetstarterpackerror.md
+  - docs/models/errors/appbskygraphgetstarterpackresponsebody.md
+  - docs/models/errors/appbskygraphgetstarterpacksappbskygraphresponsebody.md
+  - docs/models/errors/appbskygraphgetstarterpackserror.md
+  - docs/models/errors/appbskygraphgetstarterpacksresponsebody.md
+  - docs/models/errors/appbskygraphgetsuggestedfollowsbyactorappbskygraphresponsebody.md
+  - docs/models/errors/appbskygraphgetsuggestedfollowsbyactorerror.md
+  - docs/models/errors/appbskygraphgetsuggestedfollowsbyactorresponsebody.md
+  - docs/models/errors/appbskygraphmuteactorappbskygraphresponsebody.md
+  - docs/models/errors/appbskygraphmuteactorerror.md
+  - docs/models/errors/appbskygraphmuteactorlistappbskygraphresponsebody.md
+  - docs/models/errors/appbskygraphmuteactorlisterror.md
+  - docs/models/errors/appbskygraphmuteactorlistresponsebody.md
+  - docs/models/errors/appbskygraphmuteactorresponsebody.md
+  - docs/models/errors/appbskygraphmutethreadappbskygraphresponsebody.md
+  - docs/models/errors/appbskygraphmutethreaderror.md
+  - docs/models/errors/appbskygraphmutethreadresponsebody.md
+  - docs/models/errors/appbskygraphsearchstarterpacksappbskygraphresponsebody.md
+  - docs/models/errors/appbskygraphsearchstarterpackserror.md
+  - docs/models/errors/appbskygraphsearchstarterpacksresponsebody.md
+  - docs/models/errors/appbskygraphunmuteactorappbskygraphresponsebody.md
+  - docs/models/errors/appbskygraphunmuteactorerror.md
+  - docs/models/errors/appbskygraphunmuteactorlistappbskygraphresponsebody.md
+  - docs/models/errors/appbskygraphunmuteactorlisterror.md
+  - docs/models/errors/appbskygraphunmuteactorlistresponsebody.md
+  - docs/models/errors/appbskygraphunmuteactorresponsebody.md
+  - docs/models/errors/appbskygraphunmutethreadappbskygraphresponsebody.md
+  - docs/models/errors/appbskygraphunmutethreaderror.md
+  - docs/models/errors/appbskygraphunmutethreadresponsebody.md
+  - docs/models/errors/appbskylabelergetservicesappbskylabelerresponsebody.md
+  - docs/models/errors/appbskylabelergetserviceserror.md
+  - docs/models/errors/appbskylabelergetservicesresponsebody.md
+  - docs/models/errors/appbskynotificationgetunreadcountappbskynotificationresponsebody.md
+  - docs/models/errors/appbskynotificationgetunreadcounterror.md
+  - docs/models/errors/appbskynotificationgetunreadcountresponsebody.md
+  - docs/models/errors/appbskynotificationlistnotificationsappbskynotificationresponsebody.md
+  - docs/models/errors/appbskynotificationlistnotificationserror.md
+  - docs/models/errors/appbskynotificationlistnotificationsresponsebody.md
+  - docs/models/errors/appbskynotificationputpreferencesappbskynotificationresponsebody.md
+  - docs/models/errors/appbskynotificationputpreferenceserror.md
+  - docs/models/errors/appbskynotificationputpreferencesresponsebody.md
+  - docs/models/errors/appbskynotificationregisterpushappbskynotificationresponsebody.md
+  - docs/models/errors/appbskynotificationregisterpusherror.md
+  - docs/models/errors/appbskynotificationregisterpushresponsebody.md
+  - docs/models/errors/appbskynotificationupdateseenappbskynotificationresponsebody.md
+  - docs/models/errors/appbskynotificationupdateseenerror.md
+  - docs/models/errors/appbskynotificationupdateseenresponsebody.md
+  - docs/models/errors/appbskyvideogetjobstatusappbskyvideoresponsebody.md
+  - docs/models/errors/appbskyvideogetjobstatuserror.md
+  - docs/models/errors/appbskyvideogetjobstatusresponsebody.md
+  - docs/models/errors/appbskyvideogetuploadlimitsappbskyvideoresponsebody.md
+  - docs/models/errors/appbskyvideogetuploadlimitserror.md
+  - docs/models/errors/appbskyvideogetuploadlimitsresponsebody.md
+  - docs/models/errors/appbskyvideouploadvideoappbskyvideoresponsebody.md
+  - docs/models/errors/appbskyvideouploadvideoerror.md
+  - docs/models/errors/appbskyvideouploadvideoresponsebody.md
+  - docs/models/errors/chatbskyactordeleteaccountchatbskyactorresponsebody.md
+  - docs/models/errors/chatbskyactordeleteaccounterror.md
+  - docs/models/errors/chatbskyactordeleteaccountresponsebody.md
+  - docs/models/errors/chatbskyactorexportaccountdatachatbskyactorresponsebody.md
+  - docs/models/errors/chatbskyactorexportaccountdataerror.md
+  - docs/models/errors/chatbskyactorexportaccountdataresponsebody.md
+  - docs/models/errors/chatbskyconvodeletemessageforselfchatbskyconvoresponsebody.md
+  - docs/models/errors/chatbskyconvodeletemessageforselferror.md
+  - docs/models/errors/chatbskyconvodeletemessageforselfresponsebody.md
+  - docs/models/errors/chatbskyconvogetconvochatbskyconvoresponsebody.md
+  - docs/models/errors/chatbskyconvogetconvoerror.md
+  - docs/models/errors/chatbskyconvogetconvoformemberschatbskyconvoresponsebody.md
+  - docs/models/errors/chatbskyconvogetconvoformemberserror.md
+  - docs/models/errors/chatbskyconvogetconvoformembersresponsebody.md
+  - docs/models/errors/chatbskyconvogetconvoresponsebody.md
+  - docs/models/errors/chatbskyconvogetlogchatbskyconvoresponsebody.md
+  - docs/models/errors/chatbskyconvogetlogerror.md
+  - docs/models/errors/chatbskyconvogetlogresponsebody.md
+  - docs/models/errors/chatbskyconvogetmessageschatbskyconvoresponsebody.md
+  - docs/models/errors/chatbskyconvogetmessageserror.md
+  - docs/models/errors/chatbskyconvogetmessagesresponsebody.md
+  - docs/models/errors/chatbskyconvoleaveconvochatbskyconvoresponsebody.md
+  - docs/models/errors/chatbskyconvoleaveconvoerror.md
+  - docs/models/errors/chatbskyconvoleaveconvoresponsebody.md
+  - docs/models/errors/chatbskyconvolistconvoschatbskyconvoresponsebody.md
+  - docs/models/errors/chatbskyconvolistconvoserror.md
+  - docs/models/errors/chatbskyconvolistconvosresponsebody.md
+  - docs/models/errors/chatbskyconvomuteconvochatbskyconvoresponsebody.md
+  - docs/models/errors/chatbskyconvomuteconvoerror.md
+  - docs/models/errors/chatbskyconvomuteconvoresponsebody.md
+  - docs/models/errors/chatbskyconvosendmessagebatchchatbskyconvoresponsebody.md
+  - docs/models/errors/chatbskyconvosendmessagebatcherror.md
+  - docs/models/errors/chatbskyconvosendmessagebatchresponsebody.md
+  - docs/models/errors/chatbskyconvosendmessagechatbskyconvoresponsebody.md
+  - docs/models/errors/chatbskyconvosendmessageerror.md
+  - docs/models/errors/chatbskyconvosendmessageresponsebody.md
+  - docs/models/errors/chatbskyconvounmuteconvochatbskyconvoresponsebody.md
+  - docs/models/errors/chatbskyconvounmuteconvoerror.md
+  - docs/models/errors/chatbskyconvounmuteconvoresponsebody.md
+  - docs/models/errors/chatbskyconvoupdatereadchatbskyconvoresponsebody.md
+  - docs/models/errors/chatbskyconvoupdatereaderror.md
+  - docs/models/errors/chatbskyconvoupdatereadresponsebody.md
+  - docs/models/errors/chatbskymoderationgetactormetadatachatbskymoderationresponsebody.md
+  - docs/models/errors/chatbskymoderationgetactormetadataerror.md
+  - docs/models/errors/chatbskymoderationgetactormetadataresponsebody.md
+  - docs/models/errors/chatbskymoderationgetmessagecontextchatbskymoderationresponsebody.md
+  - docs/models/errors/chatbskymoderationgetmessagecontexterror.md
+  - docs/models/errors/chatbskymoderationgetmessagecontextresponsebody.md
+  - docs/models/errors/chatbskymoderationupdateactoraccesschatbskymoderationresponsebody.md
+  - docs/models/errors/chatbskymoderationupdateactoraccesserror.md
+  - docs/models/errors/chatbskymoderationupdateactoraccessresponsebody.md
+  - docs/models/errors/comatprotoadmindeleteaccountcomatprotoadminresponsebody.md
+  - docs/models/errors/comatprotoadmindeleteaccounterror.md
+  - docs/models/errors/comatprotoadmindeleteaccountresponsebody.md
+  - docs/models/errors/comatprotoadmindisableaccountinvitescomatprotoadminresponsebody.md
+  - docs/models/errors/comatprotoadmindisableaccountinviteserror.md
+  - docs/models/errors/comatprotoadmindisableaccountinvitesresponsebody.md
+  - docs/models/errors/comatprotoadmindisableinvitecodescomatprotoadminresponsebody.md
+  - docs/models/errors/comatprotoadmindisableinvitecodeserror.md
+  - docs/models/errors/comatprotoadmindisableinvitecodesresponsebody.md
+  - docs/models/errors/comatprotoadminenableaccountinvitescomatprotoadminresponsebody.md
+  - docs/models/errors/comatprotoadminenableaccountinviteserror.md
+  - docs/models/errors/comatprotoadminenableaccountinvitesresponsebody.md
+  - docs/models/errors/comatprotoadmingetaccountinfocomatprotoadminresponsebody.md
+  - docs/models/errors/comatprotoadmingetaccountinfoerror.md
+  - docs/models/errors/comatprotoadmingetaccountinforesponsebody.md
+  - docs/models/errors/comatprotoadmingetaccountinfoscomatprotoadminresponsebody.md
+  - docs/models/errors/comatprotoadmingetaccountinfoserror.md
+  - docs/models/errors/comatprotoadmingetaccountinfosresponsebody.md
+  - docs/models/errors/comatprotoadmingetinvitecodescomatprotoadminresponsebody.md
+  - docs/models/errors/comatprotoadmingetinvitecodeserror.md
+  - docs/models/errors/comatprotoadmingetinvitecodesresponsebody.md
+  - docs/models/errors/comatprotoadmingetsubjectstatuscomatprotoadminresponsebody.md
+  - docs/models/errors/comatprotoadmingetsubjectstatuserror.md
+  - docs/models/errors/comatprotoadmingetsubjectstatusresponsebody.md
+  - docs/models/errors/comatprotoadminsearchaccountscomatprotoadminresponsebody.md
+  - docs/models/errors/comatprotoadminsearchaccountserror.md
+  - docs/models/errors/comatprotoadminsearchaccountsresponsebody.md
+  - docs/models/errors/comatprotoadminsendemailcomatprotoadminresponsebody.md
+  - docs/models/errors/comatprotoadminsendemailerror.md
+  - docs/models/errors/comatprotoadminsendemailresponsebody.md
+  - docs/models/errors/comatprotoadminupdateaccountemailcomatprotoadminresponsebody.md
+  - docs/models/errors/comatprotoadminupdateaccountemailerror.md
+  - docs/models/errors/comatprotoadminupdateaccountemailresponsebody.md
+  - docs/models/errors/comatprotoadminupdateaccounthandlecomatprotoadminresponsebody.md
+  - docs/models/errors/comatprotoadminupdateaccounthandleerror.md
+  - docs/models/errors/comatprotoadminupdateaccounthandleresponsebody.md
+  - docs/models/errors/comatprotoadminupdateaccountpasswordcomatprotoadminresponsebody.md
+  - docs/models/errors/comatprotoadminupdateaccountpassworderror.md
+  - docs/models/errors/comatprotoadminupdateaccountpasswordresponsebody.md
+  - docs/models/errors/comatprotoadminupdatesubjectstatuscomatprotoadminresponsebody.md
+  - docs/models/errors/comatprotoadminupdatesubjectstatuserror.md
+  - docs/models/errors/comatprotoadminupdatesubjectstatusresponsebody.md
+  - docs/models/errors/comatprotoidentitygetrecommendeddidcredentialscomatprotoidentityresponsebody.md
+  - docs/models/errors/comatprotoidentitygetrecommendeddidcredentialserror.md
+  - docs/models/errors/comatprotoidentitygetrecommendeddidcredentialsresponsebody.md
+  - docs/models/errors/comatprotoidentityrequestplcoperationsignaturecomatprotoidentityresponsebody.md
+  - docs/models/errors/comatprotoidentityrequestplcoperationsignatureerror.md
+  - docs/models/errors/comatprotoidentityrequestplcoperationsignatureresponsebody.md
+  - docs/models/errors/comatprotoidentityresolvehandlecomatprotoidentityresponsebody.md
+  - docs/models/errors/comatprotoidentityresolvehandleerror.md
+  - docs/models/errors/comatprotoidentityresolvehandleresponsebody.md
+  - docs/models/errors/comatprotoidentitysignplcoperationcomatprotoidentityresponsebody.md
+  - docs/models/errors/comatprotoidentitysignplcoperationerror.md
+  - docs/models/errors/comatprotoidentitysignplcoperationresponsebody.md
+  - docs/models/errors/comatprotoidentitysubmitplcoperationcomatprotoidentityresponsebody.md
+  - docs/models/errors/comatprotoidentitysubmitplcoperationerror.md
+  - docs/models/errors/comatprotoidentitysubmitplcoperationresponsebody.md
+  - docs/models/errors/comatprotoidentityupdatehandlecomatprotoidentityresponsebody.md
+  - docs/models/errors/comatprotoidentityupdatehandleerror.md
+  - docs/models/errors/comatprotoidentityupdatehandleresponsebody.md
+  - docs/models/errors/comatprotolabelquerylabelscomatprotolabelresponsebody.md
+  - docs/models/errors/comatprotolabelquerylabelserror.md
+  - docs/models/errors/comatprotolabelquerylabelsresponsebody.md
+  - docs/models/errors/comatprotomoderationcreatereportcomatprotomoderationresponsebody.md
+  - docs/models/errors/comatprotomoderationcreatereporterror.md
+  - docs/models/errors/comatprotomoderationcreatereportresponsebody.md
+  - docs/models/errors/comatprotorepoapplywritescomatprotoreporesponsebody.md
+  - docs/models/errors/comatprotorepoapplywriteserror.md
+  - docs/models/errors/comatprotorepoapplywritesresponsebody.md
+  - docs/models/errors/comatprotorepocreaterecordcomatprotoreporesponsebody.md
+  - docs/models/errors/comatprotorepocreaterecorderror.md
+  - docs/models/errors/comatprotorepocreaterecordresponsebody.md
+  - docs/models/errors/comatprotorepodeleterecordcomatprotoreporesponsebody.md
+  - docs/models/errors/comatprotorepodeleterecorderror.md
+  - docs/models/errors/comatprotorepodeleterecordresponsebody.md
+  - docs/models/errors/comatprotorepodescriberepocomatprotoreporesponsebody.md
+  - docs/models/errors/comatprotorepodescriberepoerror.md
+  - docs/models/errors/comatprotorepodescribereporesponsebody.md
+  - docs/models/errors/comatprotorepogetrecordcomatprotoreporesponsebody.md
+  - docs/models/errors/comatprotorepogetrecorderror.md
+  - docs/models/errors/comatprotorepogetrecordresponsebody.md
+  - docs/models/errors/comatprotorepoimportrepocomatprotoreporesponsebody.md
+  - docs/models/errors/comatprotorepoimportrepoerror.md
+  - docs/models/errors/comatprotorepoimportreporesponsebody.md
+  - docs/models/errors/comatprotorepolistmissingblobscomatprotoreporesponsebody.md
+  - docs/models/errors/comatprotorepolistmissingblobserror.md
+  - docs/models/errors/comatprotorepolistmissingblobsresponsebody.md
+  - docs/models/errors/comatprotorepolistrecordscomatprotoreporesponsebody.md
+  - docs/models/errors/comatprotorepolistrecordserror.md
+  - docs/models/errors/comatprotorepolistrecordsresponsebody.md
+  - docs/models/errors/comatprotorepoputrecordcomatprotoreporesponsebody.md
+  - docs/models/errors/comatprotorepoputrecorderror.md
+  - docs/models/errors/comatprotorepoputrecordresponsebody.md
+  - docs/models/errors/comatprotorepouploadblobcomatprotoreporesponsebody.md
+  - docs/models/errors/comatprotorepouploadbloberror.md
+  - docs/models/errors/comatprotorepouploadblobresponsebody.md
+  - docs/models/errors/comatprotoserveractivateaccountcomatprotoserverresponsebody.md
+  - docs/models/errors/comatprotoserveractivateaccounterror.md
+  - docs/models/errors/comatprotoserveractivateaccountresponsebody.md
+  - docs/models/errors/comatprotoservercheckaccountstatuscomatprotoserverresponsebody.md
+  - docs/models/errors/comatprotoservercheckaccountstatuserror.md
+  - docs/models/errors/comatprotoservercheckaccountstatusresponsebody.md
+  - docs/models/errors/comatprotoserverconfirmemailcomatprotoserverresponsebody.md
+  - docs/models/errors/comatprotoserverconfirmemailerror.md
+  - docs/models/errors/comatprotoserverconfirmemailresponsebody.md
+  - docs/models/errors/comatprotoservercreateaccountcomatprotoserverresponsebody.md
+  - docs/models/errors/comatprotoservercreateaccounterror.md
+  - docs/models/errors/comatprotoservercreateaccountresponsebody.md
+  - docs/models/errors/comatprotoservercreateapppasswordcomatprotoserverresponsebody.md
+  - docs/models/errors/comatprotoservercreateapppassworderror.md
+  - docs/models/errors/comatprotoservercreateapppasswordresponsebody.md
+  - docs/models/errors/comatprotoservercreateinvitecodecomatprotoserverresponsebody.md
+  - docs/models/errors/comatprotoservercreateinvitecodeerror.md
+  - docs/models/errors/comatprotoservercreateinvitecoderesponsebody.md
+  - docs/models/errors/comatprotoservercreateinvitecodescomatprotoserverresponsebody.md
+  - docs/models/errors/comatprotoservercreateinvitecodeserror.md
+  - docs/models/errors/comatprotoservercreateinvitecodesresponsebody.md
+  - docs/models/errors/comatprotoservercreatesessioncomatprotoserverresponsebody.md
+  - docs/models/errors/comatprotoservercreatesessionerror.md
+  - docs/models/errors/comatprotoservercreatesessionresponsebody.md
+  - docs/models/errors/comatprotoserverdeactivateaccountcomatprotoserverresponsebody.md
+  - docs/models/errors/comatprotoserverdeactivateaccounterror.md
+  - docs/models/errors/comatprotoserverdeactivateaccountresponsebody.md
+  - docs/models/errors/comatprotoserverdeleteaccountcomatprotoserverresponsebody.md
+  - docs/models/errors/comatprotoserverdeleteaccounterror.md
+  - docs/models/errors/comatprotoserverdeleteaccountresponsebody.md
+  - docs/models/errors/comatprotoserverdeletesessioncomatprotoserverresponsebody.md
+  - docs/models/errors/comatprotoserverdeletesessionerror.md
+  - docs/models/errors/comatprotoserverdeletesessionresponsebody.md
+  - docs/models/errors/comatprotoserverdescribeservercomatprotoserverresponsebody.md
+  - docs/models/errors/comatprotoserverdescribeservererror.md
+  - docs/models/errors/comatprotoserverdescribeserverresponsebody.md
+  - docs/models/errors/comatprotoservergetaccountinvitecodescomatprotoserverresponsebody.md
+  - docs/models/errors/comatprotoservergetaccountinvitecodeserror.md
+  - docs/models/errors/comatprotoservergetaccountinvitecodesresponsebody.md
+  - docs/models/errors/comatprotoservergetserviceauthcomatprotoserverresponsebody.md
+  - docs/models/errors/comatprotoservergetserviceautherror.md
+  - docs/models/errors/comatprotoservergetserviceauthresponsebody.md
+  - docs/models/errors/comatprotoservergetsessioncomatprotoserverresponsebody.md
+  - docs/models/errors/comatprotoservergetsessionerror.md
+  - docs/models/errors/comatprotoservergetsessionresponsebody.md
+  - docs/models/errors/comatprotoserverlistapppasswordscomatprotoserverresponsebody.md
+  - docs/models/errors/comatprotoserverlistapppasswordserror.md
+  - docs/models/errors/comatprotoserverlistapppasswordsresponsebody.md
+  - docs/models/errors/comatprotoserverrefreshsessioncomatprotoserverresponsebody.md
+  - docs/models/errors/comatprotoserverrefreshsessionerror.md
+  - docs/models/errors/comatprotoserverrefreshsessionresponsebody.md
+  - docs/models/errors/comatprotoserverrequestaccountdeletecomatprotoserverresponsebody.md
+  - docs/models/errors/comatprotoserverrequestaccountdeleteerror.md
+  - docs/models/errors/comatprotoserverrequestaccountdeleteresponsebody.md
+  - docs/models/errors/comatprotoserverrequestemailconfirmationcomatprotoserverresponsebody.md
+  - docs/models/errors/comatprotoserverrequestemailconfirmationerror.md
+  - docs/models/errors/comatprotoserverrequestemailconfirmationresponsebody.md
+  - docs/models/errors/comatprotoserverrequestemailupdatecomatprotoserverresponsebody.md
+  - docs/models/errors/comatprotoserverrequestemailupdateerror.md
+  - docs/models/errors/comatprotoserverrequestemailupdateresponsebody.md
+  - docs/models/errors/comatprotoserverrequestpasswordresetcomatprotoserverresponsebody.md
+  - docs/models/errors/comatprotoserverrequestpasswordreseterror.md
+  - docs/models/errors/comatprotoserverrequestpasswordresetresponsebody.md
+  - docs/models/errors/comatprotoserverreservesigningkeycomatprotoserverresponsebody.md
+  - docs/models/errors/comatprotoserverreservesigningkeyerror.md
+  - docs/models/errors/comatprotoserverreservesigningkeyresponsebody.md
+  - docs/models/errors/comatprotoserverresetpasswordcomatprotoserverresponsebody.md
+  - docs/models/errors/comatprotoserverresetpassworderror.md
+  - docs/models/errors/comatprotoserverresetpasswordresponsebody.md
+  - docs/models/errors/comatprotoserverrevokeapppasswordcomatprotoserverresponsebody.md
+  - docs/models/errors/comatprotoserverrevokeapppassworderror.md
+  - docs/models/errors/comatprotoserverrevokeapppasswordresponsebody.md
+  - docs/models/errors/comatprotoserverupdateemailcomatprotoserverresponsebody.md
+  - docs/models/errors/comatprotoserverupdateemailerror.md
+  - docs/models/errors/comatprotoserverupdateemailresponsebody.md
+  - docs/models/errors/comatprotosyncgetblobcomatprotosyncresponsebody.md
+  - docs/models/errors/comatprotosyncgetbloberror.md
+  - docs/models/errors/comatprotosyncgetblobresponsebody.md
+  - docs/models/errors/comatprotosyncgetblockscomatprotosyncresponsebody.md
+  - docs/models/errors/comatprotosyncgetblockserror.md
+  - docs/models/errors/comatprotosyncgetblocksresponsebody.md
+  - docs/models/errors/comatprotosyncgetlatestcommitcomatprotosyncresponsebody.md
+  - docs/models/errors/comatprotosyncgetlatestcommiterror.md
+  - docs/models/errors/comatprotosyncgetlatestcommitresponsebody.md
+  - docs/models/errors/comatprotosyncgetrecordcomatprotosyncresponsebody.md
+  - docs/models/errors/comatprotosyncgetrecorderror.md
+  - docs/models/errors/comatprotosyncgetrecordresponsebody.md
+  - docs/models/errors/comatprotosyncgetrepocomatprotosyncresponsebody.md
+  - docs/models/errors/comatprotosyncgetrepoerror.md
+  - docs/models/errors/comatprotosyncgetreporesponsebody.md
+  - docs/models/errors/comatprotosyncgetrepostatuscomatprotosyncresponsebody.md
+  - docs/models/errors/comatprotosyncgetrepostatuserror.md
+  - docs/models/errors/comatprotosyncgetrepostatusresponsebody.md
+  - docs/models/errors/comatprotosynclistblobscomatprotosyncresponsebody.md
+  - docs/models/errors/comatprotosynclistblobserror.md
+  - docs/models/errors/comatprotosynclistblobsresponsebody.md
+  - docs/models/errors/comatprotosynclistreposcomatprotosyncresponsebody.md
+  - docs/models/errors/comatprotosynclistreposerror.md
+  - docs/models/errors/comatprotosynclistreposresponsebody.md
+  - docs/models/errors/comatprotosyncnotifyofupdatecomatprotosyncresponsebody.md
+  - docs/models/errors/comatprotosyncnotifyofupdateerror.md
+  - docs/models/errors/comatprotosyncnotifyofupdateresponsebody.md
+  - docs/models/errors/comatprotosyncrequestcrawlcomatprotosyncresponsebody.md
+  - docs/models/errors/comatprotosyncrequestcrawlerror.md
+  - docs/models/errors/comatprotosyncrequestcrawlresponsebody.md
+  - docs/models/errors/errort.md
+  - docs/models/errors/toolsozonecommunicationcreatetemplateerror.md
+  - docs/models/errors/toolsozonecommunicationcreatetemplateresponsebody.md
+  - docs/models/errors/toolsozonecommunicationcreatetemplatetoolsozonecommunicationresponsebody.md
+  - docs/models/errors/toolsozonecommunicationdeletetemplateerror.md
+  - docs/models/errors/toolsozonecommunicationdeletetemplateresponsebody.md
+  - docs/models/errors/toolsozonecommunicationdeletetemplatetoolsozonecommunicationresponsebody.md
+  - docs/models/errors/toolsozonecommunicationlisttemplateserror.md
+  - docs/models/errors/toolsozonecommunicationlisttemplatesresponsebody.md
+  - docs/models/errors/toolsozonecommunicationlisttemplatestoolsozonecommunicationresponsebody.md
+  - docs/models/errors/toolsozonecommunicationupdatetemplateerror.md
+  - docs/models/errors/toolsozonecommunicationupdatetemplateresponsebody.md
+  - docs/models/errors/toolsozonecommunicationupdatetemplatetoolsozonecommunicationresponsebody.md
+  - docs/models/errors/toolsozonemoderationemiteventerror.md
+  - docs/models/errors/toolsozonemoderationemiteventresponsebody.md
+  - docs/models/errors/toolsozonemoderationemiteventtoolsozonemoderationresponsebody.md
+  - docs/models/errors/toolsozonemoderationgeteventerror.md
+  - docs/models/errors/toolsozonemoderationgeteventresponsebody.md
+  - docs/models/errors/toolsozonemoderationgeteventtoolsozonemoderationresponsebody.md
+  - docs/models/errors/toolsozonemoderationgetrecorderror.md
+  - docs/models/errors/toolsozonemoderationgetrecordresponsebody.md
+  - docs/models/errors/toolsozonemoderationgetrecordserror.md
+  - docs/models/errors/toolsozonemoderationgetrecordsresponsebody.md
+  - docs/models/errors/toolsozonemoderationgetrecordstoolsozonemoderationresponsebody.md
+  - docs/models/errors/toolsozonemoderationgetrecordtoolsozonemoderationresponsebody.md
+  - docs/models/errors/toolsozonemoderationgetrepoerror.md
+  - docs/models/errors/toolsozonemoderationgetreporesponsebody.md
+  - docs/models/errors/toolsozonemoderationgetreposerror.md
+  - docs/models/errors/toolsozonemoderationgetreposresponsebody.md
+  - docs/models/errors/toolsozonemoderationgetrepostoolsozonemoderationresponsebody.md
+  - docs/models/errors/toolsozonemoderationgetrepotoolsozonemoderationresponsebody.md
+  - docs/models/errors/toolsozonemoderationqueryeventserror.md
+  - docs/models/errors/toolsozonemoderationqueryeventsresponsebody.md
+  - docs/models/errors/toolsozonemoderationqueryeventstoolsozonemoderationresponsebody.md
+  - docs/models/errors/toolsozonemoderationquerystatuseserror.md
+  - docs/models/errors/toolsozonemoderationquerystatusesresponsebody.md
+  - docs/models/errors/toolsozonemoderationquerystatusestoolsozonemoderationresponsebody.md
+  - docs/models/errors/toolsozonemoderationsearchreposerror.md
+  - docs/models/errors/toolsozonemoderationsearchreposresponsebody.md
+  - docs/models/errors/toolsozonemoderationsearchrepostoolsozonemoderationresponsebody.md
+  - docs/models/errors/toolsozoneservergetconfigerror.md
+  - docs/models/errors/toolsozoneservergetconfigresponsebody.md
+  - docs/models/errors/toolsozoneservergetconfigtoolsozoneserverresponsebody.md
+  - docs/models/errors/toolsozonesetaddvalueserror.md
+  - docs/models/errors/toolsozonesetaddvaluesresponsebody.md
+  - docs/models/errors/toolsozonesetaddvaluestoolsozonesetresponsebody.md
+  - docs/models/errors/toolsozonesetdeleteseterror.md
+  - docs/models/errors/toolsozonesetdeletesetresponsebody.md
+  - docs/models/errors/toolsozonesetdeletesettoolsozonesetresponsebody.md
+  - docs/models/errors/toolsozonesetdeletevalueserror.md
+  - docs/models/errors/toolsozonesetdeletevaluesresponsebody.md
+  - docs/models/errors/toolsozonesetdeletevaluestoolsozonesetresponsebody.md
+  - docs/models/errors/toolsozonesetgetvalueserror.md
+  - docs/models/errors/toolsozonesetgetvaluesresponsebody.md
+  - docs/models/errors/toolsozonesetgetvaluestoolsozonesetresponsebody.md
+  - docs/models/errors/toolsozonesetquerysetserror.md
+  - docs/models/errors/toolsozonesetquerysetsresponsebody.md
+  - docs/models/errors/toolsozonesetquerysetstoolsozonesetresponsebody.md
+  - docs/models/errors/toolsozonesettinglistoptionserror.md
+  - docs/models/errors/toolsozonesettinglistoptionsresponsebody.md
+  - docs/models/errors/toolsozonesettinglistoptionstoolsozonesettingresponsebody.md
+  - docs/models/errors/toolsozonesettingremoveoptionserror.md
+  - docs/models/errors/toolsozonesettingremoveoptionsresponsebody.md
+  - docs/models/errors/toolsozonesettingremoveoptionstoolsozonesettingresponsebody.md
+  - docs/models/errors/toolsozonesettingupsertoptionerror.md
+  - docs/models/errors/toolsozonesettingupsertoptionresponsebody.md
+  - docs/models/errors/toolsozonesettingupsertoptiontoolsozonesettingresponsebody.md
+  - docs/models/errors/toolsozonesetupsertseterror.md
+  - docs/models/errors/toolsozonesetupsertsetresponsebody.md
+  - docs/models/errors/toolsozonesetupsertsettoolsozonesetresponsebody.md
+  - docs/models/errors/toolsozonesignaturefindcorrelationerror.md
+  - docs/models/errors/toolsozonesignaturefindcorrelationresponsebody.md
+  - docs/models/errors/toolsozonesignaturefindcorrelationtoolsozonesignatureresponsebody.md
+  - docs/models/errors/toolsozonesignaturefindrelatedaccountserror.md
+  - docs/models/errors/toolsozonesignaturefindrelatedaccountsresponsebody.md
+  - docs/models/errors/toolsozonesignaturefindrelatedaccountstoolsozonesignatureresponsebody.md
+  - docs/models/errors/toolsozonesignaturesearchaccountserror.md
+  - docs/models/errors/toolsozonesignaturesearchaccountsresponsebody.md
+  - docs/models/errors/toolsozonesignaturesearchaccountstoolsozonesignatureresponsebody.md
+  - docs/models/errors/toolsozoneteamaddmembererror.md
+  - docs/models/errors/toolsozoneteamaddmemberresponsebody.md
+  - docs/models/errors/toolsozoneteamaddmembertoolsozoneteamresponsebody.md
+  - docs/models/errors/toolsozoneteamdeletemembererror.md
+  - docs/models/errors/toolsozoneteamdeletememberresponsebody.md
+  - docs/models/errors/toolsozoneteamdeletemembertoolsozoneteamresponsebody.md
+  - docs/models/errors/toolsozoneteamlistmemberserror.md
+  - docs/models/errors/toolsozoneteamlistmembersresponsebody.md
+  - docs/models/errors/toolsozoneteamlistmemberstoolsozoneteamresponsebody.md
+  - docs/models/errors/toolsozoneteamupdatemembererror.md
+  - docs/models/errors/toolsozoneteamupdatememberresponsebody.md
+  - docs/models/errors/toolsozoneteamupdatemembertoolsozoneteamresponsebody.md
+  - docs/models/operations/appbskyactorgetpreferencesresponsebody.md
+  - docs/models/operations/appbskyactorgetprofilerequest.md
+  - docs/models/operations/appbskyactorgetprofilesrequest.md
+  - docs/models/operations/appbskyactorgetprofilesresponsebody.md
+  - docs/models/operations/appbskyactorgetsuggestionsrequest.md
+  - docs/models/operations/appbskyactorgetsuggestionsresponsebody.md
+  - docs/models/operations/appbskyactorputpreferencesrequestbody.md
+  - docs/models/operations/appbskyactorsearchactorsrequest.md
+  - docs/models/operations/appbskyactorsearchactorsresponsebody.md
+  - docs/models/operations/appbskyactorsearchactorstypeaheadrequest.md
+  - docs/models/operations/appbskyactorsearchactorstypeaheadresponsebody.md
+  - docs/models/operations/appbskyfeeddescribefeedgeneratorresponsebody.md
+  - docs/models/operations/appbskyfeedgetactorfeedsrequest.md
+  - docs/models/operations/appbskyfeedgetactorfeedsresponsebody.md
+  - docs/models/operations/appbskyfeedgetactorlikesrequest.md
+  - docs/models/operations/appbskyfeedgetactorlikesresponsebody.md
+  - docs/models/operations/appbskyfeedgetauthorfeedrequest.md
+  - docs/models/operations/appbskyfeedgetauthorfeedresponsebody.md
+  - docs/models/operations/appbskyfeedgetfeedgeneratorrequest.md
+  - docs/models/operations/appbskyfeedgetfeedgeneratorresponsebody.md
+  - docs/models/operations/appbskyfeedgetfeedgeneratorsrequest.md
+  - docs/models/operations/appbskyfeedgetfeedgeneratorsresponsebody.md
+  - docs/models/operations/appbskyfeedgetfeedrequest.md
+  - docs/models/operations/appbskyfeedgetfeedresponsebody.md
+  - docs/models/operations/appbskyfeedgetfeedskeletonrequest.md
+  - docs/models/operations/appbskyfeedgetfeedskeletonresponsebody.md
+  - docs/models/operations/appbskyfeedgetlikesrequest.md
+  - docs/models/operations/appbskyfeedgetlikesresponsebody.md
+  - docs/models/operations/appbskyfeedgetlistfeedrequest.md
+  - docs/models/operations/appbskyfeedgetlistfeedresponsebody.md
+  - docs/models/operations/appbskyfeedgetpostsrequest.md
+  - docs/models/operations/appbskyfeedgetpostsresponsebody.md
+  - docs/models/operations/appbskyfeedgetpostthreadrequest.md
+  - docs/models/operations/appbskyfeedgetpostthreadresponsebody.md
+  - docs/models/operations/appbskyfeedgetquotesrequest.md
+  - docs/models/operations/appbskyfeedgetquotesresponsebody.md
+  - docs/models/operations/appbskyfeedgetrepostedbyrequest.md
+  - docs/models/operations/appbskyfeedgetrepostedbyresponsebody.md
+  - docs/models/operations/appbskyfeedgetsuggestedfeedsrequest.md
+  - docs/models/operations/appbskyfeedgetsuggestedfeedsresponsebody.md
+  - docs/models/operations/appbskyfeedgettimelinerequest.md
+  - docs/models/operations/appbskyfeedgettimelineresponsebody.md
+  - docs/models/operations/appbskyfeedsearchpostsrequest.md
+  - docs/models/operations/appbskyfeedsearchpostsresponsebody.md
+  - docs/models/operations/appbskyfeedsendinteractionsrequestbody.md
+  - docs/models/operations/appbskyfeedsendinteractionsresponsebody.md
+  - docs/models/operations/appbskygraphgetactorstarterpacksrequest.md
+  - docs/models/operations/appbskygraphgetactorstarterpacksresponsebody.md
+  - docs/models/operations/appbskygraphgetblocksrequest.md
+  - docs/models/operations/appbskygraphgetblocksresponsebody.md
+  - docs/models/operations/appbskygraphgetfollowersrequest.md
+  - docs/models/operations/appbskygraphgetfollowersresponsebody.md
+  - docs/models/operations/appbskygraphgetfollowsrequest.md
+  - docs/models/operations/appbskygraphgetfollowsresponsebody.md
+  - docs/models/operations/appbskygraphgetknownfollowersrequest.md
+  - docs/models/operations/appbskygraphgetknownfollowersresponsebody.md
+  - docs/models/operations/appbskygraphgetlistblocksrequest.md
+  - docs/models/operations/appbskygraphgetlistblocksresponsebody.md
+  - docs/models/operations/appbskygraphgetlistmutesrequest.md
+  - docs/models/operations/appbskygraphgetlistmutesresponsebody.md
+  - docs/models/operations/appbskygraphgetlistrequest.md
+  - docs/models/operations/appbskygraphgetlistresponsebody.md
+  - docs/models/operations/appbskygraphgetlistsrequest.md
+  - docs/models/operations/appbskygraphgetlistsresponsebody.md
+  - docs/models/operations/appbskygraphgetmutesrequest.md
+  - docs/models/operations/appbskygraphgetmutesresponsebody.md
+  - docs/models/operations/appbskygraphgetrelationshipsrequest.md
+  - docs/models/operations/appbskygraphgetrelationshipsresponsebody.md
+  - docs/models/operations/appbskygraphgetstarterpackrequest.md
+  - docs/models/operations/appbskygraphgetstarterpackresponsebody.md
+  - docs/models/operations/appbskygraphgetstarterpacksrequest.md
+  - docs/models/operations/appbskygraphgetstarterpacksresponsebody.md
+  - docs/models/operations/appbskygraphgetsuggestedfollowsbyactorrequest.md
+  - docs/models/operations/appbskygraphgetsuggestedfollowsbyactorresponsebody.md
+  - docs/models/operations/appbskygraphmuteactorlistrequestbody.md
+  - docs/models/operations/appbskygraphmuteactorrequestbody.md
+  - docs/models/operations/appbskygraphmutethreadrequestbody.md
+  - docs/models/operations/appbskygraphsearchstarterpacksrequest.md
+  - docs/models/operations/appbskygraphsearchstarterpacksresponsebody.md
+  - docs/models/operations/appbskygraphunmuteactorlistrequestbody.md
+  - docs/models/operations/appbskygraphunmuteactorrequestbody.md
+  - docs/models/operations/appbskygraphunmutethreadrequestbody.md
+  - docs/models/operations/appbskylabelergetservicesrequest.md
+  - docs/models/operations/appbskylabelergetservicesresponsebody.md
+  - docs/models/operations/appbskynotificationgetunreadcountrequest.md
+  - docs/models/operations/appbskynotificationgetunreadcountresponsebody.md
+  - docs/models/operations/appbskynotificationlistnotificationsrequest.md
+  - docs/models/operations/appbskynotificationlistnotificationsresponsebody.md
+  - docs/models/operations/appbskynotificationputpreferencesrequestbody.md
+  - docs/models/operations/appbskynotificationregisterpushrequestbody.md
+  - docs/models/operations/appbskynotificationupdateseenrequestbody.md
+  - docs/models/operations/appbskyvideogetjobstatusrequest.md
+  - docs/models/operations/appbskyvideogetjobstatusresponsebody.md
+  - docs/models/operations/appbskyvideogetuploadlimitsresponsebody.md
+  - docs/models/operations/appbskyvideouploadvideoresponsebody.md
+  - docs/models/operations/chatbskyactordeleteaccountresponsebody.md
+  - docs/models/operations/chatbskyactordeleteaccountunknown.md
+  - docs/models/operations/chatbskyconvodeletemessageforselfrequestbody.md
+  - docs/models/operations/chatbskyconvogetconvoformembersrequest.md
+  - docs/models/operations/chatbskyconvogetconvoformembersresponsebody.md
+  - docs/models/operations/chatbskyconvogetconvorequest.md
+  - docs/models/operations/chatbskyconvogetconvoresponsebody.md
+  - docs/models/operations/chatbskyconvogetlogrequest.md
+  - docs/models/operations/chatbskyconvogetlogresponsebody.md
+  - docs/models/operations/chatbskyconvogetmessagesrequest.md
+  - docs/models/operations/chatbskyconvogetmessagesresponsebody.md
+  - docs/models/operations/chatbskyconvoleaveconvorequestbody.md
+  - docs/models/operations/chatbskyconvoleaveconvoresponsebody.md
+  - docs/models/operations/chatbskyconvolistconvosrequest.md
+  - docs/models/operations/chatbskyconvolistconvosresponsebody.md
+  - docs/models/operations/chatbskyconvomuteconvorequestbody.md
+  - docs/models/operations/chatbskyconvomuteconvoresponsebody.md
+  - docs/models/operations/chatbskyconvosendmessagebatchrequestbody.md
+  - docs/models/operations/chatbskyconvosendmessagebatchresponsebody.md
+  - docs/models/operations/chatbskyconvosendmessagerequestbody.md
+  - docs/models/operations/chatbskyconvounmuteconvorequestbody.md
+  - docs/models/operations/chatbskyconvounmuteconvoresponsebody.md
+  - docs/models/operations/chatbskyconvoupdatereadrequestbody.md
+  - docs/models/operations/chatbskyconvoupdatereadresponsebody.md
+  - docs/models/operations/chatbskymoderationgetactormetadatarequest.md
+  - docs/models/operations/chatbskymoderationgetactormetadataresponsebody.md
+  - docs/models/operations/chatbskymoderationgetmessagecontextmessages.md
+  - docs/models/operations/chatbskymoderationgetmessagecontextrequest.md
+  - docs/models/operations/chatbskymoderationgetmessagecontextresponsebody.md
+  - docs/models/operations/chatbskymoderationupdateactoraccessrequestbody.md
+  - docs/models/operations/comatprotoadmindeleteaccountrequestbody.md
+  - docs/models/operations/comatprotoadmindisableaccountinvitesrequestbody.md
+  - docs/models/operations/comatprotoadmindisableinvitecodesrequestbody.md
+  - docs/models/operations/comatprotoadminenableaccountinvitesrequestbody.md
+  - docs/models/operations/comatprotoadmingetaccountinforequest.md
+  - docs/models/operations/comatprotoadmingetaccountinfosrequest.md
+  - docs/models/operations/comatprotoadmingetaccountinfosresponsebody.md
+  - docs/models/operations/comatprotoadmingetinvitecodesrequest.md
+  - docs/models/operations/comatprotoadmingetinvitecodesresponsebody.md
+  - docs/models/operations/comatprotoadmingetsubjectstatusrequest.md
+  - docs/models/operations/comatprotoadmingetsubjectstatusresponsebody.md
+  - docs/models/operations/comatprotoadmingetsubjectstatussubject.md
+  - docs/models/operations/comatprotoadminsearchaccountsrequest.md
+  - docs/models/operations/comatprotoadminsearchaccountsresponsebody.md
+  - docs/models/operations/comatprotoadminsendemailrequestbody.md
+  - docs/models/operations/comatprotoadminsendemailresponsebody.md
+  - docs/models/operations/comatprotoadminupdateaccountemailrequestbody.md
+  - docs/models/operations/comatprotoadminupdateaccounthandlerequestbody.md
+  - docs/models/operations/comatprotoadminupdateaccountpasswordrequestbody.md
+  - docs/models/operations/comatprotoadminupdatesubjectstatusrequestbody.md
+  - docs/models/operations/comatprotoadminupdatesubjectstatusresponsebody.md
+  - docs/models/operations/comatprotoadminupdatesubjectstatussubject.md
+  - docs/models/operations/comatprotoidentitygetrecommendeddidcredentialsresponsebody.md
+  - docs/models/operations/comatprotoidentityresolvehandlerequest.md
+  - docs/models/operations/comatprotoidentityresolvehandleresponsebody.md
+  - docs/models/operations/comatprotoidentitysignplcoperationrequestbody.md
+  - docs/models/operations/comatprotoidentitysignplcoperationresponsebody.md
+  - docs/models/operations/comatprotoidentitysubmitplcoperationrequestbody.md
+  - docs/models/operations/comatprotoidentityupdatehandlerequestbody.md
+  - docs/models/operations/comatprotolabelquerylabelsrequest.md
+  - docs/models/operations/comatprotolabelquerylabelsresponsebody.md
+  - docs/models/operations/comatprotomoderationcreatereportcomatprotomoderationsubject.md
+  - docs/models/operations/comatprotomoderationcreatereportrequestbody.md
+  - docs/models/operations/comatprotomoderationcreatereportresponsebody.md
+  - docs/models/operations/comatprotomoderationcreatereportsubject.md
+  - docs/models/operations/comatprotorepoapplywritesrequestbody.md
+  - docs/models/operations/comatprotorepoapplywritesresponsebody.md
+  - docs/models/operations/comatprotorepocreaterecordrequestbody.md
+  - docs/models/operations/comatprotorepocreaterecordresponsebody.md
+  - docs/models/operations/comatprotorepodeleterecordrequestbody.md
+  - docs/models/operations/comatprotorepodeleterecordresponsebody.md
+  - docs/models/operations/comatprotorepodescribereporequest.md
+  - docs/models/operations/comatprotorepodescribereporesponsebody.md
+  - docs/models/operations/comatprotorepogetrecordrequest.md
+  - docs/models/operations/comatprotorepogetrecordresponsebody.md
+  - docs/models/operations/comatprotorepolistmissingblobsrequest.md
+  - docs/models/operations/comatprotorepolistmissingblobsresponsebody.md
+  - docs/models/operations/comatprotorepolistrecordsrequest.md
+  - docs/models/operations/comatprotorepolistrecordsresponsebody.md
+  - docs/models/operations/comatprotorepoputrecordrequestbody.md
+  - docs/models/operations/comatprotorepoputrecordresponsebody.md
+  - docs/models/operations/comatprotorepoputrecordvalidationstatus.md
+  - docs/models/operations/comatprotorepouploadblobresponsebody.md
+  - docs/models/operations/comatprotoservercheckaccountstatusresponsebody.md
+  - docs/models/operations/comatprotoserverconfirmemailrequestbody.md
+  - docs/models/operations/comatprotoservercreateaccountrequestbody.md
+  - docs/models/operations/comatprotoservercreateaccountresponsebody.md
+  - docs/models/operations/comatprotoservercreateapppasswordrequestbody.md
+  - docs/models/operations/comatprotoservercreateinvitecoderequestbody.md
+  - docs/models/operations/comatprotoservercreateinvitecoderesponsebody.md
+  - docs/models/operations/comatprotoservercreateinvitecodesrequestbody.md
+  - docs/models/operations/comatprotoservercreateinvitecodesresponsebody.md
+  - docs/models/operations/comatprotoservercreatesessionrequestbody.md
+  - docs/models/operations/comatprotoservercreatesessionresponsebody.md
+  - docs/models/operations/comatprotoserverdeactivateaccountrequestbody.md
+  - docs/models/operations/comatprotoserverdeleteaccountrequestbody.md
+  - docs/models/operations/comatprotoserverdescribeserverresponsebody.md
+  - docs/models/operations/comatprotoservergetaccountinvitecodesrequest.md
+  - docs/models/operations/comatprotoservergetaccountinvitecodesresponsebody.md
+  - docs/models/operations/comatprotoservergetserviceauthrequest.md
+  - docs/models/operations/comatprotoservergetserviceauthresponsebody.md
+  - docs/models/operations/comatprotoservergetsessionresponsebody.md
+  - docs/models/operations/comatprotoservergetsessionstatus.md
+  - docs/models/operations/comatprotoserverlistapppasswordsresponsebody.md
+  - docs/models/operations/comatprotoserverrefreshsessionresponsebody.md
+  - docs/models/operations/comatprotoserverrefreshsessionstatus.md
+  - docs/models/operations/comatprotoserverrequestemailupdateresponsebody.md
+  - docs/models/operations/comatprotoserverrequestpasswordresetrequestbody.md
+  - docs/models/operations/comatprotoserverreservesigningkeyrequestbody.md
+  - docs/models/operations/comatprotoserverreservesigningkeyresponsebody.md
+  - docs/models/operations/comatprotoserverresetpasswordrequestbody.md
+  - docs/models/operations/comatprotoserverrevokeapppasswordrequestbody.md
+  - docs/models/operations/comatprotoserverupdateemailrequestbody.md
+  - docs/models/operations/comatprotosyncgetblobrequest.md
+  - docs/models/operations/comatprotosyncgetblocksrequest.md
+  - docs/models/operations/comatprotosyncgetlatestcommitrequest.md
+  - docs/models/operations/comatprotosyncgetlatestcommitresponsebody.md
+  - docs/models/operations/comatprotosyncgetrecordrequest.md
+  - docs/models/operations/comatprotosyncgetreporequest.md
+  - docs/models/operations/comatprotosyncgetrepostatusrequest.md
+  - docs/models/operations/comatprotosyncgetrepostatusresponsebody.md
+  - docs/models/operations/comatprotosyncgetrepostatusstatus.md
+  - docs/models/operations/comatprotosynclistblobsrequest.md
+  - docs/models/operations/comatprotosynclistblobsresponsebody.md
+  - docs/models/operations/comatprotosynclistreposrequest.md
+  - docs/models/operations/comatprotosynclistreposresponsebody.md
+  - docs/models/operations/comatprotosyncnotifyofupdaterequestbody.md
+  - docs/models/operations/comatprotosyncrequestcrawlrequestbody.md
+  - docs/models/operations/event.md
+  - docs/models/operations/filter.md
+  - docs/models/operations/logs.md
+  - docs/models/operations/managerrole.md
+  - docs/models/operations/messages.md
+  - docs/models/operations/platform.md
+  - docs/models/operations/queryparamscope.md
+  - docs/models/operations/queryparamsort.md
+  - docs/models/operations/queryparamsubjecttype.md
+  - docs/models/operations/records.md
+  - docs/models/operations/relationships.md
+  - docs/models/operations/repos.md
+  - docs/models/operations/results.md
+  - docs/models/operations/role.md
+  - docs/models/operations/scope.md
+  - docs/models/operations/sort.md
+  - docs/models/operations/status.md
+  - docs/models/operations/subject.md
+  - docs/models/operations/subjecttype.md
+  - docs/models/operations/thread.md
+  - docs/models/operations/toolsozonecommunicationcreatetemplaterequestbody.md
+  - docs/models/operations/toolsozonecommunicationdeletetemplaterequestbody.md
+  - docs/models/operations/toolsozonecommunicationlisttemplatesresponsebody.md
+  - docs/models/operations/toolsozonecommunicationupdatetemplaterequestbody.md
+  - docs/models/operations/toolsozonemoderationemiteventrequestbody.md
+  - docs/models/operations/toolsozonemoderationemiteventsubject.md
+  - docs/models/operations/toolsozonemoderationgeteventrequest.md
+  - docs/models/operations/toolsozonemoderationgetrecordrequest.md
+  - docs/models/operations/toolsozonemoderationgetrecordsrequest.md
+  - docs/models/operations/toolsozonemoderationgetrecordsresponsebody.md
+  - docs/models/operations/toolsozonemoderationgetreporequest.md
+  - docs/models/operations/toolsozonemoderationgetreposrequest.md
+  - docs/models/operations/toolsozonemoderationgetreposresponsebody.md
+  - docs/models/operations/toolsozonemoderationqueryeventsrequest.md
+  - docs/models/operations/toolsozonemoderationqueryeventsresponsebody.md
+  - docs/models/operations/toolsozonemoderationquerystatusesrequest.md
+  - docs/models/operations/toolsozonemoderationquerystatusesresponsebody.md
+  - docs/models/operations/toolsozonemoderationsearchreposrequest.md
+  - docs/models/operations/toolsozonemoderationsearchreposresponsebody.md
+  - docs/models/operations/toolsozoneservergetconfigresponsebody.md
+  - docs/models/operations/toolsozonesetaddvaluesrequestbody.md
+  - docs/models/operations/toolsozonesetdeletesetrequestbody.md
+  - docs/models/operations/toolsozonesetdeletesetresponsebody.md
+  - docs/models/operations/toolsozonesetdeletesetunknown.md
+  - docs/models/operations/toolsozonesetdeletevaluesrequestbody.md
+  - docs/models/operations/toolsozonesetgetvaluesrequest.md
+  - docs/models/operations/toolsozonesetgetvaluesresponsebody.md
+  - docs/models/operations/toolsozonesetquerysetsrequest.md
+  - docs/models/operations/toolsozonesetquerysetsresponsebody.md
+  - docs/models/operations/toolsozonesettinglistoptionsrequest.md
+  - docs/models/operations/toolsozonesettinglistoptionsresponsebody.md
+  - docs/models/operations/toolsozonesettingremoveoptionsrequestbody.md
+  - docs/models/operations/toolsozonesettingremoveoptionsresponsebody.md
+  - docs/models/operations/toolsozonesettingupsertoptionrequestbody.md
+  - docs/models/operations/toolsozonesettingupsertoptionresponsebody.md
+  - docs/models/operations/toolsozonesettingupsertoptionscope.md
+  - docs/models/operations/toolsozonesignaturefindcorrelationrequest.md
+  - docs/models/operations/toolsozonesignaturefindcorrelationresponsebody.md
+  - docs/models/operations/toolsozonesignaturefindrelatedaccountsrequest.md
+  - docs/models/operations/toolsozonesignaturefindrelatedaccountsresponsebody.md
+  - docs/models/operations/toolsozonesignaturesearchaccountsrequest.md
+  - docs/models/operations/toolsozonesignaturesearchaccountsresponsebody.md
+  - docs/models/operations/toolsozoneteamaddmemberrequestbody.md
+  - docs/models/operations/toolsozoneteamdeletememberrequestbody.md
+  - docs/models/operations/toolsozoneteamlistmembersrequest.md
+  - docs/models/operations/toolsozoneteamlistmembersresponsebody.md
+  - docs/models/operations/toolsozoneteamupdatememberrequestbody.md
+  - docs/models/operations/toolsozoneteamupdatememberrole.md
+  - docs/models/operations/unknown.md
+  - docs/models/operations/validationstatus.md
+  - docs/models/operations/views.md
+  - docs/models/operations/writes.md
+  - docs/sdks/actor/README.md
+  - docs/sdks/admin/README.md
+  - docs/sdks/app/README.md
+  - docs/sdks/atproto/README.md
+  - docs/sdks/bluesky/README.md
+  - docs/sdks/blueskyactor/README.md
+  - docs/sdks/blueskybsky/README.md
+  - docs/sdks/blueskymoderation/README.md
+  - docs/sdks/blueskyserver/README.md
+  - docs/sdks/blueskytoolsmoderation/README.md
+  - docs/sdks/bsky/README.md
+  - docs/sdks/chat/README.md
+  - docs/sdks/com/README.md
+  - docs/sdks/communication/README.md
+  - docs/sdks/convo/README.md
+  - docs/sdks/feed/README.md
+  - docs/sdks/graph/README.md
+  - docs/sdks/identity/README.md
+  - docs/sdks/label/README.md
+  - docs/sdks/labeler/README.md
+  - docs/sdks/moderation/README.md
+  - docs/sdks/notification/README.md
+  - docs/sdks/ozone/README.md
+  - docs/sdks/repo/README.md
+  - docs/sdks/server/README.md
+  - docs/sdks/set/README.md
+  - docs/sdks/setting/README.md
+  - docs/sdks/signature/README.md
+  - docs/sdks/sync/README.md
+  - docs/sdks/team/README.md
+  - docs/sdks/tools/README.md
+  - docs/sdks/video/README.md
+  - jsr.json
+  - package.json
+  - src/core.ts
+  - src/funcs/appBskyActorAppBskyActorGetPreferences.ts
+  - src/funcs/appBskyActorAppBskyActorGetProfile.ts
+  - src/funcs/appBskyActorAppBskyActorGetProfiles.ts
+  - src/funcs/appBskyActorAppBskyActorGetSuggestions.ts
+  - src/funcs/appBskyActorAppBskyActorPutPreferences.ts
+  - src/funcs/appBskyActorAppBskyActorSearchActors.ts
+  - src/funcs/appBskyActorAppBskyActorSearchActorsTypeahead.ts
+  - src/funcs/appBskyFeedAppBskyFeedDescribeFeedGenerator.ts
+  - src/funcs/appBskyFeedAppBskyFeedGetActorFeeds.ts
+  - src/funcs/appBskyFeedAppBskyFeedGetActorLikes.ts
+  - src/funcs/appBskyFeedAppBskyFeedGetAuthorFeed.ts
+  - src/funcs/appBskyFeedAppBskyFeedGetFeed.ts
+  - src/funcs/appBskyFeedAppBskyFeedGetFeedGenerator.ts
+  - src/funcs/appBskyFeedAppBskyFeedGetFeedGenerators.ts
+  - src/funcs/appBskyFeedAppBskyFeedGetFeedSkeleton.ts
+  - src/funcs/appBskyFeedAppBskyFeedGetLikes.ts
+  - src/funcs/appBskyFeedAppBskyFeedGetListFeed.ts
+  - src/funcs/appBskyFeedAppBskyFeedGetPostThread.ts
+  - src/funcs/appBskyFeedAppBskyFeedGetPosts.ts
+  - src/funcs/appBskyFeedAppBskyFeedGetQuotes.ts
+  - src/funcs/appBskyFeedAppBskyFeedGetRepostedBy.ts
+  - src/funcs/appBskyFeedAppBskyFeedGetSuggestedFeeds.ts
+  - src/funcs/appBskyFeedAppBskyFeedGetTimeline.ts
+  - src/funcs/appBskyFeedAppBskyFeedSearchPosts.ts
+  - src/funcs/appBskyFeedAppBskyFeedSendInteractions.ts
+  - src/funcs/appBskyGraphAppBskyGraphGetActorStarterPacks.ts
+  - src/funcs/appBskyGraphAppBskyGraphGetBlocks.ts
+  - src/funcs/appBskyGraphAppBskyGraphGetFollowers.ts
+  - src/funcs/appBskyGraphAppBskyGraphGetFollows.ts
+  - src/funcs/appBskyGraphAppBskyGraphGetKnownFollowers.ts
+  - src/funcs/appBskyGraphAppBskyGraphGetList.ts
+  - src/funcs/appBskyGraphAppBskyGraphGetListBlocks.ts
+  - src/funcs/appBskyGraphAppBskyGraphGetListMutes.ts
+  - src/funcs/appBskyGraphAppBskyGraphGetLists.ts
+  - src/funcs/appBskyGraphAppBskyGraphGetMutes.ts
+  - src/funcs/appBskyGraphAppBskyGraphGetRelationships.ts
+  - src/funcs/appBskyGraphAppBskyGraphGetStarterPack.ts
+  - src/funcs/appBskyGraphAppBskyGraphGetStarterPacks.ts
+  - src/funcs/appBskyGraphAppBskyGraphGetSuggestedFollowsByActor.ts
+  - src/funcs/appBskyGraphAppBskyGraphMuteActor.ts
+  - src/funcs/appBskyGraphAppBskyGraphMuteActorList.ts
+  - src/funcs/appBskyGraphAppBskyGraphMuteThread.ts
+  - src/funcs/appBskyGraphAppBskyGraphSearchStarterPacks.ts
+  - src/funcs/appBskyGraphAppBskyGraphUnmuteActor.ts
+  - src/funcs/appBskyGraphAppBskyGraphUnmuteActorList.ts
+  - src/funcs/appBskyGraphAppBskyGraphUnmuteThread.ts
+  - src/funcs/appBskyLabelerAppBskyLabelerGetServices.ts
+  - src/funcs/appBskyNotificationAppBskyNotificationGetUnreadCount.ts
+  - src/funcs/appBskyNotificationAppBskyNotificationListNotifications.ts
+  - src/funcs/appBskyNotificationAppBskyNotificationPutPreferences.ts
+  - src/funcs/appBskyNotificationAppBskyNotificationRegisterPush.ts
+  - src/funcs/appBskyNotificationAppBskyNotificationUpdateSeen.ts
+  - src/funcs/appBskyVideoAppBskyVideoGetJobStatus.ts
+  - src/funcs/appBskyVideoAppBskyVideoGetUploadLimits.ts
+  - src/funcs/appBskyVideoAppBskyVideoUploadVideo.ts
+  - src/funcs/chatBskyActorChatBskyActorDeleteAccount.ts
+  - src/funcs/chatBskyActorChatBskyActorExportAccountData.ts
+  - src/funcs/chatBskyConvoChatBskyConvoDeleteMessageForSelf.ts
+  - src/funcs/chatBskyConvoChatBskyConvoGetConvo.ts
+  - src/funcs/chatBskyConvoChatBskyConvoGetConvoForMembers.ts
+  - src/funcs/chatBskyConvoChatBskyConvoGetLog.ts
+  - src/funcs/chatBskyConvoChatBskyConvoGetMessages.ts
+  - src/funcs/chatBskyConvoChatBskyConvoLeaveConvo.ts
+  - src/funcs/chatBskyConvoChatBskyConvoListConvos.ts
+  - src/funcs/chatBskyConvoChatBskyConvoMuteConvo.ts
+  - src/funcs/chatBskyConvoChatBskyConvoSendMessage.ts
+  - src/funcs/chatBskyConvoChatBskyConvoSendMessageBatch.ts
+  - src/funcs/chatBskyConvoChatBskyConvoUnmuteConvo.ts
+  - src/funcs/chatBskyConvoChatBskyConvoUpdateRead.ts
+  - src/funcs/chatBskyModerationChatBskyModerationGetActorMetadata.ts
+  - src/funcs/chatBskyModerationChatBskyModerationGetMessageContext.ts
+  - src/funcs/chatBskyModerationChatBskyModerationUpdateActorAccess.ts
+  - src/funcs/comAtprotoAdminComAtprotoAdminDeleteAccount.ts
+  - src/funcs/comAtprotoAdminComAtprotoAdminDisableAccountInvites.ts
+  - src/funcs/comAtprotoAdminComAtprotoAdminDisableInviteCodes.ts
+  - src/funcs/comAtprotoAdminComAtprotoAdminEnableAccountInvites.ts
+  - src/funcs/comAtprotoAdminComAtprotoAdminGetAccountInfo.ts
+  - src/funcs/comAtprotoAdminComAtprotoAdminGetAccountInfos.ts
+  - src/funcs/comAtprotoAdminComAtprotoAdminGetInviteCodes.ts
+  - src/funcs/comAtprotoAdminComAtprotoAdminGetSubjectStatus.ts
+  - src/funcs/comAtprotoAdminComAtprotoAdminSearchAccounts.ts
+  - src/funcs/comAtprotoAdminComAtprotoAdminSendEmail.ts
+  - src/funcs/comAtprotoAdminComAtprotoAdminUpdateAccountEmail.ts
+  - src/funcs/comAtprotoAdminComAtprotoAdminUpdateAccountHandle.ts
+  - src/funcs/comAtprotoAdminComAtprotoAdminUpdateAccountPassword.ts
+  - src/funcs/comAtprotoAdminComAtprotoAdminUpdateSubjectStatus.ts
+  - src/funcs/comAtprotoIdentityComAtprotoIdentityGetRecommendedDidCredentials.ts
+  - src/funcs/comAtprotoIdentityComAtprotoIdentityRequestPlcOperationSignature.ts
+  - src/funcs/comAtprotoIdentityComAtprotoIdentityResolveHandle.ts
+  - src/funcs/comAtprotoIdentityComAtprotoIdentitySignPlcOperation.ts
+  - src/funcs/comAtprotoIdentityComAtprotoIdentitySubmitPlcOperation.ts
+  - src/funcs/comAtprotoIdentityComAtprotoIdentityUpdateHandle.ts
+  - src/funcs/comAtprotoLabelComAtprotoLabelQueryLabels.ts
+  - src/funcs/comAtprotoModerationComAtprotoModerationCreateReport.ts
+  - src/funcs/comAtprotoRepoComAtprotoRepoApplyWrites.ts
+  - src/funcs/comAtprotoRepoComAtprotoRepoCreateRecord.ts
+  - src/funcs/comAtprotoRepoComAtprotoRepoDeleteRecord.ts
+  - src/funcs/comAtprotoRepoComAtprotoRepoDescribeRepo.ts
+  - src/funcs/comAtprotoRepoComAtprotoRepoGetRecord.ts
+  - src/funcs/comAtprotoRepoComAtprotoRepoImportRepo.ts
+  - src/funcs/comAtprotoRepoComAtprotoRepoListMissingBlobs.ts
+  - src/funcs/comAtprotoRepoComAtprotoRepoListRecords.ts
+  - src/funcs/comAtprotoRepoComAtprotoRepoPutRecord.ts
+  - src/funcs/comAtprotoRepoComAtprotoRepoUploadBlob.ts
+  - src/funcs/comAtprotoServerComAtprotoServerActivateAccount.ts
+  - src/funcs/comAtprotoServerComAtprotoServerCheckAccountStatus.ts
+  - src/funcs/comAtprotoServerComAtprotoServerConfirmEmail.ts
+  - src/funcs/comAtprotoServerComAtprotoServerCreateAccount.ts
+  - src/funcs/comAtprotoServerComAtprotoServerCreateAppPassword.ts
+  - src/funcs/comAtprotoServerComAtprotoServerCreateInviteCode.ts
+  - src/funcs/comAtprotoServerComAtprotoServerCreateInviteCodes.ts
+  - src/funcs/comAtprotoServerComAtprotoServerCreateSession.ts
+  - src/funcs/comAtprotoServerComAtprotoServerDeactivateAccount.ts
+  - src/funcs/comAtprotoServerComAtprotoServerDeleteAccount.ts
+  - src/funcs/comAtprotoServerComAtprotoServerDeleteSession.ts
+  - src/funcs/comAtprotoServerComAtprotoServerDescribeServer.ts
+  - src/funcs/comAtprotoServerComAtprotoServerGetAccountInviteCodes.ts
+  - src/funcs/comAtprotoServerComAtprotoServerGetServiceAuth.ts
+  - src/funcs/comAtprotoServerComAtprotoServerGetSession.ts
+  - src/funcs/comAtprotoServerComAtprotoServerListAppPasswords.ts
+  - src/funcs/comAtprotoServerComAtprotoServerRefreshSession.ts
+  - src/funcs/comAtprotoServerComAtprotoServerRequestAccountDelete.ts
+  - src/funcs/comAtprotoServerComAtprotoServerRequestEmailConfirmation.ts
+  - src/funcs/comAtprotoServerComAtprotoServerRequestEmailUpdate.ts
+  - src/funcs/comAtprotoServerComAtprotoServerRequestPasswordReset.ts
+  - src/funcs/comAtprotoServerComAtprotoServerReserveSigningKey.ts
+  - src/funcs/comAtprotoServerComAtprotoServerResetPassword.ts
+  - src/funcs/comAtprotoServerComAtprotoServerRevokeAppPassword.ts
+  - src/funcs/comAtprotoServerComAtprotoServerUpdateEmail.ts
+  - src/funcs/comAtprotoSyncComAtprotoSyncGetBlob.ts
+  - src/funcs/comAtprotoSyncComAtprotoSyncGetBlocks.ts
+  - src/funcs/comAtprotoSyncComAtprotoSyncGetLatestCommit.ts
+  - src/funcs/comAtprotoSyncComAtprotoSyncGetRecord.ts
+  - src/funcs/comAtprotoSyncComAtprotoSyncGetRepo.ts
+  - src/funcs/comAtprotoSyncComAtprotoSyncGetRepoStatus.ts
+  - src/funcs/comAtprotoSyncComAtprotoSyncListBlobs.ts
+  - src/funcs/comAtprotoSyncComAtprotoSyncListRepos.ts
+  - src/funcs/comAtprotoSyncComAtprotoSyncNotifyOfUpdate.ts
+  - src/funcs/comAtprotoSyncComAtprotoSyncRequestCrawl.ts
+  - src/funcs/toolsOzoneCommunicationToolsOzoneCommunicationCreateTemplate.ts
+  - src/funcs/toolsOzoneCommunicationToolsOzoneCommunicationDeleteTemplate.ts
+  - src/funcs/toolsOzoneCommunicationToolsOzoneCommunicationListTemplates.ts
+  - src/funcs/toolsOzoneCommunicationToolsOzoneCommunicationUpdateTemplate.ts
+  - src/funcs/toolsOzoneModerationToolsOzoneModerationEmitEvent.ts
+  - src/funcs/toolsOzoneModerationToolsOzoneModerationGetEvent.ts
+  - src/funcs/toolsOzoneModerationToolsOzoneModerationGetRecord.ts
+  - src/funcs/toolsOzoneModerationToolsOzoneModerationGetRecords.ts
+  - src/funcs/toolsOzoneModerationToolsOzoneModerationGetRepo.ts
+  - src/funcs/toolsOzoneModerationToolsOzoneModerationGetRepos.ts
+  - src/funcs/toolsOzoneModerationToolsOzoneModerationQueryEvents.ts
+  - src/funcs/toolsOzoneModerationToolsOzoneModerationQueryStatuses.ts
+  - src/funcs/toolsOzoneModerationToolsOzoneModerationSearchRepos.ts
+  - src/funcs/toolsOzoneServerToolsOzoneServerGetConfig.ts
+  - src/funcs/toolsOzoneSetToolsOzoneSetAddValues.ts
+  - src/funcs/toolsOzoneSetToolsOzoneSetDeleteSet.ts
+  - src/funcs/toolsOzoneSetToolsOzoneSetDeleteValues.ts
+  - src/funcs/toolsOzoneSetToolsOzoneSetGetValues.ts
+  - src/funcs/toolsOzoneSetToolsOzoneSetQuerySets.ts
+  - src/funcs/toolsOzoneSetToolsOzoneSetUpsertSet.ts
+  - src/funcs/toolsOzoneSettingToolsOzoneSettingListOptions.ts
+  - src/funcs/toolsOzoneSettingToolsOzoneSettingRemoveOptions.ts
+  - src/funcs/toolsOzoneSettingToolsOzoneSettingUpsertOption.ts
+  - src/funcs/toolsOzoneSignatureToolsOzoneSignatureFindCorrelation.ts
+  - src/funcs/toolsOzoneSignatureToolsOzoneSignatureFindRelatedAccounts.ts
+  - src/funcs/toolsOzoneSignatureToolsOzoneSignatureSearchAccounts.ts
+  - src/funcs/toolsOzoneTeamToolsOzoneTeamAddMember.ts
+  - src/funcs/toolsOzoneTeamToolsOzoneTeamDeleteMember.ts
+  - src/funcs/toolsOzoneTeamToolsOzoneTeamListMembers.ts
+  - src/funcs/toolsOzoneTeamToolsOzoneTeamUpdateMember.ts
+  - src/hooks/hooks.ts
+  - src/hooks/index.ts
+  - src/hooks/types.ts
+  - src/index.ts
+  - src/lib/base64.ts
+  - src/lib/config.ts
+  - src/lib/dlv.ts
+  - src/lib/encodings.ts
+  - src/lib/env.ts
+  - src/lib/files.ts
+  - src/lib/http.ts
+  - src/lib/is-plain-object.ts
+  - src/lib/logger.ts
+  - src/lib/matchers.ts
+  - src/lib/primitives.ts
+  - src/lib/retries.ts
+  - src/lib/schemas.ts
+  - src/lib/sdks.ts
+  - src/lib/security.ts
+  - src/lib/url.ts
+  - src/models/components/appbskyactordefsadultcontentpref.ts
+  - src/models/components/appbskyactordefsbskyappprogressguide.ts
+  - src/models/components/appbskyactordefsbskyappstatepref.ts
+  - src/models/components/appbskyactordefscontentlabelpref.ts
+  - src/models/components/appbskyactordefsfeedviewpref.ts
+  - src/models/components/appbskyactordefshiddenpostspref.ts
+  - src/models/components/appbskyactordefsinterestspref.ts
+  - src/models/components/appbskyactordefsknownfollowers.ts
+  - src/models/components/appbskyactordefslabelerprefitem.ts
+  - src/models/components/appbskyactordefslabelerspref.ts
+  - src/models/components/appbskyactordefsmutedword.ts
+  - src/models/components/appbskyactordefsmutedwordspref.ts
+  - src/models/components/appbskyactordefsmutedwordtarget.ts
+  - src/models/components/appbskyactordefsnux.ts
+  - src/models/components/appbskyactordefspersonaldetailspref.ts
+  - src/models/components/appbskyactordefspreferences.ts
+  - src/models/components/appbskyactordefsprofileassociated.ts
+  - src/models/components/appbskyactordefsprofileassociatedchat.ts
+  - src/models/components/appbskyactordefsprofileview.ts
+  - src/models/components/appbskyactordefsprofileviewbasic.ts
+  - src/models/components/appbskyactordefsprofileviewdetailed.ts
+  - src/models/components/appbskyactordefssavedfeed.ts
+  - src/models/components/appbskyactordefssavedfeedspref.ts
+  - src/models/components/appbskyactordefssavedfeedsprefv2.ts
+  - src/models/components/appbskyactordefsthreadviewpref.ts
+  - src/models/components/appbskyactordefsviewerstate.ts
+  - src/models/components/appbskyembeddefsaspectratio.ts
+  - src/models/components/appbskyembedexternalview.ts
+  - src/models/components/appbskyembedexternalviewexternal.ts
+  - src/models/components/appbskyembedimagesview.ts
+  - src/models/components/appbskyembedimagesviewimage.ts
+  - src/models/components/appbskyembedrecord.ts
+  - src/models/components/appbskyembedrecordview.ts
+  - src/models/components/appbskyembedrecordviewblocked.ts
+  - src/models/components/appbskyembedrecordviewdetached.ts
+  - src/models/components/appbskyembedrecordviewnotfound.ts
+  - src/models/components/appbskyembedrecordviewrecord.ts
+  - src/models/components/appbskyembedrecordwithmediaview.ts
+  - src/models/components/appbskyembedvideoview.ts
+  - src/models/components/appbskyfeeddefsblockedauthor.ts
+  - src/models/components/appbskyfeeddefsblockedpost.ts
+  - src/models/components/appbskyfeeddefsfeedviewpost.ts
+  - src/models/components/appbskyfeeddefsgeneratorview.ts
+  - src/models/components/appbskyfeeddefsgeneratorviewerstate.ts
+  - src/models/components/appbskyfeeddefsinteraction.ts
+  - src/models/components/appbskyfeeddefsnotfoundpost.ts
+  - src/models/components/appbskyfeeddefspostview.ts
+  - src/models/components/appbskyfeeddefsreasonpin.ts
+  - src/models/components/appbskyfeeddefsreasonrepost.ts
+  - src/models/components/appbskyfeeddefsreplyref.ts
+  - src/models/components/appbskyfeeddefsskeletonfeedpost.ts
+  - src/models/components/appbskyfeeddefsskeletonreasonpin.ts
+  - src/models/components/appbskyfeeddefsskeletonreasonrepost.ts
+  - src/models/components/appbskyfeeddefsthreadgateview.ts
+  - src/models/components/appbskyfeeddefsthreadviewpost.ts
+  - src/models/components/appbskyfeeddefsviewerstate.ts
+  - src/models/components/appbskyfeeddescribefeedgeneratorfeed.ts
+  - src/models/components/appbskyfeeddescribefeedgeneratorlinks.ts
+  - src/models/components/appbskyfeedgetlikeslike.ts
+  - src/models/components/appbskygraphdefslistitemview.ts
+  - src/models/components/appbskygraphdefslistview.ts
+  - src/models/components/appbskygraphdefslistviewbasic.ts
+  - src/models/components/appbskygraphdefslistviewerstate.ts
+  - src/models/components/appbskygraphdefsnotfoundactor.ts
+  - src/models/components/appbskygraphdefsrelationship.ts
+  - src/models/components/appbskygraphdefsstarterpackview.ts
+  - src/models/components/appbskygraphdefsstarterpackviewbasic.ts
+  - src/models/components/appbskylabelerdefslabelerpolicies.ts
+  - src/models/components/appbskylabelerdefslabelerview.ts
+  - src/models/components/appbskylabelerdefslabelerviewdetailed.ts
+  - src/models/components/appbskylabelerdefslabelerviewerstate.ts
+  - src/models/components/appbskynotificationlistnotificationsnotification.ts
+  - src/models/components/appbskyrichtextfacet.ts
+  - src/models/components/appbskyrichtextfacetbyteslice.ts
+  - src/models/components/appbskyrichtextfacetlink.ts
+  - src/models/components/appbskyrichtextfacetmention.ts
+  - src/models/components/appbskyrichtextfacettag.ts
+  - src/models/components/appbskyvideodefsjobstatus.ts
+  - src/models/components/chatbskyactordefsprofileviewbasic.ts
+  - src/models/components/chatbskyconvodefsconvoview.ts
+  - src/models/components/chatbskyconvodefsdeletedmessageview.ts
+  - src/models/components/chatbskyconvodefslogbeginconvo.ts
+  - src/models/components/chatbskyconvodefslogcreatemessage.ts
+  - src/models/components/chatbskyconvodefslogdeletemessage.ts
+  - src/models/components/chatbskyconvodefslogleaveconvo.ts
+  - src/models/components/chatbskyconvodefsmessageinput.ts
+  - src/models/components/chatbskyconvodefsmessageref.ts
+  - src/models/components/chatbskyconvodefsmessageview.ts
+  - src/models/components/chatbskyconvodefsmessageviewsender.ts
+  - src/models/components/chatbskyconvosendmessagebatchbatchitem.ts
+  - src/models/components/chatbskymoderationgetactormetadatametadata.ts
+  - src/models/components/comatprotoadmindefsaccountview.ts
+  - src/models/components/comatprotoadmindefsrepoblobref.ts
+  - src/models/components/comatprotoadmindefsreporef.ts
+  - src/models/components/comatprotoadmindefsstatusattr.ts
+  - src/models/components/comatprotoadmindefsthreatsignature.ts
+  - src/models/components/comatprotolabeldefslabel.ts
+  - src/models/components/comatprotolabeldefslabelvalue.ts
+  - src/models/components/comatprotolabeldefslabelvaluedefinition.ts
+  - src/models/components/comatprotolabeldefslabelvaluedefinitionstrings.ts
+  - src/models/components/comatprotorepoapplywritescreate.ts
+  - src/models/components/comatprotorepoapplywritescreateresult.ts
+  - src/models/components/comatprotorepoapplywritesdelete.ts
+  - src/models/components/comatprotorepoapplywritesdeleteresult.ts
+  - src/models/components/comatprotorepoapplywritesupdate.ts
+  - src/models/components/comatprotorepoapplywritesupdateresult.ts
+  - src/models/components/comatprotorepodefscommitmeta.ts
+  - src/models/components/comatprotorepolistmissingblobsrecordblob.ts
+  - src/models/components/comatprotorepolistrecordsrecord.ts
+  - src/models/components/comatprotorepostrongref.ts
+  - src/models/components/comatprotoservercreateapppasswordapppassword.ts
+  - src/models/components/comatprotoservercreateinvitecodesaccountcodes.ts
+  - src/models/components/comatprotoserverdefsinvitecode.ts
+  - src/models/components/comatprotoserverdefsinvitecodeuse.ts
+  - src/models/components/comatprotoserverdescribeservercontact.ts
+  - src/models/components/comatprotoserverdescribeserverlinks.ts
+  - src/models/components/comatprotoserverlistapppasswordsapppassword.ts
+  - src/models/components/comatprotosynclistreposrepo.ts
+  - src/models/components/index.ts
+  - src/models/components/security.ts
+  - src/models/components/toolsozonecommunicationdefstemplateview.ts
+  - src/models/components/toolsozonemoderationdefsaccountevent.ts
+  - src/models/components/toolsozonemoderationdefsaccounthosting.ts
+  - src/models/components/toolsozonemoderationdefsblobview.ts
+  - src/models/components/toolsozonemoderationdefsidentityevent.ts
+  - src/models/components/toolsozonemoderationdefsimagedetails.ts
+  - src/models/components/toolsozonemoderationdefsmoderation.ts
+  - src/models/components/toolsozonemoderationdefsmoderationdetail.ts
+  - src/models/components/toolsozonemoderationdefsmodeventacknowledge.ts
+  - src/models/components/toolsozonemoderationdefsmodeventcomment.ts
+  - src/models/components/toolsozonemoderationdefsmodeventdivert.ts
+  - src/models/components/toolsozonemoderationdefsmodeventemail.ts
+  - src/models/components/toolsozonemoderationdefsmodeventescalate.ts
+  - src/models/components/toolsozonemoderationdefsmodeventlabel.ts
+  - src/models/components/toolsozonemoderationdefsmodeventmute.ts
+  - src/models/components/toolsozonemoderationdefsmodeventmutereporter.ts
+  - src/models/components/toolsozonemoderationdefsmodeventreport.ts
+  - src/models/components/toolsozonemoderationdefsmodeventresolveappeal.ts
+  - src/models/components/toolsozonemoderationdefsmodeventreversetakedown.ts
+  - src/models/components/toolsozonemoderationdefsmodeventtag.ts
+  - src/models/components/toolsozonemoderationdefsmodeventtakedown.ts
+  - src/models/components/toolsozonemoderationdefsmodeventunmute.ts
+  - src/models/components/toolsozonemoderationdefsmodeventunmutereporter.ts
+  - src/models/components/toolsozonemoderationdefsmodeventview.ts
+  - src/models/components/toolsozonemoderationdefsmodeventviewdetail.ts
+  - src/models/components/toolsozonemoderationdefsrecordevent.ts
+  - src/models/components/toolsozonemoderationdefsrecordhosting.ts
+  - src/models/components/toolsozonemoderationdefsrecordview.ts
+  - src/models/components/toolsozonemoderationdefsrecordviewdetail.ts
+  - src/models/components/toolsozonemoderationdefsrecordviewnotfound.ts
+  - src/models/components/toolsozonemoderationdefsrepoview.ts
+  - src/models/components/toolsozonemoderationdefsrepoviewdetail.ts
+  - src/models/components/toolsozonemoderationdefsrepoviewnotfound.ts
+  - src/models/components/toolsozonemoderationdefssubjectreviewstate.ts
+  - src/models/components/toolsozonemoderationdefssubjectstatusview.ts
+  - src/models/components/toolsozonemoderationdefsvideodetails.ts
+  - src/models/components/toolsozoneservergetconfigserviceconfig.ts
+  - src/models/components/toolsozoneservergetconfigviewerconfig.ts
+  - src/models/components/toolsozonesetdefsset.ts
+  - src/models/components/toolsozonesetdefssetview.ts
+  - src/models/components/toolsozonesettingdefsoption.ts
+  - src/models/components/toolsozonesignaturedefssigdetail.ts
+  - src/models/components/toolsozonesignaturefindrelatedaccountsrelatedaccount.ts
+  - src/models/components/toolsozoneteamdefsmember.ts
+  - src/models/errors/apierror.ts
+  - src/models/errors/appbskyactorgetpreferences.ts
+  - src/models/errors/appbskyactorgetprofile.ts
+  - src/models/errors/appbskyactorgetprofiles.ts
+  - src/models/errors/appbskyactorgetsuggestions.ts
+  - src/models/errors/appbskyactorputpreferences.ts
+  - src/models/errors/appbskyactorsearchactors.ts
+  - src/models/errors/appbskyactorsearchactorstypeahead.ts
+  - src/models/errors/appbskyfeeddescribefeedgenerator.ts
+  - src/models/errors/appbskyfeedgetactorfeeds.ts
+  - src/models/errors/appbskyfeedgetactorlikes.ts
+  - src/models/errors/appbskyfeedgetauthorfeed.ts
+  - src/models/errors/appbskyfeedgetfeed.ts
+  - src/models/errors/appbskyfeedgetfeedgenerator.ts
+  - src/models/errors/appbskyfeedgetfeedgenerators.ts
+  - src/models/errors/appbskyfeedgetfeedskeleton.ts
+  - src/models/errors/appbskyfeedgetlikes.ts
+  - src/models/errors/appbskyfeedgetlistfeed.ts
+  - src/models/errors/appbskyfeedgetposts.ts
+  - src/models/errors/appbskyfeedgetpostthread.ts
+  - src/models/errors/appbskyfeedgetquotes.ts
+  - src/models/errors/appbskyfeedgetrepostedby.ts
+  - src/models/errors/appbskyfeedgetsuggestedfeeds.ts
+  - src/models/errors/appbskyfeedgettimeline.ts
+  - src/models/errors/appbskyfeedsearchposts.ts
+  - src/models/errors/appbskyfeedsendinteractions.ts
+  - src/models/errors/appbskygraphgetactorstarterpacks.ts
+  - src/models/errors/appbskygraphgetblocks.ts
+  - src/models/errors/appbskygraphgetfollowers.ts
+  - src/models/errors/appbskygraphgetfollows.ts
+  - src/models/errors/appbskygraphgetknownfollowers.ts
+  - src/models/errors/appbskygraphgetlist.ts
+  - src/models/errors/appbskygraphgetlistblocks.ts
+  - src/models/errors/appbskygraphgetlistmutes.ts
+  - src/models/errors/appbskygraphgetlists.ts
+  - src/models/errors/appbskygraphgetmutes.ts
+  - src/models/errors/appbskygraphgetrelationships.ts
+  - src/models/errors/appbskygraphgetstarterpack.ts
+  - src/models/errors/appbskygraphgetstarterpacks.ts
+  - src/models/errors/appbskygraphgetsuggestedfollowsbyactor.ts
+  - src/models/errors/appbskygraphmuteactor.ts
+  - src/models/errors/appbskygraphmuteactorlist.ts
+  - src/models/errors/appbskygraphmutethread.ts
+  - src/models/errors/appbskygraphsearchstarterpacks.ts
+  - src/models/errors/appbskygraphunmuteactor.ts
+  - src/models/errors/appbskygraphunmuteactorlist.ts
+  - src/models/errors/appbskygraphunmutethread.ts
+  - src/models/errors/appbskylabelergetservices.ts
+  - src/models/errors/appbskynotificationgetunreadcount.ts
+  - src/models/errors/appbskynotificationlistnotifications.ts
+  - src/models/errors/appbskynotificationputpreferences.ts
+  - src/models/errors/appbskynotificationregisterpush.ts
+  - src/models/errors/appbskynotificationupdateseen.ts
+  - src/models/errors/appbskyvideogetjobstatus.ts
+  - src/models/errors/appbskyvideogetuploadlimits.ts
+  - src/models/errors/appbskyvideouploadvideo.ts
+  - src/models/errors/chatbskyactordeleteaccount.ts
+  - src/models/errors/chatbskyactorexportaccountdata.ts
+  - src/models/errors/chatbskyconvodeletemessageforself.ts
+  - src/models/errors/chatbskyconvogetconvo.ts
+  - src/models/errors/chatbskyconvogetconvoformembers.ts
+  - src/models/errors/chatbskyconvogetlog.ts
+  - src/models/errors/chatbskyconvogetmessages.ts
+  - src/models/errors/chatbskyconvoleaveconvo.ts
+  - src/models/errors/chatbskyconvolistconvos.ts
+  - src/models/errors/chatbskyconvomuteconvo.ts
+  - src/models/errors/chatbskyconvosendmessage.ts
+  - src/models/errors/chatbskyconvosendmessagebatch.ts
+  - src/models/errors/chatbskyconvounmuteconvo.ts
+  - src/models/errors/chatbskyconvoupdateread.ts
+  - src/models/errors/chatbskymoderationgetactormetadata.ts
+  - src/models/errors/chatbskymoderationgetmessagecontext.ts
+  - src/models/errors/chatbskymoderationupdateactoraccess.ts
+  - src/models/errors/comatprotoadmindeleteaccount.ts
+  - src/models/errors/comatprotoadmindisableaccountinvites.ts
+  - src/models/errors/comatprotoadmindisableinvitecodes.ts
+  - src/models/errors/comatprotoadminenableaccountinvites.ts
+  - src/models/errors/comatprotoadmingetaccountinfo.ts
+  - src/models/errors/comatprotoadmingetaccountinfos.ts
+  - src/models/errors/comatprotoadmingetinvitecodes.ts
+  - src/models/errors/comatprotoadmingetsubjectstatus.ts
+  - src/models/errors/comatprotoadminsearchaccounts.ts
+  - src/models/errors/comatprotoadminsendemail.ts
+  - src/models/errors/comatprotoadminupdateaccountemail.ts
+  - src/models/errors/comatprotoadminupdateaccounthandle.ts
+  - src/models/errors/comatprotoadminupdateaccountpassword.ts
+  - src/models/errors/comatprotoadminupdatesubjectstatus.ts
+  - src/models/errors/comatprotoidentitygetrecommendeddidcredentials.ts
+  - src/models/errors/comatprotoidentityrequestplcoperationsignature.ts
+  - src/models/errors/comatprotoidentityresolvehandle.ts
+  - src/models/errors/comatprotoidentitysignplcoperation.ts
+  - src/models/errors/comatprotoidentitysubmitplcoperation.ts
+  - src/models/errors/comatprotoidentityupdatehandle.ts
+  - src/models/errors/comatprotolabelquerylabels.ts
+  - src/models/errors/comatprotomoderationcreatereport.ts
+  - src/models/errors/comatprotorepoapplywrites.ts
+  - src/models/errors/comatprotorepocreaterecord.ts
+  - src/models/errors/comatprotorepodeleterecord.ts
+  - src/models/errors/comatprotorepodescriberepo.ts
+  - src/models/errors/comatprotorepogetrecord.ts
+  - src/models/errors/comatprotorepoimportrepo.ts
+  - src/models/errors/comatprotorepolistmissingblobs.ts
+  - src/models/errors/comatprotorepolistrecords.ts
+  - src/models/errors/comatprotorepoputrecord.ts
+  - src/models/errors/comatprotorepouploadblob.ts
+  - src/models/errors/comatprotoserveractivateaccount.ts
+  - src/models/errors/comatprotoservercheckaccountstatus.ts
+  - src/models/errors/comatprotoserverconfirmemail.ts
+  - src/models/errors/comatprotoservercreateaccount.ts
+  - src/models/errors/comatprotoservercreateapppassword.ts
+  - src/models/errors/comatprotoservercreateinvitecode.ts
+  - src/models/errors/comatprotoservercreateinvitecodes.ts
+  - src/models/errors/comatprotoservercreatesession.ts
+  - src/models/errors/comatprotoserverdeactivateaccount.ts
+  - src/models/errors/comatprotoserverdeleteaccount.ts
+  - src/models/errors/comatprotoserverdeletesession.ts
+  - src/models/errors/comatprotoserverdescribeserver.ts
+  - src/models/errors/comatprotoservergetaccountinvitecodes.ts
+  - src/models/errors/comatprotoservergetserviceauth.ts
+  - src/models/errors/comatprotoservergetsession.ts
+  - src/models/errors/comatprotoserverlistapppasswords.ts
+  - src/models/errors/comatprotoserverrefreshsession.ts
+  - src/models/errors/comatprotoserverrequestaccountdelete.ts
+  - src/models/errors/comatprotoserverrequestemailconfirmation.ts
+  - src/models/errors/comatprotoserverrequestemailupdate.ts
+  - src/models/errors/comatprotoserverrequestpasswordreset.ts
+  - src/models/errors/comatprotoserverreservesigningkey.ts
+  - src/models/errors/comatprotoserverresetpassword.ts
+  - src/models/errors/comatprotoserverrevokeapppassword.ts
+  - src/models/errors/comatprotoserverupdateemail.ts
+  - src/models/errors/comatprotosyncgetblob.ts
+  - src/models/errors/comatprotosyncgetblocks.ts
+  - src/models/errors/comatprotosyncgetlatestcommit.ts
+  - src/models/errors/comatprotosyncgetrecord.ts
+  - src/models/errors/comatprotosyncgetrepo.ts
+  - src/models/errors/comatprotosyncgetrepostatus.ts
+  - src/models/errors/comatprotosynclistblobs.ts
+  - src/models/errors/comatprotosynclistrepos.ts
+  - src/models/errors/comatprotosyncnotifyofupdate.ts
+  - src/models/errors/comatprotosyncrequestcrawl.ts
+  - src/models/errors/httpclienterrors.ts
+  - src/models/errors/index.ts
+  - src/models/errors/sdkvalidationerror.ts
+  - src/models/errors/toolsozonecommunicationcreatetemplate.ts
+  - src/models/errors/toolsozonecommunicationdeletetemplate.ts
+  - src/models/errors/toolsozonecommunicationlisttemplates.ts
+  - src/models/errors/toolsozonecommunicationupdatetemplate.ts
+  - src/models/errors/toolsozonemoderationemitevent.ts
+  - src/models/errors/toolsozonemoderationgetevent.ts
+  - src/models/errors/toolsozonemoderationgetrecord.ts
+  - src/models/errors/toolsozonemoderationgetrecords.ts
+  - src/models/errors/toolsozonemoderationgetrepo.ts
+  - src/models/errors/toolsozonemoderationgetrepos.ts
+  - src/models/errors/toolsozonemoderationqueryevents.ts
+  - src/models/errors/toolsozonemoderationquerystatuses.ts
+  - src/models/errors/toolsozonemoderationsearchrepos.ts
+  - src/models/errors/toolsozoneservergetconfig.ts
+  - src/models/errors/toolsozonesetaddvalues.ts
+  - src/models/errors/toolsozonesetdeleteset.ts
+  - src/models/errors/toolsozonesetdeletevalues.ts
+  - src/models/errors/toolsozonesetgetvalues.ts
+  - src/models/errors/toolsozonesetquerysets.ts
+  - src/models/errors/toolsozonesettinglistoptions.ts
+  - src/models/errors/toolsozonesettingremoveoptions.ts
+  - src/models/errors/toolsozonesettingupsertoption.ts
+  - src/models/errors/toolsozonesetupsertset.ts
+  - src/models/errors/toolsozonesignaturefindcorrelation.ts
+  - src/models/errors/toolsozonesignaturefindrelatedaccounts.ts
+  - src/models/errors/toolsozonesignaturesearchaccounts.ts
+  - src/models/errors/toolsozoneteamaddmember.ts
+  - src/models/errors/toolsozoneteamdeletemember.ts
+  - src/models/errors/toolsozoneteamlistmembers.ts
+  - src/models/errors/toolsozoneteamupdatemember.ts
+  - src/models/operations/appbskyactorgetpreferences.ts
+  - src/models/operations/appbskyactorgetprofile.ts
+  - src/models/operations/appbskyactorgetprofiles.ts
+  - src/models/operations/appbskyactorgetsuggestions.ts
+  - src/models/operations/appbskyactorputpreferences.ts
+  - src/models/operations/appbskyactorsearchactors.ts
+  - src/models/operations/appbskyactorsearchactorstypeahead.ts
+  - src/models/operations/appbskyfeeddescribefeedgenerator.ts
+  - src/models/operations/appbskyfeedgetactorfeeds.ts
+  - src/models/operations/appbskyfeedgetactorlikes.ts
+  - src/models/operations/appbskyfeedgetauthorfeed.ts
+  - src/models/operations/appbskyfeedgetfeed.ts
+  - src/models/operations/appbskyfeedgetfeedgenerator.ts
+  - src/models/operations/appbskyfeedgetfeedgenerators.ts
+  - src/models/operations/appbskyfeedgetfeedskeleton.ts
+  - src/models/operations/appbskyfeedgetlikes.ts
+  - src/models/operations/appbskyfeedgetlistfeed.ts
+  - src/models/operations/appbskyfeedgetposts.ts
+  - src/models/operations/appbskyfeedgetpostthread.ts
+  - src/models/operations/appbskyfeedgetquotes.ts
+  - src/models/operations/appbskyfeedgetrepostedby.ts
+  - src/models/operations/appbskyfeedgetsuggestedfeeds.ts
+  - src/models/operations/appbskyfeedgettimeline.ts
+  - src/models/operations/appbskyfeedsearchposts.ts
+  - src/models/operations/appbskyfeedsendinteractions.ts
+  - src/models/operations/appbskygraphgetactorstarterpacks.ts
+  - src/models/operations/appbskygraphgetblocks.ts
+  - src/models/operations/appbskygraphgetfollowers.ts
+  - src/models/operations/appbskygraphgetfollows.ts
+  - src/models/operations/appbskygraphgetknownfollowers.ts
+  - src/models/operations/appbskygraphgetlist.ts
+  - src/models/operations/appbskygraphgetlistblocks.ts
+  - src/models/operations/appbskygraphgetlistmutes.ts
+  - src/models/operations/appbskygraphgetlists.ts
+  - src/models/operations/appbskygraphgetmutes.ts
+  - src/models/operations/appbskygraphgetrelationships.ts
+  - src/models/operations/appbskygraphgetstarterpack.ts
+  - src/models/operations/appbskygraphgetstarterpacks.ts
+  - src/models/operations/appbskygraphgetsuggestedfollowsbyactor.ts
+  - src/models/operations/appbskygraphmuteactor.ts
+  - src/models/operations/appbskygraphmuteactorlist.ts
+  - src/models/operations/appbskygraphmutethread.ts
+  - src/models/operations/appbskygraphsearchstarterpacks.ts
+  - src/models/operations/appbskygraphunmuteactor.ts
+  - src/models/operations/appbskygraphunmuteactorlist.ts
+  - src/models/operations/appbskygraphunmutethread.ts
+  - src/models/operations/appbskylabelergetservices.ts
+  - src/models/operations/appbskynotificationgetunreadcount.ts
+  - src/models/operations/appbskynotificationlistnotifications.ts
+  - src/models/operations/appbskynotificationputpreferences.ts
+  - src/models/operations/appbskynotificationregisterpush.ts
+  - src/models/operations/appbskynotificationupdateseen.ts
+  - src/models/operations/appbskyvideogetjobstatus.ts
+  - src/models/operations/appbskyvideogetuploadlimits.ts
+  - src/models/operations/appbskyvideouploadvideo.ts
+  - src/models/operations/chatbskyactordeleteaccount.ts
+  - src/models/operations/chatbskyconvodeletemessageforself.ts
+  - src/models/operations/chatbskyconvogetconvo.ts
+  - src/models/operations/chatbskyconvogetconvoformembers.ts
+  - src/models/operations/chatbskyconvogetlog.ts
+  - src/models/operations/chatbskyconvogetmessages.ts
+  - src/models/operations/chatbskyconvoleaveconvo.ts
+  - src/models/operations/chatbskyconvolistconvos.ts
+  - src/models/operations/chatbskyconvomuteconvo.ts
+  - src/models/operations/chatbskyconvosendmessage.ts
+  - src/models/operations/chatbskyconvosendmessagebatch.ts
+  - src/models/operations/chatbskyconvounmuteconvo.ts
+  - src/models/operations/chatbskyconvoupdateread.ts
+  - src/models/operations/chatbskymoderationgetactormetadata.ts
+  - src/models/operations/chatbskymoderationgetmessagecontext.ts
+  - src/models/operations/chatbskymoderationupdateactoraccess.ts
+  - src/models/operations/comatprotoadmindeleteaccount.ts
+  - src/models/operations/comatprotoadmindisableaccountinvites.ts
+  - src/models/operations/comatprotoadmindisableinvitecodes.ts
+  - src/models/operations/comatprotoadminenableaccountinvites.ts
+  - src/models/operations/comatprotoadmingetaccountinfo.ts
+  - src/models/operations/comatprotoadmingetaccountinfos.ts
+  - src/models/operations/comatprotoadmingetinvitecodes.ts
+  - src/models/operations/comatprotoadmingetsubjectstatus.ts
+  - src/models/operations/comatprotoadminsearchaccounts.ts
+  - src/models/operations/comatprotoadminsendemail.ts
+  - src/models/operations/comatprotoadminupdateaccountemail.ts
+  - src/models/operations/comatprotoadminupdateaccounthandle.ts
+  - src/models/operations/comatprotoadminupdateaccountpassword.ts
+  - src/models/operations/comatprotoadminupdatesubjectstatus.ts
+  - src/models/operations/comatprotoidentitygetrecommendeddidcredentials.ts
+  - src/models/operations/comatprotoidentityresolvehandle.ts
+  - src/models/operations/comatprotoidentitysignplcoperation.ts
+  - src/models/operations/comatprotoidentitysubmitplcoperation.ts
+  - src/models/operations/comatprotoidentityupdatehandle.ts
+  - src/models/operations/comatprotolabelquerylabels.ts
+  - src/models/operations/comatprotomoderationcreatereport.ts
+  - src/models/operations/comatprotorepoapplywrites.ts
+  - src/models/operations/comatprotorepocreaterecord.ts
+  - src/models/operations/comatprotorepodeleterecord.ts
+  - src/models/operations/comatprotorepodescriberepo.ts
+  - src/models/operations/comatprotorepogetrecord.ts
+  - src/models/operations/comatprotorepolistmissingblobs.ts
+  - src/models/operations/comatprotorepolistrecords.ts
+  - src/models/operations/comatprotorepoputrecord.ts
+  - src/models/operations/comatprotorepouploadblob.ts
+  - src/models/operations/comatprotoservercheckaccountstatus.ts
+  - src/models/operations/comatprotoserverconfirmemail.ts
+  - src/models/operations/comatprotoservercreateaccount.ts
+  - src/models/operations/comatprotoservercreateapppassword.ts
+  - src/models/operations/comatprotoservercreateinvitecode.ts
+  - src/models/operations/comatprotoservercreateinvitecodes.ts
+  - src/models/operations/comatprotoservercreatesession.ts
+  - src/models/operations/comatprotoserverdeactivateaccount.ts
+  - src/models/operations/comatprotoserverdeleteaccount.ts
+  - src/models/operations/comatprotoserverdescribeserver.ts
+  - src/models/operations/comatprotoservergetaccountinvitecodes.ts
+  - src/models/operations/comatprotoservergetserviceauth.ts
+  - src/models/operations/comatprotoservergetsession.ts
+  - src/models/operations/comatprotoserverlistapppasswords.ts
+  - src/models/operations/comatprotoserverrefreshsession.ts
+  - src/models/operations/comatprotoserverrequestemailupdate.ts
+  - src/models/operations/comatprotoserverrequestpasswordreset.ts
+  - src/models/operations/comatprotoserverreservesigningkey.ts
+  - src/models/operations/comatprotoserverresetpassword.ts
+  - src/models/operations/comatprotoserverrevokeapppassword.ts
+  - src/models/operations/comatprotoserverupdateemail.ts
+  - src/models/operations/comatprotosyncgetblob.ts
+  - src/models/operations/comatprotosyncgetblocks.ts
+  - src/models/operations/comatprotosyncgetlatestcommit.ts
+  - src/models/operations/comatprotosyncgetrecord.ts
+  - src/models/operations/comatprotosyncgetrepo.ts
+  - src/models/operations/comatprotosyncgetrepostatus.ts
+  - src/models/operations/comatprotosynclistblobs.ts
+  - src/models/operations/comatprotosynclistrepos.ts
+  - src/models/operations/comatprotosyncnotifyofupdate.ts
+  - src/models/operations/comatprotosyncrequestcrawl.ts
+  - src/models/operations/index.ts
+  - src/models/operations/toolsozonecommunicationcreatetemplate.ts
+  - src/models/operations/toolsozonecommunicationdeletetemplate.ts
+  - src/models/operations/toolsozonecommunicationlisttemplates.ts
+  - src/models/operations/toolsozonecommunicationupdatetemplate.ts
+  - src/models/operations/toolsozonemoderationemitevent.ts
+  - src/models/operations/toolsozonemoderationgetevent.ts
+  - src/models/operations/toolsozonemoderationgetrecord.ts
+  - src/models/operations/toolsozonemoderationgetrecords.ts
+  - src/models/operations/toolsozonemoderationgetrepo.ts
+  - src/models/operations/toolsozonemoderationgetrepos.ts
+  - src/models/operations/toolsozonemoderationqueryevents.ts
+  - src/models/operations/toolsozonemoderationquerystatuses.ts
+  - src/models/operations/toolsozonemoderationsearchrepos.ts
+  - src/models/operations/toolsozoneservergetconfig.ts
+  - src/models/operations/toolsozonesetaddvalues.ts
+  - src/models/operations/toolsozonesetdeleteset.ts
+  - src/models/operations/toolsozonesetdeletevalues.ts
+  - src/models/operations/toolsozonesetgetvalues.ts
+  - src/models/operations/toolsozonesetquerysets.ts
+  - src/models/operations/toolsozonesettinglistoptions.ts
+  - src/models/operations/toolsozonesettingremoveoptions.ts
+  - src/models/operations/toolsozonesettingupsertoption.ts
+  - src/models/operations/toolsozonesignaturefindcorrelation.ts
+  - src/models/operations/toolsozonesignaturefindrelatedaccounts.ts
+  - src/models/operations/toolsozonesignaturesearchaccounts.ts
+  - src/models/operations/toolsozoneteamaddmember.ts
+  - src/models/operations/toolsozoneteamdeletemember.ts
+  - src/models/operations/toolsozoneteamlistmembers.ts
+  - src/models/operations/toolsozoneteamupdatemember.ts
+  - src/sdk/actor.ts
+  - src/sdk/admin.ts
+  - src/sdk/app.ts
+  - src/sdk/atproto.ts
+  - src/sdk/blueskyactor.ts
+  - src/sdk/blueskybsky.ts
+  - src/sdk/blueskymoderation.ts
+  - src/sdk/blueskyserver.ts
+  - src/sdk/blueskytoolsmoderation.ts
+  - src/sdk/bsky.ts
+  - src/sdk/chat.ts
+  - src/sdk/com.ts
+  - src/sdk/communication.ts
+  - src/sdk/convo.ts
+  - src/sdk/feed.ts
+  - src/sdk/graph.ts
+  - src/sdk/identity.ts
+  - src/sdk/index.ts
+  - src/sdk/label.ts
+  - src/sdk/labeler.ts
+  - src/sdk/moderation.ts
+  - src/sdk/notification.ts
+  - src/sdk/ozone.ts
+  - src/sdk/repo.ts
+  - src/sdk/sdk.ts
+  - src/sdk/server.ts
+  - src/sdk/set.ts
+  - src/sdk/setting.ts
+  - src/sdk/signature.ts
+  - src/sdk/sync.ts
+  - src/sdk/team.ts
+  - src/sdk/tools.ts
+  - src/sdk/video.ts
+  - src/types/blobs.ts
+  - src/types/constdatetime.ts
+  - src/types/enums.ts
+  - src/types/fp.ts
+  - src/types/index.ts
+  - src/types/operations.ts
+  - src/types/rfcdate.ts
+  - src/types/streams.ts
+  - tsconfig.json
+examples:
+  app.bsky.actor.getPreferences:
+    speakeasy-default-app-bsky-actor-get-preferences:
+      responses:
+        "200":
+          application/json: {"preferences": [{"label": "<value>", "visibility": "show"}, {"items": [{"id": "<id>", "type": "timeline", "value": "<value>", "pinned": false}, {"id": "<id>", "type": "list", "value": "<value>", "pinned": true}, {"id": "<id>", "type": "timeline", "value": "<value>", "pinned": false}]}]}
+        "400":
+          application/json: {"error": "ExpiredToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.actor.getProfile:
+    speakeasy-default-app-bsky-actor-get-profile:
+      parameters:
+        query:
+          actor: "<value>"
+      responses:
+        "200":
+          application/json: {"did": "<id>", "handle": "<value>"}
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.actor.getProfiles:
+    speakeasy-default-app-bsky-actor-get-profiles:
+      parameters:
+        query:
+          actors: ["<value>"]
+      responses:
+        "200":
+          application/json: {"profiles": [{"did": "<id>", "handle": "<value>"}]}
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.actor.getSuggestions:
+    speakeasy-default-app-bsky-actor-get-suggestions:
+      responses:
+        "200":
+          application/json: {"actors": [{"did": "<id>", "handle": "<value>"}, {"did": "<id>", "handle": "<value>"}, {"did": "<id>", "handle": "<value>"}]}
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.actor.putPreferences:
+    speakeasy-default-app-bsky-actor-put-preferences:
+      requestBody:
+        application/json: {"preferences": [{"tags": ["<value>"]}]}
+      responses:
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.actor.searchActors:
+    speakeasy-default-app-bsky-actor-search-actors:
+      responses:
+        "200":
+          application/json: {"actors": [{"did": "<id>", "handle": "<value>"}, {"did": "<id>", "handle": "<value>"}]}
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.actor.searchActorsTypeahead:
+    speakeasy-default-app-bsky-actor-search-actors-typeahead:
+      responses:
+        "200":
+          application/json: {"actors": [{"did": "<id>", "handle": "<value>"}]}
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.feed.describeFeedGenerator:
+    speakeasy-default-app-bsky-feed-describe-feed-generator:
+      responses:
+        "200":
+          application/json: {"did": "<id>", "feeds": [{"uri": "https://astonishing-polarisation.name"}, {"uri": "https://some-conversation.com/"}, {"uri": "https://portly-instance.com/"}]}
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.feed.getActorFeeds:
+    speakeasy-default-app-bsky-feed-get-actor-feeds:
+      parameters:
+        query:
+          actor: "<value>"
+      responses:
+        "200":
+          application/json: {"feeds": []}
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.feed.getActorLikes:
+    speakeasy-default-app-bsky-feed-get-actor-likes:
+      parameters:
+        query:
+          actor: "<value>"
+      responses:
+        "200":
+          application/json: {"feed": [{"post": {"uri": "https://quarrelsome-reconsideration.com/", "cid": "<id>", "author": {"did": "<id>", "handle": "<value>"}, "record": "<value>", "indexedAt": "2024-08-07T10:55:48.582Z"}}]}
+        "400":
+          application/json: {"error": "BlockedByActor", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.feed.getAuthorFeed:
+    speakeasy-default-app-bsky-feed-get-author-feed:
+      parameters:
+        query:
+          actor: "<value>"
+      responses:
+        "200":
+          application/json: {"feed": [{"post": {"uri": "https://precious-dusk.name", "cid": "<id>", "author": {"did": "<id>", "handle": "<value>"}, "record": "<value>", "indexedAt": "2022-02-19T19:17:59.221Z"}}]}
+        "400":
+          application/json: {"error": "BlockedByActor", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.feed.getFeed:
+    speakeasy-default-app-bsky-feed-get-feed:
+      parameters:
+        query:
+          feed: "https://key-nougat.org"
+      responses:
+        "200":
+          application/json: {"feed": [{"post": {"uri": "https://warped-kettledrum.biz", "cid": "<id>", "author": {"did": "<id>", "handle": "<value>"}, "record": "<value>", "indexedAt": "2024-09-17T11:38:52.343Z"}}, {"post": {"uri": "https://blond-trash.org/", "cid": "<id>", "author": {"did": "<id>", "handle": "<value>"}, "record": "<value>", "indexedAt": "2022-10-08T15:27:03.484Z"}}, {"post": {"uri": "https://subdued-middle.net/", "cid": "<id>", "author": {"did": "<id>", "handle": "<value>"}, "record": "<value>", "indexedAt": "2024-10-20T22:32:44.293Z"}}]}
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.feed.getFeedGenerator:
+    speakeasy-default-app-bsky-feed-get-feed-generator:
+      parameters:
+        query:
+          feed: "https://far-flung-solvency.net"
+      responses:
+        "200":
+          application/json: {"view": {"uri": "https://prime-prohibition.org/", "cid": "<id>", "did": "<id>", "creator": {"did": "<id>", "handle": "<value>"}, "displayName": "Felix.Hodkiewicz", "indexedAt": "2024-12-19T13:42:20.152Z"}, "isOnline": false, "isValid": false}
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.feed.getFeedGenerators:
+    speakeasy-default-app-bsky-feed-get-feed-generators:
+      parameters:
+        query:
+          feeds: []
+      responses:
+        "200":
+          application/json: {"feeds": []}
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.feed.getFeedSkeleton:
+    speakeasy-default-app-bsky-feed-get-feed-skeleton:
+      parameters:
+        query:
+          feed: "https://dim-sport.info"
+      responses:
+        "200":
+          application/json: {"feed": []}
+        "400":
+          application/json: {"error": "UnknownFeed", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.feed.getLikes:
+    speakeasy-default-app-bsky-feed-get-likes:
+      parameters:
+        query:
+          uri: "https://superficial-flame.info"
+      responses:
+        "200":
+          application/json: {"uri": "https://insecure-testimonial.org/", "likes": [{"indexedAt": "2024-05-15T05:37:26.529Z", "createdAt": "2023-07-03T18:24:46.381Z", "actor": {"did": "<id>", "handle": "<value>"}}]}
+        "400":
+          application/json: {"error": "ExpiredToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.feed.getListFeed:
+    speakeasy-default-app-bsky-feed-get-list-feed:
+      parameters:
+        query:
+          list: "https://strange-dish.biz/"
+      responses:
+        "200":
+          application/json: {"feed": [{"post": {"uri": "https://creative-dandelion.com/", "cid": "<id>", "author": {"did": "<id>", "handle": "<value>"}, "record": "<value>", "indexedAt": "2022-12-17T06:42:35.608Z"}}, {"post": {"uri": "https://optimistic-status.info", "cid": "<id>", "author": {"did": "<id>", "handle": "<value>"}, "record": "<value>", "indexedAt": "2023-01-25T00:27:26.332Z"}}]}
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.feed.getPostThread:
+    speakeasy-default-app-bsky-feed-get-post-thread:
+      parameters:
+        query:
+          uri: "https://separate-bandwidth.name/"
+      responses:
+        "200":
+          application/json: {"thread": {"uri": "https://general-sonnet.biz", "author": {"did": "<id>"}}}
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.feed.getPosts:
+    speakeasy-default-app-bsky-feed-get-posts:
+      parameters:
+        query:
+          uris: ["https://crooked-recommendation.name/"]
+      responses:
+        "200":
+          application/json: {"posts": [{"uri": "https://impressionable-charm.name/", "cid": "<id>", "author": {"did": "<id>", "handle": "<value>"}, "record": "<value>", "indexedAt": "2023-10-24T18:33:17.767Z"}, {"uri": "https://worthy-quart.name/", "cid": "<id>", "author": {"did": "<id>", "handle": "<value>"}, "record": "<value>", "indexedAt": "2022-01-14T15:28:58.195Z"}, {"uri": "https://little-pomelo.name/", "cid": "<id>", "author": {"did": "<id>", "handle": "<value>"}, "record": "<value>", "indexedAt": "2023-10-19T21:50:13.939Z"}]}
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.feed.getQuotes:
+    speakeasy-default-app-bsky-feed-get-quotes:
+      parameters:
+        query:
+          uri: "https://plain-hutch.info"
+      responses:
+        "200":
+          application/json: {"uri": "https://boiling-elver.name/", "posts": [{"uri": "https://impure-chiffonier.org", "cid": "<id>", "author": {"did": "<id>", "handle": "<value>"}, "record": "<value>", "indexedAt": "2022-10-11T09:18:58.689Z"}]}
+        "400":
+          application/json: {"error": "ExpiredToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.feed.getRepostedBy:
+    speakeasy-default-app-bsky-feed-get-reposted-by:
+      parameters:
+        query:
+          uri: "https://staid-consistency.org/"
+      responses:
+        "200":
+          application/json: {"uri": "https://shameful-runway.biz/", "repostedBy": [{"did": "<id>", "handle": "<value>"}, {"did": "<id>", "handle": "<value>"}]}
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.feed.getSuggestedFeeds:
+    speakeasy-default-app-bsky-feed-get-suggested-feeds:
+      responses:
+        "200":
+          application/json: {"feeds": [{"uri": "https://impish-iridescence.biz/", "cid": "<id>", "did": "<id>", "creator": {"did": "<id>", "handle": "<value>"}, "displayName": "Deshaun.Schmeler57", "indexedAt": "2024-03-26T06:18:48.796Z"}, {"uri": "https://sneaky-packaging.biz", "cid": "<id>", "did": "<id>", "creator": {"did": "<id>", "handle": "<value>"}, "displayName": "Leonard_Durgan13", "indexedAt": "2023-08-26T18:21:52.401Z"}]}
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.feed.getTimeline:
+    speakeasy-default-app-bsky-feed-get-timeline:
+      responses:
+        "200":
+          application/json: {"feed": [{"post": {"uri": "https://insecure-executor.info/", "cid": "<id>", "author": {"did": "<id>", "handle": "<value>"}, "record": "<value>", "indexedAt": "2022-12-09T00:48:56.516Z"}}]}
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.feed.searchPosts:
+    speakeasy-default-app-bsky-feed-search-posts:
+      parameters:
+        query:
+          q: "<value>"
+      responses:
+        "200":
+          application/json: {"posts": []}
+        "400":
+          application/json: {"error": "ExpiredToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.feed.sendInteractions:
+    speakeasy-default-app-bsky-feed-send-interactions:
+      requestBody:
+        application/json: {"interactions": []}
+      responses:
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+        "200": {}
+  app.bsky.graph.getActorStarterPacks:
+    speakeasy-default-app-bsky-graph-get-actor-starter-packs:
+      parameters:
+        query:
+          actor: "<value>"
+      responses:
+        "200":
+          application/json: {"starterPacks": [{"uri": "https://antique-bonnet.info", "cid": "<id>", "record": "<value>", "creator": {"did": "<id>", "handle": "<value>"}, "indexedAt": "2022-04-25T16:43:21.570Z"}]}
+        "400":
+          application/json: {"error": "ExpiredToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.graph.getBlocks:
+    speakeasy-default-app-bsky-graph-get-blocks:
+      responses:
+        "200":
+          application/json: {"blocks": []}
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.graph.getFollowers:
+    speakeasy-default-app-bsky-graph-get-followers:
+      parameters:
+        query:
+          actor: "<value>"
+      responses:
+        "200":
+          application/json: {"subject": {"did": "<id>", "handle": "<value>"}, "followers": []}
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.graph.getFollows:
+    speakeasy-default-app-bsky-graph-get-follows:
+      parameters:
+        query:
+          actor: "<value>"
+      responses:
+        "200":
+          application/json: {"subject": {"did": "<id>", "handle": "<value>"}, "follows": []}
+        "400":
+          application/json: {"error": "ExpiredToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.graph.getKnownFollowers:
+    speakeasy-default-app-bsky-graph-get-known-followers:
+      parameters:
+        query:
+          actor: "<value>"
+      responses:
+        "200":
+          application/json: {"subject": {"did": "<id>", "handle": "<value>"}, "followers": []}
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.graph.getList:
+    speakeasy-default-app-bsky-graph-get-list:
+      parameters:
+        query:
+          list: "https://talkative-traditionalism.info"
+      responses:
+        "200":
+          application/json: {"list": {"uri": "https://taut-meal.name", "cid": "<id>", "creator": {"did": "<id>", "handle": "<value>"}, "name": "<value>", "purpose": "<value>", "indexedAt": "2022-06-17T16:50:13.312Z"}, "items": [{"uri": "https://annual-singing.biz/", "subject": {"did": "<id>", "handle": "<value>"}}]}
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.graph.getListBlocks:
+    speakeasy-default-app-bsky-graph-get-list-blocks:
+      responses:
+        "200":
+          application/json: {"lists": []}
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.graph.getListMutes:
+    speakeasy-default-app-bsky-graph-get-list-mutes:
+      responses:
+        "200":
+          application/json: {"lists": [{"uri": "https://average-scenario.name/", "cid": "<id>", "creator": {"did": "<id>", "handle": "<value>"}, "name": "<value>", "purpose": "<value>", "indexedAt": "2023-08-20T02:34:07.635Z"}]}
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.graph.getLists:
+    speakeasy-default-app-bsky-graph-get-lists:
+      parameters:
+        query:
+          actor: "<value>"
+      responses:
+        "200":
+          application/json: {"lists": [{"uri": "https://present-cd.biz/", "cid": "<id>", "creator": {"did": "<id>", "handle": "<value>"}, "name": "<value>", "purpose": "<value>", "indexedAt": "2023-10-10T00:22:28.200Z"}, {"uri": "https://alert-saloon.name", "cid": "<id>", "creator": {"did": "<id>", "handle": "<value>"}, "name": "<value>", "purpose": "<value>", "indexedAt": "2022-05-27T21:24:34.484Z"}]}
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.graph.getMutes:
+    speakeasy-default-app-bsky-graph-get-mutes:
+      responses:
+        "200":
+          application/json: {"mutes": [{"did": "<id>", "handle": "<value>"}, {"did": "<id>", "handle": "<value>"}, {"did": "<id>", "handle": "<value>"}]}
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.graph.getRelationships:
+    speakeasy-default-app-bsky-graph-get-relationships:
+      parameters:
+        query:
+          actor: "<value>"
+      responses:
+        "200":
+          application/json: {"relationships": [{"did": "<id>"}, {"actor": "<value>"}, {"did": "<id>"}]}
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.graph.getStarterPack:
+    speakeasy-default-app-bsky-graph-get-starter-pack:
+      parameters:
+        query:
+          starterPack: "https://some-colonialism.info/"
+      responses:
+        "200":
+          application/json: {"starterPack": {"uri": "https://mad-swine.info", "cid": "<id>", "record": "<value>", "creator": {"did": "<id>", "handle": "<value>"}, "indexedAt": "2024-08-22T02:46:41.972Z"}}
+        "400":
+          application/json: {"error": "ExpiredToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.graph.getStarterPacks:
+    speakeasy-default-app-bsky-graph-get-starter-packs:
+      parameters:
+        query:
+          uris: []
+      responses:
+        "200":
+          application/json: {"starterPacks": [{"uri": "https://trivial-procurement.com/", "cid": "<id>", "record": "<value>", "creator": {"did": "<id>", "handle": "<value>"}, "indexedAt": "2024-03-25T05:17:36.931Z"}, {"uri": "https://flawless-humor.net", "cid": "<id>", "record": "<value>", "creator": {"did": "<id>", "handle": "<value>"}, "indexedAt": "2024-02-28T13:16:08.821Z"}]}
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.graph.getSuggestedFollowsByActor:
+    speakeasy-default-app-bsky-graph-get-suggested-follows-by-actor:
+      parameters:
+        query:
+          actor: "<value>"
+      responses:
+        "200":
+          application/json: {"suggestions": []}
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.graph.muteActor:
+    speakeasy-default-app-bsky-graph-mute-actor:
+      requestBody:
+        application/json: {"actor": "<value>"}
+      responses:
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.graph.muteActorList:
+    speakeasy-default-app-bsky-graph-mute-actor-list:
+      requestBody:
+        application/json: {"list": "https://urban-maestro.org"}
+      responses:
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.graph.muteThread:
+    speakeasy-default-app-bsky-graph-mute-thread:
+      requestBody:
+        application/json: {"root": "https://clean-armchair.biz/"}
+      responses:
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.graph.searchStarterPacks:
+    speakeasy-default-app-bsky-graph-search-starter-packs:
+      parameters:
+        query:
+          q: "<value>"
+      responses:
+        "200":
+          application/json: {"starterPacks": [{"uri": "https://wretched-smoke.com/", "cid": "<id>", "record": "<value>", "creator": {"did": "<id>", "handle": "<value>"}, "indexedAt": "2022-06-01T06:58:25.894Z"}, {"uri": "https://indolent-scout.biz", "cid": "<id>", "record": "<value>", "creator": {"did": "<id>", "handle": "<value>"}, "indexedAt": "2024-12-25T20:25:38.322Z"}, {"uri": "https://roasted-conservative.biz/", "cid": "<id>", "record": "<value>", "creator": {"did": "<id>", "handle": "<value>"}, "indexedAt": "2022-05-13T16:22:23.932Z"}]}
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.graph.unmuteActor:
+    speakeasy-default-app-bsky-graph-unmute-actor:
+      requestBody:
+        application/json: {"actor": "<value>"}
+      responses:
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.graph.unmuteActorList:
+    speakeasy-default-app-bsky-graph-unmute-actor-list:
+      requestBody:
+        application/json: {"list": "https://instructive-monasticism.name/"}
+      responses:
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.graph.unmuteThread:
+    speakeasy-default-app-bsky-graph-unmute-thread:
+      requestBody:
+        application/json: {"root": "https://clean-behest.org/"}
+      responses:
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.labeler.getServices:
+    speakeasy-default-app-bsky-labeler-get-services:
+      parameters:
+        query:
+          dids: ["<id>", "<id>", "<id>"]
+      responses:
+        "200":
+          application/json: {"views": [{"uri": "https://eminent-deed.biz/", "cid": "<id>", "creator": {"did": "<id>", "handle": "<value>"}, "policies": {"labelValues": []}, "indexedAt": "2023-04-13T14:36:08.864Z"}, {"uri": "https://oddball-folklore.com/", "cid": "<id>", "creator": {"did": "<id>", "handle": "<value>"}, "indexedAt": "2023-06-12T22:57:44.746Z"}, {"uri": "https://hoarse-hospitalization.org/", "cid": "<id>", "creator": {"did": "<id>", "handle": "<value>"}, "policies": {"labelValues": ["!warn"]}, "indexedAt": "2024-11-13T10:48:01.325Z"}]}
+        "400":
+          application/json: {"error": "ExpiredToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.notification.getUnreadCount:
+    speakeasy-default-app-bsky-notification-get-unread-count:
+      responses:
+        "200":
+          application/json: {"count": 887038}
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.notification.listNotifications:
+    speakeasy-default-app-bsky-notification-list-notifications:
+      responses:
+        "200":
+          application/json: {"notifications": [{"uri": "https://rare-forgery.biz/", "cid": "<id>", "author": {"did": "<id>", "handle": "<value>"}, "reason": "quote", "record": "<value>", "isRead": false, "indexedAt": "2023-06-05T05:39:14.192Z"}]}
+        "400":
+          application/json: {"error": "ExpiredToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.notification.putPreferences:
+    speakeasy-default-app-bsky-notification-put-preferences:
+      requestBody:
+        application/json: {"priority": true}
+      responses:
+        "400":
+          application/json: {"error": "ExpiredToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.notification.registerPush:
+    speakeasy-default-app-bsky-notification-register-push:
+      requestBody:
+        application/json: {"serviceDid": "<id>", "token": "<value>", "platform": "ios", "appId": "<id>"}
+      responses:
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.notification.updateSeen:
+    speakeasy-default-app-bsky-notification-update-seen:
+      requestBody:
+        application/json: {"seenAt": "2023-05-09T15:02:30.758Z"}
+      responses:
+        "400":
+          application/json: {"error": "ExpiredToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.video.getJobStatus:
+    speakeasy-default-app-bsky-video-get-job-status:
+      parameters:
+        query:
+          jobId: "<id>"
+      responses:
+        "200":
+          application/json: {"jobStatus": {"jobId": "<id>", "did": "<id>", "state": "JOB_STATE_COMPLETED"}}
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.video.getUploadLimits:
+    speakeasy-default-app-bsky-video-get-upload-limits:
+      responses:
+        "200":
+          application/json: {"canUpload": true}
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  app.bsky.video.uploadVideo:
+    speakeasy-default-app-bsky-video-upload-video:
+      responses:
+        "200":
+          application/json: {"jobStatus": {"jobId": "<id>", "did": "<id>", "state": "JOB_STATE_COMPLETED"}}
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  chat.bsky.actor.deleteAccount:
+    speakeasy-default-chat-bsky-actor-delete-account:
+      responses:
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+        "200": {}
+  chat.bsky.actor.exportAccountData:
+    speakeasy-default-chat-bsky-actor-export-account-data:
+      responses:
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  chat.bsky.convo.deleteMessageForSelf:
+    speakeasy-default-chat-bsky-convo-delete-message-for-self:
+      requestBody:
+        application/json: {"convoId": "<id>", "messageId": "<id>"}
+      responses:
+        "200":
+          application/json: {"id": "<id>", "rev": "<value>", "sender": {"did": "<id>"}, "sentAt": "2024-04-17T00:38:53.207Z"}
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  chat.bsky.convo.getConvo:
+    speakeasy-default-chat-bsky-convo-get-convo:
+      parameters:
+        query:
+          convoId: "<id>"
+      responses:
+        "200":
+          application/json: {"convo": {"id": "<id>", "rev": "<value>", "members": [{"did": "<id>", "handle": "<value>"}, {"did": "<id>", "handle": "<value>"}], "muted": false, "unreadCount": 888793}}
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  chat.bsky.convo.getConvoForMembers:
+    speakeasy-default-chat-bsky-convo-get-convo-for-members:
+      parameters:
+        query:
+          members: ["<id>", "<id>", "<id>"]
+      responses:
+        "200":
+          application/json: {"convo": {"id": "<id>", "rev": "<value>", "members": [{"did": "<id>", "handle": "<value>"}], "muted": false, "unreadCount": 607782}}
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  chat.bsky.convo.getLog:
+    speakeasy-default-chat-bsky-convo-get-log:
+      responses:
+        "200":
+          application/json: {"logs": [{"rev": "<value>", "convoId": "<id>"}]}
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  chat.bsky.convo.getMessages:
+    speakeasy-default-chat-bsky-convo-get-messages:
+      parameters:
+        query:
+          convoId: "<id>"
+      responses:
+        "200":
+          application/json: {"messages": [{"id": "<id>", "rev": "<value>", "sender": {"did": "<id>"}, "sentAt": "2023-10-06T04:51:59.651Z"}]}
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  chat.bsky.convo.leaveConvo:
+    speakeasy-default-chat-bsky-convo-leave-convo:
+      requestBody:
+        application/json: {"convoId": "<id>"}
+      responses:
+        "200":
+          application/json: {"convoId": "<id>", "rev": "<value>"}
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  chat.bsky.convo.listConvos:
+    speakeasy-default-chat-bsky-convo-list-convos:
+      responses:
+        "200":
+          application/json: {"convos": [{"id": "<id>", "rev": "<value>", "members": [{"did": "<id>", "handle": "<value>"}], "muted": true, "unreadCount": 899583}, {"id": "<id>", "rev": "<value>", "members": [{"did": "<id>", "handle": "<value>"}], "muted": false, "unreadCount": 153631}]}
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  chat.bsky.convo.muteConvo:
+    speakeasy-default-chat-bsky-convo-mute-convo:
+      requestBody:
+        application/json: {"convoId": "<id>"}
+      responses:
+        "200":
+          application/json: {"convo": {"id": "<id>", "rev": "<value>", "members": [{"did": "<id>", "handle": "<value>"}, {"did": "<id>", "handle": "<value>"}], "muted": true, "unreadCount": 433485}}
+        "400":
+          application/json: {"error": "ExpiredToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  chat.bsky.convo.sendMessage:
+    speakeasy-default-chat-bsky-convo-send-message:
+      requestBody:
+        application/json: {"convoId": "<id>", "message": {"text": "<value>"}}
+      responses:
+        "200":
+          application/json: {"id": "<id>", "rev": "<value>", "text": "<value>", "sender": {"did": "<id>"}, "sentAt": "2023-12-23T07:11:50.642Z"}
+        "400":
+          application/json: {"error": "ExpiredToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  chat.bsky.convo.sendMessageBatch:
+    speakeasy-default-chat-bsky-convo-send-message-batch:
+      requestBody:
+        application/json: {"items": [{"convoId": "<id>", "message": {"text": "<value>"}}, {"convoId": "<id>", "message": {"text": "<value>"}}, {"convoId": "<id>", "message": {"text": "<value>"}}]}
+      responses:
+        "200":
+          application/json: {"items": [{"id": "<id>", "rev": "<value>", "text": "<value>", "sender": {"did": "<id>"}, "sentAt": "2023-07-30T00:22:19.783Z"}]}
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  chat.bsky.convo.unmuteConvo:
+    speakeasy-default-chat-bsky-convo-unmute-convo:
+      requestBody:
+        application/json: {"convoId": "<id>"}
+      responses:
+        "200":
+          application/json: {"convo": {"id": "<id>", "rev": "<value>", "members": [{"did": "<id>", "handle": "<value>"}, {"did": "<id>", "handle": "<value>"}, {"did": "<id>", "handle": "<value>"}], "muted": false, "unreadCount": 790351}}
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  chat.bsky.convo.updateRead:
+    speakeasy-default-chat-bsky-convo-update-read:
+      requestBody:
+        application/json: {"convoId": "<id>"}
+      responses:
+        "200":
+          application/json: {"convo": {"id": "<id>", "rev": "<value>", "members": [], "muted": true, "unreadCount": 455615}}
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  chat.bsky.moderation.getActorMetadata:
+    speakeasy-default-chat-bsky-moderation-get-actor-metadata:
+      parameters:
+        query:
+          actor: "<id>"
+      responses:
+        "200":
+          application/json: {"day": {"messagesSent": 891040, "messagesReceived": 72011, "convos": 325063, "convosStarted": 121938}, "month": {"messagesSent": 168339, "messagesReceived": 459241, "convos": 648488, "convosStarted": 174104}, "all": {"messagesSent": 230664, "messagesReceived": 816414, "convos": 249822, "convosStarted": 379116}}
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  chat.bsky.moderation.getMessageContext:
+    speakeasy-default-chat-bsky-moderation-get-message-context:
+      parameters:
+        query:
+          messageId: "<id>"
+      responses:
+        "200":
+          application/json: {"messages": [{"id": "<id>", "rev": "<value>", "text": "<value>", "sender": {"did": "<id>"}, "sentAt": "2023-01-08T19:12:20.432Z"}, {"id": "<id>", "rev": "<value>", "sender": {"did": "<id>"}, "sentAt": "2024-11-29T06:41:57.824Z"}]}
+        "400":
+          application/json: {"error": "ExpiredToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  chat.bsky.moderation.updateActorAccess:
+    speakeasy-default-chat-bsky-moderation-update-actor-access:
+      requestBody:
+        application/json: {"actor": "<id>", "allowAccess": true}
+      responses:
+        "400":
+          application/json: {"error": "ExpiredToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.admin.deleteAccount:
+    speakeasy-default-com-atproto-admin-delete-account:
+      requestBody:
+        application/json: {"did": "<id>"}
+      responses:
+        "400":
+          application/json: {"error": "ExpiredToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.admin.disableAccountInvites:
+    speakeasy-default-com-atproto-admin-disable-account-invites:
+      requestBody:
+        application/json: {"account": "<id>"}
+      responses:
+        "400":
+          application/json: {"error": "ExpiredToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.admin.disableInviteCodes:
+    speakeasy-default-com-atproto-admin-disable-invite-codes:
+      responses:
+        "400":
+          application/json: {"error": "ExpiredToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.admin.enableAccountInvites:
+    speakeasy-default-com-atproto-admin-enable-account-invites:
+      requestBody:
+        application/json: {"account": "<id>"}
+      responses:
+        "400":
+          application/json: {"error": "ExpiredToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.admin.getAccountInfo:
+    speakeasy-default-com-atproto-admin-get-account-info:
+      parameters:
+        query:
+          did: "<id>"
+      responses:
+        "200":
+          application/json: {"did": "<id>", "handle": "<value>", "indexedAt": "2024-12-02T06:10:25.898Z"}
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.admin.getAccountInfos:
+    speakeasy-default-com-atproto-admin-get-account-infos:
+      parameters:
+        query:
+          dids: []
+      responses:
+        "200":
+          application/json: {"infos": [{"did": "<id>", "handle": "<value>", "indexedAt": "2023-08-17T00:49:50.743Z"}, {"did": "<id>", "handle": "<value>", "indexedAt": "2022-04-15T11:53:33.059Z"}, {"did": "<id>", "handle": "<value>", "indexedAt": "2023-12-21T02:40:49.850Z"}]}
+        "400":
+          application/json: {"error": "ExpiredToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.admin.getInviteCodes:
+    speakeasy-default-com-atproto-admin-get-invite-codes:
+      responses:
+        "200":
+          application/json: {"codes": [{"code": "<value>", "available": 587904, "disabled": true, "forAccount": "<value>", "createdBy": "<value>", "createdAt": "2022-06-27T00:59:27.364Z", "uses": []}, {"code": "<value>", "available": 456356, "disabled": true, "forAccount": "<value>", "createdBy": "<value>", "createdAt": "2024-10-26T06:18:34.212Z", "uses": []}]}
+        "400":
+          application/json: {"error": "ExpiredToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.admin.getSubjectStatus:
+    speakeasy-default-com-atproto-admin-get-subject-status:
+      responses:
+        "200":
+          application/json: {"subject": {"uri": "https://majestic-tinderbox.info", "cid": "<id>"}}
+        "400":
+          application/json: {"error": "ExpiredToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.admin.searchAccounts:
+    speakeasy-default-com-atproto-admin-search-accounts:
+      responses:
+        "200":
+          application/json: {"accounts": []}
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.admin.sendEmail:
+    speakeasy-default-com-atproto-admin-send-email:
+      requestBody:
+        application/json: {"recipientDid": "<id>", "content": "<value>", "senderDid": "<id>"}
+      responses:
+        "200":
+          application/json: {"sent": true}
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.admin.updateAccountEmail:
+    speakeasy-default-com-atproto-admin-update-account-email:
+      requestBody:
+        application/json: {"account": "<value>", "email": "Tressie_DuBuque@hotmail.com"}
+      responses:
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.admin.updateAccountHandle:
+    speakeasy-default-com-atproto-admin-update-account-handle:
+      requestBody:
+        application/json: {"did": "<id>", "handle": "<value>"}
+      responses:
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.admin.updateAccountPassword:
+    speakeasy-default-com-atproto-admin-update-account-password:
+      requestBody:
+        application/json: {"did": "<id>", "password": "YrVgrflEZmXzy2v"}
+      responses:
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.admin.updateSubjectStatus:
+    speakeasy-default-com-atproto-admin-update-subject-status:
+      requestBody:
+        application/json: {"subject": {"did": "<id>", "cid": "<id>"}}
+      responses:
+        "200":
+          application/json: {"subject": {"uri": "https://supportive-sideboard.com", "cid": "<id>"}}
+        "400":
+          application/json: {"error": "ExpiredToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.identity.getRecommendedDidCredentials:
+    speakeasy-default-com-atproto-identity-get-recommended-did-credentials:
+      responses:
+        "400":
+          application/json: {"error": "ExpiredToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+        "200": {}
+  com.atproto.identity.requestPlcOperationSignature:
+    speakeasy-default-com-atproto-identity-request-plc-operation-signature:
+      responses:
+        "400":
+          application/json: {"error": "ExpiredToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.identity.resolveHandle:
+    speakeasy-default-com-atproto-identity-resolve-handle:
+      parameters:
+        query:
+          handle: "<value>"
+      responses:
+        "200":
+          application/json: {"did": "<id>"}
+        "400":
+          application/json: {"error": "ExpiredToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.identity.signPlcOperation:
+    speakeasy-default-com-atproto-identity-sign-plc-operation:
+      responses:
+        "200":
+          application/json: {"operation": "<value>"}
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.identity.submitPlcOperation:
+    speakeasy-default-com-atproto-identity-submit-plc-operation:
+      requestBody:
+        application/json: {"operation": "<value>"}
+      responses:
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.identity.updateHandle:
+    speakeasy-default-com-atproto-identity-update-handle:
+      requestBody:
+        application/json: {"handle": "<value>"}
+      responses:
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.label.queryLabels:
+    speakeasy-default-com-atproto-label-query-labels:
+      parameters:
+        query:
+          uriPatterns: ["<value>", "<value>"]
+      responses:
+        "200":
+          application/json: {"labels": [{"src": "<id>", "uri": "https://sugary-following.info", "val": "<value>", "cts": "2022-10-02T06:38:53.825Z"}, {"src": "<id>", "uri": "https://polished-disk.name/", "val": "<value>", "cts": "2024-04-05T03:52:12.537Z"}]}
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.moderation.createReport:
+    speakeasy-default-com-atproto-moderation-create-report:
+      requestBody:
+        application/json: {"reasonType": "<value>", "subject": {"did": "<id>"}}
+      responses:
+        "200":
+          application/json: {"id": 788744, "reasonType": "<value>", "subject": {"uri": "https://meager-diagram.biz/", "cid": "<id>"}, "reportedBy": "<id>", "createdAt": "2023-09-21T21:06:48.343Z"}
+        "400":
+          application/json: {"error": "ExpiredToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.repo.applyWrites:
+    speakeasy-default-com-atproto-repo-apply-writes:
+      requestBody:
+        application/json: {"repo": "<value>", "writes": [{"collection": "<id>", "rkey": "<value>", "value": "<value>"}, {"collection": "<id>", "value": "<value>"}, {"collection": "<id>", "value": "<value>"}]}
+      responses:
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+        "200": {}
+  com.atproto.repo.createRecord:
+    speakeasy-default-com-atproto-repo-create-record:
+      requestBody:
+        application/json: {"repo": "<value>", "collection": "<id>", "record": "<value>"}
+      responses:
+        "200":
+          application/json: {"uri": "https://dull-excess.net", "cid": "<id>"}
+        "400":
+          application/json: {"error": "InvalidSwap", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.repo.deleteRecord:
+    speakeasy-default-com-atproto-repo-delete-record:
+      requestBody:
+        application/json: {"repo": "<value>", "collection": "<id>", "rkey": "<value>"}
+      responses:
+        "400":
+          application/json: {"error": "ExpiredToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+        "200": {}
+  com.atproto.repo.describeRepo:
+    speakeasy-default-com-atproto-repo-describe-repo:
+      parameters:
+        query:
+          repo: "<value>"
+      responses:
+        "200":
+          application/json: {"handle": "<value>", "did": "<id>", "didDoc": "<value>", "collections": ["<id>", "<id>", "<id>"], "handleIsCorrect": true}
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.repo.getRecord:
+    speakeasy-default-com-atproto-repo-get-record:
+      parameters:
+        query:
+          repo: "<value>"
+          collection: "<id>"
+          rkey: "<value>"
+      responses:
+        "200":
+          application/json: {"uri": "https://parallel-encouragement.org/", "value": "<value>"}
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.repo.importRepo:
+    speakeasy-default-com-atproto-repo-import-repo:
+      responses:
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.repo.listMissingBlobs:
+    speakeasy-default-com-atproto-repo-list-missing-blobs:
+      responses:
+        "200":
+          application/json: {"blobs": [{"cid": "<id>", "recordUri": "https://compassionate-role.biz"}]}
+        "400":
+          application/json: {"error": "ExpiredToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.repo.listRecords:
+    speakeasy-default-com-atproto-repo-list-records:
+      parameters:
+        query:
+          repo: "<value>"
+          collection: "<id>"
+      responses:
+        "200":
+          application/json: {"records": []}
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.repo.putRecord:
+    speakeasy-default-com-atproto-repo-put-record:
+      requestBody:
+        application/json: {"repo": "<value>", "collection": "<id>", "rkey": "<value>", "record": "<value>"}
+      responses:
+        "200":
+          application/json: {"uri": "https://unrealistic-doubter.biz", "cid": "<id>"}
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.repo.uploadBlob:
+    speakeasy-default-com-atproto-repo-upload-blob:
+      responses:
+        "200":
+          application/json: {"blob": "0xEECF06Fe5F"}
+        "400":
+          application/json: {"error": "ExpiredToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.server.activateAccount:
+    speakeasy-default-com-atproto-server-activate-account:
+      responses:
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.server.checkAccountStatus:
+    speakeasy-default-com-atproto-server-check-account-status:
+      responses:
+        "200":
+          application/json: {"activated": true, "validDid": true, "repoCommit": "<id>", "repoRev": "<value>", "repoBlocks": 82458, "indexedRecords": 255450, "privateStateValues": 362745, "expectedBlobs": 959883, "importedBlobs": 114598}
+        "400":
+          application/json: {"error": "ExpiredToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.server.confirmEmail:
+    speakeasy-default-com-atproto-server-confirm-email:
+      requestBody:
+        application/json: {"email": "Eleanora_Dooley-Graham40@gmail.com", "token": "<value>"}
+      responses:
+        "400":
+          application/json: {"error": "ExpiredToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.server.createAccount:
+    speakeasy-default-com-atproto-server-create-account:
+      requestBody:
+        application/json: {"handle": "<value>"}
+      responses:
+        "200":
+          application/json: {"accessJwt": "<value>", "refreshJwt": "<value>", "handle": "<value>", "did": "<id>"}
+        "400":
+          application/json: {"error": "IncompatibleDidDoc", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.server.createAppPassword:
+    speakeasy-default-com-atproto-server-create-app-password:
+      requestBody:
+        application/json: {"name": "<value>"}
+      responses:
+        "200":
+          application/json: {"name": "<value>", "password": "3WmAErj_xo4912q", "createdAt": "2023-10-31T07:50:13.142Z"}
+        "400":
+          application/json: {"error": "AccountTakedown", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.server.createInviteCode:
+    speakeasy-default-com-atproto-server-create-invite-code:
+      requestBody:
+        application/json: {"useCount": 828315}
+      responses:
+        "200":
+          application/json: {"code": "<value>"}
+        "400":
+          application/json: {"error": "ExpiredToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.server.createInviteCodes:
+    speakeasy-default-com-atproto-server-create-invite-codes:
+      requestBody:
+        application/json: {"useCount": 622859}
+      responses:
+        "200":
+          application/json: {"codes": [{"account": "96552094", "codes": []}]}
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.server.createSession:
+    speakeasy-default-com-atproto-server-create-session:
+      requestBody:
+        application/json: {"identifier": "<value>", "password": "8KbePEq2B0pDAnF"}
+      responses:
+        "200":
+          application/json: {"accessJwt": "<value>", "refreshJwt": "<value>", "handle": "<value>", "did": "<id>"}
+        "400":
+          application/json: {"error": "AccountTakedown", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.server.deactivateAccount:
+    speakeasy-default-com-atproto-server-deactivate-account:
+      responses:
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.server.deleteAccount:
+    speakeasy-default-com-atproto-server-delete-account:
+      requestBody:
+        application/json: {"did": "<id>", "password": "zBMKtu2pPdN390B", "token": "<value>"}
+      responses:
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.server.deleteSession:
+    speakeasy-default-com-atproto-server-delete-session:
+      responses:
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.server.describeServer:
+    speakeasy-default-com-atproto-server-describe-server:
+      responses:
+        "200":
+          application/json: {"availableUserDomains": [], "did": "<id>"}
+        "400":
+          application/json: {"error": "ExpiredToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.server.getAccountInviteCodes:
+    speakeasy-default-com-atproto-server-get-account-invite-codes:
+      responses:
+        "200":
+          application/json: {"codes": [{"code": "<value>", "available": 73460, "disabled": true, "forAccount": "<value>", "createdBy": "<value>", "createdAt": "2023-01-01T20:28:17.978Z", "uses": [{"usedBy": "<id>", "usedAt": "2023-12-30T16:05:26.833Z"}, {"usedBy": "<id>", "usedAt": "2024-02-04T01:27:57.140Z"}, {"usedBy": "<id>", "usedAt": "2023-01-04T04:04:27.210Z"}]}, {"code": "<value>", "available": 797226, "disabled": false, "forAccount": "<value>", "createdBy": "<value>", "createdAt": "2024-02-15T10:20:34.657Z", "uses": [{"usedBy": "<id>", "usedAt": "2022-04-09T17:52:22.329Z"}, {"usedBy": "<id>", "usedAt": "2023-12-03T11:17:04.566Z"}]}, {"code": "<value>", "available": 115392, "disabled": false, "forAccount": "<value>", "createdBy": "<value>", "createdAt": "2022-12-15T15:30:40.493Z", "uses": []}]}
+        "400":
+          application/json: {"error": "DuplicateCreate", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.server.getServiceAuth:
+    speakeasy-default-com-atproto-server-get-service-auth:
+      parameters:
+        query:
+          aud: "<id>"
+      responses:
+        "200":
+          application/json: {"token": "<value>"}
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.server.getSession:
+    speakeasy-default-com-atproto-server-get-session:
+      responses:
+        "200":
+          application/json: {"handle": "<value>", "did": "<id>"}
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.server.listAppPasswords:
+    speakeasy-default-com-atproto-server-list-app-passwords:
+      responses:
+        "200":
+          application/json: {"passwords": []}
+        "400":
+          application/json: {"error": "AccountTakedown", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.server.refreshSession:
+    speakeasy-default-com-atproto-server-refresh-session:
+      responses:
+        "200":
+          application/json: {"accessJwt": "<value>", "refreshJwt": "<value>", "handle": "<value>", "did": "<id>"}
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.server.requestAccountDelete:
+    speakeasy-default-com-atproto-server-request-account-delete:
+      responses:
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.server.requestEmailConfirmation:
+    speakeasy-default-com-atproto-server-request-email-confirmation:
+      responses:
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.server.requestEmailUpdate:
+    speakeasy-default-com-atproto-server-request-email-update:
+      responses:
+        "200":
+          application/json: {"tokenRequired": true}
+        "400":
+          application/json: {"error": "ExpiredToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.server.requestPasswordReset:
+    speakeasy-default-com-atproto-server-request-password-reset:
+      requestBody:
+        application/json: {"email": "Columbus.Veum64@yahoo.com"}
+      responses:
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.server.reserveSigningKey:
+    speakeasy-default-com-atproto-server-reserve-signing-key:
+      responses:
+        "200":
+          application/json: {"signingKey": "<value>"}
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.server.resetPassword:
+    speakeasy-default-com-atproto-server-reset-password:
+      requestBody:
+        application/json: {"token": "<value>", "password": "H4fiBPbFtt_OLjH"}
+      responses:
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.server.revokeAppPassword:
+    speakeasy-default-com-atproto-server-revoke-app-password:
+      requestBody:
+        application/json: {"name": "<value>"}
+      responses:
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.server.updateEmail:
+    speakeasy-default-com-atproto-server-update-email:
+      requestBody:
+        application/json: {"email": "Isai.Auer35@yahoo.com"}
+      responses:
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.sync.getBlob:
+    speakeasy-default-com-atproto-sync-get-blob:
+      parameters:
+        query:
+          did: "<id>"
+          cid: "<id>"
+      responses:
+        "400":
+          application/json: {"error": "RepoTakendown", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.sync.getBlocks:
+    speakeasy-default-com-atproto-sync-get-blocks:
+      parameters:
+        query:
+          did: "<id>"
+          cids: ["<id>", "<id>"]
+      responses:
+        "400":
+          application/json: {"error": "RepoDeactivated", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.sync.getLatestCommit:
+    speakeasy-default-com-atproto-sync-get-latest-commit:
+      parameters:
+        query:
+          did: "<id>"
+      responses:
+        "200":
+          application/json: {"cid": "<id>", "rev": "<value>"}
+        "400":
+          application/json: {"error": "ExpiredToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.sync.getRecord:
+    speakeasy-default-com-atproto-sync-get-record:
+      parameters:
+        query:
+          did: "<id>"
+          collection: "<id>"
+          rkey: "<value>"
+      responses:
+        "400":
+          application/json: {"error": "RepoSuspended", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.sync.getRepo:
+    speakeasy-default-com-atproto-sync-get-repo:
+      parameters:
+        query:
+          did: "<id>"
+      responses:
+        "400":
+          application/json: {"error": "RepoNotFound", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.sync.getRepoStatus:
+    speakeasy-default-com-atproto-sync-get-repo-status:
+      parameters:
+        query:
+          did: "<id>"
+      responses:
+        "200":
+          application/json: {"did": "<id>", "active": false}
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.sync.listBlobs:
+    speakeasy-default-com-atproto-sync-list-blobs:
+      parameters:
+        query:
+          did: "<id>"
+      responses:
+        "200":
+          application/json: {"cids": ["<id>", "<id>", "<id>"]}
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.sync.listRepos:
+    speakeasy-default-com-atproto-sync-list-repos:
+      responses:
+        "200":
+          application/json: {"repos": [{"did": "<id>", "head": "<id>", "rev": "<value>"}, {"did": "<id>", "head": "<id>", "rev": "<value>"}]}
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.sync.notifyOfUpdate:
+    speakeasy-default-com-atproto-sync-notify-of-update:
+      requestBody:
+        application/json: {"hostname": "major-instruction.com"}
+      responses:
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  com.atproto.sync.requestCrawl:
+    speakeasy-default-com-atproto-sync-request-crawl:
+      requestBody:
+        application/json: {"hostname": "strange-monster.com"}
+      responses:
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  tools.ozone.communication.createTemplate:
+    speakeasy-default-tools-ozone-communication-create-template:
+      requestBody:
+        application/json: {"name": "<value>", "contentMarkdown": "<value>", "subject": "<value>"}
+      responses:
+        "200":
+          application/json: {"id": "<id>", "name": "<value>", "contentMarkdown": "<value>", "disabled": false, "lastUpdatedBy": "<id>", "createdAt": "2022-12-07T15:38:20.499Z", "updatedAt": "2022-01-19T00:02:04.890Z"}
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  tools.ozone.communication.deleteTemplate:
+    speakeasy-default-tools-ozone-communication-delete-template:
+      requestBody:
+        application/json: {"id": "<id>"}
+      responses:
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  tools.ozone.communication.listTemplates:
+    speakeasy-default-tools-ozone-communication-list-templates:
+      responses:
+        "200":
+          application/json: {"communicationTemplates": []}
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  tools.ozone.communication.updateTemplate:
+    speakeasy-default-tools-ozone-communication-update-template:
+      requestBody:
+        application/json: {"id": "<id>"}
+      responses:
+        "200":
+          application/json: {"id": "<id>", "name": "<value>", "contentMarkdown": "<value>", "disabled": false, "lastUpdatedBy": "<id>", "createdAt": "2023-10-30T13:10:25.395Z", "updatedAt": "2023-02-04T15:43:54.871Z"}
+        "400":
+          application/json: {"error": "DuplicateTemplateName", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  tools.ozone.moderation.emitEvent:
+    speakeasy-default-tools-ozone-moderation-emit-event:
+      requestBody:
+        application/json: {"subject": {"did": "<id>"}, "createdBy": "<id>"}
+      responses:
+        "200":
+          application/json: {"id": 465475, "subject": {"did": "<id>"}, "subjectBlobCids": ["<value>", "<value>", "<value>"], "createdBy": "<id>", "createdAt": "2022-11-12T07:00:42.517Z"}
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  tools.ozone.moderation.getEvent:
+    speakeasy-default-tools-ozone-moderation-get-event:
+      parameters:
+        query:
+          id: 895027
+      responses:
+        "200":
+          application/json: {"id": 553383, "event": {"timestamp": "2023-08-30T12:11:30.182Z"}, "subject": {"uri": "https://remorseful-cap.com"}, "subjectBlobs": [], "createdBy": "<id>", "createdAt": "2022-10-03T19:03:32.171Z"}
+        "400":
+          application/json: {"error": "ExpiredToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  tools.ozone.moderation.getRecord:
+    speakeasy-default-tools-ozone-moderation-get-record:
+      parameters:
+        query:
+          uri: "https://dependent-fax.info"
+      responses:
+        "200":
+          application/json: {"uri": "https://arid-ocelot.com", "cid": "<id>", "value": "<value>", "blobs": [{"cid": "<id>", "mimeType": "<value>", "size": 386288, "createdAt": "2024-02-21T09:52:56.463Z"}, {"cid": "<id>", "mimeType": "<value>", "size": 511553, "createdAt": "2024-05-23T08:51:33.488Z"}, {"cid": "<id>", "mimeType": "<value>", "size": 517586, "createdAt": "2024-11-13T20:31:38.094Z"}], "indexedAt": "2023-11-26T02:23:47.790Z", "repo": {"did": "<id>", "handle": "<value>", "relatedRecords": ["<value>", "<value>"], "indexedAt": "2023-12-28T04:49:10.675Z"}}
+        "400":
+          application/json: {"error": "ExpiredToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  tools.ozone.moderation.getRecords:
+    speakeasy-default-tools-ozone-moderation-get-records:
+      parameters:
+        query:
+          uris: ["https://pointed-trolley.org/", "https://another-requirement.org", "https://whispered-bowling.biz/"]
+      responses:
+        "200":
+          application/json: {"records": [{"uri": "https://cool-daddy.info"}, {"uri": "https://pointed-trolley.org/"}]}
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  tools.ozone.moderation.getRepo:
+    speakeasy-default-tools-ozone-moderation-get-repo:
+      parameters:
+        query:
+          did: "<id>"
+      responses:
+        "200":
+          application/json: {"did": "<id>", "handle": "<value>", "relatedRecords": ["<value>", "<value>"], "indexedAt": "2023-04-18T08:26:01.176Z"}
+        "400":
+          application/json: {"error": "RepoNotFound", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  tools.ozone.moderation.getRepos:
+    speakeasy-default-tools-ozone-moderation-get-repos:
+      parameters:
+        query:
+          dids: ["<id>", "<id>", "<id>"]
+      responses:
+        "200":
+          application/json: {"repos": [{"did": "<id>"}, {"did": "<id>"}, {"did": "<id>"}]}
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  tools.ozone.moderation.queryEvents:
+    speakeasy-default-tools-ozone-moderation-query-events:
+      responses:
+        "200":
+          application/json: {"events": [{"id": 71227, "subject": {"uri": "https://tidy-forgery.org", "cid": "<id>"}, "subjectBlobCids": ["<value>", "<value>"], "createdBy": "<id>", "createdAt": "2022-06-16T22:33:27.661Z"}, {"id": 858073, "subject": {"did": "<id>"}, "subjectBlobCids": ["<value>", "<value>", "<value>"], "createdBy": "<id>", "createdAt": "2024-01-10T18:18:01.886Z"}]}
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  tools.ozone.moderation.queryStatuses:
+    speakeasy-default-tools-ozone-moderation-query-statuses:
+      responses:
+        "200":
+          application/json: {"subjectStatuses": [{"id": 993194, "subject": {"uri": "https://excitable-scrap.com/", "cid": "<id>"}, "updatedAt": "2024-07-04T12:13:59.615Z", "createdAt": "2022-01-24T11:12:02.551Z", "reviewState": "#reviewNone"}, {"id": 946089, "subject": {"uri": "https://smooth-tentacle.name/", "cid": "<id>"}, "updatedAt": "2023-07-14T01:58:22.262Z", "createdAt": "2022-09-19T00:33:09.302Z", "reviewState": "#reviewOpen"}]}
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  tools.ozone.moderation.searchRepos:
+    speakeasy-default-tools-ozone-moderation-search-repos:
+      responses:
+        "200":
+          application/json: {"repos": []}
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  tools.ozone.server.getConfig:
+    speakeasy-default-tools-ozone-server-get-config:
+      responses:
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+        "200": {}
+  tools.ozone.set.addValues:
+    speakeasy-default-tools-ozone-set-add-values:
+      requestBody:
+        application/json: {"name": "<value>", "values": ["<value>", "<value>"]}
+      responses:
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  tools.ozone.set.deleteSet:
+    speakeasy-default-tools-ozone-set-delete-set:
+      requestBody:
+        application/json: {"name": "<value>"}
+      responses:
+        "400":
+          application/json: {"error": "SetNotFound", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+        "200": {}
+  tools.ozone.set.deleteValues:
+    speakeasy-default-tools-ozone-set-delete-values:
+      requestBody:
+        application/json: {"name": "<value>", "values": ["<value>"]}
+      responses:
+        "400":
+          application/json: {"error": "SetNotFound", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  tools.ozone.set.getValues:
+    speakeasy-default-tools-ozone-set-get-values:
+      parameters:
+        query:
+          name: "<value>"
+      responses:
+        "200":
+          application/json: {"set": {"name": "<value>", "setSize": 981228, "createdAt": "2022-03-08T17:52:40.845Z", "updatedAt": "2023-02-15T23:51:51.415Z"}, "values": []}
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  tools.ozone.set.querySets:
+    speakeasy-default-tools-ozone-set-query-sets:
+      responses:
+        "200":
+          application/json: {"sets": [{"name": "<value>", "setSize": 926118, "createdAt": "2024-02-05T19:45:16.268Z", "updatedAt": "2024-07-19T05:24:11.233Z"}, {"name": "<value>", "setSize": 415273, "createdAt": "2022-12-13T07:45:46.965Z", "updatedAt": "2024-10-28T22:00:25.524Z"}]}
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  tools.ozone.set.upsertSet:
+    speakeasy-default-tools-ozone-set-upsert-set:
+      requestBody:
+        application/json: {"name": "<value>"}
+      responses:
+        "200":
+          application/json: {"name": "<value>", "setSize": 710746, "createdAt": "2022-03-06T05:16:45.005Z", "updatedAt": "2024-04-26T08:14:33.560Z"}
+        "400":
+          application/json: {"error": "ExpiredToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  tools.ozone.setting.listOptions:
+    speakeasy-default-tools-ozone-setting-list-options:
+      responses:
+        "200":
+          application/json: {"options": []}
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  tools.ozone.setting.removeOptions:
+    speakeasy-default-tools-ozone-setting-remove-options:
+      requestBody:
+        application/json: {"keys": ["<id>", "<id>"], "scope": "instance"}
+      responses:
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+        "200": {}
+  tools.ozone.setting.upsertOption:
+    speakeasy-default-tools-ozone-setting-upsert-option:
+      requestBody:
+        application/json: {"key": "<id>", "scope": "instance", "value": "<value>"}
+      responses:
+        "200":
+          application/json: {"option": {"key": "<id>", "did": "<id>", "value": "<value>", "scope": "personal", "createdBy": "<id>", "lastUpdatedBy": "<id>"}}
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  tools.ozone.signature.findCorrelation:
+    speakeasy-default-tools-ozone-signature-find-correlation:
+      parameters:
+        query:
+          dids: ["<id>"]
+      responses:
+        "200":
+          application/json: {"details": []}
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  tools.ozone.signature.findRelatedAccounts:
+    speakeasy-default-tools-ozone-signature-find-related-accounts:
+      parameters:
+        query:
+          did: "<id>"
+      responses:
+        "200":
+          application/json: {"accounts": [{"account": {"did": "<id>", "handle": "<value>", "indexedAt": "2023-11-06T05:45:29.942Z"}}]}
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  tools.ozone.signature.searchAccounts:
+    speakeasy-default-tools-ozone-signature-search-accounts:
+      parameters:
+        query:
+          values: ["<value>"]
+      responses:
+        "200":
+          application/json: {"accounts": [{"did": "<id>", "handle": "<value>", "indexedAt": "2024-05-26T07:41:24.382Z"}, {"did": "<id>", "handle": "<value>", "indexedAt": "2024-03-26T23:32:12.486Z"}]}
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  tools.ozone.team.addMember:
+    speakeasy-default-tools-ozone-team-add-member:
+      requestBody:
+        application/json: {"did": "<id>", "role": "tools.ozone.team.defs#roleAdmin"}
+      responses:
+        "200":
+          application/json: {"did": "<id>", "role": "#roleTriage"}
+        "400":
+          application/json: {"error": "MemberAlreadyExists", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  tools.ozone.team.deleteMember:
+    speakeasy-default-tools-ozone-team-delete-member:
+      requestBody:
+        application/json: {"did": "<id>"}
+      responses:
+        "400":
+          application/json: {"error": "ExpiredToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  tools.ozone.team.listMembers:
+    speakeasy-default-tools-ozone-team-list-members:
+      responses:
+        "200":
+          application/json: {"members": [{"did": "<id>", "role": "#roleAdmin"}, {"did": "<id>", "role": "#roleTriage"}, {"did": "<id>", "role": "#roleAdmin"}]}
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+  tools.ozone.team.updateMember:
+    speakeasy-default-tools-ozone-team-update-member:
+      requestBody:
+        application/json: {"did": "<id>"}
+      responses:
+        "200":
+          application/json: {"did": "<id>", "role": "#roleModerator"}
+        "400":
+          application/json: {"error": "InvalidToken", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}

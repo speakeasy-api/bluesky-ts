@@ -31,7 +31,7 @@ import { Result } from "../types/fp.js";
  */
 export async function comAtprotoAdminComAtprotoAdminSearchAccounts(
   client: BlueskyCore,
-  request: operations.ComAtprotoAdminSearchAccountsRequest,
+  request?: operations.ComAtprotoAdminSearchAccountsRequest | undefined,
   options?: RequestOptions,
 ): Promise<
   Result<
@@ -50,9 +50,8 @@ export async function comAtprotoAdminComAtprotoAdminSearchAccounts(
   const parsed = safeParse(
     request,
     (value) =>
-      operations.ComAtprotoAdminSearchAccountsRequest$outboundSchema.parse(
-        value,
-      ),
+      operations.ComAtprotoAdminSearchAccountsRequest$outboundSchema.optional()
+        .parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -64,9 +63,9 @@ export async function comAtprotoAdminComAtprotoAdminSearchAccounts(
   const path = pathToFunc("/xrpc/com.atproto.admin.searchAccounts")();
 
   const query = encodeFormQuery({
-    "cursor": payload.cursor,
-    "email": payload.email,
-    "limit": payload.limit,
+    "cursor": payload?.cursor,
+    "email": payload?.email,
+    "limit": payload?.limit,
   });
 
   const headers = new Headers({

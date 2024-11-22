@@ -31,7 +31,7 @@ import { Result } from "../types/fp.js";
  */
 export async function appBskyFeedAppBskyFeedGetTimeline(
   client: BlueskyCore,
-  request: operations.AppBskyFeedGetTimelineRequest,
+  request?: operations.AppBskyFeedGetTimelineRequest | undefined,
   options?: RequestOptions,
 ): Promise<
   Result<
@@ -50,7 +50,9 @@ export async function appBskyFeedAppBskyFeedGetTimeline(
   const parsed = safeParse(
     request,
     (value) =>
-      operations.AppBskyFeedGetTimelineRequest$outboundSchema.parse(value),
+      operations.AppBskyFeedGetTimelineRequest$outboundSchema.optional().parse(
+        value,
+      ),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -62,9 +64,9 @@ export async function appBskyFeedAppBskyFeedGetTimeline(
   const path = pathToFunc("/xrpc/app.bsky.feed.getTimeline")();
 
   const query = encodeFormQuery({
-    "algorithm": payload.algorithm,
-    "cursor": payload.cursor,
-    "limit": payload.limit,
+    "algorithm": payload?.algorithm,
+    "cursor": payload?.cursor,
+    "limit": payload?.limit,
   });
 
   const headers = new Headers({

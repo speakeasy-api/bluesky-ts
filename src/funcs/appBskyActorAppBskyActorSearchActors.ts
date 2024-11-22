@@ -31,7 +31,7 @@ import { Result } from "../types/fp.js";
  */
 export async function appBskyActorAppBskyActorSearchActors(
   client: BlueskyCore,
-  request: operations.AppBskyActorSearchActorsRequest,
+  request?: operations.AppBskyActorSearchActorsRequest | undefined,
   options?: RequestOptions,
 ): Promise<
   Result<
@@ -50,7 +50,8 @@ export async function appBskyActorAppBskyActorSearchActors(
   const parsed = safeParse(
     request,
     (value) =>
-      operations.AppBskyActorSearchActorsRequest$outboundSchema.parse(value),
+      operations.AppBskyActorSearchActorsRequest$outboundSchema.optional()
+        .parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -62,9 +63,9 @@ export async function appBskyActorAppBskyActorSearchActors(
   const path = pathToFunc("/xrpc/app.bsky.actor.searchActors")();
 
   const query = encodeFormQuery({
-    "cursor": payload.cursor,
-    "limit": payload.limit,
-    "q": payload.q,
+    "cursor": payload?.cursor,
+    "limit": payload?.limit,
+    "q": payload?.q,
   });
 
   const headers = new Headers({

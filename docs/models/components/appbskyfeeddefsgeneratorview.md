@@ -1,0 +1,37 @@
+# AppBskyFeedDefsGeneratorView
+
+## Example Usage
+
+```typescript
+import { AppBskyFeedDefsGeneratorView } from "bluesky/models/components";
+
+let value: AppBskyFeedDefsGeneratorView = {
+  uri: "https://enchanted-handle.name/",
+  cid: "<id>",
+  did: "<id>",
+  creator: {
+    did: "<id>",
+    handle: "<value>",
+  },
+  displayName: "Sherman_Collier",
+  indexedAt: new Date("2024-10-07T21:26:28.728Z"),
+};
+```
+
+## Fields
+
+| Field                                                                                                            | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
+| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `uri`                                                                                                            | *string*                                                                                                         | :heavy_check_mark:                                                                                               | N/A                                                                                                              |
+| `cid`                                                                                                            | *string*                                                                                                         | :heavy_check_mark:                                                                                               | N/A                                                                                                              |
+| `did`                                                                                                            | *string*                                                                                                         | :heavy_check_mark:                                                                                               | N/A                                                                                                              |
+| `creator`                                                                                                        | [components.AppBskyActorDefsProfileView](../../models/components/appbskyactordefsprofileview.md)                 | :heavy_check_mark:                                                                                               | N/A                                                                                                              |
+| `displayName`                                                                                                    | *string*                                                                                                         | :heavy_check_mark:                                                                                               | N/A                                                                                                              |
+| `description`                                                                                                    | *string*                                                                                                         | :heavy_minus_sign:                                                                                               | N/A                                                                                                              |
+| `descriptionFacets`                                                                                              | [components.AppBskyRichtextFacet](../../models/components/appbskyrichtextfacet.md)[]                             | :heavy_minus_sign:                                                                                               | N/A                                                                                                              |
+| `avatar`                                                                                                         | *string*                                                                                                         | :heavy_minus_sign:                                                                                               | N/A                                                                                                              |
+| `likeCount`                                                                                                      | *number*                                                                                                         | :heavy_minus_sign:                                                                                               | N/A                                                                                                              |
+| `acceptsInteractions`                                                                                            | *boolean*                                                                                                        | :heavy_minus_sign:                                                                                               | N/A                                                                                                              |
+| `labels`                                                                                                         | [components.ComAtprotoLabelDefsLabel](../../models/components/comatprotolabeldefslabel.md)[]                     | :heavy_minus_sign:                                                                                               | N/A                                                                                                              |
+| `viewer`                                                                                                         | [components.AppBskyFeedDefsGeneratorViewerState](../../models/components/appbskyfeeddefsgeneratorviewerstate.md) | :heavy_minus_sign:                                                                                               | N/A                                                                                                              |
+| `indexedAt`                                                                                                      | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)                    | :heavy_check_mark:                                                                                               | N/A                                                                                                              |

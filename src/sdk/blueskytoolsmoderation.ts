@@ -133,7 +133,7 @@ export class BlueskyToolsModeration extends ClientSDK {
    * List moderation events related to a subject.
    */
   async toolsOzoneModerationQueryEvents(
-    request: operations.ToolsOzoneModerationQueryEventsRequest,
+    request?: operations.ToolsOzoneModerationQueryEventsRequest | undefined,
     options?: RequestOptions,
   ): Promise<operations.ToolsOzoneModerationQueryEventsResponseBody> {
     return unwrapAsync(toolsOzoneModerationToolsOzoneModerationQueryEvents(
@@ -151,7 +151,7 @@ export class BlueskyToolsModeration extends ClientSDK {
    * View moderation statuses of subjects (record or repo).
    */
   async toolsOzoneModerationQueryStatuses(
-    request: operations.ToolsOzoneModerationQueryStatusesRequest,
+    request?: operations.ToolsOzoneModerationQueryStatusesRequest | undefined,
     options?: RequestOptions,
   ): Promise<operations.ToolsOzoneModerationQueryStatusesResponseBody> {
     return unwrapAsync(toolsOzoneModerationToolsOzoneModerationQueryStatuses(
@@ -169,7 +169,7 @@ export class BlueskyToolsModeration extends ClientSDK {
    * Find repositories based on a search term.
    */
   async toolsOzoneModerationSearchRepos(
-    request: operations.ToolsOzoneModerationSearchReposRequest,
+    request?: operations.ToolsOzoneModerationSearchReposRequest | undefined,
     options?: RequestOptions,
   ): Promise<operations.ToolsOzoneModerationSearchReposResponseBody> {
     return unwrapAsync(toolsOzoneModerationToolsOzoneModerationSearchRepos(

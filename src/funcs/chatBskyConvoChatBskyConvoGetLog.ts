@@ -29,7 +29,7 @@ import { Result } from "../types/fp.js";
  */
 export async function chatBskyConvoChatBskyConvoGetLog(
   client: BlueskyCore,
-  request: operations.ChatBskyConvoGetLogRequest,
+  request?: operations.ChatBskyConvoGetLogRequest | undefined,
   options?: RequestOptions,
 ): Promise<
   Result<
@@ -48,7 +48,9 @@ export async function chatBskyConvoChatBskyConvoGetLog(
   const parsed = safeParse(
     request,
     (value) =>
-      operations.ChatBskyConvoGetLogRequest$outboundSchema.parse(value),
+      operations.ChatBskyConvoGetLogRequest$outboundSchema.optional().parse(
+        value,
+      ),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -60,7 +62,7 @@ export async function chatBskyConvoChatBskyConvoGetLog(
   const path = pathToFunc("/xrpc/chat.bsky.convo.getLog")();
 
   const query = encodeFormQuery({
-    "cursor": payload.cursor,
+    "cursor": payload?.cursor,
   });
 
   const headers = new Headers({

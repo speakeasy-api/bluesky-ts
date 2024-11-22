@@ -31,7 +31,7 @@ import { Result } from "../types/fp.js";
  */
 export async function comAtprotoServerComAtprotoServerReserveSigningKey(
   client: BlueskyCore,
-  request: operations.ComAtprotoServerReserveSigningKeyRequestBody,
+  request?: operations.ComAtprotoServerReserveSigningKeyRequestBody | undefined,
   options?: RequestOptions,
 ): Promise<
   Result<
@@ -51,14 +51,16 @@ export async function comAtprotoServerComAtprotoServerReserveSigningKey(
     request,
     (value) =>
       operations.ComAtprotoServerReserveSigningKeyRequestBody$outboundSchema
-        .parse(value),
+        .optional().parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
     return parsed;
   }
   const payload = parsed.value;
-  const body = encodeJSON("body", payload, { explode: true });
+  const body = payload === undefined
+    ? null
+    : encodeJSON("body", payload, { explode: true });
 
   const path = pathToFunc("/xrpc/com.atproto.server.reserveSigningKey")();
 

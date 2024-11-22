@@ -31,7 +31,7 @@ import { Result } from "../types/fp.js";
  */
 export async function comAtprotoSyncComAtprotoSyncListRepos(
   client: BlueskyCore,
-  request: operations.ComAtprotoSyncListReposRequest,
+  request?: operations.ComAtprotoSyncListReposRequest | undefined,
   options?: RequestOptions,
 ): Promise<
   Result<
@@ -50,7 +50,9 @@ export async function comAtprotoSyncComAtprotoSyncListRepos(
   const parsed = safeParse(
     request,
     (value) =>
-      operations.ComAtprotoSyncListReposRequest$outboundSchema.parse(value),
+      operations.ComAtprotoSyncListReposRequest$outboundSchema.optional().parse(
+        value,
+      ),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -62,8 +64,8 @@ export async function comAtprotoSyncComAtprotoSyncListRepos(
   const path = pathToFunc("/xrpc/com.atproto.sync.listRepos")();
 
   const query = encodeFormQuery({
-    "cursor": payload.cursor,
-    "limit": payload.limit,
+    "cursor": payload?.cursor,
+    "limit": payload?.limit,
   });
 
   const headers = new Headers({

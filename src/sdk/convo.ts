@@ -74,7 +74,7 @@ export class Convo extends ClientSDK {
    * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
    */
   async chatBskyConvoGetLog(
-    request: operations.ChatBskyConvoGetLogRequest,
+    request?: operations.ChatBskyConvoGetLogRequest | undefined,
     options?: RequestOptions,
   ): Promise<operations.ChatBskyConvoGetLogResponseBody> {
     return unwrapAsync(chatBskyConvoChatBskyConvoGetLog(
@@ -122,7 +122,7 @@ export class Convo extends ClientSDK {
    * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
    */
   async chatBskyConvoListConvos(
-    request: operations.ChatBskyConvoListConvosRequest,
+    request?: operations.ChatBskyConvoListConvosRequest | undefined,
     options?: RequestOptions,
   ): Promise<operations.ChatBskyConvoListConvosResponseBody> {
     return unwrapAsync(chatBskyConvoChatBskyConvoListConvos(

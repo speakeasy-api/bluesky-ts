@@ -29,7 +29,9 @@ import { Result } from "../types/fp.js";
  */
 export async function comAtprotoIdentityComAtprotoIdentitySignPlcOperation(
   client: BlueskyCore,
-  request: operations.ComAtprotoIdentitySignPlcOperationRequestBody,
+  request?:
+    | operations.ComAtprotoIdentitySignPlcOperationRequestBody
+    | undefined,
   options?: RequestOptions,
 ): Promise<
   Result<
@@ -49,14 +51,16 @@ export async function comAtprotoIdentityComAtprotoIdentitySignPlcOperation(
     request,
     (value) =>
       operations.ComAtprotoIdentitySignPlcOperationRequestBody$outboundSchema
-        .parse(value),
+        .optional().parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
     return parsed;
   }
   const payload = parsed.value;
-  const body = encodeJSON("body", payload, { explode: true });
+  const body = payload === undefined
+    ? null
+    : encodeJSON("body", payload, { explode: true });
 
   const path = pathToFunc("/xrpc/com.atproto.identity.signPlcOperation")();
 

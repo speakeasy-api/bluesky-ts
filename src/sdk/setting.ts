@@ -18,7 +18,7 @@ export class Setting extends ClientSDK {
    * List settings with optional filtering
    */
   async toolsOzoneSettingListOptions(
-    request: operations.ToolsOzoneSettingListOptionsRequest,
+    request?: operations.ToolsOzoneSettingListOptionsRequest | undefined,
     options?: RequestOptions,
   ): Promise<operations.ToolsOzoneSettingListOptionsResponseBody> {
     return unwrapAsync(toolsOzoneSettingToolsOzoneSettingListOptions(

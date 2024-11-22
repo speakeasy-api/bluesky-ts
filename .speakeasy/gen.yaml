@@ -16,7 +16,7 @@ generation:
     oAuth2ClientCredentialsEnabled: false
     oAuth2PasswordEnabled: false
 typescript:
-  version: 0.0.1
+  version: 0.1.0
   additionalDependencies:
     dependencies: {}
     devDependencies: {}
@@ -39,8 +39,8 @@ typescript:
       webhooks: models/webhooks
   inputModelSuffix: input
   maxMethodParams: 0
-  methodArguments: require-security-and-request
-  moduleFormat: commonjs
+  methodArguments: infer-optional-args
+  moduleFormat: dual
   outputModelSuffix: output
   packageName: bluesky
   responseFormat: flat

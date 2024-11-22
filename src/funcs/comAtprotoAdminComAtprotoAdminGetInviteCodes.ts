@@ -31,7 +31,7 @@ import { Result } from "../types/fp.js";
  */
 export async function comAtprotoAdminComAtprotoAdminGetInviteCodes(
   client: BlueskyCore,
-  request: operations.ComAtprotoAdminGetInviteCodesRequest,
+  request?: operations.ComAtprotoAdminGetInviteCodesRequest | undefined,
   options?: RequestOptions,
 ): Promise<
   Result<
@@ -50,9 +50,8 @@ export async function comAtprotoAdminComAtprotoAdminGetInviteCodes(
   const parsed = safeParse(
     request,
     (value) =>
-      operations.ComAtprotoAdminGetInviteCodesRequest$outboundSchema.parse(
-        value,
-      ),
+      operations.ComAtprotoAdminGetInviteCodesRequest$outboundSchema.optional()
+        .parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -64,9 +63,9 @@ export async function comAtprotoAdminComAtprotoAdminGetInviteCodes(
   const path = pathToFunc("/xrpc/com.atproto.admin.getInviteCodes")();
 
   const query = encodeFormQuery({
-    "cursor": payload.cursor,
-    "limit": payload.limit,
-    "sort": payload.sort,
+    "cursor": payload?.cursor,
+    "limit": payload?.limit,
+    "sort": payload?.sort,
   });
 
   const headers = new Headers({

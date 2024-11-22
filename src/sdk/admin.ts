@@ -66,7 +66,9 @@ export class Admin extends ClientSDK {
    * Disable some set of codes and/or all codes associated with a set of users.
    */
   async comAtprotoAdminDisableInviteCodes(
-    request: operations.ComAtprotoAdminDisableInviteCodesRequestBody,
+    request?:
+      | operations.ComAtprotoAdminDisableInviteCodesRequestBody
+      | undefined,
     options?: RequestOptions,
   ): Promise<void> {
     return unwrapAsync(comAtprotoAdminComAtprotoAdminDisableInviteCodes(
@@ -138,7 +140,7 @@ export class Admin extends ClientSDK {
    * Get an admin view of invite codes.
    */
   async comAtprotoAdminGetInviteCodes(
-    request: operations.ComAtprotoAdminGetInviteCodesRequest,
+    request?: operations.ComAtprotoAdminGetInviteCodesRequest | undefined,
     options?: RequestOptions,
   ): Promise<operations.ComAtprotoAdminGetInviteCodesResponseBody> {
     return unwrapAsync(comAtprotoAdminComAtprotoAdminGetInviteCodes(
@@ -156,7 +158,7 @@ export class Admin extends ClientSDK {
    * Get the service-specific admin status of a subject (account, record, or blob).
    */
   async comAtprotoAdminGetSubjectStatus(
-    request: operations.ComAtprotoAdminGetSubjectStatusRequest,
+    request?: operations.ComAtprotoAdminGetSubjectStatusRequest | undefined,
     options?: RequestOptions,
   ): Promise<operations.ComAtprotoAdminGetSubjectStatusResponseBody> {
     return unwrapAsync(comAtprotoAdminComAtprotoAdminGetSubjectStatus(
@@ -174,7 +176,7 @@ export class Admin extends ClientSDK {
    * Get list of accounts that matches your search query.
    */
   async comAtprotoAdminSearchAccounts(
-    request: operations.ComAtprotoAdminSearchAccountsRequest,
+    request?: operations.ComAtprotoAdminSearchAccountsRequest | undefined,
     options?: RequestOptions,
   ): Promise<operations.ComAtprotoAdminSearchAccountsResponseBody> {
     return unwrapAsync(comAtprotoAdminComAtprotoAdminSearchAccounts(

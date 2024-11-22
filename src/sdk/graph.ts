@@ -54,7 +54,7 @@ export class Graph extends ClientSDK {
    * Enumerates which accounts the requesting account is currently blocking. Requires auth.
    */
   async appBskyGraphGetBlocks(
-    request: operations.AppBskyGraphGetBlocksRequest,
+    request?: operations.AppBskyGraphGetBlocksRequest | undefined,
     options?: RequestOptions,
   ): Promise<operations.AppBskyGraphGetBlocksResponseBody> {
     return unwrapAsync(appBskyGraphAppBskyGraphGetBlocks(
@@ -144,7 +144,7 @@ export class Graph extends ClientSDK {
    * Get mod lists that the requesting account (actor) is blocking. Requires auth.
    */
   async appBskyGraphGetListBlocks(
-    request: operations.AppBskyGraphGetListBlocksRequest,
+    request?: operations.AppBskyGraphGetListBlocksRequest | undefined,
     options?: RequestOptions,
   ): Promise<operations.AppBskyGraphGetListBlocksResponseBody> {
     return unwrapAsync(appBskyGraphAppBskyGraphGetListBlocks(
@@ -162,7 +162,7 @@ export class Graph extends ClientSDK {
    * Enumerates mod lists that the requesting account (actor) currently has muted. Requires auth.
    */
   async appBskyGraphGetListMutes(
-    request: operations.AppBskyGraphGetListMutesRequest,
+    request?: operations.AppBskyGraphGetListMutesRequest | undefined,
     options?: RequestOptions,
   ): Promise<operations.AppBskyGraphGetListMutesResponseBody> {
     return unwrapAsync(appBskyGraphAppBskyGraphGetListMutes(
@@ -198,7 +198,7 @@ export class Graph extends ClientSDK {
    * Enumerates accounts that the requesting account (actor) currently has muted. Requires auth.
    */
   async appBskyGraphGetMutes(
-    request: operations.AppBskyGraphGetMutesRequest,
+    request?: operations.AppBskyGraphGetMutesRequest | undefined,
     options?: RequestOptions,
   ): Promise<operations.AppBskyGraphGetMutesResponseBody> {
     return unwrapAsync(appBskyGraphAppBskyGraphGetMutes(

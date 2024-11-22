@@ -1,0 +1,21 @@
+# AppBskyActorDefsKnownFollowers
+
+The subject's followers whom you also follow
+
+## Example Usage
+
+```typescript
+import { AppBskyActorDefsKnownFollowers } from "bluesky/models/components";
+
+let value: AppBskyActorDefsKnownFollowers = {
+  count: 948861,
+  followers: [],
+};
+```
+
+## Fields
+
+| Field                                                                                                        | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `count`                                                                                                      | *number*                                                                                                     | :heavy_check_mark:                                                                                           | N/A                                                                                                          |
+| `followers`                                                                                                  | [components.AppBskyActorDefsProfileViewBasic](../../models/components/appbskyactordefsprofileviewbasic.md)[] | :heavy_check_mark:                                                                                           | N/A                                                                                                          |

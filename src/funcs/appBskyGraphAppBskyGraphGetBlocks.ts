@@ -31,7 +31,7 @@ import { Result } from "../types/fp.js";
  */
 export async function appBskyGraphAppBskyGraphGetBlocks(
   client: BlueskyCore,
-  request: operations.AppBskyGraphGetBlocksRequest,
+  request?: operations.AppBskyGraphGetBlocksRequest | undefined,
   options?: RequestOptions,
 ): Promise<
   Result<
@@ -50,7 +50,9 @@ export async function appBskyGraphAppBskyGraphGetBlocks(
   const parsed = safeParse(
     request,
     (value) =>
-      operations.AppBskyGraphGetBlocksRequest$outboundSchema.parse(value),
+      operations.AppBskyGraphGetBlocksRequest$outboundSchema.optional().parse(
+        value,
+      ),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -62,8 +64,8 @@ export async function appBskyGraphAppBskyGraphGetBlocks(
   const path = pathToFunc("/xrpc/app.bsky.graph.getBlocks")();
 
   const query = encodeFormQuery({
-    "cursor": payload.cursor,
-    "limit": payload.limit,
+    "cursor": payload?.cursor,
+    "limit": payload?.limit,
   });
 
   const headers = new Headers({

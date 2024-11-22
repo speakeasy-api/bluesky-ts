@@ -31,7 +31,7 @@ import { Result } from "../types/fp.js";
  */
 export async function comAtprotoServerComAtprotoServerGetAccountInviteCodes(
   client: BlueskyCore,
-  request: operations.ComAtprotoServerGetAccountInviteCodesRequest,
+  request?: operations.ComAtprotoServerGetAccountInviteCodesRequest | undefined,
   options?: RequestOptions,
 ): Promise<
   Result<
@@ -51,7 +51,7 @@ export async function comAtprotoServerComAtprotoServerGetAccountInviteCodes(
     request,
     (value) =>
       operations.ComAtprotoServerGetAccountInviteCodesRequest$outboundSchema
-        .parse(value),
+        .optional().parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -63,8 +63,8 @@ export async function comAtprotoServerComAtprotoServerGetAccountInviteCodes(
   const path = pathToFunc("/xrpc/com.atproto.server.getAccountInviteCodes")();
 
   const query = encodeFormQuery({
-    "createAvailable": payload.createAvailable,
-    "includeUsed": payload.includeUsed,
+    "createAvailable": payload?.createAvailable,
+    "includeUsed": payload?.includeUsed,
   });
 
   const headers = new Headers({

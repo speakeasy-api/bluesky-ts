@@ -20,7 +20,7 @@ export class Notification extends ClientSDK {
    * Count the number of unread notifications for the requesting account. Requires auth.
    */
   async appBskyNotificationGetUnreadCount(
-    request: operations.AppBskyNotificationGetUnreadCountRequest,
+    request?: operations.AppBskyNotificationGetUnreadCountRequest | undefined,
     options?: RequestOptions,
   ): Promise<operations.AppBskyNotificationGetUnreadCountResponseBody> {
     return unwrapAsync(appBskyNotificationAppBskyNotificationGetUnreadCount(
@@ -38,7 +38,9 @@ export class Notification extends ClientSDK {
    * Enumerate notifications for the requesting account. Requires auth.
    */
   async appBskyNotificationListNotifications(
-    request: operations.AppBskyNotificationListNotificationsRequest,
+    request?:
+      | operations.AppBskyNotificationListNotificationsRequest
+      | undefined,
     options?: RequestOptions,
   ): Promise<operations.AppBskyNotificationListNotificationsResponseBody> {
     return unwrapAsync(appBskyNotificationAppBskyNotificationListNotifications(

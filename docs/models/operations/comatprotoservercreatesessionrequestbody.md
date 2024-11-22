@@ -1,0 +1,20 @@
+# ComAtprotoServerCreateSessionRequestBody
+
+## Example Usage
+
+```typescript
+import { ComAtprotoServerCreateSessionRequestBody } from "bluesky/models/operations";
+
+let value: ComAtprotoServerCreateSessionRequestBody = {
+  identifier: "<value>",
+  password: "8HUrf9LacE2kcjj",
+};
+```
+
+## Fields
+
+| Field                                                                           | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `identifier`                                                                    | *string*                                                                        | :heavy_check_mark:                                                              | Handle or other identifier supported by the server for the authenticating user. |
+| `password`                                                                      | *string*                                                                        | :heavy_check_mark:                                                              | N/A                                                                             |
+| `authFactorToken`                                                               | *string*                                                                        | :heavy_minus_sign:                                                              | N/A                                                                             |

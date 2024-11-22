@@ -31,7 +31,7 @@ import { Result } from "../types/fp.js";
  */
 export async function appBskyNotificationAppBskyNotificationGetUnreadCount(
   client: BlueskyCore,
-  request: operations.AppBskyNotificationGetUnreadCountRequest,
+  request?: operations.AppBskyNotificationGetUnreadCountRequest | undefined,
   options?: RequestOptions,
 ): Promise<
   Result<
@@ -50,9 +50,8 @@ export async function appBskyNotificationAppBskyNotificationGetUnreadCount(
   const parsed = safeParse(
     request,
     (value) =>
-      operations.AppBskyNotificationGetUnreadCountRequest$outboundSchema.parse(
-        value,
-      ),
+      operations.AppBskyNotificationGetUnreadCountRequest$outboundSchema
+        .optional().parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -64,8 +63,8 @@ export async function appBskyNotificationAppBskyNotificationGetUnreadCount(
   const path = pathToFunc("/xrpc/app.bsky.notification.getUnreadCount")();
 
   const query = encodeFormQuery({
-    "priority": payload.priority,
-    "seenAt": payload.seenAt,
+    "priority": payload?.priority,
+    "seenAt": payload?.seenAt,
   });
 
   const headers = new Headers({

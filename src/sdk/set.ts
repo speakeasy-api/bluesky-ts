@@ -94,7 +94,7 @@ export class Set extends ClientSDK {
    * Query available sets
    */
   async toolsOzoneSetQuerySets(
-    request: operations.ToolsOzoneSetQuerySetsRequest,
+    request?: operations.ToolsOzoneSetQuerySetsRequest | undefined,
     options?: RequestOptions,
   ): Promise<operations.ToolsOzoneSetQuerySetsResponseBody> {
     return unwrapAsync(toolsOzoneSetToolsOzoneSetQuerySets(

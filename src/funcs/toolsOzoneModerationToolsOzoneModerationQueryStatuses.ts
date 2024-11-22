@@ -31,7 +31,7 @@ import { Result } from "../types/fp.js";
  */
 export async function toolsOzoneModerationToolsOzoneModerationQueryStatuses(
   client: BlueskyCore,
-  request: operations.ToolsOzoneModerationQueryStatusesRequest,
+  request?: operations.ToolsOzoneModerationQueryStatusesRequest | undefined,
   options?: RequestOptions,
 ): Promise<
   Result<
@@ -50,9 +50,8 @@ export async function toolsOzoneModerationToolsOzoneModerationQueryStatuses(
   const parsed = safeParse(
     request,
     (value) =>
-      operations.ToolsOzoneModerationQueryStatusesRequest$outboundSchema.parse(
-        value,
-      ),
+      operations.ToolsOzoneModerationQueryStatusesRequest$outboundSchema
+        .optional().parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -64,33 +63,33 @@ export async function toolsOzoneModerationToolsOzoneModerationQueryStatuses(
   const path = pathToFunc("/xrpc/tools.ozone.moderation.queryStatuses")();
 
   const query = encodeFormQuery({
-    "appealed": payload.appealed,
-    "collections": payload.collections,
-    "comment": payload.comment,
-    "cursor": payload.cursor,
-    "excludeTags": payload.excludeTags,
-    "hostingDeletedAfter": payload.hostingDeletedAfter,
-    "hostingDeletedBefore": payload.hostingDeletedBefore,
-    "hostingStatuses": payload.hostingStatuses,
-    "hostingUpdatedAfter": payload.hostingUpdatedAfter,
-    "hostingUpdatedBefore": payload.hostingUpdatedBefore,
-    "ignoreSubjects": payload.ignoreSubjects,
-    "includeAllUserRecords": payload.includeAllUserRecords,
-    "includeMuted": payload.includeMuted,
-    "lastReviewedBy": payload.lastReviewedBy,
-    "limit": payload.limit,
-    "onlyMuted": payload.onlyMuted,
-    "reportedAfter": payload.reportedAfter,
-    "reportedBefore": payload.reportedBefore,
-    "reviewedAfter": payload.reviewedAfter,
-    "reviewedBefore": payload.reviewedBefore,
-    "reviewState": payload.reviewState,
-    "sortDirection": payload.sortDirection,
-    "sortField": payload.sortField,
-    "subject": payload.subject,
-    "subjectType": payload.subjectType,
-    "tags": payload.tags,
-    "takendown": payload.takendown,
+    "appealed": payload?.appealed,
+    "collections": payload?.collections,
+    "comment": payload?.comment,
+    "cursor": payload?.cursor,
+    "excludeTags": payload?.excludeTags,
+    "hostingDeletedAfter": payload?.hostingDeletedAfter,
+    "hostingDeletedBefore": payload?.hostingDeletedBefore,
+    "hostingStatuses": payload?.hostingStatuses,
+    "hostingUpdatedAfter": payload?.hostingUpdatedAfter,
+    "hostingUpdatedBefore": payload?.hostingUpdatedBefore,
+    "ignoreSubjects": payload?.ignoreSubjects,
+    "includeAllUserRecords": payload?.includeAllUserRecords,
+    "includeMuted": payload?.includeMuted,
+    "lastReviewedBy": payload?.lastReviewedBy,
+    "limit": payload?.limit,
+    "onlyMuted": payload?.onlyMuted,
+    "reportedAfter": payload?.reportedAfter,
+    "reportedBefore": payload?.reportedBefore,
+    "reviewedAfter": payload?.reviewedAfter,
+    "reviewedBefore": payload?.reviewedBefore,
+    "reviewState": payload?.reviewState,
+    "sortDirection": payload?.sortDirection,
+    "sortField": payload?.sortField,
+    "subject": payload?.subject,
+    "subjectType": payload?.subjectType,
+    "tags": payload?.tags,
+    "takendown": payload?.takendown,
   });
 
   const headers = new Headers({

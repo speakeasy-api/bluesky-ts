@@ -31,7 +31,7 @@ import { Result } from "../types/fp.js";
  */
 export async function comAtprotoRepoComAtprotoRepoListMissingBlobs(
   client: BlueskyCore,
-  request: operations.ComAtprotoRepoListMissingBlobsRequest,
+  request?: operations.ComAtprotoRepoListMissingBlobsRequest | undefined,
   options?: RequestOptions,
 ): Promise<
   Result<
@@ -50,9 +50,8 @@ export async function comAtprotoRepoComAtprotoRepoListMissingBlobs(
   const parsed = safeParse(
     request,
     (value) =>
-      operations.ComAtprotoRepoListMissingBlobsRequest$outboundSchema.parse(
-        value,
-      ),
+      operations.ComAtprotoRepoListMissingBlobsRequest$outboundSchema.optional()
+        .parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -64,8 +63,8 @@ export async function comAtprotoRepoComAtprotoRepoListMissingBlobs(
   const path = pathToFunc("/xrpc/com.atproto.repo.listMissingBlobs")();
 
   const query = encodeFormQuery({
-    "cursor": payload.cursor,
-    "limit": payload.limit,
+    "cursor": payload?.cursor,
+    "limit": payload?.limit,
   });
 
   const headers = new Headers({

@@ -56,7 +56,7 @@ export class Team extends ClientSDK {
    * List all members with access to the ozone service.
    */
   async toolsOzoneTeamListMembers(
-    request: operations.ToolsOzoneTeamListMembersRequest,
+    request?: operations.ToolsOzoneTeamListMembersRequest | undefined,
     options?: RequestOptions,
   ): Promise<operations.ToolsOzoneTeamListMembersResponseBody> {
     return unwrapAsync(toolsOzoneTeamToolsOzoneTeamListMembers(

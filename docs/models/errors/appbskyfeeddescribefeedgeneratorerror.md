@@ -1,0 +1,15 @@
+# AppBskyFeedDescribeFeedGeneratorError
+
+## Example Usage
+
+```typescript
+import { AppBskyFeedDescribeFeedGeneratorError } from "bluesky/models/errors";
+
+let value: AppBskyFeedDescribeFeedGeneratorError = "InvalidToken";
+```
+
+## Values
+
+```typescript
+"InvalidRequest" | "ExpiredToken" | "InvalidToken"
+```

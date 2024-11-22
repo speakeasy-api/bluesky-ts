@@ -133,7 +133,7 @@ export class Repo extends ClientSDK {
    * Returns a list of missing blobs for the requesting account. Intended to be used in the account migration flow.
    */
   async comAtprotoRepoListMissingBlobs(
-    request: operations.ComAtprotoRepoListMissingBlobsRequest,
+    request?: operations.ComAtprotoRepoListMissingBlobsRequest | undefined,
     options?: RequestOptions,
   ): Promise<operations.ComAtprotoRepoListMissingBlobsResponseBody> {
     return unwrapAsync(comAtprotoRepoComAtprotoRepoListMissingBlobs(

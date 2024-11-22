@@ -31,7 +31,7 @@ import { Result } from "../types/fp.js";
  */
 export async function comAtprotoAdminComAtprotoAdminGetSubjectStatus(
   client: BlueskyCore,
-  request: operations.ComAtprotoAdminGetSubjectStatusRequest,
+  request?: operations.ComAtprotoAdminGetSubjectStatusRequest | undefined,
   options?: RequestOptions,
 ): Promise<
   Result<
@@ -50,9 +50,8 @@ export async function comAtprotoAdminComAtprotoAdminGetSubjectStatus(
   const parsed = safeParse(
     request,
     (value) =>
-      operations.ComAtprotoAdminGetSubjectStatusRequest$outboundSchema.parse(
-        value,
-      ),
+      operations.ComAtprotoAdminGetSubjectStatusRequest$outboundSchema
+        .optional().parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -64,9 +63,9 @@ export async function comAtprotoAdminComAtprotoAdminGetSubjectStatus(
   const path = pathToFunc("/xrpc/com.atproto.admin.getSubjectStatus")();
 
   const query = encodeFormQuery({
-    "blob": payload.blob,
-    "did": payload.did,
-    "uri": payload.uri,
+    "blob": payload?.blob,
+    "did": payload?.did,
+    "uri": payload?.uri,
   });
 
   const headers = new Headers({

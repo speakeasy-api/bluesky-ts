@@ -31,7 +31,7 @@ import { Result } from "../types/fp.js";
  */
 export async function toolsOzoneModerationToolsOzoneModerationQueryEvents(
   client: BlueskyCore,
-  request: operations.ToolsOzoneModerationQueryEventsRequest,
+  request?: operations.ToolsOzoneModerationQueryEventsRequest | undefined,
   options?: RequestOptions,
 ): Promise<
   Result<
@@ -50,9 +50,8 @@ export async function toolsOzoneModerationToolsOzoneModerationQueryEvents(
   const parsed = safeParse(
     request,
     (value) =>
-      operations.ToolsOzoneModerationQueryEventsRequest$outboundSchema.parse(
-        value,
-      ),
+      operations.ToolsOzoneModerationQueryEventsRequest$outboundSchema
+        .optional().parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -64,24 +63,24 @@ export async function toolsOzoneModerationToolsOzoneModerationQueryEvents(
   const path = pathToFunc("/xrpc/tools.ozone.moderation.queryEvents")();
 
   const query = encodeFormQuery({
-    "addedLabels": payload.addedLabels,
-    "addedTags": payload.addedTags,
-    "collections": payload.collections,
-    "comment": payload.comment,
-    "createdAfter": payload.createdAfter,
-    "createdBefore": payload.createdBefore,
-    "createdBy": payload.createdBy,
-    "cursor": payload.cursor,
-    "hasComment": payload.hasComment,
-    "includeAllUserRecords": payload.includeAllUserRecords,
-    "limit": payload.limit,
-    "removedLabels": payload.removedLabels,
-    "removedTags": payload.removedTags,
-    "reportTypes": payload.reportTypes,
-    "sortDirection": payload.sortDirection,
-    "subject": payload.subject,
-    "subjectType": payload.subjectType,
-    "types": payload.types,
+    "addedLabels": payload?.addedLabels,
+    "addedTags": payload?.addedTags,
+    "collections": payload?.collections,
+    "comment": payload?.comment,
+    "createdAfter": payload?.createdAfter,
+    "createdBefore": payload?.createdBefore,
+    "createdBy": payload?.createdBy,
+    "cursor": payload?.cursor,
+    "hasComment": payload?.hasComment,
+    "includeAllUserRecords": payload?.includeAllUserRecords,
+    "limit": payload?.limit,
+    "removedLabels": payload?.removedLabels,
+    "removedTags": payload?.removedTags,
+    "reportTypes": payload?.reportTypes,
+    "sortDirection": payload?.sortDirection,
+    "subject": payload?.subject,
+    "subjectType": payload?.subjectType,
+    "types": payload?.types,
   });
 
   const headers = new Headers({

@@ -1,0 +1,22 @@
+# ToolsOzoneModerationDefsAccountHosting
+
+## Example Usage
+
+```typescript
+import { ToolsOzoneModerationDefsAccountHosting } from "bluesky/models/components";
+
+let value: ToolsOzoneModerationDefsAccountHosting = {
+  status: "deactivated",
+};
+```
+
+## Fields
+
+| Field                                                                                                                              | Type                                                                                                                               | Required                                                                                                                           | Description                                                                                                                        |
+| ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `status`                                                                                                                           | [components.ToolsOzoneModerationDefsAccountHostingStatus](../../models/components/toolsozonemoderationdefsaccounthostingstatus.md) | :heavy_check_mark:                                                                                                                 | N/A                                                                                                                                |
+| `updatedAt`                                                                                                                        | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)                                      | :heavy_minus_sign:                                                                                                                 | N/A                                                                                                                                |
+| `createdAt`                                                                                                                        | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)                                      | :heavy_minus_sign:                                                                                                                 | N/A                                                                                                                                |
+| `deletedAt`                                                                                                                        | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)                                      | :heavy_minus_sign:                                                                                                                 | N/A                                                                                                                                |
+| `deactivatedAt`                                                                                                                    | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)                                      | :heavy_minus_sign:                                                                                                                 | N/A                                                                                                                                |
+| `reactivatedAt`                                                                                                                    | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)                                      | :heavy_minus_sign:                                                                                                                 | N/A                                                                                                                                |

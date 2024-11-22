@@ -151,7 +151,7 @@ export class Sync extends ClientSDK {
    * Enumerates all the DID, rev, and commit CID for all repos hosted by this service. Does not require auth; implemented by PDS and Relay.
    */
   async comAtprotoSyncListRepos(
-    request: operations.ComAtprotoSyncListReposRequest,
+    request?: operations.ComAtprotoSyncListReposRequest | undefined,
     options?: RequestOptions,
   ): Promise<operations.ComAtprotoSyncListReposResponseBody> {
     return unwrapAsync(comAtprotoSyncComAtprotoSyncListRepos(

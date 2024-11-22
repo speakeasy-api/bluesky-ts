@@ -31,7 +31,7 @@ import { Result } from "../types/fp.js";
  */
 export async function appBskyGraphAppBskyGraphGetMutes(
   client: BlueskyCore,
-  request: operations.AppBskyGraphGetMutesRequest,
+  request?: operations.AppBskyGraphGetMutesRequest | undefined,
   options?: RequestOptions,
 ): Promise<
   Result<
@@ -50,7 +50,9 @@ export async function appBskyGraphAppBskyGraphGetMutes(
   const parsed = safeParse(
     request,
     (value) =>
-      operations.AppBskyGraphGetMutesRequest$outboundSchema.parse(value),
+      operations.AppBskyGraphGetMutesRequest$outboundSchema.optional().parse(
+        value,
+      ),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -62,8 +64,8 @@ export async function appBskyGraphAppBskyGraphGetMutes(
   const path = pathToFunc("/xrpc/app.bsky.graph.getMutes")();
 
   const query = encodeFormQuery({
-    "cursor": payload.cursor,
-    "limit": payload.limit,
+    "cursor": payload?.cursor,
+    "limit": payload?.limit,
   });
 
   const headers = new Headers({

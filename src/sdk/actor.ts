@@ -75,7 +75,7 @@ export class Actor extends ClientSDK {
    * Get a list of suggested actors. Expected use is discovery of accounts to follow during new account onboarding.
    */
   async appBskyActorGetSuggestions(
-    request: operations.AppBskyActorGetSuggestionsRequest,
+    request?: operations.AppBskyActorGetSuggestionsRequest | undefined,
     options?: RequestOptions,
   ): Promise<operations.AppBskyActorGetSuggestionsResponseBody> {
     return unwrapAsync(appBskyActorAppBskyActorGetSuggestions(
@@ -111,7 +111,7 @@ export class Actor extends ClientSDK {
    * Find actors (profiles) matching search criteria. Does not require auth.
    */
   async appBskyActorSearchActors(
-    request: operations.AppBskyActorSearchActorsRequest,
+    request?: operations.AppBskyActorSearchActorsRequest | undefined,
     options?: RequestOptions,
   ): Promise<operations.AppBskyActorSearchActorsResponseBody> {
     return unwrapAsync(appBskyActorAppBskyActorSearchActors(
@@ -129,7 +129,7 @@ export class Actor extends ClientSDK {
    * Find actor suggestions for a prefix search term. Expected use is for auto-completion during text field entry. Does not require auth.
    */
   async appBskyActorSearchActorsTypeahead(
-    request: operations.AppBskyActorSearchActorsTypeaheadRequest,
+    request?: operations.AppBskyActorSearchActorsTypeaheadRequest | undefined,
     options?: RequestOptions,
   ): Promise<operations.AppBskyActorSearchActorsTypeaheadResponseBody> {
     return unwrapAsync(appBskyActorAppBskyActorSearchActorsTypeahead(

@@ -1,0 +1,22 @@
+# AppBskyEmbedImagesViewImage
+
+## Example Usage
+
+```typescript
+import { AppBskyEmbedImagesViewImage } from "bluesky/models/components";
+
+let value: AppBskyEmbedImagesViewImage = {
+  thumb: "https://hefty-knight.info",
+  fullsize: "https://faraway-kielbasa.net/",
+  alt: "<value>",
+};
+```
+
+## Fields
+
+| Field                                                                                                                                                                 | Type                                                                                                                                                                  | Required                                                                                                                                                              | Description                                                                                                                                                           |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `thumb`                                                                                                                                                               | *string*                                                                                                                                                              | :heavy_check_mark:                                                                                                                                                    | Fully-qualified URL where a thumbnail of the image can be fetched. For example, CDN location provided by the App View.                                                |
+| `fullsize`                                                                                                                                                            | *string*                                                                                                                                                              | :heavy_check_mark:                                                                                                                                                    | Fully-qualified URL where a large version of the image can be fetched. May or may not be the exact original blob. For example, CDN location provided by the App View. |
+| `alt`                                                                                                                                                                 | *string*                                                                                                                                                              | :heavy_check_mark:                                                                                                                                                    | Alt text description of the image, for accessibility.                                                                                                                 |
+| `aspectRatio`                                                                                                                                                         | [components.AppBskyEmbedDefsAspectRatio](../../models/components/appbskyembeddefsaspectratio.md)                                                                      | :heavy_minus_sign:                                                                                                                                                    | width:height represents an aspect ratio. It may be approximate, and may not correspond to absolute dimensions in any given unit.                                      |

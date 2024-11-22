@@ -1,0 +1,15 @@
+# ComAtprotoSyncGetBlobError
+
+## Example Usage
+
+```typescript
+import { ComAtprotoSyncGetBlobError } from "bluesky/models/errors";
+
+let value: ComAtprotoSyncGetBlobError = "InvalidRequest";
+```
+
+## Values
+
+```typescript
+"InvalidRequest" | "ExpiredToken" | "InvalidToken" | "BlobNotFound" | "RepoNotFound" | "RepoTakendown" | "RepoSuspended" | "RepoDeactivated"
+```

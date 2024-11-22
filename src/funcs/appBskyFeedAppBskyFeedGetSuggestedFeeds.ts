@@ -31,7 +31,7 @@ import { Result } from "../types/fp.js";
  */
 export async function appBskyFeedAppBskyFeedGetSuggestedFeeds(
   client: BlueskyCore,
-  request: operations.AppBskyFeedGetSuggestedFeedsRequest,
+  request?: operations.AppBskyFeedGetSuggestedFeedsRequest | undefined,
   options?: RequestOptions,
 ): Promise<
   Result<
@@ -50,9 +50,8 @@ export async function appBskyFeedAppBskyFeedGetSuggestedFeeds(
   const parsed = safeParse(
     request,
     (value) =>
-      operations.AppBskyFeedGetSuggestedFeedsRequest$outboundSchema.parse(
-        value,
-      ),
+      operations.AppBskyFeedGetSuggestedFeedsRequest$outboundSchema.optional()
+        .parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -64,8 +63,8 @@ export async function appBskyFeedAppBskyFeedGetSuggestedFeeds(
   const path = pathToFunc("/xrpc/app.bsky.feed.getSuggestedFeeds")();
 
   const query = encodeFormQuery({
-    "cursor": payload.cursor,
-    "limit": payload.limit,
+    "cursor": payload?.cursor,
+    "limit": payload?.limit,
   });
 
   const headers = new Headers({

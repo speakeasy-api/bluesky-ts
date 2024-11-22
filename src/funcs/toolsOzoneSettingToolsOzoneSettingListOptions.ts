@@ -31,7 +31,7 @@ import { Result } from "../types/fp.js";
  */
 export async function toolsOzoneSettingToolsOzoneSettingListOptions(
   client: BlueskyCore,
-  request: operations.ToolsOzoneSettingListOptionsRequest,
+  request?: operations.ToolsOzoneSettingListOptionsRequest | undefined,
   options?: RequestOptions,
 ): Promise<
   Result<
@@ -50,9 +50,8 @@ export async function toolsOzoneSettingToolsOzoneSettingListOptions(
   const parsed = safeParse(
     request,
     (value) =>
-      operations.ToolsOzoneSettingListOptionsRequest$outboundSchema.parse(
-        value,
-      ),
+      operations.ToolsOzoneSettingListOptionsRequest$outboundSchema.optional()
+        .parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -64,11 +63,11 @@ export async function toolsOzoneSettingToolsOzoneSettingListOptions(
   const path = pathToFunc("/xrpc/tools.ozone.setting.listOptions")();
 
   const query = encodeFormQuery({
-    "cursor": payload.cursor,
-    "keys": payload.keys,
-    "limit": payload.limit,
-    "prefix": payload.prefix,
-    "scope": payload.scope,
+    "cursor": payload?.cursor,
+    "keys": payload?.keys,
+    "limit": payload?.limit,
+    "prefix": payload?.prefix,
+    "scope": payload?.scope,
   });
 
   const headers = new Headers({

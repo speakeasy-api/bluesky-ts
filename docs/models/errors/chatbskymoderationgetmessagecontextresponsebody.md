@@ -1,0 +1,18 @@
+# ChatBskyModerationGetMessageContextResponseBody
+
+Bad Request
+
+## Example Usage
+
+```typescript
+import { ChatBskyModerationGetMessageContextResponseBody } from "bluesky/models/errors";
+
+// No examples available for this model
+```
+
+## Fields
+
+| Field                                                                                                              | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| `error`                                                                                                            | [errors.ChatBskyModerationGetMessageContextError](../../models/errors/chatbskymoderationgetmessagecontexterror.md) | :heavy_check_mark:                                                                                                 | N/A                                                                                                                |
+| `message`                                                                                                          | *string*                                                                                                           | :heavy_check_mark:                                                                                                 | N/A                                                                                                                |

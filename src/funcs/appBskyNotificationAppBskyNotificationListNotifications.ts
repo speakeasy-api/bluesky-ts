@@ -31,7 +31,7 @@ import { Result } from "../types/fp.js";
  */
 export async function appBskyNotificationAppBskyNotificationListNotifications(
   client: BlueskyCore,
-  request: operations.AppBskyNotificationListNotificationsRequest,
+  request?: operations.AppBskyNotificationListNotificationsRequest | undefined,
   options?: RequestOptions,
 ): Promise<
   Result<
@@ -51,7 +51,7 @@ export async function appBskyNotificationAppBskyNotificationListNotifications(
     request,
     (value) =>
       operations.AppBskyNotificationListNotificationsRequest$outboundSchema
-        .parse(value),
+        .optional().parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -63,10 +63,10 @@ export async function appBskyNotificationAppBskyNotificationListNotifications(
   const path = pathToFunc("/xrpc/app.bsky.notification.listNotifications")();
 
   const query = encodeFormQuery({
-    "cursor": payload.cursor,
-    "limit": payload.limit,
-    "priority": payload.priority,
-    "seenAt": payload.seenAt,
+    "cursor": payload?.cursor,
+    "limit": payload?.limit,
+    "priority": payload?.priority,
+    "seenAt": payload?.seenAt,
   });
 
   const headers = new Headers({

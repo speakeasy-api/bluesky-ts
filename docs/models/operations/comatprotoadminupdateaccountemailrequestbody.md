@@ -1,0 +1,19 @@
+# ComAtprotoAdminUpdateAccountEmailRequestBody
+
+## Example Usage
+
+```typescript
+import { ComAtprotoAdminUpdateAccountEmailRequestBody } from "bluesky/models/operations";
+
+let value: ComAtprotoAdminUpdateAccountEmailRequestBody = {
+  account: "<value>",
+  email: "Lambert.Hahn20@yahoo.com",
+};
+```
+
+## Fields
+
+| Field                          | Type                           | Required                       | Description                    |
+| ------------------------------ | ------------------------------ | ------------------------------ | ------------------------------ |
+| `account`                      | *string*                       | :heavy_check_mark:             | The handle or DID of the repo. |
+| `email`                        | *string*                       | :heavy_check_mark:             | N/A                            |

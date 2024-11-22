@@ -31,7 +31,7 @@ import { Result } from "../types/fp.js";
  */
 export async function toolsOzoneModerationToolsOzoneModerationSearchRepos(
   client: BlueskyCore,
-  request: operations.ToolsOzoneModerationSearchReposRequest,
+  request?: operations.ToolsOzoneModerationSearchReposRequest | undefined,
   options?: RequestOptions,
 ): Promise<
   Result<
@@ -50,9 +50,8 @@ export async function toolsOzoneModerationToolsOzoneModerationSearchRepos(
   const parsed = safeParse(
     request,
     (value) =>
-      operations.ToolsOzoneModerationSearchReposRequest$outboundSchema.parse(
-        value,
-      ),
+      operations.ToolsOzoneModerationSearchReposRequest$outboundSchema
+        .optional().parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -64,9 +63,9 @@ export async function toolsOzoneModerationToolsOzoneModerationSearchRepos(
   const path = pathToFunc("/xrpc/tools.ozone.moderation.searchRepos")();
 
   const query = encodeFormQuery({
-    "cursor": payload.cursor,
-    "limit": payload.limit,
-    "q": payload.q,
+    "cursor": payload?.cursor,
+    "limit": payload?.limit,
+    "q": payload?.q,
   });
 
   const headers = new Headers({

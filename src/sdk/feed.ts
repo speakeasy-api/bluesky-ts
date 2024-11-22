@@ -283,7 +283,7 @@ export class Feed extends ClientSDK {
    * Get a list of suggested feeds (feed generators) for the requesting account.
    */
   async appBskyFeedGetSuggestedFeeds(
-    request: operations.AppBskyFeedGetSuggestedFeedsRequest,
+    request?: operations.AppBskyFeedGetSuggestedFeedsRequest | undefined,
     options?: RequestOptions,
   ): Promise<operations.AppBskyFeedGetSuggestedFeedsResponseBody> {
     return unwrapAsync(appBskyFeedAppBskyFeedGetSuggestedFeeds(
@@ -301,7 +301,7 @@ export class Feed extends ClientSDK {
    * Get a view of the requesting account's home timeline. This is expected to be some form of reverse-chronological feed.
    */
   async appBskyFeedGetTimeline(
-    request: operations.AppBskyFeedGetTimelineRequest,
+    request?: operations.AppBskyFeedGetTimelineRequest | undefined,
     options?: RequestOptions,
   ): Promise<operations.AppBskyFeedGetTimelineResponseBody> {
     return unwrapAsync(appBskyFeedAppBskyFeedGetTimeline(

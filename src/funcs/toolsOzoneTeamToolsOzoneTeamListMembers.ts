@@ -31,7 +31,7 @@ import { Result } from "../types/fp.js";
  */
 export async function toolsOzoneTeamToolsOzoneTeamListMembers(
   client: BlueskyCore,
-  request: operations.ToolsOzoneTeamListMembersRequest,
+  request?: operations.ToolsOzoneTeamListMembersRequest | undefined,
   options?: RequestOptions,
 ): Promise<
   Result<
@@ -50,7 +50,8 @@ export async function toolsOzoneTeamToolsOzoneTeamListMembers(
   const parsed = safeParse(
     request,
     (value) =>
-      operations.ToolsOzoneTeamListMembersRequest$outboundSchema.parse(value),
+      operations.ToolsOzoneTeamListMembersRequest$outboundSchema.optional()
+        .parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -62,8 +63,8 @@ export async function toolsOzoneTeamToolsOzoneTeamListMembers(
   const path = pathToFunc("/xrpc/tools.ozone.team.listMembers")();
 
   const query = encodeFormQuery({
-    "cursor": payload.cursor,
-    "limit": payload.limit,
+    "cursor": payload?.cursor,
+    "limit": payload?.limit,
   });
 
   const headers = new Headers({
