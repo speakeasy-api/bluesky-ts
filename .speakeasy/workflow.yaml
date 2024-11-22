@@ -1,0 +1,18 @@
+workflowVersion: 1.0.0
+speakeasyVersion: latest
+sources:
+    OAS:
+        inputs:
+            - location: bluesky_orig.yaml
+        overlays:
+            - location: fixes.yaml
+        registry:
+            location: registry.speakeasyapi.dev/bluesky/bluesky/-oas
+targets:
+    bluesky:
+        target: typescript
+        source: OAS
+        codeSamples:
+            registry:
+                location: registry.speakeasyapi.dev/bluesky/bluesky/-oas-code-samples
+            blocking: false
