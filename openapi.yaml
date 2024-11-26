@@ -7873,10 +7873,10 @@ paths:
                     type: string
                     enum:
                       - InvalidRequest
-                      - InvalidToken
                       - AccountNotFound
-                      - ExpiredToken
                       - InvalidEmail
+                      - InvalidToken
+                      - ExpiredToken
                   message:
                     type: string
         '401':
@@ -8431,8 +8431,8 @@ paths:
                     type: string
                     enum:
                       - InvalidRequest
-                      - ExpiredToken
                       - InvalidToken
+                      - ExpiredToken
                   message:
                     type: string
         '401':
@@ -9268,8 +9268,8 @@ paths:
                     type: string
                     enum:
                       - InvalidRequest
-                      - ExpiredToken
                       - InvalidToken
+                      - ExpiredToken
                   message:
                     type: string
         '401':
@@ -9391,9 +9391,9 @@ paths:
                     type: string
                     enum:
                       - InvalidRequest
-                      - ExpiredToken
-                      - InvalidToken
                       - TokenRequired
+                      - InvalidToken
+                      - ExpiredToken
                   message:
                     type: string
         '401':
