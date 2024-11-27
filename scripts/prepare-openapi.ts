@@ -18,7 +18,7 @@ const root = path.resolve(import.meta.dirname, "..");
 const originalSpec = path.join(root, "bluesky_orig.yaml");
 const fixedSpec = path.join(root, "openapi.yaml");
 
-const doc: any = parse(await Deno.readTextFile(originalSpec));
+const doc: any = parse(Deno.readTextFileSync(originalSpec));
 
 // 🟢 Add global servers entry
 doc.servers = [{ url: "https://api.bsky.app", description: "Bluesky API" }];
