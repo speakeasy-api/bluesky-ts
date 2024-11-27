@@ -3,9 +3,7 @@ speakeasyVersion: latest
 sources:
     OAS:
         inputs:
-            - location: bluesky_orig.yaml
-        overlays:
-            - location: fixes.yaml
+            - location: openapi.yaml
         registry:
             location: registry.speakeasyapi.dev/bluesky/bluesky/-oas
 targets:
