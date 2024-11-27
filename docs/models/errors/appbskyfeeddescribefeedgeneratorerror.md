@@ -5,7 +5,7 @@
 ```typescript
 import { AppBskyFeedDescribeFeedGeneratorError } from "bluesky/models/errors";
 
-let value: AppBskyFeedDescribeFeedGeneratorError = "InvalidToken";
+let value: AppBskyFeedDescribeFeedGeneratorError = "InvalidRequest";
 ```
 
 ## Values

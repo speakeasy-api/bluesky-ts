@@ -6,14 +6,14 @@
 import { AppBskyFeedDefsPostView } from "bluesky/models/components";
 
 let value: AppBskyFeedDefsPostView = {
-  uri: "https://ironclad-litter.info/",
+  uri: "https://dual-tribe.biz/",
   cid: "<id>",
   author: {
     did: "<id>",
     handle: "<value>",
   },
   record: "<value>",
-  indexedAt: new Date("2024-05-06T12:02:21.857Z"),
+  indexedAt: new Date("2024-07-29T17:42:47.688Z"),
 };
 ```
 

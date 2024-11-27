@@ -1,27 +1,27 @@
 # Signature
-(*tools.ozone.signature*)
+(*ozone.signature*)
 
 ## Overview
 
 ### Available Operations
 
-* [toolsOzoneSignatureFindCorrelation](#toolsozonesignaturefindcorrelation) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
+* [findCorrelation](#findcorrelation) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Find all correlated threat signatures between 2 or more accounts.
-* [toolsOzoneSignatureFindRelatedAccounts](#toolsozonesignaturefindrelatedaccounts) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
+* [findRelatedAccounts](#findrelatedaccounts) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Get accounts that share some matching threat signatures with the root account.
-* [toolsOzoneSignatureSearchAccounts](#toolsozonesignaturesearchaccounts) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
+* [searchAccounts](#searchaccounts) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Search for accounts that match one or more threat signature values.
 
-## toolsOzoneSignatureFindCorrelation
+## findCorrelation
 
 *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
@@ -39,7 +39,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.tools.ozone.signature.toolsOzoneSignatureFindCorrelation({
+  const result = await bluesky.ozone.signature.findCorrelation({
     dids: [
       "<id>",
     ],
@@ -58,7 +58,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { toolsOzoneSignatureToolsOzoneSignatureFindCorrelation } from "bluesky/funcs/toolsOzoneSignatureToolsOzoneSignatureFindCorrelation.js";
+import { ozoneSignatureFindCorrelation } from "bluesky/funcs/ozoneSignatureFindCorrelation.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -67,7 +67,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await toolsOzoneSignatureToolsOzoneSignatureFindCorrelation(bluesky, {
+  const res = await ozoneSignatureFindCorrelation(bluesky, {
     dids: [
       "<id>",
     ],
@@ -101,13 +101,13 @@ run();
 
 ### Errors
 
-| Error Type                                                               | Status Code                                                              | Content Type                                                             |
-| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
-| errors.ToolsOzoneSignatureFindCorrelationResponseBody                    | 400                                                                      | application/json                                                         |
-| errors.ToolsOzoneSignatureFindCorrelationToolsOzoneSignatureResponseBody | 401                                                                      | application/json                                                         |
-| errors.APIError                                                          | 4XX, 5XX                                                                 | \*/\*                                                                    |
+| Error Type                                                          | Status Code                                                         | Content Type                                                        |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| errors.ToolsOzoneSignatureFindCorrelationResponseBody               | 400                                                                 | application/json                                                    |
+| errors.ToolsOzoneSignatureFindCorrelationOzoneSignatureResponseBody | 401                                                                 | application/json                                                    |
+| errors.APIError                                                     | 4XX, 5XX                                                            | \*/\*                                                               |
 
-## toolsOzoneSignatureFindRelatedAccounts
+## findRelatedAccounts
 
 *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
@@ -125,12 +125,14 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.tools.ozone.signature.toolsOzoneSignatureFindRelatedAccounts({
+  const result = await bluesky.ozone.signature.findRelatedAccounts({
     did: "<id>",
   });
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -142,7 +144,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { toolsOzoneSignatureToolsOzoneSignatureFindRelatedAccounts } from "bluesky/funcs/toolsOzoneSignatureToolsOzoneSignatureFindRelatedAccounts.js";
+import { ozoneSignatureFindRelatedAccounts } from "bluesky/funcs/ozoneSignatureFindRelatedAccounts.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -151,7 +153,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await toolsOzoneSignatureToolsOzoneSignatureFindRelatedAccounts(bluesky, {
+  const res = await ozoneSignatureFindRelatedAccounts(bluesky, {
     did: "<id>",
   });
 
@@ -161,8 +163,10 @@ async function run() {
 
   const { value: result } = res;
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -179,17 +183,17 @@ run();
 
 ### Response
 
-**Promise\<[operations.ToolsOzoneSignatureFindRelatedAccountsResponseBody](../../models/operations/toolsozonesignaturefindrelatedaccountsresponsebody.md)\>**
+**Promise\<[operations.ToolsOzoneSignatureFindRelatedAccountsResponse](../../models/operations/toolsozonesignaturefindrelatedaccountsresponse.md)\>**
 
 ### Errors
 
-| Error Type                                                                   | Status Code                                                                  | Content Type                                                                 |
-| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| errors.ToolsOzoneSignatureFindRelatedAccountsResponseBody                    | 400                                                                          | application/json                                                             |
-| errors.ToolsOzoneSignatureFindRelatedAccountsToolsOzoneSignatureResponseBody | 401                                                                          | application/json                                                             |
-| errors.APIError                                                              | 4XX, 5XX                                                                     | \*/\*                                                                        |
+| Error Type                                                              | Status Code                                                             | Content Type                                                            |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| errors.ToolsOzoneSignatureFindRelatedAccountsResponseBody               | 400                                                                     | application/json                                                        |
+| errors.ToolsOzoneSignatureFindRelatedAccountsOzoneSignatureResponseBody | 401                                                                     | application/json                                                        |
+| errors.APIError                                                         | 4XX, 5XX                                                                | \*/\*                                                                   |
 
-## toolsOzoneSignatureSearchAccounts
+## searchAccounts
 
 *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
@@ -207,14 +211,16 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.tools.ozone.signature.toolsOzoneSignatureSearchAccounts({
+  const result = await bluesky.ozone.signature.searchAccounts({
     values: [
       "<value>",
     ],
   });
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -226,7 +232,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { toolsOzoneSignatureToolsOzoneSignatureSearchAccounts } from "bluesky/funcs/toolsOzoneSignatureToolsOzoneSignatureSearchAccounts.js";
+import { ozoneSignatureSearchAccounts } from "bluesky/funcs/ozoneSignatureSearchAccounts.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -235,7 +241,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await toolsOzoneSignatureToolsOzoneSignatureSearchAccounts(bluesky, {
+  const res = await ozoneSignatureSearchAccounts(bluesky, {
     values: [
       "<value>",
     ],
@@ -247,8 +253,10 @@ async function run() {
 
   const { value: result } = res;
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -265,12 +273,12 @@ run();
 
 ### Response
 
-**Promise\<[operations.ToolsOzoneSignatureSearchAccountsResponseBody](../../models/operations/toolsozonesignaturesearchaccountsresponsebody.md)\>**
+**Promise\<[operations.ToolsOzoneSignatureSearchAccountsResponse](../../models/operations/toolsozonesignaturesearchaccountsresponse.md)\>**
 
 ### Errors
 
-| Error Type                                                              | Status Code                                                             | Content Type                                                            |
-| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| errors.ToolsOzoneSignatureSearchAccountsResponseBody                    | 400                                                                     | application/json                                                        |
-| errors.ToolsOzoneSignatureSearchAccountsToolsOzoneSignatureResponseBody | 401                                                                     | application/json                                                        |
-| errors.APIError                                                         | 4XX, 5XX                                                                | \*/\*                                                                   |
+| Error Type                                                         | Status Code                                                        | Content Type                                                       |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| errors.ToolsOzoneSignatureSearchAccountsResponseBody               | 400                                                                | application/json                                                   |
+| errors.ToolsOzoneSignatureSearchAccountsOzoneSignatureResponseBody | 401                                                                | application/json                                                   |
+| errors.APIError                                                    | 4XX, 5XX                                                           | \*/\*                                                              |

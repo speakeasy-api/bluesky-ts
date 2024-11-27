@@ -5,7 +5,7 @@
 ```typescript
 import { ChatBskyConvoGetConvoError } from "bluesky/models/errors";
 
-let value: ChatBskyConvoGetConvoError = "ExpiredToken";
+let value: ChatBskyConvoGetConvoError = "InvalidRequest";
 ```
 
 ## Values

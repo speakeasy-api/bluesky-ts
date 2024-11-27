@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoRepoApplyWritesError } from "bluesky/models/errors";
 
-let value: ComAtprotoRepoApplyWritesError = "InvalidSwap";
+let value: ComAtprotoRepoApplyWritesError = "InvalidRequest";
 ```
 
 ## Values

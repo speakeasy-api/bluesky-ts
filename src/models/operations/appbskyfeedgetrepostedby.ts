@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod";
+import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
@@ -29,6 +30,10 @@ export type AppBskyFeedGetRepostedByResponseBody = {
   cid?: string | undefined;
   cursor?: string | undefined;
   repostedBy: Array<components.AppBskyActorDefsProfileView>;
+};
+
+export type AppBskyFeedGetRepostedByResponse = {
+  result: AppBskyFeedGetRepostedByResponseBody;
 };
 
 /** @internal */
@@ -161,5 +166,69 @@ export function appBskyFeedGetRepostedByResponseBodyFromJSON(
     (x) =>
       AppBskyFeedGetRepostedByResponseBody$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'AppBskyFeedGetRepostedByResponseBody' from JSON`,
+  );
+}
+
+/** @internal */
+export const AppBskyFeedGetRepostedByResponse$inboundSchema: z.ZodType<
+  AppBskyFeedGetRepostedByResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  Result: z.lazy(() => AppBskyFeedGetRepostedByResponseBody$inboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    "Result": "result",
+  });
+});
+
+/** @internal */
+export type AppBskyFeedGetRepostedByResponse$Outbound = {
+  Result: AppBskyFeedGetRepostedByResponseBody$Outbound;
+};
+
+/** @internal */
+export const AppBskyFeedGetRepostedByResponse$outboundSchema: z.ZodType<
+  AppBskyFeedGetRepostedByResponse$Outbound,
+  z.ZodTypeDef,
+  AppBskyFeedGetRepostedByResponse
+> = z.object({
+  result: z.lazy(() => AppBskyFeedGetRepostedByResponseBody$outboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    result: "Result",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AppBskyFeedGetRepostedByResponse$ {
+  /** @deprecated use `AppBskyFeedGetRepostedByResponse$inboundSchema` instead. */
+  export const inboundSchema = AppBskyFeedGetRepostedByResponse$inboundSchema;
+  /** @deprecated use `AppBskyFeedGetRepostedByResponse$outboundSchema` instead. */
+  export const outboundSchema = AppBskyFeedGetRepostedByResponse$outboundSchema;
+  /** @deprecated use `AppBskyFeedGetRepostedByResponse$Outbound` instead. */
+  export type Outbound = AppBskyFeedGetRepostedByResponse$Outbound;
+}
+
+export function appBskyFeedGetRepostedByResponseToJSON(
+  appBskyFeedGetRepostedByResponse: AppBskyFeedGetRepostedByResponse,
+): string {
+  return JSON.stringify(
+    AppBskyFeedGetRepostedByResponse$outboundSchema.parse(
+      appBskyFeedGetRepostedByResponse,
+    ),
+  );
+}
+
+export function appBskyFeedGetRepostedByResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<AppBskyFeedGetRepostedByResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => AppBskyFeedGetRepostedByResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AppBskyFeedGetRepostedByResponse' from JSON`,
   );
 }

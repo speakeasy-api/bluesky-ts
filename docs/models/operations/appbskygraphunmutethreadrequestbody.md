@@ -6,7 +6,7 @@
 import { AppBskyGraphUnmuteThreadRequestBody } from "bluesky/models/operations";
 
 let value: AppBskyGraphUnmuteThreadRequestBody = {
-  root: "https://polished-horde.com/",
+  root: "https://damp-object.com",
 };
 ```
 

@@ -7,7 +7,7 @@ Hosting status of the account. If not specified, then assume 'active'.
 ```typescript
 import { ComAtprotoServerRefreshSessionStatus } from "bluesky/models/operations";
 
-let value: ComAtprotoServerRefreshSessionStatus = "suspended";
+let value: ComAtprotoServerRefreshSessionStatus = "deactivated";
 ```
 
 ## Values

@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type AppBskyGraphMuteActorAppBskyGraphResponseBodyData = {
+export type AppBskyGraphMuteActorGraphResponseBodyData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,13 +16,13 @@ export type AppBskyGraphMuteActorAppBskyGraphResponseBodyData = {
 /**
  * Unauthorized
  */
-export class AppBskyGraphMuteActorAppBskyGraphResponseBody extends Error {
+export class AppBskyGraphMuteActorGraphResponseBody extends Error {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: AppBskyGraphMuteActorAppBskyGraphResponseBodyData;
+  data$: AppBskyGraphMuteActorGraphResponseBodyData;
 
-  constructor(err: AppBskyGraphMuteActorAppBskyGraphResponseBodyData) {
+  constructor(err: AppBskyGraphMuteActorGraphResponseBodyData) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -31,7 +31,7 @@ export class AppBskyGraphMuteActorAppBskyGraphResponseBody extends Error {
 
     this.error = err.error;
 
-    this.name = "AppBskyGraphMuteActorAppBskyGraphResponseBody";
+    this.name = "AppBskyGraphMuteActorGraphResponseBody";
   }
 }
 
@@ -75,51 +75,49 @@ export class AppBskyGraphMuteActorResponseBody extends Error {
 }
 
 /** @internal */
-export const AppBskyGraphMuteActorAppBskyGraphResponseBody$inboundSchema:
-  z.ZodType<
-    AppBskyGraphMuteActorAppBskyGraphResponseBody,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    error: z.literal("AuthMissing"),
-    message: z.string(),
-  })
-    .transform((v) => {
-      return new AppBskyGraphMuteActorAppBskyGraphResponseBody(v);
-    });
+export const AppBskyGraphMuteActorGraphResponseBody$inboundSchema: z.ZodType<
+  AppBskyGraphMuteActorGraphResponseBody,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  error: z.literal("AuthMissing"),
+  message: z.string(),
+})
+  .transform((v) => {
+    return new AppBskyGraphMuteActorGraphResponseBody(v);
+  });
 
 /** @internal */
-export type AppBskyGraphMuteActorAppBskyGraphResponseBody$Outbound = {
+export type AppBskyGraphMuteActorGraphResponseBody$Outbound = {
   error: "AuthMissing";
   message: string;
 };
 
 /** @internal */
-export const AppBskyGraphMuteActorAppBskyGraphResponseBody$outboundSchema:
-  z.ZodType<
-    AppBskyGraphMuteActorAppBskyGraphResponseBody$Outbound,
-    z.ZodTypeDef,
-    AppBskyGraphMuteActorAppBskyGraphResponseBody
-  > = z.instanceof(AppBskyGraphMuteActorAppBskyGraphResponseBody)
-    .transform(v => v.data$)
-    .pipe(z.object({
-      error: z.literal("AuthMissing").default("AuthMissing" as const),
-      message: z.string(),
-    }));
+export const AppBskyGraphMuteActorGraphResponseBody$outboundSchema: z.ZodType<
+  AppBskyGraphMuteActorGraphResponseBody$Outbound,
+  z.ZodTypeDef,
+  AppBskyGraphMuteActorGraphResponseBody
+> = z.instanceof(AppBskyGraphMuteActorGraphResponseBody)
+  .transform(v => v.data$)
+  .pipe(z.object({
+    error: z.literal("AuthMissing").default("AuthMissing" as const),
+    message: z.string(),
+  }));
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyGraphMuteActorAppBskyGraphResponseBody$ {
-  /** @deprecated use `AppBskyGraphMuteActorAppBskyGraphResponseBody$inboundSchema` instead. */
+export namespace AppBskyGraphMuteActorGraphResponseBody$ {
+  /** @deprecated use `AppBskyGraphMuteActorGraphResponseBody$inboundSchema` instead. */
   export const inboundSchema =
-    AppBskyGraphMuteActorAppBskyGraphResponseBody$inboundSchema;
-  /** @deprecated use `AppBskyGraphMuteActorAppBskyGraphResponseBody$outboundSchema` instead. */
+    AppBskyGraphMuteActorGraphResponseBody$inboundSchema;
+  /** @deprecated use `AppBskyGraphMuteActorGraphResponseBody$outboundSchema` instead. */
   export const outboundSchema =
-    AppBskyGraphMuteActorAppBskyGraphResponseBody$outboundSchema;
-  /** @deprecated use `AppBskyGraphMuteActorAppBskyGraphResponseBody$Outbound` instead. */
-  export type Outbound = AppBskyGraphMuteActorAppBskyGraphResponseBody$Outbound;
+    AppBskyGraphMuteActorGraphResponseBody$outboundSchema;
+  /** @deprecated use `AppBskyGraphMuteActorGraphResponseBody$Outbound` instead. */
+  export type Outbound = AppBskyGraphMuteActorGraphResponseBody$Outbound;
 }
 
 /** @internal */

@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type ChatBskyConvoGetConvoForMembersChatBskyConvoResponseBodyData = {
+export type ChatBskyConvoGetConvoForMembersChatConvoResponseBodyData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,17 +16,15 @@ export type ChatBskyConvoGetConvoForMembersChatBskyConvoResponseBodyData = {
 /**
  * Unauthorized
  */
-export class ChatBskyConvoGetConvoForMembersChatBskyConvoResponseBody
+export class ChatBskyConvoGetConvoForMembersChatConvoResponseBody
   extends Error
 {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: ChatBskyConvoGetConvoForMembersChatBskyConvoResponseBodyData;
+  data$: ChatBskyConvoGetConvoForMembersChatConvoResponseBodyData;
 
-  constructor(
-    err: ChatBskyConvoGetConvoForMembersChatBskyConvoResponseBodyData,
-  ) {
+  constructor(err: ChatBskyConvoGetConvoForMembersChatConvoResponseBodyData) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -35,7 +33,7 @@ export class ChatBskyConvoGetConvoForMembersChatBskyConvoResponseBody
 
     this.error = err.error;
 
-    this.name = "ChatBskyConvoGetConvoForMembersChatBskyConvoResponseBody";
+    this.name = "ChatBskyConvoGetConvoForMembersChatConvoResponseBody";
   }
 }
 
@@ -79,9 +77,9 @@ export class ChatBskyConvoGetConvoForMembersResponseBody extends Error {
 }
 
 /** @internal */
-export const ChatBskyConvoGetConvoForMembersChatBskyConvoResponseBody$inboundSchema:
+export const ChatBskyConvoGetConvoForMembersChatConvoResponseBody$inboundSchema:
   z.ZodType<
-    ChatBskyConvoGetConvoForMembersChatBskyConvoResponseBody,
+    ChatBskyConvoGetConvoForMembersChatConvoResponseBody,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -89,23 +87,22 @@ export const ChatBskyConvoGetConvoForMembersChatBskyConvoResponseBody$inboundSch
     message: z.string(),
   })
     .transform((v) => {
-      return new ChatBskyConvoGetConvoForMembersChatBskyConvoResponseBody(v);
+      return new ChatBskyConvoGetConvoForMembersChatConvoResponseBody(v);
     });
 
 /** @internal */
-export type ChatBskyConvoGetConvoForMembersChatBskyConvoResponseBody$Outbound =
-  {
-    error: "AuthMissing";
-    message: string;
-  };
+export type ChatBskyConvoGetConvoForMembersChatConvoResponseBody$Outbound = {
+  error: "AuthMissing";
+  message: string;
+};
 
 /** @internal */
-export const ChatBskyConvoGetConvoForMembersChatBskyConvoResponseBody$outboundSchema:
+export const ChatBskyConvoGetConvoForMembersChatConvoResponseBody$outboundSchema:
   z.ZodType<
-    ChatBskyConvoGetConvoForMembersChatBskyConvoResponseBody$Outbound,
+    ChatBskyConvoGetConvoForMembersChatConvoResponseBody$Outbound,
     z.ZodTypeDef,
-    ChatBskyConvoGetConvoForMembersChatBskyConvoResponseBody
-  > = z.instanceof(ChatBskyConvoGetConvoForMembersChatBskyConvoResponseBody)
+    ChatBskyConvoGetConvoForMembersChatConvoResponseBody
+  > = z.instanceof(ChatBskyConvoGetConvoForMembersChatConvoResponseBody)
     .transform(v => v.data$)
     .pipe(z.object({
       error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -116,16 +113,16 @@ export const ChatBskyConvoGetConvoForMembersChatBskyConvoResponseBody$outboundSc
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ChatBskyConvoGetConvoForMembersChatBskyConvoResponseBody$ {
-  /** @deprecated use `ChatBskyConvoGetConvoForMembersChatBskyConvoResponseBody$inboundSchema` instead. */
+export namespace ChatBskyConvoGetConvoForMembersChatConvoResponseBody$ {
+  /** @deprecated use `ChatBskyConvoGetConvoForMembersChatConvoResponseBody$inboundSchema` instead. */
   export const inboundSchema =
-    ChatBskyConvoGetConvoForMembersChatBskyConvoResponseBody$inboundSchema;
-  /** @deprecated use `ChatBskyConvoGetConvoForMembersChatBskyConvoResponseBody$outboundSchema` instead. */
+    ChatBskyConvoGetConvoForMembersChatConvoResponseBody$inboundSchema;
+  /** @deprecated use `ChatBskyConvoGetConvoForMembersChatConvoResponseBody$outboundSchema` instead. */
   export const outboundSchema =
-    ChatBskyConvoGetConvoForMembersChatBskyConvoResponseBody$outboundSchema;
-  /** @deprecated use `ChatBskyConvoGetConvoForMembersChatBskyConvoResponseBody$Outbound` instead. */
+    ChatBskyConvoGetConvoForMembersChatConvoResponseBody$outboundSchema;
+  /** @deprecated use `ChatBskyConvoGetConvoForMembersChatConvoResponseBody$Outbound` instead. */
   export type Outbound =
-    ChatBskyConvoGetConvoForMembersChatBskyConvoResponseBody$Outbound;
+    ChatBskyConvoGetConvoForMembersChatConvoResponseBody$Outbound;
 }
 
 /** @internal */

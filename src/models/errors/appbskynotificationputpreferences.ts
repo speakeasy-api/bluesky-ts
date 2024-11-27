@@ -8,25 +8,24 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type AppBskyNotificationPutPreferencesAppBskyNotificationResponseBodyData =
-  {
-    error: "AuthMissing";
-    message: string;
-  };
+export type AppBskyNotificationPutPreferencesNotificationResponseBodyData = {
+  error: "AuthMissing";
+  message: string;
+};
 
 /**
  * Unauthorized
  */
-export class AppBskyNotificationPutPreferencesAppBskyNotificationResponseBody
+export class AppBskyNotificationPutPreferencesNotificationResponseBody
   extends Error
 {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: AppBskyNotificationPutPreferencesAppBskyNotificationResponseBodyData;
+  data$: AppBskyNotificationPutPreferencesNotificationResponseBodyData;
 
   constructor(
-    err: AppBskyNotificationPutPreferencesAppBskyNotificationResponseBodyData,
+    err: AppBskyNotificationPutPreferencesNotificationResponseBodyData,
   ) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
@@ -36,8 +35,7 @@ export class AppBskyNotificationPutPreferencesAppBskyNotificationResponseBody
 
     this.error = err.error;
 
-    this.name =
-      "AppBskyNotificationPutPreferencesAppBskyNotificationResponseBody";
+    this.name = "AppBskyNotificationPutPreferencesNotificationResponseBody";
   }
 }
 
@@ -81,9 +79,9 @@ export class AppBskyNotificationPutPreferencesResponseBody extends Error {
 }
 
 /** @internal */
-export const AppBskyNotificationPutPreferencesAppBskyNotificationResponseBody$inboundSchema:
+export const AppBskyNotificationPutPreferencesNotificationResponseBody$inboundSchema:
   z.ZodType<
-    AppBskyNotificationPutPreferencesAppBskyNotificationResponseBody,
+    AppBskyNotificationPutPreferencesNotificationResponseBody,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -91,27 +89,23 @@ export const AppBskyNotificationPutPreferencesAppBskyNotificationResponseBody$in
     message: z.string(),
   })
     .transform((v) => {
-      return new AppBskyNotificationPutPreferencesAppBskyNotificationResponseBody(
-        v,
-      );
+      return new AppBskyNotificationPutPreferencesNotificationResponseBody(v);
     });
 
 /** @internal */
-export type AppBskyNotificationPutPreferencesAppBskyNotificationResponseBody$Outbound =
+export type AppBskyNotificationPutPreferencesNotificationResponseBody$Outbound =
   {
     error: "AuthMissing";
     message: string;
   };
 
 /** @internal */
-export const AppBskyNotificationPutPreferencesAppBskyNotificationResponseBody$outboundSchema:
+export const AppBskyNotificationPutPreferencesNotificationResponseBody$outboundSchema:
   z.ZodType<
-    AppBskyNotificationPutPreferencesAppBskyNotificationResponseBody$Outbound,
+    AppBskyNotificationPutPreferencesNotificationResponseBody$Outbound,
     z.ZodTypeDef,
-    AppBskyNotificationPutPreferencesAppBskyNotificationResponseBody
-  > = z.instanceof(
-    AppBskyNotificationPutPreferencesAppBskyNotificationResponseBody,
-  )
+    AppBskyNotificationPutPreferencesNotificationResponseBody
+  > = z.instanceof(AppBskyNotificationPutPreferencesNotificationResponseBody)
     .transform(v => v.data$)
     .pipe(z.object({
       error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -122,16 +116,16 @@ export const AppBskyNotificationPutPreferencesAppBskyNotificationResponseBody$ou
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyNotificationPutPreferencesAppBskyNotificationResponseBody$ {
-  /** @deprecated use `AppBskyNotificationPutPreferencesAppBskyNotificationResponseBody$inboundSchema` instead. */
+export namespace AppBskyNotificationPutPreferencesNotificationResponseBody$ {
+  /** @deprecated use `AppBskyNotificationPutPreferencesNotificationResponseBody$inboundSchema` instead. */
   export const inboundSchema =
-    AppBskyNotificationPutPreferencesAppBskyNotificationResponseBody$inboundSchema;
-  /** @deprecated use `AppBskyNotificationPutPreferencesAppBskyNotificationResponseBody$outboundSchema` instead. */
+    AppBskyNotificationPutPreferencesNotificationResponseBody$inboundSchema;
+  /** @deprecated use `AppBskyNotificationPutPreferencesNotificationResponseBody$outboundSchema` instead. */
   export const outboundSchema =
-    AppBskyNotificationPutPreferencesAppBskyNotificationResponseBody$outboundSchema;
-  /** @deprecated use `AppBskyNotificationPutPreferencesAppBskyNotificationResponseBody$Outbound` instead. */
+    AppBskyNotificationPutPreferencesNotificationResponseBody$outboundSchema;
+  /** @deprecated use `AppBskyNotificationPutPreferencesNotificationResponseBody$Outbound` instead. */
   export type Outbound =
-    AppBskyNotificationPutPreferencesAppBskyNotificationResponseBody$Outbound;
+    AppBskyNotificationPutPreferencesNotificationResponseBody$Outbound;
 }
 
 /** @internal */

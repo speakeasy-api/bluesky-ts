@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod";
+import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -76,6 +77,10 @@ export type AppBskyFeedSearchPostsResponseBody = {
   cursor?: string | undefined;
   hitsTotal?: number | undefined;
   posts: Array<components.AppBskyFeedDefsPostView>;
+};
+
+export type AppBskyFeedSearchPostsResponse = {
+  result: AppBskyFeedSearchPostsResponseBody;
 };
 
 /** @internal */
@@ -248,5 +253,69 @@ export function appBskyFeedSearchPostsResponseBodyFromJSON(
     (x) =>
       AppBskyFeedSearchPostsResponseBody$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'AppBskyFeedSearchPostsResponseBody' from JSON`,
+  );
+}
+
+/** @internal */
+export const AppBskyFeedSearchPostsResponse$inboundSchema: z.ZodType<
+  AppBskyFeedSearchPostsResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  Result: z.lazy(() => AppBskyFeedSearchPostsResponseBody$inboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    "Result": "result",
+  });
+});
+
+/** @internal */
+export type AppBskyFeedSearchPostsResponse$Outbound = {
+  Result: AppBskyFeedSearchPostsResponseBody$Outbound;
+};
+
+/** @internal */
+export const AppBskyFeedSearchPostsResponse$outboundSchema: z.ZodType<
+  AppBskyFeedSearchPostsResponse$Outbound,
+  z.ZodTypeDef,
+  AppBskyFeedSearchPostsResponse
+> = z.object({
+  result: z.lazy(() => AppBskyFeedSearchPostsResponseBody$outboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    result: "Result",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AppBskyFeedSearchPostsResponse$ {
+  /** @deprecated use `AppBskyFeedSearchPostsResponse$inboundSchema` instead. */
+  export const inboundSchema = AppBskyFeedSearchPostsResponse$inboundSchema;
+  /** @deprecated use `AppBskyFeedSearchPostsResponse$outboundSchema` instead. */
+  export const outboundSchema = AppBskyFeedSearchPostsResponse$outboundSchema;
+  /** @deprecated use `AppBskyFeedSearchPostsResponse$Outbound` instead. */
+  export type Outbound = AppBskyFeedSearchPostsResponse$Outbound;
+}
+
+export function appBskyFeedSearchPostsResponseToJSON(
+  appBskyFeedSearchPostsResponse: AppBskyFeedSearchPostsResponse,
+): string {
+  return JSON.stringify(
+    AppBskyFeedSearchPostsResponse$outboundSchema.parse(
+      appBskyFeedSearchPostsResponse,
+    ),
+  );
+}
+
+export function appBskyFeedSearchPostsResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<AppBskyFeedSearchPostsResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => AppBskyFeedSearchPostsResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AppBskyFeedSearchPostsResponse' from JSON`,
   );
 }

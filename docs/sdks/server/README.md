@@ -1,137 +1,137 @@
 # Server
-(*com.atproto.server*)
+(*atproto.server*)
 
 ## Overview
 
 ### Available Operations
 
-* [comAtprotoServerActivateAccount](#comatprotoserveractivateaccount) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
+* [activateAccount](#activateaccount) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Activates a currently deactivated account. Used to finalize account migration after the account's repo is imported and identity is setup.
-* [comAtprotoServerCheckAccountStatus](#comatprotoservercheckaccountstatus) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
+* [checkAccountStatus](#checkaccountstatus) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Returns the status of an account, especially as pertaining to import or recovery. Can be called many times over the course of an account migration. Requires auth and can only be called pertaining to oneself.
-* [comAtprotoServerConfirmEmail](#comatprotoserverconfirmemail) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
+* [confirmEmail](#confirmemail) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Confirm an email using a token from com.atproto.server.requestEmailConfirmation.
-* [comAtprotoServerCreateAccount](#comatprotoservercreateaccount) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
+* [createAccount](#createaccount) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Create an account. Implemented by PDS.
-* [comAtprotoServerCreateAppPassword](#comatprotoservercreateapppassword) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
+* [createAppPassword](#createapppassword) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Create an App Password.
-* [comAtprotoServerCreateInviteCode](#comatprotoservercreateinvitecode) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
+* [createInviteCode](#createinvitecode) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Create an invite code.
-* [comAtprotoServerCreateInviteCodes](#comatprotoservercreateinvitecodes) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
+* [createInviteCodes](#createinvitecodes) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Create invite codes.
-* [comAtprotoServerCreateSession](#comatprotoservercreatesession) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
+* [createSession](#createsession) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Create an authentication session.
-* [comAtprotoServerDeactivateAccount](#comatprotoserverdeactivateaccount) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
+* [deactivateAccount](#deactivateaccount) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Deactivates a currently active account. Stops serving of repo, and future writes to repo until reactivated. Used to finalize account migration with the old host after the account has been activated on the new host.
-* [comAtprotoServerDeleteAccount](#comatprotoserverdeleteaccount) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
+* [deleteAccount](#deleteaccount) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Delete an actor's account with a token and password. Can only be called after requesting a deletion token. Requires auth.
-* [comAtprotoServerDeleteSession](#comatprotoserverdeletesession) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
+* [deleteSession](#deletesession) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Delete the current session. Requires auth.
-* [comAtprotoServerDescribeServer](#comatprotoserverdescribeserver) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
+* [describeServer](#describeserver) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Describes the server's account creation requirements and capabilities. Implemented by PDS.
-* [comAtprotoServerGetAccountInviteCodes](#comatprotoservergetaccountinvitecodes) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
+* [getAccountInviteCodes](#getaccountinvitecodes) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Get all invite codes for the current account. Requires auth.
-* [comAtprotoServerGetServiceAuth](#comatprotoservergetserviceauth) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
+* [getServiceAuth](#getserviceauth) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Get a signed token on behalf of the requesting DID for the requested service.
-* [comAtprotoServerGetSession](#comatprotoservergetsession) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
+* [getSession](#getsession) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Get information about the current auth session. Requires auth.
-* [comAtprotoServerListAppPasswords](#comatprotoserverlistapppasswords) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
+* [listAppPasswords](#listapppasswords) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 List all App Passwords.
-* [comAtprotoServerRefreshSession](#comatprotoserverrefreshsession) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
+* [refreshSession](#refreshsession) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Refresh an authentication session. Requires auth using the 'refreshJwt' (not the 'accessJwt').
-* [comAtprotoServerRequestAccountDelete](#comatprotoserverrequestaccountdelete) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
+* [requestAccountDelete](#requestaccountdelete) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Initiate a user account deletion via email.
-* [comAtprotoServerRequestEmailConfirmation](#comatprotoserverrequestemailconfirmation) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
+* [requestEmailConfirmation](#requestemailconfirmation) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Request an email with a code to confirm ownership of email.
-* [comAtprotoServerRequestEmailUpdate](#comatprotoserverrequestemailupdate) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
+* [requestEmailUpdate](#requestemailupdate) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Request a token in order to update email.
-* [comAtprotoServerRequestPasswordReset](#comatprotoserverrequestpasswordreset) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
+* [requestPasswordReset](#requestpasswordreset) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Initiate a user account password reset via email.
-* [comAtprotoServerReserveSigningKey](#comatprotoserverreservesigningkey) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
+* [reserveSigningKey](#reservesigningkey) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Reserve a repo signing key, for use with account creation. Necessary so that a DID PLC update operation can be constructed during an account migraiton. Public and does not require auth; implemented by PDS. NOTE: this endpoint may change when full account migration is implemented.
-* [comAtprotoServerResetPassword](#comatprotoserverresetpassword) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
+* [resetPassword](#resetpassword) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Reset a user account password using a token.
-* [comAtprotoServerRevokeAppPassword](#comatprotoserverrevokeapppassword) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
+* [revokeAppPassword](#revokeapppassword) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Revoke an App Password by name.
-* [comAtprotoServerUpdateEmail](#comatprotoserverupdateemail) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
+* [updateEmail](#updateemail) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Update an account's email.
 
-## comAtprotoServerActivateAccount
+## activateAccount
 
 *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
@@ -149,7 +149,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  await bluesky.com.atproto.server.comAtprotoServerActivateAccount();
+  await bluesky.atproto.server.activateAccount();
 
 
 }
@@ -163,7 +163,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoServerComAtprotoServerActivateAccount } from "bluesky/funcs/comAtprotoServerComAtprotoServerActivateAccount.js";
+import { atprotoServerActivateAccount } from "bluesky/funcs/atprotoServerActivateAccount.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -172,7 +172,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoServerComAtprotoServerActivateAccount(bluesky);
+  const res = await atprotoServerActivateAccount(bluesky);
 
   if (!res.ok) {
     throw res.error;
@@ -200,13 +200,13 @@ run();
 
 ### Errors
 
-| Error Type                                                         | Status Code                                                        | Content Type                                                       |
-| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| errors.ComAtprotoServerActivateAccountResponseBody                 | 400                                                                | application/json                                                   |
-| errors.ComAtprotoServerActivateAccountComAtprotoServerResponseBody | 401                                                                | application/json                                                   |
-| errors.APIError                                                    | 4XX, 5XX                                                           | \*/\*                                                              |
+| Error Type                                                      | Status Code                                                     | Content Type                                                    |
+| --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
+| errors.ComAtprotoServerActivateAccountResponseBody              | 400                                                             | application/json                                                |
+| errors.ComAtprotoServerActivateAccountAtprotoServerResponseBody | 401                                                             | application/json                                                |
+| errors.APIError                                                 | 4XX, 5XX                                                        | \*/\*                                                           |
 
-## comAtprotoServerCheckAccountStatus
+## checkAccountStatus
 
 *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
@@ -224,7 +224,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.com.atproto.server.comAtprotoServerCheckAccountStatus();
+  const result = await bluesky.atproto.server.checkAccountStatus();
 
   // Handle the result
   console.log(result);
@@ -239,7 +239,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoServerComAtprotoServerCheckAccountStatus } from "bluesky/funcs/comAtprotoServerComAtprotoServerCheckAccountStatus.js";
+import { atprotoServerCheckAccountStatus } from "bluesky/funcs/atprotoServerCheckAccountStatus.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -248,7 +248,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoServerComAtprotoServerCheckAccountStatus(bluesky);
+  const res = await atprotoServerCheckAccountStatus(bluesky);
 
   if (!res.ok) {
     throw res.error;
@@ -277,13 +277,13 @@ run();
 
 ### Errors
 
-| Error Type                                                            | Status Code                                                           | Content Type                                                          |
-| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
-| errors.ComAtprotoServerCheckAccountStatusResponseBody                 | 400                                                                   | application/json                                                      |
-| errors.ComAtprotoServerCheckAccountStatusComAtprotoServerResponseBody | 401                                                                   | application/json                                                      |
-| errors.APIError                                                       | 4XX, 5XX                                                              | \*/\*                                                                 |
+| Error Type                                                         | Status Code                                                        | Content Type                                                       |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| errors.ComAtprotoServerCheckAccountStatusResponseBody              | 400                                                                | application/json                                                   |
+| errors.ComAtprotoServerCheckAccountStatusAtprotoServerResponseBody | 401                                                                | application/json                                                   |
+| errors.APIError                                                    | 4XX, 5XX                                                           | \*/\*                                                              |
 
-## comAtprotoServerConfirmEmail
+## confirmEmail
 
 *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
@@ -301,7 +301,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  await bluesky.com.atproto.server.comAtprotoServerConfirmEmail({
+  await bluesky.atproto.server.confirmEmail({
     email: "Eleanora_Dooley-Graham40@gmail.com",
     token: "<value>",
   });
@@ -318,7 +318,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoServerComAtprotoServerConfirmEmail } from "bluesky/funcs/comAtprotoServerComAtprotoServerConfirmEmail.js";
+import { atprotoServerConfirmEmail } from "bluesky/funcs/atprotoServerConfirmEmail.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -327,7 +327,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoServerComAtprotoServerConfirmEmail(bluesky, {
+  const res = await atprotoServerConfirmEmail(bluesky, {
     email: "Eleanora_Dooley-Graham40@gmail.com",
     token: "<value>",
   });
@@ -359,13 +359,13 @@ run();
 
 ### Errors
 
-| Error Type                                                      | Status Code                                                     | Content Type                                                    |
-| --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
-| errors.ComAtprotoServerConfirmEmailResponseBody                 | 400                                                             | application/json                                                |
-| errors.ComAtprotoServerConfirmEmailComAtprotoServerResponseBody | 401                                                             | application/json                                                |
-| errors.APIError                                                 | 4XX, 5XX                                                        | \*/\*                                                           |
+| Error Type                                                   | Status Code                                                  | Content Type                                                 |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| errors.ComAtprotoServerConfirmEmailResponseBody              | 400                                                          | application/json                                             |
+| errors.ComAtprotoServerConfirmEmailAtprotoServerResponseBody | 401                                                          | application/json                                             |
+| errors.APIError                                              | 4XX, 5XX                                                     | \*/\*                                                        |
 
-## comAtprotoServerCreateAccount
+## createAccount
 
 *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
@@ -383,7 +383,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.com.atproto.server.comAtprotoServerCreateAccount({
+  const result = await bluesky.atproto.server.createAccount({
     handle: "<value>",
   });
 
@@ -400,7 +400,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoServerComAtprotoServerCreateAccount } from "bluesky/funcs/comAtprotoServerComAtprotoServerCreateAccount.js";
+import { atprotoServerCreateAccount } from "bluesky/funcs/atprotoServerCreateAccount.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -409,7 +409,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoServerComAtprotoServerCreateAccount(bluesky, {
+  const res = await atprotoServerCreateAccount(bluesky, {
     handle: "<value>",
   });
 
@@ -441,13 +441,13 @@ run();
 
 ### Errors
 
-| Error Type                                                       | Status Code                                                      | Content Type                                                     |
-| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
-| errors.ComAtprotoServerCreateAccountResponseBody                 | 400                                                              | application/json                                                 |
-| errors.ComAtprotoServerCreateAccountComAtprotoServerResponseBody | 401                                                              | application/json                                                 |
-| errors.APIError                                                  | 4XX, 5XX                                                         | \*/\*                                                            |
+| Error Type                                                    | Status Code                                                   | Content Type                                                  |
+| ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
+| errors.ComAtprotoServerCreateAccountResponseBody              | 400                                                           | application/json                                              |
+| errors.ComAtprotoServerCreateAccountAtprotoServerResponseBody | 401                                                           | application/json                                              |
+| errors.APIError                                               | 4XX, 5XX                                                      | \*/\*                                                         |
 
-## comAtprotoServerCreateAppPassword
+## createAppPassword
 
 *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
@@ -465,7 +465,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.com.atproto.server.comAtprotoServerCreateAppPassword({
+  const result = await bluesky.atproto.server.createAppPassword({
     name: "<value>",
   });
 
@@ -482,7 +482,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoServerComAtprotoServerCreateAppPassword } from "bluesky/funcs/comAtprotoServerComAtprotoServerCreateAppPassword.js";
+import { atprotoServerCreateAppPassword } from "bluesky/funcs/atprotoServerCreateAppPassword.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -491,7 +491,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoServerComAtprotoServerCreateAppPassword(bluesky, {
+  const res = await atprotoServerCreateAppPassword(bluesky, {
     name: "<value>",
   });
 
@@ -523,13 +523,13 @@ run();
 
 ### Errors
 
-| Error Type                                                           | Status Code                                                          | Content Type                                                         |
-| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| errors.ComAtprotoServerCreateAppPasswordResponseBody                 | 400                                                                  | application/json                                                     |
-| errors.ComAtprotoServerCreateAppPasswordComAtprotoServerResponseBody | 401                                                                  | application/json                                                     |
-| errors.APIError                                                      | 4XX, 5XX                                                             | \*/\*                                                                |
+| Error Type                                                        | Status Code                                                       | Content Type                                                      |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| errors.ComAtprotoServerCreateAppPasswordResponseBody              | 400                                                               | application/json                                                  |
+| errors.ComAtprotoServerCreateAppPasswordAtprotoServerResponseBody | 401                                                               | application/json                                                  |
+| errors.APIError                                                   | 4XX, 5XX                                                          | \*/\*                                                             |
 
-## comAtprotoServerCreateInviteCode
+## createInviteCode
 
 *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
@@ -547,7 +547,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.com.atproto.server.comAtprotoServerCreateInviteCode({
+  const result = await bluesky.atproto.server.createInviteCode({
     useCount: 828315,
   });
 
@@ -564,7 +564,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoServerComAtprotoServerCreateInviteCode } from "bluesky/funcs/comAtprotoServerComAtprotoServerCreateInviteCode.js";
+import { atprotoServerCreateInviteCode } from "bluesky/funcs/atprotoServerCreateInviteCode.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -573,7 +573,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoServerComAtprotoServerCreateInviteCode(bluesky, {
+  const res = await atprotoServerCreateInviteCode(bluesky, {
     useCount: 828315,
   });
 
@@ -605,13 +605,13 @@ run();
 
 ### Errors
 
-| Error Type                                                          | Status Code                                                         | Content Type                                                        |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| errors.ComAtprotoServerCreateInviteCodeResponseBody                 | 400                                                                 | application/json                                                    |
-| errors.ComAtprotoServerCreateInviteCodeComAtprotoServerResponseBody | 401                                                                 | application/json                                                    |
-| errors.APIError                                                     | 4XX, 5XX                                                            | \*/\*                                                               |
+| Error Type                                                       | Status Code                                                      | Content Type                                                     |
+| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
+| errors.ComAtprotoServerCreateInviteCodeResponseBody              | 400                                                              | application/json                                                 |
+| errors.ComAtprotoServerCreateInviteCodeAtprotoServerResponseBody | 401                                                              | application/json                                                 |
+| errors.APIError                                                  | 4XX, 5XX                                                         | \*/\*                                                            |
 
-## comAtprotoServerCreateInviteCodes
+## createInviteCodes
 
 *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
@@ -629,7 +629,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.com.atproto.server.comAtprotoServerCreateInviteCodes({
+  const result = await bluesky.atproto.server.createInviteCodes({
     useCount: 622859,
   });
 
@@ -646,7 +646,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoServerComAtprotoServerCreateInviteCodes } from "bluesky/funcs/comAtprotoServerComAtprotoServerCreateInviteCodes.js";
+import { atprotoServerCreateInviteCodes } from "bluesky/funcs/atprotoServerCreateInviteCodes.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -655,7 +655,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoServerComAtprotoServerCreateInviteCodes(bluesky, {
+  const res = await atprotoServerCreateInviteCodes(bluesky, {
     useCount: 622859,
   });
 
@@ -687,13 +687,13 @@ run();
 
 ### Errors
 
-| Error Type                                                           | Status Code                                                          | Content Type                                                         |
-| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| errors.ComAtprotoServerCreateInviteCodesResponseBody                 | 400                                                                  | application/json                                                     |
-| errors.ComAtprotoServerCreateInviteCodesComAtprotoServerResponseBody | 401                                                                  | application/json                                                     |
-| errors.APIError                                                      | 4XX, 5XX                                                             | \*/\*                                                                |
+| Error Type                                                        | Status Code                                                       | Content Type                                                      |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| errors.ComAtprotoServerCreateInviteCodesResponseBody              | 400                                                               | application/json                                                  |
+| errors.ComAtprotoServerCreateInviteCodesAtprotoServerResponseBody | 401                                                               | application/json                                                  |
+| errors.APIError                                                   | 4XX, 5XX                                                          | \*/\*                                                             |
 
-## comAtprotoServerCreateSession
+## createSession
 
 *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
@@ -711,7 +711,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.com.atproto.server.comAtprotoServerCreateSession({
+  const result = await bluesky.atproto.server.createSession({
     identifier: "<value>",
     password: "8KbePEq2B0pDAnF",
   });
@@ -729,7 +729,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoServerComAtprotoServerCreateSession } from "bluesky/funcs/comAtprotoServerComAtprotoServerCreateSession.js";
+import { atprotoServerCreateSession } from "bluesky/funcs/atprotoServerCreateSession.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -738,7 +738,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoServerComAtprotoServerCreateSession(bluesky, {
+  const res = await atprotoServerCreateSession(bluesky, {
     identifier: "<value>",
     password: "8KbePEq2B0pDAnF",
   });
@@ -771,13 +771,13 @@ run();
 
 ### Errors
 
-| Error Type                                                       | Status Code                                                      | Content Type                                                     |
-| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
-| errors.ComAtprotoServerCreateSessionResponseBody                 | 400                                                              | application/json                                                 |
-| errors.ComAtprotoServerCreateSessionComAtprotoServerResponseBody | 401                                                              | application/json                                                 |
-| errors.APIError                                                  | 4XX, 5XX                                                         | \*/\*                                                            |
+| Error Type                                                    | Status Code                                                   | Content Type                                                  |
+| ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
+| errors.ComAtprotoServerCreateSessionResponseBody              | 400                                                           | application/json                                              |
+| errors.ComAtprotoServerCreateSessionAtprotoServerResponseBody | 401                                                           | application/json                                              |
+| errors.APIError                                               | 4XX, 5XX                                                      | \*/\*                                                         |
 
-## comAtprotoServerDeactivateAccount
+## deactivateAccount
 
 *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
@@ -795,7 +795,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  await bluesky.com.atproto.server.comAtprotoServerDeactivateAccount();
+  await bluesky.atproto.server.deactivateAccount();
 
 
 }
@@ -809,7 +809,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoServerComAtprotoServerDeactivateAccount } from "bluesky/funcs/comAtprotoServerComAtprotoServerDeactivateAccount.js";
+import { atprotoServerDeactivateAccount } from "bluesky/funcs/atprotoServerDeactivateAccount.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -818,7 +818,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoServerComAtprotoServerDeactivateAccount(bluesky);
+  const res = await atprotoServerDeactivateAccount(bluesky);
 
   if (!res.ok) {
     throw res.error;
@@ -847,13 +847,13 @@ run();
 
 ### Errors
 
-| Error Type                                                           | Status Code                                                          | Content Type                                                         |
-| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| errors.ComAtprotoServerDeactivateAccountResponseBody                 | 400                                                                  | application/json                                                     |
-| errors.ComAtprotoServerDeactivateAccountComAtprotoServerResponseBody | 401                                                                  | application/json                                                     |
-| errors.APIError                                                      | 4XX, 5XX                                                             | \*/\*                                                                |
+| Error Type                                                        | Status Code                                                       | Content Type                                                      |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| errors.ComAtprotoServerDeactivateAccountResponseBody              | 400                                                               | application/json                                                  |
+| errors.ComAtprotoServerDeactivateAccountAtprotoServerResponseBody | 401                                                               | application/json                                                  |
+| errors.APIError                                                   | 4XX, 5XX                                                          | \*/\*                                                             |
 
-## comAtprotoServerDeleteAccount
+## deleteAccount
 
 *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
@@ -871,7 +871,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  await bluesky.com.atproto.server.comAtprotoServerDeleteAccount({
+  await bluesky.atproto.server.deleteAccount({
     did: "<id>",
     password: "zBMKtu2pPdN390B",
     token: "<value>",
@@ -889,7 +889,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoServerComAtprotoServerDeleteAccount } from "bluesky/funcs/comAtprotoServerComAtprotoServerDeleteAccount.js";
+import { atprotoServerDeleteAccount } from "bluesky/funcs/atprotoServerDeleteAccount.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -898,7 +898,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoServerComAtprotoServerDeleteAccount(bluesky, {
+  const res = await atprotoServerDeleteAccount(bluesky, {
     did: "<id>",
     password: "zBMKtu2pPdN390B",
     token: "<value>",
@@ -931,13 +931,13 @@ run();
 
 ### Errors
 
-| Error Type                                                       | Status Code                                                      | Content Type                                                     |
-| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
-| errors.ComAtprotoServerDeleteAccountResponseBody                 | 400                                                              | application/json                                                 |
-| errors.ComAtprotoServerDeleteAccountComAtprotoServerResponseBody | 401                                                              | application/json                                                 |
-| errors.APIError                                                  | 4XX, 5XX                                                         | \*/\*                                                            |
+| Error Type                                                    | Status Code                                                   | Content Type                                                  |
+| ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
+| errors.ComAtprotoServerDeleteAccountResponseBody              | 400                                                           | application/json                                              |
+| errors.ComAtprotoServerDeleteAccountAtprotoServerResponseBody | 401                                                           | application/json                                              |
+| errors.APIError                                               | 4XX, 5XX                                                      | \*/\*                                                         |
 
-## comAtprotoServerDeleteSession
+## deleteSession
 
 *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
@@ -955,7 +955,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  await bluesky.com.atproto.server.comAtprotoServerDeleteSession();
+  await bluesky.atproto.server.deleteSession();
 
 
 }
@@ -969,7 +969,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoServerComAtprotoServerDeleteSession } from "bluesky/funcs/comAtprotoServerComAtprotoServerDeleteSession.js";
+import { atprotoServerDeleteSession } from "bluesky/funcs/atprotoServerDeleteSession.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -978,7 +978,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoServerComAtprotoServerDeleteSession(bluesky);
+  const res = await atprotoServerDeleteSession(bluesky);
 
   if (!res.ok) {
     throw res.error;
@@ -1006,13 +1006,13 @@ run();
 
 ### Errors
 
-| Error Type                                                       | Status Code                                                      | Content Type                                                     |
-| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
-| errors.ComAtprotoServerDeleteSessionResponseBody                 | 400                                                              | application/json                                                 |
-| errors.ComAtprotoServerDeleteSessionComAtprotoServerResponseBody | 401                                                              | application/json                                                 |
-| errors.APIError                                                  | 4XX, 5XX                                                         | \*/\*                                                            |
+| Error Type                                                    | Status Code                                                   | Content Type                                                  |
+| ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
+| errors.ComAtprotoServerDeleteSessionResponseBody              | 400                                                           | application/json                                              |
+| errors.ComAtprotoServerDeleteSessionAtprotoServerResponseBody | 401                                                           | application/json                                              |
+| errors.APIError                                               | 4XX, 5XX                                                      | \*/\*                                                         |
 
-## comAtprotoServerDescribeServer
+## describeServer
 
 *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
@@ -1030,7 +1030,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.com.atproto.server.comAtprotoServerDescribeServer();
+  const result = await bluesky.atproto.server.describeServer();
 
   // Handle the result
   console.log(result);
@@ -1045,7 +1045,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoServerComAtprotoServerDescribeServer } from "bluesky/funcs/comAtprotoServerComAtprotoServerDescribeServer.js";
+import { atprotoServerDescribeServer } from "bluesky/funcs/atprotoServerDescribeServer.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1054,7 +1054,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoServerComAtprotoServerDescribeServer(bluesky);
+  const res = await atprotoServerDescribeServer(bluesky);
 
   if (!res.ok) {
     throw res.error;
@@ -1083,13 +1083,13 @@ run();
 
 ### Errors
 
-| Error Type                                                        | Status Code                                                       | Content Type                                                      |
-| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
-| errors.ComAtprotoServerDescribeServerResponseBody                 | 400                                                               | application/json                                                  |
-| errors.ComAtprotoServerDescribeServerComAtprotoServerResponseBody | 401                                                               | application/json                                                  |
-| errors.APIError                                                   | 4XX, 5XX                                                          | \*/\*                                                             |
+| Error Type                                                     | Status Code                                                    | Content Type                                                   |
+| -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
+| errors.ComAtprotoServerDescribeServerResponseBody              | 400                                                            | application/json                                               |
+| errors.ComAtprotoServerDescribeServerAtprotoServerResponseBody | 401                                                            | application/json                                               |
+| errors.APIError                                                | 4XX, 5XX                                                       | \*/\*                                                          |
 
-## comAtprotoServerGetAccountInviteCodes
+## getAccountInviteCodes
 
 *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
@@ -1107,7 +1107,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.com.atproto.server.comAtprotoServerGetAccountInviteCodes();
+  const result = await bluesky.atproto.server.getAccountInviteCodes();
 
   // Handle the result
   console.log(result);
@@ -1122,7 +1122,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoServerComAtprotoServerGetAccountInviteCodes } from "bluesky/funcs/comAtprotoServerComAtprotoServerGetAccountInviteCodes.js";
+import { atprotoServerGetAccountInviteCodes } from "bluesky/funcs/atprotoServerGetAccountInviteCodes.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1131,7 +1131,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoServerComAtprotoServerGetAccountInviteCodes(bluesky);
+  const res = await atprotoServerGetAccountInviteCodes(bluesky);
 
   if (!res.ok) {
     throw res.error;
@@ -1161,13 +1161,13 @@ run();
 
 ### Errors
 
-| Error Type                                                               | Status Code                                                              | Content Type                                                             |
-| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
-| errors.ComAtprotoServerGetAccountInviteCodesResponseBody                 | 400                                                                      | application/json                                                         |
-| errors.ComAtprotoServerGetAccountInviteCodesComAtprotoServerResponseBody | 401                                                                      | application/json                                                         |
-| errors.APIError                                                          | 4XX, 5XX                                                                 | \*/\*                                                                    |
+| Error Type                                                            | Status Code                                                           | Content Type                                                          |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| errors.ComAtprotoServerGetAccountInviteCodesResponseBody              | 400                                                                   | application/json                                                      |
+| errors.ComAtprotoServerGetAccountInviteCodesAtprotoServerResponseBody | 401                                                                   | application/json                                                      |
+| errors.APIError                                                       | 4XX, 5XX                                                              | \*/\*                                                                 |
 
-## comAtprotoServerGetServiceAuth
+## getServiceAuth
 
 *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
@@ -1185,7 +1185,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.com.atproto.server.comAtprotoServerGetServiceAuth({
+  const result = await bluesky.atproto.server.getServiceAuth({
     aud: "<id>",
   });
 
@@ -1202,7 +1202,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoServerComAtprotoServerGetServiceAuth } from "bluesky/funcs/comAtprotoServerComAtprotoServerGetServiceAuth.js";
+import { atprotoServerGetServiceAuth } from "bluesky/funcs/atprotoServerGetServiceAuth.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1211,7 +1211,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoServerComAtprotoServerGetServiceAuth(bluesky, {
+  const res = await atprotoServerGetServiceAuth(bluesky, {
     aud: "<id>",
   });
 
@@ -1243,13 +1243,13 @@ run();
 
 ### Errors
 
-| Error Type                                                        | Status Code                                                       | Content Type                                                      |
-| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
-| errors.ComAtprotoServerGetServiceAuthResponseBody                 | 400                                                               | application/json                                                  |
-| errors.ComAtprotoServerGetServiceAuthComAtprotoServerResponseBody | 401                                                               | application/json                                                  |
-| errors.APIError                                                   | 4XX, 5XX                                                          | \*/\*                                                             |
+| Error Type                                                     | Status Code                                                    | Content Type                                                   |
+| -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
+| errors.ComAtprotoServerGetServiceAuthResponseBody              | 400                                                            | application/json                                               |
+| errors.ComAtprotoServerGetServiceAuthAtprotoServerResponseBody | 401                                                            | application/json                                               |
+| errors.APIError                                                | 4XX, 5XX                                                       | \*/\*                                                          |
 
-## comAtprotoServerGetSession
+## getSession
 
 *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
@@ -1267,7 +1267,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.com.atproto.server.comAtprotoServerGetSession();
+  const result = await bluesky.atproto.server.getSession();
 
   // Handle the result
   console.log(result);
@@ -1282,7 +1282,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoServerComAtprotoServerGetSession } from "bluesky/funcs/comAtprotoServerComAtprotoServerGetSession.js";
+import { atprotoServerGetSession } from "bluesky/funcs/atprotoServerGetSession.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1291,7 +1291,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoServerComAtprotoServerGetSession(bluesky);
+  const res = await atprotoServerGetSession(bluesky);
 
   if (!res.ok) {
     throw res.error;
@@ -1320,13 +1320,13 @@ run();
 
 ### Errors
 
-| Error Type                                                    | Status Code                                                   | Content Type                                                  |
-| ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
-| errors.ComAtprotoServerGetSessionResponseBody                 | 400                                                           | application/json                                              |
-| errors.ComAtprotoServerGetSessionComAtprotoServerResponseBody | 401                                                           | application/json                                              |
-| errors.APIError                                               | 4XX, 5XX                                                      | \*/\*                                                         |
+| Error Type                                                 | Status Code                                                | Content Type                                               |
+| ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
+| errors.ComAtprotoServerGetSessionResponseBody              | 400                                                        | application/json                                           |
+| errors.ComAtprotoServerGetSessionAtprotoServerResponseBody | 401                                                        | application/json                                           |
+| errors.APIError                                            | 4XX, 5XX                                                   | \*/\*                                                      |
 
-## comAtprotoServerListAppPasswords
+## listAppPasswords
 
 *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
@@ -1344,7 +1344,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.com.atproto.server.comAtprotoServerListAppPasswords();
+  const result = await bluesky.atproto.server.listAppPasswords();
 
   // Handle the result
   console.log(result);
@@ -1359,7 +1359,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoServerComAtprotoServerListAppPasswords } from "bluesky/funcs/comAtprotoServerComAtprotoServerListAppPasswords.js";
+import { atprotoServerListAppPasswords } from "bluesky/funcs/atprotoServerListAppPasswords.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1368,7 +1368,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoServerComAtprotoServerListAppPasswords(bluesky);
+  const res = await atprotoServerListAppPasswords(bluesky);
 
   if (!res.ok) {
     throw res.error;
@@ -1397,13 +1397,13 @@ run();
 
 ### Errors
 
-| Error Type                                                          | Status Code                                                         | Content Type                                                        |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| errors.ComAtprotoServerListAppPasswordsResponseBody                 | 400                                                                 | application/json                                                    |
-| errors.ComAtprotoServerListAppPasswordsComAtprotoServerResponseBody | 401                                                                 | application/json                                                    |
-| errors.APIError                                                     | 4XX, 5XX                                                            | \*/\*                                                               |
+| Error Type                                                       | Status Code                                                      | Content Type                                                     |
+| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
+| errors.ComAtprotoServerListAppPasswordsResponseBody              | 400                                                              | application/json                                                 |
+| errors.ComAtprotoServerListAppPasswordsAtprotoServerResponseBody | 401                                                              | application/json                                                 |
+| errors.APIError                                                  | 4XX, 5XX                                                         | \*/\*                                                            |
 
-## comAtprotoServerRefreshSession
+## refreshSession
 
 *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
@@ -1421,7 +1421,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.com.atproto.server.comAtprotoServerRefreshSession();
+  const result = await bluesky.atproto.server.refreshSession();
 
   // Handle the result
   console.log(result);
@@ -1436,7 +1436,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoServerComAtprotoServerRefreshSession } from "bluesky/funcs/comAtprotoServerComAtprotoServerRefreshSession.js";
+import { atprotoServerRefreshSession } from "bluesky/funcs/atprotoServerRefreshSession.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1445,7 +1445,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoServerComAtprotoServerRefreshSession(bluesky);
+  const res = await atprotoServerRefreshSession(bluesky);
 
   if (!res.ok) {
     throw res.error;
@@ -1474,13 +1474,13 @@ run();
 
 ### Errors
 
-| Error Type                                                        | Status Code                                                       | Content Type                                                      |
-| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
-| errors.ComAtprotoServerRefreshSessionResponseBody                 | 400                                                               | application/json                                                  |
-| errors.ComAtprotoServerRefreshSessionComAtprotoServerResponseBody | 401                                                               | application/json                                                  |
-| errors.APIError                                                   | 4XX, 5XX                                                          | \*/\*                                                             |
+| Error Type                                                     | Status Code                                                    | Content Type                                                   |
+| -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
+| errors.ComAtprotoServerRefreshSessionResponseBody              | 400                                                            | application/json                                               |
+| errors.ComAtprotoServerRefreshSessionAtprotoServerResponseBody | 401                                                            | application/json                                               |
+| errors.APIError                                                | 4XX, 5XX                                                       | \*/\*                                                          |
 
-## comAtprotoServerRequestAccountDelete
+## requestAccountDelete
 
 *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
@@ -1498,7 +1498,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  await bluesky.com.atproto.server.comAtprotoServerRequestAccountDelete();
+  await bluesky.atproto.server.requestAccountDelete();
 
 
 }
@@ -1512,7 +1512,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoServerComAtprotoServerRequestAccountDelete } from "bluesky/funcs/comAtprotoServerComAtprotoServerRequestAccountDelete.js";
+import { atprotoServerRequestAccountDelete } from "bluesky/funcs/atprotoServerRequestAccountDelete.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1521,7 +1521,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoServerComAtprotoServerRequestAccountDelete(bluesky);
+  const res = await atprotoServerRequestAccountDelete(bluesky);
 
   if (!res.ok) {
     throw res.error;
@@ -1549,13 +1549,13 @@ run();
 
 ### Errors
 
-| Error Type                                                              | Status Code                                                             | Content Type                                                            |
-| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| errors.ComAtprotoServerRequestAccountDeleteResponseBody                 | 400                                                                     | application/json                                                        |
-| errors.ComAtprotoServerRequestAccountDeleteComAtprotoServerResponseBody | 401                                                                     | application/json                                                        |
-| errors.APIError                                                         | 4XX, 5XX                                                                | \*/\*                                                                   |
+| Error Type                                                           | Status Code                                                          | Content Type                                                         |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| errors.ComAtprotoServerRequestAccountDeleteResponseBody              | 400                                                                  | application/json                                                     |
+| errors.ComAtprotoServerRequestAccountDeleteAtprotoServerResponseBody | 401                                                                  | application/json                                                     |
+| errors.APIError                                                      | 4XX, 5XX                                                             | \*/\*                                                                |
 
-## comAtprotoServerRequestEmailConfirmation
+## requestEmailConfirmation
 
 *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
@@ -1573,7 +1573,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  await bluesky.com.atproto.server.comAtprotoServerRequestEmailConfirmation();
+  await bluesky.atproto.server.requestEmailConfirmation();
 
 
 }
@@ -1587,7 +1587,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoServerComAtprotoServerRequestEmailConfirmation } from "bluesky/funcs/comAtprotoServerComAtprotoServerRequestEmailConfirmation.js";
+import { atprotoServerRequestEmailConfirmation } from "bluesky/funcs/atprotoServerRequestEmailConfirmation.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1596,7 +1596,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoServerComAtprotoServerRequestEmailConfirmation(bluesky);
+  const res = await atprotoServerRequestEmailConfirmation(bluesky);
 
   if (!res.ok) {
     throw res.error;
@@ -1624,13 +1624,13 @@ run();
 
 ### Errors
 
-| Error Type                                                                  | Status Code                                                                 | Content Type                                                                |
-| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| errors.ComAtprotoServerRequestEmailConfirmationResponseBody                 | 400                                                                         | application/json                                                            |
-| errors.ComAtprotoServerRequestEmailConfirmationComAtprotoServerResponseBody | 401                                                                         | application/json                                                            |
-| errors.APIError                                                             | 4XX, 5XX                                                                    | \*/\*                                                                       |
+| Error Type                                                               | Status Code                                                              | Content Type                                                             |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| errors.ComAtprotoServerRequestEmailConfirmationResponseBody              | 400                                                                      | application/json                                                         |
+| errors.ComAtprotoServerRequestEmailConfirmationAtprotoServerResponseBody | 401                                                                      | application/json                                                         |
+| errors.APIError                                                          | 4XX, 5XX                                                                 | \*/\*                                                                    |
 
-## comAtprotoServerRequestEmailUpdate
+## requestEmailUpdate
 
 *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
@@ -1648,7 +1648,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.com.atproto.server.comAtprotoServerRequestEmailUpdate();
+  const result = await bluesky.atproto.server.requestEmailUpdate();
 
   // Handle the result
   console.log(result);
@@ -1663,7 +1663,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoServerComAtprotoServerRequestEmailUpdate } from "bluesky/funcs/comAtprotoServerComAtprotoServerRequestEmailUpdate.js";
+import { atprotoServerRequestEmailUpdate } from "bluesky/funcs/atprotoServerRequestEmailUpdate.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1672,7 +1672,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoServerComAtprotoServerRequestEmailUpdate(bluesky);
+  const res = await atprotoServerRequestEmailUpdate(bluesky);
 
   if (!res.ok) {
     throw res.error;
@@ -1701,13 +1701,13 @@ run();
 
 ### Errors
 
-| Error Type                                                            | Status Code                                                           | Content Type                                                          |
-| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
-| errors.ComAtprotoServerRequestEmailUpdateResponseBody                 | 400                                                                   | application/json                                                      |
-| errors.ComAtprotoServerRequestEmailUpdateComAtprotoServerResponseBody | 401                                                                   | application/json                                                      |
-| errors.APIError                                                       | 4XX, 5XX                                                              | \*/\*                                                                 |
+| Error Type                                                         | Status Code                                                        | Content Type                                                       |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| errors.ComAtprotoServerRequestEmailUpdateResponseBody              | 400                                                                | application/json                                                   |
+| errors.ComAtprotoServerRequestEmailUpdateAtprotoServerResponseBody | 401                                                                | application/json                                                   |
+| errors.APIError                                                    | 4XX, 5XX                                                           | \*/\*                                                              |
 
-## comAtprotoServerRequestPasswordReset
+## requestPasswordReset
 
 *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
@@ -1725,7 +1725,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  await bluesky.com.atproto.server.comAtprotoServerRequestPasswordReset({
+  await bluesky.atproto.server.requestPasswordReset({
     email: "Columbus.Veum64@yahoo.com",
   });
 
@@ -1741,7 +1741,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoServerComAtprotoServerRequestPasswordReset } from "bluesky/funcs/comAtprotoServerComAtprotoServerRequestPasswordReset.js";
+import { atprotoServerRequestPasswordReset } from "bluesky/funcs/atprotoServerRequestPasswordReset.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1750,7 +1750,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoServerComAtprotoServerRequestPasswordReset(bluesky, {
+  const res = await atprotoServerRequestPasswordReset(bluesky, {
     email: "Columbus.Veum64@yahoo.com",
   });
 
@@ -1781,13 +1781,13 @@ run();
 
 ### Errors
 
-| Error Type                                                              | Status Code                                                             | Content Type                                                            |
-| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| errors.ComAtprotoServerRequestPasswordResetResponseBody                 | 400                                                                     | application/json                                                        |
-| errors.ComAtprotoServerRequestPasswordResetComAtprotoServerResponseBody | 401                                                                     | application/json                                                        |
-| errors.APIError                                                         | 4XX, 5XX                                                                | \*/\*                                                                   |
+| Error Type                                                           | Status Code                                                          | Content Type                                                         |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| errors.ComAtprotoServerRequestPasswordResetResponseBody              | 400                                                                  | application/json                                                     |
+| errors.ComAtprotoServerRequestPasswordResetAtprotoServerResponseBody | 401                                                                  | application/json                                                     |
+| errors.APIError                                                      | 4XX, 5XX                                                             | \*/\*                                                                |
 
-## comAtprotoServerReserveSigningKey
+## reserveSigningKey
 
 *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
@@ -1805,7 +1805,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.com.atproto.server.comAtprotoServerReserveSigningKey();
+  const result = await bluesky.atproto.server.reserveSigningKey();
 
   // Handle the result
   console.log(result);
@@ -1820,7 +1820,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoServerComAtprotoServerReserveSigningKey } from "bluesky/funcs/comAtprotoServerComAtprotoServerReserveSigningKey.js";
+import { atprotoServerReserveSigningKey } from "bluesky/funcs/atprotoServerReserveSigningKey.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1829,7 +1829,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoServerComAtprotoServerReserveSigningKey(bluesky);
+  const res = await atprotoServerReserveSigningKey(bluesky);
 
   if (!res.ok) {
     throw res.error;
@@ -1859,13 +1859,13 @@ run();
 
 ### Errors
 
-| Error Type                                                           | Status Code                                                          | Content Type                                                         |
-| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| errors.ComAtprotoServerReserveSigningKeyResponseBody                 | 400                                                                  | application/json                                                     |
-| errors.ComAtprotoServerReserveSigningKeyComAtprotoServerResponseBody | 401                                                                  | application/json                                                     |
-| errors.APIError                                                      | 4XX, 5XX                                                             | \*/\*                                                                |
+| Error Type                                                        | Status Code                                                       | Content Type                                                      |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| errors.ComAtprotoServerReserveSigningKeyResponseBody              | 400                                                               | application/json                                                  |
+| errors.ComAtprotoServerReserveSigningKeyAtprotoServerResponseBody | 401                                                               | application/json                                                  |
+| errors.APIError                                                   | 4XX, 5XX                                                          | \*/\*                                                             |
 
-## comAtprotoServerResetPassword
+## resetPassword
 
 *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
@@ -1883,7 +1883,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  await bluesky.com.atproto.server.comAtprotoServerResetPassword({
+  await bluesky.atproto.server.resetPassword({
     token: "<value>",
     password: "H4fiBPbFtt_OLjH",
   });
@@ -1900,7 +1900,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoServerComAtprotoServerResetPassword } from "bluesky/funcs/comAtprotoServerComAtprotoServerResetPassword.js";
+import { atprotoServerResetPassword } from "bluesky/funcs/atprotoServerResetPassword.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1909,7 +1909,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoServerComAtprotoServerResetPassword(bluesky, {
+  const res = await atprotoServerResetPassword(bluesky, {
     token: "<value>",
     password: "H4fiBPbFtt_OLjH",
   });
@@ -1941,13 +1941,13 @@ run();
 
 ### Errors
 
-| Error Type                                                       | Status Code                                                      | Content Type                                                     |
-| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
-| errors.ComAtprotoServerResetPasswordResponseBody                 | 400                                                              | application/json                                                 |
-| errors.ComAtprotoServerResetPasswordComAtprotoServerResponseBody | 401                                                              | application/json                                                 |
-| errors.APIError                                                  | 4XX, 5XX                                                         | \*/\*                                                            |
+| Error Type                                                    | Status Code                                                   | Content Type                                                  |
+| ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
+| errors.ComAtprotoServerResetPasswordResponseBody              | 400                                                           | application/json                                              |
+| errors.ComAtprotoServerResetPasswordAtprotoServerResponseBody | 401                                                           | application/json                                              |
+| errors.APIError                                               | 4XX, 5XX                                                      | \*/\*                                                         |
 
-## comAtprotoServerRevokeAppPassword
+## revokeAppPassword
 
 *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
@@ -1965,7 +1965,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  await bluesky.com.atproto.server.comAtprotoServerRevokeAppPassword({
+  await bluesky.atproto.server.revokeAppPassword({
     name: "<value>",
   });
 
@@ -1981,7 +1981,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoServerComAtprotoServerRevokeAppPassword } from "bluesky/funcs/comAtprotoServerComAtprotoServerRevokeAppPassword.js";
+import { atprotoServerRevokeAppPassword } from "bluesky/funcs/atprotoServerRevokeAppPassword.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1990,7 +1990,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoServerComAtprotoServerRevokeAppPassword(bluesky, {
+  const res = await atprotoServerRevokeAppPassword(bluesky, {
     name: "<value>",
   });
 
@@ -2021,13 +2021,13 @@ run();
 
 ### Errors
 
-| Error Type                                                           | Status Code                                                          | Content Type                                                         |
-| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| errors.ComAtprotoServerRevokeAppPasswordResponseBody                 | 400                                                                  | application/json                                                     |
-| errors.ComAtprotoServerRevokeAppPasswordComAtprotoServerResponseBody | 401                                                                  | application/json                                                     |
-| errors.APIError                                                      | 4XX, 5XX                                                             | \*/\*                                                                |
+| Error Type                                                        | Status Code                                                       | Content Type                                                      |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| errors.ComAtprotoServerRevokeAppPasswordResponseBody              | 400                                                               | application/json                                                  |
+| errors.ComAtprotoServerRevokeAppPasswordAtprotoServerResponseBody | 401                                                               | application/json                                                  |
+| errors.APIError                                                   | 4XX, 5XX                                                          | \*/\*                                                             |
 
-## comAtprotoServerUpdateEmail
+## updateEmail
 
 *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
@@ -2045,7 +2045,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  await bluesky.com.atproto.server.comAtprotoServerUpdateEmail({
+  await bluesky.atproto.server.updateEmail({
     email: "Isai.Auer35@yahoo.com",
   });
 
@@ -2061,7 +2061,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoServerComAtprotoServerUpdateEmail } from "bluesky/funcs/comAtprotoServerComAtprotoServerUpdateEmail.js";
+import { atprotoServerUpdateEmail } from "bluesky/funcs/atprotoServerUpdateEmail.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2070,7 +2070,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoServerComAtprotoServerUpdateEmail(bluesky, {
+  const res = await atprotoServerUpdateEmail(bluesky, {
     email: "Isai.Auer35@yahoo.com",
   });
 
@@ -2101,8 +2101,8 @@ run();
 
 ### Errors
 
-| Error Type                                                     | Status Code                                                    | Content Type                                                   |
-| -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
-| errors.ComAtprotoServerUpdateEmailResponseBody                 | 400                                                            | application/json                                               |
-| errors.ComAtprotoServerUpdateEmailComAtprotoServerResponseBody | 401                                                            | application/json                                               |
-| errors.APIError                                                | 4XX, 5XX                                                       | \*/\*                                                          |
+| Error Type                                                  | Status Code                                                 | Content Type                                                |
+| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
+| errors.ComAtprotoServerUpdateEmailResponseBody              | 400                                                         | application/json                                            |
+| errors.ComAtprotoServerUpdateEmailAtprotoServerResponseBody | 401                                                         | application/json                                            |
+| errors.APIError                                             | 4XX, 5XX                                                    | \*/\*                                                       |

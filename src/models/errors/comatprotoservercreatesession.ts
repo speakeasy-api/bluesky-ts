@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type ComAtprotoServerCreateSessionComAtprotoServerResponseBodyData = {
+export type ComAtprotoServerCreateSessionAtprotoServerResponseBodyData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,17 +16,15 @@ export type ComAtprotoServerCreateSessionComAtprotoServerResponseBodyData = {
 /**
  * Unauthorized
  */
-export class ComAtprotoServerCreateSessionComAtprotoServerResponseBody
+export class ComAtprotoServerCreateSessionAtprotoServerResponseBody
   extends Error
 {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: ComAtprotoServerCreateSessionComAtprotoServerResponseBodyData;
+  data$: ComAtprotoServerCreateSessionAtprotoServerResponseBodyData;
 
-  constructor(
-    err: ComAtprotoServerCreateSessionComAtprotoServerResponseBodyData,
-  ) {
+  constructor(err: ComAtprotoServerCreateSessionAtprotoServerResponseBodyData) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -35,7 +33,7 @@ export class ComAtprotoServerCreateSessionComAtprotoServerResponseBody
 
     this.error = err.error;
 
-    this.name = "ComAtprotoServerCreateSessionComAtprotoServerResponseBody";
+    this.name = "ComAtprotoServerCreateSessionAtprotoServerResponseBody";
   }
 }
 
@@ -81,9 +79,9 @@ export class ComAtprotoServerCreateSessionResponseBody extends Error {
 }
 
 /** @internal */
-export const ComAtprotoServerCreateSessionComAtprotoServerResponseBody$inboundSchema:
+export const ComAtprotoServerCreateSessionAtprotoServerResponseBody$inboundSchema:
   z.ZodType<
-    ComAtprotoServerCreateSessionComAtprotoServerResponseBody,
+    ComAtprotoServerCreateSessionAtprotoServerResponseBody,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -91,23 +89,22 @@ export const ComAtprotoServerCreateSessionComAtprotoServerResponseBody$inboundSc
     message: z.string(),
   })
     .transform((v) => {
-      return new ComAtprotoServerCreateSessionComAtprotoServerResponseBody(v);
+      return new ComAtprotoServerCreateSessionAtprotoServerResponseBody(v);
     });
 
 /** @internal */
-export type ComAtprotoServerCreateSessionComAtprotoServerResponseBody$Outbound =
-  {
-    error: "AuthMissing";
-    message: string;
-  };
+export type ComAtprotoServerCreateSessionAtprotoServerResponseBody$Outbound = {
+  error: "AuthMissing";
+  message: string;
+};
 
 /** @internal */
-export const ComAtprotoServerCreateSessionComAtprotoServerResponseBody$outboundSchema:
+export const ComAtprotoServerCreateSessionAtprotoServerResponseBody$outboundSchema:
   z.ZodType<
-    ComAtprotoServerCreateSessionComAtprotoServerResponseBody$Outbound,
+    ComAtprotoServerCreateSessionAtprotoServerResponseBody$Outbound,
     z.ZodTypeDef,
-    ComAtprotoServerCreateSessionComAtprotoServerResponseBody
-  > = z.instanceof(ComAtprotoServerCreateSessionComAtprotoServerResponseBody)
+    ComAtprotoServerCreateSessionAtprotoServerResponseBody
+  > = z.instanceof(ComAtprotoServerCreateSessionAtprotoServerResponseBody)
     .transform(v => v.data$)
     .pipe(z.object({
       error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -118,16 +115,16 @@ export const ComAtprotoServerCreateSessionComAtprotoServerResponseBody$outboundS
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoServerCreateSessionComAtprotoServerResponseBody$ {
-  /** @deprecated use `ComAtprotoServerCreateSessionComAtprotoServerResponseBody$inboundSchema` instead. */
+export namespace ComAtprotoServerCreateSessionAtprotoServerResponseBody$ {
+  /** @deprecated use `ComAtprotoServerCreateSessionAtprotoServerResponseBody$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoServerCreateSessionComAtprotoServerResponseBody$inboundSchema;
-  /** @deprecated use `ComAtprotoServerCreateSessionComAtprotoServerResponseBody$outboundSchema` instead. */
+    ComAtprotoServerCreateSessionAtprotoServerResponseBody$inboundSchema;
+  /** @deprecated use `ComAtprotoServerCreateSessionAtprotoServerResponseBody$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoServerCreateSessionComAtprotoServerResponseBody$outboundSchema;
-  /** @deprecated use `ComAtprotoServerCreateSessionComAtprotoServerResponseBody$Outbound` instead. */
+    ComAtprotoServerCreateSessionAtprotoServerResponseBody$outboundSchema;
+  /** @deprecated use `ComAtprotoServerCreateSessionAtprotoServerResponseBody$Outbound` instead. */
   export type Outbound =
-    ComAtprotoServerCreateSessionComAtprotoServerResponseBody$Outbound;
+    ComAtprotoServerCreateSessionAtprotoServerResponseBody$Outbound;
 }
 
 /** @internal */

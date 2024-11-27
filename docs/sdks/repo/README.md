@@ -1,62 +1,62 @@
 # Repo
-(*com.atproto.repo*)
+(*atproto.repo*)
 
 ## Overview
 
 ### Available Operations
 
-* [comAtprotoRepoApplyWrites](#comatprotorepoapplywrites) - *This endpoint is part of the atproto PDS repository management APIs. Requests usually require authentication (unlike the `com.atproto.sync.*` endpoints), and are made directly to the user's own PDS instance.*
+* [applyWrites](#applywrites) - *This endpoint is part of the atproto PDS repository management APIs. Requests usually require authentication (unlike the `com.atproto.sync.*` endpoints), and are made directly to the user's own PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Apply a batch transaction of repository creates, updates, and deletes. Requires auth, implemented by PDS.
-* [comAtprotoRepoCreateRecord](#comatprotorepocreaterecord) - *This endpoint is part of the atproto PDS repository management APIs. Requests usually require authentication (unlike the `com.atproto.sync.*` endpoints), and are made directly to the user's own PDS instance.*
+* [createRecord](#createrecord) - *This endpoint is part of the atproto PDS repository management APIs. Requests usually require authentication (unlike the `com.atproto.sync.*` endpoints), and are made directly to the user's own PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Create a single new repository record. Requires auth, implemented by PDS.
-* [comAtprotoRepoDeleteRecord](#comatprotorepodeleterecord) - *This endpoint is part of the atproto PDS repository management APIs. Requests usually require authentication (unlike the `com.atproto.sync.*` endpoints), and are made directly to the user's own PDS instance.*
+* [deleteRecord](#deleterecord) - *This endpoint is part of the atproto PDS repository management APIs. Requests usually require authentication (unlike the `com.atproto.sync.*` endpoints), and are made directly to the user's own PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Delete a repository record, or ensure it doesn't exist. Requires auth, implemented by PDS.
-* [comAtprotoRepoDescribeRepo](#comatprotorepodescriberepo) - *This endpoint is part of the atproto PDS repository management APIs. Requests usually require authentication (unlike the `com.atproto.sync.*` endpoints), and are made directly to the user's own PDS instance.*
+* [describeRepo](#describerepo) - *This endpoint is part of the atproto PDS repository management APIs. Requests usually require authentication (unlike the `com.atproto.sync.*` endpoints), and are made directly to the user's own PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Get information about an account and repository, including the list of collections. Does not require auth.
-* [comAtprotoRepoGetRecord](#comatprotorepogetrecord) - *This endpoint is part of the atproto PDS repository management APIs. Requests usually require authentication (unlike the `com.atproto.sync.*` endpoints), and are made directly to the user's own PDS instance.*
+* [getRecord](#getrecord) - *This endpoint is part of the atproto PDS repository management APIs. Requests usually require authentication (unlike the `com.atproto.sync.*` endpoints), and are made directly to the user's own PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Get a single record from a repository. Does not require auth.
-* [comAtprotoRepoImportRepo](#comatprotorepoimportrepo) - *This endpoint is part of the atproto PDS repository management APIs. Requests usually require authentication (unlike the `com.atproto.sync.*` endpoints), and are made directly to the user's own PDS instance.*
+* [importRepo](#importrepo) - *This endpoint is part of the atproto PDS repository management APIs. Requests usually require authentication (unlike the `com.atproto.sync.*` endpoints), and are made directly to the user's own PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Import a repo in the form of a CAR file. Requires Content-Length HTTP header to be set.
-* [comAtprotoRepoListMissingBlobs](#comatprotorepolistmissingblobs) - *This endpoint is part of the atproto PDS repository management APIs. Requests usually require authentication (unlike the `com.atproto.sync.*` endpoints), and are made directly to the user's own PDS instance.*
+* [listMissingBlobs](#listmissingblobs) - *This endpoint is part of the atproto PDS repository management APIs. Requests usually require authentication (unlike the `com.atproto.sync.*` endpoints), and are made directly to the user's own PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Returns a list of missing blobs for the requesting account. Intended to be used in the account migration flow.
-* [comAtprotoRepoListRecords](#comatprotorepolistrecords) - *This endpoint is part of the atproto PDS repository management APIs. Requests usually require authentication (unlike the `com.atproto.sync.*` endpoints), and are made directly to the user's own PDS instance.*
+* [listRecords](#listrecords) - *This endpoint is part of the atproto PDS repository management APIs. Requests usually require authentication (unlike the `com.atproto.sync.*` endpoints), and are made directly to the user's own PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 List a range of records in a repository, matching a specific collection. Does not require auth.
-* [comAtprotoRepoPutRecord](#comatprotorepoputrecord) - *This endpoint is part of the atproto PDS repository management APIs. Requests usually require authentication (unlike the `com.atproto.sync.*` endpoints), and are made directly to the user's own PDS instance.*
+* [putRecord](#putrecord) - *This endpoint is part of the atproto PDS repository management APIs. Requests usually require authentication (unlike the `com.atproto.sync.*` endpoints), and are made directly to the user's own PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Write a repository record, creating or updating it as needed. Requires auth, implemented by PDS.
-* [comAtprotoRepoUploadBlob](#comatprotorepouploadblob) - *This endpoint is part of the atproto PDS repository management APIs. Requests usually require authentication (unlike the `com.atproto.sync.*` endpoints), and are made directly to the user's own PDS instance.*
+* [uploadBlob](#uploadblob) - *This endpoint is part of the atproto PDS repository management APIs. Requests usually require authentication (unlike the `com.atproto.sync.*` endpoints), and are made directly to the user's own PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Upload a new blob, to be referenced from a repository record. The blob will be deleted if it is not referenced within a time window (eg, minutes). Blob restrictions (mimetype, size, etc) are enforced when the reference is created. Requires auth, implemented by PDS.
 
-## comAtprotoRepoApplyWrites
+## applyWrites
 
 *This endpoint is part of the atproto PDS repository management APIs. Requests usually require authentication (unlike the `com.atproto.sync.*` endpoints), and are made directly to the user's own PDS instance.*
 
@@ -74,7 +74,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.com.atproto.repo.comAtprotoRepoApplyWrites({
+  const result = await bluesky.atproto.repo.applyWrites({
     repo: "<value>",
     writes: [
       {
@@ -106,7 +106,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoRepoComAtprotoRepoApplyWrites } from "bluesky/funcs/comAtprotoRepoComAtprotoRepoApplyWrites.js";
+import { atprotoRepoApplyWrites } from "bluesky/funcs/atprotoRepoApplyWrites.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -115,7 +115,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoRepoComAtprotoRepoApplyWrites(bluesky, {
+  const res = await atprotoRepoApplyWrites(bluesky, {
     repo: "<value>",
     writes: [
       {
@@ -162,13 +162,13 @@ run();
 
 ### Errors
 
-| Error Type                                                 | Status Code                                                | Content Type                                               |
-| ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
-| errors.ComAtprotoRepoApplyWritesResponseBody               | 400                                                        | application/json                                           |
-| errors.ComAtprotoRepoApplyWritesComAtprotoRepoResponseBody | 401                                                        | application/json                                           |
-| errors.APIError                                            | 4XX, 5XX                                                   | \*/\*                                                      |
+| Error Type                                              | Status Code                                             | Content Type                                            |
+| ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
+| errors.ComAtprotoRepoApplyWritesResponseBody            | 400                                                     | application/json                                        |
+| errors.ComAtprotoRepoApplyWritesAtprotoRepoResponseBody | 401                                                     | application/json                                        |
+| errors.APIError                                         | 4XX, 5XX                                                | \*/\*                                                   |
 
-## comAtprotoRepoCreateRecord
+## createRecord
 
 *This endpoint is part of the atproto PDS repository management APIs. Requests usually require authentication (unlike the `com.atproto.sync.*` endpoints), and are made directly to the user's own PDS instance.*
 
@@ -186,7 +186,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.com.atproto.repo.comAtprotoRepoCreateRecord({
+  const result = await bluesky.atproto.repo.createRecord({
     repo: "<value>",
     collection: "<id>",
     record: "<value>",
@@ -205,7 +205,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoRepoComAtprotoRepoCreateRecord } from "bluesky/funcs/comAtprotoRepoComAtprotoRepoCreateRecord.js";
+import { atprotoRepoCreateRecord } from "bluesky/funcs/atprotoRepoCreateRecord.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -214,7 +214,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoRepoComAtprotoRepoCreateRecord(bluesky, {
+  const res = await atprotoRepoCreateRecord(bluesky, {
     repo: "<value>",
     collection: "<id>",
     record: "<value>",
@@ -248,13 +248,13 @@ run();
 
 ### Errors
 
-| Error Type                                                  | Status Code                                                 | Content Type                                                |
-| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
-| errors.ComAtprotoRepoCreateRecordResponseBody               | 400                                                         | application/json                                            |
-| errors.ComAtprotoRepoCreateRecordComAtprotoRepoResponseBody | 401                                                         | application/json                                            |
-| errors.APIError                                             | 4XX, 5XX                                                    | \*/\*                                                       |
+| Error Type                                               | Status Code                                              | Content Type                                             |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| errors.ComAtprotoRepoCreateRecordResponseBody            | 400                                                      | application/json                                         |
+| errors.ComAtprotoRepoCreateRecordAtprotoRepoResponseBody | 401                                                      | application/json                                         |
+| errors.APIError                                          | 4XX, 5XX                                                 | \*/\*                                                    |
 
-## comAtprotoRepoDeleteRecord
+## deleteRecord
 
 *This endpoint is part of the atproto PDS repository management APIs. Requests usually require authentication (unlike the `com.atproto.sync.*` endpoints), and are made directly to the user's own PDS instance.*
 
@@ -272,7 +272,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.com.atproto.repo.comAtprotoRepoDeleteRecord({
+  const result = await bluesky.atproto.repo.deleteRecord({
     repo: "<value>",
     collection: "<id>",
     rkey: "<value>",
@@ -291,7 +291,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoRepoComAtprotoRepoDeleteRecord } from "bluesky/funcs/comAtprotoRepoComAtprotoRepoDeleteRecord.js";
+import { atprotoRepoDeleteRecord } from "bluesky/funcs/atprotoRepoDeleteRecord.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -300,7 +300,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoRepoComAtprotoRepoDeleteRecord(bluesky, {
+  const res = await atprotoRepoDeleteRecord(bluesky, {
     repo: "<value>",
     collection: "<id>",
     rkey: "<value>",
@@ -334,13 +334,13 @@ run();
 
 ### Errors
 
-| Error Type                                                  | Status Code                                                 | Content Type                                                |
-| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
-| errors.ComAtprotoRepoDeleteRecordResponseBody               | 400                                                         | application/json                                            |
-| errors.ComAtprotoRepoDeleteRecordComAtprotoRepoResponseBody | 401                                                         | application/json                                            |
-| errors.APIError                                             | 4XX, 5XX                                                    | \*/\*                                                       |
+| Error Type                                               | Status Code                                              | Content Type                                             |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| errors.ComAtprotoRepoDeleteRecordResponseBody            | 400                                                      | application/json                                         |
+| errors.ComAtprotoRepoDeleteRecordAtprotoRepoResponseBody | 401                                                      | application/json                                         |
+| errors.APIError                                          | 4XX, 5XX                                                 | \*/\*                                                    |
 
-## comAtprotoRepoDescribeRepo
+## describeRepo
 
 *This endpoint is part of the atproto PDS repository management APIs. Requests usually require authentication (unlike the `com.atproto.sync.*` endpoints), and are made directly to the user's own PDS instance.*
 
@@ -358,7 +358,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.com.atproto.repo.comAtprotoRepoDescribeRepo({
+  const result = await bluesky.atproto.repo.describeRepo({
     repo: "<value>",
   });
 
@@ -375,7 +375,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoRepoComAtprotoRepoDescribeRepo } from "bluesky/funcs/comAtprotoRepoComAtprotoRepoDescribeRepo.js";
+import { atprotoRepoDescribeRepo } from "bluesky/funcs/atprotoRepoDescribeRepo.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -384,7 +384,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoRepoComAtprotoRepoDescribeRepo(bluesky, {
+  const res = await atprotoRepoDescribeRepo(bluesky, {
     repo: "<value>",
   });
 
@@ -416,13 +416,13 @@ run();
 
 ### Errors
 
-| Error Type                                                  | Status Code                                                 | Content Type                                                |
-| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
-| errors.ComAtprotoRepoDescribeRepoResponseBody               | 400                                                         | application/json                                            |
-| errors.ComAtprotoRepoDescribeRepoComAtprotoRepoResponseBody | 401                                                         | application/json                                            |
-| errors.APIError                                             | 4XX, 5XX                                                    | \*/\*                                                       |
+| Error Type                                               | Status Code                                              | Content Type                                             |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| errors.ComAtprotoRepoDescribeRepoResponseBody            | 400                                                      | application/json                                         |
+| errors.ComAtprotoRepoDescribeRepoAtprotoRepoResponseBody | 401                                                      | application/json                                         |
+| errors.APIError                                          | 4XX, 5XX                                                 | \*/\*                                                    |
 
-## comAtprotoRepoGetRecord
+## getRecord
 
 *This endpoint is part of the atproto PDS repository management APIs. Requests usually require authentication (unlike the `com.atproto.sync.*` endpoints), and are made directly to the user's own PDS instance.*
 
@@ -440,7 +440,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.com.atproto.repo.comAtprotoRepoGetRecord({
+  const result = await bluesky.atproto.repo.getRecord({
     repo: "<value>",
     collection: "<id>",
     rkey: "<value>",
@@ -459,7 +459,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoRepoComAtprotoRepoGetRecord } from "bluesky/funcs/comAtprotoRepoComAtprotoRepoGetRecord.js";
+import { atprotoRepoGetRecord } from "bluesky/funcs/atprotoRepoGetRecord.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -468,7 +468,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoRepoComAtprotoRepoGetRecord(bluesky, {
+  const res = await atprotoRepoGetRecord(bluesky, {
     repo: "<value>",
     collection: "<id>",
     rkey: "<value>",
@@ -502,13 +502,13 @@ run();
 
 ### Errors
 
-| Error Type                                               | Status Code                                              | Content Type                                             |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| errors.ComAtprotoRepoGetRecordResponseBody               | 400                                                      | application/json                                         |
-| errors.ComAtprotoRepoGetRecordComAtprotoRepoResponseBody | 401                                                      | application/json                                         |
-| errors.APIError                                          | 4XX, 5XX                                                 | \*/\*                                                    |
+| Error Type                                            | Status Code                                           | Content Type                                          |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| errors.ComAtprotoRepoGetRecordResponseBody            | 400                                                   | application/json                                      |
+| errors.ComAtprotoRepoGetRecordAtprotoRepoResponseBody | 401                                                   | application/json                                      |
+| errors.APIError                                       | 4XX, 5XX                                              | \*/\*                                                 |
 
-## comAtprotoRepoImportRepo
+## importRepo
 
 *This endpoint is part of the atproto PDS repository management APIs. Requests usually require authentication (unlike the `com.atproto.sync.*` endpoints), and are made directly to the user's own PDS instance.*
 
@@ -527,7 +527,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  await bluesky.com.atproto.repo.comAtprotoRepoImportRepo(await openAsBlob("example.file"));
+  await bluesky.atproto.repo.importRepo(await openAsBlob("example.file"));
 
 
 }
@@ -541,7 +541,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoRepoComAtprotoRepoImportRepo } from "bluesky/funcs/comAtprotoRepoComAtprotoRepoImportRepo.js";
+import { atprotoRepoImportRepo } from "bluesky/funcs/atprotoRepoImportRepo.js";
 import { openAsBlob } from "node:fs";
 
 // Use `BlueskyCore` for best tree-shaking performance.
@@ -551,7 +551,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoRepoComAtprotoRepoImportRepo(bluesky, await openAsBlob("example.file"));
+  const res = await atprotoRepoImportRepo(bluesky, await openAsBlob("example.file"));
 
   if (!res.ok) {
     throw res.error;
@@ -580,13 +580,13 @@ run();
 
 ### Errors
 
-| Error Type                                                | Status Code                                               | Content Type                                              |
-| --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
-| errors.ComAtprotoRepoImportRepoResponseBody               | 400                                                       | application/json                                          |
-| errors.ComAtprotoRepoImportRepoComAtprotoRepoResponseBody | 401                                                       | application/json                                          |
-| errors.APIError                                           | 4XX, 5XX                                                  | \*/\*                                                     |
+| Error Type                                             | Status Code                                            | Content Type                                           |
+| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
+| errors.ComAtprotoRepoImportRepoResponseBody            | 400                                                    | application/json                                       |
+| errors.ComAtprotoRepoImportRepoAtprotoRepoResponseBody | 401                                                    | application/json                                       |
+| errors.APIError                                        | 4XX, 5XX                                               | \*/\*                                                  |
 
-## comAtprotoRepoListMissingBlobs
+## listMissingBlobs
 
 *This endpoint is part of the atproto PDS repository management APIs. Requests usually require authentication (unlike the `com.atproto.sync.*` endpoints), and are made directly to the user's own PDS instance.*
 
@@ -604,10 +604,12 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.com.atproto.repo.comAtprotoRepoListMissingBlobs();
+  const result = await bluesky.atproto.repo.listMissingBlobs();
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -619,7 +621,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoRepoComAtprotoRepoListMissingBlobs } from "bluesky/funcs/comAtprotoRepoComAtprotoRepoListMissingBlobs.js";
+import { atprotoRepoListMissingBlobs } from "bluesky/funcs/atprotoRepoListMissingBlobs.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -628,7 +630,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoRepoComAtprotoRepoListMissingBlobs(bluesky);
+  const res = await atprotoRepoListMissingBlobs(bluesky);
 
   if (!res.ok) {
     throw res.error;
@@ -636,8 +638,10 @@ async function run() {
 
   const { value: result } = res;
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -654,17 +658,17 @@ run();
 
 ### Response
 
-**Promise\<[operations.ComAtprotoRepoListMissingBlobsResponseBody](../../models/operations/comatprotorepolistmissingblobsresponsebody.md)\>**
+**Promise\<[operations.ComAtprotoRepoListMissingBlobsResponse](../../models/operations/comatprotorepolistmissingblobsresponse.md)\>**
 
 ### Errors
 
-| Error Type                                                      | Status Code                                                     | Content Type                                                    |
-| --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
-| errors.ComAtprotoRepoListMissingBlobsResponseBody               | 400                                                             | application/json                                                |
-| errors.ComAtprotoRepoListMissingBlobsComAtprotoRepoResponseBody | 401                                                             | application/json                                                |
-| errors.APIError                                                 | 4XX, 5XX                                                        | \*/\*                                                           |
+| Error Type                                                   | Status Code                                                  | Content Type                                                 |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| errors.ComAtprotoRepoListMissingBlobsResponseBody            | 400                                                          | application/json                                             |
+| errors.ComAtprotoRepoListMissingBlobsAtprotoRepoResponseBody | 401                                                          | application/json                                             |
+| errors.APIError                                              | 4XX, 5XX                                                     | \*/\*                                                        |
 
-## comAtprotoRepoListRecords
+## listRecords
 
 *This endpoint is part of the atproto PDS repository management APIs. Requests usually require authentication (unlike the `com.atproto.sync.*` endpoints), and are made directly to the user's own PDS instance.*
 
@@ -682,13 +686,15 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.com.atproto.repo.comAtprotoRepoListRecords({
+  const result = await bluesky.atproto.repo.listRecords({
     repo: "<value>",
     collection: "<id>",
   });
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -700,7 +706,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoRepoComAtprotoRepoListRecords } from "bluesky/funcs/comAtprotoRepoComAtprotoRepoListRecords.js";
+import { atprotoRepoListRecords } from "bluesky/funcs/atprotoRepoListRecords.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -709,7 +715,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoRepoComAtprotoRepoListRecords(bluesky, {
+  const res = await atprotoRepoListRecords(bluesky, {
     repo: "<value>",
     collection: "<id>",
   });
@@ -720,8 +726,10 @@ async function run() {
 
   const { value: result } = res;
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -738,17 +746,17 @@ run();
 
 ### Response
 
-**Promise\<[operations.ComAtprotoRepoListRecordsResponseBody](../../models/operations/comatprotorepolistrecordsresponsebody.md)\>**
+**Promise\<[operations.ComAtprotoRepoListRecordsResponse](../../models/operations/comatprotorepolistrecordsresponse.md)\>**
 
 ### Errors
 
-| Error Type                                                 | Status Code                                                | Content Type                                               |
-| ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
-| errors.ComAtprotoRepoListRecordsResponseBody               | 400                                                        | application/json                                           |
-| errors.ComAtprotoRepoListRecordsComAtprotoRepoResponseBody | 401                                                        | application/json                                           |
-| errors.APIError                                            | 4XX, 5XX                                                   | \*/\*                                                      |
+| Error Type                                              | Status Code                                             | Content Type                                            |
+| ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
+| errors.ComAtprotoRepoListRecordsResponseBody            | 400                                                     | application/json                                        |
+| errors.ComAtprotoRepoListRecordsAtprotoRepoResponseBody | 401                                                     | application/json                                        |
+| errors.APIError                                         | 4XX, 5XX                                                | \*/\*                                                   |
 
-## comAtprotoRepoPutRecord
+## putRecord
 
 *This endpoint is part of the atproto PDS repository management APIs. Requests usually require authentication (unlike the `com.atproto.sync.*` endpoints), and are made directly to the user's own PDS instance.*
 
@@ -766,7 +774,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.com.atproto.repo.comAtprotoRepoPutRecord({
+  const result = await bluesky.atproto.repo.putRecord({
     repo: "<value>",
     collection: "<id>",
     rkey: "<value>",
@@ -786,7 +794,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoRepoComAtprotoRepoPutRecord } from "bluesky/funcs/comAtprotoRepoComAtprotoRepoPutRecord.js";
+import { atprotoRepoPutRecord } from "bluesky/funcs/atprotoRepoPutRecord.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -795,7 +803,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoRepoComAtprotoRepoPutRecord(bluesky, {
+  const res = await atprotoRepoPutRecord(bluesky, {
     repo: "<value>",
     collection: "<id>",
     rkey: "<value>",
@@ -830,13 +838,13 @@ run();
 
 ### Errors
 
-| Error Type                                               | Status Code                                              | Content Type                                             |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| errors.ComAtprotoRepoPutRecordResponseBody               | 400                                                      | application/json                                         |
-| errors.ComAtprotoRepoPutRecordComAtprotoRepoResponseBody | 401                                                      | application/json                                         |
-| errors.APIError                                          | 4XX, 5XX                                                 | \*/\*                                                    |
+| Error Type                                            | Status Code                                           | Content Type                                          |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| errors.ComAtprotoRepoPutRecordResponseBody            | 400                                                   | application/json                                      |
+| errors.ComAtprotoRepoPutRecordAtprotoRepoResponseBody | 401                                                   | application/json                                      |
+| errors.APIError                                       | 4XX, 5XX                                              | \*/\*                                                 |
 
-## comAtprotoRepoUploadBlob
+## uploadBlob
 
 *This endpoint is part of the atproto PDS repository management APIs. Requests usually require authentication (unlike the `com.atproto.sync.*` endpoints), and are made directly to the user's own PDS instance.*
 
@@ -855,7 +863,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.com.atproto.repo.comAtprotoRepoUploadBlob(await openAsBlob("example.file"));
+  const result = await bluesky.atproto.repo.uploadBlob(await openAsBlob("example.file"));
 
   // Handle the result
   console.log(result);
@@ -870,7 +878,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoRepoComAtprotoRepoUploadBlob } from "bluesky/funcs/comAtprotoRepoComAtprotoRepoUploadBlob.js";
+import { atprotoRepoUploadBlob } from "bluesky/funcs/atprotoRepoUploadBlob.js";
 import { openAsBlob } from "node:fs";
 
 // Use `BlueskyCore` for best tree-shaking performance.
@@ -880,7 +888,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoRepoComAtprotoRepoUploadBlob(bluesky, await openAsBlob("example.file"));
+  const res = await atprotoRepoUploadBlob(bluesky, await openAsBlob("example.file"));
 
   if (!res.ok) {
     throw res.error;
@@ -910,8 +918,8 @@ run();
 
 ### Errors
 
-| Error Type                                                | Status Code                                               | Content Type                                              |
-| --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
-| errors.ComAtprotoRepoUploadBlobResponseBody               | 400                                                       | application/json                                          |
-| errors.ComAtprotoRepoUploadBlobComAtprotoRepoResponseBody | 401                                                       | application/json                                          |
-| errors.APIError                                           | 4XX, 5XX                                                  | \*/\*                                                     |
+| Error Type                                             | Status Code                                            | Content Type                                           |
+| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
+| errors.ComAtprotoRepoUploadBlobResponseBody            | 400                                                    | application/json                                       |
+| errors.ComAtprotoRepoUploadBlobAtprotoRepoResponseBody | 401                                                    | application/json                                       |
+| errors.APIError                                        | 4XX, 5XX                                               | \*/\*                                                  |

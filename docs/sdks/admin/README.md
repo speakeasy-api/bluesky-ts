@@ -1,82 +1,82 @@
 # Admin
-(*com.atproto.admin*)
+(*atproto.admin*)
 
 ## Overview
 
 ### Available Operations
 
-* [comAtprotoAdminDeleteAccount](#comatprotoadmindeleteaccount) - *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
+* [deleteAccount](#deleteaccount) - *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Delete a user account as an administrator.
-* [comAtprotoAdminDisableAccountInvites](#comatprotoadmindisableaccountinvites) - *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
+* [disableAccountInvites](#disableaccountinvites) - *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Disable an account from receiving new invite codes, but does not invalidate existing codes.
-* [comAtprotoAdminDisableInviteCodes](#comatprotoadmindisableinvitecodes) - *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
+* [disableInviteCodes](#disableinvitecodes) - *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Disable some set of codes and/or all codes associated with a set of users.
-* [comAtprotoAdminEnableAccountInvites](#comatprotoadminenableaccountinvites) - *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
+* [enableAccountInvites](#enableaccountinvites) - *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Re-enable an account's ability to receive invite codes.
-* [comAtprotoAdminGetAccountInfo](#comatprotoadmingetaccountinfo) - *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
+* [getAccountInfo](#getaccountinfo) - *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Get details about an account.
-* [comAtprotoAdminGetAccountInfos](#comatprotoadmingetaccountinfos) - *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
+* [getAccountInfos](#getaccountinfos) - *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Get details about some accounts.
-* [comAtprotoAdminGetInviteCodes](#comatprotoadmingetinvitecodes) - *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
+* [getInviteCodes](#getinvitecodes) - *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Get an admin view of invite codes.
-* [comAtprotoAdminGetSubjectStatus](#comatprotoadmingetsubjectstatus) - *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
+* [getSubjectStatus](#getsubjectstatus) - *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Get the service-specific admin status of a subject (account, record, or blob).
-* [comAtprotoAdminSearchAccounts](#comatprotoadminsearchaccounts) - *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
+* [searchAccounts](#searchaccounts) - *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Get list of accounts that matches your search query.
-* [comAtprotoAdminSendEmail](#comatprotoadminsendemail) - *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
+* [sendEmail](#sendemail) - *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Send email to a user's account email address.
-* [comAtprotoAdminUpdateAccountEmail](#comatprotoadminupdateaccountemail) - *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
+* [updateAccountEmail](#updateaccountemail) - *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Administrative action to update an account's email.
-* [comAtprotoAdminUpdateAccountHandle](#comatprotoadminupdateaccounthandle) - *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
+* [updateAccountHandle](#updateaccounthandle) - *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Administrative action to update an account's handle.
-* [comAtprotoAdminUpdateAccountPassword](#comatprotoadminupdateaccountpassword) - *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
+* [updateAccountPassword](#updateaccountpassword) - *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Update the password for a user account as an administrator.
-* [comAtprotoAdminUpdateSubjectStatus](#comatprotoadminupdatesubjectstatus) - *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
+* [updateSubjectStatus](#updatesubjectstatus) - *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Update the service-specific admin status of a subject (account, record, or blob).
 
-## comAtprotoAdminDeleteAccount
+## deleteAccount
 
 *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
 
@@ -94,7 +94,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  await bluesky.com.atproto.admin.comAtprotoAdminDeleteAccount({
+  await bluesky.atproto.admin.deleteAccount({
     did: "<id>",
   });
 
@@ -110,7 +110,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoAdminComAtprotoAdminDeleteAccount } from "bluesky/funcs/comAtprotoAdminComAtprotoAdminDeleteAccount.js";
+import { atprotoAdminDeleteAccount } from "bluesky/funcs/atprotoAdminDeleteAccount.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -119,7 +119,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoAdminComAtprotoAdminDeleteAccount(bluesky, {
+  const res = await atprotoAdminDeleteAccount(bluesky, {
     did: "<id>",
   });
 
@@ -150,13 +150,13 @@ run();
 
 ### Errors
 
-| Error Type                                                     | Status Code                                                    | Content Type                                                   |
-| -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
-| errors.ComAtprotoAdminDeleteAccountResponseBody                | 400                                                            | application/json                                               |
-| errors.ComAtprotoAdminDeleteAccountComAtprotoAdminResponseBody | 401                                                            | application/json                                               |
-| errors.APIError                                                | 4XX, 5XX                                                       | \*/\*                                                          |
+| Error Type                                                  | Status Code                                                 | Content Type                                                |
+| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
+| errors.ComAtprotoAdminDeleteAccountResponseBody             | 400                                                         | application/json                                            |
+| errors.ComAtprotoAdminDeleteAccountAtprotoAdminResponseBody | 401                                                         | application/json                                            |
+| errors.APIError                                             | 4XX, 5XX                                                    | \*/\*                                                       |
 
-## comAtprotoAdminDisableAccountInvites
+## disableAccountInvites
 
 *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
 
@@ -174,7 +174,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  await bluesky.com.atproto.admin.comAtprotoAdminDisableAccountInvites({
+  await bluesky.atproto.admin.disableAccountInvites({
     account: "<id>",
   });
 
@@ -190,7 +190,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoAdminComAtprotoAdminDisableAccountInvites } from "bluesky/funcs/comAtprotoAdminComAtprotoAdminDisableAccountInvites.js";
+import { atprotoAdminDisableAccountInvites } from "bluesky/funcs/atprotoAdminDisableAccountInvites.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -199,7 +199,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoAdminComAtprotoAdminDisableAccountInvites(bluesky, {
+  const res = await atprotoAdminDisableAccountInvites(bluesky, {
     account: "<id>",
   });
 
@@ -230,13 +230,13 @@ run();
 
 ### Errors
 
-| Error Type                                                             | Status Code                                                            | Content Type                                                           |
-| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| errors.ComAtprotoAdminDisableAccountInvitesResponseBody                | 400                                                                    | application/json                                                       |
-| errors.ComAtprotoAdminDisableAccountInvitesComAtprotoAdminResponseBody | 401                                                                    | application/json                                                       |
-| errors.APIError                                                        | 4XX, 5XX                                                               | \*/\*                                                                  |
+| Error Type                                                          | Status Code                                                         | Content Type                                                        |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| errors.ComAtprotoAdminDisableAccountInvitesResponseBody             | 400                                                                 | application/json                                                    |
+| errors.ComAtprotoAdminDisableAccountInvitesAtprotoAdminResponseBody | 401                                                                 | application/json                                                    |
+| errors.APIError                                                     | 4XX, 5XX                                                            | \*/\*                                                               |
 
-## comAtprotoAdminDisableInviteCodes
+## disableInviteCodes
 
 *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
 
@@ -254,7 +254,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  await bluesky.com.atproto.admin.comAtprotoAdminDisableInviteCodes();
+  await bluesky.atproto.admin.disableInviteCodes();
 
 
 }
@@ -268,7 +268,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoAdminComAtprotoAdminDisableInviteCodes } from "bluesky/funcs/comAtprotoAdminComAtprotoAdminDisableInviteCodes.js";
+import { atprotoAdminDisableInviteCodes } from "bluesky/funcs/atprotoAdminDisableInviteCodes.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -277,7 +277,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoAdminComAtprotoAdminDisableInviteCodes(bluesky);
+  const res = await atprotoAdminDisableInviteCodes(bluesky);
 
   if (!res.ok) {
     throw res.error;
@@ -306,13 +306,13 @@ run();
 
 ### Errors
 
-| Error Type                                                          | Status Code                                                         | Content Type                                                        |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| errors.ComAtprotoAdminDisableInviteCodesResponseBody                | 400                                                                 | application/json                                                    |
-| errors.ComAtprotoAdminDisableInviteCodesComAtprotoAdminResponseBody | 401                                                                 | application/json                                                    |
-| errors.APIError                                                     | 4XX, 5XX                                                            | \*/\*                                                               |
+| Error Type                                                       | Status Code                                                      | Content Type                                                     |
+| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
+| errors.ComAtprotoAdminDisableInviteCodesResponseBody             | 400                                                              | application/json                                                 |
+| errors.ComAtprotoAdminDisableInviteCodesAtprotoAdminResponseBody | 401                                                              | application/json                                                 |
+| errors.APIError                                                  | 4XX, 5XX                                                         | \*/\*                                                            |
 
-## comAtprotoAdminEnableAccountInvites
+## enableAccountInvites
 
 *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
 
@@ -330,7 +330,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  await bluesky.com.atproto.admin.comAtprotoAdminEnableAccountInvites({
+  await bluesky.atproto.admin.enableAccountInvites({
     account: "<id>",
   });
 
@@ -346,7 +346,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoAdminComAtprotoAdminEnableAccountInvites } from "bluesky/funcs/comAtprotoAdminComAtprotoAdminEnableAccountInvites.js";
+import { atprotoAdminEnableAccountInvites } from "bluesky/funcs/atprotoAdminEnableAccountInvites.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -355,7 +355,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoAdminComAtprotoAdminEnableAccountInvites(bluesky, {
+  const res = await atprotoAdminEnableAccountInvites(bluesky, {
     account: "<id>",
   });
 
@@ -386,13 +386,13 @@ run();
 
 ### Errors
 
-| Error Type                                                            | Status Code                                                           | Content Type                                                          |
-| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
-| errors.ComAtprotoAdminEnableAccountInvitesResponseBody                | 400                                                                   | application/json                                                      |
-| errors.ComAtprotoAdminEnableAccountInvitesComAtprotoAdminResponseBody | 401                                                                   | application/json                                                      |
-| errors.APIError                                                       | 4XX, 5XX                                                              | \*/\*                                                                 |
+| Error Type                                                         | Status Code                                                        | Content Type                                                       |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| errors.ComAtprotoAdminEnableAccountInvitesResponseBody             | 400                                                                | application/json                                                   |
+| errors.ComAtprotoAdminEnableAccountInvitesAtprotoAdminResponseBody | 401                                                                | application/json                                                   |
+| errors.APIError                                                    | 4XX, 5XX                                                           | \*/\*                                                              |
 
-## comAtprotoAdminGetAccountInfo
+## getAccountInfo
 
 *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
 
@@ -410,7 +410,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.com.atproto.admin.comAtprotoAdminGetAccountInfo({
+  const result = await bluesky.atproto.admin.getAccountInfo({
     did: "<id>",
   });
 
@@ -427,7 +427,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoAdminComAtprotoAdminGetAccountInfo } from "bluesky/funcs/comAtprotoAdminComAtprotoAdminGetAccountInfo.js";
+import { atprotoAdminGetAccountInfo } from "bluesky/funcs/atprotoAdminGetAccountInfo.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -436,7 +436,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoAdminComAtprotoAdminGetAccountInfo(bluesky, {
+  const res = await atprotoAdminGetAccountInfo(bluesky, {
     did: "<id>",
   });
 
@@ -468,13 +468,13 @@ run();
 
 ### Errors
 
-| Error Type                                                      | Status Code                                                     | Content Type                                                    |
-| --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
-| errors.ComAtprotoAdminGetAccountInfoResponseBody                | 400                                                             | application/json                                                |
-| errors.ComAtprotoAdminGetAccountInfoComAtprotoAdminResponseBody | 401                                                             | application/json                                                |
-| errors.APIError                                                 | 4XX, 5XX                                                        | \*/\*                                                           |
+| Error Type                                                   | Status Code                                                  | Content Type                                                 |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| errors.ComAtprotoAdminGetAccountInfoResponseBody             | 400                                                          | application/json                                             |
+| errors.ComAtprotoAdminGetAccountInfoAtprotoAdminResponseBody | 401                                                          | application/json                                             |
+| errors.APIError                                              | 4XX, 5XX                                                     | \*/\*                                                        |
 
-## comAtprotoAdminGetAccountInfos
+## getAccountInfos
 
 *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
 
@@ -492,7 +492,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.com.atproto.admin.comAtprotoAdminGetAccountInfos({
+  const result = await bluesky.atproto.admin.getAccountInfos({
     dids: [
       "<id>",
     ],
@@ -511,7 +511,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoAdminComAtprotoAdminGetAccountInfos } from "bluesky/funcs/comAtprotoAdminComAtprotoAdminGetAccountInfos.js";
+import { atprotoAdminGetAccountInfos } from "bluesky/funcs/atprotoAdminGetAccountInfos.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -520,7 +520,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoAdminComAtprotoAdminGetAccountInfos(bluesky, {
+  const res = await atprotoAdminGetAccountInfos(bluesky, {
     dids: [
       "<id>",
     ],
@@ -554,13 +554,13 @@ run();
 
 ### Errors
 
-| Error Type                                                       | Status Code                                                      | Content Type                                                     |
-| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
-| errors.ComAtprotoAdminGetAccountInfosResponseBody                | 400                                                              | application/json                                                 |
-| errors.ComAtprotoAdminGetAccountInfosComAtprotoAdminResponseBody | 401                                                              | application/json                                                 |
-| errors.APIError                                                  | 4XX, 5XX                                                         | \*/\*                                                            |
+| Error Type                                                    | Status Code                                                   | Content Type                                                  |
+| ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
+| errors.ComAtprotoAdminGetAccountInfosResponseBody             | 400                                                           | application/json                                              |
+| errors.ComAtprotoAdminGetAccountInfosAtprotoAdminResponseBody | 401                                                           | application/json                                              |
+| errors.APIError                                               | 4XX, 5XX                                                      | \*/\*                                                         |
 
-## comAtprotoAdminGetInviteCodes
+## getInviteCodes
 
 *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
 
@@ -578,10 +578,12 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.com.atproto.admin.comAtprotoAdminGetInviteCodes();
+  const result = await bluesky.atproto.admin.getInviteCodes();
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -593,7 +595,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoAdminComAtprotoAdminGetInviteCodes } from "bluesky/funcs/comAtprotoAdminComAtprotoAdminGetInviteCodes.js";
+import { atprotoAdminGetInviteCodes } from "bluesky/funcs/atprotoAdminGetInviteCodes.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -602,7 +604,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoAdminComAtprotoAdminGetInviteCodes(bluesky);
+  const res = await atprotoAdminGetInviteCodes(bluesky);
 
   if (!res.ok) {
     throw res.error;
@@ -610,8 +612,10 @@ async function run() {
 
   const { value: result } = res;
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -628,17 +632,17 @@ run();
 
 ### Response
 
-**Promise\<[operations.ComAtprotoAdminGetInviteCodesResponseBody](../../models/operations/comatprotoadmingetinvitecodesresponsebody.md)\>**
+**Promise\<[operations.ComAtprotoAdminGetInviteCodesResponse](../../models/operations/comatprotoadmingetinvitecodesresponse.md)\>**
 
 ### Errors
 
-| Error Type                                                      | Status Code                                                     | Content Type                                                    |
-| --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
-| errors.ComAtprotoAdminGetInviteCodesResponseBody                | 400                                                             | application/json                                                |
-| errors.ComAtprotoAdminGetInviteCodesComAtprotoAdminResponseBody | 401                                                             | application/json                                                |
-| errors.APIError                                                 | 4XX, 5XX                                                        | \*/\*                                                           |
+| Error Type                                                   | Status Code                                                  | Content Type                                                 |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| errors.ComAtprotoAdminGetInviteCodesResponseBody             | 400                                                          | application/json                                             |
+| errors.ComAtprotoAdminGetInviteCodesAtprotoAdminResponseBody | 401                                                          | application/json                                             |
+| errors.APIError                                              | 4XX, 5XX                                                     | \*/\*                                                        |
 
-## comAtprotoAdminGetSubjectStatus
+## getSubjectStatus
 
 *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
 
@@ -656,7 +660,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.com.atproto.admin.comAtprotoAdminGetSubjectStatus();
+  const result = await bluesky.atproto.admin.getSubjectStatus();
 
   // Handle the result
   console.log(result);
@@ -671,7 +675,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoAdminComAtprotoAdminGetSubjectStatus } from "bluesky/funcs/comAtprotoAdminComAtprotoAdminGetSubjectStatus.js";
+import { atprotoAdminGetSubjectStatus } from "bluesky/funcs/atprotoAdminGetSubjectStatus.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -680,7 +684,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoAdminComAtprotoAdminGetSubjectStatus(bluesky);
+  const res = await atprotoAdminGetSubjectStatus(bluesky);
 
   if (!res.ok) {
     throw res.error;
@@ -710,13 +714,13 @@ run();
 
 ### Errors
 
-| Error Type                                                        | Status Code                                                       | Content Type                                                      |
-| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
-| errors.ComAtprotoAdminGetSubjectStatusResponseBody                | 400                                                               | application/json                                                  |
-| errors.ComAtprotoAdminGetSubjectStatusComAtprotoAdminResponseBody | 401                                                               | application/json                                                  |
-| errors.APIError                                                   | 4XX, 5XX                                                          | \*/\*                                                             |
+| Error Type                                                     | Status Code                                                    | Content Type                                                   |
+| -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
+| errors.ComAtprotoAdminGetSubjectStatusResponseBody             | 400                                                            | application/json                                               |
+| errors.ComAtprotoAdminGetSubjectStatusAtprotoAdminResponseBody | 401                                                            | application/json                                               |
+| errors.APIError                                                | 4XX, 5XX                                                       | \*/\*                                                          |
 
-## comAtprotoAdminSearchAccounts
+## searchAccounts
 
 *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
 
@@ -734,10 +738,12 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.com.atproto.admin.comAtprotoAdminSearchAccounts();
+  const result = await bluesky.atproto.admin.searchAccounts();
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -749,7 +755,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoAdminComAtprotoAdminSearchAccounts } from "bluesky/funcs/comAtprotoAdminComAtprotoAdminSearchAccounts.js";
+import { atprotoAdminSearchAccounts } from "bluesky/funcs/atprotoAdminSearchAccounts.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -758,7 +764,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoAdminComAtprotoAdminSearchAccounts(bluesky);
+  const res = await atprotoAdminSearchAccounts(bluesky);
 
   if (!res.ok) {
     throw res.error;
@@ -766,8 +772,10 @@ async function run() {
 
   const { value: result } = res;
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -784,17 +792,17 @@ run();
 
 ### Response
 
-**Promise\<[operations.ComAtprotoAdminSearchAccountsResponseBody](../../models/operations/comatprotoadminsearchaccountsresponsebody.md)\>**
+**Promise\<[operations.ComAtprotoAdminSearchAccountsResponse](../../models/operations/comatprotoadminsearchaccountsresponse.md)\>**
 
 ### Errors
 
-| Error Type                                                      | Status Code                                                     | Content Type                                                    |
-| --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
-| errors.ComAtprotoAdminSearchAccountsResponseBody                | 400                                                             | application/json                                                |
-| errors.ComAtprotoAdminSearchAccountsComAtprotoAdminResponseBody | 401                                                             | application/json                                                |
-| errors.APIError                                                 | 4XX, 5XX                                                        | \*/\*                                                           |
+| Error Type                                                   | Status Code                                                  | Content Type                                                 |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| errors.ComAtprotoAdminSearchAccountsResponseBody             | 400                                                          | application/json                                             |
+| errors.ComAtprotoAdminSearchAccountsAtprotoAdminResponseBody | 401                                                          | application/json                                             |
+| errors.APIError                                              | 4XX, 5XX                                                     | \*/\*                                                        |
 
-## comAtprotoAdminSendEmail
+## sendEmail
 
 *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
 
@@ -812,7 +820,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.com.atproto.admin.comAtprotoAdminSendEmail({
+  const result = await bluesky.atproto.admin.sendEmail({
     recipientDid: "<id>",
     content: "<value>",
     senderDid: "<id>",
@@ -831,7 +839,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoAdminComAtprotoAdminSendEmail } from "bluesky/funcs/comAtprotoAdminComAtprotoAdminSendEmail.js";
+import { atprotoAdminSendEmail } from "bluesky/funcs/atprotoAdminSendEmail.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -840,7 +848,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoAdminComAtprotoAdminSendEmail(bluesky, {
+  const res = await atprotoAdminSendEmail(bluesky, {
     recipientDid: "<id>",
     content: "<value>",
     senderDid: "<id>",
@@ -874,13 +882,13 @@ run();
 
 ### Errors
 
-| Error Type                                                 | Status Code                                                | Content Type                                               |
-| ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
-| errors.ComAtprotoAdminSendEmailResponseBody                | 400                                                        | application/json                                           |
-| errors.ComAtprotoAdminSendEmailComAtprotoAdminResponseBody | 401                                                        | application/json                                           |
-| errors.APIError                                            | 4XX, 5XX                                                   | \*/\*                                                      |
+| Error Type                                              | Status Code                                             | Content Type                                            |
+| ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
+| errors.ComAtprotoAdminSendEmailResponseBody             | 400                                                     | application/json                                        |
+| errors.ComAtprotoAdminSendEmailAtprotoAdminResponseBody | 401                                                     | application/json                                        |
+| errors.APIError                                         | 4XX, 5XX                                                | \*/\*                                                   |
 
-## comAtprotoAdminUpdateAccountEmail
+## updateAccountEmail
 
 *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
 
@@ -898,7 +906,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  await bluesky.com.atproto.admin.comAtprotoAdminUpdateAccountEmail({
+  await bluesky.atproto.admin.updateAccountEmail({
     account: "<value>",
     email: "Tressie_DuBuque@hotmail.com",
   });
@@ -915,7 +923,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoAdminComAtprotoAdminUpdateAccountEmail } from "bluesky/funcs/comAtprotoAdminComAtprotoAdminUpdateAccountEmail.js";
+import { atprotoAdminUpdateAccountEmail } from "bluesky/funcs/atprotoAdminUpdateAccountEmail.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -924,7 +932,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoAdminComAtprotoAdminUpdateAccountEmail(bluesky, {
+  const res = await atprotoAdminUpdateAccountEmail(bluesky, {
     account: "<value>",
     email: "Tressie_DuBuque@hotmail.com",
   });
@@ -956,13 +964,13 @@ run();
 
 ### Errors
 
-| Error Type                                                          | Status Code                                                         | Content Type                                                        |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| errors.ComAtprotoAdminUpdateAccountEmailResponseBody                | 400                                                                 | application/json                                                    |
-| errors.ComAtprotoAdminUpdateAccountEmailComAtprotoAdminResponseBody | 401                                                                 | application/json                                                    |
-| errors.APIError                                                     | 4XX, 5XX                                                            | \*/\*                                                               |
+| Error Type                                                       | Status Code                                                      | Content Type                                                     |
+| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
+| errors.ComAtprotoAdminUpdateAccountEmailResponseBody             | 400                                                              | application/json                                                 |
+| errors.ComAtprotoAdminUpdateAccountEmailAtprotoAdminResponseBody | 401                                                              | application/json                                                 |
+| errors.APIError                                                  | 4XX, 5XX                                                         | \*/\*                                                            |
 
-## comAtprotoAdminUpdateAccountHandle
+## updateAccountHandle
 
 *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
 
@@ -980,7 +988,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  await bluesky.com.atproto.admin.comAtprotoAdminUpdateAccountHandle({
+  await bluesky.atproto.admin.updateAccountHandle({
     did: "<id>",
     handle: "<value>",
   });
@@ -997,7 +1005,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoAdminComAtprotoAdminUpdateAccountHandle } from "bluesky/funcs/comAtprotoAdminComAtprotoAdminUpdateAccountHandle.js";
+import { atprotoAdminUpdateAccountHandle } from "bluesky/funcs/atprotoAdminUpdateAccountHandle.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1006,7 +1014,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoAdminComAtprotoAdminUpdateAccountHandle(bluesky, {
+  const res = await atprotoAdminUpdateAccountHandle(bluesky, {
     did: "<id>",
     handle: "<value>",
   });
@@ -1038,13 +1046,13 @@ run();
 
 ### Errors
 
-| Error Type                                                           | Status Code                                                          | Content Type                                                         |
-| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| errors.ComAtprotoAdminUpdateAccountHandleResponseBody                | 400                                                                  | application/json                                                     |
-| errors.ComAtprotoAdminUpdateAccountHandleComAtprotoAdminResponseBody | 401                                                                  | application/json                                                     |
-| errors.APIError                                                      | 4XX, 5XX                                                             | \*/\*                                                                |
+| Error Type                                                        | Status Code                                                       | Content Type                                                      |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| errors.ComAtprotoAdminUpdateAccountHandleResponseBody             | 400                                                               | application/json                                                  |
+| errors.ComAtprotoAdminUpdateAccountHandleAtprotoAdminResponseBody | 401                                                               | application/json                                                  |
+| errors.APIError                                                   | 4XX, 5XX                                                          | \*/\*                                                             |
 
-## comAtprotoAdminUpdateAccountPassword
+## updateAccountPassword
 
 *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
 
@@ -1062,7 +1070,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  await bluesky.com.atproto.admin.comAtprotoAdminUpdateAccountPassword({
+  await bluesky.atproto.admin.updateAccountPassword({
     did: "<id>",
     password: "YrVgrflEZmXzy2v",
   });
@@ -1079,7 +1087,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoAdminComAtprotoAdminUpdateAccountPassword } from "bluesky/funcs/comAtprotoAdminComAtprotoAdminUpdateAccountPassword.js";
+import { atprotoAdminUpdateAccountPassword } from "bluesky/funcs/atprotoAdminUpdateAccountPassword.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1088,7 +1096,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoAdminComAtprotoAdminUpdateAccountPassword(bluesky, {
+  const res = await atprotoAdminUpdateAccountPassword(bluesky, {
     did: "<id>",
     password: "YrVgrflEZmXzy2v",
   });
@@ -1120,13 +1128,13 @@ run();
 
 ### Errors
 
-| Error Type                                                             | Status Code                                                            | Content Type                                                           |
-| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| errors.ComAtprotoAdminUpdateAccountPasswordResponseBody                | 400                                                                    | application/json                                                       |
-| errors.ComAtprotoAdminUpdateAccountPasswordComAtprotoAdminResponseBody | 401                                                                    | application/json                                                       |
-| errors.APIError                                                        | 4XX, 5XX                                                               | \*/\*                                                                  |
+| Error Type                                                          | Status Code                                                         | Content Type                                                        |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| errors.ComAtprotoAdminUpdateAccountPasswordResponseBody             | 400                                                                 | application/json                                                    |
+| errors.ComAtprotoAdminUpdateAccountPasswordAtprotoAdminResponseBody | 401                                                                 | application/json                                                    |
+| errors.APIError                                                     | 4XX, 5XX                                                            | \*/\*                                                               |
 
-## comAtprotoAdminUpdateSubjectStatus
+## updateSubjectStatus
 
 *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
 
@@ -1144,7 +1152,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.com.atproto.admin.comAtprotoAdminUpdateSubjectStatus({
+  const result = await bluesky.atproto.admin.updateSubjectStatus({
     subject: {
       did: "<id>",
       cid: "<id>",
@@ -1164,7 +1172,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoAdminComAtprotoAdminUpdateSubjectStatus } from "bluesky/funcs/comAtprotoAdminComAtprotoAdminUpdateSubjectStatus.js";
+import { atprotoAdminUpdateSubjectStatus } from "bluesky/funcs/atprotoAdminUpdateSubjectStatus.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1173,7 +1181,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoAdminComAtprotoAdminUpdateSubjectStatus(bluesky, {
+  const res = await atprotoAdminUpdateSubjectStatus(bluesky, {
     subject: {
       did: "<id>",
       cid: "<id>",
@@ -1208,8 +1216,8 @@ run();
 
 ### Errors
 
-| Error Type                                                           | Status Code                                                          | Content Type                                                         |
-| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| errors.ComAtprotoAdminUpdateSubjectStatusResponseBody                | 400                                                                  | application/json                                                     |
-| errors.ComAtprotoAdminUpdateSubjectStatusComAtprotoAdminResponseBody | 401                                                                  | application/json                                                     |
-| errors.APIError                                                      | 4XX, 5XX                                                             | \*/\*                                                                |
+| Error Type                                                        | Status Code                                                       | Content Type                                                      |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| errors.ComAtprotoAdminUpdateSubjectStatusResponseBody             | 400                                                               | application/json                                                  |
+| errors.ComAtprotoAdminUpdateSubjectStatusAtprotoAdminResponseBody | 401                                                               | application/json                                                  |
+| errors.APIError                                                   | 4XX, 5XX                                                          | \*/\*                                                             |

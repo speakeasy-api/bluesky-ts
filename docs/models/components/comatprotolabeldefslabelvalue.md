@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoLabelDefsLabelValue } from "bluesky/models/components";
 
-let value: ComAtprotoLabelDefsLabelValue = "nudity";
+let value: ComAtprotoLabelDefsLabelValue = "doxxing";
 ```
 
 ## Values

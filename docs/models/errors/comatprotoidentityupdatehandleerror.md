@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoIdentityUpdateHandleError } from "bluesky/models/errors";
 
-let value: ComAtprotoIdentityUpdateHandleError = "InvalidToken";
+let value: ComAtprotoIdentityUpdateHandleError = "ExpiredToken";
 ```
 
 ## Values

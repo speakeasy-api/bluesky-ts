@@ -5,7 +5,7 @@
 ```typescript
 import { Visibility } from "bluesky/models/components";
 
-let value: Visibility = "show";
+let value: Visibility = "hide";
 ```
 
 ## Values

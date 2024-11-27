@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type AppBskyFeedGetActorLikesAppBskyFeedResponseBodyData = {
+export type AppBskyFeedGetActorLikesFeedResponseBodyData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,13 +16,13 @@ export type AppBskyFeedGetActorLikesAppBskyFeedResponseBodyData = {
 /**
  * Unauthorized
  */
-export class AppBskyFeedGetActorLikesAppBskyFeedResponseBody extends Error {
+export class AppBskyFeedGetActorLikesFeedResponseBody extends Error {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: AppBskyFeedGetActorLikesAppBskyFeedResponseBodyData;
+  data$: AppBskyFeedGetActorLikesFeedResponseBodyData;
 
-  constructor(err: AppBskyFeedGetActorLikesAppBskyFeedResponseBodyData) {
+  constructor(err: AppBskyFeedGetActorLikesFeedResponseBodyData) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -31,7 +31,7 @@ export class AppBskyFeedGetActorLikesAppBskyFeedResponseBody extends Error {
 
     this.error = err.error;
 
-    this.name = "AppBskyFeedGetActorLikesAppBskyFeedResponseBody";
+    this.name = "AppBskyFeedGetActorLikesFeedResponseBody";
   }
 }
 
@@ -77,52 +77,49 @@ export class AppBskyFeedGetActorLikesResponseBody extends Error {
 }
 
 /** @internal */
-export const AppBskyFeedGetActorLikesAppBskyFeedResponseBody$inboundSchema:
-  z.ZodType<
-    AppBskyFeedGetActorLikesAppBskyFeedResponseBody,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    error: z.literal("AuthMissing"),
-    message: z.string(),
-  })
-    .transform((v) => {
-      return new AppBskyFeedGetActorLikesAppBskyFeedResponseBody(v);
-    });
+export const AppBskyFeedGetActorLikesFeedResponseBody$inboundSchema: z.ZodType<
+  AppBskyFeedGetActorLikesFeedResponseBody,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  error: z.literal("AuthMissing"),
+  message: z.string(),
+})
+  .transform((v) => {
+    return new AppBskyFeedGetActorLikesFeedResponseBody(v);
+  });
 
 /** @internal */
-export type AppBskyFeedGetActorLikesAppBskyFeedResponseBody$Outbound = {
+export type AppBskyFeedGetActorLikesFeedResponseBody$Outbound = {
   error: "AuthMissing";
   message: string;
 };
 
 /** @internal */
-export const AppBskyFeedGetActorLikesAppBskyFeedResponseBody$outboundSchema:
-  z.ZodType<
-    AppBskyFeedGetActorLikesAppBskyFeedResponseBody$Outbound,
-    z.ZodTypeDef,
-    AppBskyFeedGetActorLikesAppBskyFeedResponseBody
-  > = z.instanceof(AppBskyFeedGetActorLikesAppBskyFeedResponseBody)
-    .transform(v => v.data$)
-    .pipe(z.object({
-      error: z.literal("AuthMissing").default("AuthMissing" as const),
-      message: z.string(),
-    }));
+export const AppBskyFeedGetActorLikesFeedResponseBody$outboundSchema: z.ZodType<
+  AppBskyFeedGetActorLikesFeedResponseBody$Outbound,
+  z.ZodTypeDef,
+  AppBskyFeedGetActorLikesFeedResponseBody
+> = z.instanceof(AppBskyFeedGetActorLikesFeedResponseBody)
+  .transform(v => v.data$)
+  .pipe(z.object({
+    error: z.literal("AuthMissing").default("AuthMissing" as const),
+    message: z.string(),
+  }));
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyFeedGetActorLikesAppBskyFeedResponseBody$ {
-  /** @deprecated use `AppBskyFeedGetActorLikesAppBskyFeedResponseBody$inboundSchema` instead. */
+export namespace AppBskyFeedGetActorLikesFeedResponseBody$ {
+  /** @deprecated use `AppBskyFeedGetActorLikesFeedResponseBody$inboundSchema` instead. */
   export const inboundSchema =
-    AppBskyFeedGetActorLikesAppBskyFeedResponseBody$inboundSchema;
-  /** @deprecated use `AppBskyFeedGetActorLikesAppBskyFeedResponseBody$outboundSchema` instead. */
+    AppBskyFeedGetActorLikesFeedResponseBody$inboundSchema;
+  /** @deprecated use `AppBskyFeedGetActorLikesFeedResponseBody$outboundSchema` instead. */
   export const outboundSchema =
-    AppBskyFeedGetActorLikesAppBskyFeedResponseBody$outboundSchema;
-  /** @deprecated use `AppBskyFeedGetActorLikesAppBskyFeedResponseBody$Outbound` instead. */
-  export type Outbound =
-    AppBskyFeedGetActorLikesAppBskyFeedResponseBody$Outbound;
+    AppBskyFeedGetActorLikesFeedResponseBody$outboundSchema;
+  /** @deprecated use `AppBskyFeedGetActorLikesFeedResponseBody$Outbound` instead. */
+  export type Outbound = AppBskyFeedGetActorLikesFeedResponseBody$Outbound;
 }
 
 /** @internal */

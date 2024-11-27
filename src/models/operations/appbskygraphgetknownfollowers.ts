@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod";
+import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
@@ -21,6 +22,10 @@ export type AppBskyGraphGetKnownFollowersResponseBody = {
   subject: components.AppBskyActorDefsProfileView;
   cursor?: string | undefined;
   followers: Array<components.AppBskyActorDefsProfileView>;
+};
+
+export type AppBskyGraphGetKnownFollowersResponse = {
+  result: AppBskyGraphGetKnownFollowersResponseBody;
 };
 
 /** @internal */
@@ -157,5 +162,74 @@ export function appBskyGraphGetKnownFollowersResponseBodyFromJSON(
         JSON.parse(x),
       ),
     `Failed to parse 'AppBskyGraphGetKnownFollowersResponseBody' from JSON`,
+  );
+}
+
+/** @internal */
+export const AppBskyGraphGetKnownFollowersResponse$inboundSchema: z.ZodType<
+  AppBskyGraphGetKnownFollowersResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  Result: z.lazy(() => AppBskyGraphGetKnownFollowersResponseBody$inboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    "Result": "result",
+  });
+});
+
+/** @internal */
+export type AppBskyGraphGetKnownFollowersResponse$Outbound = {
+  Result: AppBskyGraphGetKnownFollowersResponseBody$Outbound;
+};
+
+/** @internal */
+export const AppBskyGraphGetKnownFollowersResponse$outboundSchema: z.ZodType<
+  AppBskyGraphGetKnownFollowersResponse$Outbound,
+  z.ZodTypeDef,
+  AppBskyGraphGetKnownFollowersResponse
+> = z.object({
+  result: z.lazy(() =>
+    AppBskyGraphGetKnownFollowersResponseBody$outboundSchema
+  ),
+}).transform((v) => {
+  return remap$(v, {
+    result: "Result",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AppBskyGraphGetKnownFollowersResponse$ {
+  /** @deprecated use `AppBskyGraphGetKnownFollowersResponse$inboundSchema` instead. */
+  export const inboundSchema =
+    AppBskyGraphGetKnownFollowersResponse$inboundSchema;
+  /** @deprecated use `AppBskyGraphGetKnownFollowersResponse$outboundSchema` instead. */
+  export const outboundSchema =
+    AppBskyGraphGetKnownFollowersResponse$outboundSchema;
+  /** @deprecated use `AppBskyGraphGetKnownFollowersResponse$Outbound` instead. */
+  export type Outbound = AppBskyGraphGetKnownFollowersResponse$Outbound;
+}
+
+export function appBskyGraphGetKnownFollowersResponseToJSON(
+  appBskyGraphGetKnownFollowersResponse: AppBskyGraphGetKnownFollowersResponse,
+): string {
+  return JSON.stringify(
+    AppBskyGraphGetKnownFollowersResponse$outboundSchema.parse(
+      appBskyGraphGetKnownFollowersResponse,
+    ),
+  );
+}
+
+export function appBskyGraphGetKnownFollowersResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<AppBskyGraphGetKnownFollowersResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      AppBskyGraphGetKnownFollowersResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AppBskyGraphGetKnownFollowersResponse' from JSON`,
   );
 }

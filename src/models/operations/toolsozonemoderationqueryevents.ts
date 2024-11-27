@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod";
+import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -87,6 +88,10 @@ export type ToolsOzoneModerationQueryEventsRequest = {
 export type ToolsOzoneModerationQueryEventsResponseBody = {
   cursor?: string | undefined;
   events: Array<components.ToolsOzoneModerationDefsModEventView>;
+};
+
+export type ToolsOzoneModerationQueryEventsResponse = {
+  result: ToolsOzoneModerationQueryEventsResponseBody;
 };
 
 /** @internal */
@@ -294,5 +299,82 @@ export function toolsOzoneModerationQueryEventsResponseBodyFromJSON(
         JSON.parse(x),
       ),
     `Failed to parse 'ToolsOzoneModerationQueryEventsResponseBody' from JSON`,
+  );
+}
+
+/** @internal */
+export const ToolsOzoneModerationQueryEventsResponse$inboundSchema: z.ZodType<
+  ToolsOzoneModerationQueryEventsResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  Result: z.lazy(() =>
+    ToolsOzoneModerationQueryEventsResponseBody$inboundSchema
+  ),
+}).transform((v) => {
+  return remap$(v, {
+    "Result": "result",
+  });
+});
+
+/** @internal */
+export type ToolsOzoneModerationQueryEventsResponse$Outbound = {
+  Result: ToolsOzoneModerationQueryEventsResponseBody$Outbound;
+};
+
+/** @internal */
+export const ToolsOzoneModerationQueryEventsResponse$outboundSchema: z.ZodType<
+  ToolsOzoneModerationQueryEventsResponse$Outbound,
+  z.ZodTypeDef,
+  ToolsOzoneModerationQueryEventsResponse
+> = z.object({
+  result: z.lazy(() =>
+    ToolsOzoneModerationQueryEventsResponseBody$outboundSchema
+  ),
+}).transform((v) => {
+  return remap$(v, {
+    result: "Result",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace ToolsOzoneModerationQueryEventsResponse$ {
+  /** @deprecated use `ToolsOzoneModerationQueryEventsResponse$inboundSchema` instead. */
+  export const inboundSchema =
+    ToolsOzoneModerationQueryEventsResponse$inboundSchema;
+  /** @deprecated use `ToolsOzoneModerationQueryEventsResponse$outboundSchema` instead. */
+  export const outboundSchema =
+    ToolsOzoneModerationQueryEventsResponse$outboundSchema;
+  /** @deprecated use `ToolsOzoneModerationQueryEventsResponse$Outbound` instead. */
+  export type Outbound = ToolsOzoneModerationQueryEventsResponse$Outbound;
+}
+
+export function toolsOzoneModerationQueryEventsResponseToJSON(
+  toolsOzoneModerationQueryEventsResponse:
+    ToolsOzoneModerationQueryEventsResponse,
+): string {
+  return JSON.stringify(
+    ToolsOzoneModerationQueryEventsResponse$outboundSchema.parse(
+      toolsOzoneModerationQueryEventsResponse,
+    ),
+  );
+}
+
+export function toolsOzoneModerationQueryEventsResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  ToolsOzoneModerationQueryEventsResponse,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      ToolsOzoneModerationQueryEventsResponse$inboundSchema.parse(
+        JSON.parse(x),
+      ),
+    `Failed to parse 'ToolsOzoneModerationQueryEventsResponse' from JSON`,
   );
 }

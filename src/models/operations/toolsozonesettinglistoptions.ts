@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod";
+import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -35,6 +36,10 @@ export type ToolsOzoneSettingListOptionsRequest = {
 export type ToolsOzoneSettingListOptionsResponseBody = {
   cursor?: string | undefined;
   options: Array<components.ToolsOzoneSettingDefsOption>;
+};
+
+export type ToolsOzoneSettingListOptionsResponse = {
+  result: ToolsOzoneSettingListOptionsResponseBody;
 };
 
 /** @internal */
@@ -194,5 +199,72 @@ export function toolsOzoneSettingListOptionsResponseBodyFromJSON(
         JSON.parse(x),
       ),
     `Failed to parse 'ToolsOzoneSettingListOptionsResponseBody' from JSON`,
+  );
+}
+
+/** @internal */
+export const ToolsOzoneSettingListOptionsResponse$inboundSchema: z.ZodType<
+  ToolsOzoneSettingListOptionsResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  Result: z.lazy(() => ToolsOzoneSettingListOptionsResponseBody$inboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    "Result": "result",
+  });
+});
+
+/** @internal */
+export type ToolsOzoneSettingListOptionsResponse$Outbound = {
+  Result: ToolsOzoneSettingListOptionsResponseBody$Outbound;
+};
+
+/** @internal */
+export const ToolsOzoneSettingListOptionsResponse$outboundSchema: z.ZodType<
+  ToolsOzoneSettingListOptionsResponse$Outbound,
+  z.ZodTypeDef,
+  ToolsOzoneSettingListOptionsResponse
+> = z.object({
+  result: z.lazy(() => ToolsOzoneSettingListOptionsResponseBody$outboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    result: "Result",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace ToolsOzoneSettingListOptionsResponse$ {
+  /** @deprecated use `ToolsOzoneSettingListOptionsResponse$inboundSchema` instead. */
+  export const inboundSchema =
+    ToolsOzoneSettingListOptionsResponse$inboundSchema;
+  /** @deprecated use `ToolsOzoneSettingListOptionsResponse$outboundSchema` instead. */
+  export const outboundSchema =
+    ToolsOzoneSettingListOptionsResponse$outboundSchema;
+  /** @deprecated use `ToolsOzoneSettingListOptionsResponse$Outbound` instead. */
+  export type Outbound = ToolsOzoneSettingListOptionsResponse$Outbound;
+}
+
+export function toolsOzoneSettingListOptionsResponseToJSON(
+  toolsOzoneSettingListOptionsResponse: ToolsOzoneSettingListOptionsResponse,
+): string {
+  return JSON.stringify(
+    ToolsOzoneSettingListOptionsResponse$outboundSchema.parse(
+      toolsOzoneSettingListOptionsResponse,
+    ),
+  );
+}
+
+export function toolsOzoneSettingListOptionsResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<ToolsOzoneSettingListOptionsResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      ToolsOzoneSettingListOptionsResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ToolsOzoneSettingListOptionsResponse' from JSON`,
   );
 }

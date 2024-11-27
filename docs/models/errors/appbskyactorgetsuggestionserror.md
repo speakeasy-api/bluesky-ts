@@ -5,7 +5,7 @@
 ```typescript
 import { AppBskyActorGetSuggestionsError } from "bluesky/models/errors";
 
-let value: AppBskyActorGetSuggestionsError = "ExpiredToken";
+let value: AppBskyActorGetSuggestionsError = "InvalidToken";
 ```
 
 ## Values

@@ -6,7 +6,7 @@
 import { AppBskyGraphDefsListView } from "bluesky/models/components";
 
 let value: AppBskyGraphDefsListView = {
-  uri: "https://disloyal-vanadyl.biz/",
+  uri: "https://immense-valuable.name",
   cid: "<id>",
   creator: {
     did: "<id>",
@@ -14,7 +14,7 @@ let value: AppBskyGraphDefsListView = {
   },
   name: "<value>",
   purpose: "<value>",
-  indexedAt: new Date("2023-12-01T16:12:48.033Z"),
+  indexedAt: new Date("2022-05-11T07:59:28.486Z"),
 };
 ```
 

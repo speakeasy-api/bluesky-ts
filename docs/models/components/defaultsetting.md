@@ -7,7 +7,7 @@ The default setting for this label.
 ```typescript
 import { DefaultSetting } from "bluesky/models/components";
 
-let value: DefaultSetting = "hide";
+let value: DefaultSetting = "warn";
 ```
 
 ## Values

@@ -6,14 +6,14 @@
 import { AppBskyGraphDefsStarterPackViewBasic } from "bluesky/models/components";
 
 let value: AppBskyGraphDefsStarterPackViewBasic = {
-  uri: "https://stylish-language.info",
+  uri: "https://hidden-import.info",
   cid: "<id>",
   record: "<value>",
   creator: {
     did: "<id>",
     handle: "<value>",
   },
-  indexedAt: new Date("2024-05-16T18:15:34.753Z"),
+  indexedAt: new Date("2024-11-29T15:51:58.019Z"),
 };
 ```
 

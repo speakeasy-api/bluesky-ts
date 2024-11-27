@@ -6,7 +6,7 @@
 import { AppBskyFeedDescribeFeedGeneratorFeed } from "bluesky/models/components";
 
 let value: AppBskyFeedDescribeFeedGeneratorFeed = {
-  uri: "https://judicious-legging.net/",
+  uri: "https://bustling-flood.name/",
 };
 ```
 

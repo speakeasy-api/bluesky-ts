@@ -12,7 +12,7 @@ let value: ComAtprotoAdminGetAccountInfosResponseBody = {
     {
       did: "<id>",
       handle: "<value>",
-      indexedAt: new Date("2022-09-03T10:06:53.981Z"),
+      indexedAt: new Date("2022-10-06T18:35:34.427Z"),
     },
   ],
 };

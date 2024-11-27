@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoSyncNotifyOfUpdateError } from "bluesky/models/errors";
 
-let value: ComAtprotoSyncNotifyOfUpdateError = "InvalidRequest";
+let value: ComAtprotoSyncNotifyOfUpdateError = "InvalidToken";
 ```
 
 ## Values

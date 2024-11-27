@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod";
+import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
@@ -25,6 +26,10 @@ export type ToolsOzoneSetQuerySetsRequest = {
 export type ToolsOzoneSetQuerySetsResponseBody = {
   sets: Array<components.ToolsOzoneSetDefsSetView>;
   cursor?: string | undefined;
+};
+
+export type ToolsOzoneSetQuerySetsResponse = {
+  result: ToolsOzoneSetQuerySetsResponseBody;
 };
 
 /** @internal */
@@ -153,5 +158,69 @@ export function toolsOzoneSetQuerySetsResponseBodyFromJSON(
     (x) =>
       ToolsOzoneSetQuerySetsResponseBody$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'ToolsOzoneSetQuerySetsResponseBody' from JSON`,
+  );
+}
+
+/** @internal */
+export const ToolsOzoneSetQuerySetsResponse$inboundSchema: z.ZodType<
+  ToolsOzoneSetQuerySetsResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  Result: z.lazy(() => ToolsOzoneSetQuerySetsResponseBody$inboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    "Result": "result",
+  });
+});
+
+/** @internal */
+export type ToolsOzoneSetQuerySetsResponse$Outbound = {
+  Result: ToolsOzoneSetQuerySetsResponseBody$Outbound;
+};
+
+/** @internal */
+export const ToolsOzoneSetQuerySetsResponse$outboundSchema: z.ZodType<
+  ToolsOzoneSetQuerySetsResponse$Outbound,
+  z.ZodTypeDef,
+  ToolsOzoneSetQuerySetsResponse
+> = z.object({
+  result: z.lazy(() => ToolsOzoneSetQuerySetsResponseBody$outboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    result: "Result",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace ToolsOzoneSetQuerySetsResponse$ {
+  /** @deprecated use `ToolsOzoneSetQuerySetsResponse$inboundSchema` instead. */
+  export const inboundSchema = ToolsOzoneSetQuerySetsResponse$inboundSchema;
+  /** @deprecated use `ToolsOzoneSetQuerySetsResponse$outboundSchema` instead. */
+  export const outboundSchema = ToolsOzoneSetQuerySetsResponse$outboundSchema;
+  /** @deprecated use `ToolsOzoneSetQuerySetsResponse$Outbound` instead. */
+  export type Outbound = ToolsOzoneSetQuerySetsResponse$Outbound;
+}
+
+export function toolsOzoneSetQuerySetsResponseToJSON(
+  toolsOzoneSetQuerySetsResponse: ToolsOzoneSetQuerySetsResponse,
+): string {
+  return JSON.stringify(
+    ToolsOzoneSetQuerySetsResponse$outboundSchema.parse(
+      toolsOzoneSetQuerySetsResponse,
+    ),
+  );
+}
+
+export function toolsOzoneSetQuerySetsResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<ToolsOzoneSetQuerySetsResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ToolsOzoneSetQuerySetsResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ToolsOzoneSetQuerySetsResponse' from JSON`,
   );
 }

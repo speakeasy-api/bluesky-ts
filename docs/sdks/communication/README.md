@@ -1,32 +1,32 @@
 # Communication
-(*tools.ozone.communication*)
+(*ozone.communication*)
 
 ## Overview
 
 ### Available Operations
 
-* [toolsOzoneCommunicationCreateTemplate](#toolsozonecommunicationcreatetemplate) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
+* [createTemplate](#createtemplate) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Administrative action to create a new, re-usable communication (email for now) template.
-* [toolsOzoneCommunicationDeleteTemplate](#toolsozonecommunicationdeletetemplate) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
+* [deleteTemplate](#deletetemplate) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Delete a communication template.
-* [toolsOzoneCommunicationListTemplates](#toolsozonecommunicationlisttemplates) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
+* [listTemplates](#listtemplates) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Get list of all communication templates.
-* [toolsOzoneCommunicationUpdateTemplate](#toolsozonecommunicationupdatetemplate) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
+* [updateTemplate](#updatetemplate) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Administrative action to update an existing communication template. Allows passing partial fields to patch specific fields only.
 
-## toolsOzoneCommunicationCreateTemplate
+## createTemplate
 
 *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
@@ -44,7 +44,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.tools.ozone.communication.toolsOzoneCommunicationCreateTemplate({
+  const result = await bluesky.ozone.communication.createTemplate({
     name: "<value>",
     contentMarkdown: "<value>",
     subject: "<value>",
@@ -63,7 +63,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { toolsOzoneCommunicationToolsOzoneCommunicationCreateTemplate } from "bluesky/funcs/toolsOzoneCommunicationToolsOzoneCommunicationCreateTemplate.js";
+import { ozoneCommunicationCreateTemplate } from "bluesky/funcs/ozoneCommunicationCreateTemplate.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -72,7 +72,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await toolsOzoneCommunicationToolsOzoneCommunicationCreateTemplate(bluesky, {
+  const res = await ozoneCommunicationCreateTemplate(bluesky, {
     name: "<value>",
     contentMarkdown: "<value>",
     subject: "<value>",
@@ -106,13 +106,13 @@ run();
 
 ### Errors
 
-| Error Type                                                                      | Status Code                                                                     | Content Type                                                                    |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| errors.ToolsOzoneCommunicationCreateTemplateResponseBody                        | 400                                                                             | application/json                                                                |
-| errors.ToolsOzoneCommunicationCreateTemplateToolsOzoneCommunicationResponseBody | 401                                                                             | application/json                                                                |
-| errors.APIError                                                                 | 4XX, 5XX                                                                        | \*/\*                                                                           |
+| Error Type                                                                 | Status Code                                                                | Content Type                                                               |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| errors.ToolsOzoneCommunicationCreateTemplateResponseBody                   | 400                                                                        | application/json                                                           |
+| errors.ToolsOzoneCommunicationCreateTemplateOzoneCommunicationResponseBody | 401                                                                        | application/json                                                           |
+| errors.APIError                                                            | 4XX, 5XX                                                                   | \*/\*                                                                      |
 
-## toolsOzoneCommunicationDeleteTemplate
+## deleteTemplate
 
 *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
@@ -130,7 +130,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  await bluesky.tools.ozone.communication.toolsOzoneCommunicationDeleteTemplate({
+  await bluesky.ozone.communication.deleteTemplate({
     id: "<id>",
   });
 
@@ -146,7 +146,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { toolsOzoneCommunicationToolsOzoneCommunicationDeleteTemplate } from "bluesky/funcs/toolsOzoneCommunicationToolsOzoneCommunicationDeleteTemplate.js";
+import { ozoneCommunicationDeleteTemplate } from "bluesky/funcs/ozoneCommunicationDeleteTemplate.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -155,7 +155,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await toolsOzoneCommunicationToolsOzoneCommunicationDeleteTemplate(bluesky, {
+  const res = await ozoneCommunicationDeleteTemplate(bluesky, {
     id: "<id>",
   });
 
@@ -186,13 +186,13 @@ run();
 
 ### Errors
 
-| Error Type                                                                      | Status Code                                                                     | Content Type                                                                    |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| errors.ToolsOzoneCommunicationDeleteTemplateResponseBody                        | 400                                                                             | application/json                                                                |
-| errors.ToolsOzoneCommunicationDeleteTemplateToolsOzoneCommunicationResponseBody | 401                                                                             | application/json                                                                |
-| errors.APIError                                                                 | 4XX, 5XX                                                                        | \*/\*                                                                           |
+| Error Type                                                                 | Status Code                                                                | Content Type                                                               |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| errors.ToolsOzoneCommunicationDeleteTemplateResponseBody                   | 400                                                                        | application/json                                                           |
+| errors.ToolsOzoneCommunicationDeleteTemplateOzoneCommunicationResponseBody | 401                                                                        | application/json                                                           |
+| errors.APIError                                                            | 4XX, 5XX                                                                   | \*/\*                                                                      |
 
-## toolsOzoneCommunicationListTemplates
+## listTemplates
 
 *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
@@ -210,7 +210,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.tools.ozone.communication.toolsOzoneCommunicationListTemplates();
+  const result = await bluesky.ozone.communication.listTemplates();
 
   // Handle the result
   console.log(result);
@@ -225,7 +225,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { toolsOzoneCommunicationToolsOzoneCommunicationListTemplates } from "bluesky/funcs/toolsOzoneCommunicationToolsOzoneCommunicationListTemplates.js";
+import { ozoneCommunicationListTemplates } from "bluesky/funcs/ozoneCommunicationListTemplates.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -234,7 +234,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await toolsOzoneCommunicationToolsOzoneCommunicationListTemplates(bluesky);
+  const res = await ozoneCommunicationListTemplates(bluesky);
 
   if (!res.ok) {
     throw res.error;
@@ -263,13 +263,13 @@ run();
 
 ### Errors
 
-| Error Type                                                                     | Status Code                                                                    | Content Type                                                                   |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| errors.ToolsOzoneCommunicationListTemplatesResponseBody                        | 400                                                                            | application/json                                                               |
-| errors.ToolsOzoneCommunicationListTemplatesToolsOzoneCommunicationResponseBody | 401                                                                            | application/json                                                               |
-| errors.APIError                                                                | 4XX, 5XX                                                                       | \*/\*                                                                          |
+| Error Type                                                                | Status Code                                                               | Content Type                                                              |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| errors.ToolsOzoneCommunicationListTemplatesResponseBody                   | 400                                                                       | application/json                                                          |
+| errors.ToolsOzoneCommunicationListTemplatesOzoneCommunicationResponseBody | 401                                                                       | application/json                                                          |
+| errors.APIError                                                           | 4XX, 5XX                                                                  | \*/\*                                                                     |
 
-## toolsOzoneCommunicationUpdateTemplate
+## updateTemplate
 
 *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
@@ -287,7 +287,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.tools.ozone.communication.toolsOzoneCommunicationUpdateTemplate({
+  const result = await bluesky.ozone.communication.updateTemplate({
     id: "<id>",
   });
 
@@ -304,7 +304,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { toolsOzoneCommunicationToolsOzoneCommunicationUpdateTemplate } from "bluesky/funcs/toolsOzoneCommunicationToolsOzoneCommunicationUpdateTemplate.js";
+import { ozoneCommunicationUpdateTemplate } from "bluesky/funcs/ozoneCommunicationUpdateTemplate.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -313,7 +313,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await toolsOzoneCommunicationToolsOzoneCommunicationUpdateTemplate(bluesky, {
+  const res = await ozoneCommunicationUpdateTemplate(bluesky, {
     id: "<id>",
   });
 
@@ -345,8 +345,8 @@ run();
 
 ### Errors
 
-| Error Type                                                                      | Status Code                                                                     | Content Type                                                                    |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| errors.ToolsOzoneCommunicationUpdateTemplateResponseBody                        | 400                                                                             | application/json                                                                |
-| errors.ToolsOzoneCommunicationUpdateTemplateToolsOzoneCommunicationResponseBody | 401                                                                             | application/json                                                                |
-| errors.APIError                                                                 | 4XX, 5XX                                                                        | \*/\*                                                                           |
+| Error Type                                                                 | Status Code                                                                | Content Type                                                               |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| errors.ToolsOzoneCommunicationUpdateTemplateResponseBody                   | 400                                                                        | application/json                                                           |
+| errors.ToolsOzoneCommunicationUpdateTemplateOzoneCommunicationResponseBody | 401                                                                        | application/json                                                           |
+| errors.APIError                                                            | 4XX, 5XX                                                                   | \*/\*                                                                      |

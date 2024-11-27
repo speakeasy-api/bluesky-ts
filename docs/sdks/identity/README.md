@@ -1,30 +1,30 @@
 # Identity
-(*com.atproto.identity*)
+(*atproto.identity*)
 
 ## Overview
 
 ### Available Operations
 
-* [comAtprotoIdentityGetRecommendedDidCredentials](#comatprotoidentitygetrecommendeddidcredentials) - *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
+* [getRecommendedDidCredentials](#getrecommendeddidcredentials) - *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Describe the credentials that should be included in the DID doc of an account that is migrating to this service.
-* [comAtprotoIdentityRequestPlcOperationSignature](#comatprotoidentityrequestplcoperationsignature) - *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
+* [requestPlcOperationSignature](#requestplcoperationsignature) - *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Request an email with a code to in order to request a signed PLC operation. Requires Auth.
-* [comAtprotoIdentityResolveHandle](#comatprotoidentityresolvehandle) - *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
+* [resolveHandle](#resolvehandle) - *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Resolves a handle (domain name) to a DID.
-* [comAtprotoIdentitySignPlcOperation](#comatprotoidentitysignplcoperation) - *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
+* [signPlcOperation](#signplcoperation) - *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Signs a PLC operation to update some value(s) in the requesting DID's document.
-* [comAtprotoIdentitySubmitPlcOperation](#comatprotoidentitysubmitplcoperation) - *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
+* [submitPlcOperation](#submitplcoperation) - *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Validates a PLC operation to ensure that it doesn't violate a service's constraints or get the identity into a bad state, then submits it to the PLC registry
-* [comAtprotoIdentityUpdateHandle](#comatprotoidentityupdatehandle) - *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
+* [updateHandle](#updatehandle) - *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Updates the current account's handle. Verifies handle validity, and updates did:plc document if necessary. Implemented by PDS, and requires auth.
 
-## comAtprotoIdentityGetRecommendedDidCredentials
+## getRecommendedDidCredentials
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
@@ -40,7 +40,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.com.atproto.identity.comAtprotoIdentityGetRecommendedDidCredentials();
+  const result = await bluesky.atproto.identity.getRecommendedDidCredentials();
 
   // Handle the result
   console.log(result);
@@ -55,7 +55,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoIdentityComAtprotoIdentityGetRecommendedDidCredentials } from "bluesky/funcs/comAtprotoIdentityComAtprotoIdentityGetRecommendedDidCredentials.js";
+import { atprotoIdentityGetRecommendedDidCredentials } from "bluesky/funcs/atprotoIdentityGetRecommendedDidCredentials.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -64,7 +64,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoIdentityComAtprotoIdentityGetRecommendedDidCredentials(bluesky);
+  const res = await atprotoIdentityGetRecommendedDidCredentials(bluesky);
 
   if (!res.ok) {
     throw res.error;
@@ -93,13 +93,13 @@ run();
 
 ### Errors
 
-| Error Type                                                                          | Status Code                                                                         | Content Type                                                                        |
-| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| errors.ComAtprotoIdentityGetRecommendedDidCredentialsResponseBody                   | 400                                                                                 | application/json                                                                    |
-| errors.ComAtprotoIdentityGetRecommendedDidCredentialsComAtprotoIdentityResponseBody | 401                                                                                 | application/json                                                                    |
-| errors.APIError                                                                     | 4XX, 5XX                                                                            | \*/\*                                                                               |
+| Error Type                                                                       | Status Code                                                                      | Content Type                                                                     |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| errors.ComAtprotoIdentityGetRecommendedDidCredentialsResponseBody                | 400                                                                              | application/json                                                                 |
+| errors.ComAtprotoIdentityGetRecommendedDidCredentialsAtprotoIdentityResponseBody | 401                                                                              | application/json                                                                 |
+| errors.APIError                                                                  | 4XX, 5XX                                                                         | \*/\*                                                                            |
 
-## comAtprotoIdentityRequestPlcOperationSignature
+## requestPlcOperationSignature
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
@@ -115,7 +115,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  await bluesky.com.atproto.identity.comAtprotoIdentityRequestPlcOperationSignature();
+  await bluesky.atproto.identity.requestPlcOperationSignature();
 
 
 }
@@ -129,7 +129,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoIdentityComAtprotoIdentityRequestPlcOperationSignature } from "bluesky/funcs/comAtprotoIdentityComAtprotoIdentityRequestPlcOperationSignature.js";
+import { atprotoIdentityRequestPlcOperationSignature } from "bluesky/funcs/atprotoIdentityRequestPlcOperationSignature.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -138,7 +138,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoIdentityComAtprotoIdentityRequestPlcOperationSignature(bluesky);
+  const res = await atprotoIdentityRequestPlcOperationSignature(bluesky);
 
   if (!res.ok) {
     throw res.error;
@@ -166,13 +166,13 @@ run();
 
 ### Errors
 
-| Error Type                                                                          | Status Code                                                                         | Content Type                                                                        |
-| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| errors.ComAtprotoIdentityRequestPlcOperationSignatureResponseBody                   | 400                                                                                 | application/json                                                                    |
-| errors.ComAtprotoIdentityRequestPlcOperationSignatureComAtprotoIdentityResponseBody | 401                                                                                 | application/json                                                                    |
-| errors.APIError                                                                     | 4XX, 5XX                                                                            | \*/\*                                                                               |
+| Error Type                                                                       | Status Code                                                                      | Content Type                                                                     |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| errors.ComAtprotoIdentityRequestPlcOperationSignatureResponseBody                | 400                                                                              | application/json                                                                 |
+| errors.ComAtprotoIdentityRequestPlcOperationSignatureAtprotoIdentityResponseBody | 401                                                                              | application/json                                                                 |
+| errors.APIError                                                                  | 4XX, 5XX                                                                         | \*/\*                                                                            |
 
-## comAtprotoIdentityResolveHandle
+## resolveHandle
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
@@ -188,7 +188,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.com.atproto.identity.comAtprotoIdentityResolveHandle({
+  const result = await bluesky.atproto.identity.resolveHandle({
     handle: "<value>",
   });
 
@@ -205,7 +205,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoIdentityComAtprotoIdentityResolveHandle } from "bluesky/funcs/comAtprotoIdentityComAtprotoIdentityResolveHandle.js";
+import { atprotoIdentityResolveHandle } from "bluesky/funcs/atprotoIdentityResolveHandle.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -214,7 +214,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoIdentityComAtprotoIdentityResolveHandle(bluesky, {
+  const res = await atprotoIdentityResolveHandle(bluesky, {
     handle: "<value>",
   });
 
@@ -246,13 +246,13 @@ run();
 
 ### Errors
 
-| Error Type                                                           | Status Code                                                          | Content Type                                                         |
-| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| errors.ComAtprotoIdentityResolveHandleResponseBody                   | 400                                                                  | application/json                                                     |
-| errors.ComAtprotoIdentityResolveHandleComAtprotoIdentityResponseBody | 401                                                                  | application/json                                                     |
-| errors.APIError                                                      | 4XX, 5XX                                                             | \*/\*                                                                |
+| Error Type                                                        | Status Code                                                       | Content Type                                                      |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| errors.ComAtprotoIdentityResolveHandleResponseBody                | 400                                                               | application/json                                                  |
+| errors.ComAtprotoIdentityResolveHandleAtprotoIdentityResponseBody | 401                                                               | application/json                                                  |
+| errors.APIError                                                   | 4XX, 5XX                                                          | \*/\*                                                             |
 
-## comAtprotoIdentitySignPlcOperation
+## signPlcOperation
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
@@ -268,7 +268,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.com.atproto.identity.comAtprotoIdentitySignPlcOperation();
+  const result = await bluesky.atproto.identity.signPlcOperation();
 
   // Handle the result
   console.log(result);
@@ -283,7 +283,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoIdentityComAtprotoIdentitySignPlcOperation } from "bluesky/funcs/comAtprotoIdentityComAtprotoIdentitySignPlcOperation.js";
+import { atprotoIdentitySignPlcOperation } from "bluesky/funcs/atprotoIdentitySignPlcOperation.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -292,7 +292,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoIdentityComAtprotoIdentitySignPlcOperation(bluesky);
+  const res = await atprotoIdentitySignPlcOperation(bluesky);
 
   if (!res.ok) {
     throw res.error;
@@ -322,13 +322,13 @@ run();
 
 ### Errors
 
-| Error Type                                                              | Status Code                                                             | Content Type                                                            |
-| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| errors.ComAtprotoIdentitySignPlcOperationResponseBody                   | 400                                                                     | application/json                                                        |
-| errors.ComAtprotoIdentitySignPlcOperationComAtprotoIdentityResponseBody | 401                                                                     | application/json                                                        |
-| errors.APIError                                                         | 4XX, 5XX                                                                | \*/\*                                                                   |
+| Error Type                                                           | Status Code                                                          | Content Type                                                         |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| errors.ComAtprotoIdentitySignPlcOperationResponseBody                | 400                                                                  | application/json                                                     |
+| errors.ComAtprotoIdentitySignPlcOperationAtprotoIdentityResponseBody | 401                                                                  | application/json                                                     |
+| errors.APIError                                                      | 4XX, 5XX                                                             | \*/\*                                                                |
 
-## comAtprotoIdentitySubmitPlcOperation
+## submitPlcOperation
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
@@ -344,7 +344,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  await bluesky.com.atproto.identity.comAtprotoIdentitySubmitPlcOperation({
+  await bluesky.atproto.identity.submitPlcOperation({
     operation: "<value>",
   });
 
@@ -360,7 +360,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoIdentityComAtprotoIdentitySubmitPlcOperation } from "bluesky/funcs/comAtprotoIdentityComAtprotoIdentitySubmitPlcOperation.js";
+import { atprotoIdentitySubmitPlcOperation } from "bluesky/funcs/atprotoIdentitySubmitPlcOperation.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -369,7 +369,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoIdentityComAtprotoIdentitySubmitPlcOperation(bluesky, {
+  const res = await atprotoIdentitySubmitPlcOperation(bluesky, {
     operation: "<value>",
   });
 
@@ -400,13 +400,13 @@ run();
 
 ### Errors
 
-| Error Type                                                                | Status Code                                                               | Content Type                                                              |
-| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| errors.ComAtprotoIdentitySubmitPlcOperationResponseBody                   | 400                                                                       | application/json                                                          |
-| errors.ComAtprotoIdentitySubmitPlcOperationComAtprotoIdentityResponseBody | 401                                                                       | application/json                                                          |
-| errors.APIError                                                           | 4XX, 5XX                                                                  | \*/\*                                                                     |
+| Error Type                                                             | Status Code                                                            | Content Type                                                           |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| errors.ComAtprotoIdentitySubmitPlcOperationResponseBody                | 400                                                                    | application/json                                                       |
+| errors.ComAtprotoIdentitySubmitPlcOperationAtprotoIdentityResponseBody | 401                                                                    | application/json                                                       |
+| errors.APIError                                                        | 4XX, 5XX                                                               | \*/\*                                                                  |
 
-## comAtprotoIdentityUpdateHandle
+## updateHandle
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
@@ -422,7 +422,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  await bluesky.com.atproto.identity.comAtprotoIdentityUpdateHandle({
+  await bluesky.atproto.identity.updateHandle({
     handle: "<value>",
   });
 
@@ -438,7 +438,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoIdentityComAtprotoIdentityUpdateHandle } from "bluesky/funcs/comAtprotoIdentityComAtprotoIdentityUpdateHandle.js";
+import { atprotoIdentityUpdateHandle } from "bluesky/funcs/atprotoIdentityUpdateHandle.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -447,7 +447,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoIdentityComAtprotoIdentityUpdateHandle(bluesky, {
+  const res = await atprotoIdentityUpdateHandle(bluesky, {
     handle: "<value>",
   });
 
@@ -478,8 +478,8 @@ run();
 
 ### Errors
 
-| Error Type                                                          | Status Code                                                         | Content Type                                                        |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| errors.ComAtprotoIdentityUpdateHandleResponseBody                   | 400                                                                 | application/json                                                    |
-| errors.ComAtprotoIdentityUpdateHandleComAtprotoIdentityResponseBody | 401                                                                 | application/json                                                    |
-| errors.APIError                                                     | 4XX, 5XX                                                            | \*/\*                                                               |
+| Error Type                                                       | Status Code                                                      | Content Type                                                     |
+| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
+| errors.ComAtprotoIdentityUpdateHandleResponseBody                | 400                                                              | application/json                                                 |
+| errors.ComAtprotoIdentityUpdateHandleAtprotoIdentityResponseBody | 401                                                              | application/json                                                 |
+| errors.APIError                                                  | 4XX, 5XX                                                         | \*/\*                                                            |

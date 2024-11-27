@@ -7,14 +7,14 @@
 
 ```typescript
 const value: components.AppBskyFeedDefsPostView = {
-  uri: "https://bare-bar.org/",
+  uri: "https://busy-king.name",
   cid: "<id>",
   author: {
     did: "<id>",
     handle: "<value>",
   },
   record: "<value>",
-  indexedAt: new Date("2024-03-21T21:54:23.669Z"),
+  indexedAt: new Date("2022-09-22T17:54:58.972Z"),
 };
 ```
 
@@ -22,7 +22,7 @@ const value: components.AppBskyFeedDefsPostView = {
 
 ```typescript
 const value: components.AppBskyFeedDefsNotFoundPost = {
-  uri: "https://rectangular-litter.biz",
+  uri: "https://tired-backburn.info/",
 };
 ```
 
@@ -30,7 +30,7 @@ const value: components.AppBskyFeedDefsNotFoundPost = {
 
 ```typescript
 const value: components.AppBskyFeedDefsBlockedPost = {
-  uri: "https://heavenly-instruction.info",
+  uri: "https://late-waterspout.info/",
   author: {
     did: "<id>",
   },

@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod";
+import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
@@ -23,6 +24,10 @@ export type AppBskyFeedGetTimelineRequest = {
 export type AppBskyFeedGetTimelineResponseBody = {
   cursor?: string | undefined;
   feed: Array<components.AppBskyFeedDefsFeedViewPost>;
+};
+
+export type AppBskyFeedGetTimelineResponse = {
+  result: AppBskyFeedGetTimelineResponseBody;
 };
 
 /** @internal */
@@ -145,5 +150,69 @@ export function appBskyFeedGetTimelineResponseBodyFromJSON(
     (x) =>
       AppBskyFeedGetTimelineResponseBody$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'AppBskyFeedGetTimelineResponseBody' from JSON`,
+  );
+}
+
+/** @internal */
+export const AppBskyFeedGetTimelineResponse$inboundSchema: z.ZodType<
+  AppBskyFeedGetTimelineResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  Result: z.lazy(() => AppBskyFeedGetTimelineResponseBody$inboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    "Result": "result",
+  });
+});
+
+/** @internal */
+export type AppBskyFeedGetTimelineResponse$Outbound = {
+  Result: AppBskyFeedGetTimelineResponseBody$Outbound;
+};
+
+/** @internal */
+export const AppBskyFeedGetTimelineResponse$outboundSchema: z.ZodType<
+  AppBskyFeedGetTimelineResponse$Outbound,
+  z.ZodTypeDef,
+  AppBskyFeedGetTimelineResponse
+> = z.object({
+  result: z.lazy(() => AppBskyFeedGetTimelineResponseBody$outboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    result: "Result",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AppBskyFeedGetTimelineResponse$ {
+  /** @deprecated use `AppBskyFeedGetTimelineResponse$inboundSchema` instead. */
+  export const inboundSchema = AppBskyFeedGetTimelineResponse$inboundSchema;
+  /** @deprecated use `AppBskyFeedGetTimelineResponse$outboundSchema` instead. */
+  export const outboundSchema = AppBskyFeedGetTimelineResponse$outboundSchema;
+  /** @deprecated use `AppBskyFeedGetTimelineResponse$Outbound` instead. */
+  export type Outbound = AppBskyFeedGetTimelineResponse$Outbound;
+}
+
+export function appBskyFeedGetTimelineResponseToJSON(
+  appBskyFeedGetTimelineResponse: AppBskyFeedGetTimelineResponse,
+): string {
+  return JSON.stringify(
+    AppBskyFeedGetTimelineResponse$outboundSchema.parse(
+      appBskyFeedGetTimelineResponse,
+    ),
+  );
+}
+
+export function appBskyFeedGetTimelineResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<AppBskyFeedGetTimelineResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => AppBskyFeedGetTimelineResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AppBskyFeedGetTimelineResponse' from JSON`,
   );
 }

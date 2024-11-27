@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type ComAtprotoServerRequestAccountDeleteComAtprotoServerResponseBodyData =
+export type ComAtprotoServerRequestAccountDeleteAtprotoServerResponseBodyData =
   {
     error: "AuthMissing";
     message: string;
@@ -17,16 +17,16 @@ export type ComAtprotoServerRequestAccountDeleteComAtprotoServerResponseBodyData
 /**
  * Unauthorized
  */
-export class ComAtprotoServerRequestAccountDeleteComAtprotoServerResponseBody
+export class ComAtprotoServerRequestAccountDeleteAtprotoServerResponseBody
   extends Error
 {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: ComAtprotoServerRequestAccountDeleteComAtprotoServerResponseBodyData;
+  data$: ComAtprotoServerRequestAccountDeleteAtprotoServerResponseBodyData;
 
   constructor(
-    err: ComAtprotoServerRequestAccountDeleteComAtprotoServerResponseBodyData,
+    err: ComAtprotoServerRequestAccountDeleteAtprotoServerResponseBodyData,
   ) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
@@ -36,8 +36,7 @@ export class ComAtprotoServerRequestAccountDeleteComAtprotoServerResponseBody
 
     this.error = err.error;
 
-    this.name =
-      "ComAtprotoServerRequestAccountDeleteComAtprotoServerResponseBody";
+    this.name = "ComAtprotoServerRequestAccountDeleteAtprotoServerResponseBody";
   }
 }
 
@@ -81,9 +80,9 @@ export class ComAtprotoServerRequestAccountDeleteResponseBody extends Error {
 }
 
 /** @internal */
-export const ComAtprotoServerRequestAccountDeleteComAtprotoServerResponseBody$inboundSchema:
+export const ComAtprotoServerRequestAccountDeleteAtprotoServerResponseBody$inboundSchema:
   z.ZodType<
-    ComAtprotoServerRequestAccountDeleteComAtprotoServerResponseBody,
+    ComAtprotoServerRequestAccountDeleteAtprotoServerResponseBody,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -91,26 +90,26 @@ export const ComAtprotoServerRequestAccountDeleteComAtprotoServerResponseBody$in
     message: z.string(),
   })
     .transform((v) => {
-      return new ComAtprotoServerRequestAccountDeleteComAtprotoServerResponseBody(
+      return new ComAtprotoServerRequestAccountDeleteAtprotoServerResponseBody(
         v,
       );
     });
 
 /** @internal */
-export type ComAtprotoServerRequestAccountDeleteComAtprotoServerResponseBody$Outbound =
+export type ComAtprotoServerRequestAccountDeleteAtprotoServerResponseBody$Outbound =
   {
     error: "AuthMissing";
     message: string;
   };
 
 /** @internal */
-export const ComAtprotoServerRequestAccountDeleteComAtprotoServerResponseBody$outboundSchema:
+export const ComAtprotoServerRequestAccountDeleteAtprotoServerResponseBody$outboundSchema:
   z.ZodType<
-    ComAtprotoServerRequestAccountDeleteComAtprotoServerResponseBody$Outbound,
+    ComAtprotoServerRequestAccountDeleteAtprotoServerResponseBody$Outbound,
     z.ZodTypeDef,
-    ComAtprotoServerRequestAccountDeleteComAtprotoServerResponseBody
+    ComAtprotoServerRequestAccountDeleteAtprotoServerResponseBody
   > = z.instanceof(
-    ComAtprotoServerRequestAccountDeleteComAtprotoServerResponseBody,
+    ComAtprotoServerRequestAccountDeleteAtprotoServerResponseBody,
   )
     .transform(v => v.data$)
     .pipe(z.object({
@@ -122,16 +121,16 @@ export const ComAtprotoServerRequestAccountDeleteComAtprotoServerResponseBody$ou
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoServerRequestAccountDeleteComAtprotoServerResponseBody$ {
-  /** @deprecated use `ComAtprotoServerRequestAccountDeleteComAtprotoServerResponseBody$inboundSchema` instead. */
+export namespace ComAtprotoServerRequestAccountDeleteAtprotoServerResponseBody$ {
+  /** @deprecated use `ComAtprotoServerRequestAccountDeleteAtprotoServerResponseBody$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoServerRequestAccountDeleteComAtprotoServerResponseBody$inboundSchema;
-  /** @deprecated use `ComAtprotoServerRequestAccountDeleteComAtprotoServerResponseBody$outboundSchema` instead. */
+    ComAtprotoServerRequestAccountDeleteAtprotoServerResponseBody$inboundSchema;
+  /** @deprecated use `ComAtprotoServerRequestAccountDeleteAtprotoServerResponseBody$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoServerRequestAccountDeleteComAtprotoServerResponseBody$outboundSchema;
-  /** @deprecated use `ComAtprotoServerRequestAccountDeleteComAtprotoServerResponseBody$Outbound` instead. */
+    ComAtprotoServerRequestAccountDeleteAtprotoServerResponseBody$outboundSchema;
+  /** @deprecated use `ComAtprotoServerRequestAccountDeleteAtprotoServerResponseBody$Outbound` instead. */
   export type Outbound =
-    ComAtprotoServerRequestAccountDeleteComAtprotoServerResponseBody$Outbound;
+    ComAtprotoServerRequestAccountDeleteAtprotoServerResponseBody$Outbound;
 }
 
 /** @internal */

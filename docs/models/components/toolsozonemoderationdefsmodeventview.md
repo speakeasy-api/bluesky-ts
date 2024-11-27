@@ -6,19 +6,20 @@
 import { ToolsOzoneModerationDefsModEventView } from "bluesky/models/components";
 
 let value: ToolsOzoneModerationDefsModEventView = {
-  id: 881189,
+  id: 701786,
   event: {
-    timestamp: new Date("2022-10-25T14:52:48.050Z"),
+    comment:
+      "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
   },
   subject: {
-    uri: "https://mysterious-tuber.biz",
+    uri: "https://tough-morbidity.info/",
     cid: "<id>",
   },
   subjectBlobCids: [
     "<value>",
   ],
   createdBy: "<id>",
-  createdAt: new Date("2024-12-13T20:14:50.509Z"),
+  createdAt: new Date("2024-07-19T07:42:14.060Z"),
 };
 ```
 

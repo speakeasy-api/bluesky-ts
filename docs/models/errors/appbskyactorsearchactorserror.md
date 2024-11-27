@@ -5,7 +5,7 @@
 ```typescript
 import { AppBskyActorSearchActorsError } from "bluesky/models/errors";
 
-let value: AppBskyActorSearchActorsError = "InvalidToken";
+let value: AppBskyActorSearchActorsError = "InvalidRequest";
 ```
 
 ## Values

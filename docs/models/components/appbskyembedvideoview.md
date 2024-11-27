@@ -7,7 +7,7 @@ import { AppBskyEmbedVideoView } from "bluesky/models/components";
 
 let value: AppBskyEmbedVideoView = {
   cid: "<id>",
-  playlist: "https://curly-archaeology.org/",
+  playlist: "https://incomparable-gazebo.name",
 };
 ```
 

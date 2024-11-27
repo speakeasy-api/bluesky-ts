@@ -3,8 +3,8 @@
  */
 
 import { ClientSDK } from "../lib/sdks.js";
+import { BlueskyOzoneModeration } from "./blueskyozonemoderation.js";
 import { BlueskyServer } from "./blueskyserver.js";
-import { BlueskyToolsModeration } from "./blueskytoolsmoderation.js";
 import { Communication } from "./communication.js";
 import { Set } from "./set.js";
 import { Setting } from "./setting.js";
@@ -17,9 +17,9 @@ export class Ozone extends ClientSDK {
     return (this._communication ??= new Communication(this._options));
   }
 
-  private _moderation?: BlueskyToolsModeration;
-  get moderation(): BlueskyToolsModeration {
-    return (this._moderation ??= new BlueskyToolsModeration(this._options));
+  private _moderation?: BlueskyOzoneModeration;
+  get moderation(): BlueskyOzoneModeration {
+    return (this._moderation ??= new BlueskyOzoneModeration(this._options));
   }
 
   private _server?: BlueskyServer;

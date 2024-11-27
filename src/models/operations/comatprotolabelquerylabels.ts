@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod";
+import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
@@ -27,6 +28,10 @@ export type ComAtprotoLabelQueryLabelsRequest = {
 export type ComAtprotoLabelQueryLabelsResponseBody = {
   cursor?: string | undefined;
   labels: Array<components.ComAtprotoLabelDefsLabel>;
+};
+
+export type ComAtprotoLabelQueryLabelsResponse = {
+  result: ComAtprotoLabelQueryLabelsResponseBody;
 };
 
 /** @internal */
@@ -155,5 +160,71 @@ export function comAtprotoLabelQueryLabelsResponseBodyFromJSON(
     (x) =>
       ComAtprotoLabelQueryLabelsResponseBody$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'ComAtprotoLabelQueryLabelsResponseBody' from JSON`,
+  );
+}
+
+/** @internal */
+export const ComAtprotoLabelQueryLabelsResponse$inboundSchema: z.ZodType<
+  ComAtprotoLabelQueryLabelsResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  Result: z.lazy(() => ComAtprotoLabelQueryLabelsResponseBody$inboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    "Result": "result",
+  });
+});
+
+/** @internal */
+export type ComAtprotoLabelQueryLabelsResponse$Outbound = {
+  Result: ComAtprotoLabelQueryLabelsResponseBody$Outbound;
+};
+
+/** @internal */
+export const ComAtprotoLabelQueryLabelsResponse$outboundSchema: z.ZodType<
+  ComAtprotoLabelQueryLabelsResponse$Outbound,
+  z.ZodTypeDef,
+  ComAtprotoLabelQueryLabelsResponse
+> = z.object({
+  result: z.lazy(() => ComAtprotoLabelQueryLabelsResponseBody$outboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    result: "Result",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace ComAtprotoLabelQueryLabelsResponse$ {
+  /** @deprecated use `ComAtprotoLabelQueryLabelsResponse$inboundSchema` instead. */
+  export const inboundSchema = ComAtprotoLabelQueryLabelsResponse$inboundSchema;
+  /** @deprecated use `ComAtprotoLabelQueryLabelsResponse$outboundSchema` instead. */
+  export const outboundSchema =
+    ComAtprotoLabelQueryLabelsResponse$outboundSchema;
+  /** @deprecated use `ComAtprotoLabelQueryLabelsResponse$Outbound` instead. */
+  export type Outbound = ComAtprotoLabelQueryLabelsResponse$Outbound;
+}
+
+export function comAtprotoLabelQueryLabelsResponseToJSON(
+  comAtprotoLabelQueryLabelsResponse: ComAtprotoLabelQueryLabelsResponse,
+): string {
+  return JSON.stringify(
+    ComAtprotoLabelQueryLabelsResponse$outboundSchema.parse(
+      comAtprotoLabelQueryLabelsResponse,
+    ),
+  );
+}
+
+export function comAtprotoLabelQueryLabelsResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<ComAtprotoLabelQueryLabelsResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      ComAtprotoLabelQueryLabelsResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ComAtprotoLabelQueryLabelsResponse' from JSON`,
   );
 }

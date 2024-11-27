@@ -3,15 +3,45 @@
  */
 
 import { ClientSDK } from "../lib/sdks.js";
-import { App } from "./app.js";
+import { Actor } from "./actor.js";
+import { Atproto } from "./atproto.js";
 import { Chat } from "./chat.js";
-import { Com } from "./com.js";
-import { Tools } from "./tools.js";
+import { Feed } from "./feed.js";
+import { Graph } from "./graph.js";
+import { Labeler } from "./labeler.js";
+import { Notification } from "./notification.js";
+import { Ozone } from "./ozone.js";
+import { Video } from "./video.js";
 
 export class Bluesky extends ClientSDK {
-  private _app?: App;
-  get app(): App {
-    return (this._app ??= new App(this._options));
+  private _actor?: Actor;
+  get actor(): Actor {
+    return (this._actor ??= new Actor(this._options));
+  }
+
+  private _feed?: Feed;
+  get feed(): Feed {
+    return (this._feed ??= new Feed(this._options));
+  }
+
+  private _graph?: Graph;
+  get graph(): Graph {
+    return (this._graph ??= new Graph(this._options));
+  }
+
+  private _labeler?: Labeler;
+  get labeler(): Labeler {
+    return (this._labeler ??= new Labeler(this._options));
+  }
+
+  private _notification?: Notification;
+  get notification(): Notification {
+    return (this._notification ??= new Notification(this._options));
+  }
+
+  private _video?: Video;
+  get video(): Video {
+    return (this._video ??= new Video(this._options));
   }
 
   private _chat?: Chat;
@@ -19,13 +49,13 @@ export class Bluesky extends ClientSDK {
     return (this._chat ??= new Chat(this._options));
   }
 
-  private _com?: Com;
-  get com(): Com {
-    return (this._com ??= new Com(this._options));
+  private _atproto?: Atproto;
+  get atproto(): Atproto {
+    return (this._atproto ??= new Atproto(this._options));
   }
 
-  private _tools?: Tools;
-  get tools(): Tools {
-    return (this._tools ??= new Tools(this._options));
+  private _ozone?: Ozone;
+  get ozone(): Ozone {
+    return (this._ozone ??= new Ozone(this._options));
   }
 }

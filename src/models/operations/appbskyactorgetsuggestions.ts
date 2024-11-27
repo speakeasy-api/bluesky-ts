@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod";
+import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
@@ -19,6 +20,10 @@ export type AppBskyActorGetSuggestionsRequest = {
 export type AppBskyActorGetSuggestionsResponseBody = {
   cursor?: string | undefined;
   actors: Array<components.AppBskyActorDefsProfileView>;
+};
+
+export type AppBskyActorGetSuggestionsResponse = {
+  result: AppBskyActorGetSuggestionsResponseBody;
 };
 
 /** @internal */
@@ -141,5 +146,71 @@ export function appBskyActorGetSuggestionsResponseBodyFromJSON(
     (x) =>
       AppBskyActorGetSuggestionsResponseBody$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'AppBskyActorGetSuggestionsResponseBody' from JSON`,
+  );
+}
+
+/** @internal */
+export const AppBskyActorGetSuggestionsResponse$inboundSchema: z.ZodType<
+  AppBskyActorGetSuggestionsResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  Result: z.lazy(() => AppBskyActorGetSuggestionsResponseBody$inboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    "Result": "result",
+  });
+});
+
+/** @internal */
+export type AppBskyActorGetSuggestionsResponse$Outbound = {
+  Result: AppBskyActorGetSuggestionsResponseBody$Outbound;
+};
+
+/** @internal */
+export const AppBskyActorGetSuggestionsResponse$outboundSchema: z.ZodType<
+  AppBskyActorGetSuggestionsResponse$Outbound,
+  z.ZodTypeDef,
+  AppBskyActorGetSuggestionsResponse
+> = z.object({
+  result: z.lazy(() => AppBskyActorGetSuggestionsResponseBody$outboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    result: "Result",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AppBskyActorGetSuggestionsResponse$ {
+  /** @deprecated use `AppBskyActorGetSuggestionsResponse$inboundSchema` instead. */
+  export const inboundSchema = AppBskyActorGetSuggestionsResponse$inboundSchema;
+  /** @deprecated use `AppBskyActorGetSuggestionsResponse$outboundSchema` instead. */
+  export const outboundSchema =
+    AppBskyActorGetSuggestionsResponse$outboundSchema;
+  /** @deprecated use `AppBskyActorGetSuggestionsResponse$Outbound` instead. */
+  export type Outbound = AppBskyActorGetSuggestionsResponse$Outbound;
+}
+
+export function appBskyActorGetSuggestionsResponseToJSON(
+  appBskyActorGetSuggestionsResponse: AppBskyActorGetSuggestionsResponse,
+): string {
+  return JSON.stringify(
+    AppBskyActorGetSuggestionsResponse$outboundSchema.parse(
+      appBskyActorGetSuggestionsResponse,
+    ),
+  );
+}
+
+export function appBskyActorGetSuggestionsResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<AppBskyActorGetSuggestionsResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      AppBskyActorGetSuggestionsResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AppBskyActorGetSuggestionsResponse' from JSON`,
   );
 }

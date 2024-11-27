@@ -8,7 +8,7 @@ OK
 import { AppBskyFeedGetRepostedByResponseBody } from "bluesky/models/operations";
 
 let value: AppBskyFeedGetRepostedByResponseBody = {
-  uri: "https://glass-pigpen.com",
+  uri: "https://white-digestive.name",
   repostedBy: [],
 };
 ```

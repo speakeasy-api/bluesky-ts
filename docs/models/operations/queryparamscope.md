@@ -5,7 +5,7 @@
 ```typescript
 import { QueryParamScope } from "bluesky/models/operations";
 
-let value: QueryParamScope = "instance";
+let value: QueryParamScope = "personal";
 ```
 
 ## Values

@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod";
+import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
@@ -20,6 +21,10 @@ export type AppBskyFeedGetActorLikesRequest = {
 export type AppBskyFeedGetActorLikesResponseBody = {
   cursor?: string | undefined;
   feed: Array<components.AppBskyFeedDefsFeedViewPost>;
+};
+
+export type AppBskyFeedGetActorLikesResponse = {
+  result: AppBskyFeedGetActorLikesResponseBody;
 };
 
 /** @internal */
@@ -143,5 +148,69 @@ export function appBskyFeedGetActorLikesResponseBodyFromJSON(
     (x) =>
       AppBskyFeedGetActorLikesResponseBody$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'AppBskyFeedGetActorLikesResponseBody' from JSON`,
+  );
+}
+
+/** @internal */
+export const AppBskyFeedGetActorLikesResponse$inboundSchema: z.ZodType<
+  AppBskyFeedGetActorLikesResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  Result: z.lazy(() => AppBskyFeedGetActorLikesResponseBody$inboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    "Result": "result",
+  });
+});
+
+/** @internal */
+export type AppBskyFeedGetActorLikesResponse$Outbound = {
+  Result: AppBskyFeedGetActorLikesResponseBody$Outbound;
+};
+
+/** @internal */
+export const AppBskyFeedGetActorLikesResponse$outboundSchema: z.ZodType<
+  AppBskyFeedGetActorLikesResponse$Outbound,
+  z.ZodTypeDef,
+  AppBskyFeedGetActorLikesResponse
+> = z.object({
+  result: z.lazy(() => AppBskyFeedGetActorLikesResponseBody$outboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    result: "Result",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AppBskyFeedGetActorLikesResponse$ {
+  /** @deprecated use `AppBskyFeedGetActorLikesResponse$inboundSchema` instead. */
+  export const inboundSchema = AppBskyFeedGetActorLikesResponse$inboundSchema;
+  /** @deprecated use `AppBskyFeedGetActorLikesResponse$outboundSchema` instead. */
+  export const outboundSchema = AppBskyFeedGetActorLikesResponse$outboundSchema;
+  /** @deprecated use `AppBskyFeedGetActorLikesResponse$Outbound` instead. */
+  export type Outbound = AppBskyFeedGetActorLikesResponse$Outbound;
+}
+
+export function appBskyFeedGetActorLikesResponseToJSON(
+  appBskyFeedGetActorLikesResponse: AppBskyFeedGetActorLikesResponse,
+): string {
+  return JSON.stringify(
+    AppBskyFeedGetActorLikesResponse$outboundSchema.parse(
+      appBskyFeedGetActorLikesResponse,
+    ),
+  );
+}
+
+export function appBskyFeedGetActorLikesResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<AppBskyFeedGetActorLikesResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => AppBskyFeedGetActorLikesResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AppBskyFeedGetActorLikesResponse' from JSON`,
   );
 }

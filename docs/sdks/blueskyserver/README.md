@@ -1,17 +1,17 @@
 # BlueskyServer
-(*tools.ozone.server*)
+(*ozone.server*)
 
 ## Overview
 
 ### Available Operations
 
-* [toolsOzoneServerGetConfig](#toolsozoneservergetconfig) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
+* [getConfig](#getconfig) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Get details about ozone's server configuration.
 
-## toolsOzoneServerGetConfig
+## getConfig
 
 *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
@@ -29,7 +29,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.tools.ozone.server.toolsOzoneServerGetConfig();
+  const result = await bluesky.ozone.server.getConfig();
 
   // Handle the result
   console.log(result);
@@ -44,7 +44,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { toolsOzoneServerToolsOzoneServerGetConfig } from "bluesky/funcs/toolsOzoneServerToolsOzoneServerGetConfig.js";
+import { ozoneServerGetConfig } from "bluesky/funcs/ozoneServerGetConfig.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -53,7 +53,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await toolsOzoneServerToolsOzoneServerGetConfig(bluesky);
+  const res = await ozoneServerGetConfig(bluesky);
 
   if (!res.ok) {
     throw res.error;
@@ -82,8 +82,8 @@ run();
 
 ### Errors
 
-| Error Type                                                   | Status Code                                                  | Content Type                                                 |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| errors.ToolsOzoneServerGetConfigResponseBody                 | 400                                                          | application/json                                             |
-| errors.ToolsOzoneServerGetConfigToolsOzoneServerResponseBody | 401                                                          | application/json                                             |
-| errors.APIError                                              | 4XX, 5XX                                                     | \*/\*                                                        |
+| Error Type                                              | Status Code                                             | Content Type                                            |
+| ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
+| errors.ToolsOzoneServerGetConfigResponseBody            | 400                                                     | application/json                                        |
+| errors.ToolsOzoneServerGetConfigOzoneServerResponseBody | 401                                                     | application/json                                        |
+| errors.APIError                                         | 4XX, 5XX                                                | \*/\*                                                   |

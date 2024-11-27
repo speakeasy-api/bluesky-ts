@@ -5,7 +5,7 @@
 ```typescript
 import { AppBskyNotificationGetUnreadCountError } from "bluesky/models/errors";
 
-let value: AppBskyNotificationGetUnreadCountError = "ExpiredToken";
+let value: AppBskyNotificationGetUnreadCountError = "InvalidToken";
 ```
 
 ## Values

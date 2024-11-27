@@ -9,7 +9,7 @@ let value: AppBskyActorDefsSavedFeedsPrefV2 = {
   items: [
     {
       id: "<id>",
-      type: "timeline",
+      type: "feed",
       value: "<value>",
       pinned: false,
     },

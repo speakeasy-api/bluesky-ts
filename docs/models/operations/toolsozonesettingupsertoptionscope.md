@@ -5,7 +5,7 @@
 ```typescript
 import { ToolsOzoneSettingUpsertOptionScope } from "bluesky/models/operations";
 
-let value: ToolsOzoneSettingUpsertOptionScope = "instance";
+let value: ToolsOzoneSettingUpsertOptionScope = "personal";
 ```
 
 ## Values

@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod";
+import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
@@ -19,6 +20,10 @@ export type AppBskyGraphGetBlocksRequest = {
 export type AppBskyGraphGetBlocksResponseBody = {
   cursor?: string | undefined;
   blocks: Array<components.AppBskyActorDefsProfileView>;
+};
+
+export type AppBskyGraphGetBlocksResponse = {
+  result: AppBskyGraphGetBlocksResponseBody;
 };
 
 /** @internal */
@@ -137,5 +142,69 @@ export function appBskyGraphGetBlocksResponseBodyFromJSON(
     jsonString,
     (x) => AppBskyGraphGetBlocksResponseBody$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'AppBskyGraphGetBlocksResponseBody' from JSON`,
+  );
+}
+
+/** @internal */
+export const AppBskyGraphGetBlocksResponse$inboundSchema: z.ZodType<
+  AppBskyGraphGetBlocksResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  Result: z.lazy(() => AppBskyGraphGetBlocksResponseBody$inboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    "Result": "result",
+  });
+});
+
+/** @internal */
+export type AppBskyGraphGetBlocksResponse$Outbound = {
+  Result: AppBskyGraphGetBlocksResponseBody$Outbound;
+};
+
+/** @internal */
+export const AppBskyGraphGetBlocksResponse$outboundSchema: z.ZodType<
+  AppBskyGraphGetBlocksResponse$Outbound,
+  z.ZodTypeDef,
+  AppBskyGraphGetBlocksResponse
+> = z.object({
+  result: z.lazy(() => AppBskyGraphGetBlocksResponseBody$outboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    result: "Result",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AppBskyGraphGetBlocksResponse$ {
+  /** @deprecated use `AppBskyGraphGetBlocksResponse$inboundSchema` instead. */
+  export const inboundSchema = AppBskyGraphGetBlocksResponse$inboundSchema;
+  /** @deprecated use `AppBskyGraphGetBlocksResponse$outboundSchema` instead. */
+  export const outboundSchema = AppBskyGraphGetBlocksResponse$outboundSchema;
+  /** @deprecated use `AppBskyGraphGetBlocksResponse$Outbound` instead. */
+  export type Outbound = AppBskyGraphGetBlocksResponse$Outbound;
+}
+
+export function appBskyGraphGetBlocksResponseToJSON(
+  appBskyGraphGetBlocksResponse: AppBskyGraphGetBlocksResponse,
+): string {
+  return JSON.stringify(
+    AppBskyGraphGetBlocksResponse$outboundSchema.parse(
+      appBskyGraphGetBlocksResponse,
+    ),
+  );
+}
+
+export function appBskyGraphGetBlocksResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<AppBskyGraphGetBlocksResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => AppBskyGraphGetBlocksResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AppBskyGraphGetBlocksResponse' from JSON`,
   );
 }

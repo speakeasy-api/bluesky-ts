@@ -6,7 +6,7 @@
 import { ToolsOzoneModerationGetEventRequest } from "bluesky/models/operations";
 
 let value: ToolsOzoneModerationGetEventRequest = {
-  id: 638762,
+  id: 374296,
 };
 ```
 

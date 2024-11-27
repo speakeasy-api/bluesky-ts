@@ -7,7 +7,7 @@ Specifies the ranking order of results.
 ```typescript
 import { Sort } from "bluesky/models/operations";
 
-let value: Sort = "latest";
+let value: Sort = "top";
 ```
 
 ## Values

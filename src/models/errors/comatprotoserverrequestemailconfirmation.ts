@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type ComAtprotoServerRequestEmailConfirmationComAtprotoServerResponseBodyData =
+export type ComAtprotoServerRequestEmailConfirmationAtprotoServerResponseBodyData =
   {
     error: "AuthMissing";
     message: string;
@@ -17,18 +17,16 @@ export type ComAtprotoServerRequestEmailConfirmationComAtprotoServerResponseBody
 /**
  * Unauthorized
  */
-export class ComAtprotoServerRequestEmailConfirmationComAtprotoServerResponseBody
+export class ComAtprotoServerRequestEmailConfirmationAtprotoServerResponseBody
   extends Error
 {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$:
-    ComAtprotoServerRequestEmailConfirmationComAtprotoServerResponseBodyData;
+  data$: ComAtprotoServerRequestEmailConfirmationAtprotoServerResponseBodyData;
 
   constructor(
-    err:
-      ComAtprotoServerRequestEmailConfirmationComAtprotoServerResponseBodyData,
+    err: ComAtprotoServerRequestEmailConfirmationAtprotoServerResponseBodyData,
   ) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
@@ -39,7 +37,7 @@ export class ComAtprotoServerRequestEmailConfirmationComAtprotoServerResponseBod
     this.error = err.error;
 
     this.name =
-      "ComAtprotoServerRequestEmailConfirmationComAtprotoServerResponseBody";
+      "ComAtprotoServerRequestEmailConfirmationAtprotoServerResponseBody";
   }
 }
 
@@ -85,9 +83,9 @@ export class ComAtprotoServerRequestEmailConfirmationResponseBody
 }
 
 /** @internal */
-export const ComAtprotoServerRequestEmailConfirmationComAtprotoServerResponseBody$inboundSchema:
+export const ComAtprotoServerRequestEmailConfirmationAtprotoServerResponseBody$inboundSchema:
   z.ZodType<
-    ComAtprotoServerRequestEmailConfirmationComAtprotoServerResponseBody,
+    ComAtprotoServerRequestEmailConfirmationAtprotoServerResponseBody,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -95,26 +93,26 @@ export const ComAtprotoServerRequestEmailConfirmationComAtprotoServerResponseBod
     message: z.string(),
   })
     .transform((v) => {
-      return new ComAtprotoServerRequestEmailConfirmationComAtprotoServerResponseBody(
+      return new ComAtprotoServerRequestEmailConfirmationAtprotoServerResponseBody(
         v,
       );
     });
 
 /** @internal */
-export type ComAtprotoServerRequestEmailConfirmationComAtprotoServerResponseBody$Outbound =
+export type ComAtprotoServerRequestEmailConfirmationAtprotoServerResponseBody$Outbound =
   {
     error: "AuthMissing";
     message: string;
   };
 
 /** @internal */
-export const ComAtprotoServerRequestEmailConfirmationComAtprotoServerResponseBody$outboundSchema:
+export const ComAtprotoServerRequestEmailConfirmationAtprotoServerResponseBody$outboundSchema:
   z.ZodType<
-    ComAtprotoServerRequestEmailConfirmationComAtprotoServerResponseBody$Outbound,
+    ComAtprotoServerRequestEmailConfirmationAtprotoServerResponseBody$Outbound,
     z.ZodTypeDef,
-    ComAtprotoServerRequestEmailConfirmationComAtprotoServerResponseBody
+    ComAtprotoServerRequestEmailConfirmationAtprotoServerResponseBody
   > = z.instanceof(
-    ComAtprotoServerRequestEmailConfirmationComAtprotoServerResponseBody,
+    ComAtprotoServerRequestEmailConfirmationAtprotoServerResponseBody,
   )
     .transform(v => v.data$)
     .pipe(z.object({
@@ -126,16 +124,16 @@ export const ComAtprotoServerRequestEmailConfirmationComAtprotoServerResponseBod
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoServerRequestEmailConfirmationComAtprotoServerResponseBody$ {
-  /** @deprecated use `ComAtprotoServerRequestEmailConfirmationComAtprotoServerResponseBody$inboundSchema` instead. */
+export namespace ComAtprotoServerRequestEmailConfirmationAtprotoServerResponseBody$ {
+  /** @deprecated use `ComAtprotoServerRequestEmailConfirmationAtprotoServerResponseBody$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoServerRequestEmailConfirmationComAtprotoServerResponseBody$inboundSchema;
-  /** @deprecated use `ComAtprotoServerRequestEmailConfirmationComAtprotoServerResponseBody$outboundSchema` instead. */
+    ComAtprotoServerRequestEmailConfirmationAtprotoServerResponseBody$inboundSchema;
+  /** @deprecated use `ComAtprotoServerRequestEmailConfirmationAtprotoServerResponseBody$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoServerRequestEmailConfirmationComAtprotoServerResponseBody$outboundSchema;
-  /** @deprecated use `ComAtprotoServerRequestEmailConfirmationComAtprotoServerResponseBody$Outbound` instead. */
+    ComAtprotoServerRequestEmailConfirmationAtprotoServerResponseBody$outboundSchema;
+  /** @deprecated use `ComAtprotoServerRequestEmailConfirmationAtprotoServerResponseBody$Outbound` instead. */
   export type Outbound =
-    ComAtprotoServerRequestEmailConfirmationComAtprotoServerResponseBody$Outbound;
+    ComAtprotoServerRequestEmailConfirmationAtprotoServerResponseBody$Outbound;
 }
 
 /** @internal */

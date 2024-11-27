@@ -6,7 +6,7 @@
 import { AppBskyFeedDefsNotFoundPost } from "bluesky/models/components";
 
 let value: AppBskyFeedDefsNotFoundPost = {
-  uri: "https://imaginative-dead.net/",
+  uri: "https://lawful-millet.org",
 };
 ```
 

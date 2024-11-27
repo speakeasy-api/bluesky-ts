@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod";
+import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
@@ -23,6 +24,10 @@ export type AppBskyActorSearchActorsRequest = {
 export type AppBskyActorSearchActorsResponseBody = {
   cursor?: string | undefined;
   actors: Array<components.AppBskyActorDefsProfileView>;
+};
+
+export type AppBskyActorSearchActorsResponse = {
+  result: AppBskyActorSearchActorsResponseBody;
 };
 
 /** @internal */
@@ -146,5 +151,69 @@ export function appBskyActorSearchActorsResponseBodyFromJSON(
     (x) =>
       AppBskyActorSearchActorsResponseBody$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'AppBskyActorSearchActorsResponseBody' from JSON`,
+  );
+}
+
+/** @internal */
+export const AppBskyActorSearchActorsResponse$inboundSchema: z.ZodType<
+  AppBskyActorSearchActorsResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  Result: z.lazy(() => AppBskyActorSearchActorsResponseBody$inboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    "Result": "result",
+  });
+});
+
+/** @internal */
+export type AppBskyActorSearchActorsResponse$Outbound = {
+  Result: AppBskyActorSearchActorsResponseBody$Outbound;
+};
+
+/** @internal */
+export const AppBskyActorSearchActorsResponse$outboundSchema: z.ZodType<
+  AppBskyActorSearchActorsResponse$Outbound,
+  z.ZodTypeDef,
+  AppBskyActorSearchActorsResponse
+> = z.object({
+  result: z.lazy(() => AppBskyActorSearchActorsResponseBody$outboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    result: "Result",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AppBskyActorSearchActorsResponse$ {
+  /** @deprecated use `AppBskyActorSearchActorsResponse$inboundSchema` instead. */
+  export const inboundSchema = AppBskyActorSearchActorsResponse$inboundSchema;
+  /** @deprecated use `AppBskyActorSearchActorsResponse$outboundSchema` instead. */
+  export const outboundSchema = AppBskyActorSearchActorsResponse$outboundSchema;
+  /** @deprecated use `AppBskyActorSearchActorsResponse$Outbound` instead. */
+  export type Outbound = AppBskyActorSearchActorsResponse$Outbound;
+}
+
+export function appBskyActorSearchActorsResponseToJSON(
+  appBskyActorSearchActorsResponse: AppBskyActorSearchActorsResponse,
+): string {
+  return JSON.stringify(
+    AppBskyActorSearchActorsResponse$outboundSchema.parse(
+      appBskyActorSearchActorsResponse,
+    ),
+  );
+}
+
+export function appBskyActorSearchActorsResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<AppBskyActorSearchActorsResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => AppBskyActorSearchActorsResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AppBskyActorSearchActorsResponse' from JSON`,
   );
 }

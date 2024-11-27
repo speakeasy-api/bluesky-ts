@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoRepoPutRecordValidationStatus } from "bluesky/models/operations";
 
-let value: ComAtprotoRepoPutRecordValidationStatus = "valid";
+let value: ComAtprotoRepoPutRecordValidationStatus = "unknown";
 ```
 
 ## Values

@@ -7,9 +7,9 @@ import { ToolsOzoneSetDefsSetView } from "bluesky/models/components";
 
 let value: ToolsOzoneSetDefsSetView = {
   name: "<value>",
-  setSize: 298246,
-  createdAt: new Date("2024-08-03T08:45:30.623Z"),
-  updatedAt: new Date("2023-10-05T13:26:19.195Z"),
+  setSize: 638363,
+  createdAt: new Date("2022-04-22T12:57:54.328Z"),
+  updatedAt: new Date("2024-01-08T14:51:30.818Z"),
 };
 ```
 

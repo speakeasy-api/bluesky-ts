@@ -1,117 +1,117 @@
 # Graph
-(*app.bsky.graph*)
+(*graph*)
 
 ## Overview
 
 ### Available Operations
 
-* [appBskyGraphGetActorStarterPacks](#appbskygraphgetactorstarterpacks) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [getActorStarterPacks](#getactorstarterpacks) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Get a list of starter packs created by the actor.
-* [appBskyGraphGetBlocks](#appbskygraphgetblocks) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [getBlocks](#getblocks) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Enumerates which accounts the requesting account is currently blocking. Requires auth.
-* [appBskyGraphGetFollowers](#appbskygraphgetfollowers) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [getFollowers](#getfollowers) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Enumerates accounts which follow a specified account (actor).
-* [appBskyGraphGetFollows](#appbskygraphgetfollows) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [getFollows](#getfollows) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Enumerates accounts which a specified account (actor) follows.
-* [appBskyGraphGetKnownFollowers](#appbskygraphgetknownfollowers) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [getKnownFollowers](#getknownfollowers) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Enumerates accounts which follow a specified account (actor) and are followed by the viewer.
-* [appBskyGraphGetList](#appbskygraphgetlist) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [getList](#getlist) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Gets a 'view' (with additional context) of a specified list.
-* [appBskyGraphGetListBlocks](#appbskygraphgetlistblocks) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [getListBlocks](#getlistblocks) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Get mod lists that the requesting account (actor) is blocking. Requires auth.
-* [appBskyGraphGetListMutes](#appbskygraphgetlistmutes) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [getListMutes](#getlistmutes) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Enumerates mod lists that the requesting account (actor) currently has muted. Requires auth.
-* [appBskyGraphGetLists](#appbskygraphgetlists) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [getLists](#getlists) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Enumerates the lists created by a specified account (actor).
-* [appBskyGraphGetMutes](#appbskygraphgetmutes) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [getMutes](#getmutes) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Enumerates accounts that the requesting account (actor) currently has muted. Requires auth.
-* [appBskyGraphGetRelationships](#appbskygraphgetrelationships) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [getRelationships](#getrelationships) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Enumerates public relationships between one account, and a list of other accounts. Does not require auth.
-* [appBskyGraphGetStarterPack](#appbskygraphgetstarterpack) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [getStarterPack](#getstarterpack) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Gets a view of a starter pack.
-* [appBskyGraphGetStarterPacks](#appbskygraphgetstarterpacks) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [getStarterPacks](#getstarterpacks) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Get views for a list of starter packs.
-* [appBskyGraphGetSuggestedFollowsByActor](#appbskygraphgetsuggestedfollowsbyactor) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [getSuggestedFollowsByActor](#getsuggestedfollowsbyactor) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Enumerates follows similar to a given account (actor). Expected use is to recommend additional accounts immediately after following one account.
-* [appBskyGraphMuteActor](#appbskygraphmuteactor) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [muteActor](#muteactor) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Creates a mute relationship for the specified account. Mutes are private in Bluesky. Requires auth.
-* [appBskyGraphMuteActorList](#appbskygraphmuteactorlist) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [muteActorList](#muteactorlist) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Creates a mute relationship for the specified list of accounts. Mutes are private in Bluesky. Requires auth.
-* [appBskyGraphMuteThread](#appbskygraphmutethread) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [muteThread](#mutethread) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Mutes a thread preventing notifications from the thread and any of its children. Mutes are private in Bluesky. Requires auth.
-* [appBskyGraphSearchStarterPacks](#appbskygraphsearchstarterpacks) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [searchStarterPacks](#searchstarterpacks) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Find starter packs matching search criteria. Does not require auth.
-* [appBskyGraphUnmuteActor](#appbskygraphunmuteactor) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [unmuteActor](#unmuteactor) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Unmutes the specified account. Requires auth.
-* [appBskyGraphUnmuteActorList](#appbskygraphunmuteactorlist) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [unmuteActorList](#unmuteactorlist) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Unmutes the specified list of accounts. Requires auth.
-* [appBskyGraphUnmuteThread](#appbskygraphunmutethread) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [unmuteThread](#unmutethread) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Unmutes the specified thread. Requires auth.
 
-## appBskyGraphGetActorStarterPacks
+## getActorStarterPacks
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -129,12 +129,14 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.app.bsky.graph.appBskyGraphGetActorStarterPacks({
+  const result = await bluesky.graph.getActorStarterPacks({
     actor: "<value>",
   });
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -146,7 +148,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyGraphAppBskyGraphGetActorStarterPacks } from "bluesky/funcs/appBskyGraphAppBskyGraphGetActorStarterPacks.js";
+import { graphGetActorStarterPacks } from "bluesky/funcs/graphGetActorStarterPacks.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -155,7 +157,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyGraphAppBskyGraphGetActorStarterPacks(bluesky, {
+  const res = await graphGetActorStarterPacks(bluesky, {
     actor: "<value>",
   });
 
@@ -165,8 +167,10 @@ async function run() {
 
   const { value: result } = res;
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -183,17 +187,17 @@ run();
 
 ### Response
 
-**Promise\<[operations.AppBskyGraphGetActorStarterPacksResponseBody](../../models/operations/appbskygraphgetactorstarterpacksresponsebody.md)\>**
+**Promise\<[operations.AppBskyGraphGetActorStarterPacksResponse](../../models/operations/appbskygraphgetactorstarterpacksresponse.md)\>**
 
 ### Errors
 
-| Error Type                                                      | Status Code                                                     | Content Type                                                    |
-| --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
-| errors.AppBskyGraphGetActorStarterPacksResponseBody             | 400                                                             | application/json                                                |
-| errors.AppBskyGraphGetActorStarterPacksAppBskyGraphResponseBody | 401                                                             | application/json                                                |
-| errors.APIError                                                 | 4XX, 5XX                                                        | \*/\*                                                           |
+| Error Type                                               | Status Code                                              | Content Type                                             |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| errors.AppBskyGraphGetActorStarterPacksResponseBody      | 400                                                      | application/json                                         |
+| errors.AppBskyGraphGetActorStarterPacksGraphResponseBody | 401                                                      | application/json                                         |
+| errors.APIError                                          | 4XX, 5XX                                                 | \*/\*                                                    |
 
-## appBskyGraphGetBlocks
+## getBlocks
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -211,10 +215,12 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.app.bsky.graph.appBskyGraphGetBlocks();
+  const result = await bluesky.graph.getBlocks();
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -226,7 +232,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyGraphAppBskyGraphGetBlocks } from "bluesky/funcs/appBskyGraphAppBskyGraphGetBlocks.js";
+import { graphGetBlocks } from "bluesky/funcs/graphGetBlocks.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -235,7 +241,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyGraphAppBskyGraphGetBlocks(bluesky);
+  const res = await graphGetBlocks(bluesky);
 
   if (!res.ok) {
     throw res.error;
@@ -243,8 +249,10 @@ async function run() {
 
   const { value: result } = res;
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -261,17 +269,17 @@ run();
 
 ### Response
 
-**Promise\<[operations.AppBskyGraphGetBlocksResponseBody](../../models/operations/appbskygraphgetblocksresponsebody.md)\>**
+**Promise\<[operations.AppBskyGraphGetBlocksResponse](../../models/operations/appbskygraphgetblocksresponse.md)\>**
 
 ### Errors
 
-| Error Type                                           | Status Code                                          | Content Type                                         |
-| ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
-| errors.AppBskyGraphGetBlocksResponseBody             | 400                                                  | application/json                                     |
-| errors.AppBskyGraphGetBlocksAppBskyGraphResponseBody | 401                                                  | application/json                                     |
-| errors.APIError                                      | 4XX, 5XX                                             | \*/\*                                                |
+| Error Type                                    | Status Code                                   | Content Type                                  |
+| --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
+| errors.AppBskyGraphGetBlocksResponseBody      | 400                                           | application/json                              |
+| errors.AppBskyGraphGetBlocksGraphResponseBody | 401                                           | application/json                              |
+| errors.APIError                               | 4XX, 5XX                                      | \*/\*                                         |
 
-## appBskyGraphGetFollowers
+## getFollowers
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -289,12 +297,14 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.app.bsky.graph.appBskyGraphGetFollowers({
+  const result = await bluesky.graph.getFollowers({
     actor: "<value>",
   });
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -306,7 +316,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyGraphAppBskyGraphGetFollowers } from "bluesky/funcs/appBskyGraphAppBskyGraphGetFollowers.js";
+import { graphGetFollowers } from "bluesky/funcs/graphGetFollowers.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -315,7 +325,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyGraphAppBskyGraphGetFollowers(bluesky, {
+  const res = await graphGetFollowers(bluesky, {
     actor: "<value>",
   });
 
@@ -325,8 +335,10 @@ async function run() {
 
   const { value: result } = res;
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -343,17 +355,17 @@ run();
 
 ### Response
 
-**Promise\<[operations.AppBskyGraphGetFollowersResponseBody](../../models/operations/appbskygraphgetfollowersresponsebody.md)\>**
+**Promise\<[operations.AppBskyGraphGetFollowersResponse](../../models/operations/appbskygraphgetfollowersresponse.md)\>**
 
 ### Errors
 
-| Error Type                                              | Status Code                                             | Content Type                                            |
-| ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
-| errors.AppBskyGraphGetFollowersResponseBody             | 400                                                     | application/json                                        |
-| errors.AppBskyGraphGetFollowersAppBskyGraphResponseBody | 401                                                     | application/json                                        |
-| errors.APIError                                         | 4XX, 5XX                                                | \*/\*                                                   |
+| Error Type                                       | Status Code                                      | Content Type                                     |
+| ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ |
+| errors.AppBskyGraphGetFollowersResponseBody      | 400                                              | application/json                                 |
+| errors.AppBskyGraphGetFollowersGraphResponseBody | 401                                              | application/json                                 |
+| errors.APIError                                  | 4XX, 5XX                                         | \*/\*                                            |
 
-## appBskyGraphGetFollows
+## getFollows
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -371,12 +383,14 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.app.bsky.graph.appBskyGraphGetFollows({
+  const result = await bluesky.graph.getFollows({
     actor: "<value>",
   });
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -388,7 +402,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyGraphAppBskyGraphGetFollows } from "bluesky/funcs/appBskyGraphAppBskyGraphGetFollows.js";
+import { graphGetFollows } from "bluesky/funcs/graphGetFollows.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -397,7 +411,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyGraphAppBskyGraphGetFollows(bluesky, {
+  const res = await graphGetFollows(bluesky, {
     actor: "<value>",
   });
 
@@ -407,8 +421,10 @@ async function run() {
 
   const { value: result } = res;
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -425,17 +441,17 @@ run();
 
 ### Response
 
-**Promise\<[operations.AppBskyGraphGetFollowsResponseBody](../../models/operations/appbskygraphgetfollowsresponsebody.md)\>**
+**Promise\<[operations.AppBskyGraphGetFollowsResponse](../../models/operations/appbskygraphgetfollowsresponse.md)\>**
 
 ### Errors
 
-| Error Type                                            | Status Code                                           | Content Type                                          |
-| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
-| errors.AppBskyGraphGetFollowsResponseBody             | 400                                                   | application/json                                      |
-| errors.AppBskyGraphGetFollowsAppBskyGraphResponseBody | 401                                                   | application/json                                      |
-| errors.APIError                                       | 4XX, 5XX                                              | \*/\*                                                 |
+| Error Type                                     | Status Code                                    | Content Type                                   |
+| ---------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- |
+| errors.AppBskyGraphGetFollowsResponseBody      | 400                                            | application/json                               |
+| errors.AppBskyGraphGetFollowsGraphResponseBody | 401                                            | application/json                               |
+| errors.APIError                                | 4XX, 5XX                                       | \*/\*                                          |
 
-## appBskyGraphGetKnownFollowers
+## getKnownFollowers
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -453,12 +469,14 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.app.bsky.graph.appBskyGraphGetKnownFollowers({
+  const result = await bluesky.graph.getKnownFollowers({
     actor: "<value>",
   });
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -470,7 +488,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyGraphAppBskyGraphGetKnownFollowers } from "bluesky/funcs/appBskyGraphAppBskyGraphGetKnownFollowers.js";
+import { graphGetKnownFollowers } from "bluesky/funcs/graphGetKnownFollowers.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -479,7 +497,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyGraphAppBskyGraphGetKnownFollowers(bluesky, {
+  const res = await graphGetKnownFollowers(bluesky, {
     actor: "<value>",
   });
 
@@ -489,8 +507,10 @@ async function run() {
 
   const { value: result } = res;
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -507,17 +527,17 @@ run();
 
 ### Response
 
-**Promise\<[operations.AppBskyGraphGetKnownFollowersResponseBody](../../models/operations/appbskygraphgetknownfollowersresponsebody.md)\>**
+**Promise\<[operations.AppBskyGraphGetKnownFollowersResponse](../../models/operations/appbskygraphgetknownfollowersresponse.md)\>**
 
 ### Errors
 
-| Error Type                                                   | Status Code                                                  | Content Type                                                 |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| errors.AppBskyGraphGetKnownFollowersResponseBody             | 400                                                          | application/json                                             |
-| errors.AppBskyGraphGetKnownFollowersAppBskyGraphResponseBody | 401                                                          | application/json                                             |
-| errors.APIError                                              | 4XX, 5XX                                                     | \*/\*                                                        |
+| Error Type                                            | Status Code                                           | Content Type                                          |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| errors.AppBskyGraphGetKnownFollowersResponseBody      | 400                                                   | application/json                                      |
+| errors.AppBskyGraphGetKnownFollowersGraphResponseBody | 401                                                   | application/json                                      |
+| errors.APIError                                       | 4XX, 5XX                                              | \*/\*                                                 |
 
-## appBskyGraphGetList
+## getList
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -535,12 +555,14 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.app.bsky.graph.appBskyGraphGetList({
+  const result = await bluesky.graph.getList({
     list: "https://talkative-traditionalism.info",
   });
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -552,7 +574,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyGraphAppBskyGraphGetList } from "bluesky/funcs/appBskyGraphAppBskyGraphGetList.js";
+import { graphGetList } from "bluesky/funcs/graphGetList.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -561,7 +583,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyGraphAppBskyGraphGetList(bluesky, {
+  const res = await graphGetList(bluesky, {
     list: "https://talkative-traditionalism.info",
   });
 
@@ -571,8 +593,10 @@ async function run() {
 
   const { value: result } = res;
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -589,17 +613,17 @@ run();
 
 ### Response
 
-**Promise\<[operations.AppBskyGraphGetListResponseBody](../../models/operations/appbskygraphgetlistresponsebody.md)\>**
+**Promise\<[operations.AppBskyGraphGetListResponse](../../models/operations/appbskygraphgetlistresponse.md)\>**
 
 ### Errors
 
-| Error Type                                         | Status Code                                        | Content Type                                       |
-| -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
-| errors.AppBskyGraphGetListResponseBody             | 400                                                | application/json                                   |
-| errors.AppBskyGraphGetListAppBskyGraphResponseBody | 401                                                | application/json                                   |
-| errors.APIError                                    | 4XX, 5XX                                           | \*/\*                                              |
+| Error Type                                  | Status Code                                 | Content Type                                |
+| ------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
+| errors.AppBskyGraphGetListResponseBody      | 400                                         | application/json                            |
+| errors.AppBskyGraphGetListGraphResponseBody | 401                                         | application/json                            |
+| errors.APIError                             | 4XX, 5XX                                    | \*/\*                                       |
 
-## appBskyGraphGetListBlocks
+## getListBlocks
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -617,10 +641,12 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.app.bsky.graph.appBskyGraphGetListBlocks();
+  const result = await bluesky.graph.getListBlocks();
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -632,7 +658,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyGraphAppBskyGraphGetListBlocks } from "bluesky/funcs/appBskyGraphAppBskyGraphGetListBlocks.js";
+import { graphGetListBlocks } from "bluesky/funcs/graphGetListBlocks.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -641,7 +667,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyGraphAppBskyGraphGetListBlocks(bluesky);
+  const res = await graphGetListBlocks(bluesky);
 
   if (!res.ok) {
     throw res.error;
@@ -649,8 +675,10 @@ async function run() {
 
   const { value: result } = res;
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -667,17 +695,17 @@ run();
 
 ### Response
 
-**Promise\<[operations.AppBskyGraphGetListBlocksResponseBody](../../models/operations/appbskygraphgetlistblocksresponsebody.md)\>**
+**Promise\<[operations.AppBskyGraphGetListBlocksResponse](../../models/operations/appbskygraphgetlistblocksresponse.md)\>**
 
 ### Errors
 
-| Error Type                                               | Status Code                                              | Content Type                                             |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| errors.AppBskyGraphGetListBlocksResponseBody             | 400                                                      | application/json                                         |
-| errors.AppBskyGraphGetListBlocksAppBskyGraphResponseBody | 401                                                      | application/json                                         |
-| errors.APIError                                          | 4XX, 5XX                                                 | \*/\*                                                    |
+| Error Type                                        | Status Code                                       | Content Type                                      |
+| ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
+| errors.AppBskyGraphGetListBlocksResponseBody      | 400                                               | application/json                                  |
+| errors.AppBskyGraphGetListBlocksGraphResponseBody | 401                                               | application/json                                  |
+| errors.APIError                                   | 4XX, 5XX                                          | \*/\*                                             |
 
-## appBskyGraphGetListMutes
+## getListMutes
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -695,10 +723,12 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.app.bsky.graph.appBskyGraphGetListMutes();
+  const result = await bluesky.graph.getListMutes();
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -710,7 +740,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyGraphAppBskyGraphGetListMutes } from "bluesky/funcs/appBskyGraphAppBskyGraphGetListMutes.js";
+import { graphGetListMutes } from "bluesky/funcs/graphGetListMutes.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -719,7 +749,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyGraphAppBskyGraphGetListMutes(bluesky);
+  const res = await graphGetListMutes(bluesky);
 
   if (!res.ok) {
     throw res.error;
@@ -727,8 +757,10 @@ async function run() {
 
   const { value: result } = res;
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -745,17 +777,17 @@ run();
 
 ### Response
 
-**Promise\<[operations.AppBskyGraphGetListMutesResponseBody](../../models/operations/appbskygraphgetlistmutesresponsebody.md)\>**
+**Promise\<[operations.AppBskyGraphGetListMutesResponse](../../models/operations/appbskygraphgetlistmutesresponse.md)\>**
 
 ### Errors
 
-| Error Type                                              | Status Code                                             | Content Type                                            |
-| ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
-| errors.AppBskyGraphGetListMutesResponseBody             | 400                                                     | application/json                                        |
-| errors.AppBskyGraphGetListMutesAppBskyGraphResponseBody | 401                                                     | application/json                                        |
-| errors.APIError                                         | 4XX, 5XX                                                | \*/\*                                                   |
+| Error Type                                       | Status Code                                      | Content Type                                     |
+| ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ |
+| errors.AppBskyGraphGetListMutesResponseBody      | 400                                              | application/json                                 |
+| errors.AppBskyGraphGetListMutesGraphResponseBody | 401                                              | application/json                                 |
+| errors.APIError                                  | 4XX, 5XX                                         | \*/\*                                            |
 
-## appBskyGraphGetLists
+## getLists
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -773,12 +805,14 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.app.bsky.graph.appBskyGraphGetLists({
+  const result = await bluesky.graph.getLists({
     actor: "<value>",
   });
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -790,7 +824,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyGraphAppBskyGraphGetLists } from "bluesky/funcs/appBskyGraphAppBskyGraphGetLists.js";
+import { graphGetLists } from "bluesky/funcs/graphGetLists.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -799,7 +833,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyGraphAppBskyGraphGetLists(bluesky, {
+  const res = await graphGetLists(bluesky, {
     actor: "<value>",
   });
 
@@ -809,8 +843,10 @@ async function run() {
 
   const { value: result } = res;
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -827,17 +863,17 @@ run();
 
 ### Response
 
-**Promise\<[operations.AppBskyGraphGetListsResponseBody](../../models/operations/appbskygraphgetlistsresponsebody.md)\>**
+**Promise\<[operations.AppBskyGraphGetListsResponse](../../models/operations/appbskygraphgetlistsresponse.md)\>**
 
 ### Errors
 
-| Error Type                                          | Status Code                                         | Content Type                                        |
-| --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
-| errors.AppBskyGraphGetListsResponseBody             | 400                                                 | application/json                                    |
-| errors.AppBskyGraphGetListsAppBskyGraphResponseBody | 401                                                 | application/json                                    |
-| errors.APIError                                     | 4XX, 5XX                                            | \*/\*                                               |
+| Error Type                                   | Status Code                                  | Content Type                                 |
+| -------------------------------------------- | -------------------------------------------- | -------------------------------------------- |
+| errors.AppBskyGraphGetListsResponseBody      | 400                                          | application/json                             |
+| errors.AppBskyGraphGetListsGraphResponseBody | 401                                          | application/json                             |
+| errors.APIError                              | 4XX, 5XX                                     | \*/\*                                        |
 
-## appBskyGraphGetMutes
+## getMutes
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -855,10 +891,12 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.app.bsky.graph.appBskyGraphGetMutes();
+  const result = await bluesky.graph.getMutes();
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -870,7 +908,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyGraphAppBskyGraphGetMutes } from "bluesky/funcs/appBskyGraphAppBskyGraphGetMutes.js";
+import { graphGetMutes } from "bluesky/funcs/graphGetMutes.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -879,7 +917,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyGraphAppBskyGraphGetMutes(bluesky);
+  const res = await graphGetMutes(bluesky);
 
   if (!res.ok) {
     throw res.error;
@@ -887,8 +925,10 @@ async function run() {
 
   const { value: result } = res;
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -905,17 +945,17 @@ run();
 
 ### Response
 
-**Promise\<[operations.AppBskyGraphGetMutesResponseBody](../../models/operations/appbskygraphgetmutesresponsebody.md)\>**
+**Promise\<[operations.AppBskyGraphGetMutesResponse](../../models/operations/appbskygraphgetmutesresponse.md)\>**
 
 ### Errors
 
-| Error Type                                          | Status Code                                         | Content Type                                        |
-| --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
-| errors.AppBskyGraphGetMutesResponseBody             | 400                                                 | application/json                                    |
-| errors.AppBskyGraphGetMutesAppBskyGraphResponseBody | 401                                                 | application/json                                    |
-| errors.APIError                                     | 4XX, 5XX                                            | \*/\*                                               |
+| Error Type                                   | Status Code                                  | Content Type                                 |
+| -------------------------------------------- | -------------------------------------------- | -------------------------------------------- |
+| errors.AppBskyGraphGetMutesResponseBody      | 400                                          | application/json                             |
+| errors.AppBskyGraphGetMutesGraphResponseBody | 401                                          | application/json                             |
+| errors.APIError                              | 4XX, 5XX                                     | \*/\*                                        |
 
-## appBskyGraphGetRelationships
+## getRelationships
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -933,7 +973,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.app.bsky.graph.appBskyGraphGetRelationships({
+  const result = await bluesky.graph.getRelationships({
     actor: "<value>",
   });
 
@@ -950,7 +990,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyGraphAppBskyGraphGetRelationships } from "bluesky/funcs/appBskyGraphAppBskyGraphGetRelationships.js";
+import { graphGetRelationships } from "bluesky/funcs/graphGetRelationships.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -959,7 +999,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyGraphAppBskyGraphGetRelationships(bluesky, {
+  const res = await graphGetRelationships(bluesky, {
     actor: "<value>",
   });
 
@@ -991,13 +1031,13 @@ run();
 
 ### Errors
 
-| Error Type                                                  | Status Code                                                 | Content Type                                                |
-| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
-| errors.AppBskyGraphGetRelationshipsResponseBody             | 400                                                         | application/json                                            |
-| errors.AppBskyGraphGetRelationshipsAppBskyGraphResponseBody | 401                                                         | application/json                                            |
-| errors.APIError                                             | 4XX, 5XX                                                    | \*/\*                                                       |
+| Error Type                                           | Status Code                                          | Content Type                                         |
+| ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
+| errors.AppBskyGraphGetRelationshipsResponseBody      | 400                                                  | application/json                                     |
+| errors.AppBskyGraphGetRelationshipsGraphResponseBody | 401                                                  | application/json                                     |
+| errors.APIError                                      | 4XX, 5XX                                             | \*/\*                                                |
 
-## appBskyGraphGetStarterPack
+## getStarterPack
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -1015,7 +1055,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.app.bsky.graph.appBskyGraphGetStarterPack({
+  const result = await bluesky.graph.getStarterPack({
     starterPack: "https://some-colonialism.info/",
   });
 
@@ -1032,7 +1072,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyGraphAppBskyGraphGetStarterPack } from "bluesky/funcs/appBskyGraphAppBskyGraphGetStarterPack.js";
+import { graphGetStarterPack } from "bluesky/funcs/graphGetStarterPack.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1041,7 +1081,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyGraphAppBskyGraphGetStarterPack(bluesky, {
+  const res = await graphGetStarterPack(bluesky, {
     starterPack: "https://some-colonialism.info/",
   });
 
@@ -1073,13 +1113,13 @@ run();
 
 ### Errors
 
-| Error Type                                                | Status Code                                               | Content Type                                              |
-| --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
-| errors.AppBskyGraphGetStarterPackResponseBody             | 400                                                       | application/json                                          |
-| errors.AppBskyGraphGetStarterPackAppBskyGraphResponseBody | 401                                                       | application/json                                          |
-| errors.APIError                                           | 4XX, 5XX                                                  | \*/\*                                                     |
+| Error Type                                         | Status Code                                        | Content Type                                       |
+| -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
+| errors.AppBskyGraphGetStarterPackResponseBody      | 400                                                | application/json                                   |
+| errors.AppBskyGraphGetStarterPackGraphResponseBody | 401                                                | application/json                                   |
+| errors.APIError                                    | 4XX, 5XX                                           | \*/\*                                              |
 
-## appBskyGraphGetStarterPacks
+## getStarterPacks
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -1097,9 +1137,9 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.app.bsky.graph.appBskyGraphGetStarterPacks({
+  const result = await bluesky.graph.getStarterPacks({
     uris: [
-      "https://outlying-councilman.org/",
+      "https://enlightened-slime.biz",
     ],
   });
 
@@ -1116,7 +1156,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyGraphAppBskyGraphGetStarterPacks } from "bluesky/funcs/appBskyGraphAppBskyGraphGetStarterPacks.js";
+import { graphGetStarterPacks } from "bluesky/funcs/graphGetStarterPacks.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1125,9 +1165,9 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyGraphAppBskyGraphGetStarterPacks(bluesky, {
+  const res = await graphGetStarterPacks(bluesky, {
     uris: [
-      "https://jealous-rationale.net/",
+      "https://broken-airmail.com",
     ],
   });
 
@@ -1159,13 +1199,13 @@ run();
 
 ### Errors
 
-| Error Type                                                 | Status Code                                                | Content Type                                               |
-| ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
-| errors.AppBskyGraphGetStarterPacksResponseBody             | 400                                                        | application/json                                           |
-| errors.AppBskyGraphGetStarterPacksAppBskyGraphResponseBody | 401                                                        | application/json                                           |
-| errors.APIError                                            | 4XX, 5XX                                                   | \*/\*                                                      |
+| Error Type                                          | Status Code                                         | Content Type                                        |
+| --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| errors.AppBskyGraphGetStarterPacksResponseBody      | 400                                                 | application/json                                    |
+| errors.AppBskyGraphGetStarterPacksGraphResponseBody | 401                                                 | application/json                                    |
+| errors.APIError                                     | 4XX, 5XX                                            | \*/\*                                               |
 
-## appBskyGraphGetSuggestedFollowsByActor
+## getSuggestedFollowsByActor
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -1183,7 +1223,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.app.bsky.graph.appBskyGraphGetSuggestedFollowsByActor({
+  const result = await bluesky.graph.getSuggestedFollowsByActor({
     actor: "<value>",
   });
 
@@ -1200,7 +1240,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyGraphAppBskyGraphGetSuggestedFollowsByActor } from "bluesky/funcs/appBskyGraphAppBskyGraphGetSuggestedFollowsByActor.js";
+import { graphGetSuggestedFollowsByActor } from "bluesky/funcs/graphGetSuggestedFollowsByActor.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1209,7 +1249,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyGraphAppBskyGraphGetSuggestedFollowsByActor(bluesky, {
+  const res = await graphGetSuggestedFollowsByActor(bluesky, {
     actor: "<value>",
   });
 
@@ -1241,13 +1281,13 @@ run();
 
 ### Errors
 
-| Error Type                                                            | Status Code                                                           | Content Type                                                          |
-| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
-| errors.AppBskyGraphGetSuggestedFollowsByActorResponseBody             | 400                                                                   | application/json                                                      |
-| errors.AppBskyGraphGetSuggestedFollowsByActorAppBskyGraphResponseBody | 401                                                                   | application/json                                                      |
-| errors.APIError                                                       | 4XX, 5XX                                                              | \*/\*                                                                 |
+| Error Type                                                     | Status Code                                                    | Content Type                                                   |
+| -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
+| errors.AppBskyGraphGetSuggestedFollowsByActorResponseBody      | 400                                                            | application/json                                               |
+| errors.AppBskyGraphGetSuggestedFollowsByActorGraphResponseBody | 401                                                            | application/json                                               |
+| errors.APIError                                                | 4XX, 5XX                                                       | \*/\*                                                          |
 
-## appBskyGraphMuteActor
+## muteActor
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -1265,7 +1305,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  await bluesky.app.bsky.graph.appBskyGraphMuteActor({
+  await bluesky.graph.muteActor({
     actor: "<value>",
   });
 
@@ -1281,7 +1321,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyGraphAppBskyGraphMuteActor } from "bluesky/funcs/appBskyGraphAppBskyGraphMuteActor.js";
+import { graphMuteActor } from "bluesky/funcs/graphMuteActor.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1290,7 +1330,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyGraphAppBskyGraphMuteActor(bluesky, {
+  const res = await graphMuteActor(bluesky, {
     actor: "<value>",
   });
 
@@ -1321,13 +1361,13 @@ run();
 
 ### Errors
 
-| Error Type                                           | Status Code                                          | Content Type                                         |
-| ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
-| errors.AppBskyGraphMuteActorResponseBody             | 400                                                  | application/json                                     |
-| errors.AppBskyGraphMuteActorAppBskyGraphResponseBody | 401                                                  | application/json                                     |
-| errors.APIError                                      | 4XX, 5XX                                             | \*/\*                                                |
+| Error Type                                    | Status Code                                   | Content Type                                  |
+| --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
+| errors.AppBskyGraphMuteActorResponseBody      | 400                                           | application/json                              |
+| errors.AppBskyGraphMuteActorGraphResponseBody | 401                                           | application/json                              |
+| errors.APIError                               | 4XX, 5XX                                      | \*/\*                                         |
 
-## appBskyGraphMuteActorList
+## muteActorList
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -1345,7 +1385,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  await bluesky.app.bsky.graph.appBskyGraphMuteActorList({
+  await bluesky.graph.muteActorList({
     list: "https://urban-maestro.org",
   });
 
@@ -1361,7 +1401,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyGraphAppBskyGraphMuteActorList } from "bluesky/funcs/appBskyGraphAppBskyGraphMuteActorList.js";
+import { graphMuteActorList } from "bluesky/funcs/graphMuteActorList.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1370,7 +1410,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyGraphAppBskyGraphMuteActorList(bluesky, {
+  const res = await graphMuteActorList(bluesky, {
     list: "https://urban-maestro.org",
   });
 
@@ -1401,13 +1441,13 @@ run();
 
 ### Errors
 
-| Error Type                                               | Status Code                                              | Content Type                                             |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| errors.AppBskyGraphMuteActorListResponseBody             | 400                                                      | application/json                                         |
-| errors.AppBskyGraphMuteActorListAppBskyGraphResponseBody | 401                                                      | application/json                                         |
-| errors.APIError                                          | 4XX, 5XX                                                 | \*/\*                                                    |
+| Error Type                                        | Status Code                                       | Content Type                                      |
+| ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
+| errors.AppBskyGraphMuteActorListResponseBody      | 400                                               | application/json                                  |
+| errors.AppBskyGraphMuteActorListGraphResponseBody | 401                                               | application/json                                  |
+| errors.APIError                                   | 4XX, 5XX                                          | \*/\*                                             |
 
-## appBskyGraphMuteThread
+## muteThread
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -1425,7 +1465,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  await bluesky.app.bsky.graph.appBskyGraphMuteThread({
+  await bluesky.graph.muteThread({
     root: "https://clean-armchair.biz/",
   });
 
@@ -1441,7 +1481,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyGraphAppBskyGraphMuteThread } from "bluesky/funcs/appBskyGraphAppBskyGraphMuteThread.js";
+import { graphMuteThread } from "bluesky/funcs/graphMuteThread.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1450,7 +1490,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyGraphAppBskyGraphMuteThread(bluesky, {
+  const res = await graphMuteThread(bluesky, {
     root: "https://clean-armchair.biz/",
   });
 
@@ -1481,13 +1521,13 @@ run();
 
 ### Errors
 
-| Error Type                                            | Status Code                                           | Content Type                                          |
-| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
-| errors.AppBskyGraphMuteThreadResponseBody             | 400                                                   | application/json                                      |
-| errors.AppBskyGraphMuteThreadAppBskyGraphResponseBody | 401                                                   | application/json                                      |
-| errors.APIError                                       | 4XX, 5XX                                              | \*/\*                                                 |
+| Error Type                                     | Status Code                                    | Content Type                                   |
+| ---------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- |
+| errors.AppBskyGraphMuteThreadResponseBody      | 400                                            | application/json                               |
+| errors.AppBskyGraphMuteThreadGraphResponseBody | 401                                            | application/json                               |
+| errors.APIError                                | 4XX, 5XX                                       | \*/\*                                          |
 
-## appBskyGraphSearchStarterPacks
+## searchStarterPacks
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -1505,12 +1545,14 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.app.bsky.graph.appBskyGraphSearchStarterPacks({
+  const result = await bluesky.graph.searchStarterPacks({
     q: "<value>",
   });
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -1522,7 +1564,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyGraphAppBskyGraphSearchStarterPacks } from "bluesky/funcs/appBskyGraphAppBskyGraphSearchStarterPacks.js";
+import { graphSearchStarterPacks } from "bluesky/funcs/graphSearchStarterPacks.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1531,7 +1573,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyGraphAppBskyGraphSearchStarterPacks(bluesky, {
+  const res = await graphSearchStarterPacks(bluesky, {
     q: "<value>",
   });
 
@@ -1541,8 +1583,10 @@ async function run() {
 
   const { value: result } = res;
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -1559,17 +1603,17 @@ run();
 
 ### Response
 
-**Promise\<[operations.AppBskyGraphSearchStarterPacksResponseBody](../../models/operations/appbskygraphsearchstarterpacksresponsebody.md)\>**
+**Promise\<[operations.AppBskyGraphSearchStarterPacksResponse](../../models/operations/appbskygraphsearchstarterpacksresponse.md)\>**
 
 ### Errors
 
-| Error Type                                                    | Status Code                                                   | Content Type                                                  |
-| ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
-| errors.AppBskyGraphSearchStarterPacksResponseBody             | 400                                                           | application/json                                              |
-| errors.AppBskyGraphSearchStarterPacksAppBskyGraphResponseBody | 401                                                           | application/json                                              |
-| errors.APIError                                               | 4XX, 5XX                                                      | \*/\*                                                         |
+| Error Type                                             | Status Code                                            | Content Type                                           |
+| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
+| errors.AppBskyGraphSearchStarterPacksResponseBody      | 400                                                    | application/json                                       |
+| errors.AppBskyGraphSearchStarterPacksGraphResponseBody | 401                                                    | application/json                                       |
+| errors.APIError                                        | 4XX, 5XX                                               | \*/\*                                                  |
 
-## appBskyGraphUnmuteActor
+## unmuteActor
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -1587,7 +1631,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  await bluesky.app.bsky.graph.appBskyGraphUnmuteActor({
+  await bluesky.graph.unmuteActor({
     actor: "<value>",
   });
 
@@ -1603,7 +1647,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyGraphAppBskyGraphUnmuteActor } from "bluesky/funcs/appBskyGraphAppBskyGraphUnmuteActor.js";
+import { graphUnmuteActor } from "bluesky/funcs/graphUnmuteActor.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1612,7 +1656,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyGraphAppBskyGraphUnmuteActor(bluesky, {
+  const res = await graphUnmuteActor(bluesky, {
     actor: "<value>",
   });
 
@@ -1643,13 +1687,13 @@ run();
 
 ### Errors
 
-| Error Type                                             | Status Code                                            | Content Type                                           |
-| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
-| errors.AppBskyGraphUnmuteActorResponseBody             | 400                                                    | application/json                                       |
-| errors.AppBskyGraphUnmuteActorAppBskyGraphResponseBody | 401                                                    | application/json                                       |
-| errors.APIError                                        | 4XX, 5XX                                               | \*/\*                                                  |
+| Error Type                                      | Status Code                                     | Content Type                                    |
+| ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
+| errors.AppBskyGraphUnmuteActorResponseBody      | 400                                             | application/json                                |
+| errors.AppBskyGraphUnmuteActorGraphResponseBody | 401                                             | application/json                                |
+| errors.APIError                                 | 4XX, 5XX                                        | \*/\*                                           |
 
-## appBskyGraphUnmuteActorList
+## unmuteActorList
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -1667,7 +1711,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  await bluesky.app.bsky.graph.appBskyGraphUnmuteActorList({
+  await bluesky.graph.unmuteActorList({
     list: "https://instructive-monasticism.name/",
   });
 
@@ -1683,7 +1727,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyGraphAppBskyGraphUnmuteActorList } from "bluesky/funcs/appBskyGraphAppBskyGraphUnmuteActorList.js";
+import { graphUnmuteActorList } from "bluesky/funcs/graphUnmuteActorList.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1692,7 +1736,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyGraphAppBskyGraphUnmuteActorList(bluesky, {
+  const res = await graphUnmuteActorList(bluesky, {
     list: "https://instructive-monasticism.name/",
   });
 
@@ -1723,13 +1767,13 @@ run();
 
 ### Errors
 
-| Error Type                                                 | Status Code                                                | Content Type                                               |
-| ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
-| errors.AppBskyGraphUnmuteActorListResponseBody             | 400                                                        | application/json                                           |
-| errors.AppBskyGraphUnmuteActorListAppBskyGraphResponseBody | 401                                                        | application/json                                           |
-| errors.APIError                                            | 4XX, 5XX                                                   | \*/\*                                                      |
+| Error Type                                          | Status Code                                         | Content Type                                        |
+| --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| errors.AppBskyGraphUnmuteActorListResponseBody      | 400                                                 | application/json                                    |
+| errors.AppBskyGraphUnmuteActorListGraphResponseBody | 401                                                 | application/json                                    |
+| errors.APIError                                     | 4XX, 5XX                                            | \*/\*                                               |
 
-## appBskyGraphUnmuteThread
+## unmuteThread
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -1747,7 +1791,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  await bluesky.app.bsky.graph.appBskyGraphUnmuteThread({
+  await bluesky.graph.unmuteThread({
     root: "https://clean-behest.org/",
   });
 
@@ -1763,7 +1807,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyGraphAppBskyGraphUnmuteThread } from "bluesky/funcs/appBskyGraphAppBskyGraphUnmuteThread.js";
+import { graphUnmuteThread } from "bluesky/funcs/graphUnmuteThread.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1772,7 +1816,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyGraphAppBskyGraphUnmuteThread(bluesky, {
+  const res = await graphUnmuteThread(bluesky, {
     root: "https://clean-behest.org/",
   });
 
@@ -1803,8 +1847,8 @@ run();
 
 ### Errors
 
-| Error Type                                              | Status Code                                             | Content Type                                            |
-| ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
-| errors.AppBskyGraphUnmuteThreadResponseBody             | 400                                                     | application/json                                        |
-| errors.AppBskyGraphUnmuteThreadAppBskyGraphResponseBody | 401                                                     | application/json                                        |
-| errors.APIError                                         | 4XX, 5XX                                                | \*/\*                                                   |
+| Error Type                                       | Status Code                                      | Content Type                                     |
+| ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ |
+| errors.AppBskyGraphUnmuteThreadResponseBody      | 400                                              | application/json                                 |
+| errors.AppBskyGraphUnmuteThreadGraphResponseBody | 401                                              | application/json                                 |
+| errors.APIError                                  | 4XX, 5XX                                         | \*/\*                                            |

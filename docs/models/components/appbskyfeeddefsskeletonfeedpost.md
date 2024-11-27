@@ -6,7 +6,7 @@
 import { AppBskyFeedDefsSkeletonFeedPost } from "bluesky/models/components";
 
 let value: AppBskyFeedDefsSkeletonFeedPost = {
-  post: "https://filthy-self-confidence.org/",
+  post: "https://spiteful-republican.net",
 };
 ```
 

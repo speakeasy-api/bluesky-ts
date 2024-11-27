@@ -9,22 +9,22 @@ import { ChatBskyModerationGetActorMetadataResponseBody } from "bluesky/models/o
 
 let value: ChatBskyModerationGetActorMetadataResponseBody = {
   day: {
-    messagesSent: 453543,
-    messagesReceived: 722056,
-    convos: 866383,
-    convosStarted: 975522,
+    messagesSent: 237893,
+    messagesReceived: 934214,
+    convos: 613966,
+    convosStarted: 535633,
   },
   month: {
-    messagesSent: 855804,
-    messagesReceived: 11714,
-    convos: 359978,
-    convosStarted: 729991,
+    messagesSent: 589910,
+    messagesReceived: 730122,
+    convos: 311945,
+    convosStarted: 398221,
   },
   all: {
-    messagesSent: 171629,
-    messagesReceived: 521037,
-    convos: 54338,
-    convosStarted: 199996,
+    messagesSent: 209843,
+    messagesReceived: 186193,
+    convos: 944373,
+    convosStarted: 739551,
   },
 };
 ```

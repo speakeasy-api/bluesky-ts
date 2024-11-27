@@ -5,7 +5,7 @@
 ```typescript
 import { ToolsOzoneSignatureFindRelatedAccountsError } from "bluesky/models/errors";
 
-let value: ToolsOzoneSignatureFindRelatedAccountsError = "InvalidToken";
+let value: ToolsOzoneSignatureFindRelatedAccountsError = "ExpiredToken";
 ```
 
 ## Values

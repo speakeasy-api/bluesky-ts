@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type AppBskyFeedGetTimelineAppBskyFeedResponseBodyData = {
+export type AppBskyFeedGetTimelineFeedResponseBodyData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,13 +16,13 @@ export type AppBskyFeedGetTimelineAppBskyFeedResponseBodyData = {
 /**
  * Unauthorized
  */
-export class AppBskyFeedGetTimelineAppBskyFeedResponseBody extends Error {
+export class AppBskyFeedGetTimelineFeedResponseBody extends Error {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: AppBskyFeedGetTimelineAppBskyFeedResponseBodyData;
+  data$: AppBskyFeedGetTimelineFeedResponseBodyData;
 
-  constructor(err: AppBskyFeedGetTimelineAppBskyFeedResponseBodyData) {
+  constructor(err: AppBskyFeedGetTimelineFeedResponseBodyData) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -31,7 +31,7 @@ export class AppBskyFeedGetTimelineAppBskyFeedResponseBody extends Error {
 
     this.error = err.error;
 
-    this.name = "AppBskyFeedGetTimelineAppBskyFeedResponseBody";
+    this.name = "AppBskyFeedGetTimelineFeedResponseBody";
   }
 }
 
@@ -75,51 +75,49 @@ export class AppBskyFeedGetTimelineResponseBody extends Error {
 }
 
 /** @internal */
-export const AppBskyFeedGetTimelineAppBskyFeedResponseBody$inboundSchema:
-  z.ZodType<
-    AppBskyFeedGetTimelineAppBskyFeedResponseBody,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    error: z.literal("AuthMissing"),
-    message: z.string(),
-  })
-    .transform((v) => {
-      return new AppBskyFeedGetTimelineAppBskyFeedResponseBody(v);
-    });
+export const AppBskyFeedGetTimelineFeedResponseBody$inboundSchema: z.ZodType<
+  AppBskyFeedGetTimelineFeedResponseBody,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  error: z.literal("AuthMissing"),
+  message: z.string(),
+})
+  .transform((v) => {
+    return new AppBskyFeedGetTimelineFeedResponseBody(v);
+  });
 
 /** @internal */
-export type AppBskyFeedGetTimelineAppBskyFeedResponseBody$Outbound = {
+export type AppBskyFeedGetTimelineFeedResponseBody$Outbound = {
   error: "AuthMissing";
   message: string;
 };
 
 /** @internal */
-export const AppBskyFeedGetTimelineAppBskyFeedResponseBody$outboundSchema:
-  z.ZodType<
-    AppBskyFeedGetTimelineAppBskyFeedResponseBody$Outbound,
-    z.ZodTypeDef,
-    AppBskyFeedGetTimelineAppBskyFeedResponseBody
-  > = z.instanceof(AppBskyFeedGetTimelineAppBskyFeedResponseBody)
-    .transform(v => v.data$)
-    .pipe(z.object({
-      error: z.literal("AuthMissing").default("AuthMissing" as const),
-      message: z.string(),
-    }));
+export const AppBskyFeedGetTimelineFeedResponseBody$outboundSchema: z.ZodType<
+  AppBskyFeedGetTimelineFeedResponseBody$Outbound,
+  z.ZodTypeDef,
+  AppBskyFeedGetTimelineFeedResponseBody
+> = z.instanceof(AppBskyFeedGetTimelineFeedResponseBody)
+  .transform(v => v.data$)
+  .pipe(z.object({
+    error: z.literal("AuthMissing").default("AuthMissing" as const),
+    message: z.string(),
+  }));
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyFeedGetTimelineAppBskyFeedResponseBody$ {
-  /** @deprecated use `AppBskyFeedGetTimelineAppBskyFeedResponseBody$inboundSchema` instead. */
+export namespace AppBskyFeedGetTimelineFeedResponseBody$ {
+  /** @deprecated use `AppBskyFeedGetTimelineFeedResponseBody$inboundSchema` instead. */
   export const inboundSchema =
-    AppBskyFeedGetTimelineAppBskyFeedResponseBody$inboundSchema;
-  /** @deprecated use `AppBskyFeedGetTimelineAppBskyFeedResponseBody$outboundSchema` instead. */
+    AppBskyFeedGetTimelineFeedResponseBody$inboundSchema;
+  /** @deprecated use `AppBskyFeedGetTimelineFeedResponseBody$outboundSchema` instead. */
   export const outboundSchema =
-    AppBskyFeedGetTimelineAppBskyFeedResponseBody$outboundSchema;
-  /** @deprecated use `AppBskyFeedGetTimelineAppBskyFeedResponseBody$Outbound` instead. */
-  export type Outbound = AppBskyFeedGetTimelineAppBskyFeedResponseBody$Outbound;
+    AppBskyFeedGetTimelineFeedResponseBody$outboundSchema;
+  /** @deprecated use `AppBskyFeedGetTimelineFeedResponseBody$Outbound` instead. */
+  export type Outbound = AppBskyFeedGetTimelineFeedResponseBody$Outbound;
 }
 
 /** @internal */

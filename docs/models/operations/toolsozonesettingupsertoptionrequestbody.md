@@ -7,7 +7,7 @@ import { ToolsOzoneSettingUpsertOptionRequestBody } from "bluesky/models/operati
 
 let value: ToolsOzoneSettingUpsertOptionRequestBody = {
   key: "<id>",
-  scope: "instance",
+  scope: "personal",
   value: "<value>",
 };
 ```

@@ -7,7 +7,7 @@ If active=false, this optional field indicates a possible reason for why the acc
 ```typescript
 import { ComAtprotoSyncGetRepoStatusStatus } from "bluesky/models/operations";
 
-let value: ComAtprotoSyncGetRepoStatusStatus = "deactivated";
+let value: ComAtprotoSyncGetRepoStatusStatus = "suspended";
 ```
 
 ## Values

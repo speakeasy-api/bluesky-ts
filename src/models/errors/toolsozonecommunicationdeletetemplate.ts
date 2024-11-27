@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type ToolsOzoneCommunicationDeleteTemplateToolsOzoneCommunicationResponseBodyData =
+export type ToolsOzoneCommunicationDeleteTemplateOzoneCommunicationResponseBodyData =
   {
     error: "AuthMissing";
     message: string;
@@ -17,18 +17,18 @@ export type ToolsOzoneCommunicationDeleteTemplateToolsOzoneCommunicationResponse
 /**
  * Unauthorized
  */
-export class ToolsOzoneCommunicationDeleteTemplateToolsOzoneCommunicationResponseBody
+export class ToolsOzoneCommunicationDeleteTemplateOzoneCommunicationResponseBody
   extends Error
 {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
   data$:
-    ToolsOzoneCommunicationDeleteTemplateToolsOzoneCommunicationResponseBodyData;
+    ToolsOzoneCommunicationDeleteTemplateOzoneCommunicationResponseBodyData;
 
   constructor(
     err:
-      ToolsOzoneCommunicationDeleteTemplateToolsOzoneCommunicationResponseBodyData,
+      ToolsOzoneCommunicationDeleteTemplateOzoneCommunicationResponseBodyData,
   ) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
@@ -39,7 +39,7 @@ export class ToolsOzoneCommunicationDeleteTemplateToolsOzoneCommunicationRespons
     this.error = err.error;
 
     this.name =
-      "ToolsOzoneCommunicationDeleteTemplateToolsOzoneCommunicationResponseBody";
+      "ToolsOzoneCommunicationDeleteTemplateOzoneCommunicationResponseBody";
   }
 }
 
@@ -83,9 +83,9 @@ export class ToolsOzoneCommunicationDeleteTemplateResponseBody extends Error {
 }
 
 /** @internal */
-export const ToolsOzoneCommunicationDeleteTemplateToolsOzoneCommunicationResponseBody$inboundSchema:
+export const ToolsOzoneCommunicationDeleteTemplateOzoneCommunicationResponseBody$inboundSchema:
   z.ZodType<
-    ToolsOzoneCommunicationDeleteTemplateToolsOzoneCommunicationResponseBody,
+    ToolsOzoneCommunicationDeleteTemplateOzoneCommunicationResponseBody,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -93,26 +93,26 @@ export const ToolsOzoneCommunicationDeleteTemplateToolsOzoneCommunicationRespons
     message: z.string(),
   })
     .transform((v) => {
-      return new ToolsOzoneCommunicationDeleteTemplateToolsOzoneCommunicationResponseBody(
+      return new ToolsOzoneCommunicationDeleteTemplateOzoneCommunicationResponseBody(
         v,
       );
     });
 
 /** @internal */
-export type ToolsOzoneCommunicationDeleteTemplateToolsOzoneCommunicationResponseBody$Outbound =
+export type ToolsOzoneCommunicationDeleteTemplateOzoneCommunicationResponseBody$Outbound =
   {
     error: "AuthMissing";
     message: string;
   };
 
 /** @internal */
-export const ToolsOzoneCommunicationDeleteTemplateToolsOzoneCommunicationResponseBody$outboundSchema:
+export const ToolsOzoneCommunicationDeleteTemplateOzoneCommunicationResponseBody$outboundSchema:
   z.ZodType<
-    ToolsOzoneCommunicationDeleteTemplateToolsOzoneCommunicationResponseBody$Outbound,
+    ToolsOzoneCommunicationDeleteTemplateOzoneCommunicationResponseBody$Outbound,
     z.ZodTypeDef,
-    ToolsOzoneCommunicationDeleteTemplateToolsOzoneCommunicationResponseBody
+    ToolsOzoneCommunicationDeleteTemplateOzoneCommunicationResponseBody
   > = z.instanceof(
-    ToolsOzoneCommunicationDeleteTemplateToolsOzoneCommunicationResponseBody,
+    ToolsOzoneCommunicationDeleteTemplateOzoneCommunicationResponseBody,
   )
     .transform(v => v.data$)
     .pipe(z.object({
@@ -124,16 +124,16 @@ export const ToolsOzoneCommunicationDeleteTemplateToolsOzoneCommunicationRespons
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ToolsOzoneCommunicationDeleteTemplateToolsOzoneCommunicationResponseBody$ {
-  /** @deprecated use `ToolsOzoneCommunicationDeleteTemplateToolsOzoneCommunicationResponseBody$inboundSchema` instead. */
+export namespace ToolsOzoneCommunicationDeleteTemplateOzoneCommunicationResponseBody$ {
+  /** @deprecated use `ToolsOzoneCommunicationDeleteTemplateOzoneCommunicationResponseBody$inboundSchema` instead. */
   export const inboundSchema =
-    ToolsOzoneCommunicationDeleteTemplateToolsOzoneCommunicationResponseBody$inboundSchema;
-  /** @deprecated use `ToolsOzoneCommunicationDeleteTemplateToolsOzoneCommunicationResponseBody$outboundSchema` instead. */
+    ToolsOzoneCommunicationDeleteTemplateOzoneCommunicationResponseBody$inboundSchema;
+  /** @deprecated use `ToolsOzoneCommunicationDeleteTemplateOzoneCommunicationResponseBody$outboundSchema` instead. */
   export const outboundSchema =
-    ToolsOzoneCommunicationDeleteTemplateToolsOzoneCommunicationResponseBody$outboundSchema;
-  /** @deprecated use `ToolsOzoneCommunicationDeleteTemplateToolsOzoneCommunicationResponseBody$Outbound` instead. */
+    ToolsOzoneCommunicationDeleteTemplateOzoneCommunicationResponseBody$outboundSchema;
+  /** @deprecated use `ToolsOzoneCommunicationDeleteTemplateOzoneCommunicationResponseBody$Outbound` instead. */
   export type Outbound =
-    ToolsOzoneCommunicationDeleteTemplateToolsOzoneCommunicationResponseBody$Outbound;
+    ToolsOzoneCommunicationDeleteTemplateOzoneCommunicationResponseBody$Outbound;
 }
 
 /** @internal */

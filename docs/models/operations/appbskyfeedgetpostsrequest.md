@@ -7,7 +7,7 @@ import { AppBskyFeedGetPostsRequest } from "bluesky/models/operations";
 
 let value: AppBskyFeedGetPostsRequest = {
   uris: [
-    "https://showy-antelope.biz",
+    "https://rough-mentor.biz/",
   ],
 };
 ```

@@ -1,21 +1,21 @@
 # Moderation
-(*chat.bsky.moderation*)
+(*chat.moderation*)
 
 ## Overview
 
 ### Available Operations
 
-* [chatBskyModerationGetActorMetadata](#chatbskymoderationgetactormetadata) - *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
+* [getActorMetadata](#getactormetadata) - *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
-* [chatBskyModerationGetMessageContext](#chatbskymoderationgetmessagecontext) - *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
+* [getMessageContext](#getmessagecontext) - *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
-* [chatBskyModerationUpdateActorAccess](#chatbskymoderationupdateactoraccess) - *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
+* [updateActorAccess](#updateactoraccess) - *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
-## chatBskyModerationGetActorMetadata
+## getActorMetadata
 
 *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
 
@@ -31,7 +31,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.chat.bsky.moderation.chatBskyModerationGetActorMetadata({
+  const result = await bluesky.chat.moderation.getActorMetadata({
     actor: "<id>",
   });
 
@@ -48,7 +48,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { chatBskyModerationChatBskyModerationGetActorMetadata } from "bluesky/funcs/chatBskyModerationChatBskyModerationGetActorMetadata.js";
+import { chatModerationGetActorMetadata } from "bluesky/funcs/chatModerationGetActorMetadata.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -57,7 +57,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await chatBskyModerationChatBskyModerationGetActorMetadata(bluesky, {
+  const res = await chatModerationGetActorMetadata(bluesky, {
     actor: "<id>",
   });
 
@@ -89,13 +89,13 @@ run();
 
 ### Errors
 
-| Error Type                                                              | Status Code                                                             | Content Type                                                            |
-| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| errors.ChatBskyModerationGetActorMetadataResponseBody                   | 400                                                                     | application/json                                                        |
-| errors.ChatBskyModerationGetActorMetadataChatBskyModerationResponseBody | 401                                                                     | application/json                                                        |
-| errors.APIError                                                         | 4XX, 5XX                                                                | \*/\*                                                                   |
+| Error Type                                                          | Status Code                                                         | Content Type                                                        |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| errors.ChatBskyModerationGetActorMetadataResponseBody               | 400                                                                 | application/json                                                    |
+| errors.ChatBskyModerationGetActorMetadataChatModerationResponseBody | 401                                                                 | application/json                                                    |
+| errors.APIError                                                     | 4XX, 5XX                                                            | \*/\*                                                               |
 
-## chatBskyModerationGetMessageContext
+## getMessageContext
 
 *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
 
@@ -111,7 +111,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.chat.bsky.moderation.chatBskyModerationGetMessageContext({
+  const result = await bluesky.chat.moderation.getMessageContext({
     messageId: "<id>",
   });
 
@@ -128,7 +128,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { chatBskyModerationChatBskyModerationGetMessageContext } from "bluesky/funcs/chatBskyModerationChatBskyModerationGetMessageContext.js";
+import { chatModerationGetMessageContext } from "bluesky/funcs/chatModerationGetMessageContext.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -137,7 +137,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await chatBskyModerationChatBskyModerationGetMessageContext(bluesky, {
+  const res = await chatModerationGetMessageContext(bluesky, {
     messageId: "<id>",
   });
 
@@ -169,13 +169,13 @@ run();
 
 ### Errors
 
-| Error Type                                                               | Status Code                                                              | Content Type                                                             |
-| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
-| errors.ChatBskyModerationGetMessageContextResponseBody                   | 400                                                                      | application/json                                                         |
-| errors.ChatBskyModerationGetMessageContextChatBskyModerationResponseBody | 401                                                                      | application/json                                                         |
-| errors.APIError                                                          | 4XX, 5XX                                                                 | \*/\*                                                                    |
+| Error Type                                                           | Status Code                                                          | Content Type                                                         |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| errors.ChatBskyModerationGetMessageContextResponseBody               | 400                                                                  | application/json                                                     |
+| errors.ChatBskyModerationGetMessageContextChatModerationResponseBody | 401                                                                  | application/json                                                     |
+| errors.APIError                                                      | 4XX, 5XX                                                             | \*/\*                                                                |
 
-## chatBskyModerationUpdateActorAccess
+## updateActorAccess
 
 *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
 
@@ -191,7 +191,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  await bluesky.chat.bsky.moderation.chatBskyModerationUpdateActorAccess({
+  await bluesky.chat.moderation.updateActorAccess({
     actor: "<id>",
     allowAccess: true,
   });
@@ -208,7 +208,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { chatBskyModerationChatBskyModerationUpdateActorAccess } from "bluesky/funcs/chatBskyModerationChatBskyModerationUpdateActorAccess.js";
+import { chatModerationUpdateActorAccess } from "bluesky/funcs/chatModerationUpdateActorAccess.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -217,7 +217,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await chatBskyModerationChatBskyModerationUpdateActorAccess(bluesky, {
+  const res = await chatModerationUpdateActorAccess(bluesky, {
     actor: "<id>",
     allowAccess: true,
   });
@@ -249,8 +249,8 @@ run();
 
 ### Errors
 
-| Error Type                                                               | Status Code                                                              | Content Type                                                             |
-| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
-| errors.ChatBskyModerationUpdateActorAccessResponseBody                   | 400                                                                      | application/json                                                         |
-| errors.ChatBskyModerationUpdateActorAccessChatBskyModerationResponseBody | 401                                                                      | application/json                                                         |
-| errors.APIError                                                          | 4XX, 5XX                                                                 | \*/\*                                                                    |
+| Error Type                                                           | Status Code                                                          | Content Type                                                         |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| errors.ChatBskyModerationUpdateActorAccessResponseBody               | 400                                                                  | application/json                                                     |
+| errors.ChatBskyModerationUpdateActorAccessChatModerationResponseBody | 401                                                                  | application/json                                                     |
+| errors.APIError                                                      | 4XX, 5XX                                                             | \*/\*                                                                |

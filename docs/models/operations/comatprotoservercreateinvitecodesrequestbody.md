@@ -6,7 +6,7 @@
 import { ComAtprotoServerCreateInviteCodesRequestBody } from "bluesky/models/operations";
 
 let value: ComAtprotoServerCreateInviteCodesRequestBody = {
-  useCount: 333145,
+  useCount: 587600,
 };
 ```
 

@@ -7,10 +7,10 @@ import { AppBskyActorDefsSavedFeedsPref } from "bluesky/models/components";
 
 let value: AppBskyActorDefsSavedFeedsPref = {
   pinned: [
-    "https://guilty-relative.net/",
+    "https://illiterate-valentine.biz/",
   ],
   saved: [
-    "https://scary-creature.info",
+    "https://unfortunate-hydrolyze.org/",
   ],
 };
 ```

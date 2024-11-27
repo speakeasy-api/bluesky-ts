@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type ComAtprotoLabelQueryLabelsComAtprotoLabelResponseBodyData = {
+export type ComAtprotoLabelQueryLabelsAtprotoLabelResponseBodyData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,15 +16,13 @@ export type ComAtprotoLabelQueryLabelsComAtprotoLabelResponseBodyData = {
 /**
  * Unauthorized
  */
-export class ComAtprotoLabelQueryLabelsComAtprotoLabelResponseBody
-  extends Error
-{
+export class ComAtprotoLabelQueryLabelsAtprotoLabelResponseBody extends Error {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: ComAtprotoLabelQueryLabelsComAtprotoLabelResponseBodyData;
+  data$: ComAtprotoLabelQueryLabelsAtprotoLabelResponseBodyData;
 
-  constructor(err: ComAtprotoLabelQueryLabelsComAtprotoLabelResponseBodyData) {
+  constructor(err: ComAtprotoLabelQueryLabelsAtprotoLabelResponseBodyData) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -33,7 +31,7 @@ export class ComAtprotoLabelQueryLabelsComAtprotoLabelResponseBody
 
     this.error = err.error;
 
-    this.name = "ComAtprotoLabelQueryLabelsComAtprotoLabelResponseBody";
+    this.name = "ComAtprotoLabelQueryLabelsAtprotoLabelResponseBody";
   }
 }
 
@@ -77,9 +75,9 @@ export class ComAtprotoLabelQueryLabelsResponseBody extends Error {
 }
 
 /** @internal */
-export const ComAtprotoLabelQueryLabelsComAtprotoLabelResponseBody$inboundSchema:
+export const ComAtprotoLabelQueryLabelsAtprotoLabelResponseBody$inboundSchema:
   z.ZodType<
-    ComAtprotoLabelQueryLabelsComAtprotoLabelResponseBody,
+    ComAtprotoLabelQueryLabelsAtprotoLabelResponseBody,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -87,22 +85,22 @@ export const ComAtprotoLabelQueryLabelsComAtprotoLabelResponseBody$inboundSchema
     message: z.string(),
   })
     .transform((v) => {
-      return new ComAtprotoLabelQueryLabelsComAtprotoLabelResponseBody(v);
+      return new ComAtprotoLabelQueryLabelsAtprotoLabelResponseBody(v);
     });
 
 /** @internal */
-export type ComAtprotoLabelQueryLabelsComAtprotoLabelResponseBody$Outbound = {
+export type ComAtprotoLabelQueryLabelsAtprotoLabelResponseBody$Outbound = {
   error: "AuthMissing";
   message: string;
 };
 
 /** @internal */
-export const ComAtprotoLabelQueryLabelsComAtprotoLabelResponseBody$outboundSchema:
+export const ComAtprotoLabelQueryLabelsAtprotoLabelResponseBody$outboundSchema:
   z.ZodType<
-    ComAtprotoLabelQueryLabelsComAtprotoLabelResponseBody$Outbound,
+    ComAtprotoLabelQueryLabelsAtprotoLabelResponseBody$Outbound,
     z.ZodTypeDef,
-    ComAtprotoLabelQueryLabelsComAtprotoLabelResponseBody
-  > = z.instanceof(ComAtprotoLabelQueryLabelsComAtprotoLabelResponseBody)
+    ComAtprotoLabelQueryLabelsAtprotoLabelResponseBody
+  > = z.instanceof(ComAtprotoLabelQueryLabelsAtprotoLabelResponseBody)
     .transform(v => v.data$)
     .pipe(z.object({
       error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -113,16 +111,16 @@ export const ComAtprotoLabelQueryLabelsComAtprotoLabelResponseBody$outboundSchem
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoLabelQueryLabelsComAtprotoLabelResponseBody$ {
-  /** @deprecated use `ComAtprotoLabelQueryLabelsComAtprotoLabelResponseBody$inboundSchema` instead. */
+export namespace ComAtprotoLabelQueryLabelsAtprotoLabelResponseBody$ {
+  /** @deprecated use `ComAtprotoLabelQueryLabelsAtprotoLabelResponseBody$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoLabelQueryLabelsComAtprotoLabelResponseBody$inboundSchema;
-  /** @deprecated use `ComAtprotoLabelQueryLabelsComAtprotoLabelResponseBody$outboundSchema` instead. */
+    ComAtprotoLabelQueryLabelsAtprotoLabelResponseBody$inboundSchema;
+  /** @deprecated use `ComAtprotoLabelQueryLabelsAtprotoLabelResponseBody$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoLabelQueryLabelsComAtprotoLabelResponseBody$outboundSchema;
-  /** @deprecated use `ComAtprotoLabelQueryLabelsComAtprotoLabelResponseBody$Outbound` instead. */
+    ComAtprotoLabelQueryLabelsAtprotoLabelResponseBody$outboundSchema;
+  /** @deprecated use `ComAtprotoLabelQueryLabelsAtprotoLabelResponseBody$Outbound` instead. */
   export type Outbound =
-    ComAtprotoLabelQueryLabelsComAtprotoLabelResponseBody$Outbound;
+    ComAtprotoLabelQueryLabelsAtprotoLabelResponseBody$Outbound;
 }
 
 /** @internal */

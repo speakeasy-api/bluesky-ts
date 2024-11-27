@@ -9,8 +9,8 @@
 const value: components.AppBskyEmbedImagesView = {
   images: [
     {
-      thumb: "https://stylish-wallaby.org",
-      fullsize: "https://rundown-fisherman.com",
+      thumb: "https://petty-pressure.name/",
+      fullsize: "https://careless-suitcase.com",
       alt: "<value>",
     },
   ],
@@ -22,7 +22,7 @@ const value: components.AppBskyEmbedImagesView = {
 ```typescript
 const value: components.AppBskyEmbedVideoView = {
   cid: "<id>",
-  playlist: "https://excellent-hospitalization.name/",
+  playlist: "https://impressionable-lieu.info",
 };
 ```
 
@@ -31,10 +31,9 @@ const value: components.AppBskyEmbedVideoView = {
 ```typescript
 const value: components.AppBskyEmbedExternalView = {
   external: {
-    uri: "https://which-carboxyl.com",
+    uri: "https://agreeable-legend.org/",
     title: "<value>",
-    description:
-      "consequently athwart um rationalize blank kiddingly overheard",
+    description: "bide daintily vast scamper over",
   },
 };
 ```
@@ -44,14 +43,10 @@ const value: components.AppBskyEmbedExternalView = {
 ```typescript
 const value: components.AppBskyEmbedRecordView = {
   record: {
-    uri: "https://trim-allegation.name/",
-    cid: "<id>",
-    record: "<value>",
-    creator: {
+    uri: "https://clear-cut-coal.com",
+    author: {
       did: "<id>",
-      handle: "<value>",
     },
-    indexedAt: new Date("2023-03-20T01:13:26.854Z"),
   },
 };
 ```
@@ -62,25 +57,23 @@ const value: components.AppBskyEmbedRecordView = {
 const value: components.AppBskyEmbedRecordWithMediaView = {
   record: {
     record: {
-      uri: "https://different-aftermath.name/",
+      uri: "https://definitive-nun.com/",
       cid: "<id>",
-      did: "<id>",
+      record: "<value>",
       creator: {
         did: "<id>",
         handle: "<value>",
       },
-      displayName: "Rory.Fadel8",
-      indexedAt: new Date("2022-04-20T14:46:11.490Z"),
+      indexedAt: new Date("2024-08-24T13:24:20.223Z"),
     },
   },
   media: {
-    images: [
-      {
-        thumb: "https://big-stool.com/",
-        fullsize: "https://sore-import.com",
-        alt: "<value>",
-      },
-    ],
+    external: {
+      uri: "https://mediocre-eternity.name",
+      title: "<value>",
+      description:
+        "factorise yearly defiantly cool briefly waist on uselessly custody honesty",
+    },
   },
 };
 ```

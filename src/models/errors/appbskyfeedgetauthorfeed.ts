@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type AppBskyFeedGetAuthorFeedAppBskyFeedResponseBodyData = {
+export type AppBskyFeedGetAuthorFeedFeedResponseBodyData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,13 +16,13 @@ export type AppBskyFeedGetAuthorFeedAppBskyFeedResponseBodyData = {
 /**
  * Unauthorized
  */
-export class AppBskyFeedGetAuthorFeedAppBskyFeedResponseBody extends Error {
+export class AppBskyFeedGetAuthorFeedFeedResponseBody extends Error {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: AppBskyFeedGetAuthorFeedAppBskyFeedResponseBodyData;
+  data$: AppBskyFeedGetAuthorFeedFeedResponseBodyData;
 
-  constructor(err: AppBskyFeedGetAuthorFeedAppBskyFeedResponseBodyData) {
+  constructor(err: AppBskyFeedGetAuthorFeedFeedResponseBodyData) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -31,7 +31,7 @@ export class AppBskyFeedGetAuthorFeedAppBskyFeedResponseBody extends Error {
 
     this.error = err.error;
 
-    this.name = "AppBskyFeedGetAuthorFeedAppBskyFeedResponseBody";
+    this.name = "AppBskyFeedGetAuthorFeedFeedResponseBody";
   }
 }
 
@@ -77,52 +77,49 @@ export class AppBskyFeedGetAuthorFeedResponseBody extends Error {
 }
 
 /** @internal */
-export const AppBskyFeedGetAuthorFeedAppBskyFeedResponseBody$inboundSchema:
-  z.ZodType<
-    AppBskyFeedGetAuthorFeedAppBskyFeedResponseBody,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    error: z.literal("AuthMissing"),
-    message: z.string(),
-  })
-    .transform((v) => {
-      return new AppBskyFeedGetAuthorFeedAppBskyFeedResponseBody(v);
-    });
+export const AppBskyFeedGetAuthorFeedFeedResponseBody$inboundSchema: z.ZodType<
+  AppBskyFeedGetAuthorFeedFeedResponseBody,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  error: z.literal("AuthMissing"),
+  message: z.string(),
+})
+  .transform((v) => {
+    return new AppBskyFeedGetAuthorFeedFeedResponseBody(v);
+  });
 
 /** @internal */
-export type AppBskyFeedGetAuthorFeedAppBskyFeedResponseBody$Outbound = {
+export type AppBskyFeedGetAuthorFeedFeedResponseBody$Outbound = {
   error: "AuthMissing";
   message: string;
 };
 
 /** @internal */
-export const AppBskyFeedGetAuthorFeedAppBskyFeedResponseBody$outboundSchema:
-  z.ZodType<
-    AppBskyFeedGetAuthorFeedAppBskyFeedResponseBody$Outbound,
-    z.ZodTypeDef,
-    AppBskyFeedGetAuthorFeedAppBskyFeedResponseBody
-  > = z.instanceof(AppBskyFeedGetAuthorFeedAppBskyFeedResponseBody)
-    .transform(v => v.data$)
-    .pipe(z.object({
-      error: z.literal("AuthMissing").default("AuthMissing" as const),
-      message: z.string(),
-    }));
+export const AppBskyFeedGetAuthorFeedFeedResponseBody$outboundSchema: z.ZodType<
+  AppBskyFeedGetAuthorFeedFeedResponseBody$Outbound,
+  z.ZodTypeDef,
+  AppBskyFeedGetAuthorFeedFeedResponseBody
+> = z.instanceof(AppBskyFeedGetAuthorFeedFeedResponseBody)
+  .transform(v => v.data$)
+  .pipe(z.object({
+    error: z.literal("AuthMissing").default("AuthMissing" as const),
+    message: z.string(),
+  }));
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyFeedGetAuthorFeedAppBskyFeedResponseBody$ {
-  /** @deprecated use `AppBskyFeedGetAuthorFeedAppBskyFeedResponseBody$inboundSchema` instead. */
+export namespace AppBskyFeedGetAuthorFeedFeedResponseBody$ {
+  /** @deprecated use `AppBskyFeedGetAuthorFeedFeedResponseBody$inboundSchema` instead. */
   export const inboundSchema =
-    AppBskyFeedGetAuthorFeedAppBskyFeedResponseBody$inboundSchema;
-  /** @deprecated use `AppBskyFeedGetAuthorFeedAppBskyFeedResponseBody$outboundSchema` instead. */
+    AppBskyFeedGetAuthorFeedFeedResponseBody$inboundSchema;
+  /** @deprecated use `AppBskyFeedGetAuthorFeedFeedResponseBody$outboundSchema` instead. */
   export const outboundSchema =
-    AppBskyFeedGetAuthorFeedAppBskyFeedResponseBody$outboundSchema;
-  /** @deprecated use `AppBskyFeedGetAuthorFeedAppBskyFeedResponseBody$Outbound` instead. */
-  export type Outbound =
-    AppBskyFeedGetAuthorFeedAppBskyFeedResponseBody$Outbound;
+    AppBskyFeedGetAuthorFeedFeedResponseBody$outboundSchema;
+  /** @deprecated use `AppBskyFeedGetAuthorFeedFeedResponseBody$Outbound` instead. */
+  export type Outbound = AppBskyFeedGetAuthorFeedFeedResponseBody$Outbound;
 }
 
 /** @internal */

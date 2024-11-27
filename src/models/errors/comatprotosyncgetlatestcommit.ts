@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type ComAtprotoSyncGetLatestCommitComAtprotoSyncResponseBodyData = {
+export type ComAtprotoSyncGetLatestCommitAtprotoSyncResponseBodyData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,17 +16,15 @@ export type ComAtprotoSyncGetLatestCommitComAtprotoSyncResponseBodyData = {
 /**
  * Unauthorized
  */
-export class ComAtprotoSyncGetLatestCommitComAtprotoSyncResponseBody
+export class ComAtprotoSyncGetLatestCommitAtprotoSyncResponseBody
   extends Error
 {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: ComAtprotoSyncGetLatestCommitComAtprotoSyncResponseBodyData;
+  data$: ComAtprotoSyncGetLatestCommitAtprotoSyncResponseBodyData;
 
-  constructor(
-    err: ComAtprotoSyncGetLatestCommitComAtprotoSyncResponseBodyData,
-  ) {
+  constructor(err: ComAtprotoSyncGetLatestCommitAtprotoSyncResponseBodyData) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -35,7 +33,7 @@ export class ComAtprotoSyncGetLatestCommitComAtprotoSyncResponseBody
 
     this.error = err.error;
 
-    this.name = "ComAtprotoSyncGetLatestCommitComAtprotoSyncResponseBody";
+    this.name = "ComAtprotoSyncGetLatestCommitAtprotoSyncResponseBody";
   }
 }
 
@@ -83,9 +81,9 @@ export class ComAtprotoSyncGetLatestCommitResponseBody extends Error {
 }
 
 /** @internal */
-export const ComAtprotoSyncGetLatestCommitComAtprotoSyncResponseBody$inboundSchema:
+export const ComAtprotoSyncGetLatestCommitAtprotoSyncResponseBody$inboundSchema:
   z.ZodType<
-    ComAtprotoSyncGetLatestCommitComAtprotoSyncResponseBody,
+    ComAtprotoSyncGetLatestCommitAtprotoSyncResponseBody,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -93,22 +91,22 @@ export const ComAtprotoSyncGetLatestCommitComAtprotoSyncResponseBody$inboundSche
     message: z.string(),
   })
     .transform((v) => {
-      return new ComAtprotoSyncGetLatestCommitComAtprotoSyncResponseBody(v);
+      return new ComAtprotoSyncGetLatestCommitAtprotoSyncResponseBody(v);
     });
 
 /** @internal */
-export type ComAtprotoSyncGetLatestCommitComAtprotoSyncResponseBody$Outbound = {
+export type ComAtprotoSyncGetLatestCommitAtprotoSyncResponseBody$Outbound = {
   error: "AuthMissing";
   message: string;
 };
 
 /** @internal */
-export const ComAtprotoSyncGetLatestCommitComAtprotoSyncResponseBody$outboundSchema:
+export const ComAtprotoSyncGetLatestCommitAtprotoSyncResponseBody$outboundSchema:
   z.ZodType<
-    ComAtprotoSyncGetLatestCommitComAtprotoSyncResponseBody$Outbound,
+    ComAtprotoSyncGetLatestCommitAtprotoSyncResponseBody$Outbound,
     z.ZodTypeDef,
-    ComAtprotoSyncGetLatestCommitComAtprotoSyncResponseBody
-  > = z.instanceof(ComAtprotoSyncGetLatestCommitComAtprotoSyncResponseBody)
+    ComAtprotoSyncGetLatestCommitAtprotoSyncResponseBody
+  > = z.instanceof(ComAtprotoSyncGetLatestCommitAtprotoSyncResponseBody)
     .transform(v => v.data$)
     .pipe(z.object({
       error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -119,16 +117,16 @@ export const ComAtprotoSyncGetLatestCommitComAtprotoSyncResponseBody$outboundSch
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoSyncGetLatestCommitComAtprotoSyncResponseBody$ {
-  /** @deprecated use `ComAtprotoSyncGetLatestCommitComAtprotoSyncResponseBody$inboundSchema` instead. */
+export namespace ComAtprotoSyncGetLatestCommitAtprotoSyncResponseBody$ {
+  /** @deprecated use `ComAtprotoSyncGetLatestCommitAtprotoSyncResponseBody$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoSyncGetLatestCommitComAtprotoSyncResponseBody$inboundSchema;
-  /** @deprecated use `ComAtprotoSyncGetLatestCommitComAtprotoSyncResponseBody$outboundSchema` instead. */
+    ComAtprotoSyncGetLatestCommitAtprotoSyncResponseBody$inboundSchema;
+  /** @deprecated use `ComAtprotoSyncGetLatestCommitAtprotoSyncResponseBody$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoSyncGetLatestCommitComAtprotoSyncResponseBody$outboundSchema;
-  /** @deprecated use `ComAtprotoSyncGetLatestCommitComAtprotoSyncResponseBody$Outbound` instead. */
+    ComAtprotoSyncGetLatestCommitAtprotoSyncResponseBody$outboundSchema;
+  /** @deprecated use `ComAtprotoSyncGetLatestCommitAtprotoSyncResponseBody$Outbound` instead. */
   export type Outbound =
-    ComAtprotoSyncGetLatestCommitComAtprotoSyncResponseBody$Outbound;
+    ComAtprotoSyncGetLatestCommitAtprotoSyncResponseBody$Outbound;
 }
 
 /** @internal */

@@ -6,7 +6,7 @@
 import { AppBskyFeedDefsSkeletonReasonRepost } from "bluesky/models/components";
 
 let value: AppBskyFeedDefsSkeletonReasonRepost = {
-  repost: "https://supportive-brook.name/",
+  repost: "https://sticky-mantua.info/",
 };
 ```
 

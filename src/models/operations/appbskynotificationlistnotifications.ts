@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod";
+import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
@@ -25,6 +26,10 @@ export type AppBskyNotificationListNotificationsResponseBody = {
   >;
   priority?: boolean | undefined;
   seenAt?: Date | undefined;
+};
+
+export type AppBskyNotificationListNotificationsResponse = {
+  result: AppBskyNotificationListNotificationsResponseBody;
 };
 
 /** @internal */
@@ -186,5 +191,84 @@ export function appBskyNotificationListNotificationsResponseBodyFromJSON(
         JSON.parse(x),
       ),
     `Failed to parse 'AppBskyNotificationListNotificationsResponseBody' from JSON`,
+  );
+}
+
+/** @internal */
+export const AppBskyNotificationListNotificationsResponse$inboundSchema:
+  z.ZodType<
+    AppBskyNotificationListNotificationsResponse,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    Result: z.lazy(() =>
+      AppBskyNotificationListNotificationsResponseBody$inboundSchema
+    ),
+  }).transform((v) => {
+    return remap$(v, {
+      "Result": "result",
+    });
+  });
+
+/** @internal */
+export type AppBskyNotificationListNotificationsResponse$Outbound = {
+  Result: AppBskyNotificationListNotificationsResponseBody$Outbound;
+};
+
+/** @internal */
+export const AppBskyNotificationListNotificationsResponse$outboundSchema:
+  z.ZodType<
+    AppBskyNotificationListNotificationsResponse$Outbound,
+    z.ZodTypeDef,
+    AppBskyNotificationListNotificationsResponse
+  > = z.object({
+    result: z.lazy(() =>
+      AppBskyNotificationListNotificationsResponseBody$outboundSchema
+    ),
+  }).transform((v) => {
+    return remap$(v, {
+      result: "Result",
+    });
+  });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AppBskyNotificationListNotificationsResponse$ {
+  /** @deprecated use `AppBskyNotificationListNotificationsResponse$inboundSchema` instead. */
+  export const inboundSchema =
+    AppBskyNotificationListNotificationsResponse$inboundSchema;
+  /** @deprecated use `AppBskyNotificationListNotificationsResponse$outboundSchema` instead. */
+  export const outboundSchema =
+    AppBskyNotificationListNotificationsResponse$outboundSchema;
+  /** @deprecated use `AppBskyNotificationListNotificationsResponse$Outbound` instead. */
+  export type Outbound = AppBskyNotificationListNotificationsResponse$Outbound;
+}
+
+export function appBskyNotificationListNotificationsResponseToJSON(
+  appBskyNotificationListNotificationsResponse:
+    AppBskyNotificationListNotificationsResponse,
+): string {
+  return JSON.stringify(
+    AppBskyNotificationListNotificationsResponse$outboundSchema.parse(
+      appBskyNotificationListNotificationsResponse,
+    ),
+  );
+}
+
+export function appBskyNotificationListNotificationsResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  AppBskyNotificationListNotificationsResponse,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      AppBskyNotificationListNotificationsResponse$inboundSchema.parse(
+        JSON.parse(x),
+      ),
+    `Failed to parse 'AppBskyNotificationListNotificationsResponse' from JSON`,
   );
 }

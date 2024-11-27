@@ -5,7 +5,7 @@
 ```typescript
 import { Event } from "bluesky/models/components";
 
-let value: Event = "app.bsky.feed.defs#clickthroughReposter";
+let value: Event = "app.bsky.feed.defs#interactionReply";
 ```
 
 ## Values

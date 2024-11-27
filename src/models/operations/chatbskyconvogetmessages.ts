@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod";
+import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
@@ -27,6 +28,10 @@ export type ChatBskyConvoGetMessagesResponseBody = {
     | components.ChatBskyConvoDefsDeletedMessageView
     | components.ChatBskyConvoDefsMessageView
   >;
+};
+
+export type ChatBskyConvoGetMessagesResponse = {
+  result: ChatBskyConvoGetMessagesResponseBody;
 };
 
 /** @internal */
@@ -215,5 +220,69 @@ export function chatBskyConvoGetMessagesResponseBodyFromJSON(
     (x) =>
       ChatBskyConvoGetMessagesResponseBody$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'ChatBskyConvoGetMessagesResponseBody' from JSON`,
+  );
+}
+
+/** @internal */
+export const ChatBskyConvoGetMessagesResponse$inboundSchema: z.ZodType<
+  ChatBskyConvoGetMessagesResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  Result: z.lazy(() => ChatBskyConvoGetMessagesResponseBody$inboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    "Result": "result",
+  });
+});
+
+/** @internal */
+export type ChatBskyConvoGetMessagesResponse$Outbound = {
+  Result: ChatBskyConvoGetMessagesResponseBody$Outbound;
+};
+
+/** @internal */
+export const ChatBskyConvoGetMessagesResponse$outboundSchema: z.ZodType<
+  ChatBskyConvoGetMessagesResponse$Outbound,
+  z.ZodTypeDef,
+  ChatBskyConvoGetMessagesResponse
+> = z.object({
+  result: z.lazy(() => ChatBskyConvoGetMessagesResponseBody$outboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    result: "Result",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace ChatBskyConvoGetMessagesResponse$ {
+  /** @deprecated use `ChatBskyConvoGetMessagesResponse$inboundSchema` instead. */
+  export const inboundSchema = ChatBskyConvoGetMessagesResponse$inboundSchema;
+  /** @deprecated use `ChatBskyConvoGetMessagesResponse$outboundSchema` instead. */
+  export const outboundSchema = ChatBskyConvoGetMessagesResponse$outboundSchema;
+  /** @deprecated use `ChatBskyConvoGetMessagesResponse$Outbound` instead. */
+  export type Outbound = ChatBskyConvoGetMessagesResponse$Outbound;
+}
+
+export function chatBskyConvoGetMessagesResponseToJSON(
+  chatBskyConvoGetMessagesResponse: ChatBskyConvoGetMessagesResponse,
+): string {
+  return JSON.stringify(
+    ChatBskyConvoGetMessagesResponse$outboundSchema.parse(
+      chatBskyConvoGetMessagesResponse,
+    ),
+  );
+}
+
+export function chatBskyConvoGetMessagesResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<ChatBskyConvoGetMessagesResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ChatBskyConvoGetMessagesResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ChatBskyConvoGetMessagesResponse' from JSON`,
   );
 }

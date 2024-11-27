@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod";
+import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
@@ -20,6 +21,10 @@ export type AppBskyFeedGetFeedRequest = {
 export type AppBskyFeedGetFeedResponseBody = {
   cursor?: string | undefined;
   feed: Array<components.AppBskyFeedDefsFeedViewPost>;
+};
+
+export type AppBskyFeedGetFeedResponse = {
+  result: AppBskyFeedGetFeedResponseBody;
 };
 
 /** @internal */
@@ -138,5 +143,67 @@ export function appBskyFeedGetFeedResponseBodyFromJSON(
     jsonString,
     (x) => AppBskyFeedGetFeedResponseBody$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'AppBskyFeedGetFeedResponseBody' from JSON`,
+  );
+}
+
+/** @internal */
+export const AppBskyFeedGetFeedResponse$inboundSchema: z.ZodType<
+  AppBskyFeedGetFeedResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  Result: z.lazy(() => AppBskyFeedGetFeedResponseBody$inboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    "Result": "result",
+  });
+});
+
+/** @internal */
+export type AppBskyFeedGetFeedResponse$Outbound = {
+  Result: AppBskyFeedGetFeedResponseBody$Outbound;
+};
+
+/** @internal */
+export const AppBskyFeedGetFeedResponse$outboundSchema: z.ZodType<
+  AppBskyFeedGetFeedResponse$Outbound,
+  z.ZodTypeDef,
+  AppBskyFeedGetFeedResponse
+> = z.object({
+  result: z.lazy(() => AppBskyFeedGetFeedResponseBody$outboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    result: "Result",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AppBskyFeedGetFeedResponse$ {
+  /** @deprecated use `AppBskyFeedGetFeedResponse$inboundSchema` instead. */
+  export const inboundSchema = AppBskyFeedGetFeedResponse$inboundSchema;
+  /** @deprecated use `AppBskyFeedGetFeedResponse$outboundSchema` instead. */
+  export const outboundSchema = AppBskyFeedGetFeedResponse$outboundSchema;
+  /** @deprecated use `AppBskyFeedGetFeedResponse$Outbound` instead. */
+  export type Outbound = AppBskyFeedGetFeedResponse$Outbound;
+}
+
+export function appBskyFeedGetFeedResponseToJSON(
+  appBskyFeedGetFeedResponse: AppBskyFeedGetFeedResponse,
+): string {
+  return JSON.stringify(
+    AppBskyFeedGetFeedResponse$outboundSchema.parse(appBskyFeedGetFeedResponse),
+  );
+}
+
+export function appBskyFeedGetFeedResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<AppBskyFeedGetFeedResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => AppBskyFeedGetFeedResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AppBskyFeedGetFeedResponse' from JSON`,
   );
 }

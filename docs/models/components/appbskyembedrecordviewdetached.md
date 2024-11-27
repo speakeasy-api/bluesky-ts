@@ -6,7 +6,7 @@
 import { AppBskyEmbedRecordViewDetached } from "bluesky/models/components";
 
 let value: AppBskyEmbedRecordViewDetached = {
-  uri: "https://personal-cellar.name",
+  uri: "https://winding-freezing.net",
 };
 ```
 

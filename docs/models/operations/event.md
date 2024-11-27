@@ -26,7 +26,7 @@ const value: components.ToolsOzoneModerationDefsModEventEscalate = {};
 ```typescript
 const value: components.ToolsOzoneModerationDefsModEventComment = {
   comment:
-    "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
+    "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
 };
 ```
 
@@ -55,7 +55,7 @@ const value: components.ToolsOzoneModerationDefsModEventReport = {
 
 ```typescript
 const value: components.ToolsOzoneModerationDefsModEventMute = {
-  durationInHours: 428796,
+  durationInHours: 296556,
 };
 ```
 
@@ -115,7 +115,7 @@ const value: components.ToolsOzoneModerationDefsModEventTag = {
 ```typescript
 const value: components.ToolsOzoneModerationDefsAccountEvent = {
   active: false,
-  timestamp: new Date("2022-03-16T14:37:13.590Z"),
+  timestamp: new Date("2024-12-23T05:51:49.489Z"),
 };
 ```
 
@@ -123,7 +123,7 @@ const value: components.ToolsOzoneModerationDefsAccountEvent = {
 
 ```typescript
 const value: components.ToolsOzoneModerationDefsIdentityEvent = {
-  timestamp: new Date("2022-10-04T03:03:20.717Z"),
+  timestamp: new Date("2022-10-01T08:44:41.136Z"),
 };
 ```
 
@@ -132,7 +132,7 @@ const value: components.ToolsOzoneModerationDefsIdentityEvent = {
 ```typescript
 const value: components.ToolsOzoneModerationDefsRecordEvent = {
   op: "create",
-  timestamp: new Date("2022-10-05T11:56:28.175Z"),
+  timestamp: new Date("2024-11-08T05:51:26.933Z"),
 };
 ```
 

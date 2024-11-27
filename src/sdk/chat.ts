@@ -3,11 +3,23 @@
  */
 
 import { ClientSDK } from "../lib/sdks.js";
-import { BlueskyBsky } from "./blueskybsky.js";
+import { BlueskyActor } from "./blueskyactor.js";
+import { Convo } from "./convo.js";
+import { Moderation } from "./moderation.js";
 
 export class Chat extends ClientSDK {
-  private _bsky?: BlueskyBsky;
-  get bsky(): BlueskyBsky {
-    return (this._bsky ??= new BlueskyBsky(this._options));
+  private _actor?: BlueskyActor;
+  get actor(): BlueskyActor {
+    return (this._actor ??= new BlueskyActor(this._options));
+  }
+
+  private _convo?: Convo;
+  get convo(): Convo {
+    return (this._convo ??= new Convo(this._options));
+  }
+
+  private _moderation?: Moderation;
+  get moderation(): Moderation {
+    return (this._moderation ??= new Moderation(this._options));
   }
 }

@@ -5,11 +5,11 @@
 ```typescript
 import { ComAtprotoServerConfirmEmailError } from "bluesky/models/errors";
 
-let value: ComAtprotoServerConfirmEmailError = "AccountNotFound";
+let value: ComAtprotoServerConfirmEmailError = "ExpiredToken";
 ```
 
 ## Values
 
 ```typescript
-"InvalidRequest" | "InvalidToken" | "AccountNotFound" | "ExpiredToken" | "InvalidEmail"
+"AccountNotFound" | "ExpiredToken" | "InvalidEmail" | "InvalidRequest" | "InvalidToken"
 ```

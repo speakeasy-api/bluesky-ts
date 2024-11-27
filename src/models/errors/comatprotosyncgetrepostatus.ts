@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type ComAtprotoSyncGetRepoStatusComAtprotoSyncResponseBodyData = {
+export type ComAtprotoSyncGetRepoStatusAtprotoSyncResponseBodyData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,15 +16,13 @@ export type ComAtprotoSyncGetRepoStatusComAtprotoSyncResponseBodyData = {
 /**
  * Unauthorized
  */
-export class ComAtprotoSyncGetRepoStatusComAtprotoSyncResponseBody
-  extends Error
-{
+export class ComAtprotoSyncGetRepoStatusAtprotoSyncResponseBody extends Error {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: ComAtprotoSyncGetRepoStatusComAtprotoSyncResponseBodyData;
+  data$: ComAtprotoSyncGetRepoStatusAtprotoSyncResponseBodyData;
 
-  constructor(err: ComAtprotoSyncGetRepoStatusComAtprotoSyncResponseBodyData) {
+  constructor(err: ComAtprotoSyncGetRepoStatusAtprotoSyncResponseBodyData) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -33,7 +31,7 @@ export class ComAtprotoSyncGetRepoStatusComAtprotoSyncResponseBody
 
     this.error = err.error;
 
-    this.name = "ComAtprotoSyncGetRepoStatusComAtprotoSyncResponseBody";
+    this.name = "ComAtprotoSyncGetRepoStatusAtprotoSyncResponseBody";
   }
 }
 
@@ -78,9 +76,9 @@ export class ComAtprotoSyncGetRepoStatusResponseBody extends Error {
 }
 
 /** @internal */
-export const ComAtprotoSyncGetRepoStatusComAtprotoSyncResponseBody$inboundSchema:
+export const ComAtprotoSyncGetRepoStatusAtprotoSyncResponseBody$inboundSchema:
   z.ZodType<
-    ComAtprotoSyncGetRepoStatusComAtprotoSyncResponseBody,
+    ComAtprotoSyncGetRepoStatusAtprotoSyncResponseBody,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -88,22 +86,22 @@ export const ComAtprotoSyncGetRepoStatusComAtprotoSyncResponseBody$inboundSchema
     message: z.string(),
   })
     .transform((v) => {
-      return new ComAtprotoSyncGetRepoStatusComAtprotoSyncResponseBody(v);
+      return new ComAtprotoSyncGetRepoStatusAtprotoSyncResponseBody(v);
     });
 
 /** @internal */
-export type ComAtprotoSyncGetRepoStatusComAtprotoSyncResponseBody$Outbound = {
+export type ComAtprotoSyncGetRepoStatusAtprotoSyncResponseBody$Outbound = {
   error: "AuthMissing";
   message: string;
 };
 
 /** @internal */
-export const ComAtprotoSyncGetRepoStatusComAtprotoSyncResponseBody$outboundSchema:
+export const ComAtprotoSyncGetRepoStatusAtprotoSyncResponseBody$outboundSchema:
   z.ZodType<
-    ComAtprotoSyncGetRepoStatusComAtprotoSyncResponseBody$Outbound,
+    ComAtprotoSyncGetRepoStatusAtprotoSyncResponseBody$Outbound,
     z.ZodTypeDef,
-    ComAtprotoSyncGetRepoStatusComAtprotoSyncResponseBody
-  > = z.instanceof(ComAtprotoSyncGetRepoStatusComAtprotoSyncResponseBody)
+    ComAtprotoSyncGetRepoStatusAtprotoSyncResponseBody
+  > = z.instanceof(ComAtprotoSyncGetRepoStatusAtprotoSyncResponseBody)
     .transform(v => v.data$)
     .pipe(z.object({
       error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -114,16 +112,16 @@ export const ComAtprotoSyncGetRepoStatusComAtprotoSyncResponseBody$outboundSchem
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoSyncGetRepoStatusComAtprotoSyncResponseBody$ {
-  /** @deprecated use `ComAtprotoSyncGetRepoStatusComAtprotoSyncResponseBody$inboundSchema` instead. */
+export namespace ComAtprotoSyncGetRepoStatusAtprotoSyncResponseBody$ {
+  /** @deprecated use `ComAtprotoSyncGetRepoStatusAtprotoSyncResponseBody$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoSyncGetRepoStatusComAtprotoSyncResponseBody$inboundSchema;
-  /** @deprecated use `ComAtprotoSyncGetRepoStatusComAtprotoSyncResponseBody$outboundSchema` instead. */
+    ComAtprotoSyncGetRepoStatusAtprotoSyncResponseBody$inboundSchema;
+  /** @deprecated use `ComAtprotoSyncGetRepoStatusAtprotoSyncResponseBody$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoSyncGetRepoStatusComAtprotoSyncResponseBody$outboundSchema;
-  /** @deprecated use `ComAtprotoSyncGetRepoStatusComAtprotoSyncResponseBody$Outbound` instead. */
+    ComAtprotoSyncGetRepoStatusAtprotoSyncResponseBody$outboundSchema;
+  /** @deprecated use `ComAtprotoSyncGetRepoStatusAtprotoSyncResponseBody$Outbound` instead. */
   export type Outbound =
-    ComAtprotoSyncGetRepoStatusComAtprotoSyncResponseBody$Outbound;
+    ComAtprotoSyncGetRepoStatusAtprotoSyncResponseBody$Outbound;
 }
 
 /** @internal */

@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoSyncListBlobsError } from "bluesky/models/errors";
 
-let value: ComAtprotoSyncListBlobsError = "RepoNotFound";
+let value: ComAtprotoSyncListBlobsError = "RepoSuspended";
 ```
 
 ## Values

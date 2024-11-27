@@ -6,7 +6,7 @@
 import { ToolsOzoneModerationGetRecordRequest } from "bluesky/models/operations";
 
 let value: ToolsOzoneModerationGetRecordRequest = {
-  uri: "https://wrong-baseboard.net/",
+  uri: "https://everlasting-commodity.info",
 };
 ```
 

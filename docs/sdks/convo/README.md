@@ -1,48 +1,48 @@
 # Convo
-(*chat.bsky.convo*)
+(*chat.convo*)
 
 ## Overview
 
 ### Available Operations
 
-* [chatBskyConvoDeleteMessageForSelf](#chatbskyconvodeletemessageforself) - *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
+* [deleteMessageForSelf](#deletemessageforself) - *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
-* [chatBskyConvoGetConvo](#chatbskyconvogetconvo) - *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
+* [getConvo](#getconvo) - *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
-* [chatBskyConvoGetConvoForMembers](#chatbskyconvogetconvoformembers) - *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
+* [getConvoForMembers](#getconvoformembers) - *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
-* [chatBskyConvoGetLog](#chatbskyconvogetlog) - *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
+* [getLog](#getlog) - *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
-* [chatBskyConvoGetMessages](#chatbskyconvogetmessages) - *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
+* [getMessages](#getmessages) - *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
-* [chatBskyConvoLeaveConvo](#chatbskyconvoleaveconvo) - *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
+* [leaveConvo](#leaveconvo) - *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
-* [chatBskyConvoListConvos](#chatbskyconvolistconvos) - *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
+* [listConvos](#listconvos) - *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
-* [chatBskyConvoMuteConvo](#chatbskyconvomuteconvo) - *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
+* [muteConvo](#muteconvo) - *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
-* [chatBskyConvoSendMessage](#chatbskyconvosendmessage) - *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
+* [sendMessage](#sendmessage) - *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
-* [chatBskyConvoSendMessageBatch](#chatbskyconvosendmessagebatch) - *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
+* [sendMessageBatch](#sendmessagebatch) - *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
-* [chatBskyConvoUnmuteConvo](#chatbskyconvounmuteconvo) - *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
+* [unmuteConvo](#unmuteconvo) - *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
-* [chatBskyConvoUpdateRead](#chatbskyconvoupdateread) - *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
+* [updateRead](#updateread) - *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
-## chatBskyConvoDeleteMessageForSelf
+## deleteMessageForSelf
 
 *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
 
@@ -58,7 +58,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.chat.bsky.convo.chatBskyConvoDeleteMessageForSelf({
+  const result = await bluesky.chat.convo.deleteMessageForSelf({
     convoId: "<id>",
     messageId: "<id>",
   });
@@ -76,7 +76,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { chatBskyConvoChatBskyConvoDeleteMessageForSelf } from "bluesky/funcs/chatBskyConvoChatBskyConvoDeleteMessageForSelf.js";
+import { chatConvoDeleteMessageForSelf } from "bluesky/funcs/chatConvoDeleteMessageForSelf.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -85,7 +85,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await chatBskyConvoChatBskyConvoDeleteMessageForSelf(bluesky, {
+  const res = await chatConvoDeleteMessageForSelf(bluesky, {
     convoId: "<id>",
     messageId: "<id>",
   });
@@ -118,13 +118,13 @@ run();
 
 ### Errors
 
-| Error Type                                                        | Status Code                                                       | Content Type                                                      |
-| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
-| errors.ChatBskyConvoDeleteMessageForSelfResponseBody              | 400                                                               | application/json                                                  |
-| errors.ChatBskyConvoDeleteMessageForSelfChatBskyConvoResponseBody | 401                                                               | application/json                                                  |
-| errors.APIError                                                   | 4XX, 5XX                                                          | \*/\*                                                             |
+| Error Type                                                    | Status Code                                                   | Content Type                                                  |
+| ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
+| errors.ChatBskyConvoDeleteMessageForSelfResponseBody          | 400                                                           | application/json                                              |
+| errors.ChatBskyConvoDeleteMessageForSelfChatConvoResponseBody | 401                                                           | application/json                                              |
+| errors.APIError                                               | 4XX, 5XX                                                      | \*/\*                                                         |
 
-## chatBskyConvoGetConvo
+## getConvo
 
 *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
 
@@ -140,7 +140,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.chat.bsky.convo.chatBskyConvoGetConvo({
+  const result = await bluesky.chat.convo.getConvo({
     convoId: "<id>",
   });
 
@@ -157,7 +157,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { chatBskyConvoChatBskyConvoGetConvo } from "bluesky/funcs/chatBskyConvoChatBskyConvoGetConvo.js";
+import { chatConvoGetConvo } from "bluesky/funcs/chatConvoGetConvo.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -166,7 +166,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await chatBskyConvoChatBskyConvoGetConvo(bluesky, {
+  const res = await chatConvoGetConvo(bluesky, {
     convoId: "<id>",
   });
 
@@ -198,13 +198,13 @@ run();
 
 ### Errors
 
-| Error Type                                            | Status Code                                           | Content Type                                          |
-| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
-| errors.ChatBskyConvoGetConvoResponseBody              | 400                                                   | application/json                                      |
-| errors.ChatBskyConvoGetConvoChatBskyConvoResponseBody | 401                                                   | application/json                                      |
-| errors.APIError                                       | 4XX, 5XX                                              | \*/\*                                                 |
+| Error Type                                        | Status Code                                       | Content Type                                      |
+| ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
+| errors.ChatBskyConvoGetConvoResponseBody          | 400                                               | application/json                                  |
+| errors.ChatBskyConvoGetConvoChatConvoResponseBody | 401                                               | application/json                                  |
+| errors.APIError                                   | 4XX, 5XX                                          | \*/\*                                             |
 
-## chatBskyConvoGetConvoForMembers
+## getConvoForMembers
 
 *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
 
@@ -220,7 +220,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.chat.bsky.convo.chatBskyConvoGetConvoForMembers({
+  const result = await bluesky.chat.convo.getConvoForMembers({
     members: [
       "<id>",
       "<id>",
@@ -241,7 +241,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { chatBskyConvoChatBskyConvoGetConvoForMembers } from "bluesky/funcs/chatBskyConvoChatBskyConvoGetConvoForMembers.js";
+import { chatConvoGetConvoForMembers } from "bluesky/funcs/chatConvoGetConvoForMembers.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -250,7 +250,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await chatBskyConvoChatBskyConvoGetConvoForMembers(bluesky, {
+  const res = await chatConvoGetConvoForMembers(bluesky, {
     members: [
       "<id>",
       "<id>",
@@ -286,13 +286,13 @@ run();
 
 ### Errors
 
-| Error Type                                                      | Status Code                                                     | Content Type                                                    |
-| --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
-| errors.ChatBskyConvoGetConvoForMembersResponseBody              | 400                                                             | application/json                                                |
-| errors.ChatBskyConvoGetConvoForMembersChatBskyConvoResponseBody | 401                                                             | application/json                                                |
-| errors.APIError                                                 | 4XX, 5XX                                                        | \*/\*                                                           |
+| Error Type                                                  | Status Code                                                 | Content Type                                                |
+| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
+| errors.ChatBskyConvoGetConvoForMembersResponseBody          | 400                                                         | application/json                                            |
+| errors.ChatBskyConvoGetConvoForMembersChatConvoResponseBody | 401                                                         | application/json                                            |
+| errors.APIError                                             | 4XX, 5XX                                                    | \*/\*                                                       |
 
-## chatBskyConvoGetLog
+## getLog
 
 *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
 
@@ -308,10 +308,12 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.chat.bsky.convo.chatBskyConvoGetLog();
+  const result = await bluesky.chat.convo.getLog();
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -323,7 +325,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { chatBskyConvoChatBskyConvoGetLog } from "bluesky/funcs/chatBskyConvoChatBskyConvoGetLog.js";
+import { chatConvoGetLog } from "bluesky/funcs/chatConvoGetLog.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -332,7 +334,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await chatBskyConvoChatBskyConvoGetLog(bluesky);
+  const res = await chatConvoGetLog(bluesky);
 
   if (!res.ok) {
     throw res.error;
@@ -340,8 +342,10 @@ async function run() {
 
   const { value: result } = res;
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -358,17 +362,17 @@ run();
 
 ### Response
 
-**Promise\<[operations.ChatBskyConvoGetLogResponseBody](../../models/operations/chatbskyconvogetlogresponsebody.md)\>**
+**Promise\<[operations.ChatBskyConvoGetLogResponse](../../models/operations/chatbskyconvogetlogresponse.md)\>**
 
 ### Errors
 
-| Error Type                                          | Status Code                                         | Content Type                                        |
-| --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
-| errors.ChatBskyConvoGetLogResponseBody              | 400                                                 | application/json                                    |
-| errors.ChatBskyConvoGetLogChatBskyConvoResponseBody | 401                                                 | application/json                                    |
-| errors.APIError                                     | 4XX, 5XX                                            | \*/\*                                               |
+| Error Type                                      | Status Code                                     | Content Type                                    |
+| ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
+| errors.ChatBskyConvoGetLogResponseBody          | 400                                             | application/json                                |
+| errors.ChatBskyConvoGetLogChatConvoResponseBody | 401                                             | application/json                                |
+| errors.APIError                                 | 4XX, 5XX                                        | \*/\*                                           |
 
-## chatBskyConvoGetMessages
+## getMessages
 
 *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
 
@@ -384,12 +388,14 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.chat.bsky.convo.chatBskyConvoGetMessages({
+  const result = await bluesky.chat.convo.getMessages({
     convoId: "<id>",
   });
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -401,7 +407,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { chatBskyConvoChatBskyConvoGetMessages } from "bluesky/funcs/chatBskyConvoChatBskyConvoGetMessages.js";
+import { chatConvoGetMessages } from "bluesky/funcs/chatConvoGetMessages.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -410,7 +416,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await chatBskyConvoChatBskyConvoGetMessages(bluesky, {
+  const res = await chatConvoGetMessages(bluesky, {
     convoId: "<id>",
   });
 
@@ -420,8 +426,10 @@ async function run() {
 
   const { value: result } = res;
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -438,17 +446,17 @@ run();
 
 ### Response
 
-**Promise\<[operations.ChatBskyConvoGetMessagesResponseBody](../../models/operations/chatbskyconvogetmessagesresponsebody.md)\>**
+**Promise\<[operations.ChatBskyConvoGetMessagesResponse](../../models/operations/chatbskyconvogetmessagesresponse.md)\>**
 
 ### Errors
 
-| Error Type                                               | Status Code                                              | Content Type                                             |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| errors.ChatBskyConvoGetMessagesResponseBody              | 400                                                      | application/json                                         |
-| errors.ChatBskyConvoGetMessagesChatBskyConvoResponseBody | 401                                                      | application/json                                         |
-| errors.APIError                                          | 4XX, 5XX                                                 | \*/\*                                                    |
+| Error Type                                           | Status Code                                          | Content Type                                         |
+| ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
+| errors.ChatBskyConvoGetMessagesResponseBody          | 400                                                  | application/json                                     |
+| errors.ChatBskyConvoGetMessagesChatConvoResponseBody | 401                                                  | application/json                                     |
+| errors.APIError                                      | 4XX, 5XX                                             | \*/\*                                                |
 
-## chatBskyConvoLeaveConvo
+## leaveConvo
 
 *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
 
@@ -464,7 +472,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.chat.bsky.convo.chatBskyConvoLeaveConvo({
+  const result = await bluesky.chat.convo.leaveConvo({
     convoId: "<id>",
   });
 
@@ -481,7 +489,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { chatBskyConvoChatBskyConvoLeaveConvo } from "bluesky/funcs/chatBskyConvoChatBskyConvoLeaveConvo.js";
+import { chatConvoLeaveConvo } from "bluesky/funcs/chatConvoLeaveConvo.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -490,7 +498,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await chatBskyConvoChatBskyConvoLeaveConvo(bluesky, {
+  const res = await chatConvoLeaveConvo(bluesky, {
     convoId: "<id>",
   });
 
@@ -522,13 +530,13 @@ run();
 
 ### Errors
 
-| Error Type                                              | Status Code                                             | Content Type                                            |
-| ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
-| errors.ChatBskyConvoLeaveConvoResponseBody              | 400                                                     | application/json                                        |
-| errors.ChatBskyConvoLeaveConvoChatBskyConvoResponseBody | 401                                                     | application/json                                        |
-| errors.APIError                                         | 4XX, 5XX                                                | \*/\*                                                   |
+| Error Type                                          | Status Code                                         | Content Type                                        |
+| --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| errors.ChatBskyConvoLeaveConvoResponseBody          | 400                                                 | application/json                                    |
+| errors.ChatBskyConvoLeaveConvoChatConvoResponseBody | 401                                                 | application/json                                    |
+| errors.APIError                                     | 4XX, 5XX                                            | \*/\*                                               |
 
-## chatBskyConvoListConvos
+## listConvos
 
 *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
 
@@ -544,10 +552,12 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.chat.bsky.convo.chatBskyConvoListConvos();
+  const result = await bluesky.chat.convo.listConvos();
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -559,7 +569,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { chatBskyConvoChatBskyConvoListConvos } from "bluesky/funcs/chatBskyConvoChatBskyConvoListConvos.js";
+import { chatConvoListConvos } from "bluesky/funcs/chatConvoListConvos.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -568,7 +578,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await chatBskyConvoChatBskyConvoListConvos(bluesky);
+  const res = await chatConvoListConvos(bluesky);
 
   if (!res.ok) {
     throw res.error;
@@ -576,8 +586,10 @@ async function run() {
 
   const { value: result } = res;
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -594,17 +606,17 @@ run();
 
 ### Response
 
-**Promise\<[operations.ChatBskyConvoListConvosResponseBody](../../models/operations/chatbskyconvolistconvosresponsebody.md)\>**
+**Promise\<[operations.ChatBskyConvoListConvosResponse](../../models/operations/chatbskyconvolistconvosresponse.md)\>**
 
 ### Errors
 
-| Error Type                                              | Status Code                                             | Content Type                                            |
-| ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
-| errors.ChatBskyConvoListConvosResponseBody              | 400                                                     | application/json                                        |
-| errors.ChatBskyConvoListConvosChatBskyConvoResponseBody | 401                                                     | application/json                                        |
-| errors.APIError                                         | 4XX, 5XX                                                | \*/\*                                                   |
+| Error Type                                          | Status Code                                         | Content Type                                        |
+| --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| errors.ChatBskyConvoListConvosResponseBody          | 400                                                 | application/json                                    |
+| errors.ChatBskyConvoListConvosChatConvoResponseBody | 401                                                 | application/json                                    |
+| errors.APIError                                     | 4XX, 5XX                                            | \*/\*                                               |
 
-## chatBskyConvoMuteConvo
+## muteConvo
 
 *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
 
@@ -620,7 +632,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.chat.bsky.convo.chatBskyConvoMuteConvo({
+  const result = await bluesky.chat.convo.muteConvo({
     convoId: "<id>",
   });
 
@@ -637,7 +649,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { chatBskyConvoChatBskyConvoMuteConvo } from "bluesky/funcs/chatBskyConvoChatBskyConvoMuteConvo.js";
+import { chatConvoMuteConvo } from "bluesky/funcs/chatConvoMuteConvo.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -646,7 +658,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await chatBskyConvoChatBskyConvoMuteConvo(bluesky, {
+  const res = await chatConvoMuteConvo(bluesky, {
     convoId: "<id>",
   });
 
@@ -678,13 +690,13 @@ run();
 
 ### Errors
 
-| Error Type                                             | Status Code                                            | Content Type                                           |
-| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
-| errors.ChatBskyConvoMuteConvoResponseBody              | 400                                                    | application/json                                       |
-| errors.ChatBskyConvoMuteConvoChatBskyConvoResponseBody | 401                                                    | application/json                                       |
-| errors.APIError                                        | 4XX, 5XX                                               | \*/\*                                                  |
+| Error Type                                         | Status Code                                        | Content Type                                       |
+| -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
+| errors.ChatBskyConvoMuteConvoResponseBody          | 400                                                | application/json                                   |
+| errors.ChatBskyConvoMuteConvoChatConvoResponseBody | 401                                                | application/json                                   |
+| errors.APIError                                    | 4XX, 5XX                                           | \*/\*                                              |
 
-## chatBskyConvoSendMessage
+## sendMessage
 
 *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
 
@@ -700,7 +712,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.chat.bsky.convo.chatBskyConvoSendMessage({
+  const result = await bluesky.chat.convo.sendMessage({
     convoId: "<id>",
     message: {
       text: "<value>",
@@ -720,7 +732,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { chatBskyConvoChatBskyConvoSendMessage } from "bluesky/funcs/chatBskyConvoChatBskyConvoSendMessage.js";
+import { chatConvoSendMessage } from "bluesky/funcs/chatConvoSendMessage.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -729,7 +741,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await chatBskyConvoChatBskyConvoSendMessage(bluesky, {
+  const res = await chatConvoSendMessage(bluesky, {
     convoId: "<id>",
     message: {
       text: "<value>",
@@ -764,13 +776,13 @@ run();
 
 ### Errors
 
-| Error Type                                               | Status Code                                              | Content Type                                             |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| errors.ChatBskyConvoSendMessageResponseBody              | 400                                                      | application/json                                         |
-| errors.ChatBskyConvoSendMessageChatBskyConvoResponseBody | 401                                                      | application/json                                         |
-| errors.APIError                                          | 4XX, 5XX                                                 | \*/\*                                                    |
+| Error Type                                           | Status Code                                          | Content Type                                         |
+| ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
+| errors.ChatBskyConvoSendMessageResponseBody          | 400                                                  | application/json                                     |
+| errors.ChatBskyConvoSendMessageChatConvoResponseBody | 401                                                  | application/json                                     |
+| errors.APIError                                      | 4XX, 5XX                                             | \*/\*                                                |
 
-## chatBskyConvoSendMessageBatch
+## sendMessageBatch
 
 *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
 
@@ -786,7 +798,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.chat.bsky.convo.chatBskyConvoSendMessageBatch({
+  const result = await bluesky.chat.convo.sendMessageBatch({
     items: [
       {
         convoId: "<id>",
@@ -822,7 +834,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { chatBskyConvoChatBskyConvoSendMessageBatch } from "bluesky/funcs/chatBskyConvoChatBskyConvoSendMessageBatch.js";
+import { chatConvoSendMessageBatch } from "bluesky/funcs/chatConvoSendMessageBatch.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -831,7 +843,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await chatBskyConvoChatBskyConvoSendMessageBatch(bluesky, {
+  const res = await chatConvoSendMessageBatch(bluesky, {
     items: [
       {
         convoId: "<id>",
@@ -882,13 +894,13 @@ run();
 
 ### Errors
 
-| Error Type                                                    | Status Code                                                   | Content Type                                                  |
-| ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
-| errors.ChatBskyConvoSendMessageBatchResponseBody              | 400                                                           | application/json                                              |
-| errors.ChatBskyConvoSendMessageBatchChatBskyConvoResponseBody | 401                                                           | application/json                                              |
-| errors.APIError                                               | 4XX, 5XX                                                      | \*/\*                                                         |
+| Error Type                                                | Status Code                                               | Content Type                                              |
+| --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
+| errors.ChatBskyConvoSendMessageBatchResponseBody          | 400                                                       | application/json                                          |
+| errors.ChatBskyConvoSendMessageBatchChatConvoResponseBody | 401                                                       | application/json                                          |
+| errors.APIError                                           | 4XX, 5XX                                                  | \*/\*                                                     |
 
-## chatBskyConvoUnmuteConvo
+## unmuteConvo
 
 *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
 
@@ -904,7 +916,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.chat.bsky.convo.chatBskyConvoUnmuteConvo({
+  const result = await bluesky.chat.convo.unmuteConvo({
     convoId: "<id>",
   });
 
@@ -921,7 +933,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { chatBskyConvoChatBskyConvoUnmuteConvo } from "bluesky/funcs/chatBskyConvoChatBskyConvoUnmuteConvo.js";
+import { chatConvoUnmuteConvo } from "bluesky/funcs/chatConvoUnmuteConvo.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -930,7 +942,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await chatBskyConvoChatBskyConvoUnmuteConvo(bluesky, {
+  const res = await chatConvoUnmuteConvo(bluesky, {
     convoId: "<id>",
   });
 
@@ -962,13 +974,13 @@ run();
 
 ### Errors
 
-| Error Type                                               | Status Code                                              | Content Type                                             |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| errors.ChatBskyConvoUnmuteConvoResponseBody              | 400                                                      | application/json                                         |
-| errors.ChatBskyConvoUnmuteConvoChatBskyConvoResponseBody | 401                                                      | application/json                                         |
-| errors.APIError                                          | 4XX, 5XX                                                 | \*/\*                                                    |
+| Error Type                                           | Status Code                                          | Content Type                                         |
+| ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
+| errors.ChatBskyConvoUnmuteConvoResponseBody          | 400                                                  | application/json                                     |
+| errors.ChatBskyConvoUnmuteConvoChatConvoResponseBody | 401                                                  | application/json                                     |
+| errors.APIError                                      | 4XX, 5XX                                             | \*/\*                                                |
 
-## chatBskyConvoUpdateRead
+## updateRead
 
 *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
 
@@ -984,7 +996,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.chat.bsky.convo.chatBskyConvoUpdateRead({
+  const result = await bluesky.chat.convo.updateRead({
     convoId: "<id>",
   });
 
@@ -1001,7 +1013,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { chatBskyConvoChatBskyConvoUpdateRead } from "bluesky/funcs/chatBskyConvoChatBskyConvoUpdateRead.js";
+import { chatConvoUpdateRead } from "bluesky/funcs/chatConvoUpdateRead.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1010,7 +1022,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await chatBskyConvoChatBskyConvoUpdateRead(bluesky, {
+  const res = await chatConvoUpdateRead(bluesky, {
     convoId: "<id>",
   });
 
@@ -1042,8 +1054,8 @@ run();
 
 ### Errors
 
-| Error Type                                              | Status Code                                             | Content Type                                            |
-| ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
-| errors.ChatBskyConvoUpdateReadResponseBody              | 400                                                     | application/json                                        |
-| errors.ChatBskyConvoUpdateReadChatBskyConvoResponseBody | 401                                                     | application/json                                        |
-| errors.APIError                                         | 4XX, 5XX                                                | \*/\*                                                   |
+| Error Type                                          | Status Code                                         | Content Type                                        |
+| --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| errors.ChatBskyConvoUpdateReadResponseBody          | 400                                                 | application/json                                    |
+| errors.ChatBskyConvoUpdateReadChatConvoResponseBody | 401                                                 | application/json                                    |
+| errors.APIError                                     | 4XX, 5XX                                            | \*/\*                                               |

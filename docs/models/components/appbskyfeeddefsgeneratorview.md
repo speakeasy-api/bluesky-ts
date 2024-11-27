@@ -6,15 +6,15 @@
 import { AppBskyFeedDefsGeneratorView } from "bluesky/models/components";
 
 let value: AppBskyFeedDefsGeneratorView = {
-  uri: "https://enchanted-handle.name/",
+  uri: "https://impassioned-zen.info",
   cid: "<id>",
   did: "<id>",
   creator: {
     did: "<id>",
     handle: "<value>",
   },
-  displayName: "Sherman_Collier",
-  indexedAt: new Date("2024-10-07T21:26:28.728Z"),
+  displayName: "Miracle88",
+  indexedAt: new Date("2024-02-05T06:43:40.658Z"),
 };
 ```
 

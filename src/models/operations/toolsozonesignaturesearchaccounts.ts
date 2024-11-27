@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod";
+import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
@@ -20,6 +21,10 @@ export type ToolsOzoneSignatureSearchAccountsRequest = {
 export type ToolsOzoneSignatureSearchAccountsResponseBody = {
   cursor?: string | undefined;
   accounts: Array<components.ComAtprotoAdminDefsAccountView>;
+};
+
+export type ToolsOzoneSignatureSearchAccountsResponse = {
+  result: ToolsOzoneSignatureSearchAccountsResponseBody;
 };
 
 /** @internal */
@@ -160,5 +165,83 @@ export function toolsOzoneSignatureSearchAccountsResponseBodyFromJSON(
         JSON.parse(x),
       ),
     `Failed to parse 'ToolsOzoneSignatureSearchAccountsResponseBody' from JSON`,
+  );
+}
+
+/** @internal */
+export const ToolsOzoneSignatureSearchAccountsResponse$inboundSchema: z.ZodType<
+  ToolsOzoneSignatureSearchAccountsResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  Result: z.lazy(() =>
+    ToolsOzoneSignatureSearchAccountsResponseBody$inboundSchema
+  ),
+}).transform((v) => {
+  return remap$(v, {
+    "Result": "result",
+  });
+});
+
+/** @internal */
+export type ToolsOzoneSignatureSearchAccountsResponse$Outbound = {
+  Result: ToolsOzoneSignatureSearchAccountsResponseBody$Outbound;
+};
+
+/** @internal */
+export const ToolsOzoneSignatureSearchAccountsResponse$outboundSchema:
+  z.ZodType<
+    ToolsOzoneSignatureSearchAccountsResponse$Outbound,
+    z.ZodTypeDef,
+    ToolsOzoneSignatureSearchAccountsResponse
+  > = z.object({
+    result: z.lazy(() =>
+      ToolsOzoneSignatureSearchAccountsResponseBody$outboundSchema
+    ),
+  }).transform((v) => {
+    return remap$(v, {
+      result: "Result",
+    });
+  });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace ToolsOzoneSignatureSearchAccountsResponse$ {
+  /** @deprecated use `ToolsOzoneSignatureSearchAccountsResponse$inboundSchema` instead. */
+  export const inboundSchema =
+    ToolsOzoneSignatureSearchAccountsResponse$inboundSchema;
+  /** @deprecated use `ToolsOzoneSignatureSearchAccountsResponse$outboundSchema` instead. */
+  export const outboundSchema =
+    ToolsOzoneSignatureSearchAccountsResponse$outboundSchema;
+  /** @deprecated use `ToolsOzoneSignatureSearchAccountsResponse$Outbound` instead. */
+  export type Outbound = ToolsOzoneSignatureSearchAccountsResponse$Outbound;
+}
+
+export function toolsOzoneSignatureSearchAccountsResponseToJSON(
+  toolsOzoneSignatureSearchAccountsResponse:
+    ToolsOzoneSignatureSearchAccountsResponse,
+): string {
+  return JSON.stringify(
+    ToolsOzoneSignatureSearchAccountsResponse$outboundSchema.parse(
+      toolsOzoneSignatureSearchAccountsResponse,
+    ),
+  );
+}
+
+export function toolsOzoneSignatureSearchAccountsResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  ToolsOzoneSignatureSearchAccountsResponse,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      ToolsOzoneSignatureSearchAccountsResponse$inboundSchema.parse(
+        JSON.parse(x),
+      ),
+    `Failed to parse 'ToolsOzoneSignatureSearchAccountsResponse' from JSON`,
   );
 }

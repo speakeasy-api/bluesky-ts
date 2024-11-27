@@ -7,13 +7,13 @@ import { AppBskyFeedDefsReplyRef } from "bluesky/models/components";
 
 let value: AppBskyFeedDefsReplyRef = {
   root: {
-    uri: "https://bustling-flood.name/",
+    uri: "https://severe-loyalty.com",
     author: {
       did: "<id>",
     },
   },
   parent: {
-    uri: "https://zesty-footrest.net/",
+    uri: "https://gloomy-allegation.net/",
   },
 };
 ```

@@ -7,8 +7,8 @@ import { ToolsOzoneModerationEmitEventRequestBody } from "bluesky/models/operati
 
 let value: ToolsOzoneModerationEmitEventRequestBody = {
   event: {
-    op: "delete",
-    timestamp: new Date("2023-03-25T07:45:32.129Z"),
+    active: false,
+    timestamp: new Date("2022-10-26T14:10:48.354Z"),
   },
   subject: {
     did: "<id>",

@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod";
+import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
@@ -19,6 +20,10 @@ export type ComAtprotoSyncListReposRequest = {
 export type ComAtprotoSyncListReposResponseBody = {
   cursor?: string | undefined;
   repos: Array<components.ComAtprotoSyncListReposRepo>;
+};
+
+export type ComAtprotoSyncListReposResponse = {
+  result: ComAtprotoSyncListReposResponseBody;
 };
 
 /** @internal */
@@ -139,5 +144,69 @@ export function comAtprotoSyncListReposResponseBodyFromJSON(
     (x) =>
       ComAtprotoSyncListReposResponseBody$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'ComAtprotoSyncListReposResponseBody' from JSON`,
+  );
+}
+
+/** @internal */
+export const ComAtprotoSyncListReposResponse$inboundSchema: z.ZodType<
+  ComAtprotoSyncListReposResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  Result: z.lazy(() => ComAtprotoSyncListReposResponseBody$inboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    "Result": "result",
+  });
+});
+
+/** @internal */
+export type ComAtprotoSyncListReposResponse$Outbound = {
+  Result: ComAtprotoSyncListReposResponseBody$Outbound;
+};
+
+/** @internal */
+export const ComAtprotoSyncListReposResponse$outboundSchema: z.ZodType<
+  ComAtprotoSyncListReposResponse$Outbound,
+  z.ZodTypeDef,
+  ComAtprotoSyncListReposResponse
+> = z.object({
+  result: z.lazy(() => ComAtprotoSyncListReposResponseBody$outboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    result: "Result",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace ComAtprotoSyncListReposResponse$ {
+  /** @deprecated use `ComAtprotoSyncListReposResponse$inboundSchema` instead. */
+  export const inboundSchema = ComAtprotoSyncListReposResponse$inboundSchema;
+  /** @deprecated use `ComAtprotoSyncListReposResponse$outboundSchema` instead. */
+  export const outboundSchema = ComAtprotoSyncListReposResponse$outboundSchema;
+  /** @deprecated use `ComAtprotoSyncListReposResponse$Outbound` instead. */
+  export type Outbound = ComAtprotoSyncListReposResponse$Outbound;
+}
+
+export function comAtprotoSyncListReposResponseToJSON(
+  comAtprotoSyncListReposResponse: ComAtprotoSyncListReposResponse,
+): string {
+  return JSON.stringify(
+    ComAtprotoSyncListReposResponse$outboundSchema.parse(
+      comAtprotoSyncListReposResponse,
+    ),
+  );
+}
+
+export function comAtprotoSyncListReposResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<ComAtprotoSyncListReposResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ComAtprotoSyncListReposResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ComAtprotoSyncListReposResponse' from JSON`,
   );
 }

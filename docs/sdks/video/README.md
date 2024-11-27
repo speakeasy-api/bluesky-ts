@@ -1,27 +1,27 @@
 # Video
-(*app.bsky.video*)
+(*video*)
 
 ## Overview
 
 ### Available Operations
 
-* [appBskyVideoGetJobStatus](#appbskyvideogetjobstatus) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [getJobStatus](#getjobstatus) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Get status details for a video processing job.
-* [appBskyVideoGetUploadLimits](#appbskyvideogetuploadlimits) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [getUploadLimits](#getuploadlimits) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Get video upload limits for the authenticated user.
-* [appBskyVideoUploadVideo](#appbskyvideouploadvideo) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [uploadVideo](#uploadvideo) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Upload a video to be processed then stored on the PDS.
 
-## appBskyVideoGetJobStatus
+## getJobStatus
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -39,7 +39,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.app.bsky.video.appBskyVideoGetJobStatus({
+  const result = await bluesky.video.getJobStatus({
     jobId: "<id>",
   });
 
@@ -56,7 +56,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyVideoAppBskyVideoGetJobStatus } from "bluesky/funcs/appBskyVideoAppBskyVideoGetJobStatus.js";
+import { videoGetJobStatus } from "bluesky/funcs/videoGetJobStatus.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -65,7 +65,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyVideoAppBskyVideoGetJobStatus(bluesky, {
+  const res = await videoGetJobStatus(bluesky, {
     jobId: "<id>",
   });
 
@@ -97,13 +97,13 @@ run();
 
 ### Errors
 
-| Error Type                                              | Status Code                                             | Content Type                                            |
-| ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
-| errors.AppBskyVideoGetJobStatusResponseBody             | 400                                                     | application/json                                        |
-| errors.AppBskyVideoGetJobStatusAppBskyVideoResponseBody | 401                                                     | application/json                                        |
-| errors.APIError                                         | 4XX, 5XX                                                | \*/\*                                                   |
+| Error Type                                       | Status Code                                      | Content Type                                     |
+| ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ |
+| errors.AppBskyVideoGetJobStatusResponseBody      | 400                                              | application/json                                 |
+| errors.AppBskyVideoGetJobStatusVideoResponseBody | 401                                              | application/json                                 |
+| errors.APIError                                  | 4XX, 5XX                                         | \*/\*                                            |
 
-## appBskyVideoGetUploadLimits
+## getUploadLimits
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -121,7 +121,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.app.bsky.video.appBskyVideoGetUploadLimits();
+  const result = await bluesky.video.getUploadLimits();
 
   // Handle the result
   console.log(result);
@@ -136,7 +136,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyVideoAppBskyVideoGetUploadLimits } from "bluesky/funcs/appBskyVideoAppBskyVideoGetUploadLimits.js";
+import { videoGetUploadLimits } from "bluesky/funcs/videoGetUploadLimits.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -145,7 +145,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyVideoAppBskyVideoGetUploadLimits(bluesky);
+  const res = await videoGetUploadLimits(bluesky);
 
   if (!res.ok) {
     throw res.error;
@@ -174,13 +174,13 @@ run();
 
 ### Errors
 
-| Error Type                                                 | Status Code                                                | Content Type                                               |
-| ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
-| errors.AppBskyVideoGetUploadLimitsResponseBody             | 400                                                        | application/json                                           |
-| errors.AppBskyVideoGetUploadLimitsAppBskyVideoResponseBody | 401                                                        | application/json                                           |
-| errors.APIError                                            | 4XX, 5XX                                                   | \*/\*                                                      |
+| Error Type                                          | Status Code                                         | Content Type                                        |
+| --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| errors.AppBskyVideoGetUploadLimitsResponseBody      | 400                                                 | application/json                                    |
+| errors.AppBskyVideoGetUploadLimitsVideoResponseBody | 401                                                 | application/json                                    |
+| errors.APIError                                     | 4XX, 5XX                                            | \*/\*                                               |
 
-## appBskyVideoUploadVideo
+## uploadVideo
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -199,7 +199,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.app.bsky.video.appBskyVideoUploadVideo(await openAsBlob("example.file"));
+  const result = await bluesky.video.uploadVideo(await openAsBlob("example.file"));
 
   // Handle the result
   console.log(result);
@@ -214,7 +214,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyVideoAppBskyVideoUploadVideo } from "bluesky/funcs/appBskyVideoAppBskyVideoUploadVideo.js";
+import { videoUploadVideo } from "bluesky/funcs/videoUploadVideo.js";
 import { openAsBlob } from "node:fs";
 
 // Use `BlueskyCore` for best tree-shaking performance.
@@ -224,7 +224,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyVideoAppBskyVideoUploadVideo(bluesky, await openAsBlob("example.file"));
+  const res = await videoUploadVideo(bluesky, await openAsBlob("example.file"));
 
   if (!res.ok) {
     throw res.error;
@@ -254,8 +254,8 @@ run();
 
 ### Errors
 
-| Error Type                                             | Status Code                                            | Content Type                                           |
-| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
-| errors.AppBskyVideoUploadVideoResponseBody             | 400                                                    | application/json                                       |
-| errors.AppBskyVideoUploadVideoAppBskyVideoResponseBody | 401                                                    | application/json                                       |
-| errors.APIError                                        | 4XX, 5XX                                               | \*/\*                                                  |
+| Error Type                                      | Status Code                                     | Content Type                                    |
+| ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
+| errors.AppBskyVideoUploadVideoResponseBody      | 400                                             | application/json                                |
+| errors.AppBskyVideoUploadVideoVideoResponseBody | 401                                             | application/json                                |
+| errors.APIError                                 | 4XX, 5XX                                        | \*/\*                                           |

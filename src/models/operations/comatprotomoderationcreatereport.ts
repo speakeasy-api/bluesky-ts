@@ -23,7 +23,7 @@ export type ComAtprotoModerationCreateReportRequestBody = {
     | components.ComAtprotoRepoStrongRef;
 };
 
-export type ComAtprotoModerationCreateReportComAtprotoModerationSubject =
+export type ComAtprotoModerationCreateReportAtprotoModerationSubject =
   | components.ComAtprotoAdminDefsRepoRef
   | components.ComAtprotoRepoStrongRef;
 
@@ -190,9 +190,9 @@ export function comAtprotoModerationCreateReportRequestBodyFromJSON(
 }
 
 /** @internal */
-export const ComAtprotoModerationCreateReportComAtprotoModerationSubject$inboundSchema:
+export const ComAtprotoModerationCreateReportAtprotoModerationSubject$inboundSchema:
   z.ZodType<
-    ComAtprotoModerationCreateReportComAtprotoModerationSubject,
+    ComAtprotoModerationCreateReportAtprotoModerationSubject,
     z.ZodTypeDef,
     unknown
   > = z.union([
@@ -201,16 +201,16 @@ export const ComAtprotoModerationCreateReportComAtprotoModerationSubject$inbound
   ]);
 
 /** @internal */
-export type ComAtprotoModerationCreateReportComAtprotoModerationSubject$Outbound =
+export type ComAtprotoModerationCreateReportAtprotoModerationSubject$Outbound =
   | components.ComAtprotoAdminDefsRepoRef$Outbound
   | components.ComAtprotoRepoStrongRef$Outbound;
 
 /** @internal */
-export const ComAtprotoModerationCreateReportComAtprotoModerationSubject$outboundSchema:
+export const ComAtprotoModerationCreateReportAtprotoModerationSubject$outboundSchema:
   z.ZodType<
-    ComAtprotoModerationCreateReportComAtprotoModerationSubject$Outbound,
+    ComAtprotoModerationCreateReportAtprotoModerationSubject$Outbound,
     z.ZodTypeDef,
-    ComAtprotoModerationCreateReportComAtprotoModerationSubject
+    ComAtprotoModerationCreateReportAtprotoModerationSubject
   > = z.union([
     components.ComAtprotoAdminDefsRepoRef$outboundSchema,
     components.ComAtprotoRepoStrongRef$outboundSchema,
@@ -220,40 +220,40 @@ export const ComAtprotoModerationCreateReportComAtprotoModerationSubject$outboun
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoModerationCreateReportComAtprotoModerationSubject$ {
-  /** @deprecated use `ComAtprotoModerationCreateReportComAtprotoModerationSubject$inboundSchema` instead. */
+export namespace ComAtprotoModerationCreateReportAtprotoModerationSubject$ {
+  /** @deprecated use `ComAtprotoModerationCreateReportAtprotoModerationSubject$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoModerationCreateReportComAtprotoModerationSubject$inboundSchema;
-  /** @deprecated use `ComAtprotoModerationCreateReportComAtprotoModerationSubject$outboundSchema` instead. */
+    ComAtprotoModerationCreateReportAtprotoModerationSubject$inboundSchema;
+  /** @deprecated use `ComAtprotoModerationCreateReportAtprotoModerationSubject$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoModerationCreateReportComAtprotoModerationSubject$outboundSchema;
-  /** @deprecated use `ComAtprotoModerationCreateReportComAtprotoModerationSubject$Outbound` instead. */
+    ComAtprotoModerationCreateReportAtprotoModerationSubject$outboundSchema;
+  /** @deprecated use `ComAtprotoModerationCreateReportAtprotoModerationSubject$Outbound` instead. */
   export type Outbound =
-    ComAtprotoModerationCreateReportComAtprotoModerationSubject$Outbound;
+    ComAtprotoModerationCreateReportAtprotoModerationSubject$Outbound;
 }
 
-export function comAtprotoModerationCreateReportComAtprotoModerationSubjectToJSON(
-  comAtprotoModerationCreateReportComAtprotoModerationSubject:
-    ComAtprotoModerationCreateReportComAtprotoModerationSubject,
+export function comAtprotoModerationCreateReportAtprotoModerationSubjectToJSON(
+  comAtprotoModerationCreateReportAtprotoModerationSubject:
+    ComAtprotoModerationCreateReportAtprotoModerationSubject,
 ): string {
   return JSON.stringify(
-    ComAtprotoModerationCreateReportComAtprotoModerationSubject$outboundSchema
-      .parse(comAtprotoModerationCreateReportComAtprotoModerationSubject),
+    ComAtprotoModerationCreateReportAtprotoModerationSubject$outboundSchema
+      .parse(comAtprotoModerationCreateReportAtprotoModerationSubject),
   );
 }
 
-export function comAtprotoModerationCreateReportComAtprotoModerationSubjectFromJSON(
+export function comAtprotoModerationCreateReportAtprotoModerationSubjectFromJSON(
   jsonString: string,
 ): SafeParseResult<
-  ComAtprotoModerationCreateReportComAtprotoModerationSubject,
+  ComAtprotoModerationCreateReportAtprotoModerationSubject,
   SDKValidationError
 > {
   return safeParse(
     jsonString,
     (x) =>
-      ComAtprotoModerationCreateReportComAtprotoModerationSubject$inboundSchema
+      ComAtprotoModerationCreateReportAtprotoModerationSubject$inboundSchema
         .parse(JSON.parse(x)),
-    `Failed to parse 'ComAtprotoModerationCreateReportComAtprotoModerationSubject' from JSON`,
+    `Failed to parse 'ComAtprotoModerationCreateReportAtprotoModerationSubject' from JSON`,
   );
 }
 

@@ -7,7 +7,7 @@ import { ComAtprotoServerDefsInviteCodeUse } from "bluesky/models/components";
 
 let value: ComAtprotoServerDefsInviteCodeUse = {
   usedBy: "<id>",
-  usedAt: new Date("2024-02-09T05:12:43.428Z"),
+  usedAt: new Date("2022-11-16T08:41:29.527Z"),
 };
 ```
 

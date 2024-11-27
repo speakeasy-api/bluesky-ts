@@ -11,7 +11,7 @@ let value: ComAtprotoRepoListMissingBlobsResponseBody = {
   blobs: [
     {
       cid: "<id>",
-      recordUri: "https://outrageous-baritone.info/",
+      recordUri: "https://eminent-brace.org",
     },
   ],
 };

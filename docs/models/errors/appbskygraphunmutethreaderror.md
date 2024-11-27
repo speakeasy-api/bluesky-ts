@@ -5,7 +5,7 @@
 ```typescript
 import { AppBskyGraphUnmuteThreadError } from "bluesky/models/errors";
 
-let value: AppBskyGraphUnmuteThreadError = "InvalidRequest";
+let value: AppBskyGraphUnmuteThreadError = "InvalidToken";
 ```
 
 ## Values

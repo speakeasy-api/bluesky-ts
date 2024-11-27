@@ -7,13 +7,13 @@
 
 ```typescript
 const value: components.AppBskyLabelerDefsLabelerView = {
-  uri: "https://official-mouser.name/",
+  uri: "https://strident-metal.info",
   cid: "<id>",
   creator: {
     did: "<id>",
     handle: "<value>",
   },
-  indexedAt: new Date("2023-12-17T21:47:39.716Z"),
+  indexedAt: new Date("2022-03-17T19:22:07.134Z"),
 };
 ```
 
@@ -21,7 +21,7 @@ const value: components.AppBskyLabelerDefsLabelerView = {
 
 ```typescript
 const value: components.AppBskyLabelerDefsLabelerViewDetailed = {
-  uri: "https://intrepid-technician.info",
+  uri: "https://kosher-puppet.org",
   cid: "<id>",
   creator: {
     did: "<id>",
@@ -29,10 +29,10 @@ const value: components.AppBskyLabelerDefsLabelerViewDetailed = {
   },
   policies: {
     labelValues: [
-      "dmca-violation",
+      "gore",
     ],
   },
-  indexedAt: new Date("2024-09-04T13:09:06.950Z"),
+  indexedAt: new Date("2024-07-26T23:03:04.026Z"),
 };
 ```
 

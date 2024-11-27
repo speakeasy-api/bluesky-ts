@@ -5,7 +5,7 @@
 ```typescript
 import { AppBskyFeedGetActorLikesError } from "bluesky/models/errors";
 
-let value: AppBskyFeedGetActorLikesError = "InvalidToken";
+let value: AppBskyFeedGetActorLikesError = "BlockedActor";
 ```
 
 ## Values

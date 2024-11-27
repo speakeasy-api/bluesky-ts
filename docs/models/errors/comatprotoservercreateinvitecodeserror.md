@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoServerCreateInviteCodesError } from "bluesky/models/errors";
 
-let value: ComAtprotoServerCreateInviteCodesError = "ExpiredToken";
+let value: ComAtprotoServerCreateInviteCodesError = "InvalidRequest";
 ```
 
 ## Values

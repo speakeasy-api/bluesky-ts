@@ -7,7 +7,7 @@ import { AppBskyActorDefsContentLabelPref } from "bluesky/models/components";
 
 let value: AppBskyActorDefsContentLabelPref = {
   label: "<value>",
-  visibility: "show",
+  visibility: "ignore",
 };
 ```
 

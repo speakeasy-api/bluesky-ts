@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoServerCreateAccountError } from "bluesky/models/errors";
 
-let value: ComAtprotoServerCreateAccountError = "InvalidPassword";
+let value: ComAtprotoServerCreateAccountError = "UnsupportedDomain";
 ```
 
 ## Values

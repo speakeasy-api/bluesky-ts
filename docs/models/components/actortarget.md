@@ -7,7 +7,7 @@ Groups of users to apply the muted word to. If undefined, applies to all users.
 ```typescript
 import { ActorTarget } from "bluesky/models/components";
 
-let value: ActorTarget = "exclude-following";
+let value: ActorTarget = "all";
 ```
 
 ## Values

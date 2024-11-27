@@ -10,7 +10,7 @@ import { ComAtprotoServerCreateInviteCodesResponseBody } from "bluesky/models/op
 let value: ComAtprotoServerCreateInviteCodesResponseBody = {
   codes: [
     {
-      account: "04210707",
+      account: "23140705",
       codes: [
         "<value>",
       ],

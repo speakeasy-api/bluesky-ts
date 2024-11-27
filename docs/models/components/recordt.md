@@ -7,14 +7,14 @@
 
 ```typescript
 const value: components.AppBskyEmbedRecordViewRecord = {
-  uri: "https://lined-swing.net",
+  uri: "https://uniform-daughter.name",
   cid: "<id>",
   author: {
     did: "<id>",
     handle: "<value>",
   },
   value: "<value>",
-  indexedAt: new Date("2023-03-26T01:26:17.206Z"),
+  indexedAt: new Date("2022-05-03T04:47:32.248Z"),
 };
 ```
 
@@ -22,7 +22,7 @@ const value: components.AppBskyEmbedRecordViewRecord = {
 
 ```typescript
 const value: components.AppBskyEmbedRecordViewNotFound = {
-  uri: "https://milky-tackle.net/",
+  uri: "https://glorious-eyeliner.info/",
 };
 ```
 
@@ -30,7 +30,7 @@ const value: components.AppBskyEmbedRecordViewNotFound = {
 
 ```typescript
 const value: components.AppBskyEmbedRecordViewBlocked = {
-  uri: "https://rowdy-tooth.net/",
+  uri: "https://black-and-white-sweatshop.net",
   author: {
     did: "<id>",
   },
@@ -41,7 +41,7 @@ const value: components.AppBskyEmbedRecordViewBlocked = {
 
 ```typescript
 const value: components.AppBskyEmbedRecordViewDetached = {
-  uri: "https://lost-character.info/",
+  uri: "https://warped-lace.org/",
 };
 ```
 
@@ -49,15 +49,15 @@ const value: components.AppBskyEmbedRecordViewDetached = {
 
 ```typescript
 const value: components.AppBskyFeedDefsGeneratorView = {
-  uri: "https://vague-ecliptic.info",
+  uri: "https://mushy-elevator.biz/",
   cid: "<id>",
   did: "<id>",
   creator: {
     did: "<id>",
     handle: "<value>",
   },
-  displayName: "Layla49",
-  indexedAt: new Date("2022-07-23T07:51:45.995Z"),
+  displayName: "Lane55",
+  indexedAt: new Date("2023-06-24T15:04:27.990Z"),
 };
 ```
 
@@ -65,7 +65,7 @@ const value: components.AppBskyFeedDefsGeneratorView = {
 
 ```typescript
 const value: components.AppBskyGraphDefsListView = {
-  uri: "https://good-eyeliner.info",
+  uri: "https://tall-custom.net",
   cid: "<id>",
   creator: {
     did: "<id>",
@@ -73,7 +73,7 @@ const value: components.AppBskyGraphDefsListView = {
   },
   name: "<value>",
   purpose: "<value>",
-  indexedAt: new Date("2023-04-20T15:40:09.196Z"),
+  indexedAt: new Date("2022-01-14T08:09:00.404Z"),
 };
 ```
 
@@ -81,13 +81,13 @@ const value: components.AppBskyGraphDefsListView = {
 
 ```typescript
 const value: components.AppBskyLabelerDefsLabelerView = {
-  uri: "https://unwritten-rawhide.net/",
+  uri: "https://energetic-lace.net/",
   cid: "<id>",
   creator: {
     did: "<id>",
     handle: "<value>",
   },
-  indexedAt: new Date("2022-11-14T17:53:00.161Z"),
+  indexedAt: new Date("2022-04-18T01:16:45.009Z"),
 };
 ```
 
@@ -95,14 +95,14 @@ const value: components.AppBskyLabelerDefsLabelerView = {
 
 ```typescript
 const value: components.AppBskyGraphDefsStarterPackViewBasic = {
-  uri: "https://sparkling-season.info",
+  uri: "https://warmhearted-deed.net",
   cid: "<id>",
   record: "<value>",
   creator: {
     did: "<id>",
     handle: "<value>",
   },
-  indexedAt: new Date("2024-04-24T21:02:13.160Z"),
+  indexedAt: new Date("2023-10-12T19:07:21.514Z"),
 };
 ```
 

@@ -11,9 +11,9 @@ let value: ComAtprotoLabelQueryLabelsResponseBody = {
   labels: [
     {
       src: "<id>",
-      uri: "https://wee-ravioli.biz/",
+      uri: "https://bouncy-marketplace.name",
       val: "<value>",
-      cts: new Date("2022-08-22T18:57:29.709Z"),
+      cts: new Date("2024-11-20T06:46:28.205Z"),
     },
   ],
 };

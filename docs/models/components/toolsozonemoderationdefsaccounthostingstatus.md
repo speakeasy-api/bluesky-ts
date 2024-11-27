@@ -5,7 +5,7 @@
 ```typescript
 import { ToolsOzoneModerationDefsAccountHostingStatus } from "bluesky/models/components";
 
-let value: ToolsOzoneModerationDefsAccountHostingStatus = "deleted";
+let value: ToolsOzoneModerationDefsAccountHostingStatus = "deactivated";
 ```
 
 ## Values

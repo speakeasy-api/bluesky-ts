@@ -5,7 +5,7 @@
 ```typescript
 import { AppBskyActorSearchActorsTypeaheadError } from "bluesky/models/errors";
 
-let value: AppBskyActorSearchActorsTypeaheadError = "ExpiredToken";
+let value: AppBskyActorSearchActorsTypeaheadError = "InvalidRequest";
 ```
 
 ## Values

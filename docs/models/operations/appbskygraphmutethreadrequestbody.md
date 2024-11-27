@@ -6,7 +6,7 @@
 import { AppBskyGraphMuteThreadRequestBody } from "bluesky/models/operations";
 
 let value: AppBskyGraphMuteThreadRequestBody = {
-  root: "https://well-to-do-papa.info",
+  root: "https://strict-pressure.com",
 };
 ```
 

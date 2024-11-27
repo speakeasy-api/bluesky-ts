@@ -11,5 +11,5 @@ let value: ComAtprotoServerUpdateEmailError = "TokenRequired";
 ## Values
 
 ```typescript
-"InvalidRequest" | "ExpiredToken" | "InvalidToken" | "TokenRequired"
+"ExpiredToken" | "InvalidRequest" | "InvalidToken" | "TokenRequired"
 ```

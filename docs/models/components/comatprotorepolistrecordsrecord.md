@@ -6,7 +6,7 @@
 import { ComAtprotoRepoListRecordsRecord } from "bluesky/models/components";
 
 let value: ComAtprotoRepoListRecordsRecord = {
-  uri: "https://pointless-widow.org",
+  uri: "https://chubby-appliance.biz/",
   cid: "<id>",
   value: "<value>",
 };

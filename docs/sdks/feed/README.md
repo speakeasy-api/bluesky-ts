@@ -1,102 +1,102 @@
 # Feed
-(*app.bsky.feed*)
+(*feed*)
 
 ## Overview
 
 ### Available Operations
 
-* [appBskyFeedDescribeFeedGenerator](#appbskyfeeddescribefeedgenerator) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [describeFeedGenerator](#describefeedgenerator) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Get information about a feed generator, including policies and offered feed URIs. Does not require auth; implemented by Feed Generator services (not App View).
-* [appBskyFeedGetActorFeeds](#appbskyfeedgetactorfeeds) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [getActorFeeds](#getactorfeeds) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Get a list of feeds (feed generator records) created by the actor (in the actor's repo).
-* [appBskyFeedGetActorLikes](#appbskyfeedgetactorlikes) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [getActorLikes](#getactorlikes) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Get a list of posts liked by an actor. Requires auth, actor must be the requesting account.
-* [appBskyFeedGetAuthorFeed](#appbskyfeedgetauthorfeed) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [getAuthorFeed](#getauthorfeed) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Get a view of an actor's 'author feed' (post and reposts by the author). Does not require auth.
-* [appBskyFeedGetFeed](#appbskyfeedgetfeed) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [getFeed](#getfeed) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Get a hydrated feed from an actor's selected feed generator. Implemented by App View.
-* [appBskyFeedGetFeedGenerator](#appbskyfeedgetfeedgenerator) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [getFeedGenerator](#getfeedgenerator) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Get information about a feed generator. Implemented by AppView.
-* [appBskyFeedGetFeedGenerators](#appbskyfeedgetfeedgenerators) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [getFeedGenerators](#getfeedgenerators) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Get information about a list of feed generators.
-* [appBskyFeedGetFeedSkeleton](#appbskyfeedgetfeedskeleton) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [getFeedSkeleton](#getfeedskeleton) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Get a skeleton of a feed provided by a feed generator. Auth is optional, depending on provider requirements, and provides the DID of the requester. Implemented by Feed Generator Service.
-* [appBskyFeedGetLikes](#appbskyfeedgetlikes) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [getLikes](#getlikes) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Get like records which reference a subject (by AT-URI and CID).
-* [appBskyFeedGetListFeed](#appbskyfeedgetlistfeed) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [getListFeed](#getlistfeed) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Get a feed of recent posts from a list (posts and reposts from any actors on the list). Does not require auth.
-* [appBskyFeedGetPostThread](#appbskyfeedgetpostthread) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [getPostThread](#getpostthread) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Get posts in a thread. Does not require auth, but additional metadata and filtering will be applied for authed requests.
-* [appBskyFeedGetPosts](#appbskyfeedgetposts) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [getPosts](#getposts) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Gets post views for a specified list of posts (by AT-URI). This is sometimes referred to as 'hydrating' a 'feed skeleton'.
-* [appBskyFeedGetQuotes](#appbskyfeedgetquotes) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [getQuotes](#getquotes) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Get a list of quotes for a given post.
-* [appBskyFeedGetRepostedBy](#appbskyfeedgetrepostedby) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [getRepostedBy](#getrepostedby) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Get a list of reposts for a given post.
-* [appBskyFeedGetSuggestedFeeds](#appbskyfeedgetsuggestedfeeds) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [getSuggestedFeeds](#getsuggestedfeeds) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Get a list of suggested feeds (feed generators) for the requesting account.
-* [appBskyFeedGetTimeline](#appbskyfeedgettimeline) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [getTimeline](#gettimeline) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Get a view of the requesting account's home timeline. This is expected to be some form of reverse-chronological feed.
-* [appBskyFeedSearchPosts](#appbskyfeedsearchposts) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [searchPosts](#searchposts) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Find posts matching search criteria, returning views of those posts.
-* [appBskyFeedSendInteractions](#appbskyfeedsendinteractions) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [sendInteractions](#sendinteractions) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Send information about interactions with feed items back to the feed generator that served them.
 
-## appBskyFeedDescribeFeedGenerator
+## describeFeedGenerator
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -114,7 +114,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.app.bsky.feed.appBskyFeedDescribeFeedGenerator();
+  const result = await bluesky.feed.describeFeedGenerator();
 
   // Handle the result
   console.log(result);
@@ -129,7 +129,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyFeedAppBskyFeedDescribeFeedGenerator } from "bluesky/funcs/appBskyFeedAppBskyFeedDescribeFeedGenerator.js";
+import { feedDescribeFeedGenerator } from "bluesky/funcs/feedDescribeFeedGenerator.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -138,7 +138,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyFeedAppBskyFeedDescribeFeedGenerator(bluesky);
+  const res = await feedDescribeFeedGenerator(bluesky);
 
   if (!res.ok) {
     throw res.error;
@@ -167,13 +167,13 @@ run();
 
 ### Errors
 
-| Error Type                                                     | Status Code                                                    | Content Type                                                   |
-| -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
-| errors.AppBskyFeedDescribeFeedGeneratorResponseBody            | 400                                                            | application/json                                               |
-| errors.AppBskyFeedDescribeFeedGeneratorAppBskyFeedResponseBody | 401                                                            | application/json                                               |
-| errors.APIError                                                | 4XX, 5XX                                                       | \*/\*                                                          |
+| Error Type                                              | Status Code                                             | Content Type                                            |
+| ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
+| errors.AppBskyFeedDescribeFeedGeneratorResponseBody     | 400                                                     | application/json                                        |
+| errors.AppBskyFeedDescribeFeedGeneratorFeedResponseBody | 401                                                     | application/json                                        |
+| errors.APIError                                         | 4XX, 5XX                                                | \*/\*                                                   |
 
-## appBskyFeedGetActorFeeds
+## getActorFeeds
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -191,12 +191,14 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.app.bsky.feed.appBskyFeedGetActorFeeds({
+  const result = await bluesky.feed.getActorFeeds({
     actor: "<value>",
   });
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -208,7 +210,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyFeedAppBskyFeedGetActorFeeds } from "bluesky/funcs/appBskyFeedAppBskyFeedGetActorFeeds.js";
+import { feedGetActorFeeds } from "bluesky/funcs/feedGetActorFeeds.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -217,7 +219,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyFeedAppBskyFeedGetActorFeeds(bluesky, {
+  const res = await feedGetActorFeeds(bluesky, {
     actor: "<value>",
   });
 
@@ -227,8 +229,10 @@ async function run() {
 
   const { value: result } = res;
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -245,17 +249,17 @@ run();
 
 ### Response
 
-**Promise\<[operations.AppBskyFeedGetActorFeedsResponseBody](../../models/operations/appbskyfeedgetactorfeedsresponsebody.md)\>**
+**Promise\<[operations.AppBskyFeedGetActorFeedsResponse](../../models/operations/appbskyfeedgetactorfeedsresponse.md)\>**
 
 ### Errors
 
-| Error Type                                             | Status Code                                            | Content Type                                           |
-| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
-| errors.AppBskyFeedGetActorFeedsResponseBody            | 400                                                    | application/json                                       |
-| errors.AppBskyFeedGetActorFeedsAppBskyFeedResponseBody | 401                                                    | application/json                                       |
-| errors.APIError                                        | 4XX, 5XX                                               | \*/\*                                                  |
+| Error Type                                      | Status Code                                     | Content Type                                    |
+| ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
+| errors.AppBskyFeedGetActorFeedsResponseBody     | 400                                             | application/json                                |
+| errors.AppBskyFeedGetActorFeedsFeedResponseBody | 401                                             | application/json                                |
+| errors.APIError                                 | 4XX, 5XX                                        | \*/\*                                           |
 
-## appBskyFeedGetActorLikes
+## getActorLikes
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -273,12 +277,14 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.app.bsky.feed.appBskyFeedGetActorLikes({
+  const result = await bluesky.feed.getActorLikes({
     actor: "<value>",
   });
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -290,7 +296,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyFeedAppBskyFeedGetActorLikes } from "bluesky/funcs/appBskyFeedAppBskyFeedGetActorLikes.js";
+import { feedGetActorLikes } from "bluesky/funcs/feedGetActorLikes.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -299,7 +305,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyFeedAppBskyFeedGetActorLikes(bluesky, {
+  const res = await feedGetActorLikes(bluesky, {
     actor: "<value>",
   });
 
@@ -309,8 +315,10 @@ async function run() {
 
   const { value: result } = res;
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -327,17 +335,17 @@ run();
 
 ### Response
 
-**Promise\<[operations.AppBskyFeedGetActorLikesResponseBody](../../models/operations/appbskyfeedgetactorlikesresponsebody.md)\>**
+**Promise\<[operations.AppBskyFeedGetActorLikesResponse](../../models/operations/appbskyfeedgetactorlikesresponse.md)\>**
 
 ### Errors
 
-| Error Type                                             | Status Code                                            | Content Type                                           |
-| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
-| errors.AppBskyFeedGetActorLikesResponseBody            | 400                                                    | application/json                                       |
-| errors.AppBskyFeedGetActorLikesAppBskyFeedResponseBody | 401                                                    | application/json                                       |
-| errors.APIError                                        | 4XX, 5XX                                               | \*/\*                                                  |
+| Error Type                                      | Status Code                                     | Content Type                                    |
+| ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
+| errors.AppBskyFeedGetActorLikesResponseBody     | 400                                             | application/json                                |
+| errors.AppBskyFeedGetActorLikesFeedResponseBody | 401                                             | application/json                                |
+| errors.APIError                                 | 4XX, 5XX                                        | \*/\*                                           |
 
-## appBskyFeedGetAuthorFeed
+## getAuthorFeed
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -355,12 +363,14 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.app.bsky.feed.appBskyFeedGetAuthorFeed({
+  const result = await bluesky.feed.getAuthorFeed({
     actor: "<value>",
   });
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -372,7 +382,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyFeedAppBskyFeedGetAuthorFeed } from "bluesky/funcs/appBskyFeedAppBskyFeedGetAuthorFeed.js";
+import { feedGetAuthorFeed } from "bluesky/funcs/feedGetAuthorFeed.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -381,7 +391,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyFeedAppBskyFeedGetAuthorFeed(bluesky, {
+  const res = await feedGetAuthorFeed(bluesky, {
     actor: "<value>",
   });
 
@@ -391,8 +401,10 @@ async function run() {
 
   const { value: result } = res;
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -409,17 +421,17 @@ run();
 
 ### Response
 
-**Promise\<[operations.AppBskyFeedGetAuthorFeedResponseBody](../../models/operations/appbskyfeedgetauthorfeedresponsebody.md)\>**
+**Promise\<[operations.AppBskyFeedGetAuthorFeedResponse](../../models/operations/appbskyfeedgetauthorfeedresponse.md)\>**
 
 ### Errors
 
-| Error Type                                             | Status Code                                            | Content Type                                           |
-| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
-| errors.AppBskyFeedGetAuthorFeedResponseBody            | 400                                                    | application/json                                       |
-| errors.AppBskyFeedGetAuthorFeedAppBskyFeedResponseBody | 401                                                    | application/json                                       |
-| errors.APIError                                        | 4XX, 5XX                                               | \*/\*                                                  |
+| Error Type                                      | Status Code                                     | Content Type                                    |
+| ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
+| errors.AppBskyFeedGetAuthorFeedResponseBody     | 400                                             | application/json                                |
+| errors.AppBskyFeedGetAuthorFeedFeedResponseBody | 401                                             | application/json                                |
+| errors.APIError                                 | 4XX, 5XX                                        | \*/\*                                           |
 
-## appBskyFeedGetFeed
+## getFeed
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -437,12 +449,14 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.app.bsky.feed.appBskyFeedGetFeed({
+  const result = await bluesky.feed.getFeed({
     feed: "https://key-nougat.org",
   });
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -454,7 +468,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyFeedAppBskyFeedGetFeed } from "bluesky/funcs/appBskyFeedAppBskyFeedGetFeed.js";
+import { feedGetFeed } from "bluesky/funcs/feedGetFeed.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -463,7 +477,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyFeedAppBskyFeedGetFeed(bluesky, {
+  const res = await feedGetFeed(bluesky, {
     feed: "https://key-nougat.org",
   });
 
@@ -473,8 +487,10 @@ async function run() {
 
   const { value: result } = res;
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -491,17 +507,17 @@ run();
 
 ### Response
 
-**Promise\<[operations.AppBskyFeedGetFeedResponseBody](../../models/operations/appbskyfeedgetfeedresponsebody.md)\>**
+**Promise\<[operations.AppBskyFeedGetFeedResponse](../../models/operations/appbskyfeedgetfeedresponse.md)\>**
 
 ### Errors
 
-| Error Type                                       | Status Code                                      | Content Type                                     |
-| ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ |
-| errors.AppBskyFeedGetFeedResponseBody            | 400                                              | application/json                                 |
-| errors.AppBskyFeedGetFeedAppBskyFeedResponseBody | 401                                              | application/json                                 |
-| errors.APIError                                  | 4XX, 5XX                                         | \*/\*                                            |
+| Error Type                                | Status Code                               | Content Type                              |
+| ----------------------------------------- | ----------------------------------------- | ----------------------------------------- |
+| errors.AppBskyFeedGetFeedResponseBody     | 400                                       | application/json                          |
+| errors.AppBskyFeedGetFeedFeedResponseBody | 401                                       | application/json                          |
+| errors.APIError                           | 4XX, 5XX                                  | \*/\*                                     |
 
-## appBskyFeedGetFeedGenerator
+## getFeedGenerator
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -519,7 +535,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.app.bsky.feed.appBskyFeedGetFeedGenerator({
+  const result = await bluesky.feed.getFeedGenerator({
     feed: "https://far-flung-solvency.net",
   });
 
@@ -536,7 +552,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyFeedAppBskyFeedGetFeedGenerator } from "bluesky/funcs/appBskyFeedAppBskyFeedGetFeedGenerator.js";
+import { feedGetFeedGenerator } from "bluesky/funcs/feedGetFeedGenerator.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -545,7 +561,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyFeedAppBskyFeedGetFeedGenerator(bluesky, {
+  const res = await feedGetFeedGenerator(bluesky, {
     feed: "https://far-flung-solvency.net",
   });
 
@@ -577,13 +593,13 @@ run();
 
 ### Errors
 
-| Error Type                                                | Status Code                                               | Content Type                                              |
-| --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
-| errors.AppBskyFeedGetFeedGeneratorResponseBody            | 400                                                       | application/json                                          |
-| errors.AppBskyFeedGetFeedGeneratorAppBskyFeedResponseBody | 401                                                       | application/json                                          |
-| errors.APIError                                           | 4XX, 5XX                                                  | \*/\*                                                     |
+| Error Type                                         | Status Code                                        | Content Type                                       |
+| -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
+| errors.AppBskyFeedGetFeedGeneratorResponseBody     | 400                                                | application/json                                   |
+| errors.AppBskyFeedGetFeedGeneratorFeedResponseBody | 401                                                | application/json                                   |
+| errors.APIError                                    | 4XX, 5XX                                           | \*/\*                                              |
 
-## appBskyFeedGetFeedGenerators
+## getFeedGenerators
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -601,9 +617,9 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.app.bsky.feed.appBskyFeedGetFeedGenerators({
+  const result = await bluesky.feed.getFeedGenerators({
     feeds: [
-      "https://exhausted-duffel.net/",
+      "https://emotional-character.info/",
     ],
   });
 
@@ -620,7 +636,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyFeedAppBskyFeedGetFeedGenerators } from "bluesky/funcs/appBskyFeedAppBskyFeedGetFeedGenerators.js";
+import { feedGetFeedGenerators } from "bluesky/funcs/feedGetFeedGenerators.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -629,9 +645,9 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyFeedAppBskyFeedGetFeedGenerators(bluesky, {
+  const res = await feedGetFeedGenerators(bluesky, {
     feeds: [
-      "https://wasteful-cleaner.info/",
+      "https://zealous-foodstuffs.net",
     ],
   });
 
@@ -663,13 +679,13 @@ run();
 
 ### Errors
 
-| Error Type                                                 | Status Code                                                | Content Type                                               |
-| ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
-| errors.AppBskyFeedGetFeedGeneratorsResponseBody            | 400                                                        | application/json                                           |
-| errors.AppBskyFeedGetFeedGeneratorsAppBskyFeedResponseBody | 401                                                        | application/json                                           |
-| errors.APIError                                            | 4XX, 5XX                                                   | \*/\*                                                      |
+| Error Type                                          | Status Code                                         | Content Type                                        |
+| --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| errors.AppBskyFeedGetFeedGeneratorsResponseBody     | 400                                                 | application/json                                    |
+| errors.AppBskyFeedGetFeedGeneratorsFeedResponseBody | 401                                                 | application/json                                    |
+| errors.APIError                                     | 4XX, 5XX                                            | \*/\*                                               |
 
-## appBskyFeedGetFeedSkeleton
+## getFeedSkeleton
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -687,12 +703,14 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.app.bsky.feed.appBskyFeedGetFeedSkeleton({
+  const result = await bluesky.feed.getFeedSkeleton({
     feed: "https://dim-sport.info",
   });
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -704,7 +722,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyFeedAppBskyFeedGetFeedSkeleton } from "bluesky/funcs/appBskyFeedAppBskyFeedGetFeedSkeleton.js";
+import { feedGetFeedSkeleton } from "bluesky/funcs/feedGetFeedSkeleton.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -713,7 +731,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyFeedAppBskyFeedGetFeedSkeleton(bluesky, {
+  const res = await feedGetFeedSkeleton(bluesky, {
     feed: "https://dim-sport.info",
   });
 
@@ -723,8 +741,10 @@ async function run() {
 
   const { value: result } = res;
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -741,17 +761,17 @@ run();
 
 ### Response
 
-**Promise\<[operations.AppBskyFeedGetFeedSkeletonResponseBody](../../models/operations/appbskyfeedgetfeedskeletonresponsebody.md)\>**
+**Promise\<[operations.AppBskyFeedGetFeedSkeletonResponse](../../models/operations/appbskyfeedgetfeedskeletonresponse.md)\>**
 
 ### Errors
 
-| Error Type                                               | Status Code                                              | Content Type                                             |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| errors.AppBskyFeedGetFeedSkeletonResponseBody            | 400                                                      | application/json                                         |
-| errors.AppBskyFeedGetFeedSkeletonAppBskyFeedResponseBody | 401                                                      | application/json                                         |
-| errors.APIError                                          | 4XX, 5XX                                                 | \*/\*                                                    |
+| Error Type                                        | Status Code                                       | Content Type                                      |
+| ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
+| errors.AppBskyFeedGetFeedSkeletonResponseBody     | 400                                               | application/json                                  |
+| errors.AppBskyFeedGetFeedSkeletonFeedResponseBody | 401                                               | application/json                                  |
+| errors.APIError                                   | 4XX, 5XX                                          | \*/\*                                             |
 
-## appBskyFeedGetLikes
+## getLikes
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -769,12 +789,14 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.app.bsky.feed.appBskyFeedGetLikes({
+  const result = await bluesky.feed.getLikes({
     uri: "https://superficial-flame.info",
   });
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -786,7 +808,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyFeedAppBskyFeedGetLikes } from "bluesky/funcs/appBskyFeedAppBskyFeedGetLikes.js";
+import { feedGetLikes } from "bluesky/funcs/feedGetLikes.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -795,7 +817,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyFeedAppBskyFeedGetLikes(bluesky, {
+  const res = await feedGetLikes(bluesky, {
     uri: "https://superficial-flame.info",
   });
 
@@ -805,8 +827,10 @@ async function run() {
 
   const { value: result } = res;
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -823,17 +847,17 @@ run();
 
 ### Response
 
-**Promise\<[operations.AppBskyFeedGetLikesResponseBody](../../models/operations/appbskyfeedgetlikesresponsebody.md)\>**
+**Promise\<[operations.AppBskyFeedGetLikesResponse](../../models/operations/appbskyfeedgetlikesresponse.md)\>**
 
 ### Errors
 
-| Error Type                                        | Status Code                                       | Content Type                                      |
-| ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
-| errors.AppBskyFeedGetLikesResponseBody            | 400                                               | application/json                                  |
-| errors.AppBskyFeedGetLikesAppBskyFeedResponseBody | 401                                               | application/json                                  |
-| errors.APIError                                   | 4XX, 5XX                                          | \*/\*                                             |
+| Error Type                                 | Status Code                                | Content Type                               |
+| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
+| errors.AppBskyFeedGetLikesResponseBody     | 400                                        | application/json                           |
+| errors.AppBskyFeedGetLikesFeedResponseBody | 401                                        | application/json                           |
+| errors.APIError                            | 4XX, 5XX                                   | \*/\*                                      |
 
-## appBskyFeedGetListFeed
+## getListFeed
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -851,12 +875,14 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.app.bsky.feed.appBskyFeedGetListFeed({
+  const result = await bluesky.feed.getListFeed({
     list: "https://strange-dish.biz/",
   });
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -868,7 +894,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyFeedAppBskyFeedGetListFeed } from "bluesky/funcs/appBskyFeedAppBskyFeedGetListFeed.js";
+import { feedGetListFeed } from "bluesky/funcs/feedGetListFeed.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -877,7 +903,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyFeedAppBskyFeedGetListFeed(bluesky, {
+  const res = await feedGetListFeed(bluesky, {
     list: "https://strange-dish.biz/",
   });
 
@@ -887,8 +913,10 @@ async function run() {
 
   const { value: result } = res;
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -905,17 +933,17 @@ run();
 
 ### Response
 
-**Promise\<[operations.AppBskyFeedGetListFeedResponseBody](../../models/operations/appbskyfeedgetlistfeedresponsebody.md)\>**
+**Promise\<[operations.AppBskyFeedGetListFeedResponse](../../models/operations/appbskyfeedgetlistfeedresponse.md)\>**
 
 ### Errors
 
-| Error Type                                           | Status Code                                          | Content Type                                         |
-| ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
-| errors.AppBskyFeedGetListFeedResponseBody            | 400                                                  | application/json                                     |
-| errors.AppBskyFeedGetListFeedAppBskyFeedResponseBody | 401                                                  | application/json                                     |
-| errors.APIError                                      | 4XX, 5XX                                             | \*/\*                                                |
+| Error Type                                    | Status Code                                   | Content Type                                  |
+| --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
+| errors.AppBskyFeedGetListFeedResponseBody     | 400                                           | application/json                              |
+| errors.AppBskyFeedGetListFeedFeedResponseBody | 401                                           | application/json                              |
+| errors.APIError                               | 4XX, 5XX                                      | \*/\*                                         |
 
-## appBskyFeedGetPostThread
+## getPostThread
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -933,7 +961,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.app.bsky.feed.appBskyFeedGetPostThread({
+  const result = await bluesky.feed.getPostThread({
     uri: "https://separate-bandwidth.name/",
   });
 
@@ -950,7 +978,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyFeedAppBskyFeedGetPostThread } from "bluesky/funcs/appBskyFeedAppBskyFeedGetPostThread.js";
+import { feedGetPostThread } from "bluesky/funcs/feedGetPostThread.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -959,7 +987,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyFeedAppBskyFeedGetPostThread(bluesky, {
+  const res = await feedGetPostThread(bluesky, {
     uri: "https://separate-bandwidth.name/",
   });
 
@@ -991,13 +1019,13 @@ run();
 
 ### Errors
 
-| Error Type                                             | Status Code                                            | Content Type                                           |
-| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
-| errors.AppBskyFeedGetPostThreadResponseBody            | 400                                                    | application/json                                       |
-| errors.AppBskyFeedGetPostThreadAppBskyFeedResponseBody | 401                                                    | application/json                                       |
-| errors.APIError                                        | 4XX, 5XX                                               | \*/\*                                                  |
+| Error Type                                      | Status Code                                     | Content Type                                    |
+| ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
+| errors.AppBskyFeedGetPostThreadResponseBody     | 400                                             | application/json                                |
+| errors.AppBskyFeedGetPostThreadFeedResponseBody | 401                                             | application/json                                |
+| errors.APIError                                 | 4XX, 5XX                                        | \*/\*                                           |
 
-## appBskyFeedGetPosts
+## getPosts
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -1015,7 +1043,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.app.bsky.feed.appBskyFeedGetPosts({
+  const result = await bluesky.feed.getPosts({
     uris: [
       "https://crooked-recommendation.name/",
     ],
@@ -1034,7 +1062,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyFeedAppBskyFeedGetPosts } from "bluesky/funcs/appBskyFeedAppBskyFeedGetPosts.js";
+import { feedGetPosts } from "bluesky/funcs/feedGetPosts.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1043,7 +1071,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyFeedAppBskyFeedGetPosts(bluesky, {
+  const res = await feedGetPosts(bluesky, {
     uris: [
       "https://crooked-recommendation.name/",
     ],
@@ -1077,13 +1105,13 @@ run();
 
 ### Errors
 
-| Error Type                                        | Status Code                                       | Content Type                                      |
-| ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
-| errors.AppBskyFeedGetPostsResponseBody            | 400                                               | application/json                                  |
-| errors.AppBskyFeedGetPostsAppBskyFeedResponseBody | 401                                               | application/json                                  |
-| errors.APIError                                   | 4XX, 5XX                                          | \*/\*                                             |
+| Error Type                                 | Status Code                                | Content Type                               |
+| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
+| errors.AppBskyFeedGetPostsResponseBody     | 400                                        | application/json                           |
+| errors.AppBskyFeedGetPostsFeedResponseBody | 401                                        | application/json                           |
+| errors.APIError                            | 4XX, 5XX                                   | \*/\*                                      |
 
-## appBskyFeedGetQuotes
+## getQuotes
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -1101,12 +1129,14 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.app.bsky.feed.appBskyFeedGetQuotes({
+  const result = await bluesky.feed.getQuotes({
     uri: "https://plain-hutch.info",
   });
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -1118,7 +1148,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyFeedAppBskyFeedGetQuotes } from "bluesky/funcs/appBskyFeedAppBskyFeedGetQuotes.js";
+import { feedGetQuotes } from "bluesky/funcs/feedGetQuotes.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1127,7 +1157,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyFeedAppBskyFeedGetQuotes(bluesky, {
+  const res = await feedGetQuotes(bluesky, {
     uri: "https://plain-hutch.info",
   });
 
@@ -1137,8 +1167,10 @@ async function run() {
 
   const { value: result } = res;
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -1155,17 +1187,17 @@ run();
 
 ### Response
 
-**Promise\<[operations.AppBskyFeedGetQuotesResponseBody](../../models/operations/appbskyfeedgetquotesresponsebody.md)\>**
+**Promise\<[operations.AppBskyFeedGetQuotesResponse](../../models/operations/appbskyfeedgetquotesresponse.md)\>**
 
 ### Errors
 
-| Error Type                                         | Status Code                                        | Content Type                                       |
-| -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
-| errors.AppBskyFeedGetQuotesResponseBody            | 400                                                | application/json                                   |
-| errors.AppBskyFeedGetQuotesAppBskyFeedResponseBody | 401                                                | application/json                                   |
-| errors.APIError                                    | 4XX, 5XX                                           | \*/\*                                              |
+| Error Type                                  | Status Code                                 | Content Type                                |
+| ------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
+| errors.AppBskyFeedGetQuotesResponseBody     | 400                                         | application/json                            |
+| errors.AppBskyFeedGetQuotesFeedResponseBody | 401                                         | application/json                            |
+| errors.APIError                             | 4XX, 5XX                                    | \*/\*                                       |
 
-## appBskyFeedGetRepostedBy
+## getRepostedBy
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -1183,12 +1215,14 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.app.bsky.feed.appBskyFeedGetRepostedBy({
+  const result = await bluesky.feed.getRepostedBy({
     uri: "https://staid-consistency.org/",
   });
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -1200,7 +1234,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyFeedAppBskyFeedGetRepostedBy } from "bluesky/funcs/appBskyFeedAppBskyFeedGetRepostedBy.js";
+import { feedGetRepostedBy } from "bluesky/funcs/feedGetRepostedBy.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1209,7 +1243,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyFeedAppBskyFeedGetRepostedBy(bluesky, {
+  const res = await feedGetRepostedBy(bluesky, {
     uri: "https://staid-consistency.org/",
   });
 
@@ -1219,8 +1253,10 @@ async function run() {
 
   const { value: result } = res;
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -1237,17 +1273,17 @@ run();
 
 ### Response
 
-**Promise\<[operations.AppBskyFeedGetRepostedByResponseBody](../../models/operations/appbskyfeedgetrepostedbyresponsebody.md)\>**
+**Promise\<[operations.AppBskyFeedGetRepostedByResponse](../../models/operations/appbskyfeedgetrepostedbyresponse.md)\>**
 
 ### Errors
 
-| Error Type                                             | Status Code                                            | Content Type                                           |
-| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
-| errors.AppBskyFeedGetRepostedByResponseBody            | 400                                                    | application/json                                       |
-| errors.AppBskyFeedGetRepostedByAppBskyFeedResponseBody | 401                                                    | application/json                                       |
-| errors.APIError                                        | 4XX, 5XX                                               | \*/\*                                                  |
+| Error Type                                      | Status Code                                     | Content Type                                    |
+| ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
+| errors.AppBskyFeedGetRepostedByResponseBody     | 400                                             | application/json                                |
+| errors.AppBskyFeedGetRepostedByFeedResponseBody | 401                                             | application/json                                |
+| errors.APIError                                 | 4XX, 5XX                                        | \*/\*                                           |
 
-## appBskyFeedGetSuggestedFeeds
+## getSuggestedFeeds
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -1265,10 +1301,12 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.app.bsky.feed.appBskyFeedGetSuggestedFeeds();
+  const result = await bluesky.feed.getSuggestedFeeds();
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -1280,7 +1318,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyFeedAppBskyFeedGetSuggestedFeeds } from "bluesky/funcs/appBskyFeedAppBskyFeedGetSuggestedFeeds.js";
+import { feedGetSuggestedFeeds } from "bluesky/funcs/feedGetSuggestedFeeds.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1289,7 +1327,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyFeedAppBskyFeedGetSuggestedFeeds(bluesky);
+  const res = await feedGetSuggestedFeeds(bluesky);
 
   if (!res.ok) {
     throw res.error;
@@ -1297,8 +1335,10 @@ async function run() {
 
   const { value: result } = res;
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -1315,17 +1355,17 @@ run();
 
 ### Response
 
-**Promise\<[operations.AppBskyFeedGetSuggestedFeedsResponseBody](../../models/operations/appbskyfeedgetsuggestedfeedsresponsebody.md)\>**
+**Promise\<[operations.AppBskyFeedGetSuggestedFeedsResponse](../../models/operations/appbskyfeedgetsuggestedfeedsresponse.md)\>**
 
 ### Errors
 
-| Error Type                                                 | Status Code                                                | Content Type                                               |
-| ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
-| errors.AppBskyFeedGetSuggestedFeedsResponseBody            | 400                                                        | application/json                                           |
-| errors.AppBskyFeedGetSuggestedFeedsAppBskyFeedResponseBody | 401                                                        | application/json                                           |
-| errors.APIError                                            | 4XX, 5XX                                                   | \*/\*                                                      |
+| Error Type                                          | Status Code                                         | Content Type                                        |
+| --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| errors.AppBskyFeedGetSuggestedFeedsResponseBody     | 400                                                 | application/json                                    |
+| errors.AppBskyFeedGetSuggestedFeedsFeedResponseBody | 401                                                 | application/json                                    |
+| errors.APIError                                     | 4XX, 5XX                                            | \*/\*                                               |
 
-## appBskyFeedGetTimeline
+## getTimeline
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -1343,10 +1383,12 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.app.bsky.feed.appBskyFeedGetTimeline();
+  const result = await bluesky.feed.getTimeline();
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -1358,7 +1400,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyFeedAppBskyFeedGetTimeline } from "bluesky/funcs/appBskyFeedAppBskyFeedGetTimeline.js";
+import { feedGetTimeline } from "bluesky/funcs/feedGetTimeline.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1367,7 +1409,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyFeedAppBskyFeedGetTimeline(bluesky);
+  const res = await feedGetTimeline(bluesky);
 
   if (!res.ok) {
     throw res.error;
@@ -1375,8 +1417,10 @@ async function run() {
 
   const { value: result } = res;
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -1393,17 +1437,17 @@ run();
 
 ### Response
 
-**Promise\<[operations.AppBskyFeedGetTimelineResponseBody](../../models/operations/appbskyfeedgettimelineresponsebody.md)\>**
+**Promise\<[operations.AppBskyFeedGetTimelineResponse](../../models/operations/appbskyfeedgettimelineresponse.md)\>**
 
 ### Errors
 
-| Error Type                                           | Status Code                                          | Content Type                                         |
-| ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
-| errors.AppBskyFeedGetTimelineResponseBody            | 400                                                  | application/json                                     |
-| errors.AppBskyFeedGetTimelineAppBskyFeedResponseBody | 401                                                  | application/json                                     |
-| errors.APIError                                      | 4XX, 5XX                                             | \*/\*                                                |
+| Error Type                                    | Status Code                                   | Content Type                                  |
+| --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
+| errors.AppBskyFeedGetTimelineResponseBody     | 400                                           | application/json                              |
+| errors.AppBskyFeedGetTimelineFeedResponseBody | 401                                           | application/json                              |
+| errors.APIError                               | 4XX, 5XX                                      | \*/\*                                         |
 
-## appBskyFeedSearchPosts
+## searchPosts
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -1421,12 +1465,14 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.app.bsky.feed.appBskyFeedSearchPosts({
+  const result = await bluesky.feed.searchPosts({
     q: "<value>",
   });
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -1438,7 +1484,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyFeedAppBskyFeedSearchPosts } from "bluesky/funcs/appBskyFeedAppBskyFeedSearchPosts.js";
+import { feedSearchPosts } from "bluesky/funcs/feedSearchPosts.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1447,7 +1493,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyFeedAppBskyFeedSearchPosts(bluesky, {
+  const res = await feedSearchPosts(bluesky, {
     q: "<value>",
   });
 
@@ -1457,8 +1503,10 @@ async function run() {
 
   const { value: result } = res;
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -1475,17 +1523,17 @@ run();
 
 ### Response
 
-**Promise\<[operations.AppBskyFeedSearchPostsResponseBody](../../models/operations/appbskyfeedsearchpostsresponsebody.md)\>**
+**Promise\<[operations.AppBskyFeedSearchPostsResponse](../../models/operations/appbskyfeedsearchpostsresponse.md)\>**
 
 ### Errors
 
-| Error Type                                           | Status Code                                          | Content Type                                         |
-| ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
-| errors.AppBskyFeedSearchPostsResponseBody            | 400                                                  | application/json                                     |
-| errors.AppBskyFeedSearchPostsAppBskyFeedResponseBody | 401                                                  | application/json                                     |
-| errors.APIError                                      | 4XX, 5XX                                             | \*/\*                                                |
+| Error Type                                    | Status Code                                   | Content Type                                  |
+| --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
+| errors.AppBskyFeedSearchPostsResponseBody     | 400                                           | application/json                              |
+| errors.AppBskyFeedSearchPostsFeedResponseBody | 401                                           | application/json                              |
+| errors.APIError                               | 4XX, 5XX                                      | \*/\*                                         |
 
-## appBskyFeedSendInteractions
+## sendInteractions
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -1503,7 +1551,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.app.bsky.feed.appBskyFeedSendInteractions({
+  const result = await bluesky.feed.sendInteractions({
     interactions: [
       {},
     ],
@@ -1522,7 +1570,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyFeedAppBskyFeedSendInteractions } from "bluesky/funcs/appBskyFeedAppBskyFeedSendInteractions.js";
+import { feedSendInteractions } from "bluesky/funcs/feedSendInteractions.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1531,7 +1579,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyFeedAppBskyFeedSendInteractions(bluesky, {
+  const res = await feedSendInteractions(bluesky, {
     interactions: [
       {},
     ],
@@ -1565,8 +1613,8 @@ run();
 
 ### Errors
 
-| Error Type                                                | Status Code                                               | Content Type                                              |
-| --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
-| errors.AppBskyFeedSendInteractionsResponseBody            | 400                                                       | application/json                                          |
-| errors.AppBskyFeedSendInteractionsAppBskyFeedResponseBody | 401                                                       | application/json                                          |
-| errors.APIError                                           | 4XX, 5XX                                                  | \*/\*                                                     |
+| Error Type                                         | Status Code                                        | Content Type                                       |
+| -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
+| errors.AppBskyFeedSendInteractionsResponseBody     | 400                                                | application/json                                   |
+| errors.AppBskyFeedSendInteractionsFeedResponseBody | 401                                                | application/json                                   |
+| errors.APIError                                    | 4XX, 5XX                                           | \*/\*                                              |

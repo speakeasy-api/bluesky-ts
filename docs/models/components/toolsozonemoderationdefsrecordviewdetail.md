@@ -6,18 +6,18 @@
 import { ToolsOzoneModerationDefsRecordViewDetail } from "bluesky/models/components";
 
 let value: ToolsOzoneModerationDefsRecordViewDetail = {
-  uri: "https://short-term-testing.net",
+  uri: "https://quixotic-statue.net",
   cid: "<id>",
   value: "<value>",
   blobs: [
     {
       cid: "<id>",
       mimeType: "<value>",
-      size: 310930,
-      createdAt: new Date("2023-07-01T06:49:42.986Z"),
+      size: 307532,
+      createdAt: new Date("2024-08-17T18:12:34.115Z"),
     },
   ],
-  indexedAt: new Date("2024-02-09T03:46:21.750Z"),
+  indexedAt: new Date("2022-02-16T20:50:29.690Z"),
   moderation: {},
   repo: {
     did: "<id>",
@@ -25,7 +25,7 @@ let value: ToolsOzoneModerationDefsRecordViewDetail = {
     relatedRecords: [
       "<value>",
     ],
-    indexedAt: new Date("2022-06-01T17:26:33.631Z"),
+    indexedAt: new Date("2022-01-01T09:39:45.396Z"),
     moderation: {},
   },
 };

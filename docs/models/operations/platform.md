@@ -5,7 +5,7 @@
 ```typescript
 import { Platform } from "bluesky/models/operations";
 
-let value: Platform = "web";
+let value: Platform = "android";
 ```
 
 ## Values

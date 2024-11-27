@@ -5,7 +5,7 @@
 ```typescript
 import { ToolsOzoneTeamUpdateMemberError } from "bluesky/models/errors";
 
-let value: ToolsOzoneTeamUpdateMemberError = "InvalidRequest";
+let value: ToolsOzoneTeamUpdateMemberError = "MemberNotFound";
 ```
 
 ## Values

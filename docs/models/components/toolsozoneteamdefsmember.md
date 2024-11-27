@@ -7,7 +7,7 @@ import { ToolsOzoneTeamDefsMember } from "bluesky/models/components";
 
 let value: ToolsOzoneTeamDefsMember = {
   did: "<id>",
-  role: "#roleModerator",
+  role: "#roleTriage",
 };
 ```
 

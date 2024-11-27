@@ -7,14 +7,14 @@ import { AppBskyFeedDefsFeedViewPost } from "bluesky/models/components";
 
 let value: AppBskyFeedDefsFeedViewPost = {
   post: {
-    uri: "https://quintessential-hunt.com/",
+    uri: "https://impish-gloom.com",
     cid: "<id>",
     author: {
       did: "<id>",
       handle: "<value>",
     },
     record: "<value>",
-    indexedAt: new Date("2024-02-03T07:45:59.605Z"),
+    indexedAt: new Date("2024-01-21T16:30:55.711Z"),
   },
 };
 ```

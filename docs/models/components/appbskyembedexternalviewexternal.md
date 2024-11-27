@@ -6,9 +6,9 @@
 import { AppBskyEmbedExternalViewExternal } from "bluesky/models/components";
 
 let value: AppBskyEmbedExternalViewExternal = {
-  uri: "https://silver-lift.info/",
+  uri: "https://serpentine-annual.net",
   title: "<value>",
-  description: "shinny invite boo",
+  description: "ah past educated or",
 };
 ```
 

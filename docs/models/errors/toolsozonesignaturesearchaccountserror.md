@@ -5,7 +5,7 @@
 ```typescript
 import { ToolsOzoneSignatureSearchAccountsError } from "bluesky/models/errors";
 
-let value: ToolsOzoneSignatureSearchAccountsError = "InvalidRequest";
+let value: ToolsOzoneSignatureSearchAccountsError = "InvalidToken";
 ```
 
 ## Values

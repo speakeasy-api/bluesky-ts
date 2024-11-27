@@ -8,14 +8,14 @@
 ```typescript
 const value: components.AppBskyFeedDefsThreadViewPost = {
   post: {
-    uri: "https://quarrelsome-disappointment.info/",
+    uri: "https://dirty-fundraising.net/",
     cid: "<id>",
     author: {
       did: "<id>",
       handle: "<value>",
     },
     record: "<value>",
-    indexedAt: new Date("2022-09-25T21:22:14.779Z"),
+    indexedAt: new Date("2022-04-17T10:09:07.050Z"),
   },
 };
 ```
@@ -24,7 +24,7 @@ const value: components.AppBskyFeedDefsThreadViewPost = {
 
 ```typescript
 const value: components.AppBskyFeedDefsNotFoundPost = {
-  uri: "https://cheerful-peony.com/",
+  uri: "https://bustling-wallaby.info",
 };
 ```
 
@@ -32,7 +32,7 @@ const value: components.AppBskyFeedDefsNotFoundPost = {
 
 ```typescript
 const value: components.AppBskyFeedDefsBlockedPost = {
-  uri: "https://hoarse-slide.com/",
+  uri: "https://pertinent-redesign.com",
   author: {
     did: "<id>",
   },

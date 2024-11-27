@@ -1,16 +1,15 @@
-speakeasyVersion: 1.443.0
+speakeasyVersion: 1.447.4
 sources: {}
-targets: {}
+targets:
+    bluesky:
+        source: OAS
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
     sources:
         OAS:
             inputs:
-                - location: bluesky_orig.yaml
-            overlays:
-                - location: fixes.yaml
-            output: openapi.yaml
+                - location: openapi.yaml
             registry:
                 location: registry.speakeasyapi.dev/bluesky/bluesky/-oas
     targets:

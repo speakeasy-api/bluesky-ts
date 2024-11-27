@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod";
+import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
@@ -20,6 +21,10 @@ export type ToolsOzoneModerationSearchReposRequest = {
 export type ToolsOzoneModerationSearchReposResponseBody = {
   cursor?: string | undefined;
   repos: Array<components.ToolsOzoneModerationDefsRepoView>;
+};
+
+export type ToolsOzoneModerationSearchReposResponse = {
+  result: ToolsOzoneModerationSearchReposResponseBody;
 };
 
 /** @internal */
@@ -155,5 +160,82 @@ export function toolsOzoneModerationSearchReposResponseBodyFromJSON(
         JSON.parse(x),
       ),
     `Failed to parse 'ToolsOzoneModerationSearchReposResponseBody' from JSON`,
+  );
+}
+
+/** @internal */
+export const ToolsOzoneModerationSearchReposResponse$inboundSchema: z.ZodType<
+  ToolsOzoneModerationSearchReposResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  Result: z.lazy(() =>
+    ToolsOzoneModerationSearchReposResponseBody$inboundSchema
+  ),
+}).transform((v) => {
+  return remap$(v, {
+    "Result": "result",
+  });
+});
+
+/** @internal */
+export type ToolsOzoneModerationSearchReposResponse$Outbound = {
+  Result: ToolsOzoneModerationSearchReposResponseBody$Outbound;
+};
+
+/** @internal */
+export const ToolsOzoneModerationSearchReposResponse$outboundSchema: z.ZodType<
+  ToolsOzoneModerationSearchReposResponse$Outbound,
+  z.ZodTypeDef,
+  ToolsOzoneModerationSearchReposResponse
+> = z.object({
+  result: z.lazy(() =>
+    ToolsOzoneModerationSearchReposResponseBody$outboundSchema
+  ),
+}).transform((v) => {
+  return remap$(v, {
+    result: "Result",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace ToolsOzoneModerationSearchReposResponse$ {
+  /** @deprecated use `ToolsOzoneModerationSearchReposResponse$inboundSchema` instead. */
+  export const inboundSchema =
+    ToolsOzoneModerationSearchReposResponse$inboundSchema;
+  /** @deprecated use `ToolsOzoneModerationSearchReposResponse$outboundSchema` instead. */
+  export const outboundSchema =
+    ToolsOzoneModerationSearchReposResponse$outboundSchema;
+  /** @deprecated use `ToolsOzoneModerationSearchReposResponse$Outbound` instead. */
+  export type Outbound = ToolsOzoneModerationSearchReposResponse$Outbound;
+}
+
+export function toolsOzoneModerationSearchReposResponseToJSON(
+  toolsOzoneModerationSearchReposResponse:
+    ToolsOzoneModerationSearchReposResponse,
+): string {
+  return JSON.stringify(
+    ToolsOzoneModerationSearchReposResponse$outboundSchema.parse(
+      toolsOzoneModerationSearchReposResponse,
+    ),
+  );
+}
+
+export function toolsOzoneModerationSearchReposResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  ToolsOzoneModerationSearchReposResponse,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      ToolsOzoneModerationSearchReposResponse$inboundSchema.parse(
+        JSON.parse(x),
+      ),
+    `Failed to parse 'ToolsOzoneModerationSearchReposResponse' from JSON`,
   );
 }

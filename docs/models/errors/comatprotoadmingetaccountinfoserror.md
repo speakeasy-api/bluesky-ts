@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoAdminGetAccountInfosError } from "bluesky/models/errors";
 
-let value: ComAtprotoAdminGetAccountInfosError = "InvalidToken";
+let value: ComAtprotoAdminGetAccountInfosError = "InvalidRequest";
 ```
 
 ## Values

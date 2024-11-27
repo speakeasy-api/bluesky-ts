@@ -9,7 +9,7 @@ import { AppBskyGraphGetListResponseBody } from "bluesky/models/operations";
 
 let value: AppBskyGraphGetListResponseBody = {
   list: {
-    uri: "https://accomplished-planula.biz",
+    uri: "https://unconscious-mom.org/",
     cid: "<id>",
     creator: {
       did: "<id>",
@@ -17,7 +17,7 @@ let value: AppBskyGraphGetListResponseBody = {
     },
     name: "<value>",
     purpose: "<value>",
-    indexedAt: new Date("2024-03-16T18:32:36.809Z"),
+    indexedAt: new Date("2024-01-30T00:21:03.404Z"),
   },
   items: [],
 };

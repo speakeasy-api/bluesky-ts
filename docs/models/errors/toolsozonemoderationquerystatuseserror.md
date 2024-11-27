@@ -5,7 +5,7 @@
 ```typescript
 import { ToolsOzoneModerationQueryStatusesError } from "bluesky/models/errors";
 
-let value: ToolsOzoneModerationQueryStatusesError = "InvalidRequest";
+let value: ToolsOzoneModerationQueryStatusesError = "InvalidToken";
 ```
 
 ## Values

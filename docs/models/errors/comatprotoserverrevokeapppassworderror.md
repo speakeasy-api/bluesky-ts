@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoServerRevokeAppPasswordError } from "bluesky/models/errors";
 
-let value: ComAtprotoServerRevokeAppPasswordError = "InvalidToken";
+let value: ComAtprotoServerRevokeAppPasswordError = "ExpiredToken";
 ```
 
 ## Values

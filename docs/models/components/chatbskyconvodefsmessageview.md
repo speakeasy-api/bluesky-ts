@@ -12,7 +12,7 @@ let value: ChatBskyConvoDefsMessageView = {
   sender: {
     did: "<id>",
   },
-  sentAt: new Date("2022-03-24T12:05:36.847Z"),
+  sentAt: new Date("2023-08-01T03:15:58.659Z"),
 };
 ```
 

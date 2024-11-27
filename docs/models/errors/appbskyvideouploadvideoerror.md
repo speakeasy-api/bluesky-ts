@@ -5,7 +5,7 @@
 ```typescript
 import { AppBskyVideoUploadVideoError } from "bluesky/models/errors";
 
-let value: AppBskyVideoUploadVideoError = "ExpiredToken";
+let value: AppBskyVideoUploadVideoError = "InvalidToken";
 ```
 
 ## Values

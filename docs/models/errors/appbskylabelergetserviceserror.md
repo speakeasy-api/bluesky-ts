@@ -5,7 +5,7 @@
 ```typescript
 import { AppBskyLabelerGetServicesError } from "bluesky/models/errors";
 
-let value: AppBskyLabelerGetServicesError = "InvalidToken";
+let value: AppBskyLabelerGetServicesError = "InvalidRequest";
 ```
 
 ## Values

@@ -8,8 +8,8 @@ width:height represents an aspect ratio. It may be approximate, and may not corr
 import { AppBskyEmbedDefsAspectRatio } from "bluesky/models/components";
 
 let value: AppBskyEmbedDefsAspectRatio = {
-  width: 277340,
-  height: 524380,
+  width: 473143,
+  height: 882284,
 };
 ```
 

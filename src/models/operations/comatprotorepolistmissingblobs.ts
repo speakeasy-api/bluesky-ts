@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod";
+import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
@@ -19,6 +20,10 @@ export type ComAtprotoRepoListMissingBlobsRequest = {
 export type ComAtprotoRepoListMissingBlobsResponseBody = {
   cursor?: string | undefined;
   blobs: Array<components.ComAtprotoRepoListMissingBlobsRecordBlob>;
+};
+
+export type ComAtprotoRepoListMissingBlobsResponse = {
+  result: ComAtprotoRepoListMissingBlobsResponseBody;
 };
 
 /** @internal */
@@ -151,5 +156,77 @@ export function comAtprotoRepoListMissingBlobsResponseBodyFromJSON(
         JSON.parse(x),
       ),
     `Failed to parse 'ComAtprotoRepoListMissingBlobsResponseBody' from JSON`,
+  );
+}
+
+/** @internal */
+export const ComAtprotoRepoListMissingBlobsResponse$inboundSchema: z.ZodType<
+  ComAtprotoRepoListMissingBlobsResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  Result: z.lazy(() =>
+    ComAtprotoRepoListMissingBlobsResponseBody$inboundSchema
+  ),
+}).transform((v) => {
+  return remap$(v, {
+    "Result": "result",
+  });
+});
+
+/** @internal */
+export type ComAtprotoRepoListMissingBlobsResponse$Outbound = {
+  Result: ComAtprotoRepoListMissingBlobsResponseBody$Outbound;
+};
+
+/** @internal */
+export const ComAtprotoRepoListMissingBlobsResponse$outboundSchema: z.ZodType<
+  ComAtprotoRepoListMissingBlobsResponse$Outbound,
+  z.ZodTypeDef,
+  ComAtprotoRepoListMissingBlobsResponse
+> = z.object({
+  result: z.lazy(() =>
+    ComAtprotoRepoListMissingBlobsResponseBody$outboundSchema
+  ),
+}).transform((v) => {
+  return remap$(v, {
+    result: "Result",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace ComAtprotoRepoListMissingBlobsResponse$ {
+  /** @deprecated use `ComAtprotoRepoListMissingBlobsResponse$inboundSchema` instead. */
+  export const inboundSchema =
+    ComAtprotoRepoListMissingBlobsResponse$inboundSchema;
+  /** @deprecated use `ComAtprotoRepoListMissingBlobsResponse$outboundSchema` instead. */
+  export const outboundSchema =
+    ComAtprotoRepoListMissingBlobsResponse$outboundSchema;
+  /** @deprecated use `ComAtprotoRepoListMissingBlobsResponse$Outbound` instead. */
+  export type Outbound = ComAtprotoRepoListMissingBlobsResponse$Outbound;
+}
+
+export function comAtprotoRepoListMissingBlobsResponseToJSON(
+  comAtprotoRepoListMissingBlobsResponse:
+    ComAtprotoRepoListMissingBlobsResponse,
+): string {
+  return JSON.stringify(
+    ComAtprotoRepoListMissingBlobsResponse$outboundSchema.parse(
+      comAtprotoRepoListMissingBlobsResponse,
+    ),
+  );
+}
+
+export function comAtprotoRepoListMissingBlobsResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<ComAtprotoRepoListMissingBlobsResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      ComAtprotoRepoListMissingBlobsResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ComAtprotoRepoListMissingBlobsResponse' from JSON`,
   );
 }

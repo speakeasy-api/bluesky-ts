@@ -7,7 +7,7 @@
 
 ```typescript
 const value: components.ToolsOzoneModerationDefsAccountHosting = {
-  status: "deleted",
+  status: "unknown",
 };
 ```
 
@@ -15,7 +15,7 @@ const value: components.ToolsOzoneModerationDefsAccountHosting = {
 
 ```typescript
 const value: components.ToolsOzoneModerationDefsRecordHosting = {
-  status: "unknown",
+  status: "deleted",
 };
 ```
 

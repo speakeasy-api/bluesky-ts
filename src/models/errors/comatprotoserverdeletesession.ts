@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type ComAtprotoServerDeleteSessionComAtprotoServerResponseBodyData = {
+export type ComAtprotoServerDeleteSessionAtprotoServerResponseBodyData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,17 +16,15 @@ export type ComAtprotoServerDeleteSessionComAtprotoServerResponseBodyData = {
 /**
  * Unauthorized
  */
-export class ComAtprotoServerDeleteSessionComAtprotoServerResponseBody
+export class ComAtprotoServerDeleteSessionAtprotoServerResponseBody
   extends Error
 {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: ComAtprotoServerDeleteSessionComAtprotoServerResponseBodyData;
+  data$: ComAtprotoServerDeleteSessionAtprotoServerResponseBodyData;
 
-  constructor(
-    err: ComAtprotoServerDeleteSessionComAtprotoServerResponseBodyData,
-  ) {
+  constructor(err: ComAtprotoServerDeleteSessionAtprotoServerResponseBodyData) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -35,7 +33,7 @@ export class ComAtprotoServerDeleteSessionComAtprotoServerResponseBody
 
     this.error = err.error;
 
-    this.name = "ComAtprotoServerDeleteSessionComAtprotoServerResponseBody";
+    this.name = "ComAtprotoServerDeleteSessionAtprotoServerResponseBody";
   }
 }
 
@@ -79,9 +77,9 @@ export class ComAtprotoServerDeleteSessionResponseBody extends Error {
 }
 
 /** @internal */
-export const ComAtprotoServerDeleteSessionComAtprotoServerResponseBody$inboundSchema:
+export const ComAtprotoServerDeleteSessionAtprotoServerResponseBody$inboundSchema:
   z.ZodType<
-    ComAtprotoServerDeleteSessionComAtprotoServerResponseBody,
+    ComAtprotoServerDeleteSessionAtprotoServerResponseBody,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -89,23 +87,22 @@ export const ComAtprotoServerDeleteSessionComAtprotoServerResponseBody$inboundSc
     message: z.string(),
   })
     .transform((v) => {
-      return new ComAtprotoServerDeleteSessionComAtprotoServerResponseBody(v);
+      return new ComAtprotoServerDeleteSessionAtprotoServerResponseBody(v);
     });
 
 /** @internal */
-export type ComAtprotoServerDeleteSessionComAtprotoServerResponseBody$Outbound =
-  {
-    error: "AuthMissing";
-    message: string;
-  };
+export type ComAtprotoServerDeleteSessionAtprotoServerResponseBody$Outbound = {
+  error: "AuthMissing";
+  message: string;
+};
 
 /** @internal */
-export const ComAtprotoServerDeleteSessionComAtprotoServerResponseBody$outboundSchema:
+export const ComAtprotoServerDeleteSessionAtprotoServerResponseBody$outboundSchema:
   z.ZodType<
-    ComAtprotoServerDeleteSessionComAtprotoServerResponseBody$Outbound,
+    ComAtprotoServerDeleteSessionAtprotoServerResponseBody$Outbound,
     z.ZodTypeDef,
-    ComAtprotoServerDeleteSessionComAtprotoServerResponseBody
-  > = z.instanceof(ComAtprotoServerDeleteSessionComAtprotoServerResponseBody)
+    ComAtprotoServerDeleteSessionAtprotoServerResponseBody
+  > = z.instanceof(ComAtprotoServerDeleteSessionAtprotoServerResponseBody)
     .transform(v => v.data$)
     .pipe(z.object({
       error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -116,16 +113,16 @@ export const ComAtprotoServerDeleteSessionComAtprotoServerResponseBody$outboundS
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoServerDeleteSessionComAtprotoServerResponseBody$ {
-  /** @deprecated use `ComAtprotoServerDeleteSessionComAtprotoServerResponseBody$inboundSchema` instead. */
+export namespace ComAtprotoServerDeleteSessionAtprotoServerResponseBody$ {
+  /** @deprecated use `ComAtprotoServerDeleteSessionAtprotoServerResponseBody$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoServerDeleteSessionComAtprotoServerResponseBody$inboundSchema;
-  /** @deprecated use `ComAtprotoServerDeleteSessionComAtprotoServerResponseBody$outboundSchema` instead. */
+    ComAtprotoServerDeleteSessionAtprotoServerResponseBody$inboundSchema;
+  /** @deprecated use `ComAtprotoServerDeleteSessionAtprotoServerResponseBody$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoServerDeleteSessionComAtprotoServerResponseBody$outboundSchema;
-  /** @deprecated use `ComAtprotoServerDeleteSessionComAtprotoServerResponseBody$Outbound` instead. */
+    ComAtprotoServerDeleteSessionAtprotoServerResponseBody$outboundSchema;
+  /** @deprecated use `ComAtprotoServerDeleteSessionAtprotoServerResponseBody$Outbound` instead. */
   export type Outbound =
-    ComAtprotoServerDeleteSessionComAtprotoServerResponseBody$Outbound;
+    ComAtprotoServerDeleteSessionAtprotoServerResponseBody$Outbound;
 }
 
 /** @internal */

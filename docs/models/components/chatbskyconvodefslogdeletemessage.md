@@ -11,11 +11,10 @@ let value: ChatBskyConvoDefsLogDeleteMessage = {
   message: {
     id: "<id>",
     rev: "<value>",
-    text: "<value>",
     sender: {
       did: "<id>",
     },
-    sentAt: new Date("2023-08-24T21:19:59.665Z"),
+    sentAt: new Date("2024-04-22T21:00:43.699Z"),
   },
 };
 ```

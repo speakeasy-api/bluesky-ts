@@ -15,7 +15,7 @@ const value: components.ComAtprotoAdminDefsRepoRef = {
 
 ```typescript
 const value: components.ComAtprotoRepoStrongRef = {
-  uri: "https://ajar-reward.biz/",
+  uri: "https://clear-cut-league.com",
   cid: "<id>",
 };
 ```

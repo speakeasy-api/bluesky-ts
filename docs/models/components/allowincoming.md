@@ -5,7 +5,7 @@
 ```typescript
 import { AllowIncoming } from "bluesky/models/components";
 
-let value: AllowIncoming = "all";
+let value: AllowIncoming = "following";
 ```
 
 ## Values

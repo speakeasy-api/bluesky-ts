@@ -5,7 +5,7 @@
 ```typescript
 import { AppBskyNotificationPutPreferencesError } from "bluesky/models/errors";
 
-let value: AppBskyNotificationPutPreferencesError = "InvalidToken";
+let value: AppBskyNotificationPutPreferencesError = "InvalidRequest";
 ```
 
 ## Values

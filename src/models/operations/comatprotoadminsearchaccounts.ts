@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod";
+import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
@@ -20,6 +21,10 @@ export type ComAtprotoAdminSearchAccountsRequest = {
 export type ComAtprotoAdminSearchAccountsResponseBody = {
   cursor?: string | undefined;
   accounts: Array<components.ComAtprotoAdminDefsAccountView>;
+};
+
+export type ComAtprotoAdminSearchAccountsResponse = {
+  result: ComAtprotoAdminSearchAccountsResponseBody;
 };
 
 /** @internal */
@@ -153,5 +158,74 @@ export function comAtprotoAdminSearchAccountsResponseBodyFromJSON(
         JSON.parse(x),
       ),
     `Failed to parse 'ComAtprotoAdminSearchAccountsResponseBody' from JSON`,
+  );
+}
+
+/** @internal */
+export const ComAtprotoAdminSearchAccountsResponse$inboundSchema: z.ZodType<
+  ComAtprotoAdminSearchAccountsResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  Result: z.lazy(() => ComAtprotoAdminSearchAccountsResponseBody$inboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    "Result": "result",
+  });
+});
+
+/** @internal */
+export type ComAtprotoAdminSearchAccountsResponse$Outbound = {
+  Result: ComAtprotoAdminSearchAccountsResponseBody$Outbound;
+};
+
+/** @internal */
+export const ComAtprotoAdminSearchAccountsResponse$outboundSchema: z.ZodType<
+  ComAtprotoAdminSearchAccountsResponse$Outbound,
+  z.ZodTypeDef,
+  ComAtprotoAdminSearchAccountsResponse
+> = z.object({
+  result: z.lazy(() =>
+    ComAtprotoAdminSearchAccountsResponseBody$outboundSchema
+  ),
+}).transform((v) => {
+  return remap$(v, {
+    result: "Result",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace ComAtprotoAdminSearchAccountsResponse$ {
+  /** @deprecated use `ComAtprotoAdminSearchAccountsResponse$inboundSchema` instead. */
+  export const inboundSchema =
+    ComAtprotoAdminSearchAccountsResponse$inboundSchema;
+  /** @deprecated use `ComAtprotoAdminSearchAccountsResponse$outboundSchema` instead. */
+  export const outboundSchema =
+    ComAtprotoAdminSearchAccountsResponse$outboundSchema;
+  /** @deprecated use `ComAtprotoAdminSearchAccountsResponse$Outbound` instead. */
+  export type Outbound = ComAtprotoAdminSearchAccountsResponse$Outbound;
+}
+
+export function comAtprotoAdminSearchAccountsResponseToJSON(
+  comAtprotoAdminSearchAccountsResponse: ComAtprotoAdminSearchAccountsResponse,
+): string {
+  return JSON.stringify(
+    ComAtprotoAdminSearchAccountsResponse$outboundSchema.parse(
+      comAtprotoAdminSearchAccountsResponse,
+    ),
+  );
+}
+
+export function comAtprotoAdminSearchAccountsResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<ComAtprotoAdminSearchAccountsResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      ComAtprotoAdminSearchAccountsResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ComAtprotoAdminSearchAccountsResponse' from JSON`,
   );
 }

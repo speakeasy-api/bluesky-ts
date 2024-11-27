@@ -6,16 +6,16 @@
 import { AppBskyNotificationListNotificationsNotification } from "bluesky/models/components";
 
 let value: AppBskyNotificationListNotificationsNotification = {
-  uri: "https://firm-disk.name/",
+  uri: "https://rusty-jump.com",
   cid: "<id>",
   author: {
     did: "<id>",
     handle: "<value>",
   },
-  reason: "reply",
+  reason: "follow",
   record: "<value>",
   isRead: false,
-  indexedAt: new Date("2024-11-06T09:51:30.567Z"),
+  indexedAt: new Date("2024-02-12T00:34:41.133Z"),
 };
 ```
 

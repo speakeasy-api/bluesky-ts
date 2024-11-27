@@ -9,14 +9,14 @@ import { ComAtprotoLabelDefsLabelValueDefinition } from "bluesky/models/componen
 
 let value: ComAtprotoLabelDefsLabelValueDefinition = {
   identifier: "<value>",
-  severity: "inform",
+  severity: "alert",
   blurs: "media",
   locales: [
     {
       lang: "<value>",
       name: "<value>",
       description:
-        "worth yippee gadzooks commemorate suspiciously suddenly well-off",
+        "weighty beneath irritably provided sorrowful furthermore lest besides sniveling",
     },
   ],
 };

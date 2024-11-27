@@ -5,7 +5,7 @@
 ```typescript
 import { Type } from "bluesky/models/components";
 
-let value: Type = "timeline";
+let value: Type = "list";
 ```
 
 ## Values

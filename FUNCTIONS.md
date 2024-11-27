@@ -20,7 +20,7 @@ specific category of applications.
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyActorAppBskyActorGetPreferences } from "bluesky/funcs/appBskyActorAppBskyActorGetPreferences.js";
+import { actorGetPreferences } from "bluesky/funcs/actorGetPreferences.js";
 import { SDKValidationError } from "bluesky/models/errors/sdkvalidationerror.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
@@ -30,7 +30,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyActorAppBskyActorGetPreferences(bluesky);
+  const res = await actorGetPreferences(bluesky);
 
   switch (true) {
     case res.ok:

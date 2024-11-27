@@ -5,7 +5,7 @@
 ```typescript
 import { ToolsOzoneModerationGetRecordError } from "bluesky/models/errors";
 
-let value: ToolsOzoneModerationGetRecordError = "InvalidToken";
+let value: ToolsOzoneModerationGetRecordError = "RecordNotFound";
 ```
 
 ## Values

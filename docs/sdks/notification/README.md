@@ -1,37 +1,37 @@
 # Notification
-(*app.bsky.notification*)
+(*notification*)
 
 ## Overview
 
 ### Available Operations
 
-* [appBskyNotificationGetUnreadCount](#appbskynotificationgetunreadcount) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [getUnreadCount](#getunreadcount) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Count the number of unread notifications for the requesting account. Requires auth.
-* [appBskyNotificationListNotifications](#appbskynotificationlistnotifications) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [listNotifications](#listnotifications) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Enumerate notifications for the requesting account. Requires auth.
-* [appBskyNotificationPutPreferences](#appbskynotificationputpreferences) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [putPreferences](#putpreferences) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Set notification-related preferences for an account. Requires auth.
-* [appBskyNotificationRegisterPush](#appbskynotificationregisterpush) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [registerPush](#registerpush) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Register to receive push notifications, via a specified service, for the requesting account. Requires auth.
-* [appBskyNotificationUpdateSeen](#appbskynotificationupdateseen) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [updateSeen](#updateseen) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Notify server that the requesting account has seen notifications. Requires auth.
 
-## appBskyNotificationGetUnreadCount
+## getUnreadCount
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -49,7 +49,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.app.bsky.notification.appBskyNotificationGetUnreadCount();
+  const result = await bluesky.notification.getUnreadCount();
 
   // Handle the result
   console.log(result);
@@ -64,7 +64,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyNotificationAppBskyNotificationGetUnreadCount } from "bluesky/funcs/appBskyNotificationAppBskyNotificationGetUnreadCount.js";
+import { notificationGetUnreadCount } from "bluesky/funcs/notificationGetUnreadCount.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -73,7 +73,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyNotificationAppBskyNotificationGetUnreadCount(bluesky);
+  const res = await notificationGetUnreadCount(bluesky);
 
   if (!res.ok) {
     throw res.error;
@@ -103,13 +103,13 @@ run();
 
 ### Errors
 
-| Error Type                                                              | Status Code                                                             | Content Type                                                            |
-| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| errors.AppBskyNotificationGetUnreadCountResponseBody                    | 400                                                                     | application/json                                                        |
-| errors.AppBskyNotificationGetUnreadCountAppBskyNotificationResponseBody | 401                                                                     | application/json                                                        |
-| errors.APIError                                                         | 4XX, 5XX                                                                | \*/\*                                                                   |
+| Error Type                                                       | Status Code                                                      | Content Type                                                     |
+| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
+| errors.AppBskyNotificationGetUnreadCountResponseBody             | 400                                                              | application/json                                                 |
+| errors.AppBskyNotificationGetUnreadCountNotificationResponseBody | 401                                                              | application/json                                                 |
+| errors.APIError                                                  | 4XX, 5XX                                                         | \*/\*                                                            |
 
-## appBskyNotificationListNotifications
+## listNotifications
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -127,10 +127,12 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.app.bsky.notification.appBskyNotificationListNotifications();
+  const result = await bluesky.notification.listNotifications();
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -142,7 +144,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyNotificationAppBskyNotificationListNotifications } from "bluesky/funcs/appBskyNotificationAppBskyNotificationListNotifications.js";
+import { notificationListNotifications } from "bluesky/funcs/notificationListNotifications.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -151,7 +153,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyNotificationAppBskyNotificationListNotifications(bluesky);
+  const res = await notificationListNotifications(bluesky);
 
   if (!res.ok) {
     throw res.error;
@@ -159,8 +161,10 @@ async function run() {
 
   const { value: result } = res;
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -177,17 +181,17 @@ run();
 
 ### Response
 
-**Promise\<[operations.AppBskyNotificationListNotificationsResponseBody](../../models/operations/appbskynotificationlistnotificationsresponsebody.md)\>**
+**Promise\<[operations.AppBskyNotificationListNotificationsResponse](../../models/operations/appbskynotificationlistnotificationsresponse.md)\>**
 
 ### Errors
 
-| Error Type                                                                 | Status Code                                                                | Content Type                                                               |
-| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| errors.AppBskyNotificationListNotificationsResponseBody                    | 400                                                                        | application/json                                                           |
-| errors.AppBskyNotificationListNotificationsAppBskyNotificationResponseBody | 401                                                                        | application/json                                                           |
-| errors.APIError                                                            | 4XX, 5XX                                                                   | \*/\*                                                                      |
+| Error Type                                                          | Status Code                                                         | Content Type                                                        |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| errors.AppBskyNotificationListNotificationsResponseBody             | 400                                                                 | application/json                                                    |
+| errors.AppBskyNotificationListNotificationsNotificationResponseBody | 401                                                                 | application/json                                                    |
+| errors.APIError                                                     | 4XX, 5XX                                                            | \*/\*                                                               |
 
-## appBskyNotificationPutPreferences
+## putPreferences
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -205,7 +209,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  await bluesky.app.bsky.notification.appBskyNotificationPutPreferences({
+  await bluesky.notification.putPreferences({
     priority: true,
   });
 
@@ -221,7 +225,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyNotificationAppBskyNotificationPutPreferences } from "bluesky/funcs/appBskyNotificationAppBskyNotificationPutPreferences.js";
+import { notificationPutPreferences } from "bluesky/funcs/notificationPutPreferences.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -230,7 +234,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyNotificationAppBskyNotificationPutPreferences(bluesky, {
+  const res = await notificationPutPreferences(bluesky, {
     priority: true,
   });
 
@@ -261,13 +265,13 @@ run();
 
 ### Errors
 
-| Error Type                                                              | Status Code                                                             | Content Type                                                            |
-| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| errors.AppBskyNotificationPutPreferencesResponseBody                    | 400                                                                     | application/json                                                        |
-| errors.AppBskyNotificationPutPreferencesAppBskyNotificationResponseBody | 401                                                                     | application/json                                                        |
-| errors.APIError                                                         | 4XX, 5XX                                                                | \*/\*                                                                   |
+| Error Type                                                       | Status Code                                                      | Content Type                                                     |
+| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
+| errors.AppBskyNotificationPutPreferencesResponseBody             | 400                                                              | application/json                                                 |
+| errors.AppBskyNotificationPutPreferencesNotificationResponseBody | 401                                                              | application/json                                                 |
+| errors.APIError                                                  | 4XX, 5XX                                                         | \*/\*                                                            |
 
-## appBskyNotificationRegisterPush
+## registerPush
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -285,7 +289,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  await bluesky.app.bsky.notification.appBskyNotificationRegisterPush({
+  await bluesky.notification.registerPush({
     serviceDid: "<id>",
     token: "<value>",
     platform: "ios",
@@ -304,7 +308,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyNotificationAppBskyNotificationRegisterPush } from "bluesky/funcs/appBskyNotificationAppBskyNotificationRegisterPush.js";
+import { notificationRegisterPush } from "bluesky/funcs/notificationRegisterPush.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -313,7 +317,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyNotificationAppBskyNotificationRegisterPush(bluesky, {
+  const res = await notificationRegisterPush(bluesky, {
     serviceDid: "<id>",
     token: "<value>",
     platform: "ios",
@@ -347,13 +351,13 @@ run();
 
 ### Errors
 
-| Error Type                                                            | Status Code                                                           | Content Type                                                          |
-| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
-| errors.AppBskyNotificationRegisterPushResponseBody                    | 400                                                                   | application/json                                                      |
-| errors.AppBskyNotificationRegisterPushAppBskyNotificationResponseBody | 401                                                                   | application/json                                                      |
-| errors.APIError                                                       | 4XX, 5XX                                                              | \*/\*                                                                 |
+| Error Type                                                     | Status Code                                                    | Content Type                                                   |
+| -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
+| errors.AppBskyNotificationRegisterPushResponseBody             | 400                                                            | application/json                                               |
+| errors.AppBskyNotificationRegisterPushNotificationResponseBody | 401                                                            | application/json                                               |
+| errors.APIError                                                | 4XX, 5XX                                                       | \*/\*                                                          |
 
-## appBskyNotificationUpdateSeen
+## updateSeen
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -371,7 +375,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  await bluesky.app.bsky.notification.appBskyNotificationUpdateSeen({
+  await bluesky.notification.updateSeen({
     seenAt: new Date("2023-05-09T15:02:30.758Z"),
   });
 
@@ -387,7 +391,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyNotificationAppBskyNotificationUpdateSeen } from "bluesky/funcs/appBskyNotificationAppBskyNotificationUpdateSeen.js";
+import { notificationUpdateSeen } from "bluesky/funcs/notificationUpdateSeen.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -396,7 +400,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyNotificationAppBskyNotificationUpdateSeen(bluesky, {
+  const res = await notificationUpdateSeen(bluesky, {
     seenAt: new Date("2023-05-09T15:02:30.758Z"),
   });
 
@@ -427,8 +431,8 @@ run();
 
 ### Errors
 
-| Error Type                                                          | Status Code                                                         | Content Type                                                        |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| errors.AppBskyNotificationUpdateSeenResponseBody                    | 400                                                                 | application/json                                                    |
-| errors.AppBskyNotificationUpdateSeenAppBskyNotificationResponseBody | 401                                                                 | application/json                                                    |
-| errors.APIError                                                     | 4XX, 5XX                                                            | \*/\*                                                               |
+| Error Type                                                   | Status Code                                                  | Content Type                                                 |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| errors.AppBskyNotificationUpdateSeenResponseBody             | 400                                                          | application/json                                             |
+| errors.AppBskyNotificationUpdateSeenNotificationResponseBody | 401                                                          | application/json                                             |
+| errors.APIError                                              | 4XX, 5XX                                                     | \*/\*                                                        |

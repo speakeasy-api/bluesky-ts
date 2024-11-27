@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod";
+import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
@@ -23,6 +24,10 @@ export type AppBskyGraphSearchStarterPacksRequest = {
 export type AppBskyGraphSearchStarterPacksResponseBody = {
   cursor?: string | undefined;
   starterPacks: Array<components.AppBskyGraphDefsStarterPackViewBasic>;
+};
+
+export type AppBskyGraphSearchStarterPacksResponse = {
+  result: AppBskyGraphSearchStarterPacksResponseBody;
 };
 
 /** @internal */
@@ -158,5 +163,77 @@ export function appBskyGraphSearchStarterPacksResponseBodyFromJSON(
         JSON.parse(x),
       ),
     `Failed to parse 'AppBskyGraphSearchStarterPacksResponseBody' from JSON`,
+  );
+}
+
+/** @internal */
+export const AppBskyGraphSearchStarterPacksResponse$inboundSchema: z.ZodType<
+  AppBskyGraphSearchStarterPacksResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  Result: z.lazy(() =>
+    AppBskyGraphSearchStarterPacksResponseBody$inboundSchema
+  ),
+}).transform((v) => {
+  return remap$(v, {
+    "Result": "result",
+  });
+});
+
+/** @internal */
+export type AppBskyGraphSearchStarterPacksResponse$Outbound = {
+  Result: AppBskyGraphSearchStarterPacksResponseBody$Outbound;
+};
+
+/** @internal */
+export const AppBskyGraphSearchStarterPacksResponse$outboundSchema: z.ZodType<
+  AppBskyGraphSearchStarterPacksResponse$Outbound,
+  z.ZodTypeDef,
+  AppBskyGraphSearchStarterPacksResponse
+> = z.object({
+  result: z.lazy(() =>
+    AppBskyGraphSearchStarterPacksResponseBody$outboundSchema
+  ),
+}).transform((v) => {
+  return remap$(v, {
+    result: "Result",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AppBskyGraphSearchStarterPacksResponse$ {
+  /** @deprecated use `AppBskyGraphSearchStarterPacksResponse$inboundSchema` instead. */
+  export const inboundSchema =
+    AppBskyGraphSearchStarterPacksResponse$inboundSchema;
+  /** @deprecated use `AppBskyGraphSearchStarterPacksResponse$outboundSchema` instead. */
+  export const outboundSchema =
+    AppBskyGraphSearchStarterPacksResponse$outboundSchema;
+  /** @deprecated use `AppBskyGraphSearchStarterPacksResponse$Outbound` instead. */
+  export type Outbound = AppBskyGraphSearchStarterPacksResponse$Outbound;
+}
+
+export function appBskyGraphSearchStarterPacksResponseToJSON(
+  appBskyGraphSearchStarterPacksResponse:
+    AppBskyGraphSearchStarterPacksResponse,
+): string {
+  return JSON.stringify(
+    AppBskyGraphSearchStarterPacksResponse$outboundSchema.parse(
+      appBskyGraphSearchStarterPacksResponse,
+    ),
+  );
+}
+
+export function appBskyGraphSearchStarterPacksResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<AppBskyGraphSearchStarterPacksResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      AppBskyGraphSearchStarterPacksResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AppBskyGraphSearchStarterPacksResponse' from JSON`,
   );
 }

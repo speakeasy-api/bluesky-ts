@@ -6,13 +6,13 @@
 import { ToolsOzoneModerationDefsRecordView } from "bluesky/models/components";
 
 let value: ToolsOzoneModerationDefsRecordView = {
-  uri: "https://criminal-mathematics.info",
+  uri: "https://awesome-conservative.com",
   cid: "<id>",
   value: "<value>",
   blobCids: [
     "<id>",
   ],
-  indexedAt: new Date("2024-10-08T18:46:29.615Z"),
+  indexedAt: new Date("2022-07-31T21:28:27.806Z"),
   moderation: {},
   repo: {
     did: "<id>",
@@ -20,7 +20,7 @@ let value: ToolsOzoneModerationDefsRecordView = {
     relatedRecords: [
       "<value>",
     ],
-    indexedAt: new Date("2022-04-26T04:24:39.015Z"),
+    indexedAt: new Date("2023-01-15T21:10:18.661Z"),
     moderation: {},
   },
 };

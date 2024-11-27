@@ -11,8 +11,8 @@ let value: ToolsOzoneCommunicationDefsTemplateView = {
   contentMarkdown: "<value>",
   disabled: false,
   lastUpdatedBy: "<id>",
-  createdAt: new Date("2023-06-21T16:40:18.965Z"),
-  updatedAt: new Date("2022-05-25T07:54:08.139Z"),
+  createdAt: new Date("2024-10-08T18:46:29.615Z"),
+  updatedAt: new Date("2022-04-26T04:24:39.015Z"),
 };
 ```
 

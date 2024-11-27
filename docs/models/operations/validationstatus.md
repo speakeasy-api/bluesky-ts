@@ -5,7 +5,7 @@
 ```typescript
 import { ValidationStatus } from "bluesky/models/operations";
 
-let value: ValidationStatus = "unknown";
+let value: ValidationStatus = "valid";
 ```
 
 ## Values

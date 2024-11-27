@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoSyncGetLatestCommitError } from "bluesky/models/errors";
 
-let value: ComAtprotoSyncGetLatestCommitError = "InvalidToken";
+let value: ComAtprotoSyncGetLatestCommitError = "RepoNotFound";
 ```
 
 ## Values

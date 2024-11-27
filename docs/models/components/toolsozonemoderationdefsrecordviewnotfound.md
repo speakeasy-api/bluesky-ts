@@ -6,7 +6,7 @@
 import { ToolsOzoneModerationDefsRecordViewNotFound } from "bluesky/models/components";
 
 let value: ToolsOzoneModerationDefsRecordViewNotFound = {
-  uri: "https://twin-bench.info",
+  uri: "https://precious-reach.org",
 };
 ```
 

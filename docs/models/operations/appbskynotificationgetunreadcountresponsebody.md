@@ -8,7 +8,7 @@ OK
 import { AppBskyNotificationGetUnreadCountResponseBody } from "bluesky/models/operations";
 
 let value: AppBskyNotificationGetUnreadCountResponseBody = {
-  count: 806194,
+  count: 11714,
 };
 ```
 

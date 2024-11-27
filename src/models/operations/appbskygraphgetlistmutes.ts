@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod";
+import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
@@ -19,6 +20,10 @@ export type AppBskyGraphGetListMutesRequest = {
 export type AppBskyGraphGetListMutesResponseBody = {
   cursor?: string | undefined;
   lists: Array<components.AppBskyGraphDefsListView>;
+};
+
+export type AppBskyGraphGetListMutesResponse = {
+  result: AppBskyGraphGetListMutesResponseBody;
 };
 
 /** @internal */
@@ -139,5 +144,69 @@ export function appBskyGraphGetListMutesResponseBodyFromJSON(
     (x) =>
       AppBskyGraphGetListMutesResponseBody$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'AppBskyGraphGetListMutesResponseBody' from JSON`,
+  );
+}
+
+/** @internal */
+export const AppBskyGraphGetListMutesResponse$inboundSchema: z.ZodType<
+  AppBskyGraphGetListMutesResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  Result: z.lazy(() => AppBskyGraphGetListMutesResponseBody$inboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    "Result": "result",
+  });
+});
+
+/** @internal */
+export type AppBskyGraphGetListMutesResponse$Outbound = {
+  Result: AppBskyGraphGetListMutesResponseBody$Outbound;
+};
+
+/** @internal */
+export const AppBskyGraphGetListMutesResponse$outboundSchema: z.ZodType<
+  AppBskyGraphGetListMutesResponse$Outbound,
+  z.ZodTypeDef,
+  AppBskyGraphGetListMutesResponse
+> = z.object({
+  result: z.lazy(() => AppBskyGraphGetListMutesResponseBody$outboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    result: "Result",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AppBskyGraphGetListMutesResponse$ {
+  /** @deprecated use `AppBskyGraphGetListMutesResponse$inboundSchema` instead. */
+  export const inboundSchema = AppBskyGraphGetListMutesResponse$inboundSchema;
+  /** @deprecated use `AppBskyGraphGetListMutesResponse$outboundSchema` instead. */
+  export const outboundSchema = AppBskyGraphGetListMutesResponse$outboundSchema;
+  /** @deprecated use `AppBskyGraphGetListMutesResponse$Outbound` instead. */
+  export type Outbound = AppBskyGraphGetListMutesResponse$Outbound;
+}
+
+export function appBskyGraphGetListMutesResponseToJSON(
+  appBskyGraphGetListMutesResponse: AppBskyGraphGetListMutesResponse,
+): string {
+  return JSON.stringify(
+    AppBskyGraphGetListMutesResponse$outboundSchema.parse(
+      appBskyGraphGetListMutesResponse,
+    ),
+  );
+}
+
+export function appBskyGraphGetListMutesResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<AppBskyGraphGetListMutesResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => AppBskyGraphGetListMutesResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AppBskyGraphGetListMutesResponse' from JSON`,
   );
 }

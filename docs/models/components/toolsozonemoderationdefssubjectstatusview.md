@@ -6,14 +6,13 @@
 import { ToolsOzoneModerationDefsSubjectStatusView } from "bluesky/models/components";
 
 let value: ToolsOzoneModerationDefsSubjectStatusView = {
-  id: 667215,
+  id: 919171,
   subject: {
-    uri: "https://worldly-mortise.com",
-    cid: "<id>",
+    did: "<id>",
   },
-  updatedAt: new Date("2022-08-05T23:44:22.450Z"),
-  createdAt: new Date("2023-03-20T15:09:55.930Z"),
-  reviewState: "#reviewClosed",
+  updatedAt: new Date("2022-12-01T13:44:36.342Z"),
+  createdAt: new Date("2024-10-30T14:18:34.931Z"),
+  reviewState: "#reviewNone",
 };
 ```
 

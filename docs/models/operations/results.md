@@ -7,7 +7,7 @@
 
 ```typescript
 const value: components.ComAtprotoRepoApplyWritesCreateResult = {
-  uri: "https://happy-go-lucky-tusk.net/",
+  uri: "https://present-sushi.biz",
   cid: "<id>",
 };
 ```
@@ -16,7 +16,7 @@ const value: components.ComAtprotoRepoApplyWritesCreateResult = {
 
 ```typescript
 const value: components.ComAtprotoRepoApplyWritesUpdateResult = {
-  uri: "https://unsteady-blight.name",
+  uri: "https://pointless-adult.info",
   cid: "<id>",
 };
 ```

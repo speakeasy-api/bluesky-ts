@@ -20,7 +20,7 @@ const value: components.ToolsOzoneModerationDefsModEventReverseTakedown = {};
 ```typescript
 const value: components.ToolsOzoneModerationDefsModEventComment = {
   comment:
-    "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
+    "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
 };
 ```
 
@@ -61,7 +61,7 @@ const value: components.ToolsOzoneModerationDefsModEventEscalate = {};
 
 ```typescript
 const value: components.ToolsOzoneModerationDefsModEventMute = {
-  durationInHours: 16252,
+  durationInHours: 960767,
 };
 ```
 
@@ -121,7 +121,7 @@ const value: components.ToolsOzoneModerationDefsModEventTag = {
 ```typescript
 const value: components.ToolsOzoneModerationDefsAccountEvent = {
   active: false,
-  timestamp: new Date("2023-12-06T12:17:59.943Z"),
+  timestamp: new Date("2023-12-04T01:24:39.845Z"),
 };
 ```
 
@@ -129,7 +129,7 @@ const value: components.ToolsOzoneModerationDefsAccountEvent = {
 
 ```typescript
 const value: components.ToolsOzoneModerationDefsIdentityEvent = {
-  timestamp: new Date("2023-05-01T09:19:55.343Z"),
+  timestamp: new Date("2024-01-25T18:12:19.188Z"),
 };
 ```
 
@@ -137,8 +137,8 @@ const value: components.ToolsOzoneModerationDefsIdentityEvent = {
 
 ```typescript
 const value: components.ToolsOzoneModerationDefsRecordEvent = {
-  op: "delete",
-  timestamp: new Date("2022-12-19T08:01:26.303Z"),
+  op: "create",
+  timestamp: new Date("2023-07-18T20:53:27.211Z"),
 };
 ```
 

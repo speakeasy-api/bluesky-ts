@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type ToolsOzoneSignatureFindRelatedAccountsToolsOzoneSignatureResponseBodyData =
+export type ToolsOzoneSignatureFindRelatedAccountsOzoneSignatureResponseBodyData =
   {
     error: "AuthMissing";
     message: string;
@@ -17,18 +17,16 @@ export type ToolsOzoneSignatureFindRelatedAccountsToolsOzoneSignatureResponseBod
 /**
  * Unauthorized
  */
-export class ToolsOzoneSignatureFindRelatedAccountsToolsOzoneSignatureResponseBody
+export class ToolsOzoneSignatureFindRelatedAccountsOzoneSignatureResponseBody
   extends Error
 {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$:
-    ToolsOzoneSignatureFindRelatedAccountsToolsOzoneSignatureResponseBodyData;
+  data$: ToolsOzoneSignatureFindRelatedAccountsOzoneSignatureResponseBodyData;
 
   constructor(
-    err:
-      ToolsOzoneSignatureFindRelatedAccountsToolsOzoneSignatureResponseBodyData,
+    err: ToolsOzoneSignatureFindRelatedAccountsOzoneSignatureResponseBodyData,
   ) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
@@ -39,7 +37,7 @@ export class ToolsOzoneSignatureFindRelatedAccountsToolsOzoneSignatureResponseBo
     this.error = err.error;
 
     this.name =
-      "ToolsOzoneSignatureFindRelatedAccountsToolsOzoneSignatureResponseBody";
+      "ToolsOzoneSignatureFindRelatedAccountsOzoneSignatureResponseBody";
   }
 }
 
@@ -83,9 +81,9 @@ export class ToolsOzoneSignatureFindRelatedAccountsResponseBody extends Error {
 }
 
 /** @internal */
-export const ToolsOzoneSignatureFindRelatedAccountsToolsOzoneSignatureResponseBody$inboundSchema:
+export const ToolsOzoneSignatureFindRelatedAccountsOzoneSignatureResponseBody$inboundSchema:
   z.ZodType<
-    ToolsOzoneSignatureFindRelatedAccountsToolsOzoneSignatureResponseBody,
+    ToolsOzoneSignatureFindRelatedAccountsOzoneSignatureResponseBody,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -93,26 +91,26 @@ export const ToolsOzoneSignatureFindRelatedAccountsToolsOzoneSignatureResponseBo
     message: z.string(),
   })
     .transform((v) => {
-      return new ToolsOzoneSignatureFindRelatedAccountsToolsOzoneSignatureResponseBody(
+      return new ToolsOzoneSignatureFindRelatedAccountsOzoneSignatureResponseBody(
         v,
       );
     });
 
 /** @internal */
-export type ToolsOzoneSignatureFindRelatedAccountsToolsOzoneSignatureResponseBody$Outbound =
+export type ToolsOzoneSignatureFindRelatedAccountsOzoneSignatureResponseBody$Outbound =
   {
     error: "AuthMissing";
     message: string;
   };
 
 /** @internal */
-export const ToolsOzoneSignatureFindRelatedAccountsToolsOzoneSignatureResponseBody$outboundSchema:
+export const ToolsOzoneSignatureFindRelatedAccountsOzoneSignatureResponseBody$outboundSchema:
   z.ZodType<
-    ToolsOzoneSignatureFindRelatedAccountsToolsOzoneSignatureResponseBody$Outbound,
+    ToolsOzoneSignatureFindRelatedAccountsOzoneSignatureResponseBody$Outbound,
     z.ZodTypeDef,
-    ToolsOzoneSignatureFindRelatedAccountsToolsOzoneSignatureResponseBody
+    ToolsOzoneSignatureFindRelatedAccountsOzoneSignatureResponseBody
   > = z.instanceof(
-    ToolsOzoneSignatureFindRelatedAccountsToolsOzoneSignatureResponseBody,
+    ToolsOzoneSignatureFindRelatedAccountsOzoneSignatureResponseBody,
   )
     .transform(v => v.data$)
     .pipe(z.object({
@@ -124,16 +122,16 @@ export const ToolsOzoneSignatureFindRelatedAccountsToolsOzoneSignatureResponseBo
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ToolsOzoneSignatureFindRelatedAccountsToolsOzoneSignatureResponseBody$ {
-  /** @deprecated use `ToolsOzoneSignatureFindRelatedAccountsToolsOzoneSignatureResponseBody$inboundSchema` instead. */
+export namespace ToolsOzoneSignatureFindRelatedAccountsOzoneSignatureResponseBody$ {
+  /** @deprecated use `ToolsOzoneSignatureFindRelatedAccountsOzoneSignatureResponseBody$inboundSchema` instead. */
   export const inboundSchema =
-    ToolsOzoneSignatureFindRelatedAccountsToolsOzoneSignatureResponseBody$inboundSchema;
-  /** @deprecated use `ToolsOzoneSignatureFindRelatedAccountsToolsOzoneSignatureResponseBody$outboundSchema` instead. */
+    ToolsOzoneSignatureFindRelatedAccountsOzoneSignatureResponseBody$inboundSchema;
+  /** @deprecated use `ToolsOzoneSignatureFindRelatedAccountsOzoneSignatureResponseBody$outboundSchema` instead. */
   export const outboundSchema =
-    ToolsOzoneSignatureFindRelatedAccountsToolsOzoneSignatureResponseBody$outboundSchema;
-  /** @deprecated use `ToolsOzoneSignatureFindRelatedAccountsToolsOzoneSignatureResponseBody$Outbound` instead. */
+    ToolsOzoneSignatureFindRelatedAccountsOzoneSignatureResponseBody$outboundSchema;
+  /** @deprecated use `ToolsOzoneSignatureFindRelatedAccountsOzoneSignatureResponseBody$Outbound` instead. */
   export type Outbound =
-    ToolsOzoneSignatureFindRelatedAccountsToolsOzoneSignatureResponseBody$Outbound;
+    ToolsOzoneSignatureFindRelatedAccountsOzoneSignatureResponseBody$Outbound;
 }
 
 /** @internal */

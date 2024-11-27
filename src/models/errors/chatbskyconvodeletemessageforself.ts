@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type ChatBskyConvoDeleteMessageForSelfChatBskyConvoResponseBodyData = {
+export type ChatBskyConvoDeleteMessageForSelfChatConvoResponseBodyData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,17 +16,15 @@ export type ChatBskyConvoDeleteMessageForSelfChatBskyConvoResponseBodyData = {
 /**
  * Unauthorized
  */
-export class ChatBskyConvoDeleteMessageForSelfChatBskyConvoResponseBody
+export class ChatBskyConvoDeleteMessageForSelfChatConvoResponseBody
   extends Error
 {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: ChatBskyConvoDeleteMessageForSelfChatBskyConvoResponseBodyData;
+  data$: ChatBskyConvoDeleteMessageForSelfChatConvoResponseBodyData;
 
-  constructor(
-    err: ChatBskyConvoDeleteMessageForSelfChatBskyConvoResponseBodyData,
-  ) {
+  constructor(err: ChatBskyConvoDeleteMessageForSelfChatConvoResponseBodyData) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -35,7 +33,7 @@ export class ChatBskyConvoDeleteMessageForSelfChatBskyConvoResponseBody
 
     this.error = err.error;
 
-    this.name = "ChatBskyConvoDeleteMessageForSelfChatBskyConvoResponseBody";
+    this.name = "ChatBskyConvoDeleteMessageForSelfChatConvoResponseBody";
   }
 }
 
@@ -79,9 +77,9 @@ export class ChatBskyConvoDeleteMessageForSelfResponseBody extends Error {
 }
 
 /** @internal */
-export const ChatBskyConvoDeleteMessageForSelfChatBskyConvoResponseBody$inboundSchema:
+export const ChatBskyConvoDeleteMessageForSelfChatConvoResponseBody$inboundSchema:
   z.ZodType<
-    ChatBskyConvoDeleteMessageForSelfChatBskyConvoResponseBody,
+    ChatBskyConvoDeleteMessageForSelfChatConvoResponseBody,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -89,23 +87,22 @@ export const ChatBskyConvoDeleteMessageForSelfChatBskyConvoResponseBody$inboundS
     message: z.string(),
   })
     .transform((v) => {
-      return new ChatBskyConvoDeleteMessageForSelfChatBskyConvoResponseBody(v);
+      return new ChatBskyConvoDeleteMessageForSelfChatConvoResponseBody(v);
     });
 
 /** @internal */
-export type ChatBskyConvoDeleteMessageForSelfChatBskyConvoResponseBody$Outbound =
-  {
-    error: "AuthMissing";
-    message: string;
-  };
+export type ChatBskyConvoDeleteMessageForSelfChatConvoResponseBody$Outbound = {
+  error: "AuthMissing";
+  message: string;
+};
 
 /** @internal */
-export const ChatBskyConvoDeleteMessageForSelfChatBskyConvoResponseBody$outboundSchema:
+export const ChatBskyConvoDeleteMessageForSelfChatConvoResponseBody$outboundSchema:
   z.ZodType<
-    ChatBskyConvoDeleteMessageForSelfChatBskyConvoResponseBody$Outbound,
+    ChatBskyConvoDeleteMessageForSelfChatConvoResponseBody$Outbound,
     z.ZodTypeDef,
-    ChatBskyConvoDeleteMessageForSelfChatBskyConvoResponseBody
-  > = z.instanceof(ChatBskyConvoDeleteMessageForSelfChatBskyConvoResponseBody)
+    ChatBskyConvoDeleteMessageForSelfChatConvoResponseBody
+  > = z.instanceof(ChatBskyConvoDeleteMessageForSelfChatConvoResponseBody)
     .transform(v => v.data$)
     .pipe(z.object({
       error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -116,16 +113,16 @@ export const ChatBskyConvoDeleteMessageForSelfChatBskyConvoResponseBody$outbound
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ChatBskyConvoDeleteMessageForSelfChatBskyConvoResponseBody$ {
-  /** @deprecated use `ChatBskyConvoDeleteMessageForSelfChatBskyConvoResponseBody$inboundSchema` instead. */
+export namespace ChatBskyConvoDeleteMessageForSelfChatConvoResponseBody$ {
+  /** @deprecated use `ChatBskyConvoDeleteMessageForSelfChatConvoResponseBody$inboundSchema` instead. */
   export const inboundSchema =
-    ChatBskyConvoDeleteMessageForSelfChatBskyConvoResponseBody$inboundSchema;
-  /** @deprecated use `ChatBskyConvoDeleteMessageForSelfChatBskyConvoResponseBody$outboundSchema` instead. */
+    ChatBskyConvoDeleteMessageForSelfChatConvoResponseBody$inboundSchema;
+  /** @deprecated use `ChatBskyConvoDeleteMessageForSelfChatConvoResponseBody$outboundSchema` instead. */
   export const outboundSchema =
-    ChatBskyConvoDeleteMessageForSelfChatBskyConvoResponseBody$outboundSchema;
-  /** @deprecated use `ChatBskyConvoDeleteMessageForSelfChatBskyConvoResponseBody$Outbound` instead. */
+    ChatBskyConvoDeleteMessageForSelfChatConvoResponseBody$outboundSchema;
+  /** @deprecated use `ChatBskyConvoDeleteMessageForSelfChatConvoResponseBody$Outbound` instead. */
   export type Outbound =
-    ChatBskyConvoDeleteMessageForSelfChatBskyConvoResponseBody$Outbound;
+    ChatBskyConvoDeleteMessageForSelfChatConvoResponseBody$Outbound;
 }
 
 /** @internal */

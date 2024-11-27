@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoServerGetServiceAuthError } from "bluesky/models/errors";
 
-let value: ComAtprotoServerGetServiceAuthError = "BadExpiration";
+let value: ComAtprotoServerGetServiceAuthError = "InvalidRequest";
 ```
 
 ## Values

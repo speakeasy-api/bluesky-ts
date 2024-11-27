@@ -1,15 +1,15 @@
 # Label
-(*com.atproto.label*)
+(*atproto.label*)
 
 ## Overview
 
 ### Available Operations
 
-* [comAtprotoLabelQueryLabels](#comatprotolabelquerylabels) - *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
+* [queryLabels](#querylabels) - *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Find labels relevant to the provided AT-URI patterns. Public endpoint for moderation services, though may return different or additional results with auth.
 
-## comAtprotoLabelQueryLabels
+## queryLabels
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
@@ -25,15 +25,17 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.com.atproto.label.comAtprotoLabelQueryLabels({
+  const result = await bluesky.atproto.label.queryLabels({
     uriPatterns: [
       "<value>",
       "<value>",
     ],
   });
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -45,7 +47,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoLabelComAtprotoLabelQueryLabels } from "bluesky/funcs/comAtprotoLabelComAtprotoLabelQueryLabels.js";
+import { atprotoLabelQueryLabels } from "bluesky/funcs/atprotoLabelQueryLabels.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -54,7 +56,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoLabelComAtprotoLabelQueryLabels(bluesky, {
+  const res = await atprotoLabelQueryLabels(bluesky, {
     uriPatterns: [
       "<value>",
       "<value>",
@@ -67,8 +69,10 @@ async function run() {
 
   const { value: result } = res;
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -85,12 +89,12 @@ run();
 
 ### Response
 
-**Promise\<[operations.ComAtprotoLabelQueryLabelsResponseBody](../../models/operations/comatprotolabelquerylabelsresponsebody.md)\>**
+**Promise\<[operations.ComAtprotoLabelQueryLabelsResponse](../../models/operations/comatprotolabelquerylabelsresponse.md)\>**
 
 ### Errors
 
-| Error Type                                                   | Status Code                                                  | Content Type                                                 |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| errors.ComAtprotoLabelQueryLabelsResponseBody                | 400                                                          | application/json                                             |
-| errors.ComAtprotoLabelQueryLabelsComAtprotoLabelResponseBody | 401                                                          | application/json                                             |
-| errors.APIError                                              | 4XX, 5XX                                                     | \*/\*                                                        |
+| Error Type                                                | Status Code                                               | Content Type                                              |
+| --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
+| errors.ComAtprotoLabelQueryLabelsResponseBody             | 400                                                       | application/json                                          |
+| errors.ComAtprotoLabelQueryLabelsAtprotoLabelResponseBody | 401                                                       | application/json                                          |
+| errors.APIError                                           | 4XX, 5XX                                                  | \*/\*                                                     |

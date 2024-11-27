@@ -1,32 +1,32 @@
 # Team
-(*tools.ozone.team*)
+(*ozone.team*)
 
 ## Overview
 
 ### Available Operations
 
-* [toolsOzoneTeamAddMember](#toolsozoneteamaddmember) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
+* [addMember](#addmember) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Add a member to the ozone team. Requires admin role.
-* [toolsOzoneTeamDeleteMember](#toolsozoneteamdeletemember) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
+* [deleteMember](#deletemember) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Delete a member from ozone team. Requires admin role.
-* [toolsOzoneTeamListMembers](#toolsozoneteamlistmembers) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
+* [listMembers](#listmembers) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 List all members with access to the ozone service.
-* [toolsOzoneTeamUpdateMember](#toolsozoneteamupdatemember) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
+* [updateMember](#updatemember) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Update a member in the ozone service. Requires admin role.
 
-## toolsOzoneTeamAddMember
+## addMember
 
 *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
@@ -44,7 +44,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.tools.ozone.team.toolsOzoneTeamAddMember({
+  const result = await bluesky.ozone.team.addMember({
     did: "<id>",
     role: "tools.ozone.team.defs#roleAdmin",
   });
@@ -62,7 +62,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { toolsOzoneTeamToolsOzoneTeamAddMember } from "bluesky/funcs/toolsOzoneTeamToolsOzoneTeamAddMember.js";
+import { ozoneTeamAddMember } from "bluesky/funcs/ozoneTeamAddMember.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -71,7 +71,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await toolsOzoneTeamToolsOzoneTeamAddMember(bluesky, {
+  const res = await ozoneTeamAddMember(bluesky, {
     did: "<id>",
     role: "tools.ozone.team.defs#roleAdmin",
   });
@@ -104,13 +104,13 @@ run();
 
 ### Errors
 
-| Error Type                                               | Status Code                                              | Content Type                                             |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| errors.ToolsOzoneTeamAddMemberResponseBody               | 400                                                      | application/json                                         |
-| errors.ToolsOzoneTeamAddMemberToolsOzoneTeamResponseBody | 401                                                      | application/json                                         |
-| errors.APIError                                          | 4XX, 5XX                                                 | \*/\*                                                    |
+| Error Type                                          | Status Code                                         | Content Type                                        |
+| --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| errors.ToolsOzoneTeamAddMemberResponseBody          | 400                                                 | application/json                                    |
+| errors.ToolsOzoneTeamAddMemberOzoneTeamResponseBody | 401                                                 | application/json                                    |
+| errors.APIError                                     | 4XX, 5XX                                            | \*/\*                                               |
 
-## toolsOzoneTeamDeleteMember
+## deleteMember
 
 *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
@@ -128,7 +128,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  await bluesky.tools.ozone.team.toolsOzoneTeamDeleteMember({
+  await bluesky.ozone.team.deleteMember({
     did: "<id>",
   });
 
@@ -144,7 +144,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { toolsOzoneTeamToolsOzoneTeamDeleteMember } from "bluesky/funcs/toolsOzoneTeamToolsOzoneTeamDeleteMember.js";
+import { ozoneTeamDeleteMember } from "bluesky/funcs/ozoneTeamDeleteMember.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -153,7 +153,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await toolsOzoneTeamToolsOzoneTeamDeleteMember(bluesky, {
+  const res = await ozoneTeamDeleteMember(bluesky, {
     did: "<id>",
   });
 
@@ -184,13 +184,13 @@ run();
 
 ### Errors
 
-| Error Type                                                  | Status Code                                                 | Content Type                                                |
-| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
-| errors.ToolsOzoneTeamDeleteMemberResponseBody               | 400                                                         | application/json                                            |
-| errors.ToolsOzoneTeamDeleteMemberToolsOzoneTeamResponseBody | 401                                                         | application/json                                            |
-| errors.APIError                                             | 4XX, 5XX                                                    | \*/\*                                                       |
+| Error Type                                             | Status Code                                            | Content Type                                           |
+| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
+| errors.ToolsOzoneTeamDeleteMemberResponseBody          | 400                                                    | application/json                                       |
+| errors.ToolsOzoneTeamDeleteMemberOzoneTeamResponseBody | 401                                                    | application/json                                       |
+| errors.APIError                                        | 4XX, 5XX                                               | \*/\*                                                  |
 
-## toolsOzoneTeamListMembers
+## listMembers
 
 *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
@@ -208,10 +208,12 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.tools.ozone.team.toolsOzoneTeamListMembers();
+  const result = await bluesky.ozone.team.listMembers();
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -223,7 +225,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { toolsOzoneTeamToolsOzoneTeamListMembers } from "bluesky/funcs/toolsOzoneTeamToolsOzoneTeamListMembers.js";
+import { ozoneTeamListMembers } from "bluesky/funcs/ozoneTeamListMembers.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -232,7 +234,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await toolsOzoneTeamToolsOzoneTeamListMembers(bluesky);
+  const res = await ozoneTeamListMembers(bluesky);
 
   if (!res.ok) {
     throw res.error;
@@ -240,8 +242,10 @@ async function run() {
 
   const { value: result } = res;
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -258,17 +262,17 @@ run();
 
 ### Response
 
-**Promise\<[operations.ToolsOzoneTeamListMembersResponseBody](../../models/operations/toolsozoneteamlistmembersresponsebody.md)\>**
+**Promise\<[operations.ToolsOzoneTeamListMembersResponse](../../models/operations/toolsozoneteamlistmembersresponse.md)\>**
 
 ### Errors
 
-| Error Type                                                 | Status Code                                                | Content Type                                               |
-| ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
-| errors.ToolsOzoneTeamListMembersResponseBody               | 400                                                        | application/json                                           |
-| errors.ToolsOzoneTeamListMembersToolsOzoneTeamResponseBody | 401                                                        | application/json                                           |
-| errors.APIError                                            | 4XX, 5XX                                                   | \*/\*                                                      |
+| Error Type                                            | Status Code                                           | Content Type                                          |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| errors.ToolsOzoneTeamListMembersResponseBody          | 400                                                   | application/json                                      |
+| errors.ToolsOzoneTeamListMembersOzoneTeamResponseBody | 401                                                   | application/json                                      |
+| errors.APIError                                       | 4XX, 5XX                                              | \*/\*                                                 |
 
-## toolsOzoneTeamUpdateMember
+## updateMember
 
 *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
@@ -286,7 +290,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.tools.ozone.team.toolsOzoneTeamUpdateMember({
+  const result = await bluesky.ozone.team.updateMember({
     did: "<id>",
   });
 
@@ -303,7 +307,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { toolsOzoneTeamToolsOzoneTeamUpdateMember } from "bluesky/funcs/toolsOzoneTeamToolsOzoneTeamUpdateMember.js";
+import { ozoneTeamUpdateMember } from "bluesky/funcs/ozoneTeamUpdateMember.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -312,7 +316,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await toolsOzoneTeamToolsOzoneTeamUpdateMember(bluesky, {
+  const res = await ozoneTeamUpdateMember(bluesky, {
     did: "<id>",
   });
 
@@ -344,8 +348,8 @@ run();
 
 ### Errors
 
-| Error Type                                                  | Status Code                                                 | Content Type                                                |
-| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
-| errors.ToolsOzoneTeamUpdateMemberResponseBody               | 400                                                         | application/json                                            |
-| errors.ToolsOzoneTeamUpdateMemberToolsOzoneTeamResponseBody | 401                                                         | application/json                                            |
-| errors.APIError                                             | 4XX, 5XX                                                    | \*/\*                                                       |
+| Error Type                                             | Status Code                                            | Content Type                                           |
+| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
+| errors.ToolsOzoneTeamUpdateMemberResponseBody          | 400                                                    | application/json                                       |
+| errors.ToolsOzoneTeamUpdateMemberOzoneTeamResponseBody | 401                                                    | application/json                                       |
+| errors.APIError                                        | 4XX, 5XX                                               | \*/\*                                                  |

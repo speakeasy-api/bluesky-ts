@@ -8,7 +8,7 @@ OK
 import { AppBskyFeedGetQuotesResponseBody } from "bluesky/models/operations";
 
 let value: AppBskyFeedGetQuotesResponseBody = {
-  uri: "https://better-poppy.name/",
+  uri: "https://raw-ceramic.net/",
   posts: [],
 };
 ```

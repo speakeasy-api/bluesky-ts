@@ -5,7 +5,7 @@
 ```typescript
 import { AppBskyFeedGetRepostedByError } from "bluesky/models/errors";
 
-let value: AppBskyFeedGetRepostedByError = "InvalidRequest";
+let value: AppBskyFeedGetRepostedByError = "ExpiredToken";
 ```
 
 ## Values

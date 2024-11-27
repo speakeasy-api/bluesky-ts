@@ -1,62 +1,62 @@
 # Sync
-(*com.atproto.sync*)
+(*atproto.sync*)
 
 ## Overview
 
 ### Available Operations
 
-* [comAtprotoSyncGetBlob](#comatprotosyncgetblob) - This endpoint is part of the atproto repository synchronization APIs. Requests usually do not require authentication, and can be made to PDS intances or Relay instances.*
+* [getBlob](#getblob) - This endpoint is part of the atproto repository synchronization APIs. Requests usually do not require authentication, and can be made to PDS intances or Relay instances.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Get a blob associated with a given account. Returns the full blob as originally uploaded. Does not require auth; implemented by PDS.
-* [comAtprotoSyncGetBlocks](#comatprotosyncgetblocks) - This endpoint is part of the atproto repository synchronization APIs. Requests usually do not require authentication, and can be made to PDS intances or Relay instances.*
+* [getBlocks](#getblocks) - This endpoint is part of the atproto repository synchronization APIs. Requests usually do not require authentication, and can be made to PDS intances or Relay instances.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Get data blocks from a given repo, by CID. For example, intermediate MST nodes, or records. Does not require auth; implemented by PDS.
-* [comAtprotoSyncGetLatestCommit](#comatprotosyncgetlatestcommit) - This endpoint is part of the atproto repository synchronization APIs. Requests usually do not require authentication, and can be made to PDS intances or Relay instances.*
+* [getLatestCommit](#getlatestcommit) - This endpoint is part of the atproto repository synchronization APIs. Requests usually do not require authentication, and can be made to PDS intances or Relay instances.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Get the current commit CID & revision of the specified repo. Does not require auth.
-* [comAtprotoSyncGetRecord](#comatprotosyncgetrecord) - This endpoint is part of the atproto repository synchronization APIs. Requests usually do not require authentication, and can be made to PDS intances or Relay instances.*
+* [getRecord](#getrecord) - This endpoint is part of the atproto repository synchronization APIs. Requests usually do not require authentication, and can be made to PDS intances or Relay instances.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Get data blocks needed to prove the existence or non-existence of record in the current version of repo. Does not require auth.
-* [comAtprotoSyncGetRepo](#comatprotosyncgetrepo) - This endpoint is part of the atproto repository synchronization APIs. Requests usually do not require authentication, and can be made to PDS intances or Relay instances.*
+* [getRepo](#getrepo) - This endpoint is part of the atproto repository synchronization APIs. Requests usually do not require authentication, and can be made to PDS intances or Relay instances.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Download a repository export as CAR file. Optionally only a 'diff' since a previous revision. Does not require auth; implemented by PDS.
-* [comAtprotoSyncGetRepoStatus](#comatprotosyncgetrepostatus) - This endpoint is part of the atproto repository synchronization APIs. Requests usually do not require authentication, and can be made to PDS intances or Relay instances.*
+* [getRepoStatus](#getrepostatus) - This endpoint is part of the atproto repository synchronization APIs. Requests usually do not require authentication, and can be made to PDS intances or Relay instances.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Get the hosting status for a repository, on this server. Expected to be implemented by PDS and Relay.
-* [comAtprotoSyncListBlobs](#comatprotosynclistblobs) - This endpoint is part of the atproto repository synchronization APIs. Requests usually do not require authentication, and can be made to PDS intances or Relay instances.*
+* [listBlobs](#listblobs) - This endpoint is part of the atproto repository synchronization APIs. Requests usually do not require authentication, and can be made to PDS intances or Relay instances.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 List blob CIDs for an account, since some repo revision. Does not require auth; implemented by PDS.
-* [comAtprotoSyncListRepos](#comatprotosynclistrepos) - This endpoint is part of the atproto repository synchronization APIs. Requests usually do not require authentication, and can be made to PDS intances or Relay instances.*
+* [listRepos](#listrepos) - This endpoint is part of the atproto repository synchronization APIs. Requests usually do not require authentication, and can be made to PDS intances or Relay instances.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Enumerates all the DID, rev, and commit CID for all repos hosted by this service. Does not require auth; implemented by PDS and Relay.
-* [comAtprotoSyncNotifyOfUpdate](#comatprotosyncnotifyofupdate) - This endpoint is part of the atproto repository synchronization APIs. Requests usually do not require authentication, and can be made to PDS intances or Relay instances.*
+* [notifyOfUpdate](#notifyofupdate) - This endpoint is part of the atproto repository synchronization APIs. Requests usually do not require authentication, and can be made to PDS intances or Relay instances.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Notify a crawling service of a recent update, and that crawling should resume. Intended use is after a gap between repo stream events caused the crawling service to disconnect. Does not require auth; implemented by Relay.
-* [comAtprotoSyncRequestCrawl](#comatprotosyncrequestcrawl) - This endpoint is part of the atproto repository synchronization APIs. Requests usually do not require authentication, and can be made to PDS intances or Relay instances.*
+* [requestCrawl](#requestcrawl) - This endpoint is part of the atproto repository synchronization APIs. Requests usually do not require authentication, and can be made to PDS intances or Relay instances.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Request a service to persistently crawl hosted repos. Expected use is new PDS instances declaring their existence to Relays. Does not require auth.
 
-## comAtprotoSyncGetBlob
+## getBlob
 
 This endpoint is part of the atproto repository synchronization APIs. Requests usually do not require authentication, and can be made to PDS intances or Relay instances.*
 
@@ -74,7 +74,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  await bluesky.com.atproto.sync.comAtprotoSyncGetBlob({
+  await bluesky.atproto.sync.getBlob({
     did: "<id>",
     cid: "<id>",
   });
@@ -91,7 +91,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoSyncComAtprotoSyncGetBlob } from "bluesky/funcs/comAtprotoSyncComAtprotoSyncGetBlob.js";
+import { atprotoSyncGetBlob } from "bluesky/funcs/atprotoSyncGetBlob.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -100,7 +100,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoSyncComAtprotoSyncGetBlob(bluesky, {
+  const res = await atprotoSyncGetBlob(bluesky, {
     did: "<id>",
     cid: "<id>",
   });
@@ -132,13 +132,13 @@ run();
 
 ### Errors
 
-| Error Type                                             | Status Code                                            | Content Type                                           |
-| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
-| errors.ComAtprotoSyncGetBlobResponseBody               | 400                                                    | application/json                                       |
-| errors.ComAtprotoSyncGetBlobComAtprotoSyncResponseBody | 401                                                    | application/json                                       |
-| errors.APIError                                        | 4XX, 5XX                                               | \*/\*                                                  |
+| Error Type                                          | Status Code                                         | Content Type                                        |
+| --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| errors.ComAtprotoSyncGetBlobResponseBody            | 400                                                 | application/json                                    |
+| errors.ComAtprotoSyncGetBlobAtprotoSyncResponseBody | 401                                                 | application/json                                    |
+| errors.APIError                                     | 4XX, 5XX                                            | \*/\*                                               |
 
-## comAtprotoSyncGetBlocks
+## getBlocks
 
 This endpoint is part of the atproto repository synchronization APIs. Requests usually do not require authentication, and can be made to PDS intances or Relay instances.*
 
@@ -156,7 +156,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  await bluesky.com.atproto.sync.comAtprotoSyncGetBlocks({
+  await bluesky.atproto.sync.getBlocks({
     did: "<id>",
     cids: [
       "<id>",
@@ -176,7 +176,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoSyncComAtprotoSyncGetBlocks } from "bluesky/funcs/comAtprotoSyncComAtprotoSyncGetBlocks.js";
+import { atprotoSyncGetBlocks } from "bluesky/funcs/atprotoSyncGetBlocks.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -185,7 +185,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoSyncComAtprotoSyncGetBlocks(bluesky, {
+  const res = await atprotoSyncGetBlocks(bluesky, {
     did: "<id>",
     cids: [
       "<id>",
@@ -220,13 +220,13 @@ run();
 
 ### Errors
 
-| Error Type                                               | Status Code                                              | Content Type                                             |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| errors.ComAtprotoSyncGetBlocksResponseBody               | 400                                                      | application/json                                         |
-| errors.ComAtprotoSyncGetBlocksComAtprotoSyncResponseBody | 401                                                      | application/json                                         |
-| errors.APIError                                          | 4XX, 5XX                                                 | \*/\*                                                    |
+| Error Type                                            | Status Code                                           | Content Type                                          |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| errors.ComAtprotoSyncGetBlocksResponseBody            | 400                                                   | application/json                                      |
+| errors.ComAtprotoSyncGetBlocksAtprotoSyncResponseBody | 401                                                   | application/json                                      |
+| errors.APIError                                       | 4XX, 5XX                                              | \*/\*                                                 |
 
-## comAtprotoSyncGetLatestCommit
+## getLatestCommit
 
 This endpoint is part of the atproto repository synchronization APIs. Requests usually do not require authentication, and can be made to PDS intances or Relay instances.*
 
@@ -244,7 +244,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.com.atproto.sync.comAtprotoSyncGetLatestCommit({
+  const result = await bluesky.atproto.sync.getLatestCommit({
     did: "<id>",
   });
 
@@ -261,7 +261,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoSyncComAtprotoSyncGetLatestCommit } from "bluesky/funcs/comAtprotoSyncComAtprotoSyncGetLatestCommit.js";
+import { atprotoSyncGetLatestCommit } from "bluesky/funcs/atprotoSyncGetLatestCommit.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -270,7 +270,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoSyncComAtprotoSyncGetLatestCommit(bluesky, {
+  const res = await atprotoSyncGetLatestCommit(bluesky, {
     did: "<id>",
   });
 
@@ -302,13 +302,13 @@ run();
 
 ### Errors
 
-| Error Type                                                     | Status Code                                                    | Content Type                                                   |
-| -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
-| errors.ComAtprotoSyncGetLatestCommitResponseBody               | 400                                                            | application/json                                               |
-| errors.ComAtprotoSyncGetLatestCommitComAtprotoSyncResponseBody | 401                                                            | application/json                                               |
-| errors.APIError                                                | 4XX, 5XX                                                       | \*/\*                                                          |
+| Error Type                                                  | Status Code                                                 | Content Type                                                |
+| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
+| errors.ComAtprotoSyncGetLatestCommitResponseBody            | 400                                                         | application/json                                            |
+| errors.ComAtprotoSyncGetLatestCommitAtprotoSyncResponseBody | 401                                                         | application/json                                            |
+| errors.APIError                                             | 4XX, 5XX                                                    | \*/\*                                                       |
 
-## comAtprotoSyncGetRecord
+## getRecord
 
 This endpoint is part of the atproto repository synchronization APIs. Requests usually do not require authentication, and can be made to PDS intances or Relay instances.*
 
@@ -326,7 +326,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  await bluesky.com.atproto.sync.comAtprotoSyncGetRecord({
+  await bluesky.atproto.sync.getRecord({
     did: "<id>",
     collection: "<id>",
     rkey: "<value>",
@@ -344,7 +344,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoSyncComAtprotoSyncGetRecord } from "bluesky/funcs/comAtprotoSyncComAtprotoSyncGetRecord.js";
+import { atprotoSyncGetRecord } from "bluesky/funcs/atprotoSyncGetRecord.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -353,7 +353,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoSyncComAtprotoSyncGetRecord(bluesky, {
+  const res = await atprotoSyncGetRecord(bluesky, {
     did: "<id>",
     collection: "<id>",
     rkey: "<value>",
@@ -386,13 +386,13 @@ run();
 
 ### Errors
 
-| Error Type                                               | Status Code                                              | Content Type                                             |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| errors.ComAtprotoSyncGetRecordResponseBody               | 400                                                      | application/json                                         |
-| errors.ComAtprotoSyncGetRecordComAtprotoSyncResponseBody | 401                                                      | application/json                                         |
-| errors.APIError                                          | 4XX, 5XX                                                 | \*/\*                                                    |
+| Error Type                                            | Status Code                                           | Content Type                                          |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| errors.ComAtprotoSyncGetRecordResponseBody            | 400                                                   | application/json                                      |
+| errors.ComAtprotoSyncGetRecordAtprotoSyncResponseBody | 401                                                   | application/json                                      |
+| errors.APIError                                       | 4XX, 5XX                                              | \*/\*                                                 |
 
-## comAtprotoSyncGetRepo
+## getRepo
 
 This endpoint is part of the atproto repository synchronization APIs. Requests usually do not require authentication, and can be made to PDS intances or Relay instances.*
 
@@ -410,7 +410,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  await bluesky.com.atproto.sync.comAtprotoSyncGetRepo({
+  await bluesky.atproto.sync.getRepo({
     did: "<id>",
   });
 
@@ -426,7 +426,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoSyncComAtprotoSyncGetRepo } from "bluesky/funcs/comAtprotoSyncComAtprotoSyncGetRepo.js";
+import { atprotoSyncGetRepo } from "bluesky/funcs/atprotoSyncGetRepo.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -435,7 +435,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoSyncComAtprotoSyncGetRepo(bluesky, {
+  const res = await atprotoSyncGetRepo(bluesky, {
     did: "<id>",
   });
 
@@ -466,13 +466,13 @@ run();
 
 ### Errors
 
-| Error Type                                             | Status Code                                            | Content Type                                           |
-| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
-| errors.ComAtprotoSyncGetRepoResponseBody               | 400                                                    | application/json                                       |
-| errors.ComAtprotoSyncGetRepoComAtprotoSyncResponseBody | 401                                                    | application/json                                       |
-| errors.APIError                                        | 4XX, 5XX                                               | \*/\*                                                  |
+| Error Type                                          | Status Code                                         | Content Type                                        |
+| --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| errors.ComAtprotoSyncGetRepoResponseBody            | 400                                                 | application/json                                    |
+| errors.ComAtprotoSyncGetRepoAtprotoSyncResponseBody | 401                                                 | application/json                                    |
+| errors.APIError                                     | 4XX, 5XX                                            | \*/\*                                               |
 
-## comAtprotoSyncGetRepoStatus
+## getRepoStatus
 
 This endpoint is part of the atproto repository synchronization APIs. Requests usually do not require authentication, and can be made to PDS intances or Relay instances.*
 
@@ -490,7 +490,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.com.atproto.sync.comAtprotoSyncGetRepoStatus({
+  const result = await bluesky.atproto.sync.getRepoStatus({
     did: "<id>",
   });
 
@@ -507,7 +507,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoSyncComAtprotoSyncGetRepoStatus } from "bluesky/funcs/comAtprotoSyncComAtprotoSyncGetRepoStatus.js";
+import { atprotoSyncGetRepoStatus } from "bluesky/funcs/atprotoSyncGetRepoStatus.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -516,7 +516,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoSyncComAtprotoSyncGetRepoStatus(bluesky, {
+  const res = await atprotoSyncGetRepoStatus(bluesky, {
     did: "<id>",
   });
 
@@ -548,13 +548,13 @@ run();
 
 ### Errors
 
-| Error Type                                                   | Status Code                                                  | Content Type                                                 |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| errors.ComAtprotoSyncGetRepoStatusResponseBody               | 400                                                          | application/json                                             |
-| errors.ComAtprotoSyncGetRepoStatusComAtprotoSyncResponseBody | 401                                                          | application/json                                             |
-| errors.APIError                                              | 4XX, 5XX                                                     | \*/\*                                                        |
+| Error Type                                                | Status Code                                               | Content Type                                              |
+| --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
+| errors.ComAtprotoSyncGetRepoStatusResponseBody            | 400                                                       | application/json                                          |
+| errors.ComAtprotoSyncGetRepoStatusAtprotoSyncResponseBody | 401                                                       | application/json                                          |
+| errors.APIError                                           | 4XX, 5XX                                                  | \*/\*                                                     |
 
-## comAtprotoSyncListBlobs
+## listBlobs
 
 This endpoint is part of the atproto repository synchronization APIs. Requests usually do not require authentication, and can be made to PDS intances or Relay instances.*
 
@@ -572,12 +572,14 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.com.atproto.sync.comAtprotoSyncListBlobs({
+  const result = await bluesky.atproto.sync.listBlobs({
     did: "<id>",
   });
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -589,7 +591,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoSyncComAtprotoSyncListBlobs } from "bluesky/funcs/comAtprotoSyncComAtprotoSyncListBlobs.js";
+import { atprotoSyncListBlobs } from "bluesky/funcs/atprotoSyncListBlobs.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -598,7 +600,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoSyncComAtprotoSyncListBlobs(bluesky, {
+  const res = await atprotoSyncListBlobs(bluesky, {
     did: "<id>",
   });
 
@@ -608,8 +610,10 @@ async function run() {
 
   const { value: result } = res;
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -626,17 +630,17 @@ run();
 
 ### Response
 
-**Promise\<[operations.ComAtprotoSyncListBlobsResponseBody](../../models/operations/comatprotosynclistblobsresponsebody.md)\>**
+**Promise\<[operations.ComAtprotoSyncListBlobsResponse](../../models/operations/comatprotosynclistblobsresponse.md)\>**
 
 ### Errors
 
-| Error Type                                               | Status Code                                              | Content Type                                             |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| errors.ComAtprotoSyncListBlobsResponseBody               | 400                                                      | application/json                                         |
-| errors.ComAtprotoSyncListBlobsComAtprotoSyncResponseBody | 401                                                      | application/json                                         |
-| errors.APIError                                          | 4XX, 5XX                                                 | \*/\*                                                    |
+| Error Type                                            | Status Code                                           | Content Type                                          |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| errors.ComAtprotoSyncListBlobsResponseBody            | 400                                                   | application/json                                      |
+| errors.ComAtprotoSyncListBlobsAtprotoSyncResponseBody | 401                                                   | application/json                                      |
+| errors.APIError                                       | 4XX, 5XX                                              | \*/\*                                                 |
 
-## comAtprotoSyncListRepos
+## listRepos
 
 This endpoint is part of the atproto repository synchronization APIs. Requests usually do not require authentication, and can be made to PDS intances or Relay instances.*
 
@@ -654,10 +658,12 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.com.atproto.sync.comAtprotoSyncListRepos();
+  const result = await bluesky.atproto.sync.listRepos();
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -669,7 +675,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoSyncComAtprotoSyncListRepos } from "bluesky/funcs/comAtprotoSyncComAtprotoSyncListRepos.js";
+import { atprotoSyncListRepos } from "bluesky/funcs/atprotoSyncListRepos.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -678,7 +684,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoSyncComAtprotoSyncListRepos(bluesky);
+  const res = await atprotoSyncListRepos(bluesky);
 
   if (!res.ok) {
     throw res.error;
@@ -686,8 +692,10 @@ async function run() {
 
   const { value: result } = res;
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -704,17 +712,17 @@ run();
 
 ### Response
 
-**Promise\<[operations.ComAtprotoSyncListReposResponseBody](../../models/operations/comatprotosynclistreposresponsebody.md)\>**
+**Promise\<[operations.ComAtprotoSyncListReposResponse](../../models/operations/comatprotosynclistreposresponse.md)\>**
 
 ### Errors
 
-| Error Type                                               | Status Code                                              | Content Type                                             |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| errors.ComAtprotoSyncListReposResponseBody               | 400                                                      | application/json                                         |
-| errors.ComAtprotoSyncListReposComAtprotoSyncResponseBody | 401                                                      | application/json                                         |
-| errors.APIError                                          | 4XX, 5XX                                                 | \*/\*                                                    |
+| Error Type                                            | Status Code                                           | Content Type                                          |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| errors.ComAtprotoSyncListReposResponseBody            | 400                                                   | application/json                                      |
+| errors.ComAtprotoSyncListReposAtprotoSyncResponseBody | 401                                                   | application/json                                      |
+| errors.APIError                                       | 4XX, 5XX                                              | \*/\*                                                 |
 
-## comAtprotoSyncNotifyOfUpdate
+## notifyOfUpdate
 
 This endpoint is part of the atproto repository synchronization APIs. Requests usually do not require authentication, and can be made to PDS intances or Relay instances.*
 
@@ -732,7 +740,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  await bluesky.com.atproto.sync.comAtprotoSyncNotifyOfUpdate({
+  await bluesky.atproto.sync.notifyOfUpdate({
     hostname: "major-instruction.com",
   });
 
@@ -748,7 +756,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoSyncComAtprotoSyncNotifyOfUpdate } from "bluesky/funcs/comAtprotoSyncComAtprotoSyncNotifyOfUpdate.js";
+import { atprotoSyncNotifyOfUpdate } from "bluesky/funcs/atprotoSyncNotifyOfUpdate.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -757,7 +765,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoSyncComAtprotoSyncNotifyOfUpdate(bluesky, {
+  const res = await atprotoSyncNotifyOfUpdate(bluesky, {
     hostname: "major-instruction.com",
   });
 
@@ -788,13 +796,13 @@ run();
 
 ### Errors
 
-| Error Type                                                    | Status Code                                                   | Content Type                                                  |
-| ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
-| errors.ComAtprotoSyncNotifyOfUpdateResponseBody               | 400                                                           | application/json                                              |
-| errors.ComAtprotoSyncNotifyOfUpdateComAtprotoSyncResponseBody | 401                                                           | application/json                                              |
-| errors.APIError                                               | 4XX, 5XX                                                      | \*/\*                                                         |
+| Error Type                                                 | Status Code                                                | Content Type                                               |
+| ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
+| errors.ComAtprotoSyncNotifyOfUpdateResponseBody            | 400                                                        | application/json                                           |
+| errors.ComAtprotoSyncNotifyOfUpdateAtprotoSyncResponseBody | 401                                                        | application/json                                           |
+| errors.APIError                                            | 4XX, 5XX                                                   | \*/\*                                                      |
 
-## comAtprotoSyncRequestCrawl
+## requestCrawl
 
 This endpoint is part of the atproto repository synchronization APIs. Requests usually do not require authentication, and can be made to PDS intances or Relay instances.*
 
@@ -812,7 +820,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  await bluesky.com.atproto.sync.comAtprotoSyncRequestCrawl({
+  await bluesky.atproto.sync.requestCrawl({
     hostname: "strange-monster.com",
   });
 
@@ -828,7 +836,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { comAtprotoSyncComAtprotoSyncRequestCrawl } from "bluesky/funcs/comAtprotoSyncComAtprotoSyncRequestCrawl.js";
+import { atprotoSyncRequestCrawl } from "bluesky/funcs/atprotoSyncRequestCrawl.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -837,7 +845,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await comAtprotoSyncComAtprotoSyncRequestCrawl(bluesky, {
+  const res = await atprotoSyncRequestCrawl(bluesky, {
     hostname: "strange-monster.com",
   });
 
@@ -868,8 +876,8 @@ run();
 
 ### Errors
 
-| Error Type                                                  | Status Code                                                 | Content Type                                                |
-| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
-| errors.ComAtprotoSyncRequestCrawlResponseBody               | 400                                                         | application/json                                            |
-| errors.ComAtprotoSyncRequestCrawlComAtprotoSyncResponseBody | 401                                                         | application/json                                            |
-| errors.APIError                                             | 4XX, 5XX                                                    | \*/\*                                                       |
+| Error Type                                               | Status Code                                              | Content Type                                             |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| errors.ComAtprotoSyncRequestCrawlResponseBody            | 400                                                      | application/json                                         |
+| errors.ComAtprotoSyncRequestCrawlAtprotoSyncResponseBody | 401                                                      | application/json                                         |
+| errors.APIError                                          | 4XX, 5XX                                                 | \*/\*                                                    |

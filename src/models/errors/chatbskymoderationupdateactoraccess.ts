@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type ChatBskyModerationUpdateActorAccessChatBskyModerationResponseBodyData =
+export type ChatBskyModerationUpdateActorAccessChatModerationResponseBodyData =
   {
     error: "AuthMissing";
     message: string;
@@ -17,16 +17,16 @@ export type ChatBskyModerationUpdateActorAccessChatBskyModerationResponseBodyDat
 /**
  * Unauthorized
  */
-export class ChatBskyModerationUpdateActorAccessChatBskyModerationResponseBody
+export class ChatBskyModerationUpdateActorAccessChatModerationResponseBody
   extends Error
 {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: ChatBskyModerationUpdateActorAccessChatBskyModerationResponseBodyData;
+  data$: ChatBskyModerationUpdateActorAccessChatModerationResponseBodyData;
 
   constructor(
-    err: ChatBskyModerationUpdateActorAccessChatBskyModerationResponseBodyData,
+    err: ChatBskyModerationUpdateActorAccessChatModerationResponseBodyData,
   ) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
@@ -36,8 +36,7 @@ export class ChatBskyModerationUpdateActorAccessChatBskyModerationResponseBody
 
     this.error = err.error;
 
-    this.name =
-      "ChatBskyModerationUpdateActorAccessChatBskyModerationResponseBody";
+    this.name = "ChatBskyModerationUpdateActorAccessChatModerationResponseBody";
   }
 }
 
@@ -81,9 +80,9 @@ export class ChatBskyModerationUpdateActorAccessResponseBody extends Error {
 }
 
 /** @internal */
-export const ChatBskyModerationUpdateActorAccessChatBskyModerationResponseBody$inboundSchema:
+export const ChatBskyModerationUpdateActorAccessChatModerationResponseBody$inboundSchema:
   z.ZodType<
-    ChatBskyModerationUpdateActorAccessChatBskyModerationResponseBody,
+    ChatBskyModerationUpdateActorAccessChatModerationResponseBody,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -91,26 +90,26 @@ export const ChatBskyModerationUpdateActorAccessChatBskyModerationResponseBody$i
     message: z.string(),
   })
     .transform((v) => {
-      return new ChatBskyModerationUpdateActorAccessChatBskyModerationResponseBody(
+      return new ChatBskyModerationUpdateActorAccessChatModerationResponseBody(
         v,
       );
     });
 
 /** @internal */
-export type ChatBskyModerationUpdateActorAccessChatBskyModerationResponseBody$Outbound =
+export type ChatBskyModerationUpdateActorAccessChatModerationResponseBody$Outbound =
   {
     error: "AuthMissing";
     message: string;
   };
 
 /** @internal */
-export const ChatBskyModerationUpdateActorAccessChatBskyModerationResponseBody$outboundSchema:
+export const ChatBskyModerationUpdateActorAccessChatModerationResponseBody$outboundSchema:
   z.ZodType<
-    ChatBskyModerationUpdateActorAccessChatBskyModerationResponseBody$Outbound,
+    ChatBskyModerationUpdateActorAccessChatModerationResponseBody$Outbound,
     z.ZodTypeDef,
-    ChatBskyModerationUpdateActorAccessChatBskyModerationResponseBody
+    ChatBskyModerationUpdateActorAccessChatModerationResponseBody
   > = z.instanceof(
-    ChatBskyModerationUpdateActorAccessChatBskyModerationResponseBody,
+    ChatBskyModerationUpdateActorAccessChatModerationResponseBody,
   )
     .transform(v => v.data$)
     .pipe(z.object({
@@ -122,16 +121,16 @@ export const ChatBskyModerationUpdateActorAccessChatBskyModerationResponseBody$o
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ChatBskyModerationUpdateActorAccessChatBskyModerationResponseBody$ {
-  /** @deprecated use `ChatBskyModerationUpdateActorAccessChatBskyModerationResponseBody$inboundSchema` instead. */
+export namespace ChatBskyModerationUpdateActorAccessChatModerationResponseBody$ {
+  /** @deprecated use `ChatBskyModerationUpdateActorAccessChatModerationResponseBody$inboundSchema` instead. */
   export const inboundSchema =
-    ChatBskyModerationUpdateActorAccessChatBskyModerationResponseBody$inboundSchema;
-  /** @deprecated use `ChatBskyModerationUpdateActorAccessChatBskyModerationResponseBody$outboundSchema` instead. */
+    ChatBskyModerationUpdateActorAccessChatModerationResponseBody$inboundSchema;
+  /** @deprecated use `ChatBskyModerationUpdateActorAccessChatModerationResponseBody$outboundSchema` instead. */
   export const outboundSchema =
-    ChatBskyModerationUpdateActorAccessChatBskyModerationResponseBody$outboundSchema;
-  /** @deprecated use `ChatBskyModerationUpdateActorAccessChatBskyModerationResponseBody$Outbound` instead. */
+    ChatBskyModerationUpdateActorAccessChatModerationResponseBody$outboundSchema;
+  /** @deprecated use `ChatBskyModerationUpdateActorAccessChatModerationResponseBody$Outbound` instead. */
   export type Outbound =
-    ChatBskyModerationUpdateActorAccessChatBskyModerationResponseBody$Outbound;
+    ChatBskyModerationUpdateActorAccessChatModerationResponseBody$Outbound;
 }
 
 /** @internal */

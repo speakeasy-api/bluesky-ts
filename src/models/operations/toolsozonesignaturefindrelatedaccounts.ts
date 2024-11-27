@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod";
+import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
@@ -22,6 +23,10 @@ export type ToolsOzoneSignatureFindRelatedAccountsResponseBody = {
   accounts: Array<
     components.ToolsOzoneSignatureFindRelatedAccountsRelatedAccount
   >;
+};
+
+export type ToolsOzoneSignatureFindRelatedAccountsResponse = {
+  result: ToolsOzoneSignatureFindRelatedAccountsResponseBody;
 };
 
 /** @internal */
@@ -173,5 +178,85 @@ export function toolsOzoneSignatureFindRelatedAccountsResponseBodyFromJSON(
         JSON.parse(x),
       ),
     `Failed to parse 'ToolsOzoneSignatureFindRelatedAccountsResponseBody' from JSON`,
+  );
+}
+
+/** @internal */
+export const ToolsOzoneSignatureFindRelatedAccountsResponse$inboundSchema:
+  z.ZodType<
+    ToolsOzoneSignatureFindRelatedAccountsResponse,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    Result: z.lazy(() =>
+      ToolsOzoneSignatureFindRelatedAccountsResponseBody$inboundSchema
+    ),
+  }).transform((v) => {
+    return remap$(v, {
+      "Result": "result",
+    });
+  });
+
+/** @internal */
+export type ToolsOzoneSignatureFindRelatedAccountsResponse$Outbound = {
+  Result: ToolsOzoneSignatureFindRelatedAccountsResponseBody$Outbound;
+};
+
+/** @internal */
+export const ToolsOzoneSignatureFindRelatedAccountsResponse$outboundSchema:
+  z.ZodType<
+    ToolsOzoneSignatureFindRelatedAccountsResponse$Outbound,
+    z.ZodTypeDef,
+    ToolsOzoneSignatureFindRelatedAccountsResponse
+  > = z.object({
+    result: z.lazy(() =>
+      ToolsOzoneSignatureFindRelatedAccountsResponseBody$outboundSchema
+    ),
+  }).transform((v) => {
+    return remap$(v, {
+      result: "Result",
+    });
+  });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace ToolsOzoneSignatureFindRelatedAccountsResponse$ {
+  /** @deprecated use `ToolsOzoneSignatureFindRelatedAccountsResponse$inboundSchema` instead. */
+  export const inboundSchema =
+    ToolsOzoneSignatureFindRelatedAccountsResponse$inboundSchema;
+  /** @deprecated use `ToolsOzoneSignatureFindRelatedAccountsResponse$outboundSchema` instead. */
+  export const outboundSchema =
+    ToolsOzoneSignatureFindRelatedAccountsResponse$outboundSchema;
+  /** @deprecated use `ToolsOzoneSignatureFindRelatedAccountsResponse$Outbound` instead. */
+  export type Outbound =
+    ToolsOzoneSignatureFindRelatedAccountsResponse$Outbound;
+}
+
+export function toolsOzoneSignatureFindRelatedAccountsResponseToJSON(
+  toolsOzoneSignatureFindRelatedAccountsResponse:
+    ToolsOzoneSignatureFindRelatedAccountsResponse,
+): string {
+  return JSON.stringify(
+    ToolsOzoneSignatureFindRelatedAccountsResponse$outboundSchema.parse(
+      toolsOzoneSignatureFindRelatedAccountsResponse,
+    ),
+  );
+}
+
+export function toolsOzoneSignatureFindRelatedAccountsResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  ToolsOzoneSignatureFindRelatedAccountsResponse,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      ToolsOzoneSignatureFindRelatedAccountsResponse$inboundSchema.parse(
+        JSON.parse(x),
+      ),
+    `Failed to parse 'ToolsOzoneSignatureFindRelatedAccountsResponse' from JSON`,
   );
 }

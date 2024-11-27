@@ -20,7 +20,7 @@ const value: components.ToolsOzoneModerationDefsModEventReverseTakedown = {};
 ```typescript
 const value: components.ToolsOzoneModerationDefsModEventComment = {
   comment:
-    "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
+    "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
 };
 ```
 
@@ -61,7 +61,7 @@ const value: components.ToolsOzoneModerationDefsModEventEscalate = {};
 
 ```typescript
 const value: components.ToolsOzoneModerationDefsModEventMute = {
-  durationInHours: 704402,
+  durationInHours: 875452,
 };
 ```
 
@@ -121,7 +121,7 @@ const value: components.ToolsOzoneModerationDefsModEventTag = {
 ```typescript
 const value: components.ToolsOzoneModerationDefsAccountEvent = {
   active: false,
-  timestamp: new Date("2022-11-09T05:37:43.437Z"),
+  timestamp: new Date("2022-03-22T21:55:35.437Z"),
 };
 ```
 
@@ -129,7 +129,7 @@ const value: components.ToolsOzoneModerationDefsAccountEvent = {
 
 ```typescript
 const value: components.ToolsOzoneModerationDefsIdentityEvent = {
-  timestamp: new Date("2022-04-24T23:18:08.610Z"),
+  timestamp: new Date("2023-06-23T02:22:47.299Z"),
 };
 ```
 
@@ -138,7 +138,7 @@ const value: components.ToolsOzoneModerationDefsIdentityEvent = {
 ```typescript
 const value: components.ToolsOzoneModerationDefsRecordEvent = {
   op: "delete",
-  timestamp: new Date("2024-02-17T02:52:21.005Z"),
+  timestamp: new Date("2024-03-20T00:20:17.729Z"),
 };
 ```
 

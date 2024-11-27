@@ -6,7 +6,7 @@
 import { AppBskyEmbedRecordViewBlocked } from "bluesky/models/components";
 
 let value: AppBskyEmbedRecordViewBlocked = {
-  uri: "https://cheerful-outlaw.org",
+  uri: "https://strange-morbidity.name/",
   author: {
     did: "<id>",
   },

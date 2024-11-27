@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoAdminGetSubjectStatusError } from "bluesky/models/errors";
 
-let value: ComAtprotoAdminGetSubjectStatusError = "InvalidRequest";
+let value: ComAtprotoAdminGetSubjectStatusError = "InvalidToken";
 ```
 
 ## Values

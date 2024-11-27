@@ -7,7 +7,7 @@ import { AppBskyGraphGetStarterPacksRequest } from "bluesky/models/operations";
 
 let value: AppBskyGraphGetStarterPacksRequest = {
   uris: [
-    "https://stylish-gripper.org/",
+    "https://optimal-pendant.name",
   ],
 };
 ```

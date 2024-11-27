@@ -7,18 +7,18 @@
 
 ```typescript
 const value: components.ToolsOzoneModerationDefsRecordViewDetail = {
-  uri: "https://minor-hippodrome.name",
+  uri: "https://pricey-suitcase.org",
   cid: "<id>",
   value: "<value>",
   blobs: [
     {
       cid: "<id>",
       mimeType: "<value>",
-      size: 287051,
-      createdAt: new Date("2024-02-14T09:44:27.866Z"),
+      size: 750765,
+      createdAt: new Date("2024-02-06T17:37:20.583Z"),
     },
   ],
-  indexedAt: new Date("2023-03-31T16:23:42.327Z"),
+  indexedAt: new Date("2024-11-26T21:21:58.551Z"),
   moderation: {},
   repo: {
     did: "<id>",
@@ -26,7 +26,7 @@ const value: components.ToolsOzoneModerationDefsRecordViewDetail = {
     relatedRecords: [
       "<value>",
     ],
-    indexedAt: new Date("2023-01-31T03:47:25.523Z"),
+    indexedAt: new Date("2024-12-25T20:43:06.136Z"),
     moderation: {},
   },
 };
@@ -36,7 +36,7 @@ const value: components.ToolsOzoneModerationDefsRecordViewDetail = {
 
 ```typescript
 const value: components.ToolsOzoneModerationDefsRecordViewNotFound = {
-  uri: "https://vain-archaeology.biz",
+  uri: "https://blank-embarrassment.com/",
 };
 ```
 

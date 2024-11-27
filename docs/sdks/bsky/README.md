@@ -1,2 +1,0 @@
-# Bsky
-(*app.bsky*)

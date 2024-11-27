@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type AppBskyActorGetProfileAppBskyActorResponseBodyData = {
+export type AppBskyActorGetProfileActorResponseBodyData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,13 +16,13 @@ export type AppBskyActorGetProfileAppBskyActorResponseBodyData = {
 /**
  * Unauthorized
  */
-export class AppBskyActorGetProfileAppBskyActorResponseBody extends Error {
+export class AppBskyActorGetProfileActorResponseBody extends Error {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: AppBskyActorGetProfileAppBskyActorResponseBodyData;
+  data$: AppBskyActorGetProfileActorResponseBodyData;
 
-  constructor(err: AppBskyActorGetProfileAppBskyActorResponseBodyData) {
+  constructor(err: AppBskyActorGetProfileActorResponseBodyData) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -31,7 +31,7 @@ export class AppBskyActorGetProfileAppBskyActorResponseBody extends Error {
 
     this.error = err.error;
 
-    this.name = "AppBskyActorGetProfileAppBskyActorResponseBody";
+    this.name = "AppBskyActorGetProfileActorResponseBody";
   }
 }
 
@@ -75,52 +75,49 @@ export class AppBskyActorGetProfileResponseBody extends Error {
 }
 
 /** @internal */
-export const AppBskyActorGetProfileAppBskyActorResponseBody$inboundSchema:
-  z.ZodType<
-    AppBskyActorGetProfileAppBskyActorResponseBody,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    error: z.literal("AuthMissing"),
-    message: z.string(),
-  })
-    .transform((v) => {
-      return new AppBskyActorGetProfileAppBskyActorResponseBody(v);
-    });
+export const AppBskyActorGetProfileActorResponseBody$inboundSchema: z.ZodType<
+  AppBskyActorGetProfileActorResponseBody,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  error: z.literal("AuthMissing"),
+  message: z.string(),
+})
+  .transform((v) => {
+    return new AppBskyActorGetProfileActorResponseBody(v);
+  });
 
 /** @internal */
-export type AppBskyActorGetProfileAppBskyActorResponseBody$Outbound = {
+export type AppBskyActorGetProfileActorResponseBody$Outbound = {
   error: "AuthMissing";
   message: string;
 };
 
 /** @internal */
-export const AppBskyActorGetProfileAppBskyActorResponseBody$outboundSchema:
-  z.ZodType<
-    AppBskyActorGetProfileAppBskyActorResponseBody$Outbound,
-    z.ZodTypeDef,
-    AppBskyActorGetProfileAppBskyActorResponseBody
-  > = z.instanceof(AppBskyActorGetProfileAppBskyActorResponseBody)
-    .transform(v => v.data$)
-    .pipe(z.object({
-      error: z.literal("AuthMissing").default("AuthMissing" as const),
-      message: z.string(),
-    }));
+export const AppBskyActorGetProfileActorResponseBody$outboundSchema: z.ZodType<
+  AppBskyActorGetProfileActorResponseBody$Outbound,
+  z.ZodTypeDef,
+  AppBskyActorGetProfileActorResponseBody
+> = z.instanceof(AppBskyActorGetProfileActorResponseBody)
+  .transform(v => v.data$)
+  .pipe(z.object({
+    error: z.literal("AuthMissing").default("AuthMissing" as const),
+    message: z.string(),
+  }));
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyActorGetProfileAppBskyActorResponseBody$ {
-  /** @deprecated use `AppBskyActorGetProfileAppBskyActorResponseBody$inboundSchema` instead. */
+export namespace AppBskyActorGetProfileActorResponseBody$ {
+  /** @deprecated use `AppBskyActorGetProfileActorResponseBody$inboundSchema` instead. */
   export const inboundSchema =
-    AppBskyActorGetProfileAppBskyActorResponseBody$inboundSchema;
-  /** @deprecated use `AppBskyActorGetProfileAppBskyActorResponseBody$outboundSchema` instead. */
+    AppBskyActorGetProfileActorResponseBody$inboundSchema;
+  /** @deprecated use `AppBskyActorGetProfileActorResponseBody$outboundSchema` instead. */
   export const outboundSchema =
-    AppBskyActorGetProfileAppBskyActorResponseBody$outboundSchema;
-  /** @deprecated use `AppBskyActorGetProfileAppBskyActorResponseBody$Outbound` instead. */
-  export type Outbound =
-    AppBskyActorGetProfileAppBskyActorResponseBody$Outbound;
+    AppBskyActorGetProfileActorResponseBody$outboundSchema;
+  /** @deprecated use `AppBskyActorGetProfileActorResponseBody$Outbound` instead. */
+  export type Outbound = AppBskyActorGetProfileActorResponseBody$Outbound;
 }
 
 /** @internal */

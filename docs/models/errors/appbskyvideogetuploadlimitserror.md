@@ -5,7 +5,7 @@
 ```typescript
 import { AppBskyVideoGetUploadLimitsError } from "bluesky/models/errors";
 
-let value: AppBskyVideoGetUploadLimitsError = "InvalidRequest";
+let value: AppBskyVideoGetUploadLimitsError = "ExpiredToken";
 ```
 
 ## Values

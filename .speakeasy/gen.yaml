@@ -16,7 +16,7 @@ generation:
     oAuth2ClientCredentialsEnabled: false
     oAuth2PasswordEnabled: false
 typescript:
-  version: 0.1.0
+  version: 0.3.1
   additionalDependencies:
     dependencies: {}
     devDependencies: {}
@@ -25,6 +25,7 @@ typescript:
   author: Speakeasy
   clientServerStatusCodesAsErrors: true
   defaultErrorName: APIError
+  enableReactQuery: true
   enumFormat: union
   envVarPrefix: BLUESKY
   flattenGlobalSecurity: true
@@ -40,7 +41,7 @@ typescript:
   inputModelSuffix: input
   maxMethodParams: 0
   methodArguments: infer-optional-args
-  moduleFormat: dual
+  moduleFormat: esm
   outputModelSuffix: output
   packageName: bluesky
   responseFormat: flat

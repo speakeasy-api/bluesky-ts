@@ -16,7 +16,7 @@ const value: components.AppBskyActorDefsAdultContentPref = {
 ```typescript
 const value: components.AppBskyActorDefsContentLabelPref = {
   label: "<value>",
-  visibility: "show",
+  visibility: "ignore",
 };
 ```
 
@@ -25,10 +25,10 @@ const value: components.AppBskyActorDefsContentLabelPref = {
 ```typescript
 const value: components.AppBskyActorDefsSavedFeedsPref = {
   pinned: [
-    "https://firm-impact.info",
+    "https://incomplete-opera.org/",
   ],
   saved: [
-    "https://measly-experience.info/",
+    "https://complicated-wear.org",
   ],
 };
 ```
@@ -98,7 +98,7 @@ const value: components.AppBskyActorDefsMutedWordsPref = {
 ```typescript
 const value: components.AppBskyActorDefsHiddenPostsPref = {
   items: [
-    "https://vain-stump.com/",
+    "https://vague-someplace.org",
   ],
 };
 ```

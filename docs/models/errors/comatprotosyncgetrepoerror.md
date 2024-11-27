@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoSyncGetRepoError } from "bluesky/models/errors";
 
-let value: ComAtprotoSyncGetRepoError = "RepoSuspended";
+let value: ComAtprotoSyncGetRepoError = "InvalidRequest";
 ```
 
 ## Values

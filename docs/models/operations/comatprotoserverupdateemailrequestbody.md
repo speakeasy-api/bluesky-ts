@@ -6,7 +6,7 @@
 import { ComAtprotoServerUpdateEmailRequestBody } from "bluesky/models/operations";
 
 let value: ComAtprotoServerUpdateEmailRequestBody = {
-  email: "Veronica.Hermiston@gmail.com",
+  email: "Joseph.Luettgen@yahoo.com",
 };
 ```
 

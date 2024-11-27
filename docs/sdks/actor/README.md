@@ -1,47 +1,47 @@
 # Actor
-(*app.bsky.actor*)
+(*actor*)
 
 ## Overview
 
 ### Available Operations
 
-* [appBskyActorGetPreferences](#appbskyactorgetpreferences) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [getPreferences](#getpreferences) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Get private preferences attached to the current account. Expected use is synchronization between multiple devices, and import/export during account migration. Requires auth.
-* [appBskyActorGetProfile](#appbskyactorgetprofile) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [getProfile](#getprofile) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Get detailed profile view of an actor. Does not require auth, but contains relevant metadata with auth.
-* [appBskyActorGetProfiles](#appbskyactorgetprofiles) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [getProfiles](#getprofiles) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Get detailed profile views of multiple actors.
-* [appBskyActorGetSuggestions](#appbskyactorgetsuggestions) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [getSuggestions](#getsuggestions) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Get a list of suggested actors. Expected use is discovery of accounts to follow during new account onboarding.
-* [appBskyActorPutPreferences](#appbskyactorputpreferences) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [putPreferences](#putpreferences) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Set the private preferences attached to the account.
-* [appBskyActorSearchActors](#appbskyactorsearchactors) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [searchActors](#searchactors) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Find actors (profiles) matching search criteria. Does not require auth.
-* [appBskyActorSearchActorsTypeahead](#appbskyactorsearchactorstypeahead) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+* [searchActorsTypeahead](#searchactorstypeahead) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Find actor suggestions for a prefix search term. Expected use is for auto-completion during text field entry. Does not require auth.
 
-## appBskyActorGetPreferences
+## getPreferences
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -59,7 +59,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.app.bsky.actor.appBskyActorGetPreferences();
+  const result = await bluesky.actor.getPreferences();
 
   // Handle the result
   console.log(result);
@@ -74,7 +74,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyActorAppBskyActorGetPreferences } from "bluesky/funcs/appBskyActorAppBskyActorGetPreferences.js";
+import { actorGetPreferences } from "bluesky/funcs/actorGetPreferences.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -83,7 +83,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyActorAppBskyActorGetPreferences(bluesky);
+  const res = await actorGetPreferences(bluesky);
 
   if (!res.ok) {
     throw res.error;
@@ -112,13 +112,13 @@ run();
 
 ### Errors
 
-| Error Type                                                | Status Code                                               | Content Type                                              |
-| --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
-| errors.AppBskyActorGetPreferencesResponseBody             | 400                                                       | application/json                                          |
-| errors.AppBskyActorGetPreferencesAppBskyActorResponseBody | 401                                                       | application/json                                          |
-| errors.APIError                                           | 4XX, 5XX                                                  | \*/\*                                                     |
+| Error Type                                         | Status Code                                        | Content Type                                       |
+| -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
+| errors.AppBskyActorGetPreferencesResponseBody      | 400                                                | application/json                                   |
+| errors.AppBskyActorGetPreferencesActorResponseBody | 401                                                | application/json                                   |
+| errors.APIError                                    | 4XX, 5XX                                           | \*/\*                                              |
 
-## appBskyActorGetProfile
+## getProfile
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -136,7 +136,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.app.bsky.actor.appBskyActorGetProfile({
+  const result = await bluesky.actor.getProfile({
     actor: "<value>",
   });
 
@@ -153,7 +153,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyActorAppBskyActorGetProfile } from "bluesky/funcs/appBskyActorAppBskyActorGetProfile.js";
+import { actorGetProfile } from "bluesky/funcs/actorGetProfile.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -162,7 +162,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyActorAppBskyActorGetProfile(bluesky, {
+  const res = await actorGetProfile(bluesky, {
     actor: "<value>",
   });
 
@@ -194,13 +194,13 @@ run();
 
 ### Errors
 
-| Error Type                                            | Status Code                                           | Content Type                                          |
-| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
-| errors.AppBskyActorGetProfileResponseBody             | 400                                                   | application/json                                      |
-| errors.AppBskyActorGetProfileAppBskyActorResponseBody | 401                                                   | application/json                                      |
-| errors.APIError                                       | 4XX, 5XX                                              | \*/\*                                                 |
+| Error Type                                     | Status Code                                    | Content Type                                   |
+| ---------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- |
+| errors.AppBskyActorGetProfileResponseBody      | 400                                            | application/json                               |
+| errors.AppBskyActorGetProfileActorResponseBody | 401                                            | application/json                               |
+| errors.APIError                                | 4XX, 5XX                                       | \*/\*                                          |
 
-## appBskyActorGetProfiles
+## getProfiles
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -218,7 +218,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.app.bsky.actor.appBskyActorGetProfiles({
+  const result = await bluesky.actor.getProfiles({
     actors: [
       "<value>",
     ],
@@ -237,7 +237,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyActorAppBskyActorGetProfiles } from "bluesky/funcs/appBskyActorAppBskyActorGetProfiles.js";
+import { actorGetProfiles } from "bluesky/funcs/actorGetProfiles.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -246,7 +246,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyActorAppBskyActorGetProfiles(bluesky, {
+  const res = await actorGetProfiles(bluesky, {
     actors: [
       "<value>",
     ],
@@ -280,13 +280,13 @@ run();
 
 ### Errors
 
-| Error Type                                             | Status Code                                            | Content Type                                           |
-| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
-| errors.AppBskyActorGetProfilesResponseBody             | 400                                                    | application/json                                       |
-| errors.AppBskyActorGetProfilesAppBskyActorResponseBody | 401                                                    | application/json                                       |
-| errors.APIError                                        | 4XX, 5XX                                               | \*/\*                                                  |
+| Error Type                                      | Status Code                                     | Content Type                                    |
+| ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
+| errors.AppBskyActorGetProfilesResponseBody      | 400                                             | application/json                                |
+| errors.AppBskyActorGetProfilesActorResponseBody | 401                                             | application/json                                |
+| errors.APIError                                 | 4XX, 5XX                                        | \*/\*                                           |
 
-## appBskyActorGetSuggestions
+## getSuggestions
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -304,10 +304,12 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.app.bsky.actor.appBskyActorGetSuggestions();
+  const result = await bluesky.actor.getSuggestions();
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -319,7 +321,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyActorAppBskyActorGetSuggestions } from "bluesky/funcs/appBskyActorAppBskyActorGetSuggestions.js";
+import { actorGetSuggestions } from "bluesky/funcs/actorGetSuggestions.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -328,7 +330,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyActorAppBskyActorGetSuggestions(bluesky);
+  const res = await actorGetSuggestions(bluesky);
 
   if (!res.ok) {
     throw res.error;
@@ -336,8 +338,10 @@ async function run() {
 
   const { value: result } = res;
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -354,17 +358,17 @@ run();
 
 ### Response
 
-**Promise\<[operations.AppBskyActorGetSuggestionsResponseBody](../../models/operations/appbskyactorgetsuggestionsresponsebody.md)\>**
+**Promise\<[operations.AppBskyActorGetSuggestionsResponse](../../models/operations/appbskyactorgetsuggestionsresponse.md)\>**
 
 ### Errors
 
-| Error Type                                                | Status Code                                               | Content Type                                              |
-| --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
-| errors.AppBskyActorGetSuggestionsResponseBody             | 400                                                       | application/json                                          |
-| errors.AppBskyActorGetSuggestionsAppBskyActorResponseBody | 401                                                       | application/json                                          |
-| errors.APIError                                           | 4XX, 5XX                                                  | \*/\*                                                     |
+| Error Type                                         | Status Code                                        | Content Type                                       |
+| -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
+| errors.AppBskyActorGetSuggestionsResponseBody      | 400                                                | application/json                                   |
+| errors.AppBskyActorGetSuggestionsActorResponseBody | 401                                                | application/json                                   |
+| errors.APIError                                    | 4XX, 5XX                                           | \*/\*                                              |
 
-## appBskyActorPutPreferences
+## putPreferences
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -382,7 +386,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  await bluesky.app.bsky.actor.appBskyActorPutPreferences({
+  await bluesky.actor.putPreferences({
     preferences: [
       {
         tags: [
@@ -404,7 +408,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyActorAppBskyActorPutPreferences } from "bluesky/funcs/appBskyActorAppBskyActorPutPreferences.js";
+import { actorPutPreferences } from "bluesky/funcs/actorPutPreferences.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -413,7 +417,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyActorAppBskyActorPutPreferences(bluesky, {
+  const res = await actorPutPreferences(bluesky, {
     preferences: [
       {
         tags: [
@@ -450,13 +454,13 @@ run();
 
 ### Errors
 
-| Error Type                                                | Status Code                                               | Content Type                                              |
-| --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
-| errors.AppBskyActorPutPreferencesResponseBody             | 400                                                       | application/json                                          |
-| errors.AppBskyActorPutPreferencesAppBskyActorResponseBody | 401                                                       | application/json                                          |
-| errors.APIError                                           | 4XX, 5XX                                                  | \*/\*                                                     |
+| Error Type                                         | Status Code                                        | Content Type                                       |
+| -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
+| errors.AppBskyActorPutPreferencesResponseBody      | 400                                                | application/json                                   |
+| errors.AppBskyActorPutPreferencesActorResponseBody | 401                                                | application/json                                   |
+| errors.APIError                                    | 4XX, 5XX                                           | \*/\*                                              |
 
-## appBskyActorSearchActors
+## searchActors
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -474,10 +478,12 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.app.bsky.actor.appBskyActorSearchActors();
+  const result = await bluesky.actor.searchActors();
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -489,7 +495,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyActorAppBskyActorSearchActors } from "bluesky/funcs/appBskyActorAppBskyActorSearchActors.js";
+import { actorSearchActors } from "bluesky/funcs/actorSearchActors.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -498,7 +504,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyActorAppBskyActorSearchActors(bluesky);
+  const res = await actorSearchActors(bluesky);
 
   if (!res.ok) {
     throw res.error;
@@ -506,8 +512,10 @@ async function run() {
 
   const { value: result } = res;
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -524,17 +532,17 @@ run();
 
 ### Response
 
-**Promise\<[operations.AppBskyActorSearchActorsResponseBody](../../models/operations/appbskyactorsearchactorsresponsebody.md)\>**
+**Promise\<[operations.AppBskyActorSearchActorsResponse](../../models/operations/appbskyactorsearchactorsresponse.md)\>**
 
 ### Errors
 
-| Error Type                                              | Status Code                                             | Content Type                                            |
-| ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
-| errors.AppBskyActorSearchActorsResponseBody             | 400                                                     | application/json                                        |
-| errors.AppBskyActorSearchActorsAppBskyActorResponseBody | 401                                                     | application/json                                        |
-| errors.APIError                                         | 4XX, 5XX                                                | \*/\*                                                   |
+| Error Type                                       | Status Code                                      | Content Type                                     |
+| ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ |
+| errors.AppBskyActorSearchActorsResponseBody      | 400                                              | application/json                                 |
+| errors.AppBskyActorSearchActorsActorResponseBody | 401                                              | application/json                                 |
+| errors.APIError                                  | 4XX, 5XX                                         | \*/\*                                            |
 
-## appBskyActorSearchActorsTypeahead
+## searchActorsTypeahead
 
 *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -552,7 +560,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.app.bsky.actor.appBskyActorSearchActorsTypeahead();
+  const result = await bluesky.actor.searchActorsTypeahead();
 
   // Handle the result
   console.log(result);
@@ -567,7 +575,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { appBskyActorAppBskyActorSearchActorsTypeahead } from "bluesky/funcs/appBskyActorAppBskyActorSearchActorsTypeahead.js";
+import { actorSearchActorsTypeahead } from "bluesky/funcs/actorSearchActorsTypeahead.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -576,7 +584,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await appBskyActorAppBskyActorSearchActorsTypeahead(bluesky);
+  const res = await actorSearchActorsTypeahead(bluesky);
 
   if (!res.ok) {
     throw res.error;
@@ -606,8 +614,8 @@ run();
 
 ### Errors
 
-| Error Type                                                       | Status Code                                                      | Content Type                                                     |
-| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
-| errors.AppBskyActorSearchActorsTypeaheadResponseBody             | 400                                                              | application/json                                                 |
-| errors.AppBskyActorSearchActorsTypeaheadAppBskyActorResponseBody | 401                                                              | application/json                                                 |
-| errors.APIError                                                  | 4XX, 5XX                                                         | \*/\*                                                            |
+| Error Type                                                | Status Code                                               | Content Type                                              |
+| --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
+| errors.AppBskyActorSearchActorsTypeaheadResponseBody      | 400                                                       | application/json                                          |
+| errors.AppBskyActorSearchActorsTypeaheadActorResponseBody | 401                                                       | application/json                                          |
+| errors.APIError                                           | 4XX, 5XX                                                  | \*/\*                                                     |

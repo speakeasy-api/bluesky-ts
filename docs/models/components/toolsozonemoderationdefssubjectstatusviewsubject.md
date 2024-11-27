@@ -15,7 +15,7 @@ const value: components.ComAtprotoAdminDefsRepoRef = {
 
 ```typescript
 const value: components.ComAtprotoRepoStrongRef = {
-  uri: "https://juvenile-spear.biz/",
+  uri: "https://simplistic-igloo.net/",
   cid: "<id>",
 };
 ```

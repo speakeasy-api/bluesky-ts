@@ -9,8 +9,8 @@
 const value: components.AppBskyEmbedImagesView = {
   images: [
     {
-      thumb: "https://poor-kiss.org",
-      fullsize: "https://important-heartbeat.net",
+      thumb: "https://eminent-validity.name/",
+      fullsize: "https://forceful-import.com/",
       alt: "<value>",
     },
   ],
@@ -22,7 +22,7 @@ const value: components.AppBskyEmbedImagesView = {
 ```typescript
 const value: components.AppBskyEmbedVideoView = {
   cid: "<id>",
-  playlist: "https://each-bakeware.org/",
+  playlist: "https://lumpy-devastation.name/",
 };
 ```
 
@@ -31,9 +31,10 @@ const value: components.AppBskyEmbedVideoView = {
 ```typescript
 const value: components.AppBskyEmbedExternalView = {
   external: {
-    uri: "https://cloudy-fireplace.biz",
+    uri: "https://esteemed-oil.name",
     title: "<value>",
-    description: "hm zowie utterly",
+    description:
+      "majestically ew airmail abaft until against however inside above sun",
   },
 };
 ```
@@ -43,14 +44,14 @@ const value: components.AppBskyEmbedExternalView = {
 ```typescript
 const value: components.AppBskyEmbedRecordView = {
   record: {
-    uri: "https://buzzing-interchange.net/",
+    uri: "https://agile-vicinity.name",
     cid: "<id>",
     author: {
       did: "<id>",
       handle: "<value>",
     },
     value: "<value>",
-    indexedAt: new Date("2022-11-23T19:31:13.111Z"),
+    indexedAt: new Date("2023-08-29T11:21:25.228Z"),
   },
 };
 ```
@@ -61,17 +62,18 @@ const value: components.AppBskyEmbedRecordView = {
 const value: components.AppBskyEmbedRecordWithMediaView = {
   record: {
     record: {
-      uri: "https://stylish-character.biz/",
+      uri: "https://favorite-solvency.org",
+      author: {
+        did: "<id>",
+      },
     },
   },
   media: {
-    images: [
-      {
-        thumb: "https://immense-experience.net",
-        fullsize: "https://shabby-singing.biz/",
-        alt: "<value>",
-      },
-    ],
+    external: {
+      uri: "https://biodegradable-integer.info",
+      title: "<value>",
+      description: "about quietly for graceful",
+    },
   },
 };
 ```

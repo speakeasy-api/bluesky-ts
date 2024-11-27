@@ -7,7 +7,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.app.bsky.actor.appBskyActorGetPreferences();
+  const result = await bluesky.actor.getPreferences();
 
   // Handle the result
   console.log(result);

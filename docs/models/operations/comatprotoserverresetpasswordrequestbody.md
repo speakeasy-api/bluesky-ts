@@ -7,7 +7,7 @@ import { ComAtprotoServerResetPasswordRequestBody } from "bluesky/models/operati
 
 let value: ComAtprotoServerResetPasswordRequestBody = {
   token: "<value>",
-  password: "0lLYrLWnwn0FI9q",
+  password: "zsL7I869G0Ok7_8",
 };
 ```
 

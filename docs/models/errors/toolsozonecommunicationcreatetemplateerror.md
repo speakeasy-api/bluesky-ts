@@ -5,7 +5,7 @@
 ```typescript
 import { ToolsOzoneCommunicationCreateTemplateError } from "bluesky/models/errors";
 
-let value: ToolsOzoneCommunicationCreateTemplateError = "InvalidRequest";
+let value: ToolsOzoneCommunicationCreateTemplateError = "DuplicateTemplateName";
 ```
 
 ## Values

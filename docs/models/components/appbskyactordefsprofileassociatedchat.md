@@ -6,7 +6,7 @@
 import { AppBskyActorDefsProfileAssociatedChat } from "bluesky/models/components";
 
 let value: AppBskyActorDefsProfileAssociatedChat = {
-  allowIncoming: "none",
+  allowIncoming: "all",
 };
 ```
 

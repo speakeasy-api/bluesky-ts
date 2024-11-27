@@ -5,7 +5,7 @@
 ```typescript
 import { AppBskyFeedGetTimelineError } from "bluesky/models/errors";
 
-let value: AppBskyFeedGetTimelineError = "InvalidRequest";
+let value: AppBskyFeedGetTimelineError = "InvalidToken";
 ```
 
 ## Values

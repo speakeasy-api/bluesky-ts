@@ -8,7 +8,7 @@ OK
 import { ComAtprotoRepoCreateRecordResponseBody } from "bluesky/models/operations";
 
 let value: ComAtprotoRepoCreateRecordResponseBody = {
-  uri: "https://frail-designation.com",
+  uri: "https://livid-king.name",
   cid: "<id>",
 };
 ```

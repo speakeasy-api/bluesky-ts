@@ -9,7 +9,7 @@ import { ToolsOzoneModerationDefsRecordEvent } from "bluesky/models/components";
 
 let value: ToolsOzoneModerationDefsRecordEvent = {
   op: "create",
-  timestamp: new Date("2024-01-06T23:51:52.329Z"),
+  timestamp: new Date("2023-01-19T21:32:01.817Z"),
 };
 ```
 

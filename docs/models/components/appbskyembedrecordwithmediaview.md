@@ -8,24 +8,24 @@ import { AppBskyEmbedRecordWithMediaView } from "bluesky/models/components";
 let value: AppBskyEmbedRecordWithMediaView = {
   record: {
     record: {
-      uri: "https://international-pecan.org/",
+      uri: "https://lavish-retrospectivity.biz/",
       cid: "<id>",
+      record: "<value>",
       creator: {
         did: "<id>",
         handle: "<value>",
       },
-      name: "<value>",
-      purpose: "<value>",
-      indexedAt: new Date("2023-06-05T22:56:35.057Z"),
+      indexedAt: new Date("2023-09-13T16:15:37.701Z"),
     },
   },
   media: {
-    external: {
-      uri: "https://afraid-jazz.biz/",
-      title: "<value>",
-      description:
-        "infinite stranger before cooperative lieu adumbrate till as about",
-    },
+    images: [
+      {
+        thumb: "https://clear-formation.com/",
+        fullsize: "https://ragged-guide.com/",
+        alt: "<value>",
+      },
+    ],
   },
 };
 ```

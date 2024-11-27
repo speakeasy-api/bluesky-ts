@@ -15,7 +15,7 @@ const value: components.ComAtprotoAdminDefsRepoRef = {
 
 ```typescript
 const value: components.ComAtprotoRepoStrongRef = {
-  uri: "https://steel-convection.org/",
+  uri: "https://oblong-contractor.com/",
   cid: "<id>",
 };
 ```

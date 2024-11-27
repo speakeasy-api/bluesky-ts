@@ -5,7 +5,7 @@
 ```typescript
 import { ToolsOzoneModerationDefsAccountEventStatus } from "bluesky/models/components";
 
-let value: ToolsOzoneModerationDefsAccountEventStatus = "suspended";
+let value: ToolsOzoneModerationDefsAccountEventStatus = "tombstoned";
 ```
 
 ## Values

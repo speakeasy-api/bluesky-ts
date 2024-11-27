@@ -5,7 +5,7 @@
 ```typescript
 import { ToolsOzoneModerationDefsSubjectReviewState } from "bluesky/models/components";
 
-let value: ToolsOzoneModerationDefsSubjectReviewState = "#reviewNone";
+let value: ToolsOzoneModerationDefsSubjectReviewState = "#reviewOpen";
 ```
 
 ## Values

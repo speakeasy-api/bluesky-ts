@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type ComAtprotoSyncNotifyOfUpdateComAtprotoSyncResponseBodyData = {
+export type ComAtprotoSyncNotifyOfUpdateAtprotoSyncResponseBodyData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,15 +16,13 @@ export type ComAtprotoSyncNotifyOfUpdateComAtprotoSyncResponseBodyData = {
 /**
  * Unauthorized
  */
-export class ComAtprotoSyncNotifyOfUpdateComAtprotoSyncResponseBody
-  extends Error
-{
+export class ComAtprotoSyncNotifyOfUpdateAtprotoSyncResponseBody extends Error {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: ComAtprotoSyncNotifyOfUpdateComAtprotoSyncResponseBodyData;
+  data$: ComAtprotoSyncNotifyOfUpdateAtprotoSyncResponseBodyData;
 
-  constructor(err: ComAtprotoSyncNotifyOfUpdateComAtprotoSyncResponseBodyData) {
+  constructor(err: ComAtprotoSyncNotifyOfUpdateAtprotoSyncResponseBodyData) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -33,7 +31,7 @@ export class ComAtprotoSyncNotifyOfUpdateComAtprotoSyncResponseBody
 
     this.error = err.error;
 
-    this.name = "ComAtprotoSyncNotifyOfUpdateComAtprotoSyncResponseBody";
+    this.name = "ComAtprotoSyncNotifyOfUpdateAtprotoSyncResponseBody";
   }
 }
 
@@ -77,9 +75,9 @@ export class ComAtprotoSyncNotifyOfUpdateResponseBody extends Error {
 }
 
 /** @internal */
-export const ComAtprotoSyncNotifyOfUpdateComAtprotoSyncResponseBody$inboundSchema:
+export const ComAtprotoSyncNotifyOfUpdateAtprotoSyncResponseBody$inboundSchema:
   z.ZodType<
-    ComAtprotoSyncNotifyOfUpdateComAtprotoSyncResponseBody,
+    ComAtprotoSyncNotifyOfUpdateAtprotoSyncResponseBody,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -87,22 +85,22 @@ export const ComAtprotoSyncNotifyOfUpdateComAtprotoSyncResponseBody$inboundSchem
     message: z.string(),
   })
     .transform((v) => {
-      return new ComAtprotoSyncNotifyOfUpdateComAtprotoSyncResponseBody(v);
+      return new ComAtprotoSyncNotifyOfUpdateAtprotoSyncResponseBody(v);
     });
 
 /** @internal */
-export type ComAtprotoSyncNotifyOfUpdateComAtprotoSyncResponseBody$Outbound = {
+export type ComAtprotoSyncNotifyOfUpdateAtprotoSyncResponseBody$Outbound = {
   error: "AuthMissing";
   message: string;
 };
 
 /** @internal */
-export const ComAtprotoSyncNotifyOfUpdateComAtprotoSyncResponseBody$outboundSchema:
+export const ComAtprotoSyncNotifyOfUpdateAtprotoSyncResponseBody$outboundSchema:
   z.ZodType<
-    ComAtprotoSyncNotifyOfUpdateComAtprotoSyncResponseBody$Outbound,
+    ComAtprotoSyncNotifyOfUpdateAtprotoSyncResponseBody$Outbound,
     z.ZodTypeDef,
-    ComAtprotoSyncNotifyOfUpdateComAtprotoSyncResponseBody
-  > = z.instanceof(ComAtprotoSyncNotifyOfUpdateComAtprotoSyncResponseBody)
+    ComAtprotoSyncNotifyOfUpdateAtprotoSyncResponseBody
+  > = z.instanceof(ComAtprotoSyncNotifyOfUpdateAtprotoSyncResponseBody)
     .transform(v => v.data$)
     .pipe(z.object({
       error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -113,16 +111,16 @@ export const ComAtprotoSyncNotifyOfUpdateComAtprotoSyncResponseBody$outboundSche
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoSyncNotifyOfUpdateComAtprotoSyncResponseBody$ {
-  /** @deprecated use `ComAtprotoSyncNotifyOfUpdateComAtprotoSyncResponseBody$inboundSchema` instead. */
+export namespace ComAtprotoSyncNotifyOfUpdateAtprotoSyncResponseBody$ {
+  /** @deprecated use `ComAtprotoSyncNotifyOfUpdateAtprotoSyncResponseBody$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoSyncNotifyOfUpdateComAtprotoSyncResponseBody$inboundSchema;
-  /** @deprecated use `ComAtprotoSyncNotifyOfUpdateComAtprotoSyncResponseBody$outboundSchema` instead. */
+    ComAtprotoSyncNotifyOfUpdateAtprotoSyncResponseBody$inboundSchema;
+  /** @deprecated use `ComAtprotoSyncNotifyOfUpdateAtprotoSyncResponseBody$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoSyncNotifyOfUpdateComAtprotoSyncResponseBody$outboundSchema;
-  /** @deprecated use `ComAtprotoSyncNotifyOfUpdateComAtprotoSyncResponseBody$Outbound` instead. */
+    ComAtprotoSyncNotifyOfUpdateAtprotoSyncResponseBody$outboundSchema;
+  /** @deprecated use `ComAtprotoSyncNotifyOfUpdateAtprotoSyncResponseBody$Outbound` instead. */
   export type Outbound =
-    ComAtprotoSyncNotifyOfUpdateComAtprotoSyncResponseBody$Outbound;
+    ComAtprotoSyncNotifyOfUpdateAtprotoSyncResponseBody$Outbound;
 }
 
 /** @internal */

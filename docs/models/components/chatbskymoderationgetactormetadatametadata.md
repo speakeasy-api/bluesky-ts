@@ -6,10 +6,10 @@
 import { ChatBskyModerationGetActorMetadataMetadata } from "bluesky/models/components";
 
 let value: ChatBskyModerationGetActorMetadataMetadata = {
-  messagesSent: 944033,
-  messagesReceived: 36691,
-  convos: 147400,
-  convosStarted: 756287,
+  messagesSent: 898088,
+  messagesReceived: 321473,
+  convos: 474185,
+  convosStarted: 514767,
 };
 ```
 

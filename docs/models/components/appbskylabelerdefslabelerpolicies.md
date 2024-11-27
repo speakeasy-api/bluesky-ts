@@ -7,7 +7,7 @@ import { AppBskyLabelerDefsLabelerPolicies } from "bluesky/models/components";
 
 let value: AppBskyLabelerDefsLabelerPolicies = {
   labelValues: [
-    "nudity",
+    "!no-unauthenticated",
   ],
 };
 ```

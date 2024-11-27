@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type AppBskyGraphUnmuteThreadAppBskyGraphResponseBodyData = {
+export type AppBskyGraphUnmuteThreadGraphResponseBodyData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,13 +16,13 @@ export type AppBskyGraphUnmuteThreadAppBskyGraphResponseBodyData = {
 /**
  * Unauthorized
  */
-export class AppBskyGraphUnmuteThreadAppBskyGraphResponseBody extends Error {
+export class AppBskyGraphUnmuteThreadGraphResponseBody extends Error {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: AppBskyGraphUnmuteThreadAppBskyGraphResponseBodyData;
+  data$: AppBskyGraphUnmuteThreadGraphResponseBodyData;
 
-  constructor(err: AppBskyGraphUnmuteThreadAppBskyGraphResponseBodyData) {
+  constructor(err: AppBskyGraphUnmuteThreadGraphResponseBodyData) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -31,7 +31,7 @@ export class AppBskyGraphUnmuteThreadAppBskyGraphResponseBody extends Error {
 
     this.error = err.error;
 
-    this.name = "AppBskyGraphUnmuteThreadAppBskyGraphResponseBody";
+    this.name = "AppBskyGraphUnmuteThreadGraphResponseBody";
   }
 }
 
@@ -75,32 +75,31 @@ export class AppBskyGraphUnmuteThreadResponseBody extends Error {
 }
 
 /** @internal */
-export const AppBskyGraphUnmuteThreadAppBskyGraphResponseBody$inboundSchema:
-  z.ZodType<
-    AppBskyGraphUnmuteThreadAppBskyGraphResponseBody,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    error: z.literal("AuthMissing"),
-    message: z.string(),
-  })
-    .transform((v) => {
-      return new AppBskyGraphUnmuteThreadAppBskyGraphResponseBody(v);
-    });
+export const AppBskyGraphUnmuteThreadGraphResponseBody$inboundSchema: z.ZodType<
+  AppBskyGraphUnmuteThreadGraphResponseBody,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  error: z.literal("AuthMissing"),
+  message: z.string(),
+})
+  .transform((v) => {
+    return new AppBskyGraphUnmuteThreadGraphResponseBody(v);
+  });
 
 /** @internal */
-export type AppBskyGraphUnmuteThreadAppBskyGraphResponseBody$Outbound = {
+export type AppBskyGraphUnmuteThreadGraphResponseBody$Outbound = {
   error: "AuthMissing";
   message: string;
 };
 
 /** @internal */
-export const AppBskyGraphUnmuteThreadAppBskyGraphResponseBody$outboundSchema:
+export const AppBskyGraphUnmuteThreadGraphResponseBody$outboundSchema:
   z.ZodType<
-    AppBskyGraphUnmuteThreadAppBskyGraphResponseBody$Outbound,
+    AppBskyGraphUnmuteThreadGraphResponseBody$Outbound,
     z.ZodTypeDef,
-    AppBskyGraphUnmuteThreadAppBskyGraphResponseBody
-  > = z.instanceof(AppBskyGraphUnmuteThreadAppBskyGraphResponseBody)
+    AppBskyGraphUnmuteThreadGraphResponseBody
+  > = z.instanceof(AppBskyGraphUnmuteThreadGraphResponseBody)
     .transform(v => v.data$)
     .pipe(z.object({
       error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -111,16 +110,15 @@ export const AppBskyGraphUnmuteThreadAppBskyGraphResponseBody$outboundSchema:
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyGraphUnmuteThreadAppBskyGraphResponseBody$ {
-  /** @deprecated use `AppBskyGraphUnmuteThreadAppBskyGraphResponseBody$inboundSchema` instead. */
+export namespace AppBskyGraphUnmuteThreadGraphResponseBody$ {
+  /** @deprecated use `AppBskyGraphUnmuteThreadGraphResponseBody$inboundSchema` instead. */
   export const inboundSchema =
-    AppBskyGraphUnmuteThreadAppBskyGraphResponseBody$inboundSchema;
-  /** @deprecated use `AppBskyGraphUnmuteThreadAppBskyGraphResponseBody$outboundSchema` instead. */
+    AppBskyGraphUnmuteThreadGraphResponseBody$inboundSchema;
+  /** @deprecated use `AppBskyGraphUnmuteThreadGraphResponseBody$outboundSchema` instead. */
   export const outboundSchema =
-    AppBskyGraphUnmuteThreadAppBskyGraphResponseBody$outboundSchema;
-  /** @deprecated use `AppBskyGraphUnmuteThreadAppBskyGraphResponseBody$Outbound` instead. */
-  export type Outbound =
-    AppBskyGraphUnmuteThreadAppBskyGraphResponseBody$Outbound;
+    AppBskyGraphUnmuteThreadGraphResponseBody$outboundSchema;
+  /** @deprecated use `AppBskyGraphUnmuteThreadGraphResponseBody$Outbound` instead. */
+  export type Outbound = AppBskyGraphUnmuteThreadGraphResponseBody$Outbound;
 }
 
 /** @internal */

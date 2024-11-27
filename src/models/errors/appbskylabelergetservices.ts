@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type AppBskyLabelerGetServicesAppBskyLabelerResponseBodyData = {
+export type AppBskyLabelerGetServicesLabelerResponseBodyData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,13 +16,13 @@ export type AppBskyLabelerGetServicesAppBskyLabelerResponseBodyData = {
 /**
  * Unauthorized
  */
-export class AppBskyLabelerGetServicesAppBskyLabelerResponseBody extends Error {
+export class AppBskyLabelerGetServicesLabelerResponseBody extends Error {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: AppBskyLabelerGetServicesAppBskyLabelerResponseBodyData;
+  data$: AppBskyLabelerGetServicesLabelerResponseBodyData;
 
-  constructor(err: AppBskyLabelerGetServicesAppBskyLabelerResponseBodyData) {
+  constructor(err: AppBskyLabelerGetServicesLabelerResponseBodyData) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -31,7 +31,7 @@ export class AppBskyLabelerGetServicesAppBskyLabelerResponseBody extends Error {
 
     this.error = err.error;
 
-    this.name = "AppBskyLabelerGetServicesAppBskyLabelerResponseBody";
+    this.name = "AppBskyLabelerGetServicesLabelerResponseBody";
   }
 }
 
@@ -75,9 +75,9 @@ export class AppBskyLabelerGetServicesResponseBody extends Error {
 }
 
 /** @internal */
-export const AppBskyLabelerGetServicesAppBskyLabelerResponseBody$inboundSchema:
+export const AppBskyLabelerGetServicesLabelerResponseBody$inboundSchema:
   z.ZodType<
-    AppBskyLabelerGetServicesAppBskyLabelerResponseBody,
+    AppBskyLabelerGetServicesLabelerResponseBody,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -85,22 +85,22 @@ export const AppBskyLabelerGetServicesAppBskyLabelerResponseBody$inboundSchema:
     message: z.string(),
   })
     .transform((v) => {
-      return new AppBskyLabelerGetServicesAppBskyLabelerResponseBody(v);
+      return new AppBskyLabelerGetServicesLabelerResponseBody(v);
     });
 
 /** @internal */
-export type AppBskyLabelerGetServicesAppBskyLabelerResponseBody$Outbound = {
+export type AppBskyLabelerGetServicesLabelerResponseBody$Outbound = {
   error: "AuthMissing";
   message: string;
 };
 
 /** @internal */
-export const AppBskyLabelerGetServicesAppBskyLabelerResponseBody$outboundSchema:
+export const AppBskyLabelerGetServicesLabelerResponseBody$outboundSchema:
   z.ZodType<
-    AppBskyLabelerGetServicesAppBskyLabelerResponseBody$Outbound,
+    AppBskyLabelerGetServicesLabelerResponseBody$Outbound,
     z.ZodTypeDef,
-    AppBskyLabelerGetServicesAppBskyLabelerResponseBody
-  > = z.instanceof(AppBskyLabelerGetServicesAppBskyLabelerResponseBody)
+    AppBskyLabelerGetServicesLabelerResponseBody
+  > = z.instanceof(AppBskyLabelerGetServicesLabelerResponseBody)
     .transform(v => v.data$)
     .pipe(z.object({
       error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -111,16 +111,15 @@ export const AppBskyLabelerGetServicesAppBskyLabelerResponseBody$outboundSchema:
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyLabelerGetServicesAppBskyLabelerResponseBody$ {
-  /** @deprecated use `AppBskyLabelerGetServicesAppBskyLabelerResponseBody$inboundSchema` instead. */
+export namespace AppBskyLabelerGetServicesLabelerResponseBody$ {
+  /** @deprecated use `AppBskyLabelerGetServicesLabelerResponseBody$inboundSchema` instead. */
   export const inboundSchema =
-    AppBskyLabelerGetServicesAppBskyLabelerResponseBody$inboundSchema;
-  /** @deprecated use `AppBskyLabelerGetServicesAppBskyLabelerResponseBody$outboundSchema` instead. */
+    AppBskyLabelerGetServicesLabelerResponseBody$inboundSchema;
+  /** @deprecated use `AppBskyLabelerGetServicesLabelerResponseBody$outboundSchema` instead. */
   export const outboundSchema =
-    AppBskyLabelerGetServicesAppBskyLabelerResponseBody$outboundSchema;
-  /** @deprecated use `AppBskyLabelerGetServicesAppBskyLabelerResponseBody$Outbound` instead. */
-  export type Outbound =
-    AppBskyLabelerGetServicesAppBskyLabelerResponseBody$Outbound;
+    AppBskyLabelerGetServicesLabelerResponseBody$outboundSchema;
+  /** @deprecated use `AppBskyLabelerGetServicesLabelerResponseBody$Outbound` instead. */
+  export type Outbound = AppBskyLabelerGetServicesLabelerResponseBody$Outbound;
 }
 
 /** @internal */

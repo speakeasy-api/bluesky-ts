@@ -8,7 +8,7 @@ import { AppBskyNotificationRegisterPushRequestBody } from "bluesky/models/opera
 let value: AppBskyNotificationRegisterPushRequestBody = {
   serviceDid: "<id>",
   token: "<value>",
-  platform: "ios",
+  platform: "web",
   appId: "<id>",
 };
 ```

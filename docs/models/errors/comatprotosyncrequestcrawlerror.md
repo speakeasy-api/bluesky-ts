@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoSyncRequestCrawlError } from "bluesky/models/errors";
 
-let value: ComAtprotoSyncRequestCrawlError = "InvalidToken";
+let value: ComAtprotoSyncRequestCrawlError = "InvalidRequest";
 ```
 
 ## Values

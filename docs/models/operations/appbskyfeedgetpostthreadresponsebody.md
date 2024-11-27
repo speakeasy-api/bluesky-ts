@@ -9,9 +9,15 @@ import { AppBskyFeedGetPostThreadResponseBody } from "bluesky/models/operations"
 
 let value: AppBskyFeedGetPostThreadResponseBody = {
   thread: {
-    uri: "https://wobbly-instance.org/",
-    author: {
-      did: "<id>",
+    post: {
+      uri: "https://frequent-cardboard.biz/",
+      cid: "<id>",
+      author: {
+        did: "<id>",
+        handle: "<value>",
+      },
+      record: "<value>",
+      indexedAt: new Date("2023-03-31T00:46:25.708Z"),
     },
   },
 };

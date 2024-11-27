@@ -9,7 +9,7 @@ let value: ToolsOzoneSettingDefsOption = {
   key: "<id>",
   did: "<id>",
   value: "<value>",
-  scope: "personal",
+  scope: "instance",
   createdBy: "<id>",
   lastUpdatedBy: "<id>",
 };

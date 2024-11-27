@@ -6,7 +6,7 @@
 import { AppBskyGraphGetListRequest } from "bluesky/models/operations";
 
 let value: AppBskyGraphGetListRequest = {
-  list: "https://dental-morbidity.com/",
+  list: "https://runny-epic.net",
 };
 ```
 

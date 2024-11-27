@@ -6,7 +6,7 @@
 import { AppBskyFeedGetListFeedRequest } from "bluesky/models/operations";
 
 let value: AppBskyFeedGetListFeedRequest = {
-  list: "https://gigantic-freezing.name/",
+  list: "https://quarrelsome-disappointment.info/",
 };
 ```
 

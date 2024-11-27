@@ -8,25 +8,24 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type ToolsOzoneModerationQueryStatusesToolsOzoneModerationResponseBodyData =
-  {
-    error: "AuthMissing";
-    message: string;
-  };
+export type ToolsOzoneModerationQueryStatusesOzoneModerationResponseBodyData = {
+  error: "AuthMissing";
+  message: string;
+};
 
 /**
  * Unauthorized
  */
-export class ToolsOzoneModerationQueryStatusesToolsOzoneModerationResponseBody
+export class ToolsOzoneModerationQueryStatusesOzoneModerationResponseBody
   extends Error
 {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: ToolsOzoneModerationQueryStatusesToolsOzoneModerationResponseBodyData;
+  data$: ToolsOzoneModerationQueryStatusesOzoneModerationResponseBodyData;
 
   constructor(
-    err: ToolsOzoneModerationQueryStatusesToolsOzoneModerationResponseBodyData,
+    err: ToolsOzoneModerationQueryStatusesOzoneModerationResponseBodyData,
   ) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
@@ -36,8 +35,7 @@ export class ToolsOzoneModerationQueryStatusesToolsOzoneModerationResponseBody
 
     this.error = err.error;
 
-    this.name =
-      "ToolsOzoneModerationQueryStatusesToolsOzoneModerationResponseBody";
+    this.name = "ToolsOzoneModerationQueryStatusesOzoneModerationResponseBody";
   }
 }
 
@@ -81,9 +79,9 @@ export class ToolsOzoneModerationQueryStatusesResponseBody extends Error {
 }
 
 /** @internal */
-export const ToolsOzoneModerationQueryStatusesToolsOzoneModerationResponseBody$inboundSchema:
+export const ToolsOzoneModerationQueryStatusesOzoneModerationResponseBody$inboundSchema:
   z.ZodType<
-    ToolsOzoneModerationQueryStatusesToolsOzoneModerationResponseBody,
+    ToolsOzoneModerationQueryStatusesOzoneModerationResponseBody,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -91,27 +89,25 @@ export const ToolsOzoneModerationQueryStatusesToolsOzoneModerationResponseBody$i
     message: z.string(),
   })
     .transform((v) => {
-      return new ToolsOzoneModerationQueryStatusesToolsOzoneModerationResponseBody(
+      return new ToolsOzoneModerationQueryStatusesOzoneModerationResponseBody(
         v,
       );
     });
 
 /** @internal */
-export type ToolsOzoneModerationQueryStatusesToolsOzoneModerationResponseBody$Outbound =
+export type ToolsOzoneModerationQueryStatusesOzoneModerationResponseBody$Outbound =
   {
     error: "AuthMissing";
     message: string;
   };
 
 /** @internal */
-export const ToolsOzoneModerationQueryStatusesToolsOzoneModerationResponseBody$outboundSchema:
+export const ToolsOzoneModerationQueryStatusesOzoneModerationResponseBody$outboundSchema:
   z.ZodType<
-    ToolsOzoneModerationQueryStatusesToolsOzoneModerationResponseBody$Outbound,
+    ToolsOzoneModerationQueryStatusesOzoneModerationResponseBody$Outbound,
     z.ZodTypeDef,
-    ToolsOzoneModerationQueryStatusesToolsOzoneModerationResponseBody
-  > = z.instanceof(
-    ToolsOzoneModerationQueryStatusesToolsOzoneModerationResponseBody,
-  )
+    ToolsOzoneModerationQueryStatusesOzoneModerationResponseBody
+  > = z.instanceof(ToolsOzoneModerationQueryStatusesOzoneModerationResponseBody)
     .transform(v => v.data$)
     .pipe(z.object({
       error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -122,16 +118,16 @@ export const ToolsOzoneModerationQueryStatusesToolsOzoneModerationResponseBody$o
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ToolsOzoneModerationQueryStatusesToolsOzoneModerationResponseBody$ {
-  /** @deprecated use `ToolsOzoneModerationQueryStatusesToolsOzoneModerationResponseBody$inboundSchema` instead. */
+export namespace ToolsOzoneModerationQueryStatusesOzoneModerationResponseBody$ {
+  /** @deprecated use `ToolsOzoneModerationQueryStatusesOzoneModerationResponseBody$inboundSchema` instead. */
   export const inboundSchema =
-    ToolsOzoneModerationQueryStatusesToolsOzoneModerationResponseBody$inboundSchema;
-  /** @deprecated use `ToolsOzoneModerationQueryStatusesToolsOzoneModerationResponseBody$outboundSchema` instead. */
+    ToolsOzoneModerationQueryStatusesOzoneModerationResponseBody$inboundSchema;
+  /** @deprecated use `ToolsOzoneModerationQueryStatusesOzoneModerationResponseBody$outboundSchema` instead. */
   export const outboundSchema =
-    ToolsOzoneModerationQueryStatusesToolsOzoneModerationResponseBody$outboundSchema;
-  /** @deprecated use `ToolsOzoneModerationQueryStatusesToolsOzoneModerationResponseBody$Outbound` instead. */
+    ToolsOzoneModerationQueryStatusesOzoneModerationResponseBody$outboundSchema;
+  /** @deprecated use `ToolsOzoneModerationQueryStatusesOzoneModerationResponseBody$Outbound` instead. */
   export type Outbound =
-    ToolsOzoneModerationQueryStatusesToolsOzoneModerationResponseBody$Outbound;
+    ToolsOzoneModerationQueryStatusesOzoneModerationResponseBody$Outbound;
 }
 
 /** @internal */

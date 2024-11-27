@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod";
+import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -27,6 +28,10 @@ export type ComAtprotoAdminGetInviteCodesRequest = {
 export type ComAtprotoAdminGetInviteCodesResponseBody = {
   cursor?: string | undefined;
   codes: Array<components.ComAtprotoServerDefsInviteCode>;
+};
+
+export type ComAtprotoAdminGetInviteCodesResponse = {
+  result: ComAtprotoAdminGetInviteCodesResponseBody;
 };
 
 /** @internal */
@@ -181,5 +186,74 @@ export function comAtprotoAdminGetInviteCodesResponseBodyFromJSON(
         JSON.parse(x),
       ),
     `Failed to parse 'ComAtprotoAdminGetInviteCodesResponseBody' from JSON`,
+  );
+}
+
+/** @internal */
+export const ComAtprotoAdminGetInviteCodesResponse$inboundSchema: z.ZodType<
+  ComAtprotoAdminGetInviteCodesResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  Result: z.lazy(() => ComAtprotoAdminGetInviteCodesResponseBody$inboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    "Result": "result",
+  });
+});
+
+/** @internal */
+export type ComAtprotoAdminGetInviteCodesResponse$Outbound = {
+  Result: ComAtprotoAdminGetInviteCodesResponseBody$Outbound;
+};
+
+/** @internal */
+export const ComAtprotoAdminGetInviteCodesResponse$outboundSchema: z.ZodType<
+  ComAtprotoAdminGetInviteCodesResponse$Outbound,
+  z.ZodTypeDef,
+  ComAtprotoAdminGetInviteCodesResponse
+> = z.object({
+  result: z.lazy(() =>
+    ComAtprotoAdminGetInviteCodesResponseBody$outboundSchema
+  ),
+}).transform((v) => {
+  return remap$(v, {
+    result: "Result",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace ComAtprotoAdminGetInviteCodesResponse$ {
+  /** @deprecated use `ComAtprotoAdminGetInviteCodesResponse$inboundSchema` instead. */
+  export const inboundSchema =
+    ComAtprotoAdminGetInviteCodesResponse$inboundSchema;
+  /** @deprecated use `ComAtprotoAdminGetInviteCodesResponse$outboundSchema` instead. */
+  export const outboundSchema =
+    ComAtprotoAdminGetInviteCodesResponse$outboundSchema;
+  /** @deprecated use `ComAtprotoAdminGetInviteCodesResponse$Outbound` instead. */
+  export type Outbound = ComAtprotoAdminGetInviteCodesResponse$Outbound;
+}
+
+export function comAtprotoAdminGetInviteCodesResponseToJSON(
+  comAtprotoAdminGetInviteCodesResponse: ComAtprotoAdminGetInviteCodesResponse,
+): string {
+  return JSON.stringify(
+    ComAtprotoAdminGetInviteCodesResponse$outboundSchema.parse(
+      comAtprotoAdminGetInviteCodesResponse,
+    ),
+  );
+}
+
+export function comAtprotoAdminGetInviteCodesResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<ComAtprotoAdminGetInviteCodesResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      ComAtprotoAdminGetInviteCodesResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ComAtprotoAdminGetInviteCodesResponse' from JSON`,
   );
 }

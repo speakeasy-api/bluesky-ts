@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type ComAtprotoServerRequestPasswordResetComAtprotoServerResponseBodyData =
+export type ComAtprotoServerRequestPasswordResetAtprotoServerResponseBodyData =
   {
     error: "AuthMissing";
     message: string;
@@ -17,16 +17,16 @@ export type ComAtprotoServerRequestPasswordResetComAtprotoServerResponseBodyData
 /**
  * Unauthorized
  */
-export class ComAtprotoServerRequestPasswordResetComAtprotoServerResponseBody
+export class ComAtprotoServerRequestPasswordResetAtprotoServerResponseBody
   extends Error
 {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: ComAtprotoServerRequestPasswordResetComAtprotoServerResponseBodyData;
+  data$: ComAtprotoServerRequestPasswordResetAtprotoServerResponseBodyData;
 
   constructor(
-    err: ComAtprotoServerRequestPasswordResetComAtprotoServerResponseBodyData,
+    err: ComAtprotoServerRequestPasswordResetAtprotoServerResponseBodyData,
   ) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
@@ -36,8 +36,7 @@ export class ComAtprotoServerRequestPasswordResetComAtprotoServerResponseBody
 
     this.error = err.error;
 
-    this.name =
-      "ComAtprotoServerRequestPasswordResetComAtprotoServerResponseBody";
+    this.name = "ComAtprotoServerRequestPasswordResetAtprotoServerResponseBody";
   }
 }
 
@@ -81,9 +80,9 @@ export class ComAtprotoServerRequestPasswordResetResponseBody extends Error {
 }
 
 /** @internal */
-export const ComAtprotoServerRequestPasswordResetComAtprotoServerResponseBody$inboundSchema:
+export const ComAtprotoServerRequestPasswordResetAtprotoServerResponseBody$inboundSchema:
   z.ZodType<
-    ComAtprotoServerRequestPasswordResetComAtprotoServerResponseBody,
+    ComAtprotoServerRequestPasswordResetAtprotoServerResponseBody,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -91,26 +90,26 @@ export const ComAtprotoServerRequestPasswordResetComAtprotoServerResponseBody$in
     message: z.string(),
   })
     .transform((v) => {
-      return new ComAtprotoServerRequestPasswordResetComAtprotoServerResponseBody(
+      return new ComAtprotoServerRequestPasswordResetAtprotoServerResponseBody(
         v,
       );
     });
 
 /** @internal */
-export type ComAtprotoServerRequestPasswordResetComAtprotoServerResponseBody$Outbound =
+export type ComAtprotoServerRequestPasswordResetAtprotoServerResponseBody$Outbound =
   {
     error: "AuthMissing";
     message: string;
   };
 
 /** @internal */
-export const ComAtprotoServerRequestPasswordResetComAtprotoServerResponseBody$outboundSchema:
+export const ComAtprotoServerRequestPasswordResetAtprotoServerResponseBody$outboundSchema:
   z.ZodType<
-    ComAtprotoServerRequestPasswordResetComAtprotoServerResponseBody$Outbound,
+    ComAtprotoServerRequestPasswordResetAtprotoServerResponseBody$Outbound,
     z.ZodTypeDef,
-    ComAtprotoServerRequestPasswordResetComAtprotoServerResponseBody
+    ComAtprotoServerRequestPasswordResetAtprotoServerResponseBody
   > = z.instanceof(
-    ComAtprotoServerRequestPasswordResetComAtprotoServerResponseBody,
+    ComAtprotoServerRequestPasswordResetAtprotoServerResponseBody,
   )
     .transform(v => v.data$)
     .pipe(z.object({
@@ -122,16 +121,16 @@ export const ComAtprotoServerRequestPasswordResetComAtprotoServerResponseBody$ou
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoServerRequestPasswordResetComAtprotoServerResponseBody$ {
-  /** @deprecated use `ComAtprotoServerRequestPasswordResetComAtprotoServerResponseBody$inboundSchema` instead. */
+export namespace ComAtprotoServerRequestPasswordResetAtprotoServerResponseBody$ {
+  /** @deprecated use `ComAtprotoServerRequestPasswordResetAtprotoServerResponseBody$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoServerRequestPasswordResetComAtprotoServerResponseBody$inboundSchema;
-  /** @deprecated use `ComAtprotoServerRequestPasswordResetComAtprotoServerResponseBody$outboundSchema` instead. */
+    ComAtprotoServerRequestPasswordResetAtprotoServerResponseBody$inboundSchema;
+  /** @deprecated use `ComAtprotoServerRequestPasswordResetAtprotoServerResponseBody$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoServerRequestPasswordResetComAtprotoServerResponseBody$outboundSchema;
-  /** @deprecated use `ComAtprotoServerRequestPasswordResetComAtprotoServerResponseBody$Outbound` instead. */
+    ComAtprotoServerRequestPasswordResetAtprotoServerResponseBody$outboundSchema;
+  /** @deprecated use `ComAtprotoServerRequestPasswordResetAtprotoServerResponseBody$Outbound` instead. */
   export type Outbound =
-    ComAtprotoServerRequestPasswordResetComAtprotoServerResponseBody$Outbound;
+    ComAtprotoServerRequestPasswordResetAtprotoServerResponseBody$Outbound;
 }
 
 /** @internal */

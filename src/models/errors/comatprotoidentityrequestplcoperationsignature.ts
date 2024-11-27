@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type ComAtprotoIdentityRequestPlcOperationSignatureComAtprotoIdentityResponseBodyData =
+export type ComAtprotoIdentityRequestPlcOperationSignatureAtprotoIdentityResponseBodyData =
   {
     error: "AuthMissing";
     message: string;
@@ -17,18 +17,18 @@ export type ComAtprotoIdentityRequestPlcOperationSignatureComAtprotoIdentityResp
 /**
  * Unauthorized
  */
-export class ComAtprotoIdentityRequestPlcOperationSignatureComAtprotoIdentityResponseBody
+export class ComAtprotoIdentityRequestPlcOperationSignatureAtprotoIdentityResponseBody
   extends Error
 {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
   data$:
-    ComAtprotoIdentityRequestPlcOperationSignatureComAtprotoIdentityResponseBodyData;
+    ComAtprotoIdentityRequestPlcOperationSignatureAtprotoIdentityResponseBodyData;
 
   constructor(
     err:
-      ComAtprotoIdentityRequestPlcOperationSignatureComAtprotoIdentityResponseBodyData,
+      ComAtprotoIdentityRequestPlcOperationSignatureAtprotoIdentityResponseBodyData,
   ) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
@@ -39,7 +39,7 @@ export class ComAtprotoIdentityRequestPlcOperationSignatureComAtprotoIdentityRes
     this.error = err.error;
 
     this.name =
-      "ComAtprotoIdentityRequestPlcOperationSignatureComAtprotoIdentityResponseBody";
+      "ComAtprotoIdentityRequestPlcOperationSignatureAtprotoIdentityResponseBody";
   }
 }
 
@@ -87,9 +87,9 @@ export class ComAtprotoIdentityRequestPlcOperationSignatureResponseBody
 }
 
 /** @internal */
-export const ComAtprotoIdentityRequestPlcOperationSignatureComAtprotoIdentityResponseBody$inboundSchema:
+export const ComAtprotoIdentityRequestPlcOperationSignatureAtprotoIdentityResponseBody$inboundSchema:
   z.ZodType<
-    ComAtprotoIdentityRequestPlcOperationSignatureComAtprotoIdentityResponseBody,
+    ComAtprotoIdentityRequestPlcOperationSignatureAtprotoIdentityResponseBody,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -97,26 +97,26 @@ export const ComAtprotoIdentityRequestPlcOperationSignatureComAtprotoIdentityRes
     message: z.string(),
   })
     .transform((v) => {
-      return new ComAtprotoIdentityRequestPlcOperationSignatureComAtprotoIdentityResponseBody(
+      return new ComAtprotoIdentityRequestPlcOperationSignatureAtprotoIdentityResponseBody(
         v,
       );
     });
 
 /** @internal */
-export type ComAtprotoIdentityRequestPlcOperationSignatureComAtprotoIdentityResponseBody$Outbound =
+export type ComAtprotoIdentityRequestPlcOperationSignatureAtprotoIdentityResponseBody$Outbound =
   {
     error: "AuthMissing";
     message: string;
   };
 
 /** @internal */
-export const ComAtprotoIdentityRequestPlcOperationSignatureComAtprotoIdentityResponseBody$outboundSchema:
+export const ComAtprotoIdentityRequestPlcOperationSignatureAtprotoIdentityResponseBody$outboundSchema:
   z.ZodType<
-    ComAtprotoIdentityRequestPlcOperationSignatureComAtprotoIdentityResponseBody$Outbound,
+    ComAtprotoIdentityRequestPlcOperationSignatureAtprotoIdentityResponseBody$Outbound,
     z.ZodTypeDef,
-    ComAtprotoIdentityRequestPlcOperationSignatureComAtprotoIdentityResponseBody
+    ComAtprotoIdentityRequestPlcOperationSignatureAtprotoIdentityResponseBody
   > = z.instanceof(
-    ComAtprotoIdentityRequestPlcOperationSignatureComAtprotoIdentityResponseBody,
+    ComAtprotoIdentityRequestPlcOperationSignatureAtprotoIdentityResponseBody,
   )
     .transform(v => v.data$)
     .pipe(z.object({
@@ -128,16 +128,16 @@ export const ComAtprotoIdentityRequestPlcOperationSignatureComAtprotoIdentityRes
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoIdentityRequestPlcOperationSignatureComAtprotoIdentityResponseBody$ {
-  /** @deprecated use `ComAtprotoIdentityRequestPlcOperationSignatureComAtprotoIdentityResponseBody$inboundSchema` instead. */
+export namespace ComAtprotoIdentityRequestPlcOperationSignatureAtprotoIdentityResponseBody$ {
+  /** @deprecated use `ComAtprotoIdentityRequestPlcOperationSignatureAtprotoIdentityResponseBody$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoIdentityRequestPlcOperationSignatureComAtprotoIdentityResponseBody$inboundSchema;
-  /** @deprecated use `ComAtprotoIdentityRequestPlcOperationSignatureComAtprotoIdentityResponseBody$outboundSchema` instead. */
+    ComAtprotoIdentityRequestPlcOperationSignatureAtprotoIdentityResponseBody$inboundSchema;
+  /** @deprecated use `ComAtprotoIdentityRequestPlcOperationSignatureAtprotoIdentityResponseBody$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoIdentityRequestPlcOperationSignatureComAtprotoIdentityResponseBody$outboundSchema;
-  /** @deprecated use `ComAtprotoIdentityRequestPlcOperationSignatureComAtprotoIdentityResponseBody$Outbound` instead. */
+    ComAtprotoIdentityRequestPlcOperationSignatureAtprotoIdentityResponseBody$outboundSchema;
+  /** @deprecated use `ComAtprotoIdentityRequestPlcOperationSignatureAtprotoIdentityResponseBody$Outbound` instead. */
   export type Outbound =
-    ComAtprotoIdentityRequestPlcOperationSignatureComAtprotoIdentityResponseBody$Outbound;
+    ComAtprotoIdentityRequestPlcOperationSignatureAtprotoIdentityResponseBody$Outbound;
 }
 
 /** @internal */

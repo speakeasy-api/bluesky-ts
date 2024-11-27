@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod";
+import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -117,6 +118,10 @@ export type ToolsOzoneModerationQueryStatusesRequest = {
 export type ToolsOzoneModerationQueryStatusesResponseBody = {
   cursor?: string | undefined;
   subjectStatuses: Array<components.ToolsOzoneModerationDefsSubjectStatusView>;
+};
+
+export type ToolsOzoneModerationQueryStatusesResponse = {
+  result: ToolsOzoneModerationQueryStatusesResponseBody;
 };
 
 /** @internal */
@@ -372,5 +377,83 @@ export function toolsOzoneModerationQueryStatusesResponseBodyFromJSON(
         JSON.parse(x),
       ),
     `Failed to parse 'ToolsOzoneModerationQueryStatusesResponseBody' from JSON`,
+  );
+}
+
+/** @internal */
+export const ToolsOzoneModerationQueryStatusesResponse$inboundSchema: z.ZodType<
+  ToolsOzoneModerationQueryStatusesResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  Result: z.lazy(() =>
+    ToolsOzoneModerationQueryStatusesResponseBody$inboundSchema
+  ),
+}).transform((v) => {
+  return remap$(v, {
+    "Result": "result",
+  });
+});
+
+/** @internal */
+export type ToolsOzoneModerationQueryStatusesResponse$Outbound = {
+  Result: ToolsOzoneModerationQueryStatusesResponseBody$Outbound;
+};
+
+/** @internal */
+export const ToolsOzoneModerationQueryStatusesResponse$outboundSchema:
+  z.ZodType<
+    ToolsOzoneModerationQueryStatusesResponse$Outbound,
+    z.ZodTypeDef,
+    ToolsOzoneModerationQueryStatusesResponse
+  > = z.object({
+    result: z.lazy(() =>
+      ToolsOzoneModerationQueryStatusesResponseBody$outboundSchema
+    ),
+  }).transform((v) => {
+    return remap$(v, {
+      result: "Result",
+    });
+  });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace ToolsOzoneModerationQueryStatusesResponse$ {
+  /** @deprecated use `ToolsOzoneModerationQueryStatusesResponse$inboundSchema` instead. */
+  export const inboundSchema =
+    ToolsOzoneModerationQueryStatusesResponse$inboundSchema;
+  /** @deprecated use `ToolsOzoneModerationQueryStatusesResponse$outboundSchema` instead. */
+  export const outboundSchema =
+    ToolsOzoneModerationQueryStatusesResponse$outboundSchema;
+  /** @deprecated use `ToolsOzoneModerationQueryStatusesResponse$Outbound` instead. */
+  export type Outbound = ToolsOzoneModerationQueryStatusesResponse$Outbound;
+}
+
+export function toolsOzoneModerationQueryStatusesResponseToJSON(
+  toolsOzoneModerationQueryStatusesResponse:
+    ToolsOzoneModerationQueryStatusesResponse,
+): string {
+  return JSON.stringify(
+    ToolsOzoneModerationQueryStatusesResponse$outboundSchema.parse(
+      toolsOzoneModerationQueryStatusesResponse,
+    ),
+  );
+}
+
+export function toolsOzoneModerationQueryStatusesResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  ToolsOzoneModerationQueryStatusesResponse,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      ToolsOzoneModerationQueryStatusesResponse$inboundSchema.parse(
+        JSON.parse(x),
+      ),
+    `Failed to parse 'ToolsOzoneModerationQueryStatusesResponse' from JSON`,
   );
 }

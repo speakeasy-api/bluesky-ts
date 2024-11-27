@@ -9,7 +9,7 @@ let value: ToolsOzoneSettingRemoveOptionsRequestBody = {
   keys: [
     "<id>",
   ],
-  scope: "instance",
+  scope: "personal",
 };
 ```
 

@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod";
+import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
@@ -19,6 +20,10 @@ export type ToolsOzoneTeamListMembersRequest = {
 export type ToolsOzoneTeamListMembersResponseBody = {
   cursor?: string | undefined;
   members: Array<components.ToolsOzoneTeamDefsMember>;
+};
+
+export type ToolsOzoneTeamListMembersResponse = {
+  result: ToolsOzoneTeamListMembersResponseBody;
 };
 
 /** @internal */
@@ -139,5 +144,70 @@ export function toolsOzoneTeamListMembersResponseBodyFromJSON(
     (x) =>
       ToolsOzoneTeamListMembersResponseBody$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'ToolsOzoneTeamListMembersResponseBody' from JSON`,
+  );
+}
+
+/** @internal */
+export const ToolsOzoneTeamListMembersResponse$inboundSchema: z.ZodType<
+  ToolsOzoneTeamListMembersResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  Result: z.lazy(() => ToolsOzoneTeamListMembersResponseBody$inboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    "Result": "result",
+  });
+});
+
+/** @internal */
+export type ToolsOzoneTeamListMembersResponse$Outbound = {
+  Result: ToolsOzoneTeamListMembersResponseBody$Outbound;
+};
+
+/** @internal */
+export const ToolsOzoneTeamListMembersResponse$outboundSchema: z.ZodType<
+  ToolsOzoneTeamListMembersResponse$Outbound,
+  z.ZodTypeDef,
+  ToolsOzoneTeamListMembersResponse
+> = z.object({
+  result: z.lazy(() => ToolsOzoneTeamListMembersResponseBody$outboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    result: "Result",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace ToolsOzoneTeamListMembersResponse$ {
+  /** @deprecated use `ToolsOzoneTeamListMembersResponse$inboundSchema` instead. */
+  export const inboundSchema = ToolsOzoneTeamListMembersResponse$inboundSchema;
+  /** @deprecated use `ToolsOzoneTeamListMembersResponse$outboundSchema` instead. */
+  export const outboundSchema =
+    ToolsOzoneTeamListMembersResponse$outboundSchema;
+  /** @deprecated use `ToolsOzoneTeamListMembersResponse$Outbound` instead. */
+  export type Outbound = ToolsOzoneTeamListMembersResponse$Outbound;
+}
+
+export function toolsOzoneTeamListMembersResponseToJSON(
+  toolsOzoneTeamListMembersResponse: ToolsOzoneTeamListMembersResponse,
+): string {
+  return JSON.stringify(
+    ToolsOzoneTeamListMembersResponse$outboundSchema.parse(
+      toolsOzoneTeamListMembersResponse,
+    ),
+  );
+}
+
+export function toolsOzoneTeamListMembersResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<ToolsOzoneTeamListMembersResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ToolsOzoneTeamListMembersResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ToolsOzoneTeamListMembersResponse' from JSON`,
   );
 }

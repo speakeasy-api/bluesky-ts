@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoModerationCreateReportError } from "bluesky/models/errors";
 
-let value: ComAtprotoModerationCreateReportError = "InvalidRequest";
+let value: ComAtprotoModerationCreateReportError = "InvalidToken";
 ```
 
 ## Values

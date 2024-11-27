@@ -10,7 +10,7 @@ import { ComAtprotoRepoListRecordsResponseBody } from "bluesky/models/operations
 let value: ComAtprotoRepoListRecordsResponseBody = {
   records: [
     {
-      uri: "https://ugly-flame.org",
+      uri: "https://bossy-hamburger.biz/",
       cid: "<id>",
       value: "<value>",
     },

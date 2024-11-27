@@ -7,7 +7,7 @@ If active=false, this optional field indicates a possible reason for why the acc
 ```typescript
 import { ComAtprotoServerGetSessionStatus } from "bluesky/models/operations";
 
-let value: ComAtprotoServerGetSessionStatus = "suspended";
+let value: ComAtprotoServerGetSessionStatus = "deactivated";
 ```
 
 ## Values

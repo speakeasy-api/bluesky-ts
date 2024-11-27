@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod";
+import { remap as remap$ } from "../../lib/primitives.js";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
@@ -21,6 +22,10 @@ export type ToolsOzoneSetGetValuesResponseBody = {
   set: components.ToolsOzoneSetDefsSetView;
   values: Array<string>;
   cursor?: string | undefined;
+};
+
+export type ToolsOzoneSetGetValuesResponse = {
+  result: ToolsOzoneSetGetValuesResponseBody;
 };
 
 /** @internal */
@@ -146,5 +151,69 @@ export function toolsOzoneSetGetValuesResponseBodyFromJSON(
     (x) =>
       ToolsOzoneSetGetValuesResponseBody$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'ToolsOzoneSetGetValuesResponseBody' from JSON`,
+  );
+}
+
+/** @internal */
+export const ToolsOzoneSetGetValuesResponse$inboundSchema: z.ZodType<
+  ToolsOzoneSetGetValuesResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  Result: z.lazy(() => ToolsOzoneSetGetValuesResponseBody$inboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    "Result": "result",
+  });
+});
+
+/** @internal */
+export type ToolsOzoneSetGetValuesResponse$Outbound = {
+  Result: ToolsOzoneSetGetValuesResponseBody$Outbound;
+};
+
+/** @internal */
+export const ToolsOzoneSetGetValuesResponse$outboundSchema: z.ZodType<
+  ToolsOzoneSetGetValuesResponse$Outbound,
+  z.ZodTypeDef,
+  ToolsOzoneSetGetValuesResponse
+> = z.object({
+  result: z.lazy(() => ToolsOzoneSetGetValuesResponseBody$outboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    result: "Result",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace ToolsOzoneSetGetValuesResponse$ {
+  /** @deprecated use `ToolsOzoneSetGetValuesResponse$inboundSchema` instead. */
+  export const inboundSchema = ToolsOzoneSetGetValuesResponse$inboundSchema;
+  /** @deprecated use `ToolsOzoneSetGetValuesResponse$outboundSchema` instead. */
+  export const outboundSchema = ToolsOzoneSetGetValuesResponse$outboundSchema;
+  /** @deprecated use `ToolsOzoneSetGetValuesResponse$Outbound` instead. */
+  export type Outbound = ToolsOzoneSetGetValuesResponse$Outbound;
+}
+
+export function toolsOzoneSetGetValuesResponseToJSON(
+  toolsOzoneSetGetValuesResponse: ToolsOzoneSetGetValuesResponse,
+): string {
+  return JSON.stringify(
+    ToolsOzoneSetGetValuesResponse$outboundSchema.parse(
+      toolsOzoneSetGetValuesResponse,
+    ),
+  );
+}
+
+export function toolsOzoneSetGetValuesResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<ToolsOzoneSetGetValuesResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ToolsOzoneSetGetValuesResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ToolsOzoneSetGetValuesResponse' from JSON`,
   );
 }

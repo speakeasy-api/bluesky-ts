@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type ComAtprotoModerationCreateReportComAtprotoModerationResponseBodyData =
+export type ComAtprotoModerationCreateReportAtprotoModerationResponseBodyData =
   {
     error: "AuthMissing";
     message: string;
@@ -17,16 +17,16 @@ export type ComAtprotoModerationCreateReportComAtprotoModerationResponseBodyData
 /**
  * Unauthorized
  */
-export class ComAtprotoModerationCreateReportComAtprotoModerationResponseBody
+export class ComAtprotoModerationCreateReportAtprotoModerationResponseBody
   extends Error
 {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: ComAtprotoModerationCreateReportComAtprotoModerationResponseBodyData;
+  data$: ComAtprotoModerationCreateReportAtprotoModerationResponseBodyData;
 
   constructor(
-    err: ComAtprotoModerationCreateReportComAtprotoModerationResponseBodyData,
+    err: ComAtprotoModerationCreateReportAtprotoModerationResponseBodyData,
   ) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
@@ -36,8 +36,7 @@ export class ComAtprotoModerationCreateReportComAtprotoModerationResponseBody
 
     this.error = err.error;
 
-    this.name =
-      "ComAtprotoModerationCreateReportComAtprotoModerationResponseBody";
+    this.name = "ComAtprotoModerationCreateReportAtprotoModerationResponseBody";
   }
 }
 
@@ -81,9 +80,9 @@ export class ComAtprotoModerationCreateReportResponseBody extends Error {
 }
 
 /** @internal */
-export const ComAtprotoModerationCreateReportComAtprotoModerationResponseBody$inboundSchema:
+export const ComAtprotoModerationCreateReportAtprotoModerationResponseBody$inboundSchema:
   z.ZodType<
-    ComAtprotoModerationCreateReportComAtprotoModerationResponseBody,
+    ComAtprotoModerationCreateReportAtprotoModerationResponseBody,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -91,26 +90,26 @@ export const ComAtprotoModerationCreateReportComAtprotoModerationResponseBody$in
     message: z.string(),
   })
     .transform((v) => {
-      return new ComAtprotoModerationCreateReportComAtprotoModerationResponseBody(
+      return new ComAtprotoModerationCreateReportAtprotoModerationResponseBody(
         v,
       );
     });
 
 /** @internal */
-export type ComAtprotoModerationCreateReportComAtprotoModerationResponseBody$Outbound =
+export type ComAtprotoModerationCreateReportAtprotoModerationResponseBody$Outbound =
   {
     error: "AuthMissing";
     message: string;
   };
 
 /** @internal */
-export const ComAtprotoModerationCreateReportComAtprotoModerationResponseBody$outboundSchema:
+export const ComAtprotoModerationCreateReportAtprotoModerationResponseBody$outboundSchema:
   z.ZodType<
-    ComAtprotoModerationCreateReportComAtprotoModerationResponseBody$Outbound,
+    ComAtprotoModerationCreateReportAtprotoModerationResponseBody$Outbound,
     z.ZodTypeDef,
-    ComAtprotoModerationCreateReportComAtprotoModerationResponseBody
+    ComAtprotoModerationCreateReportAtprotoModerationResponseBody
   > = z.instanceof(
-    ComAtprotoModerationCreateReportComAtprotoModerationResponseBody,
+    ComAtprotoModerationCreateReportAtprotoModerationResponseBody,
   )
     .transform(v => v.data$)
     .pipe(z.object({
@@ -122,16 +121,16 @@ export const ComAtprotoModerationCreateReportComAtprotoModerationResponseBody$ou
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoModerationCreateReportComAtprotoModerationResponseBody$ {
-  /** @deprecated use `ComAtprotoModerationCreateReportComAtprotoModerationResponseBody$inboundSchema` instead. */
+export namespace ComAtprotoModerationCreateReportAtprotoModerationResponseBody$ {
+  /** @deprecated use `ComAtprotoModerationCreateReportAtprotoModerationResponseBody$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoModerationCreateReportComAtprotoModerationResponseBody$inboundSchema;
-  /** @deprecated use `ComAtprotoModerationCreateReportComAtprotoModerationResponseBody$outboundSchema` instead. */
+    ComAtprotoModerationCreateReportAtprotoModerationResponseBody$inboundSchema;
+  /** @deprecated use `ComAtprotoModerationCreateReportAtprotoModerationResponseBody$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoModerationCreateReportComAtprotoModerationResponseBody$outboundSchema;
-  /** @deprecated use `ComAtprotoModerationCreateReportComAtprotoModerationResponseBody$Outbound` instead. */
+    ComAtprotoModerationCreateReportAtprotoModerationResponseBody$outboundSchema;
+  /** @deprecated use `ComAtprotoModerationCreateReportAtprotoModerationResponseBody$Outbound` instead. */
   export type Outbound =
-    ComAtprotoModerationCreateReportComAtprotoModerationResponseBody$Outbound;
+    ComAtprotoModerationCreateReportAtprotoModerationResponseBody$Outbound;
 }
 
 /** @internal */

@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoSyncGetRecordError } from "bluesky/models/errors";
 
-let value: ComAtprotoSyncGetRecordError = "ExpiredToken";
+let value: ComAtprotoSyncGetRecordError = "InvalidToken";
 ```
 
 ## Values

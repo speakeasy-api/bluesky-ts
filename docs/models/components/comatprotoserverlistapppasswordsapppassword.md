@@ -7,7 +7,7 @@ import { ComAtprotoServerListAppPasswordsAppPassword } from "bluesky/models/comp
 
 let value: ComAtprotoServerListAppPasswordsAppPassword = {
   name: "<value>",
-  createdAt: new Date("2024-08-27T16:51:13.989Z"),
+  createdAt: new Date("2023-09-04T21:05:13.882Z"),
 };
 ```
 

@@ -6,28 +6,44 @@
 import { ToolsOzoneModerationDefsModEventViewDetail } from "bluesky/models/components";
 
 let value: ToolsOzoneModerationDefsModEventViewDetail = {
-  id: 531494,
+  id: 40874,
   event: {
-    add: [
+    createLabelVals: [
       "<value>",
     ],
-    remove: [
+    negateLabelVals: [
       "<value>",
     ],
   },
   subject: {
-    did: "<id>",
+    uri: "https://soggy-rule.org",
+    cid: "<id>",
+    value: "<value>",
+    blobCids: [
+      "<id>",
+    ],
+    indexedAt: new Date("2024-02-29T11:16:40.701Z"),
+    moderation: {},
+    repo: {
+      did: "<id>",
+      handle: "<value>",
+      relatedRecords: [
+        "<value>",
+      ],
+      indexedAt: new Date("2024-12-08T23:54:11.569Z"),
+      moderation: {},
+    },
   },
   subjectBlobs: [
     {
       cid: "<id>",
       mimeType: "<value>",
-      size: 353819,
-      createdAt: new Date("2023-02-19T13:57:23.980Z"),
+      size: 898826,
+      createdAt: new Date("2023-10-06T01:00:30.025Z"),
     },
   ],
   createdBy: "<id>",
-  createdAt: new Date("2023-12-23T00:24:20.036Z"),
+  createdAt: new Date("2023-10-07T14:53:57.713Z"),
 };
 ```
 

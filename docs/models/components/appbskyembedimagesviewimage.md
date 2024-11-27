@@ -6,8 +6,8 @@
 import { AppBskyEmbedImagesViewImage } from "bluesky/models/components";
 
 let value: AppBskyEmbedImagesViewImage = {
-  thumb: "https://hefty-knight.info",
-  fullsize: "https://faraway-kielbasa.net/",
+  thumb: "https://authorized-embarrassment.net",
+  fullsize: "https://decisive-bungalow.net/",
   alt: "<value>",
 };
 ```

@@ -5,7 +5,7 @@
 ```typescript
 import { AppBskyFeedSearchPostsError } from "bluesky/models/errors";
 
-let value: AppBskyFeedSearchPostsError = "InvalidToken";
+let value: AppBskyFeedSearchPostsError = "InvalidRequest";
 ```
 
 ## Values

@@ -7,7 +7,7 @@ If active=false, this optional field indicates a possible reason for why the acc
 ```typescript
 import { Status } from "bluesky/models/operations";
 
-let value: Status = "takendown";
+let value: Status = "deactivated";
 ```
 
 ## Values

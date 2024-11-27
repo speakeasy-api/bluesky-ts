@@ -9,7 +9,7 @@ let value: ToolsOzoneSignatureFindRelatedAccountsRelatedAccount = {
   account: {
     did: "<id>",
     handle: "<value>",
-    indexedAt: new Date("2024-12-30T04:43:36.074Z"),
+    indexedAt: new Date("2023-07-24T21:41:06.633Z"),
   },
 };
 ```

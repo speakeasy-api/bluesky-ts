@@ -5,11 +5,11 @@
 ```typescript
 import { ComAtprotoServerResetPasswordError } from "bluesky/models/errors";
 
-let value: ComAtprotoServerResetPasswordError = "InvalidToken";
+let value: ComAtprotoServerResetPasswordError = "InvalidRequest";
 ```
 
 ## Values
 
 ```typescript
-"InvalidRequest" | "ExpiredToken" | "InvalidToken"
+"ExpiredToken" | "InvalidRequest" | "InvalidToken"
 ```

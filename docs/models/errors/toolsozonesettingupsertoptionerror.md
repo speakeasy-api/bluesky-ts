@@ -5,7 +5,7 @@
 ```typescript
 import { ToolsOzoneSettingUpsertOptionError } from "bluesky/models/errors";
 
-let value: ToolsOzoneSettingUpsertOptionError = "InvalidRequest";
+let value: ToolsOzoneSettingUpsertOptionError = "ExpiredToken";
 ```
 
 ## Values

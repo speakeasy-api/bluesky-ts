@@ -5,7 +5,7 @@
 ```typescript
 import { AppBskyGraphGetMutesError } from "bluesky/models/errors";
 
-let value: AppBskyGraphGetMutesError = "InvalidToken";
+let value: AppBskyGraphGetMutesError = "ExpiredToken";
 ```
 
 ## Values

@@ -5,7 +5,7 @@
 ```typescript
 import { AppBskyGraphGetFollowsError } from "bluesky/models/errors";
 
-let value: AppBskyGraphGetFollowsError = "InvalidToken";
+let value: AppBskyGraphGetFollowsError = "ExpiredToken";
 ```
 
 ## Values

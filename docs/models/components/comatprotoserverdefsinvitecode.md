@@ -7,15 +7,15 @@ import { ComAtprotoServerDefsInviteCode } from "bluesky/models/components";
 
 let value: ComAtprotoServerDefsInviteCode = {
   code: "<value>",
-  available: 516124,
+  available: 712893,
   disabled: false,
   forAccount: "<value>",
   createdBy: "<value>",
-  createdAt: new Date("2022-08-29T23:13:04.327Z"),
+  createdAt: new Date("2024-06-29T04:50:59.216Z"),
   uses: [
     {
       usedBy: "<id>",
-      usedAt: new Date("2022-10-28T15:04:27.098Z"),
+      usedAt: new Date("2022-03-05T11:14:44.230Z"),
     },
   ],
 };

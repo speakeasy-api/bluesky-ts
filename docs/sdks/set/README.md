@@ -1,42 +1,42 @@
 # Set
-(*tools.ozone.set*)
+(*ozone.set*)
 
 ## Overview
 
 ### Available Operations
 
-* [toolsOzoneSetAddValues](#toolsozonesetaddvalues) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
+* [addValues](#addvalues) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Add values to a specific set. Attempting to add values to a set that does not exist will result in an error.
-* [toolsOzoneSetDeleteSet](#toolsozonesetdeleteset) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
+* [deleteSet](#deleteset) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Delete an entire set. Attempting to delete a set that does not exist will result in an error.
-* [toolsOzoneSetDeleteValues](#toolsozonesetdeletevalues) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
+* [deleteValues](#deletevalues) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Delete values from a specific set. Attempting to delete values that are not in the set will not result in an error
-* [toolsOzoneSetGetValues](#toolsozonesetgetvalues) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
+* [getValues](#getvalues) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Get a specific set and its values
-* [toolsOzoneSetQuerySets](#toolsozonesetquerysets) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
+* [querySets](#querysets) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Query available sets
-* [toolsOzoneSetUpsertSet](#toolsozonesetupsertset) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
+* [upsertSet](#upsertset) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Create or update set metadata
 
-## toolsOzoneSetAddValues
+## addValues
 
 *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
@@ -54,7 +54,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  await bluesky.tools.ozone.set.toolsOzoneSetAddValues({
+  await bluesky.ozone.set.addValues({
     name: "<value>",
     values: [
       "<value>",
@@ -74,7 +74,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { toolsOzoneSetToolsOzoneSetAddValues } from "bluesky/funcs/toolsOzoneSetToolsOzoneSetAddValues.js";
+import { ozoneSetAddValues } from "bluesky/funcs/ozoneSetAddValues.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -83,7 +83,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await toolsOzoneSetToolsOzoneSetAddValues(bluesky, {
+  const res = await ozoneSetAddValues(bluesky, {
     name: "<value>",
     values: [
       "<value>",
@@ -118,13 +118,13 @@ run();
 
 ### Errors
 
-| Error Type                                             | Status Code                                            | Content Type                                           |
-| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
-| errors.ToolsOzoneSetAddValuesResponseBody              | 400                                                    | application/json                                       |
-| errors.ToolsOzoneSetAddValuesToolsOzoneSetResponseBody | 401                                                    | application/json                                       |
-| errors.APIError                                        | 4XX, 5XX                                               | \*/\*                                                  |
+| Error Type                                        | Status Code                                       | Content Type                                      |
+| ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
+| errors.ToolsOzoneSetAddValuesResponseBody         | 400                                               | application/json                                  |
+| errors.ToolsOzoneSetAddValuesOzoneSetResponseBody | 401                                               | application/json                                  |
+| errors.APIError                                   | 4XX, 5XX                                          | \*/\*                                             |
 
-## toolsOzoneSetDeleteSet
+## deleteSet
 
 *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
@@ -142,7 +142,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.tools.ozone.set.toolsOzoneSetDeleteSet({
+  const result = await bluesky.ozone.set.deleteSet({
     name: "<value>",
   });
 
@@ -159,7 +159,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { toolsOzoneSetToolsOzoneSetDeleteSet } from "bluesky/funcs/toolsOzoneSetToolsOzoneSetDeleteSet.js";
+import { ozoneSetDeleteSet } from "bluesky/funcs/ozoneSetDeleteSet.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -168,7 +168,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await toolsOzoneSetToolsOzoneSetDeleteSet(bluesky, {
+  const res = await ozoneSetDeleteSet(bluesky, {
     name: "<value>",
   });
 
@@ -200,13 +200,13 @@ run();
 
 ### Errors
 
-| Error Type                                             | Status Code                                            | Content Type                                           |
-| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
-| errors.ToolsOzoneSetDeleteSetResponseBody              | 400                                                    | application/json                                       |
-| errors.ToolsOzoneSetDeleteSetToolsOzoneSetResponseBody | 401                                                    | application/json                                       |
-| errors.APIError                                        | 4XX, 5XX                                               | \*/\*                                                  |
+| Error Type                                        | Status Code                                       | Content Type                                      |
+| ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
+| errors.ToolsOzoneSetDeleteSetResponseBody         | 400                                               | application/json                                  |
+| errors.ToolsOzoneSetDeleteSetOzoneSetResponseBody | 401                                               | application/json                                  |
+| errors.APIError                                   | 4XX, 5XX                                          | \*/\*                                             |
 
-## toolsOzoneSetDeleteValues
+## deleteValues
 
 *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
@@ -224,7 +224,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  await bluesky.tools.ozone.set.toolsOzoneSetDeleteValues({
+  await bluesky.ozone.set.deleteValues({
     name: "<value>",
     values: [
       "<value>",
@@ -243,7 +243,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { toolsOzoneSetToolsOzoneSetDeleteValues } from "bluesky/funcs/toolsOzoneSetToolsOzoneSetDeleteValues.js";
+import { ozoneSetDeleteValues } from "bluesky/funcs/ozoneSetDeleteValues.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -252,7 +252,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await toolsOzoneSetToolsOzoneSetDeleteValues(bluesky, {
+  const res = await ozoneSetDeleteValues(bluesky, {
     name: "<value>",
     values: [
       "<value>",
@@ -286,13 +286,13 @@ run();
 
 ### Errors
 
-| Error Type                                                | Status Code                                               | Content Type                                              |
-| --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
-| errors.ToolsOzoneSetDeleteValuesResponseBody              | 400                                                       | application/json                                          |
-| errors.ToolsOzoneSetDeleteValuesToolsOzoneSetResponseBody | 401                                                       | application/json                                          |
-| errors.APIError                                           | 4XX, 5XX                                                  | \*/\*                                                     |
+| Error Type                                           | Status Code                                          | Content Type                                         |
+| ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
+| errors.ToolsOzoneSetDeleteValuesResponseBody         | 400                                                  | application/json                                     |
+| errors.ToolsOzoneSetDeleteValuesOzoneSetResponseBody | 401                                                  | application/json                                     |
+| errors.APIError                                      | 4XX, 5XX                                             | \*/\*                                                |
 
-## toolsOzoneSetGetValues
+## getValues
 
 *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
@@ -310,12 +310,14 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.tools.ozone.set.toolsOzoneSetGetValues({
+  const result = await bluesky.ozone.set.getValues({
     name: "<value>",
   });
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -327,7 +329,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { toolsOzoneSetToolsOzoneSetGetValues } from "bluesky/funcs/toolsOzoneSetToolsOzoneSetGetValues.js";
+import { ozoneSetGetValues } from "bluesky/funcs/ozoneSetGetValues.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -336,7 +338,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await toolsOzoneSetToolsOzoneSetGetValues(bluesky, {
+  const res = await ozoneSetGetValues(bluesky, {
     name: "<value>",
   });
 
@@ -346,8 +348,10 @@ async function run() {
 
   const { value: result } = res;
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -364,17 +368,17 @@ run();
 
 ### Response
 
-**Promise\<[operations.ToolsOzoneSetGetValuesResponseBody](../../models/operations/toolsozonesetgetvaluesresponsebody.md)\>**
+**Promise\<[operations.ToolsOzoneSetGetValuesResponse](../../models/operations/toolsozonesetgetvaluesresponse.md)\>**
 
 ### Errors
 
-| Error Type                                             | Status Code                                            | Content Type                                           |
-| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
-| errors.ToolsOzoneSetGetValuesResponseBody              | 400                                                    | application/json                                       |
-| errors.ToolsOzoneSetGetValuesToolsOzoneSetResponseBody | 401                                                    | application/json                                       |
-| errors.APIError                                        | 4XX, 5XX                                               | \*/\*                                                  |
+| Error Type                                        | Status Code                                       | Content Type                                      |
+| ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
+| errors.ToolsOzoneSetGetValuesResponseBody         | 400                                               | application/json                                  |
+| errors.ToolsOzoneSetGetValuesOzoneSetResponseBody | 401                                               | application/json                                  |
+| errors.APIError                                   | 4XX, 5XX                                          | \*/\*                                             |
 
-## toolsOzoneSetQuerySets
+## querySets
 
 *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
@@ -392,10 +396,12 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.tools.ozone.set.toolsOzoneSetQuerySets();
+  const result = await bluesky.ozone.set.querySets();
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -407,7 +413,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { toolsOzoneSetToolsOzoneSetQuerySets } from "bluesky/funcs/toolsOzoneSetToolsOzoneSetQuerySets.js";
+import { ozoneSetQuerySets } from "bluesky/funcs/ozoneSetQuerySets.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -416,7 +422,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await toolsOzoneSetToolsOzoneSetQuerySets(bluesky);
+  const res = await ozoneSetQuerySets(bluesky);
 
   if (!res.ok) {
     throw res.error;
@@ -424,8 +430,10 @@ async function run() {
 
   const { value: result } = res;
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -442,17 +450,17 @@ run();
 
 ### Response
 
-**Promise\<[operations.ToolsOzoneSetQuerySetsResponseBody](../../models/operations/toolsozonesetquerysetsresponsebody.md)\>**
+**Promise\<[operations.ToolsOzoneSetQuerySetsResponse](../../models/operations/toolsozonesetquerysetsresponse.md)\>**
 
 ### Errors
 
-| Error Type                                             | Status Code                                            | Content Type                                           |
-| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
-| errors.ToolsOzoneSetQuerySetsResponseBody              | 400                                                    | application/json                                       |
-| errors.ToolsOzoneSetQuerySetsToolsOzoneSetResponseBody | 401                                                    | application/json                                       |
-| errors.APIError                                        | 4XX, 5XX                                               | \*/\*                                                  |
+| Error Type                                        | Status Code                                       | Content Type                                      |
+| ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
+| errors.ToolsOzoneSetQuerySetsResponseBody         | 400                                               | application/json                                  |
+| errors.ToolsOzoneSetQuerySetsOzoneSetResponseBody | 401                                               | application/json                                  |
+| errors.APIError                                   | 4XX, 5XX                                          | \*/\*                                             |
 
-## toolsOzoneSetUpsertSet
+## upsertSet
 
 *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
@@ -470,7 +478,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.tools.ozone.set.toolsOzoneSetUpsertSet({
+  const result = await bluesky.ozone.set.upsertSet({
     name: "<value>",
   });
 
@@ -487,7 +495,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { toolsOzoneSetToolsOzoneSetUpsertSet } from "bluesky/funcs/toolsOzoneSetToolsOzoneSetUpsertSet.js";
+import { ozoneSetUpsertSet } from "bluesky/funcs/ozoneSetUpsertSet.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -496,7 +504,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await toolsOzoneSetToolsOzoneSetUpsertSet(bluesky, {
+  const res = await ozoneSetUpsertSet(bluesky, {
     name: "<value>",
   });
 
@@ -528,8 +536,8 @@ run();
 
 ### Errors
 
-| Error Type                                             | Status Code                                            | Content Type                                           |
-| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
-| errors.ToolsOzoneSetUpsertSetResponseBody              | 400                                                    | application/json                                       |
-| errors.ToolsOzoneSetUpsertSetToolsOzoneSetResponseBody | 401                                                    | application/json                                       |
-| errors.APIError                                        | 4XX, 5XX                                               | \*/\*                                                  |
+| Error Type                                        | Status Code                                       | Content Type                                      |
+| ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
+| errors.ToolsOzoneSetUpsertSetResponseBody         | 400                                               | application/json                                  |
+| errors.ToolsOzoneSetUpsertSetOzoneSetResponseBody | 401                                               | application/json                                  |
+| errors.APIError                                   | 4XX, 5XX                                          | \*/\*                                             |

@@ -5,7 +5,7 @@
 ```typescript
 import { ToolsOzoneTeamAddMemberError } from "bluesky/models/errors";
 
-let value: ToolsOzoneTeamAddMemberError = "MemberAlreadyExists";
+let value: ToolsOzoneTeamAddMemberError = "InvalidToken";
 ```
 
 ## Values

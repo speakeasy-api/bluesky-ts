@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type AppBskyActorGetPreferencesAppBskyActorResponseBodyData = {
+export type AppBskyActorGetPreferencesActorResponseBodyData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,13 +16,13 @@ export type AppBskyActorGetPreferencesAppBskyActorResponseBodyData = {
 /**
  * Unauthorized
  */
-export class AppBskyActorGetPreferencesAppBskyActorResponseBody extends Error {
+export class AppBskyActorGetPreferencesActorResponseBody extends Error {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: AppBskyActorGetPreferencesAppBskyActorResponseBodyData;
+  data$: AppBskyActorGetPreferencesActorResponseBodyData;
 
-  constructor(err: AppBskyActorGetPreferencesAppBskyActorResponseBodyData) {
+  constructor(err: AppBskyActorGetPreferencesActorResponseBodyData) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -31,7 +31,7 @@ export class AppBskyActorGetPreferencesAppBskyActorResponseBody extends Error {
 
     this.error = err.error;
 
-    this.name = "AppBskyActorGetPreferencesAppBskyActorResponseBody";
+    this.name = "AppBskyActorGetPreferencesActorResponseBody";
   }
 }
 
@@ -73,9 +73,9 @@ export class AppBskyActorGetPreferencesResponseBody extends Error {
 }
 
 /** @internal */
-export const AppBskyActorGetPreferencesAppBskyActorResponseBody$inboundSchema:
+export const AppBskyActorGetPreferencesActorResponseBody$inboundSchema:
   z.ZodType<
-    AppBskyActorGetPreferencesAppBskyActorResponseBody,
+    AppBskyActorGetPreferencesActorResponseBody,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -83,22 +83,22 @@ export const AppBskyActorGetPreferencesAppBskyActorResponseBody$inboundSchema:
     message: z.string(),
   })
     .transform((v) => {
-      return new AppBskyActorGetPreferencesAppBskyActorResponseBody(v);
+      return new AppBskyActorGetPreferencesActorResponseBody(v);
     });
 
 /** @internal */
-export type AppBskyActorGetPreferencesAppBskyActorResponseBody$Outbound = {
+export type AppBskyActorGetPreferencesActorResponseBody$Outbound = {
   error: "AuthMissing";
   message: string;
 };
 
 /** @internal */
-export const AppBskyActorGetPreferencesAppBskyActorResponseBody$outboundSchema:
+export const AppBskyActorGetPreferencesActorResponseBody$outboundSchema:
   z.ZodType<
-    AppBskyActorGetPreferencesAppBskyActorResponseBody$Outbound,
+    AppBskyActorGetPreferencesActorResponseBody$Outbound,
     z.ZodTypeDef,
-    AppBskyActorGetPreferencesAppBskyActorResponseBody
-  > = z.instanceof(AppBskyActorGetPreferencesAppBskyActorResponseBody)
+    AppBskyActorGetPreferencesActorResponseBody
+  > = z.instanceof(AppBskyActorGetPreferencesActorResponseBody)
     .transform(v => v.data$)
     .pipe(z.object({
       error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -109,16 +109,15 @@ export const AppBskyActorGetPreferencesAppBskyActorResponseBody$outboundSchema:
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyActorGetPreferencesAppBskyActorResponseBody$ {
-  /** @deprecated use `AppBskyActorGetPreferencesAppBskyActorResponseBody$inboundSchema` instead. */
+export namespace AppBskyActorGetPreferencesActorResponseBody$ {
+  /** @deprecated use `AppBskyActorGetPreferencesActorResponseBody$inboundSchema` instead. */
   export const inboundSchema =
-    AppBskyActorGetPreferencesAppBskyActorResponseBody$inboundSchema;
-  /** @deprecated use `AppBskyActorGetPreferencesAppBskyActorResponseBody$outboundSchema` instead. */
+    AppBskyActorGetPreferencesActorResponseBody$inboundSchema;
+  /** @deprecated use `AppBskyActorGetPreferencesActorResponseBody$outboundSchema` instead. */
   export const outboundSchema =
-    AppBskyActorGetPreferencesAppBskyActorResponseBody$outboundSchema;
-  /** @deprecated use `AppBskyActorGetPreferencesAppBskyActorResponseBody$Outbound` instead. */
-  export type Outbound =
-    AppBskyActorGetPreferencesAppBskyActorResponseBody$Outbound;
+    AppBskyActorGetPreferencesActorResponseBody$outboundSchema;
+  /** @deprecated use `AppBskyActorGetPreferencesActorResponseBody$Outbound` instead. */
+  export type Outbound = AppBskyActorGetPreferencesActorResponseBody$Outbound;
 }
 
 /** @internal */

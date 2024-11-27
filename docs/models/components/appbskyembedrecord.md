@@ -7,7 +7,7 @@ import { AppBskyEmbedRecord } from "bluesky/models/components";
 
 let value: AppBskyEmbedRecord = {
   record: {
-    uri: "https://quick-witted-molasses.net",
+    uri: "https://aggressive-pantyhose.info",
     cid: "<id>",
   },
 };

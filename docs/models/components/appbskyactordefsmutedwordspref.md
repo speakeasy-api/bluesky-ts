@@ -10,7 +10,7 @@ let value: AppBskyActorDefsMutedWordsPref = {
     {
       value: "<value>",
       targets: [
-        "content",
+        "tag",
       ],
     },
   ],
