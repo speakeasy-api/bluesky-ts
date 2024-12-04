@@ -3,15 +3,17 @@ id: 8ee5821f-25ad-41d5-94bd-080f4048f5d5
 management:
   docChecksum: 5e45afbac0b5ccfc534225e0586a8167
   docVersion: 0.0.0
-  speakeasyVersion: 1.447.4
-  generationVersion: 2.463.1
-  releaseVersion: 0.3.1
-  configChecksum: 4780daafae06f97edb216011f1f81144
+  speakeasyVersion: 1.451.1
+  generationVersion: 2.470.1
+  releaseVersion: 0.3.2
+  configChecksum: bc5f7e9eb04c8bcec0833cc56c387265
+  repoURL: https://github.com/speakeasy-api/bluesky-ts.git
+  installationURL: https://github.com/speakeasy-api/bluesky-ts
 features:
   typescript:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.11
-    core: 3.18.7
+    core: 3.18.8
     defaultEnabledRetries: 0.1.0
     devContainers: 2.90.0
     enumUnions: 0.1.0

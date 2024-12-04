@@ -12,5 +12,5 @@ targets:
         source: OAS
         codeSamples:
             registry:
-                location: registry.speakeasyapi.dev/bluesky/bluesky/-oas-code-samples
+                location: registry.speakeasyapi.dev/bluesky/bluesky/-oas-typescript-code-samples
             blocking: false

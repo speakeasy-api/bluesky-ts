@@ -24,20 +24,25 @@ This section contains HTTP API reference docs for Bluesky and AT Protocol lexico
 
 <!-- Start Table of Contents [toc] -->
 ## Table of Contents
+<!-- $toc-max-depth=2 -->
+* [bluesky](#bluesky)
+  * [SDK Installation](#sdk-installation)
+  * [Requirements](#requirements)
+  * [SDK Example Usage](#sdk-example-usage)
+  * [Available Resources and Operations](#available-resources-and-operations)
+  * [Standalone functions](#standalone-functions)
+  * [Pagination](#pagination)
+  * [File uploads](#file-uploads)
+  * [Retries](#retries)
+  * [Error Handling](#error-handling)
+  * [Server Selection](#server-selection)
+  * [Custom HTTP Client](#custom-http-client)
+  * [Authentication](#authentication)
+  * [Debugging](#debugging)
+* [Development](#development)
+  * [Maturity](#maturity)
+  * [Contributions](#contributions)
 
-* [SDK Installation](#sdk-installation)
-* [Requirements](#requirements)
-* [SDK Example Usage](#sdk-example-usage)
-* [Available Resources and Operations](#available-resources-and-operations)
-* [Standalone functions](#standalone-functions)
-* [Pagination](#pagination)
-* [File uploads](#file-uploads)
-* [Retries](#retries)
-* [Error Handling](#error-handling)
-* [Server Selection](#server-selection)
-* [Custom HTTP Client](#custom-http-client)
-* [Authentication](#authentication)
-* [Debugging](#debugging)
 <!-- End Table of Contents [toc] -->
 
 <!-- Start SDK Installation [installation] -->
@@ -48,25 +53,25 @@ The SDK can be installed with either [npm](https://www.npmjs.com/), [pnpm](https
 ### NPM
 
 ```bash
-npm add <UNSET>
+npm add https://github.com/speakeasy-api/bluesky-ts
 ```
 
 ### PNPM
 
 ```bash
-pnpm add <UNSET>
+pnpm add https://github.com/speakeasy-api/bluesky-ts
 ```
 
 ### Bun
 
 ```bash
-bun add <UNSET>
+bun add https://github.com/speakeasy-api/bluesky-ts
 ```
 
 ### Yarn
 
 ```bash
-yarn add <UNSET> zod
+yarn add https://github.com/speakeasy-api/bluesky-ts zod
 
 # Note that Yarn does not install peer dependencies automatically. You will need
 # to install zod as shown above.
