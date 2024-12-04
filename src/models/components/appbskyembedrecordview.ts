@@ -130,11 +130,11 @@ export namespace RecordT$ {
   export type Outbound = RecordT$Outbound;
 }
 
-export function recordTToJSON(recordT: RecordT): string {
+export function recordToJSON(recordT: RecordT): string {
   return JSON.stringify(RecordT$outboundSchema.parse(recordT));
 }
 
-export function recordTFromJSON(
+export function recordFromJSON(
   jsonString: string,
 ): SafeParseResult<RecordT, SDKValidationError> {
   return safeParse(

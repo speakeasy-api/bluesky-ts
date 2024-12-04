@@ -1,6 +1,6 @@
 {
   "name": "bluesky",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "author": "Speakeasy",
   "type": "module",
   "main": "./esm/index.js",
@@ -43,6 +43,10 @@
     }
   },
   "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/speakeasy-api/bluesky-ts.git"
+  },
   "scripts": {
     "lint": "eslint --max-warnings=0 src",
     "build": "tsc",

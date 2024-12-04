@@ -1,4 +1,4 @@
-speakeasyVersion: 1.447.4
+speakeasyVersion: 1.451.1
 sources: {}
 targets:
     bluesky:
@@ -18,5 +18,5 @@ workflow:
             source: OAS
             codeSamples:
                 registry:
-                    location: registry.speakeasyapi.dev/bluesky/bluesky/-oas-code-samples
+                    location: registry.speakeasyapi.dev/bluesky/bluesky/-oas-typescript-code-samples
                 blocking: false
