@@ -52,7 +52,7 @@ Enumerates which accounts the requesting account is currently blocking. Requires
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -75,8 +75,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { graphsGetBlocks } from "bluesky/funcs/graphsGetBlocks.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { graphsGetBlocks } from "@speakeasy-api/bluesky/funcs/graphsGetBlocks.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -130,7 +130,7 @@ import {
   // mutations and other user actions.
   invalidateGraphsGetBlocks,
   invalidateAllGraphsGetBlocks,
-} from "bluesky/react-query/graphsGetBlocks.js";
+} from "@speakeasy-api/bluesky/react-query/graphsGetBlocks.js";
 ```
 
 ### Parameters
@@ -171,7 +171,7 @@ Enumerates accounts which follow a specified account (actor) and are followed by
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -196,8 +196,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { graphsGetKnownFollowers } from "bluesky/funcs/graphsGetKnownFollowers.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { graphsGetKnownFollowers } from "@speakeasy-api/bluesky/funcs/graphsGetKnownFollowers.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -253,7 +253,7 @@ import {
   // mutations and other user actions.
   invalidateGraphsGetKnownFollowers,
   invalidateAllGraphsGetKnownFollowers,
-} from "bluesky/react-query/graphsGetKnownFollowers.js";
+} from "@speakeasy-api/bluesky/react-query/graphsGetKnownFollowers.js";
 ```
 
 ### Parameters
@@ -294,7 +294,7 @@ Get mod lists that the requesting account (actor) is blocking. Requires auth.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -317,8 +317,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { graphsGetListBlocks } from "bluesky/funcs/graphsGetListBlocks.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { graphsGetListBlocks } from "@speakeasy-api/bluesky/funcs/graphsGetListBlocks.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -372,7 +372,7 @@ import {
   // mutations and other user actions.
   invalidateGraphsGetListBlocks,
   invalidateAllGraphsGetListBlocks,
-} from "bluesky/react-query/graphsGetListBlocks.js";
+} from "@speakeasy-api/bluesky/react-query/graphsGetListBlocks.js";
 ```
 
 ### Parameters
@@ -413,7 +413,7 @@ Enumerates accounts that the requesting account (actor) currently has muted. Req
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -436,8 +436,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { graphsGetMutes } from "bluesky/funcs/graphsGetMutes.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { graphsGetMutes } from "@speakeasy-api/bluesky/funcs/graphsGetMutes.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -491,7 +491,7 @@ import {
   // mutations and other user actions.
   invalidateGraphsGetMutes,
   invalidateAllGraphsGetMutes,
-} from "bluesky/react-query/graphsGetMutes.js";
+} from "@speakeasy-api/bluesky/react-query/graphsGetMutes.js";
 ```
 
 ### Parameters
@@ -532,7 +532,7 @@ Get views for a list of starter packs.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -557,8 +557,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { graphsGetStarterPacks } from "bluesky/funcs/graphsGetStarterPacks.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { graphsGetStarterPacks } from "@speakeasy-api/bluesky/funcs/graphsGetStarterPacks.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -611,7 +611,7 @@ import {
   // mutations and other user actions.
   invalidateGraphsGetStarterPacks,
   invalidateAllGraphsGetStarterPacks,
-} from "bluesky/react-query/graphsGetStarterPacks.js";
+} from "@speakeasy-api/bluesky/react-query/graphsGetStarterPacks.js";
 ```
 
 ### Parameters
@@ -652,7 +652,7 @@ Mutes a thread preventing notifications from the thread and any of its children.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -674,8 +674,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { graphsMuteThread } from "bluesky/funcs/graphsMuteThread.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { graphsMuteThread } from "@speakeasy-api/bluesky/funcs/graphsMuteThread.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -714,7 +714,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useGraphsMuteThreadMutation
-} from "bluesky/react-query/graphsMuteThread.js";
+} from "@speakeasy-api/bluesky/react-query/graphsMuteThread.js";
 ```
 
 ### Parameters
@@ -755,7 +755,7 @@ Unmutes the specified list of accounts. Requires auth.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -777,8 +777,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { graphsUnmuteActorList } from "bluesky/funcs/graphsUnmuteActorList.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { graphsUnmuteActorList } from "@speakeasy-api/bluesky/funcs/graphsUnmuteActorList.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -817,7 +817,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useGraphsUnmuteActorListMutation
-} from "bluesky/react-query/graphsUnmuteActorList.js";
+} from "@speakeasy-api/bluesky/react-query/graphsUnmuteActorList.js";
 ```
 
 ### Parameters

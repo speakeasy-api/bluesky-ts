@@ -48,7 +48,7 @@ export function useChatConvosUpdateReadMutation(
 }
 
 export function mutationKeyChatConvosUpdateRead(): MutationKey {
-  return ["bluesky", "chatConvos", "updateRead"];
+  return ["@speakeasy-api/bluesky", "chatConvos", "updateRead"];
 }
 
 export function buildChatConvosUpdateReadMutation(

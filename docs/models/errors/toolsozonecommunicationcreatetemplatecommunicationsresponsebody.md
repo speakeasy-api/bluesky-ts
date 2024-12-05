@@ -5,7 +5,7 @@ Unauthorized
 ## Example Usage
 
 ```typescript
-import { ToolsOzoneCommunicationCreateTemplateCommunicationsResponseBody } from "bluesky/models/errors";
+import { ToolsOzoneCommunicationCreateTemplateCommunicationsResponseBody } from "@speakeasy-api/bluesky/models/errors";
 
 // No examples available for this model
 ```

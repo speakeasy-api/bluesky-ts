@@ -190,7 +190,12 @@ export function invalidateTeamListMembers(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "team", "listMembers", ...queryKeyBase],
+    queryKey: [
+      "@speakeasy-api/bluesky",
+      "team",
+      "listMembers",
+      ...queryKeyBase,
+    ],
   });
 }
 
@@ -200,7 +205,7 @@ export function invalidateAllTeamListMembers(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "team", "listMembers"],
+    queryKey: ["@speakeasy-api/bluesky", "team", "listMembers"],
   });
 }
 
@@ -282,5 +287,5 @@ export function buildTeamListMembersInfiniteQuery(
 export function queryKeyTeamListMembers(
   parameters: { limit?: number | undefined; cursor?: string | undefined },
 ): QueryKey {
-  return ["bluesky", "team", "listMembers", parameters];
+  return ["@speakeasy-api/bluesky", "team", "listMembers", parameters];
 }

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComAtprotoAdminDefsAccountView } from "bluesky/models/components";
+import { ComAtprotoAdminDefsAccountView } from "@speakeasy-api/bluesky/models/components";
 
 let value: ComAtprotoAdminDefsAccountView = {
   did: "<id>",

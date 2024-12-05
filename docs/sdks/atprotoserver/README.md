@@ -82,7 +82,7 @@ Activates a currently deactivated account. Used to finalize account migration af
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -102,8 +102,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { atprotoServerActivateAccount } from "bluesky/funcs/atprotoServerActivateAccount.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { atprotoServerActivateAccount } from "@speakeasy-api/bluesky/funcs/atprotoServerActivateAccount.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -140,7 +140,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useAtprotoServerActivateAccountMutation
-} from "bluesky/react-query/atprotoServerActivateAccount.js";
+} from "@speakeasy-api/bluesky/react-query/atprotoServerActivateAccount.js";
 ```
 
 ### Parameters
@@ -180,7 +180,7 @@ Create an account. Implemented by PDS.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -203,8 +203,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { atprotoServerCreateAccount } from "bluesky/funcs/atprotoServerCreateAccount.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { atprotoServerCreateAccount } from "@speakeasy-api/bluesky/funcs/atprotoServerCreateAccount.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -244,7 +244,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useAtprotoServerCreateAccountMutation
-} from "bluesky/react-query/atprotoServerCreateAccount.js";
+} from "@speakeasy-api/bluesky/react-query/atprotoServerCreateAccount.js";
 ```
 
 ### Parameters
@@ -285,7 +285,7 @@ Create an App Password.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -308,8 +308,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { atprotoServerCreateAppPassword } from "bluesky/funcs/atprotoServerCreateAppPassword.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { atprotoServerCreateAppPassword } from "@speakeasy-api/bluesky/funcs/atprotoServerCreateAppPassword.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -349,7 +349,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useAtprotoServerCreateAppPasswordMutation
-} from "bluesky/react-query/atprotoServerCreateAppPassword.js";
+} from "@speakeasy-api/bluesky/react-query/atprotoServerCreateAppPassword.js";
 ```
 
 ### Parameters
@@ -390,7 +390,7 @@ Create an invite code.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -413,8 +413,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { atprotoServerCreateInviteCode } from "bluesky/funcs/atprotoServerCreateInviteCode.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { atprotoServerCreateInviteCode } from "@speakeasy-api/bluesky/funcs/atprotoServerCreateInviteCode.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -454,7 +454,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useAtprotoServerCreateInviteCodeMutation
-} from "bluesky/react-query/atprotoServerCreateInviteCode.js";
+} from "@speakeasy-api/bluesky/react-query/atprotoServerCreateInviteCode.js";
 ```
 
 ### Parameters
@@ -495,7 +495,7 @@ Create invite codes.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -518,8 +518,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { atprotoServerCreateInviteCodes } from "bluesky/funcs/atprotoServerCreateInviteCodes.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { atprotoServerCreateInviteCodes } from "@speakeasy-api/bluesky/funcs/atprotoServerCreateInviteCodes.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -559,7 +559,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useAtprotoServerCreateInviteCodesMutation
-} from "bluesky/react-query/atprotoServerCreateInviteCodes.js";
+} from "@speakeasy-api/bluesky/react-query/atprotoServerCreateInviteCodes.js";
 ```
 
 ### Parameters
@@ -600,7 +600,7 @@ Delete an actor's account with a token and password. Can only be called after re
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -624,8 +624,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { atprotoServerDeleteAccount } from "bluesky/funcs/atprotoServerDeleteAccount.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { atprotoServerDeleteAccount } from "@speakeasy-api/bluesky/funcs/atprotoServerDeleteAccount.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -666,7 +666,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useAtprotoServerDeleteAccountMutation
-} from "bluesky/react-query/atprotoServerDeleteAccount.js";
+} from "@speakeasy-api/bluesky/react-query/atprotoServerDeleteAccount.js";
 ```
 
 ### Parameters
@@ -707,7 +707,7 @@ Delete the current session. Requires auth.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -727,8 +727,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { atprotoServerDeleteSession } from "bluesky/funcs/atprotoServerDeleteSession.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { atprotoServerDeleteSession } from "@speakeasy-api/bluesky/funcs/atprotoServerDeleteSession.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -765,7 +765,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useAtprotoServerDeleteSessionMutation
-} from "bluesky/react-query/atprotoServerDeleteSession.js";
+} from "@speakeasy-api/bluesky/react-query/atprotoServerDeleteSession.js";
 ```
 
 ### Parameters
@@ -805,7 +805,7 @@ Describes the server's account creation requirements and capabilities. Implement
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -826,8 +826,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { atprotoServerDescribe } from "bluesky/funcs/atprotoServerDescribe.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { atprotoServerDescribe } from "@speakeasy-api/bluesky/funcs/atprotoServerDescribe.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -875,7 +875,7 @@ import {
   // Utility to invalidate the query cache for this query in response to
   // mutations and other user actions.
   invalidateAllAtprotoServerDescribe,
-} from "bluesky/react-query/atprotoServerDescribe.js";
+} from "@speakeasy-api/bluesky/react-query/atprotoServerDescribe.js";
 ```
 
 ### Parameters
@@ -915,7 +915,7 @@ Refresh an authentication session. Requires auth using the 'refreshJwt' (not the
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -936,8 +936,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { atprotoServerRefreshSession } from "bluesky/funcs/atprotoServerRefreshSession.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { atprotoServerRefreshSession } from "@speakeasy-api/bluesky/funcs/atprotoServerRefreshSession.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -975,7 +975,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useAtprotoServerRefreshSessionMutation
-} from "bluesky/react-query/atprotoServerRefreshSession.js";
+} from "@speakeasy-api/bluesky/react-query/atprotoServerRefreshSession.js";
 ```
 
 ### Parameters
@@ -1015,7 +1015,7 @@ Request an email with a code to confirm ownership of email.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -1035,8 +1035,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { atprotoServerRequestEmailConfirmation } from "bluesky/funcs/atprotoServerRequestEmailConfirmation.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { atprotoServerRequestEmailConfirmation } from "@speakeasy-api/bluesky/funcs/atprotoServerRequestEmailConfirmation.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1073,7 +1073,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useAtprotoServerRequestEmailConfirmationMutation
-} from "bluesky/react-query/atprotoServerRequestEmailConfirmation.js";
+} from "@speakeasy-api/bluesky/react-query/atprotoServerRequestEmailConfirmation.js";
 ```
 
 ### Parameters
@@ -1113,7 +1113,7 @@ Initiate a user account password reset via email.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -1135,8 +1135,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { atprotoServerRequestPasswordReset } from "bluesky/funcs/atprotoServerRequestPasswordReset.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { atprotoServerRequestPasswordReset } from "@speakeasy-api/bluesky/funcs/atprotoServerRequestPasswordReset.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1175,7 +1175,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useAtprotoServerRequestPasswordResetMutation
-} from "bluesky/react-query/atprotoServerRequestPasswordReset.js";
+} from "@speakeasy-api/bluesky/react-query/atprotoServerRequestPasswordReset.js";
 ```
 
 ### Parameters
@@ -1216,7 +1216,7 @@ Reset a user account password using a token.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -1239,8 +1239,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { atprotoServerResetPassword } from "bluesky/funcs/atprotoServerResetPassword.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { atprotoServerResetPassword } from "@speakeasy-api/bluesky/funcs/atprotoServerResetPassword.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1280,7 +1280,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useAtprotoServerResetPasswordMutation
-} from "bluesky/react-query/atprotoServerResetPassword.js";
+} from "@speakeasy-api/bluesky/react-query/atprotoServerResetPassword.js";
 ```
 
 ### Parameters
@@ -1321,7 +1321,7 @@ Revoke an App Password by name.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -1343,8 +1343,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { atprotoServerRevokeAppPassword } from "bluesky/funcs/atprotoServerRevokeAppPassword.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { atprotoServerRevokeAppPassword } from "@speakeasy-api/bluesky/funcs/atprotoServerRevokeAppPassword.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1383,7 +1383,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useAtprotoServerRevokeAppPasswordMutation
-} from "bluesky/react-query/atprotoServerRevokeAppPassword.js";
+} from "@speakeasy-api/bluesky/react-query/atprotoServerRevokeAppPassword.js";
 ```
 
 ### Parameters

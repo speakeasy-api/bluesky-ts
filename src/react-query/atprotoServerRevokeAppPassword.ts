@@ -49,7 +49,7 @@ export function useAtprotoServerRevokeAppPasswordMutation(
 }
 
 export function mutationKeyAtprotoServerRevokeAppPassword(): MutationKey {
-  return ["bluesky", "atprotoServer", "revokeAppPassword"];
+  return ["@speakeasy-api/bluesky", "atprotoServer", "revokeAppPassword"];
 }
 
 export function buildAtprotoServerRevokeAppPasswordMutation(

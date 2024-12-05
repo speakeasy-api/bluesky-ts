@@ -49,7 +49,7 @@ export function useGraphsMuteThreadMutation(
 }
 
 export function mutationKeyGraphsMuteThread(): MutationKey {
-  return ["bluesky", "graphs", "muteThread"];
+  return ["@speakeasy-api/bluesky", "graphs", "muteThread"];
 }
 
 export function buildGraphsMuteThreadMutation(

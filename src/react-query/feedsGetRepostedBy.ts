@@ -214,7 +214,12 @@ export function invalidateFeedsGetRepostedBy(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "feeds", "getRepostedBy", ...queryKeyBase],
+    queryKey: [
+      "@speakeasy-api/bluesky",
+      "feeds",
+      "getRepostedBy",
+      ...queryKeyBase,
+    ],
   });
 }
 
@@ -224,7 +229,7 @@ export function invalidateAllFeedsGetRepostedBy(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "feeds", "getRepostedBy"],
+    queryKey: ["@speakeasy-api/bluesky", "feeds", "getRepostedBy"],
   });
 }
 
@@ -317,5 +322,5 @@ export function queryKeyFeedsGetRepostedBy(
     cursor?: string | undefined;
   },
 ): QueryKey {
-  return ["bluesky", "feeds", "getRepostedBy", parameters];
+  return ["@speakeasy-api/bluesky", "feeds", "getRepostedBy", parameters];
 }

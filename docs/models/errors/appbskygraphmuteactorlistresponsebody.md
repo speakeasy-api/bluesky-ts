@@ -5,7 +5,7 @@ Bad Request
 ## Example Usage
 
 ```typescript
-import { AppBskyGraphMuteActorListResponseBody } from "bluesky/models/errors";
+import { AppBskyGraphMuteActorListResponseBody } from "@speakeasy-api/bluesky/models/errors";
 
 // No examples available for this model
 ```

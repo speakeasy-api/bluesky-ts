@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComAtprotoIdentityGetRecommendedDidCredentialsError } from "bluesky/models/errors";
+import { ComAtprotoIdentityGetRecommendedDidCredentialsError } from "@speakeasy-api/bluesky/models/errors";
 
 let value: ComAtprotoIdentityGetRecommendedDidCredentialsError = "ExpiredToken";
 ```

@@ -5,7 +5,7 @@ A collection of status codes that generally mean the server failed in an unexpec
 ## Example Usage
 
 ```typescript
-import { InternalServerError } from "bluesky/models/errors";
+import { InternalServerError } from "@speakeasy-api/bluesky/models/errors";
 
 // No examples available for this model
 ```

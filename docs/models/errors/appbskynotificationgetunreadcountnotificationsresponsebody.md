@@ -5,7 +5,7 @@ Unauthorized
 ## Example Usage
 
 ```typescript
-import { AppBskyNotificationGetUnreadCountNotificationsResponseBody } from "bluesky/models/errors";
+import { AppBskyNotificationGetUnreadCountNotificationsResponseBody } from "@speakeasy-api/bluesky/models/errors";
 
 // No examples available for this model
 ```

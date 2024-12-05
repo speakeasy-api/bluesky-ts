@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { ComAtprotoAdminGetInviteCodesResponseBody } from "bluesky/models/operations";
+import { ComAtprotoAdminGetInviteCodesResponseBody } from "@speakeasy-api/bluesky/models/operations";
 
 let value: ComAtprotoAdminGetInviteCodesResponseBody = {
   codes: [

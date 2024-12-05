@@ -102,7 +102,7 @@ export function invalidateChatModerationGetActorMetadata(
   return client.invalidateQueries({
     ...filters,
     queryKey: [
-      "bluesky",
+      "@speakeasy-api/bluesky",
       "chatModeration",
       "getActorMetadata",
       ...queryKeyBase,
@@ -116,7 +116,7 @@ export function invalidateAllChatModerationGetActorMetadata(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "chatModeration", "getActorMetadata"],
+    queryKey: ["@speakeasy-api/bluesky", "chatModeration", "getActorMetadata"],
   });
 }
 
@@ -153,5 +153,10 @@ export function buildChatModerationGetActorMetadataQuery(
 export function queryKeyChatModerationGetActorMetadata(
   parameters: { actor: string },
 ): QueryKey {
-  return ["bluesky", "chatModeration", "getActorMetadata", parameters];
+  return [
+    "@speakeasy-api/bluesky",
+    "chatModeration",
+    "getActorMetadata",
+    parameters,
+  ];
 }

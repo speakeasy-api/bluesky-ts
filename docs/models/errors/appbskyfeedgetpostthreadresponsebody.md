@@ -5,7 +5,7 @@ Bad Request
 ## Example Usage
 
 ```typescript
-import { AppBskyFeedGetPostThreadResponseBody } from "bluesky/models/errors";
+import { AppBskyFeedGetPostThreadResponseBody } from "@speakeasy-api/bluesky/models/errors";
 
 // No examples available for this model
 ```

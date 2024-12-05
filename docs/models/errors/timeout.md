@@ -5,7 +5,7 @@ Timeouts occurred with the request
 ## Example Usage
 
 ```typescript
-import { Timeout } from "bluesky/models/errors";
+import { Timeout } from "@speakeasy-api/bluesky/models/errors";
 
 // No examples available for this model
 ```

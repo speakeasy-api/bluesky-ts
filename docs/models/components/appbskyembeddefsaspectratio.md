@@ -5,7 +5,7 @@ width:height represents an aspect ratio. It may be approximate, and may not corr
 ## Example Usage
 
 ```typescript
-import { AppBskyEmbedDefsAspectRatio } from "bluesky/models/components";
+import { AppBskyEmbedDefsAspectRatio } from "@speakeasy-api/bluesky/models/components";
 
 let value: AppBskyEmbedDefsAspectRatio = {
   width: 966148,

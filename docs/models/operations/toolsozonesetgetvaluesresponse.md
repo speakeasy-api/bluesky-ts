@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ToolsOzoneSetGetValuesResponse } from "bluesky/models/operations";
+import { ToolsOzoneSetGetValuesResponse } from "@speakeasy-api/bluesky/models/operations";
 
 let value: ToolsOzoneSetGetValuesResponse = {
   result: {

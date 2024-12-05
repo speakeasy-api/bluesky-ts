@@ -197,7 +197,7 @@ export function invalidateSetsGetValues(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "sets", "getValues", ...queryKeyBase],
+    queryKey: ["@speakeasy-api/bluesky", "sets", "getValues", ...queryKeyBase],
   });
 }
 
@@ -207,7 +207,7 @@ export function invalidateAllSetsGetValues(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "sets", "getValues"],
+    queryKey: ["@speakeasy-api/bluesky", "sets", "getValues"],
   });
 }
 
@@ -295,5 +295,5 @@ export function queryKeySetsGetValues(
     cursor?: string | undefined;
   },
 ): QueryKey {
-  return ["bluesky", "sets", "getValues", parameters];
+  return ["@speakeasy-api/bluesky", "sets", "getValues", parameters];
 }

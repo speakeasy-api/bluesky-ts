@@ -5,7 +5,7 @@ Bad Request
 ## Example Usage
 
 ```typescript
-import { ToolsOzoneSettingUpsertOptionResponseBody } from "bluesky/models/errors";
+import { ToolsOzoneSettingUpsertOptionResponseBody } from "@speakeasy-api/bluesky/models/errors";
 
 // No examples available for this model
 ```

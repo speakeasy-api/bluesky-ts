@@ -114,7 +114,12 @@ export function invalidateFeedsGetPostThread(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "feeds", "getPostThread", ...queryKeyBase],
+    queryKey: [
+      "@speakeasy-api/bluesky",
+      "feeds",
+      "getPostThread",
+      ...queryKeyBase,
+    ],
   });
 }
 
@@ -124,7 +129,7 @@ export function invalidateAllFeedsGetPostThread(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "feeds", "getPostThread"],
+    queryKey: ["@speakeasy-api/bluesky", "feeds", "getPostThread"],
   });
 }
 
@@ -169,5 +174,5 @@ export function queryKeyFeedsGetPostThread(
     parentHeight?: number | undefined;
   },
 ): QueryKey {
-  return ["bluesky", "feeds", "getPostThread", parameters];
+  return ["@speakeasy-api/bluesky", "feeds", "getPostThread", parameters];
 }

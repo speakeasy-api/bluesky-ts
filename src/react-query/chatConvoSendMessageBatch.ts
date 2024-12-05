@@ -48,7 +48,7 @@ export function useChatConvoSendMessageBatchMutation(
 }
 
 export function mutationKeyChatConvoSendMessageBatch(): MutationKey {
-  return ["bluesky", "chatConvo", "sendMessageBatch"];
+  return ["@speakeasy-api/bluesky", "chatConvo", "sendMessageBatch"];
 }
 
 export function buildChatConvoSendMessageBatchMutation(

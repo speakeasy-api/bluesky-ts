@@ -46,7 +46,7 @@ export function useSetDeleteMutation(
 }
 
 export function mutationKeySetDelete(): MutationKey {
-  return ["bluesky", "set", "delete"];
+  return ["@speakeasy-api/bluesky", "set", "delete"];
 }
 
 export function buildSetDeleteMutation(

@@ -90,7 +90,7 @@ export function invalidateAllServerListAppPasswords(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "server", "listAppPasswords"],
+    queryKey: ["@speakeasy-api/bluesky", "server", "listAppPasswords"],
   });
 }
 
@@ -123,5 +123,5 @@ export function buildServerListAppPasswordsQuery(
 }
 
 export function queryKeyServerListAppPasswords(): QueryKey {
-  return ["bluesky", "server", "listAppPasswords"];
+  return ["@speakeasy-api/bluesky", "server", "listAppPasswords"];
 }

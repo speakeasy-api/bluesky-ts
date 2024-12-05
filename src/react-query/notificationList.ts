@@ -200,7 +200,12 @@ export function invalidateNotificationList(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "notification", "list", ...queryKeyBase],
+    queryKey: [
+      "@speakeasy-api/bluesky",
+      "notification",
+      "list",
+      ...queryKeyBase,
+    ],
   });
 }
 
@@ -210,7 +215,7 @@ export function invalidateAllNotificationList(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "notification", "list"],
+    queryKey: ["@speakeasy-api/bluesky", "notification", "list"],
   });
 }
 
@@ -303,5 +308,5 @@ export function queryKeyNotificationList(
     seenAt?: Date | undefined;
   },
 ): QueryKey {
-  return ["bluesky", "notification", "list", parameters];
+  return ["@speakeasy-api/bluesky", "notification", "list", parameters];
 }

@@ -5,7 +5,7 @@ Expected values are 'like', 'repost', 'follow', 'mention', 'reply', 'quote', and
 ## Example Usage
 
 ```typescript
-import { AppBskyNotificationListNotificationsNotificationReason } from "bluesky/models/components";
+import { AppBskyNotificationListNotificationsNotificationReason } from "@speakeasy-api/bluesky/models/components";
 
 let value: AppBskyNotificationListNotificationsNotificationReason = "like";
 ```

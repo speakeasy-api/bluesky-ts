@@ -49,7 +49,7 @@ export function useAtprotoServerRefreshSessionMutation(
 }
 
 export function mutationKeyAtprotoServerRefreshSession(): MutationKey {
-  return ["bluesky", "atprotoServer", "refreshSession"];
+  return ["@speakeasy-api/bluesky", "atprotoServer", "refreshSession"];
 }
 
 export function buildAtprotoServerRefreshSessionMutation(

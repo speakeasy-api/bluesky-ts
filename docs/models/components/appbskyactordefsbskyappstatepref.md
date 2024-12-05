@@ -5,7 +5,7 @@ A grab bag of state that's specific to the bsky.app program. Third-party apps sh
 ## Example Usage
 
 ```typescript
-import { AppBskyActorDefsBskyAppStatePref } from "bluesky/models/components";
+import { AppBskyActorDefsBskyAppStatePref } from "@speakeasy-api/bluesky/models/components";
 
 let value: AppBskyActorDefsBskyAppStatePref = {};
 ```

@@ -103,7 +103,12 @@ export function invalidateOzoneModerationGet(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "ozoneModeration", "get", ...queryKeyBase],
+    queryKey: [
+      "@speakeasy-api/bluesky",
+      "ozoneModeration",
+      "get",
+      ...queryKeyBase,
+    ],
   });
 }
 
@@ -113,7 +118,7 @@ export function invalidateAllOzoneModerationGet(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "ozoneModeration", "get"],
+    queryKey: ["@speakeasy-api/bluesky", "ozoneModeration", "get"],
   });
 }
 
@@ -150,5 +155,5 @@ export function buildOzoneModerationGetQuery(
 export function queryKeyOzoneModerationGet(
   parameters: { did: string },
 ): QueryKey {
-  return ["bluesky", "ozoneModeration", "get", parameters];
+  return ["@speakeasy-api/bluesky", "ozoneModeration", "get", parameters];
 }

@@ -102,7 +102,12 @@ export function invalidateAdminsGetAccountInfos(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "admins", "getAccountInfos", ...queryKeyBase],
+    queryKey: [
+      "@speakeasy-api/bluesky",
+      "admins",
+      "getAccountInfos",
+      ...queryKeyBase,
+    ],
   });
 }
 
@@ -112,7 +117,7 @@ export function invalidateAllAdminsGetAccountInfos(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "admins", "getAccountInfos"],
+    queryKey: ["@speakeasy-api/bluesky", "admins", "getAccountInfos"],
   });
 }
 
@@ -149,5 +154,5 @@ export function buildAdminsGetAccountInfosQuery(
 export function queryKeyAdminsGetAccountInfos(
   parameters: { dids: Array<string> },
 ): QueryKey {
-  return ["bluesky", "admins", "getAccountInfos", parameters];
+  return ["@speakeasy-api/bluesky", "admins", "getAccountInfos", parameters];
 }

@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { ComAtprotoLabelQueryLabelsResponseBody } from "bluesky/models/operations";
+import { ComAtprotoLabelQueryLabelsResponseBody } from "@speakeasy-api/bluesky/models/operations";
 
 let value: ComAtprotoLabelQueryLabelsResponseBody = {
   labels: [

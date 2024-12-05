@@ -5,7 +5,7 @@ Bad Request
 ## Example Usage
 
 ```typescript
-import { AppBskyNotificationGetUnreadCountResponseBody } from "bluesky/models/errors";
+import { AppBskyNotificationGetUnreadCountResponseBody } from "@speakeasy-api/bluesky/models/errors";
 
 // No examples available for this model
 ```

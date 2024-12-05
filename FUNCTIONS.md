@@ -19,9 +19,9 @@ specific category of applications.
 ## Example
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { actorsGetPreferences } from "bluesky/funcs/actorsGetPreferences.js";
-import { SDKValidationError } from "bluesky/models/errors/sdkvalidationerror.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { actorsGetProfile } from "@speakeasy-api/bluesky/funcs/actorsGetProfile.js";
+import { SDKValidationError } from "@speakeasy-api/bluesky/models/errors/sdkvalidationerror.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -30,7 +30,9 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await actorsGetPreferences(bluesky);
+  const res = await actorsGetProfile(bluesky, {
+    actor: "did:plc:z72i7hdynmk6r22z27h6tvur",
+  });
 
   switch (true) {
     case res.ok:

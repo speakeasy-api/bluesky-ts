@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { AppBskyVideoGetJobStatusError } from "bluesky/models/errors";
+import { AppBskyVideoGetJobStatusError } from "@speakeasy-api/bluesky/models/errors";
 
 let value: AppBskyVideoGetJobStatusError = "InvalidToken";
 ```

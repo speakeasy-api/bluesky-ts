@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { AppBskyGraphGetBlocksRequest } from "bluesky/models/operations";
+import { AppBskyGraphGetBlocksRequest } from "@speakeasy-api/bluesky/models/operations";
 
 let value: AppBskyGraphGetBlocksRequest = {};
 ```

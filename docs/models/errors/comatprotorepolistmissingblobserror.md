@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComAtprotoRepoListMissingBlobsError } from "bluesky/models/errors";
+import { ComAtprotoRepoListMissingBlobsError } from "@speakeasy-api/bluesky/models/errors";
 
 let value: ComAtprotoRepoListMissingBlobsError = "InvalidRequest";
 ```

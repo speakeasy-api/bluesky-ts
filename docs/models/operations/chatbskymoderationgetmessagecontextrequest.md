@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ChatBskyModerationGetMessageContextRequest } from "bluesky/models/operations";
+import { ChatBskyModerationGetMessageContextRequest } from "@speakeasy-api/bluesky/models/operations";
 
 let value: ChatBskyModerationGetMessageContextRequest = {
   messageId: "<id>",

@@ -197,7 +197,7 @@ export function invalidateGraphGetList(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "graph", "getList", ...queryKeyBase],
+    queryKey: ["@speakeasy-api/bluesky", "graph", "getList", ...queryKeyBase],
   });
 }
 
@@ -207,7 +207,7 @@ export function invalidateAllGraphGetList(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "graph", "getList"],
+    queryKey: ["@speakeasy-api/bluesky", "graph", "getList"],
   });
 }
 
@@ -295,5 +295,5 @@ export function queryKeyGraphGetList(
     cursor?: string | undefined;
   },
 ): QueryKey {
-  return ["bluesky", "graph", "getList", parameters];
+  return ["@speakeasy-api/bluesky", "graph", "getList", parameters];
 }

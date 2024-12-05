@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { AppBskyNotificationRegisterPushRequestBody } from "bluesky/models/operations";
+import { AppBskyNotificationRegisterPushRequestBody } from "@speakeasy-api/bluesky/models/operations";
 
 let value: AppBskyNotificationRegisterPushRequestBody = {
   serviceDid: "<id>",

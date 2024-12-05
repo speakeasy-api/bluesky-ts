@@ -106,7 +106,12 @@ export function invalidateLabelersGetServices(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "labelers", "getServices", ...queryKeyBase],
+    queryKey: [
+      "@speakeasy-api/bluesky",
+      "labelers",
+      "getServices",
+      ...queryKeyBase,
+    ],
   });
 }
 
@@ -116,7 +121,7 @@ export function invalidateAllLabelersGetServices(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "labelers", "getServices"],
+    queryKey: ["@speakeasy-api/bluesky", "labelers", "getServices"],
   });
 }
 
@@ -156,5 +161,5 @@ export function buildLabelersGetServicesQuery(
 export function queryKeyLabelersGetServices(
   parameters: { dids: Array<string>; detailed?: boolean | undefined },
 ): QueryKey {
-  return ["bluesky", "labelers", "getServices", parameters];
+  return ["@speakeasy-api/bluesky", "labelers", "getServices", parameters];
 }

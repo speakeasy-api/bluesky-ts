@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { AppBskyGraphGetMutesResponseBody } from "bluesky/models/operations";
+import { AppBskyGraphGetMutesResponseBody } from "@speakeasy-api/bluesky/models/operations";
 
 let value: AppBskyGraphGetMutesResponseBody = {
   mutes: [],

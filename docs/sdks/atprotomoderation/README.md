@@ -18,7 +18,7 @@ Submit a moderation report regarding an atproto account or record. Implemented b
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -44,8 +44,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { atprotoModerationCreateReport } from "bluesky/funcs/atprotoModerationCreateReport.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { atprotoModerationCreateReport } from "@speakeasy-api/bluesky/funcs/atprotoModerationCreateReport.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -88,7 +88,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useAtprotoModerationCreateReportMutation
-} from "bluesky/react-query/atprotoModerationCreateReport.js";
+} from "@speakeasy-api/bluesky/react-query/atprotoModerationCreateReport.js";
 ```
 
 ### Parameters

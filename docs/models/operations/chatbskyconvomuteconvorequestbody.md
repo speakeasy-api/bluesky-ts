@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ChatBskyConvoMuteConvoRequestBody } from "bluesky/models/operations";
+import { ChatBskyConvoMuteConvoRequestBody } from "@speakeasy-api/bluesky/models/operations";
 
 let value: ChatBskyConvoMuteConvoRequestBody = {
   convoId: "<id>",

@@ -49,7 +49,7 @@ export function useNotificationsUpdateSeenMutation(
 }
 
 export function mutationKeyNotificationsUpdateSeen(): MutationKey {
-  return ["bluesky", "notifications", "updateSeen"];
+  return ["@speakeasy-api/bluesky", "notifications", "updateSeen"];
 }
 
 export function buildNotificationsUpdateSeenMutation(

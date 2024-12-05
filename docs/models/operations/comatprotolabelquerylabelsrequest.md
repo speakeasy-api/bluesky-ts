@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComAtprotoLabelQueryLabelsRequest } from "bluesky/models/operations";
+import { ComAtprotoLabelQueryLabelsRequest } from "@speakeasy-api/bluesky/models/operations";
 
 let value: ComAtprotoLabelQueryLabelsRequest = {
   uriPatterns: [

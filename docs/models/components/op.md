@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { Op } from "bluesky/models/components";
+import { Op } from "@speakeasy-api/bluesky/models/components";
 
 let value: Op = "update";
 ```

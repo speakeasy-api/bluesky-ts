@@ -49,7 +49,7 @@ export function useAtprotoServerRequestPasswordResetMutation(
 }
 
 export function mutationKeyAtprotoServerRequestPasswordReset(): MutationKey {
-  return ["bluesky", "atprotoServer", "requestPasswordReset"];
+  return ["@speakeasy-api/bluesky", "atprotoServer", "requestPasswordReset"];
 }
 
 export function buildAtprotoServerRequestPasswordResetMutation(

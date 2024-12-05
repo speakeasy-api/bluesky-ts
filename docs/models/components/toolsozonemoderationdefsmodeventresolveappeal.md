@@ -5,7 +5,7 @@ Resolve appeal on a subject
 ## Example Usage
 
 ```typescript
-import { ToolsOzoneModerationDefsModEventResolveAppeal } from "bluesky/models/components";
+import { ToolsOzoneModerationDefsModEventResolveAppeal } from "@speakeasy-api/bluesky/models/components";
 
 let value: ToolsOzoneModerationDefsModEventResolveAppeal = {};
 ```

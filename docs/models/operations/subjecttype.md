@@ -5,7 +5,7 @@ If specified, only events where the subject is of the given type (account or rec
 ## Example Usage
 
 ```typescript
-import { SubjectType } from "bluesky/models/operations";
+import { SubjectType } from "@speakeasy-api/bluesky/models/operations";
 
 let value: SubjectType = "record";
 ```

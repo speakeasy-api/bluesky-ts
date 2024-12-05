@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { QueryParamSort } from "bluesky/models/operations";
+import { QueryParamSort } from "@speakeasy-api/bluesky/models/operations";
 
 let value: QueryParamSort = "recent";
 ```

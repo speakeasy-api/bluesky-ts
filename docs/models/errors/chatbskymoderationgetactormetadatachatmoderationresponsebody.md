@@ -5,7 +5,7 @@ Unauthorized
 ## Example Usage
 
 ```typescript
-import { ChatBskyModerationGetActorMetadataChatModerationResponseBody } from "bluesky/models/errors";
+import { ChatBskyModerationGetActorMetadataChatModerationResponseBody } from "@speakeasy-api/bluesky/models/errors";
 
 // No examples available for this model
 ```

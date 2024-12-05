@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { Event } from "bluesky/models/components";
+import { Event } from "@speakeasy-api/bluesky/models/components";
 
 let value: Event = "app.bsky.feed.defs#clickthroughReposter";
 ```

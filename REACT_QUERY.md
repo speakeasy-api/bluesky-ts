@@ -18,8 +18,8 @@ your React app at the root or layout component. For example:
 
 ```tsx
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BlueskyCore } from "bluesky";
-import { BlueskyProvider } from "bluesky/react-query";
+import { BlueskyCore } from "@speakeasy-api/bluesky";
+import { BlueskyProvider } from "@speakeasy-api/bluesky/react-query";
 
 const queryClient = new QueryClient();
 const bluesky = new BlueskyCore({
@@ -27,8 +27,8 @@ const bluesky = new BlueskyCore({
 });
 
 // Retries are handled by the underlying SDK.
-queryClient.setQueryDefaults(["bluesky"], { retry: false });
-queryClient.setMutationDefaults(["bluesky"], { retry: false });
+queryClient.setQueryDefaults(["@speakeasy-api/bluesky"], { retry: false });
+queryClient.setMutationDefaults(["@speakeasy-api/bluesky"], { retry: false });
 
 export function App() {
   return (
@@ -50,7 +50,7 @@ from TanStack Query.
 [use-query]: https://tanstack.com/query/v5/docs/framework/react/reference/useQuery
 
 ```tsx
-import { useActorsGetPreferences } from "bluesky/react-query/actorsGetPreferences.js";
+import { useActorsGetPreferences } from "@speakeasy-api/bluesky/react-query/actorsGetPreferences.js";
 
 export function Example() {
   const { data, error, status } = useActorsGetPreferences();
@@ -66,7 +66,7 @@ more options provided by the query hooks to control these behaviors.
 
 ```tsx
 import { useState } from "react";
-import { useActorsGetPreferences } from "bluesky/react-query/actorsGetPreferences.js";
+import { useActorsGetPreferences } from "@speakeasy-api/bluesky/react-query/actorsGetPreferences.js";
 
 export function ExampleWithOptions() {
   const [enabled, setEnabled] = useState(true);
@@ -107,7 +107,7 @@ Query.
 [use-mutation]: https://tanstack.com/query/v5/docs/framework/react/reference/useMutation
 
 ```tsx
-import { useActorsPutPreferencesMutation } from "bluesky/react-query/actorsPutPreferences.js";
+import { useActorsPutPreferencesMutation } from "@speakeasy-api/bluesky/react-query/actorsPutPreferences.js";
 
 export function Example() {
   const { mutate, status } = useActorsPutPreferencesMutation();
@@ -143,7 +143,7 @@ Since the underlying SDK handles request timeouts and retries, there are a few
 more options provided by the mutation hooks to control these behaviors.
 
 ```tsx
-import { useActorsPutPreferencesMutation } from "bluesky/react-query/actorsPutPreferences.js";
+import { useActorsPutPreferencesMutation } from "@speakeasy-api/bluesky/react-query/actorsPutPreferences.js";
 
 export function ExampleWithOptions() {
   const { mutate, status } = useActorsPutPreferencesMutation({
@@ -178,9 +178,9 @@ query hook there are two functions that help invalidate cached data:
 
 ```tsx
 import { useQueryClient } from "@tanstack/react-query";
-import { invalidateActorsGetPreferences, invalidateAllActorsGetPreferences } from "bluesky/react-query/actorsGetPreferences.js";
+import { invalidateActorsGetPreferences, invalidateAllActorsGetPreferences } from "@speakeasy-api/bluesky/react-query/actorsGetPreferences.js";
 // Replace this with a real mutation
-import { useExampleMutation } from "bluesky/react-query/example.js";
+import { useExampleMutation } from "@speakeasy-api/bluesky/react-query/example.js";
 
 export function Example() {
   const { queryClient } = useQueryClient();
@@ -225,7 +225,7 @@ infinite scrolling and "load more" user interfaces.
 > those hooks may be more suitable.
 
 ```tsx
-import { useSearchActorsInfinite } from "bluesky/react-query/actorsSearch.js";
+import { useSearchActorsInfinite } from "@speakeasy-api/bluesky/react-query/actorsSearch.js";
 
 export function Example() {
   const { data, error, status, fetchNextPage, hasNextPage } = useSearchActorsInfinite();
@@ -257,9 +257,9 @@ hooks that integrate neatly with React Suspense.
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ErrorBoundary } from "react-error-boundary";
 
-import { BlueskyCore } from "bluesky";
-import { BlueskyProvider } from "bluesky/react-query";
-import { useActorsGetPreferencesSuspense } from "bluesky/react-query/actorsGetPreferences.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky";
+import { BlueskyProvider } from "@speakeasy-api/bluesky/react-query";
+import { useActorsGetPreferencesSuspense } from "@speakeasy-api/bluesky/react-query/actorsGetPreferences.js";
 
 const queryClient = new QueryClient();
 const bluesky = new BlueskyCore({
@@ -313,8 +313,8 @@ import {
   HydrationBoundary,
   QueryClient,
 } from "@tanstack/react-query";
-import { BlueskyCore } from "bluesky";
-import { prefetchActorsGetPreferences } from "bluesky/react-query/actorsGetPreferences.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky";
+import { prefetchActorsGetPreferences } from "@speakeasy-api/bluesky/react-query/actorsGetPreferences.js";
 
 export default async function Page() {
   const queryClient = new QueryClient();

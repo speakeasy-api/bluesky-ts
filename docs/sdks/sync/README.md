@@ -32,7 +32,7 @@ Download a repository export as CAR file. Optionally only a 'diff' since a previ
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -54,8 +54,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { syncGetRepo } from "bluesky/funcs/syncGetRepo.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { syncGetRepo } from "@speakeasy-api/bluesky/funcs/syncGetRepo.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -105,7 +105,7 @@ import {
   // mutations and other user actions.
   invalidateSyncGetRepo,
   invalidateAllSyncGetRepo,
-} from "bluesky/react-query/syncGetRepo.js";
+} from "@speakeasy-api/bluesky/react-query/syncGetRepo.js";
 ```
 
 ### Parameters
@@ -146,7 +146,7 @@ List blob CIDs for an account, since some repo revision. Does not require auth; 
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -171,8 +171,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { syncListBlobs } from "bluesky/funcs/syncListBlobs.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { syncListBlobs } from "@speakeasy-api/bluesky/funcs/syncListBlobs.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -228,7 +228,7 @@ import {
   // mutations and other user actions.
   invalidateSyncListBlobs,
   invalidateAllSyncListBlobs,
-} from "bluesky/react-query/syncListBlobs.js";
+} from "@speakeasy-api/bluesky/react-query/syncListBlobs.js";
 ```
 
 ### Parameters
@@ -269,7 +269,7 @@ Notify a crawling service of a recent update, and that crawling should resume. I
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -291,8 +291,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { syncNotifyOfUpdate } from "bluesky/funcs/syncNotifyOfUpdate.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { syncNotifyOfUpdate } from "@speakeasy-api/bluesky/funcs/syncNotifyOfUpdate.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -331,7 +331,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useSyncNotifyOfUpdateMutation
-} from "bluesky/react-query/syncNotifyOfUpdate.js";
+} from "@speakeasy-api/bluesky/react-query/syncNotifyOfUpdate.js";
 ```
 
 ### Parameters

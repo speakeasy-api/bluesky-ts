@@ -199,7 +199,7 @@ export function invalidateSyncListBlobs(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "sync", "listBlobs", ...queryKeyBase],
+    queryKey: ["@speakeasy-api/bluesky", "sync", "listBlobs", ...queryKeyBase],
   });
 }
 
@@ -209,7 +209,7 @@ export function invalidateAllSyncListBlobs(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "sync", "listBlobs"],
+    queryKey: ["@speakeasy-api/bluesky", "sync", "listBlobs"],
   });
 }
 
@@ -300,5 +300,5 @@ export function queryKeySyncListBlobs(
     cursor?: string | undefined;
   },
 ): QueryKey {
-  return ["bluesky", "sync", "listBlobs", parameters];
+  return ["@speakeasy-api/bluesky", "sync", "listBlobs", parameters];
 }

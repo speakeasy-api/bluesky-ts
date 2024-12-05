@@ -5,7 +5,7 @@ If specified, subjects of the given type (account or record) will be returned. W
 ## Example Usage
 
 ```typescript
-import { QueryParamSubjectType } from "bluesky/models/operations";
+import { QueryParamSubjectType } from "@speakeasy-api/bluesky/models/operations";
 
 let value: QueryParamSubjectType = "account";
 ```

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComAtprotoRepoCreateRecordRequestBody } from "bluesky/models/operations";
+import { ComAtprotoRepoCreateRecordRequestBody } from "@speakeasy-api/bluesky/models/operations";
 
 let value: ComAtprotoRepoCreateRecordRequestBody = {
   repo: "<value>",

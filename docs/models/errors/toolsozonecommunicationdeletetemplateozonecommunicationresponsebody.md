@@ -5,7 +5,7 @@ Unauthorized
 ## Example Usage
 
 ```typescript
-import { ToolsOzoneCommunicationDeleteTemplateOzoneCommunicationResponseBody } from "bluesky/models/errors";
+import { ToolsOzoneCommunicationDeleteTemplateOzoneCommunicationResponseBody } from "@speakeasy-api/bluesky/models/errors";
 
 // No examples available for this model
 ```

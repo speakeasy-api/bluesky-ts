@@ -106,7 +106,12 @@ export function invalidateNotificationsGetUnreadCount(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "notifications", "getUnreadCount", ...queryKeyBase],
+    queryKey: [
+      "@speakeasy-api/bluesky",
+      "notifications",
+      "getUnreadCount",
+      ...queryKeyBase,
+    ],
   });
 }
 
@@ -116,7 +121,7 @@ export function invalidateAllNotificationsGetUnreadCount(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "notifications", "getUnreadCount"],
+    queryKey: ["@speakeasy-api/bluesky", "notifications", "getUnreadCount"],
   });
 }
 
@@ -156,5 +161,10 @@ export function buildNotificationsGetUnreadCountQuery(
 export function queryKeyNotificationsGetUnreadCount(
   parameters: { priority?: boolean | undefined; seenAt?: Date | undefined },
 ): QueryKey {
-  return ["bluesky", "notifications", "getUnreadCount", parameters];
+  return [
+    "@speakeasy-api/bluesky",
+    "notifications",
+    "getUnreadCount",
+    parameters,
+  ];
 }

@@ -1,8 +1,8 @@
 
 
 {
-  "name": "bluesky",
-  "version": "0.6.4",
+  "name": "@speakeasy-api/bluesky",
+  "version": "0.7.0",
   "exports": {
     ".": "./src/index.ts",    
     "./models/errors": "./src/models/errors/index.ts",    

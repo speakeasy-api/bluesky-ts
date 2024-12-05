@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComAtprotoServerListAppPasswordsAppPassword } from "bluesky/models/components";
+import { ComAtprotoServerListAppPasswordsAppPassword } from "@speakeasy-api/bluesky/models/components";
 
 let value: ComAtprotoServerListAppPasswordsAppPassword = {
   name: "<value>",

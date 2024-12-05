@@ -47,7 +47,7 @@ export function useIdentitySubmitPlcOperationMutation(
 }
 
 export function mutationKeyIdentitySubmitPlcOperation(): MutationKey {
-  return ["bluesky", "identity", "submitPlcOperation"];
+  return ["@speakeasy-api/bluesky", "identity", "submitPlcOperation"];
 }
 
 export function buildIdentitySubmitPlcOperationMutation(

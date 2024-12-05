@@ -50,7 +50,7 @@ export function useTeamsUpdateMemberMutation(
 }
 
 export function mutationKeyTeamsUpdateMember(): MutationKey {
-  return ["bluesky", "teams", "updateMember"];
+  return ["@speakeasy-api/bluesky", "teams", "updateMember"];
 }
 
 export function buildTeamsUpdateMemberMutation(

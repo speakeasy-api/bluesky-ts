@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { QueryParamScope } from "bluesky/models/operations";
+import { QueryParamScope } from "@speakeasy-api/bluesky/models/operations";
 
 let value: QueryParamScope = "personal";
 ```

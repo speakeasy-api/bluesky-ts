@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { AppBskyGraphUnmuteActorListRequestBody } from "bluesky/models/operations";
+import { AppBskyGraphUnmuteActorListRequestBody } from "@speakeasy-api/bluesky/models/operations";
 
 let value: AppBskyGraphUnmuteActorListRequestBody = {
   list: "https://trivial-coil.name/",

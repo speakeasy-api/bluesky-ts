@@ -5,7 +5,7 @@ Bad Request
 ## Example Usage
 
 ```typescript
-import { ComAtprotoServerRequestEmailConfirmationResponseBody } from "bluesky/models/errors";
+import { ComAtprotoServerRequestEmailConfirmationResponseBody } from "@speakeasy-api/bluesky/models/errors";
 
 // No examples available for this model
 ```

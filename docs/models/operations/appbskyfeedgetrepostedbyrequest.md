@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { AppBskyFeedGetRepostedByRequest } from "bluesky/models/operations";
+import { AppBskyFeedGetRepostedByRequest } from "@speakeasy-api/bluesky/models/operations";
 
 let value: AppBskyFeedGetRepostedByRequest = {
   uri: "https://querulous-chap.biz/",

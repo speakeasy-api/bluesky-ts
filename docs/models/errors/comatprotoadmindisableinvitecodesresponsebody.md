@@ -5,7 +5,7 @@ Bad Request
 ## Example Usage
 
 ```typescript
-import { ComAtprotoAdminDisableInviteCodesResponseBody } from "bluesky/models/errors";
+import { ComAtprotoAdminDisableInviteCodesResponseBody } from "@speakeasy-api/bluesky/models/errors";
 
 // No examples available for this model
 ```

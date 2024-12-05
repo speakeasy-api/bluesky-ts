@@ -22,7 +22,7 @@ Get data blocks needed to prove the existence or non-existence of record in the 
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -46,8 +46,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { atprotoSyncsGetRecord } from "bluesky/funcs/atprotoSyncsGetRecord.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { atprotoSyncsGetRecord } from "@speakeasy-api/bluesky/funcs/atprotoSyncsGetRecord.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -99,7 +99,7 @@ import {
   // mutations and other user actions.
   invalidateAtprotoSyncsGetRecord,
   invalidateAllAtprotoSyncsGetRecord,
-} from "bluesky/react-query/atprotoSyncsGetRecord.js";
+} from "@speakeasy-api/bluesky/react-query/atprotoSyncsGetRecord.js";
 ```
 
 ### Parameters

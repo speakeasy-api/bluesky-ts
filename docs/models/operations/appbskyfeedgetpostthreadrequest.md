@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { AppBskyFeedGetPostThreadRequest } from "bluesky/models/operations";
+import { AppBskyFeedGetPostThreadRequest } from "@speakeasy-api/bluesky/models/operations";
 
 let value: AppBskyFeedGetPostThreadRequest = {
   uri: "https://close-paintwork.com",

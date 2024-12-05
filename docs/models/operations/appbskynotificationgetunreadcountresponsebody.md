@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { AppBskyNotificationGetUnreadCountResponseBody } from "bluesky/models/operations";
+import { AppBskyNotificationGetUnreadCountResponseBody } from "@speakeasy-api/bluesky/models/operations";
 
 let value: AppBskyNotificationGetUnreadCountResponseBody = {
   count: 855804,

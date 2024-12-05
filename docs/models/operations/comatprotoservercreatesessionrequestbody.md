@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComAtprotoServerCreateSessionRequestBody } from "bluesky/models/operations";
+import { ComAtprotoServerCreateSessionRequestBody } from "@speakeasy-api/bluesky/models/operations";
 
 let value: ComAtprotoServerCreateSessionRequestBody = {
   identifier: "<value>",

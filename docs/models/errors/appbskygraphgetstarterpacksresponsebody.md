@@ -5,7 +5,7 @@ Bad Request
 ## Example Usage
 
 ```typescript
-import { AppBskyGraphGetStarterPacksResponseBody } from "bluesky/models/errors";
+import { AppBskyGraphGetStarterPacksResponseBody } from "@speakeasy-api/bluesky/models/errors";
 
 // No examples available for this model
 ```

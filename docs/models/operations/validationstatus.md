@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ValidationStatus } from "bluesky/models/operations";
+import { ValidationStatus } from "@speakeasy-api/bluesky/models/operations";
 
 let value: ValidationStatus = "valid";
 ```

@@ -90,7 +90,7 @@ export function invalidateAllAtprotoServerDescribe(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "atprotoServer", "describe"],
+    queryKey: ["@speakeasy-api/bluesky", "atprotoServer", "describe"],
   });
 }
 
@@ -123,5 +123,5 @@ export function buildAtprotoServerDescribeQuery(
 }
 
 export function queryKeyAtprotoServerDescribe(): QueryKey {
-  return ["bluesky", "atprotoServer", "describe"];
+  return ["@speakeasy-api/bluesky", "atprotoServer", "describe"];
 }

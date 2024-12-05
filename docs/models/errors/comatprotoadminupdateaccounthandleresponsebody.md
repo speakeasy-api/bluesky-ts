@@ -5,7 +5,7 @@ Bad Request
 ## Example Usage
 
 ```typescript
-import { ComAtprotoAdminUpdateAccountHandleResponseBody } from "bluesky/models/errors";
+import { ComAtprotoAdminUpdateAccountHandleResponseBody } from "@speakeasy-api/bluesky/models/errors";
 
 // No examples available for this model
 ```

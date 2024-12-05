@@ -220,7 +220,7 @@ export function invalidateOzoneSignaturesFindRelatedAccounts(
   return client.invalidateQueries({
     ...filters,
     queryKey: [
-      "bluesky",
+      "@speakeasy-api/bluesky",
       "ozoneSignatures",
       "findRelatedAccounts",
       ...queryKeyBase,
@@ -234,7 +234,11 @@ export function invalidateAllOzoneSignaturesFindRelatedAccounts(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "ozoneSignatures", "findRelatedAccounts"],
+    queryKey: [
+      "@speakeasy-api/bluesky",
+      "ozoneSignatures",
+      "findRelatedAccounts",
+    ],
   });
 }
 
@@ -327,5 +331,10 @@ export function queryKeyOzoneSignaturesFindRelatedAccounts(
     limit?: number | undefined;
   },
 ): QueryKey {
-  return ["bluesky", "ozoneSignatures", "findRelatedAccounts", parameters];
+  return [
+    "@speakeasy-api/bluesky",
+    "ozoneSignatures",
+    "findRelatedAccounts",
+    parameters,
+  ];
 }

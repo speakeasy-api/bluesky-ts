@@ -5,7 +5,7 @@ Bad Request
 ## Example Usage
 
 ```typescript
-import { AppBskyNotificationUpdateSeenResponseBody } from "bluesky/models/errors";
+import { AppBskyNotificationUpdateSeenResponseBody } from "@speakeasy-api/bluesky/models/errors";
 
 // No examples available for this model
 ```

@@ -190,7 +190,12 @@ export function invalidateFeedGetSuggested(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "feed", "getSuggested", ...queryKeyBase],
+    queryKey: [
+      "@speakeasy-api/bluesky",
+      "feed",
+      "getSuggested",
+      ...queryKeyBase,
+    ],
   });
 }
 
@@ -200,7 +205,7 @@ export function invalidateAllFeedGetSuggested(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "feed", "getSuggested"],
+    queryKey: ["@speakeasy-api/bluesky", "feed", "getSuggested"],
   });
 }
 
@@ -284,5 +289,5 @@ export function buildFeedGetSuggestedInfiniteQuery(
 export function queryKeyFeedGetSuggested(
   parameters: { limit?: number | undefined; cursor?: string | undefined },
 ): QueryKey {
-  return ["bluesky", "feed", "getSuggested", parameters];
+  return ["@speakeasy-api/bluesky", "feed", "getSuggested", parameters];
 }

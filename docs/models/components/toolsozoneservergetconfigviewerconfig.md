@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ToolsOzoneServerGetConfigViewerConfig } from "bluesky/models/components";
+import { ToolsOzoneServerGetConfigViewerConfig } from "@speakeasy-api/bluesky/models/components";
 
 let value: ToolsOzoneServerGetConfigViewerConfig = {};
 ```

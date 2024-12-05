@@ -90,7 +90,7 @@ export function invalidateAllVideosGetUploadLimits(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "videos", "getUploadLimits"],
+    queryKey: ["@speakeasy-api/bluesky", "videos", "getUploadLimits"],
   });
 }
 
@@ -123,5 +123,5 @@ export function buildVideosGetUploadLimitsQuery(
 }
 
 export function queryKeyVideosGetUploadLimits(): QueryKey {
-  return ["bluesky", "videos", "getUploadLimits"];
+  return ["@speakeasy-api/bluesky", "videos", "getUploadLimits"];
 }

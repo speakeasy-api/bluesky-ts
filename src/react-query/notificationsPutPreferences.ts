@@ -49,7 +49,7 @@ export function useNotificationsPutPreferencesMutation(
 }
 
 export function mutationKeyNotificationsPutPreferences(): MutationKey {
-  return ["bluesky", "notifications", "putPreferences"];
+  return ["@speakeasy-api/bluesky", "notifications", "putPreferences"];
 }
 
 export function buildNotificationsPutPreferencesMutation(

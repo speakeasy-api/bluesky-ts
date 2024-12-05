@@ -5,7 +5,7 @@ Unauthorized
 ## Example Usage
 
 ```typescript
-import { ChatBskyConvoDeleteMessageForSelfConvoResponseBody } from "bluesky/models/errors";
+import { ChatBskyConvoDeleteMessageForSelfConvoResponseBody } from "@speakeasy-api/bluesky/models/errors";
 
 // No examples available for this model
 ```

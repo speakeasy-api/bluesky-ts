@@ -49,7 +49,7 @@ export function useGraphsUnmuteActorListMutation(
 }
 
 export function mutationKeyGraphsUnmuteActorList(): MutationKey {
-  return ["bluesky", "graphs", "unmuteActorList"];
+  return ["@speakeasy-api/bluesky", "graphs", "unmuteActorList"];
 }
 
 export function buildGraphsUnmuteActorListMutation(

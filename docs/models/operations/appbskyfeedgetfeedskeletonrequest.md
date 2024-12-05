@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { AppBskyFeedGetFeedSkeletonRequest } from "bluesky/models/operations";
+import { AppBskyFeedGetFeedSkeletonRequest } from "@speakeasy-api/bluesky/models/operations";
 
 let value: AppBskyFeedGetFeedSkeletonRequest = {
   feed: "https://surprised-accelerator.net/",

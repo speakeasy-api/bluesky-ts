@@ -22,7 +22,7 @@ Find repositories based on a search term.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -45,8 +45,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { ozoneModerationsSearchRepos } from "bluesky/funcs/ozoneModerationsSearchRepos.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { ozoneModerationsSearchRepos } from "@speakeasy-api/bluesky/funcs/ozoneModerationsSearchRepos.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -100,7 +100,7 @@ import {
   // mutations and other user actions.
   invalidateOzoneModerationsSearchRepos,
   invalidateAllOzoneModerationsSearchRepos,
-} from "bluesky/react-query/ozoneModerationsSearchRepos.js";
+} from "@speakeasy-api/bluesky/react-query/ozoneModerationsSearchRepos.js";
 ```
 
 ### Parameters

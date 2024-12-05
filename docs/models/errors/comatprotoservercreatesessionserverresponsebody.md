@@ -5,7 +5,7 @@ Unauthorized
 ## Example Usage
 
 ```typescript
-import { ComAtprotoServerCreateSessionServerResponseBody } from "bluesky/models/errors";
+import { ComAtprotoServerCreateSessionServerResponseBody } from "@speakeasy-api/bluesky/models/errors";
 
 // No examples available for this model
 ```

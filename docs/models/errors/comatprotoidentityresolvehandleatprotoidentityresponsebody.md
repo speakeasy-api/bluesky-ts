@@ -5,7 +5,7 @@ Unauthorized
 ## Example Usage
 
 ```typescript
-import { ComAtprotoIdentityResolveHandleAtprotoIdentityResponseBody } from "bluesky/models/errors";
+import { ComAtprotoIdentityResolveHandleAtprotoIdentityResponseBody } from "@speakeasy-api/bluesky/models/errors";
 
 // No examples available for this model
 ```

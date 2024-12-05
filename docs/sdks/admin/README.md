@@ -57,7 +57,7 @@ Disable some set of codes and/or all codes associated with a set of users.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -77,8 +77,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { adminDisableInviteCodes } from "bluesky/funcs/adminDisableInviteCodes.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { adminDisableInviteCodes } from "@speakeasy-api/bluesky/funcs/adminDisableInviteCodes.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -115,7 +115,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useAdminDisableInviteCodesMutation
-} from "bluesky/react-query/adminDisableInviteCodes.js";
+} from "@speakeasy-api/bluesky/react-query/adminDisableInviteCodes.js";
 ```
 
 ### Parameters
@@ -156,7 +156,7 @@ Get details about an account.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -179,8 +179,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { adminGetAccountInfo } from "bluesky/funcs/adminGetAccountInfo.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { adminGetAccountInfo } from "@speakeasy-api/bluesky/funcs/adminGetAccountInfo.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -231,7 +231,7 @@ import {
   // mutations and other user actions.
   invalidateAdminGetAccountInfo,
   invalidateAllAdminGetAccountInfo,
-} from "bluesky/react-query/adminGetAccountInfo.js";
+} from "@speakeasy-api/bluesky/react-query/adminGetAccountInfo.js";
 ```
 
 ### Parameters
@@ -272,7 +272,7 @@ Get the service-specific admin status of a subject (account, record, or blob).
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -293,8 +293,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { adminGetSubjectStatus } from "bluesky/funcs/adminGetSubjectStatus.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { adminGetSubjectStatus } from "@speakeasy-api/bluesky/funcs/adminGetSubjectStatus.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -343,7 +343,7 @@ import {
   // mutations and other user actions.
   invalidateAdminGetSubjectStatus,
   invalidateAllAdminGetSubjectStatus,
-} from "bluesky/react-query/adminGetSubjectStatus.js";
+} from "@speakeasy-api/bluesky/react-query/adminGetSubjectStatus.js";
 ```
 
 ### Parameters
@@ -384,7 +384,7 @@ Send email to a user's account email address.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -409,8 +409,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { adminSendEmail } from "bluesky/funcs/adminSendEmail.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { adminSendEmail } from "@speakeasy-api/bluesky/funcs/adminSendEmail.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -452,7 +452,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useAdminSendEmailMutation
-} from "bluesky/react-query/adminSendEmail.js";
+} from "@speakeasy-api/bluesky/react-query/adminSendEmail.js";
 ```
 
 ### Parameters
@@ -493,7 +493,7 @@ Administrative action to update an account's email.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -516,8 +516,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { adminUpdateAccountEmail } from "bluesky/funcs/adminUpdateAccountEmail.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { adminUpdateAccountEmail } from "@speakeasy-api/bluesky/funcs/adminUpdateAccountEmail.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -557,7 +557,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useAdminUpdateAccountEmailMutation
-} from "bluesky/react-query/adminUpdateAccountEmail.js";
+} from "@speakeasy-api/bluesky/react-query/adminUpdateAccountEmail.js";
 ```
 
 ### Parameters
@@ -598,7 +598,7 @@ Administrative action to update an account's handle.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -621,8 +621,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { adminUpdateAccountHandle } from "bluesky/funcs/adminUpdateAccountHandle.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { adminUpdateAccountHandle } from "@speakeasy-api/bluesky/funcs/adminUpdateAccountHandle.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -662,7 +662,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useAdminUpdateAccountHandleMutation
-} from "bluesky/react-query/adminUpdateAccountHandle.js";
+} from "@speakeasy-api/bluesky/react-query/adminUpdateAccountHandle.js";
 ```
 
 ### Parameters
@@ -703,7 +703,7 @@ Update the password for a user account as an administrator.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -726,8 +726,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { adminUpdateAccountPassword } from "bluesky/funcs/adminUpdateAccountPassword.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { adminUpdateAccountPassword } from "@speakeasy-api/bluesky/funcs/adminUpdateAccountPassword.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -767,7 +767,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useAdminUpdateAccountPasswordMutation
-} from "bluesky/react-query/adminUpdateAccountPassword.js";
+} from "@speakeasy-api/bluesky/react-query/adminUpdateAccountPassword.js";
 ```
 
 ### Parameters
@@ -808,7 +808,7 @@ Update the service-specific admin status of a subject (account, record, or blob)
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -834,8 +834,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { adminUpdateSubjectStatus } from "bluesky/funcs/adminUpdateSubjectStatus.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { adminUpdateSubjectStatus } from "@speakeasy-api/bluesky/funcs/adminUpdateSubjectStatus.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -878,7 +878,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useAdminUpdateSubjectStatusMutation
-} from "bluesky/react-query/adminUpdateSubjectStatus.js";
+} from "@speakeasy-api/bluesky/react-query/adminUpdateSubjectStatus.js";
 ```
 
 ### Parameters

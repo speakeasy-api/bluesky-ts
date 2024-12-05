@@ -22,7 +22,7 @@ Find all correlated threat signatures between 2 or more accounts.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -47,8 +47,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { signatureFindCorrelation } from "bluesky/funcs/signatureFindCorrelation.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { signatureFindCorrelation } from "@speakeasy-api/bluesky/funcs/signatureFindCorrelation.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -101,7 +101,7 @@ import {
   // mutations and other user actions.
   invalidateSignatureFindCorrelation,
   invalidateAllSignatureFindCorrelation,
-} from "bluesky/react-query/signatureFindCorrelation.js";
+} from "@speakeasy-api/bluesky/react-query/signatureFindCorrelation.js";
 ```
 
 ### Parameters

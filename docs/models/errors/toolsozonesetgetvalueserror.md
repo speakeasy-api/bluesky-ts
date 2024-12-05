@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ToolsOzoneSetGetValuesError } from "bluesky/models/errors";
+import { ToolsOzoneSetGetValuesError } from "@speakeasy-api/bluesky/models/errors";
 
 let value: ToolsOzoneSetGetValuesError = "ExpiredToken";
 ```

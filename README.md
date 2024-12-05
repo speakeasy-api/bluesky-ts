@@ -95,14 +95,16 @@ For supported JavaScript runtimes, please consult [RUNTIMES.md](RUNTIMES.md).
 ### Example
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
 });
 
 async function run() {
-  const result = await bluesky.actors.getPreferences();
+  const result = await bluesky.actors.getProfile({
+    actor: "did:plc:z72i7hdynmk6r22z27h6tvur",
+  });
 
   // Handle the result
   console.log(result);
@@ -2737,7 +2739,7 @@ syntax.
 Here's an example of one such pagination call:
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -2772,7 +2774,7 @@ Certain SDK methods accept files as part of a multi-part request. It is possible
 > - **Node.js v18:** A file stream can be created using the `fileFrom` helper from [`fetch-blob/from.js`](https://www.npmjs.com/package/fetch-blob).
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 import { openAsBlob } from "node:fs";
 
 const bluesky = new Bluesky({
@@ -2798,7 +2800,7 @@ Some of the endpoints in this SDK support retries.  If you use the SDK without a
 
 To change the default retry strategy for a single API call, simply provide a retryConfig object to the call:
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -2828,7 +2830,7 @@ run();
 
 If you'd like to override the default retry strategy for all operations that support retries, you can provide a retryConfig at SDK initialization:
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   retryConfig: {
@@ -2886,7 +2888,7 @@ In addition, when custom error responses are specified for an operation, the SDK
 | errors.APIError                                     | 4XX, 5XX                     | \*/\*            |
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 import {
   AppBskyActorGetPreferencesActorsResponseBody,
   AppBskyActorGetPreferencesResponseBody,
@@ -2897,7 +2899,7 @@ import {
   SDKValidationError,
   Timeout,
   Unauthorized,
-} from "bluesky/models/errors";
+} from "@speakeasy-api/bluesky/models/errors";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -2988,7 +2990,7 @@ You can override the default server globally by passing a server name to the `se
 #### Example
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   server: "public",
@@ -3010,7 +3012,7 @@ run();
 
 The default server can also be overridden globally by passing a URL to the `serverURL: string` optional parameter when initializing the SDK client instance. For example:
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   serverURL: "https://api.bsky.app",
@@ -3047,8 +3049,8 @@ custom header and a timeout to requests and how to use the `"requestError"` hook
 to log errors:
 
 ```typescript
-import { Bluesky } from "bluesky";
-import { HTTPClient } from "bluesky/lib/http";
+import { Bluesky } from "@speakeasy-api/bluesky";
+import { HTTPClient } from "@speakeasy-api/bluesky/lib/http";
 
 const httpClient = new HTTPClient({
   // fetcher takes a function that has the same signature as native `fetch`.
@@ -3091,7 +3093,7 @@ This SDK supports the following security scheme globally:
 
 To authenticate with the API the `bearer` parameter must be set when initializing the SDK client instance. For example:
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -3120,7 +3122,7 @@ You can pass a logger that matches `console`'s interface as an SDK option.
 > Beware that debug logging will reveal secrets, like API tokens in headers, in log messages printed to a console or files. It's recommended to use this feature only during local development and not in production.
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const sdk = new Bluesky({ debugLogger: console });
 ```

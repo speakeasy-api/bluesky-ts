@@ -5,7 +5,7 @@ Unmute incoming reports from an account
 ## Example Usage
 
 ```typescript
-import { ToolsOzoneModerationDefsModEventUnmuteReporter } from "bluesky/models/components";
+import { ToolsOzoneModerationDefsModEventUnmuteReporter } from "@speakeasy-api/bluesky/models/components";
 
 let value: ToolsOzoneModerationDefsModEventUnmuteReporter = {};
 ```

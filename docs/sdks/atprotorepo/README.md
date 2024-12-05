@@ -32,7 +32,7 @@ Delete a repository record, or ensure it doesn't exist. Requires auth, implement
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -57,8 +57,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { atprotoRepoDelete } from "bluesky/funcs/atprotoRepoDelete.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { atprotoRepoDelete } from "@speakeasy-api/bluesky/funcs/atprotoRepoDelete.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -100,7 +100,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useAtprotoRepoDeleteMutation
-} from "bluesky/react-query/atprotoRepoDelete.js";
+} from "@speakeasy-api/bluesky/react-query/atprotoRepoDelete.js";
 ```
 
 ### Parameters
@@ -141,7 +141,7 @@ Import a repo in the form of a CAR file. Requires Content-Length HTTP header to 
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 import { openAsBlob } from "node:fs";
 
 const bluesky = new Bluesky({
@@ -162,8 +162,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { atprotoRepoImport } from "bluesky/funcs/atprotoRepoImport.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { atprotoRepoImport } from "@speakeasy-api/bluesky/funcs/atprotoRepoImport.js";
 import { openAsBlob } from "node:fs";
 
 // Use `BlueskyCore` for best tree-shaking performance.
@@ -201,7 +201,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useAtprotoRepoImportMutation
-} from "bluesky/react-query/atprotoRepoImport.js";
+} from "@speakeasy-api/bluesky/react-query/atprotoRepoImport.js";
 ```
 
 ### Parameters
@@ -242,7 +242,7 @@ Upload a new blob, to be referenced from a repository record. The blob will be d
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 import { openAsBlob } from "node:fs";
 
 const bluesky = new Bluesky({
@@ -264,8 +264,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { atprotoRepoUploadBlob } from "bluesky/funcs/atprotoRepoUploadBlob.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { atprotoRepoUploadBlob } from "@speakeasy-api/bluesky/funcs/atprotoRepoUploadBlob.js";
 import { openAsBlob } from "node:fs";
 
 // Use `BlueskyCore` for best tree-shaking performance.
@@ -304,7 +304,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useAtprotoRepoUploadBlobMutation
-} from "bluesky/react-query/atprotoRepoUploadBlob.js";
+} from "@speakeasy-api/bluesky/react-query/atprotoRepoUploadBlob.js";
 ```
 
 ### Parameters

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComAtprotoAdminDefsRepoBlobRef } from "bluesky/models/components";
+import { ComAtprotoAdminDefsRepoBlobRef } from "@speakeasy-api/bluesky/models/components";
 
 let value: ComAtprotoAdminDefsRepoBlobRef = {
   did: "<id>",

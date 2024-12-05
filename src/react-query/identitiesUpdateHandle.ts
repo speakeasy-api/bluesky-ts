@@ -47,7 +47,7 @@ export function useIdentitiesUpdateHandleMutation(
 }
 
 export function mutationKeyIdentitiesUpdateHandle(): MutationKey {
-  return ["bluesky", "identities", "updateHandle"];
+  return ["@speakeasy-api/bluesky", "identities", "updateHandle"];
 }
 
 export function buildIdentitiesUpdateHandleMutation(

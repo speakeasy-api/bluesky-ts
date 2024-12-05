@@ -201,7 +201,7 @@ export function invalidateReposList(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "repos", "list", ...queryKeyBase],
+    queryKey: ["@speakeasy-api/bluesky", "repos", "list", ...queryKeyBase],
   });
 }
 
@@ -211,7 +211,7 @@ export function invalidateAllReposList(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "repos", "list"],
+    queryKey: ["@speakeasy-api/bluesky", "repos", "list"],
   });
 }
 
@@ -303,5 +303,5 @@ export function queryKeyReposList(
     reverse?: boolean | undefined;
   },
 ): QueryKey {
-  return ["bluesky", "repos", "list", parameters];
+  return ["@speakeasy-api/bluesky", "repos", "list", parameters];
 }

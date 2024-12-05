@@ -112,7 +112,12 @@ export function invalidateAccountsGetInviteCodes(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "accounts", "getInviteCodes", ...queryKeyBase],
+    queryKey: [
+      "@speakeasy-api/bluesky",
+      "accounts",
+      "getInviteCodes",
+      ...queryKeyBase,
+    ],
   });
 }
 
@@ -122,7 +127,7 @@ export function invalidateAllAccountsGetInviteCodes(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "accounts", "getInviteCodes"],
+    queryKey: ["@speakeasy-api/bluesky", "accounts", "getInviteCodes"],
   });
 }
 
@@ -165,5 +170,5 @@ export function queryKeyAccountsGetInviteCodes(
     createAvailable?: boolean | undefined;
   },
 ): QueryKey {
-  return ["bluesky", "accounts", "getInviteCodes", parameters];
+  return ["@speakeasy-api/bluesky", "accounts", "getInviteCodes", parameters];
 }

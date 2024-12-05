@@ -106,7 +106,12 @@ export function invalidateActorSearchTypeahead(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "actor", "searchTypeahead", ...queryKeyBase],
+    queryKey: [
+      "@speakeasy-api/bluesky",
+      "actor",
+      "searchTypeahead",
+      ...queryKeyBase,
+    ],
   });
 }
 
@@ -116,7 +121,7 @@ export function invalidateAllActorSearchTypeahead(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "actor", "searchTypeahead"],
+    queryKey: ["@speakeasy-api/bluesky", "actor", "searchTypeahead"],
   });
 }
 
@@ -156,5 +161,5 @@ export function buildActorSearchTypeaheadQuery(
 export function queryKeyActorSearchTypeahead(
   parameters: { q?: string | undefined; limit?: number | undefined },
 ): QueryKey {
-  return ["bluesky", "actor", "searchTypeahead", parameters];
+  return ["@speakeasy-api/bluesky", "actor", "searchTypeahead", parameters];
 }

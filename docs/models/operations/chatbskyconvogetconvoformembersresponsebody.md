@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { ChatBskyConvoGetConvoForMembersResponseBody } from "bluesky/models/operations";
+import { ChatBskyConvoGetConvoForMembersResponseBody } from "@speakeasy-api/bluesky/models/operations";
 
 let value: ChatBskyConvoGetConvoForMembersResponseBody = {
   convo: {

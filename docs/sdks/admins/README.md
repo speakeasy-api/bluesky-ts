@@ -32,7 +32,7 @@ Delete a user account as an administrator.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -54,8 +54,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { adminsDeleteAccount } from "bluesky/funcs/adminsDeleteAccount.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { adminsDeleteAccount } from "@speakeasy-api/bluesky/funcs/adminsDeleteAccount.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -94,7 +94,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useAdminsDeleteAccountMutation
-} from "bluesky/react-query/adminsDeleteAccount.js";
+} from "@speakeasy-api/bluesky/react-query/adminsDeleteAccount.js";
 ```
 
 ### Parameters
@@ -135,7 +135,7 @@ Re-enable an account's ability to receive invite codes.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -157,8 +157,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { adminsEnableAccountInvites } from "bluesky/funcs/adminsEnableAccountInvites.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { adminsEnableAccountInvites } from "@speakeasy-api/bluesky/funcs/adminsEnableAccountInvites.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -197,7 +197,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useAdminsEnableAccountInvitesMutation
-} from "bluesky/react-query/adminsEnableAccountInvites.js";
+} from "@speakeasy-api/bluesky/react-query/adminsEnableAccountInvites.js";
 ```
 
 ### Parameters
@@ -238,7 +238,7 @@ Get details about some accounts.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -263,8 +263,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { adminsGetAccountInfos } from "bluesky/funcs/adminsGetAccountInfos.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { adminsGetAccountInfos } from "@speakeasy-api/bluesky/funcs/adminsGetAccountInfos.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -317,7 +317,7 @@ import {
   // mutations and other user actions.
   invalidateAdminsGetAccountInfos,
   invalidateAllAdminsGetAccountInfos,
-} from "bluesky/react-query/adminsGetAccountInfos.js";
+} from "@speakeasy-api/bluesky/react-query/adminsGetAccountInfos.js";
 ```
 
 ### Parameters

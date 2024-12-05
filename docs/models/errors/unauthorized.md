@@ -5,7 +5,7 @@ A collection of codes that generally means the client was not authenticated corr
 ## Example Usage
 
 ```typescript
-import { Unauthorized } from "bluesky/models/errors";
+import { Unauthorized } from "@speakeasy-api/bluesky/models/errors";
 
 // No examples available for this model
 ```

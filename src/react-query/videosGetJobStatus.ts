@@ -102,7 +102,12 @@ export function invalidateVideosGetJobStatus(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "videos", "getJobStatus", ...queryKeyBase],
+    queryKey: [
+      "@speakeasy-api/bluesky",
+      "videos",
+      "getJobStatus",
+      ...queryKeyBase,
+    ],
   });
 }
 
@@ -112,7 +117,7 @@ export function invalidateAllVideosGetJobStatus(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "videos", "getJobStatus"],
+    queryKey: ["@speakeasy-api/bluesky", "videos", "getJobStatus"],
   });
 }
 
@@ -149,5 +154,5 @@ export function buildVideosGetJobStatusQuery(
 export function queryKeyVideosGetJobStatus(
   parameters: { jobId: string },
 ): QueryKey {
-  return ["bluesky", "videos", "getJobStatus", parameters];
+  return ["@speakeasy-api/bluesky", "videos", "getJobStatus", parameters];
 }

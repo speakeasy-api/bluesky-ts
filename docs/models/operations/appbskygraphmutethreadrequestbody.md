@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { AppBskyGraphMuteThreadRequestBody } from "bluesky/models/operations";
+import { AppBskyGraphMuteThreadRequestBody } from "@speakeasy-api/bluesky/models/operations";
 
 let value: AppBskyGraphMuteThreadRequestBody = {
   root: "https://usable-providence.org/",

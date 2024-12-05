@@ -5,7 +5,7 @@ Revert take down action on a subject
 ## Example Usage
 
 ```typescript
-import { ToolsOzoneModerationDefsModEventReverseTakedown } from "bluesky/models/components";
+import { ToolsOzoneModerationDefsModEventReverseTakedown } from "@speakeasy-api/bluesky/models/components";
 
 let value: ToolsOzoneModerationDefsModEventReverseTakedown = {};
 ```

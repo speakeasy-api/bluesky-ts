@@ -110,6 +110,7 @@ paths:
           in: query
           description: Handle or DID of account to fetch profile of.
           required: true
+          example: "did:plc:z72i7hdynmk6r22z27h6tvur"
           schema:
             type: string
             description: Handle or DID of account to fetch profile of.
@@ -155,6 +156,7 @@ paths:
                     type: string
       x-speakeasy-name-override: getProfile
       x-speakeasy-group: actor
+      x-speakeasy-usage-example: true
   /xrpc/app.bsky.actor.getProfiles:
     get:
       tags:

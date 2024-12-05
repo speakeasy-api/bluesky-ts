@@ -51,7 +51,7 @@ export function useOzoneCommunicationUpdateTemplateMutation(
 }
 
 export function mutationKeyOzoneCommunicationUpdateTemplate(): MutationKey {
-  return ["bluesky", "ozoneCommunication", "updateTemplate"];
+  return ["@speakeasy-api/bluesky", "ozoneCommunication", "updateTemplate"];
 }
 
 export function buildOzoneCommunicationUpdateTemplateMutation(

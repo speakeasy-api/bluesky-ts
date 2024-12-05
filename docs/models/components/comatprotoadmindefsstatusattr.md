@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComAtprotoAdminDefsStatusAttr } from "bluesky/models/components";
+import { ComAtprotoAdminDefsStatusAttr } from "@speakeasy-api/bluesky/models/components";
 
 let value: ComAtprotoAdminDefsStatusAttr = {
   applied: false,

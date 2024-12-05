@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { AppBskyGraphMuteThreadError } from "bluesky/models/errors";
+import { AppBskyGraphMuteThreadError } from "@speakeasy-api/bluesky/models/errors";
 
 let value: AppBskyGraphMuteThreadError = "InvalidRequest";
 ```

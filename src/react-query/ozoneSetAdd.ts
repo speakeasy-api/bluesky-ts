@@ -49,7 +49,7 @@ export function useOzoneSetAddMutation(
 }
 
 export function mutationKeyOzoneSetAdd(): MutationKey {
-  return ["bluesky", "ozoneSet", "add"];
+  return ["@speakeasy-api/bluesky", "ozoneSet", "add"];
 }
 
 export function buildOzoneSetAddMutation(

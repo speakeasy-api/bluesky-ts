@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { AppBskyGraphSearchStarterPacksError } from "bluesky/models/errors";
+import { AppBskyGraphSearchStarterPacksError } from "@speakeasy-api/bluesky/models/errors";
 
 let value: AppBskyGraphSearchStarterPacksError = "InvalidRequest";
 ```

@@ -5,7 +5,7 @@ Status codes relating to the resource/entity they are requesting not being found
 ## Example Usage
 
 ```typescript
-import { NotFound } from "bluesky/models/errors";
+import { NotFound } from "@speakeasy-api/bluesky/models/errors";
 
 // No examples available for this model
 ```

@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { AppBskyGraphGetSuggestedFollowsByActorResponseBody } from "bluesky/models/operations";
+import { AppBskyGraphGetSuggestedFollowsByActorResponseBody } from "@speakeasy-api/bluesky/models/operations";
 
 let value: AppBskyGraphGetSuggestedFollowsByActorResponseBody = {
   suggestions: [],

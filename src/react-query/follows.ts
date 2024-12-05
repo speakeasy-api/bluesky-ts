@@ -197,7 +197,12 @@ export function invalidateFollows(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "graph", "getFollows", ...queryKeyBase],
+    queryKey: [
+      "@speakeasy-api/bluesky",
+      "graph",
+      "getFollows",
+      ...queryKeyBase,
+    ],
   });
 }
 
@@ -207,7 +212,7 @@ export function invalidateAllFollows(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "graph", "getFollows"],
+    queryKey: ["@speakeasy-api/bluesky", "graph", "getFollows"],
   });
 }
 
@@ -293,5 +298,5 @@ export function queryKeyFollows(
     cursor?: string | undefined;
   },
 ): QueryKey {
-  return ["bluesky", "graph", "getFollows", parameters];
+  return ["@speakeasy-api/bluesky", "graph", "getFollows", parameters];
 }

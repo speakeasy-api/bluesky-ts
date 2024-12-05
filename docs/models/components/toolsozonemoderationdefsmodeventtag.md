@@ -5,7 +5,7 @@ Add/Remove a tag on a subject
 ## Example Usage
 
 ```typescript
-import { ToolsOzoneModerationDefsModEventTag } from "bluesky/models/components";
+import { ToolsOzoneModerationDefsModEventTag } from "@speakeasy-api/bluesky/models/components";
 
 let value: ToolsOzoneModerationDefsModEventTag = {
   add: [

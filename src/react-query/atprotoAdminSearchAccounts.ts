@@ -214,7 +214,12 @@ export function invalidateAtprotoAdminSearchAccounts(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "atprotoAdmin", "searchAccounts", ...queryKeyBase],
+    queryKey: [
+      "@speakeasy-api/bluesky",
+      "atprotoAdmin",
+      "searchAccounts",
+      ...queryKeyBase,
+    ],
   });
 }
 
@@ -224,7 +229,7 @@ export function invalidateAllAtprotoAdminSearchAccounts(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "atprotoAdmin", "searchAccounts"],
+    queryKey: ["@speakeasy-api/bluesky", "atprotoAdmin", "searchAccounts"],
   });
 }
 
@@ -317,5 +322,10 @@ export function queryKeyAtprotoAdminSearchAccounts(
     limit?: number | undefined;
   },
 ): QueryKey {
-  return ["bluesky", "atprotoAdmin", "searchAccounts", parameters];
+  return [
+    "@speakeasy-api/bluesky",
+    "atprotoAdmin",
+    "searchAccounts",
+    parameters,
+  ];
 }

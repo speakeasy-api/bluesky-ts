@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { ToolsOzoneSettingRemoveOptionsResponseBody } from "bluesky/models/operations";
+import { ToolsOzoneSettingRemoveOptionsResponseBody } from "@speakeasy-api/bluesky/models/operations";
 
 let value: ToolsOzoneSettingRemoveOptionsResponseBody = {};
 ```

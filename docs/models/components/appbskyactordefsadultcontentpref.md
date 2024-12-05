@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { AppBskyActorDefsAdultContentPref } from "bluesky/models/components";
+import { AppBskyActorDefsAdultContentPref } from "@speakeasy-api/bluesky/models/components";
 
 let value: AppBskyActorDefsAdultContentPref = {
   enabled: false,

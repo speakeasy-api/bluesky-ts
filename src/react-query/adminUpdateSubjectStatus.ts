@@ -50,7 +50,7 @@ export function useAdminUpdateSubjectStatusMutation(
 }
 
 export function mutationKeyAdminUpdateSubjectStatus(): MutationKey {
-  return ["bluesky", "admin", "updateSubjectStatus"];
+  return ["@speakeasy-api/bluesky", "admin", "updateSubjectStatus"];
 }
 
 export function buildAdminUpdateSubjectStatusMutation(

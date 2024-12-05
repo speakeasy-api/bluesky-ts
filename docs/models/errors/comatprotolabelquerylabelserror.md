@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComAtprotoLabelQueryLabelsError } from "bluesky/models/errors";
+import { ComAtprotoLabelQueryLabelsError } from "@speakeasy-api/bluesky/models/errors";
 
 let value: ComAtprotoLabelQueryLabelsError = "ExpiredToken";
 ```

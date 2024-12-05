@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { AppBskyGraphGetFollowsError } from "bluesky/models/errors";
+import { AppBskyGraphGetFollowsError } from "@speakeasy-api/bluesky/models/errors";
 
 let value: AppBskyGraphGetFollowsError = "ExpiredToken";
 ```

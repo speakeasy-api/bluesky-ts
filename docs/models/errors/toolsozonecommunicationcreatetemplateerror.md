@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ToolsOzoneCommunicationCreateTemplateError } from "bluesky/models/errors";
+import { ToolsOzoneCommunicationCreateTemplateError } from "@speakeasy-api/bluesky/models/errors";
 
 let value: ToolsOzoneCommunicationCreateTemplateError = "DuplicateTemplateName";
 ```

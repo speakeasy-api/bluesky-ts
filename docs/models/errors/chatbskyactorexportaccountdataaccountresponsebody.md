@@ -5,7 +5,7 @@ Unauthorized
 ## Example Usage
 
 ```typescript
-import { ChatBskyActorExportAccountDataAccountResponseBody } from "bluesky/models/errors";
+import { ChatBskyActorExportAccountDataAccountResponseBody } from "@speakeasy-api/bluesky/models/errors";
 
 // No examples available for this model
 ```

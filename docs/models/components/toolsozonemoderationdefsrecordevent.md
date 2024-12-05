@@ -5,7 +5,7 @@ Logs lifecycle event on a record subject. Normally captured by automod from the 
 ## Example Usage
 
 ```typescript
-import { ToolsOzoneModerationDefsRecordEvent } from "bluesky/models/components";
+import { ToolsOzoneModerationDefsRecordEvent } from "@speakeasy-api/bluesky/models/components";
 
 let value: ToolsOzoneModerationDefsRecordEvent = {
   op: "update",

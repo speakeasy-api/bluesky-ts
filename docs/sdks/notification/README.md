@@ -22,7 +22,7 @@ Enumerate notifications for the requesting account. Requires auth.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -45,8 +45,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { notificationList } from "bluesky/funcs/notificationList.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { notificationList } from "@speakeasy-api/bluesky/funcs/notificationList.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -100,7 +100,7 @@ import {
   // mutations and other user actions.
   invalidateNotificationList,
   invalidateAllNotificationList,
-} from "bluesky/react-query/notificationList.js";
+} from "@speakeasy-api/bluesky/react-query/notificationList.js";
 ```
 
 ### Parameters

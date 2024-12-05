@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComAtprotoServerReserveSigningKeyRequestBody } from "bluesky/models/operations";
+import { ComAtprotoServerReserveSigningKeyRequestBody } from "@speakeasy-api/bluesky/models/operations";
 
 let value: ComAtprotoServerReserveSigningKeyRequestBody = {};
 ```

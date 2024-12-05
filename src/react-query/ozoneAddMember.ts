@@ -50,7 +50,7 @@ export function useOzoneAddMemberMutation(
 }
 
 export function mutationKeyOzoneAddMember(): MutationKey {
-  return ["bluesky", "ozone", "addMember"];
+  return ["@speakeasy-api/bluesky", "ozone", "addMember"];
 }
 
 export function buildOzoneAddMemberMutation(

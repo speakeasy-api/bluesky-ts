@@ -5,7 +5,7 @@ Specifies the ranking order of results.
 ## Example Usage
 
 ```typescript
-import { Sort } from "bluesky/models/operations";
+import { Sort } from "@speakeasy-api/bluesky/models/operations";
 
 let value: Sort = "latest";
 ```

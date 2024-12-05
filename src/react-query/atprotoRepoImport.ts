@@ -48,7 +48,7 @@ export function useAtprotoRepoImportMutation(
 }
 
 export function mutationKeyAtprotoRepoImport(): MutationKey {
-  return ["bluesky", "atprotoRepo", "import"];
+  return ["@speakeasy-api/bluesky", "atprotoRepo", "import"];
 }
 
 export function buildAtprotoRepoImportMutation(

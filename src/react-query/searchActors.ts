@@ -197,7 +197,7 @@ export function invalidateSearchActors(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "actors", "search", ...queryKeyBase],
+    queryKey: ["@speakeasy-api/bluesky", "actors", "search", ...queryKeyBase],
   });
 }
 
@@ -207,7 +207,7 @@ export function invalidateAllSearchActors(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "actors", "search"],
+    queryKey: ["@speakeasy-api/bluesky", "actors", "search"],
   });
 }
 
@@ -295,5 +295,5 @@ export function queryKeySearchActors(
     cursor?: string | undefined;
   },
 ): QueryKey {
-  return ["bluesky", "actors", "search", parameters];
+  return ["@speakeasy-api/bluesky", "actors", "search", parameters];
 }

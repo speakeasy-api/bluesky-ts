@@ -50,7 +50,7 @@ export function useServerCreateSessionMutation(
 }
 
 export function mutationKeyServerCreateSession(): MutationKey {
-  return ["bluesky", "server", "createSession"];
+  return ["@speakeasy-api/bluesky", "server", "createSession"];
 }
 
 export function buildServerCreateSessionMutation(

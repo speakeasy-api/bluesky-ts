@@ -90,7 +90,7 @@ export function invalidateAllFeedsDescribeGenerator(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "feeds", "describeGenerator"],
+    queryKey: ["@speakeasy-api/bluesky", "feeds", "describeGenerator"],
   });
 }
 
@@ -123,5 +123,5 @@ export function buildFeedsDescribeGeneratorQuery(
 }
 
 export function queryKeyFeedsDescribeGenerator(): QueryKey {
-  return ["bluesky", "feeds", "describeGenerator"];
+  return ["@speakeasy-api/bluesky", "feeds", "describeGenerator"];
 }

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComAtprotoSyncGetLatestCommitError } from "bluesky/models/errors";
+import { ComAtprotoSyncGetLatestCommitError } from "@speakeasy-api/bluesky/models/errors";
 
 let value: ComAtprotoSyncGetLatestCommitError = "RepoSuspended";
 ```

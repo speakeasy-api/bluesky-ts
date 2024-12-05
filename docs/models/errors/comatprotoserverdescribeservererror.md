@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComAtprotoServerDescribeServerError } from "bluesky/models/errors";
+import { ComAtprotoServerDescribeServerError } from "@speakeasy-api/bluesky/models/errors";
 
 let value: ComAtprotoServerDescribeServerError = "InvalidToken";
 ```

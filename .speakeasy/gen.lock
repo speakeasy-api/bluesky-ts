@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 8ee5821f-25ad-41d5-94bd-080f4048f5d5
 management:
-  docChecksum: 9f7012642304506e71ecf611eee8d2f5
+  docChecksum: dbb7ddc1f24fcd6d7cf7cea6229e86c5
   docVersion: 0.0.0
   speakeasyVersion: 1.452.0
   generationVersion: 2.472.1
-  releaseVersion: 0.6.4
-  configChecksum: ea074e544d6d4261b69a208e55d14fa2
+  releaseVersion: 0.7.0
+  configChecksum: 92d2bca6ffc47c646047dd2f196091a4
   repoURL: https://github.com/speakeasy-api/bluesky-ts.git
   installationURL: https://github.com/speakeasy-api/bluesky-ts
 features:
@@ -19,6 +19,7 @@ features:
     devContainers: 2.90.0
     enumUnions: 0.1.0
     envVarSecurityUsage: 0.1.2
+    examples: 2.81.4
     globalSecurity: 2.82.11
     globalSecurityCallbacks: 0.1.0
     globalSecurityFlattening: 0.1.0
@@ -2146,6 +2147,27 @@ examples:
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "429":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
+    "":
+      parameters:
+        query:
+          actor: "did:plc:z72i7hdynmk6r22z27h6tvur"
+      responses:
+        "200":
+          application/json: {"did": "<id>", "handle": "<value>"}
+        "400":
+          application/json: {"error": "InvalidRequest", "message": "<value>"}
+        "401":
+          application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "404": {}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413": {}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>"}
         "500":
           application/json: {"key": "<value>", "key1": "<value>"}
   app.bsky.actor.getProfiles:

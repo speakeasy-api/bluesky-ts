@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { AppBskyVideoGetUploadLimitsResponseBody } from "bluesky/models/operations";
+import { AppBskyVideoGetUploadLimitsResponseBody } from "@speakeasy-api/bluesky/models/operations";
 
 let value: AppBskyVideoGetUploadLimitsResponseBody = {
   canUpload: false,

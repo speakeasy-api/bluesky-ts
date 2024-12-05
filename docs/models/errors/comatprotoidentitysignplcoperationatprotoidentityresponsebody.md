@@ -5,7 +5,7 @@ Unauthorized
 ## Example Usage
 
 ```typescript
-import { ComAtprotoIdentitySignPlcOperationAtprotoIdentityResponseBody } from "bluesky/models/errors";
+import { ComAtprotoIdentitySignPlcOperationAtprotoIdentityResponseBody } from "@speakeasy-api/bluesky/models/errors";
 
 // No examples available for this model
 ```

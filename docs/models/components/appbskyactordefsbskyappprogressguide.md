@@ -5,7 +5,7 @@ If set, an active progress guide. Once completed, can be set to undefined. Shoul
 ## Example Usage
 
 ```typescript
-import { AppBskyActorDefsBskyAppProgressGuide } from "bluesky/models/components";
+import { AppBskyActorDefsBskyAppProgressGuide } from "@speakeasy-api/bluesky/models/components";
 
 let value: AppBskyActorDefsBskyAppProgressGuide = {
   guide: "<value>",

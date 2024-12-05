@@ -49,7 +49,7 @@ export function useTeamsDeleteMemberMutation(
 }
 
 export function mutationKeyTeamsDeleteMember(): MutationKey {
-  return ["bluesky", "teams", "deleteMember"];
+  return ["@speakeasy-api/bluesky", "teams", "deleteMember"];
 }
 
 export function buildTeamsDeleteMemberMutation(

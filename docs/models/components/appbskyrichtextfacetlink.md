@@ -5,7 +5,7 @@ Facet feature for a URL. The text URL may have been simplified or truncated, but
 ## Example Usage
 
 ```typescript
-import { AppBskyRichtextFacetLink } from "bluesky/models/components";
+import { AppBskyRichtextFacetLink } from "@speakeasy-api/bluesky/models/components";
 
 let value: AppBskyRichtextFacetLink = {
   uri: "https://another-testing.net",

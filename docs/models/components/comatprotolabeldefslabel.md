@@ -5,7 +5,7 @@ Metadata tag on an atproto resource (eg, repo or record).
 ## Example Usage
 
 ```typescript
-import { ComAtprotoLabelDefsLabel } from "bluesky/models/components";
+import { ComAtprotoLabelDefsLabel } from "@speakeasy-api/bluesky/models/components";
 
 let value: ComAtprotoLabelDefsLabel = {
   src: "<id>",

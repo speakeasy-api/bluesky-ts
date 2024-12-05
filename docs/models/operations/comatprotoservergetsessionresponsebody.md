@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { ComAtprotoServerGetSessionResponseBody } from "bluesky/models/operations";
+import { ComAtprotoServerGetSessionResponseBody } from "@speakeasy-api/bluesky/models/operations";
 
 let value: ComAtprotoServerGetSessionResponseBody = {
   handle: "<value>",

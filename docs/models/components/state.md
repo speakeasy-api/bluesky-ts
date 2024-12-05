@@ -5,7 +5,7 @@ The state of the video processing job. All values not listed as a known value in
 ## Example Usage
 
 ```typescript
-import { State } from "bluesky/models/components";
+import { State } from "@speakeasy-api/bluesky/models/components";
 
 let value: State = "JOB_STATE_FAILED";
 ```

@@ -48,7 +48,7 @@ export function useConvosMuteMutation(
 }
 
 export function mutationKeyConvosMute(): MutationKey {
-  return ["bluesky", "convos", "mute"];
+  return ["@speakeasy-api/bluesky", "convos", "mute"];
 }
 
 export function buildConvosMuteMutation(

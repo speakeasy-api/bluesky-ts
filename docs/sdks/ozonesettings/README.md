@@ -22,7 +22,7 @@ Create or update setting option
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -47,8 +47,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { ozoneSettingsUpsertOption } from "bluesky/funcs/ozoneSettingsUpsertOption.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { ozoneSettingsUpsertOption } from "@speakeasy-api/bluesky/funcs/ozoneSettingsUpsertOption.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -90,7 +90,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useOzoneSettingsUpsertOptionMutation
-} from "bluesky/react-query/ozoneSettingsUpsertOption.js";
+} from "@speakeasy-api/bluesky/react-query/ozoneSettingsUpsertOption.js";
 ```
 
 ### Parameters

@@ -214,7 +214,12 @@ export function invalidateAtprotoAdminGetInviteCodes(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "atprotoAdmin", "getInviteCodes", ...queryKeyBase],
+    queryKey: [
+      "@speakeasy-api/bluesky",
+      "atprotoAdmin",
+      "getInviteCodes",
+      ...queryKeyBase,
+    ],
   });
 }
 
@@ -224,7 +229,7 @@ export function invalidateAllAtprotoAdminGetInviteCodes(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "atprotoAdmin", "getInviteCodes"],
+    queryKey: ["@speakeasy-api/bluesky", "atprotoAdmin", "getInviteCodes"],
   });
 }
 
@@ -317,5 +322,10 @@ export function queryKeyAtprotoAdminGetInviteCodes(
     cursor?: string | undefined;
   },
 ): QueryKey {
-  return ["bluesky", "atprotoAdmin", "getInviteCodes", parameters];
+  return [
+    "@speakeasy-api/bluesky",
+    "atprotoAdmin",
+    "getInviteCodes",
+    parameters,
+  ];
 }

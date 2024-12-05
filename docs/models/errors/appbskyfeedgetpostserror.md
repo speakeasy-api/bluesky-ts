@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { AppBskyFeedGetPostsError } from "bluesky/models/errors";
+import { AppBskyFeedGetPostsError } from "@speakeasy-api/bluesky/models/errors";
 
 let value: AppBskyFeedGetPostsError = "ExpiredToken";
 ```

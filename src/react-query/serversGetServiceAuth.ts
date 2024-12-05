@@ -114,7 +114,12 @@ export function invalidateServersGetServiceAuth(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "servers", "getServiceAuth", ...queryKeyBase],
+    queryKey: [
+      "@speakeasy-api/bluesky",
+      "servers",
+      "getServiceAuth",
+      ...queryKeyBase,
+    ],
   });
 }
 
@@ -124,7 +129,7 @@ export function invalidateAllServersGetServiceAuth(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "servers", "getServiceAuth"],
+    queryKey: ["@speakeasy-api/bluesky", "servers", "getServiceAuth"],
   });
 }
 
@@ -169,5 +174,5 @@ export function queryKeyServersGetServiceAuth(
     lxm?: string | undefined;
   },
 ): QueryKey {
-  return ["bluesky", "servers", "getServiceAuth", parameters];
+  return ["@speakeasy-api/bluesky", "servers", "getServiceAuth", parameters];
 }

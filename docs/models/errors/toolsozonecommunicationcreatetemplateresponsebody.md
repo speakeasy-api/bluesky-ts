@@ -5,7 +5,7 @@ Bad Request
 ## Example Usage
 
 ```typescript
-import { ToolsOzoneCommunicationCreateTemplateResponseBody } from "bluesky/models/errors";
+import { ToolsOzoneCommunicationCreateTemplateResponseBody } from "@speakeasy-api/bluesky/models/errors";
 
 // No examples available for this model
 ```

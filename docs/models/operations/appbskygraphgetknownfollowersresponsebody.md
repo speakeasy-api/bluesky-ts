@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { AppBskyGraphGetKnownFollowersResponseBody } from "bluesky/models/operations";
+import { AppBskyGraphGetKnownFollowersResponseBody } from "@speakeasy-api/bluesky/models/operations";
 
 let value: AppBskyGraphGetKnownFollowersResponseBody = {
   subject: {

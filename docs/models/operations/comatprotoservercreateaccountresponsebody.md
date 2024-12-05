@@ -5,7 +5,7 @@ Account login session returned on successful account creation.
 ## Example Usage
 
 ```typescript
-import { ComAtprotoServerCreateAccountResponseBody } from "bluesky/models/operations";
+import { ComAtprotoServerCreateAccountResponseBody } from "@speakeasy-api/bluesky/models/operations";
 
 let value: ComAtprotoServerCreateAccountResponseBody = {
   accessJwt: "<value>",

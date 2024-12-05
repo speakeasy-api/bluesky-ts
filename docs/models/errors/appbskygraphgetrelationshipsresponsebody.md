@@ -5,7 +5,7 @@ Bad Request
 ## Example Usage
 
 ```typescript
-import { AppBskyGraphGetRelationshipsResponseBody } from "bluesky/models/errors";
+import { AppBskyGraphGetRelationshipsResponseBody } from "@speakeasy-api/bluesky/models/errors";
 
 // No examples available for this model
 ```

@@ -5,7 +5,7 @@ A new user experiences (NUX) storage object
 ## Example Usage
 
 ```typescript
-import { AppBskyActorDefsNux } from "bluesky/models/components";
+import { AppBskyActorDefsNux } from "@speakeasy-api/bluesky/models/components";
 
 let value: AppBskyActorDefsNux = {
   id: "<id>",

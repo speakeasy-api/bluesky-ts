@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { ToolsOzoneModerationGetRecordsResponseBody } from "bluesky/models/operations";
+import { ToolsOzoneModerationGetRecordsResponseBody } from "@speakeasy-api/bluesky/models/operations";
 
 let value: ToolsOzoneModerationGetRecordsResponseBody = {
   records: [

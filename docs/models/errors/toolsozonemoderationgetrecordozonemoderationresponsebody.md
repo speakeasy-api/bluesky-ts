@@ -5,7 +5,7 @@ Unauthorized
 ## Example Usage
 
 ```typescript
-import { ToolsOzoneModerationGetRecordOzoneModerationResponseBody } from "bluesky/models/errors";
+import { ToolsOzoneModerationGetRecordOzoneModerationResponseBody } from "@speakeasy-api/bluesky/models/errors";
 
 // No examples available for this model
 ```

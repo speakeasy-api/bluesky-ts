@@ -1,6 +1,6 @@
 {
-  "name": "bluesky",
-  "version": "0.6.4",
+  "name": "@speakeasy-api/bluesky",
+  "version": "0.7.0",
   "author": "Speakeasy",
   "type": "module",
   "main": "./esm/index.js",

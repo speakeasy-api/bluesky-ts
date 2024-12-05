@@ -52,7 +52,7 @@ Returns the status of an account, especially as pertaining to import or recovery
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -73,8 +73,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { serverCheckAccountStatus } from "bluesky/funcs/serverCheckAccountStatus.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { serverCheckAccountStatus } from "@speakeasy-api/bluesky/funcs/serverCheckAccountStatus.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -122,7 +122,7 @@ import {
   // Utility to invalidate the query cache for this query in response to
   // mutations and other user actions.
   invalidateAllServerCheckAccountStatus,
-} from "bluesky/react-query/serverCheckAccountStatus.js";
+} from "@speakeasy-api/bluesky/react-query/serverCheckAccountStatus.js";
 ```
 
 ### Parameters
@@ -162,7 +162,7 @@ Confirm an email using a token from com.atproto.server.requestEmailConfirmation.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -185,8 +185,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { serverConfirmEmail } from "bluesky/funcs/serverConfirmEmail.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { serverConfirmEmail } from "@speakeasy-api/bluesky/funcs/serverConfirmEmail.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -226,7 +226,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useServerConfirmEmailMutation
-} from "bluesky/react-query/serverConfirmEmail.js";
+} from "@speakeasy-api/bluesky/react-query/serverConfirmEmail.js";
 ```
 
 ### Parameters
@@ -267,7 +267,7 @@ Create an authentication session.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -291,8 +291,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { serverCreateSession } from "bluesky/funcs/serverCreateSession.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { serverCreateSession } from "@speakeasy-api/bluesky/funcs/serverCreateSession.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -333,7 +333,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useServerCreateSessionMutation
-} from "bluesky/react-query/serverCreateSession.js";
+} from "@speakeasy-api/bluesky/react-query/serverCreateSession.js";
 ```
 
 ### Parameters
@@ -374,7 +374,7 @@ Deactivates a currently active account. Stops serving of repo, and future writes
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -394,8 +394,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { serverDeactivateAccount } from "bluesky/funcs/serverDeactivateAccount.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { serverDeactivateAccount } from "@speakeasy-api/bluesky/funcs/serverDeactivateAccount.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -432,7 +432,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useServerDeactivateAccountMutation
-} from "bluesky/react-query/serverDeactivateAccount.js";
+} from "@speakeasy-api/bluesky/react-query/serverDeactivateAccount.js";
 ```
 
 ### Parameters
@@ -473,7 +473,7 @@ List all App Passwords.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -494,8 +494,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { serverListAppPasswords } from "bluesky/funcs/serverListAppPasswords.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { serverListAppPasswords } from "@speakeasy-api/bluesky/funcs/serverListAppPasswords.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -543,7 +543,7 @@ import {
   // Utility to invalidate the query cache for this query in response to
   // mutations and other user actions.
   invalidateAllServerListAppPasswords,
-} from "bluesky/react-query/serverListAppPasswords.js";
+} from "@speakeasy-api/bluesky/react-query/serverListAppPasswords.js";
 ```
 
 ### Parameters
@@ -583,7 +583,7 @@ Initiate a user account deletion via email.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -603,8 +603,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { serverRequestAccountDelete } from "bluesky/funcs/serverRequestAccountDelete.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { serverRequestAccountDelete } from "@speakeasy-api/bluesky/funcs/serverRequestAccountDelete.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -641,7 +641,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useServerRequestAccountDeleteMutation
-} from "bluesky/react-query/serverRequestAccountDelete.js";
+} from "@speakeasy-api/bluesky/react-query/serverRequestAccountDelete.js";
 ```
 
 ### Parameters
@@ -681,7 +681,7 @@ Request a token in order to update email.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -702,8 +702,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { serverRequestEmailUpdate } from "bluesky/funcs/serverRequestEmailUpdate.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { serverRequestEmailUpdate } from "@speakeasy-api/bluesky/funcs/serverRequestEmailUpdate.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -741,7 +741,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useServerRequestEmailUpdateMutation
-} from "bluesky/react-query/serverRequestEmailUpdate.js";
+} from "@speakeasy-api/bluesky/react-query/serverRequestEmailUpdate.js";
 ```
 
 ### Parameters

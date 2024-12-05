@@ -102,7 +102,12 @@ export function invalidateUsersGetSuggestedFollows(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "users", "getSuggestedFollows", ...queryKeyBase],
+    queryKey: [
+      "@speakeasy-api/bluesky",
+      "users",
+      "getSuggestedFollows",
+      ...queryKeyBase,
+    ],
   });
 }
 
@@ -112,7 +117,7 @@ export function invalidateAllUsersGetSuggestedFollows(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "users", "getSuggestedFollows"],
+    queryKey: ["@speakeasy-api/bluesky", "users", "getSuggestedFollows"],
   });
 }
 
@@ -149,5 +154,5 @@ export function buildUsersGetSuggestedFollowsQuery(
 export function queryKeyUsersGetSuggestedFollows(
   parameters: { actor: string },
 ): QueryKey {
-  return ["bluesky", "users", "getSuggestedFollows", parameters];
+  return ["@speakeasy-api/bluesky", "users", "getSuggestedFollows", parameters];
 }

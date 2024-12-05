@@ -5,7 +5,7 @@ Unauthorized
 ## Example Usage
 
 ```typescript
-import { ComAtprotoAdminGetInviteCodesAtprotoAdminResponseBody } from "bluesky/models/errors";
+import { ComAtprotoAdminGetInviteCodesAtprotoAdminResponseBody } from "@speakeasy-api/bluesky/models/errors";
 
 // No examples available for this model
 ```

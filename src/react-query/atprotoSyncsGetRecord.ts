@@ -103,7 +103,12 @@ export function invalidateAtprotoSyncsGetRecord(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "atprotoSyncs", "getRecord", ...queryKeyBase],
+    queryKey: [
+      "@speakeasy-api/bluesky",
+      "atprotoSyncs",
+      "getRecord",
+      ...queryKeyBase,
+    ],
   });
 }
 
@@ -113,7 +118,7 @@ export function invalidateAllAtprotoSyncsGetRecord(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "atprotoSyncs", "getRecord"],
+    queryKey: ["@speakeasy-api/bluesky", "atprotoSyncs", "getRecord"],
   });
 }
 
@@ -154,5 +159,5 @@ export function buildAtprotoSyncsGetRecordQuery(
 export function queryKeyAtprotoSyncsGetRecord(
   parameters: { did: string; collection: string; rkey: string },
 ): QueryKey {
-  return ["bluesky", "atprotoSyncs", "getRecord", parameters];
+  return ["@speakeasy-api/bluesky", "atprotoSyncs", "getRecord", parameters];
 }

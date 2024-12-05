@@ -49,7 +49,7 @@ export function useOzoneCommunicationDeleteMutation(
 }
 
 export function mutationKeyOzoneCommunicationDelete(): MutationKey {
-  return ["bluesky", "ozoneCommunication", "delete"];
+  return ["@speakeasy-api/bluesky", "ozoneCommunication", "delete"];
 }
 
 export function buildOzoneCommunicationDeleteMutation(

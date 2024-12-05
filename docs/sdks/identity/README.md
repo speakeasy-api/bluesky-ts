@@ -21,7 +21,7 @@ Describe the credentials that should be included in the DID doc of an account th
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -42,8 +42,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { identityGetRecommendedDidCredentials } from "bluesky/funcs/identityGetRecommendedDidCredentials.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { identityGetRecommendedDidCredentials } from "@speakeasy-api/bluesky/funcs/identityGetRecommendedDidCredentials.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -91,7 +91,7 @@ import {
   // Utility to invalidate the query cache for this query in response to
   // mutations and other user actions.
   invalidateAllIdentityGetRecommendedDidCredentials,
-} from "bluesky/react-query/identityGetRecommendedDidCredentials.js";
+} from "@speakeasy-api/bluesky/react-query/identityGetRecommendedDidCredentials.js";
 ```
 
 ### Parameters
@@ -129,7 +129,7 @@ Validates a PLC operation to ensure that it doesn't violate a service's constrai
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -151,8 +151,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { identitySubmitPlcOperation } from "bluesky/funcs/identitySubmitPlcOperation.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { identitySubmitPlcOperation } from "@speakeasy-api/bluesky/funcs/identitySubmitPlcOperation.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -191,7 +191,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useIdentitySubmitPlcOperationMutation
-} from "bluesky/react-query/identitySubmitPlcOperation.js";
+} from "@speakeasy-api/bluesky/react-query/identitySubmitPlcOperation.js";
 ```
 
 ### Parameters

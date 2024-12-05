@@ -49,7 +49,7 @@ export function useSyncsRequestCrawlMutation(
 }
 
 export function mutationKeySyncsRequestCrawl(): MutationKey {
-  return ["bluesky", "syncs", "requestCrawl"];
+  return ["@speakeasy-api/bluesky", "syncs", "requestCrawl"];
 }
 
 export function buildSyncsRequestCrawlMutation(

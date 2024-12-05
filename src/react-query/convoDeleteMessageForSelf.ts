@@ -49,7 +49,7 @@ export function useConvoDeleteMessageForSelfMutation(
 }
 
 export function mutationKeyConvoDeleteMessageForSelf(): MutationKey {
-  return ["bluesky", "convo", "deleteMessageForSelf"];
+  return ["@speakeasy-api/bluesky", "convo", "deleteMessageForSelf"];
 }
 
 export function buildConvoDeleteMessageForSelfMutation(

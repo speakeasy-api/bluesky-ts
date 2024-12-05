@@ -5,7 +5,7 @@ Operation which deletes an existing record.
 ## Example Usage
 
 ```typescript
-import { ComAtprotoRepoApplyWritesDelete } from "bluesky/models/components";
+import { ComAtprotoRepoApplyWritesDelete } from "@speakeasy-api/bluesky/models/components";
 
 let value: ComAtprotoRepoApplyWritesDelete = {
   collection: "<id>",

@@ -21,7 +21,7 @@
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -44,8 +44,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { chatsGetConvo } from "bluesky/funcs/chatsGetConvo.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { chatsGetConvo } from "@speakeasy-api/bluesky/funcs/chatsGetConvo.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -96,7 +96,7 @@ import {
   // mutations and other user actions.
   invalidateChatsGetConvo,
   invalidateAllChatsGetConvo,
-} from "bluesky/react-query/chatsGetConvo.js";
+} from "@speakeasy-api/bluesky/react-query/chatsGetConvo.js";
 ```
 
 ### Parameters
@@ -135,7 +135,7 @@ import {
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -158,8 +158,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { chatsGetMessageContext } from "bluesky/funcs/chatsGetMessageContext.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { chatsGetMessageContext } from "@speakeasy-api/bluesky/funcs/chatsGetMessageContext.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -210,7 +210,7 @@ import {
   // mutations and other user actions.
   invalidateChatsGetMessageContext,
   invalidateAllChatsGetMessageContext,
-} from "bluesky/react-query/chatsGetMessageContext.js";
+} from "@speakeasy-api/bluesky/react-query/chatsGetMessageContext.js";
 ```
 
 ### Parameters

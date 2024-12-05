@@ -103,7 +103,7 @@ export function invalidateSyncsGetBlocks(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "syncs", "getBlocks", ...queryKeyBase],
+    queryKey: ["@speakeasy-api/bluesky", "syncs", "getBlocks", ...queryKeyBase],
   });
 }
 
@@ -113,7 +113,7 @@ export function invalidateAllSyncsGetBlocks(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "syncs", "getBlocks"],
+    queryKey: ["@speakeasy-api/bluesky", "syncs", "getBlocks"],
   });
 }
 
@@ -148,5 +148,5 @@ export function buildSyncsGetBlocksQuery(
 export function queryKeySyncsGetBlocks(
   parameters: { did: string; cids: Array<string> },
 ): QueryKey {
-  return ["bluesky", "syncs", "getBlocks", parameters];
+  return ["@speakeasy-api/bluesky", "syncs", "getBlocks", parameters];
 }

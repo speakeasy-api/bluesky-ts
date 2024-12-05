@@ -204,7 +204,12 @@ export function invalidateActorGetSuggestions(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "actor", "getSuggestions", ...queryKeyBase],
+    queryKey: [
+      "@speakeasy-api/bluesky",
+      "actor",
+      "getSuggestions",
+      ...queryKeyBase,
+    ],
   });
 }
 
@@ -214,7 +219,7 @@ export function invalidateAllActorGetSuggestions(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "actor", "getSuggestions"],
+    queryKey: ["@speakeasy-api/bluesky", "actor", "getSuggestions"],
   });
 }
 
@@ -298,5 +303,5 @@ export function buildActorGetSuggestionsInfiniteQuery(
 export function queryKeyActorGetSuggestions(
   parameters: { limit?: number | undefined; cursor?: string | undefined },
 ): QueryKey {
-  return ["bluesky", "actor", "getSuggestions", parameters];
+  return ["@speakeasy-api/bluesky", "actor", "getSuggestions", parameters];
 }

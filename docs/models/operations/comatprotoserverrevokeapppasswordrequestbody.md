@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComAtprotoServerRevokeAppPasswordRequestBody } from "bluesky/models/operations";
+import { ComAtprotoServerRevokeAppPasswordRequestBody } from "@speakeasy-api/bluesky/models/operations";
 
 let value: ComAtprotoServerRevokeAppPasswordRequestBody = {
   name: "<value>",

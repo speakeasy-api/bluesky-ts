@@ -181,7 +181,7 @@ export function invalidateConvoList(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "convo", "list", ...queryKeyBase],
+    queryKey: ["@speakeasy-api/bluesky", "convo", "list", ...queryKeyBase],
   });
 }
 
@@ -191,7 +191,7 @@ export function invalidateAllConvoList(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "convo", "list"],
+    queryKey: ["@speakeasy-api/bluesky", "convo", "list"],
   });
 }
 
@@ -271,5 +271,5 @@ export function buildConvoListInfiniteQuery(
 export function queryKeyConvoList(
   parameters: { limit?: number | undefined; cursor?: string | undefined },
 ): QueryKey {
-  return ["bluesky", "convo", "list", parameters];
+  return ["@speakeasy-api/bluesky", "convo", "list", parameters];
 }

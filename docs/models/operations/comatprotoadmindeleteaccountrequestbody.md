@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComAtprotoAdminDeleteAccountRequestBody } from "bluesky/models/operations";
+import { ComAtprotoAdminDeleteAccountRequestBody } from "@speakeasy-api/bluesky/models/operations";
 
 let value: ComAtprotoAdminDeleteAccountRequestBody = {
   did: "<id>",

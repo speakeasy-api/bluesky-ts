@@ -22,7 +22,7 @@ Search for accounts that match one or more threat signature values.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -49,8 +49,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { ozoneSignatureSearchAccounts } from "bluesky/funcs/ozoneSignatureSearchAccounts.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { ozoneSignatureSearchAccounts } from "@speakeasy-api/bluesky/funcs/ozoneSignatureSearchAccounts.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -108,7 +108,7 @@ import {
   // mutations and other user actions.
   invalidateOzoneSignatureSearchAccounts,
   invalidateAllOzoneSignatureSearchAccounts,
-} from "bluesky/react-query/ozoneSignatureSearchAccounts.js";
+} from "@speakeasy-api/bluesky/react-query/ozoneSignatureSearchAccounts.js";
 ```
 
 ### Parameters

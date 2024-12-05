@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ChatBskyConvoMuteConvoError } from "bluesky/models/errors";
+import { ChatBskyConvoMuteConvoError } from "@speakeasy-api/bluesky/models/errors";
 
 let value: ChatBskyConvoMuteConvoError = "ExpiredToken";
 ```

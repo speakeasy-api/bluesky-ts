@@ -50,7 +50,7 @@ export function useFeedsSendInteractionsMutation(
 }
 
 export function mutationKeyFeedsSendInteractions(): MutationKey {
-  return ["bluesky", "feeds", "sendInteractions"];
+  return ["@speakeasy-api/bluesky", "feeds", "sendInteractions"];
 }
 
 export function buildFeedsSendInteractionsMutation(

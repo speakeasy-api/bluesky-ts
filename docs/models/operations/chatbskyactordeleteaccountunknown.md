@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ChatBskyActorDeleteAccountUnknown } from "bluesky/models/operations";
+import { ChatBskyActorDeleteAccountUnknown } from "@speakeasy-api/bluesky/models/operations";
 
 let value: ChatBskyActorDeleteAccountUnknown = {};
 ```

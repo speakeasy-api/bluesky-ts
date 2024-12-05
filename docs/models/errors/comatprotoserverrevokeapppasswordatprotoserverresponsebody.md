@@ -5,7 +5,7 @@ Unauthorized
 ## Example Usage
 
 ```typescript
-import { ComAtprotoServerRevokeAppPasswordAtprotoServerResponseBody } from "bluesky/models/errors";
+import { ComAtprotoServerRevokeAppPasswordAtprotoServerResponseBody } from "@speakeasy-api/bluesky/models/errors";
 
 // No examples available for this model
 ```

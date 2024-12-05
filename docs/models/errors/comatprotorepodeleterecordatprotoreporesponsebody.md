@@ -5,7 +5,7 @@ Unauthorized
 ## Example Usage
 
 ```typescript
-import { ComAtprotoRepoDeleteRecordAtprotoRepoResponseBody } from "bluesky/models/errors";
+import { ComAtprotoRepoDeleteRecordAtprotoRepoResponseBody } from "@speakeasy-api/bluesky/models/errors";
 
 // No examples available for this model
 ```

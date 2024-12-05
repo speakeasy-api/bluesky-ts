@@ -102,7 +102,12 @@ export function invalidateFeedGetGenerator(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "feed", "getGenerator", ...queryKeyBase],
+    queryKey: [
+      "@speakeasy-api/bluesky",
+      "feed",
+      "getGenerator",
+      ...queryKeyBase,
+    ],
   });
 }
 
@@ -112,7 +117,7 @@ export function invalidateAllFeedGetGenerator(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "feed", "getGenerator"],
+    queryKey: ["@speakeasy-api/bluesky", "feed", "getGenerator"],
   });
 }
 
@@ -149,5 +154,5 @@ export function buildFeedGetGeneratorQuery(
 export function queryKeyFeedGetGenerator(
   parameters: { feed: string },
 ): QueryKey {
-  return ["bluesky", "feed", "getGenerator", parameters];
+  return ["@speakeasy-api/bluesky", "feed", "getGenerator", parameters];
 }

@@ -49,7 +49,7 @@ export function useAdminUpdateAccountPasswordMutation(
 }
 
 export function mutationKeyAdminUpdateAccountPassword(): MutationKey {
-  return ["bluesky", "admin", "updateAccountPassword"];
+  return ["@speakeasy-api/bluesky", "admin", "updateAccountPassword"];
 }
 
 export function buildAdminUpdateAccountPasswordMutation(

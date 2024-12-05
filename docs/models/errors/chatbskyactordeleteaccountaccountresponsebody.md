@@ -5,7 +5,7 @@ Unauthorized
 ## Example Usage
 
 ```typescript
-import { ChatBskyActorDeleteAccountAccountResponseBody } from "bluesky/models/errors";
+import { ChatBskyActorDeleteAccountAccountResponseBody } from "@speakeasy-api/bluesky/models/errors";
 
 // No examples available for this model
 ```

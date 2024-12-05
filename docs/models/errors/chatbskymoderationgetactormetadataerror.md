@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ChatBskyModerationGetActorMetadataError } from "bluesky/models/errors";
+import { ChatBskyModerationGetActorMetadataError } from "@speakeasy-api/bluesky/models/errors";
 
 let value: ChatBskyModerationGetActorMetadataError = "ExpiredToken";
 ```

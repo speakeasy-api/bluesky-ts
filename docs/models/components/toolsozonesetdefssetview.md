@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ToolsOzoneSetDefsSetView } from "bluesky/models/components";
+import { ToolsOzoneSetDefsSetView } from "@speakeasy-api/bluesky/models/components";
 
 let value: ToolsOzoneSetDefsSetView = {
   name: "<value>",

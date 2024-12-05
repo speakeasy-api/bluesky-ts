@@ -93,7 +93,7 @@ export function invalidateAllOzoneCommunicationListTemplates(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "ozoneCommunication", "listTemplates"],
+    queryKey: ["@speakeasy-api/bluesky", "ozoneCommunication", "listTemplates"],
   });
 }
 
@@ -126,5 +126,5 @@ export function buildOzoneCommunicationListTemplatesQuery(
 }
 
 export function queryKeyOzoneCommunicationListTemplates(): QueryKey {
-  return ["bluesky", "ozoneCommunication", "listTemplates"];
+  return ["@speakeasy-api/bluesky", "ozoneCommunication", "listTemplates"];
 }

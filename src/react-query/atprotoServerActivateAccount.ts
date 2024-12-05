@@ -47,7 +47,7 @@ export function useAtprotoServerActivateAccountMutation(
 }
 
 export function mutationKeyAtprotoServerActivateAccount(): MutationKey {
-  return ["bluesky", "atprotoServer", "activateAccount"];
+  return ["@speakeasy-api/bluesky", "atprotoServer", "activateAccount"];
 }
 
 export function buildAtprotoServerActivateAccountMutation(

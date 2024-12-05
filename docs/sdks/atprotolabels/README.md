@@ -18,7 +18,7 @@ Find labels relevant to the provided AT-URI patterns. Public endpoint for modera
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -46,8 +46,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { atprotoLabelsQuery } from "bluesky/funcs/atprotoLabelsQuery.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { atprotoLabelsQuery } from "@speakeasy-api/bluesky/funcs/atprotoLabelsQuery.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -106,7 +106,7 @@ import {
   // mutations and other user actions.
   invalidateAtprotoLabelsQuery,
   invalidateAllAtprotoLabelsQuery,
-} from "bluesky/react-query/atprotoLabelsQuery.js";
+} from "@speakeasy-api/bluesky/react-query/atprotoLabelsQuery.js";
 ```
 
 ### Parameters

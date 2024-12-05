@@ -5,7 +5,7 @@ If active=false, this optional field indicates a possible reason for why the acc
 ## Example Usage
 
 ```typescript
-import { Status } from "bluesky/models/operations";
+import { Status } from "@speakeasy-api/bluesky/models/operations";
 
 let value: Status = "takendown";
 ```

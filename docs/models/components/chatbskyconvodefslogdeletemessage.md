@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ChatBskyConvoDefsLogDeleteMessage } from "bluesky/models/components";
+import { ChatBskyConvoDefsLogDeleteMessage } from "@speakeasy-api/bluesky/models/components";
 
 let value: ChatBskyConvoDefsLogDeleteMessage = {
   rev: "<value>",

@@ -5,7 +5,7 @@ Unauthorized
 ## Example Usage
 
 ```typescript
-import { ComAtprotoLabelQueryLabelsAtprotoLabelsResponseBody } from "bluesky/models/errors";
+import { ComAtprotoLabelQueryLabelsAtprotoLabelsResponseBody } from "@speakeasy-api/bluesky/models/errors";
 
 // No examples available for this model
 ```

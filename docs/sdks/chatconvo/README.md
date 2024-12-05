@@ -21,7 +21,7 @@
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -63,8 +63,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { chatConvoSendMessageBatch } from "bluesky/funcs/chatConvoSendMessageBatch.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { chatConvoSendMessageBatch } from "@speakeasy-api/bluesky/funcs/chatConvoSendMessageBatch.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -123,7 +123,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useChatConvoSendMessageBatchMutation
-} from "bluesky/react-query/chatConvoSendMessageBatch.js";
+} from "@speakeasy-api/bluesky/react-query/chatConvoSendMessageBatch.js";
 ```
 
 ### Parameters
@@ -162,7 +162,7 @@ import {
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -185,8 +185,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { chatConvoUnmute } from "bluesky/funcs/chatConvoUnmute.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { chatConvoUnmute } from "@speakeasy-api/bluesky/funcs/chatConvoUnmute.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -226,7 +226,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useChatConvoUnmuteMutation
-} from "bluesky/react-query/chatConvoUnmute.js";
+} from "@speakeasy-api/bluesky/react-query/chatConvoUnmute.js";
 ```
 
 ### Parameters

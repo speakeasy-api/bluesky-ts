@@ -5,7 +5,7 @@ Take down a subject permanently or temporarily
 ## Example Usage
 
 ```typescript
-import { ToolsOzoneModerationDefsModEventTakedown } from "bluesky/models/components";
+import { ToolsOzoneModerationDefsModEventTakedown } from "@speakeasy-api/bluesky/models/components";
 
 let value: ToolsOzoneModerationDefsModEventTakedown = {};
 ```

@@ -50,7 +50,7 @@ export function useAtprotoServerCreateInviteCodesMutation(
 }
 
 export function mutationKeyAtprotoServerCreateInviteCodes(): MutationKey {
-  return ["bluesky", "atprotoServer", "createInviteCodes"];
+  return ["@speakeasy-api/bluesky", "atprotoServer", "createInviteCodes"];
 }
 
 export function buildAtprotoServerCreateInviteCodesMutation(

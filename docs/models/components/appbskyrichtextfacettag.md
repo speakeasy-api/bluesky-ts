@@ -5,7 +5,7 @@ Facet feature for a hashtag. The text usually includes a '#' prefix, but the fac
 ## Example Usage
 
 ```typescript
-import { AppBskyRichtextFacetTag } from "bluesky/models/components";
+import { AppBskyRichtextFacetTag } from "@speakeasy-api/bluesky/models/components";
 
 let value: AppBskyRichtextFacetTag = {
   tag: "<value>",

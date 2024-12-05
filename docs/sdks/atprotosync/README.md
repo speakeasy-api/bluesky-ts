@@ -27,7 +27,7 @@ Get a blob associated with a given account. Returns the full blob as originally 
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -50,8 +50,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { atprotoSyncGetBlob } from "bluesky/funcs/atprotoSyncGetBlob.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { atprotoSyncGetBlob } from "@speakeasy-api/bluesky/funcs/atprotoSyncGetBlob.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -102,7 +102,7 @@ import {
   // mutations and other user actions.
   invalidateAtprotoSyncGetBlob,
   invalidateAllAtprotoSyncGetBlob,
-} from "bluesky/react-query/atprotoSyncGetBlob.js";
+} from "@speakeasy-api/bluesky/react-query/atprotoSyncGetBlob.js";
 ```
 
 ### Parameters
@@ -143,7 +143,7 @@ Enumerates all the DID, rev, and commit CID for all repos hosted by this service
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -166,8 +166,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { atprotoSyncListRepos } from "bluesky/funcs/atprotoSyncListRepos.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { atprotoSyncListRepos } from "@speakeasy-api/bluesky/funcs/atprotoSyncListRepos.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -221,7 +221,7 @@ import {
   // mutations and other user actions.
   invalidateAtprotoSyncListRepos,
   invalidateAllAtprotoSyncListRepos,
-} from "bluesky/react-query/atprotoSyncListRepos.js";
+} from "@speakeasy-api/bluesky/react-query/atprotoSyncListRepos.js";
 ```
 
 ### Parameters

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ToolsOzoneTeamAddMemberRequestBody } from "bluesky/models/operations";
+import { ToolsOzoneTeamAddMemberRequestBody } from "@speakeasy-api/bluesky/models/operations";
 
 let value: ToolsOzoneTeamAddMemberRequestBody = {
   did: "<id>",

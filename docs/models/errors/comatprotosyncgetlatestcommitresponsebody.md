@@ -5,7 +5,7 @@ Bad Request
 ## Example Usage
 
 ```typescript
-import { ComAtprotoSyncGetLatestCommitResponseBody } from "bluesky/models/errors";
+import { ComAtprotoSyncGetLatestCommitResponseBody } from "@speakeasy-api/bluesky/models/errors";
 
 // No examples available for this model
 ```

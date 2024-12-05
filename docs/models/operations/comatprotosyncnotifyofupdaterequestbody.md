@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComAtprotoSyncNotifyOfUpdateRequestBody } from "bluesky/models/operations";
+import { ComAtprotoSyncNotifyOfUpdateRequestBody } from "@speakeasy-api/bluesky/models/operations";
 
 let value: ComAtprotoSyncNotifyOfUpdateRequestBody = {
   hostname: "haunting-solvency.org",

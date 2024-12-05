@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { AppBskyEmbedExternalViewExternal } from "bluesky/models/components";
+import { AppBskyEmbedExternalViewExternal } from "@speakeasy-api/bluesky/models/components";
 
 let value: AppBskyEmbedExternalViewExternal = {
   uri: "https://subtle-intellect.org/",

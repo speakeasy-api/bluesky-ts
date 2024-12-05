@@ -102,7 +102,7 @@ export function invalidateReposDescribe(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "repos", "describe", ...queryKeyBase],
+    queryKey: ["@speakeasy-api/bluesky", "repos", "describe", ...queryKeyBase],
   });
 }
 
@@ -112,7 +112,7 @@ export function invalidateAllReposDescribe(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "repos", "describe"],
+    queryKey: ["@speakeasy-api/bluesky", "repos", "describe"],
   });
 }
 
@@ -145,5 +145,5 @@ export function buildReposDescribeQuery(
 }
 
 export function queryKeyReposDescribe(parameters: { repo: string }): QueryKey {
-  return ["bluesky", "repos", "describe", parameters];
+  return ["@speakeasy-api/bluesky", "repos", "describe", parameters];
 }

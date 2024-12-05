@@ -5,7 +5,7 @@ Unauthorized
 ## Example Usage
 
 ```typescript
-import { AppBskyGraphGetBlocksGraphsResponseBody } from "bluesky/models/errors";
+import { AppBskyGraphGetBlocksGraphsResponseBody } from "@speakeasy-api/bluesky/models/errors";
 
 // No examples available for this model
 ```

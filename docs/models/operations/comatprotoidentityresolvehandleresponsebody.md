@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { ComAtprotoIdentityResolveHandleResponseBody } from "bluesky/models/operations";
+import { ComAtprotoIdentityResolveHandleResponseBody } from "@speakeasy-api/bluesky/models/operations";
 
 let value: ComAtprotoIdentityResolveHandleResponseBody = {
   did: "<id>",

@@ -37,7 +37,7 @@ Count the number of unread notifications for the requesting account. Requires au
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -58,8 +58,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { notificationsGetUnreadCount } from "bluesky/funcs/notificationsGetUnreadCount.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { notificationsGetUnreadCount } from "@speakeasy-api/bluesky/funcs/notificationsGetUnreadCount.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -108,7 +108,7 @@ import {
   // mutations and other user actions.
   invalidateNotificationsGetUnreadCount,
   invalidateAllNotificationsGetUnreadCount,
-} from "bluesky/react-query/notificationsGetUnreadCount.js";
+} from "@speakeasy-api/bluesky/react-query/notificationsGetUnreadCount.js";
 ```
 
 ### Parameters
@@ -149,7 +149,7 @@ Set notification-related preferences for an account. Requires auth.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -171,8 +171,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { notificationsPutPreferences } from "bluesky/funcs/notificationsPutPreferences.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { notificationsPutPreferences } from "@speakeasy-api/bluesky/funcs/notificationsPutPreferences.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -211,7 +211,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useNotificationsPutPreferencesMutation
-} from "bluesky/react-query/notificationsPutPreferences.js";
+} from "@speakeasy-api/bluesky/react-query/notificationsPutPreferences.js";
 ```
 
 ### Parameters
@@ -252,7 +252,7 @@ Register to receive push notifications, via a specified service, for the request
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -277,8 +277,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { notificationsRegisterPush } from "bluesky/funcs/notificationsRegisterPush.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { notificationsRegisterPush } from "@speakeasy-api/bluesky/funcs/notificationsRegisterPush.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -320,7 +320,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useNotificationsRegisterPushMutation
-} from "bluesky/react-query/notificationsRegisterPush.js";
+} from "@speakeasy-api/bluesky/react-query/notificationsRegisterPush.js";
 ```
 
 ### Parameters
@@ -361,7 +361,7 @@ Notify server that the requesting account has seen notifications. Requires auth.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -383,8 +383,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { notificationsUpdateSeen } from "bluesky/funcs/notificationsUpdateSeen.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { notificationsUpdateSeen } from "@speakeasy-api/bluesky/funcs/notificationsUpdateSeen.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -423,7 +423,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useNotificationsUpdateSeenMutation
-} from "bluesky/react-query/notificationsUpdateSeen.js";
+} from "@speakeasy-api/bluesky/react-query/notificationsUpdateSeen.js";
 ```
 
 ### Parameters

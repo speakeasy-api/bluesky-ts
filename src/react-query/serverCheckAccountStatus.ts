@@ -90,7 +90,7 @@ export function invalidateAllServerCheckAccountStatus(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "server", "checkAccountStatus"],
+    queryKey: ["@speakeasy-api/bluesky", "server", "checkAccountStatus"],
   });
 }
 
@@ -123,5 +123,5 @@ export function buildServerCheckAccountStatusQuery(
 }
 
 export function queryKeyServerCheckAccountStatus(): QueryKey {
-  return ["bluesky", "server", "checkAccountStatus"];
+  return ["@speakeasy-api/bluesky", "server", "checkAccountStatus"];
 }

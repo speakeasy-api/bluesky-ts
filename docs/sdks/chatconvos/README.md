@@ -27,7 +27,7 @@
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -54,8 +54,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { chatConvosGetForMembers } from "bluesky/funcs/chatConvosGetForMembers.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { chatConvosGetForMembers } from "@speakeasy-api/bluesky/funcs/chatConvosGetForMembers.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -110,7 +110,7 @@ import {
   // mutations and other user actions.
   invalidateChatConvosGetForMembers,
   invalidateAllChatConvosGetForMembers,
-} from "bluesky/react-query/chatConvosGetForMembers.js";
+} from "@speakeasy-api/bluesky/react-query/chatConvosGetForMembers.js";
 ```
 
 ### Parameters
@@ -149,7 +149,7 @@ import {
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -174,8 +174,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { chatConvosGetMessages } from "bluesky/funcs/chatConvosGetMessages.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { chatConvosGetMessages } from "@speakeasy-api/bluesky/funcs/chatConvosGetMessages.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -231,7 +231,7 @@ import {
   // mutations and other user actions.
   invalidateChatConvosGetMessages,
   invalidateAllChatConvosGetMessages,
-} from "bluesky/react-query/chatConvosGetMessages.js";
+} from "@speakeasy-api/bluesky/react-query/chatConvosGetMessages.js";
 ```
 
 ### Parameters
@@ -270,7 +270,7 @@ import {
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -296,8 +296,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { chatConvosSendMessage } from "bluesky/funcs/chatConvosSendMessage.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { chatConvosSendMessage } from "@speakeasy-api/bluesky/funcs/chatConvosSendMessage.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -340,7 +340,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useChatConvosSendMessageMutation
-} from "bluesky/react-query/chatConvosSendMessage.js";
+} from "@speakeasy-api/bluesky/react-query/chatConvosSendMessage.js";
 ```
 
 ### Parameters
@@ -379,7 +379,7 @@ import {
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "bluesky";
+import { Bluesky } from "@speakeasy-api/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -402,8 +402,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { chatConvosUpdateRead } from "bluesky/funcs/chatConvosUpdateRead.js";
+import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
+import { chatConvosUpdateRead } from "@speakeasy-api/bluesky/funcs/chatConvosUpdateRead.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -443,7 +443,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useChatConvosUpdateReadMutation
-} from "bluesky/react-query/chatConvosUpdateRead.js";
+} from "@speakeasy-api/bluesky/react-query/chatConvosUpdateRead.js";
 ```
 
 ### Parameters

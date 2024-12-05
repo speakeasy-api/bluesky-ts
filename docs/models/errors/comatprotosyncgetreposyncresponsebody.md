@@ -5,7 +5,7 @@ Unauthorized
 ## Example Usage
 
 ```typescript
-import { ComAtprotoSyncGetRepoSyncResponseBody } from "bluesky/models/errors";
+import { ComAtprotoSyncGetRepoSyncResponseBody } from "@speakeasy-api/bluesky/models/errors";
 
 // No examples available for this model
 ```

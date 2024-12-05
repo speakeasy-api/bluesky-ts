@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { AppBskyVideoUploadVideoResponseBody } from "bluesky/models/operations";
+import { AppBskyVideoUploadVideoResponseBody } from "@speakeasy-api/bluesky/models/operations";
 
 let value: AppBskyVideoUploadVideoResponseBody = {
   jobStatus: {

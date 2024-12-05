@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { ChatBskyActorDeleteAccountResponseBody } from "bluesky/models/operations";
+import { ChatBskyActorDeleteAccountResponseBody } from "@speakeasy-api/bluesky/models/operations";
 
 let value: ChatBskyActorDeleteAccountResponseBody = {};
 ```

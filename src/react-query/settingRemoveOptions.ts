@@ -50,7 +50,7 @@ export function useSettingRemoveOptionsMutation(
 }
 
 export function mutationKeySettingRemoveOptions(): MutationKey {
-  return ["bluesky", "setting", "removeOptions"];
+  return ["@speakeasy-api/bluesky", "setting", "removeOptions"];
 }
 
 export function buildSettingRemoveOptionsMutation(

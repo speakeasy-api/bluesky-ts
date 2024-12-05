@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { AppBskyFeedDescribeFeedGeneratorResponseBody } from "bluesky/models/operations";
+import { AppBskyFeedDescribeFeedGeneratorResponseBody } from "@speakeasy-api/bluesky/models/operations";
 
 let value: AppBskyFeedDescribeFeedGeneratorResponseBody = {
   did: "<id>",

@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { ComAtprotoIdentityGetRecommendedDidCredentialsResponseBody } from "bluesky/models/operations";
+import { ComAtprotoIdentityGetRecommendedDidCredentialsResponseBody } from "@speakeasy-api/bluesky/models/operations";
 
 let value: ComAtprotoIdentityGetRecommendedDidCredentialsResponseBody = {};
 ```

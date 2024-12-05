@@ -5,7 +5,7 @@ Bad Request
 ## Example Usage
 
 ```typescript
-import { ComAtprotoRepoDeleteRecordResponseBody } from "bluesky/models/errors";
+import { ComAtprotoRepoDeleteRecordResponseBody } from "@speakeasy-api/bluesky/models/errors";
 
 // No examples available for this model
 ```

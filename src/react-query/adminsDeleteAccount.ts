@@ -49,7 +49,7 @@ export function useAdminsDeleteAccountMutation(
 }
 
 export function mutationKeyAdminsDeleteAccount(): MutationKey {
-  return ["bluesky", "admins", "deleteAccount"];
+  return ["@speakeasy-api/bluesky", "admins", "deleteAccount"];
 }
 
 export function buildAdminsDeleteAccountMutation(

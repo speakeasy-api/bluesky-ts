@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ToolsOzoneSetAddValuesError } from "bluesky/models/errors";
+import { ToolsOzoneSetAddValuesError } from "@speakeasy-api/bluesky/models/errors";
 
 let value: ToolsOzoneSetAddValuesError = "InvalidRequest";
 ```

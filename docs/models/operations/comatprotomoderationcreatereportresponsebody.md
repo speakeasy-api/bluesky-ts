@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { ComAtprotoModerationCreateReportResponseBody } from "bluesky/models/operations";
+import { ComAtprotoModerationCreateReportResponseBody } from "@speakeasy-api/bluesky/models/operations";
 
 let value: ComAtprotoModerationCreateReportResponseBody = {
   id: 876506,

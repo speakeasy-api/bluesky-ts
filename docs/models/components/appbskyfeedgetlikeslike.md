@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { AppBskyFeedGetLikesLike } from "bluesky/models/components";
+import { AppBskyFeedGetLikesLike } from "@speakeasy-api/bluesky/models/components";
 
 let value: AppBskyFeedGetLikesLike = {
   indexedAt: new Date("2023-01-12T08:34:33.723Z"),

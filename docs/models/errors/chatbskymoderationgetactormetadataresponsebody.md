@@ -5,7 +5,7 @@ Bad Request
 ## Example Usage
 
 ```typescript
-import { ChatBskyModerationGetActorMetadataResponseBody } from "bluesky/models/errors";
+import { ChatBskyModerationGetActorMetadataResponseBody } from "@speakeasy-api/bluesky/models/errors";
 
 // No examples available for this model
 ```

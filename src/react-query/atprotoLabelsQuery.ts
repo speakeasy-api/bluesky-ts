@@ -206,7 +206,12 @@ export function invalidateAtprotoLabelsQuery(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "atprotoLabels", "query", ...queryKeyBase],
+    queryKey: [
+      "@speakeasy-api/bluesky",
+      "atprotoLabels",
+      "query",
+      ...queryKeyBase,
+    ],
   });
 }
 
@@ -216,7 +221,7 @@ export function invalidateAllAtprotoLabelsQuery(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "atprotoLabels", "query"],
+    queryKey: ["@speakeasy-api/bluesky", "atprotoLabels", "query"],
   });
 }
 
@@ -309,5 +314,5 @@ export function queryKeyAtprotoLabelsQuery(
     cursor?: string | undefined;
   },
 ): QueryKey {
-  return ["bluesky", "atprotoLabels", "query", parameters];
+  return ["@speakeasy-api/bluesky", "atprotoLabels", "query", parameters];
 }
