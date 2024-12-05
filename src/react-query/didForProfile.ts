@@ -25,7 +25,7 @@ import {
   TupleToPrefixes,
 } from "./_types.js";
 
-export type AtprotoIdentityResolveHandleQueryData =
+export type DidForProfileQueryData =
   operations.ComAtprotoIdentityResolveHandleResponseBody;
 
 /**
@@ -33,13 +33,13 @@ export type AtprotoIdentityResolveHandleQueryData =
  *
  * Resolves a handle (domain name) to a DID.
  */
-export function useAtprotoIdentityResolveHandle(
+export function useDidForProfile(
   request: operations.ComAtprotoIdentityResolveHandleRequest,
-  options?: QueryHookOptions<AtprotoIdentityResolveHandleQueryData>,
-): UseQueryResult<AtprotoIdentityResolveHandleQueryData, Error> {
+  options?: QueryHookOptions<DidForProfileQueryData>,
+): UseQueryResult<DidForProfileQueryData, Error> {
   const client = useBlueskyContext();
   return useQuery({
-    ...buildAtprotoIdentityResolveHandleQuery(
+    ...buildDidForProfileQuery(
       client,
       request,
       options,
@@ -53,13 +53,13 @@ export function useAtprotoIdentityResolveHandle(
  *
  * Resolves a handle (domain name) to a DID.
  */
-export function useAtprotoIdentityResolveHandleSuspense(
+export function useDidForProfileSuspense(
   request: operations.ComAtprotoIdentityResolveHandleRequest,
-  options?: SuspenseQueryHookOptions<AtprotoIdentityResolveHandleQueryData>,
-): UseSuspenseQueryResult<AtprotoIdentityResolveHandleQueryData, Error> {
+  options?: SuspenseQueryHookOptions<DidForProfileQueryData>,
+): UseSuspenseQueryResult<DidForProfileQueryData, Error> {
   const client = useBlueskyContext();
   return useSuspenseQuery({
-    ...buildAtprotoIdentityResolveHandleQuery(
+    ...buildDidForProfileQuery(
       client,
       request,
       options,
@@ -68,30 +68,30 @@ export function useAtprotoIdentityResolveHandleSuspense(
   });
 }
 
-export function prefetchAtprotoIdentityResolveHandle(
+export function prefetchDidForProfile(
   queryClient: QueryClient,
   client$: BlueskyCore,
   request: operations.ComAtprotoIdentityResolveHandleRequest,
 ): Promise<void> {
   return queryClient.prefetchQuery({
-    ...buildAtprotoIdentityResolveHandleQuery(
+    ...buildDidForProfileQuery(
       client$,
       request,
     ),
   });
 }
 
-export function setAtprotoIdentityResolveHandleData(
+export function setDidForProfileData(
   client: QueryClient,
   queryKeyBase: [parameters: { handle: string }],
-  data: AtprotoIdentityResolveHandleQueryData,
-): AtprotoIdentityResolveHandleQueryData | undefined {
-  const key = queryKeyAtprotoIdentityResolveHandle(...queryKeyBase);
+  data: DidForProfileQueryData,
+): DidForProfileQueryData | undefined {
+  const key = queryKeyDidForProfile(...queryKeyBase);
 
-  return client.setQueryData<AtprotoIdentityResolveHandleQueryData>(key, data);
+  return client.setQueryData<DidForProfileQueryData>(key, data);
 }
 
-export function invalidateAtprotoIdentityResolveHandle(
+export function invalidateDidForProfile(
   client: QueryClient,
   queryKeyBase: TupleToPrefixes<[parameters: { handle: string }]>,
   filters?: Omit<InvalidateQueryFilters, "queryKey" | "predicate" | "exact">,
@@ -102,7 +102,7 @@ export function invalidateAtprotoIdentityResolveHandle(
   });
 }
 
-export function invalidateAllAtprotoIdentityResolveHandle(
+export function invalidateAllDidForProfile(
   client: QueryClient,
   filters?: Omit<InvalidateQueryFilters, "queryKey" | "predicate" | "exact">,
 ): Promise<void> {
@@ -112,21 +112,19 @@ export function invalidateAllAtprotoIdentityResolveHandle(
   });
 }
 
-export function buildAtprotoIdentityResolveHandleQuery(
+export function buildDidForProfileQuery(
   client$: BlueskyCore,
   request: operations.ComAtprotoIdentityResolveHandleRequest,
   options?: RequestOptions,
 ): {
   queryKey: QueryKey;
-  queryFn: (
-    context: QueryFunctionContext,
-  ) => Promise<AtprotoIdentityResolveHandleQueryData>;
+  queryFn: (context: QueryFunctionContext) => Promise<DidForProfileQueryData>;
 } {
   return {
-    queryKey: queryKeyAtprotoIdentityResolveHandle({ handle: request.handle }),
-    queryFn: async function atprotoIdentityResolveHandleQueryFn(
+    queryKey: queryKeyDidForProfile({ handle: request.handle }),
+    queryFn: async function didForProfileQueryFn(
       ctx,
-    ): Promise<AtprotoIdentityResolveHandleQueryData> {
+    ): Promise<DidForProfileQueryData> {
       const sig = combineSignals(ctx.signal, options?.fetchOptions?.signal);
       const mergedOptions = {
         ...options,
@@ -142,7 +140,7 @@ export function buildAtprotoIdentityResolveHandleQuery(
   };
 }
 
-export function queryKeyAtprotoIdentityResolveHandle(
+export function queryKeyDidForProfile(
   parameters: { handle: string },
 ): QueryKey {
   return ["bluesky", "atprotoIdentity", "resolveHandle", parameters];

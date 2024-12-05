@@ -380,21 +380,21 @@ associated utilities.
 ```tsx
 import {
   // Query hooks for fetching data.
-  useFeedGetAuthor,
-  useFeedGetAuthorSuspense,
+  useActorAuthorFeed,
+  useActorAuthorFeedSuspense,
   // Query hooks suitable for building infinite scrolling or "load more" UIs.
-  useFeedGetAuthorInfinite,
-  useFeedGetAuthorInfiniteSuspense,
+  useActorAuthorFeedInfinite,
+  useActorAuthorFeedInfiniteSuspense,
 
   // Utility for prefetching data during server-side rendering and in React
   // Server Components that will be immediately available to client components
   // using the hooks.
-  prefetchFeedGetAuthor,
+  prefetchActorAuthorFeed,
   
   // Utilities to invalidate the query cache for this query in response to
   // mutations and other user actions.
-  invalidateFeedGetAuthor,
-  invalidateAllFeedGetAuthor,
+  invalidateActorAuthorFeed,
+  invalidateAllActorAuthorFeed,
 } from "bluesky/react-query/feedGetAuthor.js";
 ```
 
@@ -503,21 +503,21 @@ associated utilities.
 ```tsx
 import {
   // Query hooks for fetching data.
-  useFeedFetch,
-  useFeedFetchSuspense,
+  useFeed,
+  useFeedSuspense,
   // Query hooks suitable for building infinite scrolling or "load more" UIs.
-  useFeedFetchInfinite,
-  useFeedFetchInfiniteSuspense,
+  useFeedInfinite,
+  useFeedInfiniteSuspense,
 
   // Utility for prefetching data during server-side rendering and in React
   // Server Components that will be immediately available to client components
   // using the hooks.
-  prefetchFeedFetch,
+  prefetchFeed,
   
   // Utilities to invalidate the query cache for this query in response to
   // mutations and other user actions.
-  invalidateFeedFetch,
-  invalidateAllFeedFetch,
+  invalidateFeed,
+  invalidateAllFeed,
 } from "bluesky/react-query/feedFetch.js";
 ```
 

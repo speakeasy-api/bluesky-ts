@@ -8,14 +8,20 @@ import { RetryConfig } from "./retries.js";
 import { Params, pathToFunc } from "./url.js";
 
 /**
+ * Bluesky API
+ */
+export const ServerPrivileged = "privileged";
+/**
+ * Bluesky Public API
+ */
+export const ServerPublic = "public";
+/**
  * Contains the list of servers available to the SDK
  */
-export const ServerList = [
-  /**
-   * Bluesky API
-   */
-  "https://api.bsky.app",
-] as const;
+export const ServerList = {
+  [ServerPrivileged]: "https://api.bsky.app",
+  [ServerPublic]: "https://public.api.bsky.app",
+} as const;
 
 export type SDKOptions = {
   bearer?: string | (() => Promise<string>);
@@ -24,7 +30,7 @@ export type SDKOptions = {
   /**
    * Allows overriding the default server used by the SDK
    */
-  serverIdx?: number;
+  server?: keyof typeof ServerList;
   /**
    * Allows overriding the default server URL used by the SDK
    */
@@ -43,11 +49,8 @@ export function serverURLFromOptions(options: SDKOptions): URL | null {
   const params: Params = {};
 
   if (!serverURL) {
-    const serverIdx = options.serverIdx ?? 0;
-    if (serverIdx < 0 || serverIdx >= ServerList.length) {
-      throw new Error(`Invalid server index ${serverIdx}`);
-    }
-    serverURL = ServerList[serverIdx] || "";
+    const server = options.server ?? ServerPrivileged;
+    serverURL = ServerList[server] || "";
   }
 
   const u = pathToFunc(serverURL)(params);
@@ -57,7 +60,7 @@ export function serverURLFromOptions(options: SDKOptions): URL | null {
 export const SDK_METADATA = {
   language: "typescript",
   openapiDocVersion: "0.0.0",
-  sdkVersion: "0.5.0",
+  sdkVersion: "0.6.4",
   genVersion: "2.472.1",
-  userAgent: "speakeasy-sdk/typescript 0.5.0 2.472.1 0.0.0 bluesky",
+  userAgent: "speakeasy-sdk/typescript 0.6.4 2.472.1 0.0.0 bluesky",
 } as const;

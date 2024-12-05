@@ -225,10 +225,10 @@ infinite scrolling and "load more" user interfaces.
 > those hooks may be more suitable.
 
 ```tsx
-import { useActorsSearchInfinite } from "bluesky/react-query/actorsSearch.js";
+import { useSearchActorsInfinite } from "bluesky/react-query/actorsSearch.js";
 
 export function Example() {
-  const { data, error, status, fetchNextPage, hasNextPage } = useActorsSearchInfinite();
+  const { data, error, status, fetchNextPage, hasNextPage } = useSearchActorsInfinite();
 
   return (
     <div>

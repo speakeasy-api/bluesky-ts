@@ -18,7 +18,7 @@ import {
   UseSuspenseQueryResult,
 } from "@tanstack/react-query";
 import { BlueskyCore } from "../core.js";
-import { graphGetFollows } from "../funcs/graphGetFollows.js";
+import { actorsSearch } from "../funcs/actorsSearch.js";
 import { combineSignals } from "../lib/primitives.js";
 import { RequestOptions } from "../lib/sdks.js";
 import * as operations from "../models/operations/index.js";
@@ -33,16 +33,15 @@ import {
   TupleToPrefixes,
 } from "./_types.js";
 
-export type GraphGetFollowsQueryData =
-  operations.AppBskyGraphGetFollowsResponse;
+export type SearchActorsQueryData = operations.AppBskyActorSearchActorsResponse;
 
-export type GraphGetFollowsInfiniteQueryData = PageIterator<
-  operations.AppBskyGraphGetFollowsResponse,
+export type SearchActorsInfiniteQueryData = PageIterator<
+  operations.AppBskyActorSearchActorsResponse,
   { cursor: string }
 >;
 
-export type GraphGetFollowsPageParams = PageIterator<
-  operations.AppBskyGraphGetFollowsResponse,
+export type SearchActorsPageParams = PageIterator<
+  operations.AppBskyActorSearchActorsResponse,
   { cursor: string }
 >["~next"];
 
@@ -51,15 +50,15 @@ export type GraphGetFollowsPageParams = PageIterator<
  *
  * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
  *
- * Enumerates accounts which a specified account (actor) follows.
+ * Find actors (profiles) matching search criteria. Does not require auth.
  */
-export function useGraphGetFollows(
-  request: operations.AppBskyGraphGetFollowsRequest,
-  options?: QueryHookOptions<GraphGetFollowsQueryData>,
-): UseQueryResult<GraphGetFollowsQueryData, Error> {
+export function useSearchActors(
+  request?: operations.AppBskyActorSearchActorsRequest | undefined,
+  options?: QueryHookOptions<SearchActorsQueryData>,
+): UseQueryResult<SearchActorsQueryData, Error> {
   const client = useBlueskyContext();
   return useQuery({
-    ...buildGraphGetFollowsQuery(
+    ...buildSearchActorsQuery(
       client,
       request,
       options,
@@ -73,15 +72,15 @@ export function useGraphGetFollows(
  *
  * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
  *
- * Enumerates accounts which a specified account (actor) follows.
+ * Find actors (profiles) matching search criteria. Does not require auth.
  */
-export function useGraphGetFollowsSuspense(
-  request: operations.AppBskyGraphGetFollowsRequest,
-  options?: SuspenseQueryHookOptions<GraphGetFollowsQueryData>,
-): UseSuspenseQueryResult<GraphGetFollowsQueryData, Error> {
+export function useSearchActorsSuspense(
+  request?: operations.AppBskyActorSearchActorsRequest | undefined,
+  options?: SuspenseQueryHookOptions<SearchActorsQueryData>,
+): UseSuspenseQueryResult<SearchActorsQueryData, Error> {
   const client = useBlueskyContext();
   return useSuspenseQuery({
-    ...buildGraphGetFollowsQuery(
+    ...buildSearchActorsQuery(
       client,
       request,
       options,
@@ -95,24 +94,24 @@ export function useGraphGetFollowsSuspense(
  *
  * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
  *
- * Enumerates accounts which a specified account (actor) follows.
+ * Find actors (profiles) matching search criteria. Does not require auth.
  */
-export function useGraphGetFollowsInfinite(
-  request: operations.AppBskyGraphGetFollowsRequest,
-  options?: InfiniteQueryHookOptions<GraphGetFollowsInfiniteQueryData>,
+export function useSearchActorsInfinite(
+  request?: operations.AppBskyActorSearchActorsRequest | undefined,
+  options?: InfiniteQueryHookOptions<SearchActorsInfiniteQueryData>,
 ): UseInfiniteQueryResult<
-  InfiniteData<GraphGetFollowsInfiniteQueryData, GraphGetFollowsPageParams>,
+  InfiniteData<SearchActorsInfiniteQueryData, SearchActorsPageParams>,
   Error
 > {
   const client = useBlueskyContext();
   return useInfiniteQuery<
-    GraphGetFollowsInfiniteQueryData,
+    SearchActorsInfiniteQueryData,
     Error,
-    InfiniteData<GraphGetFollowsInfiniteQueryData, GraphGetFollowsPageParams>,
+    InfiniteData<SearchActorsInfiniteQueryData, SearchActorsPageParams>,
     QueryKey,
-    GraphGetFollowsPageParams
+    SearchActorsPageParams
   >({
-    ...buildGraphGetFollowsInfiniteQuery(
+    ...buildSearchActorsInfiniteQuery(
       client,
       request,
       options,
@@ -128,24 +127,24 @@ export function useGraphGetFollowsInfinite(
  *
  * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
  *
- * Enumerates accounts which a specified account (actor) follows.
+ * Find actors (profiles) matching search criteria. Does not require auth.
  */
-export function useGraphGetFollowsInfiniteSuspense(
-  request: operations.AppBskyGraphGetFollowsRequest,
-  options?: SuspenseInfiniteQueryHookOptions<GraphGetFollowsInfiniteQueryData>,
+export function useSearchActorsInfiniteSuspense(
+  request?: operations.AppBskyActorSearchActorsRequest | undefined,
+  options?: SuspenseInfiniteQueryHookOptions<SearchActorsInfiniteQueryData>,
 ): UseSuspenseInfiniteQueryResult<
-  InfiniteData<GraphGetFollowsInfiniteQueryData, GraphGetFollowsPageParams>,
+  InfiniteData<SearchActorsInfiniteQueryData, SearchActorsPageParams>,
   Error
 > {
   const client = useBlueskyContext();
   return useSuspenseInfiniteQuery<
-    GraphGetFollowsInfiniteQueryData,
+    SearchActorsInfiniteQueryData,
     Error,
-    InfiniteData<GraphGetFollowsInfiniteQueryData, GraphGetFollowsPageParams>,
+    InfiniteData<SearchActorsInfiniteQueryData, SearchActorsPageParams>,
     QueryKey,
-    GraphGetFollowsPageParams
+    SearchActorsPageParams
   >({
-    ...buildGraphGetFollowsInfiniteQuery(
+    ...buildSearchActorsInfiniteQuery(
       client,
       request,
       options,
@@ -156,40 +155,40 @@ export function useGraphGetFollowsInfiniteSuspense(
   });
 }
 
-export function prefetchGraphGetFollows(
+export function prefetchSearchActors(
   queryClient: QueryClient,
   client$: BlueskyCore,
-  request: operations.AppBskyGraphGetFollowsRequest,
+  request?: operations.AppBskyActorSearchActorsRequest | undefined,
 ): Promise<void> {
   return queryClient.prefetchQuery({
-    ...buildGraphGetFollowsQuery(
+    ...buildSearchActorsQuery(
       client$,
       request,
     ),
   });
 }
 
-export function setGraphGetFollowsData(
+export function setSearchActorsData(
   client: QueryClient,
   queryKeyBase: [
     parameters: {
-      actor: string;
+      q?: string | undefined;
       limit?: number | undefined;
       cursor?: string | undefined;
     },
   ],
-  data: GraphGetFollowsQueryData,
-): GraphGetFollowsQueryData | undefined {
-  const key = queryKeyGraphGetFollows(...queryKeyBase);
+  data: SearchActorsQueryData,
+): SearchActorsQueryData | undefined {
+  const key = queryKeySearchActors(...queryKeyBase);
 
-  return client.setQueryData<GraphGetFollowsQueryData>(key, data);
+  return client.setQueryData<SearchActorsQueryData>(key, data);
 }
 
-export function invalidateGraphGetFollows(
+export function invalidateSearchActors(
   client: QueryClient,
   queryKeyBase: TupleToPrefixes<
     [parameters: {
-      actor: string;
+      q?: string | undefined;
       limit?: number | undefined;
       cursor?: string | undefined;
     }]
@@ -198,44 +197,44 @@ export function invalidateGraphGetFollows(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "graph", "getFollows", ...queryKeyBase],
+    queryKey: ["bluesky", "actors", "search", ...queryKeyBase],
   });
 }
 
-export function invalidateAllGraphGetFollows(
+export function invalidateAllSearchActors(
   client: QueryClient,
   filters?: Omit<InvalidateQueryFilters, "queryKey" | "predicate" | "exact">,
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "graph", "getFollows"],
+    queryKey: ["bluesky", "actors", "search"],
   });
 }
 
-export function buildGraphGetFollowsQuery(
+export function buildSearchActorsQuery(
   client$: BlueskyCore,
-  request: operations.AppBskyGraphGetFollowsRequest,
+  request?: operations.AppBskyActorSearchActorsRequest | undefined,
   options?: RequestOptions,
 ): {
   queryKey: QueryKey;
-  queryFn: (context: QueryFunctionContext) => Promise<GraphGetFollowsQueryData>;
+  queryFn: (context: QueryFunctionContext) => Promise<SearchActorsQueryData>;
 } {
   return {
-    queryKey: queryKeyGraphGetFollows({
-      actor: request.actor,
-      limit: request.limit,
-      cursor: request.cursor,
+    queryKey: queryKeySearchActors({
+      q: request?.q,
+      limit: request?.limit,
+      cursor: request?.cursor,
     }),
-    queryFn: async function graphGetFollowsQueryFn(
+    queryFn: async function searchActorsQueryFn(
       ctx,
-    ): Promise<GraphGetFollowsQueryData> {
+    ): Promise<SearchActorsQueryData> {
       const sig = combineSignals(ctx.signal, options?.fetchOptions?.signal);
       const mergedOptions = {
         ...options,
         fetchOptions: { ...options?.fetchOptions, signal: sig },
       };
 
-      return unwrapAsync(graphGetFollows(
+      return unwrapAsync(actorsSearch(
         client$,
         request,
         mergedOptions,
@@ -244,25 +243,25 @@ export function buildGraphGetFollowsQuery(
   };
 }
 
-export function buildGraphGetFollowsInfiniteQuery(
+export function buildSearchActorsInfiniteQuery(
   client$: BlueskyCore,
-  request: operations.AppBskyGraphGetFollowsRequest,
+  request?: operations.AppBskyActorSearchActorsRequest | undefined,
   options?: RequestOptions,
 ): {
   queryKey: QueryKey;
   queryFn: (
-    context: QueryFunctionContext<QueryKey, GraphGetFollowsPageParams>,
-  ) => Promise<GraphGetFollowsInfiniteQueryData>;
+    context: QueryFunctionContext<QueryKey, SearchActorsPageParams>,
+  ) => Promise<SearchActorsInfiniteQueryData>;
 } {
   return {
-    queryKey: queryKeyGraphGetFollows({
-      actor: request.actor,
-      limit: request.limit,
-      cursor: request.cursor,
+    queryKey: queryKeySearchActors({
+      q: request?.q,
+      limit: request?.limit,
+      cursor: request?.cursor,
     }),
-    queryFn: async function graphGetFollowsQuery(
+    queryFn: async function searchActorsQuery(
       ctx,
-    ): Promise<GraphGetFollowsInfiniteQueryData> {
+    ): Promise<SearchActorsInfiniteQueryData> {
       const sig = combineSignals(ctx.signal, options?.fetchOptions?.signal);
       const mergedOptions = {
         ...options,
@@ -270,14 +269,14 @@ export function buildGraphGetFollowsInfiniteQuery(
       };
 
       if (!ctx.pageParam) {
-        return unwrapResultIterator(graphGetFollows(
+        return unwrapResultIterator(actorsSearch(
           client$,
           request,
           mergedOptions,
         ));
       }
 
-      return unwrapResultIterator(graphGetFollows(
+      return unwrapResultIterator(actorsSearch(
         client$,
         {
           ...request,
@@ -289,12 +288,12 @@ export function buildGraphGetFollowsInfiniteQuery(
   };
 }
 
-export function queryKeyGraphGetFollows(
+export function queryKeySearchActors(
   parameters: {
-    actor: string;
+    q?: string | undefined;
     limit?: number | undefined;
     cursor?: string | undefined;
   },
 ): QueryKey {
-  return ["bluesky", "graph", "getFollows", parameters];
+  return ["bluesky", "actors", "search", parameters];
 }

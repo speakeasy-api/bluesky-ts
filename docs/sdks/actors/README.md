@@ -215,18 +215,18 @@ associated utilities.
 ```tsx
 import {
   // Query hooks for fetching data.
-  useActorsGetProfile,
-  useActorsGetProfileSuspense,
+  useActorProfile,
+  useActorProfileSuspense,
 
   // Utility for prefetching data during server-side rendering and in React
   // Server Components that will be immediately available to client components
   // using the hooks.
-  prefetchActorsGetProfile,
+  prefetchActorProfile,
   
   // Utilities to invalidate the query cache for this query in response to
   // mutations and other user actions.
-  invalidateActorsGetProfile,
-  invalidateAllActorsGetProfile,
+  invalidateActorProfile,
+  invalidateAllActorProfile,
 } from "bluesky/react-query/actorsGetProfile.js";
 ```
 
@@ -566,21 +566,21 @@ associated utilities.
 ```tsx
 import {
   // Query hooks for fetching data.
-  useActorsSearch,
-  useActorsSearchSuspense,
+  useSearchActors,
+  useSearchActorsSuspense,
   // Query hooks suitable for building infinite scrolling or "load more" UIs.
-  useActorsSearchInfinite,
-  useActorsSearchInfiniteSuspense,
+  useSearchActorsInfinite,
+  useSearchActorsInfiniteSuspense,
 
   // Utility for prefetching data during server-side rendering and in React
   // Server Components that will be immediately available to client components
   // using the hooks.
-  prefetchActorsSearch,
+  prefetchSearchActors,
   
   // Utilities to invalidate the query cache for this query in response to
   // mutations and other user actions.
-  invalidateActorsSearch,
-  invalidateAllActorsSearch,
+  invalidateSearchActors,
+  invalidateAllSearchActors,
 } from "bluesky/react-query/actorsSearch.js";
 ```
 

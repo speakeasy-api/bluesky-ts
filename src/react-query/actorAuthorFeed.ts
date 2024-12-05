@@ -18,7 +18,7 @@ import {
   UseSuspenseQueryResult,
 } from "@tanstack/react-query";
 import { BlueskyCore } from "../core.js";
-import { usersGetFollowers } from "../funcs/usersGetFollowers.js";
+import { feedGetAuthor } from "../funcs/feedGetAuthor.js";
 import { combineSignals } from "../lib/primitives.js";
 import { RequestOptions } from "../lib/sdks.js";
 import * as operations from "../models/operations/index.js";
@@ -33,16 +33,16 @@ import {
   TupleToPrefixes,
 } from "./_types.js";
 
-export type UsersGetFollowersQueryData =
-  operations.AppBskyGraphGetFollowersResponse;
+export type ActorAuthorFeedQueryData =
+  operations.AppBskyFeedGetAuthorFeedResponse;
 
-export type UsersGetFollowersInfiniteQueryData = PageIterator<
-  operations.AppBskyGraphGetFollowersResponse,
+export type ActorAuthorFeedInfiniteQueryData = PageIterator<
+  operations.AppBskyFeedGetAuthorFeedResponse,
   { cursor: string }
 >;
 
-export type UsersGetFollowersPageParams = PageIterator<
-  operations.AppBskyGraphGetFollowersResponse,
+export type ActorAuthorFeedPageParams = PageIterator<
+  operations.AppBskyFeedGetAuthorFeedResponse,
   { cursor: string }
 >["~next"];
 
@@ -51,15 +51,15 @@ export type UsersGetFollowersPageParams = PageIterator<
  *
  * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
  *
- * Enumerates accounts which follow a specified account (actor).
+ * Get a view of an actor's 'author feed' (post and reposts by the author). Does not require auth.
  */
-export function useUsersGetFollowers(
-  request: operations.AppBskyGraphGetFollowersRequest,
-  options?: QueryHookOptions<UsersGetFollowersQueryData>,
-): UseQueryResult<UsersGetFollowersQueryData, Error> {
+export function useActorAuthorFeed(
+  request: operations.AppBskyFeedGetAuthorFeedRequest,
+  options?: QueryHookOptions<ActorAuthorFeedQueryData>,
+): UseQueryResult<ActorAuthorFeedQueryData, Error> {
   const client = useBlueskyContext();
   return useQuery({
-    ...buildUsersGetFollowersQuery(
+    ...buildActorAuthorFeedQuery(
       client,
       request,
       options,
@@ -73,15 +73,15 @@ export function useUsersGetFollowers(
  *
  * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
  *
- * Enumerates accounts which follow a specified account (actor).
+ * Get a view of an actor's 'author feed' (post and reposts by the author). Does not require auth.
  */
-export function useUsersGetFollowersSuspense(
-  request: operations.AppBskyGraphGetFollowersRequest,
-  options?: SuspenseQueryHookOptions<UsersGetFollowersQueryData>,
-): UseSuspenseQueryResult<UsersGetFollowersQueryData, Error> {
+export function useActorAuthorFeedSuspense(
+  request: operations.AppBskyFeedGetAuthorFeedRequest,
+  options?: SuspenseQueryHookOptions<ActorAuthorFeedQueryData>,
+): UseSuspenseQueryResult<ActorAuthorFeedQueryData, Error> {
   const client = useBlueskyContext();
   return useSuspenseQuery({
-    ...buildUsersGetFollowersQuery(
+    ...buildActorAuthorFeedQuery(
       client,
       request,
       options,
@@ -95,27 +95,24 @@ export function useUsersGetFollowersSuspense(
  *
  * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
  *
- * Enumerates accounts which follow a specified account (actor).
+ * Get a view of an actor's 'author feed' (post and reposts by the author). Does not require auth.
  */
-export function useUsersGetFollowersInfinite(
-  request: operations.AppBskyGraphGetFollowersRequest,
-  options?: InfiniteQueryHookOptions<UsersGetFollowersInfiniteQueryData>,
+export function useActorAuthorFeedInfinite(
+  request: operations.AppBskyFeedGetAuthorFeedRequest,
+  options?: InfiniteQueryHookOptions<ActorAuthorFeedInfiniteQueryData>,
 ): UseInfiniteQueryResult<
-  InfiniteData<UsersGetFollowersInfiniteQueryData, UsersGetFollowersPageParams>,
+  InfiniteData<ActorAuthorFeedInfiniteQueryData, ActorAuthorFeedPageParams>,
   Error
 > {
   const client = useBlueskyContext();
   return useInfiniteQuery<
-    UsersGetFollowersInfiniteQueryData,
+    ActorAuthorFeedInfiniteQueryData,
     Error,
-    InfiniteData<
-      UsersGetFollowersInfiniteQueryData,
-      UsersGetFollowersPageParams
-    >,
+    InfiniteData<ActorAuthorFeedInfiniteQueryData, ActorAuthorFeedPageParams>,
     QueryKey,
-    UsersGetFollowersPageParams
+    ActorAuthorFeedPageParams
   >({
-    ...buildUsersGetFollowersInfiniteQuery(
+    ...buildActorAuthorFeedInfiniteQuery(
       client,
       request,
       options,
@@ -131,29 +128,24 @@ export function useUsersGetFollowersInfinite(
  *
  * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
  *
- * Enumerates accounts which follow a specified account (actor).
+ * Get a view of an actor's 'author feed' (post and reposts by the author). Does not require auth.
  */
-export function useUsersGetFollowersInfiniteSuspense(
-  request: operations.AppBskyGraphGetFollowersRequest,
-  options?: SuspenseInfiniteQueryHookOptions<
-    UsersGetFollowersInfiniteQueryData
-  >,
+export function useActorAuthorFeedInfiniteSuspense(
+  request: operations.AppBskyFeedGetAuthorFeedRequest,
+  options?: SuspenseInfiniteQueryHookOptions<ActorAuthorFeedInfiniteQueryData>,
 ): UseSuspenseInfiniteQueryResult<
-  InfiniteData<UsersGetFollowersInfiniteQueryData, UsersGetFollowersPageParams>,
+  InfiniteData<ActorAuthorFeedInfiniteQueryData, ActorAuthorFeedPageParams>,
   Error
 > {
   const client = useBlueskyContext();
   return useSuspenseInfiniteQuery<
-    UsersGetFollowersInfiniteQueryData,
+    ActorAuthorFeedInfiniteQueryData,
     Error,
-    InfiniteData<
-      UsersGetFollowersInfiniteQueryData,
-      UsersGetFollowersPageParams
-    >,
+    InfiniteData<ActorAuthorFeedInfiniteQueryData, ActorAuthorFeedPageParams>,
     QueryKey,
-    UsersGetFollowersPageParams
+    ActorAuthorFeedPageParams
   >({
-    ...buildUsersGetFollowersInfiniteQuery(
+    ...buildActorAuthorFeedInfiniteQuery(
       client,
       request,
       options,
@@ -164,88 +156,92 @@ export function useUsersGetFollowersInfiniteSuspense(
   });
 }
 
-export function prefetchUsersGetFollowers(
+export function prefetchActorAuthorFeed(
   queryClient: QueryClient,
   client$: BlueskyCore,
-  request: operations.AppBskyGraphGetFollowersRequest,
+  request: operations.AppBskyFeedGetAuthorFeedRequest,
 ): Promise<void> {
   return queryClient.prefetchQuery({
-    ...buildUsersGetFollowersQuery(
+    ...buildActorAuthorFeedQuery(
       client$,
       request,
     ),
   });
 }
 
-export function setUsersGetFollowersData(
+export function setActorAuthorFeedData(
   client: QueryClient,
   queryKeyBase: [
     parameters: {
       actor: string;
       limit?: number | undefined;
       cursor?: string | undefined;
+      filter?: operations.Filter | undefined;
+      includePins?: boolean | undefined;
     },
   ],
-  data: UsersGetFollowersQueryData,
-): UsersGetFollowersQueryData | undefined {
-  const key = queryKeyUsersGetFollowers(...queryKeyBase);
+  data: ActorAuthorFeedQueryData,
+): ActorAuthorFeedQueryData | undefined {
+  const key = queryKeyActorAuthorFeed(...queryKeyBase);
 
-  return client.setQueryData<UsersGetFollowersQueryData>(key, data);
+  return client.setQueryData<ActorAuthorFeedQueryData>(key, data);
 }
 
-export function invalidateUsersGetFollowers(
+export function invalidateActorAuthorFeed(
   client: QueryClient,
   queryKeyBase: TupleToPrefixes<
     [parameters: {
       actor: string;
       limit?: number | undefined;
       cursor?: string | undefined;
+      filter?: operations.Filter | undefined;
+      includePins?: boolean | undefined;
     }]
   >,
   filters?: Omit<InvalidateQueryFilters, "queryKey" | "predicate" | "exact">,
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "users", "getFollowers", ...queryKeyBase],
+    queryKey: ["bluesky", "feed", "getAuthor", ...queryKeyBase],
   });
 }
 
-export function invalidateAllUsersGetFollowers(
+export function invalidateAllActorAuthorFeed(
   client: QueryClient,
   filters?: Omit<InvalidateQueryFilters, "queryKey" | "predicate" | "exact">,
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "users", "getFollowers"],
+    queryKey: ["bluesky", "feed", "getAuthor"],
   });
 }
 
-export function buildUsersGetFollowersQuery(
+export function buildActorAuthorFeedQuery(
   client$: BlueskyCore,
-  request: operations.AppBskyGraphGetFollowersRequest,
+  request: operations.AppBskyFeedGetAuthorFeedRequest,
   options?: RequestOptions,
 ): {
   queryKey: QueryKey;
-  queryFn: (
-    context: QueryFunctionContext,
-  ) => Promise<UsersGetFollowersQueryData>;
+  queryFn: (context: QueryFunctionContext) => Promise<ActorAuthorFeedQueryData>;
 } {
   return {
-    queryKey: queryKeyUsersGetFollowers({
+    queryKey: queryKeyActorAuthorFeed({
       actor: request.actor,
       limit: request.limit,
       cursor: request.cursor,
+      filter: request.filter,
+      includePins: request.includePins,
     }),
-    queryFn: async function usersGetFollowersQueryFn(
+    queryFn: async function actorAuthorFeedQueryFn(
       ctx,
-    ): Promise<UsersGetFollowersQueryData> {
+    ): Promise<ActorAuthorFeedQueryData> {
       const sig = combineSignals(ctx.signal, options?.fetchOptions?.signal);
       const mergedOptions = {
         ...options,
         fetchOptions: { ...options?.fetchOptions, signal: sig },
       };
 
-      return unwrapAsync(usersGetFollowers(
+      return unwrapAsync(feedGetAuthor(
         client$,
         request,
         mergedOptions,
@@ -254,25 +250,27 @@ export function buildUsersGetFollowersQuery(
   };
 }
 
-export function buildUsersGetFollowersInfiniteQuery(
+export function buildActorAuthorFeedInfiniteQuery(
   client$: BlueskyCore,
-  request: operations.AppBskyGraphGetFollowersRequest,
+  request: operations.AppBskyFeedGetAuthorFeedRequest,
   options?: RequestOptions,
 ): {
   queryKey: QueryKey;
   queryFn: (
-    context: QueryFunctionContext<QueryKey, UsersGetFollowersPageParams>,
-  ) => Promise<UsersGetFollowersInfiniteQueryData>;
+    context: QueryFunctionContext<QueryKey, ActorAuthorFeedPageParams>,
+  ) => Promise<ActorAuthorFeedInfiniteQueryData>;
 } {
   return {
-    queryKey: queryKeyUsersGetFollowers({
+    queryKey: queryKeyActorAuthorFeed({
       actor: request.actor,
       limit: request.limit,
       cursor: request.cursor,
+      filter: request.filter,
+      includePins: request.includePins,
     }),
-    queryFn: async function usersGetFollowersQuery(
+    queryFn: async function actorAuthorFeedQuery(
       ctx,
-    ): Promise<UsersGetFollowersInfiniteQueryData> {
+    ): Promise<ActorAuthorFeedInfiniteQueryData> {
       const sig = combineSignals(ctx.signal, options?.fetchOptions?.signal);
       const mergedOptions = {
         ...options,
@@ -280,14 +278,14 @@ export function buildUsersGetFollowersInfiniteQuery(
       };
 
       if (!ctx.pageParam) {
-        return unwrapResultIterator(usersGetFollowers(
+        return unwrapResultIterator(feedGetAuthor(
           client$,
           request,
           mergedOptions,
         ));
       }
 
-      return unwrapResultIterator(usersGetFollowers(
+      return unwrapResultIterator(feedGetAuthor(
         client$,
         {
           ...request,
@@ -299,12 +297,14 @@ export function buildUsersGetFollowersInfiniteQuery(
   };
 }
 
-export function queryKeyUsersGetFollowers(
+export function queryKeyActorAuthorFeed(
   parameters: {
     actor: string;
     limit?: number | undefined;
     cursor?: string | undefined;
+    filter?: operations.Filter | undefined;
+    includePins?: boolean | undefined;
   },
 ): QueryKey {
-  return ["bluesky", "users", "getFollowers", parameters];
+  return ["bluesky", "feed", "getAuthor", parameters];
 }

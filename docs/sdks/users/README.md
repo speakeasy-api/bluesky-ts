@@ -99,21 +99,21 @@ associated utilities.
 ```tsx
 import {
   // Query hooks for fetching data.
-  useUsersGetFollowers,
-  useUsersGetFollowersSuspense,
+  useFollowers,
+  useFollowersSuspense,
   // Query hooks suitable for building infinite scrolling or "load more" UIs.
-  useUsersGetFollowersInfinite,
-  useUsersGetFollowersInfiniteSuspense,
+  useFollowersInfinite,
+  useFollowersInfiniteSuspense,
 
   // Utility for prefetching data during server-side rendering and in React
   // Server Components that will be immediately available to client components
   // using the hooks.
-  prefetchUsersGetFollowers,
+  prefetchFollowers,
   
   // Utilities to invalidate the query cache for this query in response to
   // mutations and other user actions.
-  invalidateUsersGetFollowers,
-  invalidateAllUsersGetFollowers,
+  invalidateFollowers,
+  invalidateAllFollowers,
 } from "bluesky/react-query/usersGetFollowers.js";
 ```
 

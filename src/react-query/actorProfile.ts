@@ -26,7 +26,7 @@ import {
   TupleToPrefixes,
 } from "./_types.js";
 
-export type ActorsGetProfileQueryData =
+export type ActorProfileQueryData =
   components.AppBskyActorDefsProfileViewDetailed;
 
 /**
@@ -36,13 +36,13 @@ export type ActorsGetProfileQueryData =
  *
  * Get detailed profile view of an actor. Does not require auth, but contains relevant metadata with auth.
  */
-export function useActorsGetProfile(
+export function useActorProfile(
   request: operations.AppBskyActorGetProfileRequest,
-  options?: QueryHookOptions<ActorsGetProfileQueryData>,
-): UseQueryResult<ActorsGetProfileQueryData, Error> {
+  options?: QueryHookOptions<ActorProfileQueryData>,
+): UseQueryResult<ActorProfileQueryData, Error> {
   const client = useBlueskyContext();
   return useQuery({
-    ...buildActorsGetProfileQuery(
+    ...buildActorProfileQuery(
       client,
       request,
       options,
@@ -58,13 +58,13 @@ export function useActorsGetProfile(
  *
  * Get detailed profile view of an actor. Does not require auth, but contains relevant metadata with auth.
  */
-export function useActorsGetProfileSuspense(
+export function useActorProfileSuspense(
   request: operations.AppBskyActorGetProfileRequest,
-  options?: SuspenseQueryHookOptions<ActorsGetProfileQueryData>,
-): UseSuspenseQueryResult<ActorsGetProfileQueryData, Error> {
+  options?: SuspenseQueryHookOptions<ActorProfileQueryData>,
+): UseSuspenseQueryResult<ActorProfileQueryData, Error> {
   const client = useBlueskyContext();
   return useSuspenseQuery({
-    ...buildActorsGetProfileQuery(
+    ...buildActorProfileQuery(
       client,
       request,
       options,
@@ -73,30 +73,30 @@ export function useActorsGetProfileSuspense(
   });
 }
 
-export function prefetchActorsGetProfile(
+export function prefetchActorProfile(
   queryClient: QueryClient,
   client$: BlueskyCore,
   request: operations.AppBskyActorGetProfileRequest,
 ): Promise<void> {
   return queryClient.prefetchQuery({
-    ...buildActorsGetProfileQuery(
+    ...buildActorProfileQuery(
       client$,
       request,
     ),
   });
 }
 
-export function setActorsGetProfileData(
+export function setActorProfileData(
   client: QueryClient,
   queryKeyBase: [parameters: { actor: string }],
-  data: ActorsGetProfileQueryData,
-): ActorsGetProfileQueryData | undefined {
-  const key = queryKeyActorsGetProfile(...queryKeyBase);
+  data: ActorProfileQueryData,
+): ActorProfileQueryData | undefined {
+  const key = queryKeyActorProfile(...queryKeyBase);
 
-  return client.setQueryData<ActorsGetProfileQueryData>(key, data);
+  return client.setQueryData<ActorProfileQueryData>(key, data);
 }
 
-export function invalidateActorsGetProfile(
+export function invalidateActorProfile(
   client: QueryClient,
   queryKeyBase: TupleToPrefixes<[parameters: { actor: string }]>,
   filters?: Omit<InvalidateQueryFilters, "queryKey" | "predicate" | "exact">,
@@ -107,7 +107,7 @@ export function invalidateActorsGetProfile(
   });
 }
 
-export function invalidateAllActorsGetProfile(
+export function invalidateAllActorProfile(
   client: QueryClient,
   filters?: Omit<InvalidateQueryFilters, "queryKey" | "predicate" | "exact">,
 ): Promise<void> {
@@ -117,21 +117,19 @@ export function invalidateAllActorsGetProfile(
   });
 }
 
-export function buildActorsGetProfileQuery(
+export function buildActorProfileQuery(
   client$: BlueskyCore,
   request: operations.AppBskyActorGetProfileRequest,
   options?: RequestOptions,
 ): {
   queryKey: QueryKey;
-  queryFn: (
-    context: QueryFunctionContext,
-  ) => Promise<ActorsGetProfileQueryData>;
+  queryFn: (context: QueryFunctionContext) => Promise<ActorProfileQueryData>;
 } {
   return {
-    queryKey: queryKeyActorsGetProfile({ actor: request.actor }),
-    queryFn: async function actorsGetProfileQueryFn(
+    queryKey: queryKeyActorProfile({ actor: request.actor }),
+    queryFn: async function actorProfileQueryFn(
       ctx,
-    ): Promise<ActorsGetProfileQueryData> {
+    ): Promise<ActorProfileQueryData> {
       const sig = combineSignals(ctx.signal, options?.fetchOptions?.signal);
       const mergedOptions = {
         ...options,
@@ -147,8 +145,6 @@ export function buildActorsGetProfileQuery(
   };
 }
 
-export function queryKeyActorsGetProfile(
-  parameters: { actor: string },
-): QueryKey {
+export function queryKeyActorProfile(parameters: { actor: string }): QueryKey {
   return ["bluesky", "actors", "getProfile", parameters];
 }

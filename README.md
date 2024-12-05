@@ -1936,11 +1936,21 @@ To learn about this feature and how to get started, check
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Get all invite codes for the current account. Requires auth.
+- [`useActorAuthorFeed`](docs/sdks/feed/README.md#getauthor) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+
+*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
+
+Get a view of an actor's 'author feed' (post and reposts by the author). Does not require auth.
 - [`useActorGetSuggestions`](docs/sdks/actor/README.md#getsuggestions) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Get a list of suggested actors. Expected use is discovery of accounts to follow during new account onboarding.
+- [`useActorProfile`](docs/sdks/actors/README.md#getprofile) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+
+*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
+
+Get detailed profile view of an actor. Does not require auth, but contains relevant metadata with auth.
 - [`useActorSearchTypeahead`](docs/sdks/actor/README.md#searchtypeahead) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
@@ -1951,11 +1961,6 @@ Find actor suggestions for a prefix search term. Expected use is for auto-comple
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Get private preferences attached to the current account. Expected use is synchronization between multiple devices, and import/export during account migration. Requires auth.
-- [`useActorsGetProfile`](docs/sdks/actors/README.md#getprofile) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
-
-*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
-
-Get detailed profile view of an actor. Does not require auth, but contains relevant metadata with auth.
 - [`useActorsGetProfiles`](docs/sdks/actors/README.md#getprofiles) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
@@ -1966,11 +1971,6 @@ Get detailed profile views of multiple actors.
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Set the private preferences attached to the account.
-- [`useActorsSearch`](docs/sdks/actors/README.md#search) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
-
-*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
-
-Find actors (profiles) matching search criteria. Does not require auth.
 - [`useAdminDisableInviteCodesMutation`](docs/sdks/admin/README.md#disableinvitecodes) - *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
@@ -2044,9 +2044,6 @@ Get list of accounts that matches your search query.
 - [`useAtprotoIdentityRequestPlcOperationSignatureMutation`](docs/sdks/atprotoidentity/README.md#requestplcoperationsignature) - *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Request an email with a code to in order to request a signed PLC operation. Requires Auth.
-- [`useAtprotoIdentityResolveHandle`](docs/sdks/atprotoidentity/README.md#resolvehandle) - *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
-
-Resolves a handle (domain name) to a DID.
 - [`useAtprotoIdentitySignPlcOperationMutation`](docs/sdks/atprotoidentity/README.md#signplcoperation) - *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Signs a PLC operation to update some value(s) in the requesting DID's document.
@@ -2201,7 +2198,10 @@ Administrative action to create a new, re-usable communication (email for now) t
 - [`useConvosMuteMutation`](docs/sdks/convos/README.md#mute) - *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
-- [`useFeedFetch`](docs/sdks/feed/README.md#fetch) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+- [`useDidForProfile`](docs/sdks/atprotoidentity/README.md#resolvehandle) - *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
+
+Resolves a handle (domain name) to a DID.
+- [`useFeed`](docs/sdks/feed/README.md#fetch) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
@@ -2216,11 +2216,6 @@ Get a list of feeds (feed generator records) created by the actor (in the actor'
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Get a list of posts liked by an actor. Requires auth, actor must be the requesting account.
-- [`useFeedGetAuthor`](docs/sdks/feed/README.md#getauthor) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
-
-*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
-
-Get a view of an actor's 'author feed' (post and reposts by the author). Does not require auth.
 - [`useFeedGetGenerator`](docs/sdks/feed/README.md#getgenerator) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
@@ -2291,16 +2286,21 @@ Get a list of reposts for a given post.
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Send information about interactions with feed items back to the feed generator that served them.
+- [`useFollowers`](docs/sdks/users/README.md#getfollowers) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+
+*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
+
+Enumerates accounts which follow a specified account (actor).
+- [`useFollows`](docs/sdks/graph/README.md#getfollows) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+
+*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
+
+Enumerates accounts which a specified account (actor) follows.
 - [`useGraphGetActorStarterPacks`](docs/sdks/graph/README.md#getactorstarterpacks) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Get a list of starter packs created by the actor.
-- [`useGraphGetFollows`](docs/sdks/graph/README.md#getfollows) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
-
-*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
-
-Enumerates accounts which a specified account (actor) follows.
 - [`useGraphGetList`](docs/sdks/graph/README.md#getlist) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
@@ -2550,6 +2550,11 @@ List a range of records in a repository, matching a specific collection. Does no
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Returns a list of missing blobs for the requesting account. Intended to be used in the account migration flow.
+- [`useSearchActors`](docs/sdks/actors/README.md#search) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+
+*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
+
+Find actors (profiles) matching search criteria. Does not require auth.
 - [`useServerCheckAccountStatus`](docs/sdks/server/README.md#checkaccountstatus) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
@@ -2690,11 +2695,6 @@ Delete a member from ozone team. Requires admin role.
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Update a member in the ozone service. Requires admin role.
-- [`useUsersGetFollowers`](docs/sdks/users/README.md#getfollowers) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
-
-*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
-
-Enumerates accounts which follow a specified account (actor).
 - [`useUsersGetSuggestedFollows`](docs/sdks/users/README.md#getsuggestedfollows) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
@@ -2975,6 +2975,36 @@ Validation errors can also occur when either method arguments or data returned f
 
 <!-- Start Server Selection [server] -->
 ## Server Selection
+
+### Select Server by Name
+
+You can override the default server globally by passing a server name to the `server: keyof typeof ServerList` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the names associated with the available servers:
+
+| Name         | Server                        |
+| ------------ | ----------------------------- |
+| `privileged` | `https://api.bsky.app`        |
+| `public`     | `https://public.api.bsky.app` |
+
+#### Example
+
+```typescript
+import { Bluesky } from "bluesky";
+
+const bluesky = new Bluesky({
+  server: "public",
+  bearer: process.env["BLUESKY_BEARER"] ?? "",
+});
+
+async function run() {
+  const result = await bluesky.actors.getPreferences();
+
+  // Handle the result
+  console.log(result);
+}
+
+run();
+
+```
 
 ### Override Server URL Per-Client
 

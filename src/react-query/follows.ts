@@ -18,7 +18,7 @@ import {
   UseSuspenseQueryResult,
 } from "@tanstack/react-query";
 import { BlueskyCore } from "../core.js";
-import { feedFetch } from "../funcs/feedFetch.js";
+import { graphGetFollows } from "../funcs/graphGetFollows.js";
 import { combineSignals } from "../lib/primitives.js";
 import { RequestOptions } from "../lib/sdks.js";
 import * as operations from "../models/operations/index.js";
@@ -33,15 +33,15 @@ import {
   TupleToPrefixes,
 } from "./_types.js";
 
-export type FeedFetchQueryData = operations.AppBskyFeedGetFeedResponse;
+export type FollowsQueryData = operations.AppBskyGraphGetFollowsResponse;
 
-export type FeedFetchInfiniteQueryData = PageIterator<
-  operations.AppBskyFeedGetFeedResponse,
+export type FollowsInfiniteQueryData = PageIterator<
+  operations.AppBskyGraphGetFollowsResponse,
   { cursor: string }
 >;
 
-export type FeedFetchPageParams = PageIterator<
-  operations.AppBskyFeedGetFeedResponse,
+export type FollowsPageParams = PageIterator<
+  operations.AppBskyGraphGetFollowsResponse,
   { cursor: string }
 >["~next"];
 
@@ -50,15 +50,15 @@ export type FeedFetchPageParams = PageIterator<
  *
  * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
  *
- * Get a hydrated feed from an actor's selected feed generator. Implemented by App View.
+ * Enumerates accounts which a specified account (actor) follows.
  */
-export function useFeedFetch(
-  request: operations.AppBskyFeedGetFeedRequest,
-  options?: QueryHookOptions<FeedFetchQueryData>,
-): UseQueryResult<FeedFetchQueryData, Error> {
+export function useFollows(
+  request: operations.AppBskyGraphGetFollowsRequest,
+  options?: QueryHookOptions<FollowsQueryData>,
+): UseQueryResult<FollowsQueryData, Error> {
   const client = useBlueskyContext();
   return useQuery({
-    ...buildFeedFetchQuery(
+    ...buildFollowsQuery(
       client,
       request,
       options,
@@ -72,15 +72,15 @@ export function useFeedFetch(
  *
  * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
  *
- * Get a hydrated feed from an actor's selected feed generator. Implemented by App View.
+ * Enumerates accounts which a specified account (actor) follows.
  */
-export function useFeedFetchSuspense(
-  request: operations.AppBskyFeedGetFeedRequest,
-  options?: SuspenseQueryHookOptions<FeedFetchQueryData>,
-): UseSuspenseQueryResult<FeedFetchQueryData, Error> {
+export function useFollowsSuspense(
+  request: operations.AppBskyGraphGetFollowsRequest,
+  options?: SuspenseQueryHookOptions<FollowsQueryData>,
+): UseSuspenseQueryResult<FollowsQueryData, Error> {
   const client = useBlueskyContext();
   return useSuspenseQuery({
-    ...buildFeedFetchQuery(
+    ...buildFollowsQuery(
       client,
       request,
       options,
@@ -94,24 +94,24 @@ export function useFeedFetchSuspense(
  *
  * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
  *
- * Get a hydrated feed from an actor's selected feed generator. Implemented by App View.
+ * Enumerates accounts which a specified account (actor) follows.
  */
-export function useFeedFetchInfinite(
-  request: operations.AppBskyFeedGetFeedRequest,
-  options?: InfiniteQueryHookOptions<FeedFetchInfiniteQueryData>,
+export function useFollowsInfinite(
+  request: operations.AppBskyGraphGetFollowsRequest,
+  options?: InfiniteQueryHookOptions<FollowsInfiniteQueryData>,
 ): UseInfiniteQueryResult<
-  InfiniteData<FeedFetchInfiniteQueryData, FeedFetchPageParams>,
+  InfiniteData<FollowsInfiniteQueryData, FollowsPageParams>,
   Error
 > {
   const client = useBlueskyContext();
   return useInfiniteQuery<
-    FeedFetchInfiniteQueryData,
+    FollowsInfiniteQueryData,
     Error,
-    InfiniteData<FeedFetchInfiniteQueryData, FeedFetchPageParams>,
+    InfiniteData<FollowsInfiniteQueryData, FollowsPageParams>,
     QueryKey,
-    FeedFetchPageParams
+    FollowsPageParams
   >({
-    ...buildFeedFetchInfiniteQuery(
+    ...buildFollowsInfiniteQuery(
       client,
       request,
       options,
@@ -127,24 +127,24 @@ export function useFeedFetchInfinite(
  *
  * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
  *
- * Get a hydrated feed from an actor's selected feed generator. Implemented by App View.
+ * Enumerates accounts which a specified account (actor) follows.
  */
-export function useFeedFetchInfiniteSuspense(
-  request: operations.AppBskyFeedGetFeedRequest,
-  options?: SuspenseInfiniteQueryHookOptions<FeedFetchInfiniteQueryData>,
+export function useFollowsInfiniteSuspense(
+  request: operations.AppBskyGraphGetFollowsRequest,
+  options?: SuspenseInfiniteQueryHookOptions<FollowsInfiniteQueryData>,
 ): UseSuspenseInfiniteQueryResult<
-  InfiniteData<FeedFetchInfiniteQueryData, FeedFetchPageParams>,
+  InfiniteData<FollowsInfiniteQueryData, FollowsPageParams>,
   Error
 > {
   const client = useBlueskyContext();
   return useSuspenseInfiniteQuery<
-    FeedFetchInfiniteQueryData,
+    FollowsInfiniteQueryData,
     Error,
-    InfiniteData<FeedFetchInfiniteQueryData, FeedFetchPageParams>,
+    InfiniteData<FollowsInfiniteQueryData, FollowsPageParams>,
     QueryKey,
-    FeedFetchPageParams
+    FollowsPageParams
   >({
-    ...buildFeedFetchInfiniteQuery(
+    ...buildFollowsInfiniteQuery(
       client,
       request,
       options,
@@ -155,40 +155,40 @@ export function useFeedFetchInfiniteSuspense(
   });
 }
 
-export function prefetchFeedFetch(
+export function prefetchFollows(
   queryClient: QueryClient,
   client$: BlueskyCore,
-  request: operations.AppBskyFeedGetFeedRequest,
+  request: operations.AppBskyGraphGetFollowsRequest,
 ): Promise<void> {
   return queryClient.prefetchQuery({
-    ...buildFeedFetchQuery(
+    ...buildFollowsQuery(
       client$,
       request,
     ),
   });
 }
 
-export function setFeedFetchData(
+export function setFollowsData(
   client: QueryClient,
   queryKeyBase: [
     parameters: {
-      feed: string;
+      actor: string;
       limit?: number | undefined;
       cursor?: string | undefined;
     },
   ],
-  data: FeedFetchQueryData,
-): FeedFetchQueryData | undefined {
-  const key = queryKeyFeedFetch(...queryKeyBase);
+  data: FollowsQueryData,
+): FollowsQueryData | undefined {
+  const key = queryKeyFollows(...queryKeyBase);
 
-  return client.setQueryData<FeedFetchQueryData>(key, data);
+  return client.setQueryData<FollowsQueryData>(key, data);
 }
 
-export function invalidateFeedFetch(
+export function invalidateFollows(
   client: QueryClient,
   queryKeyBase: TupleToPrefixes<
     [parameters: {
-      feed: string;
+      actor: string;
       limit?: number | undefined;
       cursor?: string | undefined;
     }]
@@ -197,42 +197,42 @@ export function invalidateFeedFetch(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "feed", "fetch", ...queryKeyBase],
+    queryKey: ["bluesky", "graph", "getFollows", ...queryKeyBase],
   });
 }
 
-export function invalidateAllFeedFetch(
+export function invalidateAllFollows(
   client: QueryClient,
   filters?: Omit<InvalidateQueryFilters, "queryKey" | "predicate" | "exact">,
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "feed", "fetch"],
+    queryKey: ["bluesky", "graph", "getFollows"],
   });
 }
 
-export function buildFeedFetchQuery(
+export function buildFollowsQuery(
   client$: BlueskyCore,
-  request: operations.AppBskyFeedGetFeedRequest,
+  request: operations.AppBskyGraphGetFollowsRequest,
   options?: RequestOptions,
 ): {
   queryKey: QueryKey;
-  queryFn: (context: QueryFunctionContext) => Promise<FeedFetchQueryData>;
+  queryFn: (context: QueryFunctionContext) => Promise<FollowsQueryData>;
 } {
   return {
-    queryKey: queryKeyFeedFetch({
-      feed: request.feed,
+    queryKey: queryKeyFollows({
+      actor: request.actor,
       limit: request.limit,
       cursor: request.cursor,
     }),
-    queryFn: async function feedFetchQueryFn(ctx): Promise<FeedFetchQueryData> {
+    queryFn: async function followsQueryFn(ctx): Promise<FollowsQueryData> {
       const sig = combineSignals(ctx.signal, options?.fetchOptions?.signal);
       const mergedOptions = {
         ...options,
         fetchOptions: { ...options?.fetchOptions, signal: sig },
       };
 
-      return unwrapAsync(feedFetch(
+      return unwrapAsync(graphGetFollows(
         client$,
         request,
         mergedOptions,
@@ -241,25 +241,25 @@ export function buildFeedFetchQuery(
   };
 }
 
-export function buildFeedFetchInfiniteQuery(
+export function buildFollowsInfiniteQuery(
   client$: BlueskyCore,
-  request: operations.AppBskyFeedGetFeedRequest,
+  request: operations.AppBskyGraphGetFollowsRequest,
   options?: RequestOptions,
 ): {
   queryKey: QueryKey;
   queryFn: (
-    context: QueryFunctionContext<QueryKey, FeedFetchPageParams>,
-  ) => Promise<FeedFetchInfiniteQueryData>;
+    context: QueryFunctionContext<QueryKey, FollowsPageParams>,
+  ) => Promise<FollowsInfiniteQueryData>;
 } {
   return {
-    queryKey: queryKeyFeedFetch({
-      feed: request.feed,
+    queryKey: queryKeyFollows({
+      actor: request.actor,
       limit: request.limit,
       cursor: request.cursor,
     }),
-    queryFn: async function feedFetchQuery(
+    queryFn: async function followsQuery(
       ctx,
-    ): Promise<FeedFetchInfiniteQueryData> {
+    ): Promise<FollowsInfiniteQueryData> {
       const sig = combineSignals(ctx.signal, options?.fetchOptions?.signal);
       const mergedOptions = {
         ...options,
@@ -267,14 +267,14 @@ export function buildFeedFetchInfiniteQuery(
       };
 
       if (!ctx.pageParam) {
-        return unwrapResultIterator(feedFetch(
+        return unwrapResultIterator(graphGetFollows(
           client$,
           request,
           mergedOptions,
         ));
       }
 
-      return unwrapResultIterator(feedFetch(
+      return unwrapResultIterator(graphGetFollows(
         client$,
         {
           ...request,
@@ -286,12 +286,12 @@ export function buildFeedFetchInfiniteQuery(
   };
 }
 
-export function queryKeyFeedFetch(
+export function queryKeyFollows(
   parameters: {
-    feed: string;
+    actor: string;
     limit?: number | undefined;
     cursor?: string | undefined;
   },
 ): QueryKey {
-  return ["bluesky", "feed", "fetch", parameters];
+  return ["bluesky", "graph", "getFollows", parameters];
 }

@@ -1,0 +1,33 @@
+overlay: 1.0.0
+info:
+  title: React hooks overlay
+  version: 0.0.0
+actions:
+  - target: $["paths"]["/xrpc/com.atproto.identity.resolveHandle"]["get"]
+    update:
+      x-speakeasy-react-hook:
+        name: DIDForProfile
+  - target: $["paths"]["/xrpc/app.bsky.actor.getProfile"]["get"]
+    update:
+      x-speakeasy-react-hook:
+        name: ActorProfile
+  - target: $["paths"]["/xrpc/app.bsky.actor.searchActors"]["get"]
+    update:
+      x-speakeasy-react-hook:
+        name: SearchActors
+  - target: $["paths"]["/xrpc/app.bsky.feed.getAuthorFeed"]["get"]
+    update:
+      x-speakeasy-react-hook:
+        name: ActorAuthorFeed
+  - target: $["paths"]["/xrpc/app.bsky.feed.getFeed"]["get"]
+    update:
+      x-speakeasy-react-hook:
+        name: Feed
+  - target: $["paths"]["/xrpc/app.bsky.graph.getFollows"]["get"]
+    update:
+      x-speakeasy-react-hook:
+        name: Follows
+  - target: $["paths"]["/xrpc/app.bsky.graph.getFollowers"]["get"]
+    update:
+      x-speakeasy-react-hook:
+        name: Followers

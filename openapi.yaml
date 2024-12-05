@@ -7,8 +7,12 @@ info:
     lexicons. Generate a bearer token to test API calls directly from the docs.
   version: 0.0.0
 servers:
-  - url: 'https://api.bsky.app'
+  - url: https://api.bsky.app
     description: Bluesky API
+    x-speakeasy-server-id: privileged
+  - url: https://public.api.bsky.app
+    description: Bluesky Public API
+    x-speakeasy-server-id: public
 paths:
   /xrpc/app.bsky.actor.getPreferences:
     get:

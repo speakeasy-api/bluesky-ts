@@ -18,7 +18,7 @@ import {
   UseSuspenseQueryResult,
 } from "@tanstack/react-query";
 import { BlueskyCore } from "../core.js";
-import { actorsSearch } from "../funcs/actorsSearch.js";
+import { feedFetch } from "../funcs/feedFetch.js";
 import { combineSignals } from "../lib/primitives.js";
 import { RequestOptions } from "../lib/sdks.js";
 import * as operations from "../models/operations/index.js";
@@ -33,15 +33,15 @@ import {
   TupleToPrefixes,
 } from "./_types.js";
 
-export type ActorsSearchQueryData = operations.AppBskyActorSearchActorsResponse;
+export type FeedQueryData = operations.AppBskyFeedGetFeedResponse;
 
-export type ActorsSearchInfiniteQueryData = PageIterator<
-  operations.AppBskyActorSearchActorsResponse,
+export type FeedInfiniteQueryData = PageIterator<
+  operations.AppBskyFeedGetFeedResponse,
   { cursor: string }
 >;
 
-export type ActorsSearchPageParams = PageIterator<
-  operations.AppBskyActorSearchActorsResponse,
+export type FeedPageParams = PageIterator<
+  operations.AppBskyFeedGetFeedResponse,
   { cursor: string }
 >["~next"];
 
@@ -50,15 +50,15 @@ export type ActorsSearchPageParams = PageIterator<
  *
  * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
  *
- * Find actors (profiles) matching search criteria. Does not require auth.
+ * Get a hydrated feed from an actor's selected feed generator. Implemented by App View.
  */
-export function useActorsSearch(
-  request?: operations.AppBskyActorSearchActorsRequest | undefined,
-  options?: QueryHookOptions<ActorsSearchQueryData>,
-): UseQueryResult<ActorsSearchQueryData, Error> {
+export function useFeed(
+  request: operations.AppBskyFeedGetFeedRequest,
+  options?: QueryHookOptions<FeedQueryData>,
+): UseQueryResult<FeedQueryData, Error> {
   const client = useBlueskyContext();
   return useQuery({
-    ...buildActorsSearchQuery(
+    ...buildFeedQuery(
       client,
       request,
       options,
@@ -72,15 +72,15 @@ export function useActorsSearch(
  *
  * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
  *
- * Find actors (profiles) matching search criteria. Does not require auth.
+ * Get a hydrated feed from an actor's selected feed generator. Implemented by App View.
  */
-export function useActorsSearchSuspense(
-  request?: operations.AppBskyActorSearchActorsRequest | undefined,
-  options?: SuspenseQueryHookOptions<ActorsSearchQueryData>,
-): UseSuspenseQueryResult<ActorsSearchQueryData, Error> {
+export function useFeedSuspense(
+  request: operations.AppBskyFeedGetFeedRequest,
+  options?: SuspenseQueryHookOptions<FeedQueryData>,
+): UseSuspenseQueryResult<FeedQueryData, Error> {
   const client = useBlueskyContext();
   return useSuspenseQuery({
-    ...buildActorsSearchQuery(
+    ...buildFeedQuery(
       client,
       request,
       options,
@@ -94,24 +94,24 @@ export function useActorsSearchSuspense(
  *
  * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
  *
- * Find actors (profiles) matching search criteria. Does not require auth.
+ * Get a hydrated feed from an actor's selected feed generator. Implemented by App View.
  */
-export function useActorsSearchInfinite(
-  request?: operations.AppBskyActorSearchActorsRequest | undefined,
-  options?: InfiniteQueryHookOptions<ActorsSearchInfiniteQueryData>,
+export function useFeedInfinite(
+  request: operations.AppBskyFeedGetFeedRequest,
+  options?: InfiniteQueryHookOptions<FeedInfiniteQueryData>,
 ): UseInfiniteQueryResult<
-  InfiniteData<ActorsSearchInfiniteQueryData, ActorsSearchPageParams>,
+  InfiniteData<FeedInfiniteQueryData, FeedPageParams>,
   Error
 > {
   const client = useBlueskyContext();
   return useInfiniteQuery<
-    ActorsSearchInfiniteQueryData,
+    FeedInfiniteQueryData,
     Error,
-    InfiniteData<ActorsSearchInfiniteQueryData, ActorsSearchPageParams>,
+    InfiniteData<FeedInfiniteQueryData, FeedPageParams>,
     QueryKey,
-    ActorsSearchPageParams
+    FeedPageParams
   >({
-    ...buildActorsSearchInfiniteQuery(
+    ...buildFeedInfiniteQuery(
       client,
       request,
       options,
@@ -127,24 +127,24 @@ export function useActorsSearchInfinite(
  *
  * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
  *
- * Find actors (profiles) matching search criteria. Does not require auth.
+ * Get a hydrated feed from an actor's selected feed generator. Implemented by App View.
  */
-export function useActorsSearchInfiniteSuspense(
-  request?: operations.AppBskyActorSearchActorsRequest | undefined,
-  options?: SuspenseInfiniteQueryHookOptions<ActorsSearchInfiniteQueryData>,
+export function useFeedInfiniteSuspense(
+  request: operations.AppBskyFeedGetFeedRequest,
+  options?: SuspenseInfiniteQueryHookOptions<FeedInfiniteQueryData>,
 ): UseSuspenseInfiniteQueryResult<
-  InfiniteData<ActorsSearchInfiniteQueryData, ActorsSearchPageParams>,
+  InfiniteData<FeedInfiniteQueryData, FeedPageParams>,
   Error
 > {
   const client = useBlueskyContext();
   return useSuspenseInfiniteQuery<
-    ActorsSearchInfiniteQueryData,
+    FeedInfiniteQueryData,
     Error,
-    InfiniteData<ActorsSearchInfiniteQueryData, ActorsSearchPageParams>,
+    InfiniteData<FeedInfiniteQueryData, FeedPageParams>,
     QueryKey,
-    ActorsSearchPageParams
+    FeedPageParams
   >({
-    ...buildActorsSearchInfiniteQuery(
+    ...buildFeedInfiniteQuery(
       client,
       request,
       options,
@@ -155,40 +155,40 @@ export function useActorsSearchInfiniteSuspense(
   });
 }
 
-export function prefetchActorsSearch(
+export function prefetchFeed(
   queryClient: QueryClient,
   client$: BlueskyCore,
-  request?: operations.AppBskyActorSearchActorsRequest | undefined,
+  request: operations.AppBskyFeedGetFeedRequest,
 ): Promise<void> {
   return queryClient.prefetchQuery({
-    ...buildActorsSearchQuery(
+    ...buildFeedQuery(
       client$,
       request,
     ),
   });
 }
 
-export function setActorsSearchData(
+export function setFeedData(
   client: QueryClient,
   queryKeyBase: [
     parameters: {
-      q?: string | undefined;
+      feed: string;
       limit?: number | undefined;
       cursor?: string | undefined;
     },
   ],
-  data: ActorsSearchQueryData,
-): ActorsSearchQueryData | undefined {
-  const key = queryKeyActorsSearch(...queryKeyBase);
+  data: FeedQueryData,
+): FeedQueryData | undefined {
+  const key = queryKeyFeed(...queryKeyBase);
 
-  return client.setQueryData<ActorsSearchQueryData>(key, data);
+  return client.setQueryData<FeedQueryData>(key, data);
 }
 
-export function invalidateActorsSearch(
+export function invalidateFeed(
   client: QueryClient,
   queryKeyBase: TupleToPrefixes<
     [parameters: {
-      q?: string | undefined;
+      feed: string;
       limit?: number | undefined;
       cursor?: string | undefined;
     }]
@@ -197,44 +197,42 @@ export function invalidateActorsSearch(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "actors", "search", ...queryKeyBase],
+    queryKey: ["bluesky", "feed", "fetch", ...queryKeyBase],
   });
 }
 
-export function invalidateAllActorsSearch(
+export function invalidateAllFeed(
   client: QueryClient,
   filters?: Omit<InvalidateQueryFilters, "queryKey" | "predicate" | "exact">,
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["bluesky", "actors", "search"],
+    queryKey: ["bluesky", "feed", "fetch"],
   });
 }
 
-export function buildActorsSearchQuery(
+export function buildFeedQuery(
   client$: BlueskyCore,
-  request?: operations.AppBskyActorSearchActorsRequest | undefined,
+  request: operations.AppBskyFeedGetFeedRequest,
   options?: RequestOptions,
 ): {
   queryKey: QueryKey;
-  queryFn: (context: QueryFunctionContext) => Promise<ActorsSearchQueryData>;
+  queryFn: (context: QueryFunctionContext) => Promise<FeedQueryData>;
 } {
   return {
-    queryKey: queryKeyActorsSearch({
-      q: request?.q,
-      limit: request?.limit,
-      cursor: request?.cursor,
+    queryKey: queryKeyFeed({
+      feed: request.feed,
+      limit: request.limit,
+      cursor: request.cursor,
     }),
-    queryFn: async function actorsSearchQueryFn(
-      ctx,
-    ): Promise<ActorsSearchQueryData> {
+    queryFn: async function feedQueryFn(ctx): Promise<FeedQueryData> {
       const sig = combineSignals(ctx.signal, options?.fetchOptions?.signal);
       const mergedOptions = {
         ...options,
         fetchOptions: { ...options?.fetchOptions, signal: sig },
       };
 
-      return unwrapAsync(actorsSearch(
+      return unwrapAsync(feedFetch(
         client$,
         request,
         mergedOptions,
@@ -243,25 +241,23 @@ export function buildActorsSearchQuery(
   };
 }
 
-export function buildActorsSearchInfiniteQuery(
+export function buildFeedInfiniteQuery(
   client$: BlueskyCore,
-  request?: operations.AppBskyActorSearchActorsRequest | undefined,
+  request: operations.AppBskyFeedGetFeedRequest,
   options?: RequestOptions,
 ): {
   queryKey: QueryKey;
   queryFn: (
-    context: QueryFunctionContext<QueryKey, ActorsSearchPageParams>,
-  ) => Promise<ActorsSearchInfiniteQueryData>;
+    context: QueryFunctionContext<QueryKey, FeedPageParams>,
+  ) => Promise<FeedInfiniteQueryData>;
 } {
   return {
-    queryKey: queryKeyActorsSearch({
-      q: request?.q,
-      limit: request?.limit,
-      cursor: request?.cursor,
+    queryKey: queryKeyFeed({
+      feed: request.feed,
+      limit: request.limit,
+      cursor: request.cursor,
     }),
-    queryFn: async function actorsSearchQuery(
-      ctx,
-    ): Promise<ActorsSearchInfiniteQueryData> {
+    queryFn: async function feedQuery(ctx): Promise<FeedInfiniteQueryData> {
       const sig = combineSignals(ctx.signal, options?.fetchOptions?.signal);
       const mergedOptions = {
         ...options,
@@ -269,14 +265,14 @@ export function buildActorsSearchInfiniteQuery(
       };
 
       if (!ctx.pageParam) {
-        return unwrapResultIterator(actorsSearch(
+        return unwrapResultIterator(feedFetch(
           client$,
           request,
           mergedOptions,
         ));
       }
 
-      return unwrapResultIterator(actorsSearch(
+      return unwrapResultIterator(feedFetch(
         client$,
         {
           ...request,
@@ -288,12 +284,12 @@ export function buildActorsSearchInfiniteQuery(
   };
 }
 
-export function queryKeyActorsSearch(
+export function queryKeyFeed(
   parameters: {
-    q?: string | undefined;
+    feed: string;
     limit?: number | undefined;
     cursor?: string | undefined;
   },
 ): QueryKey {
-  return ["bluesky", "actors", "search", parameters];
+  return ["bluesky", "feed", "fetch", parameters];
 }

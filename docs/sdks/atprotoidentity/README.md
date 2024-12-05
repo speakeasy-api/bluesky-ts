@@ -183,18 +183,18 @@ associated utilities.
 ```tsx
 import {
   // Query hooks for fetching data.
-  useAtprotoIdentityResolveHandle,
-  useAtprotoIdentityResolveHandleSuspense,
+  useDidForProfile,
+  useDidForProfileSuspense,
 
   // Utility for prefetching data during server-side rendering and in React
   // Server Components that will be immediately available to client components
   // using the hooks.
-  prefetchAtprotoIdentityResolveHandle,
+  prefetchDidForProfile,
   
   // Utilities to invalidate the query cache for this query in response to
   // mutations and other user actions.
-  invalidateAtprotoIdentityResolveHandle,
-  invalidateAllAtprotoIdentityResolveHandle,
+  invalidateDidForProfile,
+  invalidateAllDidForProfile,
 } from "bluesky/react-query/atprotoIdentityResolveHandle.js";
 ```
 
