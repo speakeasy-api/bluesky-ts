@@ -103,6 +103,33 @@ async function run() {
 run();
 ```
 
+### React hooks and utilities
+
+This method can be used in React components through the following hooks and
+associated utilities.
+
+> Check out [this guide][hook-guide] for information about each of the utilities
+> below and how to get started using React hooks.
+
+[hook-guide]: ../../../REACT_QUERY.md
+
+```tsx
+import {
+  // Query hooks for fetching data.
+  useFeedsDescribeGenerator,
+  useFeedsDescribeGeneratorSuspense,
+
+  // Utility for prefetching data during server-side rendering and in React
+  // Server Components that will be immediately available to client components
+  // using the hooks.
+  prefetchFeedsDescribeGenerator,
+  
+  // Utility to invalidate the query cache for this query in response to
+  // mutations and other user actions.
+  invalidateAllFeedsDescribeGenerator,
+} from "bluesky/react-query/feedsDescribeGenerator.js";
+```
+
 ### Parameters
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
@@ -192,6 +219,37 @@ async function run() {
 }
 
 run();
+```
+
+### React hooks and utilities
+
+This method can be used in React components through the following hooks and
+associated utilities.
+
+> Check out [this guide][hook-guide] for information about each of the utilities
+> below and how to get started using React hooks.
+
+[hook-guide]: ../../../REACT_QUERY.md
+
+```tsx
+import {
+  // Query hooks for fetching data.
+  useFeedsGetLikes,
+  useFeedsGetLikesSuspense,
+  // Query hooks suitable for building infinite scrolling or "load more" UIs.
+  useFeedsGetLikesInfinite,
+  useFeedsGetLikesInfiniteSuspense,
+
+  // Utility for prefetching data during server-side rendering and in React
+  // Server Components that will be immediately available to client components
+  // using the hooks.
+  prefetchFeedsGetLikes,
+  
+  // Utilities to invalidate the query cache for this query in response to
+  // mutations and other user actions.
+  invalidateFeedsGetLikes,
+  invalidateAllFeedsGetLikes,
+} from "bluesky/react-query/feedsGetLikes.js";
 ```
 
 ### Parameters
@@ -286,6 +344,37 @@ async function run() {
 run();
 ```
 
+### React hooks and utilities
+
+This method can be used in React components through the following hooks and
+associated utilities.
+
+> Check out [this guide][hook-guide] for information about each of the utilities
+> below and how to get started using React hooks.
+
+[hook-guide]: ../../../REACT_QUERY.md
+
+```tsx
+import {
+  // Query hooks for fetching data.
+  useFeedsGetList,
+  useFeedsGetListSuspense,
+  // Query hooks suitable for building infinite scrolling or "load more" UIs.
+  useFeedsGetListInfinite,
+  useFeedsGetListInfiniteSuspense,
+
+  // Utility for prefetching data during server-side rendering and in React
+  // Server Components that will be immediately available to client components
+  // using the hooks.
+  prefetchFeedsGetList,
+  
+  // Utilities to invalidate the query cache for this query in response to
+  // mutations and other user actions.
+  invalidateFeedsGetList,
+  invalidateAllFeedsGetList,
+} from "bluesky/react-query/feedsGetList.js";
+```
+
 ### Parameters
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
@@ -372,6 +461,34 @@ async function run() {
 }
 
 run();
+```
+
+### React hooks and utilities
+
+This method can be used in React components through the following hooks and
+associated utilities.
+
+> Check out [this guide][hook-guide] for information about each of the utilities
+> below and how to get started using React hooks.
+
+[hook-guide]: ../../../REACT_QUERY.md
+
+```tsx
+import {
+  // Query hooks for fetching data.
+  useFeedsGetPostThread,
+  useFeedsGetPostThreadSuspense,
+
+  // Utility for prefetching data during server-side rendering and in React
+  // Server Components that will be immediately available to client components
+  // using the hooks.
+  prefetchFeedsGetPostThread,
+  
+  // Utilities to invalidate the query cache for this query in response to
+  // mutations and other user actions.
+  invalidateFeedsGetPostThread,
+  invalidateAllFeedsGetPostThread,
+} from "bluesky/react-query/feedsGetPostThread.js";
 ```
 
 ### Parameters
@@ -466,6 +583,34 @@ async function run() {
 run();
 ```
 
+### React hooks and utilities
+
+This method can be used in React components through the following hooks and
+associated utilities.
+
+> Check out [this guide][hook-guide] for information about each of the utilities
+> below and how to get started using React hooks.
+
+[hook-guide]: ../../../REACT_QUERY.md
+
+```tsx
+import {
+  // Query hooks for fetching data.
+  useFeedsGet,
+  useFeedsGetSuspense,
+
+  // Utility for prefetching data during server-side rendering and in React
+  // Server Components that will be immediately available to client components
+  // using the hooks.
+  prefetchFeedsGet,
+  
+  // Utilities to invalidate the query cache for this query in response to
+  // mutations and other user actions.
+  invalidateFeedsGet,
+  invalidateAllFeedsGet,
+} from "bluesky/react-query/feedsGet.js";
+```
+
 ### Parameters
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
@@ -556,6 +701,37 @@ async function run() {
 }
 
 run();
+```
+
+### React hooks and utilities
+
+This method can be used in React components through the following hooks and
+associated utilities.
+
+> Check out [this guide][hook-guide] for information about each of the utilities
+> below and how to get started using React hooks.
+
+[hook-guide]: ../../../REACT_QUERY.md
+
+```tsx
+import {
+  // Query hooks for fetching data.
+  useFeedsGetQuotes,
+  useFeedsGetQuotesSuspense,
+  // Query hooks suitable for building infinite scrolling or "load more" UIs.
+  useFeedsGetQuotesInfinite,
+  useFeedsGetQuotesInfiniteSuspense,
+
+  // Utility for prefetching data during server-side rendering and in React
+  // Server Components that will be immediately available to client components
+  // using the hooks.
+  prefetchFeedsGetQuotes,
+  
+  // Utilities to invalidate the query cache for this query in response to
+  // mutations and other user actions.
+  invalidateFeedsGetQuotes,
+  invalidateAllFeedsGetQuotes,
+} from "bluesky/react-query/feedsGetQuotes.js";
 ```
 
 ### Parameters
@@ -650,6 +826,37 @@ async function run() {
 run();
 ```
 
+### React hooks and utilities
+
+This method can be used in React components through the following hooks and
+associated utilities.
+
+> Check out [this guide][hook-guide] for information about each of the utilities
+> below and how to get started using React hooks.
+
+[hook-guide]: ../../../REACT_QUERY.md
+
+```tsx
+import {
+  // Query hooks for fetching data.
+  useFeedsGetRepostedBy,
+  useFeedsGetRepostedBySuspense,
+  // Query hooks suitable for building infinite scrolling or "load more" UIs.
+  useFeedsGetRepostedByInfinite,
+  useFeedsGetRepostedByInfiniteSuspense,
+
+  // Utility for prefetching data during server-side rendering and in React
+  // Server Components that will be immediately available to client components
+  // using the hooks.
+  prefetchFeedsGetRepostedBy,
+  
+  // Utilities to invalidate the query cache for this query in response to
+  // mutations and other user actions.
+  invalidateFeedsGetRepostedBy,
+  invalidateAllFeedsGetRepostedBy,
+} from "bluesky/react-query/feedsGetRepostedBy.js";
+```
+
 ### Parameters
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
@@ -740,6 +947,23 @@ async function run() {
 }
 
 run();
+```
+
+### React hooks and utilities
+
+This method can be used in React components through the following hooks and
+associated utilities.
+
+> Check out [this guide][hook-guide] for information about each of the utilities
+> below and how to get started using React hooks.
+
+[hook-guide]: ../../../REACT_QUERY.md
+
+```tsx
+import {
+  // Mutation hook for triggering the API call.
+  useFeedsSendInteractionsMutation
+} from "bluesky/react-query/feedsSendInteractions.js";
 ```
 
 ### Parameters

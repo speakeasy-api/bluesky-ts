@@ -3,10 +3,10 @@ id: 8ee5821f-25ad-41d5-94bd-080f4048f5d5
 management:
   docChecksum: baf69af3ebbab24595e9f996f7d642bd
   docVersion: 0.0.0
-  speakeasyVersion: 1.451.7
-  generationVersion: 2.471.2
-  releaseVersion: 0.4.0
-  configChecksum: 3f5eea132f8e799148f64982cf2834ff
+  speakeasyVersion: 1.452.0
+  generationVersion: 2.472.1
+  releaseVersion: 0.5.0
+  configChecksum: 1f5117f639d6dfda45afc0bbf6487f0f
   repoURL: https://github.com/speakeasy-api/bluesky-ts.git
   installationURL: https://github.com/speakeasy-api/bluesky-ts
 features:
@@ -27,6 +27,7 @@ features:
     methodArguments: 0.1.2
     nameOverrides: 2.81.2
     pagination: 2.82.7
+    reactQueryHooks: 0.2.0
     responseFormat: 0.2.3
     retries: 2.83.0
     sdkHooks: 0.2.0
@@ -41,6 +42,7 @@ generatedFiles:
   - .npmignore
   - CONTRIBUTING.md
   - FUNCTIONS.md
+  - REACT_QUERY.md
   - RUNTIMES.md
   - USAGE.md
   - docs/lib/utils/retryconfig.md
@@ -1860,6 +1862,178 @@ generatedFiles:
   - src/models/operations/toolsozoneteamdeletemember.ts
   - src/models/operations/toolsozoneteamlistmembers.ts
   - src/models/operations/toolsozoneteamupdatemember.ts
+  - src/react-query/_context.tsx
+  - src/react-query/_types.ts
+  - src/react-query/accountDelete.ts
+  - src/react-query/accountExportData.ts
+  - src/react-query/accountsGetInviteCodes.ts
+  - src/react-query/actorGetSuggestions.ts
+  - src/react-query/actorSearchTypeahead.ts
+  - src/react-query/actorsGetPreferences.ts
+  - src/react-query/actorsGetProfile.ts
+  - src/react-query/actorsGetProfiles.ts
+  - src/react-query/actorsPutPreferences.ts
+  - src/react-query/actorsSearch.ts
+  - src/react-query/adminDisableInviteCodes.ts
+  - src/react-query/adminGetAccountInfo.ts
+  - src/react-query/adminGetSubjectStatus.ts
+  - src/react-query/adminSendEmail.ts
+  - src/react-query/adminUpdateAccountEmail.ts
+  - src/react-query/adminUpdateAccountHandle.ts
+  - src/react-query/adminUpdateAccountPassword.ts
+  - src/react-query/adminUpdateSubjectStatus.ts
+  - src/react-query/adminsDeleteAccount.ts
+  - src/react-query/adminsEnableAccountInvites.ts
+  - src/react-query/adminsGetAccountInfos.ts
+  - src/react-query/atprotoAdminDisableAccountInvites.ts
+  - src/react-query/atprotoAdminGetInviteCodes.ts
+  - src/react-query/atprotoAdminSearchAccounts.ts
+  - src/react-query/atprotoIdentityRequestPlcOperationSignature.ts
+  - src/react-query/atprotoIdentityResolveHandle.ts
+  - src/react-query/atprotoIdentitySignPlcOperation.ts
+  - src/react-query/atprotoLabelsQuery.ts
+  - src/react-query/atprotoModerationCreateReport.ts
+  - src/react-query/atprotoRepoDelete.ts
+  - src/react-query/atprotoRepoImport.ts
+  - src/react-query/atprotoRepoUploadBlob.ts
+  - src/react-query/atprotoServerActivateAccount.ts
+  - src/react-query/atprotoServerCreateAccount.ts
+  - src/react-query/atprotoServerCreateAppPassword.ts
+  - src/react-query/atprotoServerCreateInviteCode.ts
+  - src/react-query/atprotoServerCreateInviteCodes.ts
+  - src/react-query/atprotoServerDeleteAccount.ts
+  - src/react-query/atprotoServerDeleteSession.ts
+  - src/react-query/atprotoServerDescribe.ts
+  - src/react-query/atprotoServerRefreshSession.ts
+  - src/react-query/atprotoServerRequestEmailConfirmation.ts
+  - src/react-query/atprotoServerRequestPasswordReset.ts
+  - src/react-query/atprotoServerResetPassword.ts
+  - src/react-query/atprotoServerRevokeAppPassword.ts
+  - src/react-query/atprotoSyncGetBlob.ts
+  - src/react-query/atprotoSyncListRepos.ts
+  - src/react-query/atprotoSyncsGetRecord.ts
+  - src/react-query/chatConvoSendMessageBatch.ts
+  - src/react-query/chatConvoUnmute.ts
+  - src/react-query/chatConvosGetForMembers.ts
+  - src/react-query/chatConvosGetMessages.ts
+  - src/react-query/chatConvosSendMessage.ts
+  - src/react-query/chatConvosUpdateRead.ts
+  - src/react-query/chatModerationGetActorMetadata.ts
+  - src/react-query/chatModerationUpdateActorAccess.ts
+  - src/react-query/chatsGetConvo.ts
+  - src/react-query/chatsGetMessageContext.ts
+  - src/react-query/communicationsCreateTemplate.ts
+  - src/react-query/conversationsGetLog.ts
+  - src/react-query/conversationsLeave.ts
+  - src/react-query/convoDeleteMessageForSelf.ts
+  - src/react-query/convoList.ts
+  - src/react-query/convosMute.ts
+  - src/react-query/feedFetch.ts
+  - src/react-query/feedGetActor.ts
+  - src/react-query/feedGetActorLikes.ts
+  - src/react-query/feedGetAuthor.ts
+  - src/react-query/feedGetGenerator.ts
+  - src/react-query/feedGetGenerators.ts
+  - src/react-query/feedGetSkeleton.ts
+  - src/react-query/feedGetSuggested.ts
+  - src/react-query/feedGetTimeline.ts
+  - src/react-query/feedSearch.ts
+  - src/react-query/feedsDescribeGenerator.ts
+  - src/react-query/feedsGet.ts
+  - src/react-query/feedsGetLikes.ts
+  - src/react-query/feedsGetList.ts
+  - src/react-query/feedsGetPostThread.ts
+  - src/react-query/feedsGetQuotes.ts
+  - src/react-query/feedsGetRepostedBy.ts
+  - src/react-query/feedsSendInteractions.ts
+  - src/react-query/graphGetActorStarterPacks.ts
+  - src/react-query/graphGetFollows.ts
+  - src/react-query/graphGetList.ts
+  - src/react-query/graphGetListMutes.ts
+  - src/react-query/graphGetLists.ts
+  - src/react-query/graphGetRelationships.ts
+  - src/react-query/graphGetStarterPack.ts
+  - src/react-query/graphMuteActor.ts
+  - src/react-query/graphMuteActorList.ts
+  - src/react-query/graphSearchStarterPacks.ts
+  - src/react-query/graphUnmuteThread.ts
+  - src/react-query/graphsGetBlocks.ts
+  - src/react-query/graphsGetKnownFollowers.ts
+  - src/react-query/graphsGetListBlocks.ts
+  - src/react-query/graphsGetMutes.ts
+  - src/react-query/graphsGetStarterPacks.ts
+  - src/react-query/graphsMuteThread.ts
+  - src/react-query/graphsUnmuteActorList.ts
+  - src/react-query/identitiesUpdateHandle.ts
+  - src/react-query/identityGetRecommendedDidCredentials.ts
+  - src/react-query/identitySubmitPlcOperation.ts
+  - src/react-query/index.ts
+  - src/react-query/labelersGetServices.ts
+  - src/react-query/moderationGetEvent.ts
+  - src/react-query/moderationQueryEvents.ts
+  - src/react-query/moderationsGetRecords.ts
+  - src/react-query/moderationsGetRepos.ts
+  - src/react-query/moderationsQueryStatuses.ts
+  - src/react-query/notificationList.ts
+  - src/react-query/notificationsGetUnreadCount.ts
+  - src/react-query/notificationsPutPreferences.ts
+  - src/react-query/notificationsRegisterPush.ts
+  - src/react-query/notificationsUpdateSeen.ts
+  - src/react-query/ozoneAddMember.ts
+  - src/react-query/ozoneCommunicationDelete.ts
+  - src/react-query/ozoneCommunicationListTemplates.ts
+  - src/react-query/ozoneCommunicationUpdateTemplate.ts
+  - src/react-query/ozoneModerationEmitEvent.ts
+  - src/react-query/ozoneModerationGet.ts
+  - src/react-query/ozoneModerationGetRecord.ts
+  - src/react-query/ozoneModerationsSearchRepos.ts
+  - src/react-query/ozoneServerGetConfig.ts
+  - src/react-query/ozoneSetAdd.ts
+  - src/react-query/ozoneSetUpsert.ts
+  - src/react-query/ozoneSettingsUpsertOption.ts
+  - src/react-query/ozoneSignatureSearchAccounts.ts
+  - src/react-query/ozoneSignaturesFindRelatedAccounts.ts
+  - src/react-query/repoPutRecord.ts
+  - src/react-query/reposApplyWrites.ts
+  - src/react-query/reposCreateRecord.ts
+  - src/react-query/reposDescribe.ts
+  - src/react-query/reposGetRecord.ts
+  - src/react-query/reposList.ts
+  - src/react-query/reposListMissingBlobs.ts
+  - src/react-query/serverCheckAccountStatus.ts
+  - src/react-query/serverConfirmEmail.ts
+  - src/react-query/serverCreateSession.ts
+  - src/react-query/serverDeactivateAccount.ts
+  - src/react-query/serverListAppPasswords.ts
+  - src/react-query/serverRequestAccountDelete.ts
+  - src/react-query/serverRequestEmailUpdate.ts
+  - src/react-query/serversGetServiceAuth.ts
+  - src/react-query/serversGetSession.ts
+  - src/react-query/serversReserveSigningKey.ts
+  - src/react-query/serversUpdateEmail.ts
+  - src/react-query/setDelete.ts
+  - src/react-query/setQuery.ts
+  - src/react-query/setsDeleteValues.ts
+  - src/react-query/setsGetValues.ts
+  - src/react-query/settingRemoveOptions.ts
+  - src/react-query/settingsList.ts
+  - src/react-query/signatureFindCorrelation.ts
+  - src/react-query/syncGetRepo.ts
+  - src/react-query/syncListBlobs.ts
+  - src/react-query/syncNotifyOfUpdate.ts
+  - src/react-query/syncsGetBlocks.ts
+  - src/react-query/syncsGetLatestCommit.ts
+  - src/react-query/syncsGetRepoStatus.ts
+  - src/react-query/syncsRequestCrawl.ts
+  - src/react-query/teamListMembers.ts
+  - src/react-query/teamsDeleteMember.ts
+  - src/react-query/teamsUpdateMember.ts
+  - src/react-query/usersGetFollowers.ts
+  - src/react-query/usersGetSuggestedFollows.ts
+  - src/react-query/usersUnmute.ts
+  - src/react-query/videosGetJobStatus.ts
+  - src/react-query/videosGetUploadLimits.ts
+  - src/react-query/videosUpload.ts
   - src/sdk/account.ts
   - src/sdk/accounts.ts
   - src/sdk/actor.ts
@@ -1965,7 +2139,8 @@ examples:
         "403": {}
         "404":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408": {}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "413":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "429": {}
@@ -1988,7 +2163,8 @@ examples:
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "408":
           application/json: {"key": "<value>"}
-        "413": {}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "429":
           application/json: {"key": "<value>", "key1": "<value>"}
         "500":
@@ -2030,7 +2206,8 @@ examples:
           application/json: {"key": "<value>"}
         "429":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500": {}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   app.bsky.actor.searchActors:
     speakeasy-default-app-bsky-actor-search-actors:
       responses:
@@ -2044,8 +2221,10 @@ examples:
           application/json: {"key": "<value>"}
         "404":
           application/json: {"key": "<value>"}
-        "408": {}
-        "413": {}
+        "408":
+          application/json: {"key": "<value>"}
+        "413":
+          application/json: {"key": "<value>"}
         "429": {}
         "500": {}
   app.bsky.actor.searchActorsTypeahead:
@@ -2067,7 +2246,8 @@ examples:
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "429":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500": {}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   app.bsky.feed.describeFeedGenerator:
     speakeasy-default-app-bsky-feed-describe-feed-generator:
       responses:
@@ -2080,7 +2260,8 @@ examples:
         "403": {}
         "404":
           application/json: {"key": "<value>", "key1": "<value>"}
-        "408": {}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>"}
         "413":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "429":
@@ -2103,8 +2284,10 @@ examples:
           application/json: {"key": "<value>"}
         "404":
           application/json: {"key": "<value>", "key1": "<value>"}
-        "408": {}
-        "413": {}
+        "408":
+          application/json: {"key": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>"}
         "429":
           application/json: {"key": "<value>", "key1": "<value>"}
         "500": {}
@@ -2124,10 +2307,12 @@ examples:
           application/json: {"key": "<value>"}
         "404":
           application/json: {"key": "<value>", "key1": "<value>"}
-        "408": {}
+        "408":
+          application/json: {"key": "<value>"}
         "413":
           application/json: {"key": "<value>"}
-        "429": {}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>"}
         "500":
           application/json: {"key": "<value>"}
   app.bsky.feed.getAuthorFeed:
@@ -2152,7 +2337,8 @@ examples:
           application/json: {"key": "<value>"}
         "429":
           application/json: {"key": "<value>"}
-        "500": {}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   app.bsky.feed.getFeed:
     speakeasy-default-app-bsky-feed-get-feed:
       parameters:
@@ -2195,7 +2381,8 @@ examples:
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "408":
           application/json: {"key": "<value>", "key1": "<value>"}
-        "413": {}
+        "413":
+          application/json: {"key": "<value>"}
         "429":
           application/json: {"key": "<value>"}
         "500":
@@ -2214,7 +2401,8 @@ examples:
           application/json: {"message": "<value>"}
         "403":
           application/json: {"key": "<value>", "key1": "<value>"}
-        "404": {}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
         "408":
           application/json: {"key": "<value>"}
         "413":
@@ -2240,9 +2428,12 @@ examples:
           application/json: {"key": "<value>"}
         "408":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413": {}
-        "429": {}
-        "500": {}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "429":
+          application/json: {"key": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
   app.bsky.feed.getLikes:
     speakeasy-default-app-bsky-feed-get-likes:
       parameters:
@@ -2259,12 +2450,14 @@ examples:
           application/json: {"key": "<value>"}
         "404":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408": {}
+        "408":
+          application/json: {"key": "<value>"}
         "413":
           application/json: {"key": "<value>"}
         "429":
           application/json: {"key": "<value>"}
-        "500": {}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
   app.bsky.feed.getListFeed:
     speakeasy-default-app-bsky-feed-get-list-feed:
       parameters:
@@ -2281,12 +2474,14 @@ examples:
           application/json: {"key": "<value>"}
         "404":
           application/json: {"key": "<value>", "key1": "<value>"}
-        "408": {}
+        "408":
+          application/json: {"key": "<value>"}
         "413":
           application/json: {"key": "<value>"}
         "429":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500": {}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   app.bsky.feed.getPostThread:
     speakeasy-default-app-bsky-feed-get-post-thread:
       parameters:
@@ -2301,7 +2496,8 @@ examples:
           application/json: {"message": "<value>"}
         "403":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404": {}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "408": {}
         "413":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
@@ -2349,7 +2545,8 @@ examples:
           application/json: {"key": "<value>"}
         "404":
           application/json: {"key": "<value>"}
-        "408": {}
+        "408":
+          application/json: {"key": "<value>"}
         "413":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "429":
@@ -2378,7 +2575,8 @@ examples:
           application/json: {"key": "<value>", "key1": "<value>"}
         "429":
           application/json: {"key": "<value>"}
-        "500": {}
+        "500":
+          application/json: {"key": "<value>"}
   app.bsky.feed.getSuggestedFeeds:
     speakeasy-default-app-bsky-feed-get-suggested-feeds:
       responses:
@@ -2390,7 +2588,8 @@ examples:
           application/json: {"message": "<value>"}
         "403":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404": {}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "408":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "413":
@@ -2435,8 +2634,10 @@ examples:
           application/json: {"key": "<value>"}
         "404":
           application/json: {"key": "<value>"}
-        "408": {}
-        "413": {}
+        "408":
+          application/json: {"key": "<value>"}
+        "413":
+          application/json: {"key": "<value>"}
         "429": {}
         "500": {}
   app.bsky.feed.sendInteractions:
@@ -2455,7 +2656,8 @@ examples:
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "408":
           application/json: {"key": "<value>", "key1": "<value>"}
-        "413": {}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "429":
           application/json: {"key": "<value>"}
         "500":
@@ -2476,7 +2678,8 @@ examples:
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "404":
           application/json: {"key": "<value>"}
-        "408": {}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "413":
           application/json: {"key": "<value>", "key1": "<value>"}
         "429":
@@ -2495,7 +2698,8 @@ examples:
         "403": {}
         "404":
           application/json: {"key": "<value>"}
-        "408": {}
+        "408":
+          application/json: {"key": "<value>"}
         "413":
           application/json: {"key": "<value>"}
         "429":
@@ -2516,7 +2720,8 @@ examples:
           application/json: {"message": "<value>"}
         "403":
           application/json: {"key": "<value>"}
-        "404": {}
+        "404":
+          application/json: {"key": "<value>"}
         "408":
           application/json: {"key": "<value>", "key1": "<value>"}
         "413":
@@ -2543,10 +2748,12 @@ examples:
           application/json: {"key": "<value>"}
         "408":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413": {}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "429":
           application/json: {"key": "<value>", "key1": "<value>"}
-        "500": {}
+        "500":
+          application/json: {"key": "<value>"}
   app.bsky.graph.getKnownFollowers:
     speakeasy-default-app-bsky-graph-get-known-followers:
       parameters:
@@ -2587,12 +2794,14 @@ examples:
           application/json: {"key": "<value>"}
         "404":
           application/json: {"key": "<value>", "key1": "<value>"}
-        "408": {}
+        "408":
+          application/json: {"key": "<value>"}
         "413":
           application/json: {"key": "<value>"}
         "429":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500": {}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   app.bsky.graph.getListBlocks:
     speakeasy-default-app-bsky-graph-get-list-blocks:
       responses:
@@ -2631,7 +2840,8 @@ examples:
           application/json: {"key": "<value>", "key1": "<value>"}
         "429":
           application/json: {"key": "<value>"}
-        "500": {}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   app.bsky.graph.getLists:
     speakeasy-default-app-bsky-graph-get-lists:
       parameters:
@@ -2675,7 +2885,8 @@ examples:
           application/json: {"key": "<value>"}
         "429":
           application/json: {"key": "<value>", "key1": "<value>"}
-        "500": {}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   app.bsky.graph.getRelationships:
     speakeasy-default-app-bsky-graph-get-relationships:
       parameters:
@@ -2698,7 +2909,8 @@ examples:
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "429":
           application/json: {"key": "<value>", "key1": "<value>"}
-        "500": {}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   app.bsky.graph.getStarterPack:
     speakeasy-default-app-bsky-graph-get-starter-pack:
       parameters:
@@ -2713,7 +2925,8 @@ examples:
           application/json: {"message": "<value>"}
         "403":
           application/json: {"key": "<value>", "key1": "<value>"}
-        "404": {}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
         "408":
           application/json: {"key": "<value>"}
         "413":
@@ -2735,13 +2948,15 @@ examples:
           application/json: {"message": "<value>"}
         "403":
           application/json: {"key": "<value>", "key1": "<value>"}
-        "404": {}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
         "408":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "413": {}
         "429":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500": {}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
   app.bsky.graph.getSuggestedFollowsByActor:
     speakeasy-default-app-bsky-graph-get-suggested-follows-by-actor:
       parameters:
@@ -2780,7 +2995,8 @@ examples:
           application/json: {"key": "<value>"}
         "408":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413": {}
+        "413":
+          application/json: {"key": "<value>"}
         "429":
           application/json: {"key": "<value>", "key1": "<value>"}
         "500":
@@ -2804,7 +3020,8 @@ examples:
           application/json: {"key": "<value>"}
         "429":
           application/json: {"key": "<value>", "key1": "<value>"}
-        "500": {}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   app.bsky.graph.muteThread:
     speakeasy-default-app-bsky-graph-mute-thread:
       requestBody:
@@ -2818,7 +3035,8 @@ examples:
           application/json: {"key": "<value>"}
         "404":
           application/json: {"key": "<value>", "key1": "<value>"}
-        "408": {}
+        "408":
+          application/json: {"key": "<value>"}
         "413":
           application/json: {"key": "<value>"}
         "429":
@@ -2839,7 +3057,8 @@ examples:
           application/json: {"message": "<value>"}
         "403":
           application/json: {"key": "<value>", "key1": "<value>"}
-        "404": {}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
         "408": {}
         "413": {}
         "429":
@@ -2857,7 +3076,8 @@ examples:
           application/json: {"message": "<value>"}
         "403":
           application/json: {"key": "<value>"}
-        "404": {}
+        "404":
+          application/json: {"key": "<value>"}
         "408":
           application/json: {"key": "<value>", "key1": "<value>"}
         "413":
@@ -2879,7 +3099,8 @@ examples:
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "404":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408": {}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "413":
           application/json: {"key": "<value>"}
         "429":
@@ -2897,7 +3118,8 @@ examples:
           application/json: {"message": "<value>"}
         "403":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404": {}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "408":
           application/json: {"key": "<value>"}
         "413":
@@ -2921,7 +3143,8 @@ examples:
         "403": {}
         "404":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408": {}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "413": {}
         "429":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
@@ -2943,7 +3166,8 @@ examples:
           application/json: {"key": "<value>", "key1": "<value>"}
         "413":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429": {}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "500":
           application/json: {"key": "<value>"}
   app.bsky.notification.listNotifications:
@@ -2961,9 +3185,12 @@ examples:
           application/json: {"key": "<value>", "key1": "<value>"}
         "408":
           application/json: {"key": "<value>", "key1": "<value>"}
-        "413": {}
-        "429": {}
-        "500": {}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   app.bsky.notification.putPreferences:
     speakeasy-default-app-bsky-notification-put-preferences:
       requestBody:
@@ -2983,7 +3210,8 @@ examples:
           application/json: {"key": "<value>"}
         "429":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500": {}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   app.bsky.notification.registerPush:
     speakeasy-default-app-bsky-notification-register-push:
       requestBody:
@@ -2997,7 +3225,8 @@ examples:
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "404":
           application/json: {"key": "<value>", "key1": "<value>"}
-        "408": {}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "413":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "429":
@@ -3019,8 +3248,10 @@ examples:
           application/json: {"key": "<value>", "key1": "<value>"}
         "408":
           application/json: {"key": "<value>", "key1": "<value>"}
-        "413": {}
-        "429": {}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>"}
         "500":
           application/json: {"key": "<value>", "key1": "<value>"}
   app.bsky.video.getJobStatus:
@@ -3037,13 +3268,15 @@ examples:
           application/json: {"message": "<value>"}
         "403":
           application/json: {"key": "<value>"}
-        "404": {}
+        "404":
+          application/json: {"key": "<value>"}
         "408":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "413": {}
         "429":
           application/json: {"key": "<value>"}
-        "500": {}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
   app.bsky.video.getUploadLimits:
     speakeasy-default-app-bsky-video-get-upload-limits:
       responses:
@@ -3115,7 +3348,8 @@ examples:
           application/json: {"message": "<value>"}
         "403":
           application/json: {"key": "<value>"}
-        "404": {}
+        "404":
+          application/json: {"key": "<value>"}
         "408":
           application/json: {"key": "<value>"}
         "413":
@@ -3141,7 +3375,8 @@ examples:
           application/json: {"key": "<value>"}
         "413":
           application/json: {"key": "<value>"}
-        "429": {}
+        "429":
+          application/json: {"key": "<value>"}
         "500":
           application/json: {"key": "<value>", "key1": "<value>"}
   chat.bsky.convo.getConvo:
@@ -3164,8 +3399,10 @@ examples:
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "413":
           application/json: {"key": "<value>"}
-        "429": {}
-        "500": {}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
   chat.bsky.convo.getConvoForMembers:
     speakeasy-default-chat-bsky-convo-get-convo-for-members:
       parameters:
@@ -3184,7 +3421,8 @@ examples:
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "408":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413": {}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>"}
         "429":
           application/json: {"key": "<value>", "key1": "<value>"}
         "500":
@@ -3202,7 +3440,8 @@ examples:
           application/json: {"key": "<value>", "key1": "<value>"}
         "404":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408": {}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>"}
         "413":
           application/json: {"key": "<value>"}
         "429":
@@ -3223,7 +3462,8 @@ examples:
           application/json: {"message": "<value>"}
         "403":
           application/json: {"key": "<value>", "key1": "<value>"}
-        "404": {}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
         "408":
           application/json: {"key": "<value>"}
         "413":
@@ -3248,7 +3488,8 @@ examples:
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "408":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413": {}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "429":
           application/json: {"key": "<value>"}
         "500":
@@ -3268,9 +3509,12 @@ examples:
           application/json: {"key": "<value>", "key1": "<value>"}
         "408":
           application/json: {"key": "<value>", "key1": "<value>"}
-        "413": {}
-        "429": {}
-        "500": {}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   chat.bsky.convo.muteConvo:
     speakeasy-default-chat-bsky-convo-mute-convo:
       requestBody:
@@ -3284,7 +3528,8 @@ examples:
           application/json: {"message": "<value>"}
         "403":
           application/json: {"key": "<value>"}
-        "404": {}
+        "404":
+          application/json: {"key": "<value>"}
         "408":
           application/json: {"key": "<value>", "key1": "<value>"}
         "413":
@@ -3314,7 +3559,8 @@ examples:
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "429":
           application/json: {"key": "<value>", "key1": "<value>"}
-        "500": {}
+        "500":
+          application/json: {"key": "<value>"}
   chat.bsky.convo.sendMessageBatch:
     speakeasy-default-chat-bsky-convo-send-message-batch:
       requestBody:
@@ -3336,7 +3582,8 @@ examples:
           application/json: {"key": "<value>"}
         "429":
           application/json: {"key": "<value>"}
-        "500": {}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   chat.bsky.convo.unmuteConvo:
     speakeasy-default-chat-bsky-convo-unmute-convo:
       requestBody:
@@ -3350,7 +3597,8 @@ examples:
           application/json: {"message": "<value>"}
         "403":
           application/json: {"key": "<value>"}
-        "404": {}
+        "404":
+          application/json: {"key": "<value>"}
         "408":
           application/json: {"key": "<value>", "key1": "<value>"}
         "413":
@@ -3397,12 +3645,14 @@ examples:
           application/json: {"key": "<value>"}
         "404":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408": {}
+        "408":
+          application/json: {"key": "<value>"}
         "413":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "429":
           application/json: {"key": "<value>", "key1": "<value>"}
-        "500": {}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
   chat.bsky.moderation.getMessageContext:
     speakeasy-default-chat-bsky-moderation-get-message-context:
       parameters:
@@ -3458,7 +3708,8 @@ examples:
           application/json: {"message": "<value>"}
         "403":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404": {}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "408": {}
         "413": {}
         "429":
@@ -3478,10 +3729,12 @@ examples:
           application/json: {"key": "<value>", "key1": "<value>"}
         "408":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413": {}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>"}
         "429":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500": {}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
   com.atproto.admin.disableInviteCodes:
     speakeasy-default-com-atproto-admin-disable-invite-codes:
       responses:
@@ -3492,7 +3745,8 @@ examples:
         "403": {}
         "404":
           application/json: {"key": "<value>"}
-        "408": {}
+        "408":
+          application/json: {"key": "<value>"}
         "413": {}
         "429":
           application/json: {"key": "<value>", "key1": "<value>"}
@@ -3530,11 +3784,13 @@ examples:
           application/json: {"message": "<value>"}
         "403":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404": {}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "408":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "413": {}
-        "429": {}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "500": {}
   com.atproto.admin.getAccountInfos:
     speakeasy-default-com-atproto-admin-get-account-infos:
@@ -3550,7 +3806,8 @@ examples:
           application/json: {"message": "<value>"}
         "403":
           application/json: {"key": "<value>"}
-        "404": {}
+        "404":
+          application/json: {"key": "<value>"}
         "408":
           application/json: {"key": "<value>", "key1": "<value>"}
         "413":
@@ -3594,7 +3851,8 @@ examples:
           application/json: {"key": "<value>", "key1": "<value>"}
         "408":
           application/json: {"key": "<value>"}
-        "413": {}
+        "413":
+          application/json: {"key": "<value>"}
         "429":
           application/json: {"key": "<value>"}
         "500":
@@ -3616,7 +3874,8 @@ examples:
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "413":
           application/json: {"key": "<value>"}
-        "429": {}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "500":
           application/json: {"key": "<value>", "key1": "<value>"}
   com.atproto.admin.sendEmail:
@@ -3636,8 +3895,10 @@ examples:
           application/json: {"key": "<value>"}
         "408":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413": {}
-        "429": {}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "429":
+          application/json: {"key": "<value>"}
         "500":
           application/json: {"key": "<value>"}
   com.atproto.admin.updateAccountEmail:
@@ -3651,7 +3912,8 @@ examples:
           application/json: {"message": "<value>"}
         "403":
           application/json: {"key": "<value>", "key1": "<value>"}
-        "404": {}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
         "408":
           application/json: {"key": "<value>"}
         "413":
@@ -3671,11 +3933,13 @@ examples:
           application/json: {"message": "<value>"}
         "403":
           application/json: {"key": "<value>"}
-        "404": {}
+        "404":
+          application/json: {"key": "<value>"}
         "408":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "413": {}
-        "429": {}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "500": {}
   com.atproto.admin.updateAccountPassword:
     speakeasy-default-com-atproto-admin-update-account-password:
@@ -3692,10 +3956,12 @@ examples:
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "408":
           application/json: {"key": "<value>"}
-        "413": {}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>"}
         "429":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500": {}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
   com.atproto.admin.updateSubjectStatus:
     speakeasy-default-com-atproto-admin-update-subject-status:
       requestBody:
@@ -3709,7 +3975,8 @@ examples:
           application/json: {"message": "<value>"}
         "403":
           application/json: {"key": "<value>", "key1": "<value>"}
-        "404": {}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
         "408": {}
         "413": {}
         "429":
@@ -3768,7 +4035,8 @@ examples:
           application/json: {"message": "<value>"}
         "403":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404": {}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "408":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "413":
@@ -3811,7 +4079,8 @@ examples:
           application/json: {"key": "<value>", "key1": "<value>"}
         "404":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408": {}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>"}
         "413":
           application/json: {"key": "<value>", "key1": "<value>"}
         "429":
@@ -3829,7 +4098,8 @@ examples:
           application/json: {"message": "<value>"}
         "403":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404": {}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "408": {}
         "413": {}
         "429":
@@ -3852,7 +4122,8 @@ examples:
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "404":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408": {}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "413":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "429":
@@ -3874,8 +4145,10 @@ examples:
           application/json: {"key": "<value>"}
         "404":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408": {}
-        "413": {}
+        "408":
+          application/json: {"key": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "429":
           application/json: {"key": "<value>"}
         "500":
@@ -3961,7 +4234,8 @@ examples:
           application/json: {"message": "<value>"}
         "403":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404": {}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "408":
           application/json: {"key": "<value>", "key1": "<value>"}
         "413":
@@ -3988,7 +4262,8 @@ examples:
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "408":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413": {}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "429":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "500":
@@ -4024,7 +4299,8 @@ examples:
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "404":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408": {}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "413":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "429":
@@ -4050,9 +4326,12 @@ examples:
           application/json: {"key": "<value>", "key1": "<value>"}
         "408":
           application/json: {"key": "<value>", "key1": "<value>"}
-        "413": {}
-        "429": {}
-        "500": {}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   com.atproto.repo.putRecord:
     speakeasy-default-com-atproto-repo-put-record:
       requestBody:
@@ -4069,10 +4348,12 @@ examples:
           application/json: {"key": "<value>", "key1": "<value>"}
         "408":
           application/json: {"key": "<value>"}
-        "413": {}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>"}
         "429":
           application/json: {"key": "<value>", "key1": "<value>"}
-        "500": {}
+        "500":
+          application/json: {"key": "<value>"}
   com.atproto.repo.uploadBlob:
     speakeasy-default-com-atproto-repo-upload-blob:
       responses:
@@ -4103,7 +4384,8 @@ examples:
         "404": {}
         "408":
           application/json: {"key": "<value>"}
-        "413": {}
+        "413":
+          application/json: {"key": "<value>"}
         "429":
           application/json: {"key": "<value>", "key1": "<value>"}
         "500":
@@ -4119,7 +4401,8 @@ examples:
           application/json: {"message": "<value>"}
         "403":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404": {}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "408":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "413": {}
@@ -4141,10 +4424,12 @@ examples:
           application/json: {"key": "<value>", "key1": "<value>"}
         "408":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413": {}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>"}
         "429":
           application/json: {"key": "<value>"}
-        "500": {}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
   com.atproto.server.createAccount:
     speakeasy-default-com-atproto-server-create-account:
       requestBody:
@@ -4160,7 +4445,8 @@ examples:
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "404":
           application/json: {"key": "<value>"}
-        "408": {}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "413":
           application/json: {"key": "<value>", "key1": "<value>"}
         "429":
@@ -4182,7 +4468,8 @@ examples:
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "404":
           application/json: {"key": "<value>", "key1": "<value>"}
-        "408": {}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "413":
           application/json: {"key": "<value>", "key1": "<value>"}
         "429":
@@ -4205,7 +4492,8 @@ examples:
           application/json: {"key": "<value>", "key1": "<value>"}
         "408":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413": {}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>"}
         "429":
           application/json: {"key": "<value>", "key1": "<value>"}
         "500":
@@ -4230,7 +4518,8 @@ examples:
           application/json: {"key": "<value>"}
         "429":
           application/json: {"key": "<value>"}
-        "500": {}
+        "500":
+          application/json: {"key": "<value>"}
   com.atproto.server.createSession:
     speakeasy-default-com-atproto-server-create-session:
       requestBody:
@@ -4244,7 +4533,8 @@ examples:
           application/json: {"message": "<value>"}
         "403":
           application/json: {"key": "<value>", "key1": "<value>"}
-        "404": {}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
         "408":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "413":
@@ -4268,7 +4558,8 @@ examples:
           application/json: {"key": "<value>", "key1": "<value>"}
         "413":
           application/json: {"key": "<value>", "key1": "<value>"}
-        "429": {}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>"}
         "500":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
   com.atproto.server.deleteAccount:
@@ -4282,7 +4573,8 @@ examples:
           application/json: {"message": "<value>"}
         "403":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404": {}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "408": {}
         "413": {}
         "429":
@@ -4318,7 +4610,8 @@ examples:
           application/json: {"message": "<value>"}
         "403":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404": {}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "408":
           application/json: {"key": "<value>", "key1": "<value>"}
         "413":
@@ -4366,7 +4659,8 @@ examples:
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "413":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429": {}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "500":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
   com.atproto.server.getSession:
@@ -4401,7 +4695,8 @@ examples:
           application/json: {"message": "<value>"}
         "403":
           application/json: {"key": "<value>", "key1": "<value>"}
-        "404": {}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
         "408": {}
         "413":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
@@ -4483,7 +4778,8 @@ examples:
           application/json: {"key": "<value>"}
         "413":
           application/json: {"key": "<value>", "key1": "<value>"}
-        "429": {}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "500":
           application/json: {"key": "<value>"}
   com.atproto.server.requestPasswordReset:
@@ -4497,7 +4793,8 @@ examples:
           application/json: {"message": "<value>"}
         "403":
           application/json: {"key": "<value>", "key1": "<value>"}
-        "404": {}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
         "408":
           application/json: {"key": "<value>", "key1": "<value>"}
         "413":
@@ -4524,7 +4821,8 @@ examples:
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "429":
           application/json: {"key": "<value>"}
-        "500": {}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
   com.atproto.server.resetPassword:
     speakeasy-default-com-atproto-server-reset-password:
       requestBody:
@@ -4540,7 +4838,8 @@ examples:
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "408":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413": {}
+        "413":
+          application/json: {"key": "<value>"}
         "429":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "500":
@@ -4582,7 +4881,8 @@ examples:
           application/json: {"key": "<value>"}
         "413":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429": {}
+        "429":
+          application/json: {"key": "<value>"}
         "500":
           application/json: {"key": "<value>", "key1": "<value>"}
   com.atproto.sync.getBlob:
@@ -4602,7 +4902,8 @@ examples:
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "413":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429": {}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "500":
           application/json: {"key": "<value>"}
   com.atproto.sync.getBlocks:
@@ -4619,7 +4920,8 @@ examples:
         "403": {}
         "404":
           application/json: {"key": "<value>"}
-        "408": {}
+        "408":
+          application/json: {"key": "<value>"}
         "413":
           application/json: {"key": "<value>"}
         "429":
@@ -4642,7 +4944,8 @@ examples:
           application/json: {"key": "<value>", "key1": "<value>"}
         "404":
           application/json: {"key": "<value>", "key1": "<value>"}
-        "408": {}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>"}
         "413":
           application/json: {"key": "<value>"}
         "429":
@@ -4666,7 +4969,8 @@ examples:
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "408":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413": {}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "429":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "500":
@@ -4684,7 +4988,8 @@ examples:
         "403": {}
         "404":
           application/json: {"key": "<value>"}
-        "408": {}
+        "408":
+          application/json: {"key": "<value>"}
         "413": {}
         "429": {}
         "500":
@@ -4733,7 +5038,8 @@ examples:
           application/json: {"key": "<value>"}
         "413":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429": {}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "500":
           application/json: {"key": "<value>"}
   com.atproto.sync.listRepos:
@@ -4752,7 +5058,8 @@ examples:
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "413":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429": {}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>"}
         "500":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
   com.atproto.sync.notifyOfUpdate:
@@ -4770,7 +5077,8 @@ examples:
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "408":
           application/json: {"key": "<value>"}
-        "413": {}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>"}
         "429":
           application/json: {"key": "<value>", "key1": "<value>"}
         "500":
@@ -4789,7 +5097,8 @@ examples:
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "408":
           application/json: {"key": "<value>", "key1": "<value>"}
-        "413": {}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "429":
           application/json: {"key": "<value>"}
         "500":
@@ -4849,7 +5158,8 @@ examples:
           application/json: {"message": "<value>"}
         "403":
           application/json: {"key": "<value>"}
-        "404": {}
+        "404":
+          application/json: {"key": "<value>"}
         "408":
           application/json: {"key": "<value>", "key1": "<value>"}
         "413":
@@ -4922,8 +5232,10 @@ examples:
           application/json: {"key": "<value>", "key1": "<value>"}
         "413":
           application/json: {"key": "<value>", "key1": "<value>"}
-        "429": {}
-        "500": {}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "500":
+          application/json: {"key": "<value>"}
   tools.ozone.moderation.getRecord:
     speakeasy-default-tools-ozone-moderation-get-record:
       parameters:
@@ -4941,7 +5253,8 @@ examples:
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "408":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413": {}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "429":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "500":
@@ -4964,7 +5277,8 @@ examples:
           application/json: {"key": "<value>", "key1": "<value>"}
         "408":
           application/json: {"key": "<value>"}
-        "413": {}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>"}
         "429":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "500":
@@ -5150,7 +5464,8 @@ examples:
           application/json: {"message": "<value>"}
         "403":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404": {}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "408":
           application/json: {"key": "<value>"}
         "413": {}
@@ -5172,13 +5487,15 @@ examples:
           application/json: {"message": "<value>"}
         "403":
           application/json: {"key": "<value>"}
-        "404": {}
+        "404":
+          application/json: {"key": "<value>"}
         "408":
           application/json: {"key": "<value>"}
         "413":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "429": {}
-        "500": {}
+        "500":
+          application/json: {"key": "<value>"}
   tools.ozone.set.querySets:
     speakeasy-default-tools-ozone-set-query-sets:
       responses:
@@ -5192,7 +5509,8 @@ examples:
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "404":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408": {}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "413":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "429":
@@ -5218,7 +5536,8 @@ examples:
           application/json: {"key": "<value>"}
         "413":
           application/json: {"key": "<value>"}
-        "429": {}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>"}
         "500":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
   tools.ozone.setting.listOptions:
@@ -5236,9 +5555,12 @@ examples:
           application/json: {"key": "<value>", "key1": "<value>"}
         "408":
           application/json: {"key": "<value>", "key1": "<value>"}
-        "413": {}
-        "429": {}
-        "500": {}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   tools.ozone.setting.removeOptions:
     speakeasy-default-tools-ozone-setting-remove-options:
       requestBody:
@@ -5323,7 +5645,8 @@ examples:
         "403": {}
         "404":
           application/json: {"key": "<value>"}
-        "408": {}
+        "408":
+          application/json: {"key": "<value>"}
         "413": {}
         "429": {}
         "500":
@@ -5348,7 +5671,8 @@ examples:
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "413":
           application/json: {"key": "<value>"}
-        "429": {}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "500":
           application/json: {"key": "<value>", "key1": "<value>"}
   tools.ozone.team.addMember:
@@ -5368,8 +5692,10 @@ examples:
           application/json: {"key": "<value>"}
         "408":
           application/json: {"key": "<value>"}
-        "413": {}
-        "429": {}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429":
+          application/json: {"key": "<value>"}
         "500":
           application/json: {"key": "<value>", "key1": "<value>"}
   tools.ozone.team.deleteMember:
@@ -5407,8 +5733,10 @@ examples:
           application/json: {"key": "<value>", "key1": "<value>"}
         "408":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413": {}
-        "429": {}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "500":
           application/json: {"key": "<value>"}
   tools.ozone.team.updateMember:
@@ -5424,7 +5752,8 @@ examples:
           application/json: {"message": "<value>"}
         "403":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404": {}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "408":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "413":

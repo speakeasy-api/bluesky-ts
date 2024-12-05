@@ -80,6 +80,23 @@ async function run() {
 run();
 ```
 
+### React hooks and utilities
+
+This method can be used in React components through the following hooks and
+associated utilities.
+
+> Check out [this guide][hook-guide] for information about each of the utilities
+> below and how to get started using React hooks.
+
+[hook-guide]: ../../../REACT_QUERY.md
+
+```tsx
+import {
+  // Mutation hook for triggering the API call.
+  useAtprotoAdminDisableAccountInvitesMutation
+} from "bluesky/react-query/atprotoAdminDisableAccountInvites.js";
+```
+
 ### Parameters
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
@@ -168,6 +185,37 @@ async function run() {
 run();
 ```
 
+### React hooks and utilities
+
+This method can be used in React components through the following hooks and
+associated utilities.
+
+> Check out [this guide][hook-guide] for information about each of the utilities
+> below and how to get started using React hooks.
+
+[hook-guide]: ../../../REACT_QUERY.md
+
+```tsx
+import {
+  // Query hooks for fetching data.
+  useAtprotoAdminGetInviteCodes,
+  useAtprotoAdminGetInviteCodesSuspense,
+  // Query hooks suitable for building infinite scrolling or "load more" UIs.
+  useAtprotoAdminGetInviteCodesInfinite,
+  useAtprotoAdminGetInviteCodesInfiniteSuspense,
+
+  // Utility for prefetching data during server-side rendering and in React
+  // Server Components that will be immediately available to client components
+  // using the hooks.
+  prefetchAtprotoAdminGetInviteCodes,
+  
+  // Utilities to invalidate the query cache for this query in response to
+  // mutations and other user actions.
+  invalidateAtprotoAdminGetInviteCodes,
+  invalidateAllAtprotoAdminGetInviteCodes,
+} from "bluesky/react-query/atprotoAdminGetInviteCodes.js";
+```
+
 ### Parameters
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
@@ -254,6 +302,37 @@ async function run() {
 }
 
 run();
+```
+
+### React hooks and utilities
+
+This method can be used in React components through the following hooks and
+associated utilities.
+
+> Check out [this guide][hook-guide] for information about each of the utilities
+> below and how to get started using React hooks.
+
+[hook-guide]: ../../../REACT_QUERY.md
+
+```tsx
+import {
+  // Query hooks for fetching data.
+  useAtprotoAdminSearchAccounts,
+  useAtprotoAdminSearchAccountsSuspense,
+  // Query hooks suitable for building infinite scrolling or "load more" UIs.
+  useAtprotoAdminSearchAccountsInfinite,
+  useAtprotoAdminSearchAccountsInfiniteSuspense,
+
+  // Utility for prefetching data during server-side rendering and in React
+  // Server Components that will be immediately available to client components
+  // using the hooks.
+  prefetchAtprotoAdminSearchAccounts,
+  
+  // Utilities to invalidate the query cache for this query in response to
+  // mutations and other user actions.
+  invalidateAtprotoAdminSearchAccounts,
+  invalidateAllAtprotoAdminSearchAccounts,
+} from "bluesky/react-query/atprotoAdminSearchAccounts.js";
 ```
 
 ### Parameters
