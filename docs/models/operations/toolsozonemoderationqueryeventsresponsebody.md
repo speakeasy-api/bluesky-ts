@@ -10,19 +10,19 @@ import { ToolsOzoneModerationQueryEventsResponseBody } from "bluesky/models/oper
 let value: ToolsOzoneModerationQueryEventsResponseBody = {
   events: [
     {
-      id: 455444,
+      id: 237807,
       event: {
-        durationInHours: 248413,
+        reportType: "<value>",
       },
       subject: {
-        uri: "https://hopeful-lieu.net/",
+        uri: "https://tedious-descendant.name/",
         cid: "<id>",
       },
       subjectBlobCids: [
         "<value>",
       ],
       createdBy: "<id>",
-      createdAt: new Date("2023-01-01T12:34:49.368Z"),
+      createdAt: new Date("2024-10-30T01:43:08.424Z"),
     },
   ],
 };

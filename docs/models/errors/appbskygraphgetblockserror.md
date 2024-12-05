@@ -5,7 +5,7 @@
 ```typescript
 import { AppBskyGraphGetBlocksError } from "bluesky/models/errors";
 
-let value: AppBskyGraphGetBlocksError = "InvalidToken";
+let value: AppBskyGraphGetBlocksError = "ExpiredToken";
 ```
 
 ## Values

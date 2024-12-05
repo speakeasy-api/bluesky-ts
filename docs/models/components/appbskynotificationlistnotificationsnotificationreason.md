@@ -7,8 +7,7 @@ Expected values are 'like', 'repost', 'follow', 'mention', 'reply', 'quote', and
 ```typescript
 import { AppBskyNotificationListNotificationsNotificationReason } from "bluesky/models/components";
 
-let value: AppBskyNotificationListNotificationsNotificationReason =
-  "starterpack-joined";
+let value: AppBskyNotificationListNotificationsNotificationReason = "like";
 ```
 
 ## Values

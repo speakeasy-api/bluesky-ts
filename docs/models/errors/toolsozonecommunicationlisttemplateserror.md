@@ -5,7 +5,7 @@
 ```typescript
 import { ToolsOzoneCommunicationListTemplatesError } from "bluesky/models/errors";
 
-let value: ToolsOzoneCommunicationListTemplatesError = "ExpiredToken";
+let value: ToolsOzoneCommunicationListTemplatesError = "InvalidRequest";
 ```
 
 ## Values

@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoServerCreateSessionError } from "bluesky/models/errors";
 
-let value: ComAtprotoServerCreateSessionError = "AuthFactorTokenRequired";
+let value: ComAtprotoServerCreateSessionError = "InvalidToken";
 ```
 
 ## Values

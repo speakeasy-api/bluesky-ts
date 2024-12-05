@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type AppBskyGraphGetFollowersGraphResponseBodyData = {
+export type AppBskyGraphGetFollowersUsersResponseBodyData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,13 +16,13 @@ export type AppBskyGraphGetFollowersGraphResponseBodyData = {
 /**
  * Unauthorized
  */
-export class AppBskyGraphGetFollowersGraphResponseBody extends Error {
+export class AppBskyGraphGetFollowersUsersResponseBody extends Error {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: AppBskyGraphGetFollowersGraphResponseBodyData;
+  data$: AppBskyGraphGetFollowersUsersResponseBodyData;
 
-  constructor(err: AppBskyGraphGetFollowersGraphResponseBodyData) {
+  constructor(err: AppBskyGraphGetFollowersUsersResponseBodyData) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -31,7 +31,7 @@ export class AppBskyGraphGetFollowersGraphResponseBody extends Error {
 
     this.error = err.error;
 
-    this.name = "AppBskyGraphGetFollowersGraphResponseBody";
+    this.name = "AppBskyGraphGetFollowersUsersResponseBody";
   }
 }
 
@@ -75,8 +75,8 @@ export class AppBskyGraphGetFollowersResponseBody extends Error {
 }
 
 /** @internal */
-export const AppBskyGraphGetFollowersGraphResponseBody$inboundSchema: z.ZodType<
-  AppBskyGraphGetFollowersGraphResponseBody,
+export const AppBskyGraphGetFollowersUsersResponseBody$inboundSchema: z.ZodType<
+  AppBskyGraphGetFollowersUsersResponseBody,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -84,22 +84,22 @@ export const AppBskyGraphGetFollowersGraphResponseBody$inboundSchema: z.ZodType<
   message: z.string(),
 })
   .transform((v) => {
-    return new AppBskyGraphGetFollowersGraphResponseBody(v);
+    return new AppBskyGraphGetFollowersUsersResponseBody(v);
   });
 
 /** @internal */
-export type AppBskyGraphGetFollowersGraphResponseBody$Outbound = {
+export type AppBskyGraphGetFollowersUsersResponseBody$Outbound = {
   error: "AuthMissing";
   message: string;
 };
 
 /** @internal */
-export const AppBskyGraphGetFollowersGraphResponseBody$outboundSchema:
+export const AppBskyGraphGetFollowersUsersResponseBody$outboundSchema:
   z.ZodType<
-    AppBskyGraphGetFollowersGraphResponseBody$Outbound,
+    AppBskyGraphGetFollowersUsersResponseBody$Outbound,
     z.ZodTypeDef,
-    AppBskyGraphGetFollowersGraphResponseBody
-  > = z.instanceof(AppBskyGraphGetFollowersGraphResponseBody)
+    AppBskyGraphGetFollowersUsersResponseBody
+  > = z.instanceof(AppBskyGraphGetFollowersUsersResponseBody)
     .transform(v => v.data$)
     .pipe(z.object({
       error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -110,15 +110,15 @@ export const AppBskyGraphGetFollowersGraphResponseBody$outboundSchema:
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyGraphGetFollowersGraphResponseBody$ {
-  /** @deprecated use `AppBskyGraphGetFollowersGraphResponseBody$inboundSchema` instead. */
+export namespace AppBskyGraphGetFollowersUsersResponseBody$ {
+  /** @deprecated use `AppBskyGraphGetFollowersUsersResponseBody$inboundSchema` instead. */
   export const inboundSchema =
-    AppBskyGraphGetFollowersGraphResponseBody$inboundSchema;
-  /** @deprecated use `AppBskyGraphGetFollowersGraphResponseBody$outboundSchema` instead. */
+    AppBskyGraphGetFollowersUsersResponseBody$inboundSchema;
+  /** @deprecated use `AppBskyGraphGetFollowersUsersResponseBody$outboundSchema` instead. */
   export const outboundSchema =
-    AppBskyGraphGetFollowersGraphResponseBody$outboundSchema;
-  /** @deprecated use `AppBskyGraphGetFollowersGraphResponseBody$Outbound` instead. */
-  export type Outbound = AppBskyGraphGetFollowersGraphResponseBody$Outbound;
+    AppBskyGraphGetFollowersUsersResponseBody$outboundSchema;
+  /** @deprecated use `AppBskyGraphGetFollowersUsersResponseBody$Outbound` instead. */
+  export type Outbound = AppBskyGraphGetFollowersUsersResponseBody$Outbound;
 }
 
 /** @internal */

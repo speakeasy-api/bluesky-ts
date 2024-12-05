@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type ChatBskyConvoGetLogChatConvoResponseBodyData = {
+export type ChatBskyConvoGetLogConversationsResponseBodyData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,13 +16,13 @@ export type ChatBskyConvoGetLogChatConvoResponseBodyData = {
 /**
  * Unauthorized
  */
-export class ChatBskyConvoGetLogChatConvoResponseBody extends Error {
+export class ChatBskyConvoGetLogConversationsResponseBody extends Error {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: ChatBskyConvoGetLogChatConvoResponseBodyData;
+  data$: ChatBskyConvoGetLogConversationsResponseBodyData;
 
-  constructor(err: ChatBskyConvoGetLogChatConvoResponseBodyData) {
+  constructor(err: ChatBskyConvoGetLogConversationsResponseBodyData) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -31,7 +31,7 @@ export class ChatBskyConvoGetLogChatConvoResponseBody extends Error {
 
     this.error = err.error;
 
-    this.name = "ChatBskyConvoGetLogChatConvoResponseBody";
+    this.name = "ChatBskyConvoGetLogConversationsResponseBody";
   }
 }
 
@@ -75,49 +75,51 @@ export class ChatBskyConvoGetLogResponseBody extends Error {
 }
 
 /** @internal */
-export const ChatBskyConvoGetLogChatConvoResponseBody$inboundSchema: z.ZodType<
-  ChatBskyConvoGetLogChatConvoResponseBody,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  error: z.literal("AuthMissing"),
-  message: z.string(),
-})
-  .transform((v) => {
-    return new ChatBskyConvoGetLogChatConvoResponseBody(v);
-  });
+export const ChatBskyConvoGetLogConversationsResponseBody$inboundSchema:
+  z.ZodType<
+    ChatBskyConvoGetLogConversationsResponseBody,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    error: z.literal("AuthMissing"),
+    message: z.string(),
+  })
+    .transform((v) => {
+      return new ChatBskyConvoGetLogConversationsResponseBody(v);
+    });
 
 /** @internal */
-export type ChatBskyConvoGetLogChatConvoResponseBody$Outbound = {
+export type ChatBskyConvoGetLogConversationsResponseBody$Outbound = {
   error: "AuthMissing";
   message: string;
 };
 
 /** @internal */
-export const ChatBskyConvoGetLogChatConvoResponseBody$outboundSchema: z.ZodType<
-  ChatBskyConvoGetLogChatConvoResponseBody$Outbound,
-  z.ZodTypeDef,
-  ChatBskyConvoGetLogChatConvoResponseBody
-> = z.instanceof(ChatBskyConvoGetLogChatConvoResponseBody)
-  .transform(v => v.data$)
-  .pipe(z.object({
-    error: z.literal("AuthMissing").default("AuthMissing" as const),
-    message: z.string(),
-  }));
+export const ChatBskyConvoGetLogConversationsResponseBody$outboundSchema:
+  z.ZodType<
+    ChatBskyConvoGetLogConversationsResponseBody$Outbound,
+    z.ZodTypeDef,
+    ChatBskyConvoGetLogConversationsResponseBody
+  > = z.instanceof(ChatBskyConvoGetLogConversationsResponseBody)
+    .transform(v => v.data$)
+    .pipe(z.object({
+      error: z.literal("AuthMissing").default("AuthMissing" as const),
+      message: z.string(),
+    }));
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ChatBskyConvoGetLogChatConvoResponseBody$ {
-  /** @deprecated use `ChatBskyConvoGetLogChatConvoResponseBody$inboundSchema` instead. */
+export namespace ChatBskyConvoGetLogConversationsResponseBody$ {
+  /** @deprecated use `ChatBskyConvoGetLogConversationsResponseBody$inboundSchema` instead. */
   export const inboundSchema =
-    ChatBskyConvoGetLogChatConvoResponseBody$inboundSchema;
-  /** @deprecated use `ChatBskyConvoGetLogChatConvoResponseBody$outboundSchema` instead. */
+    ChatBskyConvoGetLogConversationsResponseBody$inboundSchema;
+  /** @deprecated use `ChatBskyConvoGetLogConversationsResponseBody$outboundSchema` instead. */
   export const outboundSchema =
-    ChatBskyConvoGetLogChatConvoResponseBody$outboundSchema;
-  /** @deprecated use `ChatBskyConvoGetLogChatConvoResponseBody$Outbound` instead. */
-  export type Outbound = ChatBskyConvoGetLogChatConvoResponseBody$Outbound;
+    ChatBskyConvoGetLogConversationsResponseBody$outboundSchema;
+  /** @deprecated use `ChatBskyConvoGetLogConversationsResponseBody$Outbound` instead. */
+  export type Outbound = ChatBskyConvoGetLogConversationsResponseBody$Outbound;
 }
 
 /** @internal */

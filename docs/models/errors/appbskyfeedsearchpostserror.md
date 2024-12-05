@@ -5,7 +5,7 @@
 ```typescript
 import { AppBskyFeedSearchPostsError } from "bluesky/models/errors";
 
-let value: AppBskyFeedSearchPostsError = "InvalidRequest";
+let value: AppBskyFeedSearchPostsError = "BadQueryString";
 ```
 
 ## Values

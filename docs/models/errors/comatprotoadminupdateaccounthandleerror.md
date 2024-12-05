@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoAdminUpdateAccountHandleError } from "bluesky/models/errors";
 
-let value: ComAtprotoAdminUpdateAccountHandleError = "InvalidRequest";
+let value: ComAtprotoAdminUpdateAccountHandleError = "ExpiredToken";
 ```
 
 ## Values

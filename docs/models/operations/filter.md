@@ -7,7 +7,7 @@ Combinations of post/repost types to include in response.
 ```typescript
 import { Filter } from "bluesky/models/operations";
 
-let value: Filter = "posts_and_author_threads";
+let value: Filter = "posts_with_media";
 ```
 
 ## Values

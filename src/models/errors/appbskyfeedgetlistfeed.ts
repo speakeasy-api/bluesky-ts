@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type AppBskyFeedGetListFeedFeedResponseBodyData = {
+export type AppBskyFeedGetListFeedFeedsResponseBodyData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,13 +16,13 @@ export type AppBskyFeedGetListFeedFeedResponseBodyData = {
 /**
  * Unauthorized
  */
-export class AppBskyFeedGetListFeedFeedResponseBody extends Error {
+export class AppBskyFeedGetListFeedFeedsResponseBody extends Error {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: AppBskyFeedGetListFeedFeedResponseBodyData;
+  data$: AppBskyFeedGetListFeedFeedsResponseBodyData;
 
-  constructor(err: AppBskyFeedGetListFeedFeedResponseBodyData) {
+  constructor(err: AppBskyFeedGetListFeedFeedsResponseBodyData) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -31,7 +31,7 @@ export class AppBskyFeedGetListFeedFeedResponseBody extends Error {
 
     this.error = err.error;
 
-    this.name = "AppBskyFeedGetListFeedFeedResponseBody";
+    this.name = "AppBskyFeedGetListFeedFeedsResponseBody";
   }
 }
 
@@ -76,8 +76,8 @@ export class AppBskyFeedGetListFeedResponseBody extends Error {
 }
 
 /** @internal */
-export const AppBskyFeedGetListFeedFeedResponseBody$inboundSchema: z.ZodType<
-  AppBskyFeedGetListFeedFeedResponseBody,
+export const AppBskyFeedGetListFeedFeedsResponseBody$inboundSchema: z.ZodType<
+  AppBskyFeedGetListFeedFeedsResponseBody,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -85,21 +85,21 @@ export const AppBskyFeedGetListFeedFeedResponseBody$inboundSchema: z.ZodType<
   message: z.string(),
 })
   .transform((v) => {
-    return new AppBskyFeedGetListFeedFeedResponseBody(v);
+    return new AppBskyFeedGetListFeedFeedsResponseBody(v);
   });
 
 /** @internal */
-export type AppBskyFeedGetListFeedFeedResponseBody$Outbound = {
+export type AppBskyFeedGetListFeedFeedsResponseBody$Outbound = {
   error: "AuthMissing";
   message: string;
 };
 
 /** @internal */
-export const AppBskyFeedGetListFeedFeedResponseBody$outboundSchema: z.ZodType<
-  AppBskyFeedGetListFeedFeedResponseBody$Outbound,
+export const AppBskyFeedGetListFeedFeedsResponseBody$outboundSchema: z.ZodType<
+  AppBskyFeedGetListFeedFeedsResponseBody$Outbound,
   z.ZodTypeDef,
-  AppBskyFeedGetListFeedFeedResponseBody
-> = z.instanceof(AppBskyFeedGetListFeedFeedResponseBody)
+  AppBskyFeedGetListFeedFeedsResponseBody
+> = z.instanceof(AppBskyFeedGetListFeedFeedsResponseBody)
   .transform(v => v.data$)
   .pipe(z.object({
     error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -110,15 +110,15 @@ export const AppBskyFeedGetListFeedFeedResponseBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyFeedGetListFeedFeedResponseBody$ {
-  /** @deprecated use `AppBskyFeedGetListFeedFeedResponseBody$inboundSchema` instead. */
+export namespace AppBskyFeedGetListFeedFeedsResponseBody$ {
+  /** @deprecated use `AppBskyFeedGetListFeedFeedsResponseBody$inboundSchema` instead. */
   export const inboundSchema =
-    AppBskyFeedGetListFeedFeedResponseBody$inboundSchema;
-  /** @deprecated use `AppBskyFeedGetListFeedFeedResponseBody$outboundSchema` instead. */
+    AppBskyFeedGetListFeedFeedsResponseBody$inboundSchema;
+  /** @deprecated use `AppBskyFeedGetListFeedFeedsResponseBody$outboundSchema` instead. */
   export const outboundSchema =
-    AppBskyFeedGetListFeedFeedResponseBody$outboundSchema;
-  /** @deprecated use `AppBskyFeedGetListFeedFeedResponseBody$Outbound` instead. */
-  export type Outbound = AppBskyFeedGetListFeedFeedResponseBody$Outbound;
+    AppBskyFeedGetListFeedFeedsResponseBody$outboundSchema;
+  /** @deprecated use `AppBskyFeedGetListFeedFeedsResponseBody$Outbound` instead. */
+  export type Outbound = AppBskyFeedGetListFeedFeedsResponseBody$Outbound;
 }
 
 /** @internal */

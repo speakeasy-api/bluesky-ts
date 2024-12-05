@@ -6,7 +6,7 @@
 import { AppBskyGraphDefsListItemView } from "bluesky/models/components";
 
 let value: AppBskyGraphDefsListItemView = {
-  uri: "https://uneven-vibration.net",
+  uri: "https://hidden-printer.name/",
   subject: {
     did: "<id>",
     handle: "<value>",

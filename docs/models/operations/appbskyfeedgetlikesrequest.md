@@ -6,7 +6,7 @@
 import { AppBskyFeedGetLikesRequest } from "bluesky/models/operations";
 
 let value: AppBskyFeedGetLikesRequest = {
-  uri: "https://rare-pillbox.biz/",
+  uri: "https://whole-godparent.net",
 };
 ```
 

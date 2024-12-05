@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoServerDescribeServerError } from "bluesky/models/errors";
 
-let value: ComAtprotoServerDescribeServerError = "InvalidRequest";
+let value: ComAtprotoServerDescribeServerError = "InvalidToken";
 ```
 
 ## Values

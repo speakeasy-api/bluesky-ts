@@ -5,7 +5,7 @@
 ```typescript
 import { ChatBskyModerationGetMessageContextError } from "bluesky/models/errors";
 
-let value: ChatBskyModerationGetMessageContextError = "InvalidRequest";
+let value: ChatBskyModerationGetMessageContextError = "InvalidToken";
 ```
 
 ## Values

@@ -7,7 +7,7 @@ import { AppBskyFeedGetLikesResponse } from "bluesky/models/operations";
 
 let value: AppBskyFeedGetLikesResponse = {
   result: {
-    uri: "https://writhing-brochure.biz/",
+    uri: "https://ajar-sonnet.net/",
     likes: [],
   },
 };

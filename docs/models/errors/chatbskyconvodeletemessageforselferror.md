@@ -5,7 +5,7 @@
 ```typescript
 import { ChatBskyConvoDeleteMessageForSelfError } from "bluesky/models/errors";
 
-let value: ChatBskyConvoDeleteMessageForSelfError = "InvalidToken";
+let value: ChatBskyConvoDeleteMessageForSelfError = "ExpiredToken";
 ```
 
 ## Values

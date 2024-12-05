@@ -8,7 +8,7 @@ import { AppBskyGraphGetListResponse } from "bluesky/models/operations";
 let value: AppBskyGraphGetListResponse = {
   result: {
     list: {
-      uri: "https://mature-vanadyl.name",
+      uri: "https://serpentine-knight.org",
       cid: "<id>",
       creator: {
         did: "<id>",
@@ -16,7 +16,7 @@ let value: AppBskyGraphGetListResponse = {
       },
       name: "<value>",
       purpose: "<value>",
-      indexedAt: new Date("2023-04-10T13:04:59.510Z"),
+      indexedAt: new Date("2023-12-07T19:31:05.522Z"),
     },
     items: [],
   },

@@ -7,7 +7,7 @@
 
 ```typescript
 const value: components.ToolsOzoneModerationDefsAccountHosting = {
-  status: "unknown",
+  status: "suspended",
 };
 ```
 

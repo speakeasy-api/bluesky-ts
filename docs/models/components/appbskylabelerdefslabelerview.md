@@ -6,13 +6,13 @@
 import { AppBskyLabelerDefsLabelerView } from "bluesky/models/components";
 
 let value: AppBskyLabelerDefsLabelerView = {
-  uri: "https://specific-popularity.org/",
+  uri: "https://comfortable-monasticism.com",
   cid: "<id>",
   creator: {
     did: "<id>",
     handle: "<value>",
   },
-  indexedAt: new Date("2022-10-12T06:39:45.765Z"),
+  indexedAt: new Date("2022-08-07T00:09:49.489Z"),
 };
 ```
 

@@ -6,7 +6,7 @@
 import { AppBskyFeedGetQuotesRequest } from "bluesky/models/operations";
 
 let value: AppBskyFeedGetQuotesRequest = {
-  uri: "https://bulky-minister.org",
+  uri: "https://oily-hundred.org/",
 };
 ```
 

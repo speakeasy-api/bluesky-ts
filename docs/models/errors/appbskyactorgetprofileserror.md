@@ -5,7 +5,7 @@
 ```typescript
 import { AppBskyActorGetProfilesError } from "bluesky/models/errors";
 
-let value: AppBskyActorGetProfilesError = "InvalidRequest";
+let value: AppBskyActorGetProfilesError = "InvalidToken";
 ```
 
 ## Values

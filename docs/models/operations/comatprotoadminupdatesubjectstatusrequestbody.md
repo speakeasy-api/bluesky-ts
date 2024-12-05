@@ -7,7 +7,7 @@ import { ComAtprotoAdminUpdateSubjectStatusRequestBody } from "bluesky/models/op
 
 let value: ComAtprotoAdminUpdateSubjectStatusRequestBody = {
   subject: {
-    did: "<id>",
+    uri: "https://second-hand-gripper.name/",
     cid: "<id>",
   },
 };

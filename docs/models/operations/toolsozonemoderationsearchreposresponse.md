@@ -14,7 +14,7 @@ let value: ToolsOzoneModerationSearchReposResponse = {
         relatedRecords: [
           "<value>",
         ],
-        indexedAt: new Date("2023-08-05T11:15:03.211Z"),
+        indexedAt: new Date("2022-01-09T15:23:00.451Z"),
         moderation: {},
       },
     ],

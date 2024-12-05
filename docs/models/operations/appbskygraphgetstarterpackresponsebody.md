@@ -9,14 +9,14 @@ import { AppBskyGraphGetStarterPackResponseBody } from "bluesky/models/operation
 
 let value: AppBskyGraphGetStarterPackResponseBody = {
   starterPack: {
-    uri: "https://interesting-chairperson.biz",
+    uri: "https://polished-horde.com/",
     cid: "<id>",
     record: "<value>",
     creator: {
       did: "<id>",
       handle: "<value>",
     },
-    indexedAt: new Date("2023-09-17T16:21:25.240Z"),
+    indexedAt: new Date("2022-11-23T22:01:05.887Z"),
   },
 };
 ```

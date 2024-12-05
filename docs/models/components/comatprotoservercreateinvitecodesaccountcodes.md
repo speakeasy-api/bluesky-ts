@@ -6,7 +6,7 @@
 import { ComAtprotoServerCreateInviteCodesAccountCodes } from "bluesky/models/components";
 
 let value: ComAtprotoServerCreateInviteCodesAccountCodes = {
-  account: "96857791",
+  account: "50037677",
   codes: [
     "<value>",
   ],

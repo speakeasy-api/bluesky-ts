@@ -10,9 +10,9 @@ let value: ToolsOzoneSetQuerySetsResponse = {
     sets: [
       {
         name: "<value>",
-        setSize: 577140,
-        createdAt: new Date("2024-02-02T00:22:56.047Z"),
-        updatedAt: new Date("2024-01-07T11:09:38.255Z"),
+        setSize: 89494,
+        createdAt: new Date("2023-03-21T21:54:24.613Z"),
+        updatedAt: new Date("2022-01-27T15:32:03.858Z"),
       },
     ],
   },

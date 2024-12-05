@@ -10,9 +10,9 @@ let value: ComAtprotoLabelQueryLabelsResponse = {
     labels: [
       {
         src: "<id>",
-        uri: "https://exalted-breastplate.com/",
+        uri: "https://whispered-embarrassment.biz",
         val: "<value>",
-        cts: new Date("2024-10-15T18:20:20.936Z"),
+        cts: new Date("2022-04-20T22:07:54.686Z"),
       },
     ],
   },

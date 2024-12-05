@@ -7,7 +7,7 @@ import { ComAtprotoServerDeleteAccountRequestBody } from "bluesky/models/operati
 
 let value: ComAtprotoServerDeleteAccountRequestBody = {
   did: "<id>",
-  password: "ch70lLYrLWnwn0F",
+  password: "cjj9DXD3LlRWIQS",
   token: "<value>",
 };
 ```

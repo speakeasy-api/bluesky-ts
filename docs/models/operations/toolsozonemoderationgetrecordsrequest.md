@@ -7,7 +7,7 @@ import { ToolsOzoneModerationGetRecordsRequest } from "bluesky/models/operations
 
 let value: ToolsOzoneModerationGetRecordsRequest = {
   uris: [
-    "https://tedious-descendant.name/",
+    "https://young-icebreaker.com",
   ],
 };
 ```

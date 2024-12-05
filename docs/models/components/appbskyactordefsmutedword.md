@@ -10,7 +10,7 @@ import { AppBskyActorDefsMutedWord } from "bluesky/models/components";
 let value: AppBskyActorDefsMutedWord = {
   value: "<value>",
   targets: [
-    "content",
+    "tag",
   ],
 };
 ```

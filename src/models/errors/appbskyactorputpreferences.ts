@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type AppBskyActorPutPreferencesActorResponseBodyData = {
+export type AppBskyActorPutPreferencesActorsResponseBodyData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,13 +16,13 @@ export type AppBskyActorPutPreferencesActorResponseBodyData = {
 /**
  * Unauthorized
  */
-export class AppBskyActorPutPreferencesActorResponseBody extends Error {
+export class AppBskyActorPutPreferencesActorsResponseBody extends Error {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: AppBskyActorPutPreferencesActorResponseBodyData;
+  data$: AppBskyActorPutPreferencesActorsResponseBodyData;
 
-  constructor(err: AppBskyActorPutPreferencesActorResponseBodyData) {
+  constructor(err: AppBskyActorPutPreferencesActorsResponseBodyData) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -31,7 +31,7 @@ export class AppBskyActorPutPreferencesActorResponseBody extends Error {
 
     this.error = err.error;
 
-    this.name = "AppBskyActorPutPreferencesActorResponseBody";
+    this.name = "AppBskyActorPutPreferencesActorsResponseBody";
   }
 }
 
@@ -75,9 +75,9 @@ export class AppBskyActorPutPreferencesResponseBody extends Error {
 }
 
 /** @internal */
-export const AppBskyActorPutPreferencesActorResponseBody$inboundSchema:
+export const AppBskyActorPutPreferencesActorsResponseBody$inboundSchema:
   z.ZodType<
-    AppBskyActorPutPreferencesActorResponseBody,
+    AppBskyActorPutPreferencesActorsResponseBody,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -85,22 +85,22 @@ export const AppBskyActorPutPreferencesActorResponseBody$inboundSchema:
     message: z.string(),
   })
     .transform((v) => {
-      return new AppBskyActorPutPreferencesActorResponseBody(v);
+      return new AppBskyActorPutPreferencesActorsResponseBody(v);
     });
 
 /** @internal */
-export type AppBskyActorPutPreferencesActorResponseBody$Outbound = {
+export type AppBskyActorPutPreferencesActorsResponseBody$Outbound = {
   error: "AuthMissing";
   message: string;
 };
 
 /** @internal */
-export const AppBskyActorPutPreferencesActorResponseBody$outboundSchema:
+export const AppBskyActorPutPreferencesActorsResponseBody$outboundSchema:
   z.ZodType<
-    AppBskyActorPutPreferencesActorResponseBody$Outbound,
+    AppBskyActorPutPreferencesActorsResponseBody$Outbound,
     z.ZodTypeDef,
-    AppBskyActorPutPreferencesActorResponseBody
-  > = z.instanceof(AppBskyActorPutPreferencesActorResponseBody)
+    AppBskyActorPutPreferencesActorsResponseBody
+  > = z.instanceof(AppBskyActorPutPreferencesActorsResponseBody)
     .transform(v => v.data$)
     .pipe(z.object({
       error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -111,15 +111,15 @@ export const AppBskyActorPutPreferencesActorResponseBody$outboundSchema:
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyActorPutPreferencesActorResponseBody$ {
-  /** @deprecated use `AppBskyActorPutPreferencesActorResponseBody$inboundSchema` instead. */
+export namespace AppBskyActorPutPreferencesActorsResponseBody$ {
+  /** @deprecated use `AppBskyActorPutPreferencesActorsResponseBody$inboundSchema` instead. */
   export const inboundSchema =
-    AppBskyActorPutPreferencesActorResponseBody$inboundSchema;
-  /** @deprecated use `AppBskyActorPutPreferencesActorResponseBody$outboundSchema` instead. */
+    AppBskyActorPutPreferencesActorsResponseBody$inboundSchema;
+  /** @deprecated use `AppBskyActorPutPreferencesActorsResponseBody$outboundSchema` instead. */
   export const outboundSchema =
-    AppBskyActorPutPreferencesActorResponseBody$outboundSchema;
-  /** @deprecated use `AppBskyActorPutPreferencesActorResponseBody$Outbound` instead. */
-  export type Outbound = AppBskyActorPutPreferencesActorResponseBody$Outbound;
+    AppBskyActorPutPreferencesActorsResponseBody$outboundSchema;
+  /** @deprecated use `AppBskyActorPutPreferencesActorsResponseBody$Outbound` instead. */
+  export type Outbound = AppBskyActorPutPreferencesActorsResponseBody$Outbound;
 }
 
 /** @internal */

@@ -5,7 +5,7 @@
 ```typescript
 import { ToolsOzoneSignatureFindCorrelationError } from "bluesky/models/errors";
 
-let value: ToolsOzoneSignatureFindCorrelationError = "InvalidRequest";
+let value: ToolsOzoneSignatureFindCorrelationError = "InvalidToken";
 ```
 
 ## Values

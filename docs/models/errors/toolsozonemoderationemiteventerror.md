@@ -5,7 +5,7 @@
 ```typescript
 import { ToolsOzoneModerationEmitEventError } from "bluesky/models/errors";
 
-let value: ToolsOzoneModerationEmitEventError = "SubjectHasAction";
+let value: ToolsOzoneModerationEmitEventError = "InvalidRequest";
 ```
 
 ## Values

@@ -8,8 +8,8 @@ Logs lifecycle event on a record subject. Normally captured by automod from the 
 import { ToolsOzoneModerationDefsRecordEvent } from "bluesky/models/components";
 
 let value: ToolsOzoneModerationDefsRecordEvent = {
-  op: "create",
-  timestamp: new Date("2023-01-19T21:32:01.817Z"),
+  op: "update",
+  timestamp: new Date("2023-01-13T23:06:27.556Z"),
 };
 ```
 

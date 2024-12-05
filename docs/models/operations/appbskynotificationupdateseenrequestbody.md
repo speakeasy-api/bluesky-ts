@@ -6,7 +6,7 @@
 import { AppBskyNotificationUpdateSeenRequestBody } from "bluesky/models/operations";
 
 let value: AppBskyNotificationUpdateSeenRequestBody = {
-  seenAt: new Date("2022-07-08T02:32:49.310Z"),
+  seenAt: new Date("2024-03-11T01:40:18.315Z"),
 };
 ```
 

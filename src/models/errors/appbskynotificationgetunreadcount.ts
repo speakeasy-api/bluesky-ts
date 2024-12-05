@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type AppBskyNotificationGetUnreadCountNotificationResponseBodyData = {
+export type AppBskyNotificationGetUnreadCountNotificationsResponseBodyData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,16 +16,16 @@ export type AppBskyNotificationGetUnreadCountNotificationResponseBodyData = {
 /**
  * Unauthorized
  */
-export class AppBskyNotificationGetUnreadCountNotificationResponseBody
+export class AppBskyNotificationGetUnreadCountNotificationsResponseBody
   extends Error
 {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: AppBskyNotificationGetUnreadCountNotificationResponseBodyData;
+  data$: AppBskyNotificationGetUnreadCountNotificationsResponseBodyData;
 
   constructor(
-    err: AppBskyNotificationGetUnreadCountNotificationResponseBodyData,
+    err: AppBskyNotificationGetUnreadCountNotificationsResponseBodyData,
   ) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
@@ -35,7 +35,7 @@ export class AppBskyNotificationGetUnreadCountNotificationResponseBody
 
     this.error = err.error;
 
-    this.name = "AppBskyNotificationGetUnreadCountNotificationResponseBody";
+    this.name = "AppBskyNotificationGetUnreadCountNotificationsResponseBody";
   }
 }
 
@@ -79,9 +79,9 @@ export class AppBskyNotificationGetUnreadCountResponseBody extends Error {
 }
 
 /** @internal */
-export const AppBskyNotificationGetUnreadCountNotificationResponseBody$inboundSchema:
+export const AppBskyNotificationGetUnreadCountNotificationsResponseBody$inboundSchema:
   z.ZodType<
-    AppBskyNotificationGetUnreadCountNotificationResponseBody,
+    AppBskyNotificationGetUnreadCountNotificationsResponseBody,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -89,23 +89,23 @@ export const AppBskyNotificationGetUnreadCountNotificationResponseBody$inboundSc
     message: z.string(),
   })
     .transform((v) => {
-      return new AppBskyNotificationGetUnreadCountNotificationResponseBody(v);
+      return new AppBskyNotificationGetUnreadCountNotificationsResponseBody(v);
     });
 
 /** @internal */
-export type AppBskyNotificationGetUnreadCountNotificationResponseBody$Outbound =
+export type AppBskyNotificationGetUnreadCountNotificationsResponseBody$Outbound =
   {
     error: "AuthMissing";
     message: string;
   };
 
 /** @internal */
-export const AppBskyNotificationGetUnreadCountNotificationResponseBody$outboundSchema:
+export const AppBskyNotificationGetUnreadCountNotificationsResponseBody$outboundSchema:
   z.ZodType<
-    AppBskyNotificationGetUnreadCountNotificationResponseBody$Outbound,
+    AppBskyNotificationGetUnreadCountNotificationsResponseBody$Outbound,
     z.ZodTypeDef,
-    AppBskyNotificationGetUnreadCountNotificationResponseBody
-  > = z.instanceof(AppBskyNotificationGetUnreadCountNotificationResponseBody)
+    AppBskyNotificationGetUnreadCountNotificationsResponseBody
+  > = z.instanceof(AppBskyNotificationGetUnreadCountNotificationsResponseBody)
     .transform(v => v.data$)
     .pipe(z.object({
       error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -116,16 +116,16 @@ export const AppBskyNotificationGetUnreadCountNotificationResponseBody$outboundS
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyNotificationGetUnreadCountNotificationResponseBody$ {
-  /** @deprecated use `AppBskyNotificationGetUnreadCountNotificationResponseBody$inboundSchema` instead. */
+export namespace AppBskyNotificationGetUnreadCountNotificationsResponseBody$ {
+  /** @deprecated use `AppBskyNotificationGetUnreadCountNotificationsResponseBody$inboundSchema` instead. */
   export const inboundSchema =
-    AppBskyNotificationGetUnreadCountNotificationResponseBody$inboundSchema;
-  /** @deprecated use `AppBskyNotificationGetUnreadCountNotificationResponseBody$outboundSchema` instead. */
+    AppBskyNotificationGetUnreadCountNotificationsResponseBody$inboundSchema;
+  /** @deprecated use `AppBskyNotificationGetUnreadCountNotificationsResponseBody$outboundSchema` instead. */
   export const outboundSchema =
-    AppBskyNotificationGetUnreadCountNotificationResponseBody$outboundSchema;
-  /** @deprecated use `AppBskyNotificationGetUnreadCountNotificationResponseBody$Outbound` instead. */
+    AppBskyNotificationGetUnreadCountNotificationsResponseBody$outboundSchema;
+  /** @deprecated use `AppBskyNotificationGetUnreadCountNotificationsResponseBody$Outbound` instead. */
   export type Outbound =
-    AppBskyNotificationGetUnreadCountNotificationResponseBody$Outbound;
+    AppBskyNotificationGetUnreadCountNotificationsResponseBody$Outbound;
 }
 
 /** @internal */

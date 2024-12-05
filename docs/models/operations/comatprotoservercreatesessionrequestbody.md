@@ -7,7 +7,7 @@ import { ComAtprotoServerCreateSessionRequestBody } from "bluesky/models/operati
 
 let value: ComAtprotoServerCreateSessionRequestBody = {
   identifier: "<value>",
-  password: "WIQSaF2vTLtLeFv",
+  password: "qBB2GyzsL7I869G",
 };
 ```
 

@@ -5,7 +5,7 @@
 ```typescript
 import { AppBskyGraphSearchStarterPacksError } from "bluesky/models/errors";
 
-let value: AppBskyGraphSearchStarterPacksError = "InvalidToken";
+let value: AppBskyGraphSearchStarterPacksError = "InvalidRequest";
 ```
 
 ## Values

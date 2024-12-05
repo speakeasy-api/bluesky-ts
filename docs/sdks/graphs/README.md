@@ -1,0 +1,662 @@
+# Graphs
+(*graphs*)
+
+## Overview
+
+### Available Operations
+
+* [getBlocks](#getblocks) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+
+*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
+
+Enumerates which accounts the requesting account is currently blocking. Requires auth.
+* [getKnownFollowers](#getknownfollowers) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+
+*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
+
+Enumerates accounts which follow a specified account (actor) and are followed by the viewer.
+* [getListBlocks](#getlistblocks) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+
+*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
+
+Get mod lists that the requesting account (actor) is blocking. Requires auth.
+* [getMutes](#getmutes) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+
+*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
+
+Enumerates accounts that the requesting account (actor) currently has muted. Requires auth.
+* [getStarterPacks](#getstarterpacks) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+
+*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
+
+Get views for a list of starter packs.
+* [muteThread](#mutethread) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+
+*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
+
+Mutes a thread preventing notifications from the thread and any of its children. Mutes are private in Bluesky. Requires auth.
+* [unmuteActorList](#unmuteactorlist) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+
+*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
+
+Unmutes the specified list of accounts. Requires auth.
+
+## getBlocks
+
+*This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+
+*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
+
+Enumerates which accounts the requesting account is currently blocking. Requires auth.
+
+### Example Usage
+
+```typescript
+import { Bluesky } from "bluesky";
+
+const bluesky = new Bluesky({
+  bearer: process.env["BLUESKY_BEARER"] ?? "",
+});
+
+async function run() {
+  const result = await bluesky.graphs.getBlocks();
+
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { BlueskyCore } from "bluesky/core.js";
+import { graphsGetBlocks } from "bluesky/funcs/graphsGetBlocks.js";
+
+// Use `BlueskyCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const bluesky = new BlueskyCore({
+  bearer: process.env["BLUESKY_BEARER"] ?? "",
+});
+
+async function run() {
+  const res = await graphsGetBlocks(bluesky);
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
+
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.AppBskyGraphGetBlocksRequest](../../models/operations/appbskygraphgetblocksrequest.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.AppBskyGraphGetBlocksResponse](../../models/operations/appbskygraphgetblocksresponse.md)\>**
+
+### Errors
+
+| Error Type                                     | Status Code                                    | Content Type                                   |
+| ---------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- |
+| errors.AppBskyGraphGetBlocksResponseBody       | 400                                            | application/json                               |
+| errors.AppBskyGraphGetBlocksGraphsResponseBody | 401                                            | application/json                               |
+| errors.Unauthorized                            | 403, 407, 511                                  | application/json                               |
+| errors.NotFound                                | 404, 501, 505                                  | application/json                               |
+| errors.Timeout                                 | 408, 504                                       | application/json                               |
+| errors.BadRequest                              | 413, 414, 415, 422, 431, 510                   | application/json                               |
+| errors.RateLimited                             | 429                                            | application/json                               |
+| errors.InternalServerError                     | 500, 502, 503, 506, 507, 508                   | application/json                               |
+| errors.APIError                                | 4XX, 5XX                                       | \*/\*                                          |
+
+## getKnownFollowers
+
+*This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+
+*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
+
+Enumerates accounts which follow a specified account (actor) and are followed by the viewer.
+
+### Example Usage
+
+```typescript
+import { Bluesky } from "bluesky";
+
+const bluesky = new Bluesky({
+  bearer: process.env["BLUESKY_BEARER"] ?? "",
+});
+
+async function run() {
+  const result = await bluesky.graphs.getKnownFollowers({
+    actor: "<value>",
+  });
+
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { BlueskyCore } from "bluesky/core.js";
+import { graphsGetKnownFollowers } from "bluesky/funcs/graphsGetKnownFollowers.js";
+
+// Use `BlueskyCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const bluesky = new BlueskyCore({
+  bearer: process.env["BLUESKY_BEARER"] ?? "",
+});
+
+async function run() {
+  const res = await graphsGetKnownFollowers(bluesky, {
+    actor: "<value>",
+  });
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
+
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.AppBskyGraphGetKnownFollowersRequest](../../models/operations/appbskygraphgetknownfollowersrequest.md)                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.AppBskyGraphGetKnownFollowersResponse](../../models/operations/appbskygraphgetknownfollowersresponse.md)\>**
+
+### Errors
+
+| Error Type                                             | Status Code                                            | Content Type                                           |
+| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
+| errors.AppBskyGraphGetKnownFollowersResponseBody       | 400                                                    | application/json                                       |
+| errors.AppBskyGraphGetKnownFollowersGraphsResponseBody | 401                                                    | application/json                                       |
+| errors.Unauthorized                                    | 403, 407, 511                                          | application/json                                       |
+| errors.NotFound                                        | 404, 501, 505                                          | application/json                                       |
+| errors.Timeout                                         | 408, 504                                               | application/json                                       |
+| errors.BadRequest                                      | 413, 414, 415, 422, 431, 510                           | application/json                                       |
+| errors.RateLimited                                     | 429                                                    | application/json                                       |
+| errors.InternalServerError                             | 500, 502, 503, 506, 507, 508                           | application/json                                       |
+| errors.APIError                                        | 4XX, 5XX                                               | \*/\*                                                  |
+
+## getListBlocks
+
+*This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+
+*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
+
+Get mod lists that the requesting account (actor) is blocking. Requires auth.
+
+### Example Usage
+
+```typescript
+import { Bluesky } from "bluesky";
+
+const bluesky = new Bluesky({
+  bearer: process.env["BLUESKY_BEARER"] ?? "",
+});
+
+async function run() {
+  const result = await bluesky.graphs.getListBlocks();
+
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { BlueskyCore } from "bluesky/core.js";
+import { graphsGetListBlocks } from "bluesky/funcs/graphsGetListBlocks.js";
+
+// Use `BlueskyCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const bluesky = new BlueskyCore({
+  bearer: process.env["BLUESKY_BEARER"] ?? "",
+});
+
+async function run() {
+  const res = await graphsGetListBlocks(bluesky);
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
+
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.AppBskyGraphGetListBlocksRequest](../../models/operations/appbskygraphgetlistblocksrequest.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.AppBskyGraphGetListBlocksResponse](../../models/operations/appbskygraphgetlistblocksresponse.md)\>**
+
+### Errors
+
+| Error Type                                         | Status Code                                        | Content Type                                       |
+| -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
+| errors.AppBskyGraphGetListBlocksResponseBody       | 400                                                | application/json                                   |
+| errors.AppBskyGraphGetListBlocksGraphsResponseBody | 401                                                | application/json                                   |
+| errors.Unauthorized                                | 403, 407, 511                                      | application/json                                   |
+| errors.NotFound                                    | 404, 501, 505                                      | application/json                                   |
+| errors.Timeout                                     | 408, 504                                           | application/json                                   |
+| errors.BadRequest                                  | 413, 414, 415, 422, 431, 510                       | application/json                                   |
+| errors.RateLimited                                 | 429                                                | application/json                                   |
+| errors.InternalServerError                         | 500, 502, 503, 506, 507, 508                       | application/json                                   |
+| errors.APIError                                    | 4XX, 5XX                                           | \*/\*                                              |
+
+## getMutes
+
+*This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+
+*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
+
+Enumerates accounts that the requesting account (actor) currently has muted. Requires auth.
+
+### Example Usage
+
+```typescript
+import { Bluesky } from "bluesky";
+
+const bluesky = new Bluesky({
+  bearer: process.env["BLUESKY_BEARER"] ?? "",
+});
+
+async function run() {
+  const result = await bluesky.graphs.getMutes();
+
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { BlueskyCore } from "bluesky/core.js";
+import { graphsGetMutes } from "bluesky/funcs/graphsGetMutes.js";
+
+// Use `BlueskyCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const bluesky = new BlueskyCore({
+  bearer: process.env["BLUESKY_BEARER"] ?? "",
+});
+
+async function run() {
+  const res = await graphsGetMutes(bluesky);
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
+
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.AppBskyGraphGetMutesRequest](../../models/operations/appbskygraphgetmutesrequest.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.AppBskyGraphGetMutesResponse](../../models/operations/appbskygraphgetmutesresponse.md)\>**
+
+### Errors
+
+| Error Type                                    | Status Code                                   | Content Type                                  |
+| --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
+| errors.AppBskyGraphGetMutesResponseBody       | 400                                           | application/json                              |
+| errors.AppBskyGraphGetMutesGraphsResponseBody | 401                                           | application/json                              |
+| errors.Unauthorized                           | 403, 407, 511                                 | application/json                              |
+| errors.NotFound                               | 404, 501, 505                                 | application/json                              |
+| errors.Timeout                                | 408, 504                                      | application/json                              |
+| errors.BadRequest                             | 413, 414, 415, 422, 431, 510                  | application/json                              |
+| errors.RateLimited                            | 429                                           | application/json                              |
+| errors.InternalServerError                    | 500, 502, 503, 506, 507, 508                  | application/json                              |
+| errors.APIError                               | 4XX, 5XX                                      | \*/\*                                         |
+
+## getStarterPacks
+
+*This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+
+*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
+
+Get views for a list of starter packs.
+
+### Example Usage
+
+```typescript
+import { Bluesky } from "bluesky";
+
+const bluesky = new Bluesky({
+  bearer: process.env["BLUESKY_BEARER"] ?? "",
+});
+
+async function run() {
+  const result = await bluesky.graphs.getStarterPacks({
+    uris: [
+      "https://enlightened-slime.biz",
+    ],
+  });
+
+  // Handle the result
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { BlueskyCore } from "bluesky/core.js";
+import { graphsGetStarterPacks } from "bluesky/funcs/graphsGetStarterPacks.js";
+
+// Use `BlueskyCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const bluesky = new BlueskyCore({
+  bearer: process.env["BLUESKY_BEARER"] ?? "",
+});
+
+async function run() {
+  const res = await graphsGetStarterPacks(bluesky, {
+    uris: [
+      "https://broken-airmail.com",
+    ],
+  });
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
+
+  // Handle the result
+  console.log(result);
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.AppBskyGraphGetStarterPacksRequest](../../models/operations/appbskygraphgetstarterpacksrequest.md)                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.AppBskyGraphGetStarterPacksResponseBody](../../models/operations/appbskygraphgetstarterpacksresponsebody.md)\>**
+
+### Errors
+
+| Error Type                                           | Status Code                                          | Content Type                                         |
+| ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
+| errors.AppBskyGraphGetStarterPacksResponseBody       | 400                                                  | application/json                                     |
+| errors.AppBskyGraphGetStarterPacksGraphsResponseBody | 401                                                  | application/json                                     |
+| errors.Unauthorized                                  | 403, 407, 511                                        | application/json                                     |
+| errors.NotFound                                      | 404, 501, 505                                        | application/json                                     |
+| errors.Timeout                                       | 408, 504                                             | application/json                                     |
+| errors.BadRequest                                    | 413, 414, 415, 422, 431, 510                         | application/json                                     |
+| errors.RateLimited                                   | 429                                                  | application/json                                     |
+| errors.InternalServerError                           | 500, 502, 503, 506, 507, 508                         | application/json                                     |
+| errors.APIError                                      | 4XX, 5XX                                             | \*/\*                                                |
+
+## muteThread
+
+*This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+
+*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
+
+Mutes a thread preventing notifications from the thread and any of its children. Mutes are private in Bluesky. Requires auth.
+
+### Example Usage
+
+```typescript
+import { Bluesky } from "bluesky";
+
+const bluesky = new Bluesky({
+  bearer: process.env["BLUESKY_BEARER"] ?? "",
+});
+
+async function run() {
+  await bluesky.graphs.muteThread({
+    root: "https://clean-armchair.biz/",
+  });
+
+
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { BlueskyCore } from "bluesky/core.js";
+import { graphsMuteThread } from "bluesky/funcs/graphsMuteThread.js";
+
+// Use `BlueskyCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const bluesky = new BlueskyCore({
+  bearer: process.env["BLUESKY_BEARER"] ?? "",
+});
+
+async function run() {
+  const res = await graphsMuteThread(bluesky, {
+    root: "https://clean-armchair.biz/",
+  });
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
+
+  
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.AppBskyGraphMuteThreadRequestBody](../../models/operations/appbskygraphmutethreadrequestbody.md)                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<void\>**
+
+### Errors
+
+| Error Type                                      | Status Code                                     | Content Type                                    |
+| ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
+| errors.AppBskyGraphMuteThreadResponseBody       | 400                                             | application/json                                |
+| errors.AppBskyGraphMuteThreadGraphsResponseBody | 401                                             | application/json                                |
+| errors.Unauthorized                             | 403, 407, 511                                   | application/json                                |
+| errors.NotFound                                 | 404, 501, 505                                   | application/json                                |
+| errors.Timeout                                  | 408, 504                                        | application/json                                |
+| errors.BadRequest                               | 413, 414, 415, 422, 431, 510                    | application/json                                |
+| errors.RateLimited                              | 429                                             | application/json                                |
+| errors.InternalServerError                      | 500, 502, 503, 506, 507, 508                    | application/json                                |
+| errors.APIError                                 | 4XX, 5XX                                        | \*/\*                                           |
+
+## unmuteActorList
+
+*This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+
+*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
+
+Unmutes the specified list of accounts. Requires auth.
+
+### Example Usage
+
+```typescript
+import { Bluesky } from "bluesky";
+
+const bluesky = new Bluesky({
+  bearer: process.env["BLUESKY_BEARER"] ?? "",
+});
+
+async function run() {
+  await bluesky.graphs.unmuteActorList({
+    list: "https://instructive-monasticism.name/",
+  });
+
+
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { BlueskyCore } from "bluesky/core.js";
+import { graphsUnmuteActorList } from "bluesky/funcs/graphsUnmuteActorList.js";
+
+// Use `BlueskyCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const bluesky = new BlueskyCore({
+  bearer: process.env["BLUESKY_BEARER"] ?? "",
+});
+
+async function run() {
+  const res = await graphsUnmuteActorList(bluesky, {
+    list: "https://instructive-monasticism.name/",
+  });
+
+  if (!res.ok) {
+    throw res.error;
+  }
+
+  const { value: result } = res;
+
+  
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.AppBskyGraphUnmuteActorListRequestBody](../../models/operations/appbskygraphunmuteactorlistrequestbody.md)                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<void\>**
+
+### Errors
+
+| Error Type                                           | Status Code                                          | Content Type                                         |
+| ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
+| errors.AppBskyGraphUnmuteActorListResponseBody       | 400                                                  | application/json                                     |
+| errors.AppBskyGraphUnmuteActorListGraphsResponseBody | 401                                                  | application/json                                     |
+| errors.Unauthorized                                  | 403, 407, 511                                        | application/json                                     |
+| errors.NotFound                                      | 404, 501, 505                                        | application/json                                     |
+| errors.Timeout                                       | 408, 504                                             | application/json                                     |
+| errors.BadRequest                                    | 413, 414, 415, 422, 431, 510                         | application/json                                     |
+| errors.RateLimited                                   | 429                                                  | application/json                                     |
+| errors.InternalServerError                           | 500, 502, 503, 506, 507, 508                         | application/json                                     |
+| errors.APIError                                      | 4XX, 5XX                                             | \*/\*                                                |

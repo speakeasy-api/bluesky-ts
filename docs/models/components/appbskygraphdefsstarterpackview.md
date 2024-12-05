@@ -6,14 +6,14 @@
 import { AppBskyGraphDefsStarterPackView } from "bluesky/models/components";
 
 let value: AppBskyGraphDefsStarterPackView = {
-  uri: "https://pleasing-angle.com",
+  uri: "https://tricky-skean.org",
   cid: "<id>",
   record: "<value>",
   creator: {
     did: "<id>",
     handle: "<value>",
   },
-  indexedAt: new Date("2023-01-10T22:42:01.200Z"),
+  indexedAt: new Date("2022-10-30T20:46:20.876Z"),
 };
 ```
 

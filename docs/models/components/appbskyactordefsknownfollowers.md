@@ -8,7 +8,7 @@ The subject's followers whom you also follow
 import { AppBskyActorDefsKnownFollowers } from "bluesky/models/components";
 
 let value: AppBskyActorDefsKnownFollowers = {
-  count: 327988,
+  count: 979527,
   followers: [],
 };
 ```

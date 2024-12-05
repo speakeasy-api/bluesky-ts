@@ -7,14 +7,14 @@ import { AppBskyFeedDefsThreadViewPost } from "bluesky/models/components";
 
 let value: AppBskyFeedDefsThreadViewPost = {
   post: {
-    uri: "https://scented-availability.info",
+    uri: "https://jam-packed-section.org",
     cid: "<id>",
     author: {
       did: "<id>",
       handle: "<value>",
     },
     record: "<value>",
-    indexedAt: new Date("2022-07-03T12:13:54.462Z"),
+    indexedAt: new Date("2022-11-24T20:56:14.878Z"),
   },
 };
 ```

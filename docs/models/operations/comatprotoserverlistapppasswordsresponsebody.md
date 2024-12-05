@@ -11,7 +11,7 @@ let value: ComAtprotoServerListAppPasswordsResponseBody = {
   passwords: [
     {
       name: "<value>",
-      createdAt: new Date("2022-02-06T12:02:41.628Z"),
+      createdAt: new Date("2023-12-02T01:59:21.357Z"),
     },
   ],
 };

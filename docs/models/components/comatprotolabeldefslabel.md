@@ -9,9 +9,9 @@ import { ComAtprotoLabelDefsLabel } from "bluesky/models/components";
 
 let value: ComAtprotoLabelDefsLabel = {
   src: "<id>",
-  uri: "https://limp-giggle.org/",
+  uri: "https://zany-freckle.info/",
   val: "<value>",
-  cts: new Date("2022-07-11T10:12:51.010Z"),
+  cts: new Date("2023-02-19T13:21:39.892Z"),
 };
 ```
 

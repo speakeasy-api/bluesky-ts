@@ -15,8 +15,8 @@ let value: ToolsOzoneCommunicationListTemplatesResponseBody = {
       contentMarkdown: "<value>",
       disabled: false,
       lastUpdatedBy: "<id>",
-      createdAt: new Date("2024-12-16T02:21:59.446Z"),
-      updatedAt: new Date("2024-11-27T23:49:54.191Z"),
+      createdAt: new Date("2022-02-20T10:10:34.700Z"),
+      updatedAt: new Date("2022-09-12T23:01:13.510Z"),
     },
   ],
 };

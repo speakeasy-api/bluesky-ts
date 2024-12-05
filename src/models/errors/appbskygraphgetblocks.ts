@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type AppBskyGraphGetBlocksGraphResponseBodyData = {
+export type AppBskyGraphGetBlocksGraphsResponseBodyData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,13 +16,13 @@ export type AppBskyGraphGetBlocksGraphResponseBodyData = {
 /**
  * Unauthorized
  */
-export class AppBskyGraphGetBlocksGraphResponseBody extends Error {
+export class AppBskyGraphGetBlocksGraphsResponseBody extends Error {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: AppBskyGraphGetBlocksGraphResponseBodyData;
+  data$: AppBskyGraphGetBlocksGraphsResponseBodyData;
 
-  constructor(err: AppBskyGraphGetBlocksGraphResponseBodyData) {
+  constructor(err: AppBskyGraphGetBlocksGraphsResponseBodyData) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -31,7 +31,7 @@ export class AppBskyGraphGetBlocksGraphResponseBody extends Error {
 
     this.error = err.error;
 
-    this.name = "AppBskyGraphGetBlocksGraphResponseBody";
+    this.name = "AppBskyGraphGetBlocksGraphsResponseBody";
   }
 }
 
@@ -75,8 +75,8 @@ export class AppBskyGraphGetBlocksResponseBody extends Error {
 }
 
 /** @internal */
-export const AppBskyGraphGetBlocksGraphResponseBody$inboundSchema: z.ZodType<
-  AppBskyGraphGetBlocksGraphResponseBody,
+export const AppBskyGraphGetBlocksGraphsResponseBody$inboundSchema: z.ZodType<
+  AppBskyGraphGetBlocksGraphsResponseBody,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -84,21 +84,21 @@ export const AppBskyGraphGetBlocksGraphResponseBody$inboundSchema: z.ZodType<
   message: z.string(),
 })
   .transform((v) => {
-    return new AppBskyGraphGetBlocksGraphResponseBody(v);
+    return new AppBskyGraphGetBlocksGraphsResponseBody(v);
   });
 
 /** @internal */
-export type AppBskyGraphGetBlocksGraphResponseBody$Outbound = {
+export type AppBskyGraphGetBlocksGraphsResponseBody$Outbound = {
   error: "AuthMissing";
   message: string;
 };
 
 /** @internal */
-export const AppBskyGraphGetBlocksGraphResponseBody$outboundSchema: z.ZodType<
-  AppBskyGraphGetBlocksGraphResponseBody$Outbound,
+export const AppBskyGraphGetBlocksGraphsResponseBody$outboundSchema: z.ZodType<
+  AppBskyGraphGetBlocksGraphsResponseBody$Outbound,
   z.ZodTypeDef,
-  AppBskyGraphGetBlocksGraphResponseBody
-> = z.instanceof(AppBskyGraphGetBlocksGraphResponseBody)
+  AppBskyGraphGetBlocksGraphsResponseBody
+> = z.instanceof(AppBskyGraphGetBlocksGraphsResponseBody)
   .transform(v => v.data$)
   .pipe(z.object({
     error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -109,15 +109,15 @@ export const AppBskyGraphGetBlocksGraphResponseBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyGraphGetBlocksGraphResponseBody$ {
-  /** @deprecated use `AppBskyGraphGetBlocksGraphResponseBody$inboundSchema` instead. */
+export namespace AppBskyGraphGetBlocksGraphsResponseBody$ {
+  /** @deprecated use `AppBskyGraphGetBlocksGraphsResponseBody$inboundSchema` instead. */
   export const inboundSchema =
-    AppBskyGraphGetBlocksGraphResponseBody$inboundSchema;
-  /** @deprecated use `AppBskyGraphGetBlocksGraphResponseBody$outboundSchema` instead. */
+    AppBskyGraphGetBlocksGraphsResponseBody$inboundSchema;
+  /** @deprecated use `AppBskyGraphGetBlocksGraphsResponseBody$outboundSchema` instead. */
   export const outboundSchema =
-    AppBskyGraphGetBlocksGraphResponseBody$outboundSchema;
-  /** @deprecated use `AppBskyGraphGetBlocksGraphResponseBody$Outbound` instead. */
-  export type Outbound = AppBskyGraphGetBlocksGraphResponseBody$Outbound;
+    AppBskyGraphGetBlocksGraphsResponseBody$outboundSchema;
+  /** @deprecated use `AppBskyGraphGetBlocksGraphsResponseBody$Outbound` instead. */
+  export type Outbound = AppBskyGraphGetBlocksGraphsResponseBody$Outbound;
 }
 
 /** @internal */

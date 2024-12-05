@@ -6,7 +6,7 @@
 import { AppBskyLabelerDefsLabelerViewDetailed } from "bluesky/models/components";
 
 let value: AppBskyLabelerDefsLabelerViewDetailed = {
-  uri: "https://tricky-version.com",
+  uri: "https://hungry-meal.net/",
   cid: "<id>",
   creator: {
     did: "<id>",
@@ -14,10 +14,10 @@ let value: AppBskyLabelerDefsLabelerViewDetailed = {
   },
   policies: {
     labelValues: [
-      "!hide",
+      "!no-unauthenticated",
     ],
   },
-  indexedAt: new Date("2024-09-27T23:00:42.188Z"),
+  indexedAt: new Date("2022-01-22T07:56:26.664Z"),
 };
 ```
 

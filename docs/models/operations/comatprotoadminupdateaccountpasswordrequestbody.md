@@ -7,7 +7,7 @@ import { ComAtprotoAdminUpdateAccountPasswordRequestBody } from "bluesky/models/
 
 let value: ComAtprotoAdminUpdateAccountPasswordRequestBody = {
   did: "<id>",
-  password: "osl2b5f95R4IDMX",
+  password: "Xosl2b5f95R4IDM",
 };
 ```
 

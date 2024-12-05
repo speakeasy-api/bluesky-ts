@@ -6,7 +6,7 @@
 import { ComAtprotoRepoStrongRef } from "bluesky/models/components";
 
 let value: ComAtprotoRepoStrongRef = {
-  uri: "https://motionless-exasperation.org",
+  uri: "https://unrealistic-pilot.name",
   cid: "<id>",
 };
 ```

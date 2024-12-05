@@ -3,20 +3,78 @@
  */
 
 import { ClientSDK } from "../lib/sdks.js";
+import { Account } from "./account.js";
+import { Accounts } from "./accounts.js";
 import { Actor } from "./actor.js";
-import { Atproto } from "./atproto.js";
-import { Chat } from "./chat.js";
+import { Actors } from "./actors.js";
+import { Admin } from "./admin.js";
+import { Admins } from "./admins.js";
+import { AtprotoAdmin } from "./atprotoadmin.js";
+import { AtprotoIdentity } from "./atprotoidentity.js";
+import { AtprotoLabels } from "./atprotolabels.js";
+import { AtprotoModeration } from "./atprotomoderation.js";
+import { AtprotoRepo } from "./atprotorepo.js";
+import { AtprotoServer } from "./atprotoserver.js";
+import { AtprotoSync } from "./atprotosync.js";
+import { AtprotoSyncs } from "./atprotosyncs.js";
+import { ChatConvo } from "./chatconvo.js";
+import { ChatConvos } from "./chatconvos.js";
+import { ChatModeration } from "./chatmoderation.js";
+import { Chats } from "./chats.js";
+import { Communications } from "./communications.js";
+import { Conversations } from "./conversations.js";
+import { Convo } from "./convo.js";
+import { Convos } from "./convos.js";
 import { Feed } from "./feed.js";
+import { Feeds } from "./feeds.js";
 import { Graph } from "./graph.js";
-import { Labeler } from "./labeler.js";
+import { Graphs } from "./graphs.js";
+import { Identities } from "./identities.js";
+import { Identity } from "./identity.js";
+import { Labelers } from "./labelers.js";
+import { Moderation } from "./moderation.js";
+import { Moderations } from "./moderations.js";
 import { Notification } from "./notification.js";
+import { Notifications } from "./notifications.js";
 import { Ozone } from "./ozone.js";
-import { Video } from "./video.js";
+import { OzoneCommunication } from "./ozonecommunication.js";
+import { OzoneModeration } from "./ozonemoderation.js";
+import { OzoneModerations } from "./ozonemoderations.js";
+import { OzoneServer } from "./ozoneserver.js";
+import { OzoneSet } from "./ozoneset.js";
+import { OzoneSettings } from "./ozonesettings.js";
+import { OzoneSignature } from "./ozonesignature.js";
+import { OzoneSignatures } from "./ozonesignatures.js";
+import { Repo } from "./repo.js";
+import { Repos } from "./repos.js";
+import { Server } from "./server.js";
+import { Servers } from "./servers.js";
+import { Set } from "./set.js";
+import { Sets } from "./sets.js";
+import { Setting } from "./setting.js";
+import { Settings } from "./settings.js";
+import { Signature } from "./signature.js";
+import { Sync } from "./sync.js";
+import { Syncs } from "./syncs.js";
+import { Team } from "./team.js";
+import { Teams } from "./teams.js";
+import { Users } from "./users.js";
+import { Videos } from "./videos.js";
 
 export class Bluesky extends ClientSDK {
+  private _actors?: Actors;
+  get actors(): Actors {
+    return (this._actors ??= new Actors(this._options));
+  }
+
   private _actor?: Actor;
   get actor(): Actor {
     return (this._actor ??= new Actor(this._options));
+  }
+
+  private _feeds?: Feeds;
+  get feeds(): Feeds {
+    return (this._feeds ??= new Feeds(this._options));
   }
 
   private _feed?: Feed;
@@ -29,9 +87,24 @@ export class Bluesky extends ClientSDK {
     return (this._graph ??= new Graph(this._options));
   }
 
-  private _labeler?: Labeler;
-  get labeler(): Labeler {
-    return (this._labeler ??= new Labeler(this._options));
+  private _graphs?: Graphs;
+  get graphs(): Graphs {
+    return (this._graphs ??= new Graphs(this._options));
+  }
+
+  private _users?: Users;
+  get users(): Users {
+    return (this._users ??= new Users(this._options));
+  }
+
+  private _labelers?: Labelers;
+  get labelers(): Labelers {
+    return (this._labelers ??= new Labelers(this._options));
+  }
+
+  private _notifications?: Notifications;
+  get notifications(): Notifications {
+    return (this._notifications ??= new Notifications(this._options));
   }
 
   private _notification?: Notification;
@@ -39,23 +112,238 @@ export class Bluesky extends ClientSDK {
     return (this._notification ??= new Notification(this._options));
   }
 
-  private _video?: Video;
-  get video(): Video {
-    return (this._video ??= new Video(this._options));
+  private _videos?: Videos;
+  get videos(): Videos {
+    return (this._videos ??= new Videos(this._options));
   }
 
-  private _chat?: Chat;
-  get chat(): Chat {
-    return (this._chat ??= new Chat(this._options));
+  private _account?: Account;
+  get account(): Account {
+    return (this._account ??= new Account(this._options));
   }
 
-  private _atproto?: Atproto;
-  get atproto(): Atproto {
-    return (this._atproto ??= new Atproto(this._options));
+  private _convo?: Convo;
+  get convo(): Convo {
+    return (this._convo ??= new Convo(this._options));
+  }
+
+  private _chats?: Chats;
+  get chats(): Chats {
+    return (this._chats ??= new Chats(this._options));
+  }
+
+  private _chatConvos?: ChatConvos;
+  get chatConvos(): ChatConvos {
+    return (this._chatConvos ??= new ChatConvos(this._options));
+  }
+
+  private _conversations?: Conversations;
+  get conversations(): Conversations {
+    return (this._conversations ??= new Conversations(this._options));
+  }
+
+  private _convos?: Convos;
+  get convos(): Convos {
+    return (this._convos ??= new Convos(this._options));
+  }
+
+  private _chatConvo?: ChatConvo;
+  get chatConvo(): ChatConvo {
+    return (this._chatConvo ??= new ChatConvo(this._options));
+  }
+
+  private _chatModeration?: ChatModeration;
+  get chatModeration(): ChatModeration {
+    return (this._chatModeration ??= new ChatModeration(this._options));
+  }
+
+  private _admins?: Admins;
+  get admins(): Admins {
+    return (this._admins ??= new Admins(this._options));
+  }
+
+  private _atprotoAdmin?: AtprotoAdmin;
+  get atprotoAdmin(): AtprotoAdmin {
+    return (this._atprotoAdmin ??= new AtprotoAdmin(this._options));
+  }
+
+  private _admin?: Admin;
+  get admin(): Admin {
+    return (this._admin ??= new Admin(this._options));
+  }
+
+  private _identity?: Identity;
+  get identity(): Identity {
+    return (this._identity ??= new Identity(this._options));
+  }
+
+  private _atprotoIdentity?: AtprotoIdentity;
+  get atprotoIdentity(): AtprotoIdentity {
+    return (this._atprotoIdentity ??= new AtprotoIdentity(this._options));
+  }
+
+  private _identities?: Identities;
+  get identities(): Identities {
+    return (this._identities ??= new Identities(this._options));
+  }
+
+  private _atprotoLabels?: AtprotoLabels;
+  get atprotoLabels(): AtprotoLabels {
+    return (this._atprotoLabels ??= new AtprotoLabels(this._options));
+  }
+
+  private _atprotoModeration?: AtprotoModeration;
+  get atprotoModeration(): AtprotoModeration {
+    return (this._atprotoModeration ??= new AtprotoModeration(this._options));
+  }
+
+  private _repos?: Repos;
+  get repos(): Repos {
+    return (this._repos ??= new Repos(this._options));
+  }
+
+  private _atprotoRepo?: AtprotoRepo;
+  get atprotoRepo(): AtprotoRepo {
+    return (this._atprotoRepo ??= new AtprotoRepo(this._options));
+  }
+
+  private _repo?: Repo;
+  get repo(): Repo {
+    return (this._repo ??= new Repo(this._options));
+  }
+
+  private _atprotoServer?: AtprotoServer;
+  get atprotoServer(): AtprotoServer {
+    return (this._atprotoServer ??= new AtprotoServer(this._options));
+  }
+
+  private _server?: Server;
+  get server(): Server {
+    return (this._server ??= new Server(this._options));
+  }
+
+  private _accounts?: Accounts;
+  get accounts(): Accounts {
+    return (this._accounts ??= new Accounts(this._options));
+  }
+
+  private _servers?: Servers;
+  get servers(): Servers {
+    return (this._servers ??= new Servers(this._options));
+  }
+
+  private _atprotoSync?: AtprotoSync;
+  get atprotoSync(): AtprotoSync {
+    return (this._atprotoSync ??= new AtprotoSync(this._options));
+  }
+
+  private _syncs?: Syncs;
+  get syncs(): Syncs {
+    return (this._syncs ??= new Syncs(this._options));
+  }
+
+  private _atprotoSyncs?: AtprotoSyncs;
+  get atprotoSyncs(): AtprotoSyncs {
+    return (this._atprotoSyncs ??= new AtprotoSyncs(this._options));
+  }
+
+  private _sync?: Sync;
+  get sync(): Sync {
+    return (this._sync ??= new Sync(this._options));
+  }
+
+  private _communications?: Communications;
+  get communications(): Communications {
+    return (this._communications ??= new Communications(this._options));
+  }
+
+  private _ozoneCommunication?: OzoneCommunication;
+  get ozoneCommunication(): OzoneCommunication {
+    return (this._ozoneCommunication ??= new OzoneCommunication(this._options));
+  }
+
+  private _ozoneModeration?: OzoneModeration;
+  get ozoneModeration(): OzoneModeration {
+    return (this._ozoneModeration ??= new OzoneModeration(this._options));
+  }
+
+  private _moderation?: Moderation;
+  get moderation(): Moderation {
+    return (this._moderation ??= new Moderation(this._options));
+  }
+
+  private _moderations?: Moderations;
+  get moderations(): Moderations {
+    return (this._moderations ??= new Moderations(this._options));
+  }
+
+  private _ozoneModerations?: OzoneModerations;
+  get ozoneModerations(): OzoneModerations {
+    return (this._ozoneModerations ??= new OzoneModerations(this._options));
+  }
+
+  private _ozoneServer?: OzoneServer;
+  get ozoneServer(): OzoneServer {
+    return (this._ozoneServer ??= new OzoneServer(this._options));
+  }
+
+  private _ozoneSet?: OzoneSet;
+  get ozoneSet(): OzoneSet {
+    return (this._ozoneSet ??= new OzoneSet(this._options));
+  }
+
+  private _set?: Set;
+  get set(): Set {
+    return (this._set ??= new Set(this._options));
+  }
+
+  private _sets?: Sets;
+  get sets(): Sets {
+    return (this._sets ??= new Sets(this._options));
+  }
+
+  private _settings?: Settings;
+  get settings(): Settings {
+    return (this._settings ??= new Settings(this._options));
+  }
+
+  private _setting?: Setting;
+  get setting(): Setting {
+    return (this._setting ??= new Setting(this._options));
+  }
+
+  private _ozoneSettings?: OzoneSettings;
+  get ozoneSettings(): OzoneSettings {
+    return (this._ozoneSettings ??= new OzoneSettings(this._options));
+  }
+
+  private _signature?: Signature;
+  get signature(): Signature {
+    return (this._signature ??= new Signature(this._options));
+  }
+
+  private _ozoneSignatures?: OzoneSignatures;
+  get ozoneSignatures(): OzoneSignatures {
+    return (this._ozoneSignatures ??= new OzoneSignatures(this._options));
+  }
+
+  private _ozoneSignature?: OzoneSignature;
+  get ozoneSignature(): OzoneSignature {
+    return (this._ozoneSignature ??= new OzoneSignature(this._options));
   }
 
   private _ozone?: Ozone;
   get ozone(): Ozone {
     return (this._ozone ??= new Ozone(this._options));
+  }
+
+  private _teams?: Teams;
+  get teams(): Teams {
+    return (this._teams ??= new Teams(this._options));
+  }
+
+  private _team?: Team;
+  get team(): Team {
+    return (this._team ??= new Team(this._options));
   }
 }

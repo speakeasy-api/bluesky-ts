@@ -8,8 +8,8 @@ import { ToolsOzoneModerationDefsBlobView } from "bluesky/models/components";
 let value: ToolsOzoneModerationDefsBlobView = {
   cid: "<id>",
   mimeType: "<value>",
-  size: 373054,
-  createdAt: new Date("2022-08-04T17:59:47.205Z"),
+  size: 134173,
+  createdAt: new Date("2022-12-13T22:17:51.524Z"),
 };
 ```
 

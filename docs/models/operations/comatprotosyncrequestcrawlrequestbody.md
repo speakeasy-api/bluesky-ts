@@ -6,7 +6,7 @@
 import { ComAtprotoSyncRequestCrawlRequestBody } from "bluesky/models/operations";
 
 let value: ComAtprotoSyncRequestCrawlRequestBody = {
-  hostname: "entire-follower.net",
+  hostname: "forceful-printer.info",
 };
 ```
 

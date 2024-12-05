@@ -11,7 +11,7 @@ let value: ChatBskyConvoDefsDeletedMessageView = {
   sender: {
     did: "<id>",
   },
-  sentAt: new Date("2024-09-22T01:21:39.695Z"),
+  sentAt: new Date("2023-06-03T18:22:20.556Z"),
 };
 ```
 

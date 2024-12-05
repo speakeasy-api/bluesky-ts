@@ -11,7 +11,7 @@ let value: AppBskyVideoUploadVideoResponseBody = {
   jobStatus: {
     jobId: "<id>",
     did: "<id>",
-    state: "JOB_STATE_COMPLETED",
+    state: "JOB_STATE_FAILED",
   },
 };
 ```

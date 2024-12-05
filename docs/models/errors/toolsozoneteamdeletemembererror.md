@@ -5,7 +5,7 @@
 ```typescript
 import { ToolsOzoneTeamDeleteMemberError } from "bluesky/models/errors";
 
-let value: ToolsOzoneTeamDeleteMemberError = "MemberNotFound";
+let value: ToolsOzoneTeamDeleteMemberError = "InvalidToken";
 ```
 
 ## Values

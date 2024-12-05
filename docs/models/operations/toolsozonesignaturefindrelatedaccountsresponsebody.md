@@ -13,7 +13,7 @@ let value: ToolsOzoneSignatureFindRelatedAccountsResponseBody = {
       account: {
         did: "<id>",
         handle: "<value>",
-        indexedAt: new Date("2023-07-13T17:58:06.600Z"),
+        indexedAt: new Date("2024-02-03T08:16:25.886Z"),
       },
     },
   ],

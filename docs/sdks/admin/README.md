@@ -1,55 +1,25 @@
 # Admin
-(*atproto.admin*)
+(*admin*)
 
 ## Overview
 
 ### Available Operations
 
-* [deleteAccount](#deleteaccount) - *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
-
-*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
-
-Delete a user account as an administrator.
-* [disableAccountInvites](#disableaccountinvites) - *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
-
-*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
-
-Disable an account from receiving new invite codes, but does not invalidate existing codes.
 * [disableInviteCodes](#disableinvitecodes) - *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Disable some set of codes and/or all codes associated with a set of users.
-* [enableAccountInvites](#enableaccountinvites) - *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
-
-*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
-
-Re-enable an account's ability to receive invite codes.
 * [getAccountInfo](#getaccountinfo) - *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Get details about an account.
-* [getAccountInfos](#getaccountinfos) - *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
-
-*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
-
-Get details about some accounts.
-* [getInviteCodes](#getinvitecodes) - *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
-
-*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
-
-Get an admin view of invite codes.
 * [getSubjectStatus](#getsubjectstatus) - *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Get the service-specific admin status of a subject (account, record, or blob).
-* [searchAccounts](#searchaccounts) - *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
-
-*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
-
-Get list of accounts that matches your search query.
 * [sendEmail](#sendemail) - *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
@@ -76,166 +46,6 @@ Update the password for a user account as an administrator.
 
 Update the service-specific admin status of a subject (account, record, or blob).
 
-## deleteAccount
-
-*This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
-
-*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
-
-Delete a user account as an administrator.
-
-### Example Usage
-
-```typescript
-import { Bluesky } from "bluesky";
-
-const bluesky = new Bluesky({
-  bearer: process.env["BLUESKY_BEARER"] ?? "",
-});
-
-async function run() {
-  await bluesky.atproto.admin.deleteAccount({
-    did: "<id>",
-  });
-
-
-}
-
-run();
-```
-
-### Standalone function
-
-The standalone function version of this method:
-
-```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { atprotoAdminDeleteAccount } from "bluesky/funcs/atprotoAdminDeleteAccount.js";
-
-// Use `BlueskyCore` for best tree-shaking performance.
-// You can create one instance of it to use across an application.
-const bluesky = new BlueskyCore({
-  bearer: process.env["BLUESKY_BEARER"] ?? "",
-});
-
-async function run() {
-  const res = await atprotoAdminDeleteAccount(bluesky, {
-    did: "<id>",
-  });
-
-  if (!res.ok) {
-    throw res.error;
-  }
-
-  const { value: result } = res;
-
-  
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ComAtprotoAdminDeleteAccountRequestBody](../../models/operations/comatprotoadmindeleteaccountrequestbody.md)                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
-| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
-| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
-| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
-
-### Response
-
-**Promise\<void\>**
-
-### Errors
-
-| Error Type                                                  | Status Code                                                 | Content Type                                                |
-| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
-| errors.ComAtprotoAdminDeleteAccountResponseBody             | 400                                                         | application/json                                            |
-| errors.ComAtprotoAdminDeleteAccountAtprotoAdminResponseBody | 401                                                         | application/json                                            |
-| errors.APIError                                             | 4XX, 5XX                                                    | \*/\*                                                       |
-
-## disableAccountInvites
-
-*This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
-
-*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
-
-Disable an account from receiving new invite codes, but does not invalidate existing codes.
-
-### Example Usage
-
-```typescript
-import { Bluesky } from "bluesky";
-
-const bluesky = new Bluesky({
-  bearer: process.env["BLUESKY_BEARER"] ?? "",
-});
-
-async function run() {
-  await bluesky.atproto.admin.disableAccountInvites({
-    account: "<id>",
-  });
-
-
-}
-
-run();
-```
-
-### Standalone function
-
-The standalone function version of this method:
-
-```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { atprotoAdminDisableAccountInvites } from "bluesky/funcs/atprotoAdminDisableAccountInvites.js";
-
-// Use `BlueskyCore` for best tree-shaking performance.
-// You can create one instance of it to use across an application.
-const bluesky = new BlueskyCore({
-  bearer: process.env["BLUESKY_BEARER"] ?? "",
-});
-
-async function run() {
-  const res = await atprotoAdminDisableAccountInvites(bluesky, {
-    account: "<id>",
-  });
-
-  if (!res.ok) {
-    throw res.error;
-  }
-
-  const { value: result } = res;
-
-  
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ComAtprotoAdminDisableAccountInvitesRequestBody](../../models/operations/comatprotoadmindisableaccountinvitesrequestbody.md)                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
-| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
-| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
-| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
-
-### Response
-
-**Promise\<void\>**
-
-### Errors
-
-| Error Type                                                          | Status Code                                                         | Content Type                                                        |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| errors.ComAtprotoAdminDisableAccountInvitesResponseBody             | 400                                                                 | application/json                                                    |
-| errors.ComAtprotoAdminDisableAccountInvitesAtprotoAdminResponseBody | 401                                                                 | application/json                                                    |
-| errors.APIError                                                     | 4XX, 5XX                                                            | \*/\*                                                               |
-
 ## disableInviteCodes
 
 *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
@@ -254,7 +64,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  await bluesky.atproto.admin.disableInviteCodes();
+  await bluesky.admin.disableInviteCodes();
 
 
 }
@@ -268,7 +78,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { atprotoAdminDisableInviteCodes } from "bluesky/funcs/atprotoAdminDisableInviteCodes.js";
+import { adminDisableInviteCodes } from "bluesky/funcs/adminDisableInviteCodes.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -277,7 +87,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await atprotoAdminDisableInviteCodes(bluesky);
+  const res = await adminDisableInviteCodes(bluesky);
 
   if (!res.ok) {
     throw res.error;
@@ -306,91 +116,17 @@ run();
 
 ### Errors
 
-| Error Type                                                       | Status Code                                                      | Content Type                                                     |
-| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
-| errors.ComAtprotoAdminDisableInviteCodesResponseBody             | 400                                                              | application/json                                                 |
-| errors.ComAtprotoAdminDisableInviteCodesAtprotoAdminResponseBody | 401                                                              | application/json                                                 |
-| errors.APIError                                                  | 4XX, 5XX                                                         | \*/\*                                                            |
-
-## enableAccountInvites
-
-*This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
-
-*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
-
-Re-enable an account's ability to receive invite codes.
-
-### Example Usage
-
-```typescript
-import { Bluesky } from "bluesky";
-
-const bluesky = new Bluesky({
-  bearer: process.env["BLUESKY_BEARER"] ?? "",
-});
-
-async function run() {
-  await bluesky.atproto.admin.enableAccountInvites({
-    account: "<id>",
-  });
-
-
-}
-
-run();
-```
-
-### Standalone function
-
-The standalone function version of this method:
-
-```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { atprotoAdminEnableAccountInvites } from "bluesky/funcs/atprotoAdminEnableAccountInvites.js";
-
-// Use `BlueskyCore` for best tree-shaking performance.
-// You can create one instance of it to use across an application.
-const bluesky = new BlueskyCore({
-  bearer: process.env["BLUESKY_BEARER"] ?? "",
-});
-
-async function run() {
-  const res = await atprotoAdminEnableAccountInvites(bluesky, {
-    account: "<id>",
-  });
-
-  if (!res.ok) {
-    throw res.error;
-  }
-
-  const { value: result } = res;
-
-  
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ComAtprotoAdminEnableAccountInvitesRequestBody](../../models/operations/comatprotoadminenableaccountinvitesrequestbody.md)                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
-| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
-| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
-| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
-
-### Response
-
-**Promise\<void\>**
-
-### Errors
-
-| Error Type                                                         | Status Code                                                        | Content Type                                                       |
-| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| errors.ComAtprotoAdminEnableAccountInvitesResponseBody             | 400                                                                | application/json                                                   |
-| errors.ComAtprotoAdminEnableAccountInvitesAtprotoAdminResponseBody | 401                                                                | application/json                                                   |
-| errors.APIError                                                    | 4XX, 5XX                                                           | \*/\*                                                              |
+| Error Type                                                | Status Code                                               | Content Type                                              |
+| --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
+| errors.ComAtprotoAdminDisableInviteCodesResponseBody      | 400                                                       | application/json                                          |
+| errors.ComAtprotoAdminDisableInviteCodesAdminResponseBody | 401                                                       | application/json                                          |
+| errors.Unauthorized                                       | 403, 407, 511                                             | application/json                                          |
+| errors.NotFound                                           | 404, 501, 505                                             | application/json                                          |
+| errors.Timeout                                            | 408, 504                                                  | application/json                                          |
+| errors.BadRequest                                         | 413, 414, 415, 422, 431, 510                              | application/json                                          |
+| errors.RateLimited                                        | 429                                                       | application/json                                          |
+| errors.InternalServerError                                | 500, 502, 503, 506, 507, 508                              | application/json                                          |
+| errors.APIError                                           | 4XX, 5XX                                                  | \*/\*                                                     |
 
 ## getAccountInfo
 
@@ -410,7 +146,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.atproto.admin.getAccountInfo({
+  const result = await bluesky.admin.getAccountInfo({
     did: "<id>",
   });
 
@@ -427,7 +163,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { atprotoAdminGetAccountInfo } from "bluesky/funcs/atprotoAdminGetAccountInfo.js";
+import { adminGetAccountInfo } from "bluesky/funcs/adminGetAccountInfo.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -436,7 +172,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await atprotoAdminGetAccountInfo(bluesky, {
+  const res = await adminGetAccountInfo(bluesky, {
     did: "<id>",
   });
 
@@ -468,179 +204,17 @@ run();
 
 ### Errors
 
-| Error Type                                                   | Status Code                                                  | Content Type                                                 |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| errors.ComAtprotoAdminGetAccountInfoResponseBody             | 400                                                          | application/json                                             |
-| errors.ComAtprotoAdminGetAccountInfoAtprotoAdminResponseBody | 401                                                          | application/json                                             |
-| errors.APIError                                              | 4XX, 5XX                                                     | \*/\*                                                        |
-
-## getAccountInfos
-
-*This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
-
-*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
-
-Get details about some accounts.
-
-### Example Usage
-
-```typescript
-import { Bluesky } from "bluesky";
-
-const bluesky = new Bluesky({
-  bearer: process.env["BLUESKY_BEARER"] ?? "",
-});
-
-async function run() {
-  const result = await bluesky.atproto.admin.getAccountInfos({
-    dids: [
-      "<id>",
-    ],
-  });
-
-  // Handle the result
-  console.log(result);
-}
-
-run();
-```
-
-### Standalone function
-
-The standalone function version of this method:
-
-```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { atprotoAdminGetAccountInfos } from "bluesky/funcs/atprotoAdminGetAccountInfos.js";
-
-// Use `BlueskyCore` for best tree-shaking performance.
-// You can create one instance of it to use across an application.
-const bluesky = new BlueskyCore({
-  bearer: process.env["BLUESKY_BEARER"] ?? "",
-});
-
-async function run() {
-  const res = await atprotoAdminGetAccountInfos(bluesky, {
-    dids: [
-      "<id>",
-    ],
-  });
-
-  if (!res.ok) {
-    throw res.error;
-  }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ComAtprotoAdminGetAccountInfosRequest](../../models/operations/comatprotoadmingetaccountinfosrequest.md)                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
-| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
-| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
-| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
-
-### Response
-
-**Promise\<[operations.ComAtprotoAdminGetAccountInfosResponseBody](../../models/operations/comatprotoadmingetaccountinfosresponsebody.md)\>**
-
-### Errors
-
-| Error Type                                                    | Status Code                                                   | Content Type                                                  |
-| ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
-| errors.ComAtprotoAdminGetAccountInfosResponseBody             | 400                                                           | application/json                                              |
-| errors.ComAtprotoAdminGetAccountInfosAtprotoAdminResponseBody | 401                                                           | application/json                                              |
-| errors.APIError                                               | 4XX, 5XX                                                      | \*/\*                                                         |
-
-## getInviteCodes
-
-*This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
-
-*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
-
-Get an admin view of invite codes.
-
-### Example Usage
-
-```typescript
-import { Bluesky } from "bluesky";
-
-const bluesky = new Bluesky({
-  bearer: process.env["BLUESKY_BEARER"] ?? "",
-});
-
-async function run() {
-  const result = await bluesky.atproto.admin.getInviteCodes();
-
-  for await (const page of result) {
-    // Handle the page
-    console.log(page);
-  }
-}
-
-run();
-```
-
-### Standalone function
-
-The standalone function version of this method:
-
-```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { atprotoAdminGetInviteCodes } from "bluesky/funcs/atprotoAdminGetInviteCodes.js";
-
-// Use `BlueskyCore` for best tree-shaking performance.
-// You can create one instance of it to use across an application.
-const bluesky = new BlueskyCore({
-  bearer: process.env["BLUESKY_BEARER"] ?? "",
-});
-
-async function run() {
-  const res = await atprotoAdminGetInviteCodes(bluesky);
-
-  if (!res.ok) {
-    throw res.error;
-  }
-
-  const { value: result } = res;
-
-  for await (const page of result) {
-    // Handle the page
-    console.log(page);
-  }
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ComAtprotoAdminGetInviteCodesRequest](../../models/operations/comatprotoadmingetinvitecodesrequest.md)                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
-| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
-| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
-| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
-
-### Response
-
-**Promise\<[operations.ComAtprotoAdminGetInviteCodesResponse](../../models/operations/comatprotoadmingetinvitecodesresponse.md)\>**
-
-### Errors
-
-| Error Type                                                   | Status Code                                                  | Content Type                                                 |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| errors.ComAtprotoAdminGetInviteCodesResponseBody             | 400                                                          | application/json                                             |
-| errors.ComAtprotoAdminGetInviteCodesAtprotoAdminResponseBody | 401                                                          | application/json                                             |
-| errors.APIError                                              | 4XX, 5XX                                                     | \*/\*                                                        |
+| Error Type                                            | Status Code                                           | Content Type                                          |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| errors.ComAtprotoAdminGetAccountInfoResponseBody      | 400                                                   | application/json                                      |
+| errors.ComAtprotoAdminGetAccountInfoAdminResponseBody | 401                                                   | application/json                                      |
+| errors.Unauthorized                                   | 403, 407, 511                                         | application/json                                      |
+| errors.NotFound                                       | 404, 501, 505                                         | application/json                                      |
+| errors.Timeout                                        | 408, 504                                              | application/json                                      |
+| errors.BadRequest                                     | 413, 414, 415, 422, 431, 510                          | application/json                                      |
+| errors.RateLimited                                    | 429                                                   | application/json                                      |
+| errors.InternalServerError                            | 500, 502, 503, 506, 507, 508                          | application/json                                      |
+| errors.APIError                                       | 4XX, 5XX                                              | \*/\*                                                 |
 
 ## getSubjectStatus
 
@@ -660,7 +234,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.atproto.admin.getSubjectStatus();
+  const result = await bluesky.admin.getSubjectStatus();
 
   // Handle the result
   console.log(result);
@@ -675,7 +249,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { atprotoAdminGetSubjectStatus } from "bluesky/funcs/atprotoAdminGetSubjectStatus.js";
+import { adminGetSubjectStatus } from "bluesky/funcs/adminGetSubjectStatus.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -684,7 +258,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await atprotoAdminGetSubjectStatus(bluesky);
+  const res = await adminGetSubjectStatus(bluesky);
 
   if (!res.ok) {
     throw res.error;
@@ -714,93 +288,17 @@ run();
 
 ### Errors
 
-| Error Type                                                     | Status Code                                                    | Content Type                                                   |
-| -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
-| errors.ComAtprotoAdminGetSubjectStatusResponseBody             | 400                                                            | application/json                                               |
-| errors.ComAtprotoAdminGetSubjectStatusAtprotoAdminResponseBody | 401                                                            | application/json                                               |
-| errors.APIError                                                | 4XX, 5XX                                                       | \*/\*                                                          |
-
-## searchAccounts
-
-*This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
-
-*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
-
-Get list of accounts that matches your search query.
-
-### Example Usage
-
-```typescript
-import { Bluesky } from "bluesky";
-
-const bluesky = new Bluesky({
-  bearer: process.env["BLUESKY_BEARER"] ?? "",
-});
-
-async function run() {
-  const result = await bluesky.atproto.admin.searchAccounts();
-
-  for await (const page of result) {
-    // Handle the page
-    console.log(page);
-  }
-}
-
-run();
-```
-
-### Standalone function
-
-The standalone function version of this method:
-
-```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { atprotoAdminSearchAccounts } from "bluesky/funcs/atprotoAdminSearchAccounts.js";
-
-// Use `BlueskyCore` for best tree-shaking performance.
-// You can create one instance of it to use across an application.
-const bluesky = new BlueskyCore({
-  bearer: process.env["BLUESKY_BEARER"] ?? "",
-});
-
-async function run() {
-  const res = await atprotoAdminSearchAccounts(bluesky);
-
-  if (!res.ok) {
-    throw res.error;
-  }
-
-  const { value: result } = res;
-
-  for await (const page of result) {
-    // Handle the page
-    console.log(page);
-  }
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ComAtprotoAdminSearchAccountsRequest](../../models/operations/comatprotoadminsearchaccountsrequest.md)                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
-| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
-| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
-| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
-
-### Response
-
-**Promise\<[operations.ComAtprotoAdminSearchAccountsResponse](../../models/operations/comatprotoadminsearchaccountsresponse.md)\>**
-
-### Errors
-
-| Error Type                                                   | Status Code                                                  | Content Type                                                 |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| errors.ComAtprotoAdminSearchAccountsResponseBody             | 400                                                          | application/json                                             |
-| errors.ComAtprotoAdminSearchAccountsAtprotoAdminResponseBody | 401                                                          | application/json                                             |
-| errors.APIError                                              | 4XX, 5XX                                                     | \*/\*                                                        |
+| Error Type                                              | Status Code                                             | Content Type                                            |
+| ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
+| errors.ComAtprotoAdminGetSubjectStatusResponseBody      | 400                                                     | application/json                                        |
+| errors.ComAtprotoAdminGetSubjectStatusAdminResponseBody | 401                                                     | application/json                                        |
+| errors.Unauthorized                                     | 403, 407, 511                                           | application/json                                        |
+| errors.NotFound                                         | 404, 501, 505                                           | application/json                                        |
+| errors.Timeout                                          | 408, 504                                                | application/json                                        |
+| errors.BadRequest                                       | 413, 414, 415, 422, 431, 510                            | application/json                                        |
+| errors.RateLimited                                      | 429                                                     | application/json                                        |
+| errors.InternalServerError                              | 500, 502, 503, 506, 507, 508                            | application/json                                        |
+| errors.APIError                                         | 4XX, 5XX                                                | \*/\*                                                   |
 
 ## sendEmail
 
@@ -820,7 +318,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.atproto.admin.sendEmail({
+  const result = await bluesky.admin.sendEmail({
     recipientDid: "<id>",
     content: "<value>",
     senderDid: "<id>",
@@ -839,7 +337,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { atprotoAdminSendEmail } from "bluesky/funcs/atprotoAdminSendEmail.js";
+import { adminSendEmail } from "bluesky/funcs/adminSendEmail.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -848,7 +346,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await atprotoAdminSendEmail(bluesky, {
+  const res = await adminSendEmail(bluesky, {
     recipientDid: "<id>",
     content: "<value>",
     senderDid: "<id>",
@@ -882,11 +380,17 @@ run();
 
 ### Errors
 
-| Error Type                                              | Status Code                                             | Content Type                                            |
-| ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
-| errors.ComAtprotoAdminSendEmailResponseBody             | 400                                                     | application/json                                        |
-| errors.ComAtprotoAdminSendEmailAtprotoAdminResponseBody | 401                                                     | application/json                                        |
-| errors.APIError                                         | 4XX, 5XX                                                | \*/\*                                                   |
+| Error Type                                       | Status Code                                      | Content Type                                     |
+| ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ |
+| errors.ComAtprotoAdminSendEmailResponseBody      | 400                                              | application/json                                 |
+| errors.ComAtprotoAdminSendEmailAdminResponseBody | 401                                              | application/json                                 |
+| errors.Unauthorized                              | 403, 407, 511                                    | application/json                                 |
+| errors.NotFound                                  | 404, 501, 505                                    | application/json                                 |
+| errors.Timeout                                   | 408, 504                                         | application/json                                 |
+| errors.BadRequest                                | 413, 414, 415, 422, 431, 510                     | application/json                                 |
+| errors.RateLimited                               | 429                                              | application/json                                 |
+| errors.InternalServerError                       | 500, 502, 503, 506, 507, 508                     | application/json                                 |
+| errors.APIError                                  | 4XX, 5XX                                         | \*/\*                                            |
 
 ## updateAccountEmail
 
@@ -906,7 +410,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  await bluesky.atproto.admin.updateAccountEmail({
+  await bluesky.admin.updateAccountEmail({
     account: "<value>",
     email: "Tressie_DuBuque@hotmail.com",
   });
@@ -923,7 +427,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { atprotoAdminUpdateAccountEmail } from "bluesky/funcs/atprotoAdminUpdateAccountEmail.js";
+import { adminUpdateAccountEmail } from "bluesky/funcs/adminUpdateAccountEmail.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -932,7 +436,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await atprotoAdminUpdateAccountEmail(bluesky, {
+  const res = await adminUpdateAccountEmail(bluesky, {
     account: "<value>",
     email: "Tressie_DuBuque@hotmail.com",
   });
@@ -964,11 +468,17 @@ run();
 
 ### Errors
 
-| Error Type                                                       | Status Code                                                      | Content Type                                                     |
-| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
-| errors.ComAtprotoAdminUpdateAccountEmailResponseBody             | 400                                                              | application/json                                                 |
-| errors.ComAtprotoAdminUpdateAccountEmailAtprotoAdminResponseBody | 401                                                              | application/json                                                 |
-| errors.APIError                                                  | 4XX, 5XX                                                         | \*/\*                                                            |
+| Error Type                                                | Status Code                                               | Content Type                                              |
+| --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
+| errors.ComAtprotoAdminUpdateAccountEmailResponseBody      | 400                                                       | application/json                                          |
+| errors.ComAtprotoAdminUpdateAccountEmailAdminResponseBody | 401                                                       | application/json                                          |
+| errors.Unauthorized                                       | 403, 407, 511                                             | application/json                                          |
+| errors.NotFound                                           | 404, 501, 505                                             | application/json                                          |
+| errors.Timeout                                            | 408, 504                                                  | application/json                                          |
+| errors.BadRequest                                         | 413, 414, 415, 422, 431, 510                              | application/json                                          |
+| errors.RateLimited                                        | 429                                                       | application/json                                          |
+| errors.InternalServerError                                | 500, 502, 503, 506, 507, 508                              | application/json                                          |
+| errors.APIError                                           | 4XX, 5XX                                                  | \*/\*                                                     |
 
 ## updateAccountHandle
 
@@ -988,7 +498,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  await bluesky.atproto.admin.updateAccountHandle({
+  await bluesky.admin.updateAccountHandle({
     did: "<id>",
     handle: "<value>",
   });
@@ -1005,7 +515,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { atprotoAdminUpdateAccountHandle } from "bluesky/funcs/atprotoAdminUpdateAccountHandle.js";
+import { adminUpdateAccountHandle } from "bluesky/funcs/adminUpdateAccountHandle.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1014,7 +524,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await atprotoAdminUpdateAccountHandle(bluesky, {
+  const res = await adminUpdateAccountHandle(bluesky, {
     did: "<id>",
     handle: "<value>",
   });
@@ -1046,11 +556,17 @@ run();
 
 ### Errors
 
-| Error Type                                                        | Status Code                                                       | Content Type                                                      |
-| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
-| errors.ComAtprotoAdminUpdateAccountHandleResponseBody             | 400                                                               | application/json                                                  |
-| errors.ComAtprotoAdminUpdateAccountHandleAtprotoAdminResponseBody | 401                                                               | application/json                                                  |
-| errors.APIError                                                   | 4XX, 5XX                                                          | \*/\*                                                             |
+| Error Type                                                 | Status Code                                                | Content Type                                               |
+| ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
+| errors.ComAtprotoAdminUpdateAccountHandleResponseBody      | 400                                                        | application/json                                           |
+| errors.ComAtprotoAdminUpdateAccountHandleAdminResponseBody | 401                                                        | application/json                                           |
+| errors.Unauthorized                                        | 403, 407, 511                                              | application/json                                           |
+| errors.NotFound                                            | 404, 501, 505                                              | application/json                                           |
+| errors.Timeout                                             | 408, 504                                                   | application/json                                           |
+| errors.BadRequest                                          | 413, 414, 415, 422, 431, 510                               | application/json                                           |
+| errors.RateLimited                                         | 429                                                        | application/json                                           |
+| errors.InternalServerError                                 | 500, 502, 503, 506, 507, 508                               | application/json                                           |
+| errors.APIError                                            | 4XX, 5XX                                                   | \*/\*                                                      |
 
 ## updateAccountPassword
 
@@ -1070,7 +586,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  await bluesky.atproto.admin.updateAccountPassword({
+  await bluesky.admin.updateAccountPassword({
     did: "<id>",
     password: "YrVgrflEZmXzy2v",
   });
@@ -1087,7 +603,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { atprotoAdminUpdateAccountPassword } from "bluesky/funcs/atprotoAdminUpdateAccountPassword.js";
+import { adminUpdateAccountPassword } from "bluesky/funcs/adminUpdateAccountPassword.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1096,7 +612,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await atprotoAdminUpdateAccountPassword(bluesky, {
+  const res = await adminUpdateAccountPassword(bluesky, {
     did: "<id>",
     password: "YrVgrflEZmXzy2v",
   });
@@ -1128,11 +644,17 @@ run();
 
 ### Errors
 
-| Error Type                                                          | Status Code                                                         | Content Type                                                        |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| errors.ComAtprotoAdminUpdateAccountPasswordResponseBody             | 400                                                                 | application/json                                                    |
-| errors.ComAtprotoAdminUpdateAccountPasswordAtprotoAdminResponseBody | 401                                                                 | application/json                                                    |
-| errors.APIError                                                     | 4XX, 5XX                                                            | \*/\*                                                               |
+| Error Type                                                   | Status Code                                                  | Content Type                                                 |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| errors.ComAtprotoAdminUpdateAccountPasswordResponseBody      | 400                                                          | application/json                                             |
+| errors.ComAtprotoAdminUpdateAccountPasswordAdminResponseBody | 401                                                          | application/json                                             |
+| errors.Unauthorized                                          | 403, 407, 511                                                | application/json                                             |
+| errors.NotFound                                              | 404, 501, 505                                                | application/json                                             |
+| errors.Timeout                                               | 408, 504                                                     | application/json                                             |
+| errors.BadRequest                                            | 413, 414, 415, 422, 431, 510                                 | application/json                                             |
+| errors.RateLimited                                           | 429                                                          | application/json                                             |
+| errors.InternalServerError                                   | 500, 502, 503, 506, 507, 508                                 | application/json                                             |
+| errors.APIError                                              | 4XX, 5XX                                                     | \*/\*                                                        |
 
 ## updateSubjectStatus
 
@@ -1152,7 +674,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.atproto.admin.updateSubjectStatus({
+  const result = await bluesky.admin.updateSubjectStatus({
     subject: {
       did: "<id>",
       cid: "<id>",
@@ -1172,7 +694,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { atprotoAdminUpdateSubjectStatus } from "bluesky/funcs/atprotoAdminUpdateSubjectStatus.js";
+import { adminUpdateSubjectStatus } from "bluesky/funcs/adminUpdateSubjectStatus.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1181,7 +703,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await atprotoAdminUpdateSubjectStatus(bluesky, {
+  const res = await adminUpdateSubjectStatus(bluesky, {
     subject: {
       did: "<id>",
       cid: "<id>",
@@ -1216,8 +738,14 @@ run();
 
 ### Errors
 
-| Error Type                                                        | Status Code                                                       | Content Type                                                      |
-| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
-| errors.ComAtprotoAdminUpdateSubjectStatusResponseBody             | 400                                                               | application/json                                                  |
-| errors.ComAtprotoAdminUpdateSubjectStatusAtprotoAdminResponseBody | 401                                                               | application/json                                                  |
-| errors.APIError                                                   | 4XX, 5XX                                                          | \*/\*                                                             |
+| Error Type                                                 | Status Code                                                | Content Type                                               |
+| ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
+| errors.ComAtprotoAdminUpdateSubjectStatusResponseBody      | 400                                                        | application/json                                           |
+| errors.ComAtprotoAdminUpdateSubjectStatusAdminResponseBody | 401                                                        | application/json                                           |
+| errors.Unauthorized                                        | 403, 407, 511                                              | application/json                                           |
+| errors.NotFound                                            | 404, 501, 505                                              | application/json                                           |
+| errors.Timeout                                             | 408, 504                                                   | application/json                                           |
+| errors.BadRequest                                          | 413, 414, 415, 422, 431, 510                               | application/json                                           |
+| errors.RateLimited                                         | 429                                                        | application/json                                           |
+| errors.InternalServerError                                 | 500, 502, 503, 506, 507, 508                               | application/json                                           |
+| errors.APIError                                            | 4XX, 5XX                                                   | \*/\*                                                      |

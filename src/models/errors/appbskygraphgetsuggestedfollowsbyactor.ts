@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type AppBskyGraphGetSuggestedFollowsByActorGraphResponseBodyData = {
+export type AppBskyGraphGetSuggestedFollowsByActorUsersResponseBodyData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,16 +16,16 @@ export type AppBskyGraphGetSuggestedFollowsByActorGraphResponseBodyData = {
 /**
  * Unauthorized
  */
-export class AppBskyGraphGetSuggestedFollowsByActorGraphResponseBody
+export class AppBskyGraphGetSuggestedFollowsByActorUsersResponseBody
   extends Error
 {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: AppBskyGraphGetSuggestedFollowsByActorGraphResponseBodyData;
+  data$: AppBskyGraphGetSuggestedFollowsByActorUsersResponseBodyData;
 
   constructor(
-    err: AppBskyGraphGetSuggestedFollowsByActorGraphResponseBodyData,
+    err: AppBskyGraphGetSuggestedFollowsByActorUsersResponseBodyData,
   ) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
@@ -35,7 +35,7 @@ export class AppBskyGraphGetSuggestedFollowsByActorGraphResponseBody
 
     this.error = err.error;
 
-    this.name = "AppBskyGraphGetSuggestedFollowsByActorGraphResponseBody";
+    this.name = "AppBskyGraphGetSuggestedFollowsByActorUsersResponseBody";
   }
 }
 
@@ -79,9 +79,9 @@ export class AppBskyGraphGetSuggestedFollowsByActorResponseBody extends Error {
 }
 
 /** @internal */
-export const AppBskyGraphGetSuggestedFollowsByActorGraphResponseBody$inboundSchema:
+export const AppBskyGraphGetSuggestedFollowsByActorUsersResponseBody$inboundSchema:
   z.ZodType<
-    AppBskyGraphGetSuggestedFollowsByActorGraphResponseBody,
+    AppBskyGraphGetSuggestedFollowsByActorUsersResponseBody,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -89,22 +89,22 @@ export const AppBskyGraphGetSuggestedFollowsByActorGraphResponseBody$inboundSche
     message: z.string(),
   })
     .transform((v) => {
-      return new AppBskyGraphGetSuggestedFollowsByActorGraphResponseBody(v);
+      return new AppBskyGraphGetSuggestedFollowsByActorUsersResponseBody(v);
     });
 
 /** @internal */
-export type AppBskyGraphGetSuggestedFollowsByActorGraphResponseBody$Outbound = {
+export type AppBskyGraphGetSuggestedFollowsByActorUsersResponseBody$Outbound = {
   error: "AuthMissing";
   message: string;
 };
 
 /** @internal */
-export const AppBskyGraphGetSuggestedFollowsByActorGraphResponseBody$outboundSchema:
+export const AppBskyGraphGetSuggestedFollowsByActorUsersResponseBody$outboundSchema:
   z.ZodType<
-    AppBskyGraphGetSuggestedFollowsByActorGraphResponseBody$Outbound,
+    AppBskyGraphGetSuggestedFollowsByActorUsersResponseBody$Outbound,
     z.ZodTypeDef,
-    AppBskyGraphGetSuggestedFollowsByActorGraphResponseBody
-  > = z.instanceof(AppBskyGraphGetSuggestedFollowsByActorGraphResponseBody)
+    AppBskyGraphGetSuggestedFollowsByActorUsersResponseBody
+  > = z.instanceof(AppBskyGraphGetSuggestedFollowsByActorUsersResponseBody)
     .transform(v => v.data$)
     .pipe(z.object({
       error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -115,16 +115,16 @@ export const AppBskyGraphGetSuggestedFollowsByActorGraphResponseBody$outboundSch
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyGraphGetSuggestedFollowsByActorGraphResponseBody$ {
-  /** @deprecated use `AppBskyGraphGetSuggestedFollowsByActorGraphResponseBody$inboundSchema` instead. */
+export namespace AppBskyGraphGetSuggestedFollowsByActorUsersResponseBody$ {
+  /** @deprecated use `AppBskyGraphGetSuggestedFollowsByActorUsersResponseBody$inboundSchema` instead. */
   export const inboundSchema =
-    AppBskyGraphGetSuggestedFollowsByActorGraphResponseBody$inboundSchema;
-  /** @deprecated use `AppBskyGraphGetSuggestedFollowsByActorGraphResponseBody$outboundSchema` instead. */
+    AppBskyGraphGetSuggestedFollowsByActorUsersResponseBody$inboundSchema;
+  /** @deprecated use `AppBskyGraphGetSuggestedFollowsByActorUsersResponseBody$outboundSchema` instead. */
   export const outboundSchema =
-    AppBskyGraphGetSuggestedFollowsByActorGraphResponseBody$outboundSchema;
-  /** @deprecated use `AppBskyGraphGetSuggestedFollowsByActorGraphResponseBody$Outbound` instead. */
+    AppBskyGraphGetSuggestedFollowsByActorUsersResponseBody$outboundSchema;
+  /** @deprecated use `AppBskyGraphGetSuggestedFollowsByActorUsersResponseBody$Outbound` instead. */
   export type Outbound =
-    AppBskyGraphGetSuggestedFollowsByActorGraphResponseBody$Outbound;
+    AppBskyGraphGetSuggestedFollowsByActorUsersResponseBody$Outbound;
 }
 
 /** @internal */

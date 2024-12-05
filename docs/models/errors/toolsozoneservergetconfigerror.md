@@ -5,7 +5,7 @@
 ```typescript
 import { ToolsOzoneServerGetConfigError } from "bluesky/models/errors";
 
-let value: ToolsOzoneServerGetConfigError = "ExpiredToken";
+let value: ToolsOzoneServerGetConfigError = "InvalidToken";
 ```
 
 ## Values

@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoRepoGetRecordError } from "bluesky/models/errors";
 
-let value: ComAtprotoRepoGetRecordError = "RecordNotFound";
+let value: ComAtprotoRepoGetRecordError = "InvalidRequest";
 ```
 
 ## Values

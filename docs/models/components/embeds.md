@@ -9,8 +9,8 @@
 const value: components.AppBskyEmbedImagesView = {
   images: [
     {
-      thumb: "https://eminent-validity.name/",
-      fullsize: "https://forceful-import.com/",
+      thumb: "https://fortunate-confusion.info/",
+      fullsize: "https://mixed-stir-fry.org/",
       alt: "<value>",
     },
   ],
@@ -22,7 +22,7 @@ const value: components.AppBskyEmbedImagesView = {
 ```typescript
 const value: components.AppBskyEmbedVideoView = {
   cid: "<id>",
-  playlist: "https://lumpy-devastation.name/",
+  playlist: "https://portly-cannon.info/",
 };
 ```
 
@@ -31,10 +31,9 @@ const value: components.AppBskyEmbedVideoView = {
 ```typescript
 const value: components.AppBskyEmbedExternalView = {
   external: {
-    uri: "https://esteemed-oil.name",
+    uri: "https://giving-jacket.net/",
     title: "<value>",
-    description:
-      "majestically ew airmail abaft until against however inside above sun",
+    description: "around separate stealthily",
   },
 };
 ```
@@ -44,14 +43,14 @@ const value: components.AppBskyEmbedExternalView = {
 ```typescript
 const value: components.AppBskyEmbedRecordView = {
   record: {
-    uri: "https://agile-vicinity.name",
+    uri: "https://energetic-lace.net/",
     cid: "<id>",
     author: {
       did: "<id>",
       handle: "<value>",
     },
     value: "<value>",
-    indexedAt: new Date("2023-08-29T11:21:25.228Z"),
+    indexedAt: new Date("2022-04-18T01:16:45.009Z"),
   },
 };
 ```
@@ -62,18 +61,25 @@ const value: components.AppBskyEmbedRecordView = {
 const value: components.AppBskyEmbedRecordWithMediaView = {
   record: {
     record: {
-      uri: "https://favorite-solvency.org",
-      author: {
+      uri: "https://enchanting-planula.name",
+      cid: "<id>",
+      did: "<id>",
+      creator: {
         did: "<id>",
+        handle: "<value>",
       },
+      displayName: "Adeline.Quitzon",
+      indexedAt: new Date("2022-02-03T14:30:29.574Z"),
     },
   },
   media: {
-    external: {
-      uri: "https://biodegradable-integer.info",
-      title: "<value>",
-      description: "about quietly for graceful",
-    },
+    images: [
+      {
+        thumb: "https://our-bungalow.biz",
+        fullsize: "https://ajar-handover.info/",
+        alt: "<value>",
+      },
+    ],
   },
 };
 ```

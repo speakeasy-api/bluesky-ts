@@ -9,7 +9,7 @@ import { ComAtprotoAdminUpdateSubjectStatusResponseBody } from "bluesky/models/o
 
 let value: ComAtprotoAdminUpdateSubjectStatusResponseBody = {
   subject: {
-    uri: "https://wasteful-roundabout.net/",
+    did: "<id>",
     cid: "<id>",
   },
 };

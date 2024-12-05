@@ -1,17 +1,18 @@
 lockVersion: 2.0.0
 id: 8ee5821f-25ad-41d5-94bd-080f4048f5d5
 management:
-  docChecksum: 5e45afbac0b5ccfc534225e0586a8167
+  docChecksum: baf69af3ebbab24595e9f996f7d642bd
   docVersion: 0.0.0
-  speakeasyVersion: 1.451.1
-  generationVersion: 2.470.1
-  releaseVersion: 0.3.2
-  configChecksum: bc5f7e9eb04c8bcec0833cc56c387265
+  speakeasyVersion: 1.451.7
+  generationVersion: 2.471.2
+  releaseVersion: 0.4.0
+  configChecksum: 3f5eea132f8e799148f64982cf2834ff
   repoURL: https://github.com/speakeasy-api/bluesky-ts.git
   installationURL: https://github.com/speakeasy-api/bluesky-ts
 features:
   typescript:
     additionalDependencies: 0.1.0
+    additionalProperties: 0.1.1
     constsAndDefaults: 0.1.11
     core: 3.18.8
     defaultEnabledRetries: 0.1.0
@@ -251,28 +252,28 @@ generatedFiles:
   - docs/models/components/type.md
   - docs/models/components/validationstatus.md
   - docs/models/components/visibility.md
-  - docs/models/errors/appbskyactorgetpreferencesactorresponsebody.md
+  - docs/models/errors/appbskyactorgetpreferencesactorsresponsebody.md
   - docs/models/errors/appbskyactorgetpreferencesresponsebody.md
-  - docs/models/errors/appbskyactorgetprofileactorresponsebody.md
+  - docs/models/errors/appbskyactorgetprofileactorsresponsebody.md
   - docs/models/errors/appbskyactorgetprofileerror.md
   - docs/models/errors/appbskyactorgetprofileresponsebody.md
-  - docs/models/errors/appbskyactorgetprofilesactorresponsebody.md
+  - docs/models/errors/appbskyactorgetprofilesactorsresponsebody.md
   - docs/models/errors/appbskyactorgetprofileserror.md
   - docs/models/errors/appbskyactorgetprofilesresponsebody.md
   - docs/models/errors/appbskyactorgetsuggestionsactorresponsebody.md
   - docs/models/errors/appbskyactorgetsuggestionserror.md
   - docs/models/errors/appbskyactorgetsuggestionsresponsebody.md
-  - docs/models/errors/appbskyactorputpreferencesactorresponsebody.md
+  - docs/models/errors/appbskyactorputpreferencesactorsresponsebody.md
   - docs/models/errors/appbskyactorputpreferenceserror.md
   - docs/models/errors/appbskyactorputpreferencesresponsebody.md
-  - docs/models/errors/appbskyactorsearchactorsactorresponsebody.md
+  - docs/models/errors/appbskyactorsearchactorsactorsresponsebody.md
   - docs/models/errors/appbskyactorsearchactorserror.md
   - docs/models/errors/appbskyactorsearchactorsresponsebody.md
   - docs/models/errors/appbskyactorsearchactorstypeaheadactorresponsebody.md
   - docs/models/errors/appbskyactorsearchactorstypeaheaderror.md
   - docs/models/errors/appbskyactorsearchactorstypeaheadresponsebody.md
   - docs/models/errors/appbskyfeeddescribefeedgeneratorerror.md
-  - docs/models/errors/appbskyfeeddescribefeedgeneratorfeedresponsebody.md
+  - docs/models/errors/appbskyfeeddescribefeedgeneratorfeedsresponsebody.md
   - docs/models/errors/appbskyfeeddescribefeedgeneratorresponsebody.md
   - docs/models/errors/appbskyfeedgetactorfeedserror.md
   - docs/models/errors/appbskyfeedgetactorfeedsfeedresponsebody.md
@@ -296,22 +297,22 @@ generatedFiles:
   - docs/models/errors/appbskyfeedgetfeedskeletonfeedresponsebody.md
   - docs/models/errors/appbskyfeedgetfeedskeletonresponsebody.md
   - docs/models/errors/appbskyfeedgetlikeserror.md
-  - docs/models/errors/appbskyfeedgetlikesfeedresponsebody.md
+  - docs/models/errors/appbskyfeedgetlikesfeedsresponsebody.md
   - docs/models/errors/appbskyfeedgetlikesresponsebody.md
   - docs/models/errors/appbskyfeedgetlistfeederror.md
-  - docs/models/errors/appbskyfeedgetlistfeedfeedresponsebody.md
+  - docs/models/errors/appbskyfeedgetlistfeedfeedsresponsebody.md
   - docs/models/errors/appbskyfeedgetlistfeedresponsebody.md
   - docs/models/errors/appbskyfeedgetpostserror.md
-  - docs/models/errors/appbskyfeedgetpostsfeedresponsebody.md
+  - docs/models/errors/appbskyfeedgetpostsfeedsresponsebody.md
   - docs/models/errors/appbskyfeedgetpostsresponsebody.md
   - docs/models/errors/appbskyfeedgetpostthreaderror.md
-  - docs/models/errors/appbskyfeedgetpostthreadfeedresponsebody.md
+  - docs/models/errors/appbskyfeedgetpostthreadfeedsresponsebody.md
   - docs/models/errors/appbskyfeedgetpostthreadresponsebody.md
   - docs/models/errors/appbskyfeedgetquoteserror.md
-  - docs/models/errors/appbskyfeedgetquotesfeedresponsebody.md
+  - docs/models/errors/appbskyfeedgetquotesfeedsresponsebody.md
   - docs/models/errors/appbskyfeedgetquotesresponsebody.md
   - docs/models/errors/appbskyfeedgetrepostedbyerror.md
-  - docs/models/errors/appbskyfeedgetrepostedbyfeedresponsebody.md
+  - docs/models/errors/appbskyfeedgetrepostedbyfeedsresponsebody.md
   - docs/models/errors/appbskyfeedgetrepostedbyresponsebody.md
   - docs/models/errors/appbskyfeedgetsuggestedfeedserror.md
   - docs/models/errors/appbskyfeedgetsuggestedfeedsfeedresponsebody.md
@@ -323,25 +324,25 @@ generatedFiles:
   - docs/models/errors/appbskyfeedsearchpostsfeedresponsebody.md
   - docs/models/errors/appbskyfeedsearchpostsresponsebody.md
   - docs/models/errors/appbskyfeedsendinteractionserror.md
-  - docs/models/errors/appbskyfeedsendinteractionsfeedresponsebody.md
+  - docs/models/errors/appbskyfeedsendinteractionsfeedsresponsebody.md
   - docs/models/errors/appbskyfeedsendinteractionsresponsebody.md
   - docs/models/errors/appbskygraphgetactorstarterpackserror.md
   - docs/models/errors/appbskygraphgetactorstarterpacksgraphresponsebody.md
   - docs/models/errors/appbskygraphgetactorstarterpacksresponsebody.md
   - docs/models/errors/appbskygraphgetblockserror.md
-  - docs/models/errors/appbskygraphgetblocksgraphresponsebody.md
+  - docs/models/errors/appbskygraphgetblocksgraphsresponsebody.md
   - docs/models/errors/appbskygraphgetblocksresponsebody.md
   - docs/models/errors/appbskygraphgetfollowerserror.md
-  - docs/models/errors/appbskygraphgetfollowersgraphresponsebody.md
   - docs/models/errors/appbskygraphgetfollowersresponsebody.md
+  - docs/models/errors/appbskygraphgetfollowersusersresponsebody.md
   - docs/models/errors/appbskygraphgetfollowserror.md
   - docs/models/errors/appbskygraphgetfollowsgraphresponsebody.md
   - docs/models/errors/appbskygraphgetfollowsresponsebody.md
   - docs/models/errors/appbskygraphgetknownfollowerserror.md
-  - docs/models/errors/appbskygraphgetknownfollowersgraphresponsebody.md
+  - docs/models/errors/appbskygraphgetknownfollowersgraphsresponsebody.md
   - docs/models/errors/appbskygraphgetknownfollowersresponsebody.md
   - docs/models/errors/appbskygraphgetlistblockserror.md
-  - docs/models/errors/appbskygraphgetlistblocksgraphresponsebody.md
+  - docs/models/errors/appbskygraphgetlistblocksgraphsresponsebody.md
   - docs/models/errors/appbskygraphgetlistblocksresponsebody.md
   - docs/models/errors/appbskygraphgetlisterror.md
   - docs/models/errors/appbskygraphgetlistgraphresponsebody.md
@@ -353,7 +354,7 @@ generatedFiles:
   - docs/models/errors/appbskygraphgetlistsgraphresponsebody.md
   - docs/models/errors/appbskygraphgetlistsresponsebody.md
   - docs/models/errors/appbskygraphgetmuteserror.md
-  - docs/models/errors/appbskygraphgetmutesgraphresponsebody.md
+  - docs/models/errors/appbskygraphgetmutesgraphsresponsebody.md
   - docs/models/errors/appbskygraphgetmutesresponsebody.md
   - docs/models/errors/appbskygraphgetrelationshipserror.md
   - docs/models/errors/appbskygraphgetrelationshipsgraphresponsebody.md
@@ -362,11 +363,11 @@ generatedFiles:
   - docs/models/errors/appbskygraphgetstarterpackgraphresponsebody.md
   - docs/models/errors/appbskygraphgetstarterpackresponsebody.md
   - docs/models/errors/appbskygraphgetstarterpackserror.md
-  - docs/models/errors/appbskygraphgetstarterpacksgraphresponsebody.md
+  - docs/models/errors/appbskygraphgetstarterpacksgraphsresponsebody.md
   - docs/models/errors/appbskygraphgetstarterpacksresponsebody.md
   - docs/models/errors/appbskygraphgetsuggestedfollowsbyactorerror.md
-  - docs/models/errors/appbskygraphgetsuggestedfollowsbyactorgraphresponsebody.md
   - docs/models/errors/appbskygraphgetsuggestedfollowsbyactorresponsebody.md
+  - docs/models/errors/appbskygraphgetsuggestedfollowsbyactorusersresponsebody.md
   - docs/models/errors/appbskygraphmuteactorerror.md
   - docs/models/errors/appbskygraphmuteactorgraphresponsebody.md
   - docs/models/errors/appbskygraphmuteactorlisterror.md
@@ -374,142 +375,143 @@ generatedFiles:
   - docs/models/errors/appbskygraphmuteactorlistresponsebody.md
   - docs/models/errors/appbskygraphmuteactorresponsebody.md
   - docs/models/errors/appbskygraphmutethreaderror.md
-  - docs/models/errors/appbskygraphmutethreadgraphresponsebody.md
+  - docs/models/errors/appbskygraphmutethreadgraphsresponsebody.md
   - docs/models/errors/appbskygraphmutethreadresponsebody.md
   - docs/models/errors/appbskygraphsearchstarterpackserror.md
   - docs/models/errors/appbskygraphsearchstarterpacksgraphresponsebody.md
   - docs/models/errors/appbskygraphsearchstarterpacksresponsebody.md
   - docs/models/errors/appbskygraphunmuteactorerror.md
-  - docs/models/errors/appbskygraphunmuteactorgraphresponsebody.md
   - docs/models/errors/appbskygraphunmuteactorlisterror.md
-  - docs/models/errors/appbskygraphunmuteactorlistgraphresponsebody.md
+  - docs/models/errors/appbskygraphunmuteactorlistgraphsresponsebody.md
   - docs/models/errors/appbskygraphunmuteactorlistresponsebody.md
   - docs/models/errors/appbskygraphunmuteactorresponsebody.md
+  - docs/models/errors/appbskygraphunmuteactorusersresponsebody.md
   - docs/models/errors/appbskygraphunmutethreaderror.md
   - docs/models/errors/appbskygraphunmutethreadgraphresponsebody.md
   - docs/models/errors/appbskygraphunmutethreadresponsebody.md
   - docs/models/errors/appbskylabelergetserviceserror.md
-  - docs/models/errors/appbskylabelergetserviceslabelerresponsebody.md
+  - docs/models/errors/appbskylabelergetserviceslabelersresponsebody.md
   - docs/models/errors/appbskylabelergetservicesresponsebody.md
   - docs/models/errors/appbskynotificationgetunreadcounterror.md
-  - docs/models/errors/appbskynotificationgetunreadcountnotificationresponsebody.md
+  - docs/models/errors/appbskynotificationgetunreadcountnotificationsresponsebody.md
   - docs/models/errors/appbskynotificationgetunreadcountresponsebody.md
   - docs/models/errors/appbskynotificationlistnotificationserror.md
   - docs/models/errors/appbskynotificationlistnotificationsnotificationresponsebody.md
   - docs/models/errors/appbskynotificationlistnotificationsresponsebody.md
   - docs/models/errors/appbskynotificationputpreferenceserror.md
-  - docs/models/errors/appbskynotificationputpreferencesnotificationresponsebody.md
+  - docs/models/errors/appbskynotificationputpreferencesnotificationsresponsebody.md
   - docs/models/errors/appbskynotificationputpreferencesresponsebody.md
   - docs/models/errors/appbskynotificationregisterpusherror.md
-  - docs/models/errors/appbskynotificationregisterpushnotificationresponsebody.md
+  - docs/models/errors/appbskynotificationregisterpushnotificationsresponsebody.md
   - docs/models/errors/appbskynotificationregisterpushresponsebody.md
   - docs/models/errors/appbskynotificationupdateseenerror.md
-  - docs/models/errors/appbskynotificationupdateseennotificationresponsebody.md
+  - docs/models/errors/appbskynotificationupdateseennotificationsresponsebody.md
   - docs/models/errors/appbskynotificationupdateseenresponsebody.md
   - docs/models/errors/appbskyvideogetjobstatuserror.md
   - docs/models/errors/appbskyvideogetjobstatusresponsebody.md
-  - docs/models/errors/appbskyvideogetjobstatusvideoresponsebody.md
+  - docs/models/errors/appbskyvideogetjobstatusvideosresponsebody.md
   - docs/models/errors/appbskyvideogetuploadlimitserror.md
   - docs/models/errors/appbskyvideogetuploadlimitsresponsebody.md
-  - docs/models/errors/appbskyvideogetuploadlimitsvideoresponsebody.md
+  - docs/models/errors/appbskyvideogetuploadlimitsvideosresponsebody.md
   - docs/models/errors/appbskyvideouploadvideoerror.md
   - docs/models/errors/appbskyvideouploadvideoresponsebody.md
-  - docs/models/errors/appbskyvideouploadvideovideoresponsebody.md
-  - docs/models/errors/chatbskyactordeleteaccountchatactorresponsebody.md
+  - docs/models/errors/appbskyvideouploadvideovideosresponsebody.md
+  - docs/models/errors/badrequest.md
+  - docs/models/errors/chatbskyactordeleteaccountaccountresponsebody.md
   - docs/models/errors/chatbskyactordeleteaccounterror.md
   - docs/models/errors/chatbskyactordeleteaccountresponsebody.md
-  - docs/models/errors/chatbskyactorexportaccountdatachatactorresponsebody.md
+  - docs/models/errors/chatbskyactorexportaccountdataaccountresponsebody.md
   - docs/models/errors/chatbskyactorexportaccountdataerror.md
   - docs/models/errors/chatbskyactorexportaccountdataresponsebody.md
-  - docs/models/errors/chatbskyconvodeletemessageforselfchatconvoresponsebody.md
+  - docs/models/errors/chatbskyconvodeletemessageforselfconvoresponsebody.md
   - docs/models/errors/chatbskyconvodeletemessageforselferror.md
   - docs/models/errors/chatbskyconvodeletemessageforselfresponsebody.md
-  - docs/models/errors/chatbskyconvogetconvochatconvoresponsebody.md
+  - docs/models/errors/chatbskyconvogetconvochatsresponsebody.md
   - docs/models/errors/chatbskyconvogetconvoerror.md
-  - docs/models/errors/chatbskyconvogetconvoformemberschatconvoresponsebody.md
+  - docs/models/errors/chatbskyconvogetconvoformemberschatconvosresponsebody.md
   - docs/models/errors/chatbskyconvogetconvoformemberserror.md
   - docs/models/errors/chatbskyconvogetconvoformembersresponsebody.md
   - docs/models/errors/chatbskyconvogetconvoresponsebody.md
-  - docs/models/errors/chatbskyconvogetlogchatconvoresponsebody.md
+  - docs/models/errors/chatbskyconvogetlogconversationsresponsebody.md
   - docs/models/errors/chatbskyconvogetlogerror.md
   - docs/models/errors/chatbskyconvogetlogresponsebody.md
-  - docs/models/errors/chatbskyconvogetmessageschatconvoresponsebody.md
+  - docs/models/errors/chatbskyconvogetmessageschatconvosresponsebody.md
   - docs/models/errors/chatbskyconvogetmessageserror.md
   - docs/models/errors/chatbskyconvogetmessagesresponsebody.md
-  - docs/models/errors/chatbskyconvoleaveconvochatconvoresponsebody.md
+  - docs/models/errors/chatbskyconvoleaveconvoconversationsresponsebody.md
   - docs/models/errors/chatbskyconvoleaveconvoerror.md
   - docs/models/errors/chatbskyconvoleaveconvoresponsebody.md
-  - docs/models/errors/chatbskyconvolistconvoschatconvoresponsebody.md
+  - docs/models/errors/chatbskyconvolistconvosconvoresponsebody.md
   - docs/models/errors/chatbskyconvolistconvoserror.md
   - docs/models/errors/chatbskyconvolistconvosresponsebody.md
-  - docs/models/errors/chatbskyconvomuteconvochatconvoresponsebody.md
+  - docs/models/errors/chatbskyconvomuteconvoconvosresponsebody.md
   - docs/models/errors/chatbskyconvomuteconvoerror.md
   - docs/models/errors/chatbskyconvomuteconvoresponsebody.md
   - docs/models/errors/chatbskyconvosendmessagebatchchatconvoresponsebody.md
   - docs/models/errors/chatbskyconvosendmessagebatcherror.md
   - docs/models/errors/chatbskyconvosendmessagebatchresponsebody.md
-  - docs/models/errors/chatbskyconvosendmessagechatconvoresponsebody.md
+  - docs/models/errors/chatbskyconvosendmessagechatconvosresponsebody.md
   - docs/models/errors/chatbskyconvosendmessageerror.md
   - docs/models/errors/chatbskyconvosendmessageresponsebody.md
   - docs/models/errors/chatbskyconvounmuteconvochatconvoresponsebody.md
   - docs/models/errors/chatbskyconvounmuteconvoerror.md
   - docs/models/errors/chatbskyconvounmuteconvoresponsebody.md
-  - docs/models/errors/chatbskyconvoupdatereadchatconvoresponsebody.md
+  - docs/models/errors/chatbskyconvoupdatereadchatconvosresponsebody.md
   - docs/models/errors/chatbskyconvoupdatereaderror.md
   - docs/models/errors/chatbskyconvoupdatereadresponsebody.md
   - docs/models/errors/chatbskymoderationgetactormetadatachatmoderationresponsebody.md
   - docs/models/errors/chatbskymoderationgetactormetadataerror.md
   - docs/models/errors/chatbskymoderationgetactormetadataresponsebody.md
-  - docs/models/errors/chatbskymoderationgetmessagecontextchatmoderationresponsebody.md
+  - docs/models/errors/chatbskymoderationgetmessagecontextchatsresponsebody.md
   - docs/models/errors/chatbskymoderationgetmessagecontexterror.md
   - docs/models/errors/chatbskymoderationgetmessagecontextresponsebody.md
   - docs/models/errors/chatbskymoderationupdateactoraccesschatmoderationresponsebody.md
   - docs/models/errors/chatbskymoderationupdateactoraccesserror.md
   - docs/models/errors/chatbskymoderationupdateactoraccessresponsebody.md
-  - docs/models/errors/comatprotoadmindeleteaccountatprotoadminresponsebody.md
+  - docs/models/errors/comatprotoadmindeleteaccountadminsresponsebody.md
   - docs/models/errors/comatprotoadmindeleteaccounterror.md
   - docs/models/errors/comatprotoadmindeleteaccountresponsebody.md
   - docs/models/errors/comatprotoadmindisableaccountinvitesatprotoadminresponsebody.md
   - docs/models/errors/comatprotoadmindisableaccountinviteserror.md
   - docs/models/errors/comatprotoadmindisableaccountinvitesresponsebody.md
-  - docs/models/errors/comatprotoadmindisableinvitecodesatprotoadminresponsebody.md
+  - docs/models/errors/comatprotoadmindisableinvitecodesadminresponsebody.md
   - docs/models/errors/comatprotoadmindisableinvitecodeserror.md
   - docs/models/errors/comatprotoadmindisableinvitecodesresponsebody.md
-  - docs/models/errors/comatprotoadminenableaccountinvitesatprotoadminresponsebody.md
+  - docs/models/errors/comatprotoadminenableaccountinvitesadminsresponsebody.md
   - docs/models/errors/comatprotoadminenableaccountinviteserror.md
   - docs/models/errors/comatprotoadminenableaccountinvitesresponsebody.md
-  - docs/models/errors/comatprotoadmingetaccountinfoatprotoadminresponsebody.md
+  - docs/models/errors/comatprotoadmingetaccountinfoadminresponsebody.md
   - docs/models/errors/comatprotoadmingetaccountinfoerror.md
   - docs/models/errors/comatprotoadmingetaccountinforesponsebody.md
-  - docs/models/errors/comatprotoadmingetaccountinfosatprotoadminresponsebody.md
+  - docs/models/errors/comatprotoadmingetaccountinfosadminsresponsebody.md
   - docs/models/errors/comatprotoadmingetaccountinfoserror.md
   - docs/models/errors/comatprotoadmingetaccountinfosresponsebody.md
   - docs/models/errors/comatprotoadmingetinvitecodesatprotoadminresponsebody.md
   - docs/models/errors/comatprotoadmingetinvitecodeserror.md
   - docs/models/errors/comatprotoadmingetinvitecodesresponsebody.md
-  - docs/models/errors/comatprotoadmingetsubjectstatusatprotoadminresponsebody.md
+  - docs/models/errors/comatprotoadmingetsubjectstatusadminresponsebody.md
   - docs/models/errors/comatprotoadmingetsubjectstatuserror.md
   - docs/models/errors/comatprotoadmingetsubjectstatusresponsebody.md
   - docs/models/errors/comatprotoadminsearchaccountsatprotoadminresponsebody.md
   - docs/models/errors/comatprotoadminsearchaccountserror.md
   - docs/models/errors/comatprotoadminsearchaccountsresponsebody.md
-  - docs/models/errors/comatprotoadminsendemailatprotoadminresponsebody.md
+  - docs/models/errors/comatprotoadminsendemailadminresponsebody.md
   - docs/models/errors/comatprotoadminsendemailerror.md
   - docs/models/errors/comatprotoadminsendemailresponsebody.md
-  - docs/models/errors/comatprotoadminupdateaccountemailatprotoadminresponsebody.md
+  - docs/models/errors/comatprotoadminupdateaccountemailadminresponsebody.md
   - docs/models/errors/comatprotoadminupdateaccountemailerror.md
   - docs/models/errors/comatprotoadminupdateaccountemailresponsebody.md
-  - docs/models/errors/comatprotoadminupdateaccounthandleatprotoadminresponsebody.md
+  - docs/models/errors/comatprotoadminupdateaccounthandleadminresponsebody.md
   - docs/models/errors/comatprotoadminupdateaccounthandleerror.md
   - docs/models/errors/comatprotoadminupdateaccounthandleresponsebody.md
-  - docs/models/errors/comatprotoadminupdateaccountpasswordatprotoadminresponsebody.md
+  - docs/models/errors/comatprotoadminupdateaccountpasswordadminresponsebody.md
   - docs/models/errors/comatprotoadminupdateaccountpassworderror.md
   - docs/models/errors/comatprotoadminupdateaccountpasswordresponsebody.md
-  - docs/models/errors/comatprotoadminupdatesubjectstatusatprotoadminresponsebody.md
+  - docs/models/errors/comatprotoadminupdatesubjectstatusadminresponsebody.md
   - docs/models/errors/comatprotoadminupdatesubjectstatuserror.md
   - docs/models/errors/comatprotoadminupdatesubjectstatusresponsebody.md
-  - docs/models/errors/comatprotoidentitygetrecommendeddidcredentialsatprotoidentityresponsebody.md
   - docs/models/errors/comatprotoidentitygetrecommendeddidcredentialserror.md
+  - docs/models/errors/comatprotoidentitygetrecommendeddidcredentialsidentityresponsebody.md
   - docs/models/errors/comatprotoidentitygetrecommendeddidcredentialsresponsebody.md
   - docs/models/errors/comatprotoidentityrequestplcoperationsignatureatprotoidentityresponsebody.md
   - docs/models/errors/comatprotoidentityrequestplcoperationsignatureerror.md
@@ -520,44 +522,44 @@ generatedFiles:
   - docs/models/errors/comatprotoidentitysignplcoperationatprotoidentityresponsebody.md
   - docs/models/errors/comatprotoidentitysignplcoperationerror.md
   - docs/models/errors/comatprotoidentitysignplcoperationresponsebody.md
-  - docs/models/errors/comatprotoidentitysubmitplcoperationatprotoidentityresponsebody.md
   - docs/models/errors/comatprotoidentitysubmitplcoperationerror.md
+  - docs/models/errors/comatprotoidentitysubmitplcoperationidentityresponsebody.md
   - docs/models/errors/comatprotoidentitysubmitplcoperationresponsebody.md
-  - docs/models/errors/comatprotoidentityupdatehandleatprotoidentityresponsebody.md
   - docs/models/errors/comatprotoidentityupdatehandleerror.md
+  - docs/models/errors/comatprotoidentityupdatehandleidentitiesresponsebody.md
   - docs/models/errors/comatprotoidentityupdatehandleresponsebody.md
-  - docs/models/errors/comatprotolabelquerylabelsatprotolabelresponsebody.md
+  - docs/models/errors/comatprotolabelquerylabelsatprotolabelsresponsebody.md
   - docs/models/errors/comatprotolabelquerylabelserror.md
   - docs/models/errors/comatprotolabelquerylabelsresponsebody.md
   - docs/models/errors/comatprotomoderationcreatereportatprotomoderationresponsebody.md
   - docs/models/errors/comatprotomoderationcreatereporterror.md
   - docs/models/errors/comatprotomoderationcreatereportresponsebody.md
-  - docs/models/errors/comatprotorepoapplywritesatprotoreporesponsebody.md
   - docs/models/errors/comatprotorepoapplywriteserror.md
+  - docs/models/errors/comatprotorepoapplywritesreposresponsebody.md
   - docs/models/errors/comatprotorepoapplywritesresponsebody.md
-  - docs/models/errors/comatprotorepocreaterecordatprotoreporesponsebody.md
   - docs/models/errors/comatprotorepocreaterecorderror.md
+  - docs/models/errors/comatprotorepocreaterecordreposresponsebody.md
   - docs/models/errors/comatprotorepocreaterecordresponsebody.md
   - docs/models/errors/comatprotorepodeleterecordatprotoreporesponsebody.md
   - docs/models/errors/comatprotorepodeleterecorderror.md
   - docs/models/errors/comatprotorepodeleterecordresponsebody.md
-  - docs/models/errors/comatprotorepodescriberepoatprotoreporesponsebody.md
   - docs/models/errors/comatprotorepodescriberepoerror.md
+  - docs/models/errors/comatprotorepodescribereporeposresponsebody.md
   - docs/models/errors/comatprotorepodescribereporesponsebody.md
-  - docs/models/errors/comatprotorepogetrecordatprotoreporesponsebody.md
   - docs/models/errors/comatprotorepogetrecorderror.md
+  - docs/models/errors/comatprotorepogetrecordreposresponsebody.md
   - docs/models/errors/comatprotorepogetrecordresponsebody.md
   - docs/models/errors/comatprotorepoimportrepoatprotoreporesponsebody.md
   - docs/models/errors/comatprotorepoimportrepoerror.md
   - docs/models/errors/comatprotorepoimportreporesponsebody.md
-  - docs/models/errors/comatprotorepolistmissingblobsatprotoreporesponsebody.md
   - docs/models/errors/comatprotorepolistmissingblobserror.md
+  - docs/models/errors/comatprotorepolistmissingblobsreposresponsebody.md
   - docs/models/errors/comatprotorepolistmissingblobsresponsebody.md
-  - docs/models/errors/comatprotorepolistrecordsatprotoreporesponsebody.md
   - docs/models/errors/comatprotorepolistrecordserror.md
+  - docs/models/errors/comatprotorepolistrecordsreposresponsebody.md
   - docs/models/errors/comatprotorepolistrecordsresponsebody.md
-  - docs/models/errors/comatprotorepoputrecordatprotoreporesponsebody.md
   - docs/models/errors/comatprotorepoputrecorderror.md
+  - docs/models/errors/comatprotorepoputrecordreporesponsebody.md
   - docs/models/errors/comatprotorepoputrecordresponsebody.md
   - docs/models/errors/comatprotorepouploadblobatprotoreporesponsebody.md
   - docs/models/errors/comatprotorepouploadbloberror.md
@@ -565,12 +567,12 @@ generatedFiles:
   - docs/models/errors/comatprotoserveractivateaccountatprotoserverresponsebody.md
   - docs/models/errors/comatprotoserveractivateaccounterror.md
   - docs/models/errors/comatprotoserveractivateaccountresponsebody.md
-  - docs/models/errors/comatprotoservercheckaccountstatusatprotoserverresponsebody.md
   - docs/models/errors/comatprotoservercheckaccountstatuserror.md
   - docs/models/errors/comatprotoservercheckaccountstatusresponsebody.md
-  - docs/models/errors/comatprotoserverconfirmemailatprotoserverresponsebody.md
+  - docs/models/errors/comatprotoservercheckaccountstatusserverresponsebody.md
   - docs/models/errors/comatprotoserverconfirmemailerror.md
   - docs/models/errors/comatprotoserverconfirmemailresponsebody.md
+  - docs/models/errors/comatprotoserverconfirmemailserverresponsebody.md
   - docs/models/errors/comatprotoservercreateaccountatprotoserverresponsebody.md
   - docs/models/errors/comatprotoservercreateaccounterror.md
   - docs/models/errors/comatprotoservercreateaccountresponsebody.md
@@ -583,12 +585,12 @@ generatedFiles:
   - docs/models/errors/comatprotoservercreateinvitecodesatprotoserverresponsebody.md
   - docs/models/errors/comatprotoservercreateinvitecodeserror.md
   - docs/models/errors/comatprotoservercreateinvitecodesresponsebody.md
-  - docs/models/errors/comatprotoservercreatesessionatprotoserverresponsebody.md
   - docs/models/errors/comatprotoservercreatesessionerror.md
   - docs/models/errors/comatprotoservercreatesessionresponsebody.md
-  - docs/models/errors/comatprotoserverdeactivateaccountatprotoserverresponsebody.md
+  - docs/models/errors/comatprotoservercreatesessionserverresponsebody.md
   - docs/models/errors/comatprotoserverdeactivateaccounterror.md
   - docs/models/errors/comatprotoserverdeactivateaccountresponsebody.md
+  - docs/models/errors/comatprotoserverdeactivateaccountserverresponsebody.md
   - docs/models/errors/comatprotoserverdeleteaccountatprotoserverresponsebody.md
   - docs/models/errors/comatprotoserverdeleteaccounterror.md
   - docs/models/errors/comatprotoserverdeleteaccountresponsebody.md
@@ -598,78 +600,82 @@ generatedFiles:
   - docs/models/errors/comatprotoserverdescribeserveratprotoserverresponsebody.md
   - docs/models/errors/comatprotoserverdescribeservererror.md
   - docs/models/errors/comatprotoserverdescribeserverresponsebody.md
-  - docs/models/errors/comatprotoservergetaccountinvitecodesatprotoserverresponsebody.md
+  - docs/models/errors/comatprotoservergetaccountinvitecodesaccountsresponsebody.md
   - docs/models/errors/comatprotoservergetaccountinvitecodeserror.md
   - docs/models/errors/comatprotoservergetaccountinvitecodesresponsebody.md
-  - docs/models/errors/comatprotoservergetserviceauthatprotoserverresponsebody.md
   - docs/models/errors/comatprotoservergetserviceautherror.md
   - docs/models/errors/comatprotoservergetserviceauthresponsebody.md
-  - docs/models/errors/comatprotoservergetsessionatprotoserverresponsebody.md
+  - docs/models/errors/comatprotoservergetserviceauthserversresponsebody.md
   - docs/models/errors/comatprotoservergetsessionerror.md
   - docs/models/errors/comatprotoservergetsessionresponsebody.md
-  - docs/models/errors/comatprotoserverlistapppasswordsatprotoserverresponsebody.md
+  - docs/models/errors/comatprotoservergetsessionserversresponsebody.md
   - docs/models/errors/comatprotoserverlistapppasswordserror.md
   - docs/models/errors/comatprotoserverlistapppasswordsresponsebody.md
+  - docs/models/errors/comatprotoserverlistapppasswordsserverresponsebody.md
   - docs/models/errors/comatprotoserverrefreshsessionatprotoserverresponsebody.md
   - docs/models/errors/comatprotoserverrefreshsessionerror.md
   - docs/models/errors/comatprotoserverrefreshsessionresponsebody.md
-  - docs/models/errors/comatprotoserverrequestaccountdeleteatprotoserverresponsebody.md
   - docs/models/errors/comatprotoserverrequestaccountdeleteerror.md
   - docs/models/errors/comatprotoserverrequestaccountdeleteresponsebody.md
+  - docs/models/errors/comatprotoserverrequestaccountdeleteserverresponsebody.md
   - docs/models/errors/comatprotoserverrequestemailconfirmationatprotoserverresponsebody.md
   - docs/models/errors/comatprotoserverrequestemailconfirmationerror.md
   - docs/models/errors/comatprotoserverrequestemailconfirmationresponsebody.md
-  - docs/models/errors/comatprotoserverrequestemailupdateatprotoserverresponsebody.md
   - docs/models/errors/comatprotoserverrequestemailupdateerror.md
   - docs/models/errors/comatprotoserverrequestemailupdateresponsebody.md
+  - docs/models/errors/comatprotoserverrequestemailupdateserverresponsebody.md
   - docs/models/errors/comatprotoserverrequestpasswordresetatprotoserverresponsebody.md
   - docs/models/errors/comatprotoserverrequestpasswordreseterror.md
   - docs/models/errors/comatprotoserverrequestpasswordresetresponsebody.md
-  - docs/models/errors/comatprotoserverreservesigningkeyatprotoserverresponsebody.md
   - docs/models/errors/comatprotoserverreservesigningkeyerror.md
   - docs/models/errors/comatprotoserverreservesigningkeyresponsebody.md
+  - docs/models/errors/comatprotoserverreservesigningkeyserversresponsebody.md
   - docs/models/errors/comatprotoserverresetpasswordatprotoserverresponsebody.md
   - docs/models/errors/comatprotoserverresetpassworderror.md
   - docs/models/errors/comatprotoserverresetpasswordresponsebody.md
   - docs/models/errors/comatprotoserverrevokeapppasswordatprotoserverresponsebody.md
   - docs/models/errors/comatprotoserverrevokeapppassworderror.md
   - docs/models/errors/comatprotoserverrevokeapppasswordresponsebody.md
-  - docs/models/errors/comatprotoserverupdateemailatprotoserverresponsebody.md
   - docs/models/errors/comatprotoserverupdateemailerror.md
   - docs/models/errors/comatprotoserverupdateemailresponsebody.md
+  - docs/models/errors/comatprotoserverupdateemailserversresponsebody.md
   - docs/models/errors/comatprotosyncgetblobatprotosyncresponsebody.md
   - docs/models/errors/comatprotosyncgetbloberror.md
   - docs/models/errors/comatprotosyncgetblobresponsebody.md
-  - docs/models/errors/comatprotosyncgetblocksatprotosyncresponsebody.md
   - docs/models/errors/comatprotosyncgetblockserror.md
   - docs/models/errors/comatprotosyncgetblocksresponsebody.md
-  - docs/models/errors/comatprotosyncgetlatestcommitatprotosyncresponsebody.md
+  - docs/models/errors/comatprotosyncgetblockssyncsresponsebody.md
   - docs/models/errors/comatprotosyncgetlatestcommiterror.md
   - docs/models/errors/comatprotosyncgetlatestcommitresponsebody.md
-  - docs/models/errors/comatprotosyncgetrecordatprotosyncresponsebody.md
+  - docs/models/errors/comatprotosyncgetlatestcommitsyncsresponsebody.md
+  - docs/models/errors/comatprotosyncgetrecordatprotosyncsresponsebody.md
   - docs/models/errors/comatprotosyncgetrecorderror.md
   - docs/models/errors/comatprotosyncgetrecordresponsebody.md
-  - docs/models/errors/comatprotosyncgetrepoatprotosyncresponsebody.md
   - docs/models/errors/comatprotosyncgetrepoerror.md
   - docs/models/errors/comatprotosyncgetreporesponsebody.md
-  - docs/models/errors/comatprotosyncgetrepostatusatprotosyncresponsebody.md
   - docs/models/errors/comatprotosyncgetrepostatuserror.md
   - docs/models/errors/comatprotosyncgetrepostatusresponsebody.md
-  - docs/models/errors/comatprotosynclistblobsatprotosyncresponsebody.md
+  - docs/models/errors/comatprotosyncgetrepostatussyncsresponsebody.md
+  - docs/models/errors/comatprotosyncgetreposyncresponsebody.md
   - docs/models/errors/comatprotosynclistblobserror.md
   - docs/models/errors/comatprotosynclistblobsresponsebody.md
+  - docs/models/errors/comatprotosynclistblobssyncresponsebody.md
   - docs/models/errors/comatprotosynclistreposatprotosyncresponsebody.md
   - docs/models/errors/comatprotosynclistreposerror.md
   - docs/models/errors/comatprotosynclistreposresponsebody.md
-  - docs/models/errors/comatprotosyncnotifyofupdateatprotosyncresponsebody.md
   - docs/models/errors/comatprotosyncnotifyofupdateerror.md
   - docs/models/errors/comatprotosyncnotifyofupdateresponsebody.md
-  - docs/models/errors/comatprotosyncrequestcrawlatprotosyncresponsebody.md
+  - docs/models/errors/comatprotosyncnotifyofupdatesyncresponsebody.md
   - docs/models/errors/comatprotosyncrequestcrawlerror.md
   - docs/models/errors/comatprotosyncrequestcrawlresponsebody.md
+  - docs/models/errors/comatprotosyncrequestcrawlsyncsresponsebody.md
   - docs/models/errors/errort.md
+  - docs/models/errors/internalservererror.md
+  - docs/models/errors/notfound.md
+  - docs/models/errors/ratelimited.md
+  - docs/models/errors/timeout.md
+  - docs/models/errors/toolsozonecommunicationcreatetemplatecommunicationsresponsebody.md
   - docs/models/errors/toolsozonecommunicationcreatetemplateerror.md
-  - docs/models/errors/toolsozonecommunicationcreatetemplateozonecommunicationresponsebody.md
   - docs/models/errors/toolsozonecommunicationcreatetemplateresponsebody.md
   - docs/models/errors/toolsozonecommunicationdeletetemplateerror.md
   - docs/models/errors/toolsozonecommunicationdeletetemplateozonecommunicationresponsebody.md
@@ -684,28 +690,28 @@ generatedFiles:
   - docs/models/errors/toolsozonemoderationemiteventozonemoderationresponsebody.md
   - docs/models/errors/toolsozonemoderationemiteventresponsebody.md
   - docs/models/errors/toolsozonemoderationgeteventerror.md
-  - docs/models/errors/toolsozonemoderationgeteventozonemoderationresponsebody.md
+  - docs/models/errors/toolsozonemoderationgeteventmoderationresponsebody.md
   - docs/models/errors/toolsozonemoderationgeteventresponsebody.md
   - docs/models/errors/toolsozonemoderationgetrecorderror.md
   - docs/models/errors/toolsozonemoderationgetrecordozonemoderationresponsebody.md
   - docs/models/errors/toolsozonemoderationgetrecordresponsebody.md
   - docs/models/errors/toolsozonemoderationgetrecordserror.md
-  - docs/models/errors/toolsozonemoderationgetrecordsozonemoderationresponsebody.md
+  - docs/models/errors/toolsozonemoderationgetrecordsmoderationsresponsebody.md
   - docs/models/errors/toolsozonemoderationgetrecordsresponsebody.md
   - docs/models/errors/toolsozonemoderationgetrepoerror.md
   - docs/models/errors/toolsozonemoderationgetrepoozonemoderationresponsebody.md
   - docs/models/errors/toolsozonemoderationgetreporesponsebody.md
   - docs/models/errors/toolsozonemoderationgetreposerror.md
-  - docs/models/errors/toolsozonemoderationgetreposozonemoderationresponsebody.md
+  - docs/models/errors/toolsozonemoderationgetreposmoderationsresponsebody.md
   - docs/models/errors/toolsozonemoderationgetreposresponsebody.md
   - docs/models/errors/toolsozonemoderationqueryeventserror.md
-  - docs/models/errors/toolsozonemoderationqueryeventsozonemoderationresponsebody.md
+  - docs/models/errors/toolsozonemoderationqueryeventsmoderationresponsebody.md
   - docs/models/errors/toolsozonemoderationqueryeventsresponsebody.md
   - docs/models/errors/toolsozonemoderationquerystatuseserror.md
-  - docs/models/errors/toolsozonemoderationquerystatusesozonemoderationresponsebody.md
+  - docs/models/errors/toolsozonemoderationquerystatusesmoderationsresponsebody.md
   - docs/models/errors/toolsozonemoderationquerystatusesresponsebody.md
   - docs/models/errors/toolsozonemoderationsearchreposerror.md
-  - docs/models/errors/toolsozonemoderationsearchreposozonemoderationresponsebody.md
+  - docs/models/errors/toolsozonemoderationsearchreposozonemoderationsresponsebody.md
   - docs/models/errors/toolsozonemoderationsearchreposresponsebody.md
   - docs/models/errors/toolsozoneservergetconfigerror.md
   - docs/models/errors/toolsozoneservergetconfigozoneserverresponsebody.md
@@ -714,50 +720,51 @@ generatedFiles:
   - docs/models/errors/toolsozonesetaddvaluesozonesetresponsebody.md
   - docs/models/errors/toolsozonesetaddvaluesresponsebody.md
   - docs/models/errors/toolsozonesetdeleteseterror.md
-  - docs/models/errors/toolsozonesetdeletesetozonesetresponsebody.md
   - docs/models/errors/toolsozonesetdeletesetresponsebody.md
+  - docs/models/errors/toolsozonesetdeletesetsetresponsebody.md
   - docs/models/errors/toolsozonesetdeletevalueserror.md
-  - docs/models/errors/toolsozonesetdeletevaluesozonesetresponsebody.md
   - docs/models/errors/toolsozonesetdeletevaluesresponsebody.md
+  - docs/models/errors/toolsozonesetdeletevaluessetsresponsebody.md
   - docs/models/errors/toolsozonesetgetvalueserror.md
-  - docs/models/errors/toolsozonesetgetvaluesozonesetresponsebody.md
   - docs/models/errors/toolsozonesetgetvaluesresponsebody.md
+  - docs/models/errors/toolsozonesetgetvaluessetsresponsebody.md
   - docs/models/errors/toolsozonesetquerysetserror.md
-  - docs/models/errors/toolsozonesetquerysetsozonesetresponsebody.md
   - docs/models/errors/toolsozonesetquerysetsresponsebody.md
+  - docs/models/errors/toolsozonesetquerysetssetresponsebody.md
   - docs/models/errors/toolsozonesettinglistoptionserror.md
-  - docs/models/errors/toolsozonesettinglistoptionsozonesettingresponsebody.md
   - docs/models/errors/toolsozonesettinglistoptionsresponsebody.md
+  - docs/models/errors/toolsozonesettinglistoptionssettingsresponsebody.md
   - docs/models/errors/toolsozonesettingremoveoptionserror.md
-  - docs/models/errors/toolsozonesettingremoveoptionsozonesettingresponsebody.md
   - docs/models/errors/toolsozonesettingremoveoptionsresponsebody.md
+  - docs/models/errors/toolsozonesettingremoveoptionssettingresponsebody.md
   - docs/models/errors/toolsozonesettingupsertoptionerror.md
-  - docs/models/errors/toolsozonesettingupsertoptionozonesettingresponsebody.md
+  - docs/models/errors/toolsozonesettingupsertoptionozonesettingsresponsebody.md
   - docs/models/errors/toolsozonesettingupsertoptionresponsebody.md
   - docs/models/errors/toolsozonesetupsertseterror.md
   - docs/models/errors/toolsozonesetupsertsetozonesetresponsebody.md
   - docs/models/errors/toolsozonesetupsertsetresponsebody.md
   - docs/models/errors/toolsozonesignaturefindcorrelationerror.md
-  - docs/models/errors/toolsozonesignaturefindcorrelationozonesignatureresponsebody.md
   - docs/models/errors/toolsozonesignaturefindcorrelationresponsebody.md
+  - docs/models/errors/toolsozonesignaturefindcorrelationsignatureresponsebody.md
   - docs/models/errors/toolsozonesignaturefindrelatedaccountserror.md
-  - docs/models/errors/toolsozonesignaturefindrelatedaccountsozonesignatureresponsebody.md
+  - docs/models/errors/toolsozonesignaturefindrelatedaccountsozonesignaturesresponsebody.md
   - docs/models/errors/toolsozonesignaturefindrelatedaccountsresponsebody.md
   - docs/models/errors/toolsozonesignaturesearchaccountserror.md
   - docs/models/errors/toolsozonesignaturesearchaccountsozonesignatureresponsebody.md
   - docs/models/errors/toolsozonesignaturesearchaccountsresponsebody.md
   - docs/models/errors/toolsozoneteamaddmembererror.md
-  - docs/models/errors/toolsozoneteamaddmemberozoneteamresponsebody.md
+  - docs/models/errors/toolsozoneteamaddmemberozoneresponsebody.md
   - docs/models/errors/toolsozoneteamaddmemberresponsebody.md
   - docs/models/errors/toolsozoneteamdeletemembererror.md
-  - docs/models/errors/toolsozoneteamdeletememberozoneteamresponsebody.md
   - docs/models/errors/toolsozoneteamdeletememberresponsebody.md
+  - docs/models/errors/toolsozoneteamdeletememberteamsresponsebody.md
   - docs/models/errors/toolsozoneteamlistmemberserror.md
-  - docs/models/errors/toolsozoneteamlistmembersozoneteamresponsebody.md
   - docs/models/errors/toolsozoneteamlistmembersresponsebody.md
+  - docs/models/errors/toolsozoneteamlistmembersteamresponsebody.md
   - docs/models/errors/toolsozoneteamupdatemembererror.md
-  - docs/models/errors/toolsozoneteamupdatememberozoneteamresponsebody.md
   - docs/models/errors/toolsozoneteamupdatememberresponsebody.md
+  - docs/models/errors/toolsozoneteamupdatememberteamsresponsebody.md
+  - docs/models/errors/unauthorized.md
   - docs/models/operations/appbskyactorgetpreferencesresponsebody.md
   - docs/models/operations/appbskyactorgetprofilerequest.md
   - docs/models/operations/appbskyactorgetprofilesrequest.md
@@ -1098,205 +1105,236 @@ generatedFiles:
   - docs/models/operations/validationstatus.md
   - docs/models/operations/views.md
   - docs/models/operations/writes.md
+  - docs/sdks/account/README.md
+  - docs/sdks/accounts/README.md
   - docs/sdks/actor/README.md
+  - docs/sdks/actors/README.md
   - docs/sdks/admin/README.md
-  - docs/sdks/atproto/README.md
+  - docs/sdks/admins/README.md
+  - docs/sdks/atprotoadmin/README.md
+  - docs/sdks/atprotoidentity/README.md
+  - docs/sdks/atprotolabels/README.md
+  - docs/sdks/atprotomoderation/README.md
+  - docs/sdks/atprotorepo/README.md
+  - docs/sdks/atprotoserver/README.md
+  - docs/sdks/atprotosync/README.md
+  - docs/sdks/atprotosyncs/README.md
   - docs/sdks/bluesky/README.md
-  - docs/sdks/blueskyactor/README.md
-  - docs/sdks/blueskymoderation/README.md
-  - docs/sdks/blueskyozonemoderation/README.md
-  - docs/sdks/blueskyserver/README.md
-  - docs/sdks/chat/README.md
-  - docs/sdks/communication/README.md
+  - docs/sdks/chatconvo/README.md
+  - docs/sdks/chatconvos/README.md
+  - docs/sdks/chatmoderation/README.md
+  - docs/sdks/chats/README.md
+  - docs/sdks/communications/README.md
+  - docs/sdks/conversations/README.md
   - docs/sdks/convo/README.md
+  - docs/sdks/convos/README.md
   - docs/sdks/feed/README.md
+  - docs/sdks/feeds/README.md
   - docs/sdks/graph/README.md
+  - docs/sdks/graphs/README.md
+  - docs/sdks/identities/README.md
   - docs/sdks/identity/README.md
-  - docs/sdks/label/README.md
-  - docs/sdks/labeler/README.md
+  - docs/sdks/labelers/README.md
   - docs/sdks/moderation/README.md
+  - docs/sdks/moderations/README.md
   - docs/sdks/notification/README.md
+  - docs/sdks/notifications/README.md
   - docs/sdks/ozone/README.md
+  - docs/sdks/ozonecommunication/README.md
+  - docs/sdks/ozonemoderation/README.md
+  - docs/sdks/ozonemoderations/README.md
+  - docs/sdks/ozoneserver/README.md
+  - docs/sdks/ozoneset/README.md
+  - docs/sdks/ozonesettings/README.md
+  - docs/sdks/ozonesignature/README.md
+  - docs/sdks/ozonesignatures/README.md
   - docs/sdks/repo/README.md
+  - docs/sdks/repos/README.md
   - docs/sdks/server/README.md
+  - docs/sdks/servers/README.md
   - docs/sdks/set/README.md
+  - docs/sdks/sets/README.md
   - docs/sdks/setting/README.md
+  - docs/sdks/settings/README.md
   - docs/sdks/signature/README.md
   - docs/sdks/sync/README.md
+  - docs/sdks/syncs/README.md
   - docs/sdks/team/README.md
-  - docs/sdks/video/README.md
+  - docs/sdks/teams/README.md
+  - docs/sdks/users/README.md
+  - docs/sdks/videos/README.md
   - jsr.json
   - package.json
   - src/core.ts
-  - src/funcs/actorGetPreferences.ts
-  - src/funcs/actorGetProfile.ts
-  - src/funcs/actorGetProfiles.ts
+  - src/funcs/accountDelete.ts
+  - src/funcs/accountExportData.ts
+  - src/funcs/accountsGetInviteCodes.ts
   - src/funcs/actorGetSuggestions.ts
-  - src/funcs/actorPutPreferences.ts
-  - src/funcs/actorSearchActors.ts
-  - src/funcs/actorSearchActorsTypeahead.ts
-  - src/funcs/atprotoAdminDeleteAccount.ts
+  - src/funcs/actorSearchTypeahead.ts
+  - src/funcs/actorsGetPreferences.ts
+  - src/funcs/actorsGetProfile.ts
+  - src/funcs/actorsGetProfiles.ts
+  - src/funcs/actorsPutPreferences.ts
+  - src/funcs/actorsSearch.ts
+  - src/funcs/adminDisableInviteCodes.ts
+  - src/funcs/adminGetAccountInfo.ts
+  - src/funcs/adminGetSubjectStatus.ts
+  - src/funcs/adminSendEmail.ts
+  - src/funcs/adminUpdateAccountEmail.ts
+  - src/funcs/adminUpdateAccountHandle.ts
+  - src/funcs/adminUpdateAccountPassword.ts
+  - src/funcs/adminUpdateSubjectStatus.ts
+  - src/funcs/adminsDeleteAccount.ts
+  - src/funcs/adminsEnableAccountInvites.ts
+  - src/funcs/adminsGetAccountInfos.ts
   - src/funcs/atprotoAdminDisableAccountInvites.ts
-  - src/funcs/atprotoAdminDisableInviteCodes.ts
-  - src/funcs/atprotoAdminEnableAccountInvites.ts
-  - src/funcs/atprotoAdminGetAccountInfo.ts
-  - src/funcs/atprotoAdminGetAccountInfos.ts
   - src/funcs/atprotoAdminGetInviteCodes.ts
-  - src/funcs/atprotoAdminGetSubjectStatus.ts
   - src/funcs/atprotoAdminSearchAccounts.ts
-  - src/funcs/atprotoAdminSendEmail.ts
-  - src/funcs/atprotoAdminUpdateAccountEmail.ts
-  - src/funcs/atprotoAdminUpdateAccountHandle.ts
-  - src/funcs/atprotoAdminUpdateAccountPassword.ts
-  - src/funcs/atprotoAdminUpdateSubjectStatus.ts
-  - src/funcs/atprotoIdentityGetRecommendedDidCredentials.ts
   - src/funcs/atprotoIdentityRequestPlcOperationSignature.ts
   - src/funcs/atprotoIdentityResolveHandle.ts
   - src/funcs/atprotoIdentitySignPlcOperation.ts
-  - src/funcs/atprotoIdentitySubmitPlcOperation.ts
-  - src/funcs/atprotoIdentityUpdateHandle.ts
-  - src/funcs/atprotoLabelQueryLabels.ts
+  - src/funcs/atprotoLabelsQuery.ts
   - src/funcs/atprotoModerationCreateReport.ts
-  - src/funcs/atprotoRepoApplyWrites.ts
-  - src/funcs/atprotoRepoCreateRecord.ts
-  - src/funcs/atprotoRepoDeleteRecord.ts
-  - src/funcs/atprotoRepoDescribeRepo.ts
-  - src/funcs/atprotoRepoGetRecord.ts
-  - src/funcs/atprotoRepoImportRepo.ts
-  - src/funcs/atprotoRepoListMissingBlobs.ts
-  - src/funcs/atprotoRepoListRecords.ts
-  - src/funcs/atprotoRepoPutRecord.ts
+  - src/funcs/atprotoRepoDelete.ts
+  - src/funcs/atprotoRepoImport.ts
   - src/funcs/atprotoRepoUploadBlob.ts
   - src/funcs/atprotoServerActivateAccount.ts
-  - src/funcs/atprotoServerCheckAccountStatus.ts
-  - src/funcs/atprotoServerConfirmEmail.ts
   - src/funcs/atprotoServerCreateAccount.ts
   - src/funcs/atprotoServerCreateAppPassword.ts
   - src/funcs/atprotoServerCreateInviteCode.ts
   - src/funcs/atprotoServerCreateInviteCodes.ts
-  - src/funcs/atprotoServerCreateSession.ts
-  - src/funcs/atprotoServerDeactivateAccount.ts
   - src/funcs/atprotoServerDeleteAccount.ts
   - src/funcs/atprotoServerDeleteSession.ts
-  - src/funcs/atprotoServerDescribeServer.ts
-  - src/funcs/atprotoServerGetAccountInviteCodes.ts
-  - src/funcs/atprotoServerGetServiceAuth.ts
-  - src/funcs/atprotoServerGetSession.ts
-  - src/funcs/atprotoServerListAppPasswords.ts
+  - src/funcs/atprotoServerDescribe.ts
   - src/funcs/atprotoServerRefreshSession.ts
-  - src/funcs/atprotoServerRequestAccountDelete.ts
   - src/funcs/atprotoServerRequestEmailConfirmation.ts
-  - src/funcs/atprotoServerRequestEmailUpdate.ts
   - src/funcs/atprotoServerRequestPasswordReset.ts
-  - src/funcs/atprotoServerReserveSigningKey.ts
   - src/funcs/atprotoServerResetPassword.ts
   - src/funcs/atprotoServerRevokeAppPassword.ts
-  - src/funcs/atprotoServerUpdateEmail.ts
   - src/funcs/atprotoSyncGetBlob.ts
-  - src/funcs/atprotoSyncGetBlocks.ts
-  - src/funcs/atprotoSyncGetLatestCommit.ts
-  - src/funcs/atprotoSyncGetRecord.ts
-  - src/funcs/atprotoSyncGetRepo.ts
-  - src/funcs/atprotoSyncGetRepoStatus.ts
-  - src/funcs/atprotoSyncListBlobs.ts
   - src/funcs/atprotoSyncListRepos.ts
-  - src/funcs/atprotoSyncNotifyOfUpdate.ts
-  - src/funcs/atprotoSyncRequestCrawl.ts
-  - src/funcs/chatActorDeleteAccount.ts
-  - src/funcs/chatActorExportAccountData.ts
-  - src/funcs/chatConvoDeleteMessageForSelf.ts
-  - src/funcs/chatConvoGetConvo.ts
-  - src/funcs/chatConvoGetConvoForMembers.ts
-  - src/funcs/chatConvoGetLog.ts
-  - src/funcs/chatConvoGetMessages.ts
-  - src/funcs/chatConvoLeaveConvo.ts
-  - src/funcs/chatConvoListConvos.ts
-  - src/funcs/chatConvoMuteConvo.ts
-  - src/funcs/chatConvoSendMessage.ts
+  - src/funcs/atprotoSyncsGetRecord.ts
   - src/funcs/chatConvoSendMessageBatch.ts
-  - src/funcs/chatConvoUnmuteConvo.ts
-  - src/funcs/chatConvoUpdateRead.ts
+  - src/funcs/chatConvoUnmute.ts
+  - src/funcs/chatConvosGetForMembers.ts
+  - src/funcs/chatConvosGetMessages.ts
+  - src/funcs/chatConvosSendMessage.ts
+  - src/funcs/chatConvosUpdateRead.ts
   - src/funcs/chatModerationGetActorMetadata.ts
-  - src/funcs/chatModerationGetMessageContext.ts
   - src/funcs/chatModerationUpdateActorAccess.ts
-  - src/funcs/feedDescribeFeedGenerator.ts
-  - src/funcs/feedGetActorFeeds.ts
+  - src/funcs/chatsGetConvo.ts
+  - src/funcs/chatsGetMessageContext.ts
+  - src/funcs/communicationsCreateTemplate.ts
+  - src/funcs/conversationsGetLog.ts
+  - src/funcs/conversationsLeave.ts
+  - src/funcs/convoDeleteMessageForSelf.ts
+  - src/funcs/convoList.ts
+  - src/funcs/convosMute.ts
+  - src/funcs/feedFetch.ts
+  - src/funcs/feedGetActor.ts
   - src/funcs/feedGetActorLikes.ts
-  - src/funcs/feedGetAuthorFeed.ts
-  - src/funcs/feedGetFeed.ts
-  - src/funcs/feedGetFeedGenerator.ts
-  - src/funcs/feedGetFeedGenerators.ts
-  - src/funcs/feedGetFeedSkeleton.ts
-  - src/funcs/feedGetLikes.ts
-  - src/funcs/feedGetListFeed.ts
-  - src/funcs/feedGetPostThread.ts
-  - src/funcs/feedGetPosts.ts
-  - src/funcs/feedGetQuotes.ts
-  - src/funcs/feedGetRepostedBy.ts
-  - src/funcs/feedGetSuggestedFeeds.ts
+  - src/funcs/feedGetAuthor.ts
+  - src/funcs/feedGetGenerator.ts
+  - src/funcs/feedGetGenerators.ts
+  - src/funcs/feedGetSkeleton.ts
+  - src/funcs/feedGetSuggested.ts
   - src/funcs/feedGetTimeline.ts
-  - src/funcs/feedSearchPosts.ts
-  - src/funcs/feedSendInteractions.ts
+  - src/funcs/feedSearch.ts
+  - src/funcs/feedsDescribeGenerator.ts
+  - src/funcs/feedsGet.ts
+  - src/funcs/feedsGetLikes.ts
+  - src/funcs/feedsGetList.ts
+  - src/funcs/feedsGetPostThread.ts
+  - src/funcs/feedsGetQuotes.ts
+  - src/funcs/feedsGetRepostedBy.ts
+  - src/funcs/feedsSendInteractions.ts
   - src/funcs/graphGetActorStarterPacks.ts
-  - src/funcs/graphGetBlocks.ts
-  - src/funcs/graphGetFollowers.ts
   - src/funcs/graphGetFollows.ts
-  - src/funcs/graphGetKnownFollowers.ts
   - src/funcs/graphGetList.ts
-  - src/funcs/graphGetListBlocks.ts
   - src/funcs/graphGetListMutes.ts
   - src/funcs/graphGetLists.ts
-  - src/funcs/graphGetMutes.ts
   - src/funcs/graphGetRelationships.ts
   - src/funcs/graphGetStarterPack.ts
-  - src/funcs/graphGetStarterPacks.ts
-  - src/funcs/graphGetSuggestedFollowsByActor.ts
   - src/funcs/graphMuteActor.ts
   - src/funcs/graphMuteActorList.ts
-  - src/funcs/graphMuteThread.ts
   - src/funcs/graphSearchStarterPacks.ts
-  - src/funcs/graphUnmuteActor.ts
-  - src/funcs/graphUnmuteActorList.ts
   - src/funcs/graphUnmuteThread.ts
-  - src/funcs/labelerGetServices.ts
-  - src/funcs/notificationGetUnreadCount.ts
-  - src/funcs/notificationListNotifications.ts
-  - src/funcs/notificationPutPreferences.ts
-  - src/funcs/notificationRegisterPush.ts
-  - src/funcs/notificationUpdateSeen.ts
-  - src/funcs/ozoneCommunicationCreateTemplate.ts
-  - src/funcs/ozoneCommunicationDeleteTemplate.ts
+  - src/funcs/graphsGetBlocks.ts
+  - src/funcs/graphsGetKnownFollowers.ts
+  - src/funcs/graphsGetListBlocks.ts
+  - src/funcs/graphsGetMutes.ts
+  - src/funcs/graphsGetStarterPacks.ts
+  - src/funcs/graphsMuteThread.ts
+  - src/funcs/graphsUnmuteActorList.ts
+  - src/funcs/identitiesUpdateHandle.ts
+  - src/funcs/identityGetRecommendedDidCredentials.ts
+  - src/funcs/identitySubmitPlcOperation.ts
+  - src/funcs/labelersGetServices.ts
+  - src/funcs/moderationGetEvent.ts
+  - src/funcs/moderationQueryEvents.ts
+  - src/funcs/moderationsGetRecords.ts
+  - src/funcs/moderationsGetRepos.ts
+  - src/funcs/moderationsQueryStatuses.ts
+  - src/funcs/notificationList.ts
+  - src/funcs/notificationsGetUnreadCount.ts
+  - src/funcs/notificationsPutPreferences.ts
+  - src/funcs/notificationsRegisterPush.ts
+  - src/funcs/notificationsUpdateSeen.ts
+  - src/funcs/ozoneAddMember.ts
+  - src/funcs/ozoneCommunicationDelete.ts
   - src/funcs/ozoneCommunicationListTemplates.ts
   - src/funcs/ozoneCommunicationUpdateTemplate.ts
   - src/funcs/ozoneModerationEmitEvent.ts
-  - src/funcs/ozoneModerationGetEvent.ts
+  - src/funcs/ozoneModerationGet.ts
   - src/funcs/ozoneModerationGetRecord.ts
-  - src/funcs/ozoneModerationGetRecords.ts
-  - src/funcs/ozoneModerationGetRepo.ts
-  - src/funcs/ozoneModerationGetRepos.ts
-  - src/funcs/ozoneModerationQueryEvents.ts
-  - src/funcs/ozoneModerationQueryStatuses.ts
-  - src/funcs/ozoneModerationSearchRepos.ts
+  - src/funcs/ozoneModerationsSearchRepos.ts
   - src/funcs/ozoneServerGetConfig.ts
-  - src/funcs/ozoneSetAddValues.ts
-  - src/funcs/ozoneSetDeleteSet.ts
-  - src/funcs/ozoneSetDeleteValues.ts
-  - src/funcs/ozoneSetGetValues.ts
-  - src/funcs/ozoneSetQuerySets.ts
-  - src/funcs/ozoneSetUpsertSet.ts
-  - src/funcs/ozoneSettingListOptions.ts
-  - src/funcs/ozoneSettingRemoveOptions.ts
-  - src/funcs/ozoneSettingUpsertOption.ts
-  - src/funcs/ozoneSignatureFindCorrelation.ts
-  - src/funcs/ozoneSignatureFindRelatedAccounts.ts
+  - src/funcs/ozoneSetAdd.ts
+  - src/funcs/ozoneSetUpsert.ts
+  - src/funcs/ozoneSettingsUpsertOption.ts
   - src/funcs/ozoneSignatureSearchAccounts.ts
-  - src/funcs/ozoneTeamAddMember.ts
-  - src/funcs/ozoneTeamDeleteMember.ts
-  - src/funcs/ozoneTeamListMembers.ts
-  - src/funcs/ozoneTeamUpdateMember.ts
-  - src/funcs/videoGetJobStatus.ts
-  - src/funcs/videoGetUploadLimits.ts
-  - src/funcs/videoUploadVideo.ts
+  - src/funcs/ozoneSignaturesFindRelatedAccounts.ts
+  - src/funcs/repoPutRecord.ts
+  - src/funcs/reposApplyWrites.ts
+  - src/funcs/reposCreateRecord.ts
+  - src/funcs/reposDescribe.ts
+  - src/funcs/reposGetRecord.ts
+  - src/funcs/reposList.ts
+  - src/funcs/reposListMissingBlobs.ts
+  - src/funcs/serverCheckAccountStatus.ts
+  - src/funcs/serverConfirmEmail.ts
+  - src/funcs/serverCreateSession.ts
+  - src/funcs/serverDeactivateAccount.ts
+  - src/funcs/serverListAppPasswords.ts
+  - src/funcs/serverRequestAccountDelete.ts
+  - src/funcs/serverRequestEmailUpdate.ts
+  - src/funcs/serversGetServiceAuth.ts
+  - src/funcs/serversGetSession.ts
+  - src/funcs/serversReserveSigningKey.ts
+  - src/funcs/serversUpdateEmail.ts
+  - src/funcs/setDelete.ts
+  - src/funcs/setQuery.ts
+  - src/funcs/setsDeleteValues.ts
+  - src/funcs/setsGetValues.ts
+  - src/funcs/settingRemoveOptions.ts
+  - src/funcs/settingsList.ts
+  - src/funcs/signatureFindCorrelation.ts
+  - src/funcs/syncGetRepo.ts
+  - src/funcs/syncListBlobs.ts
+  - src/funcs/syncNotifyOfUpdate.ts
+  - src/funcs/syncsGetBlocks.ts
+  - src/funcs/syncsGetLatestCommit.ts
+  - src/funcs/syncsGetRepoStatus.ts
+  - src/funcs/syncsRequestCrawl.ts
+  - src/funcs/teamListMembers.ts
+  - src/funcs/teamsDeleteMember.ts
+  - src/funcs/teamsUpdateMember.ts
+  - src/funcs/usersGetFollowers.ts
+  - src/funcs/usersGetSuggestedFollows.ts
+  - src/funcs/usersUnmute.ts
+  - src/funcs/videosGetJobStatus.ts
+  - src/funcs/videosGetUploadLimits.ts
+  - src/funcs/videosUpload.ts
   - src/hooks/hooks.ts
   - src/hooks/index.ts
   - src/hooks/types.ts
@@ -1537,6 +1575,7 @@ generatedFiles:
   - src/models/errors/appbskyvideogetjobstatus.ts
   - src/models/errors/appbskyvideogetuploadlimits.ts
   - src/models/errors/appbskyvideouploadvideo.ts
+  - src/models/errors/badrequest.ts
   - src/models/errors/chatbskyactordeleteaccount.ts
   - src/models/errors/chatbskyactorexportaccountdata.ts
   - src/models/errors/chatbskyconvodeletemessageforself.ts
@@ -1623,7 +1662,11 @@ generatedFiles:
   - src/models/errors/comatprotosyncrequestcrawl.ts
   - src/models/errors/httpclienterrors.ts
   - src/models/errors/index.ts
+  - src/models/errors/internalservererror.ts
+  - src/models/errors/notfound.ts
+  - src/models/errors/ratelimited.ts
   - src/models/errors/sdkvalidationerror.ts
+  - src/models/errors/timeout.ts
   - src/models/errors/toolsozonecommunicationcreatetemplate.ts
   - src/models/errors/toolsozonecommunicationdeletetemplate.ts
   - src/models/errors/toolsozonecommunicationlisttemplates.ts
@@ -1654,6 +1697,7 @@ generatedFiles:
   - src/models/errors/toolsozoneteamdeletemember.ts
   - src/models/errors/toolsozoneteamlistmembers.ts
   - src/models/errors/toolsozoneteamupdatemember.ts
+  - src/models/errors/unauthorized.ts
   - src/models/operations/appbskyactorgetpreferences.ts
   - src/models/operations/appbskyactorgetprofile.ts
   - src/models/operations/appbskyactorgetprofiles.ts
@@ -1816,206 +1860,65 @@ generatedFiles:
   - src/models/operations/toolsozoneteamdeletemember.ts
   - src/models/operations/toolsozoneteamlistmembers.ts
   - src/models/operations/toolsozoneteamupdatemember.ts
-  - src/react-query/_context.tsx
-  - src/react-query/_types.ts
-  - src/react-query/actorGetPreferences.ts
-  - src/react-query/actorGetProfile.ts
-  - src/react-query/actorGetProfiles.ts
-  - src/react-query/actorGetSuggestions.ts
-  - src/react-query/actorPutPreferences.ts
-  - src/react-query/actorSearchActors.ts
-  - src/react-query/actorSearchActorsTypeahead.ts
-  - src/react-query/atprotoAdminDeleteAccount.ts
-  - src/react-query/atprotoAdminDisableAccountInvites.ts
-  - src/react-query/atprotoAdminDisableInviteCodes.ts
-  - src/react-query/atprotoAdminEnableAccountInvites.ts
-  - src/react-query/atprotoAdminGetAccountInfo.ts
-  - src/react-query/atprotoAdminGetAccountInfos.ts
-  - src/react-query/atprotoAdminGetInviteCodes.ts
-  - src/react-query/atprotoAdminGetSubjectStatus.ts
-  - src/react-query/atprotoAdminSearchAccounts.ts
-  - src/react-query/atprotoAdminSendEmail.ts
-  - src/react-query/atprotoAdminUpdateAccountEmail.ts
-  - src/react-query/atprotoAdminUpdateAccountHandle.ts
-  - src/react-query/atprotoAdminUpdateAccountPassword.ts
-  - src/react-query/atprotoAdminUpdateSubjectStatus.ts
-  - src/react-query/atprotoIdentityGetRecommendedDidCredentials.ts
-  - src/react-query/atprotoIdentityRequestPlcOperationSignature.ts
-  - src/react-query/atprotoIdentityResolveHandle.ts
-  - src/react-query/atprotoIdentitySignPlcOperation.ts
-  - src/react-query/atprotoIdentitySubmitPlcOperation.ts
-  - src/react-query/atprotoIdentityUpdateHandle.ts
-  - src/react-query/atprotoLabelQueryLabels.ts
-  - src/react-query/atprotoModerationCreateReport.ts
-  - src/react-query/atprotoRepoApplyWrites.ts
-  - src/react-query/atprotoRepoCreateRecord.ts
-  - src/react-query/atprotoRepoDeleteRecord.ts
-  - src/react-query/atprotoRepoDescribeRepo.ts
-  - src/react-query/atprotoRepoGetRecord.ts
-  - src/react-query/atprotoRepoImportRepo.ts
-  - src/react-query/atprotoRepoListMissingBlobs.ts
-  - src/react-query/atprotoRepoListRecords.ts
-  - src/react-query/atprotoRepoPutRecord.ts
-  - src/react-query/atprotoRepoUploadBlob.ts
-  - src/react-query/atprotoServerActivateAccount.ts
-  - src/react-query/atprotoServerCheckAccountStatus.ts
-  - src/react-query/atprotoServerConfirmEmail.ts
-  - src/react-query/atprotoServerCreateAccount.ts
-  - src/react-query/atprotoServerCreateAppPassword.ts
-  - src/react-query/atprotoServerCreateInviteCode.ts
-  - src/react-query/atprotoServerCreateInviteCodes.ts
-  - src/react-query/atprotoServerCreateSession.ts
-  - src/react-query/atprotoServerDeactivateAccount.ts
-  - src/react-query/atprotoServerDeleteAccount.ts
-  - src/react-query/atprotoServerDeleteSession.ts
-  - src/react-query/atprotoServerDescribeServer.ts
-  - src/react-query/atprotoServerGetAccountInviteCodes.ts
-  - src/react-query/atprotoServerGetServiceAuth.ts
-  - src/react-query/atprotoServerGetSession.ts
-  - src/react-query/atprotoServerListAppPasswords.ts
-  - src/react-query/atprotoServerRefreshSession.ts
-  - src/react-query/atprotoServerRequestAccountDelete.ts
-  - src/react-query/atprotoServerRequestEmailConfirmation.ts
-  - src/react-query/atprotoServerRequestEmailUpdate.ts
-  - src/react-query/atprotoServerRequestPasswordReset.ts
-  - src/react-query/atprotoServerReserveSigningKey.ts
-  - src/react-query/atprotoServerResetPassword.ts
-  - src/react-query/atprotoServerRevokeAppPassword.ts
-  - src/react-query/atprotoServerUpdateEmail.ts
-  - src/react-query/atprotoSyncGetBlob.ts
-  - src/react-query/atprotoSyncGetBlocks.ts
-  - src/react-query/atprotoSyncGetLatestCommit.ts
-  - src/react-query/atprotoSyncGetRecord.ts
-  - src/react-query/atprotoSyncGetRepo.ts
-  - src/react-query/atprotoSyncGetRepoStatus.ts
-  - src/react-query/atprotoSyncListBlobs.ts
-  - src/react-query/atprotoSyncListRepos.ts
-  - src/react-query/atprotoSyncNotifyOfUpdate.ts
-  - src/react-query/atprotoSyncRequestCrawl.ts
-  - src/react-query/chatActorDeleteAccount.ts
-  - src/react-query/chatActorExportAccountData.ts
-  - src/react-query/chatConvoDeleteMessageForSelf.ts
-  - src/react-query/chatConvoGetConvo.ts
-  - src/react-query/chatConvoGetConvoForMembers.ts
-  - src/react-query/chatConvoGetLog.ts
-  - src/react-query/chatConvoGetMessages.ts
-  - src/react-query/chatConvoLeaveConvo.ts
-  - src/react-query/chatConvoListConvos.ts
-  - src/react-query/chatConvoMuteConvo.ts
-  - src/react-query/chatConvoSendMessage.ts
-  - src/react-query/chatConvoSendMessageBatch.ts
-  - src/react-query/chatConvoUnmuteConvo.ts
-  - src/react-query/chatConvoUpdateRead.ts
-  - src/react-query/chatModerationGetActorMetadata.ts
-  - src/react-query/chatModerationGetMessageContext.ts
-  - src/react-query/chatModerationUpdateActorAccess.ts
-  - src/react-query/feedDescribeFeedGenerator.ts
-  - src/react-query/feedGetActorFeeds.ts
-  - src/react-query/feedGetActorLikes.ts
-  - src/react-query/feedGetAuthorFeed.ts
-  - src/react-query/feedGetFeed.ts
-  - src/react-query/feedGetFeedGenerator.ts
-  - src/react-query/feedGetFeedGenerators.ts
-  - src/react-query/feedGetFeedSkeleton.ts
-  - src/react-query/feedGetLikes.ts
-  - src/react-query/feedGetListFeed.ts
-  - src/react-query/feedGetPostThread.ts
-  - src/react-query/feedGetPosts.ts
-  - src/react-query/feedGetQuotes.ts
-  - src/react-query/feedGetRepostedBy.ts
-  - src/react-query/feedGetSuggestedFeeds.ts
-  - src/react-query/feedGetTimeline.ts
-  - src/react-query/feedSearchPosts.ts
-  - src/react-query/feedSendInteractions.ts
-  - src/react-query/graphGetActorStarterPacks.ts
-  - src/react-query/graphGetBlocks.ts
-  - src/react-query/graphGetFollowers.ts
-  - src/react-query/graphGetFollows.ts
-  - src/react-query/graphGetKnownFollowers.ts
-  - src/react-query/graphGetList.ts
-  - src/react-query/graphGetListBlocks.ts
-  - src/react-query/graphGetListMutes.ts
-  - src/react-query/graphGetLists.ts
-  - src/react-query/graphGetMutes.ts
-  - src/react-query/graphGetRelationships.ts
-  - src/react-query/graphGetStarterPack.ts
-  - src/react-query/graphGetStarterPacks.ts
-  - src/react-query/graphGetSuggestedFollowsByActor.ts
-  - src/react-query/graphMuteActor.ts
-  - src/react-query/graphMuteActorList.ts
-  - src/react-query/graphMuteThread.ts
-  - src/react-query/graphSearchStarterPacks.ts
-  - src/react-query/graphUnmuteActor.ts
-  - src/react-query/graphUnmuteActorList.ts
-  - src/react-query/graphUnmuteThread.ts
-  - src/react-query/index.ts
-  - src/react-query/labelerGetServices.ts
-  - src/react-query/notificationGetUnreadCount.ts
-  - src/react-query/notificationListNotifications.ts
-  - src/react-query/notificationPutPreferences.ts
-  - src/react-query/notificationRegisterPush.ts
-  - src/react-query/notificationUpdateSeen.ts
-  - src/react-query/ozoneCommunicationCreateTemplate.ts
-  - src/react-query/ozoneCommunicationDeleteTemplate.ts
-  - src/react-query/ozoneCommunicationListTemplates.ts
-  - src/react-query/ozoneCommunicationUpdateTemplate.ts
-  - src/react-query/ozoneModerationEmitEvent.ts
-  - src/react-query/ozoneModerationGetEvent.ts
-  - src/react-query/ozoneModerationGetRecord.ts
-  - src/react-query/ozoneModerationGetRecords.ts
-  - src/react-query/ozoneModerationGetRepo.ts
-  - src/react-query/ozoneModerationGetRepos.ts
-  - src/react-query/ozoneModerationQueryEvents.ts
-  - src/react-query/ozoneModerationQueryStatuses.ts
-  - src/react-query/ozoneModerationSearchRepos.ts
-  - src/react-query/ozoneServerGetConfig.ts
-  - src/react-query/ozoneSetAddValues.ts
-  - src/react-query/ozoneSetDeleteSet.ts
-  - src/react-query/ozoneSetDeleteValues.ts
-  - src/react-query/ozoneSetGetValues.ts
-  - src/react-query/ozoneSetQuerySets.ts
-  - src/react-query/ozoneSetUpsertSet.ts
-  - src/react-query/ozoneSettingListOptions.ts
-  - src/react-query/ozoneSettingRemoveOptions.ts
-  - src/react-query/ozoneSettingUpsertOption.ts
-  - src/react-query/ozoneSignatureFindCorrelation.ts
-  - src/react-query/ozoneSignatureFindRelatedAccounts.ts
-  - src/react-query/ozoneSignatureSearchAccounts.ts
-  - src/react-query/ozoneTeamAddMember.ts
-  - src/react-query/ozoneTeamDeleteMember.ts
-  - src/react-query/ozoneTeamListMembers.ts
-  - src/react-query/ozoneTeamUpdateMember.ts
-  - src/react-query/videoGetJobStatus.ts
-  - src/react-query/videoGetUploadLimits.ts
-  - src/react-query/videoUploadVideo.ts
+  - src/sdk/account.ts
+  - src/sdk/accounts.ts
   - src/sdk/actor.ts
+  - src/sdk/actors.ts
   - src/sdk/admin.ts
-  - src/sdk/atproto.ts
-  - src/sdk/blueskyactor.ts
-  - src/sdk/blueskymoderation.ts
-  - src/sdk/blueskyozonemoderation.ts
-  - src/sdk/blueskyserver.ts
-  - src/sdk/chat.ts
-  - src/sdk/communication.ts
+  - src/sdk/admins.ts
+  - src/sdk/atprotoadmin.ts
+  - src/sdk/atprotoidentity.ts
+  - src/sdk/atprotolabels.ts
+  - src/sdk/atprotomoderation.ts
+  - src/sdk/atprotorepo.ts
+  - src/sdk/atprotoserver.ts
+  - src/sdk/atprotosync.ts
+  - src/sdk/atprotosyncs.ts
+  - src/sdk/chatconvo.ts
+  - src/sdk/chatconvos.ts
+  - src/sdk/chatmoderation.ts
+  - src/sdk/chats.ts
+  - src/sdk/communications.ts
+  - src/sdk/conversations.ts
   - src/sdk/convo.ts
+  - src/sdk/convos.ts
   - src/sdk/feed.ts
+  - src/sdk/feeds.ts
   - src/sdk/graph.ts
+  - src/sdk/graphs.ts
+  - src/sdk/identities.ts
   - src/sdk/identity.ts
   - src/sdk/index.ts
-  - src/sdk/label.ts
-  - src/sdk/labeler.ts
+  - src/sdk/labelers.ts
   - src/sdk/moderation.ts
+  - src/sdk/moderations.ts
   - src/sdk/notification.ts
+  - src/sdk/notifications.ts
   - src/sdk/ozone.ts
+  - src/sdk/ozonecommunication.ts
+  - src/sdk/ozonemoderation.ts
+  - src/sdk/ozonemoderations.ts
+  - src/sdk/ozoneserver.ts
+  - src/sdk/ozoneset.ts
+  - src/sdk/ozonesettings.ts
+  - src/sdk/ozonesignature.ts
+  - src/sdk/ozonesignatures.ts
   - src/sdk/repo.ts
+  - src/sdk/repos.ts
   - src/sdk/sdk.ts
   - src/sdk/server.ts
+  - src/sdk/servers.ts
   - src/sdk/set.ts
+  - src/sdk/sets.ts
   - src/sdk/setting.ts
+  - src/sdk/settings.ts
   - src/sdk/signature.ts
   - src/sdk/sync.ts
+  - src/sdk/syncs.ts
   - src/sdk/team.ts
-  - src/sdk/video.ts
+  - src/sdk/teams.ts
+  - src/sdk/users.ts
+  - src/sdk/videos.ts
   - src/types/blobs.ts
   - src/types/constdatetime.ts
   - src/types/enums.ts
@@ -2035,6 +1938,18 @@ examples:
           application/json: {"error": "ExpiredToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "408":
+          application/json: {"key": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500":
+          application/json: {"key": "<value>"}
   app.bsky.actor.getProfile:
     speakeasy-default-app-bsky-actor-get-profile:
       parameters:
@@ -2047,6 +1962,15 @@ examples:
           application/json: {"error": "InvalidToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403": {}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "408": {}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429": {}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   app.bsky.actor.getProfiles:
     speakeasy-default-app-bsky-actor-get-profiles:
       parameters:
@@ -2059,6 +1983,16 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403": {}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "408":
+          application/json: {"key": "<value>"}
+        "413": {}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "500":
+          application/json: {"key": "<value>"}
   app.bsky.actor.getSuggestions:
     speakeasy-default-app-bsky-actor-get-suggestions:
       responses:
@@ -2068,6 +2002,15 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403": {}
+        "404": {}
+        "408": {}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   app.bsky.actor.putPreferences:
     speakeasy-default-app-bsky-actor-put-preferences:
       requestBody:
@@ -2077,6 +2020,17 @@ examples:
           application/json: {"error": "InvalidToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "404":
+          application/json: {"key": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413":
+          application/json: {"key": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500": {}
   app.bsky.actor.searchActors:
     speakeasy-default-app-bsky-actor-search-actors:
       responses:
@@ -2086,6 +2040,14 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>"}
+        "404":
+          application/json: {"key": "<value>"}
+        "408": {}
+        "413": {}
+        "429": {}
+        "500": {}
   app.bsky.actor.searchActorsTypeahead:
     speakeasy-default-app-bsky-actor-search-actors-typeahead:
       responses:
@@ -2095,6 +2057,17 @@ examples:
           application/json: {"error": "InvalidToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500": {}
   app.bsky.feed.describeFeedGenerator:
     speakeasy-default-app-bsky-feed-describe-feed-generator:
       responses:
@@ -2104,6 +2077,16 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403": {}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "408": {}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500":
+          application/json: {"key": "<value>"}
   app.bsky.feed.getActorFeeds:
     speakeasy-default-app-bsky-feed-get-actor-feeds:
       parameters:
@@ -2116,6 +2099,15 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "408": {}
+        "413": {}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "500": {}
   app.bsky.feed.getActorLikes:
     speakeasy-default-app-bsky-feed-get-actor-likes:
       parameters:
@@ -2128,6 +2120,16 @@ examples:
           application/json: {"error": "BlockedByActor", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "408": {}
+        "413":
+          application/json: {"key": "<value>"}
+        "429": {}
+        "500":
+          application/json: {"key": "<value>"}
   app.bsky.feed.getAuthorFeed:
     speakeasy-default-app-bsky-feed-get-author-feed:
       parameters:
@@ -2140,6 +2142,17 @@ examples:
           application/json: {"error": "BlockedByActor", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "408":
+          application/json: {"key": "<value>"}
+        "413":
+          application/json: {"key": "<value>"}
+        "429":
+          application/json: {"key": "<value>"}
+        "500": {}
   app.bsky.feed.getFeed:
     speakeasy-default-app-bsky-feed-get-feed:
       parameters:
@@ -2152,6 +2165,18 @@ examples:
           application/json: {"error": "InvalidToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "408":
+          application/json: {"key": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
   app.bsky.feed.getFeedGenerator:
     speakeasy-default-app-bsky-feed-get-feed-generator:
       parameters:
@@ -2164,6 +2189,17 @@ examples:
           application/json: {"error": "InvalidToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "413": {}
+        "429":
+          application/json: {"key": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
   app.bsky.feed.getFeedGenerators:
     speakeasy-default-app-bsky-feed-get-feed-generators:
       parameters:
@@ -2176,6 +2212,16 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "404": {}
+        "408":
+          application/json: {"key": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "429": {}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
   app.bsky.feed.getFeedSkeleton:
     speakeasy-default-app-bsky-feed-get-feed-skeleton:
       parameters:
@@ -2188,6 +2234,15 @@ examples:
           application/json: {"error": "UnknownFeed", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "404":
+          application/json: {"key": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413": {}
+        "429": {}
+        "500": {}
   app.bsky.feed.getLikes:
     speakeasy-default-app-bsky-feed-get-likes:
       parameters:
@@ -2200,6 +2255,16 @@ examples:
           application/json: {"error": "ExpiredToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "408": {}
+        "413":
+          application/json: {"key": "<value>"}
+        "429":
+          application/json: {"key": "<value>"}
+        "500": {}
   app.bsky.feed.getListFeed:
     speakeasy-default-app-bsky-feed-get-list-feed:
       parameters:
@@ -2212,6 +2277,16 @@ examples:
           application/json: {"error": "InvalidToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "408": {}
+        "413":
+          application/json: {"key": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500": {}
   app.bsky.feed.getPostThread:
     speakeasy-default-app-bsky-feed-get-post-thread:
       parameters:
@@ -2224,6 +2299,16 @@ examples:
           application/json: {"error": "InvalidToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "404": {}
+        "408": {}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "500":
+          application/json: {"key": "<value>"}
   app.bsky.feed.getPosts:
     speakeasy-default-app-bsky-feed-get-posts:
       parameters:
@@ -2236,6 +2321,18 @@ examples:
           application/json: {"error": "InvalidToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500":
+          application/json: {"key": "<value>"}
   app.bsky.feed.getQuotes:
     speakeasy-default-app-bsky-feed-get-quotes:
       parameters:
@@ -2248,6 +2345,17 @@ examples:
           application/json: {"error": "ExpiredToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>"}
+        "404":
+          application/json: {"key": "<value>"}
+        "408": {}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   app.bsky.feed.getRepostedBy:
     speakeasy-default-app-bsky-feed-get-reposted-by:
       parameters:
@@ -2260,6 +2368,17 @@ examples:
           application/json: {"error": "InvalidToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "429":
+          application/json: {"key": "<value>"}
+        "500": {}
   app.bsky.feed.getSuggestedFeeds:
     speakeasy-default-app-bsky-feed-get-suggested-feeds:
       responses:
@@ -2269,6 +2388,17 @@ examples:
           application/json: {"error": "InvalidToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "404": {}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   app.bsky.feed.getTimeline:
     speakeasy-default-app-bsky-feed-get-timeline:
       responses:
@@ -2278,6 +2408,17 @@ examples:
           application/json: {"error": "InvalidToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403": {}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413":
+          application/json: {"key": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   app.bsky.feed.searchPosts:
     speakeasy-default-app-bsky-feed-search-posts:
       parameters:
@@ -2290,6 +2431,14 @@ examples:
           application/json: {"error": "ExpiredToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>"}
+        "404":
+          application/json: {"key": "<value>"}
+        "408": {}
+        "413": {}
+        "429": {}
+        "500": {}
   app.bsky.feed.sendInteractions:
     speakeasy-default-app-bsky-feed-send-interactions:
       requestBody:
@@ -2300,6 +2449,17 @@ examples:
         "401":
           application/json: {"message": "<value>"}
         "200": {}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "413": {}
+        "429":
+          application/json: {"key": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
   app.bsky.graph.getActorStarterPacks:
     speakeasy-default-app-bsky-graph-get-actor-starter-packs:
       parameters:
@@ -2312,6 +2472,17 @@ examples:
           application/json: {"error": "ExpiredToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "404":
+          application/json: {"key": "<value>"}
+        "408": {}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   app.bsky.graph.getBlocks:
     speakeasy-default-app-bsky-graph-get-blocks:
       responses:
@@ -2321,6 +2492,16 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403": {}
+        "404":
+          application/json: {"key": "<value>"}
+        "408": {}
+        "413":
+          application/json: {"key": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500":
+          application/json: {"key": "<value>"}
   app.bsky.graph.getFollowers:
     speakeasy-default-app-bsky-graph-get-followers:
       parameters:
@@ -2333,6 +2514,17 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>"}
+        "404": {}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "413":
+          application/json: {"key": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
   app.bsky.graph.getFollows:
     speakeasy-default-app-bsky-graph-get-follows:
       parameters:
@@ -2345,6 +2537,16 @@ examples:
           application/json: {"error": "ExpiredToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "404":
+          application/json: {"key": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413": {}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "500": {}
   app.bsky.graph.getKnownFollowers:
     speakeasy-default-app-bsky-graph-get-known-followers:
       parameters:
@@ -2357,6 +2559,18 @@ examples:
           application/json: {"error": "InvalidToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413":
+          application/json: {"key": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   app.bsky.graph.getList:
     speakeasy-default-app-bsky-graph-get-list:
       parameters:
@@ -2369,6 +2583,16 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "408": {}
+        "413":
+          application/json: {"key": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500": {}
   app.bsky.graph.getListBlocks:
     speakeasy-default-app-bsky-graph-get-list-blocks:
       responses:
@@ -2378,6 +2602,18 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "404":
+          application/json: {"key": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "429":
+          application/json: {"key": "<value>"}
+        "500":
+          application/json: {"key": "<value>"}
   app.bsky.graph.getListMutes:
     speakeasy-default-app-bsky-graph-get-list-mutes:
       responses:
@@ -2387,6 +2623,15 @@ examples:
           application/json: {"error": "InvalidToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403": {}
+        "404": {}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "429":
+          application/json: {"key": "<value>"}
+        "500": {}
   app.bsky.graph.getLists:
     speakeasy-default-app-bsky-graph-get-lists:
       parameters:
@@ -2399,6 +2644,18 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "408":
+          application/json: {"key": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429":
+          application/json: {"key": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   app.bsky.graph.getMutes:
     speakeasy-default-app-bsky-graph-get-mutes:
       responses:
@@ -2408,6 +2665,17 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "404":
+          application/json: {"key": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413":
+          application/json: {"key": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "500": {}
   app.bsky.graph.getRelationships:
     speakeasy-default-app-bsky-graph-get-relationships:
       parameters:
@@ -2420,6 +2688,17 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "404":
+          application/json: {"key": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "500": {}
   app.bsky.graph.getStarterPack:
     speakeasy-default-app-bsky-graph-get-starter-pack:
       parameters:
@@ -2432,6 +2711,16 @@ examples:
           application/json: {"error": "ExpiredToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "404": {}
+        "408":
+          application/json: {"key": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500": {}
   app.bsky.graph.getStarterPacks:
     speakeasy-default-app-bsky-graph-get-starter-packs:
       parameters:
@@ -2444,6 +2733,15 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "404": {}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413": {}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500": {}
   app.bsky.graph.getSuggestedFollowsByActor:
     speakeasy-default-app-bsky-graph-get-suggested-follows-by-actor:
       parameters:
@@ -2456,6 +2754,18 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "408":
+          application/json: {"key": "<value>"}
+        "413":
+          application/json: {"key": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
   app.bsky.graph.muteActor:
     speakeasy-default-app-bsky-graph-mute-actor:
       requestBody:
@@ -2465,6 +2775,16 @@ examples:
           application/json: {"error": "InvalidToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403": {}
+        "404":
+          application/json: {"key": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413": {}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "500":
+          application/json: {"key": "<value>"}
   app.bsky.graph.muteActorList:
     speakeasy-default-app-bsky-graph-mute-actor-list:
       requestBody:
@@ -2474,6 +2794,17 @@ examples:
           application/json: {"error": "InvalidToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "408":
+          application/json: {"key": "<value>"}
+        "413":
+          application/json: {"key": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "500": {}
   app.bsky.graph.muteThread:
     speakeasy-default-app-bsky-graph-mute-thread:
       requestBody:
@@ -2483,6 +2814,17 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "408": {}
+        "413":
+          application/json: {"key": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
   app.bsky.graph.searchStarterPacks:
     speakeasy-default-app-bsky-graph-search-starter-packs:
       parameters:
@@ -2495,6 +2837,15 @@ examples:
           application/json: {"error": "InvalidToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "404": {}
+        "408": {}
+        "413": {}
+        "429":
+          application/json: {"key": "<value>"}
+        "500":
+          application/json: {"key": "<value>"}
   app.bsky.graph.unmuteActor:
     speakeasy-default-app-bsky-graph-unmute-actor:
       requestBody:
@@ -2504,6 +2855,17 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>"}
+        "404": {}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   app.bsky.graph.unmuteActorList:
     speakeasy-default-app-bsky-graph-unmute-actor-list:
       requestBody:
@@ -2513,6 +2875,17 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "408": {}
+        "413":
+          application/json: {"key": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   app.bsky.graph.unmuteThread:
     speakeasy-default-app-bsky-graph-unmute-thread:
       requestBody:
@@ -2522,6 +2895,17 @@ examples:
           application/json: {"error": "InvalidToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "404": {}
+        "408":
+          application/json: {"key": "<value>"}
+        "413":
+          application/json: {"key": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "500":
+          application/json: {"key": "<value>"}
   app.bsky.labeler.getServices:
     speakeasy-default-app-bsky-labeler-get-services:
       parameters:
@@ -2534,6 +2918,14 @@ examples:
           application/json: {"error": "ExpiredToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403": {}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "408": {}
+        "413": {}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500": {}
   app.bsky.notification.getUnreadCount:
     speakeasy-default-app-bsky-notification-get-unread-count:
       responses:
@@ -2543,6 +2935,17 @@ examples:
           application/json: {"error": "InvalidToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "404":
+          application/json: {"key": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429": {}
+        "500":
+          application/json: {"key": "<value>"}
   app.bsky.notification.listNotifications:
     speakeasy-default-app-bsky-notification-list-notifications:
       responses:
@@ -2552,6 +2955,15 @@ examples:
           application/json: {"error": "ExpiredToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "413": {}
+        "429": {}
+        "500": {}
   app.bsky.notification.putPreferences:
     speakeasy-default-app-bsky-notification-put-preferences:
       requestBody:
@@ -2561,6 +2973,17 @@ examples:
           application/json: {"error": "ExpiredToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "404":
+          application/json: {"key": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413":
+          application/json: {"key": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500": {}
   app.bsky.notification.registerPush:
     speakeasy-default-app-bsky-notification-register-push:
       requestBody:
@@ -2570,6 +2993,17 @@ examples:
           application/json: {"error": "InvalidToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "408": {}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500":
+          application/json: {"key": "<value>"}
   app.bsky.notification.updateSeen:
     speakeasy-default-app-bsky-notification-update-seen:
       requestBody:
@@ -2579,6 +3013,16 @@ examples:
           application/json: {"error": "ExpiredToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "413": {}
+        "429": {}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   app.bsky.video.getJobStatus:
     speakeasy-default-app-bsky-video-get-job-status:
       parameters:
@@ -2591,6 +3035,15 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>"}
+        "404": {}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413": {}
+        "429":
+          application/json: {"key": "<value>"}
+        "500": {}
   app.bsky.video.getUploadLimits:
     speakeasy-default-app-bsky-video-get-upload-limits:
       responses:
@@ -2600,6 +3053,18 @@ examples:
           application/json: {"error": "InvalidToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "429":
+          application/json: {"key": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
   app.bsky.video.uploadVideo:
     speakeasy-default-app-bsky-video-upload-video:
       responses:
@@ -2609,6 +3074,18 @@ examples:
           application/json: {"error": "InvalidToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "413":
+          application/json: {"key": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "500":
+          application/json: {"key": "<value>"}
   chat.bsky.actor.deleteAccount:
     speakeasy-default-chat-bsky-actor-delete-account:
       responses:
@@ -2617,6 +3094,18 @@ examples:
         "401":
           application/json: {"message": "<value>"}
         "200": {}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "408":
+          application/json: {"key": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   chat.bsky.actor.exportAccountData:
     speakeasy-default-chat-bsky-actor-export-account-data:
       responses:
@@ -2624,6 +3113,17 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>"}
+        "404": {}
+        "408":
+          application/json: {"key": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500":
+          application/json: {"key": "<value>"}
   chat.bsky.convo.deleteMessageForSelf:
     speakeasy-default-chat-bsky-convo-delete-message-for-self:
       requestBody:
@@ -2635,6 +3135,15 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403": {}
+        "404": {}
+        "408":
+          application/json: {"key": "<value>"}
+        "413":
+          application/json: {"key": "<value>"}
+        "429": {}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   chat.bsky.convo.getConvo:
     speakeasy-default-chat-bsky-convo-get-convo:
       parameters:
@@ -2647,6 +3156,16 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413":
+          application/json: {"key": "<value>"}
+        "429": {}
+        "500": {}
   chat.bsky.convo.getConvoForMembers:
     speakeasy-default-chat-bsky-convo-get-convo-for-members:
       parameters:
@@ -2659,6 +3178,17 @@ examples:
           application/json: {"error": "InvalidToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413": {}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "500":
+          application/json: {"key": "<value>"}
   chat.bsky.convo.getLog:
     speakeasy-default-chat-bsky-convo-get-log:
       responses:
@@ -2668,6 +3198,17 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "408": {}
+        "413":
+          application/json: {"key": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "500":
+          application/json: {"key": "<value>"}
   chat.bsky.convo.getMessages:
     speakeasy-default-chat-bsky-convo-get-messages:
       parameters:
@@ -2680,6 +3221,17 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "404": {}
+        "408":
+          application/json: {"key": "<value>"}
+        "413":
+          application/json: {"key": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   chat.bsky.convo.leaveConvo:
     speakeasy-default-chat-bsky-convo-leave-convo:
       requestBody:
@@ -2691,6 +3243,16 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403": {}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413": {}
+        "429":
+          application/json: {"key": "<value>"}
+        "500":
+          application/json: {"key": "<value>"}
   chat.bsky.convo.listConvos:
     speakeasy-default-chat-bsky-convo-list-convos:
       responses:
@@ -2700,6 +3262,15 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "413": {}
+        "429": {}
+        "500": {}
   chat.bsky.convo.muteConvo:
     speakeasy-default-chat-bsky-convo-mute-convo:
       requestBody:
@@ -2711,6 +3282,17 @@ examples:
           application/json: {"error": "ExpiredToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>"}
+        "404": {}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "429":
+          application/json: {"key": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
   chat.bsky.convo.sendMessage:
     speakeasy-default-chat-bsky-convo-send-message:
       requestBody:
@@ -2722,6 +3304,17 @@ examples:
           application/json: {"error": "ExpiredToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "408":
+          application/json: {"key": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "500": {}
   chat.bsky.convo.sendMessageBatch:
     speakeasy-default-chat-bsky-convo-send-message-batch:
       requestBody:
@@ -2733,6 +3326,17 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "404":
+          application/json: {"key": "<value>"}
+        "408":
+          application/json: {"key": "<value>"}
+        "413":
+          application/json: {"key": "<value>"}
+        "429":
+          application/json: {"key": "<value>"}
+        "500": {}
   chat.bsky.convo.unmuteConvo:
     speakeasy-default-chat-bsky-convo-unmute-convo:
       requestBody:
@@ -2744,6 +3348,17 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>"}
+        "404": {}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   chat.bsky.convo.updateRead:
     speakeasy-default-chat-bsky-convo-update-read:
       requestBody:
@@ -2755,6 +3370,17 @@ examples:
           application/json: {"error": "InvalidToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403": {}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   chat.bsky.moderation.getActorMetadata:
     speakeasy-default-chat-bsky-moderation-get-actor-metadata:
       parameters:
@@ -2767,6 +3393,16 @@ examples:
           application/json: {"error": "InvalidToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "408": {}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "500": {}
   chat.bsky.moderation.getMessageContext:
     speakeasy-default-chat-bsky-moderation-get-message-context:
       parameters:
@@ -2779,6 +3415,18 @@ examples:
           application/json: {"error": "ExpiredToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "408":
+          application/json: {"key": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429":
+          application/json: {"key": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   chat.bsky.moderation.updateActorAccess:
     speakeasy-default-chat-bsky-moderation-update-actor-access:
       requestBody:
@@ -2788,6 +3436,17 @@ examples:
           application/json: {"error": "ExpiredToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403": {}
+        "404":
+          application/json: {"key": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "413":
+          application/json: {"key": "<value>"}
+        "429":
+          application/json: {"key": "<value>"}
+        "500":
+          application/json: {"key": "<value>"}
   com.atproto.admin.deleteAccount:
     speakeasy-default-com-atproto-admin-delete-account:
       requestBody:
@@ -2797,6 +3456,14 @@ examples:
           application/json: {"error": "ExpiredToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "404": {}
+        "408": {}
+        "413": {}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500": {}
   com.atproto.admin.disableAccountInvites:
     speakeasy-default-com-atproto-admin-disable-account-invites:
       requestBody:
@@ -2806,6 +3473,15 @@ examples:
           application/json: {"error": "ExpiredToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403": {}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413": {}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500": {}
   com.atproto.admin.disableInviteCodes:
     speakeasy-default-com-atproto-admin-disable-invite-codes:
       responses:
@@ -2813,6 +3489,14 @@ examples:
           application/json: {"error": "ExpiredToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403": {}
+        "404":
+          application/json: {"key": "<value>"}
+        "408": {}
+        "413": {}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "500": {}
   com.atproto.admin.enableAccountInvites:
     speakeasy-default-com-atproto-admin-enable-account-invites:
       requestBody:
@@ -2822,6 +3506,16 @@ examples:
           application/json: {"error": "ExpiredToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403": {}
+        "404": {}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "500":
+          application/json: {"key": "<value>"}
   com.atproto.admin.getAccountInfo:
     speakeasy-default-com-atproto-admin-get-account-info:
       parameters:
@@ -2834,6 +3528,14 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "404": {}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413": {}
+        "429": {}
+        "500": {}
   com.atproto.admin.getAccountInfos:
     speakeasy-default-com-atproto-admin-get-account-infos:
       parameters:
@@ -2846,6 +3548,16 @@ examples:
           application/json: {"error": "ExpiredToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>"}
+        "404": {}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "500": {}
   com.atproto.admin.getInviteCodes:
     speakeasy-default-com-atproto-admin-get-invite-codes:
       responses:
@@ -2855,6 +3567,18 @@ examples:
           application/json: {"error": "ExpiredToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   com.atproto.admin.getSubjectStatus:
     speakeasy-default-com-atproto-admin-get-subject-status:
       responses:
@@ -2864,6 +3588,17 @@ examples:
           application/json: {"error": "ExpiredToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "408":
+          application/json: {"key": "<value>"}
+        "413": {}
+        "429":
+          application/json: {"key": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   com.atproto.admin.searchAccounts:
     speakeasy-default-com-atproto-admin-search-accounts:
       responses:
@@ -2873,6 +3608,17 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413":
+          application/json: {"key": "<value>"}
+        "429": {}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   com.atproto.admin.sendEmail:
     speakeasy-default-com-atproto-admin-send-email:
       requestBody:
@@ -2884,6 +3630,16 @@ examples:
           application/json: {"error": "InvalidToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "404":
+          application/json: {"key": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413": {}
+        "429": {}
+        "500":
+          application/json: {"key": "<value>"}
   com.atproto.admin.updateAccountEmail:
     speakeasy-default-com-atproto-admin-update-account-email:
       requestBody:
@@ -2893,6 +3649,17 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "404": {}
+        "408":
+          application/json: {"key": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   com.atproto.admin.updateAccountHandle:
     speakeasy-default-com-atproto-admin-update-account-handle:
       requestBody:
@@ -2902,6 +3669,14 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>"}
+        "404": {}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413": {}
+        "429": {}
+        "500": {}
   com.atproto.admin.updateAccountPassword:
     speakeasy-default-com-atproto-admin-update-account-password:
       requestBody:
@@ -2911,6 +3686,16 @@ examples:
           application/json: {"error": "InvalidToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "408":
+          application/json: {"key": "<value>"}
+        "413": {}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500": {}
   com.atproto.admin.updateSubjectStatus:
     speakeasy-default-com-atproto-admin-update-subject-status:
       requestBody:
@@ -2922,6 +3707,15 @@ examples:
           application/json: {"error": "ExpiredToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "404": {}
+        "408": {}
+        "413": {}
+        "429":
+          application/json: {"key": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   com.atproto.identity.getRecommendedDidCredentials:
     speakeasy-default-com-atproto-identity-get-recommended-did-credentials:
       responses:
@@ -2930,6 +3724,18 @@ examples:
         "401":
           application/json: {"message": "<value>"}
         "200": {}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "408":
+          application/json: {"key": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "429":
+          application/json: {"key": "<value>"}
+        "500":
+          application/json: {"key": "<value>"}
   com.atproto.identity.requestPlcOperationSignature:
     speakeasy-default-com-atproto-identity-request-plc-operation-signature:
       responses:
@@ -2937,6 +3743,17 @@ examples:
           application/json: {"error": "ExpiredToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403": {}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "413":
+          application/json: {"key": "<value>"}
+        "429":
+          application/json: {"key": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   com.atproto.identity.resolveHandle:
     speakeasy-default-com-atproto-identity-resolve-handle:
       parameters:
@@ -2949,6 +3766,17 @@ examples:
           application/json: {"error": "ExpiredToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "404": {}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
   com.atproto.identity.signPlcOperation:
     speakeasy-default-com-atproto-identity-sign-plc-operation:
       responses:
@@ -2958,6 +3786,18 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "404":
+          application/json: {"key": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500":
+          application/json: {"key": "<value>"}
   com.atproto.identity.submitPlcOperation:
     speakeasy-default-com-atproto-identity-submit-plc-operation:
       requestBody:
@@ -2967,6 +3807,17 @@ examples:
           application/json: {"error": "InvalidToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "408": {}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "500":
+          application/json: {"key": "<value>"}
   com.atproto.identity.updateHandle:
     speakeasy-default-com-atproto-identity-update-handle:
       requestBody:
@@ -2976,6 +3827,15 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "404": {}
+        "408": {}
+        "413": {}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
   com.atproto.label.queryLabels:
     speakeasy-default-com-atproto-label-query-labels:
       parameters:
@@ -2988,6 +3848,17 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "408": {}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   com.atproto.moderation.createReport:
     speakeasy-default-com-atproto-moderation-create-report:
       requestBody:
@@ -2999,6 +3870,16 @@ examples:
           application/json: {"error": "ExpiredToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "408": {}
+        "413": {}
+        "429":
+          application/json: {"key": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
   com.atproto.repo.applyWrites:
     speakeasy-default-com-atproto-repo-apply-writes:
       requestBody:
@@ -3009,6 +3890,18 @@ examples:
         "401":
           application/json: {"message": "<value>"}
         "200": {}
+        "403":
+          application/json: {"key": "<value>"}
+        "404":
+          application/json: {"key": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429":
+          application/json: {"key": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
   com.atproto.repo.createRecord:
     speakeasy-default-com-atproto-repo-create-record:
       requestBody:
@@ -3020,6 +3913,18 @@ examples:
           application/json: {"error": "InvalidSwap", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "404":
+          application/json: {"key": "<value>"}
+        "408":
+          application/json: {"key": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
   com.atproto.repo.deleteRecord:
     speakeasy-default-com-atproto-repo-delete-record:
       requestBody:
@@ -3030,6 +3935,18 @@ examples:
         "401":
           application/json: {"message": "<value>"}
         "200": {}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "408":
+          application/json: {"key": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   com.atproto.repo.describeRepo:
     speakeasy-default-com-atproto-repo-describe-repo:
       parameters:
@@ -3042,6 +3959,16 @@ examples:
           application/json: {"error": "InvalidToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "404": {}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500": {}
   com.atproto.repo.getRecord:
     speakeasy-default-com-atproto-repo-get-record:
       parameters:
@@ -3056,6 +3983,16 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403": {}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413": {}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500":
+          application/json: {"key": "<value>"}
   com.atproto.repo.importRepo:
     speakeasy-default-com-atproto-repo-import-repo:
       responses:
@@ -3063,6 +4000,17 @@ examples:
           application/json: {"error": "InvalidToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403": {}
+        "404":
+          application/json: {"key": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413":
+          application/json: {"key": "<value>"}
+        "429":
+          application/json: {"key": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   com.atproto.repo.listMissingBlobs:
     speakeasy-default-com-atproto-repo-list-missing-blobs:
       responses:
@@ -3072,6 +4020,17 @@ examples:
           application/json: {"error": "ExpiredToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "408": {}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429":
+          application/json: {"key": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
   com.atproto.repo.listRecords:
     speakeasy-default-com-atproto-repo-list-records:
       parameters:
@@ -3085,6 +4044,15 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "413": {}
+        "429": {}
+        "500": {}
   com.atproto.repo.putRecord:
     speakeasy-default-com-atproto-repo-put-record:
       requestBody:
@@ -3096,6 +4064,15 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403": {}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "408":
+          application/json: {"key": "<value>"}
+        "413": {}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "500": {}
   com.atproto.repo.uploadBlob:
     speakeasy-default-com-atproto-repo-upload-blob:
       responses:
@@ -3105,6 +4082,16 @@ examples:
           application/json: {"error": "ExpiredToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403": {}
+        "404": {}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413":
+          application/json: {"key": "<value>"}
+        "429":
+          application/json: {"key": "<value>"}
+        "500":
+          application/json: {"key": "<value>"}
   com.atproto.server.activateAccount:
     speakeasy-default-com-atproto-server-activate-account:
       responses:
@@ -3112,6 +4099,15 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403": {}
+        "404": {}
+        "408":
+          application/json: {"key": "<value>"}
+        "413": {}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   com.atproto.server.checkAccountStatus:
     speakeasy-default-com-atproto-server-check-account-status:
       responses:
@@ -3121,6 +4117,16 @@ examples:
           application/json: {"error": "ExpiredToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "404": {}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413": {}
+        "429":
+          application/json: {"key": "<value>"}
+        "500":
+          application/json: {"key": "<value>"}
   com.atproto.server.confirmEmail:
     speakeasy-default-com-atproto-server-confirm-email:
       requestBody:
@@ -3130,6 +4136,15 @@ examples:
           application/json: {"error": "ExpiredToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403": {}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413": {}
+        "429":
+          application/json: {"key": "<value>"}
+        "500": {}
   com.atproto.server.createAccount:
     speakeasy-default-com-atproto-server-create-account:
       requestBody:
@@ -3141,6 +4156,17 @@ examples:
           application/json: {"error": "IncompatibleDidDoc", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "404":
+          application/json: {"key": "<value>"}
+        "408": {}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "429":
+          application/json: {"key": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   com.atproto.server.createAppPassword:
     speakeasy-default-com-atproto-server-create-app-password:
       requestBody:
@@ -3152,6 +4178,17 @@ examples:
           application/json: {"error": "AccountTakedown", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "408": {}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "429":
+          application/json: {"key": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
   com.atproto.server.createInviteCode:
     speakeasy-default-com-atproto-server-create-invite-code:
       requestBody:
@@ -3163,6 +4200,16 @@ examples:
           application/json: {"error": "ExpiredToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403": {}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413": {}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   com.atproto.server.createInviteCodes:
     speakeasy-default-com-atproto-server-create-invite-codes:
       requestBody:
@@ -3174,6 +4221,16 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403": {}
+        "404":
+          application/json: {"key": "<value>"}
+        "408":
+          application/json: {"key": "<value>"}
+        "413":
+          application/json: {"key": "<value>"}
+        "429":
+          application/json: {"key": "<value>"}
+        "500": {}
   com.atproto.server.createSession:
     speakeasy-default-com-atproto-server-create-session:
       requestBody:
@@ -3185,6 +4242,17 @@ examples:
           application/json: {"error": "AccountTakedown", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "404": {}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429":
+          application/json: {"key": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
   com.atproto.server.deactivateAccount:
     speakeasy-default-com-atproto-server-deactivate-account:
       responses:
@@ -3192,6 +4260,17 @@ examples:
           application/json: {"error": "InvalidToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "404":
+          application/json: {"key": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "429": {}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
   com.atproto.server.deleteAccount:
     speakeasy-default-com-atproto-server-delete-account:
       requestBody:
@@ -3201,6 +4280,14 @@ examples:
           application/json: {"error": "InvalidToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "404": {}
+        "408": {}
+        "413": {}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500": {}
   com.atproto.server.deleteSession:
     speakeasy-default-com-atproto-server-delete-session:
       responses:
@@ -3208,6 +4295,18 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413":
+          application/json: {"key": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   com.atproto.server.describeServer:
     speakeasy-default-com-atproto-server-describe-server:
       responses:
@@ -3217,6 +4316,16 @@ examples:
           application/json: {"error": "ExpiredToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "404": {}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500": {}
   com.atproto.server.getAccountInviteCodes:
     speakeasy-default-com-atproto-server-get-account-invite-codes:
       responses:
@@ -3226,6 +4335,18 @@ examples:
           application/json: {"error": "DuplicateCreate", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   com.atproto.server.getServiceAuth:
     speakeasy-default-com-atproto-server-get-service-auth:
       parameters:
@@ -3238,6 +4359,16 @@ examples:
           application/json: {"error": "InvalidToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403": {}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429": {}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
   com.atproto.server.getSession:
     speakeasy-default-com-atproto-server-get-session:
       responses:
@@ -3247,6 +4378,18 @@ examples:
           application/json: {"error": "InvalidToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "408":
+          application/json: {"key": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429":
+          application/json: {"key": "<value>"}
+        "500":
+          application/json: {"key": "<value>"}
   com.atproto.server.listAppPasswords:
     speakeasy-default-com-atproto-server-list-app-passwords:
       responses:
@@ -3256,6 +4399,15 @@ examples:
           application/json: {"error": "AccountTakedown", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "404": {}
+        "408": {}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429": {}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   com.atproto.server.refreshSession:
     speakeasy-default-com-atproto-server-refresh-session:
       responses:
@@ -3265,6 +4417,18 @@ examples:
           application/json: {"error": "InvalidToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "413":
+          application/json: {"key": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   com.atproto.server.requestAccountDelete:
     speakeasy-default-com-atproto-server-request-account-delete:
       responses:
@@ -3272,6 +4436,18 @@ examples:
           application/json: {"error": "InvalidToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>"}
+        "404":
+          application/json: {"key": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
   com.atproto.server.requestEmailConfirmation:
     speakeasy-default-com-atproto-server-request-email-confirmation:
       responses:
@@ -3279,6 +4455,17 @@ examples:
           application/json: {"error": "InvalidToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403": {}
+        "404":
+          application/json: {"key": "<value>"}
+        "408":
+          application/json: {"key": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429":
+          application/json: {"key": "<value>"}
+        "500":
+          application/json: {"key": "<value>"}
   com.atproto.server.requestEmailUpdate:
     speakeasy-default-com-atproto-server-request-email-update:
       responses:
@@ -3288,6 +4475,17 @@ examples:
           application/json: {"error": "ExpiredToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "404":
+          application/json: {"key": "<value>"}
+        "408":
+          application/json: {"key": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "429": {}
+        "500":
+          application/json: {"key": "<value>"}
   com.atproto.server.requestPasswordReset:
     speakeasy-default-com-atproto-server-request-password-reset:
       requestBody:
@@ -3297,6 +4495,16 @@ examples:
           application/json: {"error": "InvalidToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "404": {}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500": {}
   com.atproto.server.reserveSigningKey:
     speakeasy-default-com-atproto-server-reserve-signing-key:
       responses:
@@ -3306,6 +4514,17 @@ examples:
           application/json: {"error": "InvalidToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429":
+          application/json: {"key": "<value>"}
+        "500": {}
   com.atproto.server.resetPassword:
     speakeasy-default-com-atproto-server-reset-password:
       requestBody:
@@ -3315,6 +4534,17 @@ examples:
           application/json: {"error": "InvalidToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413": {}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   com.atproto.server.revokeAppPassword:
     speakeasy-default-com-atproto-server-revoke-app-password:
       requestBody:
@@ -3324,6 +4554,17 @@ examples:
           application/json: {"error": "InvalidToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403": {}
+        "404":
+          application/json: {"key": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
   com.atproto.server.updateEmail:
     speakeasy-default-com-atproto-server-update-email:
       requestBody:
@@ -3333,6 +4574,17 @@ examples:
           application/json: {"error": "InvalidToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "408":
+          application/json: {"key": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429": {}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   com.atproto.sync.getBlob:
     speakeasy-default-com-atproto-sync-get-blob:
       parameters:
@@ -3344,6 +4596,15 @@ examples:
           application/json: {"error": "RepoTakendown", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403": {}
+        "404": {}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429": {}
+        "500":
+          application/json: {"key": "<value>"}
   com.atproto.sync.getBlocks:
     speakeasy-default-com-atproto-sync-get-blocks:
       parameters:
@@ -3355,6 +4616,16 @@ examples:
           application/json: {"error": "RepoDeactivated", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403": {}
+        "404":
+          application/json: {"key": "<value>"}
+        "408": {}
+        "413":
+          application/json: {"key": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500":
+          application/json: {"key": "<value>"}
   com.atproto.sync.getLatestCommit:
     speakeasy-default-com-atproto-sync-get-latest-commit:
       parameters:
@@ -3367,6 +4638,17 @@ examples:
           application/json: {"error": "ExpiredToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "408": {}
+        "413":
+          application/json: {"key": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "500":
+          application/json: {"key": "<value>"}
   com.atproto.sync.getRecord:
     speakeasy-default-com-atproto-sync-get-record:
       parameters:
@@ -3379,6 +4661,16 @@ examples:
           application/json: {"error": "RepoSuspended", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403": {}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413": {}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500":
+          application/json: {"key": "<value>"}
   com.atproto.sync.getRepo:
     speakeasy-default-com-atproto-sync-get-repo:
       parameters:
@@ -3389,6 +4681,14 @@ examples:
           application/json: {"error": "RepoNotFound", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403": {}
+        "404":
+          application/json: {"key": "<value>"}
+        "408": {}
+        "413": {}
+        "429": {}
+        "500":
+          application/json: {"key": "<value>"}
   com.atproto.sync.getRepoStatus:
     speakeasy-default-com-atproto-sync-get-repo-status:
       parameters:
@@ -3401,6 +4701,18 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413":
+          application/json: {"key": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   com.atproto.sync.listBlobs:
     speakeasy-default-com-atproto-sync-list-blobs:
       parameters:
@@ -3413,6 +4725,17 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "408":
+          application/json: {"key": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429": {}
+        "500":
+          application/json: {"key": "<value>"}
   com.atproto.sync.listRepos:
     speakeasy-default-com-atproto-sync-list-repos:
       responses:
@@ -3422,6 +4745,16 @@ examples:
           application/json: {"error": "InvalidToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403": {}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429": {}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
   com.atproto.sync.notifyOfUpdate:
     speakeasy-default-com-atproto-sync-notify-of-update:
       requestBody:
@@ -3431,6 +4764,17 @@ examples:
           application/json: {"error": "InvalidToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "408":
+          application/json: {"key": "<value>"}
+        "413": {}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "500":
+          application/json: {"key": "<value>"}
   com.atproto.sync.requestCrawl:
     speakeasy-default-com-atproto-sync-request-crawl:
       requestBody:
@@ -3440,6 +4784,16 @@ examples:
           application/json: {"error": "InvalidToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403": {}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "413": {}
+        "429":
+          application/json: {"key": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   tools.ozone.communication.createTemplate:
     speakeasy-default-tools-ozone-communication-create-template:
       requestBody:
@@ -3451,6 +4805,18 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "404":
+          application/json: {"key": "<value>"}
+        "408":
+          application/json: {"key": "<value>"}
+        "413":
+          application/json: {"key": "<value>"}
+        "429":
+          application/json: {"key": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   tools.ozone.communication.deleteTemplate:
     speakeasy-default-tools-ozone-communication-delete-template:
       requestBody:
@@ -3460,6 +4826,18 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "408":
+          application/json: {"key": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   tools.ozone.communication.listTemplates:
     speakeasy-default-tools-ozone-communication-list-templates:
       responses:
@@ -3469,6 +4847,17 @@ examples:
           application/json: {"error": "InvalidToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>"}
+        "404": {}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
   tools.ozone.communication.updateTemplate:
     speakeasy-default-tools-ozone-communication-update-template:
       requestBody:
@@ -3480,6 +4869,17 @@ examples:
           application/json: {"error": "DuplicateTemplateName", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403": {}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "408":
+          application/json: {"key": "<value>"}
+        "413":
+          application/json: {"key": "<value>"}
+        "429":
+          application/json: {"key": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   tools.ozone.moderation.emitEvent:
     speakeasy-default-tools-ozone-moderation-emit-event:
       requestBody:
@@ -3491,6 +4891,17 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403": {}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "500":
+          application/json: {"key": "<value>"}
   tools.ozone.moderation.getEvent:
     speakeasy-default-tools-ozone-moderation-get-event:
       parameters:
@@ -3503,6 +4914,16 @@ examples:
           application/json: {"error": "ExpiredToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "404":
+          application/json: {"key": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "429": {}
+        "500": {}
   tools.ozone.moderation.getRecord:
     speakeasy-default-tools-ozone-moderation-get-record:
       parameters:
@@ -3515,6 +4936,16 @@ examples:
           application/json: {"error": "ExpiredToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403": {}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413": {}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500":
+          application/json: {"key": "<value>"}
   tools.ozone.moderation.getRecords:
     speakeasy-default-tools-ozone-moderation-get-records:
       parameters:
@@ -3527,6 +4958,17 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "408":
+          application/json: {"key": "<value>"}
+        "413": {}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   tools.ozone.moderation.getRepo:
     speakeasy-default-tools-ozone-moderation-get-repo:
       parameters:
@@ -3539,6 +4981,18 @@ examples:
           application/json: {"error": "RepoNotFound", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500":
+          application/json: {"key": "<value>"}
   tools.ozone.moderation.getRepos:
     speakeasy-default-tools-ozone-moderation-get-repos:
       parameters:
@@ -3551,6 +5005,18 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   tools.ozone.moderation.queryEvents:
     speakeasy-default-tools-ozone-moderation-query-events:
       responses:
@@ -3560,6 +5026,17 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403": {}
+        "404":
+          application/json: {"key": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   tools.ozone.moderation.queryStatuses:
     speakeasy-default-tools-ozone-moderation-query-statuses:
       responses:
@@ -3569,6 +5046,18 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413":
+          application/json: {"key": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "500":
+          application/json: {"key": "<value>"}
   tools.ozone.moderation.searchRepos:
     speakeasy-default-tools-ozone-moderation-search-repos:
       responses:
@@ -3578,6 +5067,17 @@ examples:
           application/json: {"error": "InvalidToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403": {}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "408":
+          application/json: {"key": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429":
+          application/json: {"key": "<value>"}
+        "500":
+          application/json: {"key": "<value>"}
   tools.ozone.server.getConfig:
     speakeasy-default-tools-ozone-server-get-config:
       responses:
@@ -3586,6 +5086,16 @@ examples:
         "401":
           application/json: {"message": "<value>"}
         "200": {}
+        "403": {}
+        "404": {}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413":
+          application/json: {"key": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
   tools.ozone.set.addValues:
     speakeasy-default-tools-ozone-set-add-values:
       requestBody:
@@ -3595,6 +5105,18 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   tools.ozone.set.deleteSet:
     speakeasy-default-tools-ozone-set-delete-set:
       requestBody:
@@ -3605,6 +5127,18 @@ examples:
         "401":
           application/json: {"message": "<value>"}
         "200": {}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "408":
+          application/json: {"key": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   tools.ozone.set.deleteValues:
     speakeasy-default-tools-ozone-set-delete-values:
       requestBody:
@@ -3614,6 +5148,16 @@ examples:
           application/json: {"error": "SetNotFound", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "404": {}
+        "408":
+          application/json: {"key": "<value>"}
+        "413": {}
+        "429":
+          application/json: {"key": "<value>"}
+        "500":
+          application/json: {"key": "<value>"}
   tools.ozone.set.getValues:
     speakeasy-default-tools-ozone-set-get-values:
       parameters:
@@ -3626,6 +5170,15 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>"}
+        "404": {}
+        "408":
+          application/json: {"key": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429": {}
+        "500": {}
   tools.ozone.set.querySets:
     speakeasy-default-tools-ozone-set-query-sets:
       responses:
@@ -3635,6 +5188,17 @@ examples:
           application/json: {"error": "InvalidToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "408": {}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   tools.ozone.set.upsertSet:
     speakeasy-default-tools-ozone-set-upsert-set:
       requestBody:
@@ -3646,6 +5210,17 @@ examples:
           application/json: {"error": "ExpiredToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "404":
+          application/json: {"key": "<value>"}
+        "408":
+          application/json: {"key": "<value>"}
+        "413":
+          application/json: {"key": "<value>"}
+        "429": {}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
   tools.ozone.setting.listOptions:
     speakeasy-default-tools-ozone-setting-list-options:
       responses:
@@ -3655,6 +5230,15 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "413": {}
+        "429": {}
+        "500": {}
   tools.ozone.setting.removeOptions:
     speakeasy-default-tools-ozone-setting-remove-options:
       requestBody:
@@ -3665,6 +5249,18 @@ examples:
         "401":
           application/json: {"message": "<value>"}
         "200": {}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
   tools.ozone.setting.upsertOption:
     speakeasy-default-tools-ozone-setting-upsert-option:
       requestBody:
@@ -3676,6 +5272,18 @@ examples:
           application/json: {"error": "InvalidToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "429":
+          application/json: {"key": "<value>"}
+        "500":
+          application/json: {"key": "<value>"}
   tools.ozone.signature.findCorrelation:
     speakeasy-default-tools-ozone-signature-find-correlation:
       parameters:
@@ -3688,6 +5296,18 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "408":
+          application/json: {"key": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   tools.ozone.signature.findRelatedAccounts:
     speakeasy-default-tools-ozone-signature-find-related-accounts:
       parameters:
@@ -3700,6 +5320,14 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403": {}
+        "404":
+          application/json: {"key": "<value>"}
+        "408": {}
+        "413": {}
+        "429": {}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   tools.ozone.signature.searchAccounts:
     speakeasy-default-tools-ozone-signature-search-accounts:
       parameters:
@@ -3712,6 +5340,17 @@ examples:
           application/json: {"error": "InvalidRequest", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413":
+          application/json: {"key": "<value>"}
+        "429": {}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   tools.ozone.team.addMember:
     speakeasy-default-tools-ozone-team-add-member:
       requestBody:
@@ -3723,6 +5362,16 @@ examples:
           application/json: {"error": "MemberAlreadyExists", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "404":
+          application/json: {"key": "<value>"}
+        "408":
+          application/json: {"key": "<value>"}
+        "413": {}
+        "429": {}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   tools.ozone.team.deleteMember:
     speakeasy-default-tools-ozone-team-delete-member:
       requestBody:
@@ -3732,6 +5381,18 @@ examples:
           application/json: {"error": "ExpiredToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>"}
+        "404":
+          application/json: {"key": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413":
+          application/json: {"key": "<value>"}
+        "429":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "500":
+          application/json: {"key": "<value>", "key1": "<value>"}
   tools.ozone.team.listMembers:
     speakeasy-default-tools-ozone-team-list-members:
       responses:
@@ -3741,6 +5402,15 @@ examples:
           application/json: {"error": "InvalidToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403": {}
+        "404":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413": {}
+        "429": {}
+        "500":
+          application/json: {"key": "<value>"}
   tools.ozone.team.updateMember:
     speakeasy-default-tools-ozone-team-update-member:
       requestBody:
@@ -3752,4 +5422,15 @@ examples:
           application/json: {"error": "InvalidToken", "message": "<value>"}
         "401":
           application/json: {"message": "<value>"}
+        "403":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "404": {}
+        "408":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>"}
+        "429":
+          application/json: {"key": "<value>"}
+        "500":
+          application/json: {"key": "<value>"}
 generatedTests: {}

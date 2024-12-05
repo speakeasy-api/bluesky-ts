@@ -15,7 +15,7 @@ const value: components.ComAtprotoAdminDefsRepoRef = {
 
 ```typescript
 const value: components.ComAtprotoRepoStrongRef = {
-  uri: "https://spirited-earth.name",
+  uri: "https://vengeful-pile.net/",
   cid: "<id>",
 };
 ```

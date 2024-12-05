@@ -6,7 +6,7 @@
 import { AppBskyFeedDefsBlockedPost } from "bluesky/models/components";
 
 let value: AppBskyFeedDefsBlockedPost = {
-  uri: "https://total-fort.org",
+  uri: "https://shadowy-filter.net",
   author: {
     did: "<id>",
   },

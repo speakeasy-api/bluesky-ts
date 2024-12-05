@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoServerReserveSigningKeyError } from "bluesky/models/errors";
 
-let value: ComAtprotoServerReserveSigningKeyError = "ExpiredToken";
+let value: ComAtprotoServerReserveSigningKeyError = "InvalidToken";
 ```
 
 ## Values

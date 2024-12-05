@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type ToolsOzoneSettingListOptionsOzoneSettingResponseBodyData = {
+export type ToolsOzoneSettingListOptionsSettingsResponseBodyData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,15 +16,13 @@ export type ToolsOzoneSettingListOptionsOzoneSettingResponseBodyData = {
 /**
  * Unauthorized
  */
-export class ToolsOzoneSettingListOptionsOzoneSettingResponseBody
-  extends Error
-{
+export class ToolsOzoneSettingListOptionsSettingsResponseBody extends Error {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: ToolsOzoneSettingListOptionsOzoneSettingResponseBodyData;
+  data$: ToolsOzoneSettingListOptionsSettingsResponseBodyData;
 
-  constructor(err: ToolsOzoneSettingListOptionsOzoneSettingResponseBodyData) {
+  constructor(err: ToolsOzoneSettingListOptionsSettingsResponseBodyData) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -33,7 +31,7 @@ export class ToolsOzoneSettingListOptionsOzoneSettingResponseBody
 
     this.error = err.error;
 
-    this.name = "ToolsOzoneSettingListOptionsOzoneSettingResponseBody";
+    this.name = "ToolsOzoneSettingListOptionsSettingsResponseBody";
   }
 }
 
@@ -77,9 +75,9 @@ export class ToolsOzoneSettingListOptionsResponseBody extends Error {
 }
 
 /** @internal */
-export const ToolsOzoneSettingListOptionsOzoneSettingResponseBody$inboundSchema:
+export const ToolsOzoneSettingListOptionsSettingsResponseBody$inboundSchema:
   z.ZodType<
-    ToolsOzoneSettingListOptionsOzoneSettingResponseBody,
+    ToolsOzoneSettingListOptionsSettingsResponseBody,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -87,22 +85,22 @@ export const ToolsOzoneSettingListOptionsOzoneSettingResponseBody$inboundSchema:
     message: z.string(),
   })
     .transform((v) => {
-      return new ToolsOzoneSettingListOptionsOzoneSettingResponseBody(v);
+      return new ToolsOzoneSettingListOptionsSettingsResponseBody(v);
     });
 
 /** @internal */
-export type ToolsOzoneSettingListOptionsOzoneSettingResponseBody$Outbound = {
+export type ToolsOzoneSettingListOptionsSettingsResponseBody$Outbound = {
   error: "AuthMissing";
   message: string;
 };
 
 /** @internal */
-export const ToolsOzoneSettingListOptionsOzoneSettingResponseBody$outboundSchema:
+export const ToolsOzoneSettingListOptionsSettingsResponseBody$outboundSchema:
   z.ZodType<
-    ToolsOzoneSettingListOptionsOzoneSettingResponseBody$Outbound,
+    ToolsOzoneSettingListOptionsSettingsResponseBody$Outbound,
     z.ZodTypeDef,
-    ToolsOzoneSettingListOptionsOzoneSettingResponseBody
-  > = z.instanceof(ToolsOzoneSettingListOptionsOzoneSettingResponseBody)
+    ToolsOzoneSettingListOptionsSettingsResponseBody
+  > = z.instanceof(ToolsOzoneSettingListOptionsSettingsResponseBody)
     .transform(v => v.data$)
     .pipe(z.object({
       error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -113,16 +111,16 @@ export const ToolsOzoneSettingListOptionsOzoneSettingResponseBody$outboundSchema
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ToolsOzoneSettingListOptionsOzoneSettingResponseBody$ {
-  /** @deprecated use `ToolsOzoneSettingListOptionsOzoneSettingResponseBody$inboundSchema` instead. */
+export namespace ToolsOzoneSettingListOptionsSettingsResponseBody$ {
+  /** @deprecated use `ToolsOzoneSettingListOptionsSettingsResponseBody$inboundSchema` instead. */
   export const inboundSchema =
-    ToolsOzoneSettingListOptionsOzoneSettingResponseBody$inboundSchema;
-  /** @deprecated use `ToolsOzoneSettingListOptionsOzoneSettingResponseBody$outboundSchema` instead. */
+    ToolsOzoneSettingListOptionsSettingsResponseBody$inboundSchema;
+  /** @deprecated use `ToolsOzoneSettingListOptionsSettingsResponseBody$outboundSchema` instead. */
   export const outboundSchema =
-    ToolsOzoneSettingListOptionsOzoneSettingResponseBody$outboundSchema;
-  /** @deprecated use `ToolsOzoneSettingListOptionsOzoneSettingResponseBody$Outbound` instead. */
+    ToolsOzoneSettingListOptionsSettingsResponseBody$outboundSchema;
+  /** @deprecated use `ToolsOzoneSettingListOptionsSettingsResponseBody$Outbound` instead. */
   export type Outbound =
-    ToolsOzoneSettingListOptionsOzoneSettingResponseBody$Outbound;
+    ToolsOzoneSettingListOptionsSettingsResponseBody$Outbound;
 }
 
 /** @internal */

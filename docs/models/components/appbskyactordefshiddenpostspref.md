@@ -7,7 +7,7 @@ import { AppBskyActorDefsHiddenPostsPref } from "bluesky/models/components";
 
 let value: AppBskyActorDefsHiddenPostsPref = {
   items: [
-    "https://untried-redesign.org/",
+    "https://bare-bar.org/",
   ],
 };
 ```

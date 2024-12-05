@@ -12,11 +12,11 @@ let value: ComAtprotoServerCheckAccountStatusResponseBody = {
   validDid: false,
   repoCommit: "<id>",
   repoRev: "<value>",
-  repoBlocks: 456141,
-  indexedRecords: 683282,
-  privateStateValues: 695626,
-  expectedBlobs: 283519,
-  importedBlobs: 379927,
+  repoBlocks: 457223,
+  indexedRecords: 951875,
+  privateStateValues: 575751,
+  expectedBlobs: 820767,
+  importedBlobs: 908844,
 };
 ```
 

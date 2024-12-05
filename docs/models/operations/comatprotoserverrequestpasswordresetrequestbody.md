@@ -6,7 +6,7 @@
 import { ComAtprotoServerRequestPasswordResetRequestBody } from "bluesky/models/operations";
 
 let value: ComAtprotoServerRequestPasswordResetRequestBody = {
-  email: "Fleta.Denesik92@yahoo.com",
+  email: "Braulio.Will@gmail.com",
 };
 ```
 

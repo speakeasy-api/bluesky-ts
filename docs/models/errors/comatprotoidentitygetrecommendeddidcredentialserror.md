@@ -5,8 +5,7 @@
 ```typescript
 import { ComAtprotoIdentityGetRecommendedDidCredentialsError } from "bluesky/models/errors";
 
-let value: ComAtprotoIdentityGetRecommendedDidCredentialsError =
-  "InvalidRequest";
+let value: ComAtprotoIdentityGetRecommendedDidCredentialsError = "ExpiredToken";
 ```
 
 ## Values

@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type ChatBskyActorExportAccountDataChatActorResponseBodyData = {
+export type ChatBskyActorExportAccountDataAccountResponseBodyData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,13 +16,13 @@ export type ChatBskyActorExportAccountDataChatActorResponseBodyData = {
 /**
  * Unauthorized
  */
-export class ChatBskyActorExportAccountDataChatActorResponseBody extends Error {
+export class ChatBskyActorExportAccountDataAccountResponseBody extends Error {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: ChatBskyActorExportAccountDataChatActorResponseBodyData;
+  data$: ChatBskyActorExportAccountDataAccountResponseBodyData;
 
-  constructor(err: ChatBskyActorExportAccountDataChatActorResponseBodyData) {
+  constructor(err: ChatBskyActorExportAccountDataAccountResponseBodyData) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -31,7 +31,7 @@ export class ChatBskyActorExportAccountDataChatActorResponseBody extends Error {
 
     this.error = err.error;
 
-    this.name = "ChatBskyActorExportAccountDataChatActorResponseBody";
+    this.name = "ChatBskyActorExportAccountDataAccountResponseBody";
   }
 }
 
@@ -75,9 +75,9 @@ export class ChatBskyActorExportAccountDataResponseBody extends Error {
 }
 
 /** @internal */
-export const ChatBskyActorExportAccountDataChatActorResponseBody$inboundSchema:
+export const ChatBskyActorExportAccountDataAccountResponseBody$inboundSchema:
   z.ZodType<
-    ChatBskyActorExportAccountDataChatActorResponseBody,
+    ChatBskyActorExportAccountDataAccountResponseBody,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -85,22 +85,22 @@ export const ChatBskyActorExportAccountDataChatActorResponseBody$inboundSchema:
     message: z.string(),
   })
     .transform((v) => {
-      return new ChatBskyActorExportAccountDataChatActorResponseBody(v);
+      return new ChatBskyActorExportAccountDataAccountResponseBody(v);
     });
 
 /** @internal */
-export type ChatBskyActorExportAccountDataChatActorResponseBody$Outbound = {
+export type ChatBskyActorExportAccountDataAccountResponseBody$Outbound = {
   error: "AuthMissing";
   message: string;
 };
 
 /** @internal */
-export const ChatBskyActorExportAccountDataChatActorResponseBody$outboundSchema:
+export const ChatBskyActorExportAccountDataAccountResponseBody$outboundSchema:
   z.ZodType<
-    ChatBskyActorExportAccountDataChatActorResponseBody$Outbound,
+    ChatBskyActorExportAccountDataAccountResponseBody$Outbound,
     z.ZodTypeDef,
-    ChatBskyActorExportAccountDataChatActorResponseBody
-  > = z.instanceof(ChatBskyActorExportAccountDataChatActorResponseBody)
+    ChatBskyActorExportAccountDataAccountResponseBody
+  > = z.instanceof(ChatBskyActorExportAccountDataAccountResponseBody)
     .transform(v => v.data$)
     .pipe(z.object({
       error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -111,16 +111,16 @@ export const ChatBskyActorExportAccountDataChatActorResponseBody$outboundSchema:
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ChatBskyActorExportAccountDataChatActorResponseBody$ {
-  /** @deprecated use `ChatBskyActorExportAccountDataChatActorResponseBody$inboundSchema` instead. */
+export namespace ChatBskyActorExportAccountDataAccountResponseBody$ {
+  /** @deprecated use `ChatBskyActorExportAccountDataAccountResponseBody$inboundSchema` instead. */
   export const inboundSchema =
-    ChatBskyActorExportAccountDataChatActorResponseBody$inboundSchema;
-  /** @deprecated use `ChatBskyActorExportAccountDataChatActorResponseBody$outboundSchema` instead. */
+    ChatBskyActorExportAccountDataAccountResponseBody$inboundSchema;
+  /** @deprecated use `ChatBskyActorExportAccountDataAccountResponseBody$outboundSchema` instead. */
   export const outboundSchema =
-    ChatBskyActorExportAccountDataChatActorResponseBody$outboundSchema;
-  /** @deprecated use `ChatBskyActorExportAccountDataChatActorResponseBody$Outbound` instead. */
+    ChatBskyActorExportAccountDataAccountResponseBody$outboundSchema;
+  /** @deprecated use `ChatBskyActorExportAccountDataAccountResponseBody$Outbound` instead. */
   export type Outbound =
-    ChatBskyActorExportAccountDataChatActorResponseBody$Outbound;
+    ChatBskyActorExportAccountDataAccountResponseBody$Outbound;
 }
 
 /** @internal */

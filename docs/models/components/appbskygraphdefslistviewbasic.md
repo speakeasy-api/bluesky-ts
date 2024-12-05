@@ -6,7 +6,7 @@
 import { AppBskyGraphDefsListViewBasic } from "bluesky/models/components";
 
 let value: AppBskyGraphDefsListViewBasic = {
-  uri: "https://lively-ectoderm.biz",
+  uri: "https://best-nougat.info",
   cid: "<id>",
   name: "<value>",
   purpose: "<value>",

@@ -6,7 +6,7 @@
 import { ComAtprotoSyncNotifyOfUpdateRequestBody } from "bluesky/models/operations";
 
 let value: ComAtprotoSyncNotifyOfUpdateRequestBody = {
-  hostname: "surprised-traffic.com",
+  hostname: "haunting-solvency.org",
 };
 ```
 

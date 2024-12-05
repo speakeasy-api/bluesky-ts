@@ -5,7 +5,7 @@
 ```typescript
 import { Scope } from "bluesky/models/operations";
 
-let value: Scope = "personal";
+let value: Scope = "instance";
 ```
 
 ## Values

@@ -5,7 +5,7 @@
 ```typescript
 import { ToolsOzoneSetUpsertSetError } from "bluesky/models/errors";
 
-let value: ToolsOzoneSetUpsertSetError = "InvalidRequest";
+let value: ToolsOzoneSetUpsertSetError = "InvalidToken";
 ```
 
 ## Values

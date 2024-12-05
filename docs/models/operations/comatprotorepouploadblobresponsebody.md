@@ -8,7 +8,7 @@ OK
 import { ComAtprotoRepoUploadBlobResponseBody } from "bluesky/models/operations";
 
 let value: ComAtprotoRepoUploadBlobResponseBody = {
-  blob: new TextEncoder().encode("0x59cCf52165"),
+  blob: new TextEncoder().encode("0xf0A311e59c"),
 };
 ```
 

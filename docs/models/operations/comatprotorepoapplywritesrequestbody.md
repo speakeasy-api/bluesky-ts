@@ -10,7 +10,7 @@ let value: ComAtprotoRepoApplyWritesRequestBody = {
   writes: [
     {
       collection: "<id>",
-      rkey: "<value>",
+      value: "<value>",
     },
   ],
 };

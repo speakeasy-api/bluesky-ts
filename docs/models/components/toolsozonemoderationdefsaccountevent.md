@@ -9,7 +9,7 @@ import { ToolsOzoneModerationDefsAccountEvent } from "bluesky/models/components"
 
 let value: ToolsOzoneModerationDefsAccountEvent = {
   active: false,
-  timestamp: new Date("2023-03-31T05:51:52.889Z"),
+  timestamp: new Date("2023-05-03T03:34:27.990Z"),
 };
 ```
 

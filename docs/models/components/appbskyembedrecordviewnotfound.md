@@ -6,7 +6,7 @@
 import { AppBskyEmbedRecordViewNotFound } from "bluesky/models/components";
 
 let value: AppBskyEmbedRecordViewNotFound = {
-  uri: "https://flickering-comestible.org/",
+  uri: "https://wide-eyed-straw.name/",
 };
 ```
 

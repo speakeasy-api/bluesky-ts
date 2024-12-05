@@ -8,26 +8,23 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type ChatBskyModerationGetMessageContextChatModerationResponseBodyData =
-  {
-    error: "AuthMissing";
-    message: string;
-  };
+export type ChatBskyModerationGetMessageContextChatsResponseBodyData = {
+  error: "AuthMissing";
+  message: string;
+};
 
 /**
  * Unauthorized
  */
-export class ChatBskyModerationGetMessageContextChatModerationResponseBody
+export class ChatBskyModerationGetMessageContextChatsResponseBody
   extends Error
 {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: ChatBskyModerationGetMessageContextChatModerationResponseBodyData;
+  data$: ChatBskyModerationGetMessageContextChatsResponseBodyData;
 
-  constructor(
-    err: ChatBskyModerationGetMessageContextChatModerationResponseBodyData,
-  ) {
+  constructor(err: ChatBskyModerationGetMessageContextChatsResponseBodyData) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -36,7 +33,7 @@ export class ChatBskyModerationGetMessageContextChatModerationResponseBody
 
     this.error = err.error;
 
-    this.name = "ChatBskyModerationGetMessageContextChatModerationResponseBody";
+    this.name = "ChatBskyModerationGetMessageContextChatsResponseBody";
   }
 }
 
@@ -80,9 +77,9 @@ export class ChatBskyModerationGetMessageContextResponseBody extends Error {
 }
 
 /** @internal */
-export const ChatBskyModerationGetMessageContextChatModerationResponseBody$inboundSchema:
+export const ChatBskyModerationGetMessageContextChatsResponseBody$inboundSchema:
   z.ZodType<
-    ChatBskyModerationGetMessageContextChatModerationResponseBody,
+    ChatBskyModerationGetMessageContextChatsResponseBody,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -90,27 +87,22 @@ export const ChatBskyModerationGetMessageContextChatModerationResponseBody$inbou
     message: z.string(),
   })
     .transform((v) => {
-      return new ChatBskyModerationGetMessageContextChatModerationResponseBody(
-        v,
-      );
+      return new ChatBskyModerationGetMessageContextChatsResponseBody(v);
     });
 
 /** @internal */
-export type ChatBskyModerationGetMessageContextChatModerationResponseBody$Outbound =
-  {
-    error: "AuthMissing";
-    message: string;
-  };
+export type ChatBskyModerationGetMessageContextChatsResponseBody$Outbound = {
+  error: "AuthMissing";
+  message: string;
+};
 
 /** @internal */
-export const ChatBskyModerationGetMessageContextChatModerationResponseBody$outboundSchema:
+export const ChatBskyModerationGetMessageContextChatsResponseBody$outboundSchema:
   z.ZodType<
-    ChatBskyModerationGetMessageContextChatModerationResponseBody$Outbound,
+    ChatBskyModerationGetMessageContextChatsResponseBody$Outbound,
     z.ZodTypeDef,
-    ChatBskyModerationGetMessageContextChatModerationResponseBody
-  > = z.instanceof(
-    ChatBskyModerationGetMessageContextChatModerationResponseBody,
-  )
+    ChatBskyModerationGetMessageContextChatsResponseBody
+  > = z.instanceof(ChatBskyModerationGetMessageContextChatsResponseBody)
     .transform(v => v.data$)
     .pipe(z.object({
       error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -121,16 +113,16 @@ export const ChatBskyModerationGetMessageContextChatModerationResponseBody$outbo
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ChatBskyModerationGetMessageContextChatModerationResponseBody$ {
-  /** @deprecated use `ChatBskyModerationGetMessageContextChatModerationResponseBody$inboundSchema` instead. */
+export namespace ChatBskyModerationGetMessageContextChatsResponseBody$ {
+  /** @deprecated use `ChatBskyModerationGetMessageContextChatsResponseBody$inboundSchema` instead. */
   export const inboundSchema =
-    ChatBskyModerationGetMessageContextChatModerationResponseBody$inboundSchema;
-  /** @deprecated use `ChatBskyModerationGetMessageContextChatModerationResponseBody$outboundSchema` instead. */
+    ChatBskyModerationGetMessageContextChatsResponseBody$inboundSchema;
+  /** @deprecated use `ChatBskyModerationGetMessageContextChatsResponseBody$outboundSchema` instead. */
   export const outboundSchema =
-    ChatBskyModerationGetMessageContextChatModerationResponseBody$outboundSchema;
-  /** @deprecated use `ChatBskyModerationGetMessageContextChatModerationResponseBody$Outbound` instead. */
+    ChatBskyModerationGetMessageContextChatsResponseBody$outboundSchema;
+  /** @deprecated use `ChatBskyModerationGetMessageContextChatsResponseBody$Outbound` instead. */
   export type Outbound =
-    ChatBskyModerationGetMessageContextChatModerationResponseBody$Outbound;
+    ChatBskyModerationGetMessageContextChatsResponseBody$Outbound;
 }
 
 /** @internal */

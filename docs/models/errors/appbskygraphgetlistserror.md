@@ -5,7 +5,7 @@
 ```typescript
 import { AppBskyGraphGetListsError } from "bluesky/models/errors";
 
-let value: AppBskyGraphGetListsError = "InvalidRequest";
+let value: AppBskyGraphGetListsError = "InvalidToken";
 ```
 
 ## Values

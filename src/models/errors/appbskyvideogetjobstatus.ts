@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type AppBskyVideoGetJobStatusVideoResponseBodyData = {
+export type AppBskyVideoGetJobStatusVideosResponseBodyData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,13 +16,13 @@ export type AppBskyVideoGetJobStatusVideoResponseBodyData = {
 /**
  * Unauthorized
  */
-export class AppBskyVideoGetJobStatusVideoResponseBody extends Error {
+export class AppBskyVideoGetJobStatusVideosResponseBody extends Error {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: AppBskyVideoGetJobStatusVideoResponseBodyData;
+  data$: AppBskyVideoGetJobStatusVideosResponseBodyData;
 
-  constructor(err: AppBskyVideoGetJobStatusVideoResponseBodyData) {
+  constructor(err: AppBskyVideoGetJobStatusVideosResponseBodyData) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -31,7 +31,7 @@ export class AppBskyVideoGetJobStatusVideoResponseBody extends Error {
 
     this.error = err.error;
 
-    this.name = "AppBskyVideoGetJobStatusVideoResponseBody";
+    this.name = "AppBskyVideoGetJobStatusVideosResponseBody";
   }
 }
 
@@ -75,31 +75,29 @@ export class AppBskyVideoGetJobStatusResponseBody extends Error {
 }
 
 /** @internal */
-export const AppBskyVideoGetJobStatusVideoResponseBody$inboundSchema: z.ZodType<
-  AppBskyVideoGetJobStatusVideoResponseBody,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  error: z.literal("AuthMissing"),
-  message: z.string(),
-})
-  .transform((v) => {
-    return new AppBskyVideoGetJobStatusVideoResponseBody(v);
-  });
+export const AppBskyVideoGetJobStatusVideosResponseBody$inboundSchema:
+  z.ZodType<AppBskyVideoGetJobStatusVideosResponseBody, z.ZodTypeDef, unknown> =
+    z.object({
+      error: z.literal("AuthMissing"),
+      message: z.string(),
+    })
+      .transform((v) => {
+        return new AppBskyVideoGetJobStatusVideosResponseBody(v);
+      });
 
 /** @internal */
-export type AppBskyVideoGetJobStatusVideoResponseBody$Outbound = {
+export type AppBskyVideoGetJobStatusVideosResponseBody$Outbound = {
   error: "AuthMissing";
   message: string;
 };
 
 /** @internal */
-export const AppBskyVideoGetJobStatusVideoResponseBody$outboundSchema:
+export const AppBskyVideoGetJobStatusVideosResponseBody$outboundSchema:
   z.ZodType<
-    AppBskyVideoGetJobStatusVideoResponseBody$Outbound,
+    AppBskyVideoGetJobStatusVideosResponseBody$Outbound,
     z.ZodTypeDef,
-    AppBskyVideoGetJobStatusVideoResponseBody
-  > = z.instanceof(AppBskyVideoGetJobStatusVideoResponseBody)
+    AppBskyVideoGetJobStatusVideosResponseBody
+  > = z.instanceof(AppBskyVideoGetJobStatusVideosResponseBody)
     .transform(v => v.data$)
     .pipe(z.object({
       error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -110,15 +108,15 @@ export const AppBskyVideoGetJobStatusVideoResponseBody$outboundSchema:
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyVideoGetJobStatusVideoResponseBody$ {
-  /** @deprecated use `AppBskyVideoGetJobStatusVideoResponseBody$inboundSchema` instead. */
+export namespace AppBskyVideoGetJobStatusVideosResponseBody$ {
+  /** @deprecated use `AppBskyVideoGetJobStatusVideosResponseBody$inboundSchema` instead. */
   export const inboundSchema =
-    AppBskyVideoGetJobStatusVideoResponseBody$inboundSchema;
-  /** @deprecated use `AppBskyVideoGetJobStatusVideoResponseBody$outboundSchema` instead. */
+    AppBskyVideoGetJobStatusVideosResponseBody$inboundSchema;
+  /** @deprecated use `AppBskyVideoGetJobStatusVideosResponseBody$outboundSchema` instead. */
   export const outboundSchema =
-    AppBskyVideoGetJobStatusVideoResponseBody$outboundSchema;
-  /** @deprecated use `AppBskyVideoGetJobStatusVideoResponseBody$Outbound` instead. */
-  export type Outbound = AppBskyVideoGetJobStatusVideoResponseBody$Outbound;
+    AppBskyVideoGetJobStatusVideosResponseBody$outboundSchema;
+  /** @deprecated use `AppBskyVideoGetJobStatusVideosResponseBody$Outbound` instead. */
+  export type Outbound = AppBskyVideoGetJobStatusVideosResponseBody$Outbound;
 }
 
 /** @internal */

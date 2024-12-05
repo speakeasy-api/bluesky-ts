@@ -6,7 +6,7 @@
 import { AppBskyGraphGetStarterPackRequest } from "bluesky/models/operations";
 
 let value: AppBskyGraphGetStarterPackRequest = {
-  starterPack: "https://frizzy-perp.biz/",
+  starterPack: "https://agreeable-ethyl.name",
 };
 ```
 

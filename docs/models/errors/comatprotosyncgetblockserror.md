@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoSyncGetBlocksError } from "bluesky/models/errors";
 
-let value: ComAtprotoSyncGetBlocksError = "ExpiredToken";
+let value: ComAtprotoSyncGetBlocksError = "RepoTakendown";
 ```
 
 ## Values

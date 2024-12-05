@@ -7,7 +7,7 @@ Sorting mode for threads.
 ```typescript
 import { Sort } from "bluesky/models/components";
 
-let value: Sort = "oldest";
+let value: Sort = "most-likes";
 ```
 
 ## Values

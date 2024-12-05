@@ -6,7 +6,7 @@
 import { AppBskyFeedGetFeedRequest } from "bluesky/models/operations";
 
 let value: AppBskyFeedGetFeedRequest = {
-  feed: "https://ideal-scratch.name",
+  feed: "https://appropriate-ecliptic.com",
 };
 ```
 

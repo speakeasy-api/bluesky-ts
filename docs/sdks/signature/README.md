@@ -1,5 +1,5 @@
 # Signature
-(*ozone.signature*)
+(*signature*)
 
 ## Overview
 
@@ -10,16 +10,6 @@
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Find all correlated threat signatures between 2 or more accounts.
-* [findRelatedAccounts](#findrelatedaccounts) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
-
-*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
-
-Get accounts that share some matching threat signatures with the root account.
-* [searchAccounts](#searchaccounts) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
-
-*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
-
-Search for accounts that match one or more threat signature values.
 
 ## findCorrelation
 
@@ -39,7 +29,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.ozone.signature.findCorrelation({
+  const result = await bluesky.signature.findCorrelation({
     dids: [
       "<id>",
     ],
@@ -58,7 +48,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { ozoneSignatureFindCorrelation } from "bluesky/funcs/ozoneSignatureFindCorrelation.js";
+import { signatureFindCorrelation } from "bluesky/funcs/signatureFindCorrelation.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -67,7 +57,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await ozoneSignatureFindCorrelation(bluesky, {
+  const res = await signatureFindCorrelation(bluesky, {
     dids: [
       "<id>",
     ],
@@ -101,184 +91,14 @@ run();
 
 ### Errors
 
-| Error Type                                                          | Status Code                                                         | Content Type                                                        |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| errors.ToolsOzoneSignatureFindCorrelationResponseBody               | 400                                                                 | application/json                                                    |
-| errors.ToolsOzoneSignatureFindCorrelationOzoneSignatureResponseBody | 401                                                                 | application/json                                                    |
-| errors.APIError                                                     | 4XX, 5XX                                                            | \*/\*                                                               |
-
-## findRelatedAccounts
-
-*This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
-
-*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
-
-Get accounts that share some matching threat signatures with the root account.
-
-### Example Usage
-
-```typescript
-import { Bluesky } from "bluesky";
-
-const bluesky = new Bluesky({
-  bearer: process.env["BLUESKY_BEARER"] ?? "",
-});
-
-async function run() {
-  const result = await bluesky.ozone.signature.findRelatedAccounts({
-    did: "<id>",
-  });
-
-  for await (const page of result) {
-    // Handle the page
-    console.log(page);
-  }
-}
-
-run();
-```
-
-### Standalone function
-
-The standalone function version of this method:
-
-```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { ozoneSignatureFindRelatedAccounts } from "bluesky/funcs/ozoneSignatureFindRelatedAccounts.js";
-
-// Use `BlueskyCore` for best tree-shaking performance.
-// You can create one instance of it to use across an application.
-const bluesky = new BlueskyCore({
-  bearer: process.env["BLUESKY_BEARER"] ?? "",
-});
-
-async function run() {
-  const res = await ozoneSignatureFindRelatedAccounts(bluesky, {
-    did: "<id>",
-  });
-
-  if (!res.ok) {
-    throw res.error;
-  }
-
-  const { value: result } = res;
-
-  for await (const page of result) {
-    // Handle the page
-    console.log(page);
-  }
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ToolsOzoneSignatureFindRelatedAccountsRequest](../../models/operations/toolsozonesignaturefindrelatedaccountsrequest.md)                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
-| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
-| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
-| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
-
-### Response
-
-**Promise\<[operations.ToolsOzoneSignatureFindRelatedAccountsResponse](../../models/operations/toolsozonesignaturefindrelatedaccountsresponse.md)\>**
-
-### Errors
-
-| Error Type                                                              | Status Code                                                             | Content Type                                                            |
-| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| errors.ToolsOzoneSignatureFindRelatedAccountsResponseBody               | 400                                                                     | application/json                                                        |
-| errors.ToolsOzoneSignatureFindRelatedAccountsOzoneSignatureResponseBody | 401                                                                     | application/json                                                        |
-| errors.APIError                                                         | 4XX, 5XX                                                                | \*/\*                                                                   |
-
-## searchAccounts
-
-*This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
-
-*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
-
-Search for accounts that match one or more threat signature values.
-
-### Example Usage
-
-```typescript
-import { Bluesky } from "bluesky";
-
-const bluesky = new Bluesky({
-  bearer: process.env["BLUESKY_BEARER"] ?? "",
-});
-
-async function run() {
-  const result = await bluesky.ozone.signature.searchAccounts({
-    values: [
-      "<value>",
-    ],
-  });
-
-  for await (const page of result) {
-    // Handle the page
-    console.log(page);
-  }
-}
-
-run();
-```
-
-### Standalone function
-
-The standalone function version of this method:
-
-```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { ozoneSignatureSearchAccounts } from "bluesky/funcs/ozoneSignatureSearchAccounts.js";
-
-// Use `BlueskyCore` for best tree-shaking performance.
-// You can create one instance of it to use across an application.
-const bluesky = new BlueskyCore({
-  bearer: process.env["BLUESKY_BEARER"] ?? "",
-});
-
-async function run() {
-  const res = await ozoneSignatureSearchAccounts(bluesky, {
-    values: [
-      "<value>",
-    ],
-  });
-
-  if (!res.ok) {
-    throw res.error;
-  }
-
-  const { value: result } = res;
-
-  for await (const page of result) {
-    // Handle the page
-    console.log(page);
-  }
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ToolsOzoneSignatureSearchAccountsRequest](../../models/operations/toolsozonesignaturesearchaccountsrequest.md)                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
-| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
-| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
-| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
-
-### Response
-
-**Promise\<[operations.ToolsOzoneSignatureSearchAccountsResponse](../../models/operations/toolsozonesignaturesearchaccountsresponse.md)\>**
-
-### Errors
-
-| Error Type                                                         | Status Code                                                        | Content Type                                                       |
-| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| errors.ToolsOzoneSignatureSearchAccountsResponseBody               | 400                                                                | application/json                                                   |
-| errors.ToolsOzoneSignatureSearchAccountsOzoneSignatureResponseBody | 401                                                                | application/json                                                   |
-| errors.APIError                                                    | 4XX, 5XX                                                           | \*/\*                                                              |
+| Error Type                                                     | Status Code                                                    | Content Type                                                   |
+| -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
+| errors.ToolsOzoneSignatureFindCorrelationResponseBody          | 400                                                            | application/json                                               |
+| errors.ToolsOzoneSignatureFindCorrelationSignatureResponseBody | 401                                                            | application/json                                               |
+| errors.Unauthorized                                            | 403, 407, 511                                                  | application/json                                               |
+| errors.NotFound                                                | 404, 501, 505                                                  | application/json                                               |
+| errors.Timeout                                                 | 408, 504                                                       | application/json                                               |
+| errors.BadRequest                                              | 413, 414, 415, 422, 431, 510                                   | application/json                                               |
+| errors.RateLimited                                             | 429                                                            | application/json                                               |
+| errors.InternalServerError                                     | 500, 502, 503, 506, 507, 508                                   | application/json                                               |
+| errors.APIError                                                | 4XX, 5XX                                                       | \*/\*                                                          |

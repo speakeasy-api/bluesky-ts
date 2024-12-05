@@ -1,0 +1,1432 @@
+overlay: 1.0.0
+info:
+  title: Speakeasy Modifications
+  version: 0.0.2
+  x-speakeasy-metadata:
+    after: ""
+    before: ""
+    type: speakeasy-modifications
+actions:
+  - target: $["paths"]["/xrpc/app.bsky.actor.putPreferences"]["post"]
+    update:
+      x-speakeasy-group: actors
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.actor.putPreferences()
+      after: sdk.actors.putPreferences()
+      reviewed_at: 1733406936213
+      created_at: 1733406930630
+  - target: $["paths"]["/xrpc/tools.ozone.communication.listTemplates"]["get"]
+    update:
+      x-speakeasy-group: ozoneCommunication
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.ozone.communication.listTemplates()
+      after: sdk.ozoneCommunication.listTemplates()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/app.bsky.feed.getAuthorFeed"]["get"]
+    update:
+      x-speakeasy-name-override: getAuthor
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.feed.getAuthorFeed()
+      after: sdk.feed.getAuthor()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/app.bsky.graph.getKnownFollowers"]["get"]
+    update:
+      x-speakeasy-group: graphs
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.graph.getKnownFollowers()
+      after: sdk.graphs.getKnownFollowers()
+      reviewed_at: 1733406936213
+      created_at: 1733406930630
+  - target: $["paths"]["/xrpc/app.bsky.graph.getSuggestedFollowsByActor"]["get"]
+    update:
+      x-speakeasy-group: users
+      x-speakeasy-name-override: getSuggestedFollows
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.graph.getSuggestedFollowsByActor()
+      after: sdk.users.getSuggestedFollows()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/app.bsky.graph.getListBlocks"]["get"]
+    update:
+      x-speakeasy-group: graphs
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.graph.getListBlocks()
+      after: sdk.graphs.getListBlocks()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/com.atproto.moderation.createReport"]["post"]
+    update:
+      x-speakeasy-group: atprotoModeration
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.moderation.createReport()
+      after: sdk.atprotoModeration.createReport()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/com.atproto.identity.signPlcOperation"]["post"]
+    update:
+      x-speakeasy-group: atprotoIdentity
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.identity.signPlcOperation()
+      after: sdk.atprotoIdentity.signPlcOperation()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/com.atproto.identity.resolveHandle"]["get"]
+    update:
+      x-speakeasy-group: atprotoIdentity
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.identity.resolveHandle()
+      after: sdk.atprotoIdentity.resolveHandle()
+      reviewed_at: 1733406936213
+      created_at: 1733406930630
+  - target: $["paths"]["/xrpc/app.bsky.notification.registerPush"]["post"]
+    update:
+      x-speakeasy-group: notifications
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.notification.registerPush()
+      after: sdk.notifications.registerPush()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/app.bsky.feed.getFeedGenerator"]["get"]
+    update:
+      x-speakeasy-name-override: getGenerator
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.feed.getFeedGenerator()
+      after: sdk.feed.getGenerator()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/chat.bsky.convo.sendMessageBatch"]["post"]
+    update:
+      x-speakeasy-group: chatConvo
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.chat.convo.sendMessageBatch()
+      after: sdk.chatConvo.sendMessageBatch()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/com.atproto.server.confirmEmail"]["post"]
+    update:
+      x-speakeasy-group: server
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.server.confirmEmail()
+      after: sdk.server.confirmEmail()
+      reviewed_at: 1733406936213
+      created_at: 1733406930630
+  - target: $["paths"]["/xrpc/chat.bsky.convo.listConvos"]["get"]
+    update:
+      x-speakeasy-group: convo
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.chat.convo.listConvos()
+      after: sdk.convo.list()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/com.atproto.server.createInviteCodes"]["post"]
+    update:
+      x-speakeasy-group: atprotoServer
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.server.createInviteCodes()
+      after: sdk.atprotoServer.createInviteCodes()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/com.atproto.sync.getRepo"]["get"]
+    update:
+      x-speakeasy-group: sync
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.sync.getRepo()
+      after: sdk.sync.getRepo()
+      reviewed_at: 1733406936213
+      created_at: 1733406930630
+  - target: $["paths"]["/xrpc/app.bsky.actor.searchActors"]["get"]
+    update:
+      x-speakeasy-group: actors
+      x-speakeasy-name-override: search
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.actor.searchActors()
+      after: sdk.actors.search()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/tools.ozone.team.listMembers"]["get"]
+    update:
+      x-speakeasy-group: team
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.ozone.team.listMembers()
+      after: sdk.team.listMembers()
+      reviewed_at: 1733406936213
+      created_at: 1733406930630
+  - target: $["paths"]["/xrpc/tools.ozone.signature.findRelatedAccounts"]["get"]
+    update:
+      x-speakeasy-group: ozoneSignatures
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.ozone.signature.findRelatedAccounts()
+      after: sdk.ozoneSignatures.findRelatedAccounts()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/com.atproto.repo.listRecords"]["get"]
+    update:
+      x-speakeasy-group: repos
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.repo.listRecords()
+      after: sdk.repos.list()
+      reviewed_at: 1733406936213
+      created_at: 1733406930630
+  - target: $["paths"]["/xrpc/chat.bsky.convo.deleteMessageForSelf"]["post"]
+    update:
+      x-speakeasy-group: convo
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.chat.convo.deleteMessageForSelf()
+      after: sdk.convo.deleteMessageForSelf()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/com.atproto.server.deleteSession"]["post"]
+    update:
+      x-speakeasy-group: atprotoServer
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.server.deleteSession()
+      after: sdk.atprotoServer.deleteSession()
+      reviewed_at: 1733406936213
+      created_at: 1733406930630
+  - target: $["paths"]["/xrpc/com.atproto.admin.sendEmail"]["post"]
+    update:
+      x-speakeasy-group: admin
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.admin.sendEmail()
+      after: sdk.admin.sendEmail()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/com.atproto.identity.updateHandle"]["post"]
+    update:
+      x-speakeasy-group: identities
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.identity.updateHandle()
+      after: sdk.identities.updateHandle()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/tools.ozone.moderation.queryStatuses"]["get"]
+    update:
+      x-speakeasy-group: moderations
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.ozone.moderation.queryStatuses()
+      after: sdk.moderations.queryStatuses()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/app.bsky.feed.getActorFeeds"]["get"]
+    update:
+      x-speakeasy-name-override: getActor
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.feed.getActorFeeds()
+      after: sdk.feed.getActor()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/com.atproto.repo.deleteRecord"]["post"]
+    update:
+      x-speakeasy-group: atprotoRepo
+      x-speakeasy-name-override: delete
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.repo.deleteRecord()
+      after: sdk.atprotoRepo.delete()
+      reviewed_at: 1733406936213
+      created_at: 1733406930630
+  - target: $["paths"]["/xrpc/com.atproto.server.describeServer"]["get"]
+    update:
+      x-speakeasy-group: atprotoServer
+      x-speakeasy-name-override: describe
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.server.describeServer()
+      after: sdk.atprotoServer.describe()
+      reviewed_at: 1733406936213
+      created_at: 1733406930630
+  - target: $["paths"]["/xrpc/chat.bsky.convo.sendMessage"]["post"]
+    update:
+      x-speakeasy-group: chatConvos
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.chat.convo.sendMessage()
+      after: sdk.chatConvos.sendMessage()
+      reviewed_at: 1733406936213
+      created_at: 1733406930630
+  - target: $["paths"]["/xrpc/com.atproto.repo.putRecord"]["post"]
+    update:
+      x-speakeasy-group: repo
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.repo.putRecord()
+      after: sdk.repo.putRecord()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/tools.ozone.setting.listOptions"]["get"]
+    update:
+      x-speakeasy-group: settings
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.ozone.setting.listOptions()
+      after: sdk.settings.list()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/app.bsky.feed.getQuotes"]["get"]
+    update:
+      x-speakeasy-group: feeds
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.feed.getQuotes()
+      after: sdk.feeds.getQuotes()
+      reviewed_at: 1733406936213
+      created_at: 1733406930630
+  - target: $["paths"]["/xrpc/com.atproto.server.listAppPasswords"]["get"]
+    update:
+      x-speakeasy-group: server
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.server.listAppPasswords()
+      after: sdk.server.listAppPasswords()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/app.bsky.feed.searchPosts"]["get"]
+    update:
+      x-speakeasy-name-override: search
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.feed.searchPosts()
+      after: sdk.feed.search()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/chat.bsky.actor.exportAccountData"]["get"]
+    update:
+      x-speakeasy-group: account
+      x-speakeasy-name-override: exportData
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.chat.actor.exportAccountData()
+      after: sdk.account.exportData()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/com.atproto.admin.getAccountInfos"]["get"]
+    update:
+      x-speakeasy-group: admins
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.admin.getAccountInfos()
+      after: sdk.admins.getAccountInfos()
+      reviewed_at: 1733406936213
+      created_at: 1733406930630
+  - target: $["paths"]["/xrpc/app.bsky.graph.unmuteActor"]["post"]
+    update:
+      x-speakeasy-group: users
+      x-speakeasy-name-override: unmute
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.graph.unmuteActor()
+      after: sdk.users.unmute()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/com.atproto.server.deleteAccount"]["post"]
+    update:
+      x-speakeasy-group: atprotoServer
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.server.deleteAccount()
+      after: sdk.atprotoServer.deleteAccount()
+      reviewed_at: 1733406936213
+      created_at: 1733406930630
+  - target: $["paths"]["/xrpc/app.bsky.graph.getMutes"]["get"]
+    update:
+      x-speakeasy-group: graphs
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.graph.getMutes()
+      after: sdk.graphs.getMutes()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/com.atproto.repo.getRecord"]["get"]
+    update:
+      x-speakeasy-group: repos
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.repo.getRecord()
+      after: sdk.repos.getRecord()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/app.bsky.actor.getPreferences"]["get"]
+    update:
+      x-speakeasy-group: actors
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.actor.getPreferences()
+      after: sdk.actors.getPreferences()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/tools.ozone.communication.updateTemplate"]["post"]
+    update:
+      x-speakeasy-group: ozoneCommunication
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.ozone.communication.updateTemplate()
+      after: sdk.ozoneCommunication.updateTemplate()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/com.atproto.repo.uploadBlob"]["post"]
+    update:
+      x-speakeasy-group: atprotoRepo
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.repo.uploadBlob()
+      after: sdk.atprotoRepo.uploadBlob()
+      reviewed_at: 1733406936213
+      created_at: 1733406930630
+  - target: $["paths"]["/xrpc/com.atproto.sync.notifyOfUpdate"]["post"]
+    update:
+      x-speakeasy-group: sync
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.sync.notifyOfUpdate()
+      after: sdk.sync.notifyOfUpdate()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/com.atproto.server.getSession"]["get"]
+    update:
+      x-speakeasy-group: servers
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.server.getSession()
+      after: sdk.servers.getSession()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/app.bsky.actor.getProfiles"]["get"]
+    update:
+      x-speakeasy-group: actors
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.actor.getProfiles()
+      after: sdk.actors.getProfiles()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/tools.ozone.set.querySets"]["get"]
+    update:
+      x-speakeasy-group: set
+      x-speakeasy-name-override: query
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.ozone.set.querySets()
+      after: sdk.set.query()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/com.atproto.server.updateEmail"]["post"]
+    update:
+      x-speakeasy-group: servers
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.server.updateEmail()
+      after: sdk.servers.updateEmail()
+      reviewed_at: 1733406936213
+      created_at: 1733406930630
+  - target: $["paths"]["/xrpc/tools.ozone.signature.searchAccounts"]["get"]
+    update:
+      x-speakeasy-group: ozoneSignature
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.ozone.signature.searchAccounts()
+      after: sdk.ozoneSignature.searchAccounts()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/app.bsky.feed.getFeedGenerators"]["get"]
+    update:
+      x-speakeasy-name-override: getGenerators
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.feed.getFeedGenerators()
+      after: sdk.feed.getGenerators()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/com.atproto.admin.getSubjectStatus"]["get"]
+    update:
+      x-speakeasy-group: admin
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.admin.getSubjectStatus()
+      after: sdk.admin.getSubjectStatus()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/com.atproto.server.requestEmailConfirmation"]["post"]
+    update:
+      x-speakeasy-group: atprotoServer
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.server.requestEmailConfirmation()
+      after: sdk.atprotoServer.requestEmailConfirmation()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/app.bsky.notification.getUnreadCount"]["get"]
+    update:
+      x-speakeasy-group: notifications
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.notification.getUnreadCount()
+      after: sdk.notifications.getUnreadCount()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/com.atproto.admin.getAccountInfo"]["get"]
+    update:
+      x-speakeasy-group: admin
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.admin.getAccountInfo()
+      after: sdk.admin.getAccountInfo()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/chat.bsky.moderation.getActorMetadata"]["get"]
+    update:
+      x-speakeasy-group: chatModeration
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.chat.moderation.getActorMetadata()
+      after: sdk.chatModeration.getActorMetadata()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/com.atproto.server.requestPasswordReset"]["post"]
+    update:
+      x-speakeasy-group: atprotoServer
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.server.requestPasswordReset()
+      after: sdk.atprotoServer.requestPasswordReset()
+      reviewed_at: 1733406936213
+      created_at: 1733406930630
+  - target: $["paths"]["/xrpc/com.atproto.admin.disableInviteCodes"]["post"]
+    update:
+      x-speakeasy-group: admin
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.admin.disableInviteCodes()
+      after: sdk.admin.disableInviteCodes()
+      reviewed_at: 1733406936213
+      created_at: 1733406930630
+  - target: $["paths"]["/xrpc/com.atproto.sync.listRepos"]["get"]
+    update:
+      x-speakeasy-group: atprotoSync
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.sync.listRepos()
+      after: sdk.atprotoSync.listRepos()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/com.atproto.server.deactivateAccount"]["post"]
+    update:
+      x-speakeasy-group: server
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.server.deactivateAccount()
+      after: sdk.server.deactivateAccount()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/com.atproto.server.revokeAppPassword"]["post"]
+    update:
+      x-speakeasy-group: atprotoServer
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.server.revokeAppPassword()
+      after: sdk.atprotoServer.revokeAppPassword()
+      reviewed_at: 1733406936213
+      created_at: 1733406930630
+  - target: $["paths"]["/xrpc/app.bsky.notification.listNotifications"]["get"]
+    update:
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.notification.listNotifications()
+      after: sdk.notification.list()
+      reviewed_at: 1733406936213
+      created_at: 1733406930630
+  - target: $["paths"]["/xrpc/tools.ozone.set.upsertSet"]["post"]
+    update:
+      x-speakeasy-group: ozoneSet
+      x-speakeasy-name-override: upsert
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.ozone.set.upsertSet()
+      after: sdk.ozoneSet.upsert()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/com.atproto.identity.submitPlcOperation"]["post"]
+    update:
+      x-speakeasy-group: identity
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.identity.submitPlcOperation()
+      after: sdk.identity.submitPlcOperation()
+      reviewed_at: 1733406936213
+      created_at: 1733406930630
+  - target: $["paths"]["/xrpc/app.bsky.notification.updateSeen"]["post"]
+    update:
+      x-speakeasy-group: notifications
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.notification.updateSeen()
+      after: sdk.notifications.updateSeen()
+      reviewed_at: 1733406936213
+      created_at: 1733406930630
+  - target: $["paths"]["/xrpc/app.bsky.graph.getBlocks"]["get"]
+    update:
+      x-speakeasy-group: graphs
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.graph.getBlocks()
+      after: sdk.graphs.getBlocks()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/tools.ozone.set.deleteValues"]["post"]
+    update:
+      x-speakeasy-group: sets
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.ozone.set.deleteValues()
+      after: sdk.sets.deleteValues()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/com.atproto.server.getAccountInviteCodes"]["get"]
+    update:
+      x-speakeasy-group: accounts
+      x-speakeasy-name-override: getInviteCodes
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.server.getAccountInviteCodes()
+      after: sdk.accounts.getInviteCodes()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/app.bsky.feed.getSuggestedFeeds"]["get"]
+    update:
+      x-speakeasy-name-override: getSuggested
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.feed.getSuggestedFeeds()
+      after: sdk.feed.getSuggested()
+      reviewed_at: 1733406936213
+      created_at: 1733406930630
+  - target: $["paths"]["/xrpc/com.atproto.server.getServiceAuth"]["get"]
+    update:
+      x-speakeasy-group: servers
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.server.getServiceAuth()
+      after: sdk.servers.getServiceAuth()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/chat.bsky.moderation.updateActorAccess"]["post"]
+    update:
+      x-speakeasy-group: chatModeration
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.chat.moderation.updateActorAccess()
+      after: sdk.chatModeration.updateActorAccess()
+      reviewed_at: 1733406936213
+      created_at: 1733406930630
+  - target: $["paths"]["/xrpc/chat.bsky.convo.getLog"]["get"]
+    update:
+      x-speakeasy-group: conversations
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.chat.convo.getLog()
+      after: sdk.conversations.getLog()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/com.atproto.server.activateAccount"]["post"]
+    update:
+      x-speakeasy-group: atprotoServer
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.server.activateAccount()
+      after: sdk.atprotoServer.activateAccount()
+      reviewed_at: 1733406936213
+      created_at: 1733406930630
+  - target: $["paths"]["/xrpc/com.atproto.identity.requestPlcOperationSignature"]["post"]
+    update:
+      x-speakeasy-group: atprotoIdentity
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.identity.requestPlcOperationSignature()
+      after: sdk.atprotoIdentity.requestPlcOperationSignature()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/tools.ozone.moderation.getRecords"]["get"]
+    update:
+      x-speakeasy-group: moderations
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.ozone.moderation.getRecords()
+      after: sdk.moderations.getRecords()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/com.atproto.server.createAccount"]["post"]
+    update:
+      x-speakeasy-group: atprotoServer
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.server.createAccount()
+      after: sdk.atprotoServer.createAccount()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/app.bsky.graph.muteThread"]["post"]
+    update:
+      x-speakeasy-group: graphs
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.graph.muteThread()
+      after: sdk.graphs.muteThread()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/tools.ozone.moderation.emitEvent"]["post"]
+    update:
+      x-speakeasy-group: ozoneModeration
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.ozone.moderation.emitEvent()
+      after: sdk.ozoneModeration.emitEvent()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/tools.ozone.set.addValues"]["post"]
+    update:
+      x-speakeasy-group: ozoneSet
+      x-speakeasy-name-override: add
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.ozone.set.addValues()
+      after: sdk.ozoneSet.add()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/chat.bsky.convo.muteConvo"]["post"]
+    update:
+      x-speakeasy-group: convos
+      x-speakeasy-name-override: mute
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.chat.convo.muteConvo()
+      after: sdk.convos.mute()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/com.atproto.repo.createRecord"]["post"]
+    update:
+      x-speakeasy-group: repos
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.repo.createRecord()
+      after: sdk.repos.createRecord()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/tools.ozone.moderation.getRepos"]["get"]
+    update:
+      x-speakeasy-group: moderations
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.ozone.moderation.getRepos()
+      after: sdk.moderations.getRepos()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/chat.bsky.moderation.getMessageContext"]["get"]
+    update:
+      x-speakeasy-group: chats
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.chat.moderation.getMessageContext()
+      after: sdk.chats.getMessageContext()
+      reviewed_at: 1733406936213
+      created_at: 1733406930630
+  - target: $["paths"]["/xrpc/com.atproto.admin.enableAccountInvites"]["post"]
+    update:
+      x-speakeasy-group: admins
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.admin.enableAccountInvites()
+      after: sdk.admins.enableAccountInvites()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/com.atproto.label.queryLabels"]["get"]
+    update:
+      x-speakeasy-group: atprotoLabels
+      x-speakeasy-name-override: query
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.label.queryLabels()
+      after: sdk.atprotoLabels.query()
+      reviewed_at: 1733406936213
+      created_at: 1733406930630
+  - target: $["paths"]["/xrpc/app.bsky.feed.getLikes"]["get"]
+    update:
+      x-speakeasy-group: feeds
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.feed.getLikes()
+      after: sdk.feeds.getLikes()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/tools.ozone.signature.findCorrelation"]["get"]
+    update:
+      x-speakeasy-group: signature
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.ozone.signature.findCorrelation()
+      after: sdk.signature.findCorrelation()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/com.atproto.sync.getRecord"]["get"]
+    update:
+      x-speakeasy-group: atprotoSyncs
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.sync.getRecord()
+      after: sdk.atprotoSyncs.getRecord()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/com.atproto.server.createInviteCode"]["post"]
+    update:
+      x-speakeasy-group: atprotoServer
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.server.createInviteCode()
+      after: sdk.atprotoServer.createInviteCode()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/tools.ozone.team.updateMember"]["post"]
+    update:
+      x-speakeasy-group: teams
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.ozone.team.updateMember()
+      after: sdk.teams.updateMember()
+      reviewed_at: 1733406936213
+      created_at: 1733406930630
+  - target: $["paths"]["/xrpc/app.bsky.graph.getFollowers"]["get"]
+    update:
+      x-speakeasy-group: users
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.graph.getFollowers()
+      after: sdk.users.getFollowers()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/app.bsky.feed.getPosts"]["get"]
+    update:
+      x-speakeasy-group: feeds
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.feed.getPosts()
+      after: sdk.feeds.get()
+      reviewed_at: 1733406936213
+      created_at: 1733406930630
+  - target: $["paths"]["/xrpc/app.bsky.graph.unmuteActorList"]["post"]
+    update:
+      x-speakeasy-group: graphs
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.graph.unmuteActorList()
+      after: sdk.graphs.unmuteActorList()
+      reviewed_at: 1733406936213
+      created_at: 1733406930630
+  - target: $["paths"]["/xrpc/tools.ozone.communication.deleteTemplate"]["post"]
+    update:
+      x-speakeasy-group: ozoneCommunication
+      x-speakeasy-name-override: delete
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.ozone.communication.deleteTemplate()
+      after: sdk.ozoneCommunication.delete()
+      reviewed_at: 1733406936213
+      created_at: 1733406930630
+  - target: $["paths"]["/xrpc/tools.ozone.set.getValues"]["get"]
+    update:
+      x-speakeasy-group: sets
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.ozone.set.getValues()
+      after: sdk.sets.getValues()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/chat.bsky.convo.unmuteConvo"]["post"]
+    update:
+      x-speakeasy-group: chatConvo
+      x-speakeasy-name-override: unmute
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.chat.convo.unmuteConvo()
+      after: sdk.chatConvo.unmute()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/tools.ozone.moderation.getRecord"]["get"]
+    update:
+      x-speakeasy-group: ozoneModeration
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.ozone.moderation.getRecord()
+      after: sdk.ozoneModeration.getRecord()
+      reviewed_at: 1733406936213
+      created_at: 1733406930630
+  - target: $["paths"]["/xrpc/app.bsky.video.getJobStatus"]["get"]
+    update:
+      x-speakeasy-group: videos
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.video.getJobStatus()
+      after: sdk.videos.getJobStatus()
+      reviewed_at: 1733406936213
+      created_at: 1733406930630
+  - target: $["paths"]["/xrpc/com.atproto.server.refreshSession"]["post"]
+    update:
+      x-speakeasy-group: atprotoServer
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.server.refreshSession()
+      after: sdk.atprotoServer.refreshSession()
+      reviewed_at: 1733406936213
+      created_at: 1733406930630
+  - target: $["paths"]["/xrpc/app.bsky.actor.getProfile"]["get"]
+    update:
+      x-speakeasy-group: actors
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.actor.getProfile()
+      after: sdk.actors.getProfile()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/app.bsky.video.getUploadLimits"]["get"]
+    update:
+      x-speakeasy-group: videos
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.video.getUploadLimits()
+      after: sdk.videos.getUploadLimits()
+      reviewed_at: 1733406936213
+      created_at: 1733406930630
+  - target: $["paths"]["/xrpc/tools.ozone.server.getConfig"]["get"]
+    update:
+      x-speakeasy-group: ozoneServer
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.ozone.server.getConfig()
+      after: sdk.ozoneServer.getConfig()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/com.atproto.admin.updateAccountHandle"]["post"]
+    update:
+      x-speakeasy-group: admin
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.admin.updateAccountHandle()
+      after: sdk.admin.updateAccountHandle()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/tools.ozone.team.deleteMember"]["post"]
+    update:
+      x-speakeasy-group: teams
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.ozone.team.deleteMember()
+      after: sdk.teams.deleteMember()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/com.atproto.sync.getLatestCommit"]["get"]
+    update:
+      x-speakeasy-group: syncs
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.sync.getLatestCommit()
+      after: sdk.syncs.getLatestCommit()
+      reviewed_at: 1733406936213
+      created_at: 1733406930630
+  - target: $["paths"]["/xrpc/com.atproto.server.requestAccountDelete"]["post"]
+    update:
+      x-speakeasy-group: server
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.server.requestAccountDelete()
+      after: sdk.server.requestAccountDelete()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/com.atproto.server.checkAccountStatus"]["get"]
+    update:
+      x-speakeasy-group: server
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.server.checkAccountStatus()
+      after: sdk.server.checkAccountStatus()
+      reviewed_at: 1733406936213
+      created_at: 1733406930630
+  - target: $["paths"]["/xrpc/tools.ozone.moderation.searchRepos"]["get"]
+    update:
+      x-speakeasy-group: ozoneModerations
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.ozone.moderation.searchRepos()
+      after: sdk.ozoneModerations.searchRepos()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/chat.bsky.convo.leaveConvo"]["post"]
+    update:
+      x-speakeasy-group: conversations
+      x-speakeasy-name-override: leave
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.chat.convo.leaveConvo()
+      after: sdk.conversations.leave()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/app.bsky.labeler.getServices"]["get"]
+    update:
+      x-speakeasy-group: labelers
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.labeler.getServices()
+      after: sdk.labelers.getServices()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/chat.bsky.actor.deleteAccount"]["post"]
+    update:
+      x-speakeasy-group: account
+      x-speakeasy-name-override: delete
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.chat.actor.deleteAccount()
+      after: sdk.account.delete()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/app.bsky.feed.getListFeed"]["get"]
+    update:
+      x-speakeasy-group: feeds
+      x-speakeasy-name-override: getList
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.feed.getListFeed()
+      after: sdk.feeds.getList()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/com.atproto.repo.applyWrites"]["post"]
+    update:
+      x-speakeasy-group: repos
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.repo.applyWrites()
+      after: sdk.repos.applyWrites()
+      reviewed_at: 1733406936213
+      created_at: 1733406930630
+  - target: $["paths"]["/xrpc/app.bsky.notification.putPreferences"]["post"]
+    update:
+      x-speakeasy-group: notifications
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.notification.putPreferences()
+      after: sdk.notifications.putPreferences()
+      reviewed_at: 1733406936213
+      created_at: 1733406930630
+  - target: $["paths"]["/xrpc/app.bsky.feed.getFeed"]["get"]
+    update:
+      x-speakeasy-name-override: fetch
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.feed.getFeed()
+      after: sdk.feed.fetch()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/chat.bsky.convo.getConvoForMembers"]["get"]
+    update:
+      x-speakeasy-group: chatConvos
+      x-speakeasy-name-override: getForMembers
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.chat.convo.getConvoForMembers()
+      after: sdk.chatConvos.getForMembers()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/com.atproto.admin.deleteAccount"]["post"]
+    update:
+      x-speakeasy-group: admins
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.admin.deleteAccount()
+      after: sdk.admins.deleteAccount()
+      reviewed_at: 1733406936213
+      created_at: 1733406930630
+  - target: $["paths"]["/xrpc/com.atproto.identity.getRecommendedDidCredentials"]["get"]
+    update:
+      x-speakeasy-group: identity
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.identity.getRecommendedDidCredentials()
+      after: sdk.identity.getRecommendedDidCredentials()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/com.atproto.admin.disableAccountInvites"]["post"]
+    update:
+      x-speakeasy-group: atprotoAdmin
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.admin.disableAccountInvites()
+      after: sdk.atprotoAdmin.disableAccountInvites()
+      reviewed_at: 1733406936213
+      created_at: 1733406930630
+  - target: $["paths"]["/xrpc/com.atproto.repo.importRepo"]["post"]
+    update:
+      x-speakeasy-group: atprotoRepo
+      x-speakeasy-name-override: import
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.repo.importRepo()
+      after: sdk.atprotoRepo.import()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/tools.ozone.team.addMember"]["post"]
+    update:
+      x-speakeasy-group: ozone
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.ozone.team.addMember()
+      after: sdk.ozone.addMember()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/com.atproto.server.requestEmailUpdate"]["post"]
+    update:
+      x-speakeasy-group: server
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.server.requestEmailUpdate()
+      after: sdk.server.requestEmailUpdate()
+      reviewed_at: 1733406936213
+      created_at: 1733406930630
+  - target: $["paths"]["/xrpc/app.bsky.feed.getRepostedBy"]["get"]
+    update:
+      x-speakeasy-group: feeds
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.feed.getRepostedBy()
+      after: sdk.feeds.getRepostedBy()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/app.bsky.feed.sendInteractions"]["post"]
+    update:
+      x-speakeasy-group: feeds
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.feed.sendInteractions()
+      after: sdk.feeds.sendInteractions()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/com.atproto.sync.getBlob"]["get"]
+    update:
+      x-speakeasy-group: atprotoSync
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.sync.getBlob()
+      after: sdk.atprotoSync.getBlob()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/com.atproto.sync.getBlocks"]["get"]
+    update:
+      x-speakeasy-group: syncs
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.sync.getBlocks()
+      after: sdk.syncs.getBlocks()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/com.atproto.server.createAppPassword"]["post"]
+    update:
+      x-speakeasy-group: atprotoServer
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.server.createAppPassword()
+      after: sdk.atprotoServer.createAppPassword()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/tools.ozone.moderation.queryEvents"]["get"]
+    update:
+      x-speakeasy-group: moderation
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.ozone.moderation.queryEvents()
+      after: sdk.moderation.queryEvents()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/com.atproto.repo.describeRepo"]["get"]
+    update:
+      x-speakeasy-group: repos
+      x-speakeasy-name-override: describe
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.repo.describeRepo()
+      after: sdk.repos.describe()
+      reviewed_at: 1733406936213
+      created_at: 1733406930630
+  - target: $["paths"]["/xrpc/com.atproto.admin.updateAccountEmail"]["post"]
+    update:
+      x-speakeasy-group: admin
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.admin.updateAccountEmail()
+      after: sdk.admin.updateAccountEmail()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/tools.ozone.moderation.getEvent"]["get"]
+    update:
+      x-speakeasy-group: moderation
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.ozone.moderation.getEvent()
+      after: sdk.moderation.getEvent()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/com.atproto.repo.listMissingBlobs"]["get"]
+    update:
+      x-speakeasy-group: repos
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.repo.listMissingBlobs()
+      after: sdk.repos.listMissingBlobs()
+      reviewed_at: 1733406936213
+      created_at: 1733406930630
+  - target: $["paths"]["/xrpc/com.atproto.admin.getInviteCodes"]["get"]
+    update:
+      x-speakeasy-group: atprotoAdmin
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.admin.getInviteCodes()
+      after: sdk.atprotoAdmin.getInviteCodes()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/app.bsky.feed.describeFeedGenerator"]["get"]
+    update:
+      x-speakeasy-group: feeds
+      x-speakeasy-name-override: describeGenerator
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.feed.describeFeedGenerator()
+      after: sdk.feeds.describeGenerator()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/com.atproto.sync.getRepoStatus"]["get"]
+    update:
+      x-speakeasy-group: syncs
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.sync.getRepoStatus()
+      after: sdk.syncs.getRepoStatus()
+      reviewed_at: 1733406936213
+      created_at: 1733406930630
+  - target: $["paths"]["/xrpc/tools.ozone.communication.createTemplate"]["post"]
+    update:
+      x-speakeasy-group: communications
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.ozone.communication.createTemplate()
+      after: sdk.communications.createTemplate()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/tools.ozone.set.deleteSet"]["post"]
+    update:
+      x-speakeasy-group: set
+      x-speakeasy-name-override: delete
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.ozone.set.deleteSet()
+      after: sdk.set.delete()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/com.atproto.sync.listBlobs"]["get"]
+    update:
+      x-speakeasy-group: sync
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.sync.listBlobs()
+      after: sdk.sync.listBlobs()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/com.atproto.server.resetPassword"]["post"]
+    update:
+      x-speakeasy-group: atprotoServer
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.server.resetPassword()
+      after: sdk.atprotoServer.resetPassword()
+      reviewed_at: 1733406936213
+      created_at: 1733406930630
+  - target: $["paths"]["/xrpc/com.atproto.admin.updateSubjectStatus"]["post"]
+    update:
+      x-speakeasy-group: admin
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.admin.updateSubjectStatus()
+      after: sdk.admin.updateSubjectStatus()
+      reviewed_at: 1733406936213
+      created_at: 1733406930630
+  - target: $["paths"]["/xrpc/com.atproto.server.reserveSigningKey"]["post"]
+    update:
+      x-speakeasy-group: servers
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.server.reserveSigningKey()
+      after: sdk.servers.reserveSigningKey()
+      reviewed_at: 1733406936213
+      created_at: 1733406930630
+  - target: $["paths"]["/xrpc/tools.ozone.moderation.getRepo"]["get"]
+    update:
+      x-speakeasy-group: ozoneModeration
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.ozone.moderation.getRepo()
+      after: sdk.ozoneModeration.get()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/chat.bsky.convo.getConvo"]["get"]
+    update:
+      x-speakeasy-group: chats
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.chat.convo.getConvo()
+      after: sdk.chats.getConvo()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/app.bsky.graph.getStarterPacks"]["get"]
+    update:
+      x-speakeasy-group: graphs
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.graph.getStarterPacks()
+      after: sdk.graphs.getStarterPacks()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/tools.ozone.setting.removeOptions"]["post"]
+    update:
+      x-speakeasy-group: setting
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.ozone.setting.removeOptions()
+      after: sdk.setting.removeOptions()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/chat.bsky.convo.updateRead"]["post"]
+    update:
+      x-speakeasy-group: chatConvos
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.chat.convo.updateRead()
+      after: sdk.chatConvos.updateRead()
+      reviewed_at: 1733406936213
+      created_at: 1733406930630
+  - target: $["paths"]["/xrpc/com.atproto.admin.updateAccountPassword"]["post"]
+    update:
+      x-speakeasy-group: admin
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.admin.updateAccountPassword()
+      after: sdk.admin.updateAccountPassword()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/tools.ozone.setting.upsertOption"]["post"]
+    update:
+      x-speakeasy-group: ozoneSettings
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.ozone.setting.upsertOption()
+      after: sdk.ozoneSettings.upsertOption()
+      reviewed_at: 1733406936213
+      created_at: 1733406930630
+  - target: $["paths"]["/xrpc/app.bsky.feed.getFeedSkeleton"]["get"]
+    update:
+      x-speakeasy-name-override: getSkeleton
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.feed.getFeedSkeleton()
+      after: sdk.feed.getSkeleton()
+      reviewed_at: 1733406936213
+      created_at: 1733406930630
+  - target: $["paths"]["/xrpc/app.bsky.video.uploadVideo"]["post"]
+    update:
+      x-speakeasy-group: videos
+      x-speakeasy-name-override: upload
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.video.uploadVideo()
+      after: sdk.videos.upload()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/com.atproto.server.createSession"]["post"]
+    update:
+      x-speakeasy-group: server
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.server.createSession()
+      after: sdk.server.createSession()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/app.bsky.actor.searchActorsTypeahead"]["get"]
+    update:
+      x-speakeasy-name-override: searchTypeahead
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.actor.searchActorsTypeahead()
+      after: sdk.actor.searchTypeahead()
+      reviewed_at: 1733406936213
+      created_at: 1733406930630
+  - target: $["paths"]["/xrpc/app.bsky.feed.getPostThread"]["get"]
+    update:
+      x-speakeasy-group: feeds
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.feed.getPostThread()
+      after: sdk.feeds.getPostThread()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/com.atproto.admin.searchAccounts"]["get"]
+    update:
+      x-speakeasy-group: atprotoAdmin
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.admin.searchAccounts()
+      after: sdk.atprotoAdmin.searchAccounts()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/chat.bsky.convo.getMessages"]["get"]
+    update:
+      x-speakeasy-group: chatConvos
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.chat.convo.getMessages()
+      after: sdk.chatConvos.getMessages()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631
+  - target: $["paths"]["/xrpc/com.atproto.sync.requestCrawl"]["post"]
+    update:
+      x-speakeasy-group: syncs
+    x-speakeasy-metadata:
+      type: method-name
+      before: sdk.atproto.sync.requestCrawl()
+      after: sdk.syncs.requestCrawl()
+      reviewed_at: 1733406936213
+      created_at: 1733406930631

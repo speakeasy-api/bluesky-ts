@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoServerConfirmEmailError } from "bluesky/models/errors";
 
-let value: ComAtprotoServerConfirmEmailError = "ExpiredToken";
+let value: ComAtprotoServerConfirmEmailError = "InvalidRequest";
 ```
 
 ## Values

@@ -5,7 +5,7 @@
 ```typescript
 import { AppBskyGraphGetSuggestedFollowsByActorError } from "bluesky/models/errors";
 
-let value: AppBskyGraphGetSuggestedFollowsByActorError = "InvalidRequest";
+let value: AppBskyGraphGetSuggestedFollowsByActorError = "InvalidToken";
 ```
 
 ## Values

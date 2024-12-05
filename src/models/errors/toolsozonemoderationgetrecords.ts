@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type ToolsOzoneModerationGetRecordsOzoneModerationResponseBodyData = {
+export type ToolsOzoneModerationGetRecordsModerationsResponseBodyData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,17 +16,15 @@ export type ToolsOzoneModerationGetRecordsOzoneModerationResponseBodyData = {
 /**
  * Unauthorized
  */
-export class ToolsOzoneModerationGetRecordsOzoneModerationResponseBody
+export class ToolsOzoneModerationGetRecordsModerationsResponseBody
   extends Error
 {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: ToolsOzoneModerationGetRecordsOzoneModerationResponseBodyData;
+  data$: ToolsOzoneModerationGetRecordsModerationsResponseBodyData;
 
-  constructor(
-    err: ToolsOzoneModerationGetRecordsOzoneModerationResponseBodyData,
-  ) {
+  constructor(err: ToolsOzoneModerationGetRecordsModerationsResponseBodyData) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -35,7 +33,7 @@ export class ToolsOzoneModerationGetRecordsOzoneModerationResponseBody
 
     this.error = err.error;
 
-    this.name = "ToolsOzoneModerationGetRecordsOzoneModerationResponseBody";
+    this.name = "ToolsOzoneModerationGetRecordsModerationsResponseBody";
   }
 }
 
@@ -79,9 +77,9 @@ export class ToolsOzoneModerationGetRecordsResponseBody extends Error {
 }
 
 /** @internal */
-export const ToolsOzoneModerationGetRecordsOzoneModerationResponseBody$inboundSchema:
+export const ToolsOzoneModerationGetRecordsModerationsResponseBody$inboundSchema:
   z.ZodType<
-    ToolsOzoneModerationGetRecordsOzoneModerationResponseBody,
+    ToolsOzoneModerationGetRecordsModerationsResponseBody,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -89,23 +87,22 @@ export const ToolsOzoneModerationGetRecordsOzoneModerationResponseBody$inboundSc
     message: z.string(),
   })
     .transform((v) => {
-      return new ToolsOzoneModerationGetRecordsOzoneModerationResponseBody(v);
+      return new ToolsOzoneModerationGetRecordsModerationsResponseBody(v);
     });
 
 /** @internal */
-export type ToolsOzoneModerationGetRecordsOzoneModerationResponseBody$Outbound =
-  {
-    error: "AuthMissing";
-    message: string;
-  };
+export type ToolsOzoneModerationGetRecordsModerationsResponseBody$Outbound = {
+  error: "AuthMissing";
+  message: string;
+};
 
 /** @internal */
-export const ToolsOzoneModerationGetRecordsOzoneModerationResponseBody$outboundSchema:
+export const ToolsOzoneModerationGetRecordsModerationsResponseBody$outboundSchema:
   z.ZodType<
-    ToolsOzoneModerationGetRecordsOzoneModerationResponseBody$Outbound,
+    ToolsOzoneModerationGetRecordsModerationsResponseBody$Outbound,
     z.ZodTypeDef,
-    ToolsOzoneModerationGetRecordsOzoneModerationResponseBody
-  > = z.instanceof(ToolsOzoneModerationGetRecordsOzoneModerationResponseBody)
+    ToolsOzoneModerationGetRecordsModerationsResponseBody
+  > = z.instanceof(ToolsOzoneModerationGetRecordsModerationsResponseBody)
     .transform(v => v.data$)
     .pipe(z.object({
       error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -116,16 +113,16 @@ export const ToolsOzoneModerationGetRecordsOzoneModerationResponseBody$outboundS
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ToolsOzoneModerationGetRecordsOzoneModerationResponseBody$ {
-  /** @deprecated use `ToolsOzoneModerationGetRecordsOzoneModerationResponseBody$inboundSchema` instead. */
+export namespace ToolsOzoneModerationGetRecordsModerationsResponseBody$ {
+  /** @deprecated use `ToolsOzoneModerationGetRecordsModerationsResponseBody$inboundSchema` instead. */
   export const inboundSchema =
-    ToolsOzoneModerationGetRecordsOzoneModerationResponseBody$inboundSchema;
-  /** @deprecated use `ToolsOzoneModerationGetRecordsOzoneModerationResponseBody$outboundSchema` instead. */
+    ToolsOzoneModerationGetRecordsModerationsResponseBody$inboundSchema;
+  /** @deprecated use `ToolsOzoneModerationGetRecordsModerationsResponseBody$outboundSchema` instead. */
   export const outboundSchema =
-    ToolsOzoneModerationGetRecordsOzoneModerationResponseBody$outboundSchema;
-  /** @deprecated use `ToolsOzoneModerationGetRecordsOzoneModerationResponseBody$Outbound` instead. */
+    ToolsOzoneModerationGetRecordsModerationsResponseBody$outboundSchema;
+  /** @deprecated use `ToolsOzoneModerationGetRecordsModerationsResponseBody$Outbound` instead. */
   export type Outbound =
-    ToolsOzoneModerationGetRecordsOzoneModerationResponseBody$Outbound;
+    ToolsOzoneModerationGetRecordsModerationsResponseBody$Outbound;
 }
 
 /** @internal */

@@ -6,7 +6,7 @@
 import { AppBskyFeedGetFeedSkeletonRequest } from "bluesky/models/operations";
 
 let value: AppBskyFeedGetFeedSkeletonRequest = {
-  feed: "https://lasting-metabolite.com",
+  feed: "https://surprised-accelerator.net/",
 };
 ```
 

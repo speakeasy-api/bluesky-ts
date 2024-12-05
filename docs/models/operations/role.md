@@ -5,7 +5,7 @@
 ```typescript
 import { Role } from "bluesky/models/operations";
 
-let value: Role = "tools.ozone.team.defs#roleModerator";
+let value: Role = "tools.ozone.team.defs#roleTriage";
 ```
 
 ## Values

@@ -9,7 +9,7 @@ import { ToolsOzoneModerationDefsModEventComment } from "bluesky/models/componen
 
 let value: ToolsOzoneModerationDefsModEventComment = {
   comment:
-    "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
+    "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
 };
 ```
 

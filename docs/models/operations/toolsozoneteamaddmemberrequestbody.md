@@ -7,7 +7,7 @@ import { ToolsOzoneTeamAddMemberRequestBody } from "bluesky/models/operations";
 
 let value: ToolsOzoneTeamAddMemberRequestBody = {
   did: "<id>",
-  role: "tools.ozone.team.defs#roleModerator",
+  role: "tools.ozone.team.defs#roleAdmin",
 };
 ```
 

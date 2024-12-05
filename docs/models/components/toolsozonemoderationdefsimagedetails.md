@@ -6,8 +6,8 @@
 import { ToolsOzoneModerationDefsImageDetails } from "bluesky/models/components";
 
 let value: ToolsOzoneModerationDefsImageDetails = {
-  width: 684499,
-  height: 417333,
+  width: 298750,
+  height: 255064,
 };
 ```
 

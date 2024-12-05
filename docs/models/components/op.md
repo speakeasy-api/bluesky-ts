@@ -5,7 +5,7 @@
 ```typescript
 import { Op } from "bluesky/models/components";
 
-let value: Op = "delete";
+let value: Op = "update";
 ```
 
 ## Values

@@ -6,14 +6,14 @@
 import { AppBskyEmbedRecordViewRecord } from "bluesky/models/components";
 
 let value: AppBskyEmbedRecordViewRecord = {
-  uri: "https://charming-grandson.biz",
+  uri: "https://oval-resource.biz/",
   cid: "<id>",
   author: {
     did: "<id>",
     handle: "<value>",
   },
   value: "<value>",
-  indexedAt: new Date("2024-01-20T08:44:25.689Z"),
+  indexedAt: new Date("2023-11-12T01:37:45.757Z"),
 };
 ```
 

@@ -5,7 +5,7 @@
 ```typescript
 import { ChatBskyActorExportAccountDataError } from "bluesky/models/errors";
 
-let value: ChatBskyActorExportAccountDataError = "InvalidToken";
+let value: ChatBskyActorExportAccountDataError = "InvalidRequest";
 ```
 
 ## Values

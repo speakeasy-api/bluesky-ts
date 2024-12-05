@@ -7,10 +7,10 @@ import { AppBskyEmbedExternalView } from "bluesky/models/components";
 
 let value: AppBskyEmbedExternalView = {
   external: {
-    uri: "https://short-accompanist.net",
+    uri: "https://free-ignorance.info",
     title: "<value>",
     description:
-      "er store lively perfectly starch state belabor zowie incidentally nifty",
+      "dearly necklace meh uproot storyboard joy unexpectedly sightseeing contravene",
   },
 };
 ```

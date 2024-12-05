@@ -6,18 +6,18 @@
 import { ToolsOzoneModerationDefsRecordViewDetail } from "bluesky/models/components";
 
 let value: ToolsOzoneModerationDefsRecordViewDetail = {
-  uri: "https://quixotic-statue.net",
+  uri: "https://glass-colonialism.name/",
   cid: "<id>",
   value: "<value>",
   blobs: [
     {
       cid: "<id>",
       mimeType: "<value>",
-      size: 307532,
-      createdAt: new Date("2024-08-17T18:12:34.115Z"),
+      size: 318028,
+      createdAt: new Date("2024-11-16T00:59:56.580Z"),
     },
   ],
-  indexedAt: new Date("2022-02-16T20:50:29.690Z"),
+  indexedAt: new Date("2024-11-24T10:40:28.013Z"),
   moderation: {},
   repo: {
     did: "<id>",
@@ -25,7 +25,7 @@ let value: ToolsOzoneModerationDefsRecordViewDetail = {
     relatedRecords: [
       "<value>",
     ],
-    indexedAt: new Date("2022-01-01T09:39:45.396Z"),
+    indexedAt: new Date("2023-11-11T15:47:28.185Z"),
     moderation: {},
   },
 };

@@ -8,21 +8,21 @@ import { AppBskyEmbedRecordWithMediaView } from "bluesky/models/components";
 let value: AppBskyEmbedRecordWithMediaView = {
   record: {
     record: {
-      uri: "https://lavish-retrospectivity.biz/",
+      uri: "https://crooked-cd.org",
       cid: "<id>",
       record: "<value>",
       creator: {
         did: "<id>",
         handle: "<value>",
       },
-      indexedAt: new Date("2023-09-13T16:15:37.701Z"),
+      indexedAt: new Date("2022-11-02T01:04:07.129Z"),
     },
   },
   media: {
     images: [
       {
-        thumb: "https://clear-formation.com/",
-        fullsize: "https://ragged-guide.com/",
+        thumb: "https://charming-divine.org",
+        fullsize: "https://miserly-grouper.net",
         alt: "<value>",
       },
     ],

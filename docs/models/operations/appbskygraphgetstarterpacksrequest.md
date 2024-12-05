@@ -7,7 +7,7 @@ import { AppBskyGraphGetStarterPacksRequest } from "bluesky/models/operations";
 
 let value: AppBskyGraphGetStarterPacksRequest = {
   uris: [
-    "https://optimal-pendant.name",
+    "https://unique-shipper.net/",
   ],
 };
 ```

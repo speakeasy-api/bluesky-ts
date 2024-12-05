@@ -12,7 +12,7 @@ let value: ToolsOzoneSignatureSearchAccountsResponseBody = {
     {
       did: "<id>",
       handle: "<value>",
-      indexedAt: new Date("2024-05-16T18:15:34.753Z"),
+      indexedAt: new Date("2023-07-13T17:58:06.600Z"),
     },
   ],
 };

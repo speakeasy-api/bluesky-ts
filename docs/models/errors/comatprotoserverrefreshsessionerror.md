@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoServerRefreshSessionError } from "bluesky/models/errors";
 
-let value: ComAtprotoServerRefreshSessionError = "AccountTakedown";
+let value: ComAtprotoServerRefreshSessionError = "InvalidRequest";
 ```
 
 ## Values

@@ -7,7 +7,7 @@ import { AppBskyFeedGetQuotesResponse } from "bluesky/models/operations";
 
 let value: AppBskyFeedGetQuotesResponse = {
   result: {
-    uri: "https://dental-morbidity.com/",
+    uri: "https://lighthearted-developing.com/",
     posts: [],
   },
 };

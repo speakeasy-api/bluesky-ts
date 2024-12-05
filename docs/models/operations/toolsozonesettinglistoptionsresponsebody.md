@@ -13,7 +13,7 @@ let value: ToolsOzoneSettingListOptionsResponseBody = {
       key: "<id>",
       did: "<id>",
       value: "<value>",
-      scope: "instance",
+      scope: "personal",
       createdBy: "<id>",
       lastUpdatedBy: "<id>",
     },

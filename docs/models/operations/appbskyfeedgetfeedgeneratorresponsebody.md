@@ -9,15 +9,15 @@ import { AppBskyFeedGetFeedGeneratorResponseBody } from "bluesky/models/operatio
 
 let value: AppBskyFeedGetFeedGeneratorResponseBody = {
   view: {
-    uri: "https://talkative-sauerkraut.org/",
+    uri: "https://rough-mentor.biz/",
     cid: "<id>",
     did: "<id>",
     creator: {
       did: "<id>",
       handle: "<value>",
     },
-    displayName: "Wilford_Koepp",
-    indexedAt: new Date("2022-06-07T02:45:53.539Z"),
+    displayName: "Judah31",
+    indexedAt: new Date("2022-05-25T10:48:39.501Z"),
   },
   isOnline: false,
   isValid: false,

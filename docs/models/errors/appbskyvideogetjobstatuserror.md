@@ -5,7 +5,7 @@
 ```typescript
 import { AppBskyVideoGetJobStatusError } from "bluesky/models/errors";
 
-let value: AppBskyVideoGetJobStatusError = "ExpiredToken";
+let value: AppBskyVideoGetJobStatusError = "InvalidToken";
 ```
 
 ## Values

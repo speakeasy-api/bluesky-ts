@@ -9,8 +9,8 @@
 const value: components.AppBskyEmbedImagesView = {
   images: [
     {
-      thumb: "https://impassioned-dulcimer.name/",
-      fullsize: "https://sarcastic-airmail.name/",
+      thumb: "https://weekly-sauerkraut.org",
+      fullsize: "https://dependent-yeast.com/",
       alt: "<value>",
     },
   ],
@@ -22,7 +22,7 @@ const value: components.AppBskyEmbedImagesView = {
 ```typescript
 const value: components.AppBskyEmbedVideoView = {
   cid: "<id>",
-  playlist: "https://filthy-self-confidence.org/",
+  playlist: "https://black-typewriter.org/",
 };
 ```
 
@@ -31,10 +31,9 @@ const value: components.AppBskyEmbedVideoView = {
 ```typescript
 const value: components.AppBskyEmbedExternalView = {
   external: {
-    uri: "https://supportive-brook.name/",
+    uri: "https://gullible-disclosure.biz",
     title: "<value>",
-    description:
-      "excluding worthless up transcend since while sermon huzzah close",
+    description: "horst miserably normal absent",
   },
 };
 ```

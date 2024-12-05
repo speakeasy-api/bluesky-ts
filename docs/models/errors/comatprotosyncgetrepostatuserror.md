@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoSyncGetRepoStatusError } from "bluesky/models/errors";
 
-let value: ComAtprotoSyncGetRepoStatusError = "RepoNotFound";
+let value: ComAtprotoSyncGetRepoStatusError = "InvalidToken";
 ```
 
 ## Values

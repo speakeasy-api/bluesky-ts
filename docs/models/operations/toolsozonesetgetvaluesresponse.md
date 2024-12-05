@@ -9,9 +9,9 @@ let value: ToolsOzoneSetGetValuesResponse = {
   result: {
     set: {
       name: "<value>",
-      setSize: 24313,
-      createdAt: new Date("2023-01-11T12:02:21.595Z"),
-      updatedAt: new Date("2023-11-13T23:09:56.778Z"),
+      setSize: 209750,
+      createdAt: new Date("2022-05-07T19:27:28.258Z"),
+      updatedAt: new Date("2023-09-25T13:05:49.123Z"),
     },
     values: [
       "<value>",

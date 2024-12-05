@@ -5,7 +5,7 @@
 ```typescript
 import { AppBskyFeedGetLikesError } from "bluesky/models/errors";
 
-let value: AppBskyFeedGetLikesError = "ExpiredToken";
+let value: AppBskyFeedGetLikesError = "InvalidToken";
 ```
 
 ## Values

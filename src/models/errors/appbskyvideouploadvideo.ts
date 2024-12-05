@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type AppBskyVideoUploadVideoVideoResponseBodyData = {
+export type AppBskyVideoUploadVideoVideosResponseBodyData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,13 +16,13 @@ export type AppBskyVideoUploadVideoVideoResponseBodyData = {
 /**
  * Unauthorized
  */
-export class AppBskyVideoUploadVideoVideoResponseBody extends Error {
+export class AppBskyVideoUploadVideoVideosResponseBody extends Error {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: AppBskyVideoUploadVideoVideoResponseBodyData;
+  data$: AppBskyVideoUploadVideoVideosResponseBodyData;
 
-  constructor(err: AppBskyVideoUploadVideoVideoResponseBodyData) {
+  constructor(err: AppBskyVideoUploadVideoVideosResponseBodyData) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -31,7 +31,7 @@ export class AppBskyVideoUploadVideoVideoResponseBody extends Error {
 
     this.error = err.error;
 
-    this.name = "AppBskyVideoUploadVideoVideoResponseBody";
+    this.name = "AppBskyVideoUploadVideoVideosResponseBody";
   }
 }
 
@@ -75,8 +75,8 @@ export class AppBskyVideoUploadVideoResponseBody extends Error {
 }
 
 /** @internal */
-export const AppBskyVideoUploadVideoVideoResponseBody$inboundSchema: z.ZodType<
-  AppBskyVideoUploadVideoVideoResponseBody,
+export const AppBskyVideoUploadVideoVideosResponseBody$inboundSchema: z.ZodType<
+  AppBskyVideoUploadVideoVideosResponseBody,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -84,40 +84,41 @@ export const AppBskyVideoUploadVideoVideoResponseBody$inboundSchema: z.ZodType<
   message: z.string(),
 })
   .transform((v) => {
-    return new AppBskyVideoUploadVideoVideoResponseBody(v);
+    return new AppBskyVideoUploadVideoVideosResponseBody(v);
   });
 
 /** @internal */
-export type AppBskyVideoUploadVideoVideoResponseBody$Outbound = {
+export type AppBskyVideoUploadVideoVideosResponseBody$Outbound = {
   error: "AuthMissing";
   message: string;
 };
 
 /** @internal */
-export const AppBskyVideoUploadVideoVideoResponseBody$outboundSchema: z.ZodType<
-  AppBskyVideoUploadVideoVideoResponseBody$Outbound,
-  z.ZodTypeDef,
-  AppBskyVideoUploadVideoVideoResponseBody
-> = z.instanceof(AppBskyVideoUploadVideoVideoResponseBody)
-  .transform(v => v.data$)
-  .pipe(z.object({
-    error: z.literal("AuthMissing").default("AuthMissing" as const),
-    message: z.string(),
-  }));
+export const AppBskyVideoUploadVideoVideosResponseBody$outboundSchema:
+  z.ZodType<
+    AppBskyVideoUploadVideoVideosResponseBody$Outbound,
+    z.ZodTypeDef,
+    AppBskyVideoUploadVideoVideosResponseBody
+  > = z.instanceof(AppBskyVideoUploadVideoVideosResponseBody)
+    .transform(v => v.data$)
+    .pipe(z.object({
+      error: z.literal("AuthMissing").default("AuthMissing" as const),
+      message: z.string(),
+    }));
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyVideoUploadVideoVideoResponseBody$ {
-  /** @deprecated use `AppBskyVideoUploadVideoVideoResponseBody$inboundSchema` instead. */
+export namespace AppBskyVideoUploadVideoVideosResponseBody$ {
+  /** @deprecated use `AppBskyVideoUploadVideoVideosResponseBody$inboundSchema` instead. */
   export const inboundSchema =
-    AppBskyVideoUploadVideoVideoResponseBody$inboundSchema;
-  /** @deprecated use `AppBskyVideoUploadVideoVideoResponseBody$outboundSchema` instead. */
+    AppBskyVideoUploadVideoVideosResponseBody$inboundSchema;
+  /** @deprecated use `AppBskyVideoUploadVideoVideosResponseBody$outboundSchema` instead. */
   export const outboundSchema =
-    AppBskyVideoUploadVideoVideoResponseBody$outboundSchema;
-  /** @deprecated use `AppBskyVideoUploadVideoVideoResponseBody$Outbound` instead. */
-  export type Outbound = AppBskyVideoUploadVideoVideoResponseBody$Outbound;
+    AppBskyVideoUploadVideoVideosResponseBody$outboundSchema;
+  /** @deprecated use `AppBskyVideoUploadVideoVideosResponseBody$Outbound` instead. */
+  export type Outbound = AppBskyVideoUploadVideoVideosResponseBody$Outbound;
 }
 
 /** @internal */

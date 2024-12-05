@@ -11,12 +11,6 @@ let value: ToolsOzoneModerationGetReposResponseBody = {
   repos: [
     {
       did: "<id>",
-      handle: "<value>",
-      relatedRecords: [
-        "<value>",
-      ],
-      indexedAt: new Date("2023-08-29T01:52:01.164Z"),
-      moderation: {},
     },
   ],
 };

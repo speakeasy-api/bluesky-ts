@@ -7,18 +7,18 @@
 
 ```typescript
 const value: components.ToolsOzoneModerationDefsRecordViewDetail = {
-  uri: "https://pricey-suitcase.org",
+  uri: "https://crooked-heating.com/",
   cid: "<id>",
   value: "<value>",
   blobs: [
     {
       cid: "<id>",
       mimeType: "<value>",
-      size: 750765,
-      createdAt: new Date("2024-02-06T17:37:20.583Z"),
+      size: 604118,
+      createdAt: new Date("2023-02-24T13:22:59.477Z"),
     },
   ],
-  indexedAt: new Date("2024-11-26T21:21:58.551Z"),
+  indexedAt: new Date("2024-09-08T08:13:49.082Z"),
   moderation: {},
   repo: {
     did: "<id>",
@@ -26,7 +26,7 @@ const value: components.ToolsOzoneModerationDefsRecordViewDetail = {
     relatedRecords: [
       "<value>",
     ],
-    indexedAt: new Date("2024-12-25T20:43:06.136Z"),
+    indexedAt: new Date("2024-11-26T16:52:15.770Z"),
     moderation: {},
   },
 };
@@ -36,7 +36,7 @@ const value: components.ToolsOzoneModerationDefsRecordViewDetail = {
 
 ```typescript
 const value: components.ToolsOzoneModerationDefsRecordViewNotFound = {
-  uri: "https://blank-embarrassment.com/",
+  uri: "https://fixed-mozzarella.org",
 };
 ```
 

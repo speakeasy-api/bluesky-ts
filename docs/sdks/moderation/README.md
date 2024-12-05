@@ -1,25 +1,28 @@
 # Moderation
-(*chat.moderation*)
+(*moderation*)
 
 ## Overview
 
 ### Available Operations
 
-* [getActorMetadata](#getactormetadata) - *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
-
-*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
-* [getMessageContext](#getmessagecontext) - *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
-
-*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
-* [updateActorAccess](#updateactoraccess) - *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
+* [getEvent](#getevent) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
-## getActorMetadata
-
-*This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
+Get details about a moderation event.
+* [queryEvents](#queryevents) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
+
+List moderation events related to a subject.
+
+## getEvent
+
+*This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
+
+*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
+
+Get details about a moderation event.
 
 ### Example Usage
 
@@ -31,8 +34,8 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.chat.moderation.getActorMetadata({
-    actor: "<id>",
+  const result = await bluesky.moderation.getEvent({
+    id: 895027,
   });
 
   // Handle the result
@@ -48,7 +51,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { chatModerationGetActorMetadata } from "bluesky/funcs/chatModerationGetActorMetadata.js";
+import { moderationGetEvent } from "bluesky/funcs/moderationGetEvent.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -57,8 +60,8 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await chatModerationGetActorMetadata(bluesky, {
-    actor: "<id>",
+  const res = await moderationGetEvent(bluesky, {
+    id: 895027,
   });
 
   if (!res.ok) {
@@ -78,28 +81,36 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ChatBskyModerationGetActorMetadataRequest](../../models/operations/chatbskymoderationgetactormetadatarequest.md)                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ToolsOzoneModerationGetEventRequest](../../models/operations/toolsozonemoderationgeteventrequest.md)                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.ChatBskyModerationGetActorMetadataResponseBody](../../models/operations/chatbskymoderationgetactormetadataresponsebody.md)\>**
+**Promise\<[components.ToolsOzoneModerationDefsModEventViewDetail](../../models/components/toolsozonemoderationdefsmodeventviewdetail.md)\>**
 
 ### Errors
 
-| Error Type                                                          | Status Code                                                         | Content Type                                                        |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| errors.ChatBskyModerationGetActorMetadataResponseBody               | 400                                                                 | application/json                                                    |
-| errors.ChatBskyModerationGetActorMetadataChatModerationResponseBody | 401                                                                 | application/json                                                    |
-| errors.APIError                                                     | 4XX, 5XX                                                            | \*/\*                                                               |
+| Error Type                                                | Status Code                                               | Content Type                                              |
+| --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
+| errors.ToolsOzoneModerationGetEventResponseBody           | 400                                                       | application/json                                          |
+| errors.ToolsOzoneModerationGetEventModerationResponseBody | 401                                                       | application/json                                          |
+| errors.Unauthorized                                       | 403, 407, 511                                             | application/json                                          |
+| errors.NotFound                                           | 404, 501, 505                                             | application/json                                          |
+| errors.Timeout                                            | 408, 504                                                  | application/json                                          |
+| errors.BadRequest                                         | 413, 414, 415, 422, 431, 510                              | application/json                                          |
+| errors.RateLimited                                        | 429                                                       | application/json                                          |
+| errors.InternalServerError                                | 500, 502, 503, 506, 507, 508                              | application/json                                          |
+| errors.APIError                                           | 4XX, 5XX                                                  | \*/\*                                                     |
 
-## getMessageContext
+## queryEvents
 
-*This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
+*This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
+
+List moderation events related to a subject.
 
 ### Example Usage
 
@@ -111,12 +122,12 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.chat.moderation.getMessageContext({
-    messageId: "<id>",
-  });
+  const result = await bluesky.moderation.queryEvents();
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -128,7 +139,7 @@ The standalone function version of this method:
 
 ```typescript
 import { BlueskyCore } from "bluesky/core.js";
-import { chatModerationGetMessageContext } from "bluesky/funcs/chatModerationGetMessageContext.js";
+import { moderationQueryEvents } from "bluesky/funcs/moderationQueryEvents.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -137,9 +148,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await chatModerationGetMessageContext(bluesky, {
-    messageId: "<id>",
-  });
+  const res = await moderationQueryEvents(bluesky);
 
   if (!res.ok) {
     throw res.error;
@@ -147,8 +156,10 @@ async function run() {
 
   const { value: result } = res;
 
-  // Handle the result
-  console.log(result);
+  for await (const page of result) {
+    // Handle the page
+    console.log(page);
+  }
 }
 
 run();
@@ -158,99 +169,25 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ChatBskyModerationGetMessageContextRequest](../../models/operations/chatbskymoderationgetmessagecontextrequest.md)                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ToolsOzoneModerationQueryEventsRequest](../../models/operations/toolsozonemoderationqueryeventsrequest.md)                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.ChatBskyModerationGetMessageContextResponseBody](../../models/operations/chatbskymoderationgetmessagecontextresponsebody.md)\>**
+**Promise\<[operations.ToolsOzoneModerationQueryEventsResponse](../../models/operations/toolsozonemoderationqueryeventsresponse.md)\>**
 
 ### Errors
 
-| Error Type                                                           | Status Code                                                          | Content Type                                                         |
-| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| errors.ChatBskyModerationGetMessageContextResponseBody               | 400                                                                  | application/json                                                     |
-| errors.ChatBskyModerationGetMessageContextChatModerationResponseBody | 401                                                                  | application/json                                                     |
-| errors.APIError                                                      | 4XX, 5XX                                                             | \*/\*                                                                |
-
-## updateActorAccess
-
-*This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
-
-*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
-
-### Example Usage
-
-```typescript
-import { Bluesky } from "bluesky";
-
-const bluesky = new Bluesky({
-  bearer: process.env["BLUESKY_BEARER"] ?? "",
-});
-
-async function run() {
-  await bluesky.chat.moderation.updateActorAccess({
-    actor: "<id>",
-    allowAccess: true,
-  });
-
-
-}
-
-run();
-```
-
-### Standalone function
-
-The standalone function version of this method:
-
-```typescript
-import { BlueskyCore } from "bluesky/core.js";
-import { chatModerationUpdateActorAccess } from "bluesky/funcs/chatModerationUpdateActorAccess.js";
-
-// Use `BlueskyCore` for best tree-shaking performance.
-// You can create one instance of it to use across an application.
-const bluesky = new BlueskyCore({
-  bearer: process.env["BLUESKY_BEARER"] ?? "",
-});
-
-async function run() {
-  const res = await chatModerationUpdateActorAccess(bluesky, {
-    actor: "<id>",
-    allowAccess: true,
-  });
-
-  if (!res.ok) {
-    throw res.error;
-  }
-
-  const { value: result } = res;
-
-  
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ChatBskyModerationUpdateActorAccessRequestBody](../../models/operations/chatbskymoderationupdateactoraccessrequestbody.md)                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
-| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
-| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
-| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
-
-### Response
-
-**Promise\<void\>**
-
-### Errors
-
-| Error Type                                                           | Status Code                                                          | Content Type                                                         |
-| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| errors.ChatBskyModerationUpdateActorAccessResponseBody               | 400                                                                  | application/json                                                     |
-| errors.ChatBskyModerationUpdateActorAccessChatModerationResponseBody | 401                                                                  | application/json                                                     |
-| errors.APIError                                                      | 4XX, 5XX                                                             | \*/\*                                                                |
+| Error Type                                                   | Status Code                                                  | Content Type                                                 |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| errors.ToolsOzoneModerationQueryEventsResponseBody           | 400                                                          | application/json                                             |
+| errors.ToolsOzoneModerationQueryEventsModerationResponseBody | 401                                                          | application/json                                             |
+| errors.Unauthorized                                          | 403, 407, 511                                                | application/json                                             |
+| errors.NotFound                                              | 404, 501, 505                                                | application/json                                             |
+| errors.Timeout                                               | 408, 504                                                     | application/json                                             |
+| errors.BadRequest                                            | 413, 414, 415, 422, 431, 510                                 | application/json                                             |
+| errors.RateLimited                                           | 429                                                          | application/json                                             |
+| errors.InternalServerError                                   | 500, 502, 503, 506, 507, 508                                 | application/json                                             |
+| errors.APIError                                              | 4XX, 5XX                                                     | \*/\*                                                        |

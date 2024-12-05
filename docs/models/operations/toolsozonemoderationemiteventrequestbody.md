@@ -7,8 +7,8 @@ import { ToolsOzoneModerationEmitEventRequestBody } from "bluesky/models/operati
 
 let value: ToolsOzoneModerationEmitEventRequestBody = {
   event: {
-    active: false,
-    timestamp: new Date("2022-10-26T14:10:48.354Z"),
+    comment:
+      "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
   },
   subject: {
     did: "<id>",

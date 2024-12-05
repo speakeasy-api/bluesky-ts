@@ -6,9 +6,10 @@
 import { AppBskyEmbedExternalViewExternal } from "bluesky/models/components";
 
 let value: AppBskyEmbedExternalViewExternal = {
-  uri: "https://serpentine-annual.net",
+  uri: "https://subtle-intellect.org/",
   title: "<value>",
-  description: "ah past educated or",
+  description:
+    "safely ick discourse besides forsaken coordinated married aside",
 };
 ```
 

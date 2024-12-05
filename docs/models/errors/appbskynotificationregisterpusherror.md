@@ -5,7 +5,7 @@
 ```typescript
 import { AppBskyNotificationRegisterPushError } from "bluesky/models/errors";
 
-let value: AppBskyNotificationRegisterPushError = "InvalidToken";
+let value: AppBskyNotificationRegisterPushError = "InvalidRequest";
 ```
 
 ## Values

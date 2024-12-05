@@ -7,7 +7,7 @@ import { ComAtprotoAdminUpdateAccountEmailRequestBody } from "bluesky/models/ope
 
 let value: ComAtprotoAdminUpdateAccountEmailRequestBody = {
   account: "<value>",
-  email: "Diamond.Rosenbaum@yahoo.com",
+  email: "Makenzie_Aufderhar@gmail.com",
 };
 ```
 

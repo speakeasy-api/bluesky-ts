@@ -6,8 +6,8 @@
 import { AppBskyFeedGetLikesLike } from "bluesky/models/components";
 
 let value: AppBskyFeedGetLikesLike = {
-  indexedAt: new Date("2024-01-10T22:30:43.334Z"),
-  createdAt: new Date("2022-01-24T09:49:07.665Z"),
+  indexedAt: new Date("2023-01-12T08:34:33.723Z"),
+  createdAt: new Date("2023-10-10T18:22:17.762Z"),
   actor: {
     did: "<id>",
     handle: "<value>",

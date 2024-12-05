@@ -33,7 +33,7 @@ const value: components.ChatBskyConvoDefsLogCreateMessage = {
     sender: {
       did: "<id>",
     },
-    sentAt: new Date("2022-09-03T10:06:53.981Z"),
+    sentAt: new Date("2022-02-04T21:29:28.328Z"),
   },
 };
 ```
@@ -51,7 +51,7 @@ const value: components.ChatBskyConvoDefsLogDeleteMessage = {
     sender: {
       did: "<id>",
     },
-    sentAt: new Date("2024-10-14T04:15:01.236Z"),
+    sentAt: new Date("2023-11-13T03:22:04.343Z"),
   },
 };
 ```

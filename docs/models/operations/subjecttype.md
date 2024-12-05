@@ -7,7 +7,7 @@ If specified, only events where the subject is of the given type (account or rec
 ```typescript
 import { SubjectType } from "bluesky/models/operations";
 
-let value: SubjectType = "account";
+let value: SubjectType = "record";
 ```
 
 ## Values

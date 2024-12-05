@@ -5,7 +5,7 @@
 ```typescript
 import { AppBskyFeedGetFeedError } from "bluesky/models/errors";
 
-let value: AppBskyFeedGetFeedError = "UnknownFeed";
+let value: AppBskyFeedGetFeedError = "InvalidRequest";
 ```
 
 ## Values

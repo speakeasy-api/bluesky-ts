@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoServerRequestAccountDeleteError } from "bluesky/models/errors";
 
-let value: ComAtprotoServerRequestAccountDeleteError = "InvalidToken";
+let value: ComAtprotoServerRequestAccountDeleteError = "InvalidRequest";
 ```
 
 ## Values

@@ -8,7 +8,7 @@ import { AppBskyVideoDefsJobStatus } from "bluesky/models/components";
 let value: AppBskyVideoDefsJobStatus = {
   jobId: "<id>",
   did: "<id>",
-  state: "JOB_STATE_COMPLETED",
+  state: "JOB_STATE_FAILED",
 };
 ```
 

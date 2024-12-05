@@ -6,7 +6,7 @@
 import { AppBskyGraphUnmuteActorListRequestBody } from "bluesky/models/operations";
 
 let value: AppBskyGraphUnmuteActorListRequestBody = {
-  list: "https://scratchy-zebra.com",
+  list: "https://trivial-coil.name/",
 };
 ```
 

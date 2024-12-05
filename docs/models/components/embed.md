@@ -9,8 +9,8 @@
 const value: components.AppBskyEmbedImagesView = {
   images: [
     {
-      thumb: "https://petty-pressure.name/",
-      fullsize: "https://careless-suitcase.com",
+      thumb: "https://clear-cut-dredger.info",
+      fullsize: "https://reckless-flu.net/",
       alt: "<value>",
     },
   ],
@@ -22,7 +22,7 @@ const value: components.AppBskyEmbedImagesView = {
 ```typescript
 const value: components.AppBskyEmbedVideoView = {
   cid: "<id>",
-  playlist: "https://impressionable-lieu.info",
+  playlist: "https://impish-hose.name",
 };
 ```
 
@@ -31,9 +31,9 @@ const value: components.AppBskyEmbedVideoView = {
 ```typescript
 const value: components.AppBskyEmbedExternalView = {
   external: {
-    uri: "https://agreeable-legend.org/",
+    uri: "https://super-pendant.net/",
     title: "<value>",
-    description: "bide daintily vast scamper over",
+    description: "cake although misfire breastplate whenever whenever pomelo",
   },
 };
 ```
@@ -43,10 +43,14 @@ const value: components.AppBskyEmbedExternalView = {
 ```typescript
 const value: components.AppBskyEmbedRecordView = {
   record: {
-    uri: "https://clear-cut-coal.com",
-    author: {
+    uri: "https://hefty-knight.info",
+    cid: "<id>",
+    record: "<value>",
+    creator: {
       did: "<id>",
+      handle: "<value>",
     },
+    indexedAt: new Date("2023-02-04T22:38:27.365Z"),
   },
 };
 ```
@@ -57,23 +61,20 @@ const value: components.AppBskyEmbedRecordView = {
 const value: components.AppBskyEmbedRecordWithMediaView = {
   record: {
     record: {
-      uri: "https://definitive-nun.com/",
-      cid: "<id>",
-      record: "<value>",
-      creator: {
+      uri: "https://responsible-dusk.name/",
+      author: {
         did: "<id>",
-        handle: "<value>",
       },
-      indexedAt: new Date("2024-08-24T13:24:20.223Z"),
     },
   },
   media: {
-    external: {
-      uri: "https://mediocre-eternity.name",
-      title: "<value>",
-      description:
-        "factorise yearly defiantly cool briefly waist on uselessly custody honesty",
-    },
+    images: [
+      {
+        thumb: "https://athletic-vision.com/",
+        fullsize: "https://pleasant-birdcage.org/",
+        alt: "<value>",
+      },
+    ],
   },
 };
 ```

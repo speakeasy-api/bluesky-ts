@@ -10,7 +10,7 @@ let value: ChatBskyConvoDefsConvoView = {
   rev: "<value>",
   members: [],
   muted: false,
-  unreadCount: 792499,
+  unreadCount: 102316,
 };
 ```
 

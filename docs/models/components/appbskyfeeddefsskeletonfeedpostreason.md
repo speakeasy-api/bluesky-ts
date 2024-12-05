@@ -7,7 +7,7 @@
 
 ```typescript
 const value: components.AppBskyFeedDefsSkeletonReasonRepost = {
-  repost: "https://internal-amnesty.net",
+  repost: "https://oval-whale.net/",
 };
 ```
 

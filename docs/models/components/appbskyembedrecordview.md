@@ -7,14 +7,15 @@ import { AppBskyEmbedRecordView } from "bluesky/models/components";
 
 let value: AppBskyEmbedRecordView = {
   record: {
-    uri: "https://scaly-approach.org/",
+    uri: "https://shabby-singing.biz/",
     cid: "<id>",
-    author: {
+    creator: {
       did: "<id>",
       handle: "<value>",
     },
-    value: "<value>",
-    indexedAt: new Date("2023-07-25T00:13:17.699Z"),
+    name: "<value>",
+    purpose: "<value>",
+    indexedAt: new Date("2024-12-03T07:19:37.207Z"),
   },
 };
 ```

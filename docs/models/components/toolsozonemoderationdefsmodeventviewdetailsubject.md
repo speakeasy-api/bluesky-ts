@@ -12,7 +12,7 @@ const value: components.ToolsOzoneModerationDefsRepoView = {
   relatedRecords: [
     "<value>",
   ],
-  indexedAt: new Date("2023-08-23T08:49:14.071Z"),
+  indexedAt: new Date("2023-05-21T07:27:53.872Z"),
   moderation: {},
 };
 ```
@@ -29,13 +29,13 @@ const value: components.ToolsOzoneModerationDefsRepoViewNotFound = {
 
 ```typescript
 const value: components.ToolsOzoneModerationDefsRecordView = {
-  uri: "https://black-deed.info/",
+  uri: "https://unfinished-premise.info",
   cid: "<id>",
   value: "<value>",
   blobCids: [
     "<id>",
   ],
-  indexedAt: new Date("2023-04-22T21:58:29.328Z"),
+  indexedAt: new Date("2022-05-25T07:54:08.139Z"),
   moderation: {},
   repo: {
     did: "<id>",
@@ -43,7 +43,7 @@ const value: components.ToolsOzoneModerationDefsRecordView = {
     relatedRecords: [
       "<value>",
     ],
-    indexedAt: new Date("2023-10-10T15:44:11.718Z"),
+    indexedAt: new Date("2023-03-12T03:02:50.967Z"),
     moderation: {},
   },
 };
@@ -53,7 +53,7 @@ const value: components.ToolsOzoneModerationDefsRecordView = {
 
 ```typescript
 const value: components.ToolsOzoneModerationDefsRecordViewNotFound = {
-  uri: "https://glaring-fibre.com",
+  uri: "https://fond-brook.org",
 };
 ```
 

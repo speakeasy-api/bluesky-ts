@@ -10,14 +10,14 @@ import { ToolsOzoneModerationQueryStatusesResponseBody } from "bluesky/models/op
 let value: ToolsOzoneModerationQueryStatusesResponseBody = {
   subjectStatuses: [
     {
-      id: 348476,
+      id: 924159,
       subject: {
-        uri: "https://portly-programme.biz",
+        uri: "https://fair-hydrolyze.com/",
         cid: "<id>",
       },
-      updatedAt: new Date("2023-01-10T12:01:37.968Z"),
-      createdAt: new Date("2024-01-12T03:52:56.114Z"),
-      reviewState: "#reviewNone",
+      updatedAt: new Date("2023-01-17T22:18:44.696Z"),
+      createdAt: new Date("2024-03-22T03:31:31.130Z"),
+      reviewState: "#reviewClosed",
     },
   ],
 };

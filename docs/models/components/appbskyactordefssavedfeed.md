@@ -7,7 +7,7 @@ import { AppBskyActorDefsSavedFeed } from "bluesky/models/components";
 
 let value: AppBskyActorDefsSavedFeed = {
   id: "<id>",
-  type: "list",
+  type: "feed",
   value: "<value>",
   pinned: false,
 };

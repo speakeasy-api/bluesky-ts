@@ -5,7 +5,7 @@
 ```typescript
 import { ErrorT } from "bluesky/models/errors";
 
-let value: ErrorT = "InvalidToken";
+let value: ErrorT = "InvalidRequest";
 ```
 
 ## Values

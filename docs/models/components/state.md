@@ -7,7 +7,7 @@ The state of the video processing job. All values not listed as a known value in
 ```typescript
 import { State } from "bluesky/models/components";
 
-let value: State = "JOB_STATE_COMPLETED";
+let value: State = "JOB_STATE_FAILED";
 ```
 
 ## Values

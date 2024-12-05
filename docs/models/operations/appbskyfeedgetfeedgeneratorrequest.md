@@ -6,7 +6,7 @@
 import { AppBskyFeedGetFeedGeneratorRequest } from "bluesky/models/operations";
 
 let value: AppBskyFeedGetFeedGeneratorRequest = {
-  feed: "https://valuable-behest.com",
+  feed: "https://close-farm.info/",
 };
 ```
 

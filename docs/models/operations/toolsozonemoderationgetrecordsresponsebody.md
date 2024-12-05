@@ -10,18 +10,18 @@ import { ToolsOzoneModerationGetRecordsResponseBody } from "bluesky/models/opera
 let value: ToolsOzoneModerationGetRecordsResponseBody = {
   records: [
     {
-      uri: "https://pertinent-godfather.org/",
+      uri: "https://firm-impact.info",
       cid: "<id>",
       value: "<value>",
       blobs: [
         {
           cid: "<id>",
           mimeType: "<value>",
-          size: 967795,
-          createdAt: new Date("2023-08-23T09:15:37.633Z"),
+          size: 248413,
+          createdAt: new Date("2023-07-09T10:18:33.697Z"),
         },
       ],
-      indexedAt: new Date("2022-10-29T04:57:33.054Z"),
+      indexedAt: new Date("2022-12-07T04:15:26.087Z"),
       moderation: {},
       repo: {
         did: "<id>",
@@ -29,7 +29,7 @@ let value: ToolsOzoneModerationGetRecordsResponseBody = {
         relatedRecords: [
           "<value>",
         ],
-        indexedAt: new Date("2023-10-12T02:01:44.166Z"),
+        indexedAt: new Date("2023-02-13T20:18:32.614Z"),
         moderation: {},
       },
     },

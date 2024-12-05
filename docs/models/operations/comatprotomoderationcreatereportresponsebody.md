@@ -8,13 +8,13 @@ OK
 import { ComAtprotoModerationCreateReportResponseBody } from "bluesky/models/operations";
 
 let value: ComAtprotoModerationCreateReportResponseBody = {
-  id: 961571,
+  id: 876506,
   reasonType: "<value>",
   subject: {
     did: "<id>",
   },
   reportedBy: "<id>",
-  createdAt: new Date("2024-11-06T10:52:56.298Z"),
+  createdAt: new Date("2024-11-19T21:08:28.843Z"),
 };
 ```
 

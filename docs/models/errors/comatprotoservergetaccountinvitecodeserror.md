@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoServerGetAccountInviteCodesError } from "bluesky/models/errors";
 
-let value: ComAtprotoServerGetAccountInviteCodesError = "DuplicateCreate";
+let value: ComAtprotoServerGetAccountInviteCodesError = "ExpiredToken";
 ```
 
 ## Values

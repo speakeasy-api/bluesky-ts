@@ -7,13 +7,13 @@
 
 ```typescript
 const value: components.AppBskyLabelerDefsLabelerView = {
-  uri: "https://strident-metal.info",
+  uri: "https://thick-shore.name/",
   cid: "<id>",
   creator: {
     did: "<id>",
     handle: "<value>",
   },
-  indexedAt: new Date("2022-03-17T19:22:07.134Z"),
+  indexedAt: new Date("2023-03-23T06:32:58.021Z"),
 };
 ```
 
@@ -21,7 +21,7 @@ const value: components.AppBskyLabelerDefsLabelerView = {
 
 ```typescript
 const value: components.AppBskyLabelerDefsLabelerViewDetailed = {
-  uri: "https://kosher-puppet.org",
+  uri: "https://ruddy-ignorance.net/",
   cid: "<id>",
   creator: {
     did: "<id>",
@@ -29,10 +29,10 @@ const value: components.AppBskyLabelerDefsLabelerViewDetailed = {
   },
   policies: {
     labelValues: [
-      "gore",
+      "nsfl",
     ],
   },
-  indexedAt: new Date("2024-07-26T23:03:04.026Z"),
+  indexedAt: new Date("2024-12-05T04:07:03.604Z"),
 };
 ```
 

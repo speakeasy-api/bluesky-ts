@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoServerGetSessionError } from "bluesky/models/errors";
 
-let value: ComAtprotoServerGetSessionError = "ExpiredToken";
+let value: ComAtprotoServerGetSessionError = "InvalidToken";
 ```
 
 ## Values

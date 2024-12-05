@@ -8,7 +8,7 @@ OK
 import { AppBskyFeedGetLikesResponseBody } from "bluesky/models/operations";
 
 let value: AppBskyFeedGetLikesResponseBody = {
-  uri: "https://gigantic-freezing.name/",
+  uri: "https://oddball-translation.com",
   likes: [],
 };
 ```

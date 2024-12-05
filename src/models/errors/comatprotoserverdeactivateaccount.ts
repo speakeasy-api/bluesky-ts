@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type ComAtprotoServerDeactivateAccountAtprotoServerResponseBodyData = {
+export type ComAtprotoServerDeactivateAccountServerResponseBodyData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,17 +16,13 @@ export type ComAtprotoServerDeactivateAccountAtprotoServerResponseBodyData = {
 /**
  * Unauthorized
  */
-export class ComAtprotoServerDeactivateAccountAtprotoServerResponseBody
-  extends Error
-{
+export class ComAtprotoServerDeactivateAccountServerResponseBody extends Error {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: ComAtprotoServerDeactivateAccountAtprotoServerResponseBodyData;
+  data$: ComAtprotoServerDeactivateAccountServerResponseBodyData;
 
-  constructor(
-    err: ComAtprotoServerDeactivateAccountAtprotoServerResponseBodyData,
-  ) {
+  constructor(err: ComAtprotoServerDeactivateAccountServerResponseBodyData) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -35,7 +31,7 @@ export class ComAtprotoServerDeactivateAccountAtprotoServerResponseBody
 
     this.error = err.error;
 
-    this.name = "ComAtprotoServerDeactivateAccountAtprotoServerResponseBody";
+    this.name = "ComAtprotoServerDeactivateAccountServerResponseBody";
   }
 }
 
@@ -79,9 +75,9 @@ export class ComAtprotoServerDeactivateAccountResponseBody extends Error {
 }
 
 /** @internal */
-export const ComAtprotoServerDeactivateAccountAtprotoServerResponseBody$inboundSchema:
+export const ComAtprotoServerDeactivateAccountServerResponseBody$inboundSchema:
   z.ZodType<
-    ComAtprotoServerDeactivateAccountAtprotoServerResponseBody,
+    ComAtprotoServerDeactivateAccountServerResponseBody,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -89,23 +85,22 @@ export const ComAtprotoServerDeactivateAccountAtprotoServerResponseBody$inboundS
     message: z.string(),
   })
     .transform((v) => {
-      return new ComAtprotoServerDeactivateAccountAtprotoServerResponseBody(v);
+      return new ComAtprotoServerDeactivateAccountServerResponseBody(v);
     });
 
 /** @internal */
-export type ComAtprotoServerDeactivateAccountAtprotoServerResponseBody$Outbound =
-  {
-    error: "AuthMissing";
-    message: string;
-  };
+export type ComAtprotoServerDeactivateAccountServerResponseBody$Outbound = {
+  error: "AuthMissing";
+  message: string;
+};
 
 /** @internal */
-export const ComAtprotoServerDeactivateAccountAtprotoServerResponseBody$outboundSchema:
+export const ComAtprotoServerDeactivateAccountServerResponseBody$outboundSchema:
   z.ZodType<
-    ComAtprotoServerDeactivateAccountAtprotoServerResponseBody$Outbound,
+    ComAtprotoServerDeactivateAccountServerResponseBody$Outbound,
     z.ZodTypeDef,
-    ComAtprotoServerDeactivateAccountAtprotoServerResponseBody
-  > = z.instanceof(ComAtprotoServerDeactivateAccountAtprotoServerResponseBody)
+    ComAtprotoServerDeactivateAccountServerResponseBody
+  > = z.instanceof(ComAtprotoServerDeactivateAccountServerResponseBody)
     .transform(v => v.data$)
     .pipe(z.object({
       error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -116,16 +111,16 @@ export const ComAtprotoServerDeactivateAccountAtprotoServerResponseBody$outbound
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoServerDeactivateAccountAtprotoServerResponseBody$ {
-  /** @deprecated use `ComAtprotoServerDeactivateAccountAtprotoServerResponseBody$inboundSchema` instead. */
+export namespace ComAtprotoServerDeactivateAccountServerResponseBody$ {
+  /** @deprecated use `ComAtprotoServerDeactivateAccountServerResponseBody$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoServerDeactivateAccountAtprotoServerResponseBody$inboundSchema;
-  /** @deprecated use `ComAtprotoServerDeactivateAccountAtprotoServerResponseBody$outboundSchema` instead. */
+    ComAtprotoServerDeactivateAccountServerResponseBody$inboundSchema;
+  /** @deprecated use `ComAtprotoServerDeactivateAccountServerResponseBody$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoServerDeactivateAccountAtprotoServerResponseBody$outboundSchema;
-  /** @deprecated use `ComAtprotoServerDeactivateAccountAtprotoServerResponseBody$Outbound` instead. */
+    ComAtprotoServerDeactivateAccountServerResponseBody$outboundSchema;
+  /** @deprecated use `ComAtprotoServerDeactivateAccountServerResponseBody$Outbound` instead. */
   export type Outbound =
-    ComAtprotoServerDeactivateAccountAtprotoServerResponseBody$Outbound;
+    ComAtprotoServerDeactivateAccountServerResponseBody$Outbound;
 }
 
 /** @internal */

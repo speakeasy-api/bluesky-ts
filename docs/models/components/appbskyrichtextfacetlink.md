@@ -8,7 +8,7 @@ Facet feature for a URL. The text URL may have been simplified or truncated, but
 import { AppBskyRichtextFacetLink } from "bluesky/models/components";
 
 let value: AppBskyRichtextFacetLink = {
-  uri: "https://clear-cut-bungalow.name",
+  uri: "https://another-testing.net",
 };
 ```
 

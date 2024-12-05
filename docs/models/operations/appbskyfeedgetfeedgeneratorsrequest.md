@@ -7,7 +7,7 @@ import { AppBskyFeedGetFeedGeneratorsRequest } from "bluesky/models/operations";
 
 let value: AppBskyFeedGetFeedGeneratorsRequest = {
   feeds: [
-    "https://misguided-hawk.biz",
+    "https://forsaken-contractor.name",
   ],
 };
 ```

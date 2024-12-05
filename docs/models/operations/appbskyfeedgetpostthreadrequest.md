@@ -6,7 +6,7 @@
 import { AppBskyFeedGetPostThreadRequest } from "bluesky/models/operations";
 
 let value: AppBskyFeedGetPostThreadRequest = {
-  uri: "https://cumbersome-calculus.name/",
+  uri: "https://close-paintwork.com",
 };
 ```
 

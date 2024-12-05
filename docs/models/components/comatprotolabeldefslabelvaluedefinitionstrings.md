@@ -10,7 +10,7 @@ import { ComAtprotoLabelDefsLabelValueDefinitionStrings } from "bluesky/models/c
 let value: ComAtprotoLabelDefsLabelValueDefinitionStrings = {
   lang: "<value>",
   name: "<value>",
-  description: "aboard barring alongside mortar gadzooks",
+  description: "with close jeopardise probable",
 };
 ```
 

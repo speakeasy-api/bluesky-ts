@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoRepoDeleteRecordError } from "bluesky/models/errors";
 
-let value: ComAtprotoRepoDeleteRecordError = "InvalidSwap";
+let value: ComAtprotoRepoDeleteRecordError = "InvalidToken";
 ```
 
 ## Values

@@ -9,7 +9,7 @@ let value: AppBskyFeedGetFeedSkeletonResponse = {
   result: {
     feed: [
       {
-        post: "https://hateful-humor.net",
+        post: "https://pale-milestone.biz",
       },
     ],
   },

@@ -15,7 +15,7 @@ const value: components.AppBskyRichtextFacetMention = {
 
 ```typescript
 const value: components.AppBskyRichtextFacetLink = {
-  uri: "https://crazy-barge.biz/",
+  uri: "https://minty-basket.info",
 };
 ```
 

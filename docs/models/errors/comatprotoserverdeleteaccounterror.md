@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoServerDeleteAccountError } from "bluesky/models/errors";
 
-let value: ComAtprotoServerDeleteAccountError = "ExpiredToken";
+let value: ComAtprotoServerDeleteAccountError = "InvalidRequest";
 ```
 
 ## Values

@@ -7,7 +7,7 @@ import { ComAtprotoRepoListMissingBlobsRecordBlob } from "bluesky/models/compone
 
 let value: ComAtprotoRepoListMissingBlobsRecordBlob = {
   cid: "<id>",
-  recordUri: "https://unruly-whale.com/",
+  recordUri: "https://whirlwind-baseboard.com",
 };
 ```
 

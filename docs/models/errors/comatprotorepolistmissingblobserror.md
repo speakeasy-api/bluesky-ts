@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoRepoListMissingBlobsError } from "bluesky/models/errors";
 
-let value: ComAtprotoRepoListMissingBlobsError = "InvalidToken";
+let value: ComAtprotoRepoListMissingBlobsError = "InvalidRequest";
 ```
 
 ## Values

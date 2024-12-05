@@ -6,7 +6,7 @@
 import { AppBskyFeedGetRepostedByRequest } from "bluesky/models/operations";
 
 let value: AppBskyFeedGetRepostedByRequest = {
-  uri: "https://accomplished-planula.biz",
+  uri: "https://querulous-chap.biz/",
 };
 ```
 

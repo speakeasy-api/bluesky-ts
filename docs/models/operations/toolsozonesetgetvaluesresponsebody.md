@@ -10,9 +10,9 @@ import { ToolsOzoneSetGetValuesResponseBody } from "bluesky/models/operations";
 let value: ToolsOzoneSetGetValuesResponseBody = {
   set: {
     name: "<value>",
-    setSize: 922112,
-    createdAt: new Date("2022-04-09T02:03:52.245Z"),
-    updatedAt: new Date("2023-03-21T21:54:24.613Z"),
+    setSize: 342611,
+    createdAt: new Date("2023-11-13T23:09:56.778Z"),
+    updatedAt: new Date("2022-11-02T20:36:11.917Z"),
   },
   values: [
     "<value>",

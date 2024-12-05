@@ -9,12 +9,12 @@ import { AppBskyRichtextFacet } from "bluesky/models/components";
 
 let value: AppBskyRichtextFacet = {
   index: {
-    byteStart: 432281,
-    byteEnd: 521996,
+    byteStart: 438256,
+    byteEnd: 202796,
   },
   features: [
     {
-      tag: "<value>",
+      uri: "https://dapper-husband.biz/",
     },
   ],
 };

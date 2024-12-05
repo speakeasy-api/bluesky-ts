@@ -10,7 +10,7 @@ let value: ComAtprotoRepoListMissingBlobsResponse = {
     blobs: [
       {
         cid: "<id>",
-        recordUri: "https://whirlwind-testing.net",
+        recordUri: "https://tough-vol.org/",
       },
     ],
   },

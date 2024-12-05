@@ -10,7 +10,7 @@ import { AppBskyFeedGetFeedSkeletonResponseBody } from "bluesky/models/operation
 let value: AppBskyFeedGetFeedSkeletonResponseBody = {
   feed: [
     {
-      post: "https://pleasant-obligation.org",
+      post: "https://shocked-vestment.biz/",
     },
   ],
 };

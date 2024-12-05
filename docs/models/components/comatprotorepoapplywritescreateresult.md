@@ -6,7 +6,7 @@
 import { ComAtprotoRepoApplyWritesCreateResult } from "bluesky/models/components";
 
 let value: ComAtprotoRepoApplyWritesCreateResult = {
-  uri: "https://raw-viability.name",
+  uri: "https://wide-sand.org",
   cid: "<id>",
 };
 ```

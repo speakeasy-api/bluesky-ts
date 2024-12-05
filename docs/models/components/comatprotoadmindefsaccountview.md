@@ -8,7 +8,7 @@ import { ComAtprotoAdminDefsAccountView } from "bluesky/models/components";
 let value: ComAtprotoAdminDefsAccountView = {
   did: "<id>",
   handle: "<value>",
-  indexedAt: new Date("2022-06-03T22:07:16.212Z"),
+  indexedAt: new Date("2024-02-20T05:02:25.225Z"),
 };
 ```
 

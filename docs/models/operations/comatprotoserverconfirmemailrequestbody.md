@@ -6,7 +6,7 @@
 import { ComAtprotoServerConfirmEmailRequestBody } from "bluesky/models/operations";
 
 let value: ComAtprotoServerConfirmEmailRequestBody = {
-  email: "Pasquale_Predovic77@gmail.com",
+  email: "Carmine.Jacobi42@hotmail.com",
   token: "<value>",
 };
 ```

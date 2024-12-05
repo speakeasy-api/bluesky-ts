@@ -10,7 +10,7 @@ import { AppBskyGraphGetRelationshipsResponseBody } from "bluesky/models/operati
 let value: AppBskyGraphGetRelationshipsResponseBody = {
   relationships: [
     {
-      actor: "<value>",
+      did: "<id>",
     },
   ],
 };

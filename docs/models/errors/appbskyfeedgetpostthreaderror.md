@@ -5,7 +5,7 @@
 ```typescript
 import { AppBskyFeedGetPostThreadError } from "bluesky/models/errors";
 
-let value: AppBskyFeedGetPostThreadError = "InvalidToken";
+let value: AppBskyFeedGetPostThreadError = "NotFound";
 ```
 
 ## Values

@@ -5,7 +5,7 @@
 ```typescript
 import { AppBskyGraphUnmuteThreadError } from "bluesky/models/errors";
 
-let value: AppBskyGraphUnmuteThreadError = "InvalidToken";
+let value: AppBskyGraphUnmuteThreadError = "ExpiredToken";
 ```
 
 ## Values

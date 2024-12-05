@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoLabelQueryLabelsError } from "bluesky/models/errors";
 
-let value: ComAtprotoLabelQueryLabelsError = "InvalidToken";
+let value: ComAtprotoLabelQueryLabelsError = "ExpiredToken";
 ```
 
 ## Values

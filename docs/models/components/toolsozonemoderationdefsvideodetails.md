@@ -6,9 +6,9 @@
 import { ToolsOzoneModerationDefsVideoDetails } from "bluesky/models/components";
 
 let value: ToolsOzoneModerationDefsVideoDetails = {
-  width: 383066,
-  height: 393122,
-  length: 589712,
+  width: 750537,
+  height: 998023,
+  length: 533978,
 };
 ```
 

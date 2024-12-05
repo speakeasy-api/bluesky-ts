@@ -8,7 +8,7 @@
 ```typescript
 const value: components.AppBskyEmbedRecord = {
   record: {
-    uri: "https://gleaming-costume.net",
+    uri: "https://webbed-statue.info/",
     cid: "<id>",
   },
 };

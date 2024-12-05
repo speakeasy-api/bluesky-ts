@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoServerListAppPasswordsError } from "bluesky/models/errors";
 
-let value: ComAtprotoServerListAppPasswordsError = "InvalidRequest";
+let value: ComAtprotoServerListAppPasswordsError = "AccountTakedown";
 ```
 
 ## Values

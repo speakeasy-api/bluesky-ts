@@ -6,7 +6,7 @@
 import { ToolsOzoneModerationDefsAccountHosting } from "bluesky/models/components";
 
 let value: ToolsOzoneModerationDefsAccountHosting = {
-  status: "takendown",
+  status: "suspended",
 };
 ```
 

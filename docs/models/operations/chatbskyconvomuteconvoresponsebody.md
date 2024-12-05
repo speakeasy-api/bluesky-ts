@@ -13,7 +13,7 @@ let value: ChatBskyConvoMuteConvoResponseBody = {
     rev: "<value>",
     members: [],
     muted: false,
-    unreadCount: 164694,
+    unreadCount: 577229,
   },
 };
 ```

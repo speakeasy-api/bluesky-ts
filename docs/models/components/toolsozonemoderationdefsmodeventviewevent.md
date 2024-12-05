@@ -61,7 +61,7 @@ const value: components.ToolsOzoneModerationDefsModEventEscalate = {};
 
 ```typescript
 const value: components.ToolsOzoneModerationDefsModEventMute = {
-  durationInHours: 875452,
+  durationInHours: 277990,
 };
 ```
 
@@ -121,7 +121,7 @@ const value: components.ToolsOzoneModerationDefsModEventTag = {
 ```typescript
 const value: components.ToolsOzoneModerationDefsAccountEvent = {
   active: false,
-  timestamp: new Date("2022-03-22T21:55:35.437Z"),
+  timestamp: new Date("2024-05-19T10:28:52.033Z"),
 };
 ```
 
@@ -129,7 +129,7 @@ const value: components.ToolsOzoneModerationDefsAccountEvent = {
 
 ```typescript
 const value: components.ToolsOzoneModerationDefsIdentityEvent = {
-  timestamp: new Date("2023-06-23T02:22:47.299Z"),
+  timestamp: new Date("2023-12-25T07:51:55.110Z"),
 };
 ```
 
@@ -137,8 +137,8 @@ const value: components.ToolsOzoneModerationDefsIdentityEvent = {
 
 ```typescript
 const value: components.ToolsOzoneModerationDefsRecordEvent = {
-  op: "delete",
-  timestamp: new Date("2024-03-20T00:20:17.729Z"),
+  op: "update",
+  timestamp: new Date("2024-04-29T06:26:15.778Z"),
 };
 ```
 

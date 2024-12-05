@@ -26,7 +26,7 @@ const value: components.ToolsOzoneModerationDefsModEventEscalate = {};
 ```typescript
 const value: components.ToolsOzoneModerationDefsModEventComment = {
   comment:
-    "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
+    "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
 };
 ```
 
@@ -55,7 +55,7 @@ const value: components.ToolsOzoneModerationDefsModEventReport = {
 
 ```typescript
 const value: components.ToolsOzoneModerationDefsModEventMute = {
-  durationInHours: 296556,
+  durationInHours: 814967,
 };
 ```
 
@@ -115,7 +115,7 @@ const value: components.ToolsOzoneModerationDefsModEventTag = {
 ```typescript
 const value: components.ToolsOzoneModerationDefsAccountEvent = {
   active: false,
-  timestamp: new Date("2024-12-23T05:51:49.489Z"),
+  timestamp: new Date("2024-12-16T02:21:59.446Z"),
 };
 ```
 
@@ -123,7 +123,7 @@ const value: components.ToolsOzoneModerationDefsAccountEvent = {
 
 ```typescript
 const value: components.ToolsOzoneModerationDefsIdentityEvent = {
-  timestamp: new Date("2022-10-01T08:44:41.136Z"),
+  timestamp: new Date("2024-11-27T23:49:54.191Z"),
 };
 ```
 
@@ -131,8 +131,8 @@ const value: components.ToolsOzoneModerationDefsIdentityEvent = {
 
 ```typescript
 const value: components.ToolsOzoneModerationDefsRecordEvent = {
-  op: "create",
-  timestamp: new Date("2024-11-08T05:51:26.933Z"),
+  op: "delete",
+  timestamp: new Date("2022-11-22T00:36:57.586Z"),
 };
 ```
 

@@ -7,7 +7,7 @@ import { AppBskyFeedGetRepostedByResponse } from "bluesky/models/operations";
 
 let value: AppBskyFeedGetRepostedByResponse = {
   result: {
-    uri: "https://old-fashioned-deck.org",
+    uri: "https://wobbly-instance.org/",
     repostedBy: [],
   },
 };

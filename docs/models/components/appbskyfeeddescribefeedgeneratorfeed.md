@@ -6,7 +6,7 @@
 import { AppBskyFeedDescribeFeedGeneratorFeed } from "bluesky/models/components";
 
 let value: AppBskyFeedDescribeFeedGeneratorFeed = {
-  uri: "https://bustling-flood.name/",
+  uri: "https://wilted-certification.com/",
 };
 ```
 

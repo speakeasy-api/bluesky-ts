@@ -5,7 +5,7 @@
 ```typescript
 import { ChatBskyModerationUpdateActorAccessError } from "bluesky/models/errors";
 
-let value: ChatBskyModerationUpdateActorAccessError = "InvalidRequest";
+let value: ChatBskyModerationUpdateActorAccessError = "ExpiredToken";
 ```
 
 ## Values

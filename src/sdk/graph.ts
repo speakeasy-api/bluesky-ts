@@ -3,25 +3,15 @@
  */
 
 import { graphGetActorStarterPacks } from "../funcs/graphGetActorStarterPacks.js";
-import { graphGetBlocks } from "../funcs/graphGetBlocks.js";
-import { graphGetFollowers } from "../funcs/graphGetFollowers.js";
 import { graphGetFollows } from "../funcs/graphGetFollows.js";
-import { graphGetKnownFollowers } from "../funcs/graphGetKnownFollowers.js";
 import { graphGetList } from "../funcs/graphGetList.js";
-import { graphGetListBlocks } from "../funcs/graphGetListBlocks.js";
 import { graphGetListMutes } from "../funcs/graphGetListMutes.js";
 import { graphGetLists } from "../funcs/graphGetLists.js";
-import { graphGetMutes } from "../funcs/graphGetMutes.js";
 import { graphGetRelationships } from "../funcs/graphGetRelationships.js";
 import { graphGetStarterPack } from "../funcs/graphGetStarterPack.js";
-import { graphGetStarterPacks } from "../funcs/graphGetStarterPacks.js";
-import { graphGetSuggestedFollowsByActor } from "../funcs/graphGetSuggestedFollowsByActor.js";
 import { graphMuteActor } from "../funcs/graphMuteActor.js";
 import { graphMuteActorList } from "../funcs/graphMuteActorList.js";
-import { graphMuteThread } from "../funcs/graphMuteThread.js";
 import { graphSearchStarterPacks } from "../funcs/graphSearchStarterPacks.js";
-import { graphUnmuteActor } from "../funcs/graphUnmuteActor.js";
-import { graphUnmuteActorList } from "../funcs/graphUnmuteActorList.js";
 import { graphUnmuteThread } from "../funcs/graphUnmuteThread.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "../models/operations/index.js";
@@ -57,49 +47,6 @@ export class Graph extends ClientSDK {
    *
    * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
    *
-   * Enumerates which accounts the requesting account is currently blocking. Requires auth.
-   */
-  async getBlocks(
-    request?: operations.AppBskyGraphGetBlocksRequest | undefined,
-    options?: RequestOptions,
-  ): Promise<
-    PageIterator<operations.AppBskyGraphGetBlocksResponse, { cursor: string }>
-  > {
-    return unwrapResultIterator(graphGetBlocks(
-      this,
-      request,
-      options,
-    ));
-  }
-
-  /**
-   * *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
-   *
-   * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
-   *
-   * Enumerates accounts which follow a specified account (actor).
-   */
-  async getFollowers(
-    request: operations.AppBskyGraphGetFollowersRequest,
-    options?: RequestOptions,
-  ): Promise<
-    PageIterator<
-      operations.AppBskyGraphGetFollowersResponse,
-      { cursor: string }
-    >
-  > {
-    return unwrapResultIterator(graphGetFollowers(
-      this,
-      request,
-      options,
-    ));
-  }
-
-  /**
-   * *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
-   *
-   * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
-   *
    * Enumerates accounts which a specified account (actor) follows.
    */
   async getFollows(
@@ -120,29 +67,6 @@ export class Graph extends ClientSDK {
    *
    * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
    *
-   * Enumerates accounts which follow a specified account (actor) and are followed by the viewer.
-   */
-  async getKnownFollowers(
-    request: operations.AppBskyGraphGetKnownFollowersRequest,
-    options?: RequestOptions,
-  ): Promise<
-    PageIterator<
-      operations.AppBskyGraphGetKnownFollowersResponse,
-      { cursor: string }
-    >
-  > {
-    return unwrapResultIterator(graphGetKnownFollowers(
-      this,
-      request,
-      options,
-    ));
-  }
-
-  /**
-   * *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
-   *
-   * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
-   *
    * Gets a 'view' (with additional context) of a specified list.
    */
   async getList(
@@ -152,29 +76,6 @@ export class Graph extends ClientSDK {
     PageIterator<operations.AppBskyGraphGetListResponse, { cursor: string }>
   > {
     return unwrapResultIterator(graphGetList(
-      this,
-      request,
-      options,
-    ));
-  }
-
-  /**
-   * *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
-   *
-   * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
-   *
-   * Get mod lists that the requesting account (actor) is blocking. Requires auth.
-   */
-  async getListBlocks(
-    request?: operations.AppBskyGraphGetListBlocksRequest | undefined,
-    options?: RequestOptions,
-  ): Promise<
-    PageIterator<
-      operations.AppBskyGraphGetListBlocksResponse,
-      { cursor: string }
-    >
-  > {
-    return unwrapResultIterator(graphGetListBlocks(
       this,
       request,
       options,
@@ -229,26 +130,6 @@ export class Graph extends ClientSDK {
    *
    * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
    *
-   * Enumerates accounts that the requesting account (actor) currently has muted. Requires auth.
-   */
-  async getMutes(
-    request?: operations.AppBskyGraphGetMutesRequest | undefined,
-    options?: RequestOptions,
-  ): Promise<
-    PageIterator<operations.AppBskyGraphGetMutesResponse, { cursor: string }>
-  > {
-    return unwrapResultIterator(graphGetMutes(
-      this,
-      request,
-      options,
-    ));
-  }
-
-  /**
-   * *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
-   *
-   * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
-   *
    * Enumerates public relationships between one account, and a list of other accounts. Does not require auth.
    */
   async getRelationships(
@@ -274,42 +155,6 @@ export class Graph extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.AppBskyGraphGetStarterPackResponseBody> {
     return unwrapAsync(graphGetStarterPack(
-      this,
-      request,
-      options,
-    ));
-  }
-
-  /**
-   * *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
-   *
-   * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
-   *
-   * Get views for a list of starter packs.
-   */
-  async getStarterPacks(
-    request: operations.AppBskyGraphGetStarterPacksRequest,
-    options?: RequestOptions,
-  ): Promise<operations.AppBskyGraphGetStarterPacksResponseBody> {
-    return unwrapAsync(graphGetStarterPacks(
-      this,
-      request,
-      options,
-    ));
-  }
-
-  /**
-   * *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
-   *
-   * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
-   *
-   * Enumerates follows similar to a given account (actor). Expected use is to recommend additional accounts immediately after following one account.
-   */
-  async getSuggestedFollowsByActor(
-    request: operations.AppBskyGraphGetSuggestedFollowsByActorRequest,
-    options?: RequestOptions,
-  ): Promise<operations.AppBskyGraphGetSuggestedFollowsByActorResponseBody> {
-    return unwrapAsync(graphGetSuggestedFollowsByActor(
       this,
       request,
       options,
@@ -357,24 +202,6 @@ export class Graph extends ClientSDK {
    *
    * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
    *
-   * Mutes a thread preventing notifications from the thread and any of its children. Mutes are private in Bluesky. Requires auth.
-   */
-  async muteThread(
-    request: operations.AppBskyGraphMuteThreadRequestBody,
-    options?: RequestOptions,
-  ): Promise<void> {
-    return unwrapAsync(graphMuteThread(
-      this,
-      request,
-      options,
-    ));
-  }
-
-  /**
-   * *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
-   *
-   * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
-   *
    * Find starter packs matching search criteria. Does not require auth.
    */
   async searchStarterPacks(
@@ -387,42 +214,6 @@ export class Graph extends ClientSDK {
     >
   > {
     return unwrapResultIterator(graphSearchStarterPacks(
-      this,
-      request,
-      options,
-    ));
-  }
-
-  /**
-   * *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
-   *
-   * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
-   *
-   * Unmutes the specified account. Requires auth.
-   */
-  async unmuteActor(
-    request: operations.AppBskyGraphUnmuteActorRequestBody,
-    options?: RequestOptions,
-  ): Promise<void> {
-    return unwrapAsync(graphUnmuteActor(
-      this,
-      request,
-      options,
-    ));
-  }
-
-  /**
-   * *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
-   *
-   * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
-   *
-   * Unmutes the specified list of accounts. Requires auth.
-   */
-  async unmuteActorList(
-    request: operations.AppBskyGraphUnmuteActorListRequestBody,
-    options?: RequestOptions,
-  ): Promise<void> {
-    return unwrapAsync(graphUnmuteActorList(
       this,
       request,
       options,
