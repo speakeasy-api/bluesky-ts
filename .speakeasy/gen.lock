@@ -3,10 +3,10 @@ id: 8ee5821f-25ad-41d5-94bd-080f4048f5d5
 management:
   docChecksum: dbb7ddc1f24fcd6d7cf7cea6229e86c5
   docVersion: 0.0.0
-  speakeasyVersion: 1.452.0
+  speakeasyVersion: 1.453.0
   generationVersion: 2.472.1
-  releaseVersion: 0.7.0
-  configChecksum: 92d2bca6ffc47c646047dd2f196091a4
+  releaseVersion: 0.7.1
+  configChecksum: 6ac301550bcb1da0476dc292535ebc1e
   repoURL: https://github.com/speakeasy-api/bluesky-ts.git
   installationURL: https://github.com/speakeasy-api/bluesky-ts
 features:
@@ -2165,7 +2165,8 @@ examples:
         "404": {}
         "408":
           application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413": {}
+        "413":
+          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
         "429":
           application/json: {"key": "<value>", "key1": "<value>"}
         "500":
