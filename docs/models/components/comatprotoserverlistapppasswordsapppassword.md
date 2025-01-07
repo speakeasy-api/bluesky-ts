@@ -7,7 +7,7 @@ import { ComAtprotoServerListAppPasswordsAppPassword } from "@speakeasy-api/blue
 
 let value: ComAtprotoServerListAppPasswordsAppPassword = {
   name: "<value>",
-  createdAt: new Date("2022-11-11T17:15:53.855Z"),
+  createdAt: new Date("2023-11-11T17:15:53.855Z"),
 };
 ```
 

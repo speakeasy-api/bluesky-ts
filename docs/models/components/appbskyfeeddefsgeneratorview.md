@@ -14,7 +14,7 @@ let value: AppBskyFeedDefsGeneratorView = {
     handle: "<value>",
   },
   displayName: "Letitia26",
-  indexedAt: new Date("2024-12-15T16:17:55.325Z"),
+  indexedAt: new Date("2025-12-15T16:17:55.325Z"),
 };
 ```
 

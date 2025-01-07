@@ -9,7 +9,7 @@ import { ToolsOzoneModerationDefsRecordEvent } from "@speakeasy-api/bluesky/mode
 
 let value: ToolsOzoneModerationDefsRecordEvent = {
   op: "update",
-  timestamp: new Date("2023-01-13T23:06:27.556Z"),
+  timestamp: new Date("2024-01-13T23:06:27.556Z"),
 };
 ```
 

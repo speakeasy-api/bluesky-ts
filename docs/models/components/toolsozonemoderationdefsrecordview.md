@@ -12,7 +12,7 @@ let value: ToolsOzoneModerationDefsRecordView = {
   blobCids: [
     "<id>",
   ],
-  indexedAt: new Date("2024-09-15T17:39:34.108Z"),
+  indexedAt: new Date("2025-09-15T17:39:34.108Z"),
   moderation: {},
   repo: {
     did: "<id>",
@@ -20,7 +20,7 @@ let value: ToolsOzoneModerationDefsRecordView = {
     relatedRecords: [
       "<value>",
     ],
-    indexedAt: new Date("2023-05-18T18:14:48.703Z"),
+    indexedAt: new Date("2024-05-17T18:14:48.703Z"),
     moderation: {},
   },
 };

@@ -17,7 +17,7 @@ let value: AppBskyFeedDefsReplyRef = {
       handle: "<value>",
     },
     record: "<value>",
-    indexedAt: new Date("2023-04-10T09:10:18.917Z"),
+    indexedAt: new Date("2024-04-09T09:10:18.917Z"),
   },
 };
 ```

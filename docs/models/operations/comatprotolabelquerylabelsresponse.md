@@ -12,7 +12,7 @@ let value: ComAtprotoLabelQueryLabelsResponse = {
         src: "<id>",
         uri: "https://whispered-embarrassment.biz",
         val: "<value>",
-        cts: new Date("2022-04-20T22:07:54.686Z"),
+        cts: new Date("2023-04-20T22:07:54.686Z"),
       },
     ],
   },

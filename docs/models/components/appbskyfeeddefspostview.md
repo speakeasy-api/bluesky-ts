@@ -13,7 +13,7 @@ let value: AppBskyFeedDefsPostView = {
     handle: "<value>",
   },
   record: "<value>",
-  indexedAt: new Date("2023-08-26T06:03:47.041Z"),
+  indexedAt: new Date("2024-08-25T06:03:47.041Z"),
 };
 ```
 

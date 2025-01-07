@@ -14,7 +14,7 @@ const value: components.AppBskyFeedDefsPostView = {
     handle: "<value>",
   },
   record: "<value>",
-  indexedAt: new Date("2024-10-22T16:07:37.337Z"),
+  indexedAt: new Date("2025-10-22T16:07:37.337Z"),
 };
 ```
 

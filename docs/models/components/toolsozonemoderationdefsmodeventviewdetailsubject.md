@@ -12,7 +12,7 @@ const value: components.ToolsOzoneModerationDefsRepoView = {
   relatedRecords: [
     "<value>",
   ],
-  indexedAt: new Date("2023-05-21T07:27:53.872Z"),
+  indexedAt: new Date("2024-05-20T07:27:53.872Z"),
   moderation: {},
 };
 ```
@@ -35,7 +35,7 @@ const value: components.ToolsOzoneModerationDefsRecordView = {
   blobCids: [
     "<id>",
   ],
-  indexedAt: new Date("2022-05-25T07:54:08.139Z"),
+  indexedAt: new Date("2023-05-25T07:54:08.139Z"),
   moderation: {},
   repo: {
     did: "<id>",
@@ -43,7 +43,7 @@ const value: components.ToolsOzoneModerationDefsRecordView = {
     relatedRecords: [
       "<value>",
     ],
-    indexedAt: new Date("2023-03-12T03:02:50.967Z"),
+    indexedAt: new Date("2024-03-11T03:02:50.967Z"),
     moderation: {},
   },
 };

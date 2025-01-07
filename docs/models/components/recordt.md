@@ -14,7 +14,7 @@ const value: components.AppBskyEmbedRecordViewRecord = {
     handle: "<value>",
   },
   value: "<value>",
-  indexedAt: new Date("2023-01-02T13:59:50.267Z"),
+  indexedAt: new Date("2024-01-02T13:59:50.267Z"),
 };
 ```
 
@@ -57,7 +57,7 @@ const value: components.AppBskyFeedDefsGeneratorView = {
     handle: "<value>",
   },
   displayName: "Kayla.Reinger77",
-  indexedAt: new Date("2024-09-16T20:26:53.919Z"),
+  indexedAt: new Date("2025-09-16T20:26:53.919Z"),
 };
 ```
 
@@ -73,7 +73,7 @@ const value: components.AppBskyGraphDefsListView = {
   },
   name: "<value>",
   purpose: "<value>",
-  indexedAt: new Date("2024-06-17T17:52:12.552Z"),
+  indexedAt: new Date("2025-06-17T17:52:12.552Z"),
 };
 ```
 
@@ -87,7 +87,7 @@ const value: components.AppBskyLabelerDefsLabelerView = {
     did: "<id>",
     handle: "<value>",
   },
-  indexedAt: new Date("2022-06-03T20:39:34.653Z"),
+  indexedAt: new Date("2023-06-03T20:39:34.653Z"),
 };
 ```
 
@@ -102,7 +102,7 @@ const value: components.AppBskyGraphDefsStarterPackViewBasic = {
     did: "<id>",
     handle: "<value>",
   },
-  indexedAt: new Date("2022-12-07T16:20:05.131Z"),
+  indexedAt: new Date("2023-12-07T16:20:05.131Z"),
 };
 ```
 

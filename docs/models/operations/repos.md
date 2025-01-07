@@ -12,7 +12,7 @@ const value: components.ToolsOzoneModerationDefsRepoViewDetail = {
   relatedRecords: [
     "<value>",
   ],
-  indexedAt: new Date("2023-07-30T08:49:21.047Z"),
+  indexedAt: new Date("2024-07-29T08:49:21.047Z"),
   moderation: {},
 };
 ```

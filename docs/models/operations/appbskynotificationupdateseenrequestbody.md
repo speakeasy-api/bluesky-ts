@@ -6,7 +6,7 @@
 import { AppBskyNotificationUpdateSeenRequestBody } from "@speakeasy-api/bluesky/models/operations";
 
 let value: AppBskyNotificationUpdateSeenRequestBody = {
-  seenAt: new Date("2024-03-11T01:40:18.315Z"),
+  seenAt: new Date("2025-03-11T01:40:18.315Z"),
 };
 ```
 

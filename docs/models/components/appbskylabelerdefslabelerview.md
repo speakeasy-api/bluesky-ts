@@ -12,7 +12,7 @@ let value: AppBskyLabelerDefsLabelerView = {
     did: "<id>",
     handle: "<value>",
   },
-  indexedAt: new Date("2022-08-07T00:09:49.489Z"),
+  indexedAt: new Date("2023-08-07T00:09:49.489Z"),
 };
 ```
 

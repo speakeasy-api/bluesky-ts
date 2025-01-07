@@ -17,7 +17,7 @@ let value: AppBskyLabelerDefsLabelerViewDetailed = {
       "!no-unauthenticated",
     ],
   },
-  indexedAt: new Date("2022-01-22T07:56:26.664Z"),
+  indexedAt: new Date("2023-01-22T07:56:26.664Z"),
 };
 ```
 
