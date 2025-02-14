@@ -1,9 +1,9 @@
-# bluesky
+# @speakeasy-api/bluesky
 
-Developer-friendly & type-safe Typescript SDK specifically catered to leverage *bluesky* API.
+Developer-friendly & type-safe Typescript SDK specifically catered to leverage *@speakeasy-api/bluesky* API.
 
 <div align="left">
-    <a href="https://www.speakeasy.com/?utm_source=bluesky&utm_campaign=typescript"><img src="https://custom-icon-badges.demolab.com/badge/-Built%20By%20Speakeasy-212015?style=for-the-badge&logoColor=FBE331&logo=speakeasy&labelColor=545454" /></a>
+    <a href="https://www.speakeasy.com/?utm_source=@speakeasy-api/bluesky&utm_campaign=typescript"><img src="https://custom-icon-badges.demolab.com/badge/-Built%20By%20Speakeasy-212015?style=for-the-badge&logoColor=FBE331&logo=speakeasy&labelColor=545454" /></a>
     <a href="https://opensource.org/licenses/MIT">
         <img src="https://img.shields.io/badge/License-MIT-blue.svg" style="width: 100px; height: 28px;" />
     </a>
@@ -25,21 +25,8 @@ This section contains HTTP API reference docs for Bluesky and AT Protocol lexico
 <!-- Start Table of Contents [toc] -->
 ## Table of Contents
 <!-- $toc-max-depth=2 -->
-* [bluesky](#bluesky)
+* [@speakeasy-api/bluesky](#speakeasy-apibluesky)
   * [SDK Installation](#sdk-installation)
-  * [Requirements](#requirements)
-  * [SDK Example Usage](#sdk-example-usage)
-  * [Available Resources and Operations](#available-resources-and-operations)
-  * [Standalone functions](#standalone-functions)
-  * [React hooks with TanStack Query](#react-hooks-with-tanstack-query)
-  * [Pagination](#pagination)
-  * [File uploads](#file-uploads)
-  * [Retries](#retries)
-  * [Error Handling](#error-handling)
-  * [Server Selection](#server-selection)
-  * [Custom HTTP Client](#custom-http-client)
-  * [Authentication](#authentication)
-  * [Debugging](#debugging)
 * [Development](#development)
   * [Maturity](#maturity)
   * [Contributions](#contributions)
@@ -93,6 +80,60 @@ yarn add @tanstack/react-query react react-dom
 > [!NOTE]
 > This package is published as an ES Module (ESM) only. For applications using
 > CommonJS, use `await import()` to import and use this package.
+
+### Model Context Protocol (MCP) Server
+
+This SDK is also an installable MCP server where the various SDK methods are
+exposed as tools that can be invoked by AI applications.
+
+<details>
+<summary>Claude installation steps</summary>
+
+Add the following server definition to your `claude_desktop_config.json` file:
+
+```json
+{
+  "mcpServers": {
+    "Bluesky": {
+      "command": "npx",
+      "args": ["-y", "--", "@speakeasy-api/bluesky", "mcp"]
+      "env": {
+        "BLUESKY_BEARER": "..."
+      }
+    }
+  }
+}
+```
+</details>
+
+<details>
+<summary>Cursor installation steps</summary>
+
+1. Create a shell script called `mcp-bluesky.sh` with the following content:
+
+    ```sh
+    #!/bin/sh
+     
+    export BLUESKY_BEARER="..."
+
+    exec npx -y -- @speakeasy-api/bluesky mcp "$@"
+    ```
+
+2. Then make it executable with the following command:
+
+    ```sh
+    chmod +x mcp-bluesky.sh
+    ```
+
+3. In Cursor, `Cursor Settings > Features > MCP Servers > Add new MCP server` and use the following settings:
+
+    | Field   | Value |
+    | ------- | ----- |
+    | Name    | Bluesky |
+    | Type    | `command` |
+    | Command | `/path/to/mcp-bluesky.sh` |
+
+</details>
 <!-- End SDK Installation [installation] -->
 
 <!-- Start Requirements [requirements] -->
@@ -126,6 +167,37 @@ run();
 
 ```
 <!-- End SDK Example Usage [usage] -->
+
+<!-- Start Authentication [security] -->
+## Authentication
+
+### Per-Client Security Schemes
+
+This SDK supports the following security scheme globally:
+
+| Name     | Type | Scheme      | Environment Variable |
+| -------- | ---- | ----------- | -------------------- |
+| `bearer` | http | HTTP Bearer | `BLUESKY_BEARER`     |
+
+To authenticate with the API the `bearer` parameter must be set when initializing the SDK client instance. For example:
+```typescript
+import { Bluesky } from "@speakeasy-api/bluesky";
+
+const bluesky = new Bluesky({
+  bearer: process.env["BLUESKY_BEARER"] ?? "",
+});
+
+async function run() {
+  const result = await bluesky.actors.getPreferences();
+
+  // Handle the result
+  console.log(result);
+}
+
+run();
+
+```
+<!-- End Authentication [security] -->
 
 <!-- Start Available Resources and Operations [operations] -->
 ## Available Resources and Operations
@@ -3118,37 +3190,6 @@ const sdk = new Bluesky({ httpClient });
 ```
 <!-- End Custom HTTP Client [http-client] -->
 
-<!-- Start Authentication [security] -->
-## Authentication
-
-### Per-Client Security Schemes
-
-This SDK supports the following security scheme globally:
-
-| Name     | Type | Scheme      | Environment Variable |
-| -------- | ---- | ----------- | -------------------- |
-| `bearer` | http | HTTP Bearer | `BLUESKY_BEARER`     |
-
-To authenticate with the API the `bearer` parameter must be set when initializing the SDK client instance. For example:
-```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
-
-const bluesky = new Bluesky({
-  bearer: process.env["BLUESKY_BEARER"] ?? "",
-});
-
-async function run() {
-  const result = await bluesky.actors.getPreferences();
-
-  // Handle the result
-  console.log(result);
-}
-
-run();
-
-```
-<!-- End Authentication [security] -->
-
 <!-- Start Debugging [debug] -->
 ## Debugging
 
@@ -3183,4 +3224,4 @@ looking for the latest version.
 While we value open-source contributions to this SDK, this library is generated programmatically. Any manual changes added to internal files will be overwritten on the next generation. 
 We look forward to hearing your feedback. Feel free to open a PR or an issue with a proof of concept and we'll do our best to include it in a future release. 
 
-### SDK Created by [Speakeasy](https://www.speakeasy.com/?utm_source=bluesky&utm_campaign=typescript)
+### SDK Created by [Speakeasy](https://www.speakeasy.com/?utm_source=@speakeasy-api/bluesky&utm_campaign=typescript)
