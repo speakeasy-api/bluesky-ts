@@ -14,7 +14,6 @@ import {
 import express from "express";
 import process from "node:process";
 import * as z from "zod";
-import { version } from "../../package.json";
 import { createMCPServer } from "./server.js";
 
 function log(...args: unknown[]) {
@@ -61,7 +60,7 @@ interface CommandFlags {
 const app = buildApplication(command, {
   name: "mcp",
   versionInfo: {
-    currentVersion: version,
+    currentVersion: "0.10.0",
   },
 });
 

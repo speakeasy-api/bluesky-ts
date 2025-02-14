@@ -177,7 +177,7 @@ import { tool$videosUpload } from "./tools/videosUpload.js";
 export function createMCPServer() {
   const server = new McpServer({
     name: "Bluesky",
-    version: "0.9.0",
+    version: "0.10.0",
   });
 
   const client = new BlueskyCore();

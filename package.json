@@ -1,6 +1,6 @@
 {
   "name": "@speakeasy-api/bluesky",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "author": "Speakeasy",
   "type": "module",
   "bin": {

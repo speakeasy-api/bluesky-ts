@@ -5,8 +5,8 @@ management:
   docVersion: 0.0.0
   speakeasyVersion: internal
   generationVersion: internal
-  releaseVersion: 0.9.0
-  configChecksum: e2db7dc8479c15a162a7ade02fff55be
+  releaseVersion: 0.10.0
+  configChecksum: 499ac3fb7a1bffbcb6aa471396d5e628
   repoURL: https://github.com/speakeasy-api/bluesky-ts.git
   installationURL: https://github.com/speakeasy-api/bluesky-ts
 features:
@@ -14,7 +14,7 @@ features:
     additionalDependencies: 0.1.0
     additionalProperties: 0.1.1
     constsAndDefaults: 0.1.11
-    core: 3.19.0
+    core: 3.20.0
     defaultEnabledRetries: 0.1.0
     devContainers: 2.90.0
     enumUnions: 0.1.0
@@ -25,7 +25,7 @@ features:
     globalSecurityFlattening: 0.1.0
     globalServerURLs: 2.82.4
     groups: 2.81.2
-    mcpServer: 0.0.0
+    mcpServer: 0.1.0
     methodArguments: 0.1.2
     nameOverrides: 2.81.2
     pagination: 2.82.8
