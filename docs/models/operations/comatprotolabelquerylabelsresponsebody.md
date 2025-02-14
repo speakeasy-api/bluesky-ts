@@ -13,7 +13,7 @@ let value: ComAtprotoLabelQueryLabelsResponseBody = {
       src: "<id>",
       uri: "https://simplistic-teriyaki.com",
       val: "<value>",
-      cts: new Date("2023-08-29T04:52:14.624Z"),
+      cts: new Date("2024-08-28T04:52:14.624Z"),
     },
   ],
 };

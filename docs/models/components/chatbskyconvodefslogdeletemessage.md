@@ -14,7 +14,7 @@ let value: ChatBskyConvoDefsLogDeleteMessage = {
     sender: {
       did: "<id>",
     },
-    sentAt: new Date("2024-10-24T21:35:04.220Z"),
+    sentAt: new Date("2025-10-24T21:35:04.220Z"),
   },
 };
 ```

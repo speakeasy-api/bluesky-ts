@@ -11,11 +11,11 @@ let value: ComAtprotoServerDefsInviteCode = {
   disabled: false,
   forAccount: "<value>",
   createdBy: "<value>",
-  createdAt: new Date("2023-03-11T06:14:35.072Z"),
+  createdAt: new Date("2024-03-10T06:14:35.072Z"),
   uses: [
     {
       usedBy: "<id>",
-      usedAt: new Date("2022-07-03T12:13:54.462Z"),
+      usedAt: new Date("2023-07-03T12:13:54.462Z"),
     },
   ],
 };

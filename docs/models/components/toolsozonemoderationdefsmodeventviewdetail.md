@@ -18,11 +18,11 @@ let value: ToolsOzoneModerationDefsModEventViewDetail = {
       cid: "<id>",
       mimeType: "<value>",
       size: 271551,
-      createdAt: new Date("2023-10-28T20:52:23.318Z"),
+      createdAt: new Date("2024-10-27T20:52:23.318Z"),
     },
   ],
   createdBy: "<id>",
-  createdAt: new Date("2023-08-01T03:15:58.659Z"),
+  createdAt: new Date("2024-07-31T03:15:58.659Z"),
 };
 ```
 

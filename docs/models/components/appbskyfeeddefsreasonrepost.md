@@ -10,7 +10,7 @@ let value: AppBskyFeedDefsReasonRepost = {
     did: "<id>",
     handle: "<value>",
   },
-  indexedAt: new Date("2024-06-10T02:34:07.748Z"),
+  indexedAt: new Date("2025-06-10T02:34:07.748Z"),
 };
 ```
 

@@ -15,7 +15,7 @@ let value: AppBskyEmbedRecordWithMediaView = {
         did: "<id>",
         handle: "<value>",
       },
-      indexedAt: new Date("2022-11-02T01:04:07.129Z"),
+      indexedAt: new Date("2023-11-02T01:04:07.129Z"),
     },
   },
   media: {

@@ -14,7 +14,7 @@ let value: AppBskyGraphDefsListView = {
   },
   name: "<value>",
   purpose: "<value>",
-  indexedAt: new Date("2024-12-18T17:26:12.157Z"),
+  indexedAt: new Date("2025-12-18T17:26:12.157Z"),
 };
 ```
 

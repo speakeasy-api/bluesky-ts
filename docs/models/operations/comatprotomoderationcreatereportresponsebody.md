@@ -14,7 +14,7 @@ let value: ComAtprotoModerationCreateReportResponseBody = {
     did: "<id>",
   },
   reportedBy: "<id>",
-  createdAt: new Date("2024-11-19T21:08:28.843Z"),
+  createdAt: new Date("2025-11-19T21:08:28.843Z"),
 };
 ```
 

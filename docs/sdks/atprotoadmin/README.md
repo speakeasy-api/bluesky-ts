@@ -116,12 +116,16 @@ import {
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | errors.ComAtprotoAdminDisableAccountInvitesResponseBody             | 400                                                                 | application/json                                                    |
 | errors.ComAtprotoAdminDisableAccountInvitesAtprotoAdminResponseBody | 401                                                                 | application/json                                                    |
-| errors.Unauthorized                                                 | 403, 407, 511                                                       | application/json                                                    |
-| errors.NotFound                                                     | 404, 501, 505                                                       | application/json                                                    |
-| errors.Timeout                                                      | 408, 504                                                            | application/json                                                    |
-| errors.BadRequest                                                   | 413, 414, 415, 422, 431, 510                                        | application/json                                                    |
+| errors.NotFound                                                     | 404                                                                 | application/json                                                    |
+| errors.Unauthorized                                                 | 403, 407                                                            | application/json                                                    |
+| errors.Timeout                                                      | 408                                                                 | application/json                                                    |
 | errors.RateLimited                                                  | 429                                                                 | application/json                                                    |
+| errors.BadRequest                                                   | 413, 414, 415, 422, 431                                             | application/json                                                    |
+| errors.Timeout                                                      | 504                                                                 | application/json                                                    |
+| errors.NotFound                                                     | 501, 505                                                            | application/json                                                    |
 | errors.InternalServerError                                          | 500, 502, 503, 506, 507, 508                                        | application/json                                                    |
+| errors.BadRequest                                                   | 510                                                                 | application/json                                                    |
+| errors.Unauthorized                                                 | 511                                                                 | application/json                                                    |
 | errors.APIError                                                     | 4XX, 5XX                                                            | \*/\*                                                               |
 
 ## getInviteCodes
@@ -142,7 +146,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.atprotoAdmin.getInviteCodes();
+  const result = await bluesky.atprotoAdmin.getInviteCodes({});
 
   for await (const page of result) {
     // Handle the page
@@ -168,7 +172,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await atprotoAdminGetInviteCodes(bluesky);
+  const res = await atprotoAdminGetInviteCodes(bluesky, {});
 
   if (!res.ok) {
     throw res.error;
@@ -235,12 +239,16 @@ import {
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | errors.ComAtprotoAdminGetInviteCodesResponseBody             | 400                                                          | application/json                                             |
 | errors.ComAtprotoAdminGetInviteCodesAtprotoAdminResponseBody | 401                                                          | application/json                                             |
-| errors.Unauthorized                                          | 403, 407, 511                                                | application/json                                             |
-| errors.NotFound                                              | 404, 501, 505                                                | application/json                                             |
-| errors.Timeout                                               | 408, 504                                                     | application/json                                             |
-| errors.BadRequest                                            | 413, 414, 415, 422, 431, 510                                 | application/json                                             |
+| errors.NotFound                                              | 404                                                          | application/json                                             |
+| errors.Unauthorized                                          | 403, 407                                                     | application/json                                             |
+| errors.Timeout                                               | 408                                                          | application/json                                             |
 | errors.RateLimited                                           | 429                                                          | application/json                                             |
+| errors.BadRequest                                            | 413, 414, 415, 422, 431                                      | application/json                                             |
+| errors.Timeout                                               | 504                                                          | application/json                                             |
+| errors.NotFound                                              | 501, 505                                                     | application/json                                             |
 | errors.InternalServerError                                   | 500, 502, 503, 506, 507, 508                                 | application/json                                             |
+| errors.BadRequest                                            | 510                                                          | application/json                                             |
+| errors.Unauthorized                                          | 511                                                          | application/json                                             |
 | errors.APIError                                              | 4XX, 5XX                                                     | \*/\*                                                        |
 
 ## searchAccounts
@@ -261,7 +269,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.atprotoAdmin.searchAccounts();
+  const result = await bluesky.atprotoAdmin.searchAccounts({});
 
   for await (const page of result) {
     // Handle the page
@@ -287,7 +295,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await atprotoAdminSearchAccounts(bluesky);
+  const res = await atprotoAdminSearchAccounts(bluesky, {});
 
   if (!res.ok) {
     throw res.error;
@@ -354,10 +362,14 @@ import {
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | errors.ComAtprotoAdminSearchAccountsResponseBody             | 400                                                          | application/json                                             |
 | errors.ComAtprotoAdminSearchAccountsAtprotoAdminResponseBody | 401                                                          | application/json                                             |
-| errors.Unauthorized                                          | 403, 407, 511                                                | application/json                                             |
-| errors.NotFound                                              | 404, 501, 505                                                | application/json                                             |
-| errors.Timeout                                               | 408, 504                                                     | application/json                                             |
-| errors.BadRequest                                            | 413, 414, 415, 422, 431, 510                                 | application/json                                             |
+| errors.NotFound                                              | 404                                                          | application/json                                             |
+| errors.Unauthorized                                          | 403, 407                                                     | application/json                                             |
+| errors.Timeout                                               | 408                                                          | application/json                                             |
 | errors.RateLimited                                           | 429                                                          | application/json                                             |
+| errors.BadRequest                                            | 413, 414, 415, 422, 431                                      | application/json                                             |
+| errors.Timeout                                               | 504                                                          | application/json                                             |
+| errors.NotFound                                              | 501, 505                                                     | application/json                                             |
 | errors.InternalServerError                                   | 500, 502, 503, 506, 507, 508                                 | application/json                                             |
+| errors.BadRequest                                            | 510                                                          | application/json                                             |
+| errors.Unauthorized                                          | 511                                                          | application/json                                             |
 | errors.APIError                                              | 4XX, 5XX                                                     | \*/\*                                                        |

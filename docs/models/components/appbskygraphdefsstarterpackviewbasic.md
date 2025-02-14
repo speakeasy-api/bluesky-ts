@@ -13,7 +13,7 @@ let value: AppBskyGraphDefsStarterPackViewBasic = {
     did: "<id>",
     handle: "<value>",
   },
-  indexedAt: new Date("2023-05-16T08:17:57.191Z"),
+  indexedAt: new Date("2024-05-15T08:17:57.191Z"),
 };
 ```
 

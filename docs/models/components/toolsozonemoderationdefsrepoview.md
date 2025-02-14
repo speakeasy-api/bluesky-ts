@@ -11,7 +11,7 @@ let value: ToolsOzoneModerationDefsRepoView = {
   relatedRecords: [
     "<value>",
   ],
-  indexedAt: new Date("2023-11-08T18:38:53.264Z"),
+  indexedAt: new Date("2024-11-07T18:38:53.264Z"),
   moderation: {},
 };
 ```

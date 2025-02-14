@@ -49,30 +49,42 @@ This section contains HTTP API reference docs for Bluesky and AT Protocol lexico
 <!-- Start SDK Installation [installation] -->
 ## SDK Installation
 
+> [!TIP]
+> To finish publishing your SDK to npm and others you must [run your first generation action](https://www.speakeasy.com/docs/github-setup#step-by-step-guide).
+
+
 The SDK can be installed with either [npm](https://www.npmjs.com/), [pnpm](https://pnpm.io/), [bun](https://bun.sh/) or [yarn](https://classic.yarnpkg.com/en/) package managers.
 
 ### NPM
 
 ```bash
 npm add https://github.com/speakeasy-api/bluesky-ts
+# Install optional peer dependencies if you plan to use React hooks
+npm add @tanstack/react-query react react-dom
 ```
 
 ### PNPM
 
 ```bash
 pnpm add https://github.com/speakeasy-api/bluesky-ts
+# Install optional peer dependencies if you plan to use React hooks
+pnpm add @tanstack/react-query react react-dom
 ```
 
 ### Bun
 
 ```bash
 bun add https://github.com/speakeasy-api/bluesky-ts
+# Install optional peer dependencies if you plan to use React hooks
+bun add @tanstack/react-query react react-dom
 ```
 
 ### Yarn
 
 ```bash
 yarn add https://github.com/speakeasy-api/bluesky-ts zod
+# Install optional peer dependencies if you plan to use React hooks
+yarn add @tanstack/react-query react react-dom
 
 # Note that Yarn does not install peer dependencies automatically. You will need
 # to install zod as shown above.
@@ -2746,7 +2758,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.actors.search();
+  const result = await bluesky.actors.search({});
 
   for await (const page of result) {
     // Handle the page
@@ -2861,31 +2873,25 @@ run();
 <!-- Start Error Handling [errors] -->
 ## Error Handling
 
-All SDK methods return a response object or throw an error. By default, an API error will throw a `errors.APIError`.
-
-If a HTTP request fails, an operation my also throw an error from the `models/errors/httpclienterrors.ts` module:
-
-| HTTP Client Error                                    | Description                                          |
-| ---------------------------------------------------- | ---------------------------------------------------- |
-| RequestAbortedError                                  | HTTP request was aborted by the client               |
-| RequestTimeoutError                                  | HTTP request timed out due to an AbortSignal signal  |
-| ConnectionError                                      | HTTP client was unable to make a request to a server |
-| InvalidRequestError                                  | Any input used to create a request is invalid        |
-| UnexpectedClientError                                | Unrecognised or unexpected error                     |
-
-In addition, when custom error responses are specified for an operation, the SDK may throw their associated Error type. You can refer to respective *Errors* tables in SDK docs for more details on possible error types for each operation. For example, the `getPreferences` method may throw the following errors:
+Some methods specify known errors which can be thrown. All the known errors are enumerated in the `models/errors/errors.ts` module. The known errors for a method are documented under the *Errors* tables in SDK docs. For example, the `getPreferences` method may throw the following errors:
 
 | Error Type                                          | Status Code                  | Content Type     |
 | --------------------------------------------------- | ---------------------------- | ---------------- |
 | errors.AppBskyActorGetPreferencesResponseBody       | 400                          | application/json |
 | errors.AppBskyActorGetPreferencesActorsResponseBody | 401                          | application/json |
-| errors.Unauthorized                                 | 403, 407, 511                | application/json |
-| errors.NotFound                                     | 404, 501, 505                | application/json |
-| errors.Timeout                                      | 408, 504                     | application/json |
-| errors.BadRequest                                   | 413, 414, 415, 422, 431, 510 | application/json |
+| errors.NotFound                                     | 404                          | application/json |
+| errors.Unauthorized                                 | 403, 407                     | application/json |
+| errors.Timeout                                      | 408                          | application/json |
 | errors.RateLimited                                  | 429                          | application/json |
+| errors.BadRequest                                   | 413, 414, 415, 422, 431      | application/json |
+| errors.Timeout                                      | 504                          | application/json |
+| errors.NotFound                                     | 501, 505                     | application/json |
 | errors.InternalServerError                          | 500, 502, 503, 506, 507, 508 | application/json |
+| errors.BadRequest                                   | 510                          | application/json |
+| errors.Unauthorized                                 | 511                          | application/json |
 | errors.APIError                                     | 4XX, 5XX                     | \*/\*            |
+
+If the method throws an error and it is not captured by the known errors, it will default to throwing a `APIError`.
 
 ```typescript
 import { Bluesky } from "@speakeasy-api/bluesky";
@@ -2914,8 +2920,9 @@ async function run() {
     console.log(result);
   } catch (err) {
     switch (true) {
+      // The server response does not match the expected SDK schema
       case (err instanceof SDKValidationError): {
-        // Validation errors can be pretty-printed
+        // Pretty-print will provide a human-readable multi-line error message
         console.error(err.pretty());
         // Raw value may also be inspected
         console.error(err.rawValue);
@@ -2931,13 +2938,13 @@ async function run() {
         console.error(err);
         return;
       }
-      case (err instanceof Unauthorized): {
-        // Handle err.data$: UnauthorizedData
+      case (err instanceof NotFound): {
+        // Handle err.data$: NotFoundData
         console.error(err);
         return;
       }
-      case (err instanceof NotFound): {
-        // Handle err.data$: NotFoundData
+      case (err instanceof Unauthorized): {
+        // Handle err.data$: UnauthorizedData
         console.error(err);
         return;
       }
@@ -2946,13 +2953,23 @@ async function run() {
         console.error(err);
         return;
       }
+      case (err instanceof RateLimited): {
+        // Handle err.data$: RateLimitedData
+        console.error(err);
+        return;
+      }
       case (err instanceof BadRequest): {
         // Handle err.data$: BadRequestData
         console.error(err);
         return;
       }
-      case (err instanceof RateLimited): {
-        // Handle err.data$: RateLimitedData
+      case (err instanceof Timeout): {
+        // Handle err.data$: TimeoutData
+        console.error(err);
+        return;
+      }
+      case (err instanceof NotFound): {
+        // Handle err.data$: NotFoundData
         console.error(err);
         return;
       }
@@ -2961,7 +2978,18 @@ async function run() {
         console.error(err);
         return;
       }
+      case (err instanceof BadRequest): {
+        // Handle err.data$: BadRequestData
+        console.error(err);
+        return;
+      }
+      case (err instanceof Unauthorized): {
+        // Handle err.data$: UnauthorizedData
+        console.error(err);
+        return;
+      }
       default: {
+        // Other errors such as network errors, see HTTPClientErrors for more details
         throw err;
       }
     }
@@ -2972,7 +3000,17 @@ run();
 
 ```
 
-Validation errors can also occur when either method arguments or data returned from the server do not match the expected format. The `SDKValidationError` that is thrown as a result will capture the raw value that failed validation in an attribute called `rawValue`. Additionally, a `pretty()` method is available on this error that can be used to log a nicely formatted string since validation errors can list many issues and the plain error string may be difficult read when debugging.
+Validation errors can also occur when either method arguments or data returned from the server do not match the expected format. The `SDKValidationError` that is thrown as a result will capture the raw value that failed validation in an attribute called `rawValue`. Additionally, a `pretty()` method is available on this error that can be used to log a nicely formatted multi-line string since validation errors can list many issues and the plain error string may be difficult read when debugging.
+
+In some rare cases, the SDK can fail to get a response from the server or even make the request due to unexpected circumstances such as network conditions. These types of errors are captured in the `models/errors/httpclienterrors.ts` module:
+
+| HTTP Client Error                                    | Description                                          |
+| ---------------------------------------------------- | ---------------------------------------------------- |
+| RequestAbortedError                                  | HTTP request was aborted by the client               |
+| RequestTimeoutError                                  | HTTP request timed out due to an AbortSignal signal  |
+| ConnectionError                                      | HTTP client was unable to make a request to a server |
+| InvalidRequestError                                  | Any input used to create a request is invalid        |
+| UnexpectedClientError                                | Unrecognised or unexpected error                     |
 <!-- End Error Handling [errors] -->
 
 <!-- Start Server Selection [server] -->

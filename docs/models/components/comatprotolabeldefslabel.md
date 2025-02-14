@@ -11,7 +11,7 @@ let value: ComAtprotoLabelDefsLabel = {
   src: "<id>",
   uri: "https://zany-freckle.info/",
   val: "<value>",
-  cts: new Date("2023-02-19T13:21:39.892Z"),
+  cts: new Date("2024-02-19T13:21:39.892Z"),
 };
 ```
 

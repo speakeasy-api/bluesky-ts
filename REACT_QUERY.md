@@ -121,9 +121,12 @@ export function Example() {
 
         mutate({
           preferences: [
+            {},
             {
-              tags: [
-                "<value>",
+              labelers: [
+                {
+                  did: "<id>",
+                },
               ],
             },
           ],
@@ -228,7 +231,7 @@ infinite scrolling and "load more" user interfaces.
 import { useSearchActorsInfinite } from "@speakeasy-api/bluesky/react-query/actorsSearch.js";
 
 export function Example() {
-  const { data, error, status, fetchNextPage, hasNextPage } = useSearchActorsInfinite();
+  const { data, error, status, fetchNextPage, hasNextPage } = useSearchActorsInfinite({});
 
   return (
     <div>

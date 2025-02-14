@@ -50,6 +50,7 @@ export const BadRequest$inboundSchema: z.ZodType<
   })
     .catchall(z.any()),
   "additionalProperties",
+  true,
 )
   .transform((v) => {
     return new BadRequest(v);

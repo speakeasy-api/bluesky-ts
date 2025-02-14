@@ -126,12 +126,16 @@ import {
 | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
 | errors.ToolsOzoneModerationEmitEventResponseBody                | 400                                                             | application/json                                                |
 | errors.ToolsOzoneModerationEmitEventOzoneModerationResponseBody | 401                                                             | application/json                                                |
-| errors.Unauthorized                                             | 403, 407, 511                                                   | application/json                                                |
-| errors.NotFound                                                 | 404, 501, 505                                                   | application/json                                                |
-| errors.Timeout                                                  | 408, 504                                                        | application/json                                                |
-| errors.BadRequest                                               | 413, 414, 415, 422, 431, 510                                    | application/json                                                |
+| errors.NotFound                                                 | 404                                                             | application/json                                                |
+| errors.Unauthorized                                             | 403, 407                                                        | application/json                                                |
+| errors.Timeout                                                  | 408                                                             | application/json                                                |
 | errors.RateLimited                                              | 429                                                             | application/json                                                |
+| errors.BadRequest                                               | 413, 414, 415, 422, 431                                         | application/json                                                |
+| errors.Timeout                                                  | 504                                                             | application/json                                                |
+| errors.NotFound                                                 | 501, 505                                                        | application/json                                                |
 | errors.InternalServerError                                      | 500, 502, 503, 506, 507, 508                                    | application/json                                                |
+| errors.BadRequest                                               | 510                                                             | application/json                                                |
+| errors.Unauthorized                                             | 511                                                             | application/json                                                |
 | errors.APIError                                                 | 4XX, 5XX                                                        | \*/\*                                                           |
 
 ## getRecord
@@ -153,7 +157,7 @@ const bluesky = new Bluesky({
 
 async function run() {
   const result = await bluesky.ozoneModeration.getRecord({
-    uri: "https://dependent-fax.info",
+    uri: "https://substantial-schedule.com/",
   });
 
   // Handle the result
@@ -179,7 +183,7 @@ const bluesky = new BlueskyCore({
 
 async function run() {
   const res = await ozoneModerationGetRecord(bluesky, {
-    uri: "https://dependent-fax.info",
+    uri: "https://substantial-schedule.com/",
   });
 
   if (!res.ok) {
@@ -242,12 +246,16 @@ import {
 | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
 | errors.ToolsOzoneModerationGetRecordResponseBody                | 400                                                             | application/json                                                |
 | errors.ToolsOzoneModerationGetRecordOzoneModerationResponseBody | 401                                                             | application/json                                                |
-| errors.Unauthorized                                             | 403, 407, 511                                                   | application/json                                                |
-| errors.NotFound                                                 | 404, 501, 505                                                   | application/json                                                |
-| errors.Timeout                                                  | 408, 504                                                        | application/json                                                |
-| errors.BadRequest                                               | 413, 414, 415, 422, 431, 510                                    | application/json                                                |
+| errors.NotFound                                                 | 404                                                             | application/json                                                |
+| errors.Unauthorized                                             | 403, 407                                                        | application/json                                                |
+| errors.Timeout                                                  | 408                                                             | application/json                                                |
 | errors.RateLimited                                              | 429                                                             | application/json                                                |
+| errors.BadRequest                                               | 413, 414, 415, 422, 431                                         | application/json                                                |
+| errors.Timeout                                                  | 504                                                             | application/json                                                |
+| errors.NotFound                                                 | 501, 505                                                        | application/json                                                |
 | errors.InternalServerError                                      | 500, 502, 503, 506, 507, 508                                    | application/json                                                |
+| errors.BadRequest                                               | 510                                                             | application/json                                                |
+| errors.Unauthorized                                             | 511                                                             | application/json                                                |
 | errors.APIError                                                 | 4XX, 5XX                                                        | \*/\*                                                           |
 
 ## get
@@ -358,10 +366,14 @@ import {
 | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
 | errors.ToolsOzoneModerationGetRepoResponseBody                | 400                                                           | application/json                                              |
 | errors.ToolsOzoneModerationGetRepoOzoneModerationResponseBody | 401                                                           | application/json                                              |
-| errors.Unauthorized                                           | 403, 407, 511                                                 | application/json                                              |
-| errors.NotFound                                               | 404, 501, 505                                                 | application/json                                              |
-| errors.Timeout                                                | 408, 504                                                      | application/json                                              |
-| errors.BadRequest                                             | 413, 414, 415, 422, 431, 510                                  | application/json                                              |
+| errors.NotFound                                               | 404                                                           | application/json                                              |
+| errors.Unauthorized                                           | 403, 407                                                      | application/json                                              |
+| errors.Timeout                                                | 408                                                           | application/json                                              |
 | errors.RateLimited                                            | 429                                                           | application/json                                              |
+| errors.BadRequest                                             | 413, 414, 415, 422, 431                                       | application/json                                              |
+| errors.Timeout                                                | 504                                                           | application/json                                              |
+| errors.NotFound                                               | 501, 505                                                      | application/json                                              |
 | errors.InternalServerError                                    | 500, 502, 503, 506, 507, 508                                  | application/json                                              |
+| errors.BadRequest                                             | 510                                                           | application/json                                              |
+| errors.Unauthorized                                           | 511                                                           | application/json                                              |
 | errors.APIError                                               | 4XX, 5XX                                                      | \*/\*                                                         |

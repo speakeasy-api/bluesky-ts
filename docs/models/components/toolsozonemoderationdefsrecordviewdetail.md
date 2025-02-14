@@ -14,10 +14,10 @@ let value: ToolsOzoneModerationDefsRecordViewDetail = {
       cid: "<id>",
       mimeType: "<value>",
       size: 318028,
-      createdAt: new Date("2024-11-16T00:59:56.580Z"),
+      createdAt: new Date("2025-11-16T00:59:56.580Z"),
     },
   ],
-  indexedAt: new Date("2024-11-24T10:40:28.013Z"),
+  indexedAt: new Date("2025-11-24T10:40:28.013Z"),
   moderation: {},
   repo: {
     did: "<id>",
@@ -25,7 +25,7 @@ let value: ToolsOzoneModerationDefsRecordViewDetail = {
     relatedRecords: [
       "<value>",
     ],
-    indexedAt: new Date("2023-11-11T15:47:28.185Z"),
+    indexedAt: new Date("2024-11-10T15:47:28.185Z"),
     moderation: {},
   },
 };

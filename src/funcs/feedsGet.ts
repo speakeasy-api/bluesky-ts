@@ -5,6 +5,7 @@
 import { BlueskyCore } from "../core.js";
 import { encodeFormQuery } from "../lib/encodings.js";
 import * as M from "../lib/matchers.js";
+import { compactMap } from "../lib/primitives.js";
 import { safeParse } from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
@@ -38,12 +39,16 @@ export async function feedsGet(
     operations.AppBskyFeedGetPostsResponseBody,
     | errors.AppBskyFeedGetPostsResponseBody
     | errors.AppBskyFeedGetPostsFeedsResponseBody
-    | errors.Unauthorized
     | errors.NotFound
+    | errors.Unauthorized
     | errors.Timeout
-    | errors.BadRequest
     | errors.RateLimited
+    | errors.BadRequest
+    | errors.Timeout
+    | errors.NotFound
     | errors.InternalServerError
+    | errors.BadRequest
+    | errors.Unauthorized
     | APIError
     | SDKValidationError
     | UnexpectedClientError
@@ -71,15 +76,16 @@ export async function feedsGet(
     "uris": payload.uris,
   });
 
-  const headers = new Headers({
+  const headers = new Headers(compactMap({
     Accept: "application/json",
-  });
+  }));
 
   const secConfig = await extractSecurity(client._options.bearer);
   const securityInput = secConfig == null ? {} : { bearer: secConfig };
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
+    baseURL: options?.serverURL ?? "",
     operationID: "app.bsky.feed.getPosts",
     oAuth2Scopes: [],
 
@@ -95,6 +101,7 @@ export async function feedsGet(
   const requestRes = client._createRequest(context, {
     security: requestSecurity,
     method: "GET",
+    baseURL: options?.serverURL,
     path: path,
     headers: headers,
     query: query,
@@ -151,12 +158,16 @@ export async function feedsGet(
     operations.AppBskyFeedGetPostsResponseBody,
     | errors.AppBskyFeedGetPostsResponseBody
     | errors.AppBskyFeedGetPostsFeedsResponseBody
-    | errors.Unauthorized
     | errors.NotFound
+    | errors.Unauthorized
     | errors.Timeout
-    | errors.BadRequest
     | errors.RateLimited
+    | errors.BadRequest
+    | errors.Timeout
+    | errors.NotFound
     | errors.InternalServerError
+    | errors.BadRequest
+    | errors.Unauthorized
     | APIError
     | SDKValidationError
     | UnexpectedClientError
@@ -168,16 +179,21 @@ export async function feedsGet(
     M.json(200, operations.AppBskyFeedGetPostsResponseBody$inboundSchema),
     M.jsonErr(400, errors.AppBskyFeedGetPostsResponseBody$inboundSchema),
     M.jsonErr(401, errors.AppBskyFeedGetPostsFeedsResponseBody$inboundSchema),
-    M.jsonErr([403, 407, 511], errors.Unauthorized$inboundSchema),
-    M.jsonErr([404, 501, 505], errors.NotFound$inboundSchema),
-    M.jsonErr([408, 504], errors.Timeout$inboundSchema),
-    M.jsonErr([413, 414, 415, 422, 431, 510], errors.BadRequest$inboundSchema),
+    M.jsonErr(404, errors.NotFound$inboundSchema),
+    M.jsonErr([403, 407], errors.Unauthorized$inboundSchema),
+    M.jsonErr(408, errors.Timeout$inboundSchema),
     M.jsonErr(429, errors.RateLimited$inboundSchema),
+    M.jsonErr([413, 414, 415, 422, 431], errors.BadRequest$inboundSchema),
+    M.jsonErr(504, errors.Timeout$inboundSchema),
+    M.jsonErr([501, 505], errors.NotFound$inboundSchema),
     M.jsonErr(
       [500, 502, 503, 506, 507, 508],
       errors.InternalServerError$inboundSchema,
     ),
-    M.fail(["4XX", "5XX"]),
+    M.jsonErr(510, errors.BadRequest$inboundSchema),
+    M.jsonErr(511, errors.Unauthorized$inboundSchema),
+    M.fail("4XX"),
+    M.fail("5XX"),
   )(response, { extraFields: responseFields });
   if (!result.ok) {
     return result;

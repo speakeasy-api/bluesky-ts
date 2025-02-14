@@ -16,7 +16,7 @@ let value: AppBskyGraphGetListResponse = {
       },
       name: "<value>",
       purpose: "<value>",
-      indexedAt: new Date("2023-12-07T19:31:05.522Z"),
+      indexedAt: new Date("2024-12-06T19:31:05.522Z"),
     },
     items: [],
   },

@@ -14,7 +14,7 @@ let value: AppBskyFeedDefsThreadViewPost = {
       handle: "<value>",
     },
     record: "<value>",
-    indexedAt: new Date("2022-11-24T20:56:14.878Z"),
+    indexedAt: new Date("2023-11-24T20:56:14.878Z"),
   },
 };
 ```

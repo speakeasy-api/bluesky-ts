@@ -11,8 +11,8 @@ let value: ToolsOzoneModerationDefsSubjectStatusView = {
     uri: "https://close-airman.org",
     cid: "<id>",
   },
-  updatedAt: new Date("2023-08-12T17:43:22.964Z"),
-  createdAt: new Date("2022-08-08T09:47:41.350Z"),
+  updatedAt: new Date("2024-08-11T17:43:22.964Z"),
+  createdAt: new Date("2023-08-08T09:47:41.350Z"),
   reviewState: "#reviewClosed",
 };
 ```

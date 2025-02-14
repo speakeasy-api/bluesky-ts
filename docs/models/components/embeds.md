@@ -50,7 +50,7 @@ const value: components.AppBskyEmbedRecordView = {
       handle: "<value>",
     },
     value: "<value>",
-    indexedAt: new Date("2022-04-18T01:16:45.009Z"),
+    indexedAt: new Date("2023-04-18T01:16:45.009Z"),
   },
 };
 ```
@@ -69,7 +69,7 @@ const value: components.AppBskyEmbedRecordWithMediaView = {
         handle: "<value>",
       },
       displayName: "Adeline.Quitzon",
-      indexedAt: new Date("2022-02-03T14:30:29.574Z"),
+      indexedAt: new Date("2023-02-03T14:30:29.574Z"),
     },
   },
   media: {

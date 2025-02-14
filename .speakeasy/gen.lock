@@ -3,10 +3,10 @@ id: 8ee5821f-25ad-41d5-94bd-080f4048f5d5
 management:
   docChecksum: dbb7ddc1f24fcd6d7cf7cea6229e86c5
   docVersion: 0.0.0
-  speakeasyVersion: 1.453.0
-  generationVersion: 2.472.1
-  releaseVersion: 0.7.1
-  configChecksum: 6ac301550bcb1da0476dc292535ebc1e
+  speakeasyVersion: 1.492.0
+  generationVersion: 2.512.4
+  releaseVersion: 0.8.0
+  configChecksum: 2fbbe48d30886ec129a6f5a2c38d24b4
   repoURL: https://github.com/speakeasy-api/bluesky-ts.git
   installationURL: https://github.com/speakeasy-api/bluesky-ts
 features:
@@ -14,21 +14,21 @@ features:
     additionalDependencies: 0.1.0
     additionalProperties: 0.1.1
     constsAndDefaults: 0.1.11
-    core: 3.18.8
+    core: 3.19.0
     defaultEnabledRetries: 0.1.0
     devContainers: 2.90.0
     enumUnions: 0.1.0
     envVarSecurityUsage: 0.1.2
-    examples: 2.81.4
-    globalSecurity: 2.82.11
+    examples: 2.81.5
+    globalSecurity: 2.82.13
     globalSecurityCallbacks: 0.1.0
     globalSecurityFlattening: 0.1.0
     globalServerURLs: 2.82.4
     groups: 2.81.2
     methodArguments: 0.1.2
     nameOverrides: 2.81.2
-    pagination: 2.82.7
-    reactQueryHooks: 0.2.0
+    pagination: 2.82.8
+    reactQueryHooks: 0.2.2
     responseFormat: 0.2.3
     retries: 2.83.0
     sdkHooks: 0.2.0
@@ -39,10 +39,8 @@ generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
   - .devcontainer/setup.sh
-  - .eslintrc.cjs
   - .gitattributes
   - .npmignore
-  - CONTRIBUTING.md
   - FUNCTIONS.md
   - REACT_QUERY.md
   - RUNTIMES.md
@@ -1167,6 +1165,7 @@ generatedFiles:
   - docs/sdks/teams/README.md
   - docs/sdks/users/README.md
   - docs/sdks/videos/README.md
+  - eslint.config.mjs
   - jsr.json
   - package.json
   - src/core.ts
@@ -2105,2198 +2104,436 @@ generatedFiles:
   - src/types/streams.ts
   - tsconfig.json
 examples:
-  app.bsky.actor.getPreferences:
-    speakeasy-default-app-bsky-actor-get-preferences:
-      responses:
-        "200":
-          application/json: {"preferences": [{"label": "<value>", "visibility": "show"}, {"items": [{"id": "<id>", "type": "timeline", "value": "<value>", "pinned": false}, {"id": "<id>", "type": "list", "value": "<value>", "pinned": true}, {"id": "<id>", "type": "timeline", "value": "<value>", "pinned": false}]}]}
-        "400":
-          application/json: {"error": "ExpiredToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
+  app.bsky.actor.getPreferences: {}
   app.bsky.actor.getProfile:
-    speakeasy-default-app-bsky-actor-get-profile:
-      parameters:
-        query:
-          actor: "<value>"
-      responses:
-        "200":
-          application/json: {"did": "<id>", "handle": "<value>"}
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403": {}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
     "":
       parameters:
         query:
           actor: "did:plc:z72i7hdynmk6r22z27h6tvur"
-      responses:
-        "200":
-          application/json: {"did": "<id>", "handle": "<value>"}
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404": {}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
   app.bsky.actor.getProfiles:
     speakeasy-default-app-bsky-actor-get-profiles:
       parameters:
         query:
-          actors: ["<value>"]
-      responses:
-        "200":
-          application/json: {"profiles": [{"did": "<id>", "handle": "<value>"}]}
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403": {}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
-  app.bsky.actor.getSuggestions:
-    speakeasy-default-app-bsky-actor-get-suggestions:
-      responses:
-        "200":
-          application/json: {"actors": [{"did": "<id>", "handle": "<value>"}, {"did": "<id>", "handle": "<value>"}, {"did": "<id>", "handle": "<value>"}]}
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403": {}
-        "404": {}
-        "408": {}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
+          actors: []
   app.bsky.actor.putPreferences:
     speakeasy-default-app-bsky-actor-put-preferences:
       requestBody:
-        application/json: {"preferences": [{"tags": ["<value>"]}]}
-      responses:
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "404":
-          application/json: {"key": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
+        application/json: {"preferences": [{}, {"labelers": [{"did": "<id>"}]}]}
   app.bsky.actor.searchActors:
     speakeasy-default-app-bsky-actor-search-actors:
-      responses:
-        "200":
-          application/json: {"actors": [{"did": "<id>", "handle": "<value>"}, {"did": "<id>", "handle": "<value>"}]}
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>"}
-        "404":
-          application/json: {"key": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
+      parameters:
+        query:
+          limit: 25
+  app.bsky.actor.getSuggestions:
+    speakeasy-default-app-bsky-actor-get-suggestions:
+      parameters:
+        query:
+          limit: 50
   app.bsky.actor.searchActorsTypeahead:
     speakeasy-default-app-bsky-actor-search-actors-typeahead:
-      responses:
-        "200":
-          application/json: {"actors": [{"did": "<id>", "handle": "<value>"}]}
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
-  app.bsky.feed.describeFeedGenerator:
-    speakeasy-default-app-bsky-feed-describe-feed-generator:
-      responses:
-        "200":
-          application/json: {"did": "<id>", "feeds": [{"uri": "https://astonishing-polarisation.name"}, {"uri": "https://some-conversation.com/"}, {"uri": "https://portly-instance.com/"}]}
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403": {}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
+      parameters:
+        query:
+          limit: 10
+  app.bsky.feed.describeFeedGenerator: {}
+  app.bsky.feed.getLikes:
+    speakeasy-default-app-bsky-feed-get-likes:
+      parameters:
+        query:
+          uri: "https://warlike-bakeware.biz/"
+          limit: 50
+  app.bsky.feed.getListFeed:
+    speakeasy-default-app-bsky-feed-get-list-feed:
+      parameters:
+        query:
+          list: "https://prickly-caption.info/"
+          limit: 50
+  app.bsky.feed.getPostThread:
+    speakeasy-default-app-bsky-feed-get-post-thread:
+      parameters:
+        query:
+          uri: "https://black-and-white-charlatan.org"
+          depth: 6
+          parentHeight: 80
+  app.bsky.feed.getPosts:
+    speakeasy-default-app-bsky-feed-get-posts:
+      parameters:
+        query:
+          uris: ["https://necessary-lender.org", "https://knowledgeable-diversity.biz/"]
+  app.bsky.feed.getQuotes:
+    speakeasy-default-app-bsky-feed-get-quotes:
+      parameters:
+        query:
+          uri: "https://honorable-suv.net/"
+          limit: 50
+  app.bsky.feed.getRepostedBy:
+    speakeasy-default-app-bsky-feed-get-reposted-by:
+      parameters:
+        query:
+          uri: "https://merry-mousse.net/"
+          limit: 50
+  app.bsky.feed.sendInteractions:
+    speakeasy-default-app-bsky-feed-send-interactions:
+      requestBody:
+        application/json: {"interactions": [{}, {}, {}]}
   app.bsky.feed.getActorFeeds:
     speakeasy-default-app-bsky-feed-get-actor-feeds:
       parameters:
         query:
           actor: "<value>"
-      responses:
-        "200":
-          application/json: {"feeds": []}
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
+          limit: 50
   app.bsky.feed.getActorLikes:
     speakeasy-default-app-bsky-feed-get-actor-likes:
       parameters:
         query:
           actor: "<value>"
-      responses:
-        "200":
-          application/json: {"feed": [{"post": {"uri": "https://quarrelsome-reconsideration.com/", "cid": "<id>", "author": {"did": "<id>", "handle": "<value>"}, "record": "<value>", "indexedAt": "2024-08-07T10:55:48.582Z"}}]}
-        "400":
-          application/json: {"error": "BlockedByActor", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
+          limit: 50
   app.bsky.feed.getAuthorFeed:
     speakeasy-default-app-bsky-feed-get-author-feed:
       parameters:
         query:
           actor: "<value>"
-      responses:
-        "200":
-          application/json: {"feed": [{"post": {"uri": "https://precious-dusk.name", "cid": "<id>", "author": {"did": "<id>", "handle": "<value>"}, "record": "<value>", "indexedAt": "2022-02-19T19:17:59.221Z"}}]}
-        "400":
-          application/json: {"error": "BlockedByActor", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
+          limit: 50
+          filter: "posts_with_replies"
   app.bsky.feed.getFeed:
     speakeasy-default-app-bsky-feed-get-feed:
       parameters:
         query:
-          feed: "https://key-nougat.org"
-      responses:
-        "200":
-          application/json: {"feed": [{"post": {"uri": "https://warped-kettledrum.biz", "cid": "<id>", "author": {"did": "<id>", "handle": "<value>"}, "record": "<value>", "indexedAt": "2024-09-17T11:38:52.343Z"}}, {"post": {"uri": "https://blond-trash.org/", "cid": "<id>", "author": {"did": "<id>", "handle": "<value>"}, "record": "<value>", "indexedAt": "2022-10-08T15:27:03.484Z"}}, {"post": {"uri": "https://subdued-middle.net/", "cid": "<id>", "author": {"did": "<id>", "handle": "<value>"}, "record": "<value>", "indexedAt": "2024-10-20T22:32:44.293Z"}}]}
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+          feed: "https://unkempt-gym.name"
+          limit: 50
   app.bsky.feed.getFeedGenerator:
     speakeasy-default-app-bsky-feed-get-feed-generator:
       parameters:
         query:
-          feed: "https://far-flung-solvency.net"
-      responses:
-        "200":
-          application/json: {"view": {"uri": "https://prime-prohibition.org/", "cid": "<id>", "did": "<id>", "creator": {"did": "<id>", "handle": "<value>"}, "displayName": "Felix.Hodkiewicz", "indexedAt": "2024-12-19T13:42:20.152Z"}, "isOnline": false, "isValid": false}
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+          feed: "https://unrealistic-poppy.biz/"
   app.bsky.feed.getFeedGenerators:
     speakeasy-default-app-bsky-feed-get-feed-generators:
       parameters:
         query:
-          feeds: []
-      responses:
-        "200":
-          application/json: {"feeds": []}
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+          feeds: ["https://knowledgeable-replacement.com/", "https://affectionate-tomatillo.biz"]
   app.bsky.feed.getFeedSkeleton:
     speakeasy-default-app-bsky-feed-get-feed-skeleton:
       parameters:
         query:
-          feed: "https://dim-sport.info"
-      responses:
-        "200":
-          application/json: {"feed": []}
-        "400":
-          application/json: {"error": "UnknownFeed", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "404":
-          application/json: {"key": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "429":
-          application/json: {"key": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-  app.bsky.feed.getLikes:
-    speakeasy-default-app-bsky-feed-get-likes:
-      parameters:
-        query:
-          uri: "https://superficial-flame.info"
-      responses:
-        "200":
-          application/json: {"uri": "https://insecure-testimonial.org/", "likes": [{"indexedAt": "2024-05-15T05:37:26.529Z", "createdAt": "2023-07-03T18:24:46.381Z", "actor": {"did": "<id>", "handle": "<value>"}}]}
-        "400":
-          application/json: {"error": "ExpiredToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-  app.bsky.feed.getListFeed:
-    speakeasy-default-app-bsky-feed-get-list-feed:
-      parameters:
-        query:
-          list: "https://strange-dish.biz/"
-      responses:
-        "200":
-          application/json: {"feed": [{"post": {"uri": "https://creative-dandelion.com/", "cid": "<id>", "author": {"did": "<id>", "handle": "<value>"}, "record": "<value>", "indexedAt": "2022-12-17T06:42:35.608Z"}}, {"post": {"uri": "https://optimistic-status.info", "cid": "<id>", "author": {"did": "<id>", "handle": "<value>"}, "record": "<value>", "indexedAt": "2023-01-25T00:27:26.332Z"}}]}
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
-  app.bsky.feed.getPostThread:
-    speakeasy-default-app-bsky-feed-get-post-thread:
-      parameters:
-        query:
-          uri: "https://separate-bandwidth.name/"
-      responses:
-        "200":
-          application/json: {"thread": {"uri": "https://general-sonnet.biz", "author": {"did": "<id>"}}}
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
-  app.bsky.feed.getPosts:
-    speakeasy-default-app-bsky-feed-get-posts:
-      parameters:
-        query:
-          uris: ["https://crooked-recommendation.name/"]
-      responses:
-        "200":
-          application/json: {"posts": [{"uri": "https://impressionable-charm.name/", "cid": "<id>", "author": {"did": "<id>", "handle": "<value>"}, "record": "<value>", "indexedAt": "2023-10-24T18:33:17.767Z"}, {"uri": "https://worthy-quart.name/", "cid": "<id>", "author": {"did": "<id>", "handle": "<value>"}, "record": "<value>", "indexedAt": "2022-01-14T15:28:58.195Z"}, {"uri": "https://little-pomelo.name/", "cid": "<id>", "author": {"did": "<id>", "handle": "<value>"}, "record": "<value>", "indexedAt": "2023-10-19T21:50:13.939Z"}]}
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
-  app.bsky.feed.getQuotes:
-    speakeasy-default-app-bsky-feed-get-quotes:
-      parameters:
-        query:
-          uri: "https://plain-hutch.info"
-      responses:
-        "200":
-          application/json: {"uri": "https://boiling-elver.name/", "posts": [{"uri": "https://impure-chiffonier.org", "cid": "<id>", "author": {"did": "<id>", "handle": "<value>"}, "record": "<value>", "indexedAt": "2022-10-11T09:18:58.689Z"}]}
-        "400":
-          application/json: {"error": "ExpiredToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>"}
-        "404":
-          application/json: {"key": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
-  app.bsky.feed.getRepostedBy:
-    speakeasy-default-app-bsky-feed-get-reposted-by:
-      parameters:
-        query:
-          uri: "https://staid-consistency.org/"
-      responses:
-        "200":
-          application/json: {"uri": "https://shameful-runway.biz/", "repostedBy": [{"did": "<id>", "handle": "<value>"}, {"did": "<id>", "handle": "<value>"}]}
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "429":
-          application/json: {"key": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
+          feed: "https://graceful-stir-fry.com"
+          limit: 50
   app.bsky.feed.getSuggestedFeeds:
     speakeasy-default-app-bsky-feed-get-suggested-feeds:
-      responses:
-        "200":
-          application/json: {"feeds": [{"uri": "https://impish-iridescence.biz/", "cid": "<id>", "did": "<id>", "creator": {"did": "<id>", "handle": "<value>"}, "displayName": "Deshaun.Schmeler57", "indexedAt": "2024-03-26T06:18:48.796Z"}, {"uri": "https://sneaky-packaging.biz", "cid": "<id>", "did": "<id>", "creator": {"did": "<id>", "handle": "<value>"}, "displayName": "Leonard_Durgan13", "indexedAt": "2023-08-26T18:21:52.401Z"}]}
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
+      parameters:
+        query:
+          limit: 50
   app.bsky.feed.getTimeline:
     speakeasy-default-app-bsky-feed-get-timeline:
-      responses:
-        "200":
-          application/json: {"feed": [{"post": {"uri": "https://insecure-executor.info/", "cid": "<id>", "author": {"did": "<id>", "handle": "<value>"}, "record": "<value>", "indexedAt": "2022-12-09T00:48:56.516Z"}}]}
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403": {}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
+      parameters:
+        query:
+          limit: 50
   app.bsky.feed.searchPosts:
     speakeasy-default-app-bsky-feed-search-posts:
       parameters:
         query:
           q: "<value>"
-      responses:
-        "200":
-          application/json: {"posts": []}
-        "400":
-          application/json: {"error": "ExpiredToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>"}
-        "404":
-          application/json: {"key": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
-  app.bsky.feed.sendInteractions:
-    speakeasy-default-app-bsky-feed-send-interactions:
-      requestBody:
-        application/json: {"interactions": []}
-      responses:
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "200": {}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+          sort: "latest"
+          limit: 25
   app.bsky.graph.getActorStarterPacks:
     speakeasy-default-app-bsky-graph-get-actor-starter-packs:
       parameters:
         query:
           actor: "<value>"
-      responses:
-        "200":
-          application/json: {"starterPacks": [{"uri": "https://antique-bonnet.info", "cid": "<id>", "record": "<value>", "creator": {"did": "<id>", "handle": "<value>"}, "indexedAt": "2022-04-25T16:43:21.570Z"}]}
-        "400":
-          application/json: {"error": "ExpiredToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404":
-          application/json: {"key": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
-  app.bsky.graph.getBlocks:
-    speakeasy-default-app-bsky-graph-get-blocks:
-      responses:
-        "200":
-          application/json: {"blocks": []}
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403": {}
-        "404":
-          application/json: {"key": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
-  app.bsky.graph.getFollowers:
-    speakeasy-default-app-bsky-graph-get-followers:
-      parameters:
-        query:
-          actor: "<value>"
-      responses:
-        "200":
-          application/json: {"subject": {"did": "<id>", "handle": "<value>"}, "followers": []}
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>"}
-        "404":
-          application/json: {"key": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+          limit: 50
   app.bsky.graph.getFollows:
     speakeasy-default-app-bsky-graph-get-follows:
       parameters:
         query:
           actor: "<value>"
-      responses:
-        "200":
-          application/json: {"subject": {"did": "<id>", "handle": "<value>"}, "follows": []}
-        "400":
-          application/json: {"error": "ExpiredToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404":
-          application/json: {"key": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
-  app.bsky.graph.getKnownFollowers:
-    speakeasy-default-app-bsky-graph-get-known-followers:
-      parameters:
-        query:
-          actor: "<value>"
-      responses:
-        "200":
-          application/json: {"subject": {"did": "<id>", "handle": "<value>"}, "followers": []}
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
+          limit: 50
   app.bsky.graph.getList:
     speakeasy-default-app-bsky-graph-get-list:
       parameters:
         query:
-          list: "https://talkative-traditionalism.info"
-      responses:
-        "200":
-          application/json: {"list": {"uri": "https://taut-meal.name", "cid": "<id>", "creator": {"did": "<id>", "handle": "<value>"}, "name": "<value>", "purpose": "<value>", "indexedAt": "2022-06-17T16:50:13.312Z"}, "items": [{"uri": "https://annual-singing.biz/", "subject": {"did": "<id>", "handle": "<value>"}}]}
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
-  app.bsky.graph.getListBlocks:
-    speakeasy-default-app-bsky-graph-get-list-blocks:
-      responses:
-        "200":
-          application/json: {"lists": []}
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404":
-          application/json: {"key": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "429":
-          application/json: {"key": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
+          list: "https://prickly-caption.info/"
+          limit: 50
   app.bsky.graph.getListMutes:
     speakeasy-default-app-bsky-graph-get-list-mutes:
-      responses:
-        "200":
-          application/json: {"lists": [{"uri": "https://average-scenario.name/", "cid": "<id>", "creator": {"did": "<id>", "handle": "<value>"}, "name": "<value>", "purpose": "<value>", "indexedAt": "2023-08-20T02:34:07.635Z"}]}
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403": {}
-        "404": {}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "429":
-          application/json: {"key": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
+      parameters:
+        query:
+          limit: 50
   app.bsky.graph.getLists:
     speakeasy-default-app-bsky-graph-get-lists:
       parameters:
         query:
           actor: "<value>"
-      responses:
-        "200":
-          application/json: {"lists": [{"uri": "https://present-cd.biz/", "cid": "<id>", "creator": {"did": "<id>", "handle": "<value>"}, "name": "<value>", "purpose": "<value>", "indexedAt": "2023-10-10T00:22:28.200Z"}, {"uri": "https://alert-saloon.name", "cid": "<id>", "creator": {"did": "<id>", "handle": "<value>"}, "name": "<value>", "purpose": "<value>", "indexedAt": "2022-05-27T21:24:34.484Z"}]}
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
-  app.bsky.graph.getMutes:
-    speakeasy-default-app-bsky-graph-get-mutes:
-      responses:
-        "200":
-          application/json: {"mutes": [{"did": "<id>", "handle": "<value>"}, {"did": "<id>", "handle": "<value>"}, {"did": "<id>", "handle": "<value>"}]}
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "404":
-          application/json: {"key": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
+          limit: 50
   app.bsky.graph.getRelationships:
     speakeasy-default-app-bsky-graph-get-relationships:
       parameters:
         query:
           actor: "<value>"
-      responses:
-        "200":
-          application/json: {"relationships": [{"did": "<id>"}, {"actor": "<value>"}, {"did": "<id>"}]}
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "404":
-          application/json: {"key": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
   app.bsky.graph.getStarterPack:
     speakeasy-default-app-bsky-graph-get-starter-pack:
       parameters:
         query:
-          starterPack: "https://some-colonialism.info/"
-      responses:
-        "200":
-          application/json: {"starterPack": {"uri": "https://mad-swine.info", "cid": "<id>", "record": "<value>", "creator": {"did": "<id>", "handle": "<value>"}, "indexedAt": "2024-08-22T02:46:41.972Z"}}
-        "400":
-          application/json: {"error": "ExpiredToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
-  app.bsky.graph.getStarterPacks:
-    speakeasy-default-app-bsky-graph-get-starter-packs:
-      parameters:
-        query:
-          uris: []
-      responses:
-        "200":
-          application/json: {"starterPacks": [{"uri": "https://trivial-procurement.com/", "cid": "<id>", "record": "<value>", "creator": {"did": "<id>", "handle": "<value>"}, "indexedAt": "2024-03-25T05:17:36.931Z"}, {"uri": "https://flawless-humor.net", "cid": "<id>", "record": "<value>", "creator": {"did": "<id>", "handle": "<value>"}, "indexedAt": "2024-02-28T13:16:08.821Z"}]}
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-  app.bsky.graph.getSuggestedFollowsByActor:
-    speakeasy-default-app-bsky-graph-get-suggested-follows-by-actor:
-      parameters:
-        query:
-          actor: "<value>"
-      responses:
-        "200":
-          application/json: {"suggestions": []}
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+          starterPack: "https://ajar-intellect.net"
   app.bsky.graph.muteActor:
     speakeasy-default-app-bsky-graph-mute-actor:
       requestBody:
         application/json: {"actor": "<value>"}
-      responses:
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403": {}
-        "404":
-          application/json: {"key": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
   app.bsky.graph.muteActorList:
     speakeasy-default-app-bsky-graph-mute-actor-list:
       requestBody:
-        application/json: {"list": "https://urban-maestro.org"}
-      responses:
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
-  app.bsky.graph.muteThread:
-    speakeasy-default-app-bsky-graph-mute-thread:
-      requestBody:
-        application/json: {"root": "https://clean-armchair.biz/"}
-      responses:
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        application/json: {"list": "https://tedious-instruction.biz"}
   app.bsky.graph.searchStarterPacks:
     speakeasy-default-app-bsky-graph-search-starter-packs:
       parameters:
         query:
           q: "<value>"
-      responses:
-        "200":
-          application/json: {"starterPacks": [{"uri": "https://wretched-smoke.com/", "cid": "<id>", "record": "<value>", "creator": {"did": "<id>", "handle": "<value>"}, "indexedAt": "2022-06-01T06:58:25.894Z"}, {"uri": "https://indolent-scout.biz", "cid": "<id>", "record": "<value>", "creator": {"did": "<id>", "handle": "<value>"}, "indexedAt": "2024-12-25T20:25:38.322Z"}, {"uri": "https://roasted-conservative.biz/", "cid": "<id>", "record": "<value>", "creator": {"did": "<id>", "handle": "<value>"}, "indexedAt": "2022-05-13T16:22:23.932Z"}]}
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "429":
-          application/json: {"key": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
+          limit: 25
+  app.bsky.graph.unmuteThread:
+    speakeasy-default-app-bsky-graph-unmute-thread:
+      requestBody:
+        application/json: {"root": "https://dutiful-fisherman.biz"}
+  app.bsky.graph.getBlocks:
+    speakeasy-default-app-bsky-graph-get-blocks:
+      parameters:
+        query:
+          limit: 50
+  app.bsky.graph.getKnownFollowers:
+    speakeasy-default-app-bsky-graph-get-known-followers:
+      parameters:
+        query:
+          actor: "<value>"
+          limit: 50
+  app.bsky.graph.getListBlocks:
+    speakeasy-default-app-bsky-graph-get-list-blocks:
+      parameters:
+        query:
+          limit: 50
+  app.bsky.graph.getMutes:
+    speakeasy-default-app-bsky-graph-get-mutes:
+      parameters:
+        query:
+          limit: 50
+  app.bsky.graph.getStarterPacks:
+    speakeasy-default-app-bsky-graph-get-starter-packs:
+      parameters:
+        query:
+          uris: ["https://sunny-developmental.org/", "https://neat-cleaner.org/"]
+  app.bsky.graph.muteThread:
+    speakeasy-default-app-bsky-graph-mute-thread:
+      requestBody:
+        application/json: {"root": "https://pertinent-bidet.biz/"}
+  app.bsky.graph.unmuteActorList:
+    speakeasy-default-app-bsky-graph-unmute-actor-list:
+      requestBody:
+        application/json: {"list": "https://speedy-developing.info"}
+  app.bsky.graph.getFollowers:
+    speakeasy-default-app-bsky-graph-get-followers:
+      parameters:
+        query:
+          actor: "<value>"
+          limit: 50
+  app.bsky.graph.getSuggestedFollowsByActor:
+    speakeasy-default-app-bsky-graph-get-suggested-follows-by-actor:
+      parameters:
+        query:
+          actor: "<value>"
   app.bsky.graph.unmuteActor:
     speakeasy-default-app-bsky-graph-unmute-actor:
       requestBody:
         application/json: {"actor": "<value>"}
-      responses:
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>"}
-        "404":
-          application/json: {"key": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
-  app.bsky.graph.unmuteActorList:
-    speakeasy-default-app-bsky-graph-unmute-actor-list:
-      requestBody:
-        application/json: {"list": "https://instructive-monasticism.name/"}
-      responses:
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
-  app.bsky.graph.unmuteThread:
-    speakeasy-default-app-bsky-graph-unmute-thread:
-      requestBody:
-        application/json: {"root": "https://clean-behest.org/"}
-      responses:
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
   app.bsky.labeler.getServices:
     speakeasy-default-app-bsky-labeler-get-services:
       parameters:
         query:
-          dids: ["<id>", "<id>", "<id>"]
-      responses:
-        "200":
-          application/json: {"views": [{"uri": "https://eminent-deed.biz/", "cid": "<id>", "creator": {"did": "<id>", "handle": "<value>"}, "policies": {"labelValues": []}, "indexedAt": "2023-04-13T14:36:08.864Z"}, {"uri": "https://oddball-folklore.com/", "cid": "<id>", "creator": {"did": "<id>", "handle": "<value>"}, "indexedAt": "2023-06-12T22:57:44.746Z"}, {"uri": "https://hoarse-hospitalization.org/", "cid": "<id>", "creator": {"did": "<id>", "handle": "<value>"}, "policies": {"labelValues": ["!warn"]}, "indexedAt": "2024-11-13T10:48:01.325Z"}]}
-        "400":
-          application/json: {"error": "ExpiredToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403": {}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-  app.bsky.notification.getUnreadCount:
-    speakeasy-default-app-bsky-notification-get-unread-count:
-      responses:
-        "200":
-          application/json: {"count": 887038}
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404":
-          application/json: {"key": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
-  app.bsky.notification.listNotifications:
-    speakeasy-default-app-bsky-notification-list-notifications:
-      responses:
-        "200":
-          application/json: {"notifications": [{"uri": "https://rare-forgery.biz/", "cid": "<id>", "author": {"did": "<id>", "handle": "<value>"}, "reason": "quote", "record": "<value>", "isRead": false, "indexedAt": "2023-06-05T05:39:14.192Z"}]}
-        "400":
-          application/json: {"error": "ExpiredToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
+          dids: []
+  app.bsky.notification.getUnreadCount: {}
   app.bsky.notification.putPreferences:
     speakeasy-default-app-bsky-notification-put-preferences:
       requestBody:
-        application/json: {"priority": true}
-      responses:
-        "400":
-          application/json: {"error": "ExpiredToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "404":
-          application/json: {"key": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
+        application/json: {"priority": false}
   app.bsky.notification.registerPush:
     speakeasy-default-app-bsky-notification-register-push:
       requestBody:
-        application/json: {"serviceDid": "<id>", "token": "<value>", "platform": "ios", "appId": "<id>"}
-      responses:
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
+        application/json: {"serviceDid": "<id>", "token": "<value>", "platform": "web", "appId": "<id>"}
   app.bsky.notification.updateSeen:
     speakeasy-default-app-bsky-notification-update-seen:
       requestBody:
-        application/json: {"seenAt": "2023-05-09T15:02:30.758Z"}
-      responses:
-        "400":
-          application/json: {"error": "ExpiredToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
+        application/json: {"seenAt": "2024-07-16T17:03:31.114Z"}
+  app.bsky.notification.listNotifications:
+    speakeasy-default-app-bsky-notification-list-notifications:
+      parameters:
+        query:
+          limit: 50
   app.bsky.video.getJobStatus:
     speakeasy-default-app-bsky-video-get-job-status:
       parameters:
         query:
           jobId: "<id>"
-      responses:
-        "200":
-          application/json: {"jobStatus": {"jobId": "<id>", "did": "<id>", "state": "JOB_STATE_COMPLETED"}}
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>"}
-        "404":
-          application/json: {"key": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-  app.bsky.video.getUploadLimits:
-    speakeasy-default-app-bsky-video-get-upload-limits:
-      responses:
-        "200":
-          application/json: {"canUpload": true}
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "429":
-          application/json: {"key": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+  app.bsky.video.getUploadLimits: {}
   app.bsky.video.uploadVideo:
     speakeasy-default-app-bsky-video-upload-video:
-      responses:
-        "200":
-          application/json: {"jobStatus": {"jobId": "<id>", "did": "<id>", "state": "JOB_STATE_COMPLETED"}}
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
-  chat.bsky.actor.deleteAccount:
-    speakeasy-default-chat-bsky-actor-delete-account:
-      responses:
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "200": {}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
-  chat.bsky.actor.exportAccountData:
-    speakeasy-default-chat-bsky-actor-export-account-data:
-      responses:
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>"}
-        "404":
-          application/json: {"key": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
+      requestBody:
+        video/mp4: "x-file: example.file"
+  chat.bsky.actor.deleteAccount: {}
+  chat.bsky.actor.exportAccountData: {}
   chat.bsky.convo.deleteMessageForSelf:
     speakeasy-default-chat-bsky-convo-delete-message-for-self:
       requestBody:
         application/json: {"convoId": "<id>", "messageId": "<id>"}
-      responses:
-        "200":
-          application/json: {"id": "<id>", "rev": "<value>", "sender": {"did": "<id>"}, "sentAt": "2024-04-17T00:38:53.207Z"}
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403": {}
-        "404": {}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
+  chat.bsky.convo.listConvos:
+    speakeasy-default-chat-bsky-convo-list-convos:
+      parameters:
+        query:
+          limit: 50
   chat.bsky.convo.getConvo:
     speakeasy-default-chat-bsky-convo-get-convo:
       parameters:
         query:
           convoId: "<id>"
-      responses:
-        "200":
-          application/json: {"convo": {"id": "<id>", "rev": "<value>", "members": [{"did": "<id>", "handle": "<value>"}, {"did": "<id>", "handle": "<value>"}], "muted": false, "unreadCount": 888793}}
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-  chat.bsky.convo.getConvoForMembers:
-    speakeasy-default-chat-bsky-convo-get-convo-for-members:
-      parameters:
-        query:
-          members: ["<id>", "<id>", "<id>"]
-      responses:
-        "200":
-          application/json: {"convo": {"id": "<id>", "rev": "<value>", "members": [{"did": "<id>", "handle": "<value>"}], "muted": false, "unreadCount": 607782}}
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
-  chat.bsky.convo.getLog:
-    speakeasy-default-chat-bsky-convo-get-log:
-      responses:
-        "200":
-          application/json: {"logs": [{"rev": "<value>", "convoId": "<id>"}]}
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
-  chat.bsky.convo.getMessages:
-    speakeasy-default-chat-bsky-convo-get-messages:
-      parameters:
-        query:
-          convoId: "<id>"
-      responses:
-        "200":
-          application/json: {"messages": [{"id": "<id>", "rev": "<value>", "sender": {"did": "<id>"}, "sentAt": "2023-10-06T04:51:59.651Z"}]}
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
-  chat.bsky.convo.leaveConvo:
-    speakeasy-default-chat-bsky-convo-leave-convo:
-      requestBody:
-        application/json: {"convoId": "<id>"}
-      responses:
-        "200":
-          application/json: {"convoId": "<id>", "rev": "<value>"}
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403": {}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
-  chat.bsky.convo.listConvos:
-    speakeasy-default-chat-bsky-convo-list-convos:
-      responses:
-        "200":
-          application/json: {"convos": [{"id": "<id>", "rev": "<value>", "members": [{"did": "<id>", "handle": "<value>"}], "muted": true, "unreadCount": 899583}, {"id": "<id>", "rev": "<value>", "members": [{"did": "<id>", "handle": "<value>"}], "muted": false, "unreadCount": 153631}]}
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
-  chat.bsky.convo.muteConvo:
-    speakeasy-default-chat-bsky-convo-mute-convo:
-      requestBody:
-        application/json: {"convoId": "<id>"}
-      responses:
-        "200":
-          application/json: {"convo": {"id": "<id>", "rev": "<value>", "members": [{"did": "<id>", "handle": "<value>"}, {"did": "<id>", "handle": "<value>"}], "muted": true, "unreadCount": 433485}}
-        "400":
-          application/json: {"error": "ExpiredToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>"}
-        "404":
-          application/json: {"key": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "429":
-          application/json: {"key": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-  chat.bsky.convo.sendMessage:
-    speakeasy-default-chat-bsky-convo-send-message:
-      requestBody:
-        application/json: {"convoId": "<id>", "message": {"text": "<value>"}}
-      responses:
-        "200":
-          application/json: {"id": "<id>", "rev": "<value>", "text": "<value>", "sender": {"did": "<id>"}, "sentAt": "2023-12-23T07:11:50.642Z"}
-        "400":
-          application/json: {"error": "ExpiredToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
-  chat.bsky.convo.sendMessageBatch:
-    speakeasy-default-chat-bsky-convo-send-message-batch:
-      requestBody:
-        application/json: {"items": [{"convoId": "<id>", "message": {"text": "<value>"}}, {"convoId": "<id>", "message": {"text": "<value>"}}, {"convoId": "<id>", "message": {"text": "<value>"}}]}
-      responses:
-        "200":
-          application/json: {"items": [{"id": "<id>", "rev": "<value>", "text": "<value>", "sender": {"did": "<id>"}, "sentAt": "2023-07-30T00:22:19.783Z"}]}
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "404":
-          application/json: {"key": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
-  chat.bsky.convo.unmuteConvo:
-    speakeasy-default-chat-bsky-convo-unmute-convo:
-      requestBody:
-        application/json: {"convoId": "<id>"}
-      responses:
-        "200":
-          application/json: {"convo": {"id": "<id>", "rev": "<value>", "members": [{"did": "<id>", "handle": "<value>"}, {"did": "<id>", "handle": "<value>"}, {"did": "<id>", "handle": "<value>"}], "muted": false, "unreadCount": 790351}}
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>"}
-        "404":
-          application/json: {"key": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
-  chat.bsky.convo.updateRead:
-    speakeasy-default-chat-bsky-convo-update-read:
-      requestBody:
-        application/json: {"convoId": "<id>"}
-      responses:
-        "200":
-          application/json: {"convo": {"id": "<id>", "rev": "<value>", "members": [], "muted": true, "unreadCount": 455615}}
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403": {}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
-  chat.bsky.moderation.getActorMetadata:
-    speakeasy-default-chat-bsky-moderation-get-actor-metadata:
-      parameters:
-        query:
-          actor: "<id>"
-      responses:
-        "200":
-          application/json: {"day": {"messagesSent": 891040, "messagesReceived": 72011, "convos": 325063, "convosStarted": 121938}, "month": {"messagesSent": 168339, "messagesReceived": 459241, "convos": 648488, "convosStarted": 174104}, "all": {"messagesSent": 230664, "messagesReceived": 816414, "convos": 249822, "convosStarted": 379116}}
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
   chat.bsky.moderation.getMessageContext:
     speakeasy-default-chat-bsky-moderation-get-message-context:
       parameters:
         query:
           messageId: "<id>"
-      responses:
-        "200":
-          application/json: {"messages": [{"id": "<id>", "rev": "<value>", "text": "<value>", "sender": {"did": "<id>"}, "sentAt": "2023-01-08T19:12:20.432Z"}, {"id": "<id>", "rev": "<value>", "sender": {"did": "<id>"}, "sentAt": "2024-11-29T06:41:57.824Z"}]}
-        "400":
-          application/json: {"error": "ExpiredToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
+          before: 5
+          after: 5
+  chat.bsky.convo.getConvoForMembers:
+    speakeasy-default-chat-bsky-convo-get-convo-for-members:
+      parameters:
+        query:
+          members: ["<id>", "<id>"]
+  chat.bsky.convo.getMessages:
+    speakeasy-default-chat-bsky-convo-get-messages:
+      parameters:
+        query:
+          convoId: "<id>"
+          limit: 50
+  chat.bsky.convo.sendMessage:
+    speakeasy-default-chat-bsky-convo-send-message:
+      requestBody:
+        application/json: {"convoId": "<id>", "message": {"text": "<value>"}}
+  chat.bsky.convo.updateRead:
+    speakeasy-default-chat-bsky-convo-update-read:
+      requestBody:
+        application/json: {"convoId": "<id>"}
+  chat.bsky.convo.getLog: {}
+  chat.bsky.convo.leaveConvo:
+    speakeasy-default-chat-bsky-convo-leave-convo:
+      requestBody:
+        application/json: {"convoId": "<id>"}
+  chat.bsky.convo.muteConvo:
+    speakeasy-default-chat-bsky-convo-mute-convo:
+      requestBody:
+        application/json: {"convoId": "<id>"}
+  chat.bsky.convo.sendMessageBatch:
+    speakeasy-default-chat-bsky-convo-send-message-batch:
+      requestBody:
+        application/json: {"items": [{"convoId": "<id>", "message": {"text": "<value>"}}, {"convoId": "<id>", "message": {"text": "<value>"}}]}
+  chat.bsky.convo.unmuteConvo:
+    speakeasy-default-chat-bsky-convo-unmute-convo:
+      requestBody:
+        application/json: {"convoId": "<id>"}
+  chat.bsky.moderation.getActorMetadata:
+    speakeasy-default-chat-bsky-moderation-get-actor-metadata:
+      parameters:
+        query:
+          actor: "<id>"
   chat.bsky.moderation.updateActorAccess:
     speakeasy-default-chat-bsky-moderation-update-actor-access:
       requestBody:
         application/json: {"actor": "<id>", "allowAccess": true}
-      responses:
-        "400":
-          application/json: {"error": "ExpiredToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403": {}
-        "404":
-          application/json: {"key": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
   com.atproto.admin.deleteAccount:
     speakeasy-default-com-atproto-admin-delete-account:
       requestBody:
         application/json: {"did": "<id>"}
-      responses:
-        "400":
-          application/json: {"error": "ExpiredToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-  com.atproto.admin.disableAccountInvites:
-    speakeasy-default-com-atproto-admin-disable-account-invites:
-      requestBody:
-        application/json: {"account": "<id>"}
-      responses:
-        "400":
-          application/json: {"error": "ExpiredToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403": {}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-  com.atproto.admin.disableInviteCodes:
-    speakeasy-default-com-atproto-admin-disable-invite-codes:
-      responses:
-        "400":
-          application/json: {"error": "ExpiredToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403": {}
-        "404":
-          application/json: {"key": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
   com.atproto.admin.enableAccountInvites:
     speakeasy-default-com-atproto-admin-enable-account-invites:
       requestBody:
         application/json: {"account": "<id>"}
-      responses:
-        "400":
-          application/json: {"error": "ExpiredToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403": {}
-        "404": {}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
+  com.atproto.admin.getAccountInfos:
+    speakeasy-default-com-atproto-admin-get-account-infos:
+      parameters:
+        query:
+          dids: ["<id>"]
+  com.atproto.admin.disableAccountInvites:
+    speakeasy-default-com-atproto-admin-disable-account-invites:
+      requestBody:
+        application/json: {"account": "<id>"}
+  com.atproto.admin.getInviteCodes:
+    speakeasy-default-com-atproto-admin-get-invite-codes:
+      parameters:
+        query:
+          sort: "recent"
+          limit: 100
+  com.atproto.admin.searchAccounts:
+    speakeasy-default-com-atproto-admin-search-accounts:
+      parameters:
+        query:
+          limit: 50
+  com.atproto.admin.disableInviteCodes: {}
   com.atproto.admin.getAccountInfo:
     speakeasy-default-com-atproto-admin-get-account-info:
       parameters:
         query:
           did: "<id>"
-      responses:
-        "200":
-          application/json: {"did": "<id>", "handle": "<value>", "indexedAt": "2024-12-02T06:10:25.898Z"}
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-  com.atproto.admin.getAccountInfos:
-    speakeasy-default-com-atproto-admin-get-account-infos:
-      parameters:
-        query:
-          dids: []
-      responses:
-        "200":
-          application/json: {"infos": [{"did": "<id>", "handle": "<value>", "indexedAt": "2023-08-17T00:49:50.743Z"}, {"did": "<id>", "handle": "<value>", "indexedAt": "2022-04-15T11:53:33.059Z"}, {"did": "<id>", "handle": "<value>", "indexedAt": "2023-12-21T02:40:49.850Z"}]}
-        "400":
-          application/json: {"error": "ExpiredToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>"}
-        "404":
-          application/json: {"key": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
-  com.atproto.admin.getInviteCodes:
-    speakeasy-default-com-atproto-admin-get-invite-codes:
-      responses:
-        "200":
-          application/json: {"codes": [{"code": "<value>", "available": 587904, "disabled": true, "forAccount": "<value>", "createdBy": "<value>", "createdAt": "2022-06-27T00:59:27.364Z", "uses": []}, {"code": "<value>", "available": 456356, "disabled": true, "forAccount": "<value>", "createdBy": "<value>", "createdAt": "2024-10-26T06:18:34.212Z", "uses": []}]}
-        "400":
-          application/json: {"error": "ExpiredToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
-  com.atproto.admin.getSubjectStatus:
-    speakeasy-default-com-atproto-admin-get-subject-status:
-      responses:
-        "200":
-          application/json: {"subject": {"uri": "https://majestic-tinderbox.info", "cid": "<id>"}}
-        "400":
-          application/json: {"error": "ExpiredToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
-  com.atproto.admin.searchAccounts:
-    speakeasy-default-com-atproto-admin-search-accounts:
-      responses:
-        "200":
-          application/json: {"accounts": []}
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
+  com.atproto.admin.getSubjectStatus: {}
   com.atproto.admin.sendEmail:
     speakeasy-default-com-atproto-admin-send-email:
       requestBody:
         application/json: {"recipientDid": "<id>", "content": "<value>", "senderDid": "<id>"}
-      responses:
-        "200":
-          application/json: {"sent": true}
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "404":
-          application/json: {"key": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "429":
-          application/json: {"key": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
   com.atproto.admin.updateAccountEmail:
     speakeasy-default-com-atproto-admin-update-account-email:
       requestBody:
-        application/json: {"account": "<value>", "email": "Tressie_DuBuque@hotmail.com"}
-      responses:
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
+        application/json: {"account": "<value>", "email": "Darron58@hotmail.com"}
   com.atproto.admin.updateAccountHandle:
     speakeasy-default-com-atproto-admin-update-account-handle:
       requestBody:
         application/json: {"did": "<id>", "handle": "<value>"}
-      responses:
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>"}
-        "404":
-          application/json: {"key": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
   com.atproto.admin.updateAccountPassword:
     speakeasy-default-com-atproto-admin-update-account-password:
       requestBody:
-        application/json: {"did": "<id>", "password": "YrVgrflEZmXzy2v"}
-      responses:
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        application/json: {"did": "<id>", "password": "fJuaUyavCLqhYRb"}
   com.atproto.admin.updateSubjectStatus:
     speakeasy-default-com-atproto-admin-update-subject-status:
       requestBody:
-        application/json: {"subject": {"did": "<id>", "cid": "<id>"}}
-      responses:
-        "200":
-          application/json: {"subject": {"uri": "https://supportive-sideboard.com", "cid": "<id>"}}
-        "400":
-          application/json: {"error": "ExpiredToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "429":
-          application/json: {"key": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
-  com.atproto.identity.getRecommendedDidCredentials:
-    speakeasy-default-com-atproto-identity-get-recommended-did-credentials:
-      responses:
-        "400":
-          application/json: {"error": "ExpiredToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "200": {}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "429":
-          application/json: {"key": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
-  com.atproto.identity.requestPlcOperationSignature:
-    speakeasy-default-com-atproto-identity-request-plc-operation-signature:
-      responses:
-        "400":
-          application/json: {"error": "ExpiredToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403": {}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
+        application/json: {"subject": {"uri": "https://empty-descendant.info/", "cid": "<id>"}}
+  com.atproto.identity.getRecommendedDidCredentials: {}
+  com.atproto.identity.submitPlcOperation:
+    speakeasy-default-com-atproto-identity-submit-plc-operation:
+      requestBody:
+        application/json: {"operation": "<value>"}
+  com.atproto.identity.requestPlcOperationSignature: {}
   com.atproto.identity.resolveHandle:
     speakeasy-default-com-atproto-identity-resolve-handle:
       parameters:
         query:
           handle: "<value>"
-      responses:
-        "200":
-          application/json: {"did": "<id>"}
-        "400":
-          application/json: {"error": "ExpiredToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-  com.atproto.identity.signPlcOperation:
-    speakeasy-default-com-atproto-identity-sign-plc-operation:
-      responses:
-        "200":
-          application/json: {"operation": "<value>"}
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404":
-          application/json: {"key": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
-  com.atproto.identity.submitPlcOperation:
-    speakeasy-default-com-atproto-identity-submit-plc-operation:
-      requestBody:
-        application/json: {"operation": "<value>"}
-      responses:
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
+  com.atproto.identity.signPlcOperation: {}
   com.atproto.identity.updateHandle:
     speakeasy-default-com-atproto-identity-update-handle:
       requestBody:
         application/json: {"handle": "<value>"}
-      responses:
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
   com.atproto.label.queryLabels:
     speakeasy-default-com-atproto-label-query-labels:
       parameters:
         query:
-          uriPatterns: ["<value>", "<value>"]
-      responses:
-        "200":
-          application/json: {"labels": [{"src": "<id>", "uri": "https://sugary-following.info", "val": "<value>", "cts": "2022-10-02T06:38:53.825Z"}, {"src": "<id>", "uri": "https://polished-disk.name/", "val": "<value>", "cts": "2024-04-05T03:52:12.537Z"}]}
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
+          uriPatterns: ["<value>", "<value>", "<value>"]
+          limit: 50
   com.atproto.moderation.createReport:
     speakeasy-default-com-atproto-moderation-create-report:
       requestBody:
         application/json: {"reasonType": "<value>", "subject": {"did": "<id>"}}
-      responses:
-        "200":
-          application/json: {"id": 788744, "reasonType": "<value>", "subject": {"uri": "https://meager-diagram.biz/", "cid": "<id>"}, "reportedBy": "<id>", "createdAt": "2023-09-21T21:06:48.343Z"}
-        "400":
-          application/json: {"error": "ExpiredToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
   com.atproto.repo.applyWrites:
     speakeasy-default-com-atproto-repo-apply-writes:
       requestBody:
-        application/json: {"repo": "<value>", "writes": [{"collection": "<id>", "rkey": "<value>", "value": "<value>"}, {"collection": "<id>", "value": "<value>"}, {"collection": "<id>", "value": "<value>"}]}
-      responses:
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "200": {}
-        "403":
-          application/json: {"key": "<value>"}
-        "404":
-          application/json: {"key": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        application/json: {"repo": "<value>", "writes": [{"collection": "<id>", "rkey": "<value>", "value": "<value>"}]}
   com.atproto.repo.createRecord:
     speakeasy-default-com-atproto-repo-create-record:
       requestBody:
         application/json: {"repo": "<value>", "collection": "<id>", "record": "<value>"}
-      responses:
-        "200":
-          application/json: {"uri": "https://dull-excess.net", "cid": "<id>"}
-        "400":
-          application/json: {"error": "InvalidSwap", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404":
-          application/json: {"key": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-  com.atproto.repo.deleteRecord:
-    speakeasy-default-com-atproto-repo-delete-record:
-      requestBody:
-        application/json: {"repo": "<value>", "collection": "<id>", "rkey": "<value>"}
-      responses:
-        "400":
-          application/json: {"error": "ExpiredToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "200": {}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
   com.atproto.repo.describeRepo:
     speakeasy-default-com-atproto-repo-describe-repo:
       parameters:
         query:
           repo: "<value>"
-      responses:
-        "200":
-          application/json: {"handle": "<value>", "did": "<id>", "didDoc": "<value>", "collections": ["<id>", "<id>", "<id>"], "handleIsCorrect": true}
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
   com.atproto.repo.getRecord:
     speakeasy-default-com-atproto-repo-get-record:
       parameters:
@@ -4304,716 +2541,132 @@ examples:
           repo: "<value>"
           collection: "<id>"
           rkey: "<value>"
-      responses:
-        "200":
-          application/json: {"uri": "https://parallel-encouragement.org/", "value": "<value>"}
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403": {}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
-  com.atproto.repo.importRepo:
-    speakeasy-default-com-atproto-repo-import-repo:
-      responses:
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403": {}
-        "404":
-          application/json: {"key": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
   com.atproto.repo.listMissingBlobs:
     speakeasy-default-com-atproto-repo-list-missing-blobs:
-      responses:
-        "200":
-          application/json: {"blobs": [{"cid": "<id>", "recordUri": "https://compassionate-role.biz"}]}
-        "400":
-          application/json: {"error": "ExpiredToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+      parameters:
+        query:
+          limit: 500
   com.atproto.repo.listRecords:
     speakeasy-default-com-atproto-repo-list-records:
       parameters:
         query:
           repo: "<value>"
           collection: "<id>"
-      responses:
-        "200":
-          application/json: {"records": []}
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
+          limit: 50
+  com.atproto.repo.deleteRecord:
+    speakeasy-default-com-atproto-repo-delete-record:
+      requestBody:
+        application/json: {"repo": "<value>", "collection": "<id>", "rkey": "<value>"}
+  com.atproto.repo.importRepo:
+    speakeasy-default-com-atproto-repo-import-repo:
+      requestBody:
+        application/vnd.ipld.car: "x-file: example.file"
+  com.atproto.repo.uploadBlob:
+    speakeasy-default-com-atproto-repo-upload-blob:
+      requestBody:
+        '*/*': "x-file: example.file"
   com.atproto.repo.putRecord:
     speakeasy-default-com-atproto-repo-put-record:
       requestBody:
         application/json: {"repo": "<value>", "collection": "<id>", "rkey": "<value>", "record": "<value>"}
-      responses:
-        "200":
-          application/json: {"uri": "https://unrealistic-doubter.biz", "cid": "<id>"}
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403": {}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
-  com.atproto.repo.uploadBlob:
-    speakeasy-default-com-atproto-repo-upload-blob:
-      responses:
-        "200":
-          application/json: {"blob": "0xEECF06Fe5F"}
-        "400":
-          application/json: {"error": "ExpiredToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403": {}
-        "404": {}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
-  com.atproto.server.activateAccount:
-    speakeasy-default-com-atproto-server-activate-account:
-      responses:
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403": {}
-        "404": {}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
-  com.atproto.server.checkAccountStatus:
-    speakeasy-default-com-atproto-server-check-account-status:
-      responses:
-        "200":
-          application/json: {"activated": true, "validDid": true, "repoCommit": "<id>", "repoRev": "<value>", "repoBlocks": 82458, "indexedRecords": 255450, "privateStateValues": 362745, "expectedBlobs": 959883, "importedBlobs": 114598}
-        "400":
-          application/json: {"error": "ExpiredToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
-  com.atproto.server.confirmEmail:
-    speakeasy-default-com-atproto-server-confirm-email:
-      requestBody:
-        application/json: {"email": "Eleanora_Dooley-Graham40@gmail.com", "token": "<value>"}
-      responses:
-        "400":
-          application/json: {"error": "ExpiredToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403": {}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "429":
-          application/json: {"key": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+  com.atproto.server.activateAccount: {}
   com.atproto.server.createAccount:
     speakeasy-default-com-atproto-server-create-account:
       requestBody:
         application/json: {"handle": "<value>"}
-      responses:
-        "200":
-          application/json: {"accessJwt": "<value>", "refreshJwt": "<value>", "handle": "<value>", "did": "<id>"}
-        "400":
-          application/json: {"error": "IncompatibleDidDoc", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404":
-          application/json: {"key": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "429":
-          application/json: {"key": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
   com.atproto.server.createAppPassword:
     speakeasy-default-com-atproto-server-create-app-password:
       requestBody:
         application/json: {"name": "<value>"}
-      responses:
-        "200":
-          application/json: {"name": "<value>", "password": "3WmAErj_xo4912q", "createdAt": "2023-10-31T07:50:13.142Z"}
-        "400":
-          application/json: {"error": "AccountTakedown", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "429":
-          application/json: {"key": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
   com.atproto.server.createInviteCode:
     speakeasy-default-com-atproto-server-create-invite-code:
       requestBody:
-        application/json: {"useCount": 828315}
-      responses:
-        "200":
-          application/json: {"code": "<value>"}
-        "400":
-          application/json: {"error": "ExpiredToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403": {}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
+        application/json: {"useCount": 67986}
   com.atproto.server.createInviteCodes:
     speakeasy-default-com-atproto-server-create-invite-codes:
       requestBody:
-        application/json: {"useCount": 622859}
-      responses:
-        "200":
-          application/json: {"codes": [{"account": "96552094", "codes": []}]}
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403": {}
-        "404":
-          application/json: {"key": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
-  com.atproto.server.createSession:
-    speakeasy-default-com-atproto-server-create-session:
-      requestBody:
-        application/json: {"identifier": "<value>", "password": "8KbePEq2B0pDAnF"}
-      responses:
-        "200":
-          application/json: {"accessJwt": "<value>", "refreshJwt": "<value>", "handle": "<value>", "did": "<id>"}
-        "400":
-          application/json: {"error": "AccountTakedown", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-  com.atproto.server.deactivateAccount:
-    speakeasy-default-com-atproto-server-deactivate-account:
-      responses:
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "404":
-          application/json: {"key": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        application/json: {"codeCount": 1, "useCount": 126960}
   com.atproto.server.deleteAccount:
     speakeasy-default-com-atproto-server-delete-account:
       requestBody:
-        application/json: {"did": "<id>", "password": "zBMKtu2pPdN390B", "token": "<value>"}
-      responses:
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-  com.atproto.server.deleteSession:
-    speakeasy-default-com-atproto-server-delete-session:
-      responses:
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
-  com.atproto.server.describeServer:
-    speakeasy-default-com-atproto-server-describe-server:
-      responses:
-        "200":
-          application/json: {"availableUserDomains": [], "did": "<id>"}
-        "400":
-          application/json: {"error": "ExpiredToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        application/json: {"did": "<id>", "password": "s54qFXN43eXjXc3", "token": "<value>"}
+  com.atproto.server.deleteSession: {}
+  com.atproto.server.describeServer: {}
+  com.atproto.server.refreshSession: {}
+  com.atproto.server.requestEmailConfirmation: {}
+  com.atproto.server.requestPasswordReset:
+    speakeasy-default-com-atproto-server-request-password-reset:
+      requestBody:
+        application/json: {"email": "Charlotte_Predovic@yahoo.com"}
+  com.atproto.server.resetPassword:
+    speakeasy-default-com-atproto-server-reset-password:
+      requestBody:
+        application/json: {"token": "<value>", "password": "tuhIu8jo_NAprGi"}
+  com.atproto.server.revokeAppPassword:
+    speakeasy-default-com-atproto-server-revoke-app-password:
+      requestBody:
+        application/json: {"name": "<value>"}
+  com.atproto.server.checkAccountStatus: {}
+  com.atproto.server.confirmEmail:
+    speakeasy-default-com-atproto-server-confirm-email:
+      requestBody:
+        application/json: {"email": "Moriah.Davis21@gmail.com", "token": "<value>"}
+  com.atproto.server.createSession:
+    speakeasy-default-com-atproto-server-create-session:
+      requestBody:
+        application/json: {"identifier": "<value>", "password": "U1pGyJcw9BY1LjU"}
+  com.atproto.server.deactivateAccount: {}
+  com.atproto.server.listAppPasswords: {}
+  com.atproto.server.requestAccountDelete: {}
+  com.atproto.server.requestEmailUpdate: {}
   com.atproto.server.getAccountInviteCodes:
     speakeasy-default-com-atproto-server-get-account-invite-codes:
-      responses:
-        "200":
-          application/json: {"codes": [{"code": "<value>", "available": 73460, "disabled": true, "forAccount": "<value>", "createdBy": "<value>", "createdAt": "2023-01-01T20:28:17.978Z", "uses": [{"usedBy": "<id>", "usedAt": "2023-12-30T16:05:26.833Z"}, {"usedBy": "<id>", "usedAt": "2024-02-04T01:27:57.140Z"}, {"usedBy": "<id>", "usedAt": "2023-01-04T04:04:27.210Z"}]}, {"code": "<value>", "available": 797226, "disabled": false, "forAccount": "<value>", "createdBy": "<value>", "createdAt": "2024-02-15T10:20:34.657Z", "uses": [{"usedBy": "<id>", "usedAt": "2022-04-09T17:52:22.329Z"}, {"usedBy": "<id>", "usedAt": "2023-12-03T11:17:04.566Z"}]}, {"code": "<value>", "available": 115392, "disabled": false, "forAccount": "<value>", "createdBy": "<value>", "createdAt": "2022-12-15T15:30:40.493Z", "uses": []}]}
-        "400":
-          application/json: {"error": "DuplicateCreate", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
+      parameters:
+        query:
+          includeUsed: true
+          createAvailable: true
   com.atproto.server.getServiceAuth:
     speakeasy-default-com-atproto-server-get-service-auth:
       parameters:
         query:
           aud: "<id>"
-      responses:
-        "200":
-          application/json: {"token": "<value>"}
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403": {}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-  com.atproto.server.getSession:
-    speakeasy-default-com-atproto-server-get-session:
-      responses:
-        "200":
-          application/json: {"handle": "<value>", "did": "<id>"}
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
-  com.atproto.server.listAppPasswords:
-    speakeasy-default-com-atproto-server-list-app-passwords:
-      responses:
-        "200":
-          application/json: {"passwords": []}
-        "400":
-          application/json: {"error": "AccountTakedown", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
-  com.atproto.server.refreshSession:
-    speakeasy-default-com-atproto-server-refresh-session:
-      responses:
-        "200":
-          application/json: {"accessJwt": "<value>", "refreshJwt": "<value>", "handle": "<value>", "did": "<id>"}
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
-  com.atproto.server.requestAccountDelete:
-    speakeasy-default-com-atproto-server-request-account-delete:
-      responses:
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>"}
-        "404":
-          application/json: {"key": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-  com.atproto.server.requestEmailConfirmation:
-    speakeasy-default-com-atproto-server-request-email-confirmation:
-      responses:
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403": {}
-        "404":
-          application/json: {"key": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
-  com.atproto.server.requestEmailUpdate:
-    speakeasy-default-com-atproto-server-request-email-update:
-      responses:
-        "200":
-          application/json: {"tokenRequired": true}
-        "400":
-          application/json: {"error": "ExpiredToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404":
-          application/json: {"key": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
-  com.atproto.server.requestPasswordReset:
-    speakeasy-default-com-atproto-server-request-password-reset:
-      requestBody:
-        application/json: {"email": "Columbus.Veum64@yahoo.com"}
-      responses:
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
-  com.atproto.server.reserveSigningKey:
-    speakeasy-default-com-atproto-server-reserve-signing-key:
-      responses:
-        "200":
-          application/json: {"signingKey": "<value>"}
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-  com.atproto.server.resetPassword:
-    speakeasy-default-com-atproto-server-reset-password:
-      requestBody:
-        application/json: {"token": "<value>", "password": "H4fiBPbFtt_OLjH"}
-      responses:
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
-  com.atproto.server.revokeAppPassword:
-    speakeasy-default-com-atproto-server-revoke-app-password:
-      requestBody:
-        application/json: {"name": "<value>"}
-      responses:
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403": {}
-        "404":
-          application/json: {"key": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+  com.atproto.server.getSession: {}
+  com.atproto.server.reserveSigningKey: {}
   com.atproto.server.updateEmail:
     speakeasy-default-com-atproto-server-update-email:
       requestBody:
-        application/json: {"email": "Isai.Auer35@yahoo.com"}
-      responses:
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
+        application/json: {"email": "Milton.Schulist65@yahoo.com"}
   com.atproto.sync.getBlob:
     speakeasy-default-com-atproto-sync-get-blob:
       parameters:
         query:
           did: "<id>"
           cid: "<id>"
-      responses:
-        "400":
-          application/json: {"error": "RepoTakendown", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403": {}
-        "404": {}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
+  com.atproto.sync.listRepos:
+    speakeasy-default-com-atproto-sync-list-repos:
+      parameters:
+        query:
+          limit: 500
   com.atproto.sync.getBlocks:
     speakeasy-default-com-atproto-sync-get-blocks:
       parameters:
         query:
           did: "<id>"
-          cids: ["<id>", "<id>"]
-      responses:
-        "400":
-          application/json: {"error": "RepoDeactivated", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403": {}
-        "404":
-          application/json: {"key": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
+          cids: []
   com.atproto.sync.getLatestCommit:
     speakeasy-default-com-atproto-sync-get-latest-commit:
       parameters:
         query:
           did: "<id>"
-      responses:
-        "200":
-          application/json: {"cid": "<id>", "rev": "<value>"}
-        "400":
-          application/json: {"error": "ExpiredToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
+  com.atproto.sync.getRepoStatus:
+    speakeasy-default-com-atproto-sync-get-repo-status:
+      parameters:
+        query:
+          did: "<id>"
+  com.atproto.sync.requestCrawl:
+    speakeasy-default-com-atproto-sync-request-crawl:
+      requestBody:
+        application/json: {"hostname": "buttery-tenant.name"}
   com.atproto.sync.getRecord:
     speakeasy-default-com-atproto-sync-get-record:
       parameters:
@@ -5021,813 +2674,158 @@ examples:
           did: "<id>"
           collection: "<id>"
           rkey: "<value>"
-      responses:
-        "400":
-          application/json: {"error": "RepoSuspended", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403": {}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
   com.atproto.sync.getRepo:
     speakeasy-default-com-atproto-sync-get-repo:
       parameters:
         query:
           did: "<id>"
-      responses:
-        "400":
-          application/json: {"error": "RepoNotFound", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403": {}
-        "404":
-          application/json: {"key": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
-  com.atproto.sync.getRepoStatus:
-    speakeasy-default-com-atproto-sync-get-repo-status:
-      parameters:
-        query:
-          did: "<id>"
-      responses:
-        "200":
-          application/json: {"did": "<id>", "active": false}
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
   com.atproto.sync.listBlobs:
     speakeasy-default-com-atproto-sync-list-blobs:
       parameters:
         query:
           did: "<id>"
-      responses:
-        "200":
-          application/json: {"cids": ["<id>", "<id>", "<id>"]}
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
-  com.atproto.sync.listRepos:
-    speakeasy-default-com-atproto-sync-list-repos:
-      responses:
-        "200":
-          application/json: {"repos": [{"did": "<id>", "head": "<id>", "rev": "<value>"}, {"did": "<id>", "head": "<id>", "rev": "<value>"}]}
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403": {}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+          limit: 500
   com.atproto.sync.notifyOfUpdate:
     speakeasy-default-com-atproto-sync-notify-of-update:
       requestBody:
-        application/json: {"hostname": "major-instruction.com"}
-      responses:
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
-  com.atproto.sync.requestCrawl:
-    speakeasy-default-com-atproto-sync-request-crawl:
-      requestBody:
-        application/json: {"hostname": "strange-monster.com"}
-      responses:
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403": {}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
+        application/json: {"hostname": "pretty-scrap.info"}
   tools.ozone.communication.createTemplate:
     speakeasy-default-tools-ozone-communication-create-template:
       requestBody:
         application/json: {"name": "<value>", "contentMarkdown": "<value>", "subject": "<value>"}
-      responses:
-        "200":
-          application/json: {"id": "<id>", "name": "<value>", "contentMarkdown": "<value>", "disabled": false, "lastUpdatedBy": "<id>", "createdAt": "2022-12-07T15:38:20.499Z", "updatedAt": "2022-01-19T00:02:04.890Z"}
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404":
-          application/json: {"key": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
   tools.ozone.communication.deleteTemplate:
     speakeasy-default-tools-ozone-communication-delete-template:
       requestBody:
         application/json: {"id": "<id>"}
-      responses:
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
-  tools.ozone.communication.listTemplates:
-    speakeasy-default-tools-ozone-communication-list-templates:
-      responses:
-        "200":
-          application/json: {"communicationTemplates": []}
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>"}
-        "404":
-          application/json: {"key": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+  tools.ozone.communication.listTemplates: {}
   tools.ozone.communication.updateTemplate:
     speakeasy-default-tools-ozone-communication-update-template:
       requestBody:
         application/json: {"id": "<id>"}
-      responses:
-        "200":
-          application/json: {"id": "<id>", "name": "<value>", "contentMarkdown": "<value>", "disabled": false, "lastUpdatedBy": "<id>", "createdAt": "2023-10-30T13:10:25.395Z", "updatedAt": "2023-02-04T15:43:54.871Z"}
-        "400":
-          application/json: {"error": "DuplicateTemplateName", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403": {}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
   tools.ozone.moderation.emitEvent:
     speakeasy-default-tools-ozone-moderation-emit-event:
       requestBody:
-        application/json: {"subject": {"did": "<id>"}, "createdBy": "<id>"}
-      responses:
-        "200":
-          application/json: {"id": 465475, "subject": {"did": "<id>"}, "subjectBlobCids": ["<value>", "<value>", "<value>"], "createdBy": "<id>", "createdAt": "2022-11-12T07:00:42.517Z"}
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403": {}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
-  tools.ozone.moderation.getEvent:
-    speakeasy-default-tools-ozone-moderation-get-event:
-      parameters:
-        query:
-          id: 895027
-      responses:
-        "200":
-          application/json: {"id": 553383, "event": {"timestamp": "2023-08-30T12:11:30.182Z"}, "subject": {"uri": "https://remorseful-cap.com"}, "subjectBlobs": [], "createdBy": "<id>", "createdAt": "2022-10-03T19:03:32.171Z"}
-        "400":
-          application/json: {"error": "ExpiredToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "404":
-          application/json: {"key": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
+        application/json: {"event": {}, "subject": {"did": "<id>"}, "createdBy": "<id>"}
   tools.ozone.moderation.getRecord:
     speakeasy-default-tools-ozone-moderation-get-record:
       parameters:
         query:
-          uri: "https://dependent-fax.info"
-      responses:
-        "200":
-          application/json: {"uri": "https://arid-ocelot.com", "cid": "<id>", "value": "<value>", "blobs": [{"cid": "<id>", "mimeType": "<value>", "size": 386288, "createdAt": "2024-02-21T09:52:56.463Z"}, {"cid": "<id>", "mimeType": "<value>", "size": 511553, "createdAt": "2024-05-23T08:51:33.488Z"}, {"cid": "<id>", "mimeType": "<value>", "size": 517586, "createdAt": "2024-11-13T20:31:38.094Z"}], "indexedAt": "2023-11-26T02:23:47.790Z", "repo": {"did": "<id>", "handle": "<value>", "relatedRecords": ["<value>", "<value>"], "indexedAt": "2023-12-28T04:49:10.675Z"}}
-        "400":
-          application/json: {"error": "ExpiredToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403": {}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
-  tools.ozone.moderation.getRecords:
-    speakeasy-default-tools-ozone-moderation-get-records:
-      parameters:
-        query:
-          uris: ["https://pointed-trolley.org/", "https://another-requirement.org", "https://whispered-bowling.biz/"]
-      responses:
-        "200":
-          application/json: {"records": [{"uri": "https://cool-daddy.info"}, {"uri": "https://pointed-trolley.org/"}]}
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
+          uri: "https://substantial-schedule.com/"
   tools.ozone.moderation.getRepo:
     speakeasy-default-tools-ozone-moderation-get-repo:
       parameters:
         query:
           did: "<id>"
-      responses:
-        "200":
-          application/json: {"did": "<id>", "handle": "<value>", "relatedRecords": ["<value>", "<value>"], "indexedAt": "2023-04-18T08:26:01.176Z"}
-        "400":
-          application/json: {"error": "RepoNotFound", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
+  tools.ozone.moderation.getEvent:
+    speakeasy-default-tools-ozone-moderation-get-event:
+      parameters:
+        query:
+          id: 537836
+  tools.ozone.moderation.queryEvents:
+    speakeasy-default-tools-ozone-moderation-query-events:
+      parameters:
+        query:
+          sortDirection: "desc"
+          limit: 50
+  tools.ozone.moderation.getRecords:
+    speakeasy-default-tools-ozone-moderation-get-records:
+      parameters:
+        query:
+          uris: ["https://imaginary-barge.org", "https://appropriate-smoke.org"]
   tools.ozone.moderation.getRepos:
     speakeasy-default-tools-ozone-moderation-get-repos:
       parameters:
         query:
-          dids: ["<id>", "<id>", "<id>"]
-      responses:
-        "200":
-          application/json: {"repos": [{"did": "<id>"}, {"did": "<id>"}, {"did": "<id>"}]}
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
-  tools.ozone.moderation.queryEvents:
-    speakeasy-default-tools-ozone-moderation-query-events:
-      responses:
-        "200":
-          application/json: {"events": [{"id": 71227, "event": {"comment": "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart"}, "subject": {"uri": "https://tidy-forgery.org", "cid": "<id>"}, "subjectBlobCids": ["<value>", "<value>"], "createdBy": "<id>", "createdAt": "2022-06-16T22:33:27.661Z"}, {"id": 858073, "event": {"subjectLine": "<value>"}, "subject": {"did": "<id>"}, "subjectBlobCids": ["<value>", "<value>", "<value>"], "createdBy": "<id>", "createdAt": "2024-01-10T18:18:01.886Z"}]}
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403": {}
-        "404":
-          application/json: {"key": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
+          dids: ["<id>", "<id>"]
   tools.ozone.moderation.queryStatuses:
     speakeasy-default-tools-ozone-moderation-query-statuses:
-      responses:
-        "200":
-          application/json: {"subjectStatuses": [{"id": 993194, "subject": {"uri": "https://excitable-scrap.com/", "cid": "<id>"}, "updatedAt": "2024-07-04T12:13:59.615Z", "createdAt": "2022-01-24T11:12:02.551Z", "reviewState": "#reviewNone"}, {"id": 946089, "subject": {"uri": "https://smooth-tentacle.name/", "cid": "<id>"}, "updatedAt": "2023-07-14T01:58:22.262Z", "createdAt": "2022-09-19T00:33:09.302Z", "reviewState": "#reviewOpen"}]}
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
+      parameters:
+        query:
+          sortField: "lastReportedAt"
+          sortDirection: "desc"
+          limit: 50
   tools.ozone.moderation.searchRepos:
     speakeasy-default-tools-ozone-moderation-search-repos:
-      responses:
-        "200":
-          application/json: {"repos": []}
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403": {}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
-  tools.ozone.server.getConfig:
-    speakeasy-default-tools-ozone-server-get-config:
-      responses:
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "200": {}
-        "403": {}
-        "404": {}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+      parameters:
+        query:
+          limit: 50
+  tools.ozone.server.getConfig: {}
   tools.ozone.set.addValues:
     speakeasy-default-tools-ozone-set-add-values:
       requestBody:
         application/json: {"name": "<value>", "values": ["<value>", "<value>"]}
-      responses:
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
+  tools.ozone.set.upsertSet:
+    speakeasy-default-tools-ozone-set-upsert-set:
+      requestBody:
+        application/json: {"name": "<value>"}
   tools.ozone.set.deleteSet:
     speakeasy-default-tools-ozone-set-delete-set:
       requestBody:
         application/json: {"name": "<value>"}
-      responses:
-        "400":
-          application/json: {"error": "SetNotFound", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "200": {}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
+  tools.ozone.set.querySets:
+    speakeasy-default-tools-ozone-set-query-sets:
+      parameters:
+        query:
+          limit: 50
+          sortBy: "name"
+          sortDirection: "asc"
   tools.ozone.set.deleteValues:
     speakeasy-default-tools-ozone-set-delete-values:
       requestBody:
-        application/json: {"name": "<value>", "values": ["<value>"]}
-      responses:
-        "400":
-          application/json: {"error": "SetNotFound", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
+        application/json: {"name": "<value>", "values": ["<value>", "<value>", "<value>"]}
   tools.ozone.set.getValues:
     speakeasy-default-tools-ozone-set-get-values:
       parameters:
         query:
           name: "<value>"
-      responses:
-        "200":
-          application/json: {"set": {"name": "<value>", "setSize": 981228, "createdAt": "2022-03-08T17:52:40.845Z", "updatedAt": "2023-02-15T23:51:51.415Z"}, "values": []}
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>"}
-        "404":
-          application/json: {"key": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
-  tools.ozone.set.querySets:
-    speakeasy-default-tools-ozone-set-query-sets:
-      responses:
-        "200":
-          application/json: {"sets": [{"name": "<value>", "setSize": 926118, "createdAt": "2024-02-05T19:45:16.268Z", "updatedAt": "2024-07-19T05:24:11.233Z"}, {"name": "<value>", "setSize": 415273, "createdAt": "2022-12-13T07:45:46.965Z", "updatedAt": "2024-10-28T22:00:25.524Z"}]}
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
-  tools.ozone.set.upsertSet:
-    speakeasy-default-tools-ozone-set-upsert-set:
-      requestBody:
-        application/json: {"name": "<value>"}
-      responses:
-        "200":
-          application/json: {"name": "<value>", "setSize": 710746, "createdAt": "2022-03-06T05:16:45.005Z", "updatedAt": "2024-04-26T08:14:33.560Z"}
-        "400":
-          application/json: {"error": "ExpiredToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "404":
-          application/json: {"key": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+          limit: 100
   tools.ozone.setting.listOptions:
     speakeasy-default-tools-ozone-setting-list-options:
-      responses:
-        "200":
-          application/json: {"options": []}
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
+      parameters:
+        query:
+          limit: 50
+          scope: "instance"
   tools.ozone.setting.removeOptions:
     speakeasy-default-tools-ozone-setting-remove-options:
       requestBody:
-        application/json: {"keys": ["<id>", "<id>"], "scope": "instance"}
-      responses:
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "200": {}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
+        application/json: {"keys": ["<id>", "<id>", "<id>"], "scope": "personal"}
   tools.ozone.setting.upsertOption:
     speakeasy-default-tools-ozone-setting-upsert-option:
       requestBody:
-        application/json: {"key": "<id>", "scope": "instance", "value": "<value>"}
-      responses:
-        "200":
-          application/json: {"option": {"key": "<id>", "did": "<id>", "value": "<value>", "scope": "personal", "createdBy": "<id>", "lastUpdatedBy": "<id>"}}
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "429":
-          application/json: {"key": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
+        application/json: {"key": "<id>", "scope": "personal", "value": "<value>"}
   tools.ozone.signature.findCorrelation:
     speakeasy-default-tools-ozone-signature-find-correlation:
       parameters:
         query:
-          dids: ["<id>"]
-      responses:
-        "200":
-          application/json: {"details": []}
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
+          dids: ["<id>", "<id>"]
   tools.ozone.signature.findRelatedAccounts:
     speakeasy-default-tools-ozone-signature-find-related-accounts:
       parameters:
         query:
           did: "<id>"
-      responses:
-        "200":
-          application/json: {"accounts": [{"account": {"did": "<id>", "handle": "<value>", "indexedAt": "2023-11-06T05:45:29.942Z"}}]}
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403": {}
-        "404":
-          application/json: {"key": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
+          limit: 50
   tools.ozone.signature.searchAccounts:
     speakeasy-default-tools-ozone-signature-search-accounts:
       parameters:
         query:
-          values: ["<value>"]
-      responses:
-        "200":
-          application/json: {"accounts": [{"did": "<id>", "handle": "<value>", "indexedAt": "2024-05-26T07:41:24.382Z"}, {"did": "<id>", "handle": "<value>", "indexedAt": "2024-03-26T23:32:12.486Z"}]}
-        "400":
-          application/json: {"error": "InvalidRequest", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
+          values: ["<value>", "<value>", "<value>"]
+          limit: 50
   tools.ozone.team.addMember:
     speakeasy-default-tools-ozone-team-add-member:
       requestBody:
-        application/json: {"did": "<id>", "role": "tools.ozone.team.defs#roleAdmin"}
-      responses:
-        "200":
-          application/json: {"did": "<id>", "role": "#roleTriage"}
-        "400":
-          application/json: {"error": "MemberAlreadyExists", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404":
-          application/json: {"key": "<value>"}
-        "408":
-          application/json: {"key": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "429":
-          application/json: {"key": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
+        application/json: {"did": "<id>", "role": "tools.ozone.team.defs#roleTriage"}
   tools.ozone.team.deleteMember:
     speakeasy-default-tools-ozone-team-delete-member:
       requestBody:
         application/json: {"did": "<id>"}
-      responses:
-        "400":
-          application/json: {"error": "ExpiredToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>"}
-        "404":
-          application/json: {"key": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>", "key1": "<value>"}
-  tools.ozone.team.listMembers:
-    speakeasy-default-tools-ozone-team-list-members:
-      responses:
-        "200":
-          application/json: {"members": [{"did": "<id>", "role": "#roleAdmin"}, {"did": "<id>", "role": "#roleTriage"}, {"did": "<id>", "role": "#roleAdmin"}]}
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403": {}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "429":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
   tools.ozone.team.updateMember:
     speakeasy-default-tools-ozone-team-update-member:
       requestBody:
         application/json: {"did": "<id>"}
-      responses:
-        "200":
-          application/json: {"did": "<id>", "role": "#roleModerator"}
-        "400":
-          application/json: {"error": "InvalidToken", "message": "<value>"}
-        "401":
-          application/json: {"message": "<value>"}
-        "403":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "404":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "408":
-          application/json: {"key": "<value>", "key1": "<value>", "key2": "<value>"}
-        "413":
-          application/json: {"key": "<value>", "key1": "<value>"}
-        "429":
-          application/json: {"key": "<value>"}
-        "500":
-          application/json: {"key": "<value>"}
+  tools.ozone.team.listMembers:
+    speakeasy-default-tools-ozone-team-list-members:
+      parameters:
+        query:
+          limit: 50
+examplesVersion: 1.0.0
 generatedTests: {}

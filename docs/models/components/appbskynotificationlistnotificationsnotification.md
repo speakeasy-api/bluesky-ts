@@ -15,7 +15,7 @@ let value: AppBskyNotificationListNotificationsNotification = {
   reason: "quote",
   record: "<value>",
   isRead: false,
-  indexedAt: new Date("2022-11-26T12:19:41.082Z"),
+  indexedAt: new Date("2023-11-26T12:19:41.082Z"),
 };
 ```
 

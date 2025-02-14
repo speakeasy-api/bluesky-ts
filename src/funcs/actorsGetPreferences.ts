@@ -4,6 +4,7 @@
 
 import { BlueskyCore } from "../core.js";
 import * as M from "../lib/matchers.js";
+import { compactMap } from "../lib/primitives.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
@@ -35,12 +36,16 @@ export async function actorsGetPreferences(
     operations.AppBskyActorGetPreferencesResponseBody,
     | errors.AppBskyActorGetPreferencesResponseBody
     | errors.AppBskyActorGetPreferencesActorsResponseBody
-    | errors.Unauthorized
     | errors.NotFound
+    | errors.Unauthorized
     | errors.Timeout
-    | errors.BadRequest
     | errors.RateLimited
+    | errors.BadRequest
+    | errors.Timeout
+    | errors.NotFound
     | errors.InternalServerError
+    | errors.BadRequest
+    | errors.Unauthorized
     | APIError
     | SDKValidationError
     | UnexpectedClientError
@@ -52,15 +57,16 @@ export async function actorsGetPreferences(
 > {
   const path = pathToFunc("/xrpc/app.bsky.actor.getPreferences")();
 
-  const headers = new Headers({
+  const headers = new Headers(compactMap({
     Accept: "application/json",
-  });
+  }));
 
   const secConfig = await extractSecurity(client._options.bearer);
   const securityInput = secConfig == null ? {} : { bearer: secConfig };
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
+    baseURL: options?.serverURL ?? "",
     operationID: "app.bsky.actor.getPreferences",
     oAuth2Scopes: [],
 
@@ -76,6 +82,7 @@ export async function actorsGetPreferences(
   const requestRes = client._createRequest(context, {
     security: requestSecurity,
     method: "GET",
+    baseURL: options?.serverURL,
     path: path,
     headers: headers,
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
@@ -130,12 +137,16 @@ export async function actorsGetPreferences(
     operations.AppBskyActorGetPreferencesResponseBody,
     | errors.AppBskyActorGetPreferencesResponseBody
     | errors.AppBskyActorGetPreferencesActorsResponseBody
-    | errors.Unauthorized
     | errors.NotFound
+    | errors.Unauthorized
     | errors.Timeout
-    | errors.BadRequest
     | errors.RateLimited
+    | errors.BadRequest
+    | errors.Timeout
+    | errors.NotFound
     | errors.InternalServerError
+    | errors.BadRequest
+    | errors.Unauthorized
     | APIError
     | SDKValidationError
     | UnexpectedClientError
@@ -153,16 +164,21 @@ export async function actorsGetPreferences(
       401,
       errors.AppBskyActorGetPreferencesActorsResponseBody$inboundSchema,
     ),
-    M.jsonErr([403, 407, 511], errors.Unauthorized$inboundSchema),
-    M.jsonErr([404, 501, 505], errors.NotFound$inboundSchema),
-    M.jsonErr([408, 504], errors.Timeout$inboundSchema),
-    M.jsonErr([413, 414, 415, 422, 431, 510], errors.BadRequest$inboundSchema),
+    M.jsonErr(404, errors.NotFound$inboundSchema),
+    M.jsonErr([403, 407], errors.Unauthorized$inboundSchema),
+    M.jsonErr(408, errors.Timeout$inboundSchema),
     M.jsonErr(429, errors.RateLimited$inboundSchema),
+    M.jsonErr([413, 414, 415, 422, 431], errors.BadRequest$inboundSchema),
+    M.jsonErr(504, errors.Timeout$inboundSchema),
+    M.jsonErr([501, 505], errors.NotFound$inboundSchema),
     M.jsonErr(
       [500, 502, 503, 506, 507, 508],
       errors.InternalServerError$inboundSchema,
     ),
-    M.fail(["4XX", "5XX"]),
+    M.jsonErr(510, errors.BadRequest$inboundSchema),
+    M.jsonErr(511, errors.Unauthorized$inboundSchema),
+    M.fail("4XX"),
+    M.fail("5XX"),
   )(response, { extraFields: responseFields });
   if (!result.ok) {
     return result;

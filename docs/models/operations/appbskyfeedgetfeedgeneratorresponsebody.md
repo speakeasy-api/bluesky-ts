@@ -17,7 +17,7 @@ let value: AppBskyFeedGetFeedGeneratorResponseBody = {
       handle: "<value>",
     },
     displayName: "Judah31",
-    indexedAt: new Date("2022-05-25T10:48:39.501Z"),
+    indexedAt: new Date("2023-05-25T10:48:39.501Z"),
   },
   isOnline: false,
   isValid: false,

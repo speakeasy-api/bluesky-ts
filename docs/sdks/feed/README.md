@@ -171,12 +171,16 @@ import {
 | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
 | errors.AppBskyFeedGetActorFeedsResponseBody     | 400                                             | application/json                                |
 | errors.AppBskyFeedGetActorFeedsFeedResponseBody | 401                                             | application/json                                |
-| errors.Unauthorized                             | 403, 407, 511                                   | application/json                                |
-| errors.NotFound                                 | 404, 501, 505                                   | application/json                                |
-| errors.Timeout                                  | 408, 504                                        | application/json                                |
-| errors.BadRequest                               | 413, 414, 415, 422, 431, 510                    | application/json                                |
+| errors.NotFound                                 | 404                                             | application/json                                |
+| errors.Unauthorized                             | 403, 407                                        | application/json                                |
+| errors.Timeout                                  | 408                                             | application/json                                |
 | errors.RateLimited                              | 429                                             | application/json                                |
+| errors.BadRequest                               | 413, 414, 415, 422, 431                         | application/json                                |
+| errors.Timeout                                  | 504                                             | application/json                                |
+| errors.NotFound                                 | 501, 505                                        | application/json                                |
 | errors.InternalServerError                      | 500, 502, 503, 506, 507, 508                    | application/json                                |
+| errors.BadRequest                               | 510                                             | application/json                                |
+| errors.Unauthorized                             | 511                                             | application/json                                |
 | errors.APIError                                 | 4XX, 5XX                                        | \*/\*                                           |
 
 ## getActorLikes
@@ -294,12 +298,16 @@ import {
 | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
 | errors.AppBskyFeedGetActorLikesResponseBody     | 400                                             | application/json                                |
 | errors.AppBskyFeedGetActorLikesFeedResponseBody | 401                                             | application/json                                |
-| errors.Unauthorized                             | 403, 407, 511                                   | application/json                                |
-| errors.NotFound                                 | 404, 501, 505                                   | application/json                                |
-| errors.Timeout                                  | 408, 504                                        | application/json                                |
-| errors.BadRequest                               | 413, 414, 415, 422, 431, 510                    | application/json                                |
+| errors.NotFound                                 | 404                                             | application/json                                |
+| errors.Unauthorized                             | 403, 407                                        | application/json                                |
+| errors.Timeout                                  | 408                                             | application/json                                |
 | errors.RateLimited                              | 429                                             | application/json                                |
+| errors.BadRequest                               | 413, 414, 415, 422, 431                         | application/json                                |
+| errors.Timeout                                  | 504                                             | application/json                                |
+| errors.NotFound                                 | 501, 505                                        | application/json                                |
 | errors.InternalServerError                      | 500, 502, 503, 506, 507, 508                    | application/json                                |
+| errors.BadRequest                               | 510                                             | application/json                                |
+| errors.Unauthorized                             | 511                                             | application/json                                |
 | errors.APIError                                 | 4XX, 5XX                                        | \*/\*                                           |
 
 ## getAuthor
@@ -417,12 +425,16 @@ import {
 | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
 | errors.AppBskyFeedGetAuthorFeedResponseBody     | 400                                             | application/json                                |
 | errors.AppBskyFeedGetAuthorFeedFeedResponseBody | 401                                             | application/json                                |
-| errors.Unauthorized                             | 403, 407, 511                                   | application/json                                |
-| errors.NotFound                                 | 404, 501, 505                                   | application/json                                |
-| errors.Timeout                                  | 408, 504                                        | application/json                                |
-| errors.BadRequest                               | 413, 414, 415, 422, 431, 510                    | application/json                                |
+| errors.NotFound                                 | 404                                             | application/json                                |
+| errors.Unauthorized                             | 403, 407                                        | application/json                                |
+| errors.Timeout                                  | 408                                             | application/json                                |
 | errors.RateLimited                              | 429                                             | application/json                                |
+| errors.BadRequest                               | 413, 414, 415, 422, 431                         | application/json                                |
+| errors.Timeout                                  | 504                                             | application/json                                |
+| errors.NotFound                                 | 501, 505                                        | application/json                                |
 | errors.InternalServerError                      | 500, 502, 503, 506, 507, 508                    | application/json                                |
+| errors.BadRequest                               | 510                                             | application/json                                |
+| errors.Unauthorized                             | 511                                             | application/json                                |
 | errors.APIError                                 | 4XX, 5XX                                        | \*/\*                                           |
 
 ## fetch
@@ -444,7 +456,7 @@ const bluesky = new Bluesky({
 
 async function run() {
   const result = await bluesky.feed.fetch({
-    feed: "https://key-nougat.org",
+    feed: "https://unkempt-gym.name",
   });
 
   for await (const page of result) {
@@ -472,7 +484,7 @@ const bluesky = new BlueskyCore({
 
 async function run() {
   const res = await feedFetch(bluesky, {
-    feed: "https://key-nougat.org",
+    feed: "https://unkempt-gym.name",
   });
 
   if (!res.ok) {
@@ -540,12 +552,16 @@ import {
 | ----------------------------------------- | ----------------------------------------- | ----------------------------------------- |
 | errors.AppBskyFeedGetFeedResponseBody     | 400                                       | application/json                          |
 | errors.AppBskyFeedGetFeedFeedResponseBody | 401                                       | application/json                          |
-| errors.Unauthorized                       | 403, 407, 511                             | application/json                          |
-| errors.NotFound                           | 404, 501, 505                             | application/json                          |
-| errors.Timeout                            | 408, 504                                  | application/json                          |
-| errors.BadRequest                         | 413, 414, 415, 422, 431, 510              | application/json                          |
+| errors.NotFound                           | 404                                       | application/json                          |
+| errors.Unauthorized                       | 403, 407                                  | application/json                          |
+| errors.Timeout                            | 408                                       | application/json                          |
 | errors.RateLimited                        | 429                                       | application/json                          |
+| errors.BadRequest                         | 413, 414, 415, 422, 431                   | application/json                          |
+| errors.Timeout                            | 504                                       | application/json                          |
+| errors.NotFound                           | 501, 505                                  | application/json                          |
 | errors.InternalServerError                | 500, 502, 503, 506, 507, 508              | application/json                          |
+| errors.BadRequest                         | 510                                       | application/json                          |
+| errors.Unauthorized                       | 511                                       | application/json                          |
 | errors.APIError                           | 4XX, 5XX                                  | \*/\*                                     |
 
 ## getGenerator
@@ -567,7 +583,7 @@ const bluesky = new Bluesky({
 
 async function run() {
   const result = await bluesky.feed.getGenerator({
-    feed: "https://far-flung-solvency.net",
+    feed: "https://unrealistic-poppy.biz/",
   });
 
   // Handle the result
@@ -593,7 +609,7 @@ const bluesky = new BlueskyCore({
 
 async function run() {
   const res = await feedGetGenerator(bluesky, {
-    feed: "https://far-flung-solvency.net",
+    feed: "https://unrealistic-poppy.biz/",
   });
 
   if (!res.ok) {
@@ -656,12 +672,16 @@ import {
 | -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
 | errors.AppBskyFeedGetFeedGeneratorResponseBody     | 400                                                | application/json                                   |
 | errors.AppBskyFeedGetFeedGeneratorFeedResponseBody | 401                                                | application/json                                   |
-| errors.Unauthorized                                | 403, 407, 511                                      | application/json                                   |
-| errors.NotFound                                    | 404, 501, 505                                      | application/json                                   |
-| errors.Timeout                                     | 408, 504                                           | application/json                                   |
-| errors.BadRequest                                  | 413, 414, 415, 422, 431, 510                       | application/json                                   |
+| errors.NotFound                                    | 404                                                | application/json                                   |
+| errors.Unauthorized                                | 403, 407                                           | application/json                                   |
+| errors.Timeout                                     | 408                                                | application/json                                   |
 | errors.RateLimited                                 | 429                                                | application/json                                   |
+| errors.BadRequest                                  | 413, 414, 415, 422, 431                            | application/json                                   |
+| errors.Timeout                                     | 504                                                | application/json                                   |
+| errors.NotFound                                    | 501, 505                                           | application/json                                   |
 | errors.InternalServerError                         | 500, 502, 503, 506, 507, 508                       | application/json                                   |
+| errors.BadRequest                                  | 510                                                | application/json                                   |
+| errors.Unauthorized                                | 511                                                | application/json                                   |
 | errors.APIError                                    | 4XX, 5XX                                           | \*/\*                                              |
 
 ## getGenerators
@@ -684,7 +704,8 @@ const bluesky = new Bluesky({
 async function run() {
   const result = await bluesky.feed.getGenerators({
     feeds: [
-      "https://bulky-ice-cream.net",
+      "https://knowledgeable-replacement.com/",
+      "https://affectionate-tomatillo.biz",
     ],
   });
 
@@ -712,7 +733,8 @@ const bluesky = new BlueskyCore({
 async function run() {
   const res = await feedGetGenerators(bluesky, {
     feeds: [
-      "https://short-loyalty.com/",
+      "https://knowledgeable-replacement.com/",
+      "https://affectionate-tomatillo.biz",
     ],
   });
 
@@ -776,12 +798,16 @@ import {
 | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
 | errors.AppBskyFeedGetFeedGeneratorsResponseBody     | 400                                                 | application/json                                    |
 | errors.AppBskyFeedGetFeedGeneratorsFeedResponseBody | 401                                                 | application/json                                    |
-| errors.Unauthorized                                 | 403, 407, 511                                       | application/json                                    |
-| errors.NotFound                                     | 404, 501, 505                                       | application/json                                    |
-| errors.Timeout                                      | 408, 504                                            | application/json                                    |
-| errors.BadRequest                                   | 413, 414, 415, 422, 431, 510                        | application/json                                    |
+| errors.NotFound                                     | 404                                                 | application/json                                    |
+| errors.Unauthorized                                 | 403, 407                                            | application/json                                    |
+| errors.Timeout                                      | 408                                                 | application/json                                    |
 | errors.RateLimited                                  | 429                                                 | application/json                                    |
+| errors.BadRequest                                   | 413, 414, 415, 422, 431                             | application/json                                    |
+| errors.Timeout                                      | 504                                                 | application/json                                    |
+| errors.NotFound                                     | 501, 505                                            | application/json                                    |
 | errors.InternalServerError                          | 500, 502, 503, 506, 507, 508                        | application/json                                    |
+| errors.BadRequest                                   | 510                                                 | application/json                                    |
+| errors.Unauthorized                                 | 511                                                 | application/json                                    |
 | errors.APIError                                     | 4XX, 5XX                                            | \*/\*                                               |
 
 ## getSkeleton
@@ -803,7 +829,7 @@ const bluesky = new Bluesky({
 
 async function run() {
   const result = await bluesky.feed.getSkeleton({
-    feed: "https://dim-sport.info",
+    feed: "https://graceful-stir-fry.com",
   });
 
   for await (const page of result) {
@@ -831,7 +857,7 @@ const bluesky = new BlueskyCore({
 
 async function run() {
   const res = await feedGetSkeleton(bluesky, {
-    feed: "https://dim-sport.info",
+    feed: "https://graceful-stir-fry.com",
   });
 
   if (!res.ok) {
@@ -899,12 +925,16 @@ import {
 | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
 | errors.AppBskyFeedGetFeedSkeletonResponseBody     | 400                                               | application/json                                  |
 | errors.AppBskyFeedGetFeedSkeletonFeedResponseBody | 401                                               | application/json                                  |
-| errors.Unauthorized                               | 403, 407, 511                                     | application/json                                  |
-| errors.NotFound                                   | 404, 501, 505                                     | application/json                                  |
-| errors.Timeout                                    | 408, 504                                          | application/json                                  |
-| errors.BadRequest                                 | 413, 414, 415, 422, 431, 510                      | application/json                                  |
+| errors.NotFound                                   | 404                                               | application/json                                  |
+| errors.Unauthorized                               | 403, 407                                          | application/json                                  |
+| errors.Timeout                                    | 408                                               | application/json                                  |
 | errors.RateLimited                                | 429                                               | application/json                                  |
+| errors.BadRequest                                 | 413, 414, 415, 422, 431                           | application/json                                  |
+| errors.Timeout                                    | 504                                               | application/json                                  |
+| errors.NotFound                                   | 501, 505                                          | application/json                                  |
 | errors.InternalServerError                        | 500, 502, 503, 506, 507, 508                      | application/json                                  |
+| errors.BadRequest                                 | 510                                               | application/json                                  |
+| errors.Unauthorized                               | 511                                               | application/json                                  |
 | errors.APIError                                   | 4XX, 5XX                                          | \*/\*                                             |
 
 ## getSuggested
@@ -925,7 +955,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.feed.getSuggested();
+  const result = await bluesky.feed.getSuggested({});
 
   for await (const page of result) {
     // Handle the page
@@ -951,7 +981,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await feedGetSuggested(bluesky);
+  const res = await feedGetSuggested(bluesky, {});
 
   if (!res.ok) {
     throw res.error;
@@ -1018,12 +1048,16 @@ import {
 | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
 | errors.AppBskyFeedGetSuggestedFeedsResponseBody     | 400                                                 | application/json                                    |
 | errors.AppBskyFeedGetSuggestedFeedsFeedResponseBody | 401                                                 | application/json                                    |
-| errors.Unauthorized                                 | 403, 407, 511                                       | application/json                                    |
-| errors.NotFound                                     | 404, 501, 505                                       | application/json                                    |
-| errors.Timeout                                      | 408, 504                                            | application/json                                    |
-| errors.BadRequest                                   | 413, 414, 415, 422, 431, 510                        | application/json                                    |
+| errors.NotFound                                     | 404                                                 | application/json                                    |
+| errors.Unauthorized                                 | 403, 407                                            | application/json                                    |
+| errors.Timeout                                      | 408                                                 | application/json                                    |
 | errors.RateLimited                                  | 429                                                 | application/json                                    |
+| errors.BadRequest                                   | 413, 414, 415, 422, 431                             | application/json                                    |
+| errors.Timeout                                      | 504                                                 | application/json                                    |
+| errors.NotFound                                     | 501, 505                                            | application/json                                    |
 | errors.InternalServerError                          | 500, 502, 503, 506, 507, 508                        | application/json                                    |
+| errors.BadRequest                                   | 510                                                 | application/json                                    |
+| errors.Unauthorized                                 | 511                                                 | application/json                                    |
 | errors.APIError                                     | 4XX, 5XX                                            | \*/\*                                               |
 
 ## getTimeline
@@ -1044,7 +1078,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.feed.getTimeline();
+  const result = await bluesky.feed.getTimeline({});
 
   for await (const page of result) {
     // Handle the page
@@ -1070,7 +1104,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await feedGetTimeline(bluesky);
+  const res = await feedGetTimeline(bluesky, {});
 
   if (!res.ok) {
     throw res.error;
@@ -1137,12 +1171,16 @@ import {
 | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
 | errors.AppBskyFeedGetTimelineResponseBody     | 400                                           | application/json                              |
 | errors.AppBskyFeedGetTimelineFeedResponseBody | 401                                           | application/json                              |
-| errors.Unauthorized                           | 403, 407, 511                                 | application/json                              |
-| errors.NotFound                               | 404, 501, 505                                 | application/json                              |
-| errors.Timeout                                | 408, 504                                      | application/json                              |
-| errors.BadRequest                             | 413, 414, 415, 422, 431, 510                  | application/json                              |
+| errors.NotFound                               | 404                                           | application/json                              |
+| errors.Unauthorized                           | 403, 407                                      | application/json                              |
+| errors.Timeout                                | 408                                           | application/json                              |
 | errors.RateLimited                            | 429                                           | application/json                              |
+| errors.BadRequest                             | 413, 414, 415, 422, 431                       | application/json                              |
+| errors.Timeout                                | 504                                           | application/json                              |
+| errors.NotFound                               | 501, 505                                      | application/json                              |
 | errors.InternalServerError                    | 500, 502, 503, 506, 507, 508                  | application/json                              |
+| errors.BadRequest                             | 510                                           | application/json                              |
+| errors.Unauthorized                           | 511                                           | application/json                              |
 | errors.APIError                               | 4XX, 5XX                                      | \*/\*                                         |
 
 ## search
@@ -1260,10 +1298,14 @@ import {
 | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
 | errors.AppBskyFeedSearchPostsResponseBody     | 400                                           | application/json                              |
 | errors.AppBskyFeedSearchPostsFeedResponseBody | 401                                           | application/json                              |
-| errors.Unauthorized                           | 403, 407, 511                                 | application/json                              |
-| errors.NotFound                               | 404, 501, 505                                 | application/json                              |
-| errors.Timeout                                | 408, 504                                      | application/json                              |
-| errors.BadRequest                             | 413, 414, 415, 422, 431, 510                  | application/json                              |
+| errors.NotFound                               | 404                                           | application/json                              |
+| errors.Unauthorized                           | 403, 407                                      | application/json                              |
+| errors.Timeout                                | 408                                           | application/json                              |
 | errors.RateLimited                            | 429                                           | application/json                              |
+| errors.BadRequest                             | 413, 414, 415, 422, 431                       | application/json                              |
+| errors.Timeout                                | 504                                           | application/json                              |
+| errors.NotFound                               | 501, 505                                      | application/json                              |
 | errors.InternalServerError                    | 500, 502, 503, 506, 507, 508                  | application/json                              |
+| errors.BadRequest                             | 510                                           | application/json                              |
+| errors.Unauthorized                           | 511                                           | application/json                              |
 | errors.APIError                               | 4XX, 5XX                                      | \*/\*                                         |

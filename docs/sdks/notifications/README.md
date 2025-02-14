@@ -130,12 +130,16 @@ import {
 | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
 | errors.AppBskyNotificationGetUnreadCountResponseBody              | 400                                                               | application/json                                                  |
 | errors.AppBskyNotificationGetUnreadCountNotificationsResponseBody | 401                                                               | application/json                                                  |
-| errors.Unauthorized                                               | 403, 407, 511                                                     | application/json                                                  |
-| errors.NotFound                                                   | 404, 501, 505                                                     | application/json                                                  |
-| errors.Timeout                                                    | 408, 504                                                          | application/json                                                  |
-| errors.BadRequest                                                 | 413, 414, 415, 422, 431, 510                                      | application/json                                                  |
+| errors.NotFound                                                   | 404                                                               | application/json                                                  |
+| errors.Unauthorized                                               | 403, 407                                                          | application/json                                                  |
+| errors.Timeout                                                    | 408                                                               | application/json                                                  |
 | errors.RateLimited                                                | 429                                                               | application/json                                                  |
+| errors.BadRequest                                                 | 413, 414, 415, 422, 431                                           | application/json                                                  |
+| errors.Timeout                                                    | 504                                                               | application/json                                                  |
+| errors.NotFound                                                   | 501, 505                                                          | application/json                                                  |
 | errors.InternalServerError                                        | 500, 502, 503, 506, 507, 508                                      | application/json                                                  |
+| errors.BadRequest                                                 | 510                                                               | application/json                                                  |
+| errors.Unauthorized                                               | 511                                                               | application/json                                                  |
 | errors.APIError                                                   | 4XX, 5XX                                                          | \*/\*                                                             |
 
 ## putPreferences
@@ -157,7 +161,7 @@ const bluesky = new Bluesky({
 
 async function run() {
   await bluesky.notifications.putPreferences({
-    priority: true,
+    priority: false,
   });
 
 
@@ -182,7 +186,7 @@ const bluesky = new BlueskyCore({
 
 async function run() {
   const res = await notificationsPutPreferences(bluesky, {
-    priority: true,
+    priority: false,
   });
 
   if (!res.ok) {
@@ -233,12 +237,16 @@ import {
 | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
 | errors.AppBskyNotificationPutPreferencesResponseBody              | 400                                                               | application/json                                                  |
 | errors.AppBskyNotificationPutPreferencesNotificationsResponseBody | 401                                                               | application/json                                                  |
-| errors.Unauthorized                                               | 403, 407, 511                                                     | application/json                                                  |
-| errors.NotFound                                                   | 404, 501, 505                                                     | application/json                                                  |
-| errors.Timeout                                                    | 408, 504                                                          | application/json                                                  |
-| errors.BadRequest                                                 | 413, 414, 415, 422, 431, 510                                      | application/json                                                  |
+| errors.NotFound                                                   | 404                                                               | application/json                                                  |
+| errors.Unauthorized                                               | 403, 407                                                          | application/json                                                  |
+| errors.Timeout                                                    | 408                                                               | application/json                                                  |
 | errors.RateLimited                                                | 429                                                               | application/json                                                  |
+| errors.BadRequest                                                 | 413, 414, 415, 422, 431                                           | application/json                                                  |
+| errors.Timeout                                                    | 504                                                               | application/json                                                  |
+| errors.NotFound                                                   | 501, 505                                                          | application/json                                                  |
 | errors.InternalServerError                                        | 500, 502, 503, 506, 507, 508                                      | application/json                                                  |
+| errors.BadRequest                                                 | 510                                                               | application/json                                                  |
+| errors.Unauthorized                                               | 511                                                               | application/json                                                  |
 | errors.APIError                                                   | 4XX, 5XX                                                          | \*/\*                                                             |
 
 ## registerPush
@@ -262,7 +270,7 @@ async function run() {
   await bluesky.notifications.registerPush({
     serviceDid: "<id>",
     token: "<value>",
-    platform: "ios",
+    platform: "web",
     appId: "<id>",
   });
 
@@ -290,7 +298,7 @@ async function run() {
   const res = await notificationsRegisterPush(bluesky, {
     serviceDid: "<id>",
     token: "<value>",
-    platform: "ios",
+    platform: "web",
     appId: "<id>",
   });
 
@@ -342,12 +350,16 @@ import {
 | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
 | errors.AppBskyNotificationRegisterPushResponseBody              | 400                                                             | application/json                                                |
 | errors.AppBskyNotificationRegisterPushNotificationsResponseBody | 401                                                             | application/json                                                |
-| errors.Unauthorized                                             | 403, 407, 511                                                   | application/json                                                |
-| errors.NotFound                                                 | 404, 501, 505                                                   | application/json                                                |
-| errors.Timeout                                                  | 408, 504                                                        | application/json                                                |
-| errors.BadRequest                                               | 413, 414, 415, 422, 431, 510                                    | application/json                                                |
+| errors.NotFound                                                 | 404                                                             | application/json                                                |
+| errors.Unauthorized                                             | 403, 407                                                        | application/json                                                |
+| errors.Timeout                                                  | 408                                                             | application/json                                                |
 | errors.RateLimited                                              | 429                                                             | application/json                                                |
+| errors.BadRequest                                               | 413, 414, 415, 422, 431                                         | application/json                                                |
+| errors.Timeout                                                  | 504                                                             | application/json                                                |
+| errors.NotFound                                                 | 501, 505                                                        | application/json                                                |
 | errors.InternalServerError                                      | 500, 502, 503, 506, 507, 508                                    | application/json                                                |
+| errors.BadRequest                                               | 510                                                             | application/json                                                |
+| errors.Unauthorized                                             | 511                                                             | application/json                                                |
 | errors.APIError                                                 | 4XX, 5XX                                                        | \*/\*                                                           |
 
 ## updateSeen
@@ -369,7 +381,7 @@ const bluesky = new Bluesky({
 
 async function run() {
   await bluesky.notifications.updateSeen({
-    seenAt: new Date("2023-05-09T15:02:30.758Z"),
+    seenAt: new Date("2024-07-16T17:03:31.114Z"),
   });
 
 
@@ -394,7 +406,7 @@ const bluesky = new BlueskyCore({
 
 async function run() {
   const res = await notificationsUpdateSeen(bluesky, {
-    seenAt: new Date("2023-05-09T15:02:30.758Z"),
+    seenAt: new Date("2024-07-16T17:03:31.114Z"),
   });
 
   if (!res.ok) {
@@ -445,10 +457,14 @@ import {
 | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
 | errors.AppBskyNotificationUpdateSeenResponseBody              | 400                                                           | application/json                                              |
 | errors.AppBskyNotificationUpdateSeenNotificationsResponseBody | 401                                                           | application/json                                              |
-| errors.Unauthorized                                           | 403, 407, 511                                                 | application/json                                              |
-| errors.NotFound                                               | 404, 501, 505                                                 | application/json                                              |
-| errors.Timeout                                                | 408, 504                                                      | application/json                                              |
-| errors.BadRequest                                             | 413, 414, 415, 422, 431, 510                                  | application/json                                              |
+| errors.NotFound                                               | 404                                                           | application/json                                              |
+| errors.Unauthorized                                           | 403, 407                                                      | application/json                                              |
+| errors.Timeout                                                | 408                                                           | application/json                                              |
 | errors.RateLimited                                            | 429                                                           | application/json                                              |
+| errors.BadRequest                                             | 413, 414, 415, 422, 431                                       | application/json                                              |
+| errors.Timeout                                                | 504                                                           | application/json                                              |
+| errors.NotFound                                               | 501, 505                                                      | application/json                                              |
 | errors.InternalServerError                                    | 500, 502, 503, 506, 507, 508                                  | application/json                                              |
+| errors.BadRequest                                             | 510                                                           | application/json                                              |
+| errors.Unauthorized                                           | 511                                                           | application/json                                              |
 | errors.APIError                                               | 4XX, 5XX                                                      | \*/\*                                                         |
