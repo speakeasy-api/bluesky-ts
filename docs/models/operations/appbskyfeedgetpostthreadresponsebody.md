@@ -10,6 +10,7 @@ import { AppBskyFeedGetPostThreadResponseBody } from "@speakeasy-api/bluesky/mod
 let value: AppBskyFeedGetPostThreadResponseBody = {
   thread: {
     uri: "https://ruddy-bandwidth.net/",
+    notFound: true,
   },
 };
 ```

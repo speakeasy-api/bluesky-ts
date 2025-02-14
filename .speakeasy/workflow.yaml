@@ -10,6 +10,7 @@ sources:
             - location: .speakeasy/speakeasy-react-hooks-overlay.yaml
         registry:
             location: registry.speakeasyapi.dev/bluesky/bluesky/-oas
+        output: scratch/openapi.yaml 
 targets:
     bluesky:
         target: typescript

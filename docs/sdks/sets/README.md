@@ -38,6 +38,8 @@ async function run() {
     name: "<value>",
     values: [
       "<value>",
+      "<value>",
+      "<value>",
     ],
   });
 
@@ -65,6 +67,8 @@ async function run() {
   const res = await setsDeleteValues(bluesky, {
     name: "<value>",
     values: [
+      "<value>",
+      "<value>",
       "<value>",
     ],
   });
@@ -117,12 +121,16 @@ import {
 | ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ |
 | errors.ToolsOzoneSetDeleteValuesResponseBody     | 400                                              | application/json                                 |
 | errors.ToolsOzoneSetDeleteValuesSetsResponseBody | 401                                              | application/json                                 |
-| errors.Unauthorized                              | 403, 407, 511                                    | application/json                                 |
-| errors.NotFound                                  | 404, 501, 505                                    | application/json                                 |
-| errors.Timeout                                   | 408, 504                                         | application/json                                 |
-| errors.BadRequest                                | 413, 414, 415, 422, 431, 510                     | application/json                                 |
+| errors.NotFound                                  | 404                                              | application/json                                 |
+| errors.Unauthorized                              | 403, 407                                         | application/json                                 |
+| errors.Timeout                                   | 408                                              | application/json                                 |
 | errors.RateLimited                               | 429                                              | application/json                                 |
+| errors.BadRequest                                | 413, 414, 415, 422, 431                          | application/json                                 |
+| errors.Timeout                                   | 504                                              | application/json                                 |
+| errors.NotFound                                  | 501, 505                                         | application/json                                 |
 | errors.InternalServerError                       | 500, 502, 503, 506, 507, 508                     | application/json                                 |
+| errors.BadRequest                                | 510                                              | application/json                                 |
+| errors.Unauthorized                              | 511                                              | application/json                                 |
 | errors.APIError                                  | 4XX, 5XX                                         | \*/\*                                            |
 
 ## getValues
@@ -240,10 +248,14 @@ import {
 | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
 | errors.ToolsOzoneSetGetValuesResponseBody     | 400                                           | application/json                              |
 | errors.ToolsOzoneSetGetValuesSetsResponseBody | 401                                           | application/json                              |
-| errors.Unauthorized                           | 403, 407, 511                                 | application/json                              |
-| errors.NotFound                               | 404, 501, 505                                 | application/json                              |
-| errors.Timeout                                | 408, 504                                      | application/json                              |
-| errors.BadRequest                             | 413, 414, 415, 422, 431, 510                  | application/json                              |
+| errors.NotFound                               | 404                                           | application/json                              |
+| errors.Unauthorized                           | 403, 407                                      | application/json                              |
+| errors.Timeout                                | 408                                           | application/json                              |
 | errors.RateLimited                            | 429                                           | application/json                              |
+| errors.BadRequest                             | 413, 414, 415, 422, 431                       | application/json                              |
+| errors.Timeout                                | 504                                           | application/json                              |
+| errors.NotFound                               | 501, 505                                      | application/json                              |
 | errors.InternalServerError                    | 500, 502, 503, 506, 507, 508                  | application/json                              |
+| errors.BadRequest                             | 510                                           | application/json                              |
+| errors.Unauthorized                           | 511                                           | application/json                              |
 | errors.APIError                               | 4XX, 5XX                                      | \*/\*                                         |

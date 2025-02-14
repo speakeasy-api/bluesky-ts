@@ -13,7 +13,7 @@ const value: components.AppBskyLabelerDefsLabelerView = {
     did: "<id>",
     handle: "<value>",
   },
-  indexedAt: new Date("2023-03-23T06:32:58.021Z"),
+  indexedAt: new Date("2024-03-22T06:32:58.021Z"),
 };
 ```
 
@@ -32,7 +32,7 @@ const value: components.AppBskyLabelerDefsLabelerViewDetailed = {
       "nsfl",
     ],
   },
-  indexedAt: new Date("2024-12-05T04:07:03.604Z"),
+  indexedAt: new Date("2025-12-05T04:07:03.604Z"),
 };
 ```
 

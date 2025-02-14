@@ -18,10 +18,10 @@ let value: ToolsOzoneModerationGetRecordsResponseBody = {
           cid: "<id>",
           mimeType: "<value>",
           size: 248413,
-          createdAt: new Date("2023-07-09T10:18:33.697Z"),
+          createdAt: new Date("2024-07-08T10:18:33.697Z"),
         },
       ],
-      indexedAt: new Date("2022-12-07T04:15:26.087Z"),
+      indexedAt: new Date("2023-12-07T04:15:26.087Z"),
       moderation: {},
       repo: {
         did: "<id>",
@@ -29,7 +29,7 @@ let value: ToolsOzoneModerationGetRecordsResponseBody = {
         relatedRecords: [
           "<value>",
         ],
-        indexedAt: new Date("2023-02-13T20:18:32.614Z"),
+        indexedAt: new Date("2024-02-13T20:18:32.614Z"),
         moderation: {},
       },
     },

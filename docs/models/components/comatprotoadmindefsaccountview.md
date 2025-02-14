@@ -8,7 +8,7 @@ import { ComAtprotoAdminDefsAccountView } from "@speakeasy-api/bluesky/models/co
 let value: ComAtprotoAdminDefsAccountView = {
   did: "<id>",
   handle: "<value>",
-  indexedAt: new Date("2024-02-20T05:02:25.225Z"),
+  indexedAt: new Date("2025-02-19T05:02:25.225Z"),
 };
 ```
 

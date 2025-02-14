@@ -134,12 +134,16 @@ import {
 | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
 | errors.ComAtprotoServerGetServiceAuthResponseBody        | 400                                                      | application/json                                         |
 | errors.ComAtprotoServerGetServiceAuthServersResponseBody | 401                                                      | application/json                                         |
-| errors.Unauthorized                                      | 403, 407, 511                                            | application/json                                         |
-| errors.NotFound                                          | 404, 501, 505                                            | application/json                                         |
-| errors.Timeout                                           | 408, 504                                                 | application/json                                         |
-| errors.BadRequest                                        | 413, 414, 415, 422, 431, 510                             | application/json                                         |
+| errors.NotFound                                          | 404                                                      | application/json                                         |
+| errors.Unauthorized                                      | 403, 407                                                 | application/json                                         |
+| errors.Timeout                                           | 408                                                      | application/json                                         |
 | errors.RateLimited                                       | 429                                                      | application/json                                         |
+| errors.BadRequest                                        | 413, 414, 415, 422, 431                                  | application/json                                         |
+| errors.Timeout                                           | 504                                                      | application/json                                         |
+| errors.NotFound                                          | 501, 505                                                 | application/json                                         |
 | errors.InternalServerError                               | 500, 502, 503, 506, 507, 508                             | application/json                                         |
+| errors.BadRequest                                        | 510                                                      | application/json                                         |
+| errors.Unauthorized                                      | 511                                                      | application/json                                         |
 | errors.APIError                                          | 4XX, 5XX                                                 | \*/\*                                                    |
 
 ## getSession
@@ -244,12 +248,16 @@ import {
 | ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
 | errors.ComAtprotoServerGetSessionResponseBody        | 400                                                  | application/json                                     |
 | errors.ComAtprotoServerGetSessionServersResponseBody | 401                                                  | application/json                                     |
-| errors.Unauthorized                                  | 403, 407, 511                                        | application/json                                     |
-| errors.NotFound                                      | 404, 501, 505                                        | application/json                                     |
-| errors.Timeout                                       | 408, 504                                             | application/json                                     |
-| errors.BadRequest                                    | 413, 414, 415, 422, 431, 510                         | application/json                                     |
+| errors.NotFound                                      | 404                                                  | application/json                                     |
+| errors.Unauthorized                                  | 403, 407                                             | application/json                                     |
+| errors.Timeout                                       | 408                                                  | application/json                                     |
 | errors.RateLimited                                   | 429                                                  | application/json                                     |
+| errors.BadRequest                                    | 413, 414, 415, 422, 431                              | application/json                                     |
+| errors.Timeout                                       | 504                                                  | application/json                                     |
+| errors.NotFound                                      | 501, 505                                             | application/json                                     |
 | errors.InternalServerError                           | 500, 502, 503, 506, 507, 508                         | application/json                                     |
+| errors.BadRequest                                    | 510                                                  | application/json                                     |
+| errors.Unauthorized                                  | 511                                                  | application/json                                     |
 | errors.APIError                                      | 4XX, 5XX                                             | \*/\*                                                |
 
 ## reserveSigningKey
@@ -345,12 +353,16 @@ import {
 | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
 | errors.ComAtprotoServerReserveSigningKeyResponseBody        | 400                                                         | application/json                                            |
 | errors.ComAtprotoServerReserveSigningKeyServersResponseBody | 401                                                         | application/json                                            |
-| errors.Unauthorized                                         | 403, 407, 511                                               | application/json                                            |
-| errors.NotFound                                             | 404, 501, 505                                               | application/json                                            |
-| errors.Timeout                                              | 408, 504                                                    | application/json                                            |
-| errors.BadRequest                                           | 413, 414, 415, 422, 431, 510                                | application/json                                            |
+| errors.NotFound                                             | 404                                                         | application/json                                            |
+| errors.Unauthorized                                         | 403, 407                                                    | application/json                                            |
+| errors.Timeout                                              | 408                                                         | application/json                                            |
 | errors.RateLimited                                          | 429                                                         | application/json                                            |
+| errors.BadRequest                                           | 413, 414, 415, 422, 431                                     | application/json                                            |
+| errors.Timeout                                              | 504                                                         | application/json                                            |
+| errors.NotFound                                             | 501, 505                                                    | application/json                                            |
 | errors.InternalServerError                                  | 500, 502, 503, 506, 507, 508                                | application/json                                            |
+| errors.BadRequest                                           | 510                                                         | application/json                                            |
+| errors.Unauthorized                                         | 511                                                         | application/json                                            |
 | errors.APIError                                             | 4XX, 5XX                                                    | \*/\*                                                       |
 
 ## updateEmail
@@ -372,7 +384,7 @@ const bluesky = new Bluesky({
 
 async function run() {
   await bluesky.servers.updateEmail({
-    email: "Isai.Auer35@yahoo.com",
+    email: "Milton.Schulist65@yahoo.com",
   });
 
 
@@ -397,7 +409,7 @@ const bluesky = new BlueskyCore({
 
 async function run() {
   const res = await serversUpdateEmail(bluesky, {
-    email: "Isai.Auer35@yahoo.com",
+    email: "Milton.Schulist65@yahoo.com",
   });
 
   if (!res.ok) {
@@ -448,10 +460,14 @@ import {
 | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
 | errors.ComAtprotoServerUpdateEmailResponseBody        | 400                                                   | application/json                                      |
 | errors.ComAtprotoServerUpdateEmailServersResponseBody | 401                                                   | application/json                                      |
-| errors.Unauthorized                                   | 403, 407, 511                                         | application/json                                      |
-| errors.NotFound                                       | 404, 501, 505                                         | application/json                                      |
-| errors.Timeout                                        | 408, 504                                              | application/json                                      |
-| errors.BadRequest                                     | 413, 414, 415, 422, 431, 510                          | application/json                                      |
+| errors.NotFound                                       | 404                                                   | application/json                                      |
+| errors.Unauthorized                                   | 403, 407                                              | application/json                                      |
+| errors.Timeout                                        | 408                                                   | application/json                                      |
 | errors.RateLimited                                    | 429                                                   | application/json                                      |
+| errors.BadRequest                                     | 413, 414, 415, 422, 431                               | application/json                                      |
+| errors.Timeout                                        | 504                                                   | application/json                                      |
+| errors.NotFound                                       | 501, 505                                              | application/json                                      |
 | errors.InternalServerError                            | 500, 502, 503, 506, 507, 508                          | application/json                                      |
+| errors.BadRequest                                     | 510                                                   | application/json                                      |
+| errors.Unauthorized                                   | 511                                                   | application/json                                      |
 | errors.APIError                                       | 4XX, 5XX                                              | \*/\*                                                 |

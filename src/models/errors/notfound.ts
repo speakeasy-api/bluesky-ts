@@ -50,6 +50,7 @@ export const NotFound$inboundSchema: z.ZodType<
   })
     .catchall(z.any()),
   "additionalProperties",
+  true,
 )
   .transform((v) => {
     return new NotFound(v);

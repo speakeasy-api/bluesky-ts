@@ -16,7 +16,7 @@ let value: AppBskyGraphGetStarterPackResponseBody = {
       did: "<id>",
       handle: "<value>",
     },
-    indexedAt: new Date("2022-11-23T22:01:05.887Z"),
+    indexedAt: new Date("2023-11-23T22:01:05.887Z"),
   },
 };
 ```

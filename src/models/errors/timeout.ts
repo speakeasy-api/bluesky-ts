@@ -47,6 +47,7 @@ export const Timeout$inboundSchema: z.ZodType<Timeout, z.ZodTypeDef, unknown> =
     })
       .catchall(z.any()),
     "additionalProperties",
+    true,
   )
     .transform((v) => {
       return new Timeout(v);

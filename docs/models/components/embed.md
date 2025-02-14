@@ -50,7 +50,7 @@ const value: components.AppBskyEmbedRecordView = {
       did: "<id>",
       handle: "<value>",
     },
-    indexedAt: new Date("2023-02-04T22:38:27.365Z"),
+    indexedAt: new Date("2024-02-04T22:38:27.365Z"),
   },
 };
 ```
@@ -62,6 +62,7 @@ const value: components.AppBskyEmbedRecordWithMediaView = {
   record: {
     record: {
       uri: "https://responsible-dusk.name/",
+      blocked: true,
       author: {
         did: "<id>",
       },

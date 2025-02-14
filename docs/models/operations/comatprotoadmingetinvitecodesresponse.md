@@ -14,11 +14,11 @@ let value: ComAtprotoAdminGetInviteCodesResponse = {
         disabled: false,
         forAccount: "<value>",
         createdBy: "<value>",
-        createdAt: new Date("2023-02-19T00:23:03.771Z"),
+        createdAt: new Date("2024-02-19T00:23:03.771Z"),
         uses: [
           {
             usedBy: "<id>",
-            usedAt: new Date("2022-07-16T20:17:42.484Z"),
+            usedAt: new Date("2023-07-16T20:17:42.484Z"),
           },
         ],
       },

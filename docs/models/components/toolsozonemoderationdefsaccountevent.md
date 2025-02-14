@@ -9,7 +9,7 @@ import { ToolsOzoneModerationDefsAccountEvent } from "@speakeasy-api/bluesky/mod
 
 let value: ToolsOzoneModerationDefsAccountEvent = {
   active: false,
-  timestamp: new Date("2023-05-03T03:34:27.990Z"),
+  timestamp: new Date("2024-05-02T03:34:27.990Z"),
 };
 ```
 

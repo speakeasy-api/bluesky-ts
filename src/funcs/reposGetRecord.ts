@@ -5,6 +5,7 @@
 import { BlueskyCore } from "../core.js";
 import { encodeFormQuery } from "../lib/encodings.js";
 import * as M from "../lib/matchers.js";
+import { compactMap } from "../lib/primitives.js";
 import { safeParse } from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
@@ -20,38 +21,39 @@ import {
 import * as errors from "../models/errors/index.js";
 import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import * as operations from "../models/operations/index.js";
+import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
-/**
- * *This endpoint is part of the atproto PDS repository management APIs. Requests usually require authentication (unlike the `com.atproto.sync.*` endpoints), and are made directly to the user's own PDS instance.*
- *
- * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
- *
- * Get a single record from a repository. Does not require auth.
- */
-export async function reposGetRecord(
+async function $do(
   client: BlueskyCore,
   request: operations.ComAtprotoRepoGetRecordRequest,
   options?: RequestOptions,
 ): Promise<
-  Result<
-    operations.ComAtprotoRepoGetRecordResponseBody,
-    | errors.ComAtprotoRepoGetRecordResponseBody
-    | errors.ComAtprotoRepoGetRecordReposResponseBody
-    | errors.Unauthorized
-    | errors.NotFound
-    | errors.Timeout
-    | errors.BadRequest
-    | errors.RateLimited
-    | errors.InternalServerError
-    | APIError
-    | SDKValidationError
-    | UnexpectedClientError
-    | InvalidRequestError
-    | RequestAbortedError
-    | RequestTimeoutError
-    | ConnectionError
-  >
+  [
+    Result<
+      operations.ComAtprotoRepoGetRecordResponseBody,
+      | errors.ComAtprotoRepoGetRecordResponseBody
+      | errors.ComAtprotoRepoGetRecordReposResponseBody
+      | errors.NotFound
+      | errors.Unauthorized
+      | errors.Timeout
+      | errors.RateLimited
+      | errors.BadRequest
+      | errors.Timeout
+      | errors.NotFound
+      | errors.InternalServerError
+      | errors.BadRequest
+      | errors.Unauthorized
+      | APIError
+      | SDKValidationError
+      | UnexpectedClientError
+      | InvalidRequestError
+      | RequestAbortedError
+      | RequestTimeoutError
+      | ConnectionError
+    >,
+    APICall,
+  ]
 > {
   const parsed = safeParse(
     request,
@@ -60,7 +62,7 @@ export async function reposGetRecord(
     "Input validation failed",
   );
   if (!parsed.ok) {
-    return parsed;
+    return [parsed, { status: "invalid" }];
   }
   const payload = parsed.value;
   const body = null;
@@ -74,15 +76,16 @@ export async function reposGetRecord(
     "rkey": payload.rkey,
   });
 
-  const headers = new Headers({
+  const headers = new Headers(compactMap({
     Accept: "application/json",
-  });
+  }));
 
   const secConfig = await extractSecurity(client._options.bearer);
   const securityInput = secConfig == null ? {} : { bearer: secConfig };
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
+    baseURL: options?.serverURL ?? "",
     operationID: "com.atproto.repo.getRecord",
     oAuth2Scopes: [],
 
@@ -98,6 +101,7 @@ export async function reposGetRecord(
   const requestRes = client._createRequest(context, {
     security: requestSecurity,
     method: "GET",
+    baseURL: options?.serverURL,
     path: path,
     headers: headers,
     query: query,
@@ -105,7 +109,7 @@ export async function reposGetRecord(
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
   }, options);
   if (!requestRes.ok) {
-    return requestRes;
+    return [requestRes, { status: "invalid" }];
   }
   const req = requestRes.value;
 
@@ -142,7 +146,7 @@ export async function reposGetRecord(
     retryCodes: context.retryCodes,
   });
   if (!doResult.ok) {
-    return doResult;
+    return [doResult, { status: "request-error", request: req }];
   }
   const response = doResult.value;
 
@@ -154,12 +158,16 @@ export async function reposGetRecord(
     operations.ComAtprotoRepoGetRecordResponseBody,
     | errors.ComAtprotoRepoGetRecordResponseBody
     | errors.ComAtprotoRepoGetRecordReposResponseBody
-    | errors.Unauthorized
     | errors.NotFound
+    | errors.Unauthorized
     | errors.Timeout
-    | errors.BadRequest
     | errors.RateLimited
+    | errors.BadRequest
+    | errors.Timeout
+    | errors.NotFound
     | errors.InternalServerError
+    | errors.BadRequest
+    | errors.Unauthorized
     | APIError
     | SDKValidationError
     | UnexpectedClientError
@@ -174,20 +182,67 @@ export async function reposGetRecord(
       401,
       errors.ComAtprotoRepoGetRecordReposResponseBody$inboundSchema,
     ),
-    M.jsonErr([403, 407, 511], errors.Unauthorized$inboundSchema),
-    M.jsonErr([404, 501, 505], errors.NotFound$inboundSchema),
-    M.jsonErr([408, 504], errors.Timeout$inboundSchema),
-    M.jsonErr([413, 414, 415, 422, 431, 510], errors.BadRequest$inboundSchema),
+    M.jsonErr(404, errors.NotFound$inboundSchema),
+    M.jsonErr([403, 407], errors.Unauthorized$inboundSchema),
+    M.jsonErr(408, errors.Timeout$inboundSchema),
     M.jsonErr(429, errors.RateLimited$inboundSchema),
+    M.jsonErr([413, 414, 415, 422, 431], errors.BadRequest$inboundSchema),
+    M.jsonErr(504, errors.Timeout$inboundSchema),
+    M.jsonErr([501, 505], errors.NotFound$inboundSchema),
     M.jsonErr(
       [500, 502, 503, 506, 507, 508],
       errors.InternalServerError$inboundSchema,
     ),
-    M.fail(["4XX", "5XX"]),
+    M.jsonErr(510, errors.BadRequest$inboundSchema),
+    M.jsonErr(511, errors.Unauthorized$inboundSchema),
+    M.fail("4XX"),
+    M.fail("5XX"),
   )(response, { extraFields: responseFields });
   if (!result.ok) {
-    return result;
+    return [result, { status: "complete", request: req, response }];
   }
 
-  return result;
+  return [result, { status: "complete", request: req, response }];
+}
+
+/**
+ * *This endpoint is part of the atproto PDS repository management APIs. Requests usually require authentication (unlike the `com.atproto.sync.*` endpoints), and are made directly to the user's own PDS instance.*
+ *
+ * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
+ *
+ * Get a single record from a repository. Does not require auth.
+ */
+export function reposGetRecord(
+  client: BlueskyCore,
+  request: operations.ComAtprotoRepoGetRecordRequest,
+  options?: RequestOptions,
+): APIPromise<
+  Result<
+    operations.ComAtprotoRepoGetRecordResponseBody,
+    | errors.ComAtprotoRepoGetRecordResponseBody
+    | errors.ComAtprotoRepoGetRecordReposResponseBody
+    | errors.NotFound
+    | errors.Unauthorized
+    | errors.Timeout
+    | errors.RateLimited
+    | errors.BadRequest
+    | errors.Timeout
+    | errors.NotFound
+    | errors.InternalServerError
+    | errors.BadRequest
+    | errors.Unauthorized
+    | APIError
+    | SDKValidationError
+    | UnexpectedClientError
+    | InvalidRequestError
+    | RequestAbortedError
+    | RequestTimeoutError
+    | ConnectionError
+  >
+> {
+  return new APIPromise($do(
+    client,
+    request,
+    options,
+  ));
 }

@@ -8,6 +8,7 @@ import { AppBskyFeedDefsReplyRef } from "@speakeasy-api/bluesky/models/component
 let value: AppBskyFeedDefsReplyRef = {
   root: {
     uri: "https://excellent-comestible.org",
+    notFound: true,
   },
   parent: {
     uri: "https://clean-importance.org/",
@@ -17,7 +18,7 @@ let value: AppBskyFeedDefsReplyRef = {
       handle: "<value>",
     },
     record: "<value>",
-    indexedAt: new Date("2023-04-10T09:10:18.917Z"),
+    indexedAt: new Date("2024-04-09T09:10:18.917Z"),
   },
 };
 ```

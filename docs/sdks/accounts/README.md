@@ -29,7 +29,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.accounts.getInviteCodes();
+  const result = await bluesky.accounts.getInviteCodes({});
 
   // Handle the result
   console.log(result);
@@ -53,7 +53,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await accountsGetInviteCodes(bluesky);
+  const res = await accountsGetInviteCodes(bluesky, {});
 
   if (!res.ok) {
     throw res.error;
@@ -115,10 +115,14 @@ import {
 | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
 | errors.ComAtprotoServerGetAccountInviteCodesResponseBody         | 400                                                              | application/json                                                 |
 | errors.ComAtprotoServerGetAccountInviteCodesAccountsResponseBody | 401                                                              | application/json                                                 |
-| errors.Unauthorized                                              | 403, 407, 511                                                    | application/json                                                 |
-| errors.NotFound                                                  | 404, 501, 505                                                    | application/json                                                 |
-| errors.Timeout                                                   | 408, 504                                                         | application/json                                                 |
-| errors.BadRequest                                                | 413, 414, 415, 422, 431, 510                                     | application/json                                                 |
+| errors.NotFound                                                  | 404                                                              | application/json                                                 |
+| errors.Unauthorized                                              | 403, 407                                                         | application/json                                                 |
+| errors.Timeout                                                   | 408                                                              | application/json                                                 |
 | errors.RateLimited                                               | 429                                                              | application/json                                                 |
+| errors.BadRequest                                                | 413, 414, 415, 422, 431                                          | application/json                                                 |
+| errors.Timeout                                                   | 504                                                              | application/json                                                 |
+| errors.NotFound                                                  | 501, 505                                                         | application/json                                                 |
 | errors.InternalServerError                                       | 500, 502, 503, 506, 507, 508                                     | application/json                                                 |
+| errors.BadRequest                                                | 510                                                              | application/json                                                 |
+| errors.Unauthorized                                              | 511                                                              | application/json                                                 |
 | errors.APIError                                                  | 4XX, 5XX                                                         | \*/\*                                                            |

@@ -12,7 +12,7 @@ let value: ToolsOzoneModerationQueryEventsResponse = {
         id: 633998,
         event: {
           active: false,
-          timestamp: new Date("2024-10-27T11:16:32.408Z"),
+          timestamp: new Date("2025-10-27T11:16:32.408Z"),
         },
         subject: {
           did: "<id>",
@@ -23,7 +23,7 @@ let value: ToolsOzoneModerationQueryEventsResponse = {
           "<value>",
         ],
         createdBy: "<id>",
-        createdAt: new Date("2024-02-06T17:37:20.583Z"),
+        createdAt: new Date("2025-02-05T17:37:20.583Z"),
       },
     ],
   },

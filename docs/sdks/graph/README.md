@@ -176,12 +176,16 @@ import {
 | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
 | errors.AppBskyGraphGetActorStarterPacksResponseBody      | 400                                                      | application/json                                         |
 | errors.AppBskyGraphGetActorStarterPacksGraphResponseBody | 401                                                      | application/json                                         |
-| errors.Unauthorized                                      | 403, 407, 511                                            | application/json                                         |
-| errors.NotFound                                          | 404, 501, 505                                            | application/json                                         |
-| errors.Timeout                                           | 408, 504                                                 | application/json                                         |
-| errors.BadRequest                                        | 413, 414, 415, 422, 431, 510                             | application/json                                         |
+| errors.NotFound                                          | 404                                                      | application/json                                         |
+| errors.Unauthorized                                      | 403, 407                                                 | application/json                                         |
+| errors.Timeout                                           | 408                                                      | application/json                                         |
 | errors.RateLimited                                       | 429                                                      | application/json                                         |
+| errors.BadRequest                                        | 413, 414, 415, 422, 431                                  | application/json                                         |
+| errors.Timeout                                           | 504                                                      | application/json                                         |
+| errors.NotFound                                          | 501, 505                                                 | application/json                                         |
 | errors.InternalServerError                               | 500, 502, 503, 506, 507, 508                             | application/json                                         |
+| errors.BadRequest                                        | 510                                                      | application/json                                         |
+| errors.Unauthorized                                      | 511                                                      | application/json                                         |
 | errors.APIError                                          | 4XX, 5XX                                                 | \*/\*                                                    |
 
 ## getFollows
@@ -299,12 +303,16 @@ import {
 | ---------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- |
 | errors.AppBskyGraphGetFollowsResponseBody      | 400                                            | application/json                               |
 | errors.AppBskyGraphGetFollowsGraphResponseBody | 401                                            | application/json                               |
-| errors.Unauthorized                            | 403, 407, 511                                  | application/json                               |
-| errors.NotFound                                | 404, 501, 505                                  | application/json                               |
-| errors.Timeout                                 | 408, 504                                       | application/json                               |
-| errors.BadRequest                              | 413, 414, 415, 422, 431, 510                   | application/json                               |
+| errors.NotFound                                | 404                                            | application/json                               |
+| errors.Unauthorized                            | 403, 407                                       | application/json                               |
+| errors.Timeout                                 | 408                                            | application/json                               |
 | errors.RateLimited                             | 429                                            | application/json                               |
+| errors.BadRequest                              | 413, 414, 415, 422, 431                        | application/json                               |
+| errors.Timeout                                 | 504                                            | application/json                               |
+| errors.NotFound                                | 501, 505                                       | application/json                               |
 | errors.InternalServerError                     | 500, 502, 503, 506, 507, 508                   | application/json                               |
+| errors.BadRequest                              | 510                                            | application/json                               |
+| errors.Unauthorized                            | 511                                            | application/json                               |
 | errors.APIError                                | 4XX, 5XX                                       | \*/\*                                          |
 
 ## getList
@@ -326,7 +334,7 @@ const bluesky = new Bluesky({
 
 async function run() {
   const result = await bluesky.graph.getList({
-    list: "https://talkative-traditionalism.info",
+    list: "https://prickly-caption.info/",
   });
 
   for await (const page of result) {
@@ -354,7 +362,7 @@ const bluesky = new BlueskyCore({
 
 async function run() {
   const res = await graphGetList(bluesky, {
-    list: "https://talkative-traditionalism.info",
+    list: "https://prickly-caption.info/",
   });
 
   if (!res.ok) {
@@ -422,12 +430,16 @@ import {
 | ------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
 | errors.AppBskyGraphGetListResponseBody      | 400                                         | application/json                            |
 | errors.AppBskyGraphGetListGraphResponseBody | 401                                         | application/json                            |
-| errors.Unauthorized                         | 403, 407, 511                               | application/json                            |
-| errors.NotFound                             | 404, 501, 505                               | application/json                            |
-| errors.Timeout                              | 408, 504                                    | application/json                            |
-| errors.BadRequest                           | 413, 414, 415, 422, 431, 510                | application/json                            |
+| errors.NotFound                             | 404                                         | application/json                            |
+| errors.Unauthorized                         | 403, 407                                    | application/json                            |
+| errors.Timeout                              | 408                                         | application/json                            |
 | errors.RateLimited                          | 429                                         | application/json                            |
+| errors.BadRequest                           | 413, 414, 415, 422, 431                     | application/json                            |
+| errors.Timeout                              | 504                                         | application/json                            |
+| errors.NotFound                             | 501, 505                                    | application/json                            |
 | errors.InternalServerError                  | 500, 502, 503, 506, 507, 508                | application/json                            |
+| errors.BadRequest                           | 510                                         | application/json                            |
+| errors.Unauthorized                         | 511                                         | application/json                            |
 | errors.APIError                             | 4XX, 5XX                                    | \*/\*                                       |
 
 ## getListMutes
@@ -448,7 +460,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.graph.getListMutes();
+  const result = await bluesky.graph.getListMutes({});
 
   for await (const page of result) {
     // Handle the page
@@ -474,7 +486,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await graphGetListMutes(bluesky);
+  const res = await graphGetListMutes(bluesky, {});
 
   if (!res.ok) {
     throw res.error;
@@ -541,12 +553,16 @@ import {
 | ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ |
 | errors.AppBskyGraphGetListMutesResponseBody      | 400                                              | application/json                                 |
 | errors.AppBskyGraphGetListMutesGraphResponseBody | 401                                              | application/json                                 |
-| errors.Unauthorized                              | 403, 407, 511                                    | application/json                                 |
-| errors.NotFound                                  | 404, 501, 505                                    | application/json                                 |
-| errors.Timeout                                   | 408, 504                                         | application/json                                 |
-| errors.BadRequest                                | 413, 414, 415, 422, 431, 510                     | application/json                                 |
+| errors.NotFound                                  | 404                                              | application/json                                 |
+| errors.Unauthorized                              | 403, 407                                         | application/json                                 |
+| errors.Timeout                                   | 408                                              | application/json                                 |
 | errors.RateLimited                               | 429                                              | application/json                                 |
+| errors.BadRequest                                | 413, 414, 415, 422, 431                          | application/json                                 |
+| errors.Timeout                                   | 504                                              | application/json                                 |
+| errors.NotFound                                  | 501, 505                                         | application/json                                 |
 | errors.InternalServerError                       | 500, 502, 503, 506, 507, 508                     | application/json                                 |
+| errors.BadRequest                                | 510                                              | application/json                                 |
+| errors.Unauthorized                              | 511                                              | application/json                                 |
 | errors.APIError                                  | 4XX, 5XX                                         | \*/\*                                            |
 
 ## getLists
@@ -664,12 +680,16 @@ import {
 | -------------------------------------------- | -------------------------------------------- | -------------------------------------------- |
 | errors.AppBskyGraphGetListsResponseBody      | 400                                          | application/json                             |
 | errors.AppBskyGraphGetListsGraphResponseBody | 401                                          | application/json                             |
-| errors.Unauthorized                          | 403, 407, 511                                | application/json                             |
-| errors.NotFound                              | 404, 501, 505                                | application/json                             |
-| errors.Timeout                               | 408, 504                                     | application/json                             |
-| errors.BadRequest                            | 413, 414, 415, 422, 431, 510                 | application/json                             |
+| errors.NotFound                              | 404                                          | application/json                             |
+| errors.Unauthorized                          | 403, 407                                     | application/json                             |
+| errors.Timeout                               | 408                                          | application/json                             |
 | errors.RateLimited                           | 429                                          | application/json                             |
+| errors.BadRequest                            | 413, 414, 415, 422, 431                      | application/json                             |
+| errors.Timeout                               | 504                                          | application/json                             |
+| errors.NotFound                              | 501, 505                                     | application/json                             |
 | errors.InternalServerError                   | 500, 502, 503, 506, 507, 508                 | application/json                             |
+| errors.BadRequest                            | 510                                          | application/json                             |
+| errors.Unauthorized                          | 511                                          | application/json                             |
 | errors.APIError                              | 4XX, 5XX                                     | \*/\*                                        |
 
 ## getRelationships
@@ -780,12 +800,16 @@ import {
 | ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
 | errors.AppBskyGraphGetRelationshipsResponseBody      | 400                                                  | application/json                                     |
 | errors.AppBskyGraphGetRelationshipsGraphResponseBody | 401                                                  | application/json                                     |
-| errors.Unauthorized                                  | 403, 407, 511                                        | application/json                                     |
-| errors.NotFound                                      | 404, 501, 505                                        | application/json                                     |
-| errors.Timeout                                       | 408, 504                                             | application/json                                     |
-| errors.BadRequest                                    | 413, 414, 415, 422, 431, 510                         | application/json                                     |
+| errors.NotFound                                      | 404                                                  | application/json                                     |
+| errors.Unauthorized                                  | 403, 407                                             | application/json                                     |
+| errors.Timeout                                       | 408                                                  | application/json                                     |
 | errors.RateLimited                                   | 429                                                  | application/json                                     |
+| errors.BadRequest                                    | 413, 414, 415, 422, 431                              | application/json                                     |
+| errors.Timeout                                       | 504                                                  | application/json                                     |
+| errors.NotFound                                      | 501, 505                                             | application/json                                     |
 | errors.InternalServerError                           | 500, 502, 503, 506, 507, 508                         | application/json                                     |
+| errors.BadRequest                                    | 510                                                  | application/json                                     |
+| errors.Unauthorized                                  | 511                                                  | application/json                                     |
 | errors.APIError                                      | 4XX, 5XX                                             | \*/\*                                                |
 
 ## getStarterPack
@@ -807,7 +831,7 @@ const bluesky = new Bluesky({
 
 async function run() {
   const result = await bluesky.graph.getStarterPack({
-    starterPack: "https://some-colonialism.info/",
+    starterPack: "https://ajar-intellect.net",
   });
 
   // Handle the result
@@ -833,7 +857,7 @@ const bluesky = new BlueskyCore({
 
 async function run() {
   const res = await graphGetStarterPack(bluesky, {
-    starterPack: "https://some-colonialism.info/",
+    starterPack: "https://ajar-intellect.net",
   });
 
   if (!res.ok) {
@@ -896,12 +920,16 @@ import {
 | -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
 | errors.AppBskyGraphGetStarterPackResponseBody      | 400                                                | application/json                                   |
 | errors.AppBskyGraphGetStarterPackGraphResponseBody | 401                                                | application/json                                   |
-| errors.Unauthorized                                | 403, 407, 511                                      | application/json                                   |
-| errors.NotFound                                    | 404, 501, 505                                      | application/json                                   |
-| errors.Timeout                                     | 408, 504                                           | application/json                                   |
-| errors.BadRequest                                  | 413, 414, 415, 422, 431, 510                       | application/json                                   |
+| errors.NotFound                                    | 404                                                | application/json                                   |
+| errors.Unauthorized                                | 403, 407                                           | application/json                                   |
+| errors.Timeout                                     | 408                                                | application/json                                   |
 | errors.RateLimited                                 | 429                                                | application/json                                   |
+| errors.BadRequest                                  | 413, 414, 415, 422, 431                            | application/json                                   |
+| errors.Timeout                                     | 504                                                | application/json                                   |
+| errors.NotFound                                    | 501, 505                                           | application/json                                   |
 | errors.InternalServerError                         | 500, 502, 503, 506, 507, 508                       | application/json                                   |
+| errors.BadRequest                                  | 510                                                | application/json                                   |
+| errors.Unauthorized                                | 511                                                | application/json                                   |
 | errors.APIError                                    | 4XX, 5XX                                           | \*/\*                                              |
 
 ## muteActor
@@ -999,12 +1027,16 @@ import {
 | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
 | errors.AppBskyGraphMuteActorResponseBody      | 400                                           | application/json                              |
 | errors.AppBskyGraphMuteActorGraphResponseBody | 401                                           | application/json                              |
-| errors.Unauthorized                           | 403, 407, 511                                 | application/json                              |
-| errors.NotFound                               | 404, 501, 505                                 | application/json                              |
-| errors.Timeout                                | 408, 504                                      | application/json                              |
-| errors.BadRequest                             | 413, 414, 415, 422, 431, 510                  | application/json                              |
+| errors.NotFound                               | 404                                           | application/json                              |
+| errors.Unauthorized                           | 403, 407                                      | application/json                              |
+| errors.Timeout                                | 408                                           | application/json                              |
 | errors.RateLimited                            | 429                                           | application/json                              |
+| errors.BadRequest                             | 413, 414, 415, 422, 431                       | application/json                              |
+| errors.Timeout                                | 504                                           | application/json                              |
+| errors.NotFound                               | 501, 505                                      | application/json                              |
 | errors.InternalServerError                    | 500, 502, 503, 506, 507, 508                  | application/json                              |
+| errors.BadRequest                             | 510                                           | application/json                              |
+| errors.Unauthorized                           | 511                                           | application/json                              |
 | errors.APIError                               | 4XX, 5XX                                      | \*/\*                                         |
 
 ## muteActorList
@@ -1026,7 +1058,7 @@ const bluesky = new Bluesky({
 
 async function run() {
   await bluesky.graph.muteActorList({
-    list: "https://urban-maestro.org",
+    list: "https://tedious-instruction.biz",
   });
 
 
@@ -1051,7 +1083,7 @@ const bluesky = new BlueskyCore({
 
 async function run() {
   const res = await graphMuteActorList(bluesky, {
-    list: "https://urban-maestro.org",
+    list: "https://tedious-instruction.biz",
   });
 
   if (!res.ok) {
@@ -1102,12 +1134,16 @@ import {
 | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
 | errors.AppBskyGraphMuteActorListResponseBody      | 400                                               | application/json                                  |
 | errors.AppBskyGraphMuteActorListGraphResponseBody | 401                                               | application/json                                  |
-| errors.Unauthorized                               | 403, 407, 511                                     | application/json                                  |
-| errors.NotFound                                   | 404, 501, 505                                     | application/json                                  |
-| errors.Timeout                                    | 408, 504                                          | application/json                                  |
-| errors.BadRequest                                 | 413, 414, 415, 422, 431, 510                      | application/json                                  |
+| errors.NotFound                                   | 404                                               | application/json                                  |
+| errors.Unauthorized                               | 403, 407                                          | application/json                                  |
+| errors.Timeout                                    | 408                                               | application/json                                  |
 | errors.RateLimited                                | 429                                               | application/json                                  |
+| errors.BadRequest                                 | 413, 414, 415, 422, 431                           | application/json                                  |
+| errors.Timeout                                    | 504                                               | application/json                                  |
+| errors.NotFound                                   | 501, 505                                          | application/json                                  |
 | errors.InternalServerError                        | 500, 502, 503, 506, 507, 508                      | application/json                                  |
+| errors.BadRequest                                 | 510                                               | application/json                                  |
+| errors.Unauthorized                               | 511                                               | application/json                                  |
 | errors.APIError                                   | 4XX, 5XX                                          | \*/\*                                             |
 
 ## searchStarterPacks
@@ -1225,12 +1261,16 @@ import {
 | ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
 | errors.AppBskyGraphSearchStarterPacksResponseBody      | 400                                                    | application/json                                       |
 | errors.AppBskyGraphSearchStarterPacksGraphResponseBody | 401                                                    | application/json                                       |
-| errors.Unauthorized                                    | 403, 407, 511                                          | application/json                                       |
-| errors.NotFound                                        | 404, 501, 505                                          | application/json                                       |
-| errors.Timeout                                         | 408, 504                                               | application/json                                       |
-| errors.BadRequest                                      | 413, 414, 415, 422, 431, 510                           | application/json                                       |
+| errors.NotFound                                        | 404                                                    | application/json                                       |
+| errors.Unauthorized                                    | 403, 407                                               | application/json                                       |
+| errors.Timeout                                         | 408                                                    | application/json                                       |
 | errors.RateLimited                                     | 429                                                    | application/json                                       |
+| errors.BadRequest                                      | 413, 414, 415, 422, 431                                | application/json                                       |
+| errors.Timeout                                         | 504                                                    | application/json                                       |
+| errors.NotFound                                        | 501, 505                                               | application/json                                       |
 | errors.InternalServerError                             | 500, 502, 503, 506, 507, 508                           | application/json                                       |
+| errors.BadRequest                                      | 510                                                    | application/json                                       |
+| errors.Unauthorized                                    | 511                                                    | application/json                                       |
 | errors.APIError                                        | 4XX, 5XX                                               | \*/\*                                                  |
 
 ## unmuteThread
@@ -1252,7 +1292,7 @@ const bluesky = new Bluesky({
 
 async function run() {
   await bluesky.graph.unmuteThread({
-    root: "https://clean-behest.org/",
+    root: "https://dutiful-fisherman.biz",
   });
 
 
@@ -1277,7 +1317,7 @@ const bluesky = new BlueskyCore({
 
 async function run() {
   const res = await graphUnmuteThread(bluesky, {
-    root: "https://clean-behest.org/",
+    root: "https://dutiful-fisherman.biz",
   });
 
   if (!res.ok) {
@@ -1328,10 +1368,14 @@ import {
 | ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ |
 | errors.AppBskyGraphUnmuteThreadResponseBody      | 400                                              | application/json                                 |
 | errors.AppBskyGraphUnmuteThreadGraphResponseBody | 401                                              | application/json                                 |
-| errors.Unauthorized                              | 403, 407, 511                                    | application/json                                 |
-| errors.NotFound                                  | 404, 501, 505                                    | application/json                                 |
-| errors.Timeout                                   | 408, 504                                         | application/json                                 |
-| errors.BadRequest                                | 413, 414, 415, 422, 431, 510                     | application/json                                 |
+| errors.NotFound                                  | 404                                              | application/json                                 |
+| errors.Unauthorized                              | 403, 407                                         | application/json                                 |
+| errors.Timeout                                   | 408                                              | application/json                                 |
 | errors.RateLimited                               | 429                                              | application/json                                 |
+| errors.BadRequest                                | 413, 414, 415, 422, 431                          | application/json                                 |
+| errors.Timeout                                   | 504                                              | application/json                                 |
+| errors.NotFound                                  | 501, 505                                         | application/json                                 |
 | errors.InternalServerError                       | 500, 502, 503, 506, 507, 508                     | application/json                                 |
+| errors.BadRequest                                | 510                                              | application/json                                 |
+| errors.Unauthorized                              | 511                                              | application/json                                 |
 | errors.APIError                                  | 4XX, 5XX                                         | \*/\*                                            |

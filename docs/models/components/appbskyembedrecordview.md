@@ -15,7 +15,7 @@ let value: AppBskyEmbedRecordView = {
     },
     name: "<value>",
     purpose: "<value>",
-    indexedAt: new Date("2024-12-03T07:19:37.207Z"),
+    indexedAt: new Date("2025-12-03T07:19:37.207Z"),
   },
 };
 ```

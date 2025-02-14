@@ -6,6 +6,7 @@ import { BlueskyCore } from "../core.js";
 import { dlv } from "../lib/dlv.js";
 import { encodeFormQuery } from "../lib/encodings.js";
 import * as M from "../lib/matchers.js";
+import { compactMap } from "../lib/primitives.js";
 import { safeParse } from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
@@ -21,6 +22,7 @@ import {
 import * as errors from "../models/errors/index.js";
 import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import * as operations from "../models/operations/index.js";
+import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 import {
   createPageIterator,
@@ -29,37 +31,39 @@ import {
   Paginator,
 } from "../types/operations.js";
 
-/**
- * *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
- *
- * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
- */
-export async function chatConvosGetMessages(
+async function $do(
   client: BlueskyCore,
   request: operations.ChatBskyConvoGetMessagesRequest,
   options?: RequestOptions,
 ): Promise<
-  PageIterator<
-    Result<
-      operations.ChatBskyConvoGetMessagesResponse,
-      | errors.ChatBskyConvoGetMessagesResponseBody
-      | errors.ChatBskyConvoGetMessagesChatConvosResponseBody
-      | errors.Unauthorized
-      | errors.NotFound
-      | errors.Timeout
-      | errors.BadRequest
-      | errors.RateLimited
-      | errors.InternalServerError
-      | APIError
-      | SDKValidationError
-      | UnexpectedClientError
-      | InvalidRequestError
-      | RequestAbortedError
-      | RequestTimeoutError
-      | ConnectionError
+  [
+    PageIterator<
+      Result<
+        operations.ChatBskyConvoGetMessagesResponse,
+        | errors.ChatBskyConvoGetMessagesResponseBody
+        | errors.ChatBskyConvoGetMessagesChatConvosResponseBody
+        | errors.NotFound
+        | errors.Unauthorized
+        | errors.Timeout
+        | errors.RateLimited
+        | errors.BadRequest
+        | errors.Timeout
+        | errors.NotFound
+        | errors.InternalServerError
+        | errors.BadRequest
+        | errors.Unauthorized
+        | APIError
+        | SDKValidationError
+        | UnexpectedClientError
+        | InvalidRequestError
+        | RequestAbortedError
+        | RequestTimeoutError
+        | ConnectionError
+      >,
+      { cursor: string }
     >,
-    { cursor: string }
-  >
+    APICall,
+  ]
 > {
   const parsed = safeParse(
     request,
@@ -68,7 +72,7 @@ export async function chatConvosGetMessages(
     "Input validation failed",
   );
   if (!parsed.ok) {
-    return haltIterator(parsed);
+    return [haltIterator(parsed), { status: "invalid" }];
   }
   const payload = parsed.value;
   const body = null;
@@ -81,15 +85,16 @@ export async function chatConvosGetMessages(
     "limit": payload.limit,
   });
 
-  const headers = new Headers({
+  const headers = new Headers(compactMap({
     Accept: "application/json",
-  });
+  }));
 
   const secConfig = await extractSecurity(client._options.bearer);
   const securityInput = secConfig == null ? {} : { bearer: secConfig };
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
+    baseURL: options?.serverURL ?? "",
     operationID: "chat.bsky.convo.getMessages",
     oAuth2Scopes: [],
 
@@ -105,6 +110,7 @@ export async function chatConvosGetMessages(
   const requestRes = client._createRequest(context, {
     security: requestSecurity,
     method: "GET",
+    baseURL: options?.serverURL,
     path: path,
     headers: headers,
     query: query,
@@ -112,7 +118,7 @@ export async function chatConvosGetMessages(
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
   }, options);
   if (!requestRes.ok) {
-    return haltIterator(requestRes);
+    return [haltIterator(requestRes), { status: "invalid" }];
   }
   const req = requestRes.value;
 
@@ -149,7 +155,7 @@ export async function chatConvosGetMessages(
     retryCodes: context.retryCodes,
   });
   if (!doResult.ok) {
-    return haltIterator(doResult);
+    return [haltIterator(doResult), { status: "request-error", request: req }];
   }
   const response = doResult.value;
 
@@ -161,12 +167,16 @@ export async function chatConvosGetMessages(
     operations.ChatBskyConvoGetMessagesResponse,
     | errors.ChatBskyConvoGetMessagesResponseBody
     | errors.ChatBskyConvoGetMessagesChatConvosResponseBody
-    | errors.Unauthorized
     | errors.NotFound
+    | errors.Unauthorized
     | errors.Timeout
-    | errors.BadRequest
     | errors.RateLimited
+    | errors.BadRequest
+    | errors.Timeout
+    | errors.NotFound
     | errors.InternalServerError
+    | errors.BadRequest
+    | errors.Unauthorized
     | APIError
     | SDKValidationError
     | UnexpectedClientError
@@ -183,19 +193,28 @@ export async function chatConvosGetMessages(
       401,
       errors.ChatBskyConvoGetMessagesChatConvosResponseBody$inboundSchema,
     ),
-    M.jsonErr([403, 407, 511], errors.Unauthorized$inboundSchema),
-    M.jsonErr([404, 501, 505], errors.NotFound$inboundSchema),
-    M.jsonErr([408, 504], errors.Timeout$inboundSchema),
-    M.jsonErr([413, 414, 415, 422, 431, 510], errors.BadRequest$inboundSchema),
+    M.jsonErr(404, errors.NotFound$inboundSchema),
+    M.jsonErr([403, 407], errors.Unauthorized$inboundSchema),
+    M.jsonErr(408, errors.Timeout$inboundSchema),
     M.jsonErr(429, errors.RateLimited$inboundSchema),
+    M.jsonErr([413, 414, 415, 422, 431], errors.BadRequest$inboundSchema),
+    M.jsonErr(504, errors.Timeout$inboundSchema),
+    M.jsonErr([501, 505], errors.NotFound$inboundSchema),
     M.jsonErr(
       [500, 502, 503, 506, 507, 508],
       errors.InternalServerError$inboundSchema,
     ),
-    M.fail(["4XX", "5XX"]),
+    M.jsonErr(510, errors.BadRequest$inboundSchema),
+    M.jsonErr(511, errors.Unauthorized$inboundSchema),
+    M.fail("4XX"),
+    M.fail("5XX"),
   )(response, { extraFields: responseFields });
   if (!result.ok) {
-    return haltIterator(result);
+    return [haltIterator(result), {
+      status: "complete",
+      request: req,
+      response,
+    }];
   }
 
   const nextFunc = (
@@ -206,12 +225,16 @@ export async function chatConvosGetMessages(
         operations.ChatBskyConvoGetMessagesResponse,
         | errors.ChatBskyConvoGetMessagesResponseBody
         | errors.ChatBskyConvoGetMessagesChatConvosResponseBody
-        | errors.Unauthorized
         | errors.NotFound
+        | errors.Unauthorized
         | errors.Timeout
-        | errors.BadRequest
         | errors.RateLimited
+        | errors.BadRequest
+        | errors.Timeout
+        | errors.NotFound
         | errors.InternalServerError
+        | errors.BadRequest
+        | errors.Unauthorized
         | APIError
         | SDKValidationError
         | UnexpectedClientError
@@ -242,5 +265,52 @@ export async function chatConvosGetMessages(
   };
 
   const page = { ...result, ...nextFunc(raw) };
-  return { ...page, ...createPageIterator(page, (v) => !v.ok) };
+  return [{ ...page, ...createPageIterator(page, (v) => !v.ok) }, {
+    status: "complete",
+    request: req,
+    response,
+  }];
+}
+
+/**
+ * *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
+ *
+ * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
+ */
+export function chatConvosGetMessages(
+  client: BlueskyCore,
+  request: operations.ChatBskyConvoGetMessagesRequest,
+  options?: RequestOptions,
+): APIPromise<
+  PageIterator<
+    Result<
+      operations.ChatBskyConvoGetMessagesResponse,
+      | errors.ChatBskyConvoGetMessagesResponseBody
+      | errors.ChatBskyConvoGetMessagesChatConvosResponseBody
+      | errors.NotFound
+      | errors.Unauthorized
+      | errors.Timeout
+      | errors.RateLimited
+      | errors.BadRequest
+      | errors.Timeout
+      | errors.NotFound
+      | errors.InternalServerError
+      | errors.BadRequest
+      | errors.Unauthorized
+      | APIError
+      | SDKValidationError
+      | UnexpectedClientError
+      | InvalidRequestError
+      | RequestAbortedError
+      | RequestTimeoutError
+      | ConnectionError
+    >,
+    { cursor: string }
+  >
+> {
+  return new APIPromise($do(
+    client,
+    request,
+    options,
+  ));
 }

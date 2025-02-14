@@ -15,7 +15,7 @@ const value: components.AppBskyFeedDefsThreadViewPost = {
       handle: "<value>",
     },
     record: "<value>",
-    indexedAt: new Date("2024-06-25T04:17:08.995Z"),
+    indexedAt: new Date("2025-06-25T04:17:08.995Z"),
   },
 };
 ```

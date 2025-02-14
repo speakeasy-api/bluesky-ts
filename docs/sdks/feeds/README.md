@@ -148,12 +148,16 @@ import {
 | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
 | errors.AppBskyFeedDescribeFeedGeneratorResponseBody      | 400                                                      | application/json                                         |
 | errors.AppBskyFeedDescribeFeedGeneratorFeedsResponseBody | 401                                                      | application/json                                         |
-| errors.Unauthorized                                      | 403, 407, 511                                            | application/json                                         |
-| errors.NotFound                                          | 404, 501, 505                                            | application/json                                         |
-| errors.Timeout                                           | 408, 504                                                 | application/json                                         |
-| errors.BadRequest                                        | 413, 414, 415, 422, 431, 510                             | application/json                                         |
+| errors.NotFound                                          | 404                                                      | application/json                                         |
+| errors.Unauthorized                                      | 403, 407                                                 | application/json                                         |
+| errors.Timeout                                           | 408                                                      | application/json                                         |
 | errors.RateLimited                                       | 429                                                      | application/json                                         |
+| errors.BadRequest                                        | 413, 414, 415, 422, 431                                  | application/json                                         |
+| errors.Timeout                                           | 504                                                      | application/json                                         |
+| errors.NotFound                                          | 501, 505                                                 | application/json                                         |
 | errors.InternalServerError                               | 500, 502, 503, 506, 507, 508                             | application/json                                         |
+| errors.BadRequest                                        | 510                                                      | application/json                                         |
+| errors.Unauthorized                                      | 511                                                      | application/json                                         |
 | errors.APIError                                          | 4XX, 5XX                                                 | \*/\*                                                    |
 
 ## getLikes
@@ -175,7 +179,7 @@ const bluesky = new Bluesky({
 
 async function run() {
   const result = await bluesky.feeds.getLikes({
-    uri: "https://superficial-flame.info",
+    uri: "https://warlike-bakeware.biz/",
   });
 
   for await (const page of result) {
@@ -203,7 +207,7 @@ const bluesky = new BlueskyCore({
 
 async function run() {
   const res = await feedsGetLikes(bluesky, {
-    uri: "https://superficial-flame.info",
+    uri: "https://warlike-bakeware.biz/",
   });
 
   if (!res.ok) {
@@ -271,12 +275,16 @@ import {
 | ------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
 | errors.AppBskyFeedGetLikesResponseBody      | 400                                         | application/json                            |
 | errors.AppBskyFeedGetLikesFeedsResponseBody | 401                                         | application/json                            |
-| errors.Unauthorized                         | 403, 407, 511                               | application/json                            |
-| errors.NotFound                             | 404, 501, 505                               | application/json                            |
-| errors.Timeout                              | 408, 504                                    | application/json                            |
-| errors.BadRequest                           | 413, 414, 415, 422, 431, 510                | application/json                            |
+| errors.NotFound                             | 404                                         | application/json                            |
+| errors.Unauthorized                         | 403, 407                                    | application/json                            |
+| errors.Timeout                              | 408                                         | application/json                            |
 | errors.RateLimited                          | 429                                         | application/json                            |
+| errors.BadRequest                           | 413, 414, 415, 422, 431                     | application/json                            |
+| errors.Timeout                              | 504                                         | application/json                            |
+| errors.NotFound                             | 501, 505                                    | application/json                            |
 | errors.InternalServerError                  | 500, 502, 503, 506, 507, 508                | application/json                            |
+| errors.BadRequest                           | 510                                         | application/json                            |
+| errors.Unauthorized                         | 511                                         | application/json                            |
 | errors.APIError                             | 4XX, 5XX                                    | \*/\*                                       |
 
 ## getList
@@ -298,7 +306,7 @@ const bluesky = new Bluesky({
 
 async function run() {
   const result = await bluesky.feeds.getList({
-    list: "https://strange-dish.biz/",
+    list: "https://prickly-caption.info/",
   });
 
   for await (const page of result) {
@@ -326,7 +334,7 @@ const bluesky = new BlueskyCore({
 
 async function run() {
   const res = await feedsGetList(bluesky, {
-    list: "https://strange-dish.biz/",
+    list: "https://prickly-caption.info/",
   });
 
   if (!res.ok) {
@@ -394,12 +402,16 @@ import {
 | ---------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- |
 | errors.AppBskyFeedGetListFeedResponseBody      | 400                                            | application/json                               |
 | errors.AppBskyFeedGetListFeedFeedsResponseBody | 401                                            | application/json                               |
-| errors.Unauthorized                            | 403, 407, 511                                  | application/json                               |
-| errors.NotFound                                | 404, 501, 505                                  | application/json                               |
-| errors.Timeout                                 | 408, 504                                       | application/json                               |
-| errors.BadRequest                              | 413, 414, 415, 422, 431, 510                   | application/json                               |
+| errors.NotFound                                | 404                                            | application/json                               |
+| errors.Unauthorized                            | 403, 407                                       | application/json                               |
+| errors.Timeout                                 | 408                                            | application/json                               |
 | errors.RateLimited                             | 429                                            | application/json                               |
+| errors.BadRequest                              | 413, 414, 415, 422, 431                        | application/json                               |
+| errors.Timeout                                 | 504                                            | application/json                               |
+| errors.NotFound                                | 501, 505                                       | application/json                               |
 | errors.InternalServerError                     | 500, 502, 503, 506, 507, 508                   | application/json                               |
+| errors.BadRequest                              | 510                                            | application/json                               |
+| errors.Unauthorized                            | 511                                            | application/json                               |
 | errors.APIError                                | 4XX, 5XX                                       | \*/\*                                          |
 
 ## getPostThread
@@ -421,7 +433,7 @@ const bluesky = new Bluesky({
 
 async function run() {
   const result = await bluesky.feeds.getPostThread({
-    uri: "https://separate-bandwidth.name/",
+    uri: "https://black-and-white-charlatan.org",
   });
 
   // Handle the result
@@ -447,7 +459,7 @@ const bluesky = new BlueskyCore({
 
 async function run() {
   const res = await feedsGetPostThread(bluesky, {
-    uri: "https://separate-bandwidth.name/",
+    uri: "https://black-and-white-charlatan.org",
   });
 
   if (!res.ok) {
@@ -510,12 +522,16 @@ import {
 | ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ |
 | errors.AppBskyFeedGetPostThreadResponseBody      | 400                                              | application/json                                 |
 | errors.AppBskyFeedGetPostThreadFeedsResponseBody | 401                                              | application/json                                 |
-| errors.Unauthorized                              | 403, 407, 511                                    | application/json                                 |
-| errors.NotFound                                  | 404, 501, 505                                    | application/json                                 |
-| errors.Timeout                                   | 408, 504                                         | application/json                                 |
-| errors.BadRequest                                | 413, 414, 415, 422, 431, 510                     | application/json                                 |
+| errors.NotFound                                  | 404                                              | application/json                                 |
+| errors.Unauthorized                              | 403, 407                                         | application/json                                 |
+| errors.Timeout                                   | 408                                              | application/json                                 |
 | errors.RateLimited                               | 429                                              | application/json                                 |
+| errors.BadRequest                                | 413, 414, 415, 422, 431                          | application/json                                 |
+| errors.Timeout                                   | 504                                              | application/json                                 |
+| errors.NotFound                                  | 501, 505                                         | application/json                                 |
 | errors.InternalServerError                       | 500, 502, 503, 506, 507, 508                     | application/json                                 |
+| errors.BadRequest                                | 510                                              | application/json                                 |
+| errors.Unauthorized                              | 511                                              | application/json                                 |
 | errors.APIError                                  | 4XX, 5XX                                         | \*/\*                                            |
 
 ## get
@@ -538,7 +554,8 @@ const bluesky = new Bluesky({
 async function run() {
   const result = await bluesky.feeds.get({
     uris: [
-      "https://crooked-recommendation.name/",
+      "https://necessary-lender.org",
+      "https://knowledgeable-diversity.biz/",
     ],
   });
 
@@ -566,7 +583,8 @@ const bluesky = new BlueskyCore({
 async function run() {
   const res = await feedsGet(bluesky, {
     uris: [
-      "https://crooked-recommendation.name/",
+      "https://necessary-lender.org",
+      "https://knowledgeable-diversity.biz/",
     ],
   });
 
@@ -630,12 +648,16 @@ import {
 | ------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
 | errors.AppBskyFeedGetPostsResponseBody      | 400                                         | application/json                            |
 | errors.AppBskyFeedGetPostsFeedsResponseBody | 401                                         | application/json                            |
-| errors.Unauthorized                         | 403, 407, 511                               | application/json                            |
-| errors.NotFound                             | 404, 501, 505                               | application/json                            |
-| errors.Timeout                              | 408, 504                                    | application/json                            |
-| errors.BadRequest                           | 413, 414, 415, 422, 431, 510                | application/json                            |
+| errors.NotFound                             | 404                                         | application/json                            |
+| errors.Unauthorized                         | 403, 407                                    | application/json                            |
+| errors.Timeout                              | 408                                         | application/json                            |
 | errors.RateLimited                          | 429                                         | application/json                            |
+| errors.BadRequest                           | 413, 414, 415, 422, 431                     | application/json                            |
+| errors.Timeout                              | 504                                         | application/json                            |
+| errors.NotFound                             | 501, 505                                    | application/json                            |
 | errors.InternalServerError                  | 500, 502, 503, 506, 507, 508                | application/json                            |
+| errors.BadRequest                           | 510                                         | application/json                            |
+| errors.Unauthorized                         | 511                                         | application/json                            |
 | errors.APIError                             | 4XX, 5XX                                    | \*/\*                                       |
 
 ## getQuotes
@@ -657,7 +679,7 @@ const bluesky = new Bluesky({
 
 async function run() {
   const result = await bluesky.feeds.getQuotes({
-    uri: "https://plain-hutch.info",
+    uri: "https://honorable-suv.net/",
   });
 
   for await (const page of result) {
@@ -685,7 +707,7 @@ const bluesky = new BlueskyCore({
 
 async function run() {
   const res = await feedsGetQuotes(bluesky, {
-    uri: "https://plain-hutch.info",
+    uri: "https://honorable-suv.net/",
   });
 
   if (!res.ok) {
@@ -753,12 +775,16 @@ import {
 | -------------------------------------------- | -------------------------------------------- | -------------------------------------------- |
 | errors.AppBskyFeedGetQuotesResponseBody      | 400                                          | application/json                             |
 | errors.AppBskyFeedGetQuotesFeedsResponseBody | 401                                          | application/json                             |
-| errors.Unauthorized                          | 403, 407, 511                                | application/json                             |
-| errors.NotFound                              | 404, 501, 505                                | application/json                             |
-| errors.Timeout                               | 408, 504                                     | application/json                             |
-| errors.BadRequest                            | 413, 414, 415, 422, 431, 510                 | application/json                             |
+| errors.NotFound                              | 404                                          | application/json                             |
+| errors.Unauthorized                          | 403, 407                                     | application/json                             |
+| errors.Timeout                               | 408                                          | application/json                             |
 | errors.RateLimited                           | 429                                          | application/json                             |
+| errors.BadRequest                            | 413, 414, 415, 422, 431                      | application/json                             |
+| errors.Timeout                               | 504                                          | application/json                             |
+| errors.NotFound                              | 501, 505                                     | application/json                             |
 | errors.InternalServerError                   | 500, 502, 503, 506, 507, 508                 | application/json                             |
+| errors.BadRequest                            | 510                                          | application/json                             |
+| errors.Unauthorized                          | 511                                          | application/json                             |
 | errors.APIError                              | 4XX, 5XX                                     | \*/\*                                        |
 
 ## getRepostedBy
@@ -780,7 +806,7 @@ const bluesky = new Bluesky({
 
 async function run() {
   const result = await bluesky.feeds.getRepostedBy({
-    uri: "https://staid-consistency.org/",
+    uri: "https://merry-mousse.net/",
   });
 
   for await (const page of result) {
@@ -808,7 +834,7 @@ const bluesky = new BlueskyCore({
 
 async function run() {
   const res = await feedsGetRepostedBy(bluesky, {
-    uri: "https://staid-consistency.org/",
+    uri: "https://merry-mousse.net/",
   });
 
   if (!res.ok) {
@@ -876,12 +902,16 @@ import {
 | ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ |
 | errors.AppBskyFeedGetRepostedByResponseBody      | 400                                              | application/json                                 |
 | errors.AppBskyFeedGetRepostedByFeedsResponseBody | 401                                              | application/json                                 |
-| errors.Unauthorized                              | 403, 407, 511                                    | application/json                                 |
-| errors.NotFound                                  | 404, 501, 505                                    | application/json                                 |
-| errors.Timeout                                   | 408, 504                                         | application/json                                 |
-| errors.BadRequest                                | 413, 414, 415, 422, 431, 510                     | application/json                                 |
+| errors.NotFound                                  | 404                                              | application/json                                 |
+| errors.Unauthorized                              | 403, 407                                         | application/json                                 |
+| errors.Timeout                                   | 408                                              | application/json                                 |
 | errors.RateLimited                               | 429                                              | application/json                                 |
+| errors.BadRequest                                | 413, 414, 415, 422, 431                          | application/json                                 |
+| errors.Timeout                                   | 504                                              | application/json                                 |
+| errors.NotFound                                  | 501, 505                                         | application/json                                 |
 | errors.InternalServerError                       | 500, 502, 503, 506, 507, 508                     | application/json                                 |
+| errors.BadRequest                                | 510                                              | application/json                                 |
+| errors.Unauthorized                              | 511                                              | application/json                                 |
 | errors.APIError                                  | 4XX, 5XX                                         | \*/\*                                            |
 
 ## sendInteractions
@@ -904,6 +934,8 @@ const bluesky = new Bluesky({
 async function run() {
   const result = await bluesky.feeds.sendInteractions({
     interactions: [
+      {},
+      {},
       {},
     ],
   });
@@ -932,6 +964,8 @@ const bluesky = new BlueskyCore({
 async function run() {
   const res = await feedsSendInteractions(bluesky, {
     interactions: [
+      {},
+      {},
       {},
     ],
   });
@@ -985,10 +1019,14 @@ import {
 | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
 | errors.AppBskyFeedSendInteractionsResponseBody      | 400                                                 | application/json                                    |
 | errors.AppBskyFeedSendInteractionsFeedsResponseBody | 401                                                 | application/json                                    |
-| errors.Unauthorized                                 | 403, 407, 511                                       | application/json                                    |
-| errors.NotFound                                     | 404, 501, 505                                       | application/json                                    |
-| errors.Timeout                                      | 408, 504                                            | application/json                                    |
-| errors.BadRequest                                   | 413, 414, 415, 422, 431, 510                        | application/json                                    |
+| errors.NotFound                                     | 404                                                 | application/json                                    |
+| errors.Unauthorized                                 | 403, 407                                            | application/json                                    |
+| errors.Timeout                                      | 408                                                 | application/json                                    |
 | errors.RateLimited                                  | 429                                                 | application/json                                    |
+| errors.BadRequest                                   | 413, 414, 415, 422, 431                             | application/json                                    |
+| errors.Timeout                                      | 504                                                 | application/json                                    |
+| errors.NotFound                                     | 501, 505                                            | application/json                                    |
 | errors.InternalServerError                          | 500, 502, 503, 506, 507, 508                        | application/json                                    |
+| errors.BadRequest                                   | 510                                                 | application/json                                    |
+| errors.Unauthorized                                 | 511                                                 | application/json                                    |
 | errors.APIError                                     | 4XX, 5XX                                            | \*/\*                                               |

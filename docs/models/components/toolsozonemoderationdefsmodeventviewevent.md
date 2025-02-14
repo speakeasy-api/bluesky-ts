@@ -121,7 +121,7 @@ const value: components.ToolsOzoneModerationDefsModEventTag = {
 ```typescript
 const value: components.ToolsOzoneModerationDefsAccountEvent = {
   active: false,
-  timestamp: new Date("2024-05-19T10:28:52.033Z"),
+  timestamp: new Date("2025-05-19T10:28:52.033Z"),
 };
 ```
 
@@ -129,7 +129,7 @@ const value: components.ToolsOzoneModerationDefsAccountEvent = {
 
 ```typescript
 const value: components.ToolsOzoneModerationDefsIdentityEvent = {
-  timestamp: new Date("2023-12-25T07:51:55.110Z"),
+  timestamp: new Date("2024-12-24T07:51:55.110Z"),
 };
 ```
 
@@ -138,7 +138,7 @@ const value: components.ToolsOzoneModerationDefsIdentityEvent = {
 ```typescript
 const value: components.ToolsOzoneModerationDefsRecordEvent = {
   op: "update",
-  timestamp: new Date("2024-04-29T06:26:15.778Z"),
+  timestamp: new Date("2025-04-29T06:26:15.778Z"),
 };
 ```
 

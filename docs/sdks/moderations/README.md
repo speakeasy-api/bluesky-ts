@@ -41,9 +41,8 @@ const bluesky = new Bluesky({
 async function run() {
   const result = await bluesky.moderations.getRecords({
     uris: [
-      "https://pointed-trolley.org/",
-      "https://another-requirement.org",
-      "https://whispered-bowling.biz/",
+      "https://imaginary-barge.org",
+      "https://appropriate-smoke.org",
     ],
   });
 
@@ -71,9 +70,8 @@ const bluesky = new BlueskyCore({
 async function run() {
   const res = await moderationsGetRecords(bluesky, {
     uris: [
-      "https://pointed-trolley.org/",
-      "https://another-requirement.org",
-      "https://whispered-bowling.biz/",
+      "https://imaginary-barge.org",
+      "https://appropriate-smoke.org",
     ],
   });
 
@@ -137,12 +135,16 @@ import {
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | errors.ToolsOzoneModerationGetRecordsResponseBody            | 400                                                          | application/json                                             |
 | errors.ToolsOzoneModerationGetRecordsModerationsResponseBody | 401                                                          | application/json                                             |
-| errors.Unauthorized                                          | 403, 407, 511                                                | application/json                                             |
-| errors.NotFound                                              | 404, 501, 505                                                | application/json                                             |
-| errors.Timeout                                               | 408, 504                                                     | application/json                                             |
-| errors.BadRequest                                            | 413, 414, 415, 422, 431, 510                                 | application/json                                             |
+| errors.NotFound                                              | 404                                                          | application/json                                             |
+| errors.Unauthorized                                          | 403, 407                                                     | application/json                                             |
+| errors.Timeout                                               | 408                                                          | application/json                                             |
 | errors.RateLimited                                           | 429                                                          | application/json                                             |
+| errors.BadRequest                                            | 413, 414, 415, 422, 431                                      | application/json                                             |
+| errors.Timeout                                               | 504                                                          | application/json                                             |
+| errors.NotFound                                              | 501, 505                                                     | application/json                                             |
 | errors.InternalServerError                                   | 500, 502, 503, 506, 507, 508                                 | application/json                                             |
+| errors.BadRequest                                            | 510                                                          | application/json                                             |
+| errors.Unauthorized                                          | 511                                                          | application/json                                             |
 | errors.APIError                                              | 4XX, 5XX                                                     | \*/\*                                                        |
 
 ## getRepos
@@ -165,7 +167,6 @@ const bluesky = new Bluesky({
 async function run() {
   const result = await bluesky.moderations.getRepos({
     dids: [
-      "<id>",
       "<id>",
       "<id>",
     ],
@@ -195,7 +196,6 @@ const bluesky = new BlueskyCore({
 async function run() {
   const res = await moderationsGetRepos(bluesky, {
     dids: [
-      "<id>",
       "<id>",
       "<id>",
     ],
@@ -261,12 +261,16 @@ import {
 | ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
 | errors.ToolsOzoneModerationGetReposResponseBody            | 400                                                        | application/json                                           |
 | errors.ToolsOzoneModerationGetReposModerationsResponseBody | 401                                                        | application/json                                           |
-| errors.Unauthorized                                        | 403, 407, 511                                              | application/json                                           |
-| errors.NotFound                                            | 404, 501, 505                                              | application/json                                           |
-| errors.Timeout                                             | 408, 504                                                   | application/json                                           |
-| errors.BadRequest                                          | 413, 414, 415, 422, 431, 510                               | application/json                                           |
+| errors.NotFound                                            | 404                                                        | application/json                                           |
+| errors.Unauthorized                                        | 403, 407                                                   | application/json                                           |
+| errors.Timeout                                             | 408                                                        | application/json                                           |
 | errors.RateLimited                                         | 429                                                        | application/json                                           |
+| errors.BadRequest                                          | 413, 414, 415, 422, 431                                    | application/json                                           |
+| errors.Timeout                                             | 504                                                        | application/json                                           |
+| errors.NotFound                                            | 501, 505                                                   | application/json                                           |
 | errors.InternalServerError                                 | 500, 502, 503, 506, 507, 508                               | application/json                                           |
+| errors.BadRequest                                          | 510                                                        | application/json                                           |
+| errors.Unauthorized                                        | 511                                                        | application/json                                           |
 | errors.APIError                                            | 4XX, 5XX                                                   | \*/\*                                                      |
 
 ## queryStatuses
@@ -287,7 +291,7 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.moderations.queryStatuses();
+  const result = await bluesky.moderations.queryStatuses({});
 
   for await (const page of result) {
     // Handle the page
@@ -313,7 +317,7 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await moderationsQueryStatuses(bluesky);
+  const res = await moderationsQueryStatuses(bluesky, {});
 
   if (!res.ok) {
     throw res.error;
@@ -380,10 +384,14 @@ import {
 | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
 | errors.ToolsOzoneModerationQueryStatusesResponseBody            | 400                                                             | application/json                                                |
 | errors.ToolsOzoneModerationQueryStatusesModerationsResponseBody | 401                                                             | application/json                                                |
-| errors.Unauthorized                                             | 403, 407, 511                                                   | application/json                                                |
-| errors.NotFound                                                 | 404, 501, 505                                                   | application/json                                                |
-| errors.Timeout                                                  | 408, 504                                                        | application/json                                                |
-| errors.BadRequest                                               | 413, 414, 415, 422, 431, 510                                    | application/json                                                |
+| errors.NotFound                                                 | 404                                                             | application/json                                                |
+| errors.Unauthorized                                             | 403, 407                                                        | application/json                                                |
+| errors.Timeout                                                  | 408                                                             | application/json                                                |
 | errors.RateLimited                                              | 429                                                             | application/json                                                |
+| errors.BadRequest                                               | 413, 414, 415, 422, 431                                         | application/json                                                |
+| errors.Timeout                                                  | 504                                                             | application/json                                                |
+| errors.NotFound                                                 | 501, 505                                                        | application/json                                                |
 | errors.InternalServerError                                      | 500, 502, 503, 506, 507, 508                                    | application/json                                                |
+| errors.BadRequest                                               | 510                                                             | application/json                                                |
+| errors.Unauthorized                                             | 511                                                             | application/json                                                |
 | errors.APIError                                                 | 4XX, 5XX                                                        | \*/\*                                                           |
