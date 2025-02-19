@@ -17,9 +17,8 @@ export const tool$syncsGetBlocks: ToolDefinition<typeof args> = {
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
-Get data blocks from a given repo, by CID. For example, intermediate MST nodes, or records. Does not require auth; implemented by PDS.
-
-`,
+Get data blocks from a given repo, by CID. For example, intermediate MST nodes, or records. Does not require auth; implemented by PDS.`,
+  scopes: ["read"],
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await syncsGetBlocks(
@@ -28,6 +27,15 @@ Get data blocks from a given repo, by CID. For example, intermediate MST nodes, 
       { fetchOptions: { signal: ctx.signal } },
     ).$inspect();
 
-    return formatResult(result, apiCall);
+    if (!result.ok) {
+      return {
+        content: [{ type: "text", text: result.error.message }],
+        isError: true,
+      };
+    }
+
+    const value = result.value;
+
+    return formatResult(value, apiCall);
   },
 };

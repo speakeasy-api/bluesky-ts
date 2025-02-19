@@ -17,9 +17,8 @@ export const tool$graphsGetKnownFollowers: ToolDefinition<typeof args> = {
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
-Enumerates accounts which follow a specified account (actor) and are followed by the viewer.
-
-`,
+Enumerates accounts which follow a specified account (actor) and are followed by the viewer.`,
+  scopes: ["read"],
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await graphsGetKnownFollowers(
@@ -28,6 +27,15 @@ Enumerates accounts which follow a specified account (actor) and are followed by
       { fetchOptions: { signal: ctx.signal } },
     ).$inspect();
 
-    return formatResult(result, apiCall);
+    if (!result.ok) {
+      return {
+        content: [{ type: "text", text: result.error.message }],
+        isError: true,
+      };
+    }
+
+    const value = result.value.result;
+
+    return formatResult(value, apiCall);
   },
 };

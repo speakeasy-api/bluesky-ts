@@ -31,7 +31,9 @@ import {
   AppBskyFeedDefsReplyRef$outboundSchema,
 } from "./appbskyfeeddefsreplyref.js";
 
-export type Reason = AppBskyFeedDefsReasonPin | AppBskyFeedDefsReasonRepost;
+export type AppBskyFeedDefsFeedViewPostReason =
+  | AppBskyFeedDefsReasonPin
+  | AppBskyFeedDefsReasonRepost;
 
 export type AppBskyFeedDefsFeedViewPost = {
   post: AppBskyFeedDefsPostView;
@@ -44,22 +46,25 @@ export type AppBskyFeedDefsFeedViewPost = {
 };
 
 /** @internal */
-export const Reason$inboundSchema: z.ZodType<Reason, z.ZodTypeDef, unknown> = z
-  .union([
-    AppBskyFeedDefsReasonPin$inboundSchema,
-    AppBskyFeedDefsReasonRepost$inboundSchema,
-  ]);
+export const AppBskyFeedDefsFeedViewPostReason$inboundSchema: z.ZodType<
+  AppBskyFeedDefsFeedViewPostReason,
+  z.ZodTypeDef,
+  unknown
+> = z.union([
+  AppBskyFeedDefsReasonPin$inboundSchema,
+  AppBskyFeedDefsReasonRepost$inboundSchema,
+]);
 
 /** @internal */
-export type Reason$Outbound =
+export type AppBskyFeedDefsFeedViewPostReason$Outbound =
   | AppBskyFeedDefsReasonPin$Outbound
   | AppBskyFeedDefsReasonRepost$Outbound;
 
 /** @internal */
-export const Reason$outboundSchema: z.ZodType<
-  Reason$Outbound,
+export const AppBskyFeedDefsFeedViewPostReason$outboundSchema: z.ZodType<
+  AppBskyFeedDefsFeedViewPostReason$Outbound,
   z.ZodTypeDef,
-  Reason
+  AppBskyFeedDefsFeedViewPostReason
 > = z.union([
   AppBskyFeedDefsReasonPin$outboundSchema,
   AppBskyFeedDefsReasonRepost$outboundSchema,
@@ -69,26 +74,33 @@ export const Reason$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace Reason$ {
-  /** @deprecated use `Reason$inboundSchema` instead. */
-  export const inboundSchema = Reason$inboundSchema;
-  /** @deprecated use `Reason$outboundSchema` instead. */
-  export const outboundSchema = Reason$outboundSchema;
-  /** @deprecated use `Reason$Outbound` instead. */
-  export type Outbound = Reason$Outbound;
+export namespace AppBskyFeedDefsFeedViewPostReason$ {
+  /** @deprecated use `AppBskyFeedDefsFeedViewPostReason$inboundSchema` instead. */
+  export const inboundSchema = AppBskyFeedDefsFeedViewPostReason$inboundSchema;
+  /** @deprecated use `AppBskyFeedDefsFeedViewPostReason$outboundSchema` instead. */
+  export const outboundSchema =
+    AppBskyFeedDefsFeedViewPostReason$outboundSchema;
+  /** @deprecated use `AppBskyFeedDefsFeedViewPostReason$Outbound` instead. */
+  export type Outbound = AppBskyFeedDefsFeedViewPostReason$Outbound;
 }
 
-export function reasonToJSON(reason: Reason): string {
-  return JSON.stringify(Reason$outboundSchema.parse(reason));
+export function appBskyFeedDefsFeedViewPostReasonToJSON(
+  appBskyFeedDefsFeedViewPostReason: AppBskyFeedDefsFeedViewPostReason,
+): string {
+  return JSON.stringify(
+    AppBskyFeedDefsFeedViewPostReason$outboundSchema.parse(
+      appBskyFeedDefsFeedViewPostReason,
+    ),
+  );
 }
 
-export function reasonFromJSON(
+export function appBskyFeedDefsFeedViewPostReasonFromJSON(
   jsonString: string,
-): SafeParseResult<Reason, SDKValidationError> {
+): SafeParseResult<AppBskyFeedDefsFeedViewPostReason, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => Reason$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'Reason' from JSON`,
+    (x) => AppBskyFeedDefsFeedViewPostReason$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AppBskyFeedDefsFeedViewPostReason' from JSON`,
   );
 }
 

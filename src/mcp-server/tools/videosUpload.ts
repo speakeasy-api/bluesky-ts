@@ -22,9 +22,8 @@ export const tool$videosUpload: ToolDefinition<typeof args> = {
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
-Upload a video to be processed then stored on the PDS.
-
-`,
+Upload a video to be processed then stored on the PDS.`,
+  scopes: ["write"],
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await videosUpload(
@@ -33,6 +32,15 @@ Upload a video to be processed then stored on the PDS.
       { fetchOptions: { signal: ctx.signal } },
     ).$inspect();
 
-    return formatResult(result, apiCall);
+    if (!result.ok) {
+      return {
+        content: [{ type: "text", text: result.error.message }],
+        isError: true,
+      };
+    }
+
+    const value = result.value;
+
+    return formatResult(value, apiCall);
   },
 };

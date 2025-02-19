@@ -31,7 +31,7 @@ export class Identity extends ClientSDK {
    * Validates a PLC operation to ensure that it doesn't violate a service's constraints or get the identity into a bad state, then submits it to the PLC registry
    */
   async submitPlcOperation(
-    request: operations.ComAtprotoIdentitySubmitPlcOperationRequestBody,
+    request: operations.ComAtprotoIdentitySubmitPlcOperationBody,
     options?: RequestOptions,
   ): Promise<void> {
     return unwrapAsync(identitySubmitPlcOperation(

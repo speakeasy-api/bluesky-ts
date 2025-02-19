@@ -24,28 +24,66 @@ import * as operations from "../models/operations/index.js";
 import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
+/**
+ * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
+ *
+ * Signs a PLC operation to update some value(s) in the requesting DID's document.
+ */
+export function atprotoIdentitySignPlcOperation(
+  client: BlueskyCore,
+  request?: operations.ComAtprotoIdentitySignPlcOperationBody | undefined,
+  options?: RequestOptions,
+): APIPromise<
+  Result<
+    operations.ComAtprotoIdentitySignPlcOperationResponseBody,
+    | errors.BadRequestComAtprotoIdentitySignPlcOperationResponseBodyError
+    | errors.UnauthorizedComAtprotoIdentitySignPlcOperationResponseBodyError
+    | errors.NotFoundError
+    | errors.UnauthorizedError
+    | errors.TimeoutError
+    | errors.RateLimitedError
+    | errors.BadRequestError
+    | errors.TimeoutError
+    | errors.NotFoundError
+    | errors.InternalServerError
+    | errors.BadRequestError
+    | errors.UnauthorizedError
+    | APIError
+    | SDKValidationError
+    | UnexpectedClientError
+    | InvalidRequestError
+    | RequestAbortedError
+    | RequestTimeoutError
+    | ConnectionError
+  >
+> {
+  return new APIPromise($do(
+    client,
+    request,
+    options,
+  ));
+}
+
 async function $do(
   client: BlueskyCore,
-  request?:
-    | operations.ComAtprotoIdentitySignPlcOperationRequestBody
-    | undefined,
+  request?: operations.ComAtprotoIdentitySignPlcOperationBody | undefined,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
       operations.ComAtprotoIdentitySignPlcOperationResponseBody,
-      | errors.ComAtprotoIdentitySignPlcOperationResponseBody
-      | errors.ComAtprotoIdentitySignPlcOperationAtprotoIdentityResponseBody
-      | errors.NotFound
-      | errors.Unauthorized
-      | errors.Timeout
-      | errors.RateLimited
-      | errors.BadRequest
-      | errors.Timeout
-      | errors.NotFound
+      | errors.BadRequestComAtprotoIdentitySignPlcOperationResponseBodyError
+      | errors.UnauthorizedComAtprotoIdentitySignPlcOperationResponseBodyError
+      | errors.NotFoundError
+      | errors.UnauthorizedError
+      | errors.TimeoutError
+      | errors.RateLimitedError
+      | errors.BadRequestError
+      | errors.TimeoutError
+      | errors.NotFoundError
       | errors.InternalServerError
-      | errors.BadRequest
-      | errors.Unauthorized
+      | errors.BadRequestError
+      | errors.UnauthorizedError
       | APIError
       | SDKValidationError
       | UnexpectedClientError
@@ -60,7 +98,7 @@ async function $do(
   const parsed = safeParse(
     request,
     (value) =>
-      operations.ComAtprotoIdentitySignPlcOperationRequestBody$outboundSchema
+      operations.ComAtprotoIdentitySignPlcOperationBody$outboundSchema
         .optional().parse(value),
     "Input validation failed",
   );
@@ -154,18 +192,18 @@ async function $do(
 
   const [result] = await M.match<
     operations.ComAtprotoIdentitySignPlcOperationResponseBody,
-    | errors.ComAtprotoIdentitySignPlcOperationResponseBody
-    | errors.ComAtprotoIdentitySignPlcOperationAtprotoIdentityResponseBody
-    | errors.NotFound
-    | errors.Unauthorized
-    | errors.Timeout
-    | errors.RateLimited
-    | errors.BadRequest
-    | errors.Timeout
-    | errors.NotFound
+    | errors.BadRequestComAtprotoIdentitySignPlcOperationResponseBodyError
+    | errors.UnauthorizedComAtprotoIdentitySignPlcOperationResponseBodyError
+    | errors.NotFoundError
+    | errors.UnauthorizedError
+    | errors.TimeoutError
+    | errors.RateLimitedError
+    | errors.BadRequestError
+    | errors.TimeoutError
+    | errors.NotFoundError
     | errors.InternalServerError
-    | errors.BadRequest
-    | errors.Unauthorized
+    | errors.BadRequestError
+    | errors.UnauthorizedError
     | APIError
     | SDKValidationError
     | UnexpectedClientError
@@ -180,26 +218,27 @@ async function $do(
     ),
     M.jsonErr(
       400,
-      errors.ComAtprotoIdentitySignPlcOperationResponseBody$inboundSchema,
+      errors
+        .BadRequestComAtprotoIdentitySignPlcOperationResponseBodyError$inboundSchema,
     ),
     M.jsonErr(
       401,
       errors
-        .ComAtprotoIdentitySignPlcOperationAtprotoIdentityResponseBody$inboundSchema,
+        .UnauthorizedComAtprotoIdentitySignPlcOperationResponseBodyError$inboundSchema,
     ),
-    M.jsonErr(404, errors.NotFound$inboundSchema),
-    M.jsonErr([403, 407], errors.Unauthorized$inboundSchema),
-    M.jsonErr(408, errors.Timeout$inboundSchema),
-    M.jsonErr(429, errors.RateLimited$inboundSchema),
-    M.jsonErr([413, 414, 415, 422, 431], errors.BadRequest$inboundSchema),
-    M.jsonErr(504, errors.Timeout$inboundSchema),
-    M.jsonErr([501, 505], errors.NotFound$inboundSchema),
+    M.jsonErr(404, errors.NotFoundError$inboundSchema),
+    M.jsonErr([403, 407], errors.UnauthorizedError$inboundSchema),
+    M.jsonErr(408, errors.TimeoutError$inboundSchema),
+    M.jsonErr(429, errors.RateLimitedError$inboundSchema),
+    M.jsonErr([413, 414, 415, 422, 431], errors.BadRequestError$inboundSchema),
+    M.jsonErr(504, errors.TimeoutError$inboundSchema),
+    M.jsonErr([501, 505], errors.NotFoundError$inboundSchema),
     M.jsonErr(
       [500, 502, 503, 506, 507, 508],
       errors.InternalServerError$inboundSchema,
     ),
-    M.jsonErr(510, errors.BadRequest$inboundSchema),
-    M.jsonErr(511, errors.Unauthorized$inboundSchema),
+    M.jsonErr(510, errors.BadRequestError$inboundSchema),
+    M.jsonErr(511, errors.UnauthorizedError$inboundSchema),
     M.fail("4XX"),
     M.fail("5XX"),
   )(response, { extraFields: responseFields });
@@ -208,46 +247,4 @@ async function $do(
   }
 
   return [result, { status: "complete", request: req, response }];
-}
-
-/**
- * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
- *
- * Signs a PLC operation to update some value(s) in the requesting DID's document.
- */
-export function atprotoIdentitySignPlcOperation(
-  client: BlueskyCore,
-  request?:
-    | operations.ComAtprotoIdentitySignPlcOperationRequestBody
-    | undefined,
-  options?: RequestOptions,
-): APIPromise<
-  Result<
-    operations.ComAtprotoIdentitySignPlcOperationResponseBody,
-    | errors.ComAtprotoIdentitySignPlcOperationResponseBody
-    | errors.ComAtprotoIdentitySignPlcOperationAtprotoIdentityResponseBody
-    | errors.NotFound
-    | errors.Unauthorized
-    | errors.Timeout
-    | errors.RateLimited
-    | errors.BadRequest
-    | errors.Timeout
-    | errors.NotFound
-    | errors.InternalServerError
-    | errors.BadRequest
-    | errors.Unauthorized
-    | APIError
-    | SDKValidationError
-    | UnexpectedClientError
-    | InvalidRequestError
-    | RequestAbortedError
-    | RequestTimeoutError
-    | ConnectionError
-  >
-> {
-  return new APIPromise($do(
-    client,
-    request,
-    options,
-  ));
 }

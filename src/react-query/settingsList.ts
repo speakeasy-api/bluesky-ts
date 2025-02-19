@@ -175,7 +175,7 @@ export function setSettingsListData(
     parameters: {
       limit?: number | undefined;
       cursor?: string | undefined;
-      scope?: operations.QueryParamScope | undefined;
+      scope?: operations.ToolsOzoneSettingListOptionsScope | undefined;
       prefix?: string | undefined;
       keys?: Array<string> | undefined;
     },
@@ -193,7 +193,7 @@ export function invalidateSettingsList(
     [parameters: {
       limit?: number | undefined;
       cursor?: string | undefined;
-      scope?: operations.QueryParamScope | undefined;
+      scope?: operations.ToolsOzoneSettingListOptionsScope | undefined;
       prefix?: string | undefined;
       keys?: Array<string> | undefined;
     }]
@@ -301,7 +301,7 @@ export function queryKeySettingsList(
   parameters: {
     limit?: number | undefined;
     cursor?: string | undefined;
-    scope?: operations.QueryParamScope | undefined;
+    scope?: operations.ToolsOzoneSettingListOptionsScope | undefined;
     prefix?: string | undefined;
     keys?: Array<string> | undefined;
   },

@@ -7,8 +7,7 @@ import * as operations from "../../models/operations/index.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
 const args = {
-  request:
-    operations.ComAtprotoIdentitySubmitPlcOperationRequestBody$inboundSchema,
+  request: operations.ComAtprotoIdentitySubmitPlcOperationBody$inboundSchema,
 };
 
 export const tool$identitySubmitPlcOperation: ToolDefinition<typeof args> = {
@@ -16,9 +15,8 @@ export const tool$identitySubmitPlcOperation: ToolDefinition<typeof args> = {
   description:
     `*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
-Validates a PLC operation to ensure that it doesn't violate a service's constraints or get the identity into a bad state, then submits it to the PLC registry
-
-`,
+Validates a PLC operation to ensure that it doesn't violate a service's constraints or get the identity into a bad state, then submits it to the PLC registry`,
+  scopes: ["write"],
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await identitySubmitPlcOperation(
@@ -27,6 +25,15 @@ Validates a PLC operation to ensure that it doesn't violate a service's constrai
       { fetchOptions: { signal: ctx.signal } },
     ).$inspect();
 
-    return formatResult(result, apiCall);
+    if (!result.ok) {
+      return {
+        content: [{ type: "text", text: result.error.message }],
+        isError: true,
+      };
+    }
+
+    const value = result.value;
+
+    return formatResult(value, apiCall);
   },
 };

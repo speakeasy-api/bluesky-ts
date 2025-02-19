@@ -7,7 +7,7 @@ import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ComAtprotoServerCreateAppPasswordRequestBody = {
+export type ComAtprotoServerCreateAppPasswordBody = {
   /**
    * A short name for the App Password, to help distinguish them.
    */
@@ -19,71 +19,63 @@ export type ComAtprotoServerCreateAppPasswordRequestBody = {
 };
 
 /** @internal */
-export const ComAtprotoServerCreateAppPasswordRequestBody$inboundSchema:
-  z.ZodType<
-    ComAtprotoServerCreateAppPasswordRequestBody,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    name: z.string(),
-    privileged: z.boolean().optional(),
-  });
+export const ComAtprotoServerCreateAppPasswordBody$inboundSchema: z.ZodType<
+  ComAtprotoServerCreateAppPasswordBody,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  name: z.string(),
+  privileged: z.boolean().optional(),
+});
 
 /** @internal */
-export type ComAtprotoServerCreateAppPasswordRequestBody$Outbound = {
+export type ComAtprotoServerCreateAppPasswordBody$Outbound = {
   name: string;
   privileged?: boolean | undefined;
 };
 
 /** @internal */
-export const ComAtprotoServerCreateAppPasswordRequestBody$outboundSchema:
-  z.ZodType<
-    ComAtprotoServerCreateAppPasswordRequestBody$Outbound,
-    z.ZodTypeDef,
-    ComAtprotoServerCreateAppPasswordRequestBody
-  > = z.object({
-    name: z.string(),
-    privileged: z.boolean().optional(),
-  });
+export const ComAtprotoServerCreateAppPasswordBody$outboundSchema: z.ZodType<
+  ComAtprotoServerCreateAppPasswordBody$Outbound,
+  z.ZodTypeDef,
+  ComAtprotoServerCreateAppPasswordBody
+> = z.object({
+  name: z.string(),
+  privileged: z.boolean().optional(),
+});
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoServerCreateAppPasswordRequestBody$ {
-  /** @deprecated use `ComAtprotoServerCreateAppPasswordRequestBody$inboundSchema` instead. */
+export namespace ComAtprotoServerCreateAppPasswordBody$ {
+  /** @deprecated use `ComAtprotoServerCreateAppPasswordBody$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoServerCreateAppPasswordRequestBody$inboundSchema;
-  /** @deprecated use `ComAtprotoServerCreateAppPasswordRequestBody$outboundSchema` instead. */
+    ComAtprotoServerCreateAppPasswordBody$inboundSchema;
+  /** @deprecated use `ComAtprotoServerCreateAppPasswordBody$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoServerCreateAppPasswordRequestBody$outboundSchema;
-  /** @deprecated use `ComAtprotoServerCreateAppPasswordRequestBody$Outbound` instead. */
-  export type Outbound = ComAtprotoServerCreateAppPasswordRequestBody$Outbound;
+    ComAtprotoServerCreateAppPasswordBody$outboundSchema;
+  /** @deprecated use `ComAtprotoServerCreateAppPasswordBody$Outbound` instead. */
+  export type Outbound = ComAtprotoServerCreateAppPasswordBody$Outbound;
 }
 
-export function comAtprotoServerCreateAppPasswordRequestBodyToJSON(
-  comAtprotoServerCreateAppPasswordRequestBody:
-    ComAtprotoServerCreateAppPasswordRequestBody,
+export function comAtprotoServerCreateAppPasswordBodyToJSON(
+  comAtprotoServerCreateAppPasswordBody: ComAtprotoServerCreateAppPasswordBody,
 ): string {
   return JSON.stringify(
-    ComAtprotoServerCreateAppPasswordRequestBody$outboundSchema.parse(
-      comAtprotoServerCreateAppPasswordRequestBody,
+    ComAtprotoServerCreateAppPasswordBody$outboundSchema.parse(
+      comAtprotoServerCreateAppPasswordBody,
     ),
   );
 }
 
-export function comAtprotoServerCreateAppPasswordRequestBodyFromJSON(
+export function comAtprotoServerCreateAppPasswordBodyFromJSON(
   jsonString: string,
-): SafeParseResult<
-  ComAtprotoServerCreateAppPasswordRequestBody,
-  SDKValidationError
-> {
+): SafeParseResult<ComAtprotoServerCreateAppPasswordBody, SDKValidationError> {
   return safeParse(
     jsonString,
     (x) =>
-      ComAtprotoServerCreateAppPasswordRequestBody$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'ComAtprotoServerCreateAppPasswordRequestBody' from JSON`,
+      ComAtprotoServerCreateAppPasswordBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ComAtprotoServerCreateAppPasswordBody' from JSON`,
   );
 }

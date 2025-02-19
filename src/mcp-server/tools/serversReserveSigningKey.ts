@@ -7,7 +7,7 @@ import * as operations from "../../models/operations/index.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
 const args = {
-  request: operations.ComAtprotoServerReserveSigningKeyRequestBody$inboundSchema
+  request: operations.ComAtprotoServerReserveSigningKeyBody$inboundSchema
     .optional(),
 };
 
@@ -18,9 +18,8 @@ export const tool$serversReserveSigningKey: ToolDefinition<typeof args> = {
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
-Reserve a repo signing key, for use with account creation. Necessary so that a DID PLC update operation can be constructed during an account migraiton. Public and does not require auth; implemented by PDS. NOTE: this endpoint may change when full account migration is implemented.
-
-`,
+Reserve a repo signing key, for use with account creation. Necessary so that a DID PLC update operation can be constructed during an account migraiton. Public and does not require auth; implemented by PDS. NOTE: this endpoint may change when full account migration is implemented.`,
+  scopes: ["write"],
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await serversReserveSigningKey(
@@ -29,6 +28,15 @@ Reserve a repo signing key, for use with account creation. Necessary so that a D
       { fetchOptions: { signal: ctx.signal } },
     ).$inspect();
 
-    return formatResult(result, apiCall);
+    if (!result.ok) {
+      return {
+        content: [{ type: "text", text: result.error.message }],
+        isError: true,
+      };
+    }
+
+    const value = result.value;
+
+    return formatResult(value, apiCall);
   },
 };

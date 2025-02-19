@@ -15,9 +15,8 @@ export const tool$atprotoLabelsQuery: ToolDefinition<typeof args> = {
   description:
     `*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
-Find labels relevant to the provided AT-URI patterns. Public endpoint for moderation services, though may return different or additional results with auth.
-
-`,
+Find labels relevant to the provided AT-URI patterns. Public endpoint for moderation services, though may return different or additional results with auth.`,
+  scopes: ["read"],
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await atprotoLabelsQuery(
@@ -26,6 +25,15 @@ Find labels relevant to the provided AT-URI patterns. Public endpoint for modera
       { fetchOptions: { signal: ctx.signal } },
     ).$inspect();
 
-    return formatResult(result, apiCall);
+    if (!result.ok) {
+      return {
+        content: [{ type: "text", text: result.error.message }],
+        isError: true,
+      };
+    }
+
+    const value = result.value.result;
+
+    return formatResult(value, apiCall);
   },
 };

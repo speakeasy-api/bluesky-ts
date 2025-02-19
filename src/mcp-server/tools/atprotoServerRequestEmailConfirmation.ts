@@ -12,15 +12,23 @@ export const tool$atprotoServerRequestEmailConfirmation: ToolDefinition = {
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
-Request an email with a code to confirm ownership of email.
-
-`,
+Request an email with a code to confirm ownership of email.`,
+  scopes: ["write"],
   tool: async (client, ctx) => {
     const [result, apiCall] = await atprotoServerRequestEmailConfirmation(
       client,
       { fetchOptions: { signal: ctx.signal } },
     ).$inspect();
 
-    return formatResult(result, apiCall);
+    if (!result.ok) {
+      return {
+        content: [{ type: "text", text: result.error.message }],
+        isError: true,
+      };
+    }
+
+    const value = result.value;
+
+    return formatResult(value, apiCall);
   },
 };

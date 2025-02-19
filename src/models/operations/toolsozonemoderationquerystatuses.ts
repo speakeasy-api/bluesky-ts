@@ -13,14 +13,16 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 /**
  * If specified, subjects of the given type (account or record) will be returned. When this is set to 'account' the 'collections' parameter will be ignored. When includeAllUserRecords or subject is set, this will be ignored.
  */
-export const QueryParamSubjectType = {
+export const ToolsOzoneModerationQueryStatusesSubjectType = {
   Account: "account",
   Record: "record",
 } as const;
 /**
  * If specified, subjects of the given type (account or record) will be returned. When this is set to 'account' the 'collections' parameter will be ignored. When includeAllUserRecords or subject is set, this will be ignored.
  */
-export type QueryParamSubjectType = ClosedEnum<typeof QueryParamSubjectType>;
+export type ToolsOzoneModerationQueryStatusesSubjectType = ClosedEnum<
+  typeof ToolsOzoneModerationQueryStatusesSubjectType
+>;
 
 export type ToolsOzoneModerationQueryStatusesRequest = {
   /**
@@ -109,7 +111,7 @@ export type ToolsOzoneModerationQueryStatusesRequest = {
   /**
    * If specified, subjects of the given type (account or record) will be returned. When this is set to 'account' the 'collections' parameter will be ignored. When includeAllUserRecords or subject is set, this will be ignored.
    */
-  subjectType?: QueryParamSubjectType | undefined;
+  subjectType?: ToolsOzoneModerationQueryStatusesSubjectType | undefined;
 };
 
 /**
@@ -125,24 +127,26 @@ export type ToolsOzoneModerationQueryStatusesResponse = {
 };
 
 /** @internal */
-export const QueryParamSubjectType$inboundSchema: z.ZodNativeEnum<
-  typeof QueryParamSubjectType
-> = z.nativeEnum(QueryParamSubjectType);
+export const ToolsOzoneModerationQueryStatusesSubjectType$inboundSchema:
+  z.ZodNativeEnum<typeof ToolsOzoneModerationQueryStatusesSubjectType> = z
+    .nativeEnum(ToolsOzoneModerationQueryStatusesSubjectType);
 
 /** @internal */
-export const QueryParamSubjectType$outboundSchema: z.ZodNativeEnum<
-  typeof QueryParamSubjectType
-> = QueryParamSubjectType$inboundSchema;
+export const ToolsOzoneModerationQueryStatusesSubjectType$outboundSchema:
+  z.ZodNativeEnum<typeof ToolsOzoneModerationQueryStatusesSubjectType> =
+    ToolsOzoneModerationQueryStatusesSubjectType$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace QueryParamSubjectType$ {
-  /** @deprecated use `QueryParamSubjectType$inboundSchema` instead. */
-  export const inboundSchema = QueryParamSubjectType$inboundSchema;
-  /** @deprecated use `QueryParamSubjectType$outboundSchema` instead. */
-  export const outboundSchema = QueryParamSubjectType$outboundSchema;
+export namespace ToolsOzoneModerationQueryStatusesSubjectType$ {
+  /** @deprecated use `ToolsOzoneModerationQueryStatusesSubjectType$inboundSchema` instead. */
+  export const inboundSchema =
+    ToolsOzoneModerationQueryStatusesSubjectType$inboundSchema;
+  /** @deprecated use `ToolsOzoneModerationQueryStatusesSubjectType$outboundSchema` instead. */
+  export const outboundSchema =
+    ToolsOzoneModerationQueryStatusesSubjectType$outboundSchema;
 }
 
 /** @internal */
@@ -193,7 +197,8 @@ export const ToolsOzoneModerationQueryStatusesRequest$inboundSchema: z.ZodType<
   excludeTags: z.array(z.string()).optional(),
   cursor: z.string().optional(),
   collections: z.array(z.string()).optional(),
-  subjectType: QueryParamSubjectType$inboundSchema.optional(),
+  subjectType: ToolsOzoneModerationQueryStatusesSubjectType$inboundSchema
+    .optional(),
 });
 
 /** @internal */
@@ -259,7 +264,8 @@ export const ToolsOzoneModerationQueryStatusesRequest$outboundSchema: z.ZodType<
   excludeTags: z.array(z.string()).optional(),
   cursor: z.string().optional(),
   collections: z.array(z.string()).optional(),
-  subjectType: QueryParamSubjectType$outboundSchema.optional(),
+  subjectType: ToolsOzoneModerationQueryStatusesSubjectType$outboundSchema
+    .optional(),
 });
 
 /**

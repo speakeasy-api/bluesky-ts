@@ -7,31 +7,30 @@ import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ToolsOzoneCommunicationDeleteTemplateRequestBody = {
+export type ToolsOzoneCommunicationDeleteTemplateBody = {
   id: string;
 };
 
 /** @internal */
-export const ToolsOzoneCommunicationDeleteTemplateRequestBody$inboundSchema:
-  z.ZodType<
-    ToolsOzoneCommunicationDeleteTemplateRequestBody,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    id: z.string(),
-  });
+export const ToolsOzoneCommunicationDeleteTemplateBody$inboundSchema: z.ZodType<
+  ToolsOzoneCommunicationDeleteTemplateBody,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  id: z.string(),
+});
 
 /** @internal */
-export type ToolsOzoneCommunicationDeleteTemplateRequestBody$Outbound = {
+export type ToolsOzoneCommunicationDeleteTemplateBody$Outbound = {
   id: string;
 };
 
 /** @internal */
-export const ToolsOzoneCommunicationDeleteTemplateRequestBody$outboundSchema:
+export const ToolsOzoneCommunicationDeleteTemplateBody$outboundSchema:
   z.ZodType<
-    ToolsOzoneCommunicationDeleteTemplateRequestBody$Outbound,
+    ToolsOzoneCommunicationDeleteTemplateBody$Outbound,
     z.ZodTypeDef,
-    ToolsOzoneCommunicationDeleteTemplateRequestBody
+    ToolsOzoneCommunicationDeleteTemplateBody
   > = z.object({
     id: z.string(),
   });
@@ -40,41 +39,40 @@ export const ToolsOzoneCommunicationDeleteTemplateRequestBody$outboundSchema:
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ToolsOzoneCommunicationDeleteTemplateRequestBody$ {
-  /** @deprecated use `ToolsOzoneCommunicationDeleteTemplateRequestBody$inboundSchema` instead. */
+export namespace ToolsOzoneCommunicationDeleteTemplateBody$ {
+  /** @deprecated use `ToolsOzoneCommunicationDeleteTemplateBody$inboundSchema` instead. */
   export const inboundSchema =
-    ToolsOzoneCommunicationDeleteTemplateRequestBody$inboundSchema;
-  /** @deprecated use `ToolsOzoneCommunicationDeleteTemplateRequestBody$outboundSchema` instead. */
+    ToolsOzoneCommunicationDeleteTemplateBody$inboundSchema;
+  /** @deprecated use `ToolsOzoneCommunicationDeleteTemplateBody$outboundSchema` instead. */
   export const outboundSchema =
-    ToolsOzoneCommunicationDeleteTemplateRequestBody$outboundSchema;
-  /** @deprecated use `ToolsOzoneCommunicationDeleteTemplateRequestBody$Outbound` instead. */
-  export type Outbound =
-    ToolsOzoneCommunicationDeleteTemplateRequestBody$Outbound;
+    ToolsOzoneCommunicationDeleteTemplateBody$outboundSchema;
+  /** @deprecated use `ToolsOzoneCommunicationDeleteTemplateBody$Outbound` instead. */
+  export type Outbound = ToolsOzoneCommunicationDeleteTemplateBody$Outbound;
 }
 
-export function toolsOzoneCommunicationDeleteTemplateRequestBodyToJSON(
-  toolsOzoneCommunicationDeleteTemplateRequestBody:
-    ToolsOzoneCommunicationDeleteTemplateRequestBody,
+export function toolsOzoneCommunicationDeleteTemplateBodyToJSON(
+  toolsOzoneCommunicationDeleteTemplateBody:
+    ToolsOzoneCommunicationDeleteTemplateBody,
 ): string {
   return JSON.stringify(
-    ToolsOzoneCommunicationDeleteTemplateRequestBody$outboundSchema.parse(
-      toolsOzoneCommunicationDeleteTemplateRequestBody,
+    ToolsOzoneCommunicationDeleteTemplateBody$outboundSchema.parse(
+      toolsOzoneCommunicationDeleteTemplateBody,
     ),
   );
 }
 
-export function toolsOzoneCommunicationDeleteTemplateRequestBodyFromJSON(
+export function toolsOzoneCommunicationDeleteTemplateBodyFromJSON(
   jsonString: string,
 ): SafeParseResult<
-  ToolsOzoneCommunicationDeleteTemplateRequestBody,
+  ToolsOzoneCommunicationDeleteTemplateBody,
   SDKValidationError
 > {
   return safeParse(
     jsonString,
     (x) =>
-      ToolsOzoneCommunicationDeleteTemplateRequestBody$inboundSchema.parse(
+      ToolsOzoneCommunicationDeleteTemplateBody$inboundSchema.parse(
         JSON.parse(x),
       ),
-    `Failed to parse 'ToolsOzoneCommunicationDeleteTemplateRequestBody' from JSON`,
+    `Failed to parse 'ToolsOzoneCommunicationDeleteTemplateBody' from JSON`,
   );
 }

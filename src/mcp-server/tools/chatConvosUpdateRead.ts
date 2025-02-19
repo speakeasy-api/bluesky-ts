@@ -7,7 +7,7 @@ import * as operations from "../../models/operations/index.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
 const args = {
-  request: operations.ChatBskyConvoUpdateReadRequestBody$inboundSchema,
+  request: operations.ChatBskyConvoUpdateReadBody$inboundSchema,
 };
 
 export const tool$chatConvosUpdateRead: ToolDefinition<typeof args> = {
@@ -15,9 +15,8 @@ export const tool$chatConvosUpdateRead: ToolDefinition<typeof args> = {
   description:
     `*This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (\`did:web:api.bsky.chat\`) in the service proxying header.*
 
-*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
-
-`,
+*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*`,
+  scopes: ["write"],
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await chatConvosUpdateRead(
@@ -26,6 +25,15 @@ export const tool$chatConvosUpdateRead: ToolDefinition<typeof args> = {
       { fetchOptions: { signal: ctx.signal } },
     ).$inspect();
 
-    return formatResult(result, apiCall);
+    if (!result.ok) {
+      return {
+        content: [{ type: "text", text: result.error.message }],
+        isError: true,
+      };
+    }
+
+    const value = result.value;
+
+    return formatResult(value, apiCall);
   },
 };

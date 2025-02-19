@@ -12,15 +12,23 @@ export const tool$videosGetUploadLimits: ToolDefinition = {
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
-Get video upload limits for the authenticated user.
-
-`,
+Get video upload limits for the authenticated user.`,
+  scopes: ["read"],
   tool: async (client, ctx) => {
     const [result, apiCall] = await videosGetUploadLimits(
       client,
       { fetchOptions: { signal: ctx.signal } },
     ).$inspect();
 
-    return formatResult(result, apiCall);
+    if (!result.ok) {
+      return {
+        content: [{ type: "text", text: result.error.message }],
+        isError: true,
+      };
+    }
+
+    const value = result.value;
+
+    return formatResult(value, apiCall);
   },
 };

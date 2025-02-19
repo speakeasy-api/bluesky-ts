@@ -17,7 +17,7 @@ import { useBlueskyContext } from "./_context.js";
 import { MutationHookOptions } from "./_types.js";
 
 export type SetsDeleteValuesMutationVariables = {
-  request: operations.ToolsOzoneSetDeleteValuesRequestBody;
+  request: operations.ToolsOzoneSetDeleteValuesBody;
   options?: RequestOptions;
 };
 

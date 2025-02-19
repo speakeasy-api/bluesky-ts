@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type AppBskyNotificationRegisterPushNotificationsResponseBodyData = {
+export type UnauthorizedAppBskyNotificationRegisterPushResponseBodyErrorData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,16 +16,16 @@ export type AppBskyNotificationRegisterPushNotificationsResponseBodyData = {
 /**
  * Unauthorized
  */
-export class AppBskyNotificationRegisterPushNotificationsResponseBody
+export class UnauthorizedAppBskyNotificationRegisterPushResponseBodyError
   extends Error
 {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: AppBskyNotificationRegisterPushNotificationsResponseBodyData;
+  data$: UnauthorizedAppBskyNotificationRegisterPushResponseBodyErrorData;
 
   constructor(
-    err: AppBskyNotificationRegisterPushNotificationsResponseBodyData,
+    err: UnauthorizedAppBskyNotificationRegisterPushResponseBodyErrorData,
   ) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
@@ -35,7 +35,7 @@ export class AppBskyNotificationRegisterPushNotificationsResponseBody
 
     this.error = err.error;
 
-    this.name = "AppBskyNotificationRegisterPushNotificationsResponseBody";
+    this.name = "UnauthorizedAppBskyNotificationRegisterPushResponseBodyError";
   }
 }
 
@@ -51,7 +51,7 @@ export type AppBskyNotificationRegisterPushError = ClosedEnum<
 /**
  * Bad Request
  */
-export type AppBskyNotificationRegisterPushResponseBodyData = {
+export type BadRequestAppBskyNotificationRegisterPushResponseBodyErrorData = {
   error: AppBskyNotificationRegisterPushError;
   message: string;
 };
@@ -59,13 +59,17 @@ export type AppBskyNotificationRegisterPushResponseBodyData = {
 /**
  * Bad Request
  */
-export class AppBskyNotificationRegisterPushResponseBody extends Error {
+export class BadRequestAppBskyNotificationRegisterPushResponseBodyError
+  extends Error
+{
   error: AppBskyNotificationRegisterPushError;
 
   /** The original data that was passed to this error instance. */
-  data$: AppBskyNotificationRegisterPushResponseBodyData;
+  data$: BadRequestAppBskyNotificationRegisterPushResponseBodyErrorData;
 
-  constructor(err: AppBskyNotificationRegisterPushResponseBodyData) {
+  constructor(
+    err: BadRequestAppBskyNotificationRegisterPushResponseBodyErrorData,
+  ) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -74,14 +78,14 @@ export class AppBskyNotificationRegisterPushResponseBody extends Error {
 
     this.error = err.error;
 
-    this.name = "AppBskyNotificationRegisterPushResponseBody";
+    this.name = "BadRequestAppBskyNotificationRegisterPushResponseBodyError";
   }
 }
 
 /** @internal */
-export const AppBskyNotificationRegisterPushNotificationsResponseBody$inboundSchema:
+export const UnauthorizedAppBskyNotificationRegisterPushResponseBodyError$inboundSchema:
   z.ZodType<
-    AppBskyNotificationRegisterPushNotificationsResponseBody,
+    UnauthorizedAppBskyNotificationRegisterPushResponseBodyError,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -89,23 +93,25 @@ export const AppBskyNotificationRegisterPushNotificationsResponseBody$inboundSch
     message: z.string(),
   })
     .transform((v) => {
-      return new AppBskyNotificationRegisterPushNotificationsResponseBody(v);
+      return new UnauthorizedAppBskyNotificationRegisterPushResponseBodyError(
+        v,
+      );
     });
 
 /** @internal */
-export type AppBskyNotificationRegisterPushNotificationsResponseBody$Outbound =
+export type UnauthorizedAppBskyNotificationRegisterPushResponseBodyError$Outbound =
   {
     error: "AuthMissing";
     message: string;
   };
 
 /** @internal */
-export const AppBskyNotificationRegisterPushNotificationsResponseBody$outboundSchema:
+export const UnauthorizedAppBskyNotificationRegisterPushResponseBodyError$outboundSchema:
   z.ZodType<
-    AppBskyNotificationRegisterPushNotificationsResponseBody$Outbound,
+    UnauthorizedAppBskyNotificationRegisterPushResponseBodyError$Outbound,
     z.ZodTypeDef,
-    AppBskyNotificationRegisterPushNotificationsResponseBody
-  > = z.instanceof(AppBskyNotificationRegisterPushNotificationsResponseBody)
+    UnauthorizedAppBskyNotificationRegisterPushResponseBodyError
+  > = z.instanceof(UnauthorizedAppBskyNotificationRegisterPushResponseBodyError)
     .transform(v => v.data$)
     .pipe(z.object({
       error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -116,16 +122,16 @@ export const AppBskyNotificationRegisterPushNotificationsResponseBody$outboundSc
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyNotificationRegisterPushNotificationsResponseBody$ {
-  /** @deprecated use `AppBskyNotificationRegisterPushNotificationsResponseBody$inboundSchema` instead. */
+export namespace UnauthorizedAppBskyNotificationRegisterPushResponseBodyError$ {
+  /** @deprecated use `UnauthorizedAppBskyNotificationRegisterPushResponseBodyError$inboundSchema` instead. */
   export const inboundSchema =
-    AppBskyNotificationRegisterPushNotificationsResponseBody$inboundSchema;
-  /** @deprecated use `AppBskyNotificationRegisterPushNotificationsResponseBody$outboundSchema` instead. */
+    UnauthorizedAppBskyNotificationRegisterPushResponseBodyError$inboundSchema;
+  /** @deprecated use `UnauthorizedAppBskyNotificationRegisterPushResponseBodyError$outboundSchema` instead. */
   export const outboundSchema =
-    AppBskyNotificationRegisterPushNotificationsResponseBody$outboundSchema;
-  /** @deprecated use `AppBskyNotificationRegisterPushNotificationsResponseBody$Outbound` instead. */
+    UnauthorizedAppBskyNotificationRegisterPushResponseBodyError$outboundSchema;
+  /** @deprecated use `UnauthorizedAppBskyNotificationRegisterPushResponseBodyError$Outbound` instead. */
   export type Outbound =
-    AppBskyNotificationRegisterPushNotificationsResponseBody$Outbound;
+    UnauthorizedAppBskyNotificationRegisterPushResponseBodyError$Outbound;
 }
 
 /** @internal */
@@ -153,9 +159,9 @@ export namespace AppBskyNotificationRegisterPushError$ {
 }
 
 /** @internal */
-export const AppBskyNotificationRegisterPushResponseBody$inboundSchema:
+export const BadRequestAppBskyNotificationRegisterPushResponseBodyError$inboundSchema:
   z.ZodType<
-    AppBskyNotificationRegisterPushResponseBody,
+    BadRequestAppBskyNotificationRegisterPushResponseBodyError,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -163,22 +169,23 @@ export const AppBskyNotificationRegisterPushResponseBody$inboundSchema:
     message: z.string(),
   })
     .transform((v) => {
-      return new AppBskyNotificationRegisterPushResponseBody(v);
+      return new BadRequestAppBskyNotificationRegisterPushResponseBodyError(v);
     });
 
 /** @internal */
-export type AppBskyNotificationRegisterPushResponseBody$Outbound = {
-  error: string;
-  message: string;
-};
+export type BadRequestAppBskyNotificationRegisterPushResponseBodyError$Outbound =
+  {
+    error: string;
+    message: string;
+  };
 
 /** @internal */
-export const AppBskyNotificationRegisterPushResponseBody$outboundSchema:
+export const BadRequestAppBskyNotificationRegisterPushResponseBodyError$outboundSchema:
   z.ZodType<
-    AppBskyNotificationRegisterPushResponseBody$Outbound,
+    BadRequestAppBskyNotificationRegisterPushResponseBodyError$Outbound,
     z.ZodTypeDef,
-    AppBskyNotificationRegisterPushResponseBody
-  > = z.instanceof(AppBskyNotificationRegisterPushResponseBody)
+    BadRequestAppBskyNotificationRegisterPushResponseBodyError
+  > = z.instanceof(BadRequestAppBskyNotificationRegisterPushResponseBodyError)
     .transform(v => v.data$)
     .pipe(z.object({
       error: AppBskyNotificationRegisterPushError$outboundSchema,
@@ -189,13 +196,14 @@ export const AppBskyNotificationRegisterPushResponseBody$outboundSchema:
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyNotificationRegisterPushResponseBody$ {
-  /** @deprecated use `AppBskyNotificationRegisterPushResponseBody$inboundSchema` instead. */
+export namespace BadRequestAppBskyNotificationRegisterPushResponseBodyError$ {
+  /** @deprecated use `BadRequestAppBskyNotificationRegisterPushResponseBodyError$inboundSchema` instead. */
   export const inboundSchema =
-    AppBskyNotificationRegisterPushResponseBody$inboundSchema;
-  /** @deprecated use `AppBskyNotificationRegisterPushResponseBody$outboundSchema` instead. */
+    BadRequestAppBskyNotificationRegisterPushResponseBodyError$inboundSchema;
+  /** @deprecated use `BadRequestAppBskyNotificationRegisterPushResponseBodyError$outboundSchema` instead. */
   export const outboundSchema =
-    AppBskyNotificationRegisterPushResponseBody$outboundSchema;
-  /** @deprecated use `AppBskyNotificationRegisterPushResponseBody$Outbound` instead. */
-  export type Outbound = AppBskyNotificationRegisterPushResponseBody$Outbound;
+    BadRequestAppBskyNotificationRegisterPushResponseBodyError$outboundSchema;
+  /** @deprecated use `BadRequestAppBskyNotificationRegisterPushResponseBodyError$Outbound` instead. */
+  export type Outbound =
+    BadRequestAppBskyNotificationRegisterPushResponseBodyError$Outbound;
 }

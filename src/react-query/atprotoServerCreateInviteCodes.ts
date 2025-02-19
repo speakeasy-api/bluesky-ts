@@ -17,7 +17,7 @@ import { useBlueskyContext } from "./_context.js";
 import { MutationHookOptions } from "./_types.js";
 
 export type AtprotoServerCreateInviteCodesMutationVariables = {
-  request: operations.ComAtprotoServerCreateInviteCodesRequestBody;
+  request: operations.ComAtprotoServerCreateInviteCodesBody;
   options?: RequestOptions;
 };
 

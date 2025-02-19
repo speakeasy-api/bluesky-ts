@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type AppBskyGraphGetBlocksGraphsResponseBodyData = {
+export type UnauthorizedAppBskyGraphGetBlocksResponseBodyErrorData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,13 +16,13 @@ export type AppBskyGraphGetBlocksGraphsResponseBodyData = {
 /**
  * Unauthorized
  */
-export class AppBskyGraphGetBlocksGraphsResponseBody extends Error {
+export class UnauthorizedAppBskyGraphGetBlocksResponseBodyError extends Error {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: AppBskyGraphGetBlocksGraphsResponseBodyData;
+  data$: UnauthorizedAppBskyGraphGetBlocksResponseBodyErrorData;
 
-  constructor(err: AppBskyGraphGetBlocksGraphsResponseBodyData) {
+  constructor(err: UnauthorizedAppBskyGraphGetBlocksResponseBodyErrorData) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -31,7 +31,7 @@ export class AppBskyGraphGetBlocksGraphsResponseBody extends Error {
 
     this.error = err.error;
 
-    this.name = "AppBskyGraphGetBlocksGraphsResponseBody";
+    this.name = "UnauthorizedAppBskyGraphGetBlocksResponseBodyError";
   }
 }
 
@@ -47,7 +47,7 @@ export type AppBskyGraphGetBlocksError = ClosedEnum<
 /**
  * Bad Request
  */
-export type AppBskyGraphGetBlocksResponseBodyData = {
+export type BadRequestAppBskyGraphGetBlocksResponseBodyErrorData = {
   error: AppBskyGraphGetBlocksError;
   message: string;
 };
@@ -55,13 +55,13 @@ export type AppBskyGraphGetBlocksResponseBodyData = {
 /**
  * Bad Request
  */
-export class AppBskyGraphGetBlocksResponseBody extends Error {
+export class BadRequestAppBskyGraphGetBlocksResponseBodyError extends Error {
   error: AppBskyGraphGetBlocksError;
 
   /** The original data that was passed to this error instance. */
-  data$: AppBskyGraphGetBlocksResponseBodyData;
+  data$: BadRequestAppBskyGraphGetBlocksResponseBodyErrorData;
 
-  constructor(err: AppBskyGraphGetBlocksResponseBodyData) {
+  constructor(err: BadRequestAppBskyGraphGetBlocksResponseBodyErrorData) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -70,54 +70,57 @@ export class AppBskyGraphGetBlocksResponseBody extends Error {
 
     this.error = err.error;
 
-    this.name = "AppBskyGraphGetBlocksResponseBody";
+    this.name = "BadRequestAppBskyGraphGetBlocksResponseBodyError";
   }
 }
 
 /** @internal */
-export const AppBskyGraphGetBlocksGraphsResponseBody$inboundSchema: z.ZodType<
-  AppBskyGraphGetBlocksGraphsResponseBody,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  error: z.literal("AuthMissing"),
-  message: z.string(),
-})
-  .transform((v) => {
-    return new AppBskyGraphGetBlocksGraphsResponseBody(v);
-  });
+export const UnauthorizedAppBskyGraphGetBlocksResponseBodyError$inboundSchema:
+  z.ZodType<
+    UnauthorizedAppBskyGraphGetBlocksResponseBodyError,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    error: z.literal("AuthMissing"),
+    message: z.string(),
+  })
+    .transform((v) => {
+      return new UnauthorizedAppBskyGraphGetBlocksResponseBodyError(v);
+    });
 
 /** @internal */
-export type AppBskyGraphGetBlocksGraphsResponseBody$Outbound = {
+export type UnauthorizedAppBskyGraphGetBlocksResponseBodyError$Outbound = {
   error: "AuthMissing";
   message: string;
 };
 
 /** @internal */
-export const AppBskyGraphGetBlocksGraphsResponseBody$outboundSchema: z.ZodType<
-  AppBskyGraphGetBlocksGraphsResponseBody$Outbound,
-  z.ZodTypeDef,
-  AppBskyGraphGetBlocksGraphsResponseBody
-> = z.instanceof(AppBskyGraphGetBlocksGraphsResponseBody)
-  .transform(v => v.data$)
-  .pipe(z.object({
-    error: z.literal("AuthMissing").default("AuthMissing" as const),
-    message: z.string(),
-  }));
+export const UnauthorizedAppBskyGraphGetBlocksResponseBodyError$outboundSchema:
+  z.ZodType<
+    UnauthorizedAppBskyGraphGetBlocksResponseBodyError$Outbound,
+    z.ZodTypeDef,
+    UnauthorizedAppBskyGraphGetBlocksResponseBodyError
+  > = z.instanceof(UnauthorizedAppBskyGraphGetBlocksResponseBodyError)
+    .transform(v => v.data$)
+    .pipe(z.object({
+      error: z.literal("AuthMissing").default("AuthMissing" as const),
+      message: z.string(),
+    }));
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyGraphGetBlocksGraphsResponseBody$ {
-  /** @deprecated use `AppBskyGraphGetBlocksGraphsResponseBody$inboundSchema` instead. */
+export namespace UnauthorizedAppBskyGraphGetBlocksResponseBodyError$ {
+  /** @deprecated use `UnauthorizedAppBskyGraphGetBlocksResponseBodyError$inboundSchema` instead. */
   export const inboundSchema =
-    AppBskyGraphGetBlocksGraphsResponseBody$inboundSchema;
-  /** @deprecated use `AppBskyGraphGetBlocksGraphsResponseBody$outboundSchema` instead. */
+    UnauthorizedAppBskyGraphGetBlocksResponseBodyError$inboundSchema;
+  /** @deprecated use `UnauthorizedAppBskyGraphGetBlocksResponseBodyError$outboundSchema` instead. */
   export const outboundSchema =
-    AppBskyGraphGetBlocksGraphsResponseBody$outboundSchema;
-  /** @deprecated use `AppBskyGraphGetBlocksGraphsResponseBody$Outbound` instead. */
-  export type Outbound = AppBskyGraphGetBlocksGraphsResponseBody$Outbound;
+    UnauthorizedAppBskyGraphGetBlocksResponseBodyError$outboundSchema;
+  /** @deprecated use `UnauthorizedAppBskyGraphGetBlocksResponseBodyError$Outbound` instead. */
+  export type Outbound =
+    UnauthorizedAppBskyGraphGetBlocksResponseBodyError$Outbound;
 }
 
 /** @internal */
@@ -142,46 +145,50 @@ export namespace AppBskyGraphGetBlocksError$ {
 }
 
 /** @internal */
-export const AppBskyGraphGetBlocksResponseBody$inboundSchema: z.ZodType<
-  AppBskyGraphGetBlocksResponseBody,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  error: AppBskyGraphGetBlocksError$inboundSchema,
-  message: z.string(),
-})
-  .transform((v) => {
-    return new AppBskyGraphGetBlocksResponseBody(v);
-  });
+export const BadRequestAppBskyGraphGetBlocksResponseBodyError$inboundSchema:
+  z.ZodType<
+    BadRequestAppBskyGraphGetBlocksResponseBodyError,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    error: AppBskyGraphGetBlocksError$inboundSchema,
+    message: z.string(),
+  })
+    .transform((v) => {
+      return new BadRequestAppBskyGraphGetBlocksResponseBodyError(v);
+    });
 
 /** @internal */
-export type AppBskyGraphGetBlocksResponseBody$Outbound = {
+export type BadRequestAppBskyGraphGetBlocksResponseBodyError$Outbound = {
   error: string;
   message: string;
 };
 
 /** @internal */
-export const AppBskyGraphGetBlocksResponseBody$outboundSchema: z.ZodType<
-  AppBskyGraphGetBlocksResponseBody$Outbound,
-  z.ZodTypeDef,
-  AppBskyGraphGetBlocksResponseBody
-> = z.instanceof(AppBskyGraphGetBlocksResponseBody)
-  .transform(v => v.data$)
-  .pipe(z.object({
-    error: AppBskyGraphGetBlocksError$outboundSchema,
-    message: z.string(),
-  }));
+export const BadRequestAppBskyGraphGetBlocksResponseBodyError$outboundSchema:
+  z.ZodType<
+    BadRequestAppBskyGraphGetBlocksResponseBodyError$Outbound,
+    z.ZodTypeDef,
+    BadRequestAppBskyGraphGetBlocksResponseBodyError
+  > = z.instanceof(BadRequestAppBskyGraphGetBlocksResponseBodyError)
+    .transform(v => v.data$)
+    .pipe(z.object({
+      error: AppBskyGraphGetBlocksError$outboundSchema,
+      message: z.string(),
+    }));
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyGraphGetBlocksResponseBody$ {
-  /** @deprecated use `AppBskyGraphGetBlocksResponseBody$inboundSchema` instead. */
-  export const inboundSchema = AppBskyGraphGetBlocksResponseBody$inboundSchema;
-  /** @deprecated use `AppBskyGraphGetBlocksResponseBody$outboundSchema` instead. */
+export namespace BadRequestAppBskyGraphGetBlocksResponseBodyError$ {
+  /** @deprecated use `BadRequestAppBskyGraphGetBlocksResponseBodyError$inboundSchema` instead. */
+  export const inboundSchema =
+    BadRequestAppBskyGraphGetBlocksResponseBodyError$inboundSchema;
+  /** @deprecated use `BadRequestAppBskyGraphGetBlocksResponseBodyError$outboundSchema` instead. */
   export const outboundSchema =
-    AppBskyGraphGetBlocksResponseBody$outboundSchema;
-  /** @deprecated use `AppBskyGraphGetBlocksResponseBody$Outbound` instead. */
-  export type Outbound = AppBskyGraphGetBlocksResponseBody$Outbound;
+    BadRequestAppBskyGraphGetBlocksResponseBodyError$outboundSchema;
+  /** @deprecated use `BadRequestAppBskyGraphGetBlocksResponseBodyError$Outbound` instead. */
+  export type Outbound =
+    BadRequestAppBskyGraphGetBlocksResponseBodyError$Outbound;
 }

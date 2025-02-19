@@ -213,7 +213,9 @@ export function setModerationsQueryStatusesData(
       excludeTags?: Array<string> | undefined;
       cursor?: string | undefined;
       collections?: Array<string> | undefined;
-      subjectType?: operations.QueryParamSubjectType | undefined;
+      subjectType?:
+        | operations.ToolsOzoneModerationQueryStatusesSubjectType
+        | undefined;
     },
   ],
   data: ModerationsQueryStatusesQueryData,
@@ -253,7 +255,9 @@ export function invalidateModerationsQueryStatuses(
       excludeTags?: Array<string> | undefined;
       cursor?: string | undefined;
       collections?: Array<string> | undefined;
-      subjectType?: operations.QueryParamSubjectType | undefined;
+      subjectType?:
+        | operations.ToolsOzoneModerationQueryStatusesSubjectType
+        | undefined;
     }]
   >,
   filters?: Omit<InvalidateQueryFilters, "queryKey" | "predicate" | "exact">,
@@ -434,7 +438,9 @@ export function queryKeyModerationsQueryStatuses(
     excludeTags?: Array<string> | undefined;
     cursor?: string | undefined;
     collections?: Array<string> | undefined;
-    subjectType?: operations.QueryParamSubjectType | undefined;
+    subjectType?:
+      | operations.ToolsOzoneModerationQueryStatusesSubjectType
+      | undefined;
   },
 ): QueryKey {
   return ["@speakeasy-api/bluesky", "moderations", "queryStatuses", parameters];

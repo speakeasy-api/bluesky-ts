@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type AppBskyActorGetPreferencesActorsResponseBodyData = {
+export type UnauthorizedAppBskyActorGetPreferencesResponseBodyErrorData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,13 +16,17 @@ export type AppBskyActorGetPreferencesActorsResponseBodyData = {
 /**
  * Unauthorized
  */
-export class AppBskyActorGetPreferencesActorsResponseBody extends Error {
+export class UnauthorizedAppBskyActorGetPreferencesResponseBodyError
+  extends Error
+{
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: AppBskyActorGetPreferencesActorsResponseBodyData;
+  data$: UnauthorizedAppBskyActorGetPreferencesResponseBodyErrorData;
 
-  constructor(err: AppBskyActorGetPreferencesActorsResponseBodyData) {
+  constructor(
+    err: UnauthorizedAppBskyActorGetPreferencesResponseBodyErrorData,
+  ) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -31,35 +35,39 @@ export class AppBskyActorGetPreferencesActorsResponseBody extends Error {
 
     this.error = err.error;
 
-    this.name = "AppBskyActorGetPreferencesActorsResponseBody";
+    this.name = "UnauthorizedAppBskyActorGetPreferencesResponseBodyError";
   }
 }
 
-export const ErrorT = {
+export const AppBskyActorGetPreferencesError = {
   InvalidRequest: "InvalidRequest",
   ExpiredToken: "ExpiredToken",
   InvalidToken: "InvalidToken",
 } as const;
-export type ErrorT = ClosedEnum<typeof ErrorT>;
+export type AppBskyActorGetPreferencesError = ClosedEnum<
+  typeof AppBskyActorGetPreferencesError
+>;
 
 /**
  * Bad Request
  */
-export type AppBskyActorGetPreferencesResponseBodyData = {
-  error: ErrorT;
+export type BadRequestAppBskyActorGetPreferencesResponseBodyErrorData = {
+  error: AppBskyActorGetPreferencesError;
   message: string;
 };
 
 /**
  * Bad Request
  */
-export class AppBskyActorGetPreferencesResponseBody extends Error {
-  error: ErrorT;
+export class BadRequestAppBskyActorGetPreferencesResponseBodyError
+  extends Error
+{
+  error: AppBskyActorGetPreferencesError;
 
   /** The original data that was passed to this error instance. */
-  data$: AppBskyActorGetPreferencesResponseBodyData;
+  data$: BadRequestAppBskyActorGetPreferencesResponseBodyErrorData;
 
-  constructor(err: AppBskyActorGetPreferencesResponseBodyData) {
+  constructor(err: BadRequestAppBskyActorGetPreferencesResponseBodyErrorData) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -68,14 +76,14 @@ export class AppBskyActorGetPreferencesResponseBody extends Error {
 
     this.error = err.error;
 
-    this.name = "AppBskyActorGetPreferencesResponseBody";
+    this.name = "BadRequestAppBskyActorGetPreferencesResponseBodyError";
   }
 }
 
 /** @internal */
-export const AppBskyActorGetPreferencesActorsResponseBody$inboundSchema:
+export const UnauthorizedAppBskyActorGetPreferencesResponseBodyError$inboundSchema:
   z.ZodType<
-    AppBskyActorGetPreferencesActorsResponseBody,
+    UnauthorizedAppBskyActorGetPreferencesResponseBodyError,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -83,22 +91,22 @@ export const AppBskyActorGetPreferencesActorsResponseBody$inboundSchema:
     message: z.string(),
   })
     .transform((v) => {
-      return new AppBskyActorGetPreferencesActorsResponseBody(v);
+      return new UnauthorizedAppBskyActorGetPreferencesResponseBodyError(v);
     });
 
 /** @internal */
-export type AppBskyActorGetPreferencesActorsResponseBody$Outbound = {
+export type UnauthorizedAppBskyActorGetPreferencesResponseBodyError$Outbound = {
   error: "AuthMissing";
   message: string;
 };
 
 /** @internal */
-export const AppBskyActorGetPreferencesActorsResponseBody$outboundSchema:
+export const UnauthorizedAppBskyActorGetPreferencesResponseBodyError$outboundSchema:
   z.ZodType<
-    AppBskyActorGetPreferencesActorsResponseBody$Outbound,
+    UnauthorizedAppBskyActorGetPreferencesResponseBodyError$Outbound,
     z.ZodTypeDef,
-    AppBskyActorGetPreferencesActorsResponseBody
-  > = z.instanceof(AppBskyActorGetPreferencesActorsResponseBody)
+    UnauthorizedAppBskyActorGetPreferencesResponseBodyError
+  > = z.instanceof(UnauthorizedAppBskyActorGetPreferencesResponseBodyError)
     .transform(v => v.data$)
     .pipe(z.object({
       error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -109,78 +117,84 @@ export const AppBskyActorGetPreferencesActorsResponseBody$outboundSchema:
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyActorGetPreferencesActorsResponseBody$ {
-  /** @deprecated use `AppBskyActorGetPreferencesActorsResponseBody$inboundSchema` instead. */
+export namespace UnauthorizedAppBskyActorGetPreferencesResponseBodyError$ {
+  /** @deprecated use `UnauthorizedAppBskyActorGetPreferencesResponseBodyError$inboundSchema` instead. */
   export const inboundSchema =
-    AppBskyActorGetPreferencesActorsResponseBody$inboundSchema;
-  /** @deprecated use `AppBskyActorGetPreferencesActorsResponseBody$outboundSchema` instead. */
+    UnauthorizedAppBskyActorGetPreferencesResponseBodyError$inboundSchema;
+  /** @deprecated use `UnauthorizedAppBskyActorGetPreferencesResponseBodyError$outboundSchema` instead. */
   export const outboundSchema =
-    AppBskyActorGetPreferencesActorsResponseBody$outboundSchema;
-  /** @deprecated use `AppBskyActorGetPreferencesActorsResponseBody$Outbound` instead. */
-  export type Outbound = AppBskyActorGetPreferencesActorsResponseBody$Outbound;
+    UnauthorizedAppBskyActorGetPreferencesResponseBodyError$outboundSchema;
+  /** @deprecated use `UnauthorizedAppBskyActorGetPreferencesResponseBodyError$Outbound` instead. */
+  export type Outbound =
+    UnauthorizedAppBskyActorGetPreferencesResponseBodyError$Outbound;
 }
 
 /** @internal */
-export const ErrorT$inboundSchema: z.ZodNativeEnum<typeof ErrorT> = z
-  .nativeEnum(ErrorT);
+export const AppBskyActorGetPreferencesError$inboundSchema: z.ZodNativeEnum<
+  typeof AppBskyActorGetPreferencesError
+> = z.nativeEnum(AppBskyActorGetPreferencesError);
 
 /** @internal */
-export const ErrorT$outboundSchema: z.ZodNativeEnum<typeof ErrorT> =
-  ErrorT$inboundSchema;
+export const AppBskyActorGetPreferencesError$outboundSchema: z.ZodNativeEnum<
+  typeof AppBskyActorGetPreferencesError
+> = AppBskyActorGetPreferencesError$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ErrorT$ {
-  /** @deprecated use `ErrorT$inboundSchema` instead. */
-  export const inboundSchema = ErrorT$inboundSchema;
-  /** @deprecated use `ErrorT$outboundSchema` instead. */
-  export const outboundSchema = ErrorT$outboundSchema;
+export namespace AppBskyActorGetPreferencesError$ {
+  /** @deprecated use `AppBskyActorGetPreferencesError$inboundSchema` instead. */
+  export const inboundSchema = AppBskyActorGetPreferencesError$inboundSchema;
+  /** @deprecated use `AppBskyActorGetPreferencesError$outboundSchema` instead. */
+  export const outboundSchema = AppBskyActorGetPreferencesError$outboundSchema;
 }
 
 /** @internal */
-export const AppBskyActorGetPreferencesResponseBody$inboundSchema: z.ZodType<
-  AppBskyActorGetPreferencesResponseBody,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  error: ErrorT$inboundSchema,
-  message: z.string(),
-})
-  .transform((v) => {
-    return new AppBskyActorGetPreferencesResponseBody(v);
-  });
+export const BadRequestAppBskyActorGetPreferencesResponseBodyError$inboundSchema:
+  z.ZodType<
+    BadRequestAppBskyActorGetPreferencesResponseBodyError,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    error: AppBskyActorGetPreferencesError$inboundSchema,
+    message: z.string(),
+  })
+    .transform((v) => {
+      return new BadRequestAppBskyActorGetPreferencesResponseBodyError(v);
+    });
 
 /** @internal */
-export type AppBskyActorGetPreferencesResponseBody$Outbound = {
+export type BadRequestAppBskyActorGetPreferencesResponseBodyError$Outbound = {
   error: string;
   message: string;
 };
 
 /** @internal */
-export const AppBskyActorGetPreferencesResponseBody$outboundSchema: z.ZodType<
-  AppBskyActorGetPreferencesResponseBody$Outbound,
-  z.ZodTypeDef,
-  AppBskyActorGetPreferencesResponseBody
-> = z.instanceof(AppBskyActorGetPreferencesResponseBody)
-  .transform(v => v.data$)
-  .pipe(z.object({
-    error: ErrorT$outboundSchema,
-    message: z.string(),
-  }));
+export const BadRequestAppBskyActorGetPreferencesResponseBodyError$outboundSchema:
+  z.ZodType<
+    BadRequestAppBskyActorGetPreferencesResponseBodyError$Outbound,
+    z.ZodTypeDef,
+    BadRequestAppBskyActorGetPreferencesResponseBodyError
+  > = z.instanceof(BadRequestAppBskyActorGetPreferencesResponseBodyError)
+    .transform(v => v.data$)
+    .pipe(z.object({
+      error: AppBskyActorGetPreferencesError$outboundSchema,
+      message: z.string(),
+    }));
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyActorGetPreferencesResponseBody$ {
-  /** @deprecated use `AppBskyActorGetPreferencesResponseBody$inboundSchema` instead. */
+export namespace BadRequestAppBskyActorGetPreferencesResponseBodyError$ {
+  /** @deprecated use `BadRequestAppBskyActorGetPreferencesResponseBodyError$inboundSchema` instead. */
   export const inboundSchema =
-    AppBskyActorGetPreferencesResponseBody$inboundSchema;
-  /** @deprecated use `AppBskyActorGetPreferencesResponseBody$outboundSchema` instead. */
+    BadRequestAppBskyActorGetPreferencesResponseBodyError$inboundSchema;
+  /** @deprecated use `BadRequestAppBskyActorGetPreferencesResponseBodyError$outboundSchema` instead. */
   export const outboundSchema =
-    AppBskyActorGetPreferencesResponseBody$outboundSchema;
-  /** @deprecated use `AppBskyActorGetPreferencesResponseBody$Outbound` instead. */
-  export type Outbound = AppBskyActorGetPreferencesResponseBody$Outbound;
+    BadRequestAppBskyActorGetPreferencesResponseBodyError$outboundSchema;
+  /** @deprecated use `BadRequestAppBskyActorGetPreferencesResponseBodyError$Outbound` instead. */
+  export type Outbound =
+    BadRequestAppBskyActorGetPreferencesResponseBodyError$Outbound;
 }

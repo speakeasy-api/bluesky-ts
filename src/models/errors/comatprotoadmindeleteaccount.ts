@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type ComAtprotoAdminDeleteAccountAdminsResponseBodyData = {
+export type UnauthorizedComAtprotoAdminDeleteAccountResponseBodyErrorData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,13 +16,17 @@ export type ComAtprotoAdminDeleteAccountAdminsResponseBodyData = {
 /**
  * Unauthorized
  */
-export class ComAtprotoAdminDeleteAccountAdminsResponseBody extends Error {
+export class UnauthorizedComAtprotoAdminDeleteAccountResponseBodyError
+  extends Error
+{
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: ComAtprotoAdminDeleteAccountAdminsResponseBodyData;
+  data$: UnauthorizedComAtprotoAdminDeleteAccountResponseBodyErrorData;
 
-  constructor(err: ComAtprotoAdminDeleteAccountAdminsResponseBodyData) {
+  constructor(
+    err: UnauthorizedComAtprotoAdminDeleteAccountResponseBodyErrorData,
+  ) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -31,7 +35,7 @@ export class ComAtprotoAdminDeleteAccountAdminsResponseBody extends Error {
 
     this.error = err.error;
 
-    this.name = "ComAtprotoAdminDeleteAccountAdminsResponseBody";
+    this.name = "UnauthorizedComAtprotoAdminDeleteAccountResponseBodyError";
   }
 }
 
@@ -47,7 +51,7 @@ export type ComAtprotoAdminDeleteAccountError = ClosedEnum<
 /**
  * Bad Request
  */
-export type ComAtprotoAdminDeleteAccountResponseBodyData = {
+export type BadRequestComAtprotoAdminDeleteAccountResponseBodyErrorData = {
   error: ComAtprotoAdminDeleteAccountError;
   message: string;
 };
@@ -55,13 +59,17 @@ export type ComAtprotoAdminDeleteAccountResponseBodyData = {
 /**
  * Bad Request
  */
-export class ComAtprotoAdminDeleteAccountResponseBody extends Error {
+export class BadRequestComAtprotoAdminDeleteAccountResponseBodyError
+  extends Error
+{
   error: ComAtprotoAdminDeleteAccountError;
 
   /** The original data that was passed to this error instance. */
-  data$: ComAtprotoAdminDeleteAccountResponseBodyData;
+  data$: BadRequestComAtprotoAdminDeleteAccountResponseBodyErrorData;
 
-  constructor(err: ComAtprotoAdminDeleteAccountResponseBodyData) {
+  constructor(
+    err: BadRequestComAtprotoAdminDeleteAccountResponseBodyErrorData,
+  ) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -70,14 +78,14 @@ export class ComAtprotoAdminDeleteAccountResponseBody extends Error {
 
     this.error = err.error;
 
-    this.name = "ComAtprotoAdminDeleteAccountResponseBody";
+    this.name = "BadRequestComAtprotoAdminDeleteAccountResponseBodyError";
   }
 }
 
 /** @internal */
-export const ComAtprotoAdminDeleteAccountAdminsResponseBody$inboundSchema:
+export const UnauthorizedComAtprotoAdminDeleteAccountResponseBodyError$inboundSchema:
   z.ZodType<
-    ComAtprotoAdminDeleteAccountAdminsResponseBody,
+    UnauthorizedComAtprotoAdminDeleteAccountResponseBodyError,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -85,22 +93,23 @@ export const ComAtprotoAdminDeleteAccountAdminsResponseBody$inboundSchema:
     message: z.string(),
   })
     .transform((v) => {
-      return new ComAtprotoAdminDeleteAccountAdminsResponseBody(v);
+      return new UnauthorizedComAtprotoAdminDeleteAccountResponseBodyError(v);
     });
 
 /** @internal */
-export type ComAtprotoAdminDeleteAccountAdminsResponseBody$Outbound = {
-  error: "AuthMissing";
-  message: string;
-};
+export type UnauthorizedComAtprotoAdminDeleteAccountResponseBodyError$Outbound =
+  {
+    error: "AuthMissing";
+    message: string;
+  };
 
 /** @internal */
-export const ComAtprotoAdminDeleteAccountAdminsResponseBody$outboundSchema:
+export const UnauthorizedComAtprotoAdminDeleteAccountResponseBodyError$outboundSchema:
   z.ZodType<
-    ComAtprotoAdminDeleteAccountAdminsResponseBody$Outbound,
+    UnauthorizedComAtprotoAdminDeleteAccountResponseBodyError$Outbound,
     z.ZodTypeDef,
-    ComAtprotoAdminDeleteAccountAdminsResponseBody
-  > = z.instanceof(ComAtprotoAdminDeleteAccountAdminsResponseBody)
+    UnauthorizedComAtprotoAdminDeleteAccountResponseBodyError
+  > = z.instanceof(UnauthorizedComAtprotoAdminDeleteAccountResponseBodyError)
     .transform(v => v.data$)
     .pipe(z.object({
       error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -111,16 +120,16 @@ export const ComAtprotoAdminDeleteAccountAdminsResponseBody$outboundSchema:
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoAdminDeleteAccountAdminsResponseBody$ {
-  /** @deprecated use `ComAtprotoAdminDeleteAccountAdminsResponseBody$inboundSchema` instead. */
+export namespace UnauthorizedComAtprotoAdminDeleteAccountResponseBodyError$ {
+  /** @deprecated use `UnauthorizedComAtprotoAdminDeleteAccountResponseBodyError$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoAdminDeleteAccountAdminsResponseBody$inboundSchema;
-  /** @deprecated use `ComAtprotoAdminDeleteAccountAdminsResponseBody$outboundSchema` instead. */
+    UnauthorizedComAtprotoAdminDeleteAccountResponseBodyError$inboundSchema;
+  /** @deprecated use `UnauthorizedComAtprotoAdminDeleteAccountResponseBodyError$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoAdminDeleteAccountAdminsResponseBody$outboundSchema;
-  /** @deprecated use `ComAtprotoAdminDeleteAccountAdminsResponseBody$Outbound` instead. */
+    UnauthorizedComAtprotoAdminDeleteAccountResponseBodyError$outboundSchema;
+  /** @deprecated use `UnauthorizedComAtprotoAdminDeleteAccountResponseBodyError$Outbound` instead. */
   export type Outbound =
-    ComAtprotoAdminDeleteAccountAdminsResponseBody$Outbound;
+    UnauthorizedComAtprotoAdminDeleteAccountResponseBodyError$Outbound;
 }
 
 /** @internal */
@@ -146,47 +155,50 @@ export namespace ComAtprotoAdminDeleteAccountError$ {
 }
 
 /** @internal */
-export const ComAtprotoAdminDeleteAccountResponseBody$inboundSchema: z.ZodType<
-  ComAtprotoAdminDeleteAccountResponseBody,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  error: ComAtprotoAdminDeleteAccountError$inboundSchema,
-  message: z.string(),
-})
-  .transform((v) => {
-    return new ComAtprotoAdminDeleteAccountResponseBody(v);
-  });
+export const BadRequestComAtprotoAdminDeleteAccountResponseBodyError$inboundSchema:
+  z.ZodType<
+    BadRequestComAtprotoAdminDeleteAccountResponseBodyError,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    error: ComAtprotoAdminDeleteAccountError$inboundSchema,
+    message: z.string(),
+  })
+    .transform((v) => {
+      return new BadRequestComAtprotoAdminDeleteAccountResponseBodyError(v);
+    });
 
 /** @internal */
-export type ComAtprotoAdminDeleteAccountResponseBody$Outbound = {
+export type BadRequestComAtprotoAdminDeleteAccountResponseBodyError$Outbound = {
   error: string;
   message: string;
 };
 
 /** @internal */
-export const ComAtprotoAdminDeleteAccountResponseBody$outboundSchema: z.ZodType<
-  ComAtprotoAdminDeleteAccountResponseBody$Outbound,
-  z.ZodTypeDef,
-  ComAtprotoAdminDeleteAccountResponseBody
-> = z.instanceof(ComAtprotoAdminDeleteAccountResponseBody)
-  .transform(v => v.data$)
-  .pipe(z.object({
-    error: ComAtprotoAdminDeleteAccountError$outboundSchema,
-    message: z.string(),
-  }));
+export const BadRequestComAtprotoAdminDeleteAccountResponseBodyError$outboundSchema:
+  z.ZodType<
+    BadRequestComAtprotoAdminDeleteAccountResponseBodyError$Outbound,
+    z.ZodTypeDef,
+    BadRequestComAtprotoAdminDeleteAccountResponseBodyError
+  > = z.instanceof(BadRequestComAtprotoAdminDeleteAccountResponseBodyError)
+    .transform(v => v.data$)
+    .pipe(z.object({
+      error: ComAtprotoAdminDeleteAccountError$outboundSchema,
+      message: z.string(),
+    }));
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoAdminDeleteAccountResponseBody$ {
-  /** @deprecated use `ComAtprotoAdminDeleteAccountResponseBody$inboundSchema` instead. */
+export namespace BadRequestComAtprotoAdminDeleteAccountResponseBodyError$ {
+  /** @deprecated use `BadRequestComAtprotoAdminDeleteAccountResponseBodyError$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoAdminDeleteAccountResponseBody$inboundSchema;
-  /** @deprecated use `ComAtprotoAdminDeleteAccountResponseBody$outboundSchema` instead. */
+    BadRequestComAtprotoAdminDeleteAccountResponseBodyError$inboundSchema;
+  /** @deprecated use `BadRequestComAtprotoAdminDeleteAccountResponseBodyError$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoAdminDeleteAccountResponseBody$outboundSchema;
-  /** @deprecated use `ComAtprotoAdminDeleteAccountResponseBody$Outbound` instead. */
-  export type Outbound = ComAtprotoAdminDeleteAccountResponseBody$Outbound;
+    BadRequestComAtprotoAdminDeleteAccountResponseBodyError$outboundSchema;
+  /** @deprecated use `BadRequestComAtprotoAdminDeleteAccountResponseBodyError$Outbound` instead. */
+  export type Outbound =
+    BadRequestComAtprotoAdminDeleteAccountResponseBodyError$Outbound;
 }

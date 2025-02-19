@@ -18,7 +18,7 @@ import { useBlueskyContext } from "./_context.js";
 import { MutationHookOptions } from "./_types.js";
 
 export type ConvoDeleteMessageForSelfMutationVariables = {
-  request: operations.ChatBskyConvoDeleteMessageForSelfRequestBody;
+  request: operations.ChatBskyConvoDeleteMessageForSelfBody;
   options?: RequestOptions;
 };
 

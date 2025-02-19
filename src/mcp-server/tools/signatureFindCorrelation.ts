@@ -17,9 +17,8 @@ export const tool$signatureFindCorrelation: ToolDefinition<typeof args> = {
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
-Find all correlated threat signatures between 2 or more accounts.
-
-`,
+Find all correlated threat signatures between 2 or more accounts.`,
+  scopes: ["read"],
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await signatureFindCorrelation(
@@ -28,6 +27,15 @@ Find all correlated threat signatures between 2 or more accounts.
       { fetchOptions: { signal: ctx.signal } },
     ).$inspect();
 
-    return formatResult(result, apiCall);
+    if (!result.ok) {
+      return {
+        content: [{ type: "text", text: result.error.message }],
+        isError: true,
+      };
+    }
+
+    const value = result.value;
+
+    return formatResult(value, apiCall);
   },
 };

@@ -134,21 +134,21 @@ import {
 
 ### Errors
 
-| Error Type                                      | Status Code                                     | Content Type                                    |
-| ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
-| errors.ComAtprotoSyncGetBlocksResponseBody      | 400                                             | application/json                                |
-| errors.ComAtprotoSyncGetBlocksSyncsResponseBody | 401                                             | application/json                                |
-| errors.NotFound                                 | 404                                             | application/json                                |
-| errors.Unauthorized                             | 403, 407                                        | application/json                                |
-| errors.Timeout                                  | 408                                             | application/json                                |
-| errors.RateLimited                              | 429                                             | application/json                                |
-| errors.BadRequest                               | 413, 414, 415, 422, 431                         | application/json                                |
-| errors.Timeout                                  | 504                                             | application/json                                |
-| errors.NotFound                                 | 501, 505                                        | application/json                                |
-| errors.InternalServerError                      | 500, 502, 503, 506, 507, 508                    | application/json                                |
-| errors.BadRequest                               | 510                                             | application/json                                |
-| errors.Unauthorized                             | 511                                             | application/json                                |
-| errors.APIError                                 | 4XX, 5XX                                        | \*/\*                                           |
+| Error Type                                                  | Status Code                                                 | Content Type                                                |
+| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
+| errors.BadRequestComAtprotoSyncGetBlocksResponseBodyError   | 400                                                         | application/json                                            |
+| errors.UnauthorizedComAtprotoSyncGetBlocksResponseBodyError | 401                                                         | application/json                                            |
+| errors.NotFoundError                                        | 404                                                         | application/json                                            |
+| errors.UnauthorizedError                                    | 403, 407                                                    | application/json                                            |
+| errors.TimeoutError                                         | 408                                                         | application/json                                            |
+| errors.RateLimitedError                                     | 429                                                         | application/json                                            |
+| errors.BadRequestError                                      | 413, 414, 415, 422, 431                                     | application/json                                            |
+| errors.TimeoutError                                         | 504                                                         | application/json                                            |
+| errors.NotFoundError                                        | 501, 505                                                    | application/json                                            |
+| errors.InternalServerError                                  | 500, 502, 503, 506, 507, 508                                | application/json                                            |
+| errors.BadRequestError                                      | 510                                                         | application/json                                            |
+| errors.UnauthorizedError                                    | 511                                                         | application/json                                            |
+| errors.APIError                                             | 4XX, 5XX                                                    | \*/\*                                                       |
 
 ## getLatestCommit
 
@@ -254,21 +254,21 @@ import {
 
 ### Errors
 
-| Error Type                                            | Status Code                                           | Content Type                                          |
-| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
-| errors.ComAtprotoSyncGetLatestCommitResponseBody      | 400                                                   | application/json                                      |
-| errors.ComAtprotoSyncGetLatestCommitSyncsResponseBody | 401                                                   | application/json                                      |
-| errors.NotFound                                       | 404                                                   | application/json                                      |
-| errors.Unauthorized                                   | 403, 407                                              | application/json                                      |
-| errors.Timeout                                        | 408                                                   | application/json                                      |
-| errors.RateLimited                                    | 429                                                   | application/json                                      |
-| errors.BadRequest                                     | 413, 414, 415, 422, 431                               | application/json                                      |
-| errors.Timeout                                        | 504                                                   | application/json                                      |
-| errors.NotFound                                       | 501, 505                                              | application/json                                      |
-| errors.InternalServerError                            | 500, 502, 503, 506, 507, 508                          | application/json                                      |
-| errors.BadRequest                                     | 510                                                   | application/json                                      |
-| errors.Unauthorized                                   | 511                                                   | application/json                                      |
-| errors.APIError                                       | 4XX, 5XX                                              | \*/\*                                                 |
+| Error Type                                                        | Status Code                                                       | Content Type                                                      |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| errors.BadRequestComAtprotoSyncGetLatestCommitResponseBodyError   | 400                                                               | application/json                                                  |
+| errors.UnauthorizedComAtprotoSyncGetLatestCommitResponseBodyError | 401                                                               | application/json                                                  |
+| errors.NotFoundError                                              | 404                                                               | application/json                                                  |
+| errors.UnauthorizedError                                          | 403, 407                                                          | application/json                                                  |
+| errors.TimeoutError                                               | 408                                                               | application/json                                                  |
+| errors.RateLimitedError                                           | 429                                                               | application/json                                                  |
+| errors.BadRequestError                                            | 413, 414, 415, 422, 431                                           | application/json                                                  |
+| errors.TimeoutError                                               | 504                                                               | application/json                                                  |
+| errors.NotFoundError                                              | 501, 505                                                          | application/json                                                  |
+| errors.InternalServerError                                        | 500, 502, 503, 506, 507, 508                                      | application/json                                                  |
+| errors.BadRequestError                                            | 510                                                               | application/json                                                  |
+| errors.UnauthorizedError                                          | 511                                                               | application/json                                                  |
+| errors.APIError                                                   | 4XX, 5XX                                                          | \*/\*                                                             |
 
 ## getRepoStatus
 
@@ -374,21 +374,21 @@ import {
 
 ### Errors
 
-| Error Type                                          | Status Code                                         | Content Type                                        |
-| --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
-| errors.ComAtprotoSyncGetRepoStatusResponseBody      | 400                                                 | application/json                                    |
-| errors.ComAtprotoSyncGetRepoStatusSyncsResponseBody | 401                                                 | application/json                                    |
-| errors.NotFound                                     | 404                                                 | application/json                                    |
-| errors.Unauthorized                                 | 403, 407                                            | application/json                                    |
-| errors.Timeout                                      | 408                                                 | application/json                                    |
-| errors.RateLimited                                  | 429                                                 | application/json                                    |
-| errors.BadRequest                                   | 413, 414, 415, 422, 431                             | application/json                                    |
-| errors.Timeout                                      | 504                                                 | application/json                                    |
-| errors.NotFound                                     | 501, 505                                            | application/json                                    |
-| errors.InternalServerError                          | 500, 502, 503, 506, 507, 508                        | application/json                                    |
-| errors.BadRequest                                   | 510                                                 | application/json                                    |
-| errors.Unauthorized                                 | 511                                                 | application/json                                    |
-| errors.APIError                                     | 4XX, 5XX                                            | \*/\*                                               |
+| Error Type                                                      | Status Code                                                     | Content Type                                                    |
+| --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
+| errors.BadRequestComAtprotoSyncGetRepoStatusResponseBodyError   | 400                                                             | application/json                                                |
+| errors.UnauthorizedComAtprotoSyncGetRepoStatusResponseBodyError | 401                                                             | application/json                                                |
+| errors.NotFoundError                                            | 404                                                             | application/json                                                |
+| errors.UnauthorizedError                                        | 403, 407                                                        | application/json                                                |
+| errors.TimeoutError                                             | 408                                                             | application/json                                                |
+| errors.RateLimitedError                                         | 429                                                             | application/json                                                |
+| errors.BadRequestError                                          | 413, 414, 415, 422, 431                                         | application/json                                                |
+| errors.TimeoutError                                             | 504                                                             | application/json                                                |
+| errors.NotFoundError                                            | 501, 505                                                        | application/json                                                |
+| errors.InternalServerError                                      | 500, 502, 503, 506, 507, 508                                    | application/json                                                |
+| errors.BadRequestError                                          | 510                                                             | application/json                                                |
+| errors.UnauthorizedError                                        | 511                                                             | application/json                                                |
+| errors.APIError                                                 | 4XX, 5XX                                                        | \*/\*                                                           |
 
 ## requestCrawl
 
@@ -470,7 +470,7 @@ import {
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ComAtprotoSyncRequestCrawlRequestBody](../../models/operations/comatprotosyncrequestcrawlrequestbody.md)                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ComAtprotoSyncRequestCrawlBody](../../models/operations/comatprotosyncrequestcrawlbody.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -481,18 +481,18 @@ import {
 
 ### Errors
 
-| Error Type                                         | Status Code                                        | Content Type                                       |
-| -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
-| errors.ComAtprotoSyncRequestCrawlResponseBody      | 400                                                | application/json                                   |
-| errors.ComAtprotoSyncRequestCrawlSyncsResponseBody | 401                                                | application/json                                   |
-| errors.NotFound                                    | 404                                                | application/json                                   |
-| errors.Unauthorized                                | 403, 407                                           | application/json                                   |
-| errors.Timeout                                     | 408                                                | application/json                                   |
-| errors.RateLimited                                 | 429                                                | application/json                                   |
-| errors.BadRequest                                  | 413, 414, 415, 422, 431                            | application/json                                   |
-| errors.Timeout                                     | 504                                                | application/json                                   |
-| errors.NotFound                                    | 501, 505                                           | application/json                                   |
-| errors.InternalServerError                         | 500, 502, 503, 506, 507, 508                       | application/json                                   |
-| errors.BadRequest                                  | 510                                                | application/json                                   |
-| errors.Unauthorized                                | 511                                                | application/json                                   |
-| errors.APIError                                    | 4XX, 5XX                                           | \*/\*                                              |
+| Error Type                                                     | Status Code                                                    | Content Type                                                   |
+| -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
+| errors.BadRequestComAtprotoSyncRequestCrawlResponseBodyError   | 400                                                            | application/json                                               |
+| errors.UnauthorizedComAtprotoSyncRequestCrawlResponseBodyError | 401                                                            | application/json                                               |
+| errors.NotFoundError                                           | 404                                                            | application/json                                               |
+| errors.UnauthorizedError                                       | 403, 407                                                       | application/json                                               |
+| errors.TimeoutError                                            | 408                                                            | application/json                                               |
+| errors.RateLimitedError                                        | 429                                                            | application/json                                               |
+| errors.BadRequestError                                         | 413, 414, 415, 422, 431                                        | application/json                                               |
+| errors.TimeoutError                                            | 504                                                            | application/json                                               |
+| errors.NotFoundError                                           | 501, 505                                                       | application/json                                               |
+| errors.InternalServerError                                     | 500, 502, 503, 506, 507, 508                                   | application/json                                               |
+| errors.BadRequestError                                         | 510                                                            | application/json                                               |
+| errors.UnauthorizedError                                       | 511                                                            | application/json                                               |
+| errors.APIError                                                | 4XX, 5XX                                                       | \*/\*                                                          |

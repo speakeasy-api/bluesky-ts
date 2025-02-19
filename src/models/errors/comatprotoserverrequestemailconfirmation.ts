@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type ComAtprotoServerRequestEmailConfirmationAtprotoServerResponseBodyData =
+export type UnauthorizedComAtprotoServerRequestEmailConfirmationResponseBodyErrorData =
   {
     error: "AuthMissing";
     message: string;
@@ -17,16 +17,18 @@ export type ComAtprotoServerRequestEmailConfirmationAtprotoServerResponseBodyDat
 /**
  * Unauthorized
  */
-export class ComAtprotoServerRequestEmailConfirmationAtprotoServerResponseBody
+export class UnauthorizedComAtprotoServerRequestEmailConfirmationResponseBodyError
   extends Error
 {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: ComAtprotoServerRequestEmailConfirmationAtprotoServerResponseBodyData;
+  data$:
+    UnauthorizedComAtprotoServerRequestEmailConfirmationResponseBodyErrorData;
 
   constructor(
-    err: ComAtprotoServerRequestEmailConfirmationAtprotoServerResponseBodyData,
+    err:
+      UnauthorizedComAtprotoServerRequestEmailConfirmationResponseBodyErrorData,
   ) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
@@ -37,7 +39,7 @@ export class ComAtprotoServerRequestEmailConfirmationAtprotoServerResponseBody
     this.error = err.error;
 
     this.name =
-      "ComAtprotoServerRequestEmailConfirmationAtprotoServerResponseBody";
+      "UnauthorizedComAtprotoServerRequestEmailConfirmationResponseBodyError";
   }
 }
 
@@ -53,23 +55,28 @@ export type ComAtprotoServerRequestEmailConfirmationError = ClosedEnum<
 /**
  * Bad Request
  */
-export type ComAtprotoServerRequestEmailConfirmationResponseBodyData = {
-  error: ComAtprotoServerRequestEmailConfirmationError;
-  message: string;
-};
+export type BadRequestComAtprotoServerRequestEmailConfirmationResponseBodyErrorData =
+  {
+    error: ComAtprotoServerRequestEmailConfirmationError;
+    message: string;
+  };
 
 /**
  * Bad Request
  */
-export class ComAtprotoServerRequestEmailConfirmationResponseBody
+export class BadRequestComAtprotoServerRequestEmailConfirmationResponseBodyError
   extends Error
 {
   error: ComAtprotoServerRequestEmailConfirmationError;
 
   /** The original data that was passed to this error instance. */
-  data$: ComAtprotoServerRequestEmailConfirmationResponseBodyData;
+  data$:
+    BadRequestComAtprotoServerRequestEmailConfirmationResponseBodyErrorData;
 
-  constructor(err: ComAtprotoServerRequestEmailConfirmationResponseBodyData) {
+  constructor(
+    err:
+      BadRequestComAtprotoServerRequestEmailConfirmationResponseBodyErrorData,
+  ) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -78,14 +85,15 @@ export class ComAtprotoServerRequestEmailConfirmationResponseBody
 
     this.error = err.error;
 
-    this.name = "ComAtprotoServerRequestEmailConfirmationResponseBody";
+    this.name =
+      "BadRequestComAtprotoServerRequestEmailConfirmationResponseBodyError";
   }
 }
 
 /** @internal */
-export const ComAtprotoServerRequestEmailConfirmationAtprotoServerResponseBody$inboundSchema:
+export const UnauthorizedComAtprotoServerRequestEmailConfirmationResponseBodyError$inboundSchema:
   z.ZodType<
-    ComAtprotoServerRequestEmailConfirmationAtprotoServerResponseBody,
+    UnauthorizedComAtprotoServerRequestEmailConfirmationResponseBodyError,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -93,26 +101,26 @@ export const ComAtprotoServerRequestEmailConfirmationAtprotoServerResponseBody$i
     message: z.string(),
   })
     .transform((v) => {
-      return new ComAtprotoServerRequestEmailConfirmationAtprotoServerResponseBody(
+      return new UnauthorizedComAtprotoServerRequestEmailConfirmationResponseBodyError(
         v,
       );
     });
 
 /** @internal */
-export type ComAtprotoServerRequestEmailConfirmationAtprotoServerResponseBody$Outbound =
+export type UnauthorizedComAtprotoServerRequestEmailConfirmationResponseBodyError$Outbound =
   {
     error: "AuthMissing";
     message: string;
   };
 
 /** @internal */
-export const ComAtprotoServerRequestEmailConfirmationAtprotoServerResponseBody$outboundSchema:
+export const UnauthorizedComAtprotoServerRequestEmailConfirmationResponseBodyError$outboundSchema:
   z.ZodType<
-    ComAtprotoServerRequestEmailConfirmationAtprotoServerResponseBody$Outbound,
+    UnauthorizedComAtprotoServerRequestEmailConfirmationResponseBodyError$Outbound,
     z.ZodTypeDef,
-    ComAtprotoServerRequestEmailConfirmationAtprotoServerResponseBody
+    UnauthorizedComAtprotoServerRequestEmailConfirmationResponseBodyError
   > = z.instanceof(
-    ComAtprotoServerRequestEmailConfirmationAtprotoServerResponseBody,
+    UnauthorizedComAtprotoServerRequestEmailConfirmationResponseBodyError,
   )
     .transform(v => v.data$)
     .pipe(z.object({
@@ -124,16 +132,16 @@ export const ComAtprotoServerRequestEmailConfirmationAtprotoServerResponseBody$o
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoServerRequestEmailConfirmationAtprotoServerResponseBody$ {
-  /** @deprecated use `ComAtprotoServerRequestEmailConfirmationAtprotoServerResponseBody$inboundSchema` instead. */
+export namespace UnauthorizedComAtprotoServerRequestEmailConfirmationResponseBodyError$ {
+  /** @deprecated use `UnauthorizedComAtprotoServerRequestEmailConfirmationResponseBodyError$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoServerRequestEmailConfirmationAtprotoServerResponseBody$inboundSchema;
-  /** @deprecated use `ComAtprotoServerRequestEmailConfirmationAtprotoServerResponseBody$outboundSchema` instead. */
+    UnauthorizedComAtprotoServerRequestEmailConfirmationResponseBodyError$inboundSchema;
+  /** @deprecated use `UnauthorizedComAtprotoServerRequestEmailConfirmationResponseBodyError$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoServerRequestEmailConfirmationAtprotoServerResponseBody$outboundSchema;
-  /** @deprecated use `ComAtprotoServerRequestEmailConfirmationAtprotoServerResponseBody$Outbound` instead. */
+    UnauthorizedComAtprotoServerRequestEmailConfirmationResponseBodyError$outboundSchema;
+  /** @deprecated use `UnauthorizedComAtprotoServerRequestEmailConfirmationResponseBodyError$Outbound` instead. */
   export type Outbound =
-    ComAtprotoServerRequestEmailConfirmationAtprotoServerResponseBody$Outbound;
+    UnauthorizedComAtprotoServerRequestEmailConfirmationResponseBodyError$Outbound;
 }
 
 /** @internal */
@@ -160,9 +168,9 @@ export namespace ComAtprotoServerRequestEmailConfirmationError$ {
 }
 
 /** @internal */
-export const ComAtprotoServerRequestEmailConfirmationResponseBody$inboundSchema:
+export const BadRequestComAtprotoServerRequestEmailConfirmationResponseBodyError$inboundSchema:
   z.ZodType<
-    ComAtprotoServerRequestEmailConfirmationResponseBody,
+    BadRequestComAtprotoServerRequestEmailConfirmationResponseBodyError,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -170,22 +178,27 @@ export const ComAtprotoServerRequestEmailConfirmationResponseBody$inboundSchema:
     message: z.string(),
   })
     .transform((v) => {
-      return new ComAtprotoServerRequestEmailConfirmationResponseBody(v);
+      return new BadRequestComAtprotoServerRequestEmailConfirmationResponseBodyError(
+        v,
+      );
     });
 
 /** @internal */
-export type ComAtprotoServerRequestEmailConfirmationResponseBody$Outbound = {
-  error: string;
-  message: string;
-};
+export type BadRequestComAtprotoServerRequestEmailConfirmationResponseBodyError$Outbound =
+  {
+    error: string;
+    message: string;
+  };
 
 /** @internal */
-export const ComAtprotoServerRequestEmailConfirmationResponseBody$outboundSchema:
+export const BadRequestComAtprotoServerRequestEmailConfirmationResponseBodyError$outboundSchema:
   z.ZodType<
-    ComAtprotoServerRequestEmailConfirmationResponseBody$Outbound,
+    BadRequestComAtprotoServerRequestEmailConfirmationResponseBodyError$Outbound,
     z.ZodTypeDef,
-    ComAtprotoServerRequestEmailConfirmationResponseBody
-  > = z.instanceof(ComAtprotoServerRequestEmailConfirmationResponseBody)
+    BadRequestComAtprotoServerRequestEmailConfirmationResponseBodyError
+  > = z.instanceof(
+    BadRequestComAtprotoServerRequestEmailConfirmationResponseBodyError,
+  )
     .transform(v => v.data$)
     .pipe(z.object({
       error: ComAtprotoServerRequestEmailConfirmationError$outboundSchema,
@@ -196,14 +209,14 @@ export const ComAtprotoServerRequestEmailConfirmationResponseBody$outboundSchema
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoServerRequestEmailConfirmationResponseBody$ {
-  /** @deprecated use `ComAtprotoServerRequestEmailConfirmationResponseBody$inboundSchema` instead. */
+export namespace BadRequestComAtprotoServerRequestEmailConfirmationResponseBodyError$ {
+  /** @deprecated use `BadRequestComAtprotoServerRequestEmailConfirmationResponseBodyError$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoServerRequestEmailConfirmationResponseBody$inboundSchema;
-  /** @deprecated use `ComAtprotoServerRequestEmailConfirmationResponseBody$outboundSchema` instead. */
+    BadRequestComAtprotoServerRequestEmailConfirmationResponseBodyError$inboundSchema;
+  /** @deprecated use `BadRequestComAtprotoServerRequestEmailConfirmationResponseBodyError$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoServerRequestEmailConfirmationResponseBody$outboundSchema;
-  /** @deprecated use `ComAtprotoServerRequestEmailConfirmationResponseBody$Outbound` instead. */
+    BadRequestComAtprotoServerRequestEmailConfirmationResponseBodyError$outboundSchema;
+  /** @deprecated use `BadRequestComAtprotoServerRequestEmailConfirmationResponseBodyError$Outbound` instead. */
   export type Outbound =
-    ComAtprotoServerRequestEmailConfirmationResponseBody$Outbound;
+    BadRequestComAtprotoServerRequestEmailConfirmationResponseBodyError$Outbound;
 }

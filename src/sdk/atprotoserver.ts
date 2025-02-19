@@ -45,7 +45,7 @@ export class AtprotoServer extends ClientSDK {
    * Create an account. Implemented by PDS.
    */
   async createAccount(
-    request: operations.ComAtprotoServerCreateAccountRequestBody,
+    request: operations.ComAtprotoServerCreateAccountBody,
     options?: RequestOptions,
   ): Promise<operations.ComAtprotoServerCreateAccountResponseBody> {
     return unwrapAsync(atprotoServerCreateAccount(
@@ -63,7 +63,7 @@ export class AtprotoServer extends ClientSDK {
    * Create an App Password.
    */
   async createAppPassword(
-    request: operations.ComAtprotoServerCreateAppPasswordRequestBody,
+    request: operations.ComAtprotoServerCreateAppPasswordBody,
     options?: RequestOptions,
   ): Promise<components.ComAtprotoServerCreateAppPasswordAppPassword> {
     return unwrapAsync(atprotoServerCreateAppPassword(
@@ -81,7 +81,7 @@ export class AtprotoServer extends ClientSDK {
    * Create an invite code.
    */
   async createInviteCode(
-    request: operations.ComAtprotoServerCreateInviteCodeRequestBody,
+    request: operations.ComAtprotoServerCreateInviteCodeBody,
     options?: RequestOptions,
   ): Promise<operations.ComAtprotoServerCreateInviteCodeResponseBody> {
     return unwrapAsync(atprotoServerCreateInviteCode(
@@ -99,7 +99,7 @@ export class AtprotoServer extends ClientSDK {
    * Create invite codes.
    */
   async createInviteCodes(
-    request: operations.ComAtprotoServerCreateInviteCodesRequestBody,
+    request: operations.ComAtprotoServerCreateInviteCodesBody,
     options?: RequestOptions,
   ): Promise<operations.ComAtprotoServerCreateInviteCodesResponseBody> {
     return unwrapAsync(atprotoServerCreateInviteCodes(
@@ -117,7 +117,7 @@ export class AtprotoServer extends ClientSDK {
    * Delete an actor's account with a token and password. Can only be called after requesting a deletion token. Requires auth.
    */
   async deleteAccount(
-    request: operations.ComAtprotoServerDeleteAccountRequestBody,
+    request: operations.ComAtprotoServerDeleteAccountBody,
     options?: RequestOptions,
   ): Promise<void> {
     return unwrapAsync(atprotoServerDeleteAccount(
@@ -199,7 +199,7 @@ export class AtprotoServer extends ClientSDK {
    * Initiate a user account password reset via email.
    */
   async requestPasswordReset(
-    request: operations.ComAtprotoServerRequestPasswordResetRequestBody,
+    request: operations.ComAtprotoServerRequestPasswordResetBody,
     options?: RequestOptions,
   ): Promise<void> {
     return unwrapAsync(atprotoServerRequestPasswordReset(
@@ -217,7 +217,7 @@ export class AtprotoServer extends ClientSDK {
    * Reset a user account password using a token.
    */
   async resetPassword(
-    request: operations.ComAtprotoServerResetPasswordRequestBody,
+    request: operations.ComAtprotoServerResetPasswordBody,
     options?: RequestOptions,
   ): Promise<void> {
     return unwrapAsync(atprotoServerResetPassword(
@@ -235,7 +235,7 @@ export class AtprotoServer extends ClientSDK {
    * Revoke an App Password by name.
    */
   async revokeAppPassword(
-    request: operations.ComAtprotoServerRevokeAppPasswordRequestBody,
+    request: operations.ComAtprotoServerRevokeAppPasswordBody,
     options?: RequestOptions,
   ): Promise<void> {
     return unwrapAsync(atprotoServerRevokeAppPassword(

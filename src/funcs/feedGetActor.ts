@@ -31,6 +31,51 @@ import {
   Paginator,
 } from "../types/operations.js";
 
+/**
+ * *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+ *
+ * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
+ *
+ * Get a list of feeds (feed generator records) created by the actor (in the actor's repo).
+ */
+export function feedGetActor(
+  client: BlueskyCore,
+  request: operations.AppBskyFeedGetActorFeedsRequest,
+  options?: RequestOptions,
+): APIPromise<
+  PageIterator<
+    Result<
+      operations.AppBskyFeedGetActorFeedsResponse,
+      | errors.BadRequestAppBskyFeedGetActorFeedsResponseBodyError
+      | errors.UnauthorizedAppBskyFeedGetActorFeedsResponseBodyError
+      | errors.NotFoundError
+      | errors.UnauthorizedError
+      | errors.TimeoutError
+      | errors.RateLimitedError
+      | errors.BadRequestError
+      | errors.TimeoutError
+      | errors.NotFoundError
+      | errors.InternalServerError
+      | errors.BadRequestError
+      | errors.UnauthorizedError
+      | APIError
+      | SDKValidationError
+      | UnexpectedClientError
+      | InvalidRequestError
+      | RequestAbortedError
+      | RequestTimeoutError
+      | ConnectionError
+    >,
+    { cursor: string }
+  >
+> {
+  return new APIPromise($do(
+    client,
+    request,
+    options,
+  ));
+}
+
 async function $do(
   client: BlueskyCore,
   request: operations.AppBskyFeedGetActorFeedsRequest,
@@ -40,18 +85,18 @@ async function $do(
     PageIterator<
       Result<
         operations.AppBskyFeedGetActorFeedsResponse,
-        | errors.AppBskyFeedGetActorFeedsResponseBody
-        | errors.AppBskyFeedGetActorFeedsFeedResponseBody
-        | errors.NotFound
-        | errors.Unauthorized
-        | errors.Timeout
-        | errors.RateLimited
-        | errors.BadRequest
-        | errors.Timeout
-        | errors.NotFound
+        | errors.BadRequestAppBskyFeedGetActorFeedsResponseBodyError
+        | errors.UnauthorizedAppBskyFeedGetActorFeedsResponseBodyError
+        | errors.NotFoundError
+        | errors.UnauthorizedError
+        | errors.TimeoutError
+        | errors.RateLimitedError
+        | errors.BadRequestError
+        | errors.TimeoutError
+        | errors.NotFoundError
         | errors.InternalServerError
-        | errors.BadRequest
-        | errors.Unauthorized
+        | errors.BadRequestError
+        | errors.UnauthorizedError
         | APIError
         | SDKValidationError
         | UnexpectedClientError
@@ -165,18 +210,18 @@ async function $do(
 
   const [result, raw] = await M.match<
     operations.AppBskyFeedGetActorFeedsResponse,
-    | errors.AppBskyFeedGetActorFeedsResponseBody
-    | errors.AppBskyFeedGetActorFeedsFeedResponseBody
-    | errors.NotFound
-    | errors.Unauthorized
-    | errors.Timeout
-    | errors.RateLimited
-    | errors.BadRequest
-    | errors.Timeout
-    | errors.NotFound
+    | errors.BadRequestAppBskyFeedGetActorFeedsResponseBodyError
+    | errors.UnauthorizedAppBskyFeedGetActorFeedsResponseBodyError
+    | errors.NotFoundError
+    | errors.UnauthorizedError
+    | errors.TimeoutError
+    | errors.RateLimitedError
+    | errors.BadRequestError
+    | errors.TimeoutError
+    | errors.NotFoundError
     | errors.InternalServerError
-    | errors.BadRequest
-    | errors.Unauthorized
+    | errors.BadRequestError
+    | errors.UnauthorizedError
     | APIError
     | SDKValidationError
     | UnexpectedClientError
@@ -188,24 +233,28 @@ async function $do(
     M.json(200, operations.AppBskyFeedGetActorFeedsResponse$inboundSchema, {
       key: "Result",
     }),
-    M.jsonErr(400, errors.AppBskyFeedGetActorFeedsResponseBody$inboundSchema),
+    M.jsonErr(
+      400,
+      errors.BadRequestAppBskyFeedGetActorFeedsResponseBodyError$inboundSchema,
+    ),
     M.jsonErr(
       401,
-      errors.AppBskyFeedGetActorFeedsFeedResponseBody$inboundSchema,
+      errors
+        .UnauthorizedAppBskyFeedGetActorFeedsResponseBodyError$inboundSchema,
     ),
-    M.jsonErr(404, errors.NotFound$inboundSchema),
-    M.jsonErr([403, 407], errors.Unauthorized$inboundSchema),
-    M.jsonErr(408, errors.Timeout$inboundSchema),
-    M.jsonErr(429, errors.RateLimited$inboundSchema),
-    M.jsonErr([413, 414, 415, 422, 431], errors.BadRequest$inboundSchema),
-    M.jsonErr(504, errors.Timeout$inboundSchema),
-    M.jsonErr([501, 505], errors.NotFound$inboundSchema),
+    M.jsonErr(404, errors.NotFoundError$inboundSchema),
+    M.jsonErr([403, 407], errors.UnauthorizedError$inboundSchema),
+    M.jsonErr(408, errors.TimeoutError$inboundSchema),
+    M.jsonErr(429, errors.RateLimitedError$inboundSchema),
+    M.jsonErr([413, 414, 415, 422, 431], errors.BadRequestError$inboundSchema),
+    M.jsonErr(504, errors.TimeoutError$inboundSchema),
+    M.jsonErr([501, 505], errors.NotFoundError$inboundSchema),
     M.jsonErr(
       [500, 502, 503, 506, 507, 508],
       errors.InternalServerError$inboundSchema,
     ),
-    M.jsonErr(510, errors.BadRequest$inboundSchema),
-    M.jsonErr(511, errors.Unauthorized$inboundSchema),
+    M.jsonErr(510, errors.BadRequestError$inboundSchema),
+    M.jsonErr(511, errors.UnauthorizedError$inboundSchema),
     M.fail("4XX"),
     M.fail("5XX"),
   )(response, { extraFields: responseFields });
@@ -223,18 +272,18 @@ async function $do(
     next: Paginator<
       Result<
         operations.AppBskyFeedGetActorFeedsResponse,
-        | errors.AppBskyFeedGetActorFeedsResponseBody
-        | errors.AppBskyFeedGetActorFeedsFeedResponseBody
-        | errors.NotFound
-        | errors.Unauthorized
-        | errors.Timeout
-        | errors.RateLimited
-        | errors.BadRequest
-        | errors.Timeout
-        | errors.NotFound
+        | errors.BadRequestAppBskyFeedGetActorFeedsResponseBodyError
+        | errors.UnauthorizedAppBskyFeedGetActorFeedsResponseBodyError
+        | errors.NotFoundError
+        | errors.UnauthorizedError
+        | errors.TimeoutError
+        | errors.RateLimitedError
+        | errors.BadRequestError
+        | errors.TimeoutError
+        | errors.NotFoundError
         | errors.InternalServerError
-        | errors.BadRequest
-        | errors.Unauthorized
+        | errors.BadRequestError
+        | errors.UnauthorizedError
         | APIError
         | SDKValidationError
         | UnexpectedClientError
@@ -270,49 +319,4 @@ async function $do(
     request: req,
     response,
   }];
-}
-
-/**
- * *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
- *
- * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
- *
- * Get a list of feeds (feed generator records) created by the actor (in the actor's repo).
- */
-export function feedGetActor(
-  client: BlueskyCore,
-  request: operations.AppBskyFeedGetActorFeedsRequest,
-  options?: RequestOptions,
-): APIPromise<
-  PageIterator<
-    Result<
-      operations.AppBskyFeedGetActorFeedsResponse,
-      | errors.AppBskyFeedGetActorFeedsResponseBody
-      | errors.AppBskyFeedGetActorFeedsFeedResponseBody
-      | errors.NotFound
-      | errors.Unauthorized
-      | errors.Timeout
-      | errors.RateLimited
-      | errors.BadRequest
-      | errors.Timeout
-      | errors.NotFound
-      | errors.InternalServerError
-      | errors.BadRequest
-      | errors.Unauthorized
-      | APIError
-      | SDKValidationError
-      | UnexpectedClientError
-      | InvalidRequestError
-      | RequestAbortedError
-      | RequestTimeoutError
-      | ConnectionError
-    >,
-    { cursor: string }
-  >
-> {
-  return new APIPromise($do(
-    client,
-    request,
-    options,
-  ));
 }

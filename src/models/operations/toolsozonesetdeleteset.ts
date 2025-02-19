@@ -8,7 +8,7 @@ import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ToolsOzoneSetDeleteSetRequestBody = {
+export type ToolsOzoneSetDeleteSetBody = {
   /**
    * Name of the set to delete
    */
@@ -25,8 +25,8 @@ export type ToolsOzoneSetDeleteSetResponseBody = {
 };
 
 /** @internal */
-export const ToolsOzoneSetDeleteSetRequestBody$inboundSchema: z.ZodType<
-  ToolsOzoneSetDeleteSetRequestBody,
+export const ToolsOzoneSetDeleteSetBody$inboundSchema: z.ZodType<
+  ToolsOzoneSetDeleteSetBody,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -34,15 +34,15 @@ export const ToolsOzoneSetDeleteSetRequestBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type ToolsOzoneSetDeleteSetRequestBody$Outbound = {
+export type ToolsOzoneSetDeleteSetBody$Outbound = {
   name: string;
 };
 
 /** @internal */
-export const ToolsOzoneSetDeleteSetRequestBody$outboundSchema: z.ZodType<
-  ToolsOzoneSetDeleteSetRequestBody$Outbound,
+export const ToolsOzoneSetDeleteSetBody$outboundSchema: z.ZodType<
+  ToolsOzoneSetDeleteSetBody$Outbound,
   z.ZodTypeDef,
-  ToolsOzoneSetDeleteSetRequestBody
+  ToolsOzoneSetDeleteSetBody
 > = z.object({
   name: z.string(),
 });
@@ -51,33 +51,30 @@ export const ToolsOzoneSetDeleteSetRequestBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ToolsOzoneSetDeleteSetRequestBody$ {
-  /** @deprecated use `ToolsOzoneSetDeleteSetRequestBody$inboundSchema` instead. */
-  export const inboundSchema = ToolsOzoneSetDeleteSetRequestBody$inboundSchema;
-  /** @deprecated use `ToolsOzoneSetDeleteSetRequestBody$outboundSchema` instead. */
-  export const outboundSchema =
-    ToolsOzoneSetDeleteSetRequestBody$outboundSchema;
-  /** @deprecated use `ToolsOzoneSetDeleteSetRequestBody$Outbound` instead. */
-  export type Outbound = ToolsOzoneSetDeleteSetRequestBody$Outbound;
+export namespace ToolsOzoneSetDeleteSetBody$ {
+  /** @deprecated use `ToolsOzoneSetDeleteSetBody$inboundSchema` instead. */
+  export const inboundSchema = ToolsOzoneSetDeleteSetBody$inboundSchema;
+  /** @deprecated use `ToolsOzoneSetDeleteSetBody$outboundSchema` instead. */
+  export const outboundSchema = ToolsOzoneSetDeleteSetBody$outboundSchema;
+  /** @deprecated use `ToolsOzoneSetDeleteSetBody$Outbound` instead. */
+  export type Outbound = ToolsOzoneSetDeleteSetBody$Outbound;
 }
 
-export function toolsOzoneSetDeleteSetRequestBodyToJSON(
-  toolsOzoneSetDeleteSetRequestBody: ToolsOzoneSetDeleteSetRequestBody,
+export function toolsOzoneSetDeleteSetBodyToJSON(
+  toolsOzoneSetDeleteSetBody: ToolsOzoneSetDeleteSetBody,
 ): string {
   return JSON.stringify(
-    ToolsOzoneSetDeleteSetRequestBody$outboundSchema.parse(
-      toolsOzoneSetDeleteSetRequestBody,
-    ),
+    ToolsOzoneSetDeleteSetBody$outboundSchema.parse(toolsOzoneSetDeleteSetBody),
   );
 }
 
-export function toolsOzoneSetDeleteSetRequestBodyFromJSON(
+export function toolsOzoneSetDeleteSetBodyFromJSON(
   jsonString: string,
-): SafeParseResult<ToolsOzoneSetDeleteSetRequestBody, SDKValidationError> {
+): SafeParseResult<ToolsOzoneSetDeleteSetBody, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => ToolsOzoneSetDeleteSetRequestBody$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ToolsOzoneSetDeleteSetRequestBody' from JSON`,
+    (x) => ToolsOzoneSetDeleteSetBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ToolsOzoneSetDeleteSetBody' from JSON`,
   );
 }
 

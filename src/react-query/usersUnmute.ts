@@ -17,7 +17,7 @@ import { useBlueskyContext } from "./_context.js";
 import { MutationHookOptions } from "./_types.js";
 
 export type UsersUnmuteMutationVariables = {
-  request: operations.AppBskyGraphUnmuteActorRequestBody;
+  request: operations.AppBskyGraphUnmuteActorBody;
   options?: RequestOptions;
 };
 

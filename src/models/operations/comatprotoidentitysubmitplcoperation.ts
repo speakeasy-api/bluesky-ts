@@ -7,74 +7,71 @@ import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ComAtprotoIdentitySubmitPlcOperationRequestBody = {
+export type ComAtprotoIdentitySubmitPlcOperationBody = {
   operation?: any | undefined;
 };
 
 /** @internal */
-export const ComAtprotoIdentitySubmitPlcOperationRequestBody$inboundSchema:
-  z.ZodType<
-    ComAtprotoIdentitySubmitPlcOperationRequestBody,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    operation: z.any().optional(),
-  });
+export const ComAtprotoIdentitySubmitPlcOperationBody$inboundSchema: z.ZodType<
+  ComAtprotoIdentitySubmitPlcOperationBody,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  operation: z.any().optional(),
+});
 
 /** @internal */
-export type ComAtprotoIdentitySubmitPlcOperationRequestBody$Outbound = {
+export type ComAtprotoIdentitySubmitPlcOperationBody$Outbound = {
   operation?: any | undefined;
 };
 
 /** @internal */
-export const ComAtprotoIdentitySubmitPlcOperationRequestBody$outboundSchema:
-  z.ZodType<
-    ComAtprotoIdentitySubmitPlcOperationRequestBody$Outbound,
-    z.ZodTypeDef,
-    ComAtprotoIdentitySubmitPlcOperationRequestBody
-  > = z.object({
-    operation: z.any().optional(),
-  });
+export const ComAtprotoIdentitySubmitPlcOperationBody$outboundSchema: z.ZodType<
+  ComAtprotoIdentitySubmitPlcOperationBody$Outbound,
+  z.ZodTypeDef,
+  ComAtprotoIdentitySubmitPlcOperationBody
+> = z.object({
+  operation: z.any().optional(),
+});
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoIdentitySubmitPlcOperationRequestBody$ {
-  /** @deprecated use `ComAtprotoIdentitySubmitPlcOperationRequestBody$inboundSchema` instead. */
+export namespace ComAtprotoIdentitySubmitPlcOperationBody$ {
+  /** @deprecated use `ComAtprotoIdentitySubmitPlcOperationBody$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoIdentitySubmitPlcOperationRequestBody$inboundSchema;
-  /** @deprecated use `ComAtprotoIdentitySubmitPlcOperationRequestBody$outboundSchema` instead. */
+    ComAtprotoIdentitySubmitPlcOperationBody$inboundSchema;
+  /** @deprecated use `ComAtprotoIdentitySubmitPlcOperationBody$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoIdentitySubmitPlcOperationRequestBody$outboundSchema;
-  /** @deprecated use `ComAtprotoIdentitySubmitPlcOperationRequestBody$Outbound` instead. */
-  export type Outbound =
-    ComAtprotoIdentitySubmitPlcOperationRequestBody$Outbound;
+    ComAtprotoIdentitySubmitPlcOperationBody$outboundSchema;
+  /** @deprecated use `ComAtprotoIdentitySubmitPlcOperationBody$Outbound` instead. */
+  export type Outbound = ComAtprotoIdentitySubmitPlcOperationBody$Outbound;
 }
 
-export function comAtprotoIdentitySubmitPlcOperationRequestBodyToJSON(
-  comAtprotoIdentitySubmitPlcOperationRequestBody:
-    ComAtprotoIdentitySubmitPlcOperationRequestBody,
+export function comAtprotoIdentitySubmitPlcOperationBodyToJSON(
+  comAtprotoIdentitySubmitPlcOperationBody:
+    ComAtprotoIdentitySubmitPlcOperationBody,
 ): string {
   return JSON.stringify(
-    ComAtprotoIdentitySubmitPlcOperationRequestBody$outboundSchema.parse(
-      comAtprotoIdentitySubmitPlcOperationRequestBody,
+    ComAtprotoIdentitySubmitPlcOperationBody$outboundSchema.parse(
+      comAtprotoIdentitySubmitPlcOperationBody,
     ),
   );
 }
 
-export function comAtprotoIdentitySubmitPlcOperationRequestBodyFromJSON(
+export function comAtprotoIdentitySubmitPlcOperationBodyFromJSON(
   jsonString: string,
 ): SafeParseResult<
-  ComAtprotoIdentitySubmitPlcOperationRequestBody,
+  ComAtprotoIdentitySubmitPlcOperationBody,
   SDKValidationError
 > {
   return safeParse(
     jsonString,
     (x) =>
-      ComAtprotoIdentitySubmitPlcOperationRequestBody$inboundSchema.parse(
+      ComAtprotoIdentitySubmitPlcOperationBody$inboundSchema.parse(
         JSON.parse(x),
       ),
-    `Failed to parse 'ComAtprotoIdentitySubmitPlcOperationRequestBody' from JSON`,
+    `Failed to parse 'ComAtprotoIdentitySubmitPlcOperationBody' from JSON`,
   );
 }

@@ -1,0 +1,17 @@
+# AppBskyFeedSearchPostsSort
+
+Specifies the ranking order of results.
+
+## Example Usage
+
+```typescript
+import { AppBskyFeedSearchPostsSort } from "@speakeasy-api/bluesky/models/operations";
+
+let value: AppBskyFeedSearchPostsSort = "latest";
+```
+
+## Values
+
+```typescript
+"top" | "latest"
+```

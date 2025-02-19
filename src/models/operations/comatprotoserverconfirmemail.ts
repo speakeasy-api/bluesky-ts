@@ -7,14 +7,14 @@ import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ComAtprotoServerConfirmEmailRequestBody = {
+export type ComAtprotoServerConfirmEmailBody = {
   email: string;
   token: string;
 };
 
 /** @internal */
-export const ComAtprotoServerConfirmEmailRequestBody$inboundSchema: z.ZodType<
-  ComAtprotoServerConfirmEmailRequestBody,
+export const ComAtprotoServerConfirmEmailBody$inboundSchema: z.ZodType<
+  ComAtprotoServerConfirmEmailBody,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -23,16 +23,16 @@ export const ComAtprotoServerConfirmEmailRequestBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type ComAtprotoServerConfirmEmailRequestBody$Outbound = {
+export type ComAtprotoServerConfirmEmailBody$Outbound = {
   email: string;
   token: string;
 };
 
 /** @internal */
-export const ComAtprotoServerConfirmEmailRequestBody$outboundSchema: z.ZodType<
-  ComAtprotoServerConfirmEmailRequestBody$Outbound,
+export const ComAtprotoServerConfirmEmailBody$outboundSchema: z.ZodType<
+  ComAtprotoServerConfirmEmailBody$Outbound,
   z.ZodTypeDef,
-  ComAtprotoServerConfirmEmailRequestBody
+  ComAtprotoServerConfirmEmailBody
 > = z.object({
   email: z.string(),
   token: z.string(),
@@ -42,40 +42,31 @@ export const ComAtprotoServerConfirmEmailRequestBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoServerConfirmEmailRequestBody$ {
-  /** @deprecated use `ComAtprotoServerConfirmEmailRequestBody$inboundSchema` instead. */
-  export const inboundSchema =
-    ComAtprotoServerConfirmEmailRequestBody$inboundSchema;
-  /** @deprecated use `ComAtprotoServerConfirmEmailRequestBody$outboundSchema` instead. */
-  export const outboundSchema =
-    ComAtprotoServerConfirmEmailRequestBody$outboundSchema;
-  /** @deprecated use `ComAtprotoServerConfirmEmailRequestBody$Outbound` instead. */
-  export type Outbound = ComAtprotoServerConfirmEmailRequestBody$Outbound;
+export namespace ComAtprotoServerConfirmEmailBody$ {
+  /** @deprecated use `ComAtprotoServerConfirmEmailBody$inboundSchema` instead. */
+  export const inboundSchema = ComAtprotoServerConfirmEmailBody$inboundSchema;
+  /** @deprecated use `ComAtprotoServerConfirmEmailBody$outboundSchema` instead. */
+  export const outboundSchema = ComAtprotoServerConfirmEmailBody$outboundSchema;
+  /** @deprecated use `ComAtprotoServerConfirmEmailBody$Outbound` instead. */
+  export type Outbound = ComAtprotoServerConfirmEmailBody$Outbound;
 }
 
-export function comAtprotoServerConfirmEmailRequestBodyToJSON(
-  comAtprotoServerConfirmEmailRequestBody:
-    ComAtprotoServerConfirmEmailRequestBody,
+export function comAtprotoServerConfirmEmailBodyToJSON(
+  comAtprotoServerConfirmEmailBody: ComAtprotoServerConfirmEmailBody,
 ): string {
   return JSON.stringify(
-    ComAtprotoServerConfirmEmailRequestBody$outboundSchema.parse(
-      comAtprotoServerConfirmEmailRequestBody,
+    ComAtprotoServerConfirmEmailBody$outboundSchema.parse(
+      comAtprotoServerConfirmEmailBody,
     ),
   );
 }
 
-export function comAtprotoServerConfirmEmailRequestBodyFromJSON(
+export function comAtprotoServerConfirmEmailBodyFromJSON(
   jsonString: string,
-): SafeParseResult<
-  ComAtprotoServerConfirmEmailRequestBody,
-  SDKValidationError
-> {
+): SafeParseResult<ComAtprotoServerConfirmEmailBody, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) =>
-      ComAtprotoServerConfirmEmailRequestBody$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'ComAtprotoServerConfirmEmailRequestBody' from JSON`,
+    (x) => ComAtprotoServerConfirmEmailBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ComAtprotoServerConfirmEmailBody' from JSON`,
   );
 }

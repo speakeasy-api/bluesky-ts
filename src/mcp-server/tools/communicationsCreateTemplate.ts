@@ -7,8 +7,7 @@ import * as operations from "../../models/operations/index.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
 const args = {
-  request:
-    operations.ToolsOzoneCommunicationCreateTemplateRequestBody$inboundSchema,
+  request: operations.ToolsOzoneCommunicationCreateTemplateBody$inboundSchema,
 };
 
 export const tool$communicationsCreateTemplate: ToolDefinition<typeof args> = {
@@ -18,9 +17,8 @@ export const tool$communicationsCreateTemplate: ToolDefinition<typeof args> = {
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
-Administrative action to create a new, re-usable communication (email for now) template.
-
-`,
+Administrative action to create a new, re-usable communication (email for now) template.`,
+  scopes: ["write"],
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await communicationsCreateTemplate(
@@ -29,6 +27,15 @@ Administrative action to create a new, re-usable communication (email for now) t
       { fetchOptions: { signal: ctx.signal } },
     ).$inspect();
 
-    return formatResult(result, apiCall);
+    if (!result.ok) {
+      return {
+        content: [{ type: "text", text: result.error.message }],
+        isError: true,
+      };
+    }
+
+    const value = result.value;
+
+    return formatResult(value, apiCall);
   },
 };

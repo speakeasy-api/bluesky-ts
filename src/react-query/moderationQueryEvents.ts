@@ -194,7 +194,9 @@ export function setModerationQueryEventsData(
       createdBefore?: Date | undefined;
       subject?: string | undefined;
       collections?: Array<string> | undefined;
-      subjectType?: operations.SubjectType | undefined;
+      subjectType?:
+        | operations.ToolsOzoneModerationQueryEventsSubjectType
+        | undefined;
       includeAllUserRecords?: boolean | undefined;
       limit?: number | undefined;
       hasComment?: boolean | undefined;
@@ -225,7 +227,9 @@ export function invalidateModerationQueryEvents(
       createdBefore?: Date | undefined;
       subject?: string | undefined;
       collections?: Array<string> | undefined;
-      subjectType?: operations.SubjectType | undefined;
+      subjectType?:
+        | operations.ToolsOzoneModerationQueryEventsSubjectType
+        | undefined;
       includeAllUserRecords?: boolean | undefined;
       limit?: number | undefined;
       hasComment?: boolean | undefined;
@@ -379,7 +383,9 @@ export function queryKeyModerationQueryEvents(
     createdBefore?: Date | undefined;
     subject?: string | undefined;
     collections?: Array<string> | undefined;
-    subjectType?: operations.SubjectType | undefined;
+    subjectType?:
+      | operations.ToolsOzoneModerationQueryEventsSubjectType
+      | undefined;
     includeAllUserRecords?: boolean | undefined;
     limit?: number | undefined;
     hasComment?: boolean | undefined;

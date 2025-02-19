@@ -13,7 +13,7 @@ export type Writes =
   | components.ComAtprotoRepoApplyWritesCreate
   | components.ComAtprotoRepoApplyWritesUpdate;
 
-export type ComAtprotoRepoApplyWritesRequestBody = {
+export type ComAtprotoRepoApplyWritesBody = {
   /**
    * The handle or DID of the repo (aka, current account).
    */
@@ -105,8 +105,8 @@ export function writesFromJSON(
 }
 
 /** @internal */
-export const ComAtprotoRepoApplyWritesRequestBody$inboundSchema: z.ZodType<
-  ComAtprotoRepoApplyWritesRequestBody,
+export const ComAtprotoRepoApplyWritesBody$inboundSchema: z.ZodType<
+  ComAtprotoRepoApplyWritesBody,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -123,7 +123,7 @@ export const ComAtprotoRepoApplyWritesRequestBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type ComAtprotoRepoApplyWritesRequestBody$Outbound = {
+export type ComAtprotoRepoApplyWritesBody$Outbound = {
   repo: string;
   validate?: boolean | undefined;
   writes: Array<
@@ -135,10 +135,10 @@ export type ComAtprotoRepoApplyWritesRequestBody$Outbound = {
 };
 
 /** @internal */
-export const ComAtprotoRepoApplyWritesRequestBody$outboundSchema: z.ZodType<
-  ComAtprotoRepoApplyWritesRequestBody$Outbound,
+export const ComAtprotoRepoApplyWritesBody$outboundSchema: z.ZodType<
+  ComAtprotoRepoApplyWritesBody$Outbound,
   z.ZodTypeDef,
-  ComAtprotoRepoApplyWritesRequestBody
+  ComAtprotoRepoApplyWritesBody
 > = z.object({
   repo: z.string(),
   validate: z.boolean().optional(),
@@ -156,35 +156,32 @@ export const ComAtprotoRepoApplyWritesRequestBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoRepoApplyWritesRequestBody$ {
-  /** @deprecated use `ComAtprotoRepoApplyWritesRequestBody$inboundSchema` instead. */
-  export const inboundSchema =
-    ComAtprotoRepoApplyWritesRequestBody$inboundSchema;
-  /** @deprecated use `ComAtprotoRepoApplyWritesRequestBody$outboundSchema` instead. */
-  export const outboundSchema =
-    ComAtprotoRepoApplyWritesRequestBody$outboundSchema;
-  /** @deprecated use `ComAtprotoRepoApplyWritesRequestBody$Outbound` instead. */
-  export type Outbound = ComAtprotoRepoApplyWritesRequestBody$Outbound;
+export namespace ComAtprotoRepoApplyWritesBody$ {
+  /** @deprecated use `ComAtprotoRepoApplyWritesBody$inboundSchema` instead. */
+  export const inboundSchema = ComAtprotoRepoApplyWritesBody$inboundSchema;
+  /** @deprecated use `ComAtprotoRepoApplyWritesBody$outboundSchema` instead. */
+  export const outboundSchema = ComAtprotoRepoApplyWritesBody$outboundSchema;
+  /** @deprecated use `ComAtprotoRepoApplyWritesBody$Outbound` instead. */
+  export type Outbound = ComAtprotoRepoApplyWritesBody$Outbound;
 }
 
-export function comAtprotoRepoApplyWritesRequestBodyToJSON(
-  comAtprotoRepoApplyWritesRequestBody: ComAtprotoRepoApplyWritesRequestBody,
+export function comAtprotoRepoApplyWritesBodyToJSON(
+  comAtprotoRepoApplyWritesBody: ComAtprotoRepoApplyWritesBody,
 ): string {
   return JSON.stringify(
-    ComAtprotoRepoApplyWritesRequestBody$outboundSchema.parse(
-      comAtprotoRepoApplyWritesRequestBody,
+    ComAtprotoRepoApplyWritesBody$outboundSchema.parse(
+      comAtprotoRepoApplyWritesBody,
     ),
   );
 }
 
-export function comAtprotoRepoApplyWritesRequestBodyFromJSON(
+export function comAtprotoRepoApplyWritesBodyFromJSON(
   jsonString: string,
-): SafeParseResult<ComAtprotoRepoApplyWritesRequestBody, SDKValidationError> {
+): SafeParseResult<ComAtprotoRepoApplyWritesBody, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) =>
-      ComAtprotoRepoApplyWritesRequestBody$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ComAtprotoRepoApplyWritesRequestBody' from JSON`,
+    (x) => ComAtprotoRepoApplyWritesBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ComAtprotoRepoApplyWritesBody' from JSON`,
   );
 }
 

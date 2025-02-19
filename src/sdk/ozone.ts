@@ -17,7 +17,7 @@ export class Ozone extends ClientSDK {
    * Add a member to the ozone team. Requires admin role.
    */
   async addMember(
-    request: operations.ToolsOzoneTeamAddMemberRequestBody,
+    request: operations.ToolsOzoneTeamAddMemberBody,
     options?: RequestOptions,
   ): Promise<components.ToolsOzoneTeamDefsMember> {
     return unwrapAsync(ozoneAddMember(

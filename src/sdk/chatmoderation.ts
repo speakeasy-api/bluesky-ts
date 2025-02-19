@@ -31,7 +31,7 @@ export class ChatModeration extends ClientSDK {
    * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
    */
   async updateActorAccess(
-    request: operations.ChatBskyModerationUpdateActorAccessRequestBody,
+    request: operations.ChatBskyModerationUpdateActorAccessBody,
     options?: RequestOptions,
   ): Promise<void> {
     return unwrapAsync(chatModerationUpdateActorAccess(

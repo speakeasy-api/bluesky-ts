@@ -17,7 +17,7 @@ import { useBlueskyContext } from "./_context.js";
 import { MutationHookOptions } from "./_types.js";
 
 export type GraphUnmuteThreadMutationVariables = {
-  request: operations.AppBskyGraphUnmuteThreadRequestBody;
+  request: operations.AppBskyGraphUnmuteThreadBody;
   options?: RequestOptions;
 };
 

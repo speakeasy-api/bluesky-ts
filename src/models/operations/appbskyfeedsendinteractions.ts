@@ -9,22 +9,22 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type AppBskyFeedSendInteractionsRequestBody = {
+export type AppBskyFeedSendInteractionsBody = {
   interactions: Array<components.AppBskyFeedDefsInteraction>;
 };
 
-export type Unknown = {};
+export type AppBskyFeedSendInteractionsUnknown = {};
 
 /**
  * OK
  */
 export type AppBskyFeedSendInteractionsResponseBody = {
-  unknown?: Unknown | undefined;
+  unknown?: AppBskyFeedSendInteractionsUnknown | undefined;
 };
 
 /** @internal */
-export const AppBskyFeedSendInteractionsRequestBody$inboundSchema: z.ZodType<
-  AppBskyFeedSendInteractionsRequestBody,
+export const AppBskyFeedSendInteractionsBody$inboundSchema: z.ZodType<
+  AppBskyFeedSendInteractionsBody,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -32,15 +32,15 @@ export const AppBskyFeedSendInteractionsRequestBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type AppBskyFeedSendInteractionsRequestBody$Outbound = {
+export type AppBskyFeedSendInteractionsBody$Outbound = {
   interactions: Array<components.AppBskyFeedDefsInteraction$Outbound>;
 };
 
 /** @internal */
-export const AppBskyFeedSendInteractionsRequestBody$outboundSchema: z.ZodType<
-  AppBskyFeedSendInteractionsRequestBody$Outbound,
+export const AppBskyFeedSendInteractionsBody$outboundSchema: z.ZodType<
+  AppBskyFeedSendInteractionsBody$Outbound,
   z.ZodTypeDef,
-  AppBskyFeedSendInteractionsRequestBody
+  AppBskyFeedSendInteractionsBody
 > = z.object({
   interactions: z.array(components.AppBskyFeedDefsInteraction$outboundSchema),
 });
@@ -49,77 +49,84 @@ export const AppBskyFeedSendInteractionsRequestBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyFeedSendInteractionsRequestBody$ {
-  /** @deprecated use `AppBskyFeedSendInteractionsRequestBody$inboundSchema` instead. */
-  export const inboundSchema =
-    AppBskyFeedSendInteractionsRequestBody$inboundSchema;
-  /** @deprecated use `AppBskyFeedSendInteractionsRequestBody$outboundSchema` instead. */
-  export const outboundSchema =
-    AppBskyFeedSendInteractionsRequestBody$outboundSchema;
-  /** @deprecated use `AppBskyFeedSendInteractionsRequestBody$Outbound` instead. */
-  export type Outbound = AppBskyFeedSendInteractionsRequestBody$Outbound;
+export namespace AppBskyFeedSendInteractionsBody$ {
+  /** @deprecated use `AppBskyFeedSendInteractionsBody$inboundSchema` instead. */
+  export const inboundSchema = AppBskyFeedSendInteractionsBody$inboundSchema;
+  /** @deprecated use `AppBskyFeedSendInteractionsBody$outboundSchema` instead. */
+  export const outboundSchema = AppBskyFeedSendInteractionsBody$outboundSchema;
+  /** @deprecated use `AppBskyFeedSendInteractionsBody$Outbound` instead. */
+  export type Outbound = AppBskyFeedSendInteractionsBody$Outbound;
 }
 
-export function appBskyFeedSendInteractionsRequestBodyToJSON(
-  appBskyFeedSendInteractionsRequestBody:
-    AppBskyFeedSendInteractionsRequestBody,
+export function appBskyFeedSendInteractionsBodyToJSON(
+  appBskyFeedSendInteractionsBody: AppBskyFeedSendInteractionsBody,
 ): string {
   return JSON.stringify(
-    AppBskyFeedSendInteractionsRequestBody$outboundSchema.parse(
-      appBskyFeedSendInteractionsRequestBody,
+    AppBskyFeedSendInteractionsBody$outboundSchema.parse(
+      appBskyFeedSendInteractionsBody,
     ),
   );
 }
 
-export function appBskyFeedSendInteractionsRequestBodyFromJSON(
+export function appBskyFeedSendInteractionsBodyFromJSON(
   jsonString: string,
-): SafeParseResult<AppBskyFeedSendInteractionsRequestBody, SDKValidationError> {
+): SafeParseResult<AppBskyFeedSendInteractionsBody, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) =>
-      AppBskyFeedSendInteractionsRequestBody$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'AppBskyFeedSendInteractionsRequestBody' from JSON`,
+    (x) => AppBskyFeedSendInteractionsBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AppBskyFeedSendInteractionsBody' from JSON`,
   );
 }
 
 /** @internal */
-export const Unknown$inboundSchema: z.ZodType<Unknown, z.ZodTypeDef, unknown> =
-  z.object({});
-
-/** @internal */
-export type Unknown$Outbound = {};
-
-/** @internal */
-export const Unknown$outboundSchema: z.ZodType<
-  Unknown$Outbound,
+export const AppBskyFeedSendInteractionsUnknown$inboundSchema: z.ZodType<
+  AppBskyFeedSendInteractionsUnknown,
   z.ZodTypeDef,
-  Unknown
+  unknown
+> = z.object({});
+
+/** @internal */
+export type AppBskyFeedSendInteractionsUnknown$Outbound = {};
+
+/** @internal */
+export const AppBskyFeedSendInteractionsUnknown$outboundSchema: z.ZodType<
+  AppBskyFeedSendInteractionsUnknown$Outbound,
+  z.ZodTypeDef,
+  AppBskyFeedSendInteractionsUnknown
 > = z.object({});
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace Unknown$ {
-  /** @deprecated use `Unknown$inboundSchema` instead. */
-  export const inboundSchema = Unknown$inboundSchema;
-  /** @deprecated use `Unknown$outboundSchema` instead. */
-  export const outboundSchema = Unknown$outboundSchema;
-  /** @deprecated use `Unknown$Outbound` instead. */
-  export type Outbound = Unknown$Outbound;
+export namespace AppBskyFeedSendInteractionsUnknown$ {
+  /** @deprecated use `AppBskyFeedSendInteractionsUnknown$inboundSchema` instead. */
+  export const inboundSchema = AppBskyFeedSendInteractionsUnknown$inboundSchema;
+  /** @deprecated use `AppBskyFeedSendInteractionsUnknown$outboundSchema` instead. */
+  export const outboundSchema =
+    AppBskyFeedSendInteractionsUnknown$outboundSchema;
+  /** @deprecated use `AppBskyFeedSendInteractionsUnknown$Outbound` instead. */
+  export type Outbound = AppBskyFeedSendInteractionsUnknown$Outbound;
 }
 
-export function unknownToJSON(unknown: Unknown): string {
-  return JSON.stringify(Unknown$outboundSchema.parse(unknown));
+export function appBskyFeedSendInteractionsUnknownToJSON(
+  appBskyFeedSendInteractionsUnknown: AppBskyFeedSendInteractionsUnknown,
+): string {
+  return JSON.stringify(
+    AppBskyFeedSendInteractionsUnknown$outboundSchema.parse(
+      appBskyFeedSendInteractionsUnknown,
+    ),
+  );
 }
 
-export function unknownFromJSON(
+export function appBskyFeedSendInteractionsUnknownFromJSON(
   jsonString: string,
-): SafeParseResult<Unknown, SDKValidationError> {
+): SafeParseResult<AppBskyFeedSendInteractionsUnknown, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => Unknown$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'Unknown' from JSON`,
+    (x) =>
+      AppBskyFeedSendInteractionsUnknown$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AppBskyFeedSendInteractionsUnknown' from JSON`,
   );
 }
 
@@ -129,7 +136,8 @@ export const AppBskyFeedSendInteractionsResponseBody$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  _unknown_: z.lazy(() => Unknown$inboundSchema).optional(),
+  _unknown_: z.lazy(() => AppBskyFeedSendInteractionsUnknown$inboundSchema)
+    .optional(),
 }).transform((v) => {
   return remap$(v, {
     "_unknown_": "unknown",
@@ -138,7 +146,7 @@ export const AppBskyFeedSendInteractionsResponseBody$inboundSchema: z.ZodType<
 
 /** @internal */
 export type AppBskyFeedSendInteractionsResponseBody$Outbound = {
-  _unknown_?: Unknown$Outbound | undefined;
+  _unknown_?: AppBskyFeedSendInteractionsUnknown$Outbound | undefined;
 };
 
 /** @internal */
@@ -147,7 +155,8 @@ export const AppBskyFeedSendInteractionsResponseBody$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   AppBskyFeedSendInteractionsResponseBody
 > = z.object({
-  unknown: z.lazy(() => Unknown$outboundSchema).optional(),
+  unknown: z.lazy(() => AppBskyFeedSendInteractionsUnknown$outboundSchema)
+    .optional(),
 }).transform((v) => {
   return remap$(v, {
     unknown: "_unknown_",

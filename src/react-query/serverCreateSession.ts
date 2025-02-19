@@ -17,7 +17,7 @@ import { useBlueskyContext } from "./_context.js";
 import { MutationHookOptions } from "./_types.js";
 
 export type ServerCreateSessionMutationVariables = {
-  request: operations.ComAtprotoServerCreateSessionRequestBody;
+  request: operations.ComAtprotoServerCreateSessionBody;
   options?: RequestOptions;
 };
 

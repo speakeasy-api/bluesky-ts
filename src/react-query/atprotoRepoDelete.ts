@@ -17,7 +17,7 @@ import { useBlueskyContext } from "./_context.js";
 import { MutationHookOptions } from "./_types.js";
 
 export type AtprotoRepoDeleteMutationVariables = {
-  request: operations.ComAtprotoRepoDeleteRecordRequestBody;
+  request: operations.ComAtprotoRepoDeleteRecordBody;
   options?: RequestOptions;
 };
 

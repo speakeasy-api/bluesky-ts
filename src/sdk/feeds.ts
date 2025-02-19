@@ -159,7 +159,7 @@ export class Feeds extends ClientSDK {
    * Send information about interactions with feed items back to the feed generator that served them.
    */
   async sendInteractions(
-    request: operations.AppBskyFeedSendInteractionsRequestBody,
+    request: operations.AppBskyFeedSendInteractionsBody,
     options?: RequestOptions,
   ): Promise<operations.AppBskyFeedSendInteractionsResponseBody> {
     return unwrapAsync(feedsSendInteractions(

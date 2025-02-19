@@ -127,7 +127,7 @@ export class Graphs extends ClientSDK {
    * Mutes a thread preventing notifications from the thread and any of its children. Mutes are private in Bluesky. Requires auth.
    */
   async muteThread(
-    request: operations.AppBskyGraphMuteThreadRequestBody,
+    request: operations.AppBskyGraphMuteThreadBody,
     options?: RequestOptions,
   ): Promise<void> {
     return unwrapAsync(graphsMuteThread(
@@ -145,7 +145,7 @@ export class Graphs extends ClientSDK {
    * Unmutes the specified list of accounts. Requires auth.
    */
   async unmuteActorList(
-    request: operations.AppBskyGraphUnmuteActorListRequestBody,
+    request: operations.AppBskyGraphUnmuteActorListBody,
     options?: RequestOptions,
   ): Promise<void> {
     return unwrapAsync(graphsUnmuteActorList(

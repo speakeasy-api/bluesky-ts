@@ -172,21 +172,21 @@ import {
 
 ### Errors
 
-| Error Type                                               | Status Code                                              | Content Type                                             |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| errors.AppBskyGraphGetActorStarterPacksResponseBody      | 400                                                      | application/json                                         |
-| errors.AppBskyGraphGetActorStarterPacksGraphResponseBody | 401                                                      | application/json                                         |
-| errors.NotFound                                          | 404                                                      | application/json                                         |
-| errors.Unauthorized                                      | 403, 407                                                 | application/json                                         |
-| errors.Timeout                                           | 408                                                      | application/json                                         |
-| errors.RateLimited                                       | 429                                                      | application/json                                         |
-| errors.BadRequest                                        | 413, 414, 415, 422, 431                                  | application/json                                         |
-| errors.Timeout                                           | 504                                                      | application/json                                         |
-| errors.NotFound                                          | 501, 505                                                 | application/json                                         |
-| errors.InternalServerError                               | 500, 502, 503, 506, 507, 508                             | application/json                                         |
-| errors.BadRequest                                        | 510                                                      | application/json                                         |
-| errors.Unauthorized                                      | 511                                                      | application/json                                         |
-| errors.APIError                                          | 4XX, 5XX                                                 | \*/\*                                                    |
+| Error Type                                                           | Status Code                                                          | Content Type                                                         |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| errors.BadRequestAppBskyGraphGetActorStarterPacksResponseBodyError   | 400                                                                  | application/json                                                     |
+| errors.UnauthorizedAppBskyGraphGetActorStarterPacksResponseBodyError | 401                                                                  | application/json                                                     |
+| errors.NotFoundError                                                 | 404                                                                  | application/json                                                     |
+| errors.UnauthorizedError                                             | 403, 407                                                             | application/json                                                     |
+| errors.TimeoutError                                                  | 408                                                                  | application/json                                                     |
+| errors.RateLimitedError                                              | 429                                                                  | application/json                                                     |
+| errors.BadRequestError                                               | 413, 414, 415, 422, 431                                              | application/json                                                     |
+| errors.TimeoutError                                                  | 504                                                                  | application/json                                                     |
+| errors.NotFoundError                                                 | 501, 505                                                             | application/json                                                     |
+| errors.InternalServerError                                           | 500, 502, 503, 506, 507, 508                                         | application/json                                                     |
+| errors.BadRequestError                                               | 510                                                                  | application/json                                                     |
+| errors.UnauthorizedError                                             | 511                                                                  | application/json                                                     |
+| errors.APIError                                                      | 4XX, 5XX                                                             | \*/\*                                                                |
 
 ## getFollows
 
@@ -299,21 +299,21 @@ import {
 
 ### Errors
 
-| Error Type                                     | Status Code                                    | Content Type                                   |
-| ---------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- |
-| errors.AppBskyGraphGetFollowsResponseBody      | 400                                            | application/json                               |
-| errors.AppBskyGraphGetFollowsGraphResponseBody | 401                                            | application/json                               |
-| errors.NotFound                                | 404                                            | application/json                               |
-| errors.Unauthorized                            | 403, 407                                       | application/json                               |
-| errors.Timeout                                 | 408                                            | application/json                               |
-| errors.RateLimited                             | 429                                            | application/json                               |
-| errors.BadRequest                              | 413, 414, 415, 422, 431                        | application/json                               |
-| errors.Timeout                                 | 504                                            | application/json                               |
-| errors.NotFound                                | 501, 505                                       | application/json                               |
-| errors.InternalServerError                     | 500, 502, 503, 506, 507, 508                   | application/json                               |
-| errors.BadRequest                              | 510                                            | application/json                               |
-| errors.Unauthorized                            | 511                                            | application/json                               |
-| errors.APIError                                | 4XX, 5XX                                       | \*/\*                                          |
+| Error Type                                                 | Status Code                                                | Content Type                                               |
+| ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
+| errors.BadRequestAppBskyGraphGetFollowsResponseBodyError   | 400                                                        | application/json                                           |
+| errors.UnauthorizedAppBskyGraphGetFollowsResponseBodyError | 401                                                        | application/json                                           |
+| errors.NotFoundError                                       | 404                                                        | application/json                                           |
+| errors.UnauthorizedError                                   | 403, 407                                                   | application/json                                           |
+| errors.TimeoutError                                        | 408                                                        | application/json                                           |
+| errors.RateLimitedError                                    | 429                                                        | application/json                                           |
+| errors.BadRequestError                                     | 413, 414, 415, 422, 431                                    | application/json                                           |
+| errors.TimeoutError                                        | 504                                                        | application/json                                           |
+| errors.NotFoundError                                       | 501, 505                                                   | application/json                                           |
+| errors.InternalServerError                                 | 500, 502, 503, 506, 507, 508                               | application/json                                           |
+| errors.BadRequestError                                     | 510                                                        | application/json                                           |
+| errors.UnauthorizedError                                   | 511                                                        | application/json                                           |
+| errors.APIError                                            | 4XX, 5XX                                                   | \*/\*                                                      |
 
 ## getList
 
@@ -426,21 +426,21 @@ import {
 
 ### Errors
 
-| Error Type                                  | Status Code                                 | Content Type                                |
-| ------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
-| errors.AppBskyGraphGetListResponseBody      | 400                                         | application/json                            |
-| errors.AppBskyGraphGetListGraphResponseBody | 401                                         | application/json                            |
-| errors.NotFound                             | 404                                         | application/json                            |
-| errors.Unauthorized                         | 403, 407                                    | application/json                            |
-| errors.Timeout                              | 408                                         | application/json                            |
-| errors.RateLimited                          | 429                                         | application/json                            |
-| errors.BadRequest                           | 413, 414, 415, 422, 431                     | application/json                            |
-| errors.Timeout                              | 504                                         | application/json                            |
-| errors.NotFound                             | 501, 505                                    | application/json                            |
-| errors.InternalServerError                  | 500, 502, 503, 506, 507, 508                | application/json                            |
-| errors.BadRequest                           | 510                                         | application/json                            |
-| errors.Unauthorized                         | 511                                         | application/json                            |
-| errors.APIError                             | 4XX, 5XX                                    | \*/\*                                       |
+| Error Type                                              | Status Code                                             | Content Type                                            |
+| ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
+| errors.BadRequestAppBskyGraphGetListResponseBodyError   | 400                                                     | application/json                                        |
+| errors.UnauthorizedAppBskyGraphGetListResponseBodyError | 401                                                     | application/json                                        |
+| errors.NotFoundError                                    | 404                                                     | application/json                                        |
+| errors.UnauthorizedError                                | 403, 407                                                | application/json                                        |
+| errors.TimeoutError                                     | 408                                                     | application/json                                        |
+| errors.RateLimitedError                                 | 429                                                     | application/json                                        |
+| errors.BadRequestError                                  | 413, 414, 415, 422, 431                                 | application/json                                        |
+| errors.TimeoutError                                     | 504                                                     | application/json                                        |
+| errors.NotFoundError                                    | 501, 505                                                | application/json                                        |
+| errors.InternalServerError                              | 500, 502, 503, 506, 507, 508                            | application/json                                        |
+| errors.BadRequestError                                  | 510                                                     | application/json                                        |
+| errors.UnauthorizedError                                | 511                                                     | application/json                                        |
+| errors.APIError                                         | 4XX, 5XX                                                | \*/\*                                                   |
 
 ## getListMutes
 
@@ -549,21 +549,21 @@ import {
 
 ### Errors
 
-| Error Type                                       | Status Code                                      | Content Type                                     |
-| ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ |
-| errors.AppBskyGraphGetListMutesResponseBody      | 400                                              | application/json                                 |
-| errors.AppBskyGraphGetListMutesGraphResponseBody | 401                                              | application/json                                 |
-| errors.NotFound                                  | 404                                              | application/json                                 |
-| errors.Unauthorized                              | 403, 407                                         | application/json                                 |
-| errors.Timeout                                   | 408                                              | application/json                                 |
-| errors.RateLimited                               | 429                                              | application/json                                 |
-| errors.BadRequest                                | 413, 414, 415, 422, 431                          | application/json                                 |
-| errors.Timeout                                   | 504                                              | application/json                                 |
-| errors.NotFound                                  | 501, 505                                         | application/json                                 |
-| errors.InternalServerError                       | 500, 502, 503, 506, 507, 508                     | application/json                                 |
-| errors.BadRequest                                | 510                                              | application/json                                 |
-| errors.Unauthorized                              | 511                                              | application/json                                 |
-| errors.APIError                                  | 4XX, 5XX                                         | \*/\*                                            |
+| Error Type                                                   | Status Code                                                  | Content Type                                                 |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| errors.BadRequestAppBskyGraphGetListMutesResponseBodyError   | 400                                                          | application/json                                             |
+| errors.UnauthorizedAppBskyGraphGetListMutesResponseBodyError | 401                                                          | application/json                                             |
+| errors.NotFoundError                                         | 404                                                          | application/json                                             |
+| errors.UnauthorizedError                                     | 403, 407                                                     | application/json                                             |
+| errors.TimeoutError                                          | 408                                                          | application/json                                             |
+| errors.RateLimitedError                                      | 429                                                          | application/json                                             |
+| errors.BadRequestError                                       | 413, 414, 415, 422, 431                                      | application/json                                             |
+| errors.TimeoutError                                          | 504                                                          | application/json                                             |
+| errors.NotFoundError                                         | 501, 505                                                     | application/json                                             |
+| errors.InternalServerError                                   | 500, 502, 503, 506, 507, 508                                 | application/json                                             |
+| errors.BadRequestError                                       | 510                                                          | application/json                                             |
+| errors.UnauthorizedError                                     | 511                                                          | application/json                                             |
+| errors.APIError                                              | 4XX, 5XX                                                     | \*/\*                                                        |
 
 ## getLists
 
@@ -676,21 +676,21 @@ import {
 
 ### Errors
 
-| Error Type                                   | Status Code                                  | Content Type                                 |
-| -------------------------------------------- | -------------------------------------------- | -------------------------------------------- |
-| errors.AppBskyGraphGetListsResponseBody      | 400                                          | application/json                             |
-| errors.AppBskyGraphGetListsGraphResponseBody | 401                                          | application/json                             |
-| errors.NotFound                              | 404                                          | application/json                             |
-| errors.Unauthorized                          | 403, 407                                     | application/json                             |
-| errors.Timeout                               | 408                                          | application/json                             |
-| errors.RateLimited                           | 429                                          | application/json                             |
-| errors.BadRequest                            | 413, 414, 415, 422, 431                      | application/json                             |
-| errors.Timeout                               | 504                                          | application/json                             |
-| errors.NotFound                              | 501, 505                                     | application/json                             |
-| errors.InternalServerError                   | 500, 502, 503, 506, 507, 508                 | application/json                             |
-| errors.BadRequest                            | 510                                          | application/json                             |
-| errors.Unauthorized                          | 511                                          | application/json                             |
-| errors.APIError                              | 4XX, 5XX                                     | \*/\*                                        |
+| Error Type                                               | Status Code                                              | Content Type                                             |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| errors.BadRequestAppBskyGraphGetListsResponseBodyError   | 400                                                      | application/json                                         |
+| errors.UnauthorizedAppBskyGraphGetListsResponseBodyError | 401                                                      | application/json                                         |
+| errors.NotFoundError                                     | 404                                                      | application/json                                         |
+| errors.UnauthorizedError                                 | 403, 407                                                 | application/json                                         |
+| errors.TimeoutError                                      | 408                                                      | application/json                                         |
+| errors.RateLimitedError                                  | 429                                                      | application/json                                         |
+| errors.BadRequestError                                   | 413, 414, 415, 422, 431                                  | application/json                                         |
+| errors.TimeoutError                                      | 504                                                      | application/json                                         |
+| errors.NotFoundError                                     | 501, 505                                                 | application/json                                         |
+| errors.InternalServerError                               | 500, 502, 503, 506, 507, 508                             | application/json                                         |
+| errors.BadRequestError                                   | 510                                                      | application/json                                         |
+| errors.UnauthorizedError                                 | 511                                                      | application/json                                         |
+| errors.APIError                                          | 4XX, 5XX                                                 | \*/\*                                                    |
 
 ## getRelationships
 
@@ -796,21 +796,21 @@ import {
 
 ### Errors
 
-| Error Type                                           | Status Code                                          | Content Type                                         |
-| ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
-| errors.AppBskyGraphGetRelationshipsResponseBody      | 400                                                  | application/json                                     |
-| errors.AppBskyGraphGetRelationshipsGraphResponseBody | 401                                                  | application/json                                     |
-| errors.NotFound                                      | 404                                                  | application/json                                     |
-| errors.Unauthorized                                  | 403, 407                                             | application/json                                     |
-| errors.Timeout                                       | 408                                                  | application/json                                     |
-| errors.RateLimited                                   | 429                                                  | application/json                                     |
-| errors.BadRequest                                    | 413, 414, 415, 422, 431                              | application/json                                     |
-| errors.Timeout                                       | 504                                                  | application/json                                     |
-| errors.NotFound                                      | 501, 505                                             | application/json                                     |
-| errors.InternalServerError                           | 500, 502, 503, 506, 507, 508                         | application/json                                     |
-| errors.BadRequest                                    | 510                                                  | application/json                                     |
-| errors.Unauthorized                                  | 511                                                  | application/json                                     |
-| errors.APIError                                      | 4XX, 5XX                                             | \*/\*                                                |
+| Error Type                                                       | Status Code                                                      | Content Type                                                     |
+| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
+| errors.BadRequestAppBskyGraphGetRelationshipsResponseBodyError   | 400                                                              | application/json                                                 |
+| errors.UnauthorizedAppBskyGraphGetRelationshipsResponseBodyError | 401                                                              | application/json                                                 |
+| errors.NotFoundError                                             | 404                                                              | application/json                                                 |
+| errors.UnauthorizedError                                         | 403, 407                                                         | application/json                                                 |
+| errors.TimeoutError                                              | 408                                                              | application/json                                                 |
+| errors.RateLimitedError                                          | 429                                                              | application/json                                                 |
+| errors.BadRequestError                                           | 413, 414, 415, 422, 431                                          | application/json                                                 |
+| errors.TimeoutError                                              | 504                                                              | application/json                                                 |
+| errors.NotFoundError                                             | 501, 505                                                         | application/json                                                 |
+| errors.InternalServerError                                       | 500, 502, 503, 506, 507, 508                                     | application/json                                                 |
+| errors.BadRequestError                                           | 510                                                              | application/json                                                 |
+| errors.UnauthorizedError                                         | 511                                                              | application/json                                                 |
+| errors.APIError                                                  | 4XX, 5XX                                                         | \*/\*                                                            |
 
 ## getStarterPack
 
@@ -916,21 +916,21 @@ import {
 
 ### Errors
 
-| Error Type                                         | Status Code                                        | Content Type                                       |
-| -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
-| errors.AppBskyGraphGetStarterPackResponseBody      | 400                                                | application/json                                   |
-| errors.AppBskyGraphGetStarterPackGraphResponseBody | 401                                                | application/json                                   |
-| errors.NotFound                                    | 404                                                | application/json                                   |
-| errors.Unauthorized                                | 403, 407                                           | application/json                                   |
-| errors.Timeout                                     | 408                                                | application/json                                   |
-| errors.RateLimited                                 | 429                                                | application/json                                   |
-| errors.BadRequest                                  | 413, 414, 415, 422, 431                            | application/json                                   |
-| errors.Timeout                                     | 504                                                | application/json                                   |
-| errors.NotFound                                    | 501, 505                                           | application/json                                   |
-| errors.InternalServerError                         | 500, 502, 503, 506, 507, 508                       | application/json                                   |
-| errors.BadRequest                                  | 510                                                | application/json                                   |
-| errors.Unauthorized                                | 511                                                | application/json                                   |
-| errors.APIError                                    | 4XX, 5XX                                           | \*/\*                                              |
+| Error Type                                                     | Status Code                                                    | Content Type                                                   |
+| -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
+| errors.BadRequestAppBskyGraphGetStarterPackResponseBodyError   | 400                                                            | application/json                                               |
+| errors.UnauthorizedAppBskyGraphGetStarterPackResponseBodyError | 401                                                            | application/json                                               |
+| errors.NotFoundError                                           | 404                                                            | application/json                                               |
+| errors.UnauthorizedError                                       | 403, 407                                                       | application/json                                               |
+| errors.TimeoutError                                            | 408                                                            | application/json                                               |
+| errors.RateLimitedError                                        | 429                                                            | application/json                                               |
+| errors.BadRequestError                                         | 413, 414, 415, 422, 431                                        | application/json                                               |
+| errors.TimeoutError                                            | 504                                                            | application/json                                               |
+| errors.NotFoundError                                           | 501, 505                                                       | application/json                                               |
+| errors.InternalServerError                                     | 500, 502, 503, 506, 507, 508                                   | application/json                                               |
+| errors.BadRequestError                                         | 510                                                            | application/json                                               |
+| errors.UnauthorizedError                                       | 511                                                            | application/json                                               |
+| errors.APIError                                                | 4XX, 5XX                                                       | \*/\*                                                          |
 
 ## muteActor
 
@@ -1012,7 +1012,7 @@ import {
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.AppBskyGraphMuteActorRequestBody](../../models/operations/appbskygraphmuteactorrequestbody.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.AppBskyGraphMuteActorBody](../../models/operations/appbskygraphmuteactorbody.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1023,21 +1023,21 @@ import {
 
 ### Errors
 
-| Error Type                                    | Status Code                                   | Content Type                                  |
-| --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
-| errors.AppBskyGraphMuteActorResponseBody      | 400                                           | application/json                              |
-| errors.AppBskyGraphMuteActorGraphResponseBody | 401                                           | application/json                              |
-| errors.NotFound                               | 404                                           | application/json                              |
-| errors.Unauthorized                           | 403, 407                                      | application/json                              |
-| errors.Timeout                                | 408                                           | application/json                              |
-| errors.RateLimited                            | 429                                           | application/json                              |
-| errors.BadRequest                             | 413, 414, 415, 422, 431                       | application/json                              |
-| errors.Timeout                                | 504                                           | application/json                              |
-| errors.NotFound                               | 501, 505                                      | application/json                              |
-| errors.InternalServerError                    | 500, 502, 503, 506, 507, 508                  | application/json                              |
-| errors.BadRequest                             | 510                                           | application/json                              |
-| errors.Unauthorized                           | 511                                           | application/json                              |
-| errors.APIError                               | 4XX, 5XX                                      | \*/\*                                         |
+| Error Type                                                | Status Code                                               | Content Type                                              |
+| --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
+| errors.BadRequestAppBskyGraphMuteActorResponseBodyError   | 400                                                       | application/json                                          |
+| errors.UnauthorizedAppBskyGraphMuteActorResponseBodyError | 401                                                       | application/json                                          |
+| errors.NotFoundError                                      | 404                                                       | application/json                                          |
+| errors.UnauthorizedError                                  | 403, 407                                                  | application/json                                          |
+| errors.TimeoutError                                       | 408                                                       | application/json                                          |
+| errors.RateLimitedError                                   | 429                                                       | application/json                                          |
+| errors.BadRequestError                                    | 413, 414, 415, 422, 431                                   | application/json                                          |
+| errors.TimeoutError                                       | 504                                                       | application/json                                          |
+| errors.NotFoundError                                      | 501, 505                                                  | application/json                                          |
+| errors.InternalServerError                                | 500, 502, 503, 506, 507, 508                              | application/json                                          |
+| errors.BadRequestError                                    | 510                                                       | application/json                                          |
+| errors.UnauthorizedError                                  | 511                                                       | application/json                                          |
+| errors.APIError                                           | 4XX, 5XX                                                  | \*/\*                                                     |
 
 ## muteActorList
 
@@ -1119,7 +1119,7 @@ import {
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.AppBskyGraphMuteActorListRequestBody](../../models/operations/appbskygraphmuteactorlistrequestbody.md)                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.AppBskyGraphMuteActorListBody](../../models/operations/appbskygraphmuteactorlistbody.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1130,21 +1130,21 @@ import {
 
 ### Errors
 
-| Error Type                                        | Status Code                                       | Content Type                                      |
-| ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
-| errors.AppBskyGraphMuteActorListResponseBody      | 400                                               | application/json                                  |
-| errors.AppBskyGraphMuteActorListGraphResponseBody | 401                                               | application/json                                  |
-| errors.NotFound                                   | 404                                               | application/json                                  |
-| errors.Unauthorized                               | 403, 407                                          | application/json                                  |
-| errors.Timeout                                    | 408                                               | application/json                                  |
-| errors.RateLimited                                | 429                                               | application/json                                  |
-| errors.BadRequest                                 | 413, 414, 415, 422, 431                           | application/json                                  |
-| errors.Timeout                                    | 504                                               | application/json                                  |
-| errors.NotFound                                   | 501, 505                                          | application/json                                  |
-| errors.InternalServerError                        | 500, 502, 503, 506, 507, 508                      | application/json                                  |
-| errors.BadRequest                                 | 510                                               | application/json                                  |
-| errors.Unauthorized                               | 511                                               | application/json                                  |
-| errors.APIError                                   | 4XX, 5XX                                          | \*/\*                                             |
+| Error Type                                                    | Status Code                                                   | Content Type                                                  |
+| ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
+| errors.BadRequestAppBskyGraphMuteActorListResponseBodyError   | 400                                                           | application/json                                              |
+| errors.UnauthorizedAppBskyGraphMuteActorListResponseBodyError | 401                                                           | application/json                                              |
+| errors.NotFoundError                                          | 404                                                           | application/json                                              |
+| errors.UnauthorizedError                                      | 403, 407                                                      | application/json                                              |
+| errors.TimeoutError                                           | 408                                                           | application/json                                              |
+| errors.RateLimitedError                                       | 429                                                           | application/json                                              |
+| errors.BadRequestError                                        | 413, 414, 415, 422, 431                                       | application/json                                              |
+| errors.TimeoutError                                           | 504                                                           | application/json                                              |
+| errors.NotFoundError                                          | 501, 505                                                      | application/json                                              |
+| errors.InternalServerError                                    | 500, 502, 503, 506, 507, 508                                  | application/json                                              |
+| errors.BadRequestError                                        | 510                                                           | application/json                                              |
+| errors.UnauthorizedError                                      | 511                                                           | application/json                                              |
+| errors.APIError                                               | 4XX, 5XX                                                      | \*/\*                                                         |
 
 ## searchStarterPacks
 
@@ -1257,21 +1257,21 @@ import {
 
 ### Errors
 
-| Error Type                                             | Status Code                                            | Content Type                                           |
-| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
-| errors.AppBskyGraphSearchStarterPacksResponseBody      | 400                                                    | application/json                                       |
-| errors.AppBskyGraphSearchStarterPacksGraphResponseBody | 401                                                    | application/json                                       |
-| errors.NotFound                                        | 404                                                    | application/json                                       |
-| errors.Unauthorized                                    | 403, 407                                               | application/json                                       |
-| errors.Timeout                                         | 408                                                    | application/json                                       |
-| errors.RateLimited                                     | 429                                                    | application/json                                       |
-| errors.BadRequest                                      | 413, 414, 415, 422, 431                                | application/json                                       |
-| errors.Timeout                                         | 504                                                    | application/json                                       |
-| errors.NotFound                                        | 501, 505                                               | application/json                                       |
-| errors.InternalServerError                             | 500, 502, 503, 506, 507, 508                           | application/json                                       |
-| errors.BadRequest                                      | 510                                                    | application/json                                       |
-| errors.Unauthorized                                    | 511                                                    | application/json                                       |
-| errors.APIError                                        | 4XX, 5XX                                               | \*/\*                                                  |
+| Error Type                                                         | Status Code                                                        | Content Type                                                       |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| errors.BadRequestAppBskyGraphSearchStarterPacksResponseBodyError   | 400                                                                | application/json                                                   |
+| errors.UnauthorizedAppBskyGraphSearchStarterPacksResponseBodyError | 401                                                                | application/json                                                   |
+| errors.NotFoundError                                               | 404                                                                | application/json                                                   |
+| errors.UnauthorizedError                                           | 403, 407                                                           | application/json                                                   |
+| errors.TimeoutError                                                | 408                                                                | application/json                                                   |
+| errors.RateLimitedError                                            | 429                                                                | application/json                                                   |
+| errors.BadRequestError                                             | 413, 414, 415, 422, 431                                            | application/json                                                   |
+| errors.TimeoutError                                                | 504                                                                | application/json                                                   |
+| errors.NotFoundError                                               | 501, 505                                                           | application/json                                                   |
+| errors.InternalServerError                                         | 500, 502, 503, 506, 507, 508                                       | application/json                                                   |
+| errors.BadRequestError                                             | 510                                                                | application/json                                                   |
+| errors.UnauthorizedError                                           | 511                                                                | application/json                                                   |
+| errors.APIError                                                    | 4XX, 5XX                                                           | \*/\*                                                              |
 
 ## unmuteThread
 
@@ -1353,7 +1353,7 @@ import {
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.AppBskyGraphUnmuteThreadRequestBody](../../models/operations/appbskygraphunmutethreadrequestbody.md)                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.AppBskyGraphUnmuteThreadBody](../../models/operations/appbskygraphunmutethreadbody.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -1364,18 +1364,18 @@ import {
 
 ### Errors
 
-| Error Type                                       | Status Code                                      | Content Type                                     |
-| ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ |
-| errors.AppBskyGraphUnmuteThreadResponseBody      | 400                                              | application/json                                 |
-| errors.AppBskyGraphUnmuteThreadGraphResponseBody | 401                                              | application/json                                 |
-| errors.NotFound                                  | 404                                              | application/json                                 |
-| errors.Unauthorized                              | 403, 407                                         | application/json                                 |
-| errors.Timeout                                   | 408                                              | application/json                                 |
-| errors.RateLimited                               | 429                                              | application/json                                 |
-| errors.BadRequest                                | 413, 414, 415, 422, 431                          | application/json                                 |
-| errors.Timeout                                   | 504                                              | application/json                                 |
-| errors.NotFound                                  | 501, 505                                         | application/json                                 |
-| errors.InternalServerError                       | 500, 502, 503, 506, 507, 508                     | application/json                                 |
-| errors.BadRequest                                | 510                                              | application/json                                 |
-| errors.Unauthorized                              | 511                                              | application/json                                 |
-| errors.APIError                                  | 4XX, 5XX                                         | \*/\*                                            |
+| Error Type                                                   | Status Code                                                  | Content Type                                                 |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| errors.BadRequestAppBskyGraphUnmuteThreadResponseBodyError   | 400                                                          | application/json                                             |
+| errors.UnauthorizedAppBskyGraphUnmuteThreadResponseBodyError | 401                                                          | application/json                                             |
+| errors.NotFoundError                                         | 404                                                          | application/json                                             |
+| errors.UnauthorizedError                                     | 403, 407                                                     | application/json                                             |
+| errors.TimeoutError                                          | 408                                                          | application/json                                             |
+| errors.RateLimitedError                                      | 429                                                          | application/json                                             |
+| errors.BadRequestError                                       | 413, 414, 415, 422, 431                                      | application/json                                             |
+| errors.TimeoutError                                          | 504                                                          | application/json                                             |
+| errors.NotFoundError                                         | 501, 505                                                     | application/json                                             |
+| errors.InternalServerError                                   | 500, 502, 503, 506, 507, 508                                 | application/json                                             |
+| errors.BadRequestError                                       | 510                                                          | application/json                                             |
+| errors.UnauthorizedError                                     | 511                                                          | application/json                                             |
+| errors.APIError                                              | 4XX, 5XX                                                     | \*/\*                                                        |

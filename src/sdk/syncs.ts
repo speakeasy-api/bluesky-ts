@@ -73,7 +73,7 @@ export class Syncs extends ClientSDK {
    * Request a service to persistently crawl hosted repos. Expected use is new PDS instances declaring their existence to Relays. Does not require auth.
    */
   async requestCrawl(
-    request: operations.ComAtprotoSyncRequestCrawlRequestBody,
+    request: operations.ComAtprotoSyncRequestCrawlBody,
     options?: RequestOptions,
   ): Promise<void> {
     return unwrapAsync(syncsRequestCrawl(

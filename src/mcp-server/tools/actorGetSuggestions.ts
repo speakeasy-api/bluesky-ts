@@ -18,9 +18,8 @@ export const tool$actorGetSuggestions: ToolDefinition<typeof args> = {
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
-Get a list of suggested actors. Expected use is discovery of accounts to follow during new account onboarding.
-
-`,
+Get a list of suggested actors. Expected use is discovery of accounts to follow during new account onboarding.`,
+  scopes: ["read"],
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await actorGetSuggestions(
@@ -29,6 +28,15 @@ Get a list of suggested actors. Expected use is discovery of accounts to follow 
       { fetchOptions: { signal: ctx.signal } },
     ).$inspect();
 
-    return formatResult(result, apiCall);
+    if (!result.ok) {
+      return {
+        content: [{ type: "text", text: result.error.message }],
+        isError: true,
+      };
+    }
+
+    const value = result.value.result;
+
+    return formatResult(value, apiCall);
   },
 };

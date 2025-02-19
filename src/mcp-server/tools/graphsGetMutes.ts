@@ -17,9 +17,8 @@ export const tool$graphsGetMutes: ToolDefinition<typeof args> = {
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
-Enumerates accounts that the requesting account (actor) currently has muted. Requires auth.
-
-`,
+Enumerates accounts that the requesting account (actor) currently has muted. Requires auth.`,
+  scopes: ["read"],
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await graphsGetMutes(
@@ -28,6 +27,15 @@ Enumerates accounts that the requesting account (actor) currently has muted. Req
       { fetchOptions: { signal: ctx.signal } },
     ).$inspect();
 
-    return formatResult(result, apiCall);
+    if (!result.ok) {
+      return {
+        content: [{ type: "text", text: result.error.message }],
+        isError: true,
+      };
+    }
+
+    const value = result.value.result;
+
+    return formatResult(value, apiCall);
   },
 };

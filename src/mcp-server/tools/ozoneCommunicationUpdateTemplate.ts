@@ -7,8 +7,7 @@ import * as operations from "../../models/operations/index.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
 const args = {
-  request:
-    operations.ToolsOzoneCommunicationUpdateTemplateRequestBody$inboundSchema,
+  request: operations.ToolsOzoneCommunicationUpdateTemplateBody$inboundSchema,
 };
 
 export const tool$ozoneCommunicationUpdateTemplate: ToolDefinition<
@@ -20,9 +19,8 @@ export const tool$ozoneCommunicationUpdateTemplate: ToolDefinition<
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
-Administrative action to update an existing communication template. Allows passing partial fields to patch specific fields only.
-
-`,
+Administrative action to update an existing communication template. Allows passing partial fields to patch specific fields only.`,
+  scopes: ["write"],
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await ozoneCommunicationUpdateTemplate(
@@ -31,6 +29,15 @@ Administrative action to update an existing communication template. Allows passi
       { fetchOptions: { signal: ctx.signal } },
     ).$inspect();
 
-    return formatResult(result, apiCall);
+    if (!result.ok) {
+      return {
+        content: [{ type: "text", text: result.error.message }],
+        isError: true,
+      };
+    }
+
+    const value = result.value;
+
+    return formatResult(value, apiCall);
   },
 };

@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type AppBskyNotificationUpdateSeenNotificationsResponseBodyData = {
+export type UnauthorizedAppBskyNotificationUpdateSeenResponseBodyErrorData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,15 +16,17 @@ export type AppBskyNotificationUpdateSeenNotificationsResponseBodyData = {
 /**
  * Unauthorized
  */
-export class AppBskyNotificationUpdateSeenNotificationsResponseBody
+export class UnauthorizedAppBskyNotificationUpdateSeenResponseBodyError
   extends Error
 {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: AppBskyNotificationUpdateSeenNotificationsResponseBodyData;
+  data$: UnauthorizedAppBskyNotificationUpdateSeenResponseBodyErrorData;
 
-  constructor(err: AppBskyNotificationUpdateSeenNotificationsResponseBodyData) {
+  constructor(
+    err: UnauthorizedAppBskyNotificationUpdateSeenResponseBodyErrorData,
+  ) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -33,7 +35,7 @@ export class AppBskyNotificationUpdateSeenNotificationsResponseBody
 
     this.error = err.error;
 
-    this.name = "AppBskyNotificationUpdateSeenNotificationsResponseBody";
+    this.name = "UnauthorizedAppBskyNotificationUpdateSeenResponseBodyError";
   }
 }
 
@@ -49,7 +51,7 @@ export type AppBskyNotificationUpdateSeenError = ClosedEnum<
 /**
  * Bad Request
  */
-export type AppBskyNotificationUpdateSeenResponseBodyData = {
+export type BadRequestAppBskyNotificationUpdateSeenResponseBodyErrorData = {
   error: AppBskyNotificationUpdateSeenError;
   message: string;
 };
@@ -57,13 +59,17 @@ export type AppBskyNotificationUpdateSeenResponseBodyData = {
 /**
  * Bad Request
  */
-export class AppBskyNotificationUpdateSeenResponseBody extends Error {
+export class BadRequestAppBskyNotificationUpdateSeenResponseBodyError
+  extends Error
+{
   error: AppBskyNotificationUpdateSeenError;
 
   /** The original data that was passed to this error instance. */
-  data$: AppBskyNotificationUpdateSeenResponseBodyData;
+  data$: BadRequestAppBskyNotificationUpdateSeenResponseBodyErrorData;
 
-  constructor(err: AppBskyNotificationUpdateSeenResponseBodyData) {
+  constructor(
+    err: BadRequestAppBskyNotificationUpdateSeenResponseBodyErrorData,
+  ) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -72,14 +78,14 @@ export class AppBskyNotificationUpdateSeenResponseBody extends Error {
 
     this.error = err.error;
 
-    this.name = "AppBskyNotificationUpdateSeenResponseBody";
+    this.name = "BadRequestAppBskyNotificationUpdateSeenResponseBodyError";
   }
 }
 
 /** @internal */
-export const AppBskyNotificationUpdateSeenNotificationsResponseBody$inboundSchema:
+export const UnauthorizedAppBskyNotificationUpdateSeenResponseBodyError$inboundSchema:
   z.ZodType<
-    AppBskyNotificationUpdateSeenNotificationsResponseBody,
+    UnauthorizedAppBskyNotificationUpdateSeenResponseBodyError,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -87,22 +93,23 @@ export const AppBskyNotificationUpdateSeenNotificationsResponseBody$inboundSchem
     message: z.string(),
   })
     .transform((v) => {
-      return new AppBskyNotificationUpdateSeenNotificationsResponseBody(v);
+      return new UnauthorizedAppBskyNotificationUpdateSeenResponseBodyError(v);
     });
 
 /** @internal */
-export type AppBskyNotificationUpdateSeenNotificationsResponseBody$Outbound = {
-  error: "AuthMissing";
-  message: string;
-};
+export type UnauthorizedAppBskyNotificationUpdateSeenResponseBodyError$Outbound =
+  {
+    error: "AuthMissing";
+    message: string;
+  };
 
 /** @internal */
-export const AppBskyNotificationUpdateSeenNotificationsResponseBody$outboundSchema:
+export const UnauthorizedAppBskyNotificationUpdateSeenResponseBodyError$outboundSchema:
   z.ZodType<
-    AppBskyNotificationUpdateSeenNotificationsResponseBody$Outbound,
+    UnauthorizedAppBskyNotificationUpdateSeenResponseBodyError$Outbound,
     z.ZodTypeDef,
-    AppBskyNotificationUpdateSeenNotificationsResponseBody
-  > = z.instanceof(AppBskyNotificationUpdateSeenNotificationsResponseBody)
+    UnauthorizedAppBskyNotificationUpdateSeenResponseBodyError
+  > = z.instanceof(UnauthorizedAppBskyNotificationUpdateSeenResponseBodyError)
     .transform(v => v.data$)
     .pipe(z.object({
       error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -113,16 +120,16 @@ export const AppBskyNotificationUpdateSeenNotificationsResponseBody$outboundSche
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyNotificationUpdateSeenNotificationsResponseBody$ {
-  /** @deprecated use `AppBskyNotificationUpdateSeenNotificationsResponseBody$inboundSchema` instead. */
+export namespace UnauthorizedAppBskyNotificationUpdateSeenResponseBodyError$ {
+  /** @deprecated use `UnauthorizedAppBskyNotificationUpdateSeenResponseBodyError$inboundSchema` instead. */
   export const inboundSchema =
-    AppBskyNotificationUpdateSeenNotificationsResponseBody$inboundSchema;
-  /** @deprecated use `AppBskyNotificationUpdateSeenNotificationsResponseBody$outboundSchema` instead. */
+    UnauthorizedAppBskyNotificationUpdateSeenResponseBodyError$inboundSchema;
+  /** @deprecated use `UnauthorizedAppBskyNotificationUpdateSeenResponseBodyError$outboundSchema` instead. */
   export const outboundSchema =
-    AppBskyNotificationUpdateSeenNotificationsResponseBody$outboundSchema;
-  /** @deprecated use `AppBskyNotificationUpdateSeenNotificationsResponseBody$Outbound` instead. */
+    UnauthorizedAppBskyNotificationUpdateSeenResponseBodyError$outboundSchema;
+  /** @deprecated use `UnauthorizedAppBskyNotificationUpdateSeenResponseBodyError$Outbound` instead. */
   export type Outbound =
-    AppBskyNotificationUpdateSeenNotificationsResponseBody$Outbound;
+    UnauthorizedAppBskyNotificationUpdateSeenResponseBodyError$Outbound;
 }
 
 /** @internal */
@@ -148,31 +155,33 @@ export namespace AppBskyNotificationUpdateSeenError$ {
 }
 
 /** @internal */
-export const AppBskyNotificationUpdateSeenResponseBody$inboundSchema: z.ZodType<
-  AppBskyNotificationUpdateSeenResponseBody,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  error: AppBskyNotificationUpdateSeenError$inboundSchema,
-  message: z.string(),
-})
-  .transform((v) => {
-    return new AppBskyNotificationUpdateSeenResponseBody(v);
-  });
-
-/** @internal */
-export type AppBskyNotificationUpdateSeenResponseBody$Outbound = {
-  error: string;
-  message: string;
-};
-
-/** @internal */
-export const AppBskyNotificationUpdateSeenResponseBody$outboundSchema:
+export const BadRequestAppBskyNotificationUpdateSeenResponseBodyError$inboundSchema:
   z.ZodType<
-    AppBskyNotificationUpdateSeenResponseBody$Outbound,
+    BadRequestAppBskyNotificationUpdateSeenResponseBodyError,
     z.ZodTypeDef,
-    AppBskyNotificationUpdateSeenResponseBody
-  > = z.instanceof(AppBskyNotificationUpdateSeenResponseBody)
+    unknown
+  > = z.object({
+    error: AppBskyNotificationUpdateSeenError$inboundSchema,
+    message: z.string(),
+  })
+    .transform((v) => {
+      return new BadRequestAppBskyNotificationUpdateSeenResponseBodyError(v);
+    });
+
+/** @internal */
+export type BadRequestAppBskyNotificationUpdateSeenResponseBodyError$Outbound =
+  {
+    error: string;
+    message: string;
+  };
+
+/** @internal */
+export const BadRequestAppBskyNotificationUpdateSeenResponseBodyError$outboundSchema:
+  z.ZodType<
+    BadRequestAppBskyNotificationUpdateSeenResponseBodyError$Outbound,
+    z.ZodTypeDef,
+    BadRequestAppBskyNotificationUpdateSeenResponseBodyError
+  > = z.instanceof(BadRequestAppBskyNotificationUpdateSeenResponseBodyError)
     .transform(v => v.data$)
     .pipe(z.object({
       error: AppBskyNotificationUpdateSeenError$outboundSchema,
@@ -183,13 +192,14 @@ export const AppBskyNotificationUpdateSeenResponseBody$outboundSchema:
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyNotificationUpdateSeenResponseBody$ {
-  /** @deprecated use `AppBskyNotificationUpdateSeenResponseBody$inboundSchema` instead. */
+export namespace BadRequestAppBskyNotificationUpdateSeenResponseBodyError$ {
+  /** @deprecated use `BadRequestAppBskyNotificationUpdateSeenResponseBodyError$inboundSchema` instead. */
   export const inboundSchema =
-    AppBskyNotificationUpdateSeenResponseBody$inboundSchema;
-  /** @deprecated use `AppBskyNotificationUpdateSeenResponseBody$outboundSchema` instead. */
+    BadRequestAppBskyNotificationUpdateSeenResponseBodyError$inboundSchema;
+  /** @deprecated use `BadRequestAppBskyNotificationUpdateSeenResponseBodyError$outboundSchema` instead. */
   export const outboundSchema =
-    AppBskyNotificationUpdateSeenResponseBody$outboundSchema;
-  /** @deprecated use `AppBskyNotificationUpdateSeenResponseBody$Outbound` instead. */
-  export type Outbound = AppBskyNotificationUpdateSeenResponseBody$Outbound;
+    BadRequestAppBskyNotificationUpdateSeenResponseBodyError$outboundSchema;
+  /** @deprecated use `BadRequestAppBskyNotificationUpdateSeenResponseBodyError$Outbound` instead. */
+  export type Outbound =
+    BadRequestAppBskyNotificationUpdateSeenResponseBodyError$Outbound;
 }

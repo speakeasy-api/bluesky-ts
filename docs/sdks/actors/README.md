@@ -129,21 +129,21 @@ import {
 
 ### Errors
 
-| Error Type                                          | Status Code                                         | Content Type                                        |
-| --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
-| errors.AppBskyActorGetPreferencesResponseBody       | 400                                                 | application/json                                    |
-| errors.AppBskyActorGetPreferencesActorsResponseBody | 401                                                 | application/json                                    |
-| errors.NotFound                                     | 404                                                 | application/json                                    |
-| errors.Unauthorized                                 | 403, 407                                            | application/json                                    |
-| errors.Timeout                                      | 408                                                 | application/json                                    |
-| errors.RateLimited                                  | 429                                                 | application/json                                    |
-| errors.BadRequest                                   | 413, 414, 415, 422, 431                             | application/json                                    |
-| errors.Timeout                                      | 504                                                 | application/json                                    |
-| errors.NotFound                                     | 501, 505                                            | application/json                                    |
-| errors.InternalServerError                          | 500, 502, 503, 506, 507, 508                        | application/json                                    |
-| errors.BadRequest                                   | 510                                                 | application/json                                    |
-| errors.Unauthorized                                 | 511                                                 | application/json                                    |
-| errors.APIError                                     | 4XX, 5XX                                            | \*/\*                                               |
+| Error Type                                                     | Status Code                                                    | Content Type                                                   |
+| -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
+| errors.BadRequestAppBskyActorGetPreferencesResponseBodyError   | 400                                                            | application/json                                               |
+| errors.UnauthorizedAppBskyActorGetPreferencesResponseBodyError | 401                                                            | application/json                                               |
+| errors.NotFoundError                                           | 404                                                            | application/json                                               |
+| errors.UnauthorizedError                                       | 403, 407                                                       | application/json                                               |
+| errors.TimeoutError                                            | 408                                                            | application/json                                               |
+| errors.RateLimitedError                                        | 429                                                            | application/json                                               |
+| errors.BadRequestError                                         | 413, 414, 415, 422, 431                                        | application/json                                               |
+| errors.TimeoutError                                            | 504                                                            | application/json                                               |
+| errors.NotFoundError                                           | 501, 505                                                       | application/json                                               |
+| errors.InternalServerError                                     | 500, 502, 503, 506, 507, 508                                   | application/json                                               |
+| errors.BadRequestError                                         | 510                                                            | application/json                                               |
+| errors.UnauthorizedError                                       | 511                                                            | application/json                                               |
+| errors.APIError                                                | 4XX, 5XX                                                       | \*/\*                                                          |
 
 ## getProfile
 
@@ -249,21 +249,21 @@ import {
 
 ### Errors
 
-| Error Type                                      | Status Code                                     | Content Type                                    |
-| ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
-| errors.AppBskyActorGetProfileResponseBody       | 400                                             | application/json                                |
-| errors.AppBskyActorGetProfileActorsResponseBody | 401                                             | application/json                                |
-| errors.NotFound                                 | 404                                             | application/json                                |
-| errors.Unauthorized                             | 403, 407                                        | application/json                                |
-| errors.Timeout                                  | 408                                             | application/json                                |
-| errors.RateLimited                              | 429                                             | application/json                                |
-| errors.BadRequest                               | 413, 414, 415, 422, 431                         | application/json                                |
-| errors.Timeout                                  | 504                                             | application/json                                |
-| errors.NotFound                                 | 501, 505                                        | application/json                                |
-| errors.InternalServerError                      | 500, 502, 503, 506, 507, 508                    | application/json                                |
-| errors.BadRequest                               | 510                                             | application/json                                |
-| errors.Unauthorized                             | 511                                             | application/json                                |
-| errors.APIError                                 | 4XX, 5XX                                        | \*/\*                                           |
+| Error Type                                                 | Status Code                                                | Content Type                                               |
+| ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
+| errors.BadRequestAppBskyActorGetProfileResponseBodyError   | 400                                                        | application/json                                           |
+| errors.UnauthorizedAppBskyActorGetProfileResponseBodyError | 401                                                        | application/json                                           |
+| errors.NotFoundError                                       | 404                                                        | application/json                                           |
+| errors.UnauthorizedError                                   | 403, 407                                                   | application/json                                           |
+| errors.TimeoutError                                        | 408                                                        | application/json                                           |
+| errors.RateLimitedError                                    | 429                                                        | application/json                                           |
+| errors.BadRequestError                                     | 413, 414, 415, 422, 431                                    | application/json                                           |
+| errors.TimeoutError                                        | 504                                                        | application/json                                           |
+| errors.NotFoundError                                       | 501, 505                                                   | application/json                                           |
+| errors.InternalServerError                                 | 500, 502, 503, 506, 507, 508                               | application/json                                           |
+| errors.BadRequestError                                     | 510                                                        | application/json                                           |
+| errors.UnauthorizedError                                   | 511                                                        | application/json                                           |
+| errors.APIError                                            | 4XX, 5XX                                                   | \*/\*                                                      |
 
 ## getProfiles
 
@@ -373,21 +373,21 @@ import {
 
 ### Errors
 
-| Error Type                                       | Status Code                                      | Content Type                                     |
-| ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ |
-| errors.AppBskyActorGetProfilesResponseBody       | 400                                              | application/json                                 |
-| errors.AppBskyActorGetProfilesActorsResponseBody | 401                                              | application/json                                 |
-| errors.NotFound                                  | 404                                              | application/json                                 |
-| errors.Unauthorized                              | 403, 407                                         | application/json                                 |
-| errors.Timeout                                   | 408                                              | application/json                                 |
-| errors.RateLimited                               | 429                                              | application/json                                 |
-| errors.BadRequest                                | 413, 414, 415, 422, 431                          | application/json                                 |
-| errors.Timeout                                   | 504                                              | application/json                                 |
-| errors.NotFound                                  | 501, 505                                         | application/json                                 |
-| errors.InternalServerError                       | 500, 502, 503, 506, 507, 508                     | application/json                                 |
-| errors.BadRequest                                | 510                                              | application/json                                 |
-| errors.Unauthorized                              | 511                                              | application/json                                 |
-| errors.APIError                                  | 4XX, 5XX                                         | \*/\*                                            |
+| Error Type                                                  | Status Code                                                 | Content Type                                                |
+| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
+| errors.BadRequestAppBskyActorGetProfilesResponseBodyError   | 400                                                         | application/json                                            |
+| errors.UnauthorizedAppBskyActorGetProfilesResponseBodyError | 401                                                         | application/json                                            |
+| errors.NotFoundError                                        | 404                                                         | application/json                                            |
+| errors.UnauthorizedError                                    | 403, 407                                                    | application/json                                            |
+| errors.TimeoutError                                         | 408                                                         | application/json                                            |
+| errors.RateLimitedError                                     | 429                                                         | application/json                                            |
+| errors.BadRequestError                                      | 413, 414, 415, 422, 431                                     | application/json                                            |
+| errors.TimeoutError                                         | 504                                                         | application/json                                            |
+| errors.NotFoundError                                        | 501, 505                                                    | application/json                                            |
+| errors.InternalServerError                                  | 500, 502, 503, 506, 507, 508                                | application/json                                            |
+| errors.BadRequestError                                      | 510                                                         | application/json                                            |
+| errors.UnauthorizedError                                    | 511                                                         | application/json                                            |
+| errors.APIError                                             | 4XX, 5XX                                                    | \*/\*                                                       |
 
 ## putPreferences
 
@@ -487,7 +487,7 @@ import {
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.AppBskyActorPutPreferencesRequestBody](../../models/operations/appbskyactorputpreferencesrequestbody.md)                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.AppBskyActorPutPreferencesBody](../../models/operations/appbskyactorputpreferencesbody.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -498,21 +498,21 @@ import {
 
 ### Errors
 
-| Error Type                                          | Status Code                                         | Content Type                                        |
-| --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
-| errors.AppBskyActorPutPreferencesResponseBody       | 400                                                 | application/json                                    |
-| errors.AppBskyActorPutPreferencesActorsResponseBody | 401                                                 | application/json                                    |
-| errors.NotFound                                     | 404                                                 | application/json                                    |
-| errors.Unauthorized                                 | 403, 407                                            | application/json                                    |
-| errors.Timeout                                      | 408                                                 | application/json                                    |
-| errors.RateLimited                                  | 429                                                 | application/json                                    |
-| errors.BadRequest                                   | 413, 414, 415, 422, 431                             | application/json                                    |
-| errors.Timeout                                      | 504                                                 | application/json                                    |
-| errors.NotFound                                     | 501, 505                                            | application/json                                    |
-| errors.InternalServerError                          | 500, 502, 503, 506, 507, 508                        | application/json                                    |
-| errors.BadRequest                                   | 510                                                 | application/json                                    |
-| errors.Unauthorized                                 | 511                                                 | application/json                                    |
-| errors.APIError                                     | 4XX, 5XX                                            | \*/\*                                               |
+| Error Type                                                     | Status Code                                                    | Content Type                                                   |
+| -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
+| errors.BadRequestAppBskyActorPutPreferencesResponseBodyError   | 400                                                            | application/json                                               |
+| errors.UnauthorizedAppBskyActorPutPreferencesResponseBodyError | 401                                                            | application/json                                               |
+| errors.NotFoundError                                           | 404                                                            | application/json                                               |
+| errors.UnauthorizedError                                       | 403, 407                                                       | application/json                                               |
+| errors.TimeoutError                                            | 408                                                            | application/json                                               |
+| errors.RateLimitedError                                        | 429                                                            | application/json                                               |
+| errors.BadRequestError                                         | 413, 414, 415, 422, 431                                        | application/json                                               |
+| errors.TimeoutError                                            | 504                                                            | application/json                                               |
+| errors.NotFoundError                                           | 501, 505                                                       | application/json                                               |
+| errors.InternalServerError                                     | 500, 502, 503, 506, 507, 508                                   | application/json                                               |
+| errors.BadRequestError                                         | 510                                                            | application/json                                               |
+| errors.UnauthorizedError                                       | 511                                                            | application/json                                               |
+| errors.APIError                                                | 4XX, 5XX                                                       | \*/\*                                                          |
 
 ## search
 
@@ -621,18 +621,18 @@ import {
 
 ### Errors
 
-| Error Type                                        | Status Code                                       | Content Type                                      |
-| ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
-| errors.AppBskyActorSearchActorsResponseBody       | 400                                               | application/json                                  |
-| errors.AppBskyActorSearchActorsActorsResponseBody | 401                                               | application/json                                  |
-| errors.NotFound                                   | 404                                               | application/json                                  |
-| errors.Unauthorized                               | 403, 407                                          | application/json                                  |
-| errors.Timeout                                    | 408                                               | application/json                                  |
-| errors.RateLimited                                | 429                                               | application/json                                  |
-| errors.BadRequest                                 | 413, 414, 415, 422, 431                           | application/json                                  |
-| errors.Timeout                                    | 504                                               | application/json                                  |
-| errors.NotFound                                   | 501, 505                                          | application/json                                  |
-| errors.InternalServerError                        | 500, 502, 503, 506, 507, 508                      | application/json                                  |
-| errors.BadRequest                                 | 510                                               | application/json                                  |
-| errors.Unauthorized                               | 511                                               | application/json                                  |
-| errors.APIError                                   | 4XX, 5XX                                          | \*/\*                                             |
+| Error Type                                                   | Status Code                                                  | Content Type                                                 |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| errors.BadRequestAppBskyActorSearchActorsResponseBodyError   | 400                                                          | application/json                                             |
+| errors.UnauthorizedAppBskyActorSearchActorsResponseBodyError | 401                                                          | application/json                                             |
+| errors.NotFoundError                                         | 404                                                          | application/json                                             |
+| errors.UnauthorizedError                                     | 403, 407                                                     | application/json                                             |
+| errors.TimeoutError                                          | 408                                                          | application/json                                             |
+| errors.RateLimitedError                                      | 429                                                          | application/json                                             |
+| errors.BadRequestError                                       | 413, 414, 415, 422, 431                                      | application/json                                             |
+| errors.TimeoutError                                          | 504                                                          | application/json                                             |
+| errors.NotFoundError                                         | 501, 505                                                     | application/json                                             |
+| errors.InternalServerError                                   | 500, 502, 503, 506, 507, 508                                 | application/json                                             |
+| errors.BadRequestError                                       | 510                                                          | application/json                                             |
+| errors.UnauthorizedError                                     | 511                                                          | application/json                                             |
+| errors.APIError                                              | 4XX, 5XX                                                     | \*/\*                                                        |

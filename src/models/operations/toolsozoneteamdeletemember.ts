@@ -7,13 +7,13 @@ import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ToolsOzoneTeamDeleteMemberRequestBody = {
+export type ToolsOzoneTeamDeleteMemberBody = {
   did: string;
 };
 
 /** @internal */
-export const ToolsOzoneTeamDeleteMemberRequestBody$inboundSchema: z.ZodType<
-  ToolsOzoneTeamDeleteMemberRequestBody,
+export const ToolsOzoneTeamDeleteMemberBody$inboundSchema: z.ZodType<
+  ToolsOzoneTeamDeleteMemberBody,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -21,15 +21,15 @@ export const ToolsOzoneTeamDeleteMemberRequestBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type ToolsOzoneTeamDeleteMemberRequestBody$Outbound = {
+export type ToolsOzoneTeamDeleteMemberBody$Outbound = {
   did: string;
 };
 
 /** @internal */
-export const ToolsOzoneTeamDeleteMemberRequestBody$outboundSchema: z.ZodType<
-  ToolsOzoneTeamDeleteMemberRequestBody$Outbound,
+export const ToolsOzoneTeamDeleteMemberBody$outboundSchema: z.ZodType<
+  ToolsOzoneTeamDeleteMemberBody$Outbound,
   z.ZodTypeDef,
-  ToolsOzoneTeamDeleteMemberRequestBody
+  ToolsOzoneTeamDeleteMemberBody
 > = z.object({
   did: z.string(),
 });
@@ -38,34 +38,31 @@ export const ToolsOzoneTeamDeleteMemberRequestBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ToolsOzoneTeamDeleteMemberRequestBody$ {
-  /** @deprecated use `ToolsOzoneTeamDeleteMemberRequestBody$inboundSchema` instead. */
-  export const inboundSchema =
-    ToolsOzoneTeamDeleteMemberRequestBody$inboundSchema;
-  /** @deprecated use `ToolsOzoneTeamDeleteMemberRequestBody$outboundSchema` instead. */
-  export const outboundSchema =
-    ToolsOzoneTeamDeleteMemberRequestBody$outboundSchema;
-  /** @deprecated use `ToolsOzoneTeamDeleteMemberRequestBody$Outbound` instead. */
-  export type Outbound = ToolsOzoneTeamDeleteMemberRequestBody$Outbound;
+export namespace ToolsOzoneTeamDeleteMemberBody$ {
+  /** @deprecated use `ToolsOzoneTeamDeleteMemberBody$inboundSchema` instead. */
+  export const inboundSchema = ToolsOzoneTeamDeleteMemberBody$inboundSchema;
+  /** @deprecated use `ToolsOzoneTeamDeleteMemberBody$outboundSchema` instead. */
+  export const outboundSchema = ToolsOzoneTeamDeleteMemberBody$outboundSchema;
+  /** @deprecated use `ToolsOzoneTeamDeleteMemberBody$Outbound` instead. */
+  export type Outbound = ToolsOzoneTeamDeleteMemberBody$Outbound;
 }
 
-export function toolsOzoneTeamDeleteMemberRequestBodyToJSON(
-  toolsOzoneTeamDeleteMemberRequestBody: ToolsOzoneTeamDeleteMemberRequestBody,
+export function toolsOzoneTeamDeleteMemberBodyToJSON(
+  toolsOzoneTeamDeleteMemberBody: ToolsOzoneTeamDeleteMemberBody,
 ): string {
   return JSON.stringify(
-    ToolsOzoneTeamDeleteMemberRequestBody$outboundSchema.parse(
-      toolsOzoneTeamDeleteMemberRequestBody,
+    ToolsOzoneTeamDeleteMemberBody$outboundSchema.parse(
+      toolsOzoneTeamDeleteMemberBody,
     ),
   );
 }
 
-export function toolsOzoneTeamDeleteMemberRequestBodyFromJSON(
+export function toolsOzoneTeamDeleteMemberBodyFromJSON(
   jsonString: string,
-): SafeParseResult<ToolsOzoneTeamDeleteMemberRequestBody, SDKValidationError> {
+): SafeParseResult<ToolsOzoneTeamDeleteMemberBody, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) =>
-      ToolsOzoneTeamDeleteMemberRequestBody$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ToolsOzoneTeamDeleteMemberRequestBody' from JSON`,
+    (x) => ToolsOzoneTeamDeleteMemberBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ToolsOzoneTeamDeleteMemberBody' from JSON`,
   );
 }

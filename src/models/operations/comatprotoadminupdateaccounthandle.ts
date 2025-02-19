@@ -7,77 +7,70 @@ import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ComAtprotoAdminUpdateAccountHandleRequestBody = {
+export type ComAtprotoAdminUpdateAccountHandleBody = {
   did: string;
   handle: string;
 };
 
 /** @internal */
-export const ComAtprotoAdminUpdateAccountHandleRequestBody$inboundSchema:
-  z.ZodType<
-    ComAtprotoAdminUpdateAccountHandleRequestBody,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    did: z.string(),
-    handle: z.string(),
-  });
+export const ComAtprotoAdminUpdateAccountHandleBody$inboundSchema: z.ZodType<
+  ComAtprotoAdminUpdateAccountHandleBody,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  did: z.string(),
+  handle: z.string(),
+});
 
 /** @internal */
-export type ComAtprotoAdminUpdateAccountHandleRequestBody$Outbound = {
+export type ComAtprotoAdminUpdateAccountHandleBody$Outbound = {
   did: string;
   handle: string;
 };
 
 /** @internal */
-export const ComAtprotoAdminUpdateAccountHandleRequestBody$outboundSchema:
-  z.ZodType<
-    ComAtprotoAdminUpdateAccountHandleRequestBody$Outbound,
-    z.ZodTypeDef,
-    ComAtprotoAdminUpdateAccountHandleRequestBody
-  > = z.object({
-    did: z.string(),
-    handle: z.string(),
-  });
+export const ComAtprotoAdminUpdateAccountHandleBody$outboundSchema: z.ZodType<
+  ComAtprotoAdminUpdateAccountHandleBody$Outbound,
+  z.ZodTypeDef,
+  ComAtprotoAdminUpdateAccountHandleBody
+> = z.object({
+  did: z.string(),
+  handle: z.string(),
+});
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoAdminUpdateAccountHandleRequestBody$ {
-  /** @deprecated use `ComAtprotoAdminUpdateAccountHandleRequestBody$inboundSchema` instead. */
+export namespace ComAtprotoAdminUpdateAccountHandleBody$ {
+  /** @deprecated use `ComAtprotoAdminUpdateAccountHandleBody$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoAdminUpdateAccountHandleRequestBody$inboundSchema;
-  /** @deprecated use `ComAtprotoAdminUpdateAccountHandleRequestBody$outboundSchema` instead. */
+    ComAtprotoAdminUpdateAccountHandleBody$inboundSchema;
+  /** @deprecated use `ComAtprotoAdminUpdateAccountHandleBody$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoAdminUpdateAccountHandleRequestBody$outboundSchema;
-  /** @deprecated use `ComAtprotoAdminUpdateAccountHandleRequestBody$Outbound` instead. */
-  export type Outbound = ComAtprotoAdminUpdateAccountHandleRequestBody$Outbound;
+    ComAtprotoAdminUpdateAccountHandleBody$outboundSchema;
+  /** @deprecated use `ComAtprotoAdminUpdateAccountHandleBody$Outbound` instead. */
+  export type Outbound = ComAtprotoAdminUpdateAccountHandleBody$Outbound;
 }
 
-export function comAtprotoAdminUpdateAccountHandleRequestBodyToJSON(
-  comAtprotoAdminUpdateAccountHandleRequestBody:
-    ComAtprotoAdminUpdateAccountHandleRequestBody,
+export function comAtprotoAdminUpdateAccountHandleBodyToJSON(
+  comAtprotoAdminUpdateAccountHandleBody:
+    ComAtprotoAdminUpdateAccountHandleBody,
 ): string {
   return JSON.stringify(
-    ComAtprotoAdminUpdateAccountHandleRequestBody$outboundSchema.parse(
-      comAtprotoAdminUpdateAccountHandleRequestBody,
+    ComAtprotoAdminUpdateAccountHandleBody$outboundSchema.parse(
+      comAtprotoAdminUpdateAccountHandleBody,
     ),
   );
 }
 
-export function comAtprotoAdminUpdateAccountHandleRequestBodyFromJSON(
+export function comAtprotoAdminUpdateAccountHandleBodyFromJSON(
   jsonString: string,
-): SafeParseResult<
-  ComAtprotoAdminUpdateAccountHandleRequestBody,
-  SDKValidationError
-> {
+): SafeParseResult<ComAtprotoAdminUpdateAccountHandleBody, SDKValidationError> {
   return safeParse(
     jsonString,
     (x) =>
-      ComAtprotoAdminUpdateAccountHandleRequestBody$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'ComAtprotoAdminUpdateAccountHandleRequestBody' from JSON`,
+      ComAtprotoAdminUpdateAccountHandleBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ComAtprotoAdminUpdateAccountHandleBody' from JSON`,
   );
 }

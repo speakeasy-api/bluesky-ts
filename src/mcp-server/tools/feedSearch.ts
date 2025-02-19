@@ -17,9 +17,8 @@ export const tool$feedSearch: ToolDefinition<typeof args> = {
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
-Find posts matching search criteria, returning views of those posts.
-
-`,
+Find posts matching search criteria, returning views of those posts.`,
+  scopes: ["read"],
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await feedSearch(
@@ -28,6 +27,15 @@ Find posts matching search criteria, returning views of those posts.
       { fetchOptions: { signal: ctx.signal } },
     ).$inspect();
 
-    return formatResult(result, apiCall);
+    if (!result.ok) {
+      return {
+        content: [{ type: "text", text: result.error.message }],
+        isError: true,
+      };
+    }
+
+    const value = result.value.result;
+
+    return formatResult(value, apiCall);
   },
 };

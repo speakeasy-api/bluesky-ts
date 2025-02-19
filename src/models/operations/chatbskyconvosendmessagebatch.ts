@@ -8,7 +8,7 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ChatBskyConvoSendMessageBatchRequestBody = {
+export type ChatBskyConvoSendMessageBatchBody = {
   items: Array<components.ChatBskyConvoSendMessageBatchBatchItem>;
 };
 
@@ -20,8 +20,8 @@ export type ChatBskyConvoSendMessageBatchResponseBody = {
 };
 
 /** @internal */
-export const ChatBskyConvoSendMessageBatchRequestBody$inboundSchema: z.ZodType<
-  ChatBskyConvoSendMessageBatchRequestBody,
+export const ChatBskyConvoSendMessageBatchBody$inboundSchema: z.ZodType<
+  ChatBskyConvoSendMessageBatchBody,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -31,15 +31,15 @@ export const ChatBskyConvoSendMessageBatchRequestBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type ChatBskyConvoSendMessageBatchRequestBody$Outbound = {
+export type ChatBskyConvoSendMessageBatchBody$Outbound = {
   items: Array<components.ChatBskyConvoSendMessageBatchBatchItem$Outbound>;
 };
 
 /** @internal */
-export const ChatBskyConvoSendMessageBatchRequestBody$outboundSchema: z.ZodType<
-  ChatBskyConvoSendMessageBatchRequestBody$Outbound,
+export const ChatBskyConvoSendMessageBatchBody$outboundSchema: z.ZodType<
+  ChatBskyConvoSendMessageBatchBody$Outbound,
   z.ZodTypeDef,
-  ChatBskyConvoSendMessageBatchRequestBody
+  ChatBskyConvoSendMessageBatchBody
 > = z.object({
   items: z.array(
     components.ChatBskyConvoSendMessageBatchBatchItem$outboundSchema,
@@ -50,41 +50,33 @@ export const ChatBskyConvoSendMessageBatchRequestBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ChatBskyConvoSendMessageBatchRequestBody$ {
-  /** @deprecated use `ChatBskyConvoSendMessageBatchRequestBody$inboundSchema` instead. */
-  export const inboundSchema =
-    ChatBskyConvoSendMessageBatchRequestBody$inboundSchema;
-  /** @deprecated use `ChatBskyConvoSendMessageBatchRequestBody$outboundSchema` instead. */
+export namespace ChatBskyConvoSendMessageBatchBody$ {
+  /** @deprecated use `ChatBskyConvoSendMessageBatchBody$inboundSchema` instead. */
+  export const inboundSchema = ChatBskyConvoSendMessageBatchBody$inboundSchema;
+  /** @deprecated use `ChatBskyConvoSendMessageBatchBody$outboundSchema` instead. */
   export const outboundSchema =
-    ChatBskyConvoSendMessageBatchRequestBody$outboundSchema;
-  /** @deprecated use `ChatBskyConvoSendMessageBatchRequestBody$Outbound` instead. */
-  export type Outbound = ChatBskyConvoSendMessageBatchRequestBody$Outbound;
+    ChatBskyConvoSendMessageBatchBody$outboundSchema;
+  /** @deprecated use `ChatBskyConvoSendMessageBatchBody$Outbound` instead. */
+  export type Outbound = ChatBskyConvoSendMessageBatchBody$Outbound;
 }
 
-export function chatBskyConvoSendMessageBatchRequestBodyToJSON(
-  chatBskyConvoSendMessageBatchRequestBody:
-    ChatBskyConvoSendMessageBatchRequestBody,
+export function chatBskyConvoSendMessageBatchBodyToJSON(
+  chatBskyConvoSendMessageBatchBody: ChatBskyConvoSendMessageBatchBody,
 ): string {
   return JSON.stringify(
-    ChatBskyConvoSendMessageBatchRequestBody$outboundSchema.parse(
-      chatBskyConvoSendMessageBatchRequestBody,
+    ChatBskyConvoSendMessageBatchBody$outboundSchema.parse(
+      chatBskyConvoSendMessageBatchBody,
     ),
   );
 }
 
-export function chatBskyConvoSendMessageBatchRequestBodyFromJSON(
+export function chatBskyConvoSendMessageBatchBodyFromJSON(
   jsonString: string,
-): SafeParseResult<
-  ChatBskyConvoSendMessageBatchRequestBody,
-  SDKValidationError
-> {
+): SafeParseResult<ChatBskyConvoSendMessageBatchBody, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) =>
-      ChatBskyConvoSendMessageBatchRequestBody$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'ChatBskyConvoSendMessageBatchRequestBody' from JSON`,
+    (x) => ChatBskyConvoSendMessageBatchBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ChatBskyConvoSendMessageBatchBody' from JSON`,
   );
 }
 

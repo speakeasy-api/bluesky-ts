@@ -21,8 +21,8 @@ let value: ChatBskyConvoDefsLogCreateMessage = {
 
 ## Fields
 
-| Field                | Type                 | Required             | Description          |
-| -------------------- | -------------------- | -------------------- | -------------------- |
-| `rev`                | *string*             | :heavy_check_mark:   | N/A                  |
-| `convoId`            | *string*             | :heavy_check_mark:   | N/A                  |
-| `message`            | *components.Message* | :heavy_check_mark:   | N/A                  |
+| Field                                                 | Type                                                  | Required                                              | Description                                           |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| `rev`                                                 | *string*                                              | :heavy_check_mark:                                    | N/A                                                   |
+| `convoId`                                             | *string*                                              | :heavy_check_mark:                                    | N/A                                                   |
+| `message`                                             | *components.ChatBskyConvoDefsLogCreateMessageMessage* | :heavy_check_mark:                                    | N/A                                                   |

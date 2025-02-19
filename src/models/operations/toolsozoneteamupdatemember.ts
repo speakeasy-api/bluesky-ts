@@ -17,7 +17,7 @@ export type ToolsOzoneTeamUpdateMemberRole = ClosedEnum<
   typeof ToolsOzoneTeamUpdateMemberRole
 >;
 
-export type ToolsOzoneTeamUpdateMemberRequestBody = {
+export type ToolsOzoneTeamUpdateMemberBody = {
   did: string;
   disabled?: boolean | undefined;
   role?: ToolsOzoneTeamUpdateMemberRole | undefined;
@@ -45,8 +45,8 @@ export namespace ToolsOzoneTeamUpdateMemberRole$ {
 }
 
 /** @internal */
-export const ToolsOzoneTeamUpdateMemberRequestBody$inboundSchema: z.ZodType<
-  ToolsOzoneTeamUpdateMemberRequestBody,
+export const ToolsOzoneTeamUpdateMemberBody$inboundSchema: z.ZodType<
+  ToolsOzoneTeamUpdateMemberBody,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -56,17 +56,17 @@ export const ToolsOzoneTeamUpdateMemberRequestBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type ToolsOzoneTeamUpdateMemberRequestBody$Outbound = {
+export type ToolsOzoneTeamUpdateMemberBody$Outbound = {
   did: string;
   disabled?: boolean | undefined;
   role?: string | undefined;
 };
 
 /** @internal */
-export const ToolsOzoneTeamUpdateMemberRequestBody$outboundSchema: z.ZodType<
-  ToolsOzoneTeamUpdateMemberRequestBody$Outbound,
+export const ToolsOzoneTeamUpdateMemberBody$outboundSchema: z.ZodType<
+  ToolsOzoneTeamUpdateMemberBody$Outbound,
   z.ZodTypeDef,
-  ToolsOzoneTeamUpdateMemberRequestBody
+  ToolsOzoneTeamUpdateMemberBody
 > = z.object({
   did: z.string(),
   disabled: z.boolean().optional(),
@@ -77,34 +77,31 @@ export const ToolsOzoneTeamUpdateMemberRequestBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ToolsOzoneTeamUpdateMemberRequestBody$ {
-  /** @deprecated use `ToolsOzoneTeamUpdateMemberRequestBody$inboundSchema` instead. */
-  export const inboundSchema =
-    ToolsOzoneTeamUpdateMemberRequestBody$inboundSchema;
-  /** @deprecated use `ToolsOzoneTeamUpdateMemberRequestBody$outboundSchema` instead. */
-  export const outboundSchema =
-    ToolsOzoneTeamUpdateMemberRequestBody$outboundSchema;
-  /** @deprecated use `ToolsOzoneTeamUpdateMemberRequestBody$Outbound` instead. */
-  export type Outbound = ToolsOzoneTeamUpdateMemberRequestBody$Outbound;
+export namespace ToolsOzoneTeamUpdateMemberBody$ {
+  /** @deprecated use `ToolsOzoneTeamUpdateMemberBody$inboundSchema` instead. */
+  export const inboundSchema = ToolsOzoneTeamUpdateMemberBody$inboundSchema;
+  /** @deprecated use `ToolsOzoneTeamUpdateMemberBody$outboundSchema` instead. */
+  export const outboundSchema = ToolsOzoneTeamUpdateMemberBody$outboundSchema;
+  /** @deprecated use `ToolsOzoneTeamUpdateMemberBody$Outbound` instead. */
+  export type Outbound = ToolsOzoneTeamUpdateMemberBody$Outbound;
 }
 
-export function toolsOzoneTeamUpdateMemberRequestBodyToJSON(
-  toolsOzoneTeamUpdateMemberRequestBody: ToolsOzoneTeamUpdateMemberRequestBody,
+export function toolsOzoneTeamUpdateMemberBodyToJSON(
+  toolsOzoneTeamUpdateMemberBody: ToolsOzoneTeamUpdateMemberBody,
 ): string {
   return JSON.stringify(
-    ToolsOzoneTeamUpdateMemberRequestBody$outboundSchema.parse(
-      toolsOzoneTeamUpdateMemberRequestBody,
+    ToolsOzoneTeamUpdateMemberBody$outboundSchema.parse(
+      toolsOzoneTeamUpdateMemberBody,
     ),
   );
 }
 
-export function toolsOzoneTeamUpdateMemberRequestBodyFromJSON(
+export function toolsOzoneTeamUpdateMemberBodyFromJSON(
   jsonString: string,
-): SafeParseResult<ToolsOzoneTeamUpdateMemberRequestBody, SDKValidationError> {
+): SafeParseResult<ToolsOzoneTeamUpdateMemberBody, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) =>
-      ToolsOzoneTeamUpdateMemberRequestBody$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ToolsOzoneTeamUpdateMemberRequestBody' from JSON`,
+    (x) => ToolsOzoneTeamUpdateMemberBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ToolsOzoneTeamUpdateMemberBody' from JSON`,
   );
 }

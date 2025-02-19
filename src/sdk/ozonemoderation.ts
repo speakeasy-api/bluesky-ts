@@ -19,7 +19,7 @@ export class OzoneModeration extends ClientSDK {
    * Take a moderation action on an actor.
    */
   async emitEvent(
-    request: operations.ToolsOzoneModerationEmitEventRequestBody,
+    request: operations.ToolsOzoneModerationEmitEventBody,
     options?: RequestOptions,
   ): Promise<components.ToolsOzoneModerationDefsModEventView> {
     return unwrapAsync(ozoneModerationEmitEvent(

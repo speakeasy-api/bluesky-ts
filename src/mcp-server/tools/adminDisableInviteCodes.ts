@@ -7,7 +7,7 @@ import * as operations from "../../models/operations/index.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
 const args = {
-  request: operations.ComAtprotoAdminDisableInviteCodesRequestBody$inboundSchema
+  request: operations.ComAtprotoAdminDisableInviteCodesBody$inboundSchema
     .optional(),
 };
 
@@ -18,9 +18,8 @@ export const tool$adminDisableInviteCodes: ToolDefinition<typeof args> = {
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
-Disable some set of codes and/or all codes associated with a set of users.
-
-`,
+Disable some set of codes and/or all codes associated with a set of users.`,
+  scopes: ["write"],
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await adminDisableInviteCodes(
@@ -29,6 +28,15 @@ Disable some set of codes and/or all codes associated with a set of users.
       { fetchOptions: { signal: ctx.signal } },
     ).$inspect();
 
-    return formatResult(result, apiCall);
+    if (!result.ok) {
+      return {
+        content: [{ type: "text", text: result.error.message }],
+        isError: true,
+      };
+    }
+
+    const value = result.value;
+
+    return formatResult(value, apiCall);
   },
 };

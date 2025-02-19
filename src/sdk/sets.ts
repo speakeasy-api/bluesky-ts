@@ -18,7 +18,7 @@ export class Sets extends ClientSDK {
    * Delete values from a specific set. Attempting to delete values that are not in the set will not result in an error
    */
   async deleteValues(
-    request: operations.ToolsOzoneSetDeleteValuesRequestBody,
+    request: operations.ToolsOzoneSetDeleteValuesBody,
     options?: RequestOptions,
   ): Promise<void> {
     return unwrapAsync(setsDeleteValues(

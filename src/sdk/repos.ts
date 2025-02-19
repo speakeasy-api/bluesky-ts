@@ -22,7 +22,7 @@ export class Repos extends ClientSDK {
    * Apply a batch transaction of repository creates, updates, and deletes. Requires auth, implemented by PDS.
    */
   async applyWrites(
-    request: operations.ComAtprotoRepoApplyWritesRequestBody,
+    request: operations.ComAtprotoRepoApplyWritesBody,
     options?: RequestOptions,
   ): Promise<operations.ComAtprotoRepoApplyWritesResponseBody> {
     return unwrapAsync(reposApplyWrites(
@@ -40,7 +40,7 @@ export class Repos extends ClientSDK {
    * Create a single new repository record. Requires auth, implemented by PDS.
    */
   async createRecord(
-    request: operations.ComAtprotoRepoCreateRecordRequestBody,
+    request: operations.ComAtprotoRepoCreateRecordBody,
     options?: RequestOptions,
   ): Promise<operations.ComAtprotoRepoCreateRecordResponseBody> {
     return unwrapAsync(reposCreateRecord(

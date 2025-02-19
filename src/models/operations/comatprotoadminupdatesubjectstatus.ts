@@ -8,12 +8,12 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type Subject =
+export type ComAtprotoAdminUpdateSubjectStatusBodySubject =
   | components.ComAtprotoAdminDefsRepoRef
   | components.ComAtprotoRepoStrongRef
   | components.ComAtprotoAdminDefsRepoBlobRef;
 
-export type ComAtprotoAdminUpdateSubjectStatusRequestBody = {
+export type ComAtprotoAdminUpdateSubjectStatusBody = {
   subject:
     | components.ComAtprotoAdminDefsRepoRef
     | components.ComAtprotoRepoStrongRef
@@ -22,7 +22,7 @@ export type ComAtprotoAdminUpdateSubjectStatusRequestBody = {
   deactivated?: components.ComAtprotoAdminDefsStatusAttr | undefined;
 };
 
-export type ComAtprotoAdminUpdateSubjectStatusSubject =
+export type ComAtprotoAdminUpdateSubjectStatusResponseSubject =
   | components.ComAtprotoAdminDefsRepoRef
   | components.ComAtprotoRepoStrongRef
   | components.ComAtprotoAdminDefsRepoBlobRef;
@@ -39,167 +39,29 @@ export type ComAtprotoAdminUpdateSubjectStatusResponseBody = {
 };
 
 /** @internal */
-export const Subject$inboundSchema: z.ZodType<Subject, z.ZodTypeDef, unknown> =
-  z.union([
+export const ComAtprotoAdminUpdateSubjectStatusBodySubject$inboundSchema:
+  z.ZodType<
+    ComAtprotoAdminUpdateSubjectStatusBodySubject,
+    z.ZodTypeDef,
+    unknown
+  > = z.union([
     components.ComAtprotoAdminDefsRepoRef$inboundSchema,
     components.ComAtprotoRepoStrongRef$inboundSchema,
     components.ComAtprotoAdminDefsRepoBlobRef$inboundSchema,
   ]);
 
 /** @internal */
-export type Subject$Outbound =
+export type ComAtprotoAdminUpdateSubjectStatusBodySubject$Outbound =
   | components.ComAtprotoAdminDefsRepoRef$Outbound
   | components.ComAtprotoRepoStrongRef$Outbound
   | components.ComAtprotoAdminDefsRepoBlobRef$Outbound;
 
 /** @internal */
-export const Subject$outboundSchema: z.ZodType<
-  Subject$Outbound,
-  z.ZodTypeDef,
-  Subject
-> = z.union([
-  components.ComAtprotoAdminDefsRepoRef$outboundSchema,
-  components.ComAtprotoRepoStrongRef$outboundSchema,
-  components.ComAtprotoAdminDefsRepoBlobRef$outboundSchema,
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Subject$ {
-  /** @deprecated use `Subject$inboundSchema` instead. */
-  export const inboundSchema = Subject$inboundSchema;
-  /** @deprecated use `Subject$outboundSchema` instead. */
-  export const outboundSchema = Subject$outboundSchema;
-  /** @deprecated use `Subject$Outbound` instead. */
-  export type Outbound = Subject$Outbound;
-}
-
-export function subjectToJSON(subject: Subject): string {
-  return JSON.stringify(Subject$outboundSchema.parse(subject));
-}
-
-export function subjectFromJSON(
-  jsonString: string,
-): SafeParseResult<Subject, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => Subject$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'Subject' from JSON`,
-  );
-}
-
-/** @internal */
-export const ComAtprotoAdminUpdateSubjectStatusRequestBody$inboundSchema:
+export const ComAtprotoAdminUpdateSubjectStatusBodySubject$outboundSchema:
   z.ZodType<
-    ComAtprotoAdminUpdateSubjectStatusRequestBody,
+    ComAtprotoAdminUpdateSubjectStatusBodySubject$Outbound,
     z.ZodTypeDef,
-    unknown
-  > = z.object({
-    subject: z.union([
-      components.ComAtprotoAdminDefsRepoRef$inboundSchema,
-      components.ComAtprotoRepoStrongRef$inboundSchema,
-      components.ComAtprotoAdminDefsRepoBlobRef$inboundSchema,
-    ]),
-    takedown: components.ComAtprotoAdminDefsStatusAttr$inboundSchema.optional(),
-    deactivated: components.ComAtprotoAdminDefsStatusAttr$inboundSchema
-      .optional(),
-  });
-
-/** @internal */
-export type ComAtprotoAdminUpdateSubjectStatusRequestBody$Outbound = {
-  subject:
-    | components.ComAtprotoAdminDefsRepoRef$Outbound
-    | components.ComAtprotoRepoStrongRef$Outbound
-    | components.ComAtprotoAdminDefsRepoBlobRef$Outbound;
-  takedown?: components.ComAtprotoAdminDefsStatusAttr$Outbound | undefined;
-  deactivated?: components.ComAtprotoAdminDefsStatusAttr$Outbound | undefined;
-};
-
-/** @internal */
-export const ComAtprotoAdminUpdateSubjectStatusRequestBody$outboundSchema:
-  z.ZodType<
-    ComAtprotoAdminUpdateSubjectStatusRequestBody$Outbound,
-    z.ZodTypeDef,
-    ComAtprotoAdminUpdateSubjectStatusRequestBody
-  > = z.object({
-    subject: z.union([
-      components.ComAtprotoAdminDefsRepoRef$outboundSchema,
-      components.ComAtprotoRepoStrongRef$outboundSchema,
-      components.ComAtprotoAdminDefsRepoBlobRef$outboundSchema,
-    ]),
-    takedown: components.ComAtprotoAdminDefsStatusAttr$outboundSchema
-      .optional(),
-    deactivated: components.ComAtprotoAdminDefsStatusAttr$outboundSchema
-      .optional(),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ComAtprotoAdminUpdateSubjectStatusRequestBody$ {
-  /** @deprecated use `ComAtprotoAdminUpdateSubjectStatusRequestBody$inboundSchema` instead. */
-  export const inboundSchema =
-    ComAtprotoAdminUpdateSubjectStatusRequestBody$inboundSchema;
-  /** @deprecated use `ComAtprotoAdminUpdateSubjectStatusRequestBody$outboundSchema` instead. */
-  export const outboundSchema =
-    ComAtprotoAdminUpdateSubjectStatusRequestBody$outboundSchema;
-  /** @deprecated use `ComAtprotoAdminUpdateSubjectStatusRequestBody$Outbound` instead. */
-  export type Outbound = ComAtprotoAdminUpdateSubjectStatusRequestBody$Outbound;
-}
-
-export function comAtprotoAdminUpdateSubjectStatusRequestBodyToJSON(
-  comAtprotoAdminUpdateSubjectStatusRequestBody:
-    ComAtprotoAdminUpdateSubjectStatusRequestBody,
-): string {
-  return JSON.stringify(
-    ComAtprotoAdminUpdateSubjectStatusRequestBody$outboundSchema.parse(
-      comAtprotoAdminUpdateSubjectStatusRequestBody,
-    ),
-  );
-}
-
-export function comAtprotoAdminUpdateSubjectStatusRequestBodyFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  ComAtprotoAdminUpdateSubjectStatusRequestBody,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      ComAtprotoAdminUpdateSubjectStatusRequestBody$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'ComAtprotoAdminUpdateSubjectStatusRequestBody' from JSON`,
-  );
-}
-
-/** @internal */
-export const ComAtprotoAdminUpdateSubjectStatusSubject$inboundSchema: z.ZodType<
-  ComAtprotoAdminUpdateSubjectStatusSubject,
-  z.ZodTypeDef,
-  unknown
-> = z.union([
-  components.ComAtprotoAdminDefsRepoRef$inboundSchema,
-  components.ComAtprotoRepoStrongRef$inboundSchema,
-  components.ComAtprotoAdminDefsRepoBlobRef$inboundSchema,
-]);
-
-/** @internal */
-export type ComAtprotoAdminUpdateSubjectStatusSubject$Outbound =
-  | components.ComAtprotoAdminDefsRepoRef$Outbound
-  | components.ComAtprotoRepoStrongRef$Outbound
-  | components.ComAtprotoAdminDefsRepoBlobRef$Outbound;
-
-/** @internal */
-export const ComAtprotoAdminUpdateSubjectStatusSubject$outboundSchema:
-  z.ZodType<
-    ComAtprotoAdminUpdateSubjectStatusSubject$Outbound,
-    z.ZodTypeDef,
-    ComAtprotoAdminUpdateSubjectStatusSubject
+    ComAtprotoAdminUpdateSubjectStatusBodySubject
   > = z.union([
     components.ComAtprotoAdminDefsRepoRef$outboundSchema,
     components.ComAtprotoRepoStrongRef$outboundSchema,
@@ -210,41 +72,193 @@ export const ComAtprotoAdminUpdateSubjectStatusSubject$outboundSchema:
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoAdminUpdateSubjectStatusSubject$ {
-  /** @deprecated use `ComAtprotoAdminUpdateSubjectStatusSubject$inboundSchema` instead. */
+export namespace ComAtprotoAdminUpdateSubjectStatusBodySubject$ {
+  /** @deprecated use `ComAtprotoAdminUpdateSubjectStatusBodySubject$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoAdminUpdateSubjectStatusSubject$inboundSchema;
-  /** @deprecated use `ComAtprotoAdminUpdateSubjectStatusSubject$outboundSchema` instead. */
+    ComAtprotoAdminUpdateSubjectStatusBodySubject$inboundSchema;
+  /** @deprecated use `ComAtprotoAdminUpdateSubjectStatusBodySubject$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoAdminUpdateSubjectStatusSubject$outboundSchema;
-  /** @deprecated use `ComAtprotoAdminUpdateSubjectStatusSubject$Outbound` instead. */
-  export type Outbound = ComAtprotoAdminUpdateSubjectStatusSubject$Outbound;
+    ComAtprotoAdminUpdateSubjectStatusBodySubject$outboundSchema;
+  /** @deprecated use `ComAtprotoAdminUpdateSubjectStatusBodySubject$Outbound` instead. */
+  export type Outbound = ComAtprotoAdminUpdateSubjectStatusBodySubject$Outbound;
 }
 
-export function comAtprotoAdminUpdateSubjectStatusSubjectToJSON(
-  comAtprotoAdminUpdateSubjectStatusSubject:
-    ComAtprotoAdminUpdateSubjectStatusSubject,
+export function comAtprotoAdminUpdateSubjectStatusBodySubjectToJSON(
+  comAtprotoAdminUpdateSubjectStatusBodySubject:
+    ComAtprotoAdminUpdateSubjectStatusBodySubject,
 ): string {
   return JSON.stringify(
-    ComAtprotoAdminUpdateSubjectStatusSubject$outboundSchema.parse(
-      comAtprotoAdminUpdateSubjectStatusSubject,
+    ComAtprotoAdminUpdateSubjectStatusBodySubject$outboundSchema.parse(
+      comAtprotoAdminUpdateSubjectStatusBodySubject,
     ),
   );
 }
 
-export function comAtprotoAdminUpdateSubjectStatusSubjectFromJSON(
+export function comAtprotoAdminUpdateSubjectStatusBodySubjectFromJSON(
   jsonString: string,
 ): SafeParseResult<
-  ComAtprotoAdminUpdateSubjectStatusSubject,
+  ComAtprotoAdminUpdateSubjectStatusBodySubject,
   SDKValidationError
 > {
   return safeParse(
     jsonString,
     (x) =>
-      ComAtprotoAdminUpdateSubjectStatusSubject$inboundSchema.parse(
+      ComAtprotoAdminUpdateSubjectStatusBodySubject$inboundSchema.parse(
         JSON.parse(x),
       ),
-    `Failed to parse 'ComAtprotoAdminUpdateSubjectStatusSubject' from JSON`,
+    `Failed to parse 'ComAtprotoAdminUpdateSubjectStatusBodySubject' from JSON`,
+  );
+}
+
+/** @internal */
+export const ComAtprotoAdminUpdateSubjectStatusBody$inboundSchema: z.ZodType<
+  ComAtprotoAdminUpdateSubjectStatusBody,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  subject: z.union([
+    components.ComAtprotoAdminDefsRepoRef$inboundSchema,
+    components.ComAtprotoRepoStrongRef$inboundSchema,
+    components.ComAtprotoAdminDefsRepoBlobRef$inboundSchema,
+  ]),
+  takedown: components.ComAtprotoAdminDefsStatusAttr$inboundSchema.optional(),
+  deactivated: components.ComAtprotoAdminDefsStatusAttr$inboundSchema
+    .optional(),
+});
+
+/** @internal */
+export type ComAtprotoAdminUpdateSubjectStatusBody$Outbound = {
+  subject:
+    | components.ComAtprotoAdminDefsRepoRef$Outbound
+    | components.ComAtprotoRepoStrongRef$Outbound
+    | components.ComAtprotoAdminDefsRepoBlobRef$Outbound;
+  takedown?: components.ComAtprotoAdminDefsStatusAttr$Outbound | undefined;
+  deactivated?: components.ComAtprotoAdminDefsStatusAttr$Outbound | undefined;
+};
+
+/** @internal */
+export const ComAtprotoAdminUpdateSubjectStatusBody$outboundSchema: z.ZodType<
+  ComAtprotoAdminUpdateSubjectStatusBody$Outbound,
+  z.ZodTypeDef,
+  ComAtprotoAdminUpdateSubjectStatusBody
+> = z.object({
+  subject: z.union([
+    components.ComAtprotoAdminDefsRepoRef$outboundSchema,
+    components.ComAtprotoRepoStrongRef$outboundSchema,
+    components.ComAtprotoAdminDefsRepoBlobRef$outboundSchema,
+  ]),
+  takedown: components.ComAtprotoAdminDefsStatusAttr$outboundSchema.optional(),
+  deactivated: components.ComAtprotoAdminDefsStatusAttr$outboundSchema
+    .optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace ComAtprotoAdminUpdateSubjectStatusBody$ {
+  /** @deprecated use `ComAtprotoAdminUpdateSubjectStatusBody$inboundSchema` instead. */
+  export const inboundSchema =
+    ComAtprotoAdminUpdateSubjectStatusBody$inboundSchema;
+  /** @deprecated use `ComAtprotoAdminUpdateSubjectStatusBody$outboundSchema` instead. */
+  export const outboundSchema =
+    ComAtprotoAdminUpdateSubjectStatusBody$outboundSchema;
+  /** @deprecated use `ComAtprotoAdminUpdateSubjectStatusBody$Outbound` instead. */
+  export type Outbound = ComAtprotoAdminUpdateSubjectStatusBody$Outbound;
+}
+
+export function comAtprotoAdminUpdateSubjectStatusBodyToJSON(
+  comAtprotoAdminUpdateSubjectStatusBody:
+    ComAtprotoAdminUpdateSubjectStatusBody,
+): string {
+  return JSON.stringify(
+    ComAtprotoAdminUpdateSubjectStatusBody$outboundSchema.parse(
+      comAtprotoAdminUpdateSubjectStatusBody,
+    ),
+  );
+}
+
+export function comAtprotoAdminUpdateSubjectStatusBodyFromJSON(
+  jsonString: string,
+): SafeParseResult<ComAtprotoAdminUpdateSubjectStatusBody, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      ComAtprotoAdminUpdateSubjectStatusBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ComAtprotoAdminUpdateSubjectStatusBody' from JSON`,
+  );
+}
+
+/** @internal */
+export const ComAtprotoAdminUpdateSubjectStatusResponseSubject$inboundSchema:
+  z.ZodType<
+    ComAtprotoAdminUpdateSubjectStatusResponseSubject,
+    z.ZodTypeDef,
+    unknown
+  > = z.union([
+    components.ComAtprotoAdminDefsRepoRef$inboundSchema,
+    components.ComAtprotoRepoStrongRef$inboundSchema,
+    components.ComAtprotoAdminDefsRepoBlobRef$inboundSchema,
+  ]);
+
+/** @internal */
+export type ComAtprotoAdminUpdateSubjectStatusResponseSubject$Outbound =
+  | components.ComAtprotoAdminDefsRepoRef$Outbound
+  | components.ComAtprotoRepoStrongRef$Outbound
+  | components.ComAtprotoAdminDefsRepoBlobRef$Outbound;
+
+/** @internal */
+export const ComAtprotoAdminUpdateSubjectStatusResponseSubject$outboundSchema:
+  z.ZodType<
+    ComAtprotoAdminUpdateSubjectStatusResponseSubject$Outbound,
+    z.ZodTypeDef,
+    ComAtprotoAdminUpdateSubjectStatusResponseSubject
+  > = z.union([
+    components.ComAtprotoAdminDefsRepoRef$outboundSchema,
+    components.ComAtprotoRepoStrongRef$outboundSchema,
+    components.ComAtprotoAdminDefsRepoBlobRef$outboundSchema,
+  ]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace ComAtprotoAdminUpdateSubjectStatusResponseSubject$ {
+  /** @deprecated use `ComAtprotoAdminUpdateSubjectStatusResponseSubject$inboundSchema` instead. */
+  export const inboundSchema =
+    ComAtprotoAdminUpdateSubjectStatusResponseSubject$inboundSchema;
+  /** @deprecated use `ComAtprotoAdminUpdateSubjectStatusResponseSubject$outboundSchema` instead. */
+  export const outboundSchema =
+    ComAtprotoAdminUpdateSubjectStatusResponseSubject$outboundSchema;
+  /** @deprecated use `ComAtprotoAdminUpdateSubjectStatusResponseSubject$Outbound` instead. */
+  export type Outbound =
+    ComAtprotoAdminUpdateSubjectStatusResponseSubject$Outbound;
+}
+
+export function comAtprotoAdminUpdateSubjectStatusResponseSubjectToJSON(
+  comAtprotoAdminUpdateSubjectStatusResponseSubject:
+    ComAtprotoAdminUpdateSubjectStatusResponseSubject,
+): string {
+  return JSON.stringify(
+    ComAtprotoAdminUpdateSubjectStatusResponseSubject$outboundSchema.parse(
+      comAtprotoAdminUpdateSubjectStatusResponseSubject,
+    ),
+  );
+}
+
+export function comAtprotoAdminUpdateSubjectStatusResponseSubjectFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  ComAtprotoAdminUpdateSubjectStatusResponseSubject,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      ComAtprotoAdminUpdateSubjectStatusResponseSubject$inboundSchema.parse(
+        JSON.parse(x),
+      ),
+    `Failed to parse 'ComAtprotoAdminUpdateSubjectStatusResponseSubject' from JSON`,
   );
 }
 

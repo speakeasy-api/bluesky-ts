@@ -7,7 +7,7 @@ import * as operations from "../../models/operations/index.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
 const args = {
-  request: operations.ComAtprotoRepoPutRecordRequestBody$inboundSchema,
+  request: operations.ComAtprotoRepoPutRecordBody$inboundSchema,
 };
 
 export const tool$repoPutRecord: ToolDefinition<typeof args> = {
@@ -17,9 +17,8 @@ export const tool$repoPutRecord: ToolDefinition<typeof args> = {
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
-Write a repository record, creating or updating it as needed. Requires auth, implemented by PDS.
-
-`,
+Write a repository record, creating or updating it as needed. Requires auth, implemented by PDS.`,
+  scopes: ["write"],
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await repoPutRecord(
@@ -28,6 +27,15 @@ Write a repository record, creating or updating it as needed. Requires auth, imp
       { fetchOptions: { signal: ctx.signal } },
     ).$inspect();
 
-    return formatResult(result, apiCall);
+    if (!result.ok) {
+      return {
+        content: [{ type: "text", text: result.error.message }],
+        isError: true,
+      };
+    }
+
+    const value = result.value;
+
+    return formatResult(value, apiCall);
   },
 };

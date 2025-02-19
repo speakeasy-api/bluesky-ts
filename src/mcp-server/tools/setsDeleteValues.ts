@@ -7,7 +7,7 @@ import * as operations from "../../models/operations/index.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
 const args = {
-  request: operations.ToolsOzoneSetDeleteValuesRequestBody$inboundSchema,
+  request: operations.ToolsOzoneSetDeleteValuesBody$inboundSchema,
 };
 
 export const tool$setsDeleteValues: ToolDefinition<typeof args> = {
@@ -17,9 +17,8 @@ export const tool$setsDeleteValues: ToolDefinition<typeof args> = {
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
-Delete values from a specific set. Attempting to delete values that are not in the set will not result in an error
-
-`,
+Delete values from a specific set. Attempting to delete values that are not in the set will not result in an error`,
+  scopes: ["write"],
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await setsDeleteValues(
@@ -28,6 +27,15 @@ Delete values from a specific set. Attempting to delete values that are not in t
       { fetchOptions: { signal: ctx.signal } },
     ).$inspect();
 
-    return formatResult(result, apiCall);
+    if (!result.ok) {
+      return {
+        content: [{ type: "text", text: result.error.message }],
+        isError: true,
+      };
+    }
+
+    const value = result.value;
+
+    return formatResult(value, apiCall);
   },
 };

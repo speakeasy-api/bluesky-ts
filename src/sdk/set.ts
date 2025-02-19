@@ -18,7 +18,7 @@ export class Set extends ClientSDK {
    * Delete an entire set. Attempting to delete a set that does not exist will result in an error.
    */
   async delete(
-    request: operations.ToolsOzoneSetDeleteSetRequestBody,
+    request: operations.ToolsOzoneSetDeleteSetBody,
     options?: RequestOptions,
   ): Promise<operations.ToolsOzoneSetDeleteSetResponseBody> {
     return unwrapAsync(setDelete(

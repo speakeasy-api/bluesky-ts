@@ -7,7 +7,7 @@ import * as operations from "../../models/operations/index.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
 const args = {
-  request: operations.AppBskyGraphMuteThreadRequestBody$inboundSchema,
+  request: operations.AppBskyGraphMuteThreadBody$inboundSchema,
 };
 
 export const tool$graphsMuteThread: ToolDefinition<typeof args> = {
@@ -17,9 +17,8 @@ export const tool$graphsMuteThread: ToolDefinition<typeof args> = {
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
-Mutes a thread preventing notifications from the thread and any of its children. Mutes are private in Bluesky. Requires auth.
-
-`,
+Mutes a thread preventing notifications from the thread and any of its children. Mutes are private in Bluesky. Requires auth.`,
+  scopes: ["write"],
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await graphsMuteThread(
@@ -28,6 +27,15 @@ Mutes a thread preventing notifications from the thread and any of its children.
       { fetchOptions: { signal: ctx.signal } },
     ).$inspect();
 
-    return formatResult(result, apiCall);
+    if (!result.ok) {
+      return {
+        content: [{ type: "text", text: result.error.message }],
+        isError: true,
+      };
+    }
+
+    const value = result.value;
+
+    return formatResult(value, apiCall);
   },
 };

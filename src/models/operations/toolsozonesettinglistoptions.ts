@@ -10,16 +10,18 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export const QueryParamScope = {
+export const ToolsOzoneSettingListOptionsScope = {
   Instance: "instance",
   Personal: "personal",
 } as const;
-export type QueryParamScope = ClosedEnum<typeof QueryParamScope>;
+export type ToolsOzoneSettingListOptionsScope = ClosedEnum<
+  typeof ToolsOzoneSettingListOptionsScope
+>;
 
 export type ToolsOzoneSettingListOptionsRequest = {
   limit?: number | undefined;
   cursor?: string | undefined;
-  scope?: QueryParamScope | undefined;
+  scope?: ToolsOzoneSettingListOptionsScope | undefined;
   /**
    * Filter keys by prefix
    */
@@ -43,24 +45,25 @@ export type ToolsOzoneSettingListOptionsResponse = {
 };
 
 /** @internal */
-export const QueryParamScope$inboundSchema: z.ZodNativeEnum<
-  typeof QueryParamScope
-> = z.nativeEnum(QueryParamScope);
+export const ToolsOzoneSettingListOptionsScope$inboundSchema: z.ZodNativeEnum<
+  typeof ToolsOzoneSettingListOptionsScope
+> = z.nativeEnum(ToolsOzoneSettingListOptionsScope);
 
 /** @internal */
-export const QueryParamScope$outboundSchema: z.ZodNativeEnum<
-  typeof QueryParamScope
-> = QueryParamScope$inboundSchema;
+export const ToolsOzoneSettingListOptionsScope$outboundSchema: z.ZodNativeEnum<
+  typeof ToolsOzoneSettingListOptionsScope
+> = ToolsOzoneSettingListOptionsScope$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace QueryParamScope$ {
-  /** @deprecated use `QueryParamScope$inboundSchema` instead. */
-  export const inboundSchema = QueryParamScope$inboundSchema;
-  /** @deprecated use `QueryParamScope$outboundSchema` instead. */
-  export const outboundSchema = QueryParamScope$outboundSchema;
+export namespace ToolsOzoneSettingListOptionsScope$ {
+  /** @deprecated use `ToolsOzoneSettingListOptionsScope$inboundSchema` instead. */
+  export const inboundSchema = ToolsOzoneSettingListOptionsScope$inboundSchema;
+  /** @deprecated use `ToolsOzoneSettingListOptionsScope$outboundSchema` instead. */
+  export const outboundSchema =
+    ToolsOzoneSettingListOptionsScope$outboundSchema;
 }
 
 /** @internal */
@@ -71,7 +74,7 @@ export const ToolsOzoneSettingListOptionsRequest$inboundSchema: z.ZodType<
 > = z.object({
   limit: z.number().int().default(50),
   cursor: z.string().optional(),
-  scope: QueryParamScope$inboundSchema.default("instance"),
+  scope: ToolsOzoneSettingListOptionsScope$inboundSchema.default("instance"),
   prefix: z.string().optional(),
   keys: z.array(z.string()).optional(),
 });
@@ -93,7 +96,7 @@ export const ToolsOzoneSettingListOptionsRequest$outboundSchema: z.ZodType<
 > = z.object({
   limit: z.number().int().default(50),
   cursor: z.string().optional(),
-  scope: QueryParamScope$outboundSchema.default("instance"),
+  scope: ToolsOzoneSettingListOptionsScope$outboundSchema.default("instance"),
   prefix: z.string().optional(),
   keys: z.array(z.string()).optional(),
 });

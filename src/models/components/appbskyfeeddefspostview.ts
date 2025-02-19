@@ -61,7 +61,7 @@ import {
   ComAtprotoLabelDefsLabel$outboundSchema,
 } from "./comatprotolabeldefslabel.js";
 
-export type Embed =
+export type AppBskyFeedDefsPostViewEmbed =
   | AppBskyEmbedImagesView
   | AppBskyEmbedExternalView
   | AppBskyEmbedRecordView
@@ -94,17 +94,20 @@ export type AppBskyFeedDefsPostView = {
 };
 
 /** @internal */
-export const Embed$inboundSchema: z.ZodType<Embed, z.ZodTypeDef, unknown> = z
-  .union([
-    AppBskyEmbedImagesView$inboundSchema,
-    AppBskyEmbedExternalView$inboundSchema,
-    AppBskyEmbedRecordView$inboundSchema,
-    AppBskyEmbedRecordWithMediaView$inboundSchema,
-    AppBskyEmbedVideoView$inboundSchema,
-  ]);
+export const AppBskyFeedDefsPostViewEmbed$inboundSchema: z.ZodType<
+  AppBskyFeedDefsPostViewEmbed,
+  z.ZodTypeDef,
+  unknown
+> = z.union([
+  AppBskyEmbedImagesView$inboundSchema,
+  AppBskyEmbedExternalView$inboundSchema,
+  AppBskyEmbedRecordView$inboundSchema,
+  AppBskyEmbedRecordWithMediaView$inboundSchema,
+  AppBskyEmbedVideoView$inboundSchema,
+]);
 
 /** @internal */
-export type Embed$Outbound =
+export type AppBskyFeedDefsPostViewEmbed$Outbound =
   | AppBskyEmbedImagesView$Outbound
   | AppBskyEmbedExternalView$Outbound
   | AppBskyEmbedRecordView$Outbound
@@ -112,10 +115,10 @@ export type Embed$Outbound =
   | AppBskyEmbedVideoView$Outbound;
 
 /** @internal */
-export const Embed$outboundSchema: z.ZodType<
-  Embed$Outbound,
+export const AppBskyFeedDefsPostViewEmbed$outboundSchema: z.ZodType<
+  AppBskyFeedDefsPostViewEmbed$Outbound,
   z.ZodTypeDef,
-  Embed
+  AppBskyFeedDefsPostViewEmbed
 > = z.union([
   AppBskyEmbedImagesView$outboundSchema,
   AppBskyEmbedExternalView$outboundSchema,
@@ -128,26 +131,32 @@ export const Embed$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace Embed$ {
-  /** @deprecated use `Embed$inboundSchema` instead. */
-  export const inboundSchema = Embed$inboundSchema;
-  /** @deprecated use `Embed$outboundSchema` instead. */
-  export const outboundSchema = Embed$outboundSchema;
-  /** @deprecated use `Embed$Outbound` instead. */
-  export type Outbound = Embed$Outbound;
+export namespace AppBskyFeedDefsPostViewEmbed$ {
+  /** @deprecated use `AppBskyFeedDefsPostViewEmbed$inboundSchema` instead. */
+  export const inboundSchema = AppBskyFeedDefsPostViewEmbed$inboundSchema;
+  /** @deprecated use `AppBskyFeedDefsPostViewEmbed$outboundSchema` instead. */
+  export const outboundSchema = AppBskyFeedDefsPostViewEmbed$outboundSchema;
+  /** @deprecated use `AppBskyFeedDefsPostViewEmbed$Outbound` instead. */
+  export type Outbound = AppBskyFeedDefsPostViewEmbed$Outbound;
 }
 
-export function embedToJSON(embed: Embed): string {
-  return JSON.stringify(Embed$outboundSchema.parse(embed));
+export function appBskyFeedDefsPostViewEmbedToJSON(
+  appBskyFeedDefsPostViewEmbed: AppBskyFeedDefsPostViewEmbed,
+): string {
+  return JSON.stringify(
+    AppBskyFeedDefsPostViewEmbed$outboundSchema.parse(
+      appBskyFeedDefsPostViewEmbed,
+    ),
+  );
 }
 
-export function embedFromJSON(
+export function appBskyFeedDefsPostViewEmbedFromJSON(
   jsonString: string,
-): SafeParseResult<Embed, SDKValidationError> {
+): SafeParseResult<AppBskyFeedDefsPostViewEmbed, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => Embed$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'Embed' from JSON`,
+    (x) => AppBskyFeedDefsPostViewEmbed$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AppBskyFeedDefsPostViewEmbed' from JSON`,
   );
 }
 

@@ -125,21 +125,21 @@ import {
 
 ### Errors
 
-| Error Type                                        | Status Code                                       | Content Type                                      |
-| ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
-| errors.AppBskyVideoGetJobStatusResponseBody       | 400                                               | application/json                                  |
-| errors.AppBskyVideoGetJobStatusVideosResponseBody | 401                                               | application/json                                  |
-| errors.NotFound                                   | 404                                               | application/json                                  |
-| errors.Unauthorized                               | 403, 407                                          | application/json                                  |
-| errors.Timeout                                    | 408                                               | application/json                                  |
-| errors.RateLimited                                | 429                                               | application/json                                  |
-| errors.BadRequest                                 | 413, 414, 415, 422, 431                           | application/json                                  |
-| errors.Timeout                                    | 504                                               | application/json                                  |
-| errors.NotFound                                   | 501, 505                                          | application/json                                  |
-| errors.InternalServerError                        | 500, 502, 503, 506, 507, 508                      | application/json                                  |
-| errors.BadRequest                                 | 510                                               | application/json                                  |
-| errors.Unauthorized                               | 511                                               | application/json                                  |
-| errors.APIError                                   | 4XX, 5XX                                          | \*/\*                                             |
+| Error Type                                                   | Status Code                                                  | Content Type                                                 |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| errors.BadRequestAppBskyVideoGetJobStatusResponseBodyError   | 400                                                          | application/json                                             |
+| errors.UnauthorizedAppBskyVideoGetJobStatusResponseBodyError | 401                                                          | application/json                                             |
+| errors.NotFoundError                                         | 404                                                          | application/json                                             |
+| errors.UnauthorizedError                                     | 403, 407                                                     | application/json                                             |
+| errors.TimeoutError                                          | 408                                                          | application/json                                             |
+| errors.RateLimitedError                                      | 429                                                          | application/json                                             |
+| errors.BadRequestError                                       | 413, 414, 415, 422, 431                                      | application/json                                             |
+| errors.TimeoutError                                          | 504                                                          | application/json                                             |
+| errors.NotFoundError                                         | 501, 505                                                     | application/json                                             |
+| errors.InternalServerError                                   | 500, 502, 503, 506, 507, 508                                 | application/json                                             |
+| errors.BadRequestError                                       | 510                                                          | application/json                                             |
+| errors.UnauthorizedError                                     | 511                                                          | application/json                                             |
+| errors.APIError                                              | 4XX, 5XX                                                     | \*/\*                                                        |
 
 ## getUploadLimits
 
@@ -239,21 +239,21 @@ import {
 
 ### Errors
 
-| Error Type                                           | Status Code                                          | Content Type                                         |
-| ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
-| errors.AppBskyVideoGetUploadLimitsResponseBody       | 400                                                  | application/json                                     |
-| errors.AppBskyVideoGetUploadLimitsVideosResponseBody | 401                                                  | application/json                                     |
-| errors.NotFound                                      | 404                                                  | application/json                                     |
-| errors.Unauthorized                                  | 403, 407                                             | application/json                                     |
-| errors.Timeout                                       | 408                                                  | application/json                                     |
-| errors.RateLimited                                   | 429                                                  | application/json                                     |
-| errors.BadRequest                                    | 413, 414, 415, 422, 431                              | application/json                                     |
-| errors.Timeout                                       | 504                                                  | application/json                                     |
-| errors.NotFound                                      | 501, 505                                             | application/json                                     |
-| errors.InternalServerError                           | 500, 502, 503, 506, 507, 508                         | application/json                                     |
-| errors.BadRequest                                    | 510                                                  | application/json                                     |
-| errors.Unauthorized                                  | 511                                                  | application/json                                     |
-| errors.APIError                                      | 4XX, 5XX                                             | \*/\*                                                |
+| Error Type                                                      | Status Code                                                     | Content Type                                                    |
+| --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
+| errors.BadRequestAppBskyVideoGetUploadLimitsResponseBodyError   | 400                                                             | application/json                                                |
+| errors.UnauthorizedAppBskyVideoGetUploadLimitsResponseBodyError | 401                                                             | application/json                                                |
+| errors.NotFoundError                                            | 404                                                             | application/json                                                |
+| errors.UnauthorizedError                                        | 403, 407                                                        | application/json                                                |
+| errors.TimeoutError                                             | 408                                                             | application/json                                                |
+| errors.RateLimitedError                                         | 429                                                             | application/json                                                |
+| errors.BadRequestError                                          | 413, 414, 415, 422, 431                                         | application/json                                                |
+| errors.TimeoutError                                             | 504                                                             | application/json                                                |
+| errors.NotFoundError                                            | 501, 505                                                        | application/json                                                |
+| errors.InternalServerError                                      | 500, 502, 503, 506, 507, 508                                    | application/json                                                |
+| errors.BadRequestError                                          | 510                                                             | application/json                                                |
+| errors.UnauthorizedError                                        | 511                                                             | application/json                                                |
+| errors.APIError                                                 | 4XX, 5XX                                                        | \*/\*                                                           |
 
 ## upload
 
@@ -346,18 +346,18 @@ import {
 
 ### Errors
 
-| Error Type                                       | Status Code                                      | Content Type                                     |
-| ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ |
-| errors.AppBskyVideoUploadVideoResponseBody       | 400                                              | application/json                                 |
-| errors.AppBskyVideoUploadVideoVideosResponseBody | 401                                              | application/json                                 |
-| errors.NotFound                                  | 404                                              | application/json                                 |
-| errors.Unauthorized                              | 403, 407                                         | application/json                                 |
-| errors.Timeout                                   | 408                                              | application/json                                 |
-| errors.RateLimited                               | 429                                              | application/json                                 |
-| errors.BadRequest                                | 413, 414, 415, 422, 431                          | application/json                                 |
-| errors.Timeout                                   | 504                                              | application/json                                 |
-| errors.NotFound                                  | 501, 505                                         | application/json                                 |
-| errors.InternalServerError                       | 500, 502, 503, 506, 507, 508                     | application/json                                 |
-| errors.BadRequest                                | 510                                              | application/json                                 |
-| errors.Unauthorized                              | 511                                              | application/json                                 |
-| errors.APIError                                  | 4XX, 5XX                                         | \*/\*                                            |
+| Error Type                                                  | Status Code                                                 | Content Type                                                |
+| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
+| errors.BadRequestAppBskyVideoUploadVideoResponseBodyError   | 400                                                         | application/json                                            |
+| errors.UnauthorizedAppBskyVideoUploadVideoResponseBodyError | 401                                                         | application/json                                            |
+| errors.NotFoundError                                        | 404                                                         | application/json                                            |
+| errors.UnauthorizedError                                    | 403, 407                                                    | application/json                                            |
+| errors.TimeoutError                                         | 408                                                         | application/json                                            |
+| errors.RateLimitedError                                     | 429                                                         | application/json                                            |
+| errors.BadRequestError                                      | 413, 414, 415, 422, 431                                     | application/json                                            |
+| errors.TimeoutError                                         | 504                                                         | application/json                                            |
+| errors.NotFoundError                                        | 501, 505                                                    | application/json                                            |
+| errors.InternalServerError                                  | 500, 502, 503, 506, 507, 508                                | application/json                                            |
+| errors.BadRequestError                                      | 510                                                         | application/json                                            |
+| errors.UnauthorizedError                                    | 511                                                         | application/json                                            |
+| errors.APIError                                             | 4XX, 5XX                                                    | \*/\*                                                       |

@@ -18,7 +18,7 @@ export class OzoneSet extends ClientSDK {
    * Add values to a specific set. Attempting to add values to a set that does not exist will result in an error.
    */
   async add(
-    request: operations.ToolsOzoneSetAddValuesRequestBody,
+    request: operations.ToolsOzoneSetAddValuesBody,
     options?: RequestOptions,
   ): Promise<void> {
     return unwrapAsync(ozoneSetAdd(

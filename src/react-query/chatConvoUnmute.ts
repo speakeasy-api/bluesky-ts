@@ -17,7 +17,7 @@ import { useBlueskyContext } from "./_context.js";
 import { MutationHookOptions } from "./_types.js";
 
 export type ChatConvoUnmuteMutationVariables = {
-  request: operations.ChatBskyConvoUnmuteConvoRequestBody;
+  request: operations.ChatBskyConvoUnmuteConvoBody;
   options?: RequestOptions;
 };
 

@@ -7,8 +7,7 @@ import * as operations from "../../models/operations/index.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
 const args = {
-  request:
-    operations.ComAtprotoAdminUpdateAccountPasswordRequestBody$inboundSchema,
+  request: operations.ComAtprotoAdminUpdateAccountPasswordBody$inboundSchema,
 };
 
 export const tool$adminUpdateAccountPassword: ToolDefinition<typeof args> = {
@@ -18,9 +17,8 @@ export const tool$adminUpdateAccountPassword: ToolDefinition<typeof args> = {
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
-Update the password for a user account as an administrator.
-
-`,
+Update the password for a user account as an administrator.`,
+  scopes: ["write"],
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await adminUpdateAccountPassword(
@@ -29,6 +27,15 @@ Update the password for a user account as an administrator.
       { fetchOptions: { signal: ctx.signal } },
     ).$inspect();
 
-    return formatResult(result, apiCall);
+    if (!result.ok) {
+      return {
+        content: [{ type: "text", text: result.error.message }],
+        isError: true,
+      };
+    }
+
+    const value = result.value;
+
+    return formatResult(value, apiCall);
   },
 };

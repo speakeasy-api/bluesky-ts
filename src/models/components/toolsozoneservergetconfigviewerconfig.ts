@@ -8,35 +8,40 @@ import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export const Role = {
+export const ToolsOzoneServerGetConfigViewerConfigRole = {
   ToolsOzoneTeamDefsNumberRoleAdmin: "tools.ozone.team.defs#roleAdmin",
   ToolsOzoneTeamDefsNumberRoleModerator: "tools.ozone.team.defs#roleModerator",
   ToolsOzoneTeamDefsNumberRoleTriage: "tools.ozone.team.defs#roleTriage",
 } as const;
-export type Role = ClosedEnum<typeof Role>;
+export type ToolsOzoneServerGetConfigViewerConfigRole = ClosedEnum<
+  typeof ToolsOzoneServerGetConfigViewerConfigRole
+>;
 
 export type ToolsOzoneServerGetConfigViewerConfig = {
-  role?: Role | undefined;
+  role?: ToolsOzoneServerGetConfigViewerConfigRole | undefined;
 };
 
 /** @internal */
-export const Role$inboundSchema: z.ZodNativeEnum<typeof Role> = z.nativeEnum(
-  Role,
-);
+export const ToolsOzoneServerGetConfigViewerConfigRole$inboundSchema:
+  z.ZodNativeEnum<typeof ToolsOzoneServerGetConfigViewerConfigRole> = z
+    .nativeEnum(ToolsOzoneServerGetConfigViewerConfigRole);
 
 /** @internal */
-export const Role$outboundSchema: z.ZodNativeEnum<typeof Role> =
-  Role$inboundSchema;
+export const ToolsOzoneServerGetConfigViewerConfigRole$outboundSchema:
+  z.ZodNativeEnum<typeof ToolsOzoneServerGetConfigViewerConfigRole> =
+    ToolsOzoneServerGetConfigViewerConfigRole$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace Role$ {
-  /** @deprecated use `Role$inboundSchema` instead. */
-  export const inboundSchema = Role$inboundSchema;
-  /** @deprecated use `Role$outboundSchema` instead. */
-  export const outboundSchema = Role$outboundSchema;
+export namespace ToolsOzoneServerGetConfigViewerConfigRole$ {
+  /** @deprecated use `ToolsOzoneServerGetConfigViewerConfigRole$inboundSchema` instead. */
+  export const inboundSchema =
+    ToolsOzoneServerGetConfigViewerConfigRole$inboundSchema;
+  /** @deprecated use `ToolsOzoneServerGetConfigViewerConfigRole$outboundSchema` instead. */
+  export const outboundSchema =
+    ToolsOzoneServerGetConfigViewerConfigRole$outboundSchema;
 }
 
 /** @internal */
@@ -45,7 +50,7 @@ export const ToolsOzoneServerGetConfigViewerConfig$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  role: Role$inboundSchema.optional(),
+  role: ToolsOzoneServerGetConfigViewerConfigRole$inboundSchema.optional(),
 });
 
 /** @internal */
@@ -59,7 +64,7 @@ export const ToolsOzoneServerGetConfigViewerConfig$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   ToolsOzoneServerGetConfigViewerConfig
 > = z.object({
-  role: Role$outboundSchema.optional(),
+  role: ToolsOzoneServerGetConfigViewerConfigRole$outboundSchema.optional(),
 });
 
 /**

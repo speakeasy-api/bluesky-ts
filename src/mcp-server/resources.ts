@@ -8,6 +8,7 @@ import { Variables } from "@modelcontextprotocol/sdk/shared/uriTemplate.js";
 import { ReadResourceResult } from "@modelcontextprotocol/sdk/types.js";
 import { BlueskyCore } from "../core.js";
 import { Result } from "../types/fp.js";
+import { MCPScope } from "./scopes.js";
 import { isAsyncIterable, isBinaryData, valueToBase64 } from "./shared.js";
 
 export type ReadResourceCallback = (
@@ -19,6 +20,7 @@ export type ReadResourceCallback = (
 export type ResourceDefinition = {
   name: string;
   description: string;
+  scopes?: MCPScope[];
   resource: string;
   read: ReadResourceCallback;
 };
@@ -33,6 +35,7 @@ export type ReadResourceTemplateCallback = (
 export type ResourceTemplateDefinition = {
   name: string;
   description: string;
+  scopes?: MCPScope[];
   resource: ResourceTemplate;
   read: ReadResourceTemplateCallback;
 };

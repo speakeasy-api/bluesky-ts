@@ -17,7 +17,7 @@ import { useBlueskyContext } from "./_context.js";
 import { MutationHookOptions } from "./_types.js";
 
 export type ServersReserveSigningKeyMutationVariables = {
-  request?: operations.ComAtprotoServerReserveSigningKeyRequestBody | undefined;
+  request?: operations.ComAtprotoServerReserveSigningKeyBody | undefined;
   options?: RequestOptions;
 };
 

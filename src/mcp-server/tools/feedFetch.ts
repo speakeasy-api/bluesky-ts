@@ -17,9 +17,8 @@ export const tool$feedFetch: ToolDefinition<typeof args> = {
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
-Get a hydrated feed from an actor's selected feed generator. Implemented by App View.
-
-`,
+Get a hydrated feed from an actor's selected feed generator. Implemented by App View.`,
+  scopes: ["read"],
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await feedFetch(
@@ -28,6 +27,15 @@ Get a hydrated feed from an actor's selected feed generator. Implemented by App 
       { fetchOptions: { signal: ctx.signal } },
     ).$inspect();
 
-    return formatResult(result, apiCall);
+    if (!result.ok) {
+      return {
+        content: [{ type: "text", text: result.error.message }],
+        isError: true,
+      };
+    }
+
+    const value = result.value.result;
+
+    return formatResult(value, apiCall);
   },
 };

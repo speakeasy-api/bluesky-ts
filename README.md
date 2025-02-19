@@ -96,7 +96,7 @@ Add the following server definition to your `claude_desktop_config.json` file:
   "mcpServers": {
     "Bluesky": {
       "command": "npx",
-      "args": ["-y", "--", "@speakeasy-api/bluesky", "mcp"]
+      "args": ["-y", "--", "@speakeasy-api/bluesky", "mcp", "start"]
       "env": {
         "BLUESKY_BEARER": "..."
       }
@@ -116,7 +116,7 @@ Add the following server definition to your `claude_desktop_config.json` file:
      
     export BLUESKY_BEARER="..."
 
-    exec npx -y -- @speakeasy-api/bluesky mcp "$@"
+    exec npx -y -- @speakeasy-api/bluesky mcp start "$@"
     ```
 
 2. Then make it executable with the following command:
@@ -2947,36 +2947,36 @@ run();
 
 Some methods specify known errors which can be thrown. All the known errors are enumerated in the `models/errors/errors.ts` module. The known errors for a method are documented under the *Errors* tables in SDK docs. For example, the `getPreferences` method may throw the following errors:
 
-| Error Type                                          | Status Code                  | Content Type     |
-| --------------------------------------------------- | ---------------------------- | ---------------- |
-| errors.AppBskyActorGetPreferencesResponseBody       | 400                          | application/json |
-| errors.AppBskyActorGetPreferencesActorsResponseBody | 401                          | application/json |
-| errors.NotFound                                     | 404                          | application/json |
-| errors.Unauthorized                                 | 403, 407                     | application/json |
-| errors.Timeout                                      | 408                          | application/json |
-| errors.RateLimited                                  | 429                          | application/json |
-| errors.BadRequest                                   | 413, 414, 415, 422, 431      | application/json |
-| errors.Timeout                                      | 504                          | application/json |
-| errors.NotFound                                     | 501, 505                     | application/json |
-| errors.InternalServerError                          | 500, 502, 503, 506, 507, 508 | application/json |
-| errors.BadRequest                                   | 510                          | application/json |
-| errors.Unauthorized                                 | 511                          | application/json |
-| errors.APIError                                     | 4XX, 5XX                     | \*/\*            |
+| Error Type                                                     | Status Code                  | Content Type     |
+| -------------------------------------------------------------- | ---------------------------- | ---------------- |
+| errors.BadRequestAppBskyActorGetPreferencesResponseBodyError   | 400                          | application/json |
+| errors.UnauthorizedAppBskyActorGetPreferencesResponseBodyError | 401                          | application/json |
+| errors.NotFoundError                                           | 404                          | application/json |
+| errors.UnauthorizedError                                       | 403, 407                     | application/json |
+| errors.TimeoutError                                            | 408                          | application/json |
+| errors.RateLimitedError                                        | 429                          | application/json |
+| errors.BadRequestError                                         | 413, 414, 415, 422, 431      | application/json |
+| errors.TimeoutError                                            | 504                          | application/json |
+| errors.NotFoundError                                           | 501, 505                     | application/json |
+| errors.InternalServerError                                     | 500, 502, 503, 506, 507, 508 | application/json |
+| errors.BadRequestError                                         | 510                          | application/json |
+| errors.UnauthorizedError                                       | 511                          | application/json |
+| errors.APIError                                                | 4XX, 5XX                     | \*/\*            |
 
 If the method throws an error and it is not captured by the known errors, it will default to throwing a `APIError`.
 
 ```typescript
 import { Bluesky } from "@speakeasy-api/bluesky";
 import {
-  AppBskyActorGetPreferencesActorsResponseBody,
-  AppBskyActorGetPreferencesResponseBody,
-  BadRequest,
+  BadRequestAppBskyActorGetPreferencesResponseBodyError,
+  BadRequestError,
   InternalServerError,
-  NotFound,
-  RateLimited,
+  NotFoundError,
+  RateLimitedError,
   SDKValidationError,
-  Timeout,
-  Unauthorized,
+  TimeoutError,
+  UnauthorizedAppBskyActorGetPreferencesResponseBodyError,
+  UnauthorizedError,
 } from "@speakeasy-api/bluesky/models/errors";
 
 const bluesky = new Bluesky({
@@ -3000,48 +3000,50 @@ async function run() {
         console.error(err.rawValue);
         return;
       }
-      case (err instanceof AppBskyActorGetPreferencesResponseBody): {
-        // Handle err.data$: AppBskyActorGetPreferencesResponseBodyData
+      case (err
+        instanceof BadRequestAppBskyActorGetPreferencesResponseBodyError): {
+        // Handle err.data$: BadRequestAppBskyActorGetPreferencesResponseBodyErrorData
         console.error(err);
         return;
       }
-      case (err instanceof AppBskyActorGetPreferencesActorsResponseBody): {
-        // Handle err.data$: AppBskyActorGetPreferencesActorsResponseBodyData
+      case (err
+        instanceof UnauthorizedAppBskyActorGetPreferencesResponseBodyError): {
+        // Handle err.data$: UnauthorizedAppBskyActorGetPreferencesResponseBodyErrorData
         console.error(err);
         return;
       }
-      case (err instanceof NotFound): {
-        // Handle err.data$: NotFoundData
+      case (err instanceof NotFoundError): {
+        // Handle err.data$: NotFoundErrorData
         console.error(err);
         return;
       }
-      case (err instanceof Unauthorized): {
-        // Handle err.data$: UnauthorizedData
+      case (err instanceof UnauthorizedError): {
+        // Handle err.data$: UnauthorizedErrorData
         console.error(err);
         return;
       }
-      case (err instanceof Timeout): {
-        // Handle err.data$: TimeoutData
+      case (err instanceof TimeoutError): {
+        // Handle err.data$: TimeoutErrorData
         console.error(err);
         return;
       }
-      case (err instanceof RateLimited): {
-        // Handle err.data$: RateLimitedData
+      case (err instanceof RateLimitedError): {
+        // Handle err.data$: RateLimitedErrorData
         console.error(err);
         return;
       }
-      case (err instanceof BadRequest): {
-        // Handle err.data$: BadRequestData
+      case (err instanceof BadRequestError): {
+        // Handle err.data$: BadRequestErrorData
         console.error(err);
         return;
       }
-      case (err instanceof Timeout): {
-        // Handle err.data$: TimeoutData
+      case (err instanceof TimeoutError): {
+        // Handle err.data$: TimeoutErrorData
         console.error(err);
         return;
       }
-      case (err instanceof NotFound): {
-        // Handle err.data$: NotFoundData
+      case (err instanceof NotFoundError): {
+        // Handle err.data$: NotFoundErrorData
         console.error(err);
         return;
       }
@@ -3050,13 +3052,13 @@ async function run() {
         console.error(err);
         return;
       }
-      case (err instanceof BadRequest): {
-        // Handle err.data$: BadRequestData
+      case (err instanceof BadRequestError): {
+        // Handle err.data$: BadRequestErrorData
         console.error(err);
         return;
       }
-      case (err instanceof Unauthorized): {
-        // Handle err.data$: UnauthorizedData
+      case (err instanceof UnauthorizedError): {
+        // Handle err.data$: UnauthorizedErrorData
         console.error(err);
         return;
       }

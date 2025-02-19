@@ -18,9 +18,8 @@ export const tool$adminGetSubjectStatus: ToolDefinition<typeof args> = {
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
-Get the service-specific admin status of a subject (account, record, or blob).
-
-`,
+Get the service-specific admin status of a subject (account, record, or blob).`,
+  scopes: ["read"],
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await adminGetSubjectStatus(
@@ -29,6 +28,15 @@ Get the service-specific admin status of a subject (account, record, or blob).
       { fetchOptions: { signal: ctx.signal } },
     ).$inspect();
 
-    return formatResult(result, apiCall);
+    if (!result.ok) {
+      return {
+        content: [{ type: "text", text: result.error.message }],
+        isError: true,
+      };
+    }
+
+    const value = result.value;
+
+    return formatResult(value, apiCall);
   },
 };

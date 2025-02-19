@@ -56,7 +56,7 @@ export class ChatConvos extends ClientSDK {
    * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
    */
   async sendMessage(
-    request: operations.ChatBskyConvoSendMessageRequestBody,
+    request: operations.ChatBskyConvoSendMessageBody,
     options?: RequestOptions,
   ): Promise<components.ChatBskyConvoDefsMessageView> {
     return unwrapAsync(chatConvosSendMessage(
@@ -72,7 +72,7 @@ export class ChatConvos extends ClientSDK {
    * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
    */
   async updateRead(
-    request: operations.ChatBskyConvoUpdateReadRequestBody,
+    request: operations.ChatBskyConvoUpdateReadBody,
     options?: RequestOptions,
   ): Promise<operations.ChatBskyConvoUpdateReadResponseBody> {
     return unwrapAsync(chatConvosUpdateRead(

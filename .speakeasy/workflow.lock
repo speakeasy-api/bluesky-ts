@@ -14,6 +14,7 @@ workflow:
                 - location: .speakeasy/speakeasy-modifications-overlay.yaml
                 - location: .speakeasy/speakeasy-errors-overlay.yaml
                 - location: .speakeasy/speakeasy-react-hooks-overlay.yaml
+                - location: .speakeasy/speakeasy-mcp.yaml
             output: scratch/openapi.yaml
             registry:
                 location: registry.speakeasyapi.dev/bluesky/bluesky/-oas

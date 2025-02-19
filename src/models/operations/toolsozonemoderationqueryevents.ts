@@ -13,14 +13,16 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 /**
  * If specified, only events where the subject is of the given type (account or record) will be returned. When this is set to 'account' the 'collections' parameter will be ignored. When includeAllUserRecords or subject is set, this will be ignored.
  */
-export const SubjectType = {
+export const ToolsOzoneModerationQueryEventsSubjectType = {
   Account: "account",
   Record: "record",
 } as const;
 /**
  * If specified, only events where the subject is of the given type (account or record) will be returned. When this is set to 'account' the 'collections' parameter will be ignored. When includeAllUserRecords or subject is set, this will be ignored.
  */
-export type SubjectType = ClosedEnum<typeof SubjectType>;
+export type ToolsOzoneModerationQueryEventsSubjectType = ClosedEnum<
+  typeof ToolsOzoneModerationQueryEventsSubjectType
+>;
 
 export type ToolsOzoneModerationQueryEventsRequest = {
   /**
@@ -48,7 +50,7 @@ export type ToolsOzoneModerationQueryEventsRequest = {
   /**
    * If specified, only events where the subject is of the given type (account or record) will be returned. When this is set to 'account' the 'collections' parameter will be ignored. When includeAllUserRecords or subject is set, this will be ignored.
    */
-  subjectType?: SubjectType | undefined;
+  subjectType?: ToolsOzoneModerationQueryEventsSubjectType | undefined;
   /**
    * If true, events on all record types (posts, lists, profile etc.) or records from given 'collections' param, owned by the did are returned.
    */
@@ -95,22 +97,26 @@ export type ToolsOzoneModerationQueryEventsResponse = {
 };
 
 /** @internal */
-export const SubjectType$inboundSchema: z.ZodNativeEnum<typeof SubjectType> = z
-  .nativeEnum(SubjectType);
+export const ToolsOzoneModerationQueryEventsSubjectType$inboundSchema:
+  z.ZodNativeEnum<typeof ToolsOzoneModerationQueryEventsSubjectType> = z
+    .nativeEnum(ToolsOzoneModerationQueryEventsSubjectType);
 
 /** @internal */
-export const SubjectType$outboundSchema: z.ZodNativeEnum<typeof SubjectType> =
-  SubjectType$inboundSchema;
+export const ToolsOzoneModerationQueryEventsSubjectType$outboundSchema:
+  z.ZodNativeEnum<typeof ToolsOzoneModerationQueryEventsSubjectType> =
+    ToolsOzoneModerationQueryEventsSubjectType$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace SubjectType$ {
-  /** @deprecated use `SubjectType$inboundSchema` instead. */
-  export const inboundSchema = SubjectType$inboundSchema;
-  /** @deprecated use `SubjectType$outboundSchema` instead. */
-  export const outboundSchema = SubjectType$outboundSchema;
+export namespace ToolsOzoneModerationQueryEventsSubjectType$ {
+  /** @deprecated use `ToolsOzoneModerationQueryEventsSubjectType$inboundSchema` instead. */
+  export const inboundSchema =
+    ToolsOzoneModerationQueryEventsSubjectType$inboundSchema;
+  /** @deprecated use `ToolsOzoneModerationQueryEventsSubjectType$outboundSchema` instead. */
+  export const outboundSchema =
+    ToolsOzoneModerationQueryEventsSubjectType$outboundSchema;
 }
 
 /** @internal */
@@ -130,7 +136,8 @@ export const ToolsOzoneModerationQueryEventsRequest$inboundSchema: z.ZodType<
   ).optional(),
   subject: z.string().optional(),
   collections: z.array(z.string()).optional(),
-  subjectType: SubjectType$inboundSchema.optional(),
+  subjectType: ToolsOzoneModerationQueryEventsSubjectType$inboundSchema
+    .optional(),
   includeAllUserRecords: z.boolean().optional(),
   limit: z.number().int().default(50),
   hasComment: z.boolean().optional(),
@@ -178,7 +185,8 @@ export const ToolsOzoneModerationQueryEventsRequest$outboundSchema: z.ZodType<
   createdBefore: z.date().transform(v => v.toISOString()).optional(),
   subject: z.string().optional(),
   collections: z.array(z.string()).optional(),
-  subjectType: SubjectType$outboundSchema.optional(),
+  subjectType: ToolsOzoneModerationQueryEventsSubjectType$outboundSchema
+    .optional(),
   includeAllUserRecords: z.boolean().optional(),
   limit: z.number().int().default(50),
   hasComment: z.boolean().optional(),

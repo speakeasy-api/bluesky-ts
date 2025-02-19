@@ -13,14 +13,16 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 /**
  * Specifies the ranking order of results.
  */
-export const Sort = {
+export const AppBskyFeedSearchPostsSort = {
   Top: "top",
   Latest: "latest",
 } as const;
 /**
  * Specifies the ranking order of results.
  */
-export type Sort = ClosedEnum<typeof Sort>;
+export type AppBskyFeedSearchPostsSort = ClosedEnum<
+  typeof AppBskyFeedSearchPostsSort
+>;
 
 export type AppBskyFeedSearchPostsRequest = {
   /**
@@ -30,7 +32,7 @@ export type AppBskyFeedSearchPostsRequest = {
   /**
    * Specifies the ranking order of results.
    */
-  sort?: Sort | undefined;
+  sort?: AppBskyFeedSearchPostsSort | undefined;
   /**
    * Filter results for posts after the indicated datetime (inclusive). Expected to use 'sortAt' timestamp, which may not match 'createdAt'. Can be a datetime, or just an ISO date (YYYY-MM-DD).
    */
@@ -84,23 +86,24 @@ export type AppBskyFeedSearchPostsResponse = {
 };
 
 /** @internal */
-export const Sort$inboundSchema: z.ZodNativeEnum<typeof Sort> = z.nativeEnum(
-  Sort,
-);
+export const AppBskyFeedSearchPostsSort$inboundSchema: z.ZodNativeEnum<
+  typeof AppBskyFeedSearchPostsSort
+> = z.nativeEnum(AppBskyFeedSearchPostsSort);
 
 /** @internal */
-export const Sort$outboundSchema: z.ZodNativeEnum<typeof Sort> =
-  Sort$inboundSchema;
+export const AppBskyFeedSearchPostsSort$outboundSchema: z.ZodNativeEnum<
+  typeof AppBskyFeedSearchPostsSort
+> = AppBskyFeedSearchPostsSort$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace Sort$ {
-  /** @deprecated use `Sort$inboundSchema` instead. */
-  export const inboundSchema = Sort$inboundSchema;
-  /** @deprecated use `Sort$outboundSchema` instead. */
-  export const outboundSchema = Sort$outboundSchema;
+export namespace AppBskyFeedSearchPostsSort$ {
+  /** @deprecated use `AppBskyFeedSearchPostsSort$inboundSchema` instead. */
+  export const inboundSchema = AppBskyFeedSearchPostsSort$inboundSchema;
+  /** @deprecated use `AppBskyFeedSearchPostsSort$outboundSchema` instead. */
+  export const outboundSchema = AppBskyFeedSearchPostsSort$outboundSchema;
 }
 
 /** @internal */
@@ -110,7 +113,7 @@ export const AppBskyFeedSearchPostsRequest$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   q: z.string(),
-  sort: Sort$inboundSchema.default("latest"),
+  sort: AppBskyFeedSearchPostsSort$inboundSchema.default("latest"),
   since: z.string().optional(),
   until: z.string().optional(),
   mentions: z.string().optional(),
@@ -146,7 +149,7 @@ export const AppBskyFeedSearchPostsRequest$outboundSchema: z.ZodType<
   AppBskyFeedSearchPostsRequest
 > = z.object({
   q: z.string(),
-  sort: Sort$outboundSchema.default("latest"),
+  sort: AppBskyFeedSearchPostsSort$outboundSchema.default("latest"),
   since: z.string().optional(),
   until: z.string().optional(),
   mentions: z.string().optional(),

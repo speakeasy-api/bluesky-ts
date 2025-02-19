@@ -169,7 +169,7 @@ export class Graph extends ClientSDK {
    * Creates a mute relationship for the specified account. Mutes are private in Bluesky. Requires auth.
    */
   async muteActor(
-    request: operations.AppBskyGraphMuteActorRequestBody,
+    request: operations.AppBskyGraphMuteActorBody,
     options?: RequestOptions,
   ): Promise<void> {
     return unwrapAsync(graphMuteActor(
@@ -187,7 +187,7 @@ export class Graph extends ClientSDK {
    * Creates a mute relationship for the specified list of accounts. Mutes are private in Bluesky. Requires auth.
    */
   async muteActorList(
-    request: operations.AppBskyGraphMuteActorListRequestBody,
+    request: operations.AppBskyGraphMuteActorListBody,
     options?: RequestOptions,
   ): Promise<void> {
     return unwrapAsync(graphMuteActorList(
@@ -228,7 +228,7 @@ export class Graph extends ClientSDK {
    * Unmutes the specified thread. Requires auth.
    */
   async unmuteThread(
-    request: operations.AppBskyGraphUnmuteThreadRequestBody,
+    request: operations.AppBskyGraphUnmuteThreadBody,
     options?: RequestOptions,
   ): Promise<void> {
     return unwrapAsync(graphUnmuteThread(

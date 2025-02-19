@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type AppBskyVideoGetUploadLimitsVideosResponseBodyData = {
+export type UnauthorizedAppBskyVideoGetUploadLimitsResponseBodyErrorData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,13 +16,17 @@ export type AppBskyVideoGetUploadLimitsVideosResponseBodyData = {
 /**
  * Unauthorized
  */
-export class AppBskyVideoGetUploadLimitsVideosResponseBody extends Error {
+export class UnauthorizedAppBskyVideoGetUploadLimitsResponseBodyError
+  extends Error
+{
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: AppBskyVideoGetUploadLimitsVideosResponseBodyData;
+  data$: UnauthorizedAppBskyVideoGetUploadLimitsResponseBodyErrorData;
 
-  constructor(err: AppBskyVideoGetUploadLimitsVideosResponseBodyData) {
+  constructor(
+    err: UnauthorizedAppBskyVideoGetUploadLimitsResponseBodyErrorData,
+  ) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -31,7 +35,7 @@ export class AppBskyVideoGetUploadLimitsVideosResponseBody extends Error {
 
     this.error = err.error;
 
-    this.name = "AppBskyVideoGetUploadLimitsVideosResponseBody";
+    this.name = "UnauthorizedAppBskyVideoGetUploadLimitsResponseBodyError";
   }
 }
 
@@ -47,7 +51,7 @@ export type AppBskyVideoGetUploadLimitsError = ClosedEnum<
 /**
  * Bad Request
  */
-export type AppBskyVideoGetUploadLimitsResponseBodyData = {
+export type BadRequestAppBskyVideoGetUploadLimitsResponseBodyErrorData = {
   error: AppBskyVideoGetUploadLimitsError;
   message: string;
 };
@@ -55,13 +59,15 @@ export type AppBskyVideoGetUploadLimitsResponseBodyData = {
 /**
  * Bad Request
  */
-export class AppBskyVideoGetUploadLimitsResponseBody extends Error {
+export class BadRequestAppBskyVideoGetUploadLimitsResponseBodyError
+  extends Error
+{
   error: AppBskyVideoGetUploadLimitsError;
 
   /** The original data that was passed to this error instance. */
-  data$: AppBskyVideoGetUploadLimitsResponseBodyData;
+  data$: BadRequestAppBskyVideoGetUploadLimitsResponseBodyErrorData;
 
-  constructor(err: AppBskyVideoGetUploadLimitsResponseBodyData) {
+  constructor(err: BadRequestAppBskyVideoGetUploadLimitsResponseBodyErrorData) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -70,14 +76,14 @@ export class AppBskyVideoGetUploadLimitsResponseBody extends Error {
 
     this.error = err.error;
 
-    this.name = "AppBskyVideoGetUploadLimitsResponseBody";
+    this.name = "BadRequestAppBskyVideoGetUploadLimitsResponseBodyError";
   }
 }
 
 /** @internal */
-export const AppBskyVideoGetUploadLimitsVideosResponseBody$inboundSchema:
+export const UnauthorizedAppBskyVideoGetUploadLimitsResponseBodyError$inboundSchema:
   z.ZodType<
-    AppBskyVideoGetUploadLimitsVideosResponseBody,
+    UnauthorizedAppBskyVideoGetUploadLimitsResponseBodyError,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -85,22 +91,23 @@ export const AppBskyVideoGetUploadLimitsVideosResponseBody$inboundSchema:
     message: z.string(),
   })
     .transform((v) => {
-      return new AppBskyVideoGetUploadLimitsVideosResponseBody(v);
+      return new UnauthorizedAppBskyVideoGetUploadLimitsResponseBodyError(v);
     });
 
 /** @internal */
-export type AppBskyVideoGetUploadLimitsVideosResponseBody$Outbound = {
-  error: "AuthMissing";
-  message: string;
-};
+export type UnauthorizedAppBskyVideoGetUploadLimitsResponseBodyError$Outbound =
+  {
+    error: "AuthMissing";
+    message: string;
+  };
 
 /** @internal */
-export const AppBskyVideoGetUploadLimitsVideosResponseBody$outboundSchema:
+export const UnauthorizedAppBskyVideoGetUploadLimitsResponseBodyError$outboundSchema:
   z.ZodType<
-    AppBskyVideoGetUploadLimitsVideosResponseBody$Outbound,
+    UnauthorizedAppBskyVideoGetUploadLimitsResponseBodyError$Outbound,
     z.ZodTypeDef,
-    AppBskyVideoGetUploadLimitsVideosResponseBody
-  > = z.instanceof(AppBskyVideoGetUploadLimitsVideosResponseBody)
+    UnauthorizedAppBskyVideoGetUploadLimitsResponseBodyError
+  > = z.instanceof(UnauthorizedAppBskyVideoGetUploadLimitsResponseBodyError)
     .transform(v => v.data$)
     .pipe(z.object({
       error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -111,15 +118,16 @@ export const AppBskyVideoGetUploadLimitsVideosResponseBody$outboundSchema:
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyVideoGetUploadLimitsVideosResponseBody$ {
-  /** @deprecated use `AppBskyVideoGetUploadLimitsVideosResponseBody$inboundSchema` instead. */
+export namespace UnauthorizedAppBskyVideoGetUploadLimitsResponseBodyError$ {
+  /** @deprecated use `UnauthorizedAppBskyVideoGetUploadLimitsResponseBodyError$inboundSchema` instead. */
   export const inboundSchema =
-    AppBskyVideoGetUploadLimitsVideosResponseBody$inboundSchema;
-  /** @deprecated use `AppBskyVideoGetUploadLimitsVideosResponseBody$outboundSchema` instead. */
+    UnauthorizedAppBskyVideoGetUploadLimitsResponseBodyError$inboundSchema;
+  /** @deprecated use `UnauthorizedAppBskyVideoGetUploadLimitsResponseBodyError$outboundSchema` instead. */
   export const outboundSchema =
-    AppBskyVideoGetUploadLimitsVideosResponseBody$outboundSchema;
-  /** @deprecated use `AppBskyVideoGetUploadLimitsVideosResponseBody$Outbound` instead. */
-  export type Outbound = AppBskyVideoGetUploadLimitsVideosResponseBody$Outbound;
+    UnauthorizedAppBskyVideoGetUploadLimitsResponseBodyError$outboundSchema;
+  /** @deprecated use `UnauthorizedAppBskyVideoGetUploadLimitsResponseBodyError$Outbound` instead. */
+  export type Outbound =
+    UnauthorizedAppBskyVideoGetUploadLimitsResponseBodyError$Outbound;
 }
 
 /** @internal */
@@ -144,47 +152,50 @@ export namespace AppBskyVideoGetUploadLimitsError$ {
 }
 
 /** @internal */
-export const AppBskyVideoGetUploadLimitsResponseBody$inboundSchema: z.ZodType<
-  AppBskyVideoGetUploadLimitsResponseBody,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  error: AppBskyVideoGetUploadLimitsError$inboundSchema,
-  message: z.string(),
-})
-  .transform((v) => {
-    return new AppBskyVideoGetUploadLimitsResponseBody(v);
-  });
+export const BadRequestAppBskyVideoGetUploadLimitsResponseBodyError$inboundSchema:
+  z.ZodType<
+    BadRequestAppBskyVideoGetUploadLimitsResponseBodyError,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    error: AppBskyVideoGetUploadLimitsError$inboundSchema,
+    message: z.string(),
+  })
+    .transform((v) => {
+      return new BadRequestAppBskyVideoGetUploadLimitsResponseBodyError(v);
+    });
 
 /** @internal */
-export type AppBskyVideoGetUploadLimitsResponseBody$Outbound = {
+export type BadRequestAppBskyVideoGetUploadLimitsResponseBodyError$Outbound = {
   error: string;
   message: string;
 };
 
 /** @internal */
-export const AppBskyVideoGetUploadLimitsResponseBody$outboundSchema: z.ZodType<
-  AppBskyVideoGetUploadLimitsResponseBody$Outbound,
-  z.ZodTypeDef,
-  AppBskyVideoGetUploadLimitsResponseBody
-> = z.instanceof(AppBskyVideoGetUploadLimitsResponseBody)
-  .transform(v => v.data$)
-  .pipe(z.object({
-    error: AppBskyVideoGetUploadLimitsError$outboundSchema,
-    message: z.string(),
-  }));
+export const BadRequestAppBskyVideoGetUploadLimitsResponseBodyError$outboundSchema:
+  z.ZodType<
+    BadRequestAppBskyVideoGetUploadLimitsResponseBodyError$Outbound,
+    z.ZodTypeDef,
+    BadRequestAppBskyVideoGetUploadLimitsResponseBodyError
+  > = z.instanceof(BadRequestAppBskyVideoGetUploadLimitsResponseBodyError)
+    .transform(v => v.data$)
+    .pipe(z.object({
+      error: AppBskyVideoGetUploadLimitsError$outboundSchema,
+      message: z.string(),
+    }));
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyVideoGetUploadLimitsResponseBody$ {
-  /** @deprecated use `AppBskyVideoGetUploadLimitsResponseBody$inboundSchema` instead. */
+export namespace BadRequestAppBskyVideoGetUploadLimitsResponseBodyError$ {
+  /** @deprecated use `BadRequestAppBskyVideoGetUploadLimitsResponseBodyError$inboundSchema` instead. */
   export const inboundSchema =
-    AppBskyVideoGetUploadLimitsResponseBody$inboundSchema;
-  /** @deprecated use `AppBskyVideoGetUploadLimitsResponseBody$outboundSchema` instead. */
+    BadRequestAppBskyVideoGetUploadLimitsResponseBodyError$inboundSchema;
+  /** @deprecated use `BadRequestAppBskyVideoGetUploadLimitsResponseBodyError$outboundSchema` instead. */
   export const outboundSchema =
-    AppBskyVideoGetUploadLimitsResponseBody$outboundSchema;
-  /** @deprecated use `AppBskyVideoGetUploadLimitsResponseBody$Outbound` instead. */
-  export type Outbound = AppBskyVideoGetUploadLimitsResponseBody$Outbound;
+    BadRequestAppBskyVideoGetUploadLimitsResponseBodyError$outboundSchema;
+  /** @deprecated use `BadRequestAppBskyVideoGetUploadLimitsResponseBodyError$Outbound` instead. */
+  export type Outbound =
+    BadRequestAppBskyVideoGetUploadLimitsResponseBodyError$Outbound;
 }

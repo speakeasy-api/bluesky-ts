@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type ToolsOzoneModerationQueryEventsModerationResponseBodyData = {
+export type UnauthorizedToolsOzoneModerationQueryEventsResponseBodyErrorData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,15 +16,17 @@ export type ToolsOzoneModerationQueryEventsModerationResponseBodyData = {
 /**
  * Unauthorized
  */
-export class ToolsOzoneModerationQueryEventsModerationResponseBody
+export class UnauthorizedToolsOzoneModerationQueryEventsResponseBodyError
   extends Error
 {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: ToolsOzoneModerationQueryEventsModerationResponseBodyData;
+  data$: UnauthorizedToolsOzoneModerationQueryEventsResponseBodyErrorData;
 
-  constructor(err: ToolsOzoneModerationQueryEventsModerationResponseBodyData) {
+  constructor(
+    err: UnauthorizedToolsOzoneModerationQueryEventsResponseBodyErrorData,
+  ) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -33,7 +35,7 @@ export class ToolsOzoneModerationQueryEventsModerationResponseBody
 
     this.error = err.error;
 
-    this.name = "ToolsOzoneModerationQueryEventsModerationResponseBody";
+    this.name = "UnauthorizedToolsOzoneModerationQueryEventsResponseBodyError";
   }
 }
 
@@ -49,7 +51,7 @@ export type ToolsOzoneModerationQueryEventsError = ClosedEnum<
 /**
  * Bad Request
  */
-export type ToolsOzoneModerationQueryEventsResponseBodyData = {
+export type BadRequestToolsOzoneModerationQueryEventsResponseBodyErrorData = {
   error: ToolsOzoneModerationQueryEventsError;
   message: string;
 };
@@ -57,13 +59,17 @@ export type ToolsOzoneModerationQueryEventsResponseBodyData = {
 /**
  * Bad Request
  */
-export class ToolsOzoneModerationQueryEventsResponseBody extends Error {
+export class BadRequestToolsOzoneModerationQueryEventsResponseBodyError
+  extends Error
+{
   error: ToolsOzoneModerationQueryEventsError;
 
   /** The original data that was passed to this error instance. */
-  data$: ToolsOzoneModerationQueryEventsResponseBodyData;
+  data$: BadRequestToolsOzoneModerationQueryEventsResponseBodyErrorData;
 
-  constructor(err: ToolsOzoneModerationQueryEventsResponseBodyData) {
+  constructor(
+    err: BadRequestToolsOzoneModerationQueryEventsResponseBodyErrorData,
+  ) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -72,14 +78,14 @@ export class ToolsOzoneModerationQueryEventsResponseBody extends Error {
 
     this.error = err.error;
 
-    this.name = "ToolsOzoneModerationQueryEventsResponseBody";
+    this.name = "BadRequestToolsOzoneModerationQueryEventsResponseBodyError";
   }
 }
 
 /** @internal */
-export const ToolsOzoneModerationQueryEventsModerationResponseBody$inboundSchema:
+export const UnauthorizedToolsOzoneModerationQueryEventsResponseBodyError$inboundSchema:
   z.ZodType<
-    ToolsOzoneModerationQueryEventsModerationResponseBody,
+    UnauthorizedToolsOzoneModerationQueryEventsResponseBodyError,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -87,22 +93,25 @@ export const ToolsOzoneModerationQueryEventsModerationResponseBody$inboundSchema
     message: z.string(),
   })
     .transform((v) => {
-      return new ToolsOzoneModerationQueryEventsModerationResponseBody(v);
+      return new UnauthorizedToolsOzoneModerationQueryEventsResponseBodyError(
+        v,
+      );
     });
 
 /** @internal */
-export type ToolsOzoneModerationQueryEventsModerationResponseBody$Outbound = {
-  error: "AuthMissing";
-  message: string;
-};
+export type UnauthorizedToolsOzoneModerationQueryEventsResponseBodyError$Outbound =
+  {
+    error: "AuthMissing";
+    message: string;
+  };
 
 /** @internal */
-export const ToolsOzoneModerationQueryEventsModerationResponseBody$outboundSchema:
+export const UnauthorizedToolsOzoneModerationQueryEventsResponseBodyError$outboundSchema:
   z.ZodType<
-    ToolsOzoneModerationQueryEventsModerationResponseBody$Outbound,
+    UnauthorizedToolsOzoneModerationQueryEventsResponseBodyError$Outbound,
     z.ZodTypeDef,
-    ToolsOzoneModerationQueryEventsModerationResponseBody
-  > = z.instanceof(ToolsOzoneModerationQueryEventsModerationResponseBody)
+    UnauthorizedToolsOzoneModerationQueryEventsResponseBodyError
+  > = z.instanceof(UnauthorizedToolsOzoneModerationQueryEventsResponseBodyError)
     .transform(v => v.data$)
     .pipe(z.object({
       error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -113,16 +122,16 @@ export const ToolsOzoneModerationQueryEventsModerationResponseBody$outboundSchem
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ToolsOzoneModerationQueryEventsModerationResponseBody$ {
-  /** @deprecated use `ToolsOzoneModerationQueryEventsModerationResponseBody$inboundSchema` instead. */
+export namespace UnauthorizedToolsOzoneModerationQueryEventsResponseBodyError$ {
+  /** @deprecated use `UnauthorizedToolsOzoneModerationQueryEventsResponseBodyError$inboundSchema` instead. */
   export const inboundSchema =
-    ToolsOzoneModerationQueryEventsModerationResponseBody$inboundSchema;
-  /** @deprecated use `ToolsOzoneModerationQueryEventsModerationResponseBody$outboundSchema` instead. */
+    UnauthorizedToolsOzoneModerationQueryEventsResponseBodyError$inboundSchema;
+  /** @deprecated use `UnauthorizedToolsOzoneModerationQueryEventsResponseBodyError$outboundSchema` instead. */
   export const outboundSchema =
-    ToolsOzoneModerationQueryEventsModerationResponseBody$outboundSchema;
-  /** @deprecated use `ToolsOzoneModerationQueryEventsModerationResponseBody$Outbound` instead. */
+    UnauthorizedToolsOzoneModerationQueryEventsResponseBodyError$outboundSchema;
+  /** @deprecated use `UnauthorizedToolsOzoneModerationQueryEventsResponseBodyError$Outbound` instead. */
   export type Outbound =
-    ToolsOzoneModerationQueryEventsModerationResponseBody$Outbound;
+    UnauthorizedToolsOzoneModerationQueryEventsResponseBodyError$Outbound;
 }
 
 /** @internal */
@@ -150,9 +159,9 @@ export namespace ToolsOzoneModerationQueryEventsError$ {
 }
 
 /** @internal */
-export const ToolsOzoneModerationQueryEventsResponseBody$inboundSchema:
+export const BadRequestToolsOzoneModerationQueryEventsResponseBodyError$inboundSchema:
   z.ZodType<
-    ToolsOzoneModerationQueryEventsResponseBody,
+    BadRequestToolsOzoneModerationQueryEventsResponseBodyError,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -160,22 +169,23 @@ export const ToolsOzoneModerationQueryEventsResponseBody$inboundSchema:
     message: z.string(),
   })
     .transform((v) => {
-      return new ToolsOzoneModerationQueryEventsResponseBody(v);
+      return new BadRequestToolsOzoneModerationQueryEventsResponseBodyError(v);
     });
 
 /** @internal */
-export type ToolsOzoneModerationQueryEventsResponseBody$Outbound = {
-  error: string;
-  message: string;
-};
+export type BadRequestToolsOzoneModerationQueryEventsResponseBodyError$Outbound =
+  {
+    error: string;
+    message: string;
+  };
 
 /** @internal */
-export const ToolsOzoneModerationQueryEventsResponseBody$outboundSchema:
+export const BadRequestToolsOzoneModerationQueryEventsResponseBodyError$outboundSchema:
   z.ZodType<
-    ToolsOzoneModerationQueryEventsResponseBody$Outbound,
+    BadRequestToolsOzoneModerationQueryEventsResponseBodyError$Outbound,
     z.ZodTypeDef,
-    ToolsOzoneModerationQueryEventsResponseBody
-  > = z.instanceof(ToolsOzoneModerationQueryEventsResponseBody)
+    BadRequestToolsOzoneModerationQueryEventsResponseBodyError
+  > = z.instanceof(BadRequestToolsOzoneModerationQueryEventsResponseBodyError)
     .transform(v => v.data$)
     .pipe(z.object({
       error: ToolsOzoneModerationQueryEventsError$outboundSchema,
@@ -186,13 +196,14 @@ export const ToolsOzoneModerationQueryEventsResponseBody$outboundSchema:
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ToolsOzoneModerationQueryEventsResponseBody$ {
-  /** @deprecated use `ToolsOzoneModerationQueryEventsResponseBody$inboundSchema` instead. */
+export namespace BadRequestToolsOzoneModerationQueryEventsResponseBodyError$ {
+  /** @deprecated use `BadRequestToolsOzoneModerationQueryEventsResponseBodyError$inboundSchema` instead. */
   export const inboundSchema =
-    ToolsOzoneModerationQueryEventsResponseBody$inboundSchema;
-  /** @deprecated use `ToolsOzoneModerationQueryEventsResponseBody$outboundSchema` instead. */
+    BadRequestToolsOzoneModerationQueryEventsResponseBodyError$inboundSchema;
+  /** @deprecated use `BadRequestToolsOzoneModerationQueryEventsResponseBodyError$outboundSchema` instead. */
   export const outboundSchema =
-    ToolsOzoneModerationQueryEventsResponseBody$outboundSchema;
-  /** @deprecated use `ToolsOzoneModerationQueryEventsResponseBody$Outbound` instead. */
-  export type Outbound = ToolsOzoneModerationQueryEventsResponseBody$Outbound;
+    BadRequestToolsOzoneModerationQueryEventsResponseBodyError$outboundSchema;
+  /** @deprecated use `BadRequestToolsOzoneModerationQueryEventsResponseBodyError$Outbound` instead. */
+  export type Outbound =
+    BadRequestToolsOzoneModerationQueryEventsResponseBodyError$Outbound;
 }

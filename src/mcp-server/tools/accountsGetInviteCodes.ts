@@ -18,9 +18,8 @@ export const tool$accountsGetInviteCodes: ToolDefinition<typeof args> = {
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
-Get all invite codes for the current account. Requires auth.
-
-`,
+Get all invite codes for the current account. Requires auth.`,
+  scopes: ["read"],
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await accountsGetInviteCodes(
@@ -29,6 +28,15 @@ Get all invite codes for the current account. Requires auth.
       { fetchOptions: { signal: ctx.signal } },
     ).$inspect();
 
-    return formatResult(result, apiCall);
+    if (!result.ok) {
+      return {
+        content: [{ type: "text", text: result.error.message }],
+        isError: true,
+      };
+    }
+
+    const value = result.value;
+
+    return formatResult(value, apiCall);
   },
 };

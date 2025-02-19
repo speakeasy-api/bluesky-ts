@@ -173,7 +173,7 @@ export function setFeedSearchData(
   queryKeyBase: [
     parameters: {
       q: string;
-      sort?: operations.Sort | undefined;
+      sort?: operations.AppBskyFeedSearchPostsSort | undefined;
       since?: string | undefined;
       until?: string | undefined;
       mentions?: string | undefined;
@@ -198,7 +198,7 @@ export function invalidateFeedSearch(
   queryKeyBase: TupleToPrefixes<
     [parameters: {
       q: string;
-      sort?: operations.Sort | undefined;
+      sort?: operations.AppBskyFeedSearchPostsSort | undefined;
       since?: string | undefined;
       until?: string | undefined;
       mentions?: string | undefined;
@@ -327,7 +327,7 @@ export function buildFeedSearchInfiniteQuery(
 export function queryKeyFeedSearch(
   parameters: {
     q: string;
-    sort?: operations.Sort | undefined;
+    sort?: operations.AppBskyFeedSearchPostsSort | undefined;
     since?: string | undefined;
     until?: string | undefined;
     mentions?: string | undefined;

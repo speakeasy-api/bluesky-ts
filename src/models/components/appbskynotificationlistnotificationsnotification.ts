@@ -23,7 +23,7 @@ import {
 /**
  * Expected values are 'like', 'repost', 'follow', 'mention', 'reply', 'quote', and 'starterpack-joined'.
  */
-export const AppBskyNotificationListNotificationsNotificationReason = {
+export const ReasonEnum = {
   Like: "like",
   Repost: "repost",
   Follow: "follow",
@@ -35,9 +35,7 @@ export const AppBskyNotificationListNotificationsNotificationReason = {
 /**
  * Expected values are 'like', 'repost', 'follow', 'mention', 'reply', 'quote', and 'starterpack-joined'.
  */
-export type AppBskyNotificationListNotificationsNotificationReason = ClosedEnum<
-  typeof AppBskyNotificationListNotificationsNotificationReason
->;
+export type ReasonEnum = ClosedEnum<typeof ReasonEnum>;
 
 export type AppBskyNotificationListNotificationsNotification = {
   uri: string;
@@ -46,7 +44,7 @@ export type AppBskyNotificationListNotificationsNotification = {
   /**
    * Expected values are 'like', 'repost', 'follow', 'mention', 'reply', 'quote', and 'starterpack-joined'.
    */
-  reason: AppBskyNotificationListNotificationsNotificationReason;
+  reason: ReasonEnum;
   reasonSubject?: string | undefined;
   record?: any | undefined;
   isRead: boolean;
@@ -55,28 +53,22 @@ export type AppBskyNotificationListNotificationsNotification = {
 };
 
 /** @internal */
-export const AppBskyNotificationListNotificationsNotificationReason$inboundSchema:
-  z.ZodNativeEnum<
-    typeof AppBskyNotificationListNotificationsNotificationReason
-  > = z.nativeEnum(AppBskyNotificationListNotificationsNotificationReason);
+export const ReasonEnum$inboundSchema: z.ZodNativeEnum<typeof ReasonEnum> = z
+  .nativeEnum(ReasonEnum);
 
 /** @internal */
-export const AppBskyNotificationListNotificationsNotificationReason$outboundSchema:
-  z.ZodNativeEnum<
-    typeof AppBskyNotificationListNotificationsNotificationReason
-  > = AppBskyNotificationListNotificationsNotificationReason$inboundSchema;
+export const ReasonEnum$outboundSchema: z.ZodNativeEnum<typeof ReasonEnum> =
+  ReasonEnum$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyNotificationListNotificationsNotificationReason$ {
-  /** @deprecated use `AppBskyNotificationListNotificationsNotificationReason$inboundSchema` instead. */
-  export const inboundSchema =
-    AppBskyNotificationListNotificationsNotificationReason$inboundSchema;
-  /** @deprecated use `AppBskyNotificationListNotificationsNotificationReason$outboundSchema` instead. */
-  export const outboundSchema =
-    AppBskyNotificationListNotificationsNotificationReason$outboundSchema;
+export namespace ReasonEnum$ {
+  /** @deprecated use `ReasonEnum$inboundSchema` instead. */
+  export const inboundSchema = ReasonEnum$inboundSchema;
+  /** @deprecated use `ReasonEnum$outboundSchema` instead. */
+  export const outboundSchema = ReasonEnum$outboundSchema;
 }
 
 /** @internal */
@@ -89,8 +81,7 @@ export const AppBskyNotificationListNotificationsNotification$inboundSchema:
     uri: z.string(),
     cid: z.string(),
     author: AppBskyActorDefsProfileView$inboundSchema,
-    reason:
-      AppBskyNotificationListNotificationsNotificationReason$inboundSchema,
+    reason: ReasonEnum$inboundSchema,
     reasonSubject: z.string().optional(),
     record: z.any().optional(),
     isRead: z.boolean(),
@@ -123,8 +114,7 @@ export const AppBskyNotificationListNotificationsNotification$outboundSchema:
     uri: z.string(),
     cid: z.string(),
     author: AppBskyActorDefsProfileView$outboundSchema,
-    reason:
-      AppBskyNotificationListNotificationsNotificationReason$outboundSchema,
+    reason: ReasonEnum$outboundSchema,
     reasonSubject: z.string().optional(),
     record: z.any().optional(),
     isRead: z.boolean(),

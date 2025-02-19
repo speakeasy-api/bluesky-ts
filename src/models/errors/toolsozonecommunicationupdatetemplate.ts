@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type ToolsOzoneCommunicationUpdateTemplateOzoneCommunicationResponseBodyData =
+export type UnauthorizedToolsOzoneCommunicationUpdateTemplateResponseBodyErrorData =
   {
     error: "AuthMissing";
     message: string;
@@ -17,18 +17,16 @@ export type ToolsOzoneCommunicationUpdateTemplateOzoneCommunicationResponseBodyD
 /**
  * Unauthorized
  */
-export class ToolsOzoneCommunicationUpdateTemplateOzoneCommunicationResponseBody
+export class UnauthorizedToolsOzoneCommunicationUpdateTemplateResponseBodyError
   extends Error
 {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$:
-    ToolsOzoneCommunicationUpdateTemplateOzoneCommunicationResponseBodyData;
+  data$: UnauthorizedToolsOzoneCommunicationUpdateTemplateResponseBodyErrorData;
 
   constructor(
-    err:
-      ToolsOzoneCommunicationUpdateTemplateOzoneCommunicationResponseBodyData,
+    err: UnauthorizedToolsOzoneCommunicationUpdateTemplateResponseBodyErrorData,
   ) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
@@ -39,7 +37,7 @@ export class ToolsOzoneCommunicationUpdateTemplateOzoneCommunicationResponseBody
     this.error = err.error;
 
     this.name =
-      "ToolsOzoneCommunicationUpdateTemplateOzoneCommunicationResponseBody";
+      "UnauthorizedToolsOzoneCommunicationUpdateTemplateResponseBodyError";
   }
 }
 
@@ -56,21 +54,26 @@ export type ToolsOzoneCommunicationUpdateTemplateError = ClosedEnum<
 /**
  * Bad Request
  */
-export type ToolsOzoneCommunicationUpdateTemplateResponseBodyData = {
-  error: ToolsOzoneCommunicationUpdateTemplateError;
-  message: string;
-};
+export type BadRequestToolsOzoneCommunicationUpdateTemplateResponseBodyErrorData =
+  {
+    error: ToolsOzoneCommunicationUpdateTemplateError;
+    message: string;
+  };
 
 /**
  * Bad Request
  */
-export class ToolsOzoneCommunicationUpdateTemplateResponseBody extends Error {
+export class BadRequestToolsOzoneCommunicationUpdateTemplateResponseBodyError
+  extends Error
+{
   error: ToolsOzoneCommunicationUpdateTemplateError;
 
   /** The original data that was passed to this error instance. */
-  data$: ToolsOzoneCommunicationUpdateTemplateResponseBodyData;
+  data$: BadRequestToolsOzoneCommunicationUpdateTemplateResponseBodyErrorData;
 
-  constructor(err: ToolsOzoneCommunicationUpdateTemplateResponseBodyData) {
+  constructor(
+    err: BadRequestToolsOzoneCommunicationUpdateTemplateResponseBodyErrorData,
+  ) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -79,14 +82,15 @@ export class ToolsOzoneCommunicationUpdateTemplateResponseBody extends Error {
 
     this.error = err.error;
 
-    this.name = "ToolsOzoneCommunicationUpdateTemplateResponseBody";
+    this.name =
+      "BadRequestToolsOzoneCommunicationUpdateTemplateResponseBodyError";
   }
 }
 
 /** @internal */
-export const ToolsOzoneCommunicationUpdateTemplateOzoneCommunicationResponseBody$inboundSchema:
+export const UnauthorizedToolsOzoneCommunicationUpdateTemplateResponseBodyError$inboundSchema:
   z.ZodType<
-    ToolsOzoneCommunicationUpdateTemplateOzoneCommunicationResponseBody,
+    UnauthorizedToolsOzoneCommunicationUpdateTemplateResponseBodyError,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -94,26 +98,26 @@ export const ToolsOzoneCommunicationUpdateTemplateOzoneCommunicationResponseBody
     message: z.string(),
   })
     .transform((v) => {
-      return new ToolsOzoneCommunicationUpdateTemplateOzoneCommunicationResponseBody(
+      return new UnauthorizedToolsOzoneCommunicationUpdateTemplateResponseBodyError(
         v,
       );
     });
 
 /** @internal */
-export type ToolsOzoneCommunicationUpdateTemplateOzoneCommunicationResponseBody$Outbound =
+export type UnauthorizedToolsOzoneCommunicationUpdateTemplateResponseBodyError$Outbound =
   {
     error: "AuthMissing";
     message: string;
   };
 
 /** @internal */
-export const ToolsOzoneCommunicationUpdateTemplateOzoneCommunicationResponseBody$outboundSchema:
+export const UnauthorizedToolsOzoneCommunicationUpdateTemplateResponseBodyError$outboundSchema:
   z.ZodType<
-    ToolsOzoneCommunicationUpdateTemplateOzoneCommunicationResponseBody$Outbound,
+    UnauthorizedToolsOzoneCommunicationUpdateTemplateResponseBodyError$Outbound,
     z.ZodTypeDef,
-    ToolsOzoneCommunicationUpdateTemplateOzoneCommunicationResponseBody
+    UnauthorizedToolsOzoneCommunicationUpdateTemplateResponseBodyError
   > = z.instanceof(
-    ToolsOzoneCommunicationUpdateTemplateOzoneCommunicationResponseBody,
+    UnauthorizedToolsOzoneCommunicationUpdateTemplateResponseBodyError,
   )
     .transform(v => v.data$)
     .pipe(z.object({
@@ -125,16 +129,16 @@ export const ToolsOzoneCommunicationUpdateTemplateOzoneCommunicationResponseBody
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ToolsOzoneCommunicationUpdateTemplateOzoneCommunicationResponseBody$ {
-  /** @deprecated use `ToolsOzoneCommunicationUpdateTemplateOzoneCommunicationResponseBody$inboundSchema` instead. */
+export namespace UnauthorizedToolsOzoneCommunicationUpdateTemplateResponseBodyError$ {
+  /** @deprecated use `UnauthorizedToolsOzoneCommunicationUpdateTemplateResponseBodyError$inboundSchema` instead. */
   export const inboundSchema =
-    ToolsOzoneCommunicationUpdateTemplateOzoneCommunicationResponseBody$inboundSchema;
-  /** @deprecated use `ToolsOzoneCommunicationUpdateTemplateOzoneCommunicationResponseBody$outboundSchema` instead. */
+    UnauthorizedToolsOzoneCommunicationUpdateTemplateResponseBodyError$inboundSchema;
+  /** @deprecated use `UnauthorizedToolsOzoneCommunicationUpdateTemplateResponseBodyError$outboundSchema` instead. */
   export const outboundSchema =
-    ToolsOzoneCommunicationUpdateTemplateOzoneCommunicationResponseBody$outboundSchema;
-  /** @deprecated use `ToolsOzoneCommunicationUpdateTemplateOzoneCommunicationResponseBody$Outbound` instead. */
+    UnauthorizedToolsOzoneCommunicationUpdateTemplateResponseBodyError$outboundSchema;
+  /** @deprecated use `UnauthorizedToolsOzoneCommunicationUpdateTemplateResponseBodyError$Outbound` instead. */
   export type Outbound =
-    ToolsOzoneCommunicationUpdateTemplateOzoneCommunicationResponseBody$Outbound;
+    UnauthorizedToolsOzoneCommunicationUpdateTemplateResponseBodyError$Outbound;
 }
 
 /** @internal */
@@ -161,9 +165,9 @@ export namespace ToolsOzoneCommunicationUpdateTemplateError$ {
 }
 
 /** @internal */
-export const ToolsOzoneCommunicationUpdateTemplateResponseBody$inboundSchema:
+export const BadRequestToolsOzoneCommunicationUpdateTemplateResponseBodyError$inboundSchema:
   z.ZodType<
-    ToolsOzoneCommunicationUpdateTemplateResponseBody,
+    BadRequestToolsOzoneCommunicationUpdateTemplateResponseBodyError,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -171,22 +175,27 @@ export const ToolsOzoneCommunicationUpdateTemplateResponseBody$inboundSchema:
     message: z.string(),
   })
     .transform((v) => {
-      return new ToolsOzoneCommunicationUpdateTemplateResponseBody(v);
+      return new BadRequestToolsOzoneCommunicationUpdateTemplateResponseBodyError(
+        v,
+      );
     });
 
 /** @internal */
-export type ToolsOzoneCommunicationUpdateTemplateResponseBody$Outbound = {
-  error: string;
-  message: string;
-};
+export type BadRequestToolsOzoneCommunicationUpdateTemplateResponseBodyError$Outbound =
+  {
+    error: string;
+    message: string;
+  };
 
 /** @internal */
-export const ToolsOzoneCommunicationUpdateTemplateResponseBody$outboundSchema:
+export const BadRequestToolsOzoneCommunicationUpdateTemplateResponseBodyError$outboundSchema:
   z.ZodType<
-    ToolsOzoneCommunicationUpdateTemplateResponseBody$Outbound,
+    BadRequestToolsOzoneCommunicationUpdateTemplateResponseBodyError$Outbound,
     z.ZodTypeDef,
-    ToolsOzoneCommunicationUpdateTemplateResponseBody
-  > = z.instanceof(ToolsOzoneCommunicationUpdateTemplateResponseBody)
+    BadRequestToolsOzoneCommunicationUpdateTemplateResponseBodyError
+  > = z.instanceof(
+    BadRequestToolsOzoneCommunicationUpdateTemplateResponseBodyError,
+  )
     .transform(v => v.data$)
     .pipe(z.object({
       error: ToolsOzoneCommunicationUpdateTemplateError$outboundSchema,
@@ -197,14 +206,14 @@ export const ToolsOzoneCommunicationUpdateTemplateResponseBody$outboundSchema:
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ToolsOzoneCommunicationUpdateTemplateResponseBody$ {
-  /** @deprecated use `ToolsOzoneCommunicationUpdateTemplateResponseBody$inboundSchema` instead. */
+export namespace BadRequestToolsOzoneCommunicationUpdateTemplateResponseBodyError$ {
+  /** @deprecated use `BadRequestToolsOzoneCommunicationUpdateTemplateResponseBodyError$inboundSchema` instead. */
   export const inboundSchema =
-    ToolsOzoneCommunicationUpdateTemplateResponseBody$inboundSchema;
-  /** @deprecated use `ToolsOzoneCommunicationUpdateTemplateResponseBody$outboundSchema` instead. */
+    BadRequestToolsOzoneCommunicationUpdateTemplateResponseBodyError$inboundSchema;
+  /** @deprecated use `BadRequestToolsOzoneCommunicationUpdateTemplateResponseBodyError$outboundSchema` instead. */
   export const outboundSchema =
-    ToolsOzoneCommunicationUpdateTemplateResponseBody$outboundSchema;
-  /** @deprecated use `ToolsOzoneCommunicationUpdateTemplateResponseBody$Outbound` instead. */
+    BadRequestToolsOzoneCommunicationUpdateTemplateResponseBodyError$outboundSchema;
+  /** @deprecated use `BadRequestToolsOzoneCommunicationUpdateTemplateResponseBodyError$Outbound` instead. */
   export type Outbound =
-    ToolsOzoneCommunicationUpdateTemplateResponseBody$Outbound;
+    BadRequestToolsOzoneCommunicationUpdateTemplateResponseBodyError$Outbound;
 }

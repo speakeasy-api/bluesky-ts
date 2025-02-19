@@ -8,7 +8,7 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ChatBskyConvoUnmuteConvoRequestBody = {
+export type ChatBskyConvoUnmuteConvoBody = {
   convoId: string;
 };
 
@@ -20,8 +20,8 @@ export type ChatBskyConvoUnmuteConvoResponseBody = {
 };
 
 /** @internal */
-export const ChatBskyConvoUnmuteConvoRequestBody$inboundSchema: z.ZodType<
-  ChatBskyConvoUnmuteConvoRequestBody,
+export const ChatBskyConvoUnmuteConvoBody$inboundSchema: z.ZodType<
+  ChatBskyConvoUnmuteConvoBody,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -29,15 +29,15 @@ export const ChatBskyConvoUnmuteConvoRequestBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type ChatBskyConvoUnmuteConvoRequestBody$Outbound = {
+export type ChatBskyConvoUnmuteConvoBody$Outbound = {
   convoId: string;
 };
 
 /** @internal */
-export const ChatBskyConvoUnmuteConvoRequestBody$outboundSchema: z.ZodType<
-  ChatBskyConvoUnmuteConvoRequestBody$Outbound,
+export const ChatBskyConvoUnmuteConvoBody$outboundSchema: z.ZodType<
+  ChatBskyConvoUnmuteConvoBody$Outbound,
   z.ZodTypeDef,
-  ChatBskyConvoUnmuteConvoRequestBody
+  ChatBskyConvoUnmuteConvoBody
 > = z.object({
   convoId: z.string(),
 });
@@ -46,35 +46,32 @@ export const ChatBskyConvoUnmuteConvoRequestBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ChatBskyConvoUnmuteConvoRequestBody$ {
-  /** @deprecated use `ChatBskyConvoUnmuteConvoRequestBody$inboundSchema` instead. */
-  export const inboundSchema =
-    ChatBskyConvoUnmuteConvoRequestBody$inboundSchema;
-  /** @deprecated use `ChatBskyConvoUnmuteConvoRequestBody$outboundSchema` instead. */
-  export const outboundSchema =
-    ChatBskyConvoUnmuteConvoRequestBody$outboundSchema;
-  /** @deprecated use `ChatBskyConvoUnmuteConvoRequestBody$Outbound` instead. */
-  export type Outbound = ChatBskyConvoUnmuteConvoRequestBody$Outbound;
+export namespace ChatBskyConvoUnmuteConvoBody$ {
+  /** @deprecated use `ChatBskyConvoUnmuteConvoBody$inboundSchema` instead. */
+  export const inboundSchema = ChatBskyConvoUnmuteConvoBody$inboundSchema;
+  /** @deprecated use `ChatBskyConvoUnmuteConvoBody$outboundSchema` instead. */
+  export const outboundSchema = ChatBskyConvoUnmuteConvoBody$outboundSchema;
+  /** @deprecated use `ChatBskyConvoUnmuteConvoBody$Outbound` instead. */
+  export type Outbound = ChatBskyConvoUnmuteConvoBody$Outbound;
 }
 
-export function chatBskyConvoUnmuteConvoRequestBodyToJSON(
-  chatBskyConvoUnmuteConvoRequestBody: ChatBskyConvoUnmuteConvoRequestBody,
+export function chatBskyConvoUnmuteConvoBodyToJSON(
+  chatBskyConvoUnmuteConvoBody: ChatBskyConvoUnmuteConvoBody,
 ): string {
   return JSON.stringify(
-    ChatBskyConvoUnmuteConvoRequestBody$outboundSchema.parse(
-      chatBskyConvoUnmuteConvoRequestBody,
+    ChatBskyConvoUnmuteConvoBody$outboundSchema.parse(
+      chatBskyConvoUnmuteConvoBody,
     ),
   );
 }
 
-export function chatBskyConvoUnmuteConvoRequestBodyFromJSON(
+export function chatBskyConvoUnmuteConvoBodyFromJSON(
   jsonString: string,
-): SafeParseResult<ChatBskyConvoUnmuteConvoRequestBody, SDKValidationError> {
+): SafeParseResult<ChatBskyConvoUnmuteConvoBody, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) =>
-      ChatBskyConvoUnmuteConvoRequestBody$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ChatBskyConvoUnmuteConvoRequestBody' from JSON`,
+    (x) => ChatBskyConvoUnmuteConvoBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ChatBskyConvoUnmuteConvoBody' from JSON`,
   );
 }
 

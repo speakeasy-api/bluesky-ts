@@ -17,9 +17,8 @@ export const tool$syncListBlobs: ToolDefinition<typeof args> = {
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
-List blob CIDs for an account, since some repo revision. Does not require auth; implemented by PDS.
-
-`,
+List blob CIDs for an account, since some repo revision. Does not require auth; implemented by PDS.`,
+  scopes: ["read"],
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await syncListBlobs(
@@ -28,6 +27,15 @@ List blob CIDs for an account, since some repo revision. Does not require auth; 
       { fetchOptions: { signal: ctx.signal } },
     ).$inspect();
 
-    return formatResult(result, apiCall);
+    if (!result.ok) {
+      return {
+        content: [{ type: "text", text: result.error.message }],
+        isError: true,
+      };
+    }
+
+    const value = result.value.result;
+
+    return formatResult(value, apiCall);
   },
 };

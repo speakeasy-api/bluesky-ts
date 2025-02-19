@@ -7,73 +7,65 @@ import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type AppBskyNotificationPutPreferencesRequestBody = {
+export type AppBskyNotificationPutPreferencesBody = {
   priority: boolean;
 };
 
 /** @internal */
-export const AppBskyNotificationPutPreferencesRequestBody$inboundSchema:
-  z.ZodType<
-    AppBskyNotificationPutPreferencesRequestBody,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    priority: z.boolean(),
-  });
+export const AppBskyNotificationPutPreferencesBody$inboundSchema: z.ZodType<
+  AppBskyNotificationPutPreferencesBody,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  priority: z.boolean(),
+});
 
 /** @internal */
-export type AppBskyNotificationPutPreferencesRequestBody$Outbound = {
+export type AppBskyNotificationPutPreferencesBody$Outbound = {
   priority: boolean;
 };
 
 /** @internal */
-export const AppBskyNotificationPutPreferencesRequestBody$outboundSchema:
-  z.ZodType<
-    AppBskyNotificationPutPreferencesRequestBody$Outbound,
-    z.ZodTypeDef,
-    AppBskyNotificationPutPreferencesRequestBody
-  > = z.object({
-    priority: z.boolean(),
-  });
+export const AppBskyNotificationPutPreferencesBody$outboundSchema: z.ZodType<
+  AppBskyNotificationPutPreferencesBody$Outbound,
+  z.ZodTypeDef,
+  AppBskyNotificationPutPreferencesBody
+> = z.object({
+  priority: z.boolean(),
+});
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyNotificationPutPreferencesRequestBody$ {
-  /** @deprecated use `AppBskyNotificationPutPreferencesRequestBody$inboundSchema` instead. */
+export namespace AppBskyNotificationPutPreferencesBody$ {
+  /** @deprecated use `AppBskyNotificationPutPreferencesBody$inboundSchema` instead. */
   export const inboundSchema =
-    AppBskyNotificationPutPreferencesRequestBody$inboundSchema;
-  /** @deprecated use `AppBskyNotificationPutPreferencesRequestBody$outboundSchema` instead. */
+    AppBskyNotificationPutPreferencesBody$inboundSchema;
+  /** @deprecated use `AppBskyNotificationPutPreferencesBody$outboundSchema` instead. */
   export const outboundSchema =
-    AppBskyNotificationPutPreferencesRequestBody$outboundSchema;
-  /** @deprecated use `AppBskyNotificationPutPreferencesRequestBody$Outbound` instead. */
-  export type Outbound = AppBskyNotificationPutPreferencesRequestBody$Outbound;
+    AppBskyNotificationPutPreferencesBody$outboundSchema;
+  /** @deprecated use `AppBskyNotificationPutPreferencesBody$Outbound` instead. */
+  export type Outbound = AppBskyNotificationPutPreferencesBody$Outbound;
 }
 
-export function appBskyNotificationPutPreferencesRequestBodyToJSON(
-  appBskyNotificationPutPreferencesRequestBody:
-    AppBskyNotificationPutPreferencesRequestBody,
+export function appBskyNotificationPutPreferencesBodyToJSON(
+  appBskyNotificationPutPreferencesBody: AppBskyNotificationPutPreferencesBody,
 ): string {
   return JSON.stringify(
-    AppBskyNotificationPutPreferencesRequestBody$outboundSchema.parse(
-      appBskyNotificationPutPreferencesRequestBody,
+    AppBskyNotificationPutPreferencesBody$outboundSchema.parse(
+      appBskyNotificationPutPreferencesBody,
     ),
   );
 }
 
-export function appBskyNotificationPutPreferencesRequestBodyFromJSON(
+export function appBskyNotificationPutPreferencesBodyFromJSON(
   jsonString: string,
-): SafeParseResult<
-  AppBskyNotificationPutPreferencesRequestBody,
-  SDKValidationError
-> {
+): SafeParseResult<AppBskyNotificationPutPreferencesBody, SDKValidationError> {
   return safeParse(
     jsonString,
     (x) =>
-      AppBskyNotificationPutPreferencesRequestBody$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'AppBskyNotificationPutPreferencesRequestBody' from JSON`,
+      AppBskyNotificationPutPreferencesBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AppBskyNotificationPutPreferencesBody' from JSON`,
   );
 }

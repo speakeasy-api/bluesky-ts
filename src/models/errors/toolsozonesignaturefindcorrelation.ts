@@ -8,24 +8,25 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type ToolsOzoneSignatureFindCorrelationSignatureResponseBodyData = {
-  error: "AuthMissing";
-  message: string;
-};
+export type UnauthorizedToolsOzoneSignatureFindCorrelationResponseBodyErrorData =
+  {
+    error: "AuthMissing";
+    message: string;
+  };
 
 /**
  * Unauthorized
  */
-export class ToolsOzoneSignatureFindCorrelationSignatureResponseBody
+export class UnauthorizedToolsOzoneSignatureFindCorrelationResponseBodyError
   extends Error
 {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: ToolsOzoneSignatureFindCorrelationSignatureResponseBodyData;
+  data$: UnauthorizedToolsOzoneSignatureFindCorrelationResponseBodyErrorData;
 
   constructor(
-    err: ToolsOzoneSignatureFindCorrelationSignatureResponseBodyData,
+    err: UnauthorizedToolsOzoneSignatureFindCorrelationResponseBodyErrorData,
   ) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
@@ -35,7 +36,8 @@ export class ToolsOzoneSignatureFindCorrelationSignatureResponseBody
 
     this.error = err.error;
 
-    this.name = "ToolsOzoneSignatureFindCorrelationSignatureResponseBody";
+    this.name =
+      "UnauthorizedToolsOzoneSignatureFindCorrelationResponseBodyError";
   }
 }
 
@@ -51,21 +53,26 @@ export type ToolsOzoneSignatureFindCorrelationError = ClosedEnum<
 /**
  * Bad Request
  */
-export type ToolsOzoneSignatureFindCorrelationResponseBodyData = {
-  error: ToolsOzoneSignatureFindCorrelationError;
-  message: string;
-};
+export type BadRequestToolsOzoneSignatureFindCorrelationResponseBodyErrorData =
+  {
+    error: ToolsOzoneSignatureFindCorrelationError;
+    message: string;
+  };
 
 /**
  * Bad Request
  */
-export class ToolsOzoneSignatureFindCorrelationResponseBody extends Error {
+export class BadRequestToolsOzoneSignatureFindCorrelationResponseBodyError
+  extends Error
+{
   error: ToolsOzoneSignatureFindCorrelationError;
 
   /** The original data that was passed to this error instance. */
-  data$: ToolsOzoneSignatureFindCorrelationResponseBodyData;
+  data$: BadRequestToolsOzoneSignatureFindCorrelationResponseBodyErrorData;
 
-  constructor(err: ToolsOzoneSignatureFindCorrelationResponseBodyData) {
+  constructor(
+    err: BadRequestToolsOzoneSignatureFindCorrelationResponseBodyErrorData,
+  ) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -74,14 +81,14 @@ export class ToolsOzoneSignatureFindCorrelationResponseBody extends Error {
 
     this.error = err.error;
 
-    this.name = "ToolsOzoneSignatureFindCorrelationResponseBody";
+    this.name = "BadRequestToolsOzoneSignatureFindCorrelationResponseBodyError";
   }
 }
 
 /** @internal */
-export const ToolsOzoneSignatureFindCorrelationSignatureResponseBody$inboundSchema:
+export const UnauthorizedToolsOzoneSignatureFindCorrelationResponseBodyError$inboundSchema:
   z.ZodType<
-    ToolsOzoneSignatureFindCorrelationSignatureResponseBody,
+    UnauthorizedToolsOzoneSignatureFindCorrelationResponseBodyError,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -89,22 +96,27 @@ export const ToolsOzoneSignatureFindCorrelationSignatureResponseBody$inboundSche
     message: z.string(),
   })
     .transform((v) => {
-      return new ToolsOzoneSignatureFindCorrelationSignatureResponseBody(v);
+      return new UnauthorizedToolsOzoneSignatureFindCorrelationResponseBodyError(
+        v,
+      );
     });
 
 /** @internal */
-export type ToolsOzoneSignatureFindCorrelationSignatureResponseBody$Outbound = {
-  error: "AuthMissing";
-  message: string;
-};
+export type UnauthorizedToolsOzoneSignatureFindCorrelationResponseBodyError$Outbound =
+  {
+    error: "AuthMissing";
+    message: string;
+  };
 
 /** @internal */
-export const ToolsOzoneSignatureFindCorrelationSignatureResponseBody$outboundSchema:
+export const UnauthorizedToolsOzoneSignatureFindCorrelationResponseBodyError$outboundSchema:
   z.ZodType<
-    ToolsOzoneSignatureFindCorrelationSignatureResponseBody$Outbound,
+    UnauthorizedToolsOzoneSignatureFindCorrelationResponseBodyError$Outbound,
     z.ZodTypeDef,
-    ToolsOzoneSignatureFindCorrelationSignatureResponseBody
-  > = z.instanceof(ToolsOzoneSignatureFindCorrelationSignatureResponseBody)
+    UnauthorizedToolsOzoneSignatureFindCorrelationResponseBodyError
+  > = z.instanceof(
+    UnauthorizedToolsOzoneSignatureFindCorrelationResponseBodyError,
+  )
     .transform(v => v.data$)
     .pipe(z.object({
       error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -115,16 +127,16 @@ export const ToolsOzoneSignatureFindCorrelationSignatureResponseBody$outboundSch
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ToolsOzoneSignatureFindCorrelationSignatureResponseBody$ {
-  /** @deprecated use `ToolsOzoneSignatureFindCorrelationSignatureResponseBody$inboundSchema` instead. */
+export namespace UnauthorizedToolsOzoneSignatureFindCorrelationResponseBodyError$ {
+  /** @deprecated use `UnauthorizedToolsOzoneSignatureFindCorrelationResponseBodyError$inboundSchema` instead. */
   export const inboundSchema =
-    ToolsOzoneSignatureFindCorrelationSignatureResponseBody$inboundSchema;
-  /** @deprecated use `ToolsOzoneSignatureFindCorrelationSignatureResponseBody$outboundSchema` instead. */
+    UnauthorizedToolsOzoneSignatureFindCorrelationResponseBodyError$inboundSchema;
+  /** @deprecated use `UnauthorizedToolsOzoneSignatureFindCorrelationResponseBodyError$outboundSchema` instead. */
   export const outboundSchema =
-    ToolsOzoneSignatureFindCorrelationSignatureResponseBody$outboundSchema;
-  /** @deprecated use `ToolsOzoneSignatureFindCorrelationSignatureResponseBody$Outbound` instead. */
+    UnauthorizedToolsOzoneSignatureFindCorrelationResponseBodyError$outboundSchema;
+  /** @deprecated use `UnauthorizedToolsOzoneSignatureFindCorrelationResponseBodyError$Outbound` instead. */
   export type Outbound =
-    ToolsOzoneSignatureFindCorrelationSignatureResponseBody$Outbound;
+    UnauthorizedToolsOzoneSignatureFindCorrelationResponseBodyError$Outbound;
 }
 
 /** @internal */
@@ -151,9 +163,9 @@ export namespace ToolsOzoneSignatureFindCorrelationError$ {
 }
 
 /** @internal */
-export const ToolsOzoneSignatureFindCorrelationResponseBody$inboundSchema:
+export const BadRequestToolsOzoneSignatureFindCorrelationResponseBodyError$inboundSchema:
   z.ZodType<
-    ToolsOzoneSignatureFindCorrelationResponseBody,
+    BadRequestToolsOzoneSignatureFindCorrelationResponseBodyError,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -161,22 +173,27 @@ export const ToolsOzoneSignatureFindCorrelationResponseBody$inboundSchema:
     message: z.string(),
   })
     .transform((v) => {
-      return new ToolsOzoneSignatureFindCorrelationResponseBody(v);
+      return new BadRequestToolsOzoneSignatureFindCorrelationResponseBodyError(
+        v,
+      );
     });
 
 /** @internal */
-export type ToolsOzoneSignatureFindCorrelationResponseBody$Outbound = {
-  error: string;
-  message: string;
-};
+export type BadRequestToolsOzoneSignatureFindCorrelationResponseBodyError$Outbound =
+  {
+    error: string;
+    message: string;
+  };
 
 /** @internal */
-export const ToolsOzoneSignatureFindCorrelationResponseBody$outboundSchema:
+export const BadRequestToolsOzoneSignatureFindCorrelationResponseBodyError$outboundSchema:
   z.ZodType<
-    ToolsOzoneSignatureFindCorrelationResponseBody$Outbound,
+    BadRequestToolsOzoneSignatureFindCorrelationResponseBodyError$Outbound,
     z.ZodTypeDef,
-    ToolsOzoneSignatureFindCorrelationResponseBody
-  > = z.instanceof(ToolsOzoneSignatureFindCorrelationResponseBody)
+    BadRequestToolsOzoneSignatureFindCorrelationResponseBodyError
+  > = z.instanceof(
+    BadRequestToolsOzoneSignatureFindCorrelationResponseBodyError,
+  )
     .transform(v => v.data$)
     .pipe(z.object({
       error: ToolsOzoneSignatureFindCorrelationError$outboundSchema,
@@ -187,14 +204,14 @@ export const ToolsOzoneSignatureFindCorrelationResponseBody$outboundSchema:
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ToolsOzoneSignatureFindCorrelationResponseBody$ {
-  /** @deprecated use `ToolsOzoneSignatureFindCorrelationResponseBody$inboundSchema` instead. */
+export namespace BadRequestToolsOzoneSignatureFindCorrelationResponseBodyError$ {
+  /** @deprecated use `BadRequestToolsOzoneSignatureFindCorrelationResponseBodyError$inboundSchema` instead. */
   export const inboundSchema =
-    ToolsOzoneSignatureFindCorrelationResponseBody$inboundSchema;
-  /** @deprecated use `ToolsOzoneSignatureFindCorrelationResponseBody$outboundSchema` instead. */
+    BadRequestToolsOzoneSignatureFindCorrelationResponseBodyError$inboundSchema;
+  /** @deprecated use `BadRequestToolsOzoneSignatureFindCorrelationResponseBodyError$outboundSchema` instead. */
   export const outboundSchema =
-    ToolsOzoneSignatureFindCorrelationResponseBody$outboundSchema;
-  /** @deprecated use `ToolsOzoneSignatureFindCorrelationResponseBody$Outbound` instead. */
+    BadRequestToolsOzoneSignatureFindCorrelationResponseBodyError$outboundSchema;
+  /** @deprecated use `BadRequestToolsOzoneSignatureFindCorrelationResponseBodyError$Outbound` instead. */
   export type Outbound =
-    ToolsOzoneSignatureFindCorrelationResponseBody$Outbound;
+    BadRequestToolsOzoneSignatureFindCorrelationResponseBodyError$Outbound;
 }

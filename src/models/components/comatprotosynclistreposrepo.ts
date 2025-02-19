@@ -11,7 +11,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 /**
  * If active=false, this optional field indicates a possible reason for why the account is not active. If active=false and no status is supplied, then the host makes no claim for why the repository is no longer being hosted.
  */
-export const Status = {
+export const ComAtprotoSyncListReposRepoStatus = {
   Takendown: "takendown",
   Suspended: "suspended",
   Deactivated: "deactivated",
@@ -19,7 +19,9 @@ export const Status = {
 /**
  * If active=false, this optional field indicates a possible reason for why the account is not active. If active=false and no status is supplied, then the host makes no claim for why the repository is no longer being hosted.
  */
-export type Status = ClosedEnum<typeof Status>;
+export type ComAtprotoSyncListReposRepoStatus = ClosedEnum<
+  typeof ComAtprotoSyncListReposRepoStatus
+>;
 
 export type ComAtprotoSyncListReposRepo = {
   did: string;
@@ -32,26 +34,29 @@ export type ComAtprotoSyncListReposRepo = {
   /**
    * If active=false, this optional field indicates a possible reason for why the account is not active. If active=false and no status is supplied, then the host makes no claim for why the repository is no longer being hosted.
    */
-  status?: Status | undefined;
+  status?: ComAtprotoSyncListReposRepoStatus | undefined;
 };
 
 /** @internal */
-export const Status$inboundSchema: z.ZodNativeEnum<typeof Status> = z
-  .nativeEnum(Status);
+export const ComAtprotoSyncListReposRepoStatus$inboundSchema: z.ZodNativeEnum<
+  typeof ComAtprotoSyncListReposRepoStatus
+> = z.nativeEnum(ComAtprotoSyncListReposRepoStatus);
 
 /** @internal */
-export const Status$outboundSchema: z.ZodNativeEnum<typeof Status> =
-  Status$inboundSchema;
+export const ComAtprotoSyncListReposRepoStatus$outboundSchema: z.ZodNativeEnum<
+  typeof ComAtprotoSyncListReposRepoStatus
+> = ComAtprotoSyncListReposRepoStatus$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace Status$ {
-  /** @deprecated use `Status$inboundSchema` instead. */
-  export const inboundSchema = Status$inboundSchema;
-  /** @deprecated use `Status$outboundSchema` instead. */
-  export const outboundSchema = Status$outboundSchema;
+export namespace ComAtprotoSyncListReposRepoStatus$ {
+  /** @deprecated use `ComAtprotoSyncListReposRepoStatus$inboundSchema` instead. */
+  export const inboundSchema = ComAtprotoSyncListReposRepoStatus$inboundSchema;
+  /** @deprecated use `ComAtprotoSyncListReposRepoStatus$outboundSchema` instead. */
+  export const outboundSchema =
+    ComAtprotoSyncListReposRepoStatus$outboundSchema;
 }
 
 /** @internal */
@@ -64,7 +69,7 @@ export const ComAtprotoSyncListReposRepo$inboundSchema: z.ZodType<
   head: z.string(),
   rev: z.string(),
   active: z.boolean().optional(),
-  status: Status$inboundSchema.optional(),
+  status: ComAtprotoSyncListReposRepoStatus$inboundSchema.optional(),
 });
 
 /** @internal */
@@ -86,7 +91,7 @@ export const ComAtprotoSyncListReposRepo$outboundSchema: z.ZodType<
   head: z.string(),
   rev: z.string(),
   active: z.boolean().optional(),
-  status: Status$outboundSchema.optional(),
+  status: ComAtprotoSyncListReposRepoStatus$outboundSchema.optional(),
 });
 
 /**

@@ -17,9 +17,8 @@ export const tool$feedGetActorLikes: ToolDefinition<typeof args> = {
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
-Get a list of posts liked by an actor. Requires auth, actor must be the requesting account.
-
-`,
+Get a list of posts liked by an actor. Requires auth, actor must be the requesting account.`,
+  scopes: ["read"],
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await feedGetActorLikes(
@@ -28,6 +27,15 @@ Get a list of posts liked by an actor. Requires auth, actor must be the requesti
       { fetchOptions: { signal: ctx.signal } },
     ).$inspect();
 
-    return formatResult(result, apiCall);
+    if (!result.ok) {
+      return {
+        content: [{ type: "text", text: result.error.message }],
+        isError: true,
+      };
+    }
+
+    const value = result.value.result;
+
+    return formatResult(value, apiCall);
   },
 };

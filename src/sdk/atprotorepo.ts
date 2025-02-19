@@ -18,7 +18,7 @@ export class AtprotoRepo extends ClientSDK {
    * Delete a repository record, or ensure it doesn't exist. Requires auth, implemented by PDS.
    */
   async delete(
-    request: operations.ComAtprotoRepoDeleteRecordRequestBody,
+    request: operations.ComAtprotoRepoDeleteRecordBody,
     options?: RequestOptions,
   ): Promise<operations.ComAtprotoRepoDeleteRecordResponseBody> {
     return unwrapAsync(atprotoRepoDelete(

@@ -18,7 +18,7 @@ import { useBlueskyContext } from "./_context.js";
 import { MutationHookOptions } from "./_types.js";
 
 export type ChatConvosSendMessageMutationVariables = {
-  request: operations.ChatBskyConvoSendMessageRequestBody;
+  request: operations.ChatBskyConvoSendMessageBody;
   options?: RequestOptions;
 };
 

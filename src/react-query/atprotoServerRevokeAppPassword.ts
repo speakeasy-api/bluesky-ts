@@ -17,7 +17,7 @@ import { useBlueskyContext } from "./_context.js";
 import { MutationHookOptions } from "./_types.js";
 
 export type AtprotoServerRevokeAppPasswordMutationVariables = {
-  request: operations.ComAtprotoServerRevokeAppPasswordRequestBody;
+  request: operations.ComAtprotoServerRevokeAppPasswordBody;
   options?: RequestOptions;
 };
 

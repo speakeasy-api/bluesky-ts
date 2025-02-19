@@ -17,9 +17,8 @@ export const tool$ozoneSignatureSearchAccounts: ToolDefinition<typeof args> = {
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
-Search for accounts that match one or more threat signature values.
-
-`,
+Search for accounts that match one or more threat signature values.`,
+  scopes: ["read"],
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await ozoneSignatureSearchAccounts(
@@ -28,6 +27,15 @@ Search for accounts that match one or more threat signature values.
       { fetchOptions: { signal: ctx.signal } },
     ).$inspect();
 
-    return formatResult(result, apiCall);
+    if (!result.ok) {
+      return {
+        content: [{ type: "text", text: result.error.message }],
+        isError: true,
+      };
+    }
+
+    const value = result.value.result;
+
+    return formatResult(value, apiCall);
   },
 };

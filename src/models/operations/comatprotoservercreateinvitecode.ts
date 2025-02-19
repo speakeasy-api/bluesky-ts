@@ -7,7 +7,7 @@ import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ComAtprotoServerCreateInviteCodeRequestBody = {
+export type ComAtprotoServerCreateInviteCodeBody = {
   useCount: number;
   forAccount?: string | undefined;
 };
@@ -20,72 +20,64 @@ export type ComAtprotoServerCreateInviteCodeResponseBody = {
 };
 
 /** @internal */
-export const ComAtprotoServerCreateInviteCodeRequestBody$inboundSchema:
-  z.ZodType<
-    ComAtprotoServerCreateInviteCodeRequestBody,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    useCount: z.number().int(),
-    forAccount: z.string().optional(),
-  });
+export const ComAtprotoServerCreateInviteCodeBody$inboundSchema: z.ZodType<
+  ComAtprotoServerCreateInviteCodeBody,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  useCount: z.number().int(),
+  forAccount: z.string().optional(),
+});
 
 /** @internal */
-export type ComAtprotoServerCreateInviteCodeRequestBody$Outbound = {
+export type ComAtprotoServerCreateInviteCodeBody$Outbound = {
   useCount: number;
   forAccount?: string | undefined;
 };
 
 /** @internal */
-export const ComAtprotoServerCreateInviteCodeRequestBody$outboundSchema:
-  z.ZodType<
-    ComAtprotoServerCreateInviteCodeRequestBody$Outbound,
-    z.ZodTypeDef,
-    ComAtprotoServerCreateInviteCodeRequestBody
-  > = z.object({
-    useCount: z.number().int(),
-    forAccount: z.string().optional(),
-  });
+export const ComAtprotoServerCreateInviteCodeBody$outboundSchema: z.ZodType<
+  ComAtprotoServerCreateInviteCodeBody$Outbound,
+  z.ZodTypeDef,
+  ComAtprotoServerCreateInviteCodeBody
+> = z.object({
+  useCount: z.number().int(),
+  forAccount: z.string().optional(),
+});
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoServerCreateInviteCodeRequestBody$ {
-  /** @deprecated use `ComAtprotoServerCreateInviteCodeRequestBody$inboundSchema` instead. */
+export namespace ComAtprotoServerCreateInviteCodeBody$ {
+  /** @deprecated use `ComAtprotoServerCreateInviteCodeBody$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoServerCreateInviteCodeRequestBody$inboundSchema;
-  /** @deprecated use `ComAtprotoServerCreateInviteCodeRequestBody$outboundSchema` instead. */
+    ComAtprotoServerCreateInviteCodeBody$inboundSchema;
+  /** @deprecated use `ComAtprotoServerCreateInviteCodeBody$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoServerCreateInviteCodeRequestBody$outboundSchema;
-  /** @deprecated use `ComAtprotoServerCreateInviteCodeRequestBody$Outbound` instead. */
-  export type Outbound = ComAtprotoServerCreateInviteCodeRequestBody$Outbound;
+    ComAtprotoServerCreateInviteCodeBody$outboundSchema;
+  /** @deprecated use `ComAtprotoServerCreateInviteCodeBody$Outbound` instead. */
+  export type Outbound = ComAtprotoServerCreateInviteCodeBody$Outbound;
 }
 
-export function comAtprotoServerCreateInviteCodeRequestBodyToJSON(
-  comAtprotoServerCreateInviteCodeRequestBody:
-    ComAtprotoServerCreateInviteCodeRequestBody,
+export function comAtprotoServerCreateInviteCodeBodyToJSON(
+  comAtprotoServerCreateInviteCodeBody: ComAtprotoServerCreateInviteCodeBody,
 ): string {
   return JSON.stringify(
-    ComAtprotoServerCreateInviteCodeRequestBody$outboundSchema.parse(
-      comAtprotoServerCreateInviteCodeRequestBody,
+    ComAtprotoServerCreateInviteCodeBody$outboundSchema.parse(
+      comAtprotoServerCreateInviteCodeBody,
     ),
   );
 }
 
-export function comAtprotoServerCreateInviteCodeRequestBodyFromJSON(
+export function comAtprotoServerCreateInviteCodeBodyFromJSON(
   jsonString: string,
-): SafeParseResult<
-  ComAtprotoServerCreateInviteCodeRequestBody,
-  SDKValidationError
-> {
+): SafeParseResult<ComAtprotoServerCreateInviteCodeBody, SDKValidationError> {
   return safeParse(
     jsonString,
     (x) =>
-      ComAtprotoServerCreateInviteCodeRequestBody$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'ComAtprotoServerCreateInviteCodeRequestBody' from JSON`,
+      ComAtprotoServerCreateInviteCodeBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ComAtprotoServerCreateInviteCodeBody' from JSON`,
   );
 }
 

@@ -153,7 +153,7 @@ export type ToolsOzoneModerationDefsModEventViewEvent =
   | ToolsOzoneModerationDefsRecordEvent
   | ToolsOzoneModerationDefsIdentityEvent;
 
-export type Subject =
+export type ToolsOzoneModerationDefsModEventViewSubject =
   | ComAtprotoAdminDefsRepoRef
   | ComAtprotoRepoStrongRef
   | ChatBskyConvoDefsMessageRef;
@@ -307,54 +307,74 @@ export function toolsOzoneModerationDefsModEventViewEventFromJSON(
 }
 
 /** @internal */
-export const Subject$inboundSchema: z.ZodType<Subject, z.ZodTypeDef, unknown> =
-  z.union([
+export const ToolsOzoneModerationDefsModEventViewSubject$inboundSchema:
+  z.ZodType<
+    ToolsOzoneModerationDefsModEventViewSubject,
+    z.ZodTypeDef,
+    unknown
+  > = z.union([
     ComAtprotoAdminDefsRepoRef$inboundSchema,
     ComAtprotoRepoStrongRef$inboundSchema,
     ChatBskyConvoDefsMessageRef$inboundSchema,
   ]);
 
 /** @internal */
-export type Subject$Outbound =
+export type ToolsOzoneModerationDefsModEventViewSubject$Outbound =
   | ComAtprotoAdminDefsRepoRef$Outbound
   | ComAtprotoRepoStrongRef$Outbound
   | ChatBskyConvoDefsMessageRef$Outbound;
 
 /** @internal */
-export const Subject$outboundSchema: z.ZodType<
-  Subject$Outbound,
-  z.ZodTypeDef,
-  Subject
-> = z.union([
-  ComAtprotoAdminDefsRepoRef$outboundSchema,
-  ComAtprotoRepoStrongRef$outboundSchema,
-  ChatBskyConvoDefsMessageRef$outboundSchema,
-]);
+export const ToolsOzoneModerationDefsModEventViewSubject$outboundSchema:
+  z.ZodType<
+    ToolsOzoneModerationDefsModEventViewSubject$Outbound,
+    z.ZodTypeDef,
+    ToolsOzoneModerationDefsModEventViewSubject
+  > = z.union([
+    ComAtprotoAdminDefsRepoRef$outboundSchema,
+    ComAtprotoRepoStrongRef$outboundSchema,
+    ChatBskyConvoDefsMessageRef$outboundSchema,
+  ]);
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace Subject$ {
-  /** @deprecated use `Subject$inboundSchema` instead. */
-  export const inboundSchema = Subject$inboundSchema;
-  /** @deprecated use `Subject$outboundSchema` instead. */
-  export const outboundSchema = Subject$outboundSchema;
-  /** @deprecated use `Subject$Outbound` instead. */
-  export type Outbound = Subject$Outbound;
+export namespace ToolsOzoneModerationDefsModEventViewSubject$ {
+  /** @deprecated use `ToolsOzoneModerationDefsModEventViewSubject$inboundSchema` instead. */
+  export const inboundSchema =
+    ToolsOzoneModerationDefsModEventViewSubject$inboundSchema;
+  /** @deprecated use `ToolsOzoneModerationDefsModEventViewSubject$outboundSchema` instead. */
+  export const outboundSchema =
+    ToolsOzoneModerationDefsModEventViewSubject$outboundSchema;
+  /** @deprecated use `ToolsOzoneModerationDefsModEventViewSubject$Outbound` instead. */
+  export type Outbound = ToolsOzoneModerationDefsModEventViewSubject$Outbound;
 }
 
-export function subjectToJSON(subject: Subject): string {
-  return JSON.stringify(Subject$outboundSchema.parse(subject));
+export function toolsOzoneModerationDefsModEventViewSubjectToJSON(
+  toolsOzoneModerationDefsModEventViewSubject:
+    ToolsOzoneModerationDefsModEventViewSubject,
+): string {
+  return JSON.stringify(
+    ToolsOzoneModerationDefsModEventViewSubject$outboundSchema.parse(
+      toolsOzoneModerationDefsModEventViewSubject,
+    ),
+  );
 }
 
-export function subjectFromJSON(
+export function toolsOzoneModerationDefsModEventViewSubjectFromJSON(
   jsonString: string,
-): SafeParseResult<Subject, SDKValidationError> {
+): SafeParseResult<
+  ToolsOzoneModerationDefsModEventViewSubject,
+  SDKValidationError
+> {
   return safeParse(
     jsonString,
-    (x) => Subject$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'Subject' from JSON`,
+    (x) =>
+      ToolsOzoneModerationDefsModEventViewSubject$inboundSchema.parse(
+        JSON.parse(x),
+      ),
+    `Failed to parse 'ToolsOzoneModerationDefsModEventViewSubject' from JSON`,
   );
 }
 

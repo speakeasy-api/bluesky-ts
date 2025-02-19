@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 8ee5821f-25ad-41d5-94bd-080f4048f5d5
 management:
-  docChecksum: dbb7ddc1f24fcd6d7cf7cea6229e86c5
+  docChecksum: 65a8cad189779a50db0e3beea8a6a0f1
   docVersion: 0.0.0
   speakeasyVersion: internal
   generationVersion: internal
-  releaseVersion: 0.10.0
-  configChecksum: 499ac3fb7a1bffbcb6aa471396d5e628
+  releaseVersion: 0.11.2
+  configChecksum: f1f8d3e5cf9d94cea678167ef5fd1c4d
   repoURL: https://github.com/speakeasy-api/bluesky-ts.git
   installationURL: https://github.com/speakeasy-api/bluesky-ts
 features:
@@ -91,14 +91,17 @@ generatedFiles:
   - docs/models/components/appbskyfeeddefsblockedauthor.md
   - docs/models/components/appbskyfeeddefsblockedpost.md
   - docs/models/components/appbskyfeeddefsfeedviewpost.md
+  - docs/models/components/appbskyfeeddefsfeedviewpostreason.md
   - docs/models/components/appbskyfeeddefsgeneratorview.md
   - docs/models/components/appbskyfeeddefsgeneratorviewerstate.md
   - docs/models/components/appbskyfeeddefsinteraction.md
   - docs/models/components/appbskyfeeddefsnotfoundpost.md
   - docs/models/components/appbskyfeeddefspostview.md
+  - docs/models/components/appbskyfeeddefspostviewembed.md
   - docs/models/components/appbskyfeeddefsreasonpin.md
   - docs/models/components/appbskyfeeddefsreasonrepost.md
   - docs/models/components/appbskyfeeddefsreplyref.md
+  - docs/models/components/appbskyfeeddefsreplyrefparent.md
   - docs/models/components/appbskyfeeddefsskeletonfeedpost.md
   - docs/models/components/appbskyfeeddefsskeletonfeedpostreason.md
   - docs/models/components/appbskyfeeddefsskeletonreasonpin.md
@@ -123,7 +126,6 @@ generatedFiles:
   - docs/models/components/appbskylabelerdefslabelerviewdetailed.md
   - docs/models/components/appbskylabelerdefslabelerviewerstate.md
   - docs/models/components/appbskynotificationlistnotificationsnotification.md
-  - docs/models/components/appbskynotificationlistnotificationsnotificationreason.md
   - docs/models/components/appbskyrichtextfacet.md
   - docs/models/components/appbskyrichtextfacetbyteslice.md
   - docs/models/components/appbskyrichtextfacetlink.md
@@ -136,6 +138,7 @@ generatedFiles:
   - docs/models/components/chatbskyconvodefsdeletedmessageview.md
   - docs/models/components/chatbskyconvodefslogbeginconvo.md
   - docs/models/components/chatbskyconvodefslogcreatemessage.md
+  - docs/models/components/chatbskyconvodefslogcreatemessagemessage.md
   - docs/models/components/chatbskyconvodefslogdeletemessage.md
   - docs/models/components/chatbskyconvodefslogdeletemessagemessage.md
   - docs/models/components/chatbskyconvodefslogleaveconvo.md
@@ -158,6 +161,7 @@ generatedFiles:
   - docs/models/components/comatprotolabeldefslabelvaluedefinitionstrings.md
   - docs/models/components/comatprotorepoapplywritescreate.md
   - docs/models/components/comatprotorepoapplywritescreateresult.md
+  - docs/models/components/comatprotorepoapplywritescreateresultvalidationstatus.md
   - docs/models/components/comatprotorepoapplywritesdelete.md
   - docs/models/components/comatprotorepoapplywritesdeleteresult.md
   - docs/models/components/comatprotorepoapplywritesupdate.md
@@ -175,31 +179,26 @@ generatedFiles:
   - docs/models/components/comatprotoserverdescribeserverlinks.md
   - docs/models/components/comatprotoserverlistapppasswordsapppassword.md
   - docs/models/components/comatprotosynclistreposrepo.md
+  - docs/models/components/comatprotosynclistreposrepostatus.md
   - docs/models/components/defaultsetting.md
   - docs/models/components/details.md
-  - docs/models/components/embed.md
   - docs/models/components/embeds.md
-  - docs/models/components/event.md
+  - docs/models/components/eventenum.md
   - docs/models/components/features.md
   - docs/models/components/hosting.md
   - docs/models/components/lastmessage.md
   - docs/models/components/managerrole.md
   - docs/models/components/media.md
-  - docs/models/components/message.md
   - docs/models/components/op.md
-  - docs/models/components/parent.md
-  - docs/models/components/reason.md
+  - docs/models/components/reasonenum.md
   - docs/models/components/recordt.md
   - docs/models/components/replies.md
-  - docs/models/components/role.md
   - docs/models/components/root.md
   - docs/models/components/scope.md
   - docs/models/components/security.md
   - docs/models/components/severity.md
   - docs/models/components/sort.md
   - docs/models/components/state.md
-  - docs/models/components/status.md
-  - docs/models/components/subject.md
   - docs/models/components/toolsozonecommunicationdefstemplateview.md
   - docs/models/components/toolsozonemoderationdefsaccountevent.md
   - docs/models/components/toolsozonemoderationdefsaccounteventstatus.md
@@ -230,6 +229,7 @@ generatedFiles:
   - docs/models/components/toolsozonemoderationdefsmodeventviewdetailevent.md
   - docs/models/components/toolsozonemoderationdefsmodeventviewdetailsubject.md
   - docs/models/components/toolsozonemoderationdefsmodeventviewevent.md
+  - docs/models/components/toolsozonemoderationdefsmodeventviewsubject.md
   - docs/models/components/toolsozonemoderationdefsrecordevent.md
   - docs/models/components/toolsozonemoderationdefsrecordhosting.md
   - docs/models/components/toolsozonemoderationdefsrecordhostingstatus.md
@@ -245,6 +245,7 @@ generatedFiles:
   - docs/models/components/toolsozonemoderationdefsvideodetails.md
   - docs/models/components/toolsozoneservergetconfigserviceconfig.md
   - docs/models/components/toolsozoneservergetconfigviewerconfig.md
+  - docs/models/components/toolsozoneservergetconfigviewerconfigrole.md
   - docs/models/components/toolsozonesetdefsset.md
   - docs/models/components/toolsozonesetdefssetview.md
   - docs/models/components/toolsozonesettingdefsoption.md
@@ -253,521 +254,520 @@ generatedFiles:
   - docs/models/components/toolsozoneteamdefsmember.md
   - docs/models/components/toolsozoneteamdefsmemberrole.md
   - docs/models/components/type.md
-  - docs/models/components/validationstatus.md
   - docs/models/components/visibility.md
-  - docs/models/errors/appbskyactorgetpreferencesactorsresponsebody.md
-  - docs/models/errors/appbskyactorgetpreferencesresponsebody.md
-  - docs/models/errors/appbskyactorgetprofileactorsresponsebody.md
+  - docs/models/errors/appbskyactorgetpreferenceserror.md
   - docs/models/errors/appbskyactorgetprofileerror.md
-  - docs/models/errors/appbskyactorgetprofileresponsebody.md
-  - docs/models/errors/appbskyactorgetprofilesactorsresponsebody.md
   - docs/models/errors/appbskyactorgetprofileserror.md
-  - docs/models/errors/appbskyactorgetprofilesresponsebody.md
-  - docs/models/errors/appbskyactorgetsuggestionsactorresponsebody.md
   - docs/models/errors/appbskyactorgetsuggestionserror.md
-  - docs/models/errors/appbskyactorgetsuggestionsresponsebody.md
-  - docs/models/errors/appbskyactorputpreferencesactorsresponsebody.md
   - docs/models/errors/appbskyactorputpreferenceserror.md
-  - docs/models/errors/appbskyactorputpreferencesresponsebody.md
-  - docs/models/errors/appbskyactorsearchactorsactorsresponsebody.md
   - docs/models/errors/appbskyactorsearchactorserror.md
-  - docs/models/errors/appbskyactorsearchactorsresponsebody.md
-  - docs/models/errors/appbskyactorsearchactorstypeaheadactorresponsebody.md
   - docs/models/errors/appbskyactorsearchactorstypeaheaderror.md
-  - docs/models/errors/appbskyactorsearchactorstypeaheadresponsebody.md
   - docs/models/errors/appbskyfeeddescribefeedgeneratorerror.md
-  - docs/models/errors/appbskyfeeddescribefeedgeneratorfeedsresponsebody.md
-  - docs/models/errors/appbskyfeeddescribefeedgeneratorresponsebody.md
   - docs/models/errors/appbskyfeedgetactorfeedserror.md
-  - docs/models/errors/appbskyfeedgetactorfeedsfeedresponsebody.md
-  - docs/models/errors/appbskyfeedgetactorfeedsresponsebody.md
   - docs/models/errors/appbskyfeedgetactorlikeserror.md
-  - docs/models/errors/appbskyfeedgetactorlikesfeedresponsebody.md
-  - docs/models/errors/appbskyfeedgetactorlikesresponsebody.md
   - docs/models/errors/appbskyfeedgetauthorfeederror.md
-  - docs/models/errors/appbskyfeedgetauthorfeedfeedresponsebody.md
-  - docs/models/errors/appbskyfeedgetauthorfeedresponsebody.md
   - docs/models/errors/appbskyfeedgetfeederror.md
-  - docs/models/errors/appbskyfeedgetfeedfeedresponsebody.md
   - docs/models/errors/appbskyfeedgetfeedgeneratorerror.md
-  - docs/models/errors/appbskyfeedgetfeedgeneratorfeedresponsebody.md
-  - docs/models/errors/appbskyfeedgetfeedgeneratorresponsebody.md
   - docs/models/errors/appbskyfeedgetfeedgeneratorserror.md
-  - docs/models/errors/appbskyfeedgetfeedgeneratorsfeedresponsebody.md
-  - docs/models/errors/appbskyfeedgetfeedgeneratorsresponsebody.md
-  - docs/models/errors/appbskyfeedgetfeedresponsebody.md
   - docs/models/errors/appbskyfeedgetfeedskeletonerror.md
-  - docs/models/errors/appbskyfeedgetfeedskeletonfeedresponsebody.md
-  - docs/models/errors/appbskyfeedgetfeedskeletonresponsebody.md
   - docs/models/errors/appbskyfeedgetlikeserror.md
-  - docs/models/errors/appbskyfeedgetlikesfeedsresponsebody.md
-  - docs/models/errors/appbskyfeedgetlikesresponsebody.md
   - docs/models/errors/appbskyfeedgetlistfeederror.md
-  - docs/models/errors/appbskyfeedgetlistfeedfeedsresponsebody.md
-  - docs/models/errors/appbskyfeedgetlistfeedresponsebody.md
   - docs/models/errors/appbskyfeedgetpostserror.md
-  - docs/models/errors/appbskyfeedgetpostsfeedsresponsebody.md
-  - docs/models/errors/appbskyfeedgetpostsresponsebody.md
   - docs/models/errors/appbskyfeedgetpostthreaderror.md
-  - docs/models/errors/appbskyfeedgetpostthreadfeedsresponsebody.md
-  - docs/models/errors/appbskyfeedgetpostthreadresponsebody.md
   - docs/models/errors/appbskyfeedgetquoteserror.md
-  - docs/models/errors/appbskyfeedgetquotesfeedsresponsebody.md
-  - docs/models/errors/appbskyfeedgetquotesresponsebody.md
   - docs/models/errors/appbskyfeedgetrepostedbyerror.md
-  - docs/models/errors/appbskyfeedgetrepostedbyfeedsresponsebody.md
-  - docs/models/errors/appbskyfeedgetrepostedbyresponsebody.md
   - docs/models/errors/appbskyfeedgetsuggestedfeedserror.md
-  - docs/models/errors/appbskyfeedgetsuggestedfeedsfeedresponsebody.md
-  - docs/models/errors/appbskyfeedgetsuggestedfeedsresponsebody.md
   - docs/models/errors/appbskyfeedgettimelineerror.md
-  - docs/models/errors/appbskyfeedgettimelinefeedresponsebody.md
-  - docs/models/errors/appbskyfeedgettimelineresponsebody.md
   - docs/models/errors/appbskyfeedsearchpostserror.md
-  - docs/models/errors/appbskyfeedsearchpostsfeedresponsebody.md
-  - docs/models/errors/appbskyfeedsearchpostsresponsebody.md
   - docs/models/errors/appbskyfeedsendinteractionserror.md
-  - docs/models/errors/appbskyfeedsendinteractionsfeedsresponsebody.md
-  - docs/models/errors/appbskyfeedsendinteractionsresponsebody.md
   - docs/models/errors/appbskygraphgetactorstarterpackserror.md
-  - docs/models/errors/appbskygraphgetactorstarterpacksgraphresponsebody.md
-  - docs/models/errors/appbskygraphgetactorstarterpacksresponsebody.md
   - docs/models/errors/appbskygraphgetblockserror.md
-  - docs/models/errors/appbskygraphgetblocksgraphsresponsebody.md
-  - docs/models/errors/appbskygraphgetblocksresponsebody.md
   - docs/models/errors/appbskygraphgetfollowerserror.md
-  - docs/models/errors/appbskygraphgetfollowersresponsebody.md
-  - docs/models/errors/appbskygraphgetfollowersusersresponsebody.md
   - docs/models/errors/appbskygraphgetfollowserror.md
-  - docs/models/errors/appbskygraphgetfollowsgraphresponsebody.md
-  - docs/models/errors/appbskygraphgetfollowsresponsebody.md
   - docs/models/errors/appbskygraphgetknownfollowerserror.md
-  - docs/models/errors/appbskygraphgetknownfollowersgraphsresponsebody.md
-  - docs/models/errors/appbskygraphgetknownfollowersresponsebody.md
   - docs/models/errors/appbskygraphgetlistblockserror.md
-  - docs/models/errors/appbskygraphgetlistblocksgraphsresponsebody.md
-  - docs/models/errors/appbskygraphgetlistblocksresponsebody.md
   - docs/models/errors/appbskygraphgetlisterror.md
-  - docs/models/errors/appbskygraphgetlistgraphresponsebody.md
   - docs/models/errors/appbskygraphgetlistmuteserror.md
-  - docs/models/errors/appbskygraphgetlistmutesgraphresponsebody.md
-  - docs/models/errors/appbskygraphgetlistmutesresponsebody.md
-  - docs/models/errors/appbskygraphgetlistresponsebody.md
   - docs/models/errors/appbskygraphgetlistserror.md
-  - docs/models/errors/appbskygraphgetlistsgraphresponsebody.md
-  - docs/models/errors/appbskygraphgetlistsresponsebody.md
   - docs/models/errors/appbskygraphgetmuteserror.md
-  - docs/models/errors/appbskygraphgetmutesgraphsresponsebody.md
-  - docs/models/errors/appbskygraphgetmutesresponsebody.md
   - docs/models/errors/appbskygraphgetrelationshipserror.md
-  - docs/models/errors/appbskygraphgetrelationshipsgraphresponsebody.md
-  - docs/models/errors/appbskygraphgetrelationshipsresponsebody.md
   - docs/models/errors/appbskygraphgetstarterpackerror.md
-  - docs/models/errors/appbskygraphgetstarterpackgraphresponsebody.md
-  - docs/models/errors/appbskygraphgetstarterpackresponsebody.md
   - docs/models/errors/appbskygraphgetstarterpackserror.md
-  - docs/models/errors/appbskygraphgetstarterpacksgraphsresponsebody.md
-  - docs/models/errors/appbskygraphgetstarterpacksresponsebody.md
   - docs/models/errors/appbskygraphgetsuggestedfollowsbyactorerror.md
-  - docs/models/errors/appbskygraphgetsuggestedfollowsbyactorresponsebody.md
-  - docs/models/errors/appbskygraphgetsuggestedfollowsbyactorusersresponsebody.md
   - docs/models/errors/appbskygraphmuteactorerror.md
-  - docs/models/errors/appbskygraphmuteactorgraphresponsebody.md
   - docs/models/errors/appbskygraphmuteactorlisterror.md
-  - docs/models/errors/appbskygraphmuteactorlistgraphresponsebody.md
-  - docs/models/errors/appbskygraphmuteactorlistresponsebody.md
-  - docs/models/errors/appbskygraphmuteactorresponsebody.md
   - docs/models/errors/appbskygraphmutethreaderror.md
-  - docs/models/errors/appbskygraphmutethreadgraphsresponsebody.md
-  - docs/models/errors/appbskygraphmutethreadresponsebody.md
   - docs/models/errors/appbskygraphsearchstarterpackserror.md
-  - docs/models/errors/appbskygraphsearchstarterpacksgraphresponsebody.md
-  - docs/models/errors/appbskygraphsearchstarterpacksresponsebody.md
   - docs/models/errors/appbskygraphunmuteactorerror.md
   - docs/models/errors/appbskygraphunmuteactorlisterror.md
-  - docs/models/errors/appbskygraphunmuteactorlistgraphsresponsebody.md
-  - docs/models/errors/appbskygraphunmuteactorlistresponsebody.md
-  - docs/models/errors/appbskygraphunmuteactorresponsebody.md
-  - docs/models/errors/appbskygraphunmuteactorusersresponsebody.md
   - docs/models/errors/appbskygraphunmutethreaderror.md
-  - docs/models/errors/appbskygraphunmutethreadgraphresponsebody.md
-  - docs/models/errors/appbskygraphunmutethreadresponsebody.md
   - docs/models/errors/appbskylabelergetserviceserror.md
-  - docs/models/errors/appbskylabelergetserviceslabelersresponsebody.md
-  - docs/models/errors/appbskylabelergetservicesresponsebody.md
   - docs/models/errors/appbskynotificationgetunreadcounterror.md
-  - docs/models/errors/appbskynotificationgetunreadcountnotificationsresponsebody.md
-  - docs/models/errors/appbskynotificationgetunreadcountresponsebody.md
   - docs/models/errors/appbskynotificationlistnotificationserror.md
-  - docs/models/errors/appbskynotificationlistnotificationsnotificationresponsebody.md
-  - docs/models/errors/appbskynotificationlistnotificationsresponsebody.md
   - docs/models/errors/appbskynotificationputpreferenceserror.md
-  - docs/models/errors/appbskynotificationputpreferencesnotificationsresponsebody.md
-  - docs/models/errors/appbskynotificationputpreferencesresponsebody.md
   - docs/models/errors/appbskynotificationregisterpusherror.md
-  - docs/models/errors/appbskynotificationregisterpushnotificationsresponsebody.md
-  - docs/models/errors/appbskynotificationregisterpushresponsebody.md
   - docs/models/errors/appbskynotificationupdateseenerror.md
-  - docs/models/errors/appbskynotificationupdateseennotificationsresponsebody.md
-  - docs/models/errors/appbskynotificationupdateseenresponsebody.md
   - docs/models/errors/appbskyvideogetjobstatuserror.md
-  - docs/models/errors/appbskyvideogetjobstatusresponsebody.md
-  - docs/models/errors/appbskyvideogetjobstatusvideosresponsebody.md
   - docs/models/errors/appbskyvideogetuploadlimitserror.md
-  - docs/models/errors/appbskyvideogetuploadlimitsresponsebody.md
-  - docs/models/errors/appbskyvideogetuploadlimitsvideosresponsebody.md
   - docs/models/errors/appbskyvideouploadvideoerror.md
-  - docs/models/errors/appbskyvideouploadvideoresponsebody.md
-  - docs/models/errors/appbskyvideouploadvideovideosresponsebody.md
-  - docs/models/errors/badrequest.md
-  - docs/models/errors/chatbskyactordeleteaccountaccountresponsebody.md
+  - docs/models/errors/badrequestappbskyactorgetpreferencesresponsebodyerror.md
+  - docs/models/errors/badrequestappbskyactorgetprofileresponsebodyerror.md
+  - docs/models/errors/badrequestappbskyactorgetprofilesresponsebodyerror.md
+  - docs/models/errors/badrequestappbskyactorgetsuggestionsresponsebodyerror.md
+  - docs/models/errors/badrequestappbskyactorputpreferencesresponsebodyerror.md
+  - docs/models/errors/badrequestappbskyactorsearchactorsresponsebodyerror.md
+  - docs/models/errors/badrequestappbskyactorsearchactorstypeaheadresponsebodyerror.md
+  - docs/models/errors/badrequestappbskyfeeddescribefeedgeneratorresponsebodyerror.md
+  - docs/models/errors/badrequestappbskyfeedgetactorfeedsresponsebodyerror.md
+  - docs/models/errors/badrequestappbskyfeedgetactorlikesresponsebodyerror.md
+  - docs/models/errors/badrequestappbskyfeedgetauthorfeedresponsebodyerror.md
+  - docs/models/errors/badrequestappbskyfeedgetfeedgeneratorresponsebodyerror.md
+  - docs/models/errors/badrequestappbskyfeedgetfeedgeneratorsresponsebodyerror.md
+  - docs/models/errors/badrequestappbskyfeedgetfeedresponsebodyerror.md
+  - docs/models/errors/badrequestappbskyfeedgetfeedskeletonresponsebodyerror.md
+  - docs/models/errors/badrequestappbskyfeedgetlikesresponsebodyerror.md
+  - docs/models/errors/badrequestappbskyfeedgetlistfeedresponsebodyerror.md
+  - docs/models/errors/badrequestappbskyfeedgetpostsresponsebodyerror.md
+  - docs/models/errors/badrequestappbskyfeedgetpostthreadresponsebodyerror.md
+  - docs/models/errors/badrequestappbskyfeedgetquotesresponsebodyerror.md
+  - docs/models/errors/badrequestappbskyfeedgetrepostedbyresponsebodyerror.md
+  - docs/models/errors/badrequestappbskyfeedgetsuggestedfeedsresponsebodyerror.md
+  - docs/models/errors/badrequestappbskyfeedgettimelineresponsebodyerror.md
+  - docs/models/errors/badrequestappbskyfeedsearchpostsresponsebodyerror.md
+  - docs/models/errors/badrequestappbskyfeedsendinteractionsresponsebodyerror.md
+  - docs/models/errors/badrequestappbskygraphgetactorstarterpacksresponsebodyerror.md
+  - docs/models/errors/badrequestappbskygraphgetblocksresponsebodyerror.md
+  - docs/models/errors/badrequestappbskygraphgetfollowersresponsebodyerror.md
+  - docs/models/errors/badrequestappbskygraphgetfollowsresponsebodyerror.md
+  - docs/models/errors/badrequestappbskygraphgetknownfollowersresponsebodyerror.md
+  - docs/models/errors/badrequestappbskygraphgetlistblocksresponsebodyerror.md
+  - docs/models/errors/badrequestappbskygraphgetlistmutesresponsebodyerror.md
+  - docs/models/errors/badrequestappbskygraphgetlistresponsebodyerror.md
+  - docs/models/errors/badrequestappbskygraphgetlistsresponsebodyerror.md
+  - docs/models/errors/badrequestappbskygraphgetmutesresponsebodyerror.md
+  - docs/models/errors/badrequestappbskygraphgetrelationshipsresponsebodyerror.md
+  - docs/models/errors/badrequestappbskygraphgetstarterpackresponsebodyerror.md
+  - docs/models/errors/badrequestappbskygraphgetstarterpacksresponsebodyerror.md
+  - docs/models/errors/badrequestappbskygraphgetsuggestedfollowsbyactorresponsebodyerror.md
+  - docs/models/errors/badrequestappbskygraphmuteactorlistresponsebodyerror.md
+  - docs/models/errors/badrequestappbskygraphmuteactorresponsebodyerror.md
+  - docs/models/errors/badrequestappbskygraphmutethreadresponsebodyerror.md
+  - docs/models/errors/badrequestappbskygraphsearchstarterpacksresponsebodyerror.md
+  - docs/models/errors/badrequestappbskygraphunmuteactorlistresponsebodyerror.md
+  - docs/models/errors/badrequestappbskygraphunmuteactorresponsebodyerror.md
+  - docs/models/errors/badrequestappbskygraphunmutethreadresponsebodyerror.md
+  - docs/models/errors/badrequestappbskylabelergetservicesresponsebodyerror.md
+  - docs/models/errors/badrequestappbskynotificationgetunreadcountresponsebodyerror.md
+  - docs/models/errors/badrequestappbskynotificationlistnotificationsresponsebodyerror.md
+  - docs/models/errors/badrequestappbskynotificationputpreferencesresponsebodyerror.md
+  - docs/models/errors/badrequestappbskynotificationregisterpushresponsebodyerror.md
+  - docs/models/errors/badrequestappbskynotificationupdateseenresponsebodyerror.md
+  - docs/models/errors/badrequestappbskyvideogetjobstatusresponsebodyerror.md
+  - docs/models/errors/badrequestappbskyvideogetuploadlimitsresponsebodyerror.md
+  - docs/models/errors/badrequestappbskyvideouploadvideoresponsebodyerror.md
+  - docs/models/errors/badrequestchatbskyactordeleteaccountresponsebodyerror.md
+  - docs/models/errors/badrequestchatbskyactorexportaccountdataresponsebodyerror.md
+  - docs/models/errors/badrequestchatbskyconvodeletemessageforselfresponsebodyerror.md
+  - docs/models/errors/badrequestchatbskyconvogetconvoformembersresponsebodyerror.md
+  - docs/models/errors/badrequestchatbskyconvogetconvoresponsebodyerror.md
+  - docs/models/errors/badrequestchatbskyconvogetlogresponsebodyerror.md
+  - docs/models/errors/badrequestchatbskyconvogetmessagesresponsebodyerror.md
+  - docs/models/errors/badrequestchatbskyconvoleaveconvoresponsebodyerror.md
+  - docs/models/errors/badrequestchatbskyconvolistconvosresponsebodyerror.md
+  - docs/models/errors/badrequestchatbskyconvomuteconvoresponsebodyerror.md
+  - docs/models/errors/badrequestchatbskyconvosendmessagebatchresponsebodyerror.md
+  - docs/models/errors/badrequestchatbskyconvosendmessageresponsebodyerror.md
+  - docs/models/errors/badrequestchatbskyconvounmuteconvoresponsebodyerror.md
+  - docs/models/errors/badrequestchatbskyconvoupdatereadresponsebodyerror.md
+  - docs/models/errors/badrequestchatbskymoderationgetactormetadataresponsebodyerror.md
+  - docs/models/errors/badrequestchatbskymoderationgetmessagecontextresponsebodyerror.md
+  - docs/models/errors/badrequestchatbskymoderationupdateactoraccessresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotoadmindeleteaccountresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotoadmindisableaccountinvitesresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotoadmindisableinvitecodesresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotoadminenableaccountinvitesresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotoadmingetaccountinforesponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotoadmingetaccountinfosresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotoadmingetinvitecodesresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotoadmingetsubjectstatusresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotoadminsearchaccountsresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotoadminsendemailresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotoadminupdateaccountemailresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotoadminupdateaccounthandleresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotoadminupdateaccountpasswordresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotoadminupdatesubjectstatusresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotoidentitygetrecommendeddidcredentialsresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotoidentityrequestplcoperationsignatureresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotoidentityresolvehandleresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotoidentitysignplcoperationresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotoidentitysubmitplcoperationresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotoidentityupdatehandleresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotolabelquerylabelsresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotomoderationcreatereportresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotorepoapplywritesresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotorepocreaterecordresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotorepodeleterecordresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotorepodescribereporesponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotorepogetrecordresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotorepoimportreporesponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotorepolistmissingblobsresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotorepolistrecordsresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotorepoputrecordresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotorepouploadblobresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotoserveractivateaccountresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotoservercheckaccountstatusresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotoserverconfirmemailresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotoservercreateaccountresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotoservercreateapppasswordresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotoservercreateinvitecoderesponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotoservercreateinvitecodesresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotoservercreatesessionresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotoserverdeactivateaccountresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotoserverdeleteaccountresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotoserverdeletesessionresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotoserverdescribeserverresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotoservergetaccountinvitecodesresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotoservergetserviceauthresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotoservergetsessionresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotoserverlistapppasswordsresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotoserverrefreshsessionresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotoserverrequestaccountdeleteresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotoserverrequestemailconfirmationresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotoserverrequestemailupdateresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotoserverrequestpasswordresetresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotoserverreservesigningkeyresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotoserverresetpasswordresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotoserverrevokeapppasswordresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotoserverupdateemailresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotosyncgetblobresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotosyncgetblocksresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotosyncgetlatestcommitresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotosyncgetrecordresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotosyncgetreporesponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotosyncgetrepostatusresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotosynclistblobsresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotosynclistreposresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotosyncnotifyofupdateresponsebodyerror.md
+  - docs/models/errors/badrequestcomatprotosyncrequestcrawlresponsebodyerror.md
+  - docs/models/errors/badrequesterror.md
+  - docs/models/errors/badrequesttoolsozonecommunicationcreatetemplateresponsebodyerror.md
+  - docs/models/errors/badrequesttoolsozonecommunicationdeletetemplateresponsebodyerror.md
+  - docs/models/errors/badrequesttoolsozonecommunicationlisttemplatesresponsebodyerror.md
+  - docs/models/errors/badrequesttoolsozonecommunicationupdatetemplateresponsebodyerror.md
+  - docs/models/errors/badrequesttoolsozonemoderationemiteventresponsebodyerror.md
+  - docs/models/errors/badrequesttoolsozonemoderationgeteventresponsebodyerror.md
+  - docs/models/errors/badrequesttoolsozonemoderationgetrecordresponsebodyerror.md
+  - docs/models/errors/badrequesttoolsozonemoderationgetrecordsresponsebodyerror.md
+  - docs/models/errors/badrequesttoolsozonemoderationgetreporesponsebodyerror.md
+  - docs/models/errors/badrequesttoolsozonemoderationgetreposresponsebodyerror.md
+  - docs/models/errors/badrequesttoolsozonemoderationqueryeventsresponsebodyerror.md
+  - docs/models/errors/badrequesttoolsozonemoderationquerystatusesresponsebodyerror.md
+  - docs/models/errors/badrequesttoolsozonemoderationsearchreposresponsebodyerror.md
+  - docs/models/errors/badrequesttoolsozoneservergetconfigresponsebodyerror.md
+  - docs/models/errors/badrequesttoolsozonesetaddvaluesresponsebodyerror.md
+  - docs/models/errors/badrequesttoolsozonesetdeletesetresponsebodyerror.md
+  - docs/models/errors/badrequesttoolsozonesetdeletevaluesresponsebodyerror.md
+  - docs/models/errors/badrequesttoolsozonesetgetvaluesresponsebodyerror.md
+  - docs/models/errors/badrequesttoolsozonesetquerysetsresponsebodyerror.md
+  - docs/models/errors/badrequesttoolsozonesettinglistoptionsresponsebodyerror.md
+  - docs/models/errors/badrequesttoolsozonesettingremoveoptionsresponsebodyerror.md
+  - docs/models/errors/badrequesttoolsozonesettingupsertoptionresponsebodyerror.md
+  - docs/models/errors/badrequesttoolsozonesetupsertsetresponsebodyerror.md
+  - docs/models/errors/badrequesttoolsozonesignaturefindcorrelationresponsebodyerror.md
+  - docs/models/errors/badrequesttoolsozonesignaturefindrelatedaccountsresponsebodyerror.md
+  - docs/models/errors/badrequesttoolsozonesignaturesearchaccountsresponsebodyerror.md
+  - docs/models/errors/badrequesttoolsozoneteamaddmemberresponsebodyerror.md
+  - docs/models/errors/badrequesttoolsozoneteamdeletememberresponsebodyerror.md
+  - docs/models/errors/badrequesttoolsozoneteamlistmembersresponsebodyerror.md
+  - docs/models/errors/badrequesttoolsozoneteamupdatememberresponsebodyerror.md
   - docs/models/errors/chatbskyactordeleteaccounterror.md
-  - docs/models/errors/chatbskyactordeleteaccountresponsebody.md
-  - docs/models/errors/chatbskyactorexportaccountdataaccountresponsebody.md
   - docs/models/errors/chatbskyactorexportaccountdataerror.md
-  - docs/models/errors/chatbskyactorexportaccountdataresponsebody.md
-  - docs/models/errors/chatbskyconvodeletemessageforselfconvoresponsebody.md
   - docs/models/errors/chatbskyconvodeletemessageforselferror.md
-  - docs/models/errors/chatbskyconvodeletemessageforselfresponsebody.md
-  - docs/models/errors/chatbskyconvogetconvochatsresponsebody.md
   - docs/models/errors/chatbskyconvogetconvoerror.md
-  - docs/models/errors/chatbskyconvogetconvoformemberschatconvosresponsebody.md
   - docs/models/errors/chatbskyconvogetconvoformemberserror.md
-  - docs/models/errors/chatbskyconvogetconvoformembersresponsebody.md
-  - docs/models/errors/chatbskyconvogetconvoresponsebody.md
-  - docs/models/errors/chatbskyconvogetlogconversationsresponsebody.md
   - docs/models/errors/chatbskyconvogetlogerror.md
-  - docs/models/errors/chatbskyconvogetlogresponsebody.md
-  - docs/models/errors/chatbskyconvogetmessageschatconvosresponsebody.md
   - docs/models/errors/chatbskyconvogetmessageserror.md
-  - docs/models/errors/chatbskyconvogetmessagesresponsebody.md
-  - docs/models/errors/chatbskyconvoleaveconvoconversationsresponsebody.md
   - docs/models/errors/chatbskyconvoleaveconvoerror.md
-  - docs/models/errors/chatbskyconvoleaveconvoresponsebody.md
-  - docs/models/errors/chatbskyconvolistconvosconvoresponsebody.md
   - docs/models/errors/chatbskyconvolistconvoserror.md
-  - docs/models/errors/chatbskyconvolistconvosresponsebody.md
-  - docs/models/errors/chatbskyconvomuteconvoconvosresponsebody.md
   - docs/models/errors/chatbskyconvomuteconvoerror.md
-  - docs/models/errors/chatbskyconvomuteconvoresponsebody.md
-  - docs/models/errors/chatbskyconvosendmessagebatchchatconvoresponsebody.md
   - docs/models/errors/chatbskyconvosendmessagebatcherror.md
-  - docs/models/errors/chatbskyconvosendmessagebatchresponsebody.md
-  - docs/models/errors/chatbskyconvosendmessagechatconvosresponsebody.md
   - docs/models/errors/chatbskyconvosendmessageerror.md
-  - docs/models/errors/chatbskyconvosendmessageresponsebody.md
-  - docs/models/errors/chatbskyconvounmuteconvochatconvoresponsebody.md
   - docs/models/errors/chatbskyconvounmuteconvoerror.md
-  - docs/models/errors/chatbskyconvounmuteconvoresponsebody.md
-  - docs/models/errors/chatbskyconvoupdatereadchatconvosresponsebody.md
   - docs/models/errors/chatbskyconvoupdatereaderror.md
-  - docs/models/errors/chatbskyconvoupdatereadresponsebody.md
-  - docs/models/errors/chatbskymoderationgetactormetadatachatmoderationresponsebody.md
   - docs/models/errors/chatbskymoderationgetactormetadataerror.md
-  - docs/models/errors/chatbskymoderationgetactormetadataresponsebody.md
-  - docs/models/errors/chatbskymoderationgetmessagecontextchatsresponsebody.md
   - docs/models/errors/chatbskymoderationgetmessagecontexterror.md
-  - docs/models/errors/chatbskymoderationgetmessagecontextresponsebody.md
-  - docs/models/errors/chatbskymoderationupdateactoraccesschatmoderationresponsebody.md
   - docs/models/errors/chatbskymoderationupdateactoraccesserror.md
-  - docs/models/errors/chatbskymoderationupdateactoraccessresponsebody.md
-  - docs/models/errors/comatprotoadmindeleteaccountadminsresponsebody.md
   - docs/models/errors/comatprotoadmindeleteaccounterror.md
-  - docs/models/errors/comatprotoadmindeleteaccountresponsebody.md
-  - docs/models/errors/comatprotoadmindisableaccountinvitesatprotoadminresponsebody.md
   - docs/models/errors/comatprotoadmindisableaccountinviteserror.md
-  - docs/models/errors/comatprotoadmindisableaccountinvitesresponsebody.md
-  - docs/models/errors/comatprotoadmindisableinvitecodesadminresponsebody.md
   - docs/models/errors/comatprotoadmindisableinvitecodeserror.md
-  - docs/models/errors/comatprotoadmindisableinvitecodesresponsebody.md
-  - docs/models/errors/comatprotoadminenableaccountinvitesadminsresponsebody.md
   - docs/models/errors/comatprotoadminenableaccountinviteserror.md
-  - docs/models/errors/comatprotoadminenableaccountinvitesresponsebody.md
-  - docs/models/errors/comatprotoadmingetaccountinfoadminresponsebody.md
   - docs/models/errors/comatprotoadmingetaccountinfoerror.md
-  - docs/models/errors/comatprotoadmingetaccountinforesponsebody.md
-  - docs/models/errors/comatprotoadmingetaccountinfosadminsresponsebody.md
   - docs/models/errors/comatprotoadmingetaccountinfoserror.md
-  - docs/models/errors/comatprotoadmingetaccountinfosresponsebody.md
-  - docs/models/errors/comatprotoadmingetinvitecodesatprotoadminresponsebody.md
   - docs/models/errors/comatprotoadmingetinvitecodeserror.md
-  - docs/models/errors/comatprotoadmingetinvitecodesresponsebody.md
-  - docs/models/errors/comatprotoadmingetsubjectstatusadminresponsebody.md
   - docs/models/errors/comatprotoadmingetsubjectstatuserror.md
-  - docs/models/errors/comatprotoadmingetsubjectstatusresponsebody.md
-  - docs/models/errors/comatprotoadminsearchaccountsatprotoadminresponsebody.md
   - docs/models/errors/comatprotoadminsearchaccountserror.md
-  - docs/models/errors/comatprotoadminsearchaccountsresponsebody.md
-  - docs/models/errors/comatprotoadminsendemailadminresponsebody.md
   - docs/models/errors/comatprotoadminsendemailerror.md
-  - docs/models/errors/comatprotoadminsendemailresponsebody.md
-  - docs/models/errors/comatprotoadminupdateaccountemailadminresponsebody.md
   - docs/models/errors/comatprotoadminupdateaccountemailerror.md
-  - docs/models/errors/comatprotoadminupdateaccountemailresponsebody.md
-  - docs/models/errors/comatprotoadminupdateaccounthandleadminresponsebody.md
   - docs/models/errors/comatprotoadminupdateaccounthandleerror.md
-  - docs/models/errors/comatprotoadminupdateaccounthandleresponsebody.md
-  - docs/models/errors/comatprotoadminupdateaccountpasswordadminresponsebody.md
   - docs/models/errors/comatprotoadminupdateaccountpassworderror.md
-  - docs/models/errors/comatprotoadminupdateaccountpasswordresponsebody.md
-  - docs/models/errors/comatprotoadminupdatesubjectstatusadminresponsebody.md
   - docs/models/errors/comatprotoadminupdatesubjectstatuserror.md
-  - docs/models/errors/comatprotoadminupdatesubjectstatusresponsebody.md
   - docs/models/errors/comatprotoidentitygetrecommendeddidcredentialserror.md
-  - docs/models/errors/comatprotoidentitygetrecommendeddidcredentialsidentityresponsebody.md
-  - docs/models/errors/comatprotoidentitygetrecommendeddidcredentialsresponsebody.md
-  - docs/models/errors/comatprotoidentityrequestplcoperationsignatureatprotoidentityresponsebody.md
   - docs/models/errors/comatprotoidentityrequestplcoperationsignatureerror.md
-  - docs/models/errors/comatprotoidentityrequestplcoperationsignatureresponsebody.md
-  - docs/models/errors/comatprotoidentityresolvehandleatprotoidentityresponsebody.md
   - docs/models/errors/comatprotoidentityresolvehandleerror.md
-  - docs/models/errors/comatprotoidentityresolvehandleresponsebody.md
-  - docs/models/errors/comatprotoidentitysignplcoperationatprotoidentityresponsebody.md
   - docs/models/errors/comatprotoidentitysignplcoperationerror.md
-  - docs/models/errors/comatprotoidentitysignplcoperationresponsebody.md
   - docs/models/errors/comatprotoidentitysubmitplcoperationerror.md
-  - docs/models/errors/comatprotoidentitysubmitplcoperationidentityresponsebody.md
-  - docs/models/errors/comatprotoidentitysubmitplcoperationresponsebody.md
   - docs/models/errors/comatprotoidentityupdatehandleerror.md
-  - docs/models/errors/comatprotoidentityupdatehandleidentitiesresponsebody.md
-  - docs/models/errors/comatprotoidentityupdatehandleresponsebody.md
-  - docs/models/errors/comatprotolabelquerylabelsatprotolabelsresponsebody.md
   - docs/models/errors/comatprotolabelquerylabelserror.md
-  - docs/models/errors/comatprotolabelquerylabelsresponsebody.md
-  - docs/models/errors/comatprotomoderationcreatereportatprotomoderationresponsebody.md
   - docs/models/errors/comatprotomoderationcreatereporterror.md
-  - docs/models/errors/comatprotomoderationcreatereportresponsebody.md
   - docs/models/errors/comatprotorepoapplywriteserror.md
-  - docs/models/errors/comatprotorepoapplywritesreposresponsebody.md
-  - docs/models/errors/comatprotorepoapplywritesresponsebody.md
   - docs/models/errors/comatprotorepocreaterecorderror.md
-  - docs/models/errors/comatprotorepocreaterecordreposresponsebody.md
-  - docs/models/errors/comatprotorepocreaterecordresponsebody.md
-  - docs/models/errors/comatprotorepodeleterecordatprotoreporesponsebody.md
   - docs/models/errors/comatprotorepodeleterecorderror.md
-  - docs/models/errors/comatprotorepodeleterecordresponsebody.md
   - docs/models/errors/comatprotorepodescriberepoerror.md
-  - docs/models/errors/comatprotorepodescribereporeposresponsebody.md
-  - docs/models/errors/comatprotorepodescribereporesponsebody.md
   - docs/models/errors/comatprotorepogetrecorderror.md
-  - docs/models/errors/comatprotorepogetrecordreposresponsebody.md
-  - docs/models/errors/comatprotorepogetrecordresponsebody.md
-  - docs/models/errors/comatprotorepoimportrepoatprotoreporesponsebody.md
   - docs/models/errors/comatprotorepoimportrepoerror.md
-  - docs/models/errors/comatprotorepoimportreporesponsebody.md
   - docs/models/errors/comatprotorepolistmissingblobserror.md
-  - docs/models/errors/comatprotorepolistmissingblobsreposresponsebody.md
-  - docs/models/errors/comatprotorepolistmissingblobsresponsebody.md
   - docs/models/errors/comatprotorepolistrecordserror.md
-  - docs/models/errors/comatprotorepolistrecordsreposresponsebody.md
-  - docs/models/errors/comatprotorepolistrecordsresponsebody.md
   - docs/models/errors/comatprotorepoputrecorderror.md
-  - docs/models/errors/comatprotorepoputrecordreporesponsebody.md
-  - docs/models/errors/comatprotorepoputrecordresponsebody.md
-  - docs/models/errors/comatprotorepouploadblobatprotoreporesponsebody.md
   - docs/models/errors/comatprotorepouploadbloberror.md
-  - docs/models/errors/comatprotorepouploadblobresponsebody.md
-  - docs/models/errors/comatprotoserveractivateaccountatprotoserverresponsebody.md
   - docs/models/errors/comatprotoserveractivateaccounterror.md
-  - docs/models/errors/comatprotoserveractivateaccountresponsebody.md
   - docs/models/errors/comatprotoservercheckaccountstatuserror.md
-  - docs/models/errors/comatprotoservercheckaccountstatusresponsebody.md
-  - docs/models/errors/comatprotoservercheckaccountstatusserverresponsebody.md
   - docs/models/errors/comatprotoserverconfirmemailerror.md
-  - docs/models/errors/comatprotoserverconfirmemailresponsebody.md
-  - docs/models/errors/comatprotoserverconfirmemailserverresponsebody.md
-  - docs/models/errors/comatprotoservercreateaccountatprotoserverresponsebody.md
   - docs/models/errors/comatprotoservercreateaccounterror.md
-  - docs/models/errors/comatprotoservercreateaccountresponsebody.md
-  - docs/models/errors/comatprotoservercreateapppasswordatprotoserverresponsebody.md
   - docs/models/errors/comatprotoservercreateapppassworderror.md
-  - docs/models/errors/comatprotoservercreateapppasswordresponsebody.md
-  - docs/models/errors/comatprotoservercreateinvitecodeatprotoserverresponsebody.md
   - docs/models/errors/comatprotoservercreateinvitecodeerror.md
-  - docs/models/errors/comatprotoservercreateinvitecoderesponsebody.md
-  - docs/models/errors/comatprotoservercreateinvitecodesatprotoserverresponsebody.md
   - docs/models/errors/comatprotoservercreateinvitecodeserror.md
-  - docs/models/errors/comatprotoservercreateinvitecodesresponsebody.md
   - docs/models/errors/comatprotoservercreatesessionerror.md
-  - docs/models/errors/comatprotoservercreatesessionresponsebody.md
-  - docs/models/errors/comatprotoservercreatesessionserverresponsebody.md
   - docs/models/errors/comatprotoserverdeactivateaccounterror.md
-  - docs/models/errors/comatprotoserverdeactivateaccountresponsebody.md
-  - docs/models/errors/comatprotoserverdeactivateaccountserverresponsebody.md
-  - docs/models/errors/comatprotoserverdeleteaccountatprotoserverresponsebody.md
   - docs/models/errors/comatprotoserverdeleteaccounterror.md
-  - docs/models/errors/comatprotoserverdeleteaccountresponsebody.md
-  - docs/models/errors/comatprotoserverdeletesessionatprotoserverresponsebody.md
   - docs/models/errors/comatprotoserverdeletesessionerror.md
-  - docs/models/errors/comatprotoserverdeletesessionresponsebody.md
-  - docs/models/errors/comatprotoserverdescribeserveratprotoserverresponsebody.md
   - docs/models/errors/comatprotoserverdescribeservererror.md
-  - docs/models/errors/comatprotoserverdescribeserverresponsebody.md
-  - docs/models/errors/comatprotoservergetaccountinvitecodesaccountsresponsebody.md
   - docs/models/errors/comatprotoservergetaccountinvitecodeserror.md
-  - docs/models/errors/comatprotoservergetaccountinvitecodesresponsebody.md
   - docs/models/errors/comatprotoservergetserviceautherror.md
-  - docs/models/errors/comatprotoservergetserviceauthresponsebody.md
-  - docs/models/errors/comatprotoservergetserviceauthserversresponsebody.md
   - docs/models/errors/comatprotoservergetsessionerror.md
-  - docs/models/errors/comatprotoservergetsessionresponsebody.md
-  - docs/models/errors/comatprotoservergetsessionserversresponsebody.md
   - docs/models/errors/comatprotoserverlistapppasswordserror.md
-  - docs/models/errors/comatprotoserverlistapppasswordsresponsebody.md
-  - docs/models/errors/comatprotoserverlistapppasswordsserverresponsebody.md
-  - docs/models/errors/comatprotoserverrefreshsessionatprotoserverresponsebody.md
   - docs/models/errors/comatprotoserverrefreshsessionerror.md
-  - docs/models/errors/comatprotoserverrefreshsessionresponsebody.md
   - docs/models/errors/comatprotoserverrequestaccountdeleteerror.md
-  - docs/models/errors/comatprotoserverrequestaccountdeleteresponsebody.md
-  - docs/models/errors/comatprotoserverrequestaccountdeleteserverresponsebody.md
-  - docs/models/errors/comatprotoserverrequestemailconfirmationatprotoserverresponsebody.md
   - docs/models/errors/comatprotoserverrequestemailconfirmationerror.md
-  - docs/models/errors/comatprotoserverrequestemailconfirmationresponsebody.md
   - docs/models/errors/comatprotoserverrequestemailupdateerror.md
-  - docs/models/errors/comatprotoserverrequestemailupdateresponsebody.md
-  - docs/models/errors/comatprotoserverrequestemailupdateserverresponsebody.md
-  - docs/models/errors/comatprotoserverrequestpasswordresetatprotoserverresponsebody.md
   - docs/models/errors/comatprotoserverrequestpasswordreseterror.md
-  - docs/models/errors/comatprotoserverrequestpasswordresetresponsebody.md
   - docs/models/errors/comatprotoserverreservesigningkeyerror.md
-  - docs/models/errors/comatprotoserverreservesigningkeyresponsebody.md
-  - docs/models/errors/comatprotoserverreservesigningkeyserversresponsebody.md
-  - docs/models/errors/comatprotoserverresetpasswordatprotoserverresponsebody.md
   - docs/models/errors/comatprotoserverresetpassworderror.md
-  - docs/models/errors/comatprotoserverresetpasswordresponsebody.md
-  - docs/models/errors/comatprotoserverrevokeapppasswordatprotoserverresponsebody.md
   - docs/models/errors/comatprotoserverrevokeapppassworderror.md
-  - docs/models/errors/comatprotoserverrevokeapppasswordresponsebody.md
   - docs/models/errors/comatprotoserverupdateemailerror.md
-  - docs/models/errors/comatprotoserverupdateemailresponsebody.md
-  - docs/models/errors/comatprotoserverupdateemailserversresponsebody.md
-  - docs/models/errors/comatprotosyncgetblobatprotosyncresponsebody.md
   - docs/models/errors/comatprotosyncgetbloberror.md
-  - docs/models/errors/comatprotosyncgetblobresponsebody.md
   - docs/models/errors/comatprotosyncgetblockserror.md
-  - docs/models/errors/comatprotosyncgetblocksresponsebody.md
-  - docs/models/errors/comatprotosyncgetblockssyncsresponsebody.md
   - docs/models/errors/comatprotosyncgetlatestcommiterror.md
-  - docs/models/errors/comatprotosyncgetlatestcommitresponsebody.md
-  - docs/models/errors/comatprotosyncgetlatestcommitsyncsresponsebody.md
-  - docs/models/errors/comatprotosyncgetrecordatprotosyncsresponsebody.md
   - docs/models/errors/comatprotosyncgetrecorderror.md
-  - docs/models/errors/comatprotosyncgetrecordresponsebody.md
   - docs/models/errors/comatprotosyncgetrepoerror.md
-  - docs/models/errors/comatprotosyncgetreporesponsebody.md
   - docs/models/errors/comatprotosyncgetrepostatuserror.md
-  - docs/models/errors/comatprotosyncgetrepostatusresponsebody.md
-  - docs/models/errors/comatprotosyncgetrepostatussyncsresponsebody.md
-  - docs/models/errors/comatprotosyncgetreposyncresponsebody.md
   - docs/models/errors/comatprotosynclistblobserror.md
-  - docs/models/errors/comatprotosynclistblobsresponsebody.md
-  - docs/models/errors/comatprotosynclistblobssyncresponsebody.md
-  - docs/models/errors/comatprotosynclistreposatprotosyncresponsebody.md
   - docs/models/errors/comatprotosynclistreposerror.md
-  - docs/models/errors/comatprotosynclistreposresponsebody.md
   - docs/models/errors/comatprotosyncnotifyofupdateerror.md
-  - docs/models/errors/comatprotosyncnotifyofupdateresponsebody.md
-  - docs/models/errors/comatprotosyncnotifyofupdatesyncresponsebody.md
   - docs/models/errors/comatprotosyncrequestcrawlerror.md
-  - docs/models/errors/comatprotosyncrequestcrawlresponsebody.md
-  - docs/models/errors/comatprotosyncrequestcrawlsyncsresponsebody.md
-  - docs/models/errors/errort.md
   - docs/models/errors/internalservererror.md
-  - docs/models/errors/notfound.md
-  - docs/models/errors/ratelimited.md
-  - docs/models/errors/timeout.md
-  - docs/models/errors/toolsozonecommunicationcreatetemplatecommunicationsresponsebody.md
+  - docs/models/errors/notfounderror.md
+  - docs/models/errors/ratelimitederror.md
+  - docs/models/errors/timeouterror.md
   - docs/models/errors/toolsozonecommunicationcreatetemplateerror.md
-  - docs/models/errors/toolsozonecommunicationcreatetemplateresponsebody.md
   - docs/models/errors/toolsozonecommunicationdeletetemplateerror.md
-  - docs/models/errors/toolsozonecommunicationdeletetemplateozonecommunicationresponsebody.md
-  - docs/models/errors/toolsozonecommunicationdeletetemplateresponsebody.md
   - docs/models/errors/toolsozonecommunicationlisttemplateserror.md
-  - docs/models/errors/toolsozonecommunicationlisttemplatesozonecommunicationresponsebody.md
-  - docs/models/errors/toolsozonecommunicationlisttemplatesresponsebody.md
   - docs/models/errors/toolsozonecommunicationupdatetemplateerror.md
-  - docs/models/errors/toolsozonecommunicationupdatetemplateozonecommunicationresponsebody.md
-  - docs/models/errors/toolsozonecommunicationupdatetemplateresponsebody.md
   - docs/models/errors/toolsozonemoderationemiteventerror.md
-  - docs/models/errors/toolsozonemoderationemiteventozonemoderationresponsebody.md
-  - docs/models/errors/toolsozonemoderationemiteventresponsebody.md
   - docs/models/errors/toolsozonemoderationgeteventerror.md
-  - docs/models/errors/toolsozonemoderationgeteventmoderationresponsebody.md
-  - docs/models/errors/toolsozonemoderationgeteventresponsebody.md
   - docs/models/errors/toolsozonemoderationgetrecorderror.md
-  - docs/models/errors/toolsozonemoderationgetrecordozonemoderationresponsebody.md
-  - docs/models/errors/toolsozonemoderationgetrecordresponsebody.md
   - docs/models/errors/toolsozonemoderationgetrecordserror.md
-  - docs/models/errors/toolsozonemoderationgetrecordsmoderationsresponsebody.md
-  - docs/models/errors/toolsozonemoderationgetrecordsresponsebody.md
   - docs/models/errors/toolsozonemoderationgetrepoerror.md
-  - docs/models/errors/toolsozonemoderationgetrepoozonemoderationresponsebody.md
-  - docs/models/errors/toolsozonemoderationgetreporesponsebody.md
   - docs/models/errors/toolsozonemoderationgetreposerror.md
-  - docs/models/errors/toolsozonemoderationgetreposmoderationsresponsebody.md
-  - docs/models/errors/toolsozonemoderationgetreposresponsebody.md
   - docs/models/errors/toolsozonemoderationqueryeventserror.md
-  - docs/models/errors/toolsozonemoderationqueryeventsmoderationresponsebody.md
-  - docs/models/errors/toolsozonemoderationqueryeventsresponsebody.md
   - docs/models/errors/toolsozonemoderationquerystatuseserror.md
-  - docs/models/errors/toolsozonemoderationquerystatusesmoderationsresponsebody.md
-  - docs/models/errors/toolsozonemoderationquerystatusesresponsebody.md
   - docs/models/errors/toolsozonemoderationsearchreposerror.md
-  - docs/models/errors/toolsozonemoderationsearchreposozonemoderationsresponsebody.md
-  - docs/models/errors/toolsozonemoderationsearchreposresponsebody.md
   - docs/models/errors/toolsozoneservergetconfigerror.md
-  - docs/models/errors/toolsozoneservergetconfigozoneserverresponsebody.md
-  - docs/models/errors/toolsozoneservergetconfigresponsebody.md
   - docs/models/errors/toolsozonesetaddvalueserror.md
-  - docs/models/errors/toolsozonesetaddvaluesozonesetresponsebody.md
-  - docs/models/errors/toolsozonesetaddvaluesresponsebody.md
   - docs/models/errors/toolsozonesetdeleteseterror.md
-  - docs/models/errors/toolsozonesetdeletesetresponsebody.md
-  - docs/models/errors/toolsozonesetdeletesetsetresponsebody.md
   - docs/models/errors/toolsozonesetdeletevalueserror.md
-  - docs/models/errors/toolsozonesetdeletevaluesresponsebody.md
-  - docs/models/errors/toolsozonesetdeletevaluessetsresponsebody.md
   - docs/models/errors/toolsozonesetgetvalueserror.md
-  - docs/models/errors/toolsozonesetgetvaluesresponsebody.md
-  - docs/models/errors/toolsozonesetgetvaluessetsresponsebody.md
   - docs/models/errors/toolsozonesetquerysetserror.md
-  - docs/models/errors/toolsozonesetquerysetsresponsebody.md
-  - docs/models/errors/toolsozonesetquerysetssetresponsebody.md
   - docs/models/errors/toolsozonesettinglistoptionserror.md
-  - docs/models/errors/toolsozonesettinglistoptionsresponsebody.md
-  - docs/models/errors/toolsozonesettinglistoptionssettingsresponsebody.md
   - docs/models/errors/toolsozonesettingremoveoptionserror.md
-  - docs/models/errors/toolsozonesettingremoveoptionsresponsebody.md
-  - docs/models/errors/toolsozonesettingremoveoptionssettingresponsebody.md
   - docs/models/errors/toolsozonesettingupsertoptionerror.md
-  - docs/models/errors/toolsozonesettingupsertoptionozonesettingsresponsebody.md
-  - docs/models/errors/toolsozonesettingupsertoptionresponsebody.md
   - docs/models/errors/toolsozonesetupsertseterror.md
-  - docs/models/errors/toolsozonesetupsertsetozonesetresponsebody.md
-  - docs/models/errors/toolsozonesetupsertsetresponsebody.md
   - docs/models/errors/toolsozonesignaturefindcorrelationerror.md
-  - docs/models/errors/toolsozonesignaturefindcorrelationresponsebody.md
-  - docs/models/errors/toolsozonesignaturefindcorrelationsignatureresponsebody.md
   - docs/models/errors/toolsozonesignaturefindrelatedaccountserror.md
-  - docs/models/errors/toolsozonesignaturefindrelatedaccountsozonesignaturesresponsebody.md
-  - docs/models/errors/toolsozonesignaturefindrelatedaccountsresponsebody.md
   - docs/models/errors/toolsozonesignaturesearchaccountserror.md
-  - docs/models/errors/toolsozonesignaturesearchaccountsozonesignatureresponsebody.md
-  - docs/models/errors/toolsozonesignaturesearchaccountsresponsebody.md
   - docs/models/errors/toolsozoneteamaddmembererror.md
-  - docs/models/errors/toolsozoneteamaddmemberozoneresponsebody.md
-  - docs/models/errors/toolsozoneteamaddmemberresponsebody.md
   - docs/models/errors/toolsozoneteamdeletemembererror.md
-  - docs/models/errors/toolsozoneteamdeletememberresponsebody.md
-  - docs/models/errors/toolsozoneteamdeletememberteamsresponsebody.md
   - docs/models/errors/toolsozoneteamlistmemberserror.md
-  - docs/models/errors/toolsozoneteamlistmembersresponsebody.md
-  - docs/models/errors/toolsozoneteamlistmembersteamresponsebody.md
   - docs/models/errors/toolsozoneteamupdatemembererror.md
-  - docs/models/errors/toolsozoneteamupdatememberresponsebody.md
-  - docs/models/errors/toolsozoneteamupdatememberteamsresponsebody.md
-  - docs/models/errors/unauthorized.md
+  - docs/models/errors/unauthorizedappbskyactorgetpreferencesresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskyactorgetprofileresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskyactorgetprofilesresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskyactorgetsuggestionsresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskyactorputpreferencesresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskyactorsearchactorsresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskyactorsearchactorstypeaheadresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskyfeeddescribefeedgeneratorresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskyfeedgetactorfeedsresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskyfeedgetactorlikesresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskyfeedgetauthorfeedresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskyfeedgetfeedgeneratorresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskyfeedgetfeedgeneratorsresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskyfeedgetfeedresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskyfeedgetfeedskeletonresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskyfeedgetlikesresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskyfeedgetlistfeedresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskyfeedgetpostsresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskyfeedgetpostthreadresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskyfeedgetquotesresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskyfeedgetrepostedbyresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskyfeedgetsuggestedfeedsresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskyfeedgettimelineresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskyfeedsearchpostsresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskyfeedsendinteractionsresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskygraphgetactorstarterpacksresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskygraphgetblocksresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskygraphgetfollowersresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskygraphgetfollowsresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskygraphgetknownfollowersresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskygraphgetlistblocksresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskygraphgetlistmutesresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskygraphgetlistresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskygraphgetlistsresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskygraphgetmutesresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskygraphgetrelationshipsresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskygraphgetstarterpackresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskygraphgetstarterpacksresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskygraphgetsuggestedfollowsbyactorresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskygraphmuteactorlistresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskygraphmuteactorresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskygraphmutethreadresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskygraphsearchstarterpacksresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskygraphunmuteactorlistresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskygraphunmuteactorresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskygraphunmutethreadresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskylabelergetservicesresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskynotificationgetunreadcountresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskynotificationlistnotificationsresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskynotificationputpreferencesresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskynotificationregisterpushresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskynotificationupdateseenresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskyvideogetjobstatusresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskyvideogetuploadlimitsresponsebodyerror.md
+  - docs/models/errors/unauthorizedappbskyvideouploadvideoresponsebodyerror.md
+  - docs/models/errors/unauthorizedchatbskyactordeleteaccountresponsebodyerror.md
+  - docs/models/errors/unauthorizedchatbskyactorexportaccountdataresponsebodyerror.md
+  - docs/models/errors/unauthorizedchatbskyconvodeletemessageforselfresponsebodyerror.md
+  - docs/models/errors/unauthorizedchatbskyconvogetconvoformembersresponsebodyerror.md
+  - docs/models/errors/unauthorizedchatbskyconvogetconvoresponsebodyerror.md
+  - docs/models/errors/unauthorizedchatbskyconvogetlogresponsebodyerror.md
+  - docs/models/errors/unauthorizedchatbskyconvogetmessagesresponsebodyerror.md
+  - docs/models/errors/unauthorizedchatbskyconvoleaveconvoresponsebodyerror.md
+  - docs/models/errors/unauthorizedchatbskyconvolistconvosresponsebodyerror.md
+  - docs/models/errors/unauthorizedchatbskyconvomuteconvoresponsebodyerror.md
+  - docs/models/errors/unauthorizedchatbskyconvosendmessagebatchresponsebodyerror.md
+  - docs/models/errors/unauthorizedchatbskyconvosendmessageresponsebodyerror.md
+  - docs/models/errors/unauthorizedchatbskyconvounmuteconvoresponsebodyerror.md
+  - docs/models/errors/unauthorizedchatbskyconvoupdatereadresponsebodyerror.md
+  - docs/models/errors/unauthorizedchatbskymoderationgetactormetadataresponsebodyerror.md
+  - docs/models/errors/unauthorizedchatbskymoderationgetmessagecontextresponsebodyerror.md
+  - docs/models/errors/unauthorizedchatbskymoderationupdateactoraccessresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotoadmindeleteaccountresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotoadmindisableaccountinvitesresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotoadmindisableinvitecodesresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotoadminenableaccountinvitesresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotoadmingetaccountinforesponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotoadmingetaccountinfosresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotoadmingetinvitecodesresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotoadmingetsubjectstatusresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotoadminsearchaccountsresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotoadminsendemailresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotoadminupdateaccountemailresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotoadminupdateaccounthandleresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotoadminupdateaccountpasswordresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotoadminupdatesubjectstatusresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotoidentitygetrecommendeddidcredentialsresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotoidentityrequestplcoperationsignatureresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotoidentityresolvehandleresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotoidentitysignplcoperationresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotoidentitysubmitplcoperationresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotoidentityupdatehandleresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotolabelquerylabelsresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotomoderationcreatereportresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotorepoapplywritesresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotorepocreaterecordresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotorepodeleterecordresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotorepodescribereporesponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotorepogetrecordresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotorepoimportreporesponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotorepolistmissingblobsresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotorepolistrecordsresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotorepoputrecordresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotorepouploadblobresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotoserveractivateaccountresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotoservercheckaccountstatusresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotoserverconfirmemailresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotoservercreateaccountresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotoservercreateapppasswordresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotoservercreateinvitecoderesponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotoservercreateinvitecodesresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotoservercreatesessionresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotoserverdeactivateaccountresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotoserverdeleteaccountresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotoserverdeletesessionresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotoserverdescribeserverresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotoservergetaccountinvitecodesresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotoservergetserviceauthresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotoservergetsessionresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotoserverlistapppasswordsresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotoserverrefreshsessionresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotoserverrequestaccountdeleteresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotoserverrequestemailconfirmationresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotoserverrequestemailupdateresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotoserverrequestpasswordresetresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotoserverreservesigningkeyresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotoserverresetpasswordresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotoserverrevokeapppasswordresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotoserverupdateemailresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotosyncgetblobresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotosyncgetblocksresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotosyncgetlatestcommitresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotosyncgetrecordresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotosyncgetreporesponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotosyncgetrepostatusresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotosynclistblobsresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotosynclistreposresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotosyncnotifyofupdateresponsebodyerror.md
+  - docs/models/errors/unauthorizedcomatprotosyncrequestcrawlresponsebodyerror.md
+  - docs/models/errors/unauthorizederror.md
+  - docs/models/errors/unauthorizedtoolsozonecommunicationcreatetemplateresponsebodyerror.md
+  - docs/models/errors/unauthorizedtoolsozonecommunicationdeletetemplateresponsebodyerror.md
+  - docs/models/errors/unauthorizedtoolsozonecommunicationlisttemplatesresponsebodyerror.md
+  - docs/models/errors/unauthorizedtoolsozonecommunicationupdatetemplateresponsebodyerror.md
+  - docs/models/errors/unauthorizedtoolsozonemoderationemiteventresponsebodyerror.md
+  - docs/models/errors/unauthorizedtoolsozonemoderationgeteventresponsebodyerror.md
+  - docs/models/errors/unauthorizedtoolsozonemoderationgetrecordresponsebodyerror.md
+  - docs/models/errors/unauthorizedtoolsozonemoderationgetrecordsresponsebodyerror.md
+  - docs/models/errors/unauthorizedtoolsozonemoderationgetreporesponsebodyerror.md
+  - docs/models/errors/unauthorizedtoolsozonemoderationgetreposresponsebodyerror.md
+  - docs/models/errors/unauthorizedtoolsozonemoderationqueryeventsresponsebodyerror.md
+  - docs/models/errors/unauthorizedtoolsozonemoderationquerystatusesresponsebodyerror.md
+  - docs/models/errors/unauthorizedtoolsozonemoderationsearchreposresponsebodyerror.md
+  - docs/models/errors/unauthorizedtoolsozoneservergetconfigresponsebodyerror.md
+  - docs/models/errors/unauthorizedtoolsozonesetaddvaluesresponsebodyerror.md
+  - docs/models/errors/unauthorizedtoolsozonesetdeletesetresponsebodyerror.md
+  - docs/models/errors/unauthorizedtoolsozonesetdeletevaluesresponsebodyerror.md
+  - docs/models/errors/unauthorizedtoolsozonesetgetvaluesresponsebodyerror.md
+  - docs/models/errors/unauthorizedtoolsozonesetquerysetsresponsebodyerror.md
+  - docs/models/errors/unauthorizedtoolsozonesettinglistoptionsresponsebodyerror.md
+  - docs/models/errors/unauthorizedtoolsozonesettingremoveoptionsresponsebodyerror.md
+  - docs/models/errors/unauthorizedtoolsozonesettingupsertoptionresponsebodyerror.md
+  - docs/models/errors/unauthorizedtoolsozonesetupsertsetresponsebodyerror.md
+  - docs/models/errors/unauthorizedtoolsozonesignaturefindcorrelationresponsebodyerror.md
+  - docs/models/errors/unauthorizedtoolsozonesignaturefindrelatedaccountsresponsebodyerror.md
+  - docs/models/errors/unauthorizedtoolsozonesignaturesearchaccountsresponsebodyerror.md
+  - docs/models/errors/unauthorizedtoolsozoneteamaddmemberresponsebodyerror.md
+  - docs/models/errors/unauthorizedtoolsozoneteamdeletememberresponsebodyerror.md
+  - docs/models/errors/unauthorizedtoolsozoneteamlistmembersresponsebodyerror.md
+  - docs/models/errors/unauthorizedtoolsozoneteamupdatememberresponsebodyerror.md
   - docs/models/operations/appbskyactorgetpreferencesresponsebody.md
   - docs/models/operations/appbskyactorgetprofilerequest.md
   - docs/models/operations/appbskyactorgetprofilesrequest.md
@@ -775,7 +775,7 @@ generatedFiles:
   - docs/models/operations/appbskyactorgetsuggestionsrequest.md
   - docs/models/operations/appbskyactorgetsuggestionsresponse.md
   - docs/models/operations/appbskyactorgetsuggestionsresponsebody.md
-  - docs/models/operations/appbskyactorputpreferencesrequestbody.md
+  - docs/models/operations/appbskyactorputpreferencesbody.md
   - docs/models/operations/appbskyactorsearchactorsrequest.md
   - docs/models/operations/appbskyactorsearchactorsresponse.md
   - docs/models/operations/appbskyactorsearchactorsresponsebody.md
@@ -826,8 +826,10 @@ generatedFiles:
   - docs/models/operations/appbskyfeedsearchpostsrequest.md
   - docs/models/operations/appbskyfeedsearchpostsresponse.md
   - docs/models/operations/appbskyfeedsearchpostsresponsebody.md
-  - docs/models/operations/appbskyfeedsendinteractionsrequestbody.md
+  - docs/models/operations/appbskyfeedsearchpostssort.md
+  - docs/models/operations/appbskyfeedsendinteractionsbody.md
   - docs/models/operations/appbskyfeedsendinteractionsresponsebody.md
+  - docs/models/operations/appbskyfeedsendinteractionsunknown.md
   - docs/models/operations/appbskygraphgetactorstarterpacksrequest.md
   - docs/models/operations/appbskygraphgetactorstarterpacksresponse.md
   - docs/models/operations/appbskygraphgetactorstarterpacksresponsebody.md
@@ -866,15 +868,15 @@ generatedFiles:
   - docs/models/operations/appbskygraphgetstarterpacksresponsebody.md
   - docs/models/operations/appbskygraphgetsuggestedfollowsbyactorrequest.md
   - docs/models/operations/appbskygraphgetsuggestedfollowsbyactorresponsebody.md
-  - docs/models/operations/appbskygraphmuteactorlistrequestbody.md
-  - docs/models/operations/appbskygraphmuteactorrequestbody.md
-  - docs/models/operations/appbskygraphmutethreadrequestbody.md
+  - docs/models/operations/appbskygraphmuteactorbody.md
+  - docs/models/operations/appbskygraphmuteactorlistbody.md
+  - docs/models/operations/appbskygraphmutethreadbody.md
   - docs/models/operations/appbskygraphsearchstarterpacksrequest.md
   - docs/models/operations/appbskygraphsearchstarterpacksresponse.md
   - docs/models/operations/appbskygraphsearchstarterpacksresponsebody.md
-  - docs/models/operations/appbskygraphunmuteactorlistrequestbody.md
-  - docs/models/operations/appbskygraphunmuteactorrequestbody.md
-  - docs/models/operations/appbskygraphunmutethreadrequestbody.md
+  - docs/models/operations/appbskygraphunmuteactorbody.md
+  - docs/models/operations/appbskygraphunmuteactorlistbody.md
+  - docs/models/operations/appbskygraphunmutethreadbody.md
   - docs/models/operations/appbskylabelergetservicesrequest.md
   - docs/models/operations/appbskylabelergetservicesresponsebody.md
   - docs/models/operations/appbskynotificationgetunreadcountrequest.md
@@ -882,16 +884,16 @@ generatedFiles:
   - docs/models/operations/appbskynotificationlistnotificationsrequest.md
   - docs/models/operations/appbskynotificationlistnotificationsresponse.md
   - docs/models/operations/appbskynotificationlistnotificationsresponsebody.md
-  - docs/models/operations/appbskynotificationputpreferencesrequestbody.md
-  - docs/models/operations/appbskynotificationregisterpushrequestbody.md
-  - docs/models/operations/appbskynotificationupdateseenrequestbody.md
+  - docs/models/operations/appbskynotificationputpreferencesbody.md
+  - docs/models/operations/appbskynotificationregisterpushbody.md
+  - docs/models/operations/appbskynotificationupdateseenbody.md
   - docs/models/operations/appbskyvideogetjobstatusrequest.md
   - docs/models/operations/appbskyvideogetjobstatusresponsebody.md
   - docs/models/operations/appbskyvideogetuploadlimitsresponsebody.md
   - docs/models/operations/appbskyvideouploadvideoresponsebody.md
   - docs/models/operations/chatbskyactordeleteaccountresponsebody.md
   - docs/models/operations/chatbskyactordeleteaccountunknown.md
-  - docs/models/operations/chatbskyconvodeletemessageforselfrequestbody.md
+  - docs/models/operations/chatbskyconvodeletemessageforselfbody.md
   - docs/models/operations/chatbskyconvogetconvoformembersrequest.md
   - docs/models/operations/chatbskyconvogetconvoformembersresponsebody.md
   - docs/models/operations/chatbskyconvogetconvorequest.md
@@ -899,72 +901,76 @@ generatedFiles:
   - docs/models/operations/chatbskyconvogetlogrequest.md
   - docs/models/operations/chatbskyconvogetlogresponse.md
   - docs/models/operations/chatbskyconvogetlogresponsebody.md
+  - docs/models/operations/chatbskyconvogetmessagesmessages.md
   - docs/models/operations/chatbskyconvogetmessagesrequest.md
   - docs/models/operations/chatbskyconvogetmessagesresponse.md
   - docs/models/operations/chatbskyconvogetmessagesresponsebody.md
-  - docs/models/operations/chatbskyconvoleaveconvorequestbody.md
+  - docs/models/operations/chatbskyconvoleaveconvobody.md
   - docs/models/operations/chatbskyconvoleaveconvoresponsebody.md
   - docs/models/operations/chatbskyconvolistconvosrequest.md
   - docs/models/operations/chatbskyconvolistconvosresponse.md
   - docs/models/operations/chatbskyconvolistconvosresponsebody.md
-  - docs/models/operations/chatbskyconvomuteconvorequestbody.md
+  - docs/models/operations/chatbskyconvomuteconvobody.md
   - docs/models/operations/chatbskyconvomuteconvoresponsebody.md
-  - docs/models/operations/chatbskyconvosendmessagebatchrequestbody.md
+  - docs/models/operations/chatbskyconvosendmessagebatchbody.md
   - docs/models/operations/chatbskyconvosendmessagebatchresponsebody.md
-  - docs/models/operations/chatbskyconvosendmessagerequestbody.md
-  - docs/models/operations/chatbskyconvounmuteconvorequestbody.md
+  - docs/models/operations/chatbskyconvosendmessagebody.md
+  - docs/models/operations/chatbskyconvounmuteconvobody.md
   - docs/models/operations/chatbskyconvounmuteconvoresponsebody.md
-  - docs/models/operations/chatbskyconvoupdatereadrequestbody.md
+  - docs/models/operations/chatbskyconvoupdatereadbody.md
   - docs/models/operations/chatbskyconvoupdatereadresponsebody.md
   - docs/models/operations/chatbskymoderationgetactormetadatarequest.md
   - docs/models/operations/chatbskymoderationgetactormetadataresponsebody.md
   - docs/models/operations/chatbskymoderationgetmessagecontextmessages.md
   - docs/models/operations/chatbskymoderationgetmessagecontextrequest.md
   - docs/models/operations/chatbskymoderationgetmessagecontextresponsebody.md
-  - docs/models/operations/chatbskymoderationupdateactoraccessrequestbody.md
-  - docs/models/operations/comatprotoadmindeleteaccountrequestbody.md
-  - docs/models/operations/comatprotoadmindisableaccountinvitesrequestbody.md
-  - docs/models/operations/comatprotoadmindisableinvitecodesrequestbody.md
-  - docs/models/operations/comatprotoadminenableaccountinvitesrequestbody.md
+  - docs/models/operations/chatbskymoderationupdateactoraccessbody.md
+  - docs/models/operations/comatprotoadmindeleteaccountbody.md
+  - docs/models/operations/comatprotoadmindisableaccountinvitesbody.md
+  - docs/models/operations/comatprotoadmindisableinvitecodesbody.md
+  - docs/models/operations/comatprotoadminenableaccountinvitesbody.md
   - docs/models/operations/comatprotoadmingetaccountinforequest.md
   - docs/models/operations/comatprotoadmingetaccountinfosrequest.md
   - docs/models/operations/comatprotoadmingetaccountinfosresponsebody.md
   - docs/models/operations/comatprotoadmingetinvitecodesrequest.md
   - docs/models/operations/comatprotoadmingetinvitecodesresponse.md
   - docs/models/operations/comatprotoadmingetinvitecodesresponsebody.md
+  - docs/models/operations/comatprotoadmingetinvitecodessort.md
   - docs/models/operations/comatprotoadmingetsubjectstatusrequest.md
   - docs/models/operations/comatprotoadmingetsubjectstatusresponsebody.md
   - docs/models/operations/comatprotoadmingetsubjectstatussubject.md
   - docs/models/operations/comatprotoadminsearchaccountsrequest.md
   - docs/models/operations/comatprotoadminsearchaccountsresponse.md
   - docs/models/operations/comatprotoadminsearchaccountsresponsebody.md
-  - docs/models/operations/comatprotoadminsendemailrequestbody.md
+  - docs/models/operations/comatprotoadminsendemailbody.md
   - docs/models/operations/comatprotoadminsendemailresponsebody.md
-  - docs/models/operations/comatprotoadminupdateaccountemailrequestbody.md
-  - docs/models/operations/comatprotoadminupdateaccounthandlerequestbody.md
-  - docs/models/operations/comatprotoadminupdateaccountpasswordrequestbody.md
-  - docs/models/operations/comatprotoadminupdatesubjectstatusrequestbody.md
+  - docs/models/operations/comatprotoadminupdateaccountemailbody.md
+  - docs/models/operations/comatprotoadminupdateaccounthandlebody.md
+  - docs/models/operations/comatprotoadminupdateaccountpasswordbody.md
+  - docs/models/operations/comatprotoadminupdatesubjectstatusbody.md
+  - docs/models/operations/comatprotoadminupdatesubjectstatusbodysubject.md
   - docs/models/operations/comatprotoadminupdatesubjectstatusresponsebody.md
-  - docs/models/operations/comatprotoadminupdatesubjectstatussubject.md
+  - docs/models/operations/comatprotoadminupdatesubjectstatusresponsesubject.md
   - docs/models/operations/comatprotoidentitygetrecommendeddidcredentialsresponsebody.md
   - docs/models/operations/comatprotoidentityresolvehandlerequest.md
   - docs/models/operations/comatprotoidentityresolvehandleresponsebody.md
-  - docs/models/operations/comatprotoidentitysignplcoperationrequestbody.md
+  - docs/models/operations/comatprotoidentitysignplcoperationbody.md
   - docs/models/operations/comatprotoidentitysignplcoperationresponsebody.md
-  - docs/models/operations/comatprotoidentitysubmitplcoperationrequestbody.md
-  - docs/models/operations/comatprotoidentityupdatehandlerequestbody.md
+  - docs/models/operations/comatprotoidentitysubmitplcoperationbody.md
+  - docs/models/operations/comatprotoidentityupdatehandlebody.md
   - docs/models/operations/comatprotolabelquerylabelsrequest.md
   - docs/models/operations/comatprotolabelquerylabelsresponse.md
   - docs/models/operations/comatprotolabelquerylabelsresponsebody.md
-  - docs/models/operations/comatprotomoderationcreatereportatprotomoderationsubject.md
-  - docs/models/operations/comatprotomoderationcreatereportrequestbody.md
+  - docs/models/operations/comatprotomoderationcreatereportbody.md
+  - docs/models/operations/comatprotomoderationcreatereportbodysubject.md
   - docs/models/operations/comatprotomoderationcreatereportresponsebody.md
-  - docs/models/operations/comatprotomoderationcreatereportsubject.md
-  - docs/models/operations/comatprotorepoapplywritesrequestbody.md
+  - docs/models/operations/comatprotomoderationcreatereportresponsesubject.md
+  - docs/models/operations/comatprotorepoapplywritesbody.md
   - docs/models/operations/comatprotorepoapplywritesresponsebody.md
-  - docs/models/operations/comatprotorepocreaterecordrequestbody.md
+  - docs/models/operations/comatprotorepocreaterecordbody.md
   - docs/models/operations/comatprotorepocreaterecordresponsebody.md
-  - docs/models/operations/comatprotorepodeleterecordrequestbody.md
+  - docs/models/operations/comatprotorepocreaterecordvalidationstatus.md
+  - docs/models/operations/comatprotorepodeleterecordbody.md
   - docs/models/operations/comatprotorepodeleterecordresponsebody.md
   - docs/models/operations/comatprotorepodescribereporequest.md
   - docs/models/operations/comatprotorepodescribereporesponsebody.md
@@ -976,23 +982,24 @@ generatedFiles:
   - docs/models/operations/comatprotorepolistrecordsrequest.md
   - docs/models/operations/comatprotorepolistrecordsresponse.md
   - docs/models/operations/comatprotorepolistrecordsresponsebody.md
-  - docs/models/operations/comatprotorepoputrecordrequestbody.md
+  - docs/models/operations/comatprotorepoputrecordbody.md
   - docs/models/operations/comatprotorepoputrecordresponsebody.md
   - docs/models/operations/comatprotorepoputrecordvalidationstatus.md
   - docs/models/operations/comatprotorepouploadblobresponsebody.md
   - docs/models/operations/comatprotoservercheckaccountstatusresponsebody.md
-  - docs/models/operations/comatprotoserverconfirmemailrequestbody.md
-  - docs/models/operations/comatprotoservercreateaccountrequestbody.md
+  - docs/models/operations/comatprotoserverconfirmemailbody.md
+  - docs/models/operations/comatprotoservercreateaccountbody.md
   - docs/models/operations/comatprotoservercreateaccountresponsebody.md
-  - docs/models/operations/comatprotoservercreateapppasswordrequestbody.md
-  - docs/models/operations/comatprotoservercreateinvitecoderequestbody.md
+  - docs/models/operations/comatprotoservercreateapppasswordbody.md
+  - docs/models/operations/comatprotoservercreateinvitecodebody.md
   - docs/models/operations/comatprotoservercreateinvitecoderesponsebody.md
-  - docs/models/operations/comatprotoservercreateinvitecodesrequestbody.md
+  - docs/models/operations/comatprotoservercreateinvitecodesbody.md
   - docs/models/operations/comatprotoservercreateinvitecodesresponsebody.md
-  - docs/models/operations/comatprotoservercreatesessionrequestbody.md
+  - docs/models/operations/comatprotoservercreatesessionbody.md
   - docs/models/operations/comatprotoservercreatesessionresponsebody.md
-  - docs/models/operations/comatprotoserverdeactivateaccountrequestbody.md
-  - docs/models/operations/comatprotoserverdeleteaccountrequestbody.md
+  - docs/models/operations/comatprotoservercreatesessionstatus.md
+  - docs/models/operations/comatprotoserverdeactivateaccountbody.md
+  - docs/models/operations/comatprotoserverdeleteaccountbody.md
   - docs/models/operations/comatprotoserverdescribeserverresponsebody.md
   - docs/models/operations/comatprotoservergetaccountinvitecodesrequest.md
   - docs/models/operations/comatprotoservergetaccountinvitecodesresponsebody.md
@@ -1004,12 +1011,12 @@ generatedFiles:
   - docs/models/operations/comatprotoserverrefreshsessionresponsebody.md
   - docs/models/operations/comatprotoserverrefreshsessionstatus.md
   - docs/models/operations/comatprotoserverrequestemailupdateresponsebody.md
-  - docs/models/operations/comatprotoserverrequestpasswordresetrequestbody.md
-  - docs/models/operations/comatprotoserverreservesigningkeyrequestbody.md
+  - docs/models/operations/comatprotoserverrequestpasswordresetbody.md
+  - docs/models/operations/comatprotoserverreservesigningkeybody.md
   - docs/models/operations/comatprotoserverreservesigningkeyresponsebody.md
-  - docs/models/operations/comatprotoserverresetpasswordrequestbody.md
-  - docs/models/operations/comatprotoserverrevokeapppasswordrequestbody.md
-  - docs/models/operations/comatprotoserverupdateemailrequestbody.md
+  - docs/models/operations/comatprotoserverresetpasswordbody.md
+  - docs/models/operations/comatprotoserverrevokeapppasswordbody.md
+  - docs/models/operations/comatprotoserverupdateemailbody.md
   - docs/models/operations/comatprotosyncgetblobrequest.md
   - docs/models/operations/comatprotosyncgetblocksrequest.md
   - docs/models/operations/comatprotosyncgetlatestcommitrequest.md
@@ -1025,33 +1032,23 @@ generatedFiles:
   - docs/models/operations/comatprotosynclistreposrequest.md
   - docs/models/operations/comatprotosynclistreposresponse.md
   - docs/models/operations/comatprotosynclistreposresponsebody.md
-  - docs/models/operations/comatprotosyncnotifyofupdaterequestbody.md
-  - docs/models/operations/comatprotosyncrequestcrawlrequestbody.md
+  - docs/models/operations/comatprotosyncnotifyofupdatebody.md
+  - docs/models/operations/comatprotosyncrequestcrawlbody.md
   - docs/models/operations/event.md
   - docs/models/operations/filter.md
   - docs/models/operations/logs.md
   - docs/models/operations/managerrole.md
-  - docs/models/operations/messages.md
   - docs/models/operations/platform.md
-  - docs/models/operations/queryparamscope.md
-  - docs/models/operations/queryparamsort.md
-  - docs/models/operations/queryparamsubjecttype.md
   - docs/models/operations/records.md
   - docs/models/operations/relationships.md
   - docs/models/operations/repos.md
   - docs/models/operations/results.md
-  - docs/models/operations/role.md
-  - docs/models/operations/scope.md
-  - docs/models/operations/sort.md
-  - docs/models/operations/status.md
-  - docs/models/operations/subject.md
-  - docs/models/operations/subjecttype.md
   - docs/models/operations/thread.md
-  - docs/models/operations/toolsozonecommunicationcreatetemplaterequestbody.md
-  - docs/models/operations/toolsozonecommunicationdeletetemplaterequestbody.md
+  - docs/models/operations/toolsozonecommunicationcreatetemplatebody.md
+  - docs/models/operations/toolsozonecommunicationdeletetemplatebody.md
   - docs/models/operations/toolsozonecommunicationlisttemplatesresponsebody.md
-  - docs/models/operations/toolsozonecommunicationupdatetemplaterequestbody.md
-  - docs/models/operations/toolsozonemoderationemiteventrequestbody.md
+  - docs/models/operations/toolsozonecommunicationupdatetemplatebody.md
+  - docs/models/operations/toolsozonemoderationemiteventbody.md
   - docs/models/operations/toolsozonemoderationemiteventsubject.md
   - docs/models/operations/toolsozonemoderationgeteventrequest.md
   - docs/models/operations/toolsozonemoderationgetrecordrequest.md
@@ -1063,18 +1060,20 @@ generatedFiles:
   - docs/models/operations/toolsozonemoderationqueryeventsrequest.md
   - docs/models/operations/toolsozonemoderationqueryeventsresponse.md
   - docs/models/operations/toolsozonemoderationqueryeventsresponsebody.md
+  - docs/models/operations/toolsozonemoderationqueryeventssubjecttype.md
   - docs/models/operations/toolsozonemoderationquerystatusesrequest.md
   - docs/models/operations/toolsozonemoderationquerystatusesresponse.md
   - docs/models/operations/toolsozonemoderationquerystatusesresponsebody.md
+  - docs/models/operations/toolsozonemoderationquerystatusessubjecttype.md
   - docs/models/operations/toolsozonemoderationsearchreposrequest.md
   - docs/models/operations/toolsozonemoderationsearchreposresponse.md
   - docs/models/operations/toolsozonemoderationsearchreposresponsebody.md
   - docs/models/operations/toolsozoneservergetconfigresponsebody.md
-  - docs/models/operations/toolsozonesetaddvaluesrequestbody.md
-  - docs/models/operations/toolsozonesetdeletesetrequestbody.md
+  - docs/models/operations/toolsozonesetaddvaluesbody.md
+  - docs/models/operations/toolsozonesetdeletesetbody.md
   - docs/models/operations/toolsozonesetdeletesetresponsebody.md
   - docs/models/operations/toolsozonesetdeletesetunknown.md
-  - docs/models/operations/toolsozonesetdeletevaluesrequestbody.md
+  - docs/models/operations/toolsozonesetdeletevaluesbody.md
   - docs/models/operations/toolsozonesetgetvaluesrequest.md
   - docs/models/operations/toolsozonesetgetvaluesresponse.md
   - docs/models/operations/toolsozonesetgetvaluesresponsebody.md
@@ -1084,9 +1083,11 @@ generatedFiles:
   - docs/models/operations/toolsozonesettinglistoptionsrequest.md
   - docs/models/operations/toolsozonesettinglistoptionsresponse.md
   - docs/models/operations/toolsozonesettinglistoptionsresponsebody.md
-  - docs/models/operations/toolsozonesettingremoveoptionsrequestbody.md
+  - docs/models/operations/toolsozonesettinglistoptionsscope.md
+  - docs/models/operations/toolsozonesettingremoveoptionsbody.md
   - docs/models/operations/toolsozonesettingremoveoptionsresponsebody.md
-  - docs/models/operations/toolsozonesettingupsertoptionrequestbody.md
+  - docs/models/operations/toolsozonesettingremoveoptionsscope.md
+  - docs/models/operations/toolsozonesettingupsertoptionbody.md
   - docs/models/operations/toolsozonesettingupsertoptionresponsebody.md
   - docs/models/operations/toolsozonesettingupsertoptionscope.md
   - docs/models/operations/toolsozonesignaturefindcorrelationrequest.md
@@ -1097,15 +1098,14 @@ generatedFiles:
   - docs/models/operations/toolsozonesignaturesearchaccountsrequest.md
   - docs/models/operations/toolsozonesignaturesearchaccountsresponse.md
   - docs/models/operations/toolsozonesignaturesearchaccountsresponsebody.md
-  - docs/models/operations/toolsozoneteamaddmemberrequestbody.md
-  - docs/models/operations/toolsozoneteamdeletememberrequestbody.md
+  - docs/models/operations/toolsozoneteamaddmemberbody.md
+  - docs/models/operations/toolsozoneteamaddmemberrole.md
+  - docs/models/operations/toolsozoneteamdeletememberbody.md
   - docs/models/operations/toolsozoneteamlistmembersrequest.md
   - docs/models/operations/toolsozoneteamlistmembersresponse.md
   - docs/models/operations/toolsozoneteamlistmembersresponsebody.md
-  - docs/models/operations/toolsozoneteamupdatememberrequestbody.md
+  - docs/models/operations/toolsozoneteamupdatememberbody.md
   - docs/models/operations/toolsozoneteamupdatememberrole.md
-  - docs/models/operations/unknown.md
-  - docs/models/operations/validationstatus.md
   - docs/models/operations/views.md
   - docs/models/operations/writes.md
   - docs/sdks/account/README.md
@@ -1360,8 +1360,13 @@ generatedFiles:
   - src/lib/security.ts
   - src/lib/url.ts
   - src/mcp-server/build.mts
+  - src/mcp-server/cli.ts
+  - src/mcp-server/cli/start/command.ts
+  - src/mcp-server/cli/start/impl.ts
+  - src/mcp-server/console-logger.ts
   - src/mcp-server/mcp-server.ts
   - src/mcp-server/resources.ts
+  - src/mcp-server/scopes.ts
   - src/mcp-server/server.ts
   - src/mcp-server/shared.ts
   - src/mcp-server/tools.ts
@@ -1754,7 +1759,7 @@ generatedFiles:
   - src/models/errors/appbskyvideogetjobstatus.ts
   - src/models/errors/appbskyvideogetuploadlimits.ts
   - src/models/errors/appbskyvideouploadvideo.ts
-  - src/models/errors/badrequest.ts
+  - src/models/errors/badrequesterror.ts
   - src/models/errors/chatbskyactordeleteaccount.ts
   - src/models/errors/chatbskyactorexportaccountdata.ts
   - src/models/errors/chatbskyconvodeletemessageforself.ts
@@ -1842,10 +1847,10 @@ generatedFiles:
   - src/models/errors/httpclienterrors.ts
   - src/models/errors/index.ts
   - src/models/errors/internalservererror.ts
-  - src/models/errors/notfound.ts
-  - src/models/errors/ratelimited.ts
+  - src/models/errors/notfounderror.ts
+  - src/models/errors/ratelimitederror.ts
   - src/models/errors/sdkvalidationerror.ts
-  - src/models/errors/timeout.ts
+  - src/models/errors/timeouterror.ts
   - src/models/errors/toolsozonecommunicationcreatetemplate.ts
   - src/models/errors/toolsozonecommunicationdeletetemplate.ts
   - src/models/errors/toolsozonecommunicationlisttemplates.ts
@@ -1876,7 +1881,7 @@ generatedFiles:
   - src/models/errors/toolsozoneteamdeletemember.ts
   - src/models/errors/toolsozoneteamlistmembers.ts
   - src/models/errors/toolsozoneteamupdatemember.ts
-  - src/models/errors/unauthorized.ts
+  - src/models/errors/unauthorizederror.ts
   - src/models/operations/appbskyactorgetpreferences.ts
   - src/models/operations/appbskyactorgetprofile.ts
   - src/models/operations/appbskyactorgetprofiles.ts

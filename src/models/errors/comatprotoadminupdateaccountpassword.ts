@@ -8,23 +8,26 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type ComAtprotoAdminUpdateAccountPasswordAdminResponseBodyData = {
-  error: "AuthMissing";
-  message: string;
-};
+export type UnauthorizedComAtprotoAdminUpdateAccountPasswordResponseBodyErrorData =
+  {
+    error: "AuthMissing";
+    message: string;
+  };
 
 /**
  * Unauthorized
  */
-export class ComAtprotoAdminUpdateAccountPasswordAdminResponseBody
+export class UnauthorizedComAtprotoAdminUpdateAccountPasswordResponseBodyError
   extends Error
 {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: ComAtprotoAdminUpdateAccountPasswordAdminResponseBodyData;
+  data$: UnauthorizedComAtprotoAdminUpdateAccountPasswordResponseBodyErrorData;
 
-  constructor(err: ComAtprotoAdminUpdateAccountPasswordAdminResponseBodyData) {
+  constructor(
+    err: UnauthorizedComAtprotoAdminUpdateAccountPasswordResponseBodyErrorData,
+  ) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -33,7 +36,8 @@ export class ComAtprotoAdminUpdateAccountPasswordAdminResponseBody
 
     this.error = err.error;
 
-    this.name = "ComAtprotoAdminUpdateAccountPasswordAdminResponseBody";
+    this.name =
+      "UnauthorizedComAtprotoAdminUpdateAccountPasswordResponseBodyError";
   }
 }
 
@@ -49,21 +53,26 @@ export type ComAtprotoAdminUpdateAccountPasswordError = ClosedEnum<
 /**
  * Bad Request
  */
-export type ComAtprotoAdminUpdateAccountPasswordResponseBodyData = {
-  error: ComAtprotoAdminUpdateAccountPasswordError;
-  message: string;
-};
+export type BadRequestComAtprotoAdminUpdateAccountPasswordResponseBodyErrorData =
+  {
+    error: ComAtprotoAdminUpdateAccountPasswordError;
+    message: string;
+  };
 
 /**
  * Bad Request
  */
-export class ComAtprotoAdminUpdateAccountPasswordResponseBody extends Error {
+export class BadRequestComAtprotoAdminUpdateAccountPasswordResponseBodyError
+  extends Error
+{
   error: ComAtprotoAdminUpdateAccountPasswordError;
 
   /** The original data that was passed to this error instance. */
-  data$: ComAtprotoAdminUpdateAccountPasswordResponseBodyData;
+  data$: BadRequestComAtprotoAdminUpdateAccountPasswordResponseBodyErrorData;
 
-  constructor(err: ComAtprotoAdminUpdateAccountPasswordResponseBodyData) {
+  constructor(
+    err: BadRequestComAtprotoAdminUpdateAccountPasswordResponseBodyErrorData,
+  ) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -72,14 +81,15 @@ export class ComAtprotoAdminUpdateAccountPasswordResponseBody extends Error {
 
     this.error = err.error;
 
-    this.name = "ComAtprotoAdminUpdateAccountPasswordResponseBody";
+    this.name =
+      "BadRequestComAtprotoAdminUpdateAccountPasswordResponseBodyError";
   }
 }
 
 /** @internal */
-export const ComAtprotoAdminUpdateAccountPasswordAdminResponseBody$inboundSchema:
+export const UnauthorizedComAtprotoAdminUpdateAccountPasswordResponseBodyError$inboundSchema:
   z.ZodType<
-    ComAtprotoAdminUpdateAccountPasswordAdminResponseBody,
+    UnauthorizedComAtprotoAdminUpdateAccountPasswordResponseBodyError,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -87,22 +97,27 @@ export const ComAtprotoAdminUpdateAccountPasswordAdminResponseBody$inboundSchema
     message: z.string(),
   })
     .transform((v) => {
-      return new ComAtprotoAdminUpdateAccountPasswordAdminResponseBody(v);
+      return new UnauthorizedComAtprotoAdminUpdateAccountPasswordResponseBodyError(
+        v,
+      );
     });
 
 /** @internal */
-export type ComAtprotoAdminUpdateAccountPasswordAdminResponseBody$Outbound = {
-  error: "AuthMissing";
-  message: string;
-};
+export type UnauthorizedComAtprotoAdminUpdateAccountPasswordResponseBodyError$Outbound =
+  {
+    error: "AuthMissing";
+    message: string;
+  };
 
 /** @internal */
-export const ComAtprotoAdminUpdateAccountPasswordAdminResponseBody$outboundSchema:
+export const UnauthorizedComAtprotoAdminUpdateAccountPasswordResponseBodyError$outboundSchema:
   z.ZodType<
-    ComAtprotoAdminUpdateAccountPasswordAdminResponseBody$Outbound,
+    UnauthorizedComAtprotoAdminUpdateAccountPasswordResponseBodyError$Outbound,
     z.ZodTypeDef,
-    ComAtprotoAdminUpdateAccountPasswordAdminResponseBody
-  > = z.instanceof(ComAtprotoAdminUpdateAccountPasswordAdminResponseBody)
+    UnauthorizedComAtprotoAdminUpdateAccountPasswordResponseBodyError
+  > = z.instanceof(
+    UnauthorizedComAtprotoAdminUpdateAccountPasswordResponseBodyError,
+  )
     .transform(v => v.data$)
     .pipe(z.object({
       error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -113,16 +128,16 @@ export const ComAtprotoAdminUpdateAccountPasswordAdminResponseBody$outboundSchem
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoAdminUpdateAccountPasswordAdminResponseBody$ {
-  /** @deprecated use `ComAtprotoAdminUpdateAccountPasswordAdminResponseBody$inboundSchema` instead. */
+export namespace UnauthorizedComAtprotoAdminUpdateAccountPasswordResponseBodyError$ {
+  /** @deprecated use `UnauthorizedComAtprotoAdminUpdateAccountPasswordResponseBodyError$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoAdminUpdateAccountPasswordAdminResponseBody$inboundSchema;
-  /** @deprecated use `ComAtprotoAdminUpdateAccountPasswordAdminResponseBody$outboundSchema` instead. */
+    UnauthorizedComAtprotoAdminUpdateAccountPasswordResponseBodyError$inboundSchema;
+  /** @deprecated use `UnauthorizedComAtprotoAdminUpdateAccountPasswordResponseBodyError$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoAdminUpdateAccountPasswordAdminResponseBody$outboundSchema;
-  /** @deprecated use `ComAtprotoAdminUpdateAccountPasswordAdminResponseBody$Outbound` instead. */
+    UnauthorizedComAtprotoAdminUpdateAccountPasswordResponseBodyError$outboundSchema;
+  /** @deprecated use `UnauthorizedComAtprotoAdminUpdateAccountPasswordResponseBodyError$Outbound` instead. */
   export type Outbound =
-    ComAtprotoAdminUpdateAccountPasswordAdminResponseBody$Outbound;
+    UnauthorizedComAtprotoAdminUpdateAccountPasswordResponseBodyError$Outbound;
 }
 
 /** @internal */
@@ -149,9 +164,9 @@ export namespace ComAtprotoAdminUpdateAccountPasswordError$ {
 }
 
 /** @internal */
-export const ComAtprotoAdminUpdateAccountPasswordResponseBody$inboundSchema:
+export const BadRequestComAtprotoAdminUpdateAccountPasswordResponseBodyError$inboundSchema:
   z.ZodType<
-    ComAtprotoAdminUpdateAccountPasswordResponseBody,
+    BadRequestComAtprotoAdminUpdateAccountPasswordResponseBodyError,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -159,22 +174,27 @@ export const ComAtprotoAdminUpdateAccountPasswordResponseBody$inboundSchema:
     message: z.string(),
   })
     .transform((v) => {
-      return new ComAtprotoAdminUpdateAccountPasswordResponseBody(v);
+      return new BadRequestComAtprotoAdminUpdateAccountPasswordResponseBodyError(
+        v,
+      );
     });
 
 /** @internal */
-export type ComAtprotoAdminUpdateAccountPasswordResponseBody$Outbound = {
-  error: string;
-  message: string;
-};
+export type BadRequestComAtprotoAdminUpdateAccountPasswordResponseBodyError$Outbound =
+  {
+    error: string;
+    message: string;
+  };
 
 /** @internal */
-export const ComAtprotoAdminUpdateAccountPasswordResponseBody$outboundSchema:
+export const BadRequestComAtprotoAdminUpdateAccountPasswordResponseBodyError$outboundSchema:
   z.ZodType<
-    ComAtprotoAdminUpdateAccountPasswordResponseBody$Outbound,
+    BadRequestComAtprotoAdminUpdateAccountPasswordResponseBodyError$Outbound,
     z.ZodTypeDef,
-    ComAtprotoAdminUpdateAccountPasswordResponseBody
-  > = z.instanceof(ComAtprotoAdminUpdateAccountPasswordResponseBody)
+    BadRequestComAtprotoAdminUpdateAccountPasswordResponseBodyError
+  > = z.instanceof(
+    BadRequestComAtprotoAdminUpdateAccountPasswordResponseBodyError,
+  )
     .transform(v => v.data$)
     .pipe(z.object({
       error: ComAtprotoAdminUpdateAccountPasswordError$outboundSchema,
@@ -185,14 +205,14 @@ export const ComAtprotoAdminUpdateAccountPasswordResponseBody$outboundSchema:
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoAdminUpdateAccountPasswordResponseBody$ {
-  /** @deprecated use `ComAtprotoAdminUpdateAccountPasswordResponseBody$inboundSchema` instead. */
+export namespace BadRequestComAtprotoAdminUpdateAccountPasswordResponseBodyError$ {
+  /** @deprecated use `BadRequestComAtprotoAdminUpdateAccountPasswordResponseBodyError$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoAdminUpdateAccountPasswordResponseBody$inboundSchema;
-  /** @deprecated use `ComAtprotoAdminUpdateAccountPasswordResponseBody$outboundSchema` instead. */
+    BadRequestComAtprotoAdminUpdateAccountPasswordResponseBodyError$inboundSchema;
+  /** @deprecated use `BadRequestComAtprotoAdminUpdateAccountPasswordResponseBodyError$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoAdminUpdateAccountPasswordResponseBody$outboundSchema;
-  /** @deprecated use `ComAtprotoAdminUpdateAccountPasswordResponseBody$Outbound` instead. */
+    BadRequestComAtprotoAdminUpdateAccountPasswordResponseBodyError$outboundSchema;
+  /** @deprecated use `BadRequestComAtprotoAdminUpdateAccountPasswordResponseBodyError$Outbound` instead. */
   export type Outbound =
-    ComAtprotoAdminUpdateAccountPasswordResponseBody$Outbound;
+    BadRequestComAtprotoAdminUpdateAccountPasswordResponseBodyError$Outbound;
 }

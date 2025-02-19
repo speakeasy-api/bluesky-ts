@@ -17,7 +17,7 @@ import { useBlueskyContext } from "./_context.js";
 import { MutationHookOptions } from "./_types.js";
 
 export type SyncsRequestCrawlMutationVariables = {
-  request: operations.ComAtprotoSyncRequestCrawlRequestBody;
+  request: operations.ComAtprotoSyncRequestCrawlBody;
   options?: RequestOptions;
 };
 

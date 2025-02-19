@@ -12,15 +12,23 @@ export const tool$atprotoServerActivateAccount: ToolDefinition = {
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
-Activates a currently deactivated account. Used to finalize account migration after the account's repo is imported and identity is setup.
-
-`,
+Activates a currently deactivated account. Used to finalize account migration after the account's repo is imported and identity is setup.`,
+  scopes: ["write"],
   tool: async (client, ctx) => {
     const [result, apiCall] = await atprotoServerActivateAccount(
       client,
       { fetchOptions: { signal: ctx.signal } },
     ).$inspect();
 
-    return formatResult(result, apiCall);
+    if (!result.ok) {
+      return {
+        content: [{ type: "text", text: result.error.message }],
+        isError: true,
+      };
+    }
+
+    const value = result.value;
+
+    return formatResult(value, apiCall);
   },
 };

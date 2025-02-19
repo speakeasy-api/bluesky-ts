@@ -7,74 +7,71 @@ import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ComAtprotoServerRequestPasswordResetRequestBody = {
+export type ComAtprotoServerRequestPasswordResetBody = {
   email: string;
 };
 
 /** @internal */
-export const ComAtprotoServerRequestPasswordResetRequestBody$inboundSchema:
-  z.ZodType<
-    ComAtprotoServerRequestPasswordResetRequestBody,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    email: z.string(),
-  });
+export const ComAtprotoServerRequestPasswordResetBody$inboundSchema: z.ZodType<
+  ComAtprotoServerRequestPasswordResetBody,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  email: z.string(),
+});
 
 /** @internal */
-export type ComAtprotoServerRequestPasswordResetRequestBody$Outbound = {
+export type ComAtprotoServerRequestPasswordResetBody$Outbound = {
   email: string;
 };
 
 /** @internal */
-export const ComAtprotoServerRequestPasswordResetRequestBody$outboundSchema:
-  z.ZodType<
-    ComAtprotoServerRequestPasswordResetRequestBody$Outbound,
-    z.ZodTypeDef,
-    ComAtprotoServerRequestPasswordResetRequestBody
-  > = z.object({
-    email: z.string(),
-  });
+export const ComAtprotoServerRequestPasswordResetBody$outboundSchema: z.ZodType<
+  ComAtprotoServerRequestPasswordResetBody$Outbound,
+  z.ZodTypeDef,
+  ComAtprotoServerRequestPasswordResetBody
+> = z.object({
+  email: z.string(),
+});
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoServerRequestPasswordResetRequestBody$ {
-  /** @deprecated use `ComAtprotoServerRequestPasswordResetRequestBody$inboundSchema` instead. */
+export namespace ComAtprotoServerRequestPasswordResetBody$ {
+  /** @deprecated use `ComAtprotoServerRequestPasswordResetBody$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoServerRequestPasswordResetRequestBody$inboundSchema;
-  /** @deprecated use `ComAtprotoServerRequestPasswordResetRequestBody$outboundSchema` instead. */
+    ComAtprotoServerRequestPasswordResetBody$inboundSchema;
+  /** @deprecated use `ComAtprotoServerRequestPasswordResetBody$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoServerRequestPasswordResetRequestBody$outboundSchema;
-  /** @deprecated use `ComAtprotoServerRequestPasswordResetRequestBody$Outbound` instead. */
-  export type Outbound =
-    ComAtprotoServerRequestPasswordResetRequestBody$Outbound;
+    ComAtprotoServerRequestPasswordResetBody$outboundSchema;
+  /** @deprecated use `ComAtprotoServerRequestPasswordResetBody$Outbound` instead. */
+  export type Outbound = ComAtprotoServerRequestPasswordResetBody$Outbound;
 }
 
-export function comAtprotoServerRequestPasswordResetRequestBodyToJSON(
-  comAtprotoServerRequestPasswordResetRequestBody:
-    ComAtprotoServerRequestPasswordResetRequestBody,
+export function comAtprotoServerRequestPasswordResetBodyToJSON(
+  comAtprotoServerRequestPasswordResetBody:
+    ComAtprotoServerRequestPasswordResetBody,
 ): string {
   return JSON.stringify(
-    ComAtprotoServerRequestPasswordResetRequestBody$outboundSchema.parse(
-      comAtprotoServerRequestPasswordResetRequestBody,
+    ComAtprotoServerRequestPasswordResetBody$outboundSchema.parse(
+      comAtprotoServerRequestPasswordResetBody,
     ),
   );
 }
 
-export function comAtprotoServerRequestPasswordResetRequestBodyFromJSON(
+export function comAtprotoServerRequestPasswordResetBodyFromJSON(
   jsonString: string,
 ): SafeParseResult<
-  ComAtprotoServerRequestPasswordResetRequestBody,
+  ComAtprotoServerRequestPasswordResetBody,
   SDKValidationError
 > {
   return safeParse(
     jsonString,
     (x) =>
-      ComAtprotoServerRequestPasswordResetRequestBody$inboundSchema.parse(
+      ComAtprotoServerRequestPasswordResetBody$inboundSchema.parse(
         JSON.parse(x),
       ),
-    `Failed to parse 'ComAtprotoServerRequestPasswordResetRequestBody' from JSON`,
+    `Failed to parse 'ComAtprotoServerRequestPasswordResetBody' from JSON`,
   );
 }

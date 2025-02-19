@@ -14,7 +14,7 @@ export class AtprotoModeration extends ClientSDK {
    * Submit a moderation report regarding an atproto account or record. Implemented by moderation services (with PDS proxying), and requires auth.
    */
   async createReport(
-    request: operations.ComAtprotoModerationCreateReportRequestBody,
+    request: operations.ComAtprotoModerationCreateReportBody,
     options?: RequestOptions,
   ): Promise<operations.ComAtprotoModerationCreateReportResponseBody> {
     return unwrapAsync(atprotoModerationCreateReport(

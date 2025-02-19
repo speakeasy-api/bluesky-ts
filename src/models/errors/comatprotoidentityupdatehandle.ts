@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type ComAtprotoIdentityUpdateHandleIdentitiesResponseBodyData = {
+export type UnauthorizedComAtprotoIdentityUpdateHandleResponseBodyErrorData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,15 +16,17 @@ export type ComAtprotoIdentityUpdateHandleIdentitiesResponseBodyData = {
 /**
  * Unauthorized
  */
-export class ComAtprotoIdentityUpdateHandleIdentitiesResponseBody
+export class UnauthorizedComAtprotoIdentityUpdateHandleResponseBodyError
   extends Error
 {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: ComAtprotoIdentityUpdateHandleIdentitiesResponseBodyData;
+  data$: UnauthorizedComAtprotoIdentityUpdateHandleResponseBodyErrorData;
 
-  constructor(err: ComAtprotoIdentityUpdateHandleIdentitiesResponseBodyData) {
+  constructor(
+    err: UnauthorizedComAtprotoIdentityUpdateHandleResponseBodyErrorData,
+  ) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -33,7 +35,7 @@ export class ComAtprotoIdentityUpdateHandleIdentitiesResponseBody
 
     this.error = err.error;
 
-    this.name = "ComAtprotoIdentityUpdateHandleIdentitiesResponseBody";
+    this.name = "UnauthorizedComAtprotoIdentityUpdateHandleResponseBodyError";
   }
 }
 
@@ -49,7 +51,7 @@ export type ComAtprotoIdentityUpdateHandleError = ClosedEnum<
 /**
  * Bad Request
  */
-export type ComAtprotoIdentityUpdateHandleResponseBodyData = {
+export type BadRequestComAtprotoIdentityUpdateHandleResponseBodyErrorData = {
   error: ComAtprotoIdentityUpdateHandleError;
   message: string;
 };
@@ -57,13 +59,17 @@ export type ComAtprotoIdentityUpdateHandleResponseBodyData = {
 /**
  * Bad Request
  */
-export class ComAtprotoIdentityUpdateHandleResponseBody extends Error {
+export class BadRequestComAtprotoIdentityUpdateHandleResponseBodyError
+  extends Error
+{
   error: ComAtprotoIdentityUpdateHandleError;
 
   /** The original data that was passed to this error instance. */
-  data$: ComAtprotoIdentityUpdateHandleResponseBodyData;
+  data$: BadRequestComAtprotoIdentityUpdateHandleResponseBodyErrorData;
 
-  constructor(err: ComAtprotoIdentityUpdateHandleResponseBodyData) {
+  constructor(
+    err: BadRequestComAtprotoIdentityUpdateHandleResponseBodyErrorData,
+  ) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -72,14 +78,14 @@ export class ComAtprotoIdentityUpdateHandleResponseBody extends Error {
 
     this.error = err.error;
 
-    this.name = "ComAtprotoIdentityUpdateHandleResponseBody";
+    this.name = "BadRequestComAtprotoIdentityUpdateHandleResponseBodyError";
   }
 }
 
 /** @internal */
-export const ComAtprotoIdentityUpdateHandleIdentitiesResponseBody$inboundSchema:
+export const UnauthorizedComAtprotoIdentityUpdateHandleResponseBodyError$inboundSchema:
   z.ZodType<
-    ComAtprotoIdentityUpdateHandleIdentitiesResponseBody,
+    UnauthorizedComAtprotoIdentityUpdateHandleResponseBodyError,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -87,22 +93,23 @@ export const ComAtprotoIdentityUpdateHandleIdentitiesResponseBody$inboundSchema:
     message: z.string(),
   })
     .transform((v) => {
-      return new ComAtprotoIdentityUpdateHandleIdentitiesResponseBody(v);
+      return new UnauthorizedComAtprotoIdentityUpdateHandleResponseBodyError(v);
     });
 
 /** @internal */
-export type ComAtprotoIdentityUpdateHandleIdentitiesResponseBody$Outbound = {
-  error: "AuthMissing";
-  message: string;
-};
+export type UnauthorizedComAtprotoIdentityUpdateHandleResponseBodyError$Outbound =
+  {
+    error: "AuthMissing";
+    message: string;
+  };
 
 /** @internal */
-export const ComAtprotoIdentityUpdateHandleIdentitiesResponseBody$outboundSchema:
+export const UnauthorizedComAtprotoIdentityUpdateHandleResponseBodyError$outboundSchema:
   z.ZodType<
-    ComAtprotoIdentityUpdateHandleIdentitiesResponseBody$Outbound,
+    UnauthorizedComAtprotoIdentityUpdateHandleResponseBodyError$Outbound,
     z.ZodTypeDef,
-    ComAtprotoIdentityUpdateHandleIdentitiesResponseBody
-  > = z.instanceof(ComAtprotoIdentityUpdateHandleIdentitiesResponseBody)
+    UnauthorizedComAtprotoIdentityUpdateHandleResponseBodyError
+  > = z.instanceof(UnauthorizedComAtprotoIdentityUpdateHandleResponseBodyError)
     .transform(v => v.data$)
     .pipe(z.object({
       error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -113,16 +120,16 @@ export const ComAtprotoIdentityUpdateHandleIdentitiesResponseBody$outboundSchema
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoIdentityUpdateHandleIdentitiesResponseBody$ {
-  /** @deprecated use `ComAtprotoIdentityUpdateHandleIdentitiesResponseBody$inboundSchema` instead. */
+export namespace UnauthorizedComAtprotoIdentityUpdateHandleResponseBodyError$ {
+  /** @deprecated use `UnauthorizedComAtprotoIdentityUpdateHandleResponseBodyError$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoIdentityUpdateHandleIdentitiesResponseBody$inboundSchema;
-  /** @deprecated use `ComAtprotoIdentityUpdateHandleIdentitiesResponseBody$outboundSchema` instead. */
+    UnauthorizedComAtprotoIdentityUpdateHandleResponseBodyError$inboundSchema;
+  /** @deprecated use `UnauthorizedComAtprotoIdentityUpdateHandleResponseBodyError$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoIdentityUpdateHandleIdentitiesResponseBody$outboundSchema;
-  /** @deprecated use `ComAtprotoIdentityUpdateHandleIdentitiesResponseBody$Outbound` instead. */
+    UnauthorizedComAtprotoIdentityUpdateHandleResponseBodyError$outboundSchema;
+  /** @deprecated use `UnauthorizedComAtprotoIdentityUpdateHandleResponseBodyError$Outbound` instead. */
   export type Outbound =
-    ComAtprotoIdentityUpdateHandleIdentitiesResponseBody$Outbound;
+    UnauthorizedComAtprotoIdentityUpdateHandleResponseBodyError$Outbound;
 }
 
 /** @internal */
@@ -149,29 +156,33 @@ export namespace ComAtprotoIdentityUpdateHandleError$ {
 }
 
 /** @internal */
-export const ComAtprotoIdentityUpdateHandleResponseBody$inboundSchema:
-  z.ZodType<ComAtprotoIdentityUpdateHandleResponseBody, z.ZodTypeDef, unknown> =
-    z.object({
-      error: ComAtprotoIdentityUpdateHandleError$inboundSchema,
-      message: z.string(),
-    })
-      .transform((v) => {
-        return new ComAtprotoIdentityUpdateHandleResponseBody(v);
-      });
-
-/** @internal */
-export type ComAtprotoIdentityUpdateHandleResponseBody$Outbound = {
-  error: string;
-  message: string;
-};
-
-/** @internal */
-export const ComAtprotoIdentityUpdateHandleResponseBody$outboundSchema:
+export const BadRequestComAtprotoIdentityUpdateHandleResponseBodyError$inboundSchema:
   z.ZodType<
-    ComAtprotoIdentityUpdateHandleResponseBody$Outbound,
+    BadRequestComAtprotoIdentityUpdateHandleResponseBodyError,
     z.ZodTypeDef,
-    ComAtprotoIdentityUpdateHandleResponseBody
-  > = z.instanceof(ComAtprotoIdentityUpdateHandleResponseBody)
+    unknown
+  > = z.object({
+    error: ComAtprotoIdentityUpdateHandleError$inboundSchema,
+    message: z.string(),
+  })
+    .transform((v) => {
+      return new BadRequestComAtprotoIdentityUpdateHandleResponseBodyError(v);
+    });
+
+/** @internal */
+export type BadRequestComAtprotoIdentityUpdateHandleResponseBodyError$Outbound =
+  {
+    error: string;
+    message: string;
+  };
+
+/** @internal */
+export const BadRequestComAtprotoIdentityUpdateHandleResponseBodyError$outboundSchema:
+  z.ZodType<
+    BadRequestComAtprotoIdentityUpdateHandleResponseBodyError$Outbound,
+    z.ZodTypeDef,
+    BadRequestComAtprotoIdentityUpdateHandleResponseBodyError
+  > = z.instanceof(BadRequestComAtprotoIdentityUpdateHandleResponseBodyError)
     .transform(v => v.data$)
     .pipe(z.object({
       error: ComAtprotoIdentityUpdateHandleError$outboundSchema,
@@ -182,13 +193,14 @@ export const ComAtprotoIdentityUpdateHandleResponseBody$outboundSchema:
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoIdentityUpdateHandleResponseBody$ {
-  /** @deprecated use `ComAtprotoIdentityUpdateHandleResponseBody$inboundSchema` instead. */
+export namespace BadRequestComAtprotoIdentityUpdateHandleResponseBodyError$ {
+  /** @deprecated use `BadRequestComAtprotoIdentityUpdateHandleResponseBodyError$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoIdentityUpdateHandleResponseBody$inboundSchema;
-  /** @deprecated use `ComAtprotoIdentityUpdateHandleResponseBody$outboundSchema` instead. */
+    BadRequestComAtprotoIdentityUpdateHandleResponseBodyError$inboundSchema;
+  /** @deprecated use `BadRequestComAtprotoIdentityUpdateHandleResponseBodyError$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoIdentityUpdateHandleResponseBody$outboundSchema;
-  /** @deprecated use `ComAtprotoIdentityUpdateHandleResponseBody$Outbound` instead. */
-  export type Outbound = ComAtprotoIdentityUpdateHandleResponseBody$Outbound;
+    BadRequestComAtprotoIdentityUpdateHandleResponseBodyError$outboundSchema;
+  /** @deprecated use `BadRequestComAtprotoIdentityUpdateHandleResponseBodyError$Outbound` instead. */
+  export type Outbound =
+    BadRequestComAtprotoIdentityUpdateHandleResponseBodyError$Outbound;
 }

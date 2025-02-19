@@ -16,7 +16,7 @@ export class OzoneSettings extends ClientSDK {
    * Create or update setting option
    */
   async upsertOption(
-    request: operations.ToolsOzoneSettingUpsertOptionRequestBody,
+    request: operations.ToolsOzoneSettingUpsertOptionBody,
     options?: RequestOptions,
   ): Promise<operations.ToolsOzoneSettingUpsertOptionResponseBody> {
     return unwrapAsync(ozoneSettingsUpsertOption(

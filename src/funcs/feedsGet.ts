@@ -24,6 +24,48 @@ import * as operations from "../models/operations/index.js";
 import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
+/**
+ * *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
+ *
+ * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
+ *
+ * Gets post views for a specified list of posts (by AT-URI). This is sometimes referred to as 'hydrating' a 'feed skeleton'.
+ */
+export function feedsGet(
+  client: BlueskyCore,
+  request: operations.AppBskyFeedGetPostsRequest,
+  options?: RequestOptions,
+): APIPromise<
+  Result<
+    operations.AppBskyFeedGetPostsResponseBody,
+    | errors.BadRequestAppBskyFeedGetPostsResponseBodyError
+    | errors.UnauthorizedAppBskyFeedGetPostsResponseBodyError
+    | errors.NotFoundError
+    | errors.UnauthorizedError
+    | errors.TimeoutError
+    | errors.RateLimitedError
+    | errors.BadRequestError
+    | errors.TimeoutError
+    | errors.NotFoundError
+    | errors.InternalServerError
+    | errors.BadRequestError
+    | errors.UnauthorizedError
+    | APIError
+    | SDKValidationError
+    | UnexpectedClientError
+    | InvalidRequestError
+    | RequestAbortedError
+    | RequestTimeoutError
+    | ConnectionError
+  >
+> {
+  return new APIPromise($do(
+    client,
+    request,
+    options,
+  ));
+}
+
 async function $do(
   client: BlueskyCore,
   request: operations.AppBskyFeedGetPostsRequest,
@@ -32,18 +74,18 @@ async function $do(
   [
     Result<
       operations.AppBskyFeedGetPostsResponseBody,
-      | errors.AppBskyFeedGetPostsResponseBody
-      | errors.AppBskyFeedGetPostsFeedsResponseBody
-      | errors.NotFound
-      | errors.Unauthorized
-      | errors.Timeout
-      | errors.RateLimited
-      | errors.BadRequest
-      | errors.Timeout
-      | errors.NotFound
+      | errors.BadRequestAppBskyFeedGetPostsResponseBodyError
+      | errors.UnauthorizedAppBskyFeedGetPostsResponseBodyError
+      | errors.NotFoundError
+      | errors.UnauthorizedError
+      | errors.TimeoutError
+      | errors.RateLimitedError
+      | errors.BadRequestError
+      | errors.TimeoutError
+      | errors.NotFoundError
       | errors.InternalServerError
-      | errors.BadRequest
-      | errors.Unauthorized
+      | errors.BadRequestError
+      | errors.UnauthorizedError
       | APIError
       | SDKValidationError
       | UnexpectedClientError
@@ -153,18 +195,18 @@ async function $do(
 
   const [result] = await M.match<
     operations.AppBskyFeedGetPostsResponseBody,
-    | errors.AppBskyFeedGetPostsResponseBody
-    | errors.AppBskyFeedGetPostsFeedsResponseBody
-    | errors.NotFound
-    | errors.Unauthorized
-    | errors.Timeout
-    | errors.RateLimited
-    | errors.BadRequest
-    | errors.Timeout
-    | errors.NotFound
+    | errors.BadRequestAppBskyFeedGetPostsResponseBodyError
+    | errors.UnauthorizedAppBskyFeedGetPostsResponseBodyError
+    | errors.NotFoundError
+    | errors.UnauthorizedError
+    | errors.TimeoutError
+    | errors.RateLimitedError
+    | errors.BadRequestError
+    | errors.TimeoutError
+    | errors.NotFoundError
     | errors.InternalServerError
-    | errors.BadRequest
-    | errors.Unauthorized
+    | errors.BadRequestError
+    | errors.UnauthorizedError
     | APIError
     | SDKValidationError
     | UnexpectedClientError
@@ -174,21 +216,27 @@ async function $do(
     | ConnectionError
   >(
     M.json(200, operations.AppBskyFeedGetPostsResponseBody$inboundSchema),
-    M.jsonErr(400, errors.AppBskyFeedGetPostsResponseBody$inboundSchema),
-    M.jsonErr(401, errors.AppBskyFeedGetPostsFeedsResponseBody$inboundSchema),
-    M.jsonErr(404, errors.NotFound$inboundSchema),
-    M.jsonErr([403, 407], errors.Unauthorized$inboundSchema),
-    M.jsonErr(408, errors.Timeout$inboundSchema),
-    M.jsonErr(429, errors.RateLimited$inboundSchema),
-    M.jsonErr([413, 414, 415, 422, 431], errors.BadRequest$inboundSchema),
-    M.jsonErr(504, errors.Timeout$inboundSchema),
-    M.jsonErr([501, 505], errors.NotFound$inboundSchema),
+    M.jsonErr(
+      400,
+      errors.BadRequestAppBskyFeedGetPostsResponseBodyError$inboundSchema,
+    ),
+    M.jsonErr(
+      401,
+      errors.UnauthorizedAppBskyFeedGetPostsResponseBodyError$inboundSchema,
+    ),
+    M.jsonErr(404, errors.NotFoundError$inboundSchema),
+    M.jsonErr([403, 407], errors.UnauthorizedError$inboundSchema),
+    M.jsonErr(408, errors.TimeoutError$inboundSchema),
+    M.jsonErr(429, errors.RateLimitedError$inboundSchema),
+    M.jsonErr([413, 414, 415, 422, 431], errors.BadRequestError$inboundSchema),
+    M.jsonErr(504, errors.TimeoutError$inboundSchema),
+    M.jsonErr([501, 505], errors.NotFoundError$inboundSchema),
     M.jsonErr(
       [500, 502, 503, 506, 507, 508],
       errors.InternalServerError$inboundSchema,
     ),
-    M.jsonErr(510, errors.BadRequest$inboundSchema),
-    M.jsonErr(511, errors.Unauthorized$inboundSchema),
+    M.jsonErr(510, errors.BadRequestError$inboundSchema),
+    M.jsonErr(511, errors.UnauthorizedError$inboundSchema),
     M.fail("4XX"),
     M.fail("5XX"),
   )(response, { extraFields: responseFields });
@@ -197,46 +245,4 @@ async function $do(
   }
 
   return [result, { status: "complete", request: req, response }];
-}
-
-/**
- * *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
- *
- * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
- *
- * Gets post views for a specified list of posts (by AT-URI). This is sometimes referred to as 'hydrating' a 'feed skeleton'.
- */
-export function feedsGet(
-  client: BlueskyCore,
-  request: operations.AppBskyFeedGetPostsRequest,
-  options?: RequestOptions,
-): APIPromise<
-  Result<
-    operations.AppBskyFeedGetPostsResponseBody,
-    | errors.AppBskyFeedGetPostsResponseBody
-    | errors.AppBskyFeedGetPostsFeedsResponseBody
-    | errors.NotFound
-    | errors.Unauthorized
-    | errors.Timeout
-    | errors.RateLimited
-    | errors.BadRequest
-    | errors.Timeout
-    | errors.NotFound
-    | errors.InternalServerError
-    | errors.BadRequest
-    | errors.Unauthorized
-    | APIError
-    | SDKValidationError
-    | UnexpectedClientError
-    | InvalidRequestError
-    | RequestAbortedError
-    | RequestTimeoutError
-    | ConnectionError
-  >
-> {
-  return new APIPromise($do(
-    client,
-    request,
-    options,
-  ));
 }

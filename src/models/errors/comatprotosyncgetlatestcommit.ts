@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type ComAtprotoSyncGetLatestCommitSyncsResponseBodyData = {
+export type UnauthorizedComAtprotoSyncGetLatestCommitResponseBodyErrorData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,13 +16,17 @@ export type ComAtprotoSyncGetLatestCommitSyncsResponseBodyData = {
 /**
  * Unauthorized
  */
-export class ComAtprotoSyncGetLatestCommitSyncsResponseBody extends Error {
+export class UnauthorizedComAtprotoSyncGetLatestCommitResponseBodyError
+  extends Error
+{
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: ComAtprotoSyncGetLatestCommitSyncsResponseBodyData;
+  data$: UnauthorizedComAtprotoSyncGetLatestCommitResponseBodyErrorData;
 
-  constructor(err: ComAtprotoSyncGetLatestCommitSyncsResponseBodyData) {
+  constructor(
+    err: UnauthorizedComAtprotoSyncGetLatestCommitResponseBodyErrorData,
+  ) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -31,7 +35,7 @@ export class ComAtprotoSyncGetLatestCommitSyncsResponseBody extends Error {
 
     this.error = err.error;
 
-    this.name = "ComAtprotoSyncGetLatestCommitSyncsResponseBody";
+    this.name = "UnauthorizedComAtprotoSyncGetLatestCommitResponseBodyError";
   }
 }
 
@@ -51,7 +55,7 @@ export type ComAtprotoSyncGetLatestCommitError = ClosedEnum<
 /**
  * Bad Request
  */
-export type ComAtprotoSyncGetLatestCommitResponseBodyData = {
+export type BadRequestComAtprotoSyncGetLatestCommitResponseBodyErrorData = {
   error: ComAtprotoSyncGetLatestCommitError;
   message: string;
 };
@@ -59,13 +63,17 @@ export type ComAtprotoSyncGetLatestCommitResponseBodyData = {
 /**
  * Bad Request
  */
-export class ComAtprotoSyncGetLatestCommitResponseBody extends Error {
+export class BadRequestComAtprotoSyncGetLatestCommitResponseBodyError
+  extends Error
+{
   error: ComAtprotoSyncGetLatestCommitError;
 
   /** The original data that was passed to this error instance. */
-  data$: ComAtprotoSyncGetLatestCommitResponseBodyData;
+  data$: BadRequestComAtprotoSyncGetLatestCommitResponseBodyErrorData;
 
-  constructor(err: ComAtprotoSyncGetLatestCommitResponseBodyData) {
+  constructor(
+    err: BadRequestComAtprotoSyncGetLatestCommitResponseBodyErrorData,
+  ) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -74,14 +82,14 @@ export class ComAtprotoSyncGetLatestCommitResponseBody extends Error {
 
     this.error = err.error;
 
-    this.name = "ComAtprotoSyncGetLatestCommitResponseBody";
+    this.name = "BadRequestComAtprotoSyncGetLatestCommitResponseBodyError";
   }
 }
 
 /** @internal */
-export const ComAtprotoSyncGetLatestCommitSyncsResponseBody$inboundSchema:
+export const UnauthorizedComAtprotoSyncGetLatestCommitResponseBodyError$inboundSchema:
   z.ZodType<
-    ComAtprotoSyncGetLatestCommitSyncsResponseBody,
+    UnauthorizedComAtprotoSyncGetLatestCommitResponseBodyError,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -89,22 +97,23 @@ export const ComAtprotoSyncGetLatestCommitSyncsResponseBody$inboundSchema:
     message: z.string(),
   })
     .transform((v) => {
-      return new ComAtprotoSyncGetLatestCommitSyncsResponseBody(v);
+      return new UnauthorizedComAtprotoSyncGetLatestCommitResponseBodyError(v);
     });
 
 /** @internal */
-export type ComAtprotoSyncGetLatestCommitSyncsResponseBody$Outbound = {
-  error: "AuthMissing";
-  message: string;
-};
+export type UnauthorizedComAtprotoSyncGetLatestCommitResponseBodyError$Outbound =
+  {
+    error: "AuthMissing";
+    message: string;
+  };
 
 /** @internal */
-export const ComAtprotoSyncGetLatestCommitSyncsResponseBody$outboundSchema:
+export const UnauthorizedComAtprotoSyncGetLatestCommitResponseBodyError$outboundSchema:
   z.ZodType<
-    ComAtprotoSyncGetLatestCommitSyncsResponseBody$Outbound,
+    UnauthorizedComAtprotoSyncGetLatestCommitResponseBodyError$Outbound,
     z.ZodTypeDef,
-    ComAtprotoSyncGetLatestCommitSyncsResponseBody
-  > = z.instanceof(ComAtprotoSyncGetLatestCommitSyncsResponseBody)
+    UnauthorizedComAtprotoSyncGetLatestCommitResponseBodyError
+  > = z.instanceof(UnauthorizedComAtprotoSyncGetLatestCommitResponseBodyError)
     .transform(v => v.data$)
     .pipe(z.object({
       error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -115,16 +124,16 @@ export const ComAtprotoSyncGetLatestCommitSyncsResponseBody$outboundSchema:
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoSyncGetLatestCommitSyncsResponseBody$ {
-  /** @deprecated use `ComAtprotoSyncGetLatestCommitSyncsResponseBody$inboundSchema` instead. */
+export namespace UnauthorizedComAtprotoSyncGetLatestCommitResponseBodyError$ {
+  /** @deprecated use `UnauthorizedComAtprotoSyncGetLatestCommitResponseBodyError$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoSyncGetLatestCommitSyncsResponseBody$inboundSchema;
-  /** @deprecated use `ComAtprotoSyncGetLatestCommitSyncsResponseBody$outboundSchema` instead. */
+    UnauthorizedComAtprotoSyncGetLatestCommitResponseBodyError$inboundSchema;
+  /** @deprecated use `UnauthorizedComAtprotoSyncGetLatestCommitResponseBodyError$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoSyncGetLatestCommitSyncsResponseBody$outboundSchema;
-  /** @deprecated use `ComAtprotoSyncGetLatestCommitSyncsResponseBody$Outbound` instead. */
+    UnauthorizedComAtprotoSyncGetLatestCommitResponseBodyError$outboundSchema;
+  /** @deprecated use `UnauthorizedComAtprotoSyncGetLatestCommitResponseBodyError$Outbound` instead. */
   export type Outbound =
-    ComAtprotoSyncGetLatestCommitSyncsResponseBody$Outbound;
+    UnauthorizedComAtprotoSyncGetLatestCommitResponseBodyError$Outbound;
 }
 
 /** @internal */
@@ -150,31 +159,33 @@ export namespace ComAtprotoSyncGetLatestCommitError$ {
 }
 
 /** @internal */
-export const ComAtprotoSyncGetLatestCommitResponseBody$inboundSchema: z.ZodType<
-  ComAtprotoSyncGetLatestCommitResponseBody,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  error: ComAtprotoSyncGetLatestCommitError$inboundSchema,
-  message: z.string(),
-})
-  .transform((v) => {
-    return new ComAtprotoSyncGetLatestCommitResponseBody(v);
-  });
-
-/** @internal */
-export type ComAtprotoSyncGetLatestCommitResponseBody$Outbound = {
-  error: string;
-  message: string;
-};
-
-/** @internal */
-export const ComAtprotoSyncGetLatestCommitResponseBody$outboundSchema:
+export const BadRequestComAtprotoSyncGetLatestCommitResponseBodyError$inboundSchema:
   z.ZodType<
-    ComAtprotoSyncGetLatestCommitResponseBody$Outbound,
+    BadRequestComAtprotoSyncGetLatestCommitResponseBodyError,
     z.ZodTypeDef,
-    ComAtprotoSyncGetLatestCommitResponseBody
-  > = z.instanceof(ComAtprotoSyncGetLatestCommitResponseBody)
+    unknown
+  > = z.object({
+    error: ComAtprotoSyncGetLatestCommitError$inboundSchema,
+    message: z.string(),
+  })
+    .transform((v) => {
+      return new BadRequestComAtprotoSyncGetLatestCommitResponseBodyError(v);
+    });
+
+/** @internal */
+export type BadRequestComAtprotoSyncGetLatestCommitResponseBodyError$Outbound =
+  {
+    error: string;
+    message: string;
+  };
+
+/** @internal */
+export const BadRequestComAtprotoSyncGetLatestCommitResponseBodyError$outboundSchema:
+  z.ZodType<
+    BadRequestComAtprotoSyncGetLatestCommitResponseBodyError$Outbound,
+    z.ZodTypeDef,
+    BadRequestComAtprotoSyncGetLatestCommitResponseBodyError
+  > = z.instanceof(BadRequestComAtprotoSyncGetLatestCommitResponseBodyError)
     .transform(v => v.data$)
     .pipe(z.object({
       error: ComAtprotoSyncGetLatestCommitError$outboundSchema,
@@ -185,13 +196,14 @@ export const ComAtprotoSyncGetLatestCommitResponseBody$outboundSchema:
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoSyncGetLatestCommitResponseBody$ {
-  /** @deprecated use `ComAtprotoSyncGetLatestCommitResponseBody$inboundSchema` instead. */
+export namespace BadRequestComAtprotoSyncGetLatestCommitResponseBodyError$ {
+  /** @deprecated use `BadRequestComAtprotoSyncGetLatestCommitResponseBodyError$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoSyncGetLatestCommitResponseBody$inboundSchema;
-  /** @deprecated use `ComAtprotoSyncGetLatestCommitResponseBody$outboundSchema` instead. */
+    BadRequestComAtprotoSyncGetLatestCommitResponseBodyError$inboundSchema;
+  /** @deprecated use `BadRequestComAtprotoSyncGetLatestCommitResponseBodyError$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoSyncGetLatestCommitResponseBody$outboundSchema;
-  /** @deprecated use `ComAtprotoSyncGetLatestCommitResponseBody$Outbound` instead. */
-  export type Outbound = ComAtprotoSyncGetLatestCommitResponseBody$Outbound;
+    BadRequestComAtprotoSyncGetLatestCommitResponseBodyError$outboundSchema;
+  /** @deprecated use `BadRequestComAtprotoSyncGetLatestCommitResponseBodyError$Outbound` instead. */
+  export type Outbound =
+    BadRequestComAtprotoSyncGetLatestCommitResponseBodyError$Outbound;
 }

@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type ComAtprotoModerationCreateReportAtprotoModerationResponseBodyData =
+export type UnauthorizedComAtprotoModerationCreateReportResponseBodyErrorData =
   {
     error: "AuthMissing";
     message: string;
@@ -17,16 +17,16 @@ export type ComAtprotoModerationCreateReportAtprotoModerationResponseBodyData =
 /**
  * Unauthorized
  */
-export class ComAtprotoModerationCreateReportAtprotoModerationResponseBody
+export class UnauthorizedComAtprotoModerationCreateReportResponseBodyError
   extends Error
 {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: ComAtprotoModerationCreateReportAtprotoModerationResponseBodyData;
+  data$: UnauthorizedComAtprotoModerationCreateReportResponseBodyErrorData;
 
   constructor(
-    err: ComAtprotoModerationCreateReportAtprotoModerationResponseBodyData,
+    err: UnauthorizedComAtprotoModerationCreateReportResponseBodyErrorData,
   ) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
@@ -36,7 +36,7 @@ export class ComAtprotoModerationCreateReportAtprotoModerationResponseBody
 
     this.error = err.error;
 
-    this.name = "ComAtprotoModerationCreateReportAtprotoModerationResponseBody";
+    this.name = "UnauthorizedComAtprotoModerationCreateReportResponseBodyError";
   }
 }
 
@@ -52,7 +52,7 @@ export type ComAtprotoModerationCreateReportError = ClosedEnum<
 /**
  * Bad Request
  */
-export type ComAtprotoModerationCreateReportResponseBodyData = {
+export type BadRequestComAtprotoModerationCreateReportResponseBodyErrorData = {
   error: ComAtprotoModerationCreateReportError;
   message: string;
 };
@@ -60,13 +60,17 @@ export type ComAtprotoModerationCreateReportResponseBodyData = {
 /**
  * Bad Request
  */
-export class ComAtprotoModerationCreateReportResponseBody extends Error {
+export class BadRequestComAtprotoModerationCreateReportResponseBodyError
+  extends Error
+{
   error: ComAtprotoModerationCreateReportError;
 
   /** The original data that was passed to this error instance. */
-  data$: ComAtprotoModerationCreateReportResponseBodyData;
+  data$: BadRequestComAtprotoModerationCreateReportResponseBodyErrorData;
 
-  constructor(err: ComAtprotoModerationCreateReportResponseBodyData) {
+  constructor(
+    err: BadRequestComAtprotoModerationCreateReportResponseBodyErrorData,
+  ) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -75,14 +79,14 @@ export class ComAtprotoModerationCreateReportResponseBody extends Error {
 
     this.error = err.error;
 
-    this.name = "ComAtprotoModerationCreateReportResponseBody";
+    this.name = "BadRequestComAtprotoModerationCreateReportResponseBodyError";
   }
 }
 
 /** @internal */
-export const ComAtprotoModerationCreateReportAtprotoModerationResponseBody$inboundSchema:
+export const UnauthorizedComAtprotoModerationCreateReportResponseBodyError$inboundSchema:
   z.ZodType<
-    ComAtprotoModerationCreateReportAtprotoModerationResponseBody,
+    UnauthorizedComAtprotoModerationCreateReportResponseBodyError,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -90,26 +94,26 @@ export const ComAtprotoModerationCreateReportAtprotoModerationResponseBody$inbou
     message: z.string(),
   })
     .transform((v) => {
-      return new ComAtprotoModerationCreateReportAtprotoModerationResponseBody(
+      return new UnauthorizedComAtprotoModerationCreateReportResponseBodyError(
         v,
       );
     });
 
 /** @internal */
-export type ComAtprotoModerationCreateReportAtprotoModerationResponseBody$Outbound =
+export type UnauthorizedComAtprotoModerationCreateReportResponseBodyError$Outbound =
   {
     error: "AuthMissing";
     message: string;
   };
 
 /** @internal */
-export const ComAtprotoModerationCreateReportAtprotoModerationResponseBody$outboundSchema:
+export const UnauthorizedComAtprotoModerationCreateReportResponseBodyError$outboundSchema:
   z.ZodType<
-    ComAtprotoModerationCreateReportAtprotoModerationResponseBody$Outbound,
+    UnauthorizedComAtprotoModerationCreateReportResponseBodyError$Outbound,
     z.ZodTypeDef,
-    ComAtprotoModerationCreateReportAtprotoModerationResponseBody
+    UnauthorizedComAtprotoModerationCreateReportResponseBodyError
   > = z.instanceof(
-    ComAtprotoModerationCreateReportAtprotoModerationResponseBody,
+    UnauthorizedComAtprotoModerationCreateReportResponseBodyError,
   )
     .transform(v => v.data$)
     .pipe(z.object({
@@ -121,16 +125,16 @@ export const ComAtprotoModerationCreateReportAtprotoModerationResponseBody$outbo
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoModerationCreateReportAtprotoModerationResponseBody$ {
-  /** @deprecated use `ComAtprotoModerationCreateReportAtprotoModerationResponseBody$inboundSchema` instead. */
+export namespace UnauthorizedComAtprotoModerationCreateReportResponseBodyError$ {
+  /** @deprecated use `UnauthorizedComAtprotoModerationCreateReportResponseBodyError$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoModerationCreateReportAtprotoModerationResponseBody$inboundSchema;
-  /** @deprecated use `ComAtprotoModerationCreateReportAtprotoModerationResponseBody$outboundSchema` instead. */
+    UnauthorizedComAtprotoModerationCreateReportResponseBodyError$inboundSchema;
+  /** @deprecated use `UnauthorizedComAtprotoModerationCreateReportResponseBodyError$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoModerationCreateReportAtprotoModerationResponseBody$outboundSchema;
-  /** @deprecated use `ComAtprotoModerationCreateReportAtprotoModerationResponseBody$Outbound` instead. */
+    UnauthorizedComAtprotoModerationCreateReportResponseBodyError$outboundSchema;
+  /** @deprecated use `UnauthorizedComAtprotoModerationCreateReportResponseBodyError$Outbound` instead. */
   export type Outbound =
-    ComAtprotoModerationCreateReportAtprotoModerationResponseBody$Outbound;
+    UnauthorizedComAtprotoModerationCreateReportResponseBodyError$Outbound;
 }
 
 /** @internal */
@@ -158,9 +162,9 @@ export namespace ComAtprotoModerationCreateReportError$ {
 }
 
 /** @internal */
-export const ComAtprotoModerationCreateReportResponseBody$inboundSchema:
+export const BadRequestComAtprotoModerationCreateReportResponseBodyError$inboundSchema:
   z.ZodType<
-    ComAtprotoModerationCreateReportResponseBody,
+    BadRequestComAtprotoModerationCreateReportResponseBodyError,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -168,22 +172,23 @@ export const ComAtprotoModerationCreateReportResponseBody$inboundSchema:
     message: z.string(),
   })
     .transform((v) => {
-      return new ComAtprotoModerationCreateReportResponseBody(v);
+      return new BadRequestComAtprotoModerationCreateReportResponseBodyError(v);
     });
 
 /** @internal */
-export type ComAtprotoModerationCreateReportResponseBody$Outbound = {
-  error: string;
-  message: string;
-};
+export type BadRequestComAtprotoModerationCreateReportResponseBodyError$Outbound =
+  {
+    error: string;
+    message: string;
+  };
 
 /** @internal */
-export const ComAtprotoModerationCreateReportResponseBody$outboundSchema:
+export const BadRequestComAtprotoModerationCreateReportResponseBodyError$outboundSchema:
   z.ZodType<
-    ComAtprotoModerationCreateReportResponseBody$Outbound,
+    BadRequestComAtprotoModerationCreateReportResponseBodyError$Outbound,
     z.ZodTypeDef,
-    ComAtprotoModerationCreateReportResponseBody
-  > = z.instanceof(ComAtprotoModerationCreateReportResponseBody)
+    BadRequestComAtprotoModerationCreateReportResponseBodyError
+  > = z.instanceof(BadRequestComAtprotoModerationCreateReportResponseBodyError)
     .transform(v => v.data$)
     .pipe(z.object({
       error: ComAtprotoModerationCreateReportError$outboundSchema,
@@ -194,13 +199,14 @@ export const ComAtprotoModerationCreateReportResponseBody$outboundSchema:
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoModerationCreateReportResponseBody$ {
-  /** @deprecated use `ComAtprotoModerationCreateReportResponseBody$inboundSchema` instead. */
+export namespace BadRequestComAtprotoModerationCreateReportResponseBodyError$ {
+  /** @deprecated use `BadRequestComAtprotoModerationCreateReportResponseBodyError$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoModerationCreateReportResponseBody$inboundSchema;
-  /** @deprecated use `ComAtprotoModerationCreateReportResponseBody$outboundSchema` instead. */
+    BadRequestComAtprotoModerationCreateReportResponseBodyError$inboundSchema;
+  /** @deprecated use `BadRequestComAtprotoModerationCreateReportResponseBodyError$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoModerationCreateReportResponseBody$outboundSchema;
-  /** @deprecated use `ComAtprotoModerationCreateReportResponseBody$Outbound` instead. */
-  export type Outbound = ComAtprotoModerationCreateReportResponseBody$Outbound;
+    BadRequestComAtprotoModerationCreateReportResponseBodyError$outboundSchema;
+  /** @deprecated use `BadRequestComAtprotoModerationCreateReportResponseBodyError$Outbound` instead. */
+  export type Outbound =
+    BadRequestComAtprotoModerationCreateReportResponseBodyError$Outbound;
 }

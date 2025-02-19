@@ -10,15 +10,23 @@ export const tool$identityGetRecommendedDidCredentials: ToolDefinition = {
   description:
     `*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
-Describe the credentials that should be included in the DID doc of an account that is migrating to this service.
-
-`,
+Describe the credentials that should be included in the DID doc of an account that is migrating to this service.`,
+  scopes: ["read"],
   tool: async (client, ctx) => {
     const [result, apiCall] = await identityGetRecommendedDidCredentials(
       client,
       { fetchOptions: { signal: ctx.signal } },
     ).$inspect();
 
-    return formatResult(result, apiCall);
+    if (!result.ok) {
+      return {
+        content: [{ type: "text", text: result.error.message }],
+        isError: true,
+      };
+    }
+
+    const value = result.value;
+
+    return formatResult(value, apiCall);
   },
 };

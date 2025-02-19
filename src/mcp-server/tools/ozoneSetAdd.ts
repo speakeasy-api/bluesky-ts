@@ -7,7 +7,7 @@ import * as operations from "../../models/operations/index.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
 const args = {
-  request: operations.ToolsOzoneSetAddValuesRequestBody$inboundSchema,
+  request: operations.ToolsOzoneSetAddValuesBody$inboundSchema,
 };
 
 export const tool$ozoneSetAdd: ToolDefinition<typeof args> = {
@@ -17,9 +17,8 @@ export const tool$ozoneSetAdd: ToolDefinition<typeof args> = {
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
-Add values to a specific set. Attempting to add values to a set that does not exist will result in an error.
-
-`,
+Add values to a specific set. Attempting to add values to a set that does not exist will result in an error.`,
+  scopes: ["write"],
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await ozoneSetAdd(
@@ -28,6 +27,15 @@ Add values to a specific set. Attempting to add values to a set that does not ex
       { fetchOptions: { signal: ctx.signal } },
     ).$inspect();
 
-    return formatResult(result, apiCall);
+    if (!result.ok) {
+      return {
+        content: [{ type: "text", text: result.error.message }],
+        isError: true,
+      };
+    }
+
+    const value = result.value;
+
+    return formatResult(value, apiCall);
   },
 };

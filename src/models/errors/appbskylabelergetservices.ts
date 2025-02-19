@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type AppBskyLabelerGetServicesLabelersResponseBodyData = {
+export type UnauthorizedAppBskyLabelerGetServicesResponseBodyErrorData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,13 +16,15 @@ export type AppBskyLabelerGetServicesLabelersResponseBodyData = {
 /**
  * Unauthorized
  */
-export class AppBskyLabelerGetServicesLabelersResponseBody extends Error {
+export class UnauthorizedAppBskyLabelerGetServicesResponseBodyError
+  extends Error
+{
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: AppBskyLabelerGetServicesLabelersResponseBodyData;
+  data$: UnauthorizedAppBskyLabelerGetServicesResponseBodyErrorData;
 
-  constructor(err: AppBskyLabelerGetServicesLabelersResponseBodyData) {
+  constructor(err: UnauthorizedAppBskyLabelerGetServicesResponseBodyErrorData) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -31,7 +33,7 @@ export class AppBskyLabelerGetServicesLabelersResponseBody extends Error {
 
     this.error = err.error;
 
-    this.name = "AppBskyLabelerGetServicesLabelersResponseBody";
+    this.name = "UnauthorizedAppBskyLabelerGetServicesResponseBodyError";
   }
 }
 
@@ -47,7 +49,7 @@ export type AppBskyLabelerGetServicesError = ClosedEnum<
 /**
  * Bad Request
  */
-export type AppBskyLabelerGetServicesResponseBodyData = {
+export type BadRequestAppBskyLabelerGetServicesResponseBodyErrorData = {
   error: AppBskyLabelerGetServicesError;
   message: string;
 };
@@ -55,13 +57,15 @@ export type AppBskyLabelerGetServicesResponseBodyData = {
 /**
  * Bad Request
  */
-export class AppBskyLabelerGetServicesResponseBody extends Error {
+export class BadRequestAppBskyLabelerGetServicesResponseBodyError
+  extends Error
+{
   error: AppBskyLabelerGetServicesError;
 
   /** The original data that was passed to this error instance. */
-  data$: AppBskyLabelerGetServicesResponseBodyData;
+  data$: BadRequestAppBskyLabelerGetServicesResponseBodyErrorData;
 
-  constructor(err: AppBskyLabelerGetServicesResponseBodyData) {
+  constructor(err: BadRequestAppBskyLabelerGetServicesResponseBodyErrorData) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -70,14 +74,14 @@ export class AppBskyLabelerGetServicesResponseBody extends Error {
 
     this.error = err.error;
 
-    this.name = "AppBskyLabelerGetServicesResponseBody";
+    this.name = "BadRequestAppBskyLabelerGetServicesResponseBodyError";
   }
 }
 
 /** @internal */
-export const AppBskyLabelerGetServicesLabelersResponseBody$inboundSchema:
+export const UnauthorizedAppBskyLabelerGetServicesResponseBodyError$inboundSchema:
   z.ZodType<
-    AppBskyLabelerGetServicesLabelersResponseBody,
+    UnauthorizedAppBskyLabelerGetServicesResponseBodyError,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -85,22 +89,22 @@ export const AppBskyLabelerGetServicesLabelersResponseBody$inboundSchema:
     message: z.string(),
   })
     .transform((v) => {
-      return new AppBskyLabelerGetServicesLabelersResponseBody(v);
+      return new UnauthorizedAppBskyLabelerGetServicesResponseBodyError(v);
     });
 
 /** @internal */
-export type AppBskyLabelerGetServicesLabelersResponseBody$Outbound = {
+export type UnauthorizedAppBskyLabelerGetServicesResponseBodyError$Outbound = {
   error: "AuthMissing";
   message: string;
 };
 
 /** @internal */
-export const AppBskyLabelerGetServicesLabelersResponseBody$outboundSchema:
+export const UnauthorizedAppBskyLabelerGetServicesResponseBodyError$outboundSchema:
   z.ZodType<
-    AppBskyLabelerGetServicesLabelersResponseBody$Outbound,
+    UnauthorizedAppBskyLabelerGetServicesResponseBodyError$Outbound,
     z.ZodTypeDef,
-    AppBskyLabelerGetServicesLabelersResponseBody
-  > = z.instanceof(AppBskyLabelerGetServicesLabelersResponseBody)
+    UnauthorizedAppBskyLabelerGetServicesResponseBodyError
+  > = z.instanceof(UnauthorizedAppBskyLabelerGetServicesResponseBodyError)
     .transform(v => v.data$)
     .pipe(z.object({
       error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -111,15 +115,16 @@ export const AppBskyLabelerGetServicesLabelersResponseBody$outboundSchema:
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyLabelerGetServicesLabelersResponseBody$ {
-  /** @deprecated use `AppBskyLabelerGetServicesLabelersResponseBody$inboundSchema` instead. */
+export namespace UnauthorizedAppBskyLabelerGetServicesResponseBodyError$ {
+  /** @deprecated use `UnauthorizedAppBskyLabelerGetServicesResponseBodyError$inboundSchema` instead. */
   export const inboundSchema =
-    AppBskyLabelerGetServicesLabelersResponseBody$inboundSchema;
-  /** @deprecated use `AppBskyLabelerGetServicesLabelersResponseBody$outboundSchema` instead. */
+    UnauthorizedAppBskyLabelerGetServicesResponseBodyError$inboundSchema;
+  /** @deprecated use `UnauthorizedAppBskyLabelerGetServicesResponseBodyError$outboundSchema` instead. */
   export const outboundSchema =
-    AppBskyLabelerGetServicesLabelersResponseBody$outboundSchema;
-  /** @deprecated use `AppBskyLabelerGetServicesLabelersResponseBody$Outbound` instead. */
-  export type Outbound = AppBskyLabelerGetServicesLabelersResponseBody$Outbound;
+    UnauthorizedAppBskyLabelerGetServicesResponseBodyError$outboundSchema;
+  /** @deprecated use `UnauthorizedAppBskyLabelerGetServicesResponseBodyError$Outbound` instead. */
+  export type Outbound =
+    UnauthorizedAppBskyLabelerGetServicesResponseBodyError$Outbound;
 }
 
 /** @internal */
@@ -144,47 +149,50 @@ export namespace AppBskyLabelerGetServicesError$ {
 }
 
 /** @internal */
-export const AppBskyLabelerGetServicesResponseBody$inboundSchema: z.ZodType<
-  AppBskyLabelerGetServicesResponseBody,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  error: AppBskyLabelerGetServicesError$inboundSchema,
-  message: z.string(),
-})
-  .transform((v) => {
-    return new AppBskyLabelerGetServicesResponseBody(v);
-  });
+export const BadRequestAppBskyLabelerGetServicesResponseBodyError$inboundSchema:
+  z.ZodType<
+    BadRequestAppBskyLabelerGetServicesResponseBodyError,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    error: AppBskyLabelerGetServicesError$inboundSchema,
+    message: z.string(),
+  })
+    .transform((v) => {
+      return new BadRequestAppBskyLabelerGetServicesResponseBodyError(v);
+    });
 
 /** @internal */
-export type AppBskyLabelerGetServicesResponseBody$Outbound = {
+export type BadRequestAppBskyLabelerGetServicesResponseBodyError$Outbound = {
   error: string;
   message: string;
 };
 
 /** @internal */
-export const AppBskyLabelerGetServicesResponseBody$outboundSchema: z.ZodType<
-  AppBskyLabelerGetServicesResponseBody$Outbound,
-  z.ZodTypeDef,
-  AppBskyLabelerGetServicesResponseBody
-> = z.instanceof(AppBskyLabelerGetServicesResponseBody)
-  .transform(v => v.data$)
-  .pipe(z.object({
-    error: AppBskyLabelerGetServicesError$outboundSchema,
-    message: z.string(),
-  }));
+export const BadRequestAppBskyLabelerGetServicesResponseBodyError$outboundSchema:
+  z.ZodType<
+    BadRequestAppBskyLabelerGetServicesResponseBodyError$Outbound,
+    z.ZodTypeDef,
+    BadRequestAppBskyLabelerGetServicesResponseBodyError
+  > = z.instanceof(BadRequestAppBskyLabelerGetServicesResponseBodyError)
+    .transform(v => v.data$)
+    .pipe(z.object({
+      error: AppBskyLabelerGetServicesError$outboundSchema,
+      message: z.string(),
+    }));
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyLabelerGetServicesResponseBody$ {
-  /** @deprecated use `AppBskyLabelerGetServicesResponseBody$inboundSchema` instead. */
+export namespace BadRequestAppBskyLabelerGetServicesResponseBodyError$ {
+  /** @deprecated use `BadRequestAppBskyLabelerGetServicesResponseBodyError$inboundSchema` instead. */
   export const inboundSchema =
-    AppBskyLabelerGetServicesResponseBody$inboundSchema;
-  /** @deprecated use `AppBskyLabelerGetServicesResponseBody$outboundSchema` instead. */
+    BadRequestAppBskyLabelerGetServicesResponseBodyError$inboundSchema;
+  /** @deprecated use `BadRequestAppBskyLabelerGetServicesResponseBodyError$outboundSchema` instead. */
   export const outboundSchema =
-    AppBskyLabelerGetServicesResponseBody$outboundSchema;
-  /** @deprecated use `AppBskyLabelerGetServicesResponseBody$Outbound` instead. */
-  export type Outbound = AppBskyLabelerGetServicesResponseBody$Outbound;
+    BadRequestAppBskyLabelerGetServicesResponseBodyError$outboundSchema;
+  /** @deprecated use `BadRequestAppBskyLabelerGetServicesResponseBodyError$Outbound` instead. */
+  export type Outbound =
+    BadRequestAppBskyLabelerGetServicesResponseBodyError$Outbound;
 }

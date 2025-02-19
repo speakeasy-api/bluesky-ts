@@ -131,21 +131,21 @@ import {
 
 ### Errors
 
-| Error Type                                                   | Status Code                                                  | Content Type                                                 |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| errors.ToolsOzoneModerationGetRecordsResponseBody            | 400                                                          | application/json                                             |
-| errors.ToolsOzoneModerationGetRecordsModerationsResponseBody | 401                                                          | application/json                                             |
-| errors.NotFound                                              | 404                                                          | application/json                                             |
-| errors.Unauthorized                                          | 403, 407                                                     | application/json                                             |
-| errors.Timeout                                               | 408                                                          | application/json                                             |
-| errors.RateLimited                                           | 429                                                          | application/json                                             |
-| errors.BadRequest                                            | 413, 414, 415, 422, 431                                      | application/json                                             |
-| errors.Timeout                                               | 504                                                          | application/json                                             |
-| errors.NotFound                                              | 501, 505                                                     | application/json                                             |
-| errors.InternalServerError                                   | 500, 502, 503, 506, 507, 508                                 | application/json                                             |
-| errors.BadRequest                                            | 510                                                          | application/json                                             |
-| errors.Unauthorized                                          | 511                                                          | application/json                                             |
-| errors.APIError                                              | 4XX, 5XX                                                     | \*/\*                                                        |
+| Error Type                                                         | Status Code                                                        | Content Type                                                       |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| errors.BadRequestToolsOzoneModerationGetRecordsResponseBodyError   | 400                                                                | application/json                                                   |
+| errors.UnauthorizedToolsOzoneModerationGetRecordsResponseBodyError | 401                                                                | application/json                                                   |
+| errors.NotFoundError                                               | 404                                                                | application/json                                                   |
+| errors.UnauthorizedError                                           | 403, 407                                                           | application/json                                                   |
+| errors.TimeoutError                                                | 408                                                                | application/json                                                   |
+| errors.RateLimitedError                                            | 429                                                                | application/json                                                   |
+| errors.BadRequestError                                             | 413, 414, 415, 422, 431                                            | application/json                                                   |
+| errors.TimeoutError                                                | 504                                                                | application/json                                                   |
+| errors.NotFoundError                                               | 501, 505                                                           | application/json                                                   |
+| errors.InternalServerError                                         | 500, 502, 503, 506, 507, 508                                       | application/json                                                   |
+| errors.BadRequestError                                             | 510                                                                | application/json                                                   |
+| errors.UnauthorizedError                                           | 511                                                                | application/json                                                   |
+| errors.APIError                                                    | 4XX, 5XX                                                           | \*/\*                                                              |
 
 ## getRepos
 
@@ -257,21 +257,21 @@ import {
 
 ### Errors
 
-| Error Type                                                 | Status Code                                                | Content Type                                               |
-| ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
-| errors.ToolsOzoneModerationGetReposResponseBody            | 400                                                        | application/json                                           |
-| errors.ToolsOzoneModerationGetReposModerationsResponseBody | 401                                                        | application/json                                           |
-| errors.NotFound                                            | 404                                                        | application/json                                           |
-| errors.Unauthorized                                        | 403, 407                                                   | application/json                                           |
-| errors.Timeout                                             | 408                                                        | application/json                                           |
-| errors.RateLimited                                         | 429                                                        | application/json                                           |
-| errors.BadRequest                                          | 413, 414, 415, 422, 431                                    | application/json                                           |
-| errors.Timeout                                             | 504                                                        | application/json                                           |
-| errors.NotFound                                            | 501, 505                                                   | application/json                                           |
-| errors.InternalServerError                                 | 500, 502, 503, 506, 507, 508                               | application/json                                           |
-| errors.BadRequest                                          | 510                                                        | application/json                                           |
-| errors.Unauthorized                                        | 511                                                        | application/json                                           |
-| errors.APIError                                            | 4XX, 5XX                                                   | \*/\*                                                      |
+| Error Type                                                       | Status Code                                                      | Content Type                                                     |
+| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
+| errors.BadRequestToolsOzoneModerationGetReposResponseBodyError   | 400                                                              | application/json                                                 |
+| errors.UnauthorizedToolsOzoneModerationGetReposResponseBodyError | 401                                                              | application/json                                                 |
+| errors.NotFoundError                                             | 404                                                              | application/json                                                 |
+| errors.UnauthorizedError                                         | 403, 407                                                         | application/json                                                 |
+| errors.TimeoutError                                              | 408                                                              | application/json                                                 |
+| errors.RateLimitedError                                          | 429                                                              | application/json                                                 |
+| errors.BadRequestError                                           | 413, 414, 415, 422, 431                                          | application/json                                                 |
+| errors.TimeoutError                                              | 504                                                              | application/json                                                 |
+| errors.NotFoundError                                             | 501, 505                                                         | application/json                                                 |
+| errors.InternalServerError                                       | 500, 502, 503, 506, 507, 508                                     | application/json                                                 |
+| errors.BadRequestError                                           | 510                                                              | application/json                                                 |
+| errors.UnauthorizedError                                         | 511                                                              | application/json                                                 |
+| errors.APIError                                                  | 4XX, 5XX                                                         | \*/\*                                                            |
 
 ## queryStatuses
 
@@ -380,18 +380,18 @@ import {
 
 ### Errors
 
-| Error Type                                                      | Status Code                                                     | Content Type                                                    |
-| --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
-| errors.ToolsOzoneModerationQueryStatusesResponseBody            | 400                                                             | application/json                                                |
-| errors.ToolsOzoneModerationQueryStatusesModerationsResponseBody | 401                                                             | application/json                                                |
-| errors.NotFound                                                 | 404                                                             | application/json                                                |
-| errors.Unauthorized                                             | 403, 407                                                        | application/json                                                |
-| errors.Timeout                                                  | 408                                                             | application/json                                                |
-| errors.RateLimited                                              | 429                                                             | application/json                                                |
-| errors.BadRequest                                               | 413, 414, 415, 422, 431                                         | application/json                                                |
-| errors.Timeout                                                  | 504                                                             | application/json                                                |
-| errors.NotFound                                                 | 501, 505                                                        | application/json                                                |
-| errors.InternalServerError                                      | 500, 502, 503, 506, 507, 508                                    | application/json                                                |
-| errors.BadRequest                                               | 510                                                             | application/json                                                |
-| errors.Unauthorized                                             | 511                                                             | application/json                                                |
-| errors.APIError                                                 | 4XX, 5XX                                                        | \*/\*                                                           |
+| Error Type                                                            | Status Code                                                           | Content Type                                                          |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| errors.BadRequestToolsOzoneModerationQueryStatusesResponseBodyError   | 400                                                                   | application/json                                                      |
+| errors.UnauthorizedToolsOzoneModerationQueryStatusesResponseBodyError | 401                                                                   | application/json                                                      |
+| errors.NotFoundError                                                  | 404                                                                   | application/json                                                      |
+| errors.UnauthorizedError                                              | 403, 407                                                              | application/json                                                      |
+| errors.TimeoutError                                                   | 408                                                                   | application/json                                                      |
+| errors.RateLimitedError                                               | 429                                                                   | application/json                                                      |
+| errors.BadRequestError                                                | 413, 414, 415, 422, 431                                               | application/json                                                      |
+| errors.TimeoutError                                                   | 504                                                                   | application/json                                                      |
+| errors.NotFoundError                                                  | 501, 505                                                              | application/json                                                      |
+| errors.InternalServerError                                            | 500, 502, 503, 506, 507, 508                                          | application/json                                                      |
+| errors.BadRequestError                                                | 510                                                                   | application/json                                                      |
+| errors.UnauthorizedError                                              | 511                                                                   | application/json                                                      |
+| errors.APIError                                                       | 4XX, 5XX                                                              | \*/\*                                                                 |

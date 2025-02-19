@@ -17,9 +17,8 @@ export const tool$syncsGetRepoStatus: ToolDefinition<typeof args> = {
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
-Get the hosting status for a repository, on this server. Expected to be implemented by PDS and Relay.
-
-`,
+Get the hosting status for a repository, on this server. Expected to be implemented by PDS and Relay.`,
+  scopes: ["read"],
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await syncsGetRepoStatus(
@@ -28,6 +27,15 @@ Get the hosting status for a repository, on this server. Expected to be implemen
       { fetchOptions: { signal: ctx.signal } },
     ).$inspect();
 
-    return formatResult(result, apiCall);
+    if (!result.ok) {
+      return {
+        content: [{ type: "text", text: result.error.message }],
+        isError: true,
+      };
+    }
+
+    const value = result.value;
+
+    return formatResult(value, apiCall);
   },
 };

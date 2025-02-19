@@ -53,9 +53,7 @@ export class Servers extends ClientSDK {
    * Reserve a repo signing key, for use with account creation. Necessary so that a DID PLC update operation can be constructed during an account migraiton. Public and does not require auth; implemented by PDS. NOTE: this endpoint may change when full account migration is implemented.
    */
   async reserveSigningKey(
-    request?:
-      | operations.ComAtprotoServerReserveSigningKeyRequestBody
-      | undefined,
+    request?: operations.ComAtprotoServerReserveSigningKeyBody | undefined,
     options?: RequestOptions,
   ): Promise<operations.ComAtprotoServerReserveSigningKeyResponseBody> {
     return unwrapAsync(serversReserveSigningKey(
@@ -73,7 +71,7 @@ export class Servers extends ClientSDK {
    * Update an account's email.
    */
   async updateEmail(
-    request: operations.ComAtprotoServerUpdateEmailRequestBody,
+    request: operations.ComAtprotoServerUpdateEmailBody,
     options?: RequestOptions,
   ): Promise<void> {
     return unwrapAsync(serversUpdateEmail(

@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type ComAtprotoServerConfirmEmailServerResponseBodyData = {
+export type UnauthorizedComAtprotoServerConfirmEmailResponseBodyErrorData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,13 +16,17 @@ export type ComAtprotoServerConfirmEmailServerResponseBodyData = {
 /**
  * Unauthorized
  */
-export class ComAtprotoServerConfirmEmailServerResponseBody extends Error {
+export class UnauthorizedComAtprotoServerConfirmEmailResponseBodyError
+  extends Error
+{
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: ComAtprotoServerConfirmEmailServerResponseBodyData;
+  data$: UnauthorizedComAtprotoServerConfirmEmailResponseBodyErrorData;
 
-  constructor(err: ComAtprotoServerConfirmEmailServerResponseBodyData) {
+  constructor(
+    err: UnauthorizedComAtprotoServerConfirmEmailResponseBodyErrorData,
+  ) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -31,7 +35,7 @@ export class ComAtprotoServerConfirmEmailServerResponseBody extends Error {
 
     this.error = err.error;
 
-    this.name = "ComAtprotoServerConfirmEmailServerResponseBody";
+    this.name = "UnauthorizedComAtprotoServerConfirmEmailResponseBodyError";
   }
 }
 
@@ -49,7 +53,7 @@ export type ComAtprotoServerConfirmEmailError = ClosedEnum<
 /**
  * Bad Request
  */
-export type ComAtprotoServerConfirmEmailResponseBodyData = {
+export type BadRequestComAtprotoServerConfirmEmailResponseBodyErrorData = {
   error: ComAtprotoServerConfirmEmailError;
   message: string;
 };
@@ -57,13 +61,17 @@ export type ComAtprotoServerConfirmEmailResponseBodyData = {
 /**
  * Bad Request
  */
-export class ComAtprotoServerConfirmEmailResponseBody extends Error {
+export class BadRequestComAtprotoServerConfirmEmailResponseBodyError
+  extends Error
+{
   error: ComAtprotoServerConfirmEmailError;
 
   /** The original data that was passed to this error instance. */
-  data$: ComAtprotoServerConfirmEmailResponseBodyData;
+  data$: BadRequestComAtprotoServerConfirmEmailResponseBodyErrorData;
 
-  constructor(err: ComAtprotoServerConfirmEmailResponseBodyData) {
+  constructor(
+    err: BadRequestComAtprotoServerConfirmEmailResponseBodyErrorData,
+  ) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -72,14 +80,14 @@ export class ComAtprotoServerConfirmEmailResponseBody extends Error {
 
     this.error = err.error;
 
-    this.name = "ComAtprotoServerConfirmEmailResponseBody";
+    this.name = "BadRequestComAtprotoServerConfirmEmailResponseBodyError";
   }
 }
 
 /** @internal */
-export const ComAtprotoServerConfirmEmailServerResponseBody$inboundSchema:
+export const UnauthorizedComAtprotoServerConfirmEmailResponseBodyError$inboundSchema:
   z.ZodType<
-    ComAtprotoServerConfirmEmailServerResponseBody,
+    UnauthorizedComAtprotoServerConfirmEmailResponseBodyError,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -87,22 +95,23 @@ export const ComAtprotoServerConfirmEmailServerResponseBody$inboundSchema:
     message: z.string(),
   })
     .transform((v) => {
-      return new ComAtprotoServerConfirmEmailServerResponseBody(v);
+      return new UnauthorizedComAtprotoServerConfirmEmailResponseBodyError(v);
     });
 
 /** @internal */
-export type ComAtprotoServerConfirmEmailServerResponseBody$Outbound = {
-  error: "AuthMissing";
-  message: string;
-};
+export type UnauthorizedComAtprotoServerConfirmEmailResponseBodyError$Outbound =
+  {
+    error: "AuthMissing";
+    message: string;
+  };
 
 /** @internal */
-export const ComAtprotoServerConfirmEmailServerResponseBody$outboundSchema:
+export const UnauthorizedComAtprotoServerConfirmEmailResponseBodyError$outboundSchema:
   z.ZodType<
-    ComAtprotoServerConfirmEmailServerResponseBody$Outbound,
+    UnauthorizedComAtprotoServerConfirmEmailResponseBodyError$Outbound,
     z.ZodTypeDef,
-    ComAtprotoServerConfirmEmailServerResponseBody
-  > = z.instanceof(ComAtprotoServerConfirmEmailServerResponseBody)
+    UnauthorizedComAtprotoServerConfirmEmailResponseBodyError
+  > = z.instanceof(UnauthorizedComAtprotoServerConfirmEmailResponseBodyError)
     .transform(v => v.data$)
     .pipe(z.object({
       error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -113,16 +122,16 @@ export const ComAtprotoServerConfirmEmailServerResponseBody$outboundSchema:
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoServerConfirmEmailServerResponseBody$ {
-  /** @deprecated use `ComAtprotoServerConfirmEmailServerResponseBody$inboundSchema` instead. */
+export namespace UnauthorizedComAtprotoServerConfirmEmailResponseBodyError$ {
+  /** @deprecated use `UnauthorizedComAtprotoServerConfirmEmailResponseBodyError$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoServerConfirmEmailServerResponseBody$inboundSchema;
-  /** @deprecated use `ComAtprotoServerConfirmEmailServerResponseBody$outboundSchema` instead. */
+    UnauthorizedComAtprotoServerConfirmEmailResponseBodyError$inboundSchema;
+  /** @deprecated use `UnauthorizedComAtprotoServerConfirmEmailResponseBodyError$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoServerConfirmEmailServerResponseBody$outboundSchema;
-  /** @deprecated use `ComAtprotoServerConfirmEmailServerResponseBody$Outbound` instead. */
+    UnauthorizedComAtprotoServerConfirmEmailResponseBodyError$outboundSchema;
+  /** @deprecated use `UnauthorizedComAtprotoServerConfirmEmailResponseBodyError$Outbound` instead. */
   export type Outbound =
-    ComAtprotoServerConfirmEmailServerResponseBody$Outbound;
+    UnauthorizedComAtprotoServerConfirmEmailResponseBodyError$Outbound;
 }
 
 /** @internal */
@@ -148,47 +157,50 @@ export namespace ComAtprotoServerConfirmEmailError$ {
 }
 
 /** @internal */
-export const ComAtprotoServerConfirmEmailResponseBody$inboundSchema: z.ZodType<
-  ComAtprotoServerConfirmEmailResponseBody,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  error: ComAtprotoServerConfirmEmailError$inboundSchema,
-  message: z.string(),
-})
-  .transform((v) => {
-    return new ComAtprotoServerConfirmEmailResponseBody(v);
-  });
+export const BadRequestComAtprotoServerConfirmEmailResponseBodyError$inboundSchema:
+  z.ZodType<
+    BadRequestComAtprotoServerConfirmEmailResponseBodyError,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    error: ComAtprotoServerConfirmEmailError$inboundSchema,
+    message: z.string(),
+  })
+    .transform((v) => {
+      return new BadRequestComAtprotoServerConfirmEmailResponseBodyError(v);
+    });
 
 /** @internal */
-export type ComAtprotoServerConfirmEmailResponseBody$Outbound = {
+export type BadRequestComAtprotoServerConfirmEmailResponseBodyError$Outbound = {
   error: string;
   message: string;
 };
 
 /** @internal */
-export const ComAtprotoServerConfirmEmailResponseBody$outboundSchema: z.ZodType<
-  ComAtprotoServerConfirmEmailResponseBody$Outbound,
-  z.ZodTypeDef,
-  ComAtprotoServerConfirmEmailResponseBody
-> = z.instanceof(ComAtprotoServerConfirmEmailResponseBody)
-  .transform(v => v.data$)
-  .pipe(z.object({
-    error: ComAtprotoServerConfirmEmailError$outboundSchema,
-    message: z.string(),
-  }));
+export const BadRequestComAtprotoServerConfirmEmailResponseBodyError$outboundSchema:
+  z.ZodType<
+    BadRequestComAtprotoServerConfirmEmailResponseBodyError$Outbound,
+    z.ZodTypeDef,
+    BadRequestComAtprotoServerConfirmEmailResponseBodyError
+  > = z.instanceof(BadRequestComAtprotoServerConfirmEmailResponseBodyError)
+    .transform(v => v.data$)
+    .pipe(z.object({
+      error: ComAtprotoServerConfirmEmailError$outboundSchema,
+      message: z.string(),
+    }));
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoServerConfirmEmailResponseBody$ {
-  /** @deprecated use `ComAtprotoServerConfirmEmailResponseBody$inboundSchema` instead. */
+export namespace BadRequestComAtprotoServerConfirmEmailResponseBodyError$ {
+  /** @deprecated use `BadRequestComAtprotoServerConfirmEmailResponseBodyError$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoServerConfirmEmailResponseBody$inboundSchema;
-  /** @deprecated use `ComAtprotoServerConfirmEmailResponseBody$outboundSchema` instead. */
+    BadRequestComAtprotoServerConfirmEmailResponseBodyError$inboundSchema;
+  /** @deprecated use `BadRequestComAtprotoServerConfirmEmailResponseBodyError$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoServerConfirmEmailResponseBody$outboundSchema;
-  /** @deprecated use `ComAtprotoServerConfirmEmailResponseBody$Outbound` instead. */
-  export type Outbound = ComAtprotoServerConfirmEmailResponseBody$Outbound;
+    BadRequestComAtprotoServerConfirmEmailResponseBodyError$outboundSchema;
+  /** @deprecated use `BadRequestComAtprotoServerConfirmEmailResponseBodyError$Outbound` instead. */
+  export type Outbound =
+    BadRequestComAtprotoServerConfirmEmailResponseBodyError$Outbound;
 }

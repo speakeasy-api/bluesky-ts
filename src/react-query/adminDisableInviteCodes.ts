@@ -17,7 +17,7 @@ import { useBlueskyContext } from "./_context.js";
 import { MutationHookOptions } from "./_types.js";
 
 export type AdminDisableInviteCodesMutationVariables = {
-  request?: operations.ComAtprotoAdminDisableInviteCodesRequestBody | undefined;
+  request?: operations.ComAtprotoAdminDisableInviteCodesBody | undefined;
   options?: RequestOptions;
 };
 

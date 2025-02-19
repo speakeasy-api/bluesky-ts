@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ComAtprotoServerCreateSessionRequestBody = {
+export type ComAtprotoServerCreateSessionBody = {
   /**
    * Handle or other identifier supported by the server for the authenticating user.
    */
@@ -20,7 +20,7 @@ export type ComAtprotoServerCreateSessionRequestBody = {
 /**
  * If active=false, this optional field indicates a possible reason for why the account is not active. If active=false and no status is supplied, then the host makes no claim for why the repository is no longer being hosted.
  */
-export const Status = {
+export const ComAtprotoServerCreateSessionStatus = {
   Takendown: "takendown",
   Suspended: "suspended",
   Deactivated: "deactivated",
@@ -28,7 +28,9 @@ export const Status = {
 /**
  * If active=false, this optional field indicates a possible reason for why the account is not active. If active=false and no status is supplied, then the host makes no claim for why the repository is no longer being hosted.
  */
-export type Status = ClosedEnum<typeof Status>;
+export type ComAtprotoServerCreateSessionStatus = ClosedEnum<
+  typeof ComAtprotoServerCreateSessionStatus
+>;
 
 /**
  * OK
@@ -46,12 +48,12 @@ export type ComAtprotoServerCreateSessionResponseBody = {
   /**
    * If active=false, this optional field indicates a possible reason for why the account is not active. If active=false and no status is supplied, then the host makes no claim for why the repository is no longer being hosted.
    */
-  status?: Status | undefined;
+  status?: ComAtprotoServerCreateSessionStatus | undefined;
 };
 
 /** @internal */
-export const ComAtprotoServerCreateSessionRequestBody$inboundSchema: z.ZodType<
-  ComAtprotoServerCreateSessionRequestBody,
+export const ComAtprotoServerCreateSessionBody$inboundSchema: z.ZodType<
+  ComAtprotoServerCreateSessionBody,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -61,17 +63,17 @@ export const ComAtprotoServerCreateSessionRequestBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type ComAtprotoServerCreateSessionRequestBody$Outbound = {
+export type ComAtprotoServerCreateSessionBody$Outbound = {
   identifier: string;
   password: string;
   authFactorToken?: string | undefined;
 };
 
 /** @internal */
-export const ComAtprotoServerCreateSessionRequestBody$outboundSchema: z.ZodType<
-  ComAtprotoServerCreateSessionRequestBody$Outbound,
+export const ComAtprotoServerCreateSessionBody$outboundSchema: z.ZodType<
+  ComAtprotoServerCreateSessionBody$Outbound,
   z.ZodTypeDef,
-  ComAtprotoServerCreateSessionRequestBody
+  ComAtprotoServerCreateSessionBody
 > = z.object({
   identifier: z.string(),
   password: z.string(),
@@ -82,61 +84,57 @@ export const ComAtprotoServerCreateSessionRequestBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoServerCreateSessionRequestBody$ {
-  /** @deprecated use `ComAtprotoServerCreateSessionRequestBody$inboundSchema` instead. */
-  export const inboundSchema =
-    ComAtprotoServerCreateSessionRequestBody$inboundSchema;
-  /** @deprecated use `ComAtprotoServerCreateSessionRequestBody$outboundSchema` instead. */
+export namespace ComAtprotoServerCreateSessionBody$ {
+  /** @deprecated use `ComAtprotoServerCreateSessionBody$inboundSchema` instead. */
+  export const inboundSchema = ComAtprotoServerCreateSessionBody$inboundSchema;
+  /** @deprecated use `ComAtprotoServerCreateSessionBody$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoServerCreateSessionRequestBody$outboundSchema;
-  /** @deprecated use `ComAtprotoServerCreateSessionRequestBody$Outbound` instead. */
-  export type Outbound = ComAtprotoServerCreateSessionRequestBody$Outbound;
+    ComAtprotoServerCreateSessionBody$outboundSchema;
+  /** @deprecated use `ComAtprotoServerCreateSessionBody$Outbound` instead. */
+  export type Outbound = ComAtprotoServerCreateSessionBody$Outbound;
 }
 
-export function comAtprotoServerCreateSessionRequestBodyToJSON(
-  comAtprotoServerCreateSessionRequestBody:
-    ComAtprotoServerCreateSessionRequestBody,
+export function comAtprotoServerCreateSessionBodyToJSON(
+  comAtprotoServerCreateSessionBody: ComAtprotoServerCreateSessionBody,
 ): string {
   return JSON.stringify(
-    ComAtprotoServerCreateSessionRequestBody$outboundSchema.parse(
-      comAtprotoServerCreateSessionRequestBody,
+    ComAtprotoServerCreateSessionBody$outboundSchema.parse(
+      comAtprotoServerCreateSessionBody,
     ),
   );
 }
 
-export function comAtprotoServerCreateSessionRequestBodyFromJSON(
+export function comAtprotoServerCreateSessionBodyFromJSON(
   jsonString: string,
-): SafeParseResult<
-  ComAtprotoServerCreateSessionRequestBody,
-  SDKValidationError
-> {
+): SafeParseResult<ComAtprotoServerCreateSessionBody, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) =>
-      ComAtprotoServerCreateSessionRequestBody$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'ComAtprotoServerCreateSessionRequestBody' from JSON`,
+    (x) => ComAtprotoServerCreateSessionBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ComAtprotoServerCreateSessionBody' from JSON`,
   );
 }
 
 /** @internal */
-export const Status$inboundSchema: z.ZodNativeEnum<typeof Status> = z
-  .nativeEnum(Status);
+export const ComAtprotoServerCreateSessionStatus$inboundSchema: z.ZodNativeEnum<
+  typeof ComAtprotoServerCreateSessionStatus
+> = z.nativeEnum(ComAtprotoServerCreateSessionStatus);
 
 /** @internal */
-export const Status$outboundSchema: z.ZodNativeEnum<typeof Status> =
-  Status$inboundSchema;
+export const ComAtprotoServerCreateSessionStatus$outboundSchema:
+  z.ZodNativeEnum<typeof ComAtprotoServerCreateSessionStatus> =
+    ComAtprotoServerCreateSessionStatus$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace Status$ {
-  /** @deprecated use `Status$inboundSchema` instead. */
-  export const inboundSchema = Status$inboundSchema;
-  /** @deprecated use `Status$outboundSchema` instead. */
-  export const outboundSchema = Status$outboundSchema;
+export namespace ComAtprotoServerCreateSessionStatus$ {
+  /** @deprecated use `ComAtprotoServerCreateSessionStatus$inboundSchema` instead. */
+  export const inboundSchema =
+    ComAtprotoServerCreateSessionStatus$inboundSchema;
+  /** @deprecated use `ComAtprotoServerCreateSessionStatus$outboundSchema` instead. */
+  export const outboundSchema =
+    ComAtprotoServerCreateSessionStatus$outboundSchema;
 }
 
 /** @internal */
@@ -154,7 +152,7 @@ export const ComAtprotoServerCreateSessionResponseBody$inboundSchema: z.ZodType<
   emailConfirmed: z.boolean().optional(),
   emailAuthFactor: z.boolean().optional(),
   active: z.boolean().optional(),
-  status: Status$inboundSchema.optional(),
+  status: ComAtprotoServerCreateSessionStatus$inboundSchema.optional(),
 });
 
 /** @internal */
@@ -187,7 +185,7 @@ export const ComAtprotoServerCreateSessionResponseBody$outboundSchema:
     emailConfirmed: z.boolean().optional(),
     emailAuthFactor: z.boolean().optional(),
     active: z.boolean().optional(),
-    status: Status$outboundSchema.optional(),
+    status: ComAtprotoServerCreateSessionStatus$outboundSchema.optional(),
   });
 
 /**

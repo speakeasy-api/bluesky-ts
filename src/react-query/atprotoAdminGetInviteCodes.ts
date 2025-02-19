@@ -189,7 +189,7 @@ export function setAtprotoAdminGetInviteCodesData(
   client: QueryClient,
   queryKeyBase: [
     parameters: {
-      sort?: operations.QueryParamSort | undefined;
+      sort?: operations.ComAtprotoAdminGetInviteCodesSort | undefined;
       limit?: number | undefined;
       cursor?: string | undefined;
     },
@@ -205,7 +205,7 @@ export function invalidateAtprotoAdminGetInviteCodes(
   client: QueryClient,
   queryKeyBase: TupleToPrefixes<
     [parameters: {
-      sort?: operations.QueryParamSort | undefined;
+      sort?: operations.ComAtprotoAdminGetInviteCodesSort | undefined;
       limit?: number | undefined;
       cursor?: string | undefined;
     }]
@@ -317,7 +317,7 @@ export function buildAtprotoAdminGetInviteCodesInfiniteQuery(
 
 export function queryKeyAtprotoAdminGetInviteCodes(
   parameters: {
-    sort?: operations.QueryParamSort | undefined;
+    sort?: operations.ComAtprotoAdminGetInviteCodesSort | undefined;
     limit?: number | undefined;
     cursor?: string | undefined;
   },

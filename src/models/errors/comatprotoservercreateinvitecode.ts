@@ -8,24 +8,25 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type ComAtprotoServerCreateInviteCodeAtprotoServerResponseBodyData = {
-  error: "AuthMissing";
-  message: string;
-};
+export type UnauthorizedComAtprotoServerCreateInviteCodeResponseBodyErrorData =
+  {
+    error: "AuthMissing";
+    message: string;
+  };
 
 /**
  * Unauthorized
  */
-export class ComAtprotoServerCreateInviteCodeAtprotoServerResponseBody
+export class UnauthorizedComAtprotoServerCreateInviteCodeResponseBodyError
   extends Error
 {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: ComAtprotoServerCreateInviteCodeAtprotoServerResponseBodyData;
+  data$: UnauthorizedComAtprotoServerCreateInviteCodeResponseBodyErrorData;
 
   constructor(
-    err: ComAtprotoServerCreateInviteCodeAtprotoServerResponseBodyData,
+    err: UnauthorizedComAtprotoServerCreateInviteCodeResponseBodyErrorData,
   ) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
@@ -35,7 +36,7 @@ export class ComAtprotoServerCreateInviteCodeAtprotoServerResponseBody
 
     this.error = err.error;
 
-    this.name = "ComAtprotoServerCreateInviteCodeAtprotoServerResponseBody";
+    this.name = "UnauthorizedComAtprotoServerCreateInviteCodeResponseBodyError";
   }
 }
 
@@ -51,7 +52,7 @@ export type ComAtprotoServerCreateInviteCodeError = ClosedEnum<
 /**
  * Bad Request
  */
-export type ComAtprotoServerCreateInviteCodeResponseBodyData = {
+export type BadRequestComAtprotoServerCreateInviteCodeResponseBodyErrorData = {
   error: ComAtprotoServerCreateInviteCodeError;
   message: string;
 };
@@ -59,13 +60,17 @@ export type ComAtprotoServerCreateInviteCodeResponseBodyData = {
 /**
  * Bad Request
  */
-export class ComAtprotoServerCreateInviteCodeResponseBody extends Error {
+export class BadRequestComAtprotoServerCreateInviteCodeResponseBodyError
+  extends Error
+{
   error: ComAtprotoServerCreateInviteCodeError;
 
   /** The original data that was passed to this error instance. */
-  data$: ComAtprotoServerCreateInviteCodeResponseBodyData;
+  data$: BadRequestComAtprotoServerCreateInviteCodeResponseBodyErrorData;
 
-  constructor(err: ComAtprotoServerCreateInviteCodeResponseBodyData) {
+  constructor(
+    err: BadRequestComAtprotoServerCreateInviteCodeResponseBodyErrorData,
+  ) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -74,14 +79,14 @@ export class ComAtprotoServerCreateInviteCodeResponseBody extends Error {
 
     this.error = err.error;
 
-    this.name = "ComAtprotoServerCreateInviteCodeResponseBody";
+    this.name = "BadRequestComAtprotoServerCreateInviteCodeResponseBodyError";
   }
 }
 
 /** @internal */
-export const ComAtprotoServerCreateInviteCodeAtprotoServerResponseBody$inboundSchema:
+export const UnauthorizedComAtprotoServerCreateInviteCodeResponseBodyError$inboundSchema:
   z.ZodType<
-    ComAtprotoServerCreateInviteCodeAtprotoServerResponseBody,
+    UnauthorizedComAtprotoServerCreateInviteCodeResponseBodyError,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -89,23 +94,27 @@ export const ComAtprotoServerCreateInviteCodeAtprotoServerResponseBody$inboundSc
     message: z.string(),
   })
     .transform((v) => {
-      return new ComAtprotoServerCreateInviteCodeAtprotoServerResponseBody(v);
+      return new UnauthorizedComAtprotoServerCreateInviteCodeResponseBodyError(
+        v,
+      );
     });
 
 /** @internal */
-export type ComAtprotoServerCreateInviteCodeAtprotoServerResponseBody$Outbound =
+export type UnauthorizedComAtprotoServerCreateInviteCodeResponseBodyError$Outbound =
   {
     error: "AuthMissing";
     message: string;
   };
 
 /** @internal */
-export const ComAtprotoServerCreateInviteCodeAtprotoServerResponseBody$outboundSchema:
+export const UnauthorizedComAtprotoServerCreateInviteCodeResponseBodyError$outboundSchema:
   z.ZodType<
-    ComAtprotoServerCreateInviteCodeAtprotoServerResponseBody$Outbound,
+    UnauthorizedComAtprotoServerCreateInviteCodeResponseBodyError$Outbound,
     z.ZodTypeDef,
-    ComAtprotoServerCreateInviteCodeAtprotoServerResponseBody
-  > = z.instanceof(ComAtprotoServerCreateInviteCodeAtprotoServerResponseBody)
+    UnauthorizedComAtprotoServerCreateInviteCodeResponseBodyError
+  > = z.instanceof(
+    UnauthorizedComAtprotoServerCreateInviteCodeResponseBodyError,
+  )
     .transform(v => v.data$)
     .pipe(z.object({
       error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -116,16 +125,16 @@ export const ComAtprotoServerCreateInviteCodeAtprotoServerResponseBody$outboundS
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoServerCreateInviteCodeAtprotoServerResponseBody$ {
-  /** @deprecated use `ComAtprotoServerCreateInviteCodeAtprotoServerResponseBody$inboundSchema` instead. */
+export namespace UnauthorizedComAtprotoServerCreateInviteCodeResponseBodyError$ {
+  /** @deprecated use `UnauthorizedComAtprotoServerCreateInviteCodeResponseBodyError$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoServerCreateInviteCodeAtprotoServerResponseBody$inboundSchema;
-  /** @deprecated use `ComAtprotoServerCreateInviteCodeAtprotoServerResponseBody$outboundSchema` instead. */
+    UnauthorizedComAtprotoServerCreateInviteCodeResponseBodyError$inboundSchema;
+  /** @deprecated use `UnauthorizedComAtprotoServerCreateInviteCodeResponseBodyError$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoServerCreateInviteCodeAtprotoServerResponseBody$outboundSchema;
-  /** @deprecated use `ComAtprotoServerCreateInviteCodeAtprotoServerResponseBody$Outbound` instead. */
+    UnauthorizedComAtprotoServerCreateInviteCodeResponseBodyError$outboundSchema;
+  /** @deprecated use `UnauthorizedComAtprotoServerCreateInviteCodeResponseBodyError$Outbound` instead. */
   export type Outbound =
-    ComAtprotoServerCreateInviteCodeAtprotoServerResponseBody$Outbound;
+    UnauthorizedComAtprotoServerCreateInviteCodeResponseBodyError$Outbound;
 }
 
 /** @internal */
@@ -153,9 +162,9 @@ export namespace ComAtprotoServerCreateInviteCodeError$ {
 }
 
 /** @internal */
-export const ComAtprotoServerCreateInviteCodeResponseBody$inboundSchema:
+export const BadRequestComAtprotoServerCreateInviteCodeResponseBodyError$inboundSchema:
   z.ZodType<
-    ComAtprotoServerCreateInviteCodeResponseBody,
+    BadRequestComAtprotoServerCreateInviteCodeResponseBodyError,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -163,22 +172,23 @@ export const ComAtprotoServerCreateInviteCodeResponseBody$inboundSchema:
     message: z.string(),
   })
     .transform((v) => {
-      return new ComAtprotoServerCreateInviteCodeResponseBody(v);
+      return new BadRequestComAtprotoServerCreateInviteCodeResponseBodyError(v);
     });
 
 /** @internal */
-export type ComAtprotoServerCreateInviteCodeResponseBody$Outbound = {
-  error: string;
-  message: string;
-};
+export type BadRequestComAtprotoServerCreateInviteCodeResponseBodyError$Outbound =
+  {
+    error: string;
+    message: string;
+  };
 
 /** @internal */
-export const ComAtprotoServerCreateInviteCodeResponseBody$outboundSchema:
+export const BadRequestComAtprotoServerCreateInviteCodeResponseBodyError$outboundSchema:
   z.ZodType<
-    ComAtprotoServerCreateInviteCodeResponseBody$Outbound,
+    BadRequestComAtprotoServerCreateInviteCodeResponseBodyError$Outbound,
     z.ZodTypeDef,
-    ComAtprotoServerCreateInviteCodeResponseBody
-  > = z.instanceof(ComAtprotoServerCreateInviteCodeResponseBody)
+    BadRequestComAtprotoServerCreateInviteCodeResponseBodyError
+  > = z.instanceof(BadRequestComAtprotoServerCreateInviteCodeResponseBodyError)
     .transform(v => v.data$)
     .pipe(z.object({
       error: ComAtprotoServerCreateInviteCodeError$outboundSchema,
@@ -189,13 +199,14 @@ export const ComAtprotoServerCreateInviteCodeResponseBody$outboundSchema:
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoServerCreateInviteCodeResponseBody$ {
-  /** @deprecated use `ComAtprotoServerCreateInviteCodeResponseBody$inboundSchema` instead. */
+export namespace BadRequestComAtprotoServerCreateInviteCodeResponseBodyError$ {
+  /** @deprecated use `BadRequestComAtprotoServerCreateInviteCodeResponseBodyError$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoServerCreateInviteCodeResponseBody$inboundSchema;
-  /** @deprecated use `ComAtprotoServerCreateInviteCodeResponseBody$outboundSchema` instead. */
+    BadRequestComAtprotoServerCreateInviteCodeResponseBodyError$inboundSchema;
+  /** @deprecated use `BadRequestComAtprotoServerCreateInviteCodeResponseBodyError$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoServerCreateInviteCodeResponseBody$outboundSchema;
-  /** @deprecated use `ComAtprotoServerCreateInviteCodeResponseBody$Outbound` instead. */
-  export type Outbound = ComAtprotoServerCreateInviteCodeResponseBody$Outbound;
+    BadRequestComAtprotoServerCreateInviteCodeResponseBodyError$outboundSchema;
+  /** @deprecated use `BadRequestComAtprotoServerCreateInviteCodeResponseBodyError$Outbound` instead. */
+  export type Outbound =
+    BadRequestComAtprotoServerCreateInviteCodeResponseBodyError$Outbound;
 }

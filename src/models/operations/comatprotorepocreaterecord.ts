@@ -9,7 +9,7 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ComAtprotoRepoCreateRecordRequestBody = {
+export type ComAtprotoRepoCreateRecordBody = {
   /**
    * The handle or DID of the repo (aka, current account).
    */
@@ -33,11 +33,13 @@ export type ComAtprotoRepoCreateRecordRequestBody = {
   swapCommit?: string | undefined;
 };
 
-export const ValidationStatus = {
+export const ComAtprotoRepoCreateRecordValidationStatus = {
   Valid: "valid",
   Unknown: "unknown",
 } as const;
-export type ValidationStatus = ClosedEnum<typeof ValidationStatus>;
+export type ComAtprotoRepoCreateRecordValidationStatus = ClosedEnum<
+  typeof ComAtprotoRepoCreateRecordValidationStatus
+>;
 
 /**
  * OK
@@ -46,12 +48,12 @@ export type ComAtprotoRepoCreateRecordResponseBody = {
   uri: string;
   cid: string;
   commit?: components.ComAtprotoRepoDefsCommitMeta | undefined;
-  validationStatus?: ValidationStatus | undefined;
+  validationStatus?: ComAtprotoRepoCreateRecordValidationStatus | undefined;
 };
 
 /** @internal */
-export const ComAtprotoRepoCreateRecordRequestBody$inboundSchema: z.ZodType<
-  ComAtprotoRepoCreateRecordRequestBody,
+export const ComAtprotoRepoCreateRecordBody$inboundSchema: z.ZodType<
+  ComAtprotoRepoCreateRecordBody,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -64,7 +66,7 @@ export const ComAtprotoRepoCreateRecordRequestBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type ComAtprotoRepoCreateRecordRequestBody$Outbound = {
+export type ComAtprotoRepoCreateRecordBody$Outbound = {
   repo: string;
   collection: string;
   rkey?: string | undefined;
@@ -74,10 +76,10 @@ export type ComAtprotoRepoCreateRecordRequestBody$Outbound = {
 };
 
 /** @internal */
-export const ComAtprotoRepoCreateRecordRequestBody$outboundSchema: z.ZodType<
-  ComAtprotoRepoCreateRecordRequestBody$Outbound,
+export const ComAtprotoRepoCreateRecordBody$outboundSchema: z.ZodType<
+  ComAtprotoRepoCreateRecordBody$Outbound,
   z.ZodTypeDef,
-  ComAtprotoRepoCreateRecordRequestBody
+  ComAtprotoRepoCreateRecordBody
 > = z.object({
   repo: z.string(),
   collection: z.string(),
@@ -91,57 +93,56 @@ export const ComAtprotoRepoCreateRecordRequestBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoRepoCreateRecordRequestBody$ {
-  /** @deprecated use `ComAtprotoRepoCreateRecordRequestBody$inboundSchema` instead. */
-  export const inboundSchema =
-    ComAtprotoRepoCreateRecordRequestBody$inboundSchema;
-  /** @deprecated use `ComAtprotoRepoCreateRecordRequestBody$outboundSchema` instead. */
-  export const outboundSchema =
-    ComAtprotoRepoCreateRecordRequestBody$outboundSchema;
-  /** @deprecated use `ComAtprotoRepoCreateRecordRequestBody$Outbound` instead. */
-  export type Outbound = ComAtprotoRepoCreateRecordRequestBody$Outbound;
+export namespace ComAtprotoRepoCreateRecordBody$ {
+  /** @deprecated use `ComAtprotoRepoCreateRecordBody$inboundSchema` instead. */
+  export const inboundSchema = ComAtprotoRepoCreateRecordBody$inboundSchema;
+  /** @deprecated use `ComAtprotoRepoCreateRecordBody$outboundSchema` instead. */
+  export const outboundSchema = ComAtprotoRepoCreateRecordBody$outboundSchema;
+  /** @deprecated use `ComAtprotoRepoCreateRecordBody$Outbound` instead. */
+  export type Outbound = ComAtprotoRepoCreateRecordBody$Outbound;
 }
 
-export function comAtprotoRepoCreateRecordRequestBodyToJSON(
-  comAtprotoRepoCreateRecordRequestBody: ComAtprotoRepoCreateRecordRequestBody,
+export function comAtprotoRepoCreateRecordBodyToJSON(
+  comAtprotoRepoCreateRecordBody: ComAtprotoRepoCreateRecordBody,
 ): string {
   return JSON.stringify(
-    ComAtprotoRepoCreateRecordRequestBody$outboundSchema.parse(
-      comAtprotoRepoCreateRecordRequestBody,
+    ComAtprotoRepoCreateRecordBody$outboundSchema.parse(
+      comAtprotoRepoCreateRecordBody,
     ),
   );
 }
 
-export function comAtprotoRepoCreateRecordRequestBodyFromJSON(
+export function comAtprotoRepoCreateRecordBodyFromJSON(
   jsonString: string,
-): SafeParseResult<ComAtprotoRepoCreateRecordRequestBody, SDKValidationError> {
+): SafeParseResult<ComAtprotoRepoCreateRecordBody, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) =>
-      ComAtprotoRepoCreateRecordRequestBody$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ComAtprotoRepoCreateRecordRequestBody' from JSON`,
+    (x) => ComAtprotoRepoCreateRecordBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ComAtprotoRepoCreateRecordBody' from JSON`,
   );
 }
 
 /** @internal */
-export const ValidationStatus$inboundSchema: z.ZodNativeEnum<
-  typeof ValidationStatus
-> = z.nativeEnum(ValidationStatus);
+export const ComAtprotoRepoCreateRecordValidationStatus$inboundSchema:
+  z.ZodNativeEnum<typeof ComAtprotoRepoCreateRecordValidationStatus> = z
+    .nativeEnum(ComAtprotoRepoCreateRecordValidationStatus);
 
 /** @internal */
-export const ValidationStatus$outboundSchema: z.ZodNativeEnum<
-  typeof ValidationStatus
-> = ValidationStatus$inboundSchema;
+export const ComAtprotoRepoCreateRecordValidationStatus$outboundSchema:
+  z.ZodNativeEnum<typeof ComAtprotoRepoCreateRecordValidationStatus> =
+    ComAtprotoRepoCreateRecordValidationStatus$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ValidationStatus$ {
-  /** @deprecated use `ValidationStatus$inboundSchema` instead. */
-  export const inboundSchema = ValidationStatus$inboundSchema;
-  /** @deprecated use `ValidationStatus$outboundSchema` instead. */
-  export const outboundSchema = ValidationStatus$outboundSchema;
+export namespace ComAtprotoRepoCreateRecordValidationStatus$ {
+  /** @deprecated use `ComAtprotoRepoCreateRecordValidationStatus$inboundSchema` instead. */
+  export const inboundSchema =
+    ComAtprotoRepoCreateRecordValidationStatus$inboundSchema;
+  /** @deprecated use `ComAtprotoRepoCreateRecordValidationStatus$outboundSchema` instead. */
+  export const outboundSchema =
+    ComAtprotoRepoCreateRecordValidationStatus$outboundSchema;
 }
 
 /** @internal */
@@ -153,7 +154,8 @@ export const ComAtprotoRepoCreateRecordResponseBody$inboundSchema: z.ZodType<
   uri: z.string(),
   cid: z.string(),
   commit: components.ComAtprotoRepoDefsCommitMeta$inboundSchema.optional(),
-  validationStatus: ValidationStatus$inboundSchema.optional(),
+  validationStatus: ComAtprotoRepoCreateRecordValidationStatus$inboundSchema
+    .optional(),
 });
 
 /** @internal */
@@ -173,7 +175,8 @@ export const ComAtprotoRepoCreateRecordResponseBody$outboundSchema: z.ZodType<
   uri: z.string(),
   cid: z.string(),
   commit: components.ComAtprotoRepoDefsCommitMeta$outboundSchema.optional(),
-  validationStatus: ValidationStatus$outboundSchema.optional(),
+  validationStatus: ComAtprotoRepoCreateRecordValidationStatus$outboundSchema
+    .optional(),
 });
 
 /**

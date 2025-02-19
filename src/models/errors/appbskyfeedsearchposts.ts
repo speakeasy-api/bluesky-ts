@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type AppBskyFeedSearchPostsFeedResponseBodyData = {
+export type UnauthorizedAppBskyFeedSearchPostsResponseBodyErrorData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,13 +16,13 @@ export type AppBskyFeedSearchPostsFeedResponseBodyData = {
 /**
  * Unauthorized
  */
-export class AppBskyFeedSearchPostsFeedResponseBody extends Error {
+export class UnauthorizedAppBskyFeedSearchPostsResponseBodyError extends Error {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: AppBskyFeedSearchPostsFeedResponseBodyData;
+  data$: UnauthorizedAppBskyFeedSearchPostsResponseBodyErrorData;
 
-  constructor(err: AppBskyFeedSearchPostsFeedResponseBodyData) {
+  constructor(err: UnauthorizedAppBskyFeedSearchPostsResponseBodyErrorData) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -31,7 +31,7 @@ export class AppBskyFeedSearchPostsFeedResponseBody extends Error {
 
     this.error = err.error;
 
-    this.name = "AppBskyFeedSearchPostsFeedResponseBody";
+    this.name = "UnauthorizedAppBskyFeedSearchPostsResponseBodyError";
   }
 }
 
@@ -48,7 +48,7 @@ export type AppBskyFeedSearchPostsError = ClosedEnum<
 /**
  * Bad Request
  */
-export type AppBskyFeedSearchPostsResponseBodyData = {
+export type BadRequestAppBskyFeedSearchPostsResponseBodyErrorData = {
   error: AppBskyFeedSearchPostsError;
   message: string;
 };
@@ -56,13 +56,13 @@ export type AppBskyFeedSearchPostsResponseBodyData = {
 /**
  * Bad Request
  */
-export class AppBskyFeedSearchPostsResponseBody extends Error {
+export class BadRequestAppBskyFeedSearchPostsResponseBodyError extends Error {
   error: AppBskyFeedSearchPostsError;
 
   /** The original data that was passed to this error instance. */
-  data$: AppBskyFeedSearchPostsResponseBodyData;
+  data$: BadRequestAppBskyFeedSearchPostsResponseBodyErrorData;
 
-  constructor(err: AppBskyFeedSearchPostsResponseBodyData) {
+  constructor(err: BadRequestAppBskyFeedSearchPostsResponseBodyErrorData) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -71,54 +71,57 @@ export class AppBskyFeedSearchPostsResponseBody extends Error {
 
     this.error = err.error;
 
-    this.name = "AppBskyFeedSearchPostsResponseBody";
+    this.name = "BadRequestAppBskyFeedSearchPostsResponseBodyError";
   }
 }
 
 /** @internal */
-export const AppBskyFeedSearchPostsFeedResponseBody$inboundSchema: z.ZodType<
-  AppBskyFeedSearchPostsFeedResponseBody,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  error: z.literal("AuthMissing"),
-  message: z.string(),
-})
-  .transform((v) => {
-    return new AppBskyFeedSearchPostsFeedResponseBody(v);
-  });
+export const UnauthorizedAppBskyFeedSearchPostsResponseBodyError$inboundSchema:
+  z.ZodType<
+    UnauthorizedAppBskyFeedSearchPostsResponseBodyError,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    error: z.literal("AuthMissing"),
+    message: z.string(),
+  })
+    .transform((v) => {
+      return new UnauthorizedAppBskyFeedSearchPostsResponseBodyError(v);
+    });
 
 /** @internal */
-export type AppBskyFeedSearchPostsFeedResponseBody$Outbound = {
+export type UnauthorizedAppBskyFeedSearchPostsResponseBodyError$Outbound = {
   error: "AuthMissing";
   message: string;
 };
 
 /** @internal */
-export const AppBskyFeedSearchPostsFeedResponseBody$outboundSchema: z.ZodType<
-  AppBskyFeedSearchPostsFeedResponseBody$Outbound,
-  z.ZodTypeDef,
-  AppBskyFeedSearchPostsFeedResponseBody
-> = z.instanceof(AppBskyFeedSearchPostsFeedResponseBody)
-  .transform(v => v.data$)
-  .pipe(z.object({
-    error: z.literal("AuthMissing").default("AuthMissing" as const),
-    message: z.string(),
-  }));
+export const UnauthorizedAppBskyFeedSearchPostsResponseBodyError$outboundSchema:
+  z.ZodType<
+    UnauthorizedAppBskyFeedSearchPostsResponseBodyError$Outbound,
+    z.ZodTypeDef,
+    UnauthorizedAppBskyFeedSearchPostsResponseBodyError
+  > = z.instanceof(UnauthorizedAppBskyFeedSearchPostsResponseBodyError)
+    .transform(v => v.data$)
+    .pipe(z.object({
+      error: z.literal("AuthMissing").default("AuthMissing" as const),
+      message: z.string(),
+    }));
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyFeedSearchPostsFeedResponseBody$ {
-  /** @deprecated use `AppBskyFeedSearchPostsFeedResponseBody$inboundSchema` instead. */
+export namespace UnauthorizedAppBskyFeedSearchPostsResponseBodyError$ {
+  /** @deprecated use `UnauthorizedAppBskyFeedSearchPostsResponseBodyError$inboundSchema` instead. */
   export const inboundSchema =
-    AppBskyFeedSearchPostsFeedResponseBody$inboundSchema;
-  /** @deprecated use `AppBskyFeedSearchPostsFeedResponseBody$outboundSchema` instead. */
+    UnauthorizedAppBskyFeedSearchPostsResponseBodyError$inboundSchema;
+  /** @deprecated use `UnauthorizedAppBskyFeedSearchPostsResponseBodyError$outboundSchema` instead. */
   export const outboundSchema =
-    AppBskyFeedSearchPostsFeedResponseBody$outboundSchema;
-  /** @deprecated use `AppBskyFeedSearchPostsFeedResponseBody$Outbound` instead. */
-  export type Outbound = AppBskyFeedSearchPostsFeedResponseBody$Outbound;
+    UnauthorizedAppBskyFeedSearchPostsResponseBodyError$outboundSchema;
+  /** @deprecated use `UnauthorizedAppBskyFeedSearchPostsResponseBodyError$Outbound` instead. */
+  export type Outbound =
+    UnauthorizedAppBskyFeedSearchPostsResponseBodyError$Outbound;
 }
 
 /** @internal */
@@ -143,46 +146,50 @@ export namespace AppBskyFeedSearchPostsError$ {
 }
 
 /** @internal */
-export const AppBskyFeedSearchPostsResponseBody$inboundSchema: z.ZodType<
-  AppBskyFeedSearchPostsResponseBody,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  error: AppBskyFeedSearchPostsError$inboundSchema,
-  message: z.string(),
-})
-  .transform((v) => {
-    return new AppBskyFeedSearchPostsResponseBody(v);
-  });
+export const BadRequestAppBskyFeedSearchPostsResponseBodyError$inboundSchema:
+  z.ZodType<
+    BadRequestAppBskyFeedSearchPostsResponseBodyError,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    error: AppBskyFeedSearchPostsError$inboundSchema,
+    message: z.string(),
+  })
+    .transform((v) => {
+      return new BadRequestAppBskyFeedSearchPostsResponseBodyError(v);
+    });
 
 /** @internal */
-export type AppBskyFeedSearchPostsResponseBody$Outbound = {
+export type BadRequestAppBskyFeedSearchPostsResponseBodyError$Outbound = {
   error: string;
   message: string;
 };
 
 /** @internal */
-export const AppBskyFeedSearchPostsResponseBody$outboundSchema: z.ZodType<
-  AppBskyFeedSearchPostsResponseBody$Outbound,
-  z.ZodTypeDef,
-  AppBskyFeedSearchPostsResponseBody
-> = z.instanceof(AppBskyFeedSearchPostsResponseBody)
-  .transform(v => v.data$)
-  .pipe(z.object({
-    error: AppBskyFeedSearchPostsError$outboundSchema,
-    message: z.string(),
-  }));
+export const BadRequestAppBskyFeedSearchPostsResponseBodyError$outboundSchema:
+  z.ZodType<
+    BadRequestAppBskyFeedSearchPostsResponseBodyError$Outbound,
+    z.ZodTypeDef,
+    BadRequestAppBskyFeedSearchPostsResponseBodyError
+  > = z.instanceof(BadRequestAppBskyFeedSearchPostsResponseBodyError)
+    .transform(v => v.data$)
+    .pipe(z.object({
+      error: AppBskyFeedSearchPostsError$outboundSchema,
+      message: z.string(),
+    }));
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyFeedSearchPostsResponseBody$ {
-  /** @deprecated use `AppBskyFeedSearchPostsResponseBody$inboundSchema` instead. */
-  export const inboundSchema = AppBskyFeedSearchPostsResponseBody$inboundSchema;
-  /** @deprecated use `AppBskyFeedSearchPostsResponseBody$outboundSchema` instead. */
+export namespace BadRequestAppBskyFeedSearchPostsResponseBodyError$ {
+  /** @deprecated use `BadRequestAppBskyFeedSearchPostsResponseBodyError$inboundSchema` instead. */
+  export const inboundSchema =
+    BadRequestAppBskyFeedSearchPostsResponseBodyError$inboundSchema;
+  /** @deprecated use `BadRequestAppBskyFeedSearchPostsResponseBodyError$outboundSchema` instead. */
   export const outboundSchema =
-    AppBskyFeedSearchPostsResponseBody$outboundSchema;
-  /** @deprecated use `AppBskyFeedSearchPostsResponseBody$Outbound` instead. */
-  export type Outbound = AppBskyFeedSearchPostsResponseBody$Outbound;
+    BadRequestAppBskyFeedSearchPostsResponseBodyError$outboundSchema;
+  /** @deprecated use `BadRequestAppBskyFeedSearchPostsResponseBodyError$Outbound` instead. */
+  export type Outbound =
+    BadRequestAppBskyFeedSearchPostsResponseBodyError$Outbound;
 }

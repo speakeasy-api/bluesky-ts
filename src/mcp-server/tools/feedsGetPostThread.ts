@@ -17,9 +17,8 @@ export const tool$feedsGetPostThread: ToolDefinition<typeof args> = {
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
-Get posts in a thread. Does not require auth, but additional metadata and filtering will be applied for authed requests.
-
-`,
+Get posts in a thread. Does not require auth, but additional metadata and filtering will be applied for authed requests.`,
+  scopes: ["read"],
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await feedsGetPostThread(
@@ -28,6 +27,15 @@ Get posts in a thread. Does not require auth, but additional metadata and filter
       { fetchOptions: { signal: ctx.signal } },
     ).$inspect();
 
-    return formatResult(result, apiCall);
+    if (!result.ok) {
+      return {
+        content: [{ type: "text", text: result.error.message }],
+        isError: true,
+      };
+    }
+
+    const value = result.value;
+
+    return formatResult(value, apiCall);
   },
 };

@@ -15,7 +15,7 @@ export type ChatBskyConvoGetMessagesRequest = {
   cursor?: string | undefined;
 };
 
-export type Messages =
+export type ChatBskyConvoGetMessagesMessages =
   | components.ChatBskyConvoDefsDeletedMessageView
   | components.ChatBskyConvoDefsMessageView;
 
@@ -97,8 +97,8 @@ export function chatBskyConvoGetMessagesRequestFromJSON(
 }
 
 /** @internal */
-export const Messages$inboundSchema: z.ZodType<
-  Messages,
+export const ChatBskyConvoGetMessagesMessages$inboundSchema: z.ZodType<
+  ChatBskyConvoGetMessagesMessages,
   z.ZodTypeDef,
   unknown
 > = z.union([
@@ -107,15 +107,15 @@ export const Messages$inboundSchema: z.ZodType<
 ]);
 
 /** @internal */
-export type Messages$Outbound =
+export type ChatBskyConvoGetMessagesMessages$Outbound =
   | components.ChatBskyConvoDefsDeletedMessageView$Outbound
   | components.ChatBskyConvoDefsMessageView$Outbound;
 
 /** @internal */
-export const Messages$outboundSchema: z.ZodType<
-  Messages$Outbound,
+export const ChatBskyConvoGetMessagesMessages$outboundSchema: z.ZodType<
+  ChatBskyConvoGetMessagesMessages$Outbound,
   z.ZodTypeDef,
-  Messages
+  ChatBskyConvoGetMessagesMessages
 > = z.union([
   components.ChatBskyConvoDefsDeletedMessageView$outboundSchema,
   components.ChatBskyConvoDefsMessageView$outboundSchema,
@@ -125,26 +125,32 @@ export const Messages$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace Messages$ {
-  /** @deprecated use `Messages$inboundSchema` instead. */
-  export const inboundSchema = Messages$inboundSchema;
-  /** @deprecated use `Messages$outboundSchema` instead. */
-  export const outboundSchema = Messages$outboundSchema;
-  /** @deprecated use `Messages$Outbound` instead. */
-  export type Outbound = Messages$Outbound;
+export namespace ChatBskyConvoGetMessagesMessages$ {
+  /** @deprecated use `ChatBskyConvoGetMessagesMessages$inboundSchema` instead. */
+  export const inboundSchema = ChatBskyConvoGetMessagesMessages$inboundSchema;
+  /** @deprecated use `ChatBskyConvoGetMessagesMessages$outboundSchema` instead. */
+  export const outboundSchema = ChatBskyConvoGetMessagesMessages$outboundSchema;
+  /** @deprecated use `ChatBskyConvoGetMessagesMessages$Outbound` instead. */
+  export type Outbound = ChatBskyConvoGetMessagesMessages$Outbound;
 }
 
-export function messagesToJSON(messages: Messages): string {
-  return JSON.stringify(Messages$outboundSchema.parse(messages));
+export function chatBskyConvoGetMessagesMessagesToJSON(
+  chatBskyConvoGetMessagesMessages: ChatBskyConvoGetMessagesMessages,
+): string {
+  return JSON.stringify(
+    ChatBskyConvoGetMessagesMessages$outboundSchema.parse(
+      chatBskyConvoGetMessagesMessages,
+    ),
+  );
 }
 
-export function messagesFromJSON(
+export function chatBskyConvoGetMessagesMessagesFromJSON(
   jsonString: string,
-): SafeParseResult<Messages, SDKValidationError> {
+): SafeParseResult<ChatBskyConvoGetMessagesMessages, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => Messages$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'Messages' from JSON`,
+    (x) => ChatBskyConvoGetMessagesMessages$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ChatBskyConvoGetMessagesMessages' from JSON`,
   );
 }
 

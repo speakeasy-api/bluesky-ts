@@ -46,9 +46,7 @@ export class AtprotoIdentity extends ClientSDK {
    * Signs a PLC operation to update some value(s) in the requesting DID's document.
    */
   async signPlcOperation(
-    request?:
-      | operations.ComAtprotoIdentitySignPlcOperationRequestBody
-      | undefined,
+    request?: operations.ComAtprotoIdentitySignPlcOperationBody | undefined,
     options?: RequestOptions,
   ): Promise<operations.ComAtprotoIdentitySignPlcOperationResponseBody> {
     return unwrapAsync(atprotoIdentitySignPlcOperation(

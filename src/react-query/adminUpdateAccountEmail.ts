@@ -17,7 +17,7 @@ import { useBlueskyContext } from "./_context.js";
 import { MutationHookOptions } from "./_types.js";
 
 export type AdminUpdateAccountEmailMutationVariables = {
-  request: operations.ComAtprotoAdminUpdateAccountEmailRequestBody;
+  request: operations.ComAtprotoAdminUpdateAccountEmailBody;
   options?: RequestOptions;
 };
 

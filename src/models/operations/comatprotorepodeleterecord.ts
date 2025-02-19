@@ -8,7 +8,7 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ComAtprotoRepoDeleteRecordRequestBody = {
+export type ComAtprotoRepoDeleteRecordBody = {
   /**
    * The handle or DID of the repo (aka, current account).
    */
@@ -39,8 +39,8 @@ export type ComAtprotoRepoDeleteRecordResponseBody = {
 };
 
 /** @internal */
-export const ComAtprotoRepoDeleteRecordRequestBody$inboundSchema: z.ZodType<
-  ComAtprotoRepoDeleteRecordRequestBody,
+export const ComAtprotoRepoDeleteRecordBody$inboundSchema: z.ZodType<
+  ComAtprotoRepoDeleteRecordBody,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -52,7 +52,7 @@ export const ComAtprotoRepoDeleteRecordRequestBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type ComAtprotoRepoDeleteRecordRequestBody$Outbound = {
+export type ComAtprotoRepoDeleteRecordBody$Outbound = {
   repo: string;
   collection: string;
   rkey: string;
@@ -61,10 +61,10 @@ export type ComAtprotoRepoDeleteRecordRequestBody$Outbound = {
 };
 
 /** @internal */
-export const ComAtprotoRepoDeleteRecordRequestBody$outboundSchema: z.ZodType<
-  ComAtprotoRepoDeleteRecordRequestBody$Outbound,
+export const ComAtprotoRepoDeleteRecordBody$outboundSchema: z.ZodType<
+  ComAtprotoRepoDeleteRecordBody$Outbound,
   z.ZodTypeDef,
-  ComAtprotoRepoDeleteRecordRequestBody
+  ComAtprotoRepoDeleteRecordBody
 > = z.object({
   repo: z.string(),
   collection: z.string(),
@@ -77,35 +77,32 @@ export const ComAtprotoRepoDeleteRecordRequestBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoRepoDeleteRecordRequestBody$ {
-  /** @deprecated use `ComAtprotoRepoDeleteRecordRequestBody$inboundSchema` instead. */
-  export const inboundSchema =
-    ComAtprotoRepoDeleteRecordRequestBody$inboundSchema;
-  /** @deprecated use `ComAtprotoRepoDeleteRecordRequestBody$outboundSchema` instead. */
-  export const outboundSchema =
-    ComAtprotoRepoDeleteRecordRequestBody$outboundSchema;
-  /** @deprecated use `ComAtprotoRepoDeleteRecordRequestBody$Outbound` instead. */
-  export type Outbound = ComAtprotoRepoDeleteRecordRequestBody$Outbound;
+export namespace ComAtprotoRepoDeleteRecordBody$ {
+  /** @deprecated use `ComAtprotoRepoDeleteRecordBody$inboundSchema` instead. */
+  export const inboundSchema = ComAtprotoRepoDeleteRecordBody$inboundSchema;
+  /** @deprecated use `ComAtprotoRepoDeleteRecordBody$outboundSchema` instead. */
+  export const outboundSchema = ComAtprotoRepoDeleteRecordBody$outboundSchema;
+  /** @deprecated use `ComAtprotoRepoDeleteRecordBody$Outbound` instead. */
+  export type Outbound = ComAtprotoRepoDeleteRecordBody$Outbound;
 }
 
-export function comAtprotoRepoDeleteRecordRequestBodyToJSON(
-  comAtprotoRepoDeleteRecordRequestBody: ComAtprotoRepoDeleteRecordRequestBody,
+export function comAtprotoRepoDeleteRecordBodyToJSON(
+  comAtprotoRepoDeleteRecordBody: ComAtprotoRepoDeleteRecordBody,
 ): string {
   return JSON.stringify(
-    ComAtprotoRepoDeleteRecordRequestBody$outboundSchema.parse(
-      comAtprotoRepoDeleteRecordRequestBody,
+    ComAtprotoRepoDeleteRecordBody$outboundSchema.parse(
+      comAtprotoRepoDeleteRecordBody,
     ),
   );
 }
 
-export function comAtprotoRepoDeleteRecordRequestBodyFromJSON(
+export function comAtprotoRepoDeleteRecordBodyFromJSON(
   jsonString: string,
-): SafeParseResult<ComAtprotoRepoDeleteRecordRequestBody, SDKValidationError> {
+): SafeParseResult<ComAtprotoRepoDeleteRecordBody, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) =>
-      ComAtprotoRepoDeleteRecordRequestBody$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ComAtprotoRepoDeleteRecordRequestBody' from JSON`,
+    (x) => ComAtprotoRepoDeleteRecordBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ComAtprotoRepoDeleteRecordBody' from JSON`,
   );
 }
 

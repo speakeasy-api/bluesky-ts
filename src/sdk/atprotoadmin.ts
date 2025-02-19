@@ -19,7 +19,7 @@ export class AtprotoAdmin extends ClientSDK {
    * Disable an account from receiving new invite codes, but does not invalidate existing codes.
    */
   async disableAccountInvites(
-    request: operations.ComAtprotoAdminDisableAccountInvitesRequestBody,
+    request: operations.ComAtprotoAdminDisableAccountInvitesBody,
     options?: RequestOptions,
   ): Promise<void> {
     return unwrapAsync(atprotoAdminDisableAccountInvites(

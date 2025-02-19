@@ -7,8 +7,8 @@ import * as operations from "../../models/operations/index.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
 const args = {
-  request: operations
-    .ComAtprotoIdentitySignPlcOperationRequestBody$inboundSchema.optional(),
+  request: operations.ComAtprotoIdentitySignPlcOperationBody$inboundSchema
+    .optional(),
 };
 
 export const tool$atprotoIdentitySignPlcOperation: ToolDefinition<typeof args> =
@@ -17,9 +17,8 @@ export const tool$atprotoIdentitySignPlcOperation: ToolDefinition<typeof args> =
     description:
       `*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
-Signs a PLC operation to update some value(s) in the requesting DID's document.
-
-`,
+Signs a PLC operation to update some value(s) in the requesting DID's document.`,
+    scopes: ["write"],
     args,
     tool: async (client, args, ctx) => {
       const [result, apiCall] = await atprotoIdentitySignPlcOperation(
@@ -28,6 +27,15 @@ Signs a PLC operation to update some value(s) in the requesting DID's document.
         { fetchOptions: { signal: ctx.signal } },
       ).$inspect();
 
-      return formatResult(result, apiCall);
+      if (!result.ok) {
+        return {
+          content: [{ type: "text", text: result.error.message }],
+          isError: true,
+        };
+      }
+
+      const value = result.value;
+
+      return formatResult(value, apiCall);
     },
   };

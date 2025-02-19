@@ -74,7 +74,7 @@ export class Actors extends ClientSDK {
    * Set the private preferences attached to the account.
    */
   async putPreferences(
-    request: operations.AppBskyActorPutPreferencesRequestBody,
+    request: operations.AppBskyActorPutPreferencesBody,
     options?: RequestOptions,
   ): Promise<void> {
     return unwrapAsync(actorsPutPreferences(

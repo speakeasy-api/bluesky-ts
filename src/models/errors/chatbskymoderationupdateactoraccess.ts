@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type ChatBskyModerationUpdateActorAccessChatModerationResponseBodyData =
+export type UnauthorizedChatBskyModerationUpdateActorAccessResponseBodyErrorData =
   {
     error: "AuthMissing";
     message: string;
@@ -17,16 +17,16 @@ export type ChatBskyModerationUpdateActorAccessChatModerationResponseBodyData =
 /**
  * Unauthorized
  */
-export class ChatBskyModerationUpdateActorAccessChatModerationResponseBody
+export class UnauthorizedChatBskyModerationUpdateActorAccessResponseBodyError
   extends Error
 {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: ChatBskyModerationUpdateActorAccessChatModerationResponseBodyData;
+  data$: UnauthorizedChatBskyModerationUpdateActorAccessResponseBodyErrorData;
 
   constructor(
-    err: ChatBskyModerationUpdateActorAccessChatModerationResponseBodyData,
+    err: UnauthorizedChatBskyModerationUpdateActorAccessResponseBodyErrorData,
   ) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
@@ -36,7 +36,8 @@ export class ChatBskyModerationUpdateActorAccessChatModerationResponseBody
 
     this.error = err.error;
 
-    this.name = "ChatBskyModerationUpdateActorAccessChatModerationResponseBody";
+    this.name =
+      "UnauthorizedChatBskyModerationUpdateActorAccessResponseBodyError";
   }
 }
 
@@ -52,21 +53,26 @@ export type ChatBskyModerationUpdateActorAccessError = ClosedEnum<
 /**
  * Bad Request
  */
-export type ChatBskyModerationUpdateActorAccessResponseBodyData = {
-  error: ChatBskyModerationUpdateActorAccessError;
-  message: string;
-};
+export type BadRequestChatBskyModerationUpdateActorAccessResponseBodyErrorData =
+  {
+    error: ChatBskyModerationUpdateActorAccessError;
+    message: string;
+  };
 
 /**
  * Bad Request
  */
-export class ChatBskyModerationUpdateActorAccessResponseBody extends Error {
+export class BadRequestChatBskyModerationUpdateActorAccessResponseBodyError
+  extends Error
+{
   error: ChatBskyModerationUpdateActorAccessError;
 
   /** The original data that was passed to this error instance. */
-  data$: ChatBskyModerationUpdateActorAccessResponseBodyData;
+  data$: BadRequestChatBskyModerationUpdateActorAccessResponseBodyErrorData;
 
-  constructor(err: ChatBskyModerationUpdateActorAccessResponseBodyData) {
+  constructor(
+    err: BadRequestChatBskyModerationUpdateActorAccessResponseBodyErrorData,
+  ) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -75,14 +81,15 @@ export class ChatBskyModerationUpdateActorAccessResponseBody extends Error {
 
     this.error = err.error;
 
-    this.name = "ChatBskyModerationUpdateActorAccessResponseBody";
+    this.name =
+      "BadRequestChatBskyModerationUpdateActorAccessResponseBodyError";
   }
 }
 
 /** @internal */
-export const ChatBskyModerationUpdateActorAccessChatModerationResponseBody$inboundSchema:
+export const UnauthorizedChatBskyModerationUpdateActorAccessResponseBodyError$inboundSchema:
   z.ZodType<
-    ChatBskyModerationUpdateActorAccessChatModerationResponseBody,
+    UnauthorizedChatBskyModerationUpdateActorAccessResponseBodyError,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -90,26 +97,26 @@ export const ChatBskyModerationUpdateActorAccessChatModerationResponseBody$inbou
     message: z.string(),
   })
     .transform((v) => {
-      return new ChatBskyModerationUpdateActorAccessChatModerationResponseBody(
+      return new UnauthorizedChatBskyModerationUpdateActorAccessResponseBodyError(
         v,
       );
     });
 
 /** @internal */
-export type ChatBskyModerationUpdateActorAccessChatModerationResponseBody$Outbound =
+export type UnauthorizedChatBskyModerationUpdateActorAccessResponseBodyError$Outbound =
   {
     error: "AuthMissing";
     message: string;
   };
 
 /** @internal */
-export const ChatBskyModerationUpdateActorAccessChatModerationResponseBody$outboundSchema:
+export const UnauthorizedChatBskyModerationUpdateActorAccessResponseBodyError$outboundSchema:
   z.ZodType<
-    ChatBskyModerationUpdateActorAccessChatModerationResponseBody$Outbound,
+    UnauthorizedChatBskyModerationUpdateActorAccessResponseBodyError$Outbound,
     z.ZodTypeDef,
-    ChatBskyModerationUpdateActorAccessChatModerationResponseBody
+    UnauthorizedChatBskyModerationUpdateActorAccessResponseBodyError
   > = z.instanceof(
-    ChatBskyModerationUpdateActorAccessChatModerationResponseBody,
+    UnauthorizedChatBskyModerationUpdateActorAccessResponseBodyError,
   )
     .transform(v => v.data$)
     .pipe(z.object({
@@ -121,16 +128,16 @@ export const ChatBskyModerationUpdateActorAccessChatModerationResponseBody$outbo
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ChatBskyModerationUpdateActorAccessChatModerationResponseBody$ {
-  /** @deprecated use `ChatBskyModerationUpdateActorAccessChatModerationResponseBody$inboundSchema` instead. */
+export namespace UnauthorizedChatBskyModerationUpdateActorAccessResponseBodyError$ {
+  /** @deprecated use `UnauthorizedChatBskyModerationUpdateActorAccessResponseBodyError$inboundSchema` instead. */
   export const inboundSchema =
-    ChatBskyModerationUpdateActorAccessChatModerationResponseBody$inboundSchema;
-  /** @deprecated use `ChatBskyModerationUpdateActorAccessChatModerationResponseBody$outboundSchema` instead. */
+    UnauthorizedChatBskyModerationUpdateActorAccessResponseBodyError$inboundSchema;
+  /** @deprecated use `UnauthorizedChatBskyModerationUpdateActorAccessResponseBodyError$outboundSchema` instead. */
   export const outboundSchema =
-    ChatBskyModerationUpdateActorAccessChatModerationResponseBody$outboundSchema;
-  /** @deprecated use `ChatBskyModerationUpdateActorAccessChatModerationResponseBody$Outbound` instead. */
+    UnauthorizedChatBskyModerationUpdateActorAccessResponseBodyError$outboundSchema;
+  /** @deprecated use `UnauthorizedChatBskyModerationUpdateActorAccessResponseBodyError$Outbound` instead. */
   export type Outbound =
-    ChatBskyModerationUpdateActorAccessChatModerationResponseBody$Outbound;
+    UnauthorizedChatBskyModerationUpdateActorAccessResponseBodyError$Outbound;
 }
 
 /** @internal */
@@ -157,9 +164,9 @@ export namespace ChatBskyModerationUpdateActorAccessError$ {
 }
 
 /** @internal */
-export const ChatBskyModerationUpdateActorAccessResponseBody$inboundSchema:
+export const BadRequestChatBskyModerationUpdateActorAccessResponseBodyError$inboundSchema:
   z.ZodType<
-    ChatBskyModerationUpdateActorAccessResponseBody,
+    BadRequestChatBskyModerationUpdateActorAccessResponseBodyError,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -167,22 +174,27 @@ export const ChatBskyModerationUpdateActorAccessResponseBody$inboundSchema:
     message: z.string(),
   })
     .transform((v) => {
-      return new ChatBskyModerationUpdateActorAccessResponseBody(v);
+      return new BadRequestChatBskyModerationUpdateActorAccessResponseBodyError(
+        v,
+      );
     });
 
 /** @internal */
-export type ChatBskyModerationUpdateActorAccessResponseBody$Outbound = {
-  error: string;
-  message: string;
-};
+export type BadRequestChatBskyModerationUpdateActorAccessResponseBodyError$Outbound =
+  {
+    error: string;
+    message: string;
+  };
 
 /** @internal */
-export const ChatBskyModerationUpdateActorAccessResponseBody$outboundSchema:
+export const BadRequestChatBskyModerationUpdateActorAccessResponseBodyError$outboundSchema:
   z.ZodType<
-    ChatBskyModerationUpdateActorAccessResponseBody$Outbound,
+    BadRequestChatBskyModerationUpdateActorAccessResponseBodyError$Outbound,
     z.ZodTypeDef,
-    ChatBskyModerationUpdateActorAccessResponseBody
-  > = z.instanceof(ChatBskyModerationUpdateActorAccessResponseBody)
+    BadRequestChatBskyModerationUpdateActorAccessResponseBodyError
+  > = z.instanceof(
+    BadRequestChatBskyModerationUpdateActorAccessResponseBodyError,
+  )
     .transform(v => v.data$)
     .pipe(z.object({
       error: ChatBskyModerationUpdateActorAccessError$outboundSchema,
@@ -193,14 +205,14 @@ export const ChatBskyModerationUpdateActorAccessResponseBody$outboundSchema:
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ChatBskyModerationUpdateActorAccessResponseBody$ {
-  /** @deprecated use `ChatBskyModerationUpdateActorAccessResponseBody$inboundSchema` instead. */
+export namespace BadRequestChatBskyModerationUpdateActorAccessResponseBodyError$ {
+  /** @deprecated use `BadRequestChatBskyModerationUpdateActorAccessResponseBodyError$inboundSchema` instead. */
   export const inboundSchema =
-    ChatBskyModerationUpdateActorAccessResponseBody$inboundSchema;
-  /** @deprecated use `ChatBskyModerationUpdateActorAccessResponseBody$outboundSchema` instead. */
+    BadRequestChatBskyModerationUpdateActorAccessResponseBodyError$inboundSchema;
+  /** @deprecated use `BadRequestChatBskyModerationUpdateActorAccessResponseBodyError$outboundSchema` instead. */
   export const outboundSchema =
-    ChatBskyModerationUpdateActorAccessResponseBody$outboundSchema;
-  /** @deprecated use `ChatBskyModerationUpdateActorAccessResponseBody$Outbound` instead. */
+    BadRequestChatBskyModerationUpdateActorAccessResponseBodyError$outboundSchema;
+  /** @deprecated use `BadRequestChatBskyModerationUpdateActorAccessResponseBodyError$Outbound` instead. */
   export type Outbound =
-    ChatBskyModerationUpdateActorAccessResponseBody$Outbound;
+    BadRequestChatBskyModerationUpdateActorAccessResponseBodyError$Outbound;
 }

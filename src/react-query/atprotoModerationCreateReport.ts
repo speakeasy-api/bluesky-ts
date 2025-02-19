@@ -17,7 +17,7 @@ import { useBlueskyContext } from "./_context.js";
 import { MutationHookOptions } from "./_types.js";
 
 export type AtprotoModerationCreateReportMutationVariables = {
-  request: operations.ComAtprotoModerationCreateReportRequestBody;
+  request: operations.ComAtprotoModerationCreateReportBody;
   options?: RequestOptions;
 };
 

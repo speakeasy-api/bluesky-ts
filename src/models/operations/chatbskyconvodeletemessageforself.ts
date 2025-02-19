@@ -7,77 +7,69 @@ import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ChatBskyConvoDeleteMessageForSelfRequestBody = {
+export type ChatBskyConvoDeleteMessageForSelfBody = {
   convoId: string;
   messageId: string;
 };
 
 /** @internal */
-export const ChatBskyConvoDeleteMessageForSelfRequestBody$inboundSchema:
-  z.ZodType<
-    ChatBskyConvoDeleteMessageForSelfRequestBody,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    convoId: z.string(),
-    messageId: z.string(),
-  });
+export const ChatBskyConvoDeleteMessageForSelfBody$inboundSchema: z.ZodType<
+  ChatBskyConvoDeleteMessageForSelfBody,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  convoId: z.string(),
+  messageId: z.string(),
+});
 
 /** @internal */
-export type ChatBskyConvoDeleteMessageForSelfRequestBody$Outbound = {
+export type ChatBskyConvoDeleteMessageForSelfBody$Outbound = {
   convoId: string;
   messageId: string;
 };
 
 /** @internal */
-export const ChatBskyConvoDeleteMessageForSelfRequestBody$outboundSchema:
-  z.ZodType<
-    ChatBskyConvoDeleteMessageForSelfRequestBody$Outbound,
-    z.ZodTypeDef,
-    ChatBskyConvoDeleteMessageForSelfRequestBody
-  > = z.object({
-    convoId: z.string(),
-    messageId: z.string(),
-  });
+export const ChatBskyConvoDeleteMessageForSelfBody$outboundSchema: z.ZodType<
+  ChatBskyConvoDeleteMessageForSelfBody$Outbound,
+  z.ZodTypeDef,
+  ChatBskyConvoDeleteMessageForSelfBody
+> = z.object({
+  convoId: z.string(),
+  messageId: z.string(),
+});
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ChatBskyConvoDeleteMessageForSelfRequestBody$ {
-  /** @deprecated use `ChatBskyConvoDeleteMessageForSelfRequestBody$inboundSchema` instead. */
+export namespace ChatBskyConvoDeleteMessageForSelfBody$ {
+  /** @deprecated use `ChatBskyConvoDeleteMessageForSelfBody$inboundSchema` instead. */
   export const inboundSchema =
-    ChatBskyConvoDeleteMessageForSelfRequestBody$inboundSchema;
-  /** @deprecated use `ChatBskyConvoDeleteMessageForSelfRequestBody$outboundSchema` instead. */
+    ChatBskyConvoDeleteMessageForSelfBody$inboundSchema;
+  /** @deprecated use `ChatBskyConvoDeleteMessageForSelfBody$outboundSchema` instead. */
   export const outboundSchema =
-    ChatBskyConvoDeleteMessageForSelfRequestBody$outboundSchema;
-  /** @deprecated use `ChatBskyConvoDeleteMessageForSelfRequestBody$Outbound` instead. */
-  export type Outbound = ChatBskyConvoDeleteMessageForSelfRequestBody$Outbound;
+    ChatBskyConvoDeleteMessageForSelfBody$outboundSchema;
+  /** @deprecated use `ChatBskyConvoDeleteMessageForSelfBody$Outbound` instead. */
+  export type Outbound = ChatBskyConvoDeleteMessageForSelfBody$Outbound;
 }
 
-export function chatBskyConvoDeleteMessageForSelfRequestBodyToJSON(
-  chatBskyConvoDeleteMessageForSelfRequestBody:
-    ChatBskyConvoDeleteMessageForSelfRequestBody,
+export function chatBskyConvoDeleteMessageForSelfBodyToJSON(
+  chatBskyConvoDeleteMessageForSelfBody: ChatBskyConvoDeleteMessageForSelfBody,
 ): string {
   return JSON.stringify(
-    ChatBskyConvoDeleteMessageForSelfRequestBody$outboundSchema.parse(
-      chatBskyConvoDeleteMessageForSelfRequestBody,
+    ChatBskyConvoDeleteMessageForSelfBody$outboundSchema.parse(
+      chatBskyConvoDeleteMessageForSelfBody,
     ),
   );
 }
 
-export function chatBskyConvoDeleteMessageForSelfRequestBodyFromJSON(
+export function chatBskyConvoDeleteMessageForSelfBodyFromJSON(
   jsonString: string,
-): SafeParseResult<
-  ChatBskyConvoDeleteMessageForSelfRequestBody,
-  SDKValidationError
-> {
+): SafeParseResult<ChatBskyConvoDeleteMessageForSelfBody, SDKValidationError> {
   return safeParse(
     jsonString,
     (x) =>
-      ChatBskyConvoDeleteMessageForSelfRequestBody$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'ChatBskyConvoDeleteMessageForSelfRequestBody' from JSON`,
+      ChatBskyConvoDeleteMessageForSelfBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ChatBskyConvoDeleteMessageForSelfBody' from JSON`,
   );
 }

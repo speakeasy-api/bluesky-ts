@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type AppBskyFeedGetFeedFeedResponseBodyData = {
+export type UnauthorizedAppBskyFeedGetFeedResponseBodyErrorData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,13 +16,13 @@ export type AppBskyFeedGetFeedFeedResponseBodyData = {
 /**
  * Unauthorized
  */
-export class AppBskyFeedGetFeedFeedResponseBody extends Error {
+export class UnauthorizedAppBskyFeedGetFeedResponseBodyError extends Error {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: AppBskyFeedGetFeedFeedResponseBodyData;
+  data$: UnauthorizedAppBskyFeedGetFeedResponseBodyErrorData;
 
-  constructor(err: AppBskyFeedGetFeedFeedResponseBodyData) {
+  constructor(err: UnauthorizedAppBskyFeedGetFeedResponseBodyErrorData) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -31,7 +31,7 @@ export class AppBskyFeedGetFeedFeedResponseBody extends Error {
 
     this.error = err.error;
 
-    this.name = "AppBskyFeedGetFeedFeedResponseBody";
+    this.name = "UnauthorizedAppBskyFeedGetFeedResponseBodyError";
   }
 }
 
@@ -48,7 +48,7 @@ export type AppBskyFeedGetFeedError = ClosedEnum<
 /**
  * Bad Request
  */
-export type AppBskyFeedGetFeedResponseBodyData = {
+export type BadRequestAppBskyFeedGetFeedResponseBodyErrorData = {
   error: AppBskyFeedGetFeedError;
   message: string;
 };
@@ -56,13 +56,13 @@ export type AppBskyFeedGetFeedResponseBodyData = {
 /**
  * Bad Request
  */
-export class AppBskyFeedGetFeedResponseBody extends Error {
+export class BadRequestAppBskyFeedGetFeedResponseBodyError extends Error {
   error: AppBskyFeedGetFeedError;
 
   /** The original data that was passed to this error instance. */
-  data$: AppBskyFeedGetFeedResponseBodyData;
+  data$: BadRequestAppBskyFeedGetFeedResponseBodyErrorData;
 
-  constructor(err: AppBskyFeedGetFeedResponseBodyData) {
+  constructor(err: BadRequestAppBskyFeedGetFeedResponseBodyErrorData) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -71,53 +71,57 @@ export class AppBskyFeedGetFeedResponseBody extends Error {
 
     this.error = err.error;
 
-    this.name = "AppBskyFeedGetFeedResponseBody";
+    this.name = "BadRequestAppBskyFeedGetFeedResponseBodyError";
   }
 }
 
 /** @internal */
-export const AppBskyFeedGetFeedFeedResponseBody$inboundSchema: z.ZodType<
-  AppBskyFeedGetFeedFeedResponseBody,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  error: z.literal("AuthMissing"),
-  message: z.string(),
-})
-  .transform((v) => {
-    return new AppBskyFeedGetFeedFeedResponseBody(v);
-  });
+export const UnauthorizedAppBskyFeedGetFeedResponseBodyError$inboundSchema:
+  z.ZodType<
+    UnauthorizedAppBskyFeedGetFeedResponseBodyError,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    error: z.literal("AuthMissing"),
+    message: z.string(),
+  })
+    .transform((v) => {
+      return new UnauthorizedAppBskyFeedGetFeedResponseBodyError(v);
+    });
 
 /** @internal */
-export type AppBskyFeedGetFeedFeedResponseBody$Outbound = {
+export type UnauthorizedAppBskyFeedGetFeedResponseBodyError$Outbound = {
   error: "AuthMissing";
   message: string;
 };
 
 /** @internal */
-export const AppBskyFeedGetFeedFeedResponseBody$outboundSchema: z.ZodType<
-  AppBskyFeedGetFeedFeedResponseBody$Outbound,
-  z.ZodTypeDef,
-  AppBskyFeedGetFeedFeedResponseBody
-> = z.instanceof(AppBskyFeedGetFeedFeedResponseBody)
-  .transform(v => v.data$)
-  .pipe(z.object({
-    error: z.literal("AuthMissing").default("AuthMissing" as const),
-    message: z.string(),
-  }));
+export const UnauthorizedAppBskyFeedGetFeedResponseBodyError$outboundSchema:
+  z.ZodType<
+    UnauthorizedAppBskyFeedGetFeedResponseBodyError$Outbound,
+    z.ZodTypeDef,
+    UnauthorizedAppBskyFeedGetFeedResponseBodyError
+  > = z.instanceof(UnauthorizedAppBskyFeedGetFeedResponseBodyError)
+    .transform(v => v.data$)
+    .pipe(z.object({
+      error: z.literal("AuthMissing").default("AuthMissing" as const),
+      message: z.string(),
+    }));
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyFeedGetFeedFeedResponseBody$ {
-  /** @deprecated use `AppBskyFeedGetFeedFeedResponseBody$inboundSchema` instead. */
-  export const inboundSchema = AppBskyFeedGetFeedFeedResponseBody$inboundSchema;
-  /** @deprecated use `AppBskyFeedGetFeedFeedResponseBody$outboundSchema` instead. */
+export namespace UnauthorizedAppBskyFeedGetFeedResponseBodyError$ {
+  /** @deprecated use `UnauthorizedAppBskyFeedGetFeedResponseBodyError$inboundSchema` instead. */
+  export const inboundSchema =
+    UnauthorizedAppBskyFeedGetFeedResponseBodyError$inboundSchema;
+  /** @deprecated use `UnauthorizedAppBskyFeedGetFeedResponseBodyError$outboundSchema` instead. */
   export const outboundSchema =
-    AppBskyFeedGetFeedFeedResponseBody$outboundSchema;
-  /** @deprecated use `AppBskyFeedGetFeedFeedResponseBody$Outbound` instead. */
-  export type Outbound = AppBskyFeedGetFeedFeedResponseBody$Outbound;
+    UnauthorizedAppBskyFeedGetFeedResponseBodyError$outboundSchema;
+  /** @deprecated use `UnauthorizedAppBskyFeedGetFeedResponseBodyError$Outbound` instead. */
+  export type Outbound =
+    UnauthorizedAppBskyFeedGetFeedResponseBodyError$Outbound;
 }
 
 /** @internal */
@@ -142,45 +146,49 @@ export namespace AppBskyFeedGetFeedError$ {
 }
 
 /** @internal */
-export const AppBskyFeedGetFeedResponseBody$inboundSchema: z.ZodType<
-  AppBskyFeedGetFeedResponseBody,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  error: AppBskyFeedGetFeedError$inboundSchema,
-  message: z.string(),
-})
-  .transform((v) => {
-    return new AppBskyFeedGetFeedResponseBody(v);
-  });
+export const BadRequestAppBskyFeedGetFeedResponseBodyError$inboundSchema:
+  z.ZodType<
+    BadRequestAppBskyFeedGetFeedResponseBodyError,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    error: AppBskyFeedGetFeedError$inboundSchema,
+    message: z.string(),
+  })
+    .transform((v) => {
+      return new BadRequestAppBskyFeedGetFeedResponseBodyError(v);
+    });
 
 /** @internal */
-export type AppBskyFeedGetFeedResponseBody$Outbound = {
+export type BadRequestAppBskyFeedGetFeedResponseBodyError$Outbound = {
   error: string;
   message: string;
 };
 
 /** @internal */
-export const AppBskyFeedGetFeedResponseBody$outboundSchema: z.ZodType<
-  AppBskyFeedGetFeedResponseBody$Outbound,
-  z.ZodTypeDef,
-  AppBskyFeedGetFeedResponseBody
-> = z.instanceof(AppBskyFeedGetFeedResponseBody)
-  .transform(v => v.data$)
-  .pipe(z.object({
-    error: AppBskyFeedGetFeedError$outboundSchema,
-    message: z.string(),
-  }));
+export const BadRequestAppBskyFeedGetFeedResponseBodyError$outboundSchema:
+  z.ZodType<
+    BadRequestAppBskyFeedGetFeedResponseBodyError$Outbound,
+    z.ZodTypeDef,
+    BadRequestAppBskyFeedGetFeedResponseBodyError
+  > = z.instanceof(BadRequestAppBskyFeedGetFeedResponseBodyError)
+    .transform(v => v.data$)
+    .pipe(z.object({
+      error: AppBskyFeedGetFeedError$outboundSchema,
+      message: z.string(),
+    }));
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyFeedGetFeedResponseBody$ {
-  /** @deprecated use `AppBskyFeedGetFeedResponseBody$inboundSchema` instead. */
-  export const inboundSchema = AppBskyFeedGetFeedResponseBody$inboundSchema;
-  /** @deprecated use `AppBskyFeedGetFeedResponseBody$outboundSchema` instead. */
-  export const outboundSchema = AppBskyFeedGetFeedResponseBody$outboundSchema;
-  /** @deprecated use `AppBskyFeedGetFeedResponseBody$Outbound` instead. */
-  export type Outbound = AppBskyFeedGetFeedResponseBody$Outbound;
+export namespace BadRequestAppBskyFeedGetFeedResponseBodyError$ {
+  /** @deprecated use `BadRequestAppBskyFeedGetFeedResponseBodyError$inboundSchema` instead. */
+  export const inboundSchema =
+    BadRequestAppBskyFeedGetFeedResponseBodyError$inboundSchema;
+  /** @deprecated use `BadRequestAppBskyFeedGetFeedResponseBodyError$outboundSchema` instead. */
+  export const outboundSchema =
+    BadRequestAppBskyFeedGetFeedResponseBodyError$outboundSchema;
+  /** @deprecated use `BadRequestAppBskyFeedGetFeedResponseBodyError$Outbound` instead. */
+  export type Outbound = BadRequestAppBskyFeedGetFeedResponseBodyError$Outbound;
 }

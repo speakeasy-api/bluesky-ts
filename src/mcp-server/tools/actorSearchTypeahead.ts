@@ -18,9 +18,8 @@ export const tool$actorSearchTypeahead: ToolDefinition<typeof args> = {
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
-Find actor suggestions for a prefix search term. Expected use is for auto-completion during text field entry. Does not require auth.
-
-`,
+Find actor suggestions for a prefix search term. Expected use is for auto-completion during text field entry. Does not require auth.`,
+  scopes: ["read"],
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await actorSearchTypeahead(
@@ -29,6 +28,15 @@ Find actor suggestions for a prefix search term. Expected use is for auto-comple
       { fetchOptions: { signal: ctx.signal } },
     ).$inspect();
 
-    return formatResult(result, apiCall);
+    if (!result.ok) {
+      return {
+        content: [{ type: "text", text: result.error.message }],
+        isError: true,
+      };
+    }
+
+    const value = result.value;
+
+    return formatResult(value, apiCall);
   },
 };

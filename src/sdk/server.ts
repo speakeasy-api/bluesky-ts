@@ -38,7 +38,7 @@ export class Server extends ClientSDK {
    * Confirm an email using a token from com.atproto.server.requestEmailConfirmation.
    */
   async confirmEmail(
-    request: operations.ComAtprotoServerConfirmEmailRequestBody,
+    request: operations.ComAtprotoServerConfirmEmailBody,
     options?: RequestOptions,
   ): Promise<void> {
     return unwrapAsync(serverConfirmEmail(
@@ -56,7 +56,7 @@ export class Server extends ClientSDK {
    * Create an authentication session.
    */
   async createSession(
-    request: operations.ComAtprotoServerCreateSessionRequestBody,
+    request: operations.ComAtprotoServerCreateSessionBody,
     options?: RequestOptions,
   ): Promise<operations.ComAtprotoServerCreateSessionResponseBody> {
     return unwrapAsync(serverCreateSession(
@@ -74,9 +74,7 @@ export class Server extends ClientSDK {
    * Deactivates a currently active account. Stops serving of repo, and future writes to repo until reactivated. Used to finalize account migration with the old host after the account has been activated on the new host.
    */
   async deactivateAccount(
-    request?:
-      | operations.ComAtprotoServerDeactivateAccountRequestBody
-      | undefined,
+    request?: operations.ComAtprotoServerDeactivateAccountBody | undefined,
     options?: RequestOptions,
   ): Promise<void> {
     return unwrapAsync(serverDeactivateAccount(

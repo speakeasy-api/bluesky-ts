@@ -15,7 +15,7 @@ export const Platform = {
 } as const;
 export type Platform = ClosedEnum<typeof Platform>;
 
-export type AppBskyNotificationRegisterPushRequestBody = {
+export type AppBskyNotificationRegisterPushBody = {
   serviceDid: string;
   token: string;
   platform: Platform;
@@ -42,17 +42,19 @@ export namespace Platform$ {
 }
 
 /** @internal */
-export const AppBskyNotificationRegisterPushRequestBody$inboundSchema:
-  z.ZodType<AppBskyNotificationRegisterPushRequestBody, z.ZodTypeDef, unknown> =
-    z.object({
-      serviceDid: z.string(),
-      token: z.string(),
-      platform: Platform$inboundSchema,
-      appId: z.string(),
-    });
+export const AppBskyNotificationRegisterPushBody$inboundSchema: z.ZodType<
+  AppBskyNotificationRegisterPushBody,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  serviceDid: z.string(),
+  token: z.string(),
+  platform: Platform$inboundSchema,
+  appId: z.string(),
+});
 
 /** @internal */
-export type AppBskyNotificationRegisterPushRequestBody$Outbound = {
+export type AppBskyNotificationRegisterPushBody$Outbound = {
   serviceDid: string;
   token: string;
   platform: string;
@@ -60,56 +62,49 @@ export type AppBskyNotificationRegisterPushRequestBody$Outbound = {
 };
 
 /** @internal */
-export const AppBskyNotificationRegisterPushRequestBody$outboundSchema:
-  z.ZodType<
-    AppBskyNotificationRegisterPushRequestBody$Outbound,
-    z.ZodTypeDef,
-    AppBskyNotificationRegisterPushRequestBody
-  > = z.object({
-    serviceDid: z.string(),
-    token: z.string(),
-    platform: Platform$outboundSchema,
-    appId: z.string(),
-  });
+export const AppBskyNotificationRegisterPushBody$outboundSchema: z.ZodType<
+  AppBskyNotificationRegisterPushBody$Outbound,
+  z.ZodTypeDef,
+  AppBskyNotificationRegisterPushBody
+> = z.object({
+  serviceDid: z.string(),
+  token: z.string(),
+  platform: Platform$outboundSchema,
+  appId: z.string(),
+});
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyNotificationRegisterPushRequestBody$ {
-  /** @deprecated use `AppBskyNotificationRegisterPushRequestBody$inboundSchema` instead. */
+export namespace AppBskyNotificationRegisterPushBody$ {
+  /** @deprecated use `AppBskyNotificationRegisterPushBody$inboundSchema` instead. */
   export const inboundSchema =
-    AppBskyNotificationRegisterPushRequestBody$inboundSchema;
-  /** @deprecated use `AppBskyNotificationRegisterPushRequestBody$outboundSchema` instead. */
+    AppBskyNotificationRegisterPushBody$inboundSchema;
+  /** @deprecated use `AppBskyNotificationRegisterPushBody$outboundSchema` instead. */
   export const outboundSchema =
-    AppBskyNotificationRegisterPushRequestBody$outboundSchema;
-  /** @deprecated use `AppBskyNotificationRegisterPushRequestBody$Outbound` instead. */
-  export type Outbound = AppBskyNotificationRegisterPushRequestBody$Outbound;
+    AppBskyNotificationRegisterPushBody$outboundSchema;
+  /** @deprecated use `AppBskyNotificationRegisterPushBody$Outbound` instead. */
+  export type Outbound = AppBskyNotificationRegisterPushBody$Outbound;
 }
 
-export function appBskyNotificationRegisterPushRequestBodyToJSON(
-  appBskyNotificationRegisterPushRequestBody:
-    AppBskyNotificationRegisterPushRequestBody,
+export function appBskyNotificationRegisterPushBodyToJSON(
+  appBskyNotificationRegisterPushBody: AppBskyNotificationRegisterPushBody,
 ): string {
   return JSON.stringify(
-    AppBskyNotificationRegisterPushRequestBody$outboundSchema.parse(
-      appBskyNotificationRegisterPushRequestBody,
+    AppBskyNotificationRegisterPushBody$outboundSchema.parse(
+      appBskyNotificationRegisterPushBody,
     ),
   );
 }
 
-export function appBskyNotificationRegisterPushRequestBodyFromJSON(
+export function appBskyNotificationRegisterPushBodyFromJSON(
   jsonString: string,
-): SafeParseResult<
-  AppBskyNotificationRegisterPushRequestBody,
-  SDKValidationError
-> {
+): SafeParseResult<AppBskyNotificationRegisterPushBody, SDKValidationError> {
   return safeParse(
     jsonString,
     (x) =>
-      AppBskyNotificationRegisterPushRequestBody$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'AppBskyNotificationRegisterPushRequestBody' from JSON`,
+      AppBskyNotificationRegisterPushBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AppBskyNotificationRegisterPushBody' from JSON`,
   );
 }

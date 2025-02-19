@@ -60,7 +60,7 @@ export class Users extends ClientSDK {
    * Unmutes the specified account. Requires auth.
    */
   async unmute(
-    request: operations.AppBskyGraphUnmuteActorRequestBody,
+    request: operations.AppBskyGraphUnmuteActorBody,
     options?: RequestOptions,
   ): Promise<void> {
     return unwrapAsync(usersUnmute(

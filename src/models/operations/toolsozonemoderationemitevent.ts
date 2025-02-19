@@ -31,7 +31,7 @@ export type ToolsOzoneModerationEmitEventSubject =
   | components.ComAtprotoAdminDefsRepoRef
   | components.ComAtprotoRepoStrongRef;
 
-export type ToolsOzoneModerationEmitEventRequestBody = {
+export type ToolsOzoneModerationEmitEventBody = {
   event:
     | components.ToolsOzoneModerationDefsModEventAcknowledge
     | components.ToolsOzoneModerationDefsModEventEscalate
@@ -213,8 +213,8 @@ export function toolsOzoneModerationEmitEventSubjectFromJSON(
 }
 
 /** @internal */
-export const ToolsOzoneModerationEmitEventRequestBody$inboundSchema: z.ZodType<
-  ToolsOzoneModerationEmitEventRequestBody,
+export const ToolsOzoneModerationEmitEventBody$inboundSchema: z.ZodType<
+  ToolsOzoneModerationEmitEventBody,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -246,7 +246,7 @@ export const ToolsOzoneModerationEmitEventRequestBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type ToolsOzoneModerationEmitEventRequestBody$Outbound = {
+export type ToolsOzoneModerationEmitEventBody$Outbound = {
   event:
     | components.ToolsOzoneModerationDefsModEventAcknowledge$Outbound
     | components.ToolsOzoneModerationDefsModEventEscalate$Outbound
@@ -273,10 +273,10 @@ export type ToolsOzoneModerationEmitEventRequestBody$Outbound = {
 };
 
 /** @internal */
-export const ToolsOzoneModerationEmitEventRequestBody$outboundSchema: z.ZodType<
-  ToolsOzoneModerationEmitEventRequestBody$Outbound,
+export const ToolsOzoneModerationEmitEventBody$outboundSchema: z.ZodType<
+  ToolsOzoneModerationEmitEventBody$Outbound,
   z.ZodTypeDef,
-  ToolsOzoneModerationEmitEventRequestBody
+  ToolsOzoneModerationEmitEventBody
 > = z.object({
   event: z.union([
     components.ToolsOzoneModerationDefsModEventAcknowledge$outboundSchema,
@@ -309,40 +309,32 @@ export const ToolsOzoneModerationEmitEventRequestBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ToolsOzoneModerationEmitEventRequestBody$ {
-  /** @deprecated use `ToolsOzoneModerationEmitEventRequestBody$inboundSchema` instead. */
-  export const inboundSchema =
-    ToolsOzoneModerationEmitEventRequestBody$inboundSchema;
-  /** @deprecated use `ToolsOzoneModerationEmitEventRequestBody$outboundSchema` instead. */
+export namespace ToolsOzoneModerationEmitEventBody$ {
+  /** @deprecated use `ToolsOzoneModerationEmitEventBody$inboundSchema` instead. */
+  export const inboundSchema = ToolsOzoneModerationEmitEventBody$inboundSchema;
+  /** @deprecated use `ToolsOzoneModerationEmitEventBody$outboundSchema` instead. */
   export const outboundSchema =
-    ToolsOzoneModerationEmitEventRequestBody$outboundSchema;
-  /** @deprecated use `ToolsOzoneModerationEmitEventRequestBody$Outbound` instead. */
-  export type Outbound = ToolsOzoneModerationEmitEventRequestBody$Outbound;
+    ToolsOzoneModerationEmitEventBody$outboundSchema;
+  /** @deprecated use `ToolsOzoneModerationEmitEventBody$Outbound` instead. */
+  export type Outbound = ToolsOzoneModerationEmitEventBody$Outbound;
 }
 
-export function toolsOzoneModerationEmitEventRequestBodyToJSON(
-  toolsOzoneModerationEmitEventRequestBody:
-    ToolsOzoneModerationEmitEventRequestBody,
+export function toolsOzoneModerationEmitEventBodyToJSON(
+  toolsOzoneModerationEmitEventBody: ToolsOzoneModerationEmitEventBody,
 ): string {
   return JSON.stringify(
-    ToolsOzoneModerationEmitEventRequestBody$outboundSchema.parse(
-      toolsOzoneModerationEmitEventRequestBody,
+    ToolsOzoneModerationEmitEventBody$outboundSchema.parse(
+      toolsOzoneModerationEmitEventBody,
     ),
   );
 }
 
-export function toolsOzoneModerationEmitEventRequestBodyFromJSON(
+export function toolsOzoneModerationEmitEventBodyFromJSON(
   jsonString: string,
-): SafeParseResult<
-  ToolsOzoneModerationEmitEventRequestBody,
-  SDKValidationError
-> {
+): SafeParseResult<ToolsOzoneModerationEmitEventBody, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) =>
-      ToolsOzoneModerationEmitEventRequestBody$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'ToolsOzoneModerationEmitEventRequestBody' from JSON`,
+    (x) => ToolsOzoneModerationEmitEventBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ToolsOzoneModerationEmitEventBody' from JSON`,
   );
 }

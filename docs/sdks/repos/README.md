@@ -132,7 +132,7 @@ import {
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ComAtprotoRepoApplyWritesRequestBody](../../models/operations/comatprotorepoapplywritesrequestbody.md)                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ComAtprotoRepoApplyWritesBody](../../models/operations/comatprotorepoapplywritesbody.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -143,21 +143,21 @@ import {
 
 ### Errors
 
-| Error Type                                        | Status Code                                       | Content Type                                      |
-| ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
-| errors.ComAtprotoRepoApplyWritesResponseBody      | 400                                               | application/json                                  |
-| errors.ComAtprotoRepoApplyWritesReposResponseBody | 401                                               | application/json                                  |
-| errors.NotFound                                   | 404                                               | application/json                                  |
-| errors.Unauthorized                               | 403, 407                                          | application/json                                  |
-| errors.Timeout                                    | 408                                               | application/json                                  |
-| errors.RateLimited                                | 429                                               | application/json                                  |
-| errors.BadRequest                                 | 413, 414, 415, 422, 431                           | application/json                                  |
-| errors.Timeout                                    | 504                                               | application/json                                  |
-| errors.NotFound                                   | 501, 505                                          | application/json                                  |
-| errors.InternalServerError                        | 500, 502, 503, 506, 507, 508                      | application/json                                  |
-| errors.BadRequest                                 | 510                                               | application/json                                  |
-| errors.Unauthorized                               | 511                                               | application/json                                  |
-| errors.APIError                                   | 4XX, 5XX                                          | \*/\*                                             |
+| Error Type                                                    | Status Code                                                   | Content Type                                                  |
+| ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
+| errors.BadRequestComAtprotoRepoApplyWritesResponseBodyError   | 400                                                           | application/json                                              |
+| errors.UnauthorizedComAtprotoRepoApplyWritesResponseBodyError | 401                                                           | application/json                                              |
+| errors.NotFoundError                                          | 404                                                           | application/json                                              |
+| errors.UnauthorizedError                                      | 403, 407                                                      | application/json                                              |
+| errors.TimeoutError                                           | 408                                                           | application/json                                              |
+| errors.RateLimitedError                                       | 429                                                           | application/json                                              |
+| errors.BadRequestError                                        | 413, 414, 415, 422, 431                                       | application/json                                              |
+| errors.TimeoutError                                           | 504                                                           | application/json                                              |
+| errors.NotFoundError                                          | 501, 505                                                      | application/json                                              |
+| errors.InternalServerError                                    | 500, 502, 503, 506, 507, 508                                  | application/json                                              |
+| errors.BadRequestError                                        | 510                                                           | application/json                                              |
+| errors.UnauthorizedError                                      | 511                                                           | application/json                                              |
+| errors.APIError                                               | 4XX, 5XX                                                      | \*/\*                                                         |
 
 ## createRecord
 
@@ -245,7 +245,7 @@ import {
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ComAtprotoRepoCreateRecordRequestBody](../../models/operations/comatprotorepocreaterecordrequestbody.md)                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ComAtprotoRepoCreateRecordBody](../../models/operations/comatprotorepocreaterecordbody.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -256,21 +256,21 @@ import {
 
 ### Errors
 
-| Error Type                                         | Status Code                                        | Content Type                                       |
-| -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
-| errors.ComAtprotoRepoCreateRecordResponseBody      | 400                                                | application/json                                   |
-| errors.ComAtprotoRepoCreateRecordReposResponseBody | 401                                                | application/json                                   |
-| errors.NotFound                                    | 404                                                | application/json                                   |
-| errors.Unauthorized                                | 403, 407                                           | application/json                                   |
-| errors.Timeout                                     | 408                                                | application/json                                   |
-| errors.RateLimited                                 | 429                                                | application/json                                   |
-| errors.BadRequest                                  | 413, 414, 415, 422, 431                            | application/json                                   |
-| errors.Timeout                                     | 504                                                | application/json                                   |
-| errors.NotFound                                    | 501, 505                                           | application/json                                   |
-| errors.InternalServerError                         | 500, 502, 503, 506, 507, 508                       | application/json                                   |
-| errors.BadRequest                                  | 510                                                | application/json                                   |
-| errors.Unauthorized                                | 511                                                | application/json                                   |
-| errors.APIError                                    | 4XX, 5XX                                           | \*/\*                                              |
+| Error Type                                                     | Status Code                                                    | Content Type                                                   |
+| -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
+| errors.BadRequestComAtprotoRepoCreateRecordResponseBodyError   | 400                                                            | application/json                                               |
+| errors.UnauthorizedComAtprotoRepoCreateRecordResponseBodyError | 401                                                            | application/json                                               |
+| errors.NotFoundError                                           | 404                                                            | application/json                                               |
+| errors.UnauthorizedError                                       | 403, 407                                                       | application/json                                               |
+| errors.TimeoutError                                            | 408                                                            | application/json                                               |
+| errors.RateLimitedError                                        | 429                                                            | application/json                                               |
+| errors.BadRequestError                                         | 413, 414, 415, 422, 431                                        | application/json                                               |
+| errors.TimeoutError                                            | 504                                                            | application/json                                               |
+| errors.NotFoundError                                           | 501, 505                                                       | application/json                                               |
+| errors.InternalServerError                                     | 500, 502, 503, 506, 507, 508                                   | application/json                                               |
+| errors.BadRequestError                                         | 510                                                            | application/json                                               |
+| errors.UnauthorizedError                                       | 511                                                            | application/json                                               |
+| errors.APIError                                                | 4XX, 5XX                                                       | \*/\*                                                          |
 
 ## describe
 
@@ -376,21 +376,21 @@ import {
 
 ### Errors
 
-| Error Type                                         | Status Code                                        | Content Type                                       |
-| -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
-| errors.ComAtprotoRepoDescribeRepoResponseBody      | 400                                                | application/json                                   |
-| errors.ComAtprotoRepoDescribeRepoReposResponseBody | 401                                                | application/json                                   |
-| errors.NotFound                                    | 404                                                | application/json                                   |
-| errors.Unauthorized                                | 403, 407                                           | application/json                                   |
-| errors.Timeout                                     | 408                                                | application/json                                   |
-| errors.RateLimited                                 | 429                                                | application/json                                   |
-| errors.BadRequest                                  | 413, 414, 415, 422, 431                            | application/json                                   |
-| errors.Timeout                                     | 504                                                | application/json                                   |
-| errors.NotFound                                    | 501, 505                                           | application/json                                   |
-| errors.InternalServerError                         | 500, 502, 503, 506, 507, 508                       | application/json                                   |
-| errors.BadRequest                                  | 510                                                | application/json                                   |
-| errors.Unauthorized                                | 511                                                | application/json                                   |
-| errors.APIError                                    | 4XX, 5XX                                           | \*/\*                                              |
+| Error Type                                                     | Status Code                                                    | Content Type                                                   |
+| -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
+| errors.BadRequestComAtprotoRepoDescribeRepoResponseBodyError   | 400                                                            | application/json                                               |
+| errors.UnauthorizedComAtprotoRepoDescribeRepoResponseBodyError | 401                                                            | application/json                                               |
+| errors.NotFoundError                                           | 404                                                            | application/json                                               |
+| errors.UnauthorizedError                                       | 403, 407                                                       | application/json                                               |
+| errors.TimeoutError                                            | 408                                                            | application/json                                               |
+| errors.RateLimitedError                                        | 429                                                            | application/json                                               |
+| errors.BadRequestError                                         | 413, 414, 415, 422, 431                                        | application/json                                               |
+| errors.TimeoutError                                            | 504                                                            | application/json                                               |
+| errors.NotFoundError                                           | 501, 505                                                       | application/json                                               |
+| errors.InternalServerError                                     | 500, 502, 503, 506, 507, 508                                   | application/json                                               |
+| errors.BadRequestError                                         | 510                                                            | application/json                                               |
+| errors.UnauthorizedError                                       | 511                                                            | application/json                                               |
+| errors.APIError                                                | 4XX, 5XX                                                       | \*/\*                                                          |
 
 ## getRecord
 
@@ -500,21 +500,21 @@ import {
 
 ### Errors
 
-| Error Type                                      | Status Code                                     | Content Type                                    |
-| ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
-| errors.ComAtprotoRepoGetRecordResponseBody      | 400                                             | application/json                                |
-| errors.ComAtprotoRepoGetRecordReposResponseBody | 401                                             | application/json                                |
-| errors.NotFound                                 | 404                                             | application/json                                |
-| errors.Unauthorized                             | 403, 407                                        | application/json                                |
-| errors.Timeout                                  | 408                                             | application/json                                |
-| errors.RateLimited                              | 429                                             | application/json                                |
-| errors.BadRequest                               | 413, 414, 415, 422, 431                         | application/json                                |
-| errors.Timeout                                  | 504                                             | application/json                                |
-| errors.NotFound                                 | 501, 505                                        | application/json                                |
-| errors.InternalServerError                      | 500, 502, 503, 506, 507, 508                    | application/json                                |
-| errors.BadRequest                               | 510                                             | application/json                                |
-| errors.Unauthorized                             | 511                                             | application/json                                |
-| errors.APIError                                 | 4XX, 5XX                                        | \*/\*                                           |
+| Error Type                                                  | Status Code                                                 | Content Type                                                |
+| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
+| errors.BadRequestComAtprotoRepoGetRecordResponseBodyError   | 400                                                         | application/json                                            |
+| errors.UnauthorizedComAtprotoRepoGetRecordResponseBodyError | 401                                                         | application/json                                            |
+| errors.NotFoundError                                        | 404                                                         | application/json                                            |
+| errors.UnauthorizedError                                    | 403, 407                                                    | application/json                                            |
+| errors.TimeoutError                                         | 408                                                         | application/json                                            |
+| errors.RateLimitedError                                     | 429                                                         | application/json                                            |
+| errors.BadRequestError                                      | 413, 414, 415, 422, 431                                     | application/json                                            |
+| errors.TimeoutError                                         | 504                                                         | application/json                                            |
+| errors.NotFoundError                                        | 501, 505                                                    | application/json                                            |
+| errors.InternalServerError                                  | 500, 502, 503, 506, 507, 508                                | application/json                                            |
+| errors.BadRequestError                                      | 510                                                         | application/json                                            |
+| errors.UnauthorizedError                                    | 511                                                         | application/json                                            |
+| errors.APIError                                             | 4XX, 5XX                                                    | \*/\*                                                       |
 
 ## listMissingBlobs
 
@@ -623,21 +623,21 @@ import {
 
 ### Errors
 
-| Error Type                                             | Status Code                                            | Content Type                                           |
-| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
-| errors.ComAtprotoRepoListMissingBlobsResponseBody      | 400                                                    | application/json                                       |
-| errors.ComAtprotoRepoListMissingBlobsReposResponseBody | 401                                                    | application/json                                       |
-| errors.NotFound                                        | 404                                                    | application/json                                       |
-| errors.Unauthorized                                    | 403, 407                                               | application/json                                       |
-| errors.Timeout                                         | 408                                                    | application/json                                       |
-| errors.RateLimited                                     | 429                                                    | application/json                                       |
-| errors.BadRequest                                      | 413, 414, 415, 422, 431                                | application/json                                       |
-| errors.Timeout                                         | 504                                                    | application/json                                       |
-| errors.NotFound                                        | 501, 505                                               | application/json                                       |
-| errors.InternalServerError                             | 500, 502, 503, 506, 507, 508                           | application/json                                       |
-| errors.BadRequest                                      | 510                                                    | application/json                                       |
-| errors.Unauthorized                                    | 511                                                    | application/json                                       |
-| errors.APIError                                        | 4XX, 5XX                                               | \*/\*                                                  |
+| Error Type                                                         | Status Code                                                        | Content Type                                                       |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| errors.BadRequestComAtprotoRepoListMissingBlobsResponseBodyError   | 400                                                                | application/json                                                   |
+| errors.UnauthorizedComAtprotoRepoListMissingBlobsResponseBodyError | 401                                                                | application/json                                                   |
+| errors.NotFoundError                                               | 404                                                                | application/json                                                   |
+| errors.UnauthorizedError                                           | 403, 407                                                           | application/json                                                   |
+| errors.TimeoutError                                                | 408                                                                | application/json                                                   |
+| errors.RateLimitedError                                            | 429                                                                | application/json                                                   |
+| errors.BadRequestError                                             | 413, 414, 415, 422, 431                                            | application/json                                                   |
+| errors.TimeoutError                                                | 504                                                                | application/json                                                   |
+| errors.NotFoundError                                               | 501, 505                                                           | application/json                                                   |
+| errors.InternalServerError                                         | 500, 502, 503, 506, 507, 508                                       | application/json                                                   |
+| errors.BadRequestError                                             | 510                                                                | application/json                                                   |
+| errors.UnauthorizedError                                           | 511                                                                | application/json                                                   |
+| errors.APIError                                                    | 4XX, 5XX                                                           | \*/\*                                                              |
 
 ## list
 
@@ -752,18 +752,18 @@ import {
 
 ### Errors
 
-| Error Type                                        | Status Code                                       | Content Type                                      |
-| ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
-| errors.ComAtprotoRepoListRecordsResponseBody      | 400                                               | application/json                                  |
-| errors.ComAtprotoRepoListRecordsReposResponseBody | 401                                               | application/json                                  |
-| errors.NotFound                                   | 404                                               | application/json                                  |
-| errors.Unauthorized                               | 403, 407                                          | application/json                                  |
-| errors.Timeout                                    | 408                                               | application/json                                  |
-| errors.RateLimited                                | 429                                               | application/json                                  |
-| errors.BadRequest                                 | 413, 414, 415, 422, 431                           | application/json                                  |
-| errors.Timeout                                    | 504                                               | application/json                                  |
-| errors.NotFound                                   | 501, 505                                          | application/json                                  |
-| errors.InternalServerError                        | 500, 502, 503, 506, 507, 508                      | application/json                                  |
-| errors.BadRequest                                 | 510                                               | application/json                                  |
-| errors.Unauthorized                               | 511                                               | application/json                                  |
-| errors.APIError                                   | 4XX, 5XX                                          | \*/\*                                             |
+| Error Type                                                    | Status Code                                                   | Content Type                                                  |
+| ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
+| errors.BadRequestComAtprotoRepoListRecordsResponseBodyError   | 400                                                           | application/json                                              |
+| errors.UnauthorizedComAtprotoRepoListRecordsResponseBodyError | 401                                                           | application/json                                              |
+| errors.NotFoundError                                          | 404                                                           | application/json                                              |
+| errors.UnauthorizedError                                      | 403, 407                                                      | application/json                                              |
+| errors.TimeoutError                                           | 408                                                           | application/json                                              |
+| errors.RateLimitedError                                       | 429                                                           | application/json                                              |
+| errors.BadRequestError                                        | 413, 414, 415, 422, 431                                       | application/json                                              |
+| errors.TimeoutError                                           | 504                                                           | application/json                                              |
+| errors.NotFoundError                                          | 501, 505                                                      | application/json                                              |
+| errors.InternalServerError                                    | 500, 502, 503, 506, 507, 508                                  | application/json                                              |
+| errors.BadRequestError                                        | 510                                                           | application/json                                              |
+| errors.UnauthorizedError                                      | 511                                                           | application/json                                              |
+| errors.APIError                                               | 4XX, 5XX                                                      | \*/\*                                                         |

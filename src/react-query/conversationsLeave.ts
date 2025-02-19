@@ -17,7 +17,7 @@ import { useBlueskyContext } from "./_context.js";
 import { MutationHookOptions } from "./_types.js";
 
 export type ConversationsLeaveMutationVariables = {
-  request: operations.ChatBskyConvoLeaveConvoRequestBody;
+  request: operations.ChatBskyConvoLeaveConvoBody;
   options?: RequestOptions;
 };
 

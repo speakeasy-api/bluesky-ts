@@ -17,7 +17,7 @@ import { useBlueskyContext } from "./_context.js";
 import { MutationHookOptions } from "./_types.js";
 
 export type NotificationsUpdateSeenMutationVariables = {
-  request: operations.AppBskyNotificationUpdateSeenRequestBody;
+  request: operations.AppBskyNotificationUpdateSeenBody;
   options?: RequestOptions;
 };
 

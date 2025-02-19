@@ -17,7 +17,7 @@ import { useBlueskyContext } from "./_context.js";
 import { MutationHookOptions } from "./_types.js";
 
 export type OzoneSettingsUpsertOptionMutationVariables = {
-  request: operations.ToolsOzoneSettingUpsertOptionRequestBody;
+  request: operations.ToolsOzoneSettingUpsertOptionBody;
   options?: RequestOptions;
 };
 

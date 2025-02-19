@@ -1,0 +1,14 @@
+overlay: 1.0.0
+info:
+  title: Add MCP scopes
+  version: 0.0.0
+actions:
+  - target: $.paths.*["get","head","query"]
+    update: 
+      x-speakeasy-mcp:
+        scopes: ["read"]
+
+  - target: $.paths.*["post","put","delete","patch"]
+    update:
+      x-speakeasy-mcp:
+        scopes: ["write"]

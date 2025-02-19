@@ -7,7 +7,7 @@ import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ComAtprotoSyncNotifyOfUpdateRequestBody = {
+export type ComAtprotoSyncNotifyOfUpdateBody = {
   /**
    * Hostname of the current service (usually a PDS) that is notifying of update.
    */
@@ -15,8 +15,8 @@ export type ComAtprotoSyncNotifyOfUpdateRequestBody = {
 };
 
 /** @internal */
-export const ComAtprotoSyncNotifyOfUpdateRequestBody$inboundSchema: z.ZodType<
-  ComAtprotoSyncNotifyOfUpdateRequestBody,
+export const ComAtprotoSyncNotifyOfUpdateBody$inboundSchema: z.ZodType<
+  ComAtprotoSyncNotifyOfUpdateBody,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -24,15 +24,15 @@ export const ComAtprotoSyncNotifyOfUpdateRequestBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type ComAtprotoSyncNotifyOfUpdateRequestBody$Outbound = {
+export type ComAtprotoSyncNotifyOfUpdateBody$Outbound = {
   hostname: string;
 };
 
 /** @internal */
-export const ComAtprotoSyncNotifyOfUpdateRequestBody$outboundSchema: z.ZodType<
-  ComAtprotoSyncNotifyOfUpdateRequestBody$Outbound,
+export const ComAtprotoSyncNotifyOfUpdateBody$outboundSchema: z.ZodType<
+  ComAtprotoSyncNotifyOfUpdateBody$Outbound,
   z.ZodTypeDef,
-  ComAtprotoSyncNotifyOfUpdateRequestBody
+  ComAtprotoSyncNotifyOfUpdateBody
 > = z.object({
   hostname: z.string(),
 });
@@ -41,40 +41,31 @@ export const ComAtprotoSyncNotifyOfUpdateRequestBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoSyncNotifyOfUpdateRequestBody$ {
-  /** @deprecated use `ComAtprotoSyncNotifyOfUpdateRequestBody$inboundSchema` instead. */
-  export const inboundSchema =
-    ComAtprotoSyncNotifyOfUpdateRequestBody$inboundSchema;
-  /** @deprecated use `ComAtprotoSyncNotifyOfUpdateRequestBody$outboundSchema` instead. */
-  export const outboundSchema =
-    ComAtprotoSyncNotifyOfUpdateRequestBody$outboundSchema;
-  /** @deprecated use `ComAtprotoSyncNotifyOfUpdateRequestBody$Outbound` instead. */
-  export type Outbound = ComAtprotoSyncNotifyOfUpdateRequestBody$Outbound;
+export namespace ComAtprotoSyncNotifyOfUpdateBody$ {
+  /** @deprecated use `ComAtprotoSyncNotifyOfUpdateBody$inboundSchema` instead. */
+  export const inboundSchema = ComAtprotoSyncNotifyOfUpdateBody$inboundSchema;
+  /** @deprecated use `ComAtprotoSyncNotifyOfUpdateBody$outboundSchema` instead. */
+  export const outboundSchema = ComAtprotoSyncNotifyOfUpdateBody$outboundSchema;
+  /** @deprecated use `ComAtprotoSyncNotifyOfUpdateBody$Outbound` instead. */
+  export type Outbound = ComAtprotoSyncNotifyOfUpdateBody$Outbound;
 }
 
-export function comAtprotoSyncNotifyOfUpdateRequestBodyToJSON(
-  comAtprotoSyncNotifyOfUpdateRequestBody:
-    ComAtprotoSyncNotifyOfUpdateRequestBody,
+export function comAtprotoSyncNotifyOfUpdateBodyToJSON(
+  comAtprotoSyncNotifyOfUpdateBody: ComAtprotoSyncNotifyOfUpdateBody,
 ): string {
   return JSON.stringify(
-    ComAtprotoSyncNotifyOfUpdateRequestBody$outboundSchema.parse(
-      comAtprotoSyncNotifyOfUpdateRequestBody,
+    ComAtprotoSyncNotifyOfUpdateBody$outboundSchema.parse(
+      comAtprotoSyncNotifyOfUpdateBody,
     ),
   );
 }
 
-export function comAtprotoSyncNotifyOfUpdateRequestBodyFromJSON(
+export function comAtprotoSyncNotifyOfUpdateBodyFromJSON(
   jsonString: string,
-): SafeParseResult<
-  ComAtprotoSyncNotifyOfUpdateRequestBody,
-  SDKValidationError
-> {
+): SafeParseResult<ComAtprotoSyncNotifyOfUpdateBody, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) =>
-      ComAtprotoSyncNotifyOfUpdateRequestBody$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'ComAtprotoSyncNotifyOfUpdateRequestBody' from JSON`,
+    (x) => ComAtprotoSyncNotifyOfUpdateBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ComAtprotoSyncNotifyOfUpdateBody' from JSON`,
   );
 }

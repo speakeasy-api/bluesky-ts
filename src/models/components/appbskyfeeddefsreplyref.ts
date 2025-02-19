@@ -36,7 +36,7 @@ export type Root =
   | AppBskyFeedDefsBlockedPost
   | AppBskyFeedDefsPostView;
 
-export type Parent =
+export type AppBskyFeedDefsReplyRefParent =
   | AppBskyFeedDefsNotFoundPost
   | AppBskyFeedDefsBlockedPost
   | AppBskyFeedDefsPostView;
@@ -103,24 +103,27 @@ export function rootFromJSON(
 }
 
 /** @internal */
-export const Parent$inboundSchema: z.ZodType<Parent, z.ZodTypeDef, unknown> = z
-  .union([
-    AppBskyFeedDefsNotFoundPost$inboundSchema,
-    AppBskyFeedDefsBlockedPost$inboundSchema,
-    AppBskyFeedDefsPostView$inboundSchema,
-  ]);
+export const AppBskyFeedDefsReplyRefParent$inboundSchema: z.ZodType<
+  AppBskyFeedDefsReplyRefParent,
+  z.ZodTypeDef,
+  unknown
+> = z.union([
+  AppBskyFeedDefsNotFoundPost$inboundSchema,
+  AppBskyFeedDefsBlockedPost$inboundSchema,
+  AppBskyFeedDefsPostView$inboundSchema,
+]);
 
 /** @internal */
-export type Parent$Outbound =
+export type AppBskyFeedDefsReplyRefParent$Outbound =
   | AppBskyFeedDefsNotFoundPost$Outbound
   | AppBskyFeedDefsBlockedPost$Outbound
   | AppBskyFeedDefsPostView$Outbound;
 
 /** @internal */
-export const Parent$outboundSchema: z.ZodType<
-  Parent$Outbound,
+export const AppBskyFeedDefsReplyRefParent$outboundSchema: z.ZodType<
+  AppBskyFeedDefsReplyRefParent$Outbound,
   z.ZodTypeDef,
-  Parent
+  AppBskyFeedDefsReplyRefParent
 > = z.union([
   AppBskyFeedDefsNotFoundPost$outboundSchema,
   AppBskyFeedDefsBlockedPost$outboundSchema,
@@ -131,26 +134,32 @@ export const Parent$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace Parent$ {
-  /** @deprecated use `Parent$inboundSchema` instead. */
-  export const inboundSchema = Parent$inboundSchema;
-  /** @deprecated use `Parent$outboundSchema` instead. */
-  export const outboundSchema = Parent$outboundSchema;
-  /** @deprecated use `Parent$Outbound` instead. */
-  export type Outbound = Parent$Outbound;
+export namespace AppBskyFeedDefsReplyRefParent$ {
+  /** @deprecated use `AppBskyFeedDefsReplyRefParent$inboundSchema` instead. */
+  export const inboundSchema = AppBskyFeedDefsReplyRefParent$inboundSchema;
+  /** @deprecated use `AppBskyFeedDefsReplyRefParent$outboundSchema` instead. */
+  export const outboundSchema = AppBskyFeedDefsReplyRefParent$outboundSchema;
+  /** @deprecated use `AppBskyFeedDefsReplyRefParent$Outbound` instead. */
+  export type Outbound = AppBskyFeedDefsReplyRefParent$Outbound;
 }
 
-export function parentToJSON(parent: Parent): string {
-  return JSON.stringify(Parent$outboundSchema.parse(parent));
+export function appBskyFeedDefsReplyRefParentToJSON(
+  appBskyFeedDefsReplyRefParent: AppBskyFeedDefsReplyRefParent,
+): string {
+  return JSON.stringify(
+    AppBskyFeedDefsReplyRefParent$outboundSchema.parse(
+      appBskyFeedDefsReplyRefParent,
+    ),
+  );
 }
 
-export function parentFromJSON(
+export function appBskyFeedDefsReplyRefParentFromJSON(
   jsonString: string,
-): SafeParseResult<Parent, SDKValidationError> {
+): SafeParseResult<AppBskyFeedDefsReplyRefParent, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => Parent$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'Parent' from JSON`,
+    (x) => AppBskyFeedDefsReplyRefParent$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AppBskyFeedDefsReplyRefParent' from JSON`,
   );
 }
 

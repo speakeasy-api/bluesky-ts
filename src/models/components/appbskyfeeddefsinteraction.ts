@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export const Event = {
+export const EventEnum = {
   AppBskyFeedDefsNumberRequestLess: "app.bsky.feed.defs#requestLess",
   AppBskyFeedDefsNumberRequestMore: "app.bsky.feed.defs#requestMore",
   AppBskyFeedDefsNumberClickthroughItem: "app.bsky.feed.defs#clickthroughItem",
@@ -26,11 +26,11 @@ export const Event = {
   AppBskyFeedDefsNumberInteractionQuote: "app.bsky.feed.defs#interactionQuote",
   AppBskyFeedDefsNumberInteractionShare: "app.bsky.feed.defs#interactionShare",
 } as const;
-export type Event = ClosedEnum<typeof Event>;
+export type EventEnum = ClosedEnum<typeof EventEnum>;
 
 export type AppBskyFeedDefsInteraction = {
   item?: string | undefined;
-  event?: Event | undefined;
+  event?: EventEnum | undefined;
   /**
    * Context on a feed item that was originally supplied by the feed generator on getFeedSkeleton.
    */
@@ -38,23 +38,22 @@ export type AppBskyFeedDefsInteraction = {
 };
 
 /** @internal */
-export const Event$inboundSchema: z.ZodNativeEnum<typeof Event> = z.nativeEnum(
-  Event,
-);
+export const EventEnum$inboundSchema: z.ZodNativeEnum<typeof EventEnum> = z
+  .nativeEnum(EventEnum);
 
 /** @internal */
-export const Event$outboundSchema: z.ZodNativeEnum<typeof Event> =
-  Event$inboundSchema;
+export const EventEnum$outboundSchema: z.ZodNativeEnum<typeof EventEnum> =
+  EventEnum$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace Event$ {
-  /** @deprecated use `Event$inboundSchema` instead. */
-  export const inboundSchema = Event$inboundSchema;
-  /** @deprecated use `Event$outboundSchema` instead. */
-  export const outboundSchema = Event$outboundSchema;
+export namespace EventEnum$ {
+  /** @deprecated use `EventEnum$inboundSchema` instead. */
+  export const inboundSchema = EventEnum$inboundSchema;
+  /** @deprecated use `EventEnum$outboundSchema` instead. */
+  export const outboundSchema = EventEnum$outboundSchema;
 }
 
 /** @internal */
@@ -64,7 +63,7 @@ export const AppBskyFeedDefsInteraction$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   item: z.string().optional(),
-  event: Event$inboundSchema.optional(),
+  event: EventEnum$inboundSchema.optional(),
   feedContext: z.string().optional(),
 });
 
@@ -82,7 +81,7 @@ export const AppBskyFeedDefsInteraction$outboundSchema: z.ZodType<
   AppBskyFeedDefsInteraction
 > = z.object({
   item: z.string().optional(),
-  event: Event$outboundSchema.optional(),
+  event: EventEnum$outboundSchema.optional(),
   feedContext: z.string().optional(),
 });
 

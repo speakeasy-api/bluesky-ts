@@ -8,37 +8,45 @@ import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export const ValidationStatus = {
+export const ComAtprotoRepoApplyWritesCreateResultValidationStatus = {
   Valid: "valid",
   Unknown: "unknown",
 } as const;
-export type ValidationStatus = ClosedEnum<typeof ValidationStatus>;
+export type ComAtprotoRepoApplyWritesCreateResultValidationStatus = ClosedEnum<
+  typeof ComAtprotoRepoApplyWritesCreateResultValidationStatus
+>;
 
 export type ComAtprotoRepoApplyWritesCreateResult = {
   uri: string;
   cid: string;
-  validationStatus?: ValidationStatus | undefined;
+  validationStatus?:
+    | ComAtprotoRepoApplyWritesCreateResultValidationStatus
+    | undefined;
 };
 
 /** @internal */
-export const ValidationStatus$inboundSchema: z.ZodNativeEnum<
-  typeof ValidationStatus
-> = z.nativeEnum(ValidationStatus);
+export const ComAtprotoRepoApplyWritesCreateResultValidationStatus$inboundSchema:
+  z.ZodNativeEnum<
+    typeof ComAtprotoRepoApplyWritesCreateResultValidationStatus
+  > = z.nativeEnum(ComAtprotoRepoApplyWritesCreateResultValidationStatus);
 
 /** @internal */
-export const ValidationStatus$outboundSchema: z.ZodNativeEnum<
-  typeof ValidationStatus
-> = ValidationStatus$inboundSchema;
+export const ComAtprotoRepoApplyWritesCreateResultValidationStatus$outboundSchema:
+  z.ZodNativeEnum<
+    typeof ComAtprotoRepoApplyWritesCreateResultValidationStatus
+  > = ComAtprotoRepoApplyWritesCreateResultValidationStatus$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ValidationStatus$ {
-  /** @deprecated use `ValidationStatus$inboundSchema` instead. */
-  export const inboundSchema = ValidationStatus$inboundSchema;
-  /** @deprecated use `ValidationStatus$outboundSchema` instead. */
-  export const outboundSchema = ValidationStatus$outboundSchema;
+export namespace ComAtprotoRepoApplyWritesCreateResultValidationStatus$ {
+  /** @deprecated use `ComAtprotoRepoApplyWritesCreateResultValidationStatus$inboundSchema` instead. */
+  export const inboundSchema =
+    ComAtprotoRepoApplyWritesCreateResultValidationStatus$inboundSchema;
+  /** @deprecated use `ComAtprotoRepoApplyWritesCreateResultValidationStatus$outboundSchema` instead. */
+  export const outboundSchema =
+    ComAtprotoRepoApplyWritesCreateResultValidationStatus$outboundSchema;
 }
 
 /** @internal */
@@ -49,7 +57,9 @@ export const ComAtprotoRepoApplyWritesCreateResult$inboundSchema: z.ZodType<
 > = z.object({
   uri: z.string(),
   cid: z.string(),
-  validationStatus: ValidationStatus$inboundSchema.optional(),
+  validationStatus:
+    ComAtprotoRepoApplyWritesCreateResultValidationStatus$inboundSchema
+      .optional(),
 });
 
 /** @internal */
@@ -67,7 +77,9 @@ export const ComAtprotoRepoApplyWritesCreateResult$outboundSchema: z.ZodType<
 > = z.object({
   uri: z.string(),
   cid: z.string(),
-  validationStatus: ValidationStatus$outboundSchema.optional(),
+  validationStatus:
+    ComAtprotoRepoApplyWritesCreateResultValidationStatus$outboundSchema
+      .optional(),
 });
 
 /**

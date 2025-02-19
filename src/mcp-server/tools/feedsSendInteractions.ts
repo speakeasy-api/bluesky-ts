@@ -7,7 +7,7 @@ import * as operations from "../../models/operations/index.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
 const args = {
-  request: operations.AppBskyFeedSendInteractionsRequestBody$inboundSchema,
+  request: operations.AppBskyFeedSendInteractionsBody$inboundSchema,
 };
 
 export const tool$feedsSendInteractions: ToolDefinition<typeof args> = {
@@ -17,9 +17,8 @@ export const tool$feedsSendInteractions: ToolDefinition<typeof args> = {
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
-Send information about interactions with feed items back to the feed generator that served them.
-
-`,
+Send information about interactions with feed items back to the feed generator that served them.`,
+  scopes: ["write"],
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await feedsSendInteractions(
@@ -28,6 +27,15 @@ Send information about interactions with feed items back to the feed generator t
       { fetchOptions: { signal: ctx.signal } },
     ).$inspect();
 
-    return formatResult(result, apiCall);
+    if (!result.ok) {
+      return {
+        content: [{ type: "text", text: result.error.message }],
+        isError: true,
+      };
+    }
+
+    const value = result.value;
+
+    return formatResult(value, apiCall);
   },
 };

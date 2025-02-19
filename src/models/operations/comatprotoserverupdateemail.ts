@@ -7,7 +7,7 @@ import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ComAtprotoServerUpdateEmailRequestBody = {
+export type ComAtprotoServerUpdateEmailBody = {
   email: string;
   emailAuthFactor?: boolean | undefined;
   /**
@@ -17,8 +17,8 @@ export type ComAtprotoServerUpdateEmailRequestBody = {
 };
 
 /** @internal */
-export const ComAtprotoServerUpdateEmailRequestBody$inboundSchema: z.ZodType<
-  ComAtprotoServerUpdateEmailRequestBody,
+export const ComAtprotoServerUpdateEmailBody$inboundSchema: z.ZodType<
+  ComAtprotoServerUpdateEmailBody,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -28,17 +28,17 @@ export const ComAtprotoServerUpdateEmailRequestBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type ComAtprotoServerUpdateEmailRequestBody$Outbound = {
+export type ComAtprotoServerUpdateEmailBody$Outbound = {
   email: string;
   emailAuthFactor?: boolean | undefined;
   token?: string | undefined;
 };
 
 /** @internal */
-export const ComAtprotoServerUpdateEmailRequestBody$outboundSchema: z.ZodType<
-  ComAtprotoServerUpdateEmailRequestBody$Outbound,
+export const ComAtprotoServerUpdateEmailBody$outboundSchema: z.ZodType<
+  ComAtprotoServerUpdateEmailBody$Outbound,
   z.ZodTypeDef,
-  ComAtprotoServerUpdateEmailRequestBody
+  ComAtprotoServerUpdateEmailBody
 > = z.object({
   email: z.string(),
   emailAuthFactor: z.boolean().optional(),
@@ -49,35 +49,31 @@ export const ComAtprotoServerUpdateEmailRequestBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoServerUpdateEmailRequestBody$ {
-  /** @deprecated use `ComAtprotoServerUpdateEmailRequestBody$inboundSchema` instead. */
-  export const inboundSchema =
-    ComAtprotoServerUpdateEmailRequestBody$inboundSchema;
-  /** @deprecated use `ComAtprotoServerUpdateEmailRequestBody$outboundSchema` instead. */
-  export const outboundSchema =
-    ComAtprotoServerUpdateEmailRequestBody$outboundSchema;
-  /** @deprecated use `ComAtprotoServerUpdateEmailRequestBody$Outbound` instead. */
-  export type Outbound = ComAtprotoServerUpdateEmailRequestBody$Outbound;
+export namespace ComAtprotoServerUpdateEmailBody$ {
+  /** @deprecated use `ComAtprotoServerUpdateEmailBody$inboundSchema` instead. */
+  export const inboundSchema = ComAtprotoServerUpdateEmailBody$inboundSchema;
+  /** @deprecated use `ComAtprotoServerUpdateEmailBody$outboundSchema` instead. */
+  export const outboundSchema = ComAtprotoServerUpdateEmailBody$outboundSchema;
+  /** @deprecated use `ComAtprotoServerUpdateEmailBody$Outbound` instead. */
+  export type Outbound = ComAtprotoServerUpdateEmailBody$Outbound;
 }
 
-export function comAtprotoServerUpdateEmailRequestBodyToJSON(
-  comAtprotoServerUpdateEmailRequestBody:
-    ComAtprotoServerUpdateEmailRequestBody,
+export function comAtprotoServerUpdateEmailBodyToJSON(
+  comAtprotoServerUpdateEmailBody: ComAtprotoServerUpdateEmailBody,
 ): string {
   return JSON.stringify(
-    ComAtprotoServerUpdateEmailRequestBody$outboundSchema.parse(
-      comAtprotoServerUpdateEmailRequestBody,
+    ComAtprotoServerUpdateEmailBody$outboundSchema.parse(
+      comAtprotoServerUpdateEmailBody,
     ),
   );
 }
 
-export function comAtprotoServerUpdateEmailRequestBodyFromJSON(
+export function comAtprotoServerUpdateEmailBodyFromJSON(
   jsonString: string,
-): SafeParseResult<ComAtprotoServerUpdateEmailRequestBody, SDKValidationError> {
+): SafeParseResult<ComAtprotoServerUpdateEmailBody, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) =>
-      ComAtprotoServerUpdateEmailRequestBody$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ComAtprotoServerUpdateEmailRequestBody' from JSON`,
+    (x) => ComAtprotoServerUpdateEmailBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ComAtprotoServerUpdateEmailBody' from JSON`,
   );
 }

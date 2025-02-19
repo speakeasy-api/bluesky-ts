@@ -8,24 +8,25 @@ import { ClosedEnum } from "../../types/enums.js";
 /**
  * Unauthorized
  */
-export type ComAtprotoServerRevokeAppPasswordAtprotoServerResponseBodyData = {
-  error: "AuthMissing";
-  message: string;
-};
+export type UnauthorizedComAtprotoServerRevokeAppPasswordResponseBodyErrorData =
+  {
+    error: "AuthMissing";
+    message: string;
+  };
 
 /**
  * Unauthorized
  */
-export class ComAtprotoServerRevokeAppPasswordAtprotoServerResponseBody
+export class UnauthorizedComAtprotoServerRevokeAppPasswordResponseBodyError
   extends Error
 {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: ComAtprotoServerRevokeAppPasswordAtprotoServerResponseBodyData;
+  data$: UnauthorizedComAtprotoServerRevokeAppPasswordResponseBodyErrorData;
 
   constructor(
-    err: ComAtprotoServerRevokeAppPasswordAtprotoServerResponseBodyData,
+    err: UnauthorizedComAtprotoServerRevokeAppPasswordResponseBodyErrorData,
   ) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
@@ -35,7 +36,8 @@ export class ComAtprotoServerRevokeAppPasswordAtprotoServerResponseBody
 
     this.error = err.error;
 
-    this.name = "ComAtprotoServerRevokeAppPasswordAtprotoServerResponseBody";
+    this.name =
+      "UnauthorizedComAtprotoServerRevokeAppPasswordResponseBodyError";
   }
 }
 
@@ -51,7 +53,7 @@ export type ComAtprotoServerRevokeAppPasswordError = ClosedEnum<
 /**
  * Bad Request
  */
-export type ComAtprotoServerRevokeAppPasswordResponseBodyData = {
+export type BadRequestComAtprotoServerRevokeAppPasswordResponseBodyErrorData = {
   error: ComAtprotoServerRevokeAppPasswordError;
   message: string;
 };
@@ -59,13 +61,17 @@ export type ComAtprotoServerRevokeAppPasswordResponseBodyData = {
 /**
  * Bad Request
  */
-export class ComAtprotoServerRevokeAppPasswordResponseBody extends Error {
+export class BadRequestComAtprotoServerRevokeAppPasswordResponseBodyError
+  extends Error
+{
   error: ComAtprotoServerRevokeAppPasswordError;
 
   /** The original data that was passed to this error instance. */
-  data$: ComAtprotoServerRevokeAppPasswordResponseBodyData;
+  data$: BadRequestComAtprotoServerRevokeAppPasswordResponseBodyErrorData;
 
-  constructor(err: ComAtprotoServerRevokeAppPasswordResponseBodyData) {
+  constructor(
+    err: BadRequestComAtprotoServerRevokeAppPasswordResponseBodyErrorData,
+  ) {
     const message = "message" in err && typeof err.message === "string"
       ? err.message
       : `API error occurred: ${JSON.stringify(err)}`;
@@ -74,14 +80,14 @@ export class ComAtprotoServerRevokeAppPasswordResponseBody extends Error {
 
     this.error = err.error;
 
-    this.name = "ComAtprotoServerRevokeAppPasswordResponseBody";
+    this.name = "BadRequestComAtprotoServerRevokeAppPasswordResponseBodyError";
   }
 }
 
 /** @internal */
-export const ComAtprotoServerRevokeAppPasswordAtprotoServerResponseBody$inboundSchema:
+export const UnauthorizedComAtprotoServerRevokeAppPasswordResponseBodyError$inboundSchema:
   z.ZodType<
-    ComAtprotoServerRevokeAppPasswordAtprotoServerResponseBody,
+    UnauthorizedComAtprotoServerRevokeAppPasswordResponseBodyError,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -89,23 +95,27 @@ export const ComAtprotoServerRevokeAppPasswordAtprotoServerResponseBody$inboundS
     message: z.string(),
   })
     .transform((v) => {
-      return new ComAtprotoServerRevokeAppPasswordAtprotoServerResponseBody(v);
+      return new UnauthorizedComAtprotoServerRevokeAppPasswordResponseBodyError(
+        v,
+      );
     });
 
 /** @internal */
-export type ComAtprotoServerRevokeAppPasswordAtprotoServerResponseBody$Outbound =
+export type UnauthorizedComAtprotoServerRevokeAppPasswordResponseBodyError$Outbound =
   {
     error: "AuthMissing";
     message: string;
   };
 
 /** @internal */
-export const ComAtprotoServerRevokeAppPasswordAtprotoServerResponseBody$outboundSchema:
+export const UnauthorizedComAtprotoServerRevokeAppPasswordResponseBodyError$outboundSchema:
   z.ZodType<
-    ComAtprotoServerRevokeAppPasswordAtprotoServerResponseBody$Outbound,
+    UnauthorizedComAtprotoServerRevokeAppPasswordResponseBodyError$Outbound,
     z.ZodTypeDef,
-    ComAtprotoServerRevokeAppPasswordAtprotoServerResponseBody
-  > = z.instanceof(ComAtprotoServerRevokeAppPasswordAtprotoServerResponseBody)
+    UnauthorizedComAtprotoServerRevokeAppPasswordResponseBodyError
+  > = z.instanceof(
+    UnauthorizedComAtprotoServerRevokeAppPasswordResponseBodyError,
+  )
     .transform(v => v.data$)
     .pipe(z.object({
       error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -116,16 +126,16 @@ export const ComAtprotoServerRevokeAppPasswordAtprotoServerResponseBody$outbound
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoServerRevokeAppPasswordAtprotoServerResponseBody$ {
-  /** @deprecated use `ComAtprotoServerRevokeAppPasswordAtprotoServerResponseBody$inboundSchema` instead. */
+export namespace UnauthorizedComAtprotoServerRevokeAppPasswordResponseBodyError$ {
+  /** @deprecated use `UnauthorizedComAtprotoServerRevokeAppPasswordResponseBodyError$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoServerRevokeAppPasswordAtprotoServerResponseBody$inboundSchema;
-  /** @deprecated use `ComAtprotoServerRevokeAppPasswordAtprotoServerResponseBody$outboundSchema` instead. */
+    UnauthorizedComAtprotoServerRevokeAppPasswordResponseBodyError$inboundSchema;
+  /** @deprecated use `UnauthorizedComAtprotoServerRevokeAppPasswordResponseBodyError$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoServerRevokeAppPasswordAtprotoServerResponseBody$outboundSchema;
-  /** @deprecated use `ComAtprotoServerRevokeAppPasswordAtprotoServerResponseBody$Outbound` instead. */
+    UnauthorizedComAtprotoServerRevokeAppPasswordResponseBodyError$outboundSchema;
+  /** @deprecated use `UnauthorizedComAtprotoServerRevokeAppPasswordResponseBodyError$Outbound` instead. */
   export type Outbound =
-    ComAtprotoServerRevokeAppPasswordAtprotoServerResponseBody$Outbound;
+    UnauthorizedComAtprotoServerRevokeAppPasswordResponseBodyError$Outbound;
 }
 
 /** @internal */
@@ -153,9 +163,9 @@ export namespace ComAtprotoServerRevokeAppPasswordError$ {
 }
 
 /** @internal */
-export const ComAtprotoServerRevokeAppPasswordResponseBody$inboundSchema:
+export const BadRequestComAtprotoServerRevokeAppPasswordResponseBodyError$inboundSchema:
   z.ZodType<
-    ComAtprotoServerRevokeAppPasswordResponseBody,
+    BadRequestComAtprotoServerRevokeAppPasswordResponseBodyError,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -163,22 +173,25 @@ export const ComAtprotoServerRevokeAppPasswordResponseBody$inboundSchema:
     message: z.string(),
   })
     .transform((v) => {
-      return new ComAtprotoServerRevokeAppPasswordResponseBody(v);
+      return new BadRequestComAtprotoServerRevokeAppPasswordResponseBodyError(
+        v,
+      );
     });
 
 /** @internal */
-export type ComAtprotoServerRevokeAppPasswordResponseBody$Outbound = {
-  error: string;
-  message: string;
-};
+export type BadRequestComAtprotoServerRevokeAppPasswordResponseBodyError$Outbound =
+  {
+    error: string;
+    message: string;
+  };
 
 /** @internal */
-export const ComAtprotoServerRevokeAppPasswordResponseBody$outboundSchema:
+export const BadRequestComAtprotoServerRevokeAppPasswordResponseBodyError$outboundSchema:
   z.ZodType<
-    ComAtprotoServerRevokeAppPasswordResponseBody$Outbound,
+    BadRequestComAtprotoServerRevokeAppPasswordResponseBodyError$Outbound,
     z.ZodTypeDef,
-    ComAtprotoServerRevokeAppPasswordResponseBody
-  > = z.instanceof(ComAtprotoServerRevokeAppPasswordResponseBody)
+    BadRequestComAtprotoServerRevokeAppPasswordResponseBodyError
+  > = z.instanceof(BadRequestComAtprotoServerRevokeAppPasswordResponseBodyError)
     .transform(v => v.data$)
     .pipe(z.object({
       error: ComAtprotoServerRevokeAppPasswordError$outboundSchema,
@@ -189,13 +202,14 @@ export const ComAtprotoServerRevokeAppPasswordResponseBody$outboundSchema:
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoServerRevokeAppPasswordResponseBody$ {
-  /** @deprecated use `ComAtprotoServerRevokeAppPasswordResponseBody$inboundSchema` instead. */
+export namespace BadRequestComAtprotoServerRevokeAppPasswordResponseBodyError$ {
+  /** @deprecated use `BadRequestComAtprotoServerRevokeAppPasswordResponseBodyError$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoServerRevokeAppPasswordResponseBody$inboundSchema;
-  /** @deprecated use `ComAtprotoServerRevokeAppPasswordResponseBody$outboundSchema` instead. */
+    BadRequestComAtprotoServerRevokeAppPasswordResponseBodyError$inboundSchema;
+  /** @deprecated use `BadRequestComAtprotoServerRevokeAppPasswordResponseBodyError$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoServerRevokeAppPasswordResponseBody$outboundSchema;
-  /** @deprecated use `ComAtprotoServerRevokeAppPasswordResponseBody$Outbound` instead. */
-  export type Outbound = ComAtprotoServerRevokeAppPasswordResponseBody$Outbound;
+    BadRequestComAtprotoServerRevokeAppPasswordResponseBodyError$outboundSchema;
+  /** @deprecated use `BadRequestComAtprotoServerRevokeAppPasswordResponseBodyError$Outbound` instead. */
+  export type Outbound =
+    BadRequestComAtprotoServerRevokeAppPasswordResponseBodyError$Outbound;
 }

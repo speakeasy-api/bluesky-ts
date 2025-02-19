@@ -7,73 +7,65 @@ import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ComAtprotoServerRevokeAppPasswordRequestBody = {
+export type ComAtprotoServerRevokeAppPasswordBody = {
   name: string;
 };
 
 /** @internal */
-export const ComAtprotoServerRevokeAppPasswordRequestBody$inboundSchema:
-  z.ZodType<
-    ComAtprotoServerRevokeAppPasswordRequestBody,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    name: z.string(),
-  });
+export const ComAtprotoServerRevokeAppPasswordBody$inboundSchema: z.ZodType<
+  ComAtprotoServerRevokeAppPasswordBody,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  name: z.string(),
+});
 
 /** @internal */
-export type ComAtprotoServerRevokeAppPasswordRequestBody$Outbound = {
+export type ComAtprotoServerRevokeAppPasswordBody$Outbound = {
   name: string;
 };
 
 /** @internal */
-export const ComAtprotoServerRevokeAppPasswordRequestBody$outboundSchema:
-  z.ZodType<
-    ComAtprotoServerRevokeAppPasswordRequestBody$Outbound,
-    z.ZodTypeDef,
-    ComAtprotoServerRevokeAppPasswordRequestBody
-  > = z.object({
-    name: z.string(),
-  });
+export const ComAtprotoServerRevokeAppPasswordBody$outboundSchema: z.ZodType<
+  ComAtprotoServerRevokeAppPasswordBody$Outbound,
+  z.ZodTypeDef,
+  ComAtprotoServerRevokeAppPasswordBody
+> = z.object({
+  name: z.string(),
+});
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoServerRevokeAppPasswordRequestBody$ {
-  /** @deprecated use `ComAtprotoServerRevokeAppPasswordRequestBody$inboundSchema` instead. */
+export namespace ComAtprotoServerRevokeAppPasswordBody$ {
+  /** @deprecated use `ComAtprotoServerRevokeAppPasswordBody$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoServerRevokeAppPasswordRequestBody$inboundSchema;
-  /** @deprecated use `ComAtprotoServerRevokeAppPasswordRequestBody$outboundSchema` instead. */
+    ComAtprotoServerRevokeAppPasswordBody$inboundSchema;
+  /** @deprecated use `ComAtprotoServerRevokeAppPasswordBody$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoServerRevokeAppPasswordRequestBody$outboundSchema;
-  /** @deprecated use `ComAtprotoServerRevokeAppPasswordRequestBody$Outbound` instead. */
-  export type Outbound = ComAtprotoServerRevokeAppPasswordRequestBody$Outbound;
+    ComAtprotoServerRevokeAppPasswordBody$outboundSchema;
+  /** @deprecated use `ComAtprotoServerRevokeAppPasswordBody$Outbound` instead. */
+  export type Outbound = ComAtprotoServerRevokeAppPasswordBody$Outbound;
 }
 
-export function comAtprotoServerRevokeAppPasswordRequestBodyToJSON(
-  comAtprotoServerRevokeAppPasswordRequestBody:
-    ComAtprotoServerRevokeAppPasswordRequestBody,
+export function comAtprotoServerRevokeAppPasswordBodyToJSON(
+  comAtprotoServerRevokeAppPasswordBody: ComAtprotoServerRevokeAppPasswordBody,
 ): string {
   return JSON.stringify(
-    ComAtprotoServerRevokeAppPasswordRequestBody$outboundSchema.parse(
-      comAtprotoServerRevokeAppPasswordRequestBody,
+    ComAtprotoServerRevokeAppPasswordBody$outboundSchema.parse(
+      comAtprotoServerRevokeAppPasswordBody,
     ),
   );
 }
 
-export function comAtprotoServerRevokeAppPasswordRequestBodyFromJSON(
+export function comAtprotoServerRevokeAppPasswordBodyFromJSON(
   jsonString: string,
-): SafeParseResult<
-  ComAtprotoServerRevokeAppPasswordRequestBody,
-  SDKValidationError
-> {
+): SafeParseResult<ComAtprotoServerRevokeAppPasswordBody, SDKValidationError> {
   return safeParse(
     jsonString,
     (x) =>
-      ComAtprotoServerRevokeAppPasswordRequestBody$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'ComAtprotoServerRevokeAppPasswordRequestBody' from JSON`,
+      ComAtprotoServerRevokeAppPasswordBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ComAtprotoServerRevokeAppPasswordBody' from JSON`,
   );
 }

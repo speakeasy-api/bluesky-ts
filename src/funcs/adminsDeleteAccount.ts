@@ -25,26 +25,68 @@ import * as operations from "../models/operations/index.js";
 import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
+/**
+ * *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
+ *
+ * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
+ *
+ * Delete a user account as an administrator.
+ */
+export function adminsDeleteAccount(
+  client: BlueskyCore,
+  request: operations.ComAtprotoAdminDeleteAccountBody,
+  options?: RequestOptions,
+): APIPromise<
+  Result<
+    void,
+    | errors.BadRequestComAtprotoAdminDeleteAccountResponseBodyError
+    | errors.UnauthorizedComAtprotoAdminDeleteAccountResponseBodyError
+    | errors.NotFoundError
+    | errors.UnauthorizedError
+    | errors.TimeoutError
+    | errors.RateLimitedError
+    | errors.BadRequestError
+    | errors.TimeoutError
+    | errors.NotFoundError
+    | errors.InternalServerError
+    | errors.BadRequestError
+    | errors.UnauthorizedError
+    | APIError
+    | SDKValidationError
+    | UnexpectedClientError
+    | InvalidRequestError
+    | RequestAbortedError
+    | RequestTimeoutError
+    | ConnectionError
+  >
+> {
+  return new APIPromise($do(
+    client,
+    request,
+    options,
+  ));
+}
+
 async function $do(
   client: BlueskyCore,
-  request: operations.ComAtprotoAdminDeleteAccountRequestBody,
+  request: operations.ComAtprotoAdminDeleteAccountBody,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
       void,
-      | errors.ComAtprotoAdminDeleteAccountResponseBody
-      | errors.ComAtprotoAdminDeleteAccountAdminsResponseBody
-      | errors.NotFound
-      | errors.Unauthorized
-      | errors.Timeout
-      | errors.RateLimited
-      | errors.BadRequest
-      | errors.Timeout
-      | errors.NotFound
+      | errors.BadRequestComAtprotoAdminDeleteAccountResponseBodyError
+      | errors.UnauthorizedComAtprotoAdminDeleteAccountResponseBodyError
+      | errors.NotFoundError
+      | errors.UnauthorizedError
+      | errors.TimeoutError
+      | errors.RateLimitedError
+      | errors.BadRequestError
+      | errors.TimeoutError
+      | errors.NotFoundError
       | errors.InternalServerError
-      | errors.BadRequest
-      | errors.Unauthorized
+      | errors.BadRequestError
+      | errors.UnauthorizedError
       | APIError
       | SDKValidationError
       | UnexpectedClientError
@@ -59,9 +101,7 @@ async function $do(
   const parsed = safeParse(
     request,
     (value) =>
-      operations.ComAtprotoAdminDeleteAccountRequestBody$outboundSchema.parse(
-        value,
-      ),
+      operations.ComAtprotoAdminDeleteAccountBody$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -152,18 +192,18 @@ async function $do(
 
   const [result] = await M.match<
     void,
-    | errors.ComAtprotoAdminDeleteAccountResponseBody
-    | errors.ComAtprotoAdminDeleteAccountAdminsResponseBody
-    | errors.NotFound
-    | errors.Unauthorized
-    | errors.Timeout
-    | errors.RateLimited
-    | errors.BadRequest
-    | errors.Timeout
-    | errors.NotFound
+    | errors.BadRequestComAtprotoAdminDeleteAccountResponseBodyError
+    | errors.UnauthorizedComAtprotoAdminDeleteAccountResponseBodyError
+    | errors.NotFoundError
+    | errors.UnauthorizedError
+    | errors.TimeoutError
+    | errors.RateLimitedError
+    | errors.BadRequestError
+    | errors.TimeoutError
+    | errors.NotFoundError
     | errors.InternalServerError
-    | errors.BadRequest
-    | errors.Unauthorized
+    | errors.BadRequestError
+    | errors.UnauthorizedError
     | APIError
     | SDKValidationError
     | UnexpectedClientError
@@ -175,25 +215,27 @@ async function $do(
     M.nil(200, z.void()),
     M.jsonErr(
       400,
-      errors.ComAtprotoAdminDeleteAccountResponseBody$inboundSchema,
+      errors
+        .BadRequestComAtprotoAdminDeleteAccountResponseBodyError$inboundSchema,
     ),
     M.jsonErr(
       401,
-      errors.ComAtprotoAdminDeleteAccountAdminsResponseBody$inboundSchema,
+      errors
+        .UnauthorizedComAtprotoAdminDeleteAccountResponseBodyError$inboundSchema,
     ),
-    M.jsonErr(404, errors.NotFound$inboundSchema),
-    M.jsonErr([403, 407], errors.Unauthorized$inboundSchema),
-    M.jsonErr(408, errors.Timeout$inboundSchema),
-    M.jsonErr(429, errors.RateLimited$inboundSchema),
-    M.jsonErr([413, 414, 415, 422, 431], errors.BadRequest$inboundSchema),
-    M.jsonErr(504, errors.Timeout$inboundSchema),
-    M.jsonErr([501, 505], errors.NotFound$inboundSchema),
+    M.jsonErr(404, errors.NotFoundError$inboundSchema),
+    M.jsonErr([403, 407], errors.UnauthorizedError$inboundSchema),
+    M.jsonErr(408, errors.TimeoutError$inboundSchema),
+    M.jsonErr(429, errors.RateLimitedError$inboundSchema),
+    M.jsonErr([413, 414, 415, 422, 431], errors.BadRequestError$inboundSchema),
+    M.jsonErr(504, errors.TimeoutError$inboundSchema),
+    M.jsonErr([501, 505], errors.NotFoundError$inboundSchema),
     M.jsonErr(
       [500, 502, 503, 506, 507, 508],
       errors.InternalServerError$inboundSchema,
     ),
-    M.jsonErr(510, errors.BadRequest$inboundSchema),
-    M.jsonErr(511, errors.Unauthorized$inboundSchema),
+    M.jsonErr(510, errors.BadRequestError$inboundSchema),
+    M.jsonErr(511, errors.UnauthorizedError$inboundSchema),
     M.fail("4XX"),
     M.fail("5XX"),
   )(response, { extraFields: responseFields });
@@ -202,46 +244,4 @@ async function $do(
   }
 
   return [result, { status: "complete", request: req, response }];
-}
-
-/**
- * *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
- *
- * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
- *
- * Delete a user account as an administrator.
- */
-export function adminsDeleteAccount(
-  client: BlueskyCore,
-  request: operations.ComAtprotoAdminDeleteAccountRequestBody,
-  options?: RequestOptions,
-): APIPromise<
-  Result<
-    void,
-    | errors.ComAtprotoAdminDeleteAccountResponseBody
-    | errors.ComAtprotoAdminDeleteAccountAdminsResponseBody
-    | errors.NotFound
-    | errors.Unauthorized
-    | errors.Timeout
-    | errors.RateLimited
-    | errors.BadRequest
-    | errors.Timeout
-    | errors.NotFound
-    | errors.InternalServerError
-    | errors.BadRequest
-    | errors.Unauthorized
-    | APIError
-    | SDKValidationError
-    | UnexpectedClientError
-    | InvalidRequestError
-    | RequestAbortedError
-    | RequestTimeoutError
-    | ConnectionError
-  >
-> {
-  return new APIPromise($do(
-    client,
-    request,
-    options,
-  ));
 }

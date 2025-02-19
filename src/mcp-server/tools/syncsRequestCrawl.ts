@@ -7,7 +7,7 @@ import * as operations from "../../models/operations/index.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
 const args = {
-  request: operations.ComAtprotoSyncRequestCrawlRequestBody$inboundSchema,
+  request: operations.ComAtprotoSyncRequestCrawlBody$inboundSchema,
 };
 
 export const tool$syncsRequestCrawl: ToolDefinition<typeof args> = {
@@ -17,9 +17,8 @@ export const tool$syncsRequestCrawl: ToolDefinition<typeof args> = {
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
-Request a service to persistently crawl hosted repos. Expected use is new PDS instances declaring their existence to Relays. Does not require auth.
-
-`,
+Request a service to persistently crawl hosted repos. Expected use is new PDS instances declaring their existence to Relays. Does not require auth.`,
+  scopes: ["write"],
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await syncsRequestCrawl(
@@ -28,6 +27,15 @@ Request a service to persistently crawl hosted repos. Expected use is new PDS in
       { fetchOptions: { signal: ctx.signal } },
     ).$inspect();
 
-    return formatResult(result, apiCall);
+    if (!result.ok) {
+      return {
+        content: [{ type: "text", text: result.error.message }],
+        isError: true,
+      };
+    }
+
+    const value = result.value;
+
+    return formatResult(value, apiCall);
   },
 };

@@ -10,14 +10,16 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export const QueryParamSort = {
+export const ComAtprotoAdminGetInviteCodesSort = {
   Recent: "recent",
   Usage: "usage",
 } as const;
-export type QueryParamSort = ClosedEnum<typeof QueryParamSort>;
+export type ComAtprotoAdminGetInviteCodesSort = ClosedEnum<
+  typeof ComAtprotoAdminGetInviteCodesSort
+>;
 
 export type ComAtprotoAdminGetInviteCodesRequest = {
-  sort?: QueryParamSort | undefined;
+  sort?: ComAtprotoAdminGetInviteCodesSort | undefined;
   limit?: number | undefined;
   cursor?: string | undefined;
 };
@@ -35,24 +37,25 @@ export type ComAtprotoAdminGetInviteCodesResponse = {
 };
 
 /** @internal */
-export const QueryParamSort$inboundSchema: z.ZodNativeEnum<
-  typeof QueryParamSort
-> = z.nativeEnum(QueryParamSort);
+export const ComAtprotoAdminGetInviteCodesSort$inboundSchema: z.ZodNativeEnum<
+  typeof ComAtprotoAdminGetInviteCodesSort
+> = z.nativeEnum(ComAtprotoAdminGetInviteCodesSort);
 
 /** @internal */
-export const QueryParamSort$outboundSchema: z.ZodNativeEnum<
-  typeof QueryParamSort
-> = QueryParamSort$inboundSchema;
+export const ComAtprotoAdminGetInviteCodesSort$outboundSchema: z.ZodNativeEnum<
+  typeof ComAtprotoAdminGetInviteCodesSort
+> = ComAtprotoAdminGetInviteCodesSort$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace QueryParamSort$ {
-  /** @deprecated use `QueryParamSort$inboundSchema` instead. */
-  export const inboundSchema = QueryParamSort$inboundSchema;
-  /** @deprecated use `QueryParamSort$outboundSchema` instead. */
-  export const outboundSchema = QueryParamSort$outboundSchema;
+export namespace ComAtprotoAdminGetInviteCodesSort$ {
+  /** @deprecated use `ComAtprotoAdminGetInviteCodesSort$inboundSchema` instead. */
+  export const inboundSchema = ComAtprotoAdminGetInviteCodesSort$inboundSchema;
+  /** @deprecated use `ComAtprotoAdminGetInviteCodesSort$outboundSchema` instead. */
+  export const outboundSchema =
+    ComAtprotoAdminGetInviteCodesSort$outboundSchema;
 }
 
 /** @internal */
@@ -61,7 +64,7 @@ export const ComAtprotoAdminGetInviteCodesRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  sort: QueryParamSort$inboundSchema.default("recent"),
+  sort: ComAtprotoAdminGetInviteCodesSort$inboundSchema.default("recent"),
   limit: z.number().int().default(100),
   cursor: z.string().optional(),
 });
@@ -79,7 +82,7 @@ export const ComAtprotoAdminGetInviteCodesRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   ComAtprotoAdminGetInviteCodesRequest
 > = z.object({
-  sort: QueryParamSort$outboundSchema.default("recent"),
+  sort: ComAtprotoAdminGetInviteCodesSort$outboundSchema.default("recent"),
   limit: z.number().int().default(100),
   cursor: z.string().optional(),
 });

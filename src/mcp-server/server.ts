@@ -4,6 +4,10 @@
 
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { BlueskyCore } from "../core.js";
+import { SDKOptions } from "../lib/config.js";
+import type { ConsoleLogger } from "./console-logger.js";
+import { MCPScope, mcpScopes } from "./scopes.js";
+import { createRegisterTool } from "./tools.js";
 import { tool$accountDelete } from "./tools/accountDelete.js";
 import { tool$accountExportData } from "./tools/accountExportData.js";
 import { tool$accountsGetInviteCodes } from "./tools/accountsGetInviteCodes.js";
@@ -174,1515 +178,193 @@ import { tool$videosGetJobStatus } from "./tools/videosGetJobStatus.js";
 import { tool$videosGetUploadLimits } from "./tools/videosGetUploadLimits.js";
 import { tool$videosUpload } from "./tools/videosUpload.js";
 
-export function createMCPServer() {
+export function createMCPServer(deps: {
+  logger: ConsoleLogger;
+  scopes?: MCPScope[] | undefined;
+  serverURL?: string | undefined;
+  server?: SDKOptions["server"];
+}) {
   const server = new McpServer({
     name: "Bluesky",
-    version: "0.10.0",
+    version: "0.11.2",
   });
 
-  const client = new BlueskyCore();
-
-  server.tool(
-    tool$actorsGetPreferences.name,
-    tool$actorsGetPreferences.description,
-    async function(ctx) {
-      return tool$actorsGetPreferences.tool(client, ctx);
-    },
-  );
-
-  server.tool(
-    tool$actorsGetProfile.name,
-    tool$actorsGetProfile.description,
-    tool$actorsGetProfile.args,
-    async function(args, ctx) {
-      return tool$actorsGetProfile.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$actorsGetProfiles.name,
-    tool$actorsGetProfiles.description,
-    tool$actorsGetProfiles.args,
-    async function(args, ctx) {
-      return tool$actorsGetProfiles.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$actorsPutPreferences.name,
-    tool$actorsPutPreferences.description,
-    tool$actorsPutPreferences.args,
-    async function(args, ctx) {
-      return tool$actorsPutPreferences.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$actorsSearch.name,
-    tool$actorsSearch.description,
-    tool$actorsSearch.args,
-    async function(args, ctx) {
-      return tool$actorsSearch.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$actorGetSuggestions.name,
-    tool$actorGetSuggestions.description,
-    tool$actorGetSuggestions.args,
-    async function(args, ctx) {
-      return tool$actorGetSuggestions.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$actorSearchTypeahead.name,
-    tool$actorSearchTypeahead.description,
-    tool$actorSearchTypeahead.args,
-    async function(args, ctx) {
-      return tool$actorSearchTypeahead.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$feedsDescribeGenerator.name,
-    tool$feedsDescribeGenerator.description,
-    async function(ctx) {
-      return tool$feedsDescribeGenerator.tool(client, ctx);
-    },
-  );
-
-  server.tool(
-    tool$feedsGetLikes.name,
-    tool$feedsGetLikes.description,
-    tool$feedsGetLikes.args,
-    async function(args, ctx) {
-      return tool$feedsGetLikes.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$feedsGetList.name,
-    tool$feedsGetList.description,
-    tool$feedsGetList.args,
-    async function(args, ctx) {
-      return tool$feedsGetList.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$feedsGetPostThread.name,
-    tool$feedsGetPostThread.description,
-    tool$feedsGetPostThread.args,
-    async function(args, ctx) {
-      return tool$feedsGetPostThread.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$feedsGet.name,
-    tool$feedsGet.description,
-    tool$feedsGet.args,
-    async function(args, ctx) {
-      return tool$feedsGet.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$feedsGetQuotes.name,
-    tool$feedsGetQuotes.description,
-    tool$feedsGetQuotes.args,
-    async function(args, ctx) {
-      return tool$feedsGetQuotes.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$feedsGetRepostedBy.name,
-    tool$feedsGetRepostedBy.description,
-    tool$feedsGetRepostedBy.args,
-    async function(args, ctx) {
-      return tool$feedsGetRepostedBy.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$feedsSendInteractions.name,
-    tool$feedsSendInteractions.description,
-    tool$feedsSendInteractions.args,
-    async function(args, ctx) {
-      return tool$feedsSendInteractions.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$feedGetActor.name,
-    tool$feedGetActor.description,
-    tool$feedGetActor.args,
-    async function(args, ctx) {
-      return tool$feedGetActor.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$feedGetActorLikes.name,
-    tool$feedGetActorLikes.description,
-    tool$feedGetActorLikes.args,
-    async function(args, ctx) {
-      return tool$feedGetActorLikes.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$feedGetAuthor.name,
-    tool$feedGetAuthor.description,
-    tool$feedGetAuthor.args,
-    async function(args, ctx) {
-      return tool$feedGetAuthor.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$feedFetch.name,
-    tool$feedFetch.description,
-    tool$feedFetch.args,
-    async function(args, ctx) {
-      return tool$feedFetch.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$feedGetGenerator.name,
-    tool$feedGetGenerator.description,
-    tool$feedGetGenerator.args,
-    async function(args, ctx) {
-      return tool$feedGetGenerator.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$feedGetGenerators.name,
-    tool$feedGetGenerators.description,
-    tool$feedGetGenerators.args,
-    async function(args, ctx) {
-      return tool$feedGetGenerators.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$feedGetSkeleton.name,
-    tool$feedGetSkeleton.description,
-    tool$feedGetSkeleton.args,
-    async function(args, ctx) {
-      return tool$feedGetSkeleton.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$feedGetSuggested.name,
-    tool$feedGetSuggested.description,
-    tool$feedGetSuggested.args,
-    async function(args, ctx) {
-      return tool$feedGetSuggested.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$feedGetTimeline.name,
-    tool$feedGetTimeline.description,
-    tool$feedGetTimeline.args,
-    async function(args, ctx) {
-      return tool$feedGetTimeline.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$feedSearch.name,
-    tool$feedSearch.description,
-    tool$feedSearch.args,
-    async function(args, ctx) {
-      return tool$feedSearch.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$graphGetActorStarterPacks.name,
-    tool$graphGetActorStarterPacks.description,
-    tool$graphGetActorStarterPacks.args,
-    async function(args, ctx) {
-      return tool$graphGetActorStarterPacks.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$graphGetFollows.name,
-    tool$graphGetFollows.description,
-    tool$graphGetFollows.args,
-    async function(args, ctx) {
-      return tool$graphGetFollows.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$graphGetList.name,
-    tool$graphGetList.description,
-    tool$graphGetList.args,
-    async function(args, ctx) {
-      return tool$graphGetList.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$graphGetListMutes.name,
-    tool$graphGetListMutes.description,
-    tool$graphGetListMutes.args,
-    async function(args, ctx) {
-      return tool$graphGetListMutes.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$graphGetLists.name,
-    tool$graphGetLists.description,
-    tool$graphGetLists.args,
-    async function(args, ctx) {
-      return tool$graphGetLists.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$graphGetRelationships.name,
-    tool$graphGetRelationships.description,
-    tool$graphGetRelationships.args,
-    async function(args, ctx) {
-      return tool$graphGetRelationships.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$graphGetStarterPack.name,
-    tool$graphGetStarterPack.description,
-    tool$graphGetStarterPack.args,
-    async function(args, ctx) {
-      return tool$graphGetStarterPack.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$graphMuteActor.name,
-    tool$graphMuteActor.description,
-    tool$graphMuteActor.args,
-    async function(args, ctx) {
-      return tool$graphMuteActor.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$graphMuteActorList.name,
-    tool$graphMuteActorList.description,
-    tool$graphMuteActorList.args,
-    async function(args, ctx) {
-      return tool$graphMuteActorList.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$graphSearchStarterPacks.name,
-    tool$graphSearchStarterPacks.description,
-    tool$graphSearchStarterPacks.args,
-    async function(args, ctx) {
-      return tool$graphSearchStarterPacks.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$graphUnmuteThread.name,
-    tool$graphUnmuteThread.description,
-    tool$graphUnmuteThread.args,
-    async function(args, ctx) {
-      return tool$graphUnmuteThread.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$graphsGetBlocks.name,
-    tool$graphsGetBlocks.description,
-    tool$graphsGetBlocks.args,
-    async function(args, ctx) {
-      return tool$graphsGetBlocks.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$graphsGetKnownFollowers.name,
-    tool$graphsGetKnownFollowers.description,
-    tool$graphsGetKnownFollowers.args,
-    async function(args, ctx) {
-      return tool$graphsGetKnownFollowers.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$graphsGetListBlocks.name,
-    tool$graphsGetListBlocks.description,
-    tool$graphsGetListBlocks.args,
-    async function(args, ctx) {
-      return tool$graphsGetListBlocks.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$graphsGetMutes.name,
-    tool$graphsGetMutes.description,
-    tool$graphsGetMutes.args,
-    async function(args, ctx) {
-      return tool$graphsGetMutes.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$graphsGetStarterPacks.name,
-    tool$graphsGetStarterPacks.description,
-    tool$graphsGetStarterPacks.args,
-    async function(args, ctx) {
-      return tool$graphsGetStarterPacks.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$graphsMuteThread.name,
-    tool$graphsMuteThread.description,
-    tool$graphsMuteThread.args,
-    async function(args, ctx) {
-      return tool$graphsMuteThread.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$graphsUnmuteActorList.name,
-    tool$graphsUnmuteActorList.description,
-    tool$graphsUnmuteActorList.args,
-    async function(args, ctx) {
-      return tool$graphsUnmuteActorList.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$usersGetFollowers.name,
-    tool$usersGetFollowers.description,
-    tool$usersGetFollowers.args,
-    async function(args, ctx) {
-      return tool$usersGetFollowers.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$usersGetSuggestedFollows.name,
-    tool$usersGetSuggestedFollows.description,
-    tool$usersGetSuggestedFollows.args,
-    async function(args, ctx) {
-      return tool$usersGetSuggestedFollows.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$usersUnmute.name,
-    tool$usersUnmute.description,
-    tool$usersUnmute.args,
-    async function(args, ctx) {
-      return tool$usersUnmute.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$labelersGetServices.name,
-    tool$labelersGetServices.description,
-    tool$labelersGetServices.args,
-    async function(args, ctx) {
-      return tool$labelersGetServices.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$notificationsGetUnreadCount.name,
-    tool$notificationsGetUnreadCount.description,
-    tool$notificationsGetUnreadCount.args,
-    async function(args, ctx) {
-      return tool$notificationsGetUnreadCount.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$notificationsPutPreferences.name,
-    tool$notificationsPutPreferences.description,
-    tool$notificationsPutPreferences.args,
-    async function(args, ctx) {
-      return tool$notificationsPutPreferences.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$notificationsRegisterPush.name,
-    tool$notificationsRegisterPush.description,
-    tool$notificationsRegisterPush.args,
-    async function(args, ctx) {
-      return tool$notificationsRegisterPush.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$notificationsUpdateSeen.name,
-    tool$notificationsUpdateSeen.description,
-    tool$notificationsUpdateSeen.args,
-    async function(args, ctx) {
-      return tool$notificationsUpdateSeen.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$notificationList.name,
-    tool$notificationList.description,
-    tool$notificationList.args,
-    async function(args, ctx) {
-      return tool$notificationList.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$videosGetJobStatus.name,
-    tool$videosGetJobStatus.description,
-    tool$videosGetJobStatus.args,
-    async function(args, ctx) {
-      return tool$videosGetJobStatus.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$videosGetUploadLimits.name,
-    tool$videosGetUploadLimits.description,
-    async function(ctx) {
-      return tool$videosGetUploadLimits.tool(client, ctx);
-    },
-  );
-
-  server.tool(
-    tool$videosUpload.name,
-    tool$videosUpload.description,
-    tool$videosUpload.args,
-    async function(args, ctx) {
-      return tool$videosUpload.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$accountDelete.name,
-    tool$accountDelete.description,
-    async function(ctx) {
-      return tool$accountDelete.tool(client, ctx);
-    },
-  );
-
-  server.tool(
-    tool$accountExportData.name,
-    tool$accountExportData.description,
-    async function(ctx) {
-      return tool$accountExportData.tool(client, ctx);
-    },
-  );
-
-  server.tool(
-    tool$convoDeleteMessageForSelf.name,
-    tool$convoDeleteMessageForSelf.description,
-    tool$convoDeleteMessageForSelf.args,
-    async function(args, ctx) {
-      return tool$convoDeleteMessageForSelf.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$convoList.name,
-    tool$convoList.description,
-    tool$convoList.args,
-    async function(args, ctx) {
-      return tool$convoList.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$chatsGetConvo.name,
-    tool$chatsGetConvo.description,
-    tool$chatsGetConvo.args,
-    async function(args, ctx) {
-      return tool$chatsGetConvo.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$chatsGetMessageContext.name,
-    tool$chatsGetMessageContext.description,
-    tool$chatsGetMessageContext.args,
-    async function(args, ctx) {
-      return tool$chatsGetMessageContext.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$chatConvosGetForMembers.name,
-    tool$chatConvosGetForMembers.description,
-    tool$chatConvosGetForMembers.args,
-    async function(args, ctx) {
-      return tool$chatConvosGetForMembers.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$chatConvosGetMessages.name,
-    tool$chatConvosGetMessages.description,
-    tool$chatConvosGetMessages.args,
-    async function(args, ctx) {
-      return tool$chatConvosGetMessages.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$chatConvosSendMessage.name,
-    tool$chatConvosSendMessage.description,
-    tool$chatConvosSendMessage.args,
-    async function(args, ctx) {
-      return tool$chatConvosSendMessage.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$chatConvosUpdateRead.name,
-    tool$chatConvosUpdateRead.description,
-    tool$chatConvosUpdateRead.args,
-    async function(args, ctx) {
-      return tool$chatConvosUpdateRead.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$conversationsGetLog.name,
-    tool$conversationsGetLog.description,
-    tool$conversationsGetLog.args,
-    async function(args, ctx) {
-      return tool$conversationsGetLog.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$conversationsLeave.name,
-    tool$conversationsLeave.description,
-    tool$conversationsLeave.args,
-    async function(args, ctx) {
-      return tool$conversationsLeave.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$convosMute.name,
-    tool$convosMute.description,
-    tool$convosMute.args,
-    async function(args, ctx) {
-      return tool$convosMute.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$chatConvoSendMessageBatch.name,
-    tool$chatConvoSendMessageBatch.description,
-    tool$chatConvoSendMessageBatch.args,
-    async function(args, ctx) {
-      return tool$chatConvoSendMessageBatch.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$chatConvoUnmute.name,
-    tool$chatConvoUnmute.description,
-    tool$chatConvoUnmute.args,
-    async function(args, ctx) {
-      return tool$chatConvoUnmute.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$chatModerationGetActorMetadata.name,
-    tool$chatModerationGetActorMetadata.description,
-    tool$chatModerationGetActorMetadata.args,
-    async function(args, ctx) {
-      return tool$chatModerationGetActorMetadata.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$chatModerationUpdateActorAccess.name,
-    tool$chatModerationUpdateActorAccess.description,
-    tool$chatModerationUpdateActorAccess.args,
-    async function(args, ctx) {
-      return tool$chatModerationUpdateActorAccess.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$adminsDeleteAccount.name,
-    tool$adminsDeleteAccount.description,
-    tool$adminsDeleteAccount.args,
-    async function(args, ctx) {
-      return tool$adminsDeleteAccount.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$adminsEnableAccountInvites.name,
-    tool$adminsEnableAccountInvites.description,
-    tool$adminsEnableAccountInvites.args,
-    async function(args, ctx) {
-      return tool$adminsEnableAccountInvites.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$adminsGetAccountInfos.name,
-    tool$adminsGetAccountInfos.description,
-    tool$adminsGetAccountInfos.args,
-    async function(args, ctx) {
-      return tool$adminsGetAccountInfos.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$atprotoAdminDisableAccountInvites.name,
-    tool$atprotoAdminDisableAccountInvites.description,
-    tool$atprotoAdminDisableAccountInvites.args,
-    async function(args, ctx) {
-      return tool$atprotoAdminDisableAccountInvites.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$atprotoAdminGetInviteCodes.name,
-    tool$atprotoAdminGetInviteCodes.description,
-    tool$atprotoAdminGetInviteCodes.args,
-    async function(args, ctx) {
-      return tool$atprotoAdminGetInviteCodes.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$atprotoAdminSearchAccounts.name,
-    tool$atprotoAdminSearchAccounts.description,
-    tool$atprotoAdminSearchAccounts.args,
-    async function(args, ctx) {
-      return tool$atprotoAdminSearchAccounts.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$adminDisableInviteCodes.name,
-    tool$adminDisableInviteCodes.description,
-    tool$adminDisableInviteCodes.args,
-    async function(args, ctx) {
-      return tool$adminDisableInviteCodes.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$adminGetAccountInfo.name,
-    tool$adminGetAccountInfo.description,
-    tool$adminGetAccountInfo.args,
-    async function(args, ctx) {
-      return tool$adminGetAccountInfo.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$adminGetSubjectStatus.name,
-    tool$adminGetSubjectStatus.description,
-    tool$adminGetSubjectStatus.args,
-    async function(args, ctx) {
-      return tool$adminGetSubjectStatus.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$adminSendEmail.name,
-    tool$adminSendEmail.description,
-    tool$adminSendEmail.args,
-    async function(args, ctx) {
-      return tool$adminSendEmail.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$adminUpdateAccountEmail.name,
-    tool$adminUpdateAccountEmail.description,
-    tool$adminUpdateAccountEmail.args,
-    async function(args, ctx) {
-      return tool$adminUpdateAccountEmail.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$adminUpdateAccountHandle.name,
-    tool$adminUpdateAccountHandle.description,
-    tool$adminUpdateAccountHandle.args,
-    async function(args, ctx) {
-      return tool$adminUpdateAccountHandle.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$adminUpdateAccountPassword.name,
-    tool$adminUpdateAccountPassword.description,
-    tool$adminUpdateAccountPassword.args,
-    async function(args, ctx) {
-      return tool$adminUpdateAccountPassword.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$adminUpdateSubjectStatus.name,
-    tool$adminUpdateSubjectStatus.description,
-    tool$adminUpdateSubjectStatus.args,
-    async function(args, ctx) {
-      return tool$adminUpdateSubjectStatus.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$identityGetRecommendedDidCredentials.name,
-    tool$identityGetRecommendedDidCredentials.description,
-    async function(ctx) {
-      return tool$identityGetRecommendedDidCredentials.tool(client, ctx);
-    },
-  );
-
-  server.tool(
-    tool$identitySubmitPlcOperation.name,
-    tool$identitySubmitPlcOperation.description,
-    tool$identitySubmitPlcOperation.args,
-    async function(args, ctx) {
-      return tool$identitySubmitPlcOperation.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$atprotoIdentityRequestPlcOperationSignature.name,
-    tool$atprotoIdentityRequestPlcOperationSignature.description,
-    async function(ctx) {
-      return tool$atprotoIdentityRequestPlcOperationSignature.tool(client, ctx);
-    },
-  );
-
-  server.tool(
-    tool$atprotoIdentityResolveHandle.name,
-    tool$atprotoIdentityResolveHandle.description,
-    tool$atprotoIdentityResolveHandle.args,
-    async function(args, ctx) {
-      return tool$atprotoIdentityResolveHandle.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$atprotoIdentitySignPlcOperation.name,
-    tool$atprotoIdentitySignPlcOperation.description,
-    tool$atprotoIdentitySignPlcOperation.args,
-    async function(args, ctx) {
-      return tool$atprotoIdentitySignPlcOperation.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$identitiesUpdateHandle.name,
-    tool$identitiesUpdateHandle.description,
-    tool$identitiesUpdateHandle.args,
-    async function(args, ctx) {
-      return tool$identitiesUpdateHandle.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$atprotoLabelsQuery.name,
-    tool$atprotoLabelsQuery.description,
-    tool$atprotoLabelsQuery.args,
-    async function(args, ctx) {
-      return tool$atprotoLabelsQuery.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$atprotoModerationCreateReport.name,
-    tool$atprotoModerationCreateReport.description,
-    tool$atprotoModerationCreateReport.args,
-    async function(args, ctx) {
-      return tool$atprotoModerationCreateReport.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$reposApplyWrites.name,
-    tool$reposApplyWrites.description,
-    tool$reposApplyWrites.args,
-    async function(args, ctx) {
-      return tool$reposApplyWrites.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$reposCreateRecord.name,
-    tool$reposCreateRecord.description,
-    tool$reposCreateRecord.args,
-    async function(args, ctx) {
-      return tool$reposCreateRecord.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$reposDescribe.name,
-    tool$reposDescribe.description,
-    tool$reposDescribe.args,
-    async function(args, ctx) {
-      return tool$reposDescribe.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$reposGetRecord.name,
-    tool$reposGetRecord.description,
-    tool$reposGetRecord.args,
-    async function(args, ctx) {
-      return tool$reposGetRecord.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$reposListMissingBlobs.name,
-    tool$reposListMissingBlobs.description,
-    tool$reposListMissingBlobs.args,
-    async function(args, ctx) {
-      return tool$reposListMissingBlobs.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$reposList.name,
-    tool$reposList.description,
-    tool$reposList.args,
-    async function(args, ctx) {
-      return tool$reposList.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$atprotoRepoDelete.name,
-    tool$atprotoRepoDelete.description,
-    tool$atprotoRepoDelete.args,
-    async function(args, ctx) {
-      return tool$atprotoRepoDelete.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$atprotoRepoImport.name,
-    tool$atprotoRepoImport.description,
-    tool$atprotoRepoImport.args,
-    async function(args, ctx) {
-      return tool$atprotoRepoImport.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$atprotoRepoUploadBlob.name,
-    tool$atprotoRepoUploadBlob.description,
-    tool$atprotoRepoUploadBlob.args,
-    async function(args, ctx) {
-      return tool$atprotoRepoUploadBlob.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$repoPutRecord.name,
-    tool$repoPutRecord.description,
-    tool$repoPutRecord.args,
-    async function(args, ctx) {
-      return tool$repoPutRecord.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$atprotoServerActivateAccount.name,
-    tool$atprotoServerActivateAccount.description,
-    async function(ctx) {
-      return tool$atprotoServerActivateAccount.tool(client, ctx);
-    },
-  );
-
-  server.tool(
-    tool$atprotoServerCreateAccount.name,
-    tool$atprotoServerCreateAccount.description,
-    tool$atprotoServerCreateAccount.args,
-    async function(args, ctx) {
-      return tool$atprotoServerCreateAccount.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$atprotoServerCreateAppPassword.name,
-    tool$atprotoServerCreateAppPassword.description,
-    tool$atprotoServerCreateAppPassword.args,
-    async function(args, ctx) {
-      return tool$atprotoServerCreateAppPassword.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$atprotoServerCreateInviteCode.name,
-    tool$atprotoServerCreateInviteCode.description,
-    tool$atprotoServerCreateInviteCode.args,
-    async function(args, ctx) {
-      return tool$atprotoServerCreateInviteCode.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$atprotoServerCreateInviteCodes.name,
-    tool$atprotoServerCreateInviteCodes.description,
-    tool$atprotoServerCreateInviteCodes.args,
-    async function(args, ctx) {
-      return tool$atprotoServerCreateInviteCodes.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$atprotoServerDeleteAccount.name,
-    tool$atprotoServerDeleteAccount.description,
-    tool$atprotoServerDeleteAccount.args,
-    async function(args, ctx) {
-      return tool$atprotoServerDeleteAccount.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$atprotoServerDeleteSession.name,
-    tool$atprotoServerDeleteSession.description,
-    async function(ctx) {
-      return tool$atprotoServerDeleteSession.tool(client, ctx);
-    },
-  );
-
-  server.tool(
-    tool$atprotoServerDescribe.name,
-    tool$atprotoServerDescribe.description,
-    async function(ctx) {
-      return tool$atprotoServerDescribe.tool(client, ctx);
-    },
-  );
-
-  server.tool(
-    tool$atprotoServerRefreshSession.name,
-    tool$atprotoServerRefreshSession.description,
-    async function(ctx) {
-      return tool$atprotoServerRefreshSession.tool(client, ctx);
-    },
-  );
-
-  server.tool(
-    tool$atprotoServerRequestEmailConfirmation.name,
-    tool$atprotoServerRequestEmailConfirmation.description,
-    async function(ctx) {
-      return tool$atprotoServerRequestEmailConfirmation.tool(client, ctx);
-    },
-  );
-
-  server.tool(
-    tool$atprotoServerRequestPasswordReset.name,
-    tool$atprotoServerRequestPasswordReset.description,
-    tool$atprotoServerRequestPasswordReset.args,
-    async function(args, ctx) {
-      return tool$atprotoServerRequestPasswordReset.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$atprotoServerResetPassword.name,
-    tool$atprotoServerResetPassword.description,
-    tool$atprotoServerResetPassword.args,
-    async function(args, ctx) {
-      return tool$atprotoServerResetPassword.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$atprotoServerRevokeAppPassword.name,
-    tool$atprotoServerRevokeAppPassword.description,
-    tool$atprotoServerRevokeAppPassword.args,
-    async function(args, ctx) {
-      return tool$atprotoServerRevokeAppPassword.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$serverCheckAccountStatus.name,
-    tool$serverCheckAccountStatus.description,
-    async function(ctx) {
-      return tool$serverCheckAccountStatus.tool(client, ctx);
-    },
-  );
-
-  server.tool(
-    tool$serverConfirmEmail.name,
-    tool$serverConfirmEmail.description,
-    tool$serverConfirmEmail.args,
-    async function(args, ctx) {
-      return tool$serverConfirmEmail.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$serverCreateSession.name,
-    tool$serverCreateSession.description,
-    tool$serverCreateSession.args,
-    async function(args, ctx) {
-      return tool$serverCreateSession.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$serverDeactivateAccount.name,
-    tool$serverDeactivateAccount.description,
-    tool$serverDeactivateAccount.args,
-    async function(args, ctx) {
-      return tool$serverDeactivateAccount.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$serverListAppPasswords.name,
-    tool$serverListAppPasswords.description,
-    async function(ctx) {
-      return tool$serverListAppPasswords.tool(client, ctx);
-    },
-  );
-
-  server.tool(
-    tool$serverRequestAccountDelete.name,
-    tool$serverRequestAccountDelete.description,
-    async function(ctx) {
-      return tool$serverRequestAccountDelete.tool(client, ctx);
-    },
-  );
-
-  server.tool(
-    tool$serverRequestEmailUpdate.name,
-    tool$serverRequestEmailUpdate.description,
-    async function(ctx) {
-      return tool$serverRequestEmailUpdate.tool(client, ctx);
-    },
-  );
-
-  server.tool(
-    tool$accountsGetInviteCodes.name,
-    tool$accountsGetInviteCodes.description,
-    tool$accountsGetInviteCodes.args,
-    async function(args, ctx) {
-      return tool$accountsGetInviteCodes.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$serversGetServiceAuth.name,
-    tool$serversGetServiceAuth.description,
-    tool$serversGetServiceAuth.args,
-    async function(args, ctx) {
-      return tool$serversGetServiceAuth.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$serversGetSession.name,
-    tool$serversGetSession.description,
-    async function(ctx) {
-      return tool$serversGetSession.tool(client, ctx);
-    },
-  );
-
-  server.tool(
-    tool$serversReserveSigningKey.name,
-    tool$serversReserveSigningKey.description,
-    tool$serversReserveSigningKey.args,
-    async function(args, ctx) {
-      return tool$serversReserveSigningKey.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$serversUpdateEmail.name,
-    tool$serversUpdateEmail.description,
-    tool$serversUpdateEmail.args,
-    async function(args, ctx) {
-      return tool$serversUpdateEmail.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$atprotoSyncGetBlob.name,
-    tool$atprotoSyncGetBlob.description,
-    tool$atprotoSyncGetBlob.args,
-    async function(args, ctx) {
-      return tool$atprotoSyncGetBlob.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$atprotoSyncListRepos.name,
-    tool$atprotoSyncListRepos.description,
-    tool$atprotoSyncListRepos.args,
-    async function(args, ctx) {
-      return tool$atprotoSyncListRepos.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$syncsGetBlocks.name,
-    tool$syncsGetBlocks.description,
-    tool$syncsGetBlocks.args,
-    async function(args, ctx) {
-      return tool$syncsGetBlocks.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$syncsGetLatestCommit.name,
-    tool$syncsGetLatestCommit.description,
-    tool$syncsGetLatestCommit.args,
-    async function(args, ctx) {
-      return tool$syncsGetLatestCommit.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$syncsGetRepoStatus.name,
-    tool$syncsGetRepoStatus.description,
-    tool$syncsGetRepoStatus.args,
-    async function(args, ctx) {
-      return tool$syncsGetRepoStatus.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$syncsRequestCrawl.name,
-    tool$syncsRequestCrawl.description,
-    tool$syncsRequestCrawl.args,
-    async function(args, ctx) {
-      return tool$syncsRequestCrawl.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$atprotoSyncsGetRecord.name,
-    tool$atprotoSyncsGetRecord.description,
-    tool$atprotoSyncsGetRecord.args,
-    async function(args, ctx) {
-      return tool$atprotoSyncsGetRecord.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$syncGetRepo.name,
-    tool$syncGetRepo.description,
-    tool$syncGetRepo.args,
-    async function(args, ctx) {
-      return tool$syncGetRepo.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$syncListBlobs.name,
-    tool$syncListBlobs.description,
-    tool$syncListBlobs.args,
-    async function(args, ctx) {
-      return tool$syncListBlobs.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$syncNotifyOfUpdate.name,
-    tool$syncNotifyOfUpdate.description,
-    tool$syncNotifyOfUpdate.args,
-    async function(args, ctx) {
-      return tool$syncNotifyOfUpdate.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$communicationsCreateTemplate.name,
-    tool$communicationsCreateTemplate.description,
-    tool$communicationsCreateTemplate.args,
-    async function(args, ctx) {
-      return tool$communicationsCreateTemplate.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$ozoneCommunicationDelete.name,
-    tool$ozoneCommunicationDelete.description,
-    tool$ozoneCommunicationDelete.args,
-    async function(args, ctx) {
-      return tool$ozoneCommunicationDelete.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$ozoneCommunicationListTemplates.name,
-    tool$ozoneCommunicationListTemplates.description,
-    async function(ctx) {
-      return tool$ozoneCommunicationListTemplates.tool(client, ctx);
-    },
-  );
-
-  server.tool(
-    tool$ozoneCommunicationUpdateTemplate.name,
-    tool$ozoneCommunicationUpdateTemplate.description,
-    tool$ozoneCommunicationUpdateTemplate.args,
-    async function(args, ctx) {
-      return tool$ozoneCommunicationUpdateTemplate.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$ozoneModerationEmitEvent.name,
-    tool$ozoneModerationEmitEvent.description,
-    tool$ozoneModerationEmitEvent.args,
-    async function(args, ctx) {
-      return tool$ozoneModerationEmitEvent.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$ozoneModerationGetRecord.name,
-    tool$ozoneModerationGetRecord.description,
-    tool$ozoneModerationGetRecord.args,
-    async function(args, ctx) {
-      return tool$ozoneModerationGetRecord.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$ozoneModerationGet.name,
-    tool$ozoneModerationGet.description,
-    tool$ozoneModerationGet.args,
-    async function(args, ctx) {
-      return tool$ozoneModerationGet.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$moderationGetEvent.name,
-    tool$moderationGetEvent.description,
-    tool$moderationGetEvent.args,
-    async function(args, ctx) {
-      return tool$moderationGetEvent.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$moderationQueryEvents.name,
-    tool$moderationQueryEvents.description,
-    tool$moderationQueryEvents.args,
-    async function(args, ctx) {
-      return tool$moderationQueryEvents.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$moderationsGetRecords.name,
-    tool$moderationsGetRecords.description,
-    tool$moderationsGetRecords.args,
-    async function(args, ctx) {
-      return tool$moderationsGetRecords.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$moderationsGetRepos.name,
-    tool$moderationsGetRepos.description,
-    tool$moderationsGetRepos.args,
-    async function(args, ctx) {
-      return tool$moderationsGetRepos.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$moderationsQueryStatuses.name,
-    tool$moderationsQueryStatuses.description,
-    tool$moderationsQueryStatuses.args,
-    async function(args, ctx) {
-      return tool$moderationsQueryStatuses.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$ozoneModerationsSearchRepos.name,
-    tool$ozoneModerationsSearchRepos.description,
-    tool$ozoneModerationsSearchRepos.args,
-    async function(args, ctx) {
-      return tool$ozoneModerationsSearchRepos.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$ozoneServerGetConfig.name,
-    tool$ozoneServerGetConfig.description,
-    async function(ctx) {
-      return tool$ozoneServerGetConfig.tool(client, ctx);
-    },
-  );
-
-  server.tool(
-    tool$ozoneSetAdd.name,
-    tool$ozoneSetAdd.description,
-    tool$ozoneSetAdd.args,
-    async function(args, ctx) {
-      return tool$ozoneSetAdd.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$ozoneSetUpsert.name,
-    tool$ozoneSetUpsert.description,
-    tool$ozoneSetUpsert.args,
-    async function(args, ctx) {
-      return tool$ozoneSetUpsert.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$setDelete.name,
-    tool$setDelete.description,
-    tool$setDelete.args,
-    async function(args, ctx) {
-      return tool$setDelete.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$setQuery.name,
-    tool$setQuery.description,
-    tool$setQuery.args,
-    async function(args, ctx) {
-      return tool$setQuery.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$setsDeleteValues.name,
-    tool$setsDeleteValues.description,
-    tool$setsDeleteValues.args,
-    async function(args, ctx) {
-      return tool$setsDeleteValues.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$setsGetValues.name,
-    tool$setsGetValues.description,
-    tool$setsGetValues.args,
-    async function(args, ctx) {
-      return tool$setsGetValues.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$settingsList.name,
-    tool$settingsList.description,
-    tool$settingsList.args,
-    async function(args, ctx) {
-      return tool$settingsList.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$settingRemoveOptions.name,
-    tool$settingRemoveOptions.description,
-    tool$settingRemoveOptions.args,
-    async function(args, ctx) {
-      return tool$settingRemoveOptions.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$ozoneSettingsUpsertOption.name,
-    tool$ozoneSettingsUpsertOption.description,
-    tool$ozoneSettingsUpsertOption.args,
-    async function(args, ctx) {
-      return tool$ozoneSettingsUpsertOption.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$signatureFindCorrelation.name,
-    tool$signatureFindCorrelation.description,
-    tool$signatureFindCorrelation.args,
-    async function(args, ctx) {
-      return tool$signatureFindCorrelation.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$ozoneSignaturesFindRelatedAccounts.name,
-    tool$ozoneSignaturesFindRelatedAccounts.description,
-    tool$ozoneSignaturesFindRelatedAccounts.args,
-    async function(args, ctx) {
-      return tool$ozoneSignaturesFindRelatedAccounts.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$ozoneSignatureSearchAccounts.name,
-    tool$ozoneSignatureSearchAccounts.description,
-    tool$ozoneSignatureSearchAccounts.args,
-    async function(args, ctx) {
-      return tool$ozoneSignatureSearchAccounts.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$ozoneAddMember.name,
-    tool$ozoneAddMember.description,
-    tool$ozoneAddMember.args,
-    async function(args, ctx) {
-      return tool$ozoneAddMember.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$teamsDeleteMember.name,
-    tool$teamsDeleteMember.description,
-    tool$teamsDeleteMember.args,
-    async function(args, ctx) {
-      return tool$teamsDeleteMember.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$teamsUpdateMember.name,
-    tool$teamsUpdateMember.description,
-    tool$teamsUpdateMember.args,
-    async function(args, ctx) {
-      return tool$teamsUpdateMember.tool(client, args, ctx);
-    },
-  );
-
-  server.tool(
-    tool$teamListMembers.name,
-    tool$teamListMembers.description,
-    tool$teamListMembers.args,
-    async function(args, ctx) {
-      return tool$teamListMembers.tool(client, args, ctx);
-    },
-  );
+  const client = new BlueskyCore({
+    serverURL: deps.serverURL,
+    server: deps.server,
+  });
+  const scopes = new Set(deps.scopes ?? mcpScopes);
+  const tool = createRegisterTool(deps.logger, server, client, scopes);
+
+  tool(tool$actorsGetPreferences);
+  tool(tool$actorsGetProfile);
+  tool(tool$actorsGetProfiles);
+  tool(tool$actorsPutPreferences);
+  tool(tool$actorsSearch);
+  tool(tool$actorGetSuggestions);
+  tool(tool$actorSearchTypeahead);
+  tool(tool$feedsDescribeGenerator);
+  tool(tool$feedsGetLikes);
+  tool(tool$feedsGetList);
+  tool(tool$feedsGetPostThread);
+  tool(tool$feedsGet);
+  tool(tool$feedsGetQuotes);
+  tool(tool$feedsGetRepostedBy);
+  tool(tool$feedsSendInteractions);
+  tool(tool$feedGetActor);
+  tool(tool$feedGetActorLikes);
+  tool(tool$feedGetAuthor);
+  tool(tool$feedFetch);
+  tool(tool$feedGetGenerator);
+  tool(tool$feedGetGenerators);
+  tool(tool$feedGetSkeleton);
+  tool(tool$feedGetSuggested);
+  tool(tool$feedGetTimeline);
+  tool(tool$feedSearch);
+  tool(tool$graphGetActorStarterPacks);
+  tool(tool$graphGetFollows);
+  tool(tool$graphGetList);
+  tool(tool$graphGetListMutes);
+  tool(tool$graphGetLists);
+  tool(tool$graphGetRelationships);
+  tool(tool$graphGetStarterPack);
+  tool(tool$graphMuteActor);
+  tool(tool$graphMuteActorList);
+  tool(tool$graphSearchStarterPacks);
+  tool(tool$graphUnmuteThread);
+  tool(tool$graphsGetBlocks);
+  tool(tool$graphsGetKnownFollowers);
+  tool(tool$graphsGetListBlocks);
+  tool(tool$graphsGetMutes);
+  tool(tool$graphsGetStarterPacks);
+  tool(tool$graphsMuteThread);
+  tool(tool$graphsUnmuteActorList);
+  tool(tool$usersGetFollowers);
+  tool(tool$usersGetSuggestedFollows);
+  tool(tool$usersUnmute);
+  tool(tool$labelersGetServices);
+  tool(tool$notificationsGetUnreadCount);
+  tool(tool$notificationsPutPreferences);
+  tool(tool$notificationsRegisterPush);
+  tool(tool$notificationsUpdateSeen);
+  tool(tool$notificationList);
+  tool(tool$videosGetJobStatus);
+  tool(tool$videosGetUploadLimits);
+  tool(tool$videosUpload);
+  tool(tool$accountDelete);
+  tool(tool$accountExportData);
+  tool(tool$convoDeleteMessageForSelf);
+  tool(tool$convoList);
+  tool(tool$chatsGetConvo);
+  tool(tool$chatsGetMessageContext);
+  tool(tool$chatConvosGetForMembers);
+  tool(tool$chatConvosGetMessages);
+  tool(tool$chatConvosSendMessage);
+  tool(tool$chatConvosUpdateRead);
+  tool(tool$conversationsGetLog);
+  tool(tool$conversationsLeave);
+  tool(tool$convosMute);
+  tool(tool$chatConvoSendMessageBatch);
+  tool(tool$chatConvoUnmute);
+  tool(tool$chatModerationGetActorMetadata);
+  tool(tool$chatModerationUpdateActorAccess);
+  tool(tool$adminsDeleteAccount);
+  tool(tool$adminsEnableAccountInvites);
+  tool(tool$adminsGetAccountInfos);
+  tool(tool$atprotoAdminDisableAccountInvites);
+  tool(tool$atprotoAdminGetInviteCodes);
+  tool(tool$atprotoAdminSearchAccounts);
+  tool(tool$adminDisableInviteCodes);
+  tool(tool$adminGetAccountInfo);
+  tool(tool$adminGetSubjectStatus);
+  tool(tool$adminSendEmail);
+  tool(tool$adminUpdateAccountEmail);
+  tool(tool$adminUpdateAccountHandle);
+  tool(tool$adminUpdateAccountPassword);
+  tool(tool$adminUpdateSubjectStatus);
+  tool(tool$identityGetRecommendedDidCredentials);
+  tool(tool$identitySubmitPlcOperation);
+  tool(tool$atprotoIdentityRequestPlcOperationSignature);
+  tool(tool$atprotoIdentityResolveHandle);
+  tool(tool$atprotoIdentitySignPlcOperation);
+  tool(tool$identitiesUpdateHandle);
+  tool(tool$atprotoLabelsQuery);
+  tool(tool$atprotoModerationCreateReport);
+  tool(tool$reposApplyWrites);
+  tool(tool$reposCreateRecord);
+  tool(tool$reposDescribe);
+  tool(tool$reposGetRecord);
+  tool(tool$reposListMissingBlobs);
+  tool(tool$reposList);
+  tool(tool$atprotoRepoDelete);
+  tool(tool$atprotoRepoImport);
+  tool(tool$atprotoRepoUploadBlob);
+  tool(tool$repoPutRecord);
+  tool(tool$atprotoServerActivateAccount);
+  tool(tool$atprotoServerCreateAccount);
+  tool(tool$atprotoServerCreateAppPassword);
+  tool(tool$atprotoServerCreateInviteCode);
+  tool(tool$atprotoServerCreateInviteCodes);
+  tool(tool$atprotoServerDeleteAccount);
+  tool(tool$atprotoServerDeleteSession);
+  tool(tool$atprotoServerDescribe);
+  tool(tool$atprotoServerRefreshSession);
+  tool(tool$atprotoServerRequestEmailConfirmation);
+  tool(tool$atprotoServerRequestPasswordReset);
+  tool(tool$atprotoServerResetPassword);
+  tool(tool$atprotoServerRevokeAppPassword);
+  tool(tool$serverCheckAccountStatus);
+  tool(tool$serverConfirmEmail);
+  tool(tool$serverCreateSession);
+  tool(tool$serverDeactivateAccount);
+  tool(tool$serverListAppPasswords);
+  tool(tool$serverRequestAccountDelete);
+  tool(tool$serverRequestEmailUpdate);
+  tool(tool$accountsGetInviteCodes);
+  tool(tool$serversGetServiceAuth);
+  tool(tool$serversGetSession);
+  tool(tool$serversReserveSigningKey);
+  tool(tool$serversUpdateEmail);
+  tool(tool$atprotoSyncGetBlob);
+  tool(tool$atprotoSyncListRepos);
+  tool(tool$syncsGetBlocks);
+  tool(tool$syncsGetLatestCommit);
+  tool(tool$syncsGetRepoStatus);
+  tool(tool$syncsRequestCrawl);
+  tool(tool$atprotoSyncsGetRecord);
+  tool(tool$syncGetRepo);
+  tool(tool$syncListBlobs);
+  tool(tool$syncNotifyOfUpdate);
+  tool(tool$communicationsCreateTemplate);
+  tool(tool$ozoneCommunicationDelete);
+  tool(tool$ozoneCommunicationListTemplates);
+  tool(tool$ozoneCommunicationUpdateTemplate);
+  tool(tool$ozoneModerationEmitEvent);
+  tool(tool$ozoneModerationGetRecord);
+  tool(tool$ozoneModerationGet);
+  tool(tool$moderationGetEvent);
+  tool(tool$moderationQueryEvents);
+  tool(tool$moderationsGetRecords);
+  tool(tool$moderationsGetRepos);
+  tool(tool$moderationsQueryStatuses);
+  tool(tool$ozoneModerationsSearchRepos);
+  tool(tool$ozoneServerGetConfig);
+  tool(tool$ozoneSetAdd);
+  tool(tool$ozoneSetUpsert);
+  tool(tool$setDelete);
+  tool(tool$setQuery);
+  tool(tool$setsDeleteValues);
+  tool(tool$setsGetValues);
+  tool(tool$settingsList);
+  tool(tool$settingRemoveOptions);
+  tool(tool$ozoneSettingsUpsertOption);
+  tool(tool$signatureFindCorrelation);
+  tool(tool$ozoneSignaturesFindRelatedAccounts);
+  tool(tool$ozoneSignatureSearchAccounts);
+  tool(tool$ozoneAddMember);
+  tool(tool$teamsDeleteMember);
+  tool(tool$teamsUpdateMember);
+  tool(tool$teamListMembers);
 
   return server;
 }

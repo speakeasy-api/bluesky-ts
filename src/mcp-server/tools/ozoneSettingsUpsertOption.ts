@@ -7,7 +7,7 @@ import * as operations from "../../models/operations/index.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
 const args = {
-  request: operations.ToolsOzoneSettingUpsertOptionRequestBody$inboundSchema,
+  request: operations.ToolsOzoneSettingUpsertOptionBody$inboundSchema,
 };
 
 export const tool$ozoneSettingsUpsertOption: ToolDefinition<typeof args> = {
@@ -17,9 +17,8 @@ export const tool$ozoneSettingsUpsertOption: ToolDefinition<typeof args> = {
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
-Create or update setting option
-
-`,
+Create or update setting option`,
+  scopes: ["write"],
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await ozoneSettingsUpsertOption(
@@ -28,6 +27,15 @@ Create or update setting option
       { fetchOptions: { signal: ctx.signal } },
     ).$inspect();
 
-    return formatResult(result, apiCall);
+    if (!result.ok) {
+      return {
+        content: [{ type: "text", text: result.error.message }],
+        isError: true,
+      };
+    }
+
+    const value = result.value;
+
+    return formatResult(value, apiCall);
   },
 };

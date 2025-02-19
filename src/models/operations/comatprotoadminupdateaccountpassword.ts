@@ -7,78 +7,75 @@ import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ComAtprotoAdminUpdateAccountPasswordRequestBody = {
+export type ComAtprotoAdminUpdateAccountPasswordBody = {
   did: string;
   password: string;
 };
 
 /** @internal */
-export const ComAtprotoAdminUpdateAccountPasswordRequestBody$inboundSchema:
-  z.ZodType<
-    ComAtprotoAdminUpdateAccountPasswordRequestBody,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    did: z.string(),
-    password: z.string(),
-  });
+export const ComAtprotoAdminUpdateAccountPasswordBody$inboundSchema: z.ZodType<
+  ComAtprotoAdminUpdateAccountPasswordBody,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  did: z.string(),
+  password: z.string(),
+});
 
 /** @internal */
-export type ComAtprotoAdminUpdateAccountPasswordRequestBody$Outbound = {
+export type ComAtprotoAdminUpdateAccountPasswordBody$Outbound = {
   did: string;
   password: string;
 };
 
 /** @internal */
-export const ComAtprotoAdminUpdateAccountPasswordRequestBody$outboundSchema:
-  z.ZodType<
-    ComAtprotoAdminUpdateAccountPasswordRequestBody$Outbound,
-    z.ZodTypeDef,
-    ComAtprotoAdminUpdateAccountPasswordRequestBody
-  > = z.object({
-    did: z.string(),
-    password: z.string(),
-  });
+export const ComAtprotoAdminUpdateAccountPasswordBody$outboundSchema: z.ZodType<
+  ComAtprotoAdminUpdateAccountPasswordBody$Outbound,
+  z.ZodTypeDef,
+  ComAtprotoAdminUpdateAccountPasswordBody
+> = z.object({
+  did: z.string(),
+  password: z.string(),
+});
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoAdminUpdateAccountPasswordRequestBody$ {
-  /** @deprecated use `ComAtprotoAdminUpdateAccountPasswordRequestBody$inboundSchema` instead. */
+export namespace ComAtprotoAdminUpdateAccountPasswordBody$ {
+  /** @deprecated use `ComAtprotoAdminUpdateAccountPasswordBody$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoAdminUpdateAccountPasswordRequestBody$inboundSchema;
-  /** @deprecated use `ComAtprotoAdminUpdateAccountPasswordRequestBody$outboundSchema` instead. */
+    ComAtprotoAdminUpdateAccountPasswordBody$inboundSchema;
+  /** @deprecated use `ComAtprotoAdminUpdateAccountPasswordBody$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoAdminUpdateAccountPasswordRequestBody$outboundSchema;
-  /** @deprecated use `ComAtprotoAdminUpdateAccountPasswordRequestBody$Outbound` instead. */
-  export type Outbound =
-    ComAtprotoAdminUpdateAccountPasswordRequestBody$Outbound;
+    ComAtprotoAdminUpdateAccountPasswordBody$outboundSchema;
+  /** @deprecated use `ComAtprotoAdminUpdateAccountPasswordBody$Outbound` instead. */
+  export type Outbound = ComAtprotoAdminUpdateAccountPasswordBody$Outbound;
 }
 
-export function comAtprotoAdminUpdateAccountPasswordRequestBodyToJSON(
-  comAtprotoAdminUpdateAccountPasswordRequestBody:
-    ComAtprotoAdminUpdateAccountPasswordRequestBody,
+export function comAtprotoAdminUpdateAccountPasswordBodyToJSON(
+  comAtprotoAdminUpdateAccountPasswordBody:
+    ComAtprotoAdminUpdateAccountPasswordBody,
 ): string {
   return JSON.stringify(
-    ComAtprotoAdminUpdateAccountPasswordRequestBody$outboundSchema.parse(
-      comAtprotoAdminUpdateAccountPasswordRequestBody,
+    ComAtprotoAdminUpdateAccountPasswordBody$outboundSchema.parse(
+      comAtprotoAdminUpdateAccountPasswordBody,
     ),
   );
 }
 
-export function comAtprotoAdminUpdateAccountPasswordRequestBodyFromJSON(
+export function comAtprotoAdminUpdateAccountPasswordBodyFromJSON(
   jsonString: string,
 ): SafeParseResult<
-  ComAtprotoAdminUpdateAccountPasswordRequestBody,
+  ComAtprotoAdminUpdateAccountPasswordBody,
   SDKValidationError
 > {
   return safeParse(
     jsonString,
     (x) =>
-      ComAtprotoAdminUpdateAccountPasswordRequestBody$inboundSchema.parse(
+      ComAtprotoAdminUpdateAccountPasswordBody$inboundSchema.parse(
         JSON.parse(x),
       ),
-    `Failed to parse 'ComAtprotoAdminUpdateAccountPasswordRequestBody' from JSON`,
+    `Failed to parse 'ComAtprotoAdminUpdateAccountPasswordBody' from JSON`,
   );
 }

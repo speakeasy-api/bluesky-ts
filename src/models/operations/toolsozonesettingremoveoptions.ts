@@ -8,15 +8,17 @@ import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export const Scope = {
+export const ToolsOzoneSettingRemoveOptionsScope = {
   Instance: "instance",
   Personal: "personal",
 } as const;
-export type Scope = ClosedEnum<typeof Scope>;
+export type ToolsOzoneSettingRemoveOptionsScope = ClosedEnum<
+  typeof ToolsOzoneSettingRemoveOptionsScope
+>;
 
-export type ToolsOzoneSettingRemoveOptionsRequestBody = {
+export type ToolsOzoneSettingRemoveOptionsBody = {
   keys: Array<string>;
-  scope: Scope;
+  scope: ToolsOzoneSettingRemoveOptionsScope;
 };
 
 /**
@@ -25,91 +27,86 @@ export type ToolsOzoneSettingRemoveOptionsRequestBody = {
 export type ToolsOzoneSettingRemoveOptionsResponseBody = {};
 
 /** @internal */
-export const Scope$inboundSchema: z.ZodNativeEnum<typeof Scope> = z.nativeEnum(
-  Scope,
-);
+export const ToolsOzoneSettingRemoveOptionsScope$inboundSchema: z.ZodNativeEnum<
+  typeof ToolsOzoneSettingRemoveOptionsScope
+> = z.nativeEnum(ToolsOzoneSettingRemoveOptionsScope);
 
 /** @internal */
-export const Scope$outboundSchema: z.ZodNativeEnum<typeof Scope> =
-  Scope$inboundSchema;
+export const ToolsOzoneSettingRemoveOptionsScope$outboundSchema:
+  z.ZodNativeEnum<typeof ToolsOzoneSettingRemoveOptionsScope> =
+    ToolsOzoneSettingRemoveOptionsScope$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace Scope$ {
-  /** @deprecated use `Scope$inboundSchema` instead. */
-  export const inboundSchema = Scope$inboundSchema;
-  /** @deprecated use `Scope$outboundSchema` instead. */
-  export const outboundSchema = Scope$outboundSchema;
+export namespace ToolsOzoneSettingRemoveOptionsScope$ {
+  /** @deprecated use `ToolsOzoneSettingRemoveOptionsScope$inboundSchema` instead. */
+  export const inboundSchema =
+    ToolsOzoneSettingRemoveOptionsScope$inboundSchema;
+  /** @deprecated use `ToolsOzoneSettingRemoveOptionsScope$outboundSchema` instead. */
+  export const outboundSchema =
+    ToolsOzoneSettingRemoveOptionsScope$outboundSchema;
 }
 
 /** @internal */
-export const ToolsOzoneSettingRemoveOptionsRequestBody$inboundSchema: z.ZodType<
-  ToolsOzoneSettingRemoveOptionsRequestBody,
+export const ToolsOzoneSettingRemoveOptionsBody$inboundSchema: z.ZodType<
+  ToolsOzoneSettingRemoveOptionsBody,
   z.ZodTypeDef,
   unknown
 > = z.object({
   keys: z.array(z.string()),
-  scope: Scope$inboundSchema,
+  scope: ToolsOzoneSettingRemoveOptionsScope$inboundSchema,
 });
 
 /** @internal */
-export type ToolsOzoneSettingRemoveOptionsRequestBody$Outbound = {
+export type ToolsOzoneSettingRemoveOptionsBody$Outbound = {
   keys: Array<string>;
   scope: string;
 };
 
 /** @internal */
-export const ToolsOzoneSettingRemoveOptionsRequestBody$outboundSchema:
-  z.ZodType<
-    ToolsOzoneSettingRemoveOptionsRequestBody$Outbound,
-    z.ZodTypeDef,
-    ToolsOzoneSettingRemoveOptionsRequestBody
-  > = z.object({
-    keys: z.array(z.string()),
-    scope: Scope$outboundSchema,
-  });
+export const ToolsOzoneSettingRemoveOptionsBody$outboundSchema: z.ZodType<
+  ToolsOzoneSettingRemoveOptionsBody$Outbound,
+  z.ZodTypeDef,
+  ToolsOzoneSettingRemoveOptionsBody
+> = z.object({
+  keys: z.array(z.string()),
+  scope: ToolsOzoneSettingRemoveOptionsScope$outboundSchema,
+});
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ToolsOzoneSettingRemoveOptionsRequestBody$ {
-  /** @deprecated use `ToolsOzoneSettingRemoveOptionsRequestBody$inboundSchema` instead. */
-  export const inboundSchema =
-    ToolsOzoneSettingRemoveOptionsRequestBody$inboundSchema;
-  /** @deprecated use `ToolsOzoneSettingRemoveOptionsRequestBody$outboundSchema` instead. */
+export namespace ToolsOzoneSettingRemoveOptionsBody$ {
+  /** @deprecated use `ToolsOzoneSettingRemoveOptionsBody$inboundSchema` instead. */
+  export const inboundSchema = ToolsOzoneSettingRemoveOptionsBody$inboundSchema;
+  /** @deprecated use `ToolsOzoneSettingRemoveOptionsBody$outboundSchema` instead. */
   export const outboundSchema =
-    ToolsOzoneSettingRemoveOptionsRequestBody$outboundSchema;
-  /** @deprecated use `ToolsOzoneSettingRemoveOptionsRequestBody$Outbound` instead. */
-  export type Outbound = ToolsOzoneSettingRemoveOptionsRequestBody$Outbound;
+    ToolsOzoneSettingRemoveOptionsBody$outboundSchema;
+  /** @deprecated use `ToolsOzoneSettingRemoveOptionsBody$Outbound` instead. */
+  export type Outbound = ToolsOzoneSettingRemoveOptionsBody$Outbound;
 }
 
-export function toolsOzoneSettingRemoveOptionsRequestBodyToJSON(
-  toolsOzoneSettingRemoveOptionsRequestBody:
-    ToolsOzoneSettingRemoveOptionsRequestBody,
+export function toolsOzoneSettingRemoveOptionsBodyToJSON(
+  toolsOzoneSettingRemoveOptionsBody: ToolsOzoneSettingRemoveOptionsBody,
 ): string {
   return JSON.stringify(
-    ToolsOzoneSettingRemoveOptionsRequestBody$outboundSchema.parse(
-      toolsOzoneSettingRemoveOptionsRequestBody,
+    ToolsOzoneSettingRemoveOptionsBody$outboundSchema.parse(
+      toolsOzoneSettingRemoveOptionsBody,
     ),
   );
 }
 
-export function toolsOzoneSettingRemoveOptionsRequestBodyFromJSON(
+export function toolsOzoneSettingRemoveOptionsBodyFromJSON(
   jsonString: string,
-): SafeParseResult<
-  ToolsOzoneSettingRemoveOptionsRequestBody,
-  SDKValidationError
-> {
+): SafeParseResult<ToolsOzoneSettingRemoveOptionsBody, SDKValidationError> {
   return safeParse(
     jsonString,
     (x) =>
-      ToolsOzoneSettingRemoveOptionsRequestBody$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'ToolsOzoneSettingRemoveOptionsRequestBody' from JSON`,
+      ToolsOzoneSettingRemoveOptionsBody$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ToolsOzoneSettingRemoveOptionsBody' from JSON`,
   );
 }
 
