@@ -1,6 +1,6 @@
 # @speakeasy-api/bluesky
 
-Developer-friendly & type-safe Typescript SDK specifically catered to leverage *@speakeasy-api/bluesky* API.
+Developer-friendly & type-safe Typescript SDK specifically catered to leverage _@speakeasy-api/bluesky_ API.
 
 <div align="left">
     <a href="https://www.speakeasy.com/?utm_source=@speakeasy-api/bluesky&utm_campaign=typescript"><img src="https://custom-icon-badges.demolab.com/badge/-Built%20By%20Speakeasy-212015?style=for-the-badge&logoColor=FBE331&logo=speakeasy&labelColor=545454" /></a>
@@ -9,8 +9,8 @@ Developer-friendly & type-safe Typescript SDK specifically catered to leverage *
     </a>
 </div>
 
-
 <br /><br />
+
 > [!IMPORTANT]
 > This SDK is not yet ready for production use. Delete this section before > publishing to a package manager.
 
@@ -86,6 +86,8 @@ yarn add @tanstack/react-query react react-dom
 This SDK is also an installable MCP server where the various SDK methods are
 exposed as tools that can be invoked by AI applications.
 
+> Node.js v20 or greater is required to run the MCP server.
+
 <details>
 <summary>Claude installation steps</summary>
 
@@ -96,7 +98,7 @@ Add the following server definition to your `claude_desktop_config.json` file:
   "mcpServers": {
     "Bluesky": {
       "command": "npx",
-      "args": ["-y", "--", "@speakeasy-api/bluesky", "mcp", "start"]
+      "args": ["-y", "--", "@speakeasy-api/bluesky", "mcp", "start"],
       "env": {
         "BLUESKY_BEARER": "..."
       }
@@ -104,6 +106,7 @@ Add the following server definition to your `claude_desktop_config.json` file:
   }
 }
 ```
+
 </details>
 
 <details>
@@ -134,6 +137,12 @@ Add the following server definition to your `claude_desktop_config.json` file:
     | Command | `/path/to/mcp-bluesky.sh` |
 
 </details>
+
+For a full list of server arguments, run:
+
+```sh
+npx -y -- @speakeasy-api/bluesky mcp start --help
+```
 <!-- End SDK Installation [installation] -->
 
 <!-- Start Requirements [requirements] -->
@@ -3223,7 +3232,7 @@ looking for the latest version.
 
 ## Contributions
 
-While we value open-source contributions to this SDK, this library is generated programmatically. Any manual changes added to internal files will be overwritten on the next generation. 
-We look forward to hearing your feedback. Feel free to open a PR or an issue with a proof of concept and we'll do our best to include it in a future release. 
+While we value open-source contributions to this SDK, this library is generated programmatically. Any manual changes added to internal files will be overwritten on the next generation.
+We look forward to hearing your feedback. Feel free to open a PR or an issue with a proof of concept and we'll do our best to include it in a future release.
 
 ### SDK Created by [Speakeasy](https://www.speakeasy.com/?utm_source=@speakeasy-api/bluesky&utm_campaign=typescript)
