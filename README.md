@@ -94,16 +94,10 @@ Add the following server definition to your `claude_desktop_config.json` file:
   "mcpServers": {
     "Bluesky": {
       "command": "npx",
-      "args": [
-        "-y",
-        "--project",
-        "@speakeasy-sdks/bluesky",
-        "--",
-        "mcp",
-        "start",
-        "--server",
-        "public"
-      ]
+      "args": ["-y", "--package", "@speakeasy-sdks/bluesky", "--", "mcp", "start"],
+      "env": {
+        "BLUESKY_BEARER": "..."
+      }
     }
   }
 }
@@ -119,6 +113,8 @@ Add the following server definition to your `claude_desktop_config.json` file:
     ```sh
     #!/bin/sh
      
+    export BLUESKY_BEARER="..."
+
     exec npx -y --package @speakeasy-sdks/bluesky -- mcp start "$@"
     ```
 
@@ -134,7 +130,7 @@ Add the following server definition to your `claude_desktop_config.json` file:
     | ------- | ----- |
     | Name    | Bluesky |
     | Type    | `command` |
-    | Command | `/path/to/mcp-bluesky.sh --server public` |
+    | Command | `/path/to/mcp-bluesky.sh` |
 
 </details>
 

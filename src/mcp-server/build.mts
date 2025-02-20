@@ -10,6 +10,7 @@ await build({
   sourcemap: "linked",
   target: "node",
   format: "esm",
+  minify: false,
   throw: true,
   banner: "#!/usr/bin/env node",
 });
