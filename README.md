@@ -94,10 +94,16 @@ Add the following server definition to your `claude_desktop_config.json` file:
   "mcpServers": {
     "Bluesky": {
       "command": "npx",
-      "args": ["-y", "--", "@speakeasy-sdks/bluesky", "mcp", "start"],
-      "env": {
-        "BLUESKY_BEARER": "..."
-      }
+      "args": [
+        "-y",
+        "--project",
+        "@speakeasy-sdks/bluesky",
+        "--",
+        "mcp",
+        "start",
+        "--server",
+        "public"
+      ]
     }
   }
 }
@@ -113,9 +119,7 @@ Add the following server definition to your `claude_desktop_config.json` file:
     ```sh
     #!/bin/sh
      
-    export BLUESKY_BEARER="..."
-
-    exec npx -y -- @speakeasy-sdks/bluesky mcp start "$@"
+    exec npx -y --package @speakeasy-sdks/bluesky -- mcp start "$@"
     ```
 
 2. Then make it executable with the following command:
@@ -130,14 +134,14 @@ Add the following server definition to your `claude_desktop_config.json` file:
     | ------- | ----- |
     | Name    | Bluesky |
     | Type    | `command` |
-    | Command | `/path/to/mcp-bluesky.sh` |
+    | Command | `/path/to/mcp-bluesky.sh --server public` |
 
 </details>
 
 For a full list of server arguments, run:
 
 ```sh
-npx -y -- @speakeasy-sdks/bluesky mcp start --help
+npx -y --package @speakeasy-sdks/bluesky -- mcp start --help
 ```
 <!-- End SDK Installation [installation] -->
 
