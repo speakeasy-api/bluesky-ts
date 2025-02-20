@@ -47,7 +47,7 @@ typescript:
   methodArguments: infer-optional-args
   moduleFormat: esm
   outputModelSuffix: output
-  packageName: '@speakeasy-api/bluesky'
+  packageName: '@speakeasy-sdks/bluesky'
   responseFormat: flat
   templateVersion: v2
   useIndexModules: true

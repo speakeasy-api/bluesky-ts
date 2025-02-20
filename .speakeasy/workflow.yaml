@@ -9,13 +9,16 @@ sources:
             - location: .speakeasy/speakeasy-errors-overlay.yaml
             - location: .speakeasy/speakeasy-react-hooks-overlay.yaml
             - location: .speakeasy/speakeasy-mcp.yaml
+        output: scratch/openapi.yaml
         registry:
             location: registry.speakeasyapi.dev/bluesky/bluesky/-oas
-        output: scratch/openapi.yaml 
 targets:
     bluesky:
         target: typescript
         source: OAS
+        publish:
+            npm:
+                token: $npm_token
         codeSamples:
             registry:
                 location: registry.speakeasyapi.dev/bluesky/bluesky/-oas-typescript-code-samples
