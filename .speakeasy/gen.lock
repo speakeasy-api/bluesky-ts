@@ -5,8 +5,8 @@ management:
   docVersion: 0.0.0
   speakeasyVersion: 1.498.0
   generationVersion: 2.518.0
-  releaseVersion: 0.1.1
-  configChecksum: 1844f35361ce5ed4f5705a456d15c7ed
+  releaseVersion: 0.1.2
+  configChecksum: 816e245cd0e06e8794ed80a7f960011c
   repoURL: https://github.com/speakeasy-api/bluesky-ts.git
   installationURL: https://github.com/speakeasy-api/bluesky-ts
   published: true
@@ -1360,7 +1360,6 @@ generatedFiles:
   - src/lib/sdks.ts
   - src/lib/security.ts
   - src/lib/url.ts
-  - src/mcp-server/build.mts
   - src/mcp-server/cli.ts
   - src/mcp-server/cli/start/command.ts
   - src/mcp-server/cli/start/impl.ts
