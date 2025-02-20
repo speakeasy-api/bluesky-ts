@@ -1,8 +1,21 @@
 speakeasyVersion: 1.498.0
-sources: {}
+sources:
+    OAS:
+        sourceNamespace: oas
+        sourceRevisionDigest: sha256:3898729eaee30e5acb8c1d665b0f8de325ae4109043d9659c22b6d1ee3514975
+        sourceBlobDigest: sha256:fc611c3f426fda575a39f6881e166ba50f7760e7c81a8a7d094b851ae6f3fbb8
+        tags:
+            - latest
+            - speakeasy-sdk-regen-1740067043
+            - 0.0.0
 targets:
     bluesky:
         source: OAS
+        sourceNamespace: oas
+        sourceRevisionDigest: sha256:3898729eaee30e5acb8c1d665b0f8de325ae4109043d9659c22b6d1ee3514975
+        sourceBlobDigest: sha256:fc611c3f426fda575a39f6881e166ba50f7760e7c81a8a7d094b851ae6f3fbb8
+        codeSamplesNamespace: oas-typescript-code-samples
+        codeSamplesRevisionDigest: sha256:6a207213b71f541d9ee5ff5a2df6da629e793254dac55ed1a07006973ec0e666
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
@@ -17,7 +30,7 @@ workflow:
                 - location: .speakeasy/speakeasy-mcp.yaml
             output: scratch/openapi.yaml
             registry:
-                location: registry.speakeasyapi.dev/bluesky/bluesky/-oas
+                location: registry.speakeasyapi.dev/speakeasy-self/bluesky/oas
     targets:
         bluesky:
             target: typescript
@@ -27,5 +40,5 @@ workflow:
                     token: $npm_token
             codeSamples:
                 registry:
-                    location: registry.speakeasyapi.dev/bluesky/bluesky/-oas-typescript-code-samples
+                    location: registry.speakeasyapi.dev/speakeasy-self/bluesky/oas-typescript-code-samples
                 blocking: false
