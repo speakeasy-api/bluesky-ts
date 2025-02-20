@@ -5,7 +5,7 @@ Strings which describe the label in the UI, localized into a specific language.
 ## Example Usage
 
 ```typescript
-import { ComAtprotoLabelDefsLabelValueDefinitionStrings } from "@speakeasy-api/bluesky/models/components";
+import { ComAtprotoLabelDefsLabelValueDefinitionStrings } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: ComAtprotoLabelDefsLabelValueDefinitionStrings = {
   lang: "<value>",

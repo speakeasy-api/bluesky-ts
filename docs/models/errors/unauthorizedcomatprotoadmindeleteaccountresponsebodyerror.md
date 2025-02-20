@@ -5,7 +5,7 @@ Unauthorized
 ## Example Usage
 
 ```typescript
-import { UnauthorizedComAtprotoAdminDeleteAccountResponseBodyError } from "@speakeasy-api/bluesky/models/errors";
+import { UnauthorizedComAtprotoAdminDeleteAccountResponseBodyError } from "@speakeasy-sdks/bluesky/models/errors";
 
 // No examples available for this model
 ```

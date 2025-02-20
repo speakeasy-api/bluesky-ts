@@ -50,7 +50,7 @@ export function useAtprotoRepoUploadBlobMutation(
 }
 
 export function mutationKeyAtprotoRepoUploadBlob(): MutationKey {
-  return ["@speakeasy-api/bluesky", "atprotoRepo", "uploadBlob"];
+  return ["@speakeasy-sdks/bluesky", "atprotoRepo", "uploadBlob"];
 }
 
 export function buildAtprotoRepoUploadBlobMutation(

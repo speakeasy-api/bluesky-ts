@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { AppBskyFeedGetPostThreadResponseBody } from "@speakeasy-api/bluesky/models/operations";
+import { AppBskyFeedGetPostThreadResponseBody } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: AppBskyFeedGetPostThreadResponseBody = {
   thread: {

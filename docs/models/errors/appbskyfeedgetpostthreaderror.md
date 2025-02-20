@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { AppBskyFeedGetPostThreadError } from "@speakeasy-api/bluesky/models/errors";
+import { AppBskyFeedGetPostThreadError } from "@speakeasy-sdks/bluesky/models/errors";
 
 let value: AppBskyFeedGetPostThreadError = "NotFound";
 ```

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ManagerRole } from "@speakeasy-api/bluesky/models/components";
+import { ManagerRole } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: ManagerRole = "tools.ozone.team.defs#roleTriage";
 ```

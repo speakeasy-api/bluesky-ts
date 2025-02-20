@@ -36,16 +36,12 @@ This section contains HTTP API reference docs for Bluesky and AT Protocol lexico
 <!-- Start SDK Installation [installation] -->
 ## SDK Installation
 
-> [!TIP]
-> To finish publishing your SDK to npm and others you must [run your first generation action](https://www.speakeasy.com/docs/github-setup#step-by-step-guide).
-
-
 The SDK can be installed with either [npm](https://www.npmjs.com/), [pnpm](https://pnpm.io/), [bun](https://bun.sh/) or [yarn](https://classic.yarnpkg.com/en/) package managers.
 
 ### NPM
 
 ```bash
-npm add https://github.com/speakeasy-api/bluesky-ts
+npm add @speakeasy-sdks/bluesky
 # Install optional peer dependencies if you plan to use React hooks
 npm add @tanstack/react-query react react-dom
 ```
@@ -53,7 +49,7 @@ npm add @tanstack/react-query react react-dom
 ### PNPM
 
 ```bash
-pnpm add https://github.com/speakeasy-api/bluesky-ts
+pnpm add @speakeasy-sdks/bluesky
 # Install optional peer dependencies if you plan to use React hooks
 pnpm add @tanstack/react-query react react-dom
 ```
@@ -61,7 +57,7 @@ pnpm add @tanstack/react-query react react-dom
 ### Bun
 
 ```bash
-bun add https://github.com/speakeasy-api/bluesky-ts
+bun add @speakeasy-sdks/bluesky
 # Install optional peer dependencies if you plan to use React hooks
 bun add @tanstack/react-query react react-dom
 ```
@@ -69,7 +65,7 @@ bun add @tanstack/react-query react react-dom
 ### Yarn
 
 ```bash
-yarn add https://github.com/speakeasy-api/bluesky-ts zod
+yarn add @speakeasy-sdks/bluesky zod
 # Install optional peer dependencies if you plan to use React hooks
 yarn add @tanstack/react-query react react-dom
 
@@ -79,7 +75,7 @@ yarn add @tanstack/react-query react react-dom
 
 > [!NOTE]
 > This package is published as an ES Module (ESM) only. For applications using
-> CommonJS, use `await import()` to import and use this package.
+> CommonJS, use `await import("@speakeasy-sdks/bluesky")` to import and use this package.
 
 ### Model Context Protocol (MCP) Server
 
@@ -98,7 +94,10 @@ Add the following server definition to your `claude_desktop_config.json` file:
   "mcpServers": {
     "Bluesky": {
       "command": "npx",
-      "args": ["-y", "--", "@speakeasy-api/bluesky", "mcp", "start", "--server", "public"]
+      "args": ["-y", "--", "@speakeasy-sdks/bluesky", "mcp", "start"],
+      "env": {
+        "BLUESKY_BEARER": "..."
+      }
     }
   }
 }
@@ -116,7 +115,7 @@ Add the following server definition to your `claude_desktop_config.json` file:
      
     export BLUESKY_BEARER="..."
 
-    exec npx -y -- @speakeasy-api/bluesky mcp start "$@"
+    exec npx -y -- @speakeasy-sdks/bluesky mcp start "$@"
     ```
 
 2. Then make it executable with the following command:
@@ -138,7 +137,7 @@ Add the following server definition to your `claude_desktop_config.json` file:
 For a full list of server arguments, run:
 
 ```sh
-npx -y -- @speakeasy-api/bluesky mcp start --help
+npx -y -- @speakeasy-sdks/bluesky mcp start --help
 ```
 <!-- End SDK Installation [installation] -->
 
@@ -154,7 +153,7 @@ For supported JavaScript runtimes, please consult [RUNTIMES.md](RUNTIMES.md).
 ### Example
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -187,7 +186,7 @@ This SDK supports the following security scheme globally:
 
 To authenticate with the API the `bearer` parameter must be set when initializing the SDK client instance. For example:
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -2829,7 +2828,7 @@ syntax.
 Here's an example of one such pagination call:
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -2864,7 +2863,7 @@ Certain SDK methods accept files as part of a multi-part request. It is possible
 > - **Node.js v18:** A file stream can be created using the `fileFrom` helper from [`fetch-blob/from.js`](https://www.npmjs.com/package/fetch-blob).
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 import { openAsBlob } from "node:fs";
 
 const bluesky = new Bluesky({
@@ -2890,7 +2889,7 @@ Some of the endpoints in this SDK support retries.  If you use the SDK without a
 
 To change the default retry strategy for a single API call, simply provide a retryConfig object to the call:
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -2920,7 +2919,7 @@ run();
 
 If you'd like to override the default retry strategy for all operations that support retries, you can provide a retryConfig at SDK initialization:
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   retryConfig: {
@@ -2972,7 +2971,7 @@ Some methods specify known errors which can be thrown. All the known errors are 
 If the method throws an error and it is not captured by the known errors, it will default to throwing a `APIError`.
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 import {
   BadRequestAppBskyActorGetPreferencesResponseBodyError,
   BadRequestError,
@@ -2983,7 +2982,7 @@ import {
   TimeoutError,
   UnauthorizedAppBskyActorGetPreferencesResponseBodyError,
   UnauthorizedError,
-} from "@speakeasy-api/bluesky/models/errors";
+} from "@speakeasy-sdks/bluesky/models/errors";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -3108,7 +3107,7 @@ You can override the default server globally by passing a server name to the `se
 #### Example
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   server: "public",
@@ -3130,7 +3129,7 @@ run();
 
 The default server can also be overridden globally by passing a URL to the `serverURL: string` optional parameter when initializing the SDK client instance. For example:
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   serverURL: "https://api.bsky.app",
@@ -3167,8 +3166,8 @@ custom header and a timeout to requests and how to use the `"requestError"` hook
 to log errors:
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
-import { HTTPClient } from "@speakeasy-api/bluesky/lib/http";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
+import { HTTPClient } from "@speakeasy-sdks/bluesky/lib/http";
 
 const httpClient = new HTTPClient({
   // fetcher takes a function that has the same signature as native `fetch`.
@@ -3209,7 +3208,7 @@ You can pass a logger that matches `console`'s interface as an SDK option.
 > Beware that debug logging will reveal secrets, like API tokens in headers, in log messages printed to a console or files. It's recommended to use this feature only during local development and not in production.
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const sdk = new Bluesky({ debugLogger: console });
 ```

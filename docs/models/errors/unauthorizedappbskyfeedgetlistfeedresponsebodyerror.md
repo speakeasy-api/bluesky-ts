@@ -5,7 +5,7 @@ Unauthorized
 ## Example Usage
 
 ```typescript
-import { UnauthorizedAppBskyFeedGetListFeedResponseBodyError } from "@speakeasy-api/bluesky/models/errors";
+import { UnauthorizedAppBskyFeedGetListFeedResponseBodyError } from "@speakeasy-sdks/bluesky/models/errors";
 
 // No examples available for this model
 ```

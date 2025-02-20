@@ -98,7 +98,7 @@ export function invalidateChatsGetConvo(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["@speakeasy-api/bluesky", "chats", "getConvo", ...queryKeyBase],
+    queryKey: ["@speakeasy-sdks/bluesky", "chats", "getConvo", ...queryKeyBase],
   });
 }
 
@@ -108,7 +108,7 @@ export function invalidateAllChatsGetConvo(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["@speakeasy-api/bluesky", "chats", "getConvo"],
+    queryKey: ["@speakeasy-sdks/bluesky", "chats", "getConvo"],
   });
 }
 
@@ -143,5 +143,5 @@ export function buildChatsGetConvoQuery(
 export function queryKeyChatsGetConvo(
   parameters: { convoId: string },
 ): QueryKey {
-  return ["@speakeasy-api/bluesky", "chats", "getConvo", parameters];
+  return ["@speakeasy-sdks/bluesky", "chats", "getConvo", parameters];
 }

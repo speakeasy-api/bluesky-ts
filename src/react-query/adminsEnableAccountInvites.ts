@@ -49,7 +49,7 @@ export function useAdminsEnableAccountInvitesMutation(
 }
 
 export function mutationKeyAdminsEnableAccountInvites(): MutationKey {
-  return ["@speakeasy-api/bluesky", "admins", "enableAccountInvites"];
+  return ["@speakeasy-sdks/bluesky", "admins", "enableAccountInvites"];
 }
 
 export function buildAdminsEnableAccountInvitesMutation(

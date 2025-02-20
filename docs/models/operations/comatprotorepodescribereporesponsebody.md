@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { ComAtprotoRepoDescribeRepoResponseBody } from "@speakeasy-api/bluesky/models/operations";
+import { ComAtprotoRepoDescribeRepoResponseBody } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: ComAtprotoRepoDescribeRepoResponseBody = {
   handle: "<value>",

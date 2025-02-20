@@ -50,7 +50,7 @@ export function useRepoPutRecordMutation(
 }
 
 export function mutationKeyRepoPutRecord(): MutationKey {
-  return ["@speakeasy-api/bluesky", "repo", "putRecord"];
+  return ["@speakeasy-sdks/bluesky", "repo", "putRecord"];
 }
 
 export function buildRepoPutRecordMutation(

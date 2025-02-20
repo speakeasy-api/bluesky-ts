@@ -32,7 +32,7 @@ Get status details for a video processing job.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -55,8 +55,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { videosGetJobStatus } from "@speakeasy-api/bluesky/funcs/videosGetJobStatus.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { videosGetJobStatus } from "@speakeasy-sdks/bluesky/funcs/videosGetJobStatus.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -107,7 +107,7 @@ import {
   // mutations and other user actions.
   invalidateVideosGetJobStatus,
   invalidateAllVideosGetJobStatus,
-} from "@speakeasy-api/bluesky/react-query/videosGetJobStatus.js";
+} from "@speakeasy-sdks/bluesky/react-query/videosGetJobStatus.js";
 ```
 
 ### Parameters
@@ -152,7 +152,7 @@ Get video upload limits for the authenticated user.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -173,8 +173,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { videosGetUploadLimits } from "@speakeasy-api/bluesky/funcs/videosGetUploadLimits.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { videosGetUploadLimits } from "@speakeasy-sdks/bluesky/funcs/videosGetUploadLimits.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -222,7 +222,7 @@ import {
   // Utility to invalidate the query cache for this query in response to
   // mutations and other user actions.
   invalidateAllVideosGetUploadLimits,
-} from "@speakeasy-api/bluesky/react-query/videosGetUploadLimits.js";
+} from "@speakeasy-sdks/bluesky/react-query/videosGetUploadLimits.js";
 ```
 
 ### Parameters
@@ -266,7 +266,7 @@ Upload a video to be processed then stored on the PDS.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 import { openAsBlob } from "node:fs";
 
 const bluesky = new Bluesky({
@@ -288,8 +288,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { videosUpload } from "@speakeasy-api/bluesky/funcs/videosUpload.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { videosUpload } from "@speakeasy-sdks/bluesky/funcs/videosUpload.js";
 import { openAsBlob } from "node:fs";
 
 // Use `BlueskyCore` for best tree-shaking performance.
@@ -328,7 +328,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useVideosUploadMutation
-} from "@speakeasy-api/bluesky/react-query/videosUpload.js";
+} from "@speakeasy-sdks/bluesky/react-query/videosUpload.js";
 ```
 
 ### Parameters

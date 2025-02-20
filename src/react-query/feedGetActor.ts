@@ -197,7 +197,7 @@ export function invalidateFeedGetActor(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["@speakeasy-api/bluesky", "feed", "getActor", ...queryKeyBase],
+    queryKey: ["@speakeasy-sdks/bluesky", "feed", "getActor", ...queryKeyBase],
   });
 }
 
@@ -207,7 +207,7 @@ export function invalidateAllFeedGetActor(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["@speakeasy-api/bluesky", "feed", "getActor"],
+    queryKey: ["@speakeasy-sdks/bluesky", "feed", "getActor"],
   });
 }
 
@@ -295,5 +295,5 @@ export function queryKeyFeedGetActor(
     cursor?: string | undefined;
   },
 ): QueryKey {
-  return ["@speakeasy-api/bluesky", "feed", "getActor", parameters];
+  return ["@speakeasy-sdks/bluesky", "feed", "getActor", parameters];
 }

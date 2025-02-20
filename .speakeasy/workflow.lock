@@ -22,6 +22,9 @@ workflow:
         bluesky:
             target: typescript
             source: OAS
+            publish:
+                npm:
+                    token: $npm_token
             codeSamples:
                 registry:
                     location: registry.speakeasyapi.dev/bluesky/bluesky/-oas-typescript-code-samples

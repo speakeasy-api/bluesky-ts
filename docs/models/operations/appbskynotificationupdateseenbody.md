@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { AppBskyNotificationUpdateSeenBody } from "@speakeasy-api/bluesky/models/operations";
+import { AppBskyNotificationUpdateSeenBody } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: AppBskyNotificationUpdateSeenBody = {
   seenAt: new Date("2025-03-11T01:40:18.315Z"),

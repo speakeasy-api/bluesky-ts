@@ -5,7 +5,7 @@ Unauthorized
 ## Example Usage
 
 ```typescript
-import { UnauthorizedComAtprotoServerConfirmEmailResponseBodyError } from "@speakeasy-api/bluesky/models/errors";
+import { UnauthorizedComAtprotoServerConfirmEmailResponseBodyError } from "@speakeasy-sdks/bluesky/models/errors";
 
 // No examples available for this model
 ```

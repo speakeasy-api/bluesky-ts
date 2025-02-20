@@ -32,7 +32,7 @@ Enumerates accounts which follow a specified account (actor).
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -57,8 +57,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { usersGetFollowers } from "@speakeasy-api/bluesky/funcs/usersGetFollowers.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { usersGetFollowers } from "@speakeasy-sdks/bluesky/funcs/usersGetFollowers.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -114,7 +114,7 @@ import {
   // mutations and other user actions.
   invalidateFollowers,
   invalidateAllFollowers,
-} from "@speakeasy-api/bluesky/react-query/usersGetFollowers.js";
+} from "@speakeasy-sdks/bluesky/react-query/usersGetFollowers.js";
 ```
 
 ### Parameters
@@ -159,7 +159,7 @@ Enumerates follows similar to a given account (actor). Expected use is to recomm
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -182,8 +182,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { usersGetSuggestedFollows } from "@speakeasy-api/bluesky/funcs/usersGetSuggestedFollows.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { usersGetSuggestedFollows } from "@speakeasy-sdks/bluesky/funcs/usersGetSuggestedFollows.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -234,7 +234,7 @@ import {
   // mutations and other user actions.
   invalidateUsersGetSuggestedFollows,
   invalidateAllUsersGetSuggestedFollows,
-} from "@speakeasy-api/bluesky/react-query/usersGetSuggestedFollows.js";
+} from "@speakeasy-sdks/bluesky/react-query/usersGetSuggestedFollows.js";
 ```
 
 ### Parameters
@@ -279,7 +279,7 @@ Unmutes the specified account. Requires auth.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -301,8 +301,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { usersUnmute } from "@speakeasy-api/bluesky/funcs/usersUnmute.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { usersUnmute } from "@speakeasy-sdks/bluesky/funcs/usersUnmute.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -341,7 +341,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useUsersUnmuteMutation
-} from "@speakeasy-api/bluesky/react-query/usersUnmute.js";
+} from "@speakeasy-sdks/bluesky/react-query/usersUnmute.js";
 ```
 
 ### Parameters

@@ -103,7 +103,7 @@ export function invalidateActorsGetProfiles(
   return client.invalidateQueries({
     ...filters,
     queryKey: [
-      "@speakeasy-api/bluesky",
+      "@speakeasy-sdks/bluesky",
       "actors",
       "getProfiles",
       ...queryKeyBase,
@@ -117,7 +117,7 @@ export function invalidateAllActorsGetProfiles(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["@speakeasy-api/bluesky", "actors", "getProfiles"],
+    queryKey: ["@speakeasy-sdks/bluesky", "actors", "getProfiles"],
   });
 }
 
@@ -154,5 +154,5 @@ export function buildActorsGetProfilesQuery(
 export function queryKeyActorsGetProfiles(
   parameters: { actors: Array<string> },
 ): QueryKey {
-  return ["@speakeasy-api/bluesky", "actors", "getProfiles", parameters];
+  return ["@speakeasy-sdks/bluesky", "actors", "getProfiles", parameters];
 }

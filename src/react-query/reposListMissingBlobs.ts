@@ -205,7 +205,7 @@ export function invalidateReposListMissingBlobs(
   return client.invalidateQueries({
     ...filters,
     queryKey: [
-      "@speakeasy-api/bluesky",
+      "@speakeasy-sdks/bluesky",
       "repos",
       "listMissingBlobs",
       ...queryKeyBase,
@@ -219,7 +219,7 @@ export function invalidateAllReposListMissingBlobs(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["@speakeasy-api/bluesky", "repos", "listMissingBlobs"],
+    queryKey: ["@speakeasy-sdks/bluesky", "repos", "listMissingBlobs"],
   });
 }
 
@@ -303,5 +303,5 @@ export function buildReposListMissingBlobsInfiniteQuery(
 export function queryKeyReposListMissingBlobs(
   parameters: { limit?: number | undefined; cursor?: string | undefined },
 ): QueryKey {
-  return ["@speakeasy-api/bluesky", "repos", "listMissingBlobs", parameters];
+  return ["@speakeasy-sdks/bluesky", "repos", "listMissingBlobs", parameters];
 }

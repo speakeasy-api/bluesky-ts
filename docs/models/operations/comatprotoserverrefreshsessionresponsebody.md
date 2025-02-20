@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { ComAtprotoServerRefreshSessionResponseBody } from "@speakeasy-api/bluesky/models/operations";
+import { ComAtprotoServerRefreshSessionResponseBody } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: ComAtprotoServerRefreshSessionResponseBody = {
   accessJwt: "<value>",

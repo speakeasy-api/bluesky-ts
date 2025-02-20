@@ -22,7 +22,7 @@ Delete settings by key
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -50,8 +50,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { settingRemoveOptions } from "@speakeasy-api/bluesky/funcs/settingRemoveOptions.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { settingRemoveOptions } from "@speakeasy-sdks/bluesky/funcs/settingRemoveOptions.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -96,7 +96,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useSettingRemoveOptionsMutation
-} from "@speakeasy-api/bluesky/react-query/settingRemoveOptions.js";
+} from "@speakeasy-sdks/bluesky/react-query/settingRemoveOptions.js";
 ```
 
 ### Parameters

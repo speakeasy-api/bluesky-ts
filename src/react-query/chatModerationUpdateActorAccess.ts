@@ -47,7 +47,7 @@ export function useChatModerationUpdateActorAccessMutation(
 }
 
 export function mutationKeyChatModerationUpdateActorAccess(): MutationKey {
-  return ["@speakeasy-api/bluesky", "chatModeration", "updateActorAccess"];
+  return ["@speakeasy-sdks/bluesky", "chatModeration", "updateActorAccess"];
 }
 
 export function buildChatModerationUpdateActorAccessMutation(

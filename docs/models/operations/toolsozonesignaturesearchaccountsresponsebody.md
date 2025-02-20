@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { ToolsOzoneSignatureSearchAccountsResponseBody } from "@speakeasy-api/bluesky/models/operations";
+import { ToolsOzoneSignatureSearchAccountsResponseBody } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: ToolsOzoneSignatureSearchAccountsResponseBody = {
   accounts: [

@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { AppBskyGraphSearchStarterPacksResponseBody } from "@speakeasy-api/bluesky/models/operations";
+import { AppBskyGraphSearchStarterPacksResponseBody } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: AppBskyGraphSearchStarterPacksResponseBody = {
   starterPacks: [],

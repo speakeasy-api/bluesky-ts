@@ -5,7 +5,7 @@ Add a comment to a subject
 ## Example Usage
 
 ```typescript
-import { ToolsOzoneModerationDefsModEventComment } from "@speakeasy-api/bluesky/models/components";
+import { ToolsOzoneModerationDefsModEventComment } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: ToolsOzoneModerationDefsModEventComment = {
   comment:

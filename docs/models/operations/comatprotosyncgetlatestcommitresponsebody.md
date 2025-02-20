@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { ComAtprotoSyncGetLatestCommitResponseBody } from "@speakeasy-api/bluesky/models/operations";
+import { ComAtprotoSyncGetLatestCommitResponseBody } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: ComAtprotoSyncGetLatestCommitResponseBody = {
   cid: "<id>",

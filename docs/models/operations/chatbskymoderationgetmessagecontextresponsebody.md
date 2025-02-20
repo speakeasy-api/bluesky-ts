@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { ChatBskyModerationGetMessageContextResponseBody } from "@speakeasy-api/bluesky/models/operations";
+import { ChatBskyModerationGetMessageContextResponseBody } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: ChatBskyModerationGetMessageContextResponseBody = {
   messages: [],

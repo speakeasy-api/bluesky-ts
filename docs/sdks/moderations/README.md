@@ -32,7 +32,7 @@ Get details about some records.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -58,8 +58,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { moderationsGetRecords } from "@speakeasy-api/bluesky/funcs/moderationsGetRecords.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { moderationsGetRecords } from "@speakeasy-sdks/bluesky/funcs/moderationsGetRecords.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -113,7 +113,7 @@ import {
   // mutations and other user actions.
   invalidateModerationsGetRecords,
   invalidateAllModerationsGetRecords,
-} from "@speakeasy-api/bluesky/react-query/moderationsGetRecords.js";
+} from "@speakeasy-sdks/bluesky/react-query/moderationsGetRecords.js";
 ```
 
 ### Parameters
@@ -158,7 +158,7 @@ Get details about some repositories.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -184,8 +184,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { moderationsGetRepos } from "@speakeasy-api/bluesky/funcs/moderationsGetRepos.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { moderationsGetRepos } from "@speakeasy-sdks/bluesky/funcs/moderationsGetRepos.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -239,7 +239,7 @@ import {
   // mutations and other user actions.
   invalidateModerationsGetRepos,
   invalidateAllModerationsGetRepos,
-} from "@speakeasy-api/bluesky/react-query/moderationsGetRepos.js";
+} from "@speakeasy-sdks/bluesky/react-query/moderationsGetRepos.js";
 ```
 
 ### Parameters
@@ -284,7 +284,7 @@ View moderation statuses of subjects (record or repo).
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -307,8 +307,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { moderationsQueryStatuses } from "@speakeasy-api/bluesky/funcs/moderationsQueryStatuses.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { moderationsQueryStatuses } from "@speakeasy-sdks/bluesky/funcs/moderationsQueryStatuses.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -362,7 +362,7 @@ import {
   // mutations and other user actions.
   invalidateModerationsQueryStatuses,
   invalidateAllModerationsQueryStatuses,
-} from "@speakeasy-api/bluesky/react-query/moderationsQueryStatuses.js";
+} from "@speakeasy-sdks/bluesky/react-query/moderationsQueryStatuses.js";
 ```
 
 ### Parameters

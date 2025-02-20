@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { AppBskyFeedGetQuotesRequest } from "@speakeasy-api/bluesky/models/operations";
+import { AppBskyFeedGetQuotesRequest } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: AppBskyFeedGetQuotesRequest = {
   uri: "https://oily-hundred.org/",

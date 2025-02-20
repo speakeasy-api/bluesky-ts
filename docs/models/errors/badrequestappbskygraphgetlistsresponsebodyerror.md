@@ -5,7 +5,7 @@ Bad Request
 ## Example Usage
 
 ```typescript
-import { BadRequestAppBskyGraphGetListsResponseBodyError } from "@speakeasy-api/bluesky/models/errors";
+import { BadRequestAppBskyGraphGetListsResponseBodyError } from "@speakeasy-sdks/bluesky/models/errors";
 
 // No examples available for this model
 ```

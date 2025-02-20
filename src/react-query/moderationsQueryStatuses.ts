@@ -265,7 +265,7 @@ export function invalidateModerationsQueryStatuses(
   return client.invalidateQueries({
     ...filters,
     queryKey: [
-      "@speakeasy-api/bluesky",
+      "@speakeasy-sdks/bluesky",
       "moderations",
       "queryStatuses",
       ...queryKeyBase,
@@ -279,7 +279,7 @@ export function invalidateAllModerationsQueryStatuses(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["@speakeasy-api/bluesky", "moderations", "queryStatuses"],
+    queryKey: ["@speakeasy-sdks/bluesky", "moderations", "queryStatuses"],
   });
 }
 
@@ -443,5 +443,10 @@ export function queryKeyModerationsQueryStatuses(
       | undefined;
   },
 ): QueryKey {
-  return ["@speakeasy-api/bluesky", "moderations", "queryStatuses", parameters];
+  return [
+    "@speakeasy-sdks/bluesky",
+    "moderations",
+    "queryStatuses",
+    parameters,
+  ];
 }

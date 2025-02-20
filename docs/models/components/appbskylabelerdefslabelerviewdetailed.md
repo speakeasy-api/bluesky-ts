@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { AppBskyLabelerDefsLabelerViewDetailed } from "@speakeasy-api/bluesky/models/components";
+import { AppBskyLabelerDefsLabelerViewDetailed } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: AppBskyLabelerDefsLabelerViewDetailed = {
   uri: "https://hungry-meal.net/",

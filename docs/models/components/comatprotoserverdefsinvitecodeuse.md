@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComAtprotoServerDefsInviteCodeUse } from "@speakeasy-api/bluesky/models/components";
+import { ComAtprotoServerDefsInviteCodeUse } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: ComAtprotoServerDefsInviteCodeUse = {
   usedBy: "<id>",

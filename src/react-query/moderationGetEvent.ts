@@ -104,7 +104,7 @@ export function invalidateModerationGetEvent(
   return client.invalidateQueries({
     ...filters,
     queryKey: [
-      "@speakeasy-api/bluesky",
+      "@speakeasy-sdks/bluesky",
       "moderation",
       "getEvent",
       ...queryKeyBase,
@@ -118,7 +118,7 @@ export function invalidateAllModerationGetEvent(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["@speakeasy-api/bluesky", "moderation", "getEvent"],
+    queryKey: ["@speakeasy-sdks/bluesky", "moderation", "getEvent"],
   });
 }
 
@@ -155,5 +155,5 @@ export function buildModerationGetEventQuery(
 export function queryKeyModerationGetEvent(
   parameters: { id: number },
 ): QueryKey {
-  return ["@speakeasy-api/bluesky", "moderation", "getEvent", parameters];
+  return ["@speakeasy-sdks/bluesky", "moderation", "getEvent", parameters];
 }

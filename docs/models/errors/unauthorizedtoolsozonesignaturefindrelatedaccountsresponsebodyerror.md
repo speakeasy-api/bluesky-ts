@@ -5,7 +5,7 @@ Unauthorized
 ## Example Usage
 
 ```typescript
-import { UnauthorizedToolsOzoneSignatureFindRelatedAccountsResponseBodyError } from "@speakeasy-api/bluesky/models/errors";
+import { UnauthorizedToolsOzoneSignatureFindRelatedAccountsResponseBodyError } from "@speakeasy-sdks/bluesky/models/errors";
 
 // No examples available for this model
 ```

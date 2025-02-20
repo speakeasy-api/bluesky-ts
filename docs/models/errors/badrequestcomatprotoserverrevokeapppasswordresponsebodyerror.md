@@ -5,7 +5,7 @@ Bad Request
 ## Example Usage
 
 ```typescript
-import { BadRequestComAtprotoServerRevokeAppPasswordResponseBodyError } from "@speakeasy-api/bluesky/models/errors";
+import { BadRequestComAtprotoServerRevokeAppPasswordResponseBodyError } from "@speakeasy-sdks/bluesky/models/errors";
 
 // No examples available for this model
 ```

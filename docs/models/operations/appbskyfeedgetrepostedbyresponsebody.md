@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { AppBskyFeedGetRepostedByResponseBody } from "@speakeasy-api/bluesky/models/operations";
+import { AppBskyFeedGetRepostedByResponseBody } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: AppBskyFeedGetRepostedByResponseBody = {
   uri: "https://sugary-brace.org/",

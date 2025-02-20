@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { ComAtprotoServerRequestEmailUpdateResponseBody } from "@speakeasy-api/bluesky/models/operations";
+import { ComAtprotoServerRequestEmailUpdateResponseBody } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: ComAtprotoServerRequestEmailUpdateResponseBody = {
   tokenRequired: false,

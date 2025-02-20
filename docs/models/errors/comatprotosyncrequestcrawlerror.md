@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComAtprotoSyncRequestCrawlError } from "@speakeasy-api/bluesky/models/errors";
+import { ComAtprotoSyncRequestCrawlError } from "@speakeasy-sdks/bluesky/models/errors";
 
 let value: ComAtprotoSyncRequestCrawlError = "ExpiredToken";
 ```

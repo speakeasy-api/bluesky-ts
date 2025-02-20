@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ToolsOzoneSettingRemoveOptionsError } from "@speakeasy-api/bluesky/models/errors";
+import { ToolsOzoneSettingRemoveOptionsError } from "@speakeasy-sdks/bluesky/models/errors";
 
 let value: ToolsOzoneSettingRemoveOptionsError = "InvalidRequest";
 ```

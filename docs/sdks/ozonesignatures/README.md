@@ -22,7 +22,7 @@ Get accounts that share some matching threat signatures with the root account.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -47,8 +47,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { ozoneSignaturesFindRelatedAccounts } from "@speakeasy-api/bluesky/funcs/ozoneSignaturesFindRelatedAccounts.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { ozoneSignaturesFindRelatedAccounts } from "@speakeasy-sdks/bluesky/funcs/ozoneSignaturesFindRelatedAccounts.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -104,7 +104,7 @@ import {
   // mutations and other user actions.
   invalidateOzoneSignaturesFindRelatedAccounts,
   invalidateAllOzoneSignaturesFindRelatedAccounts,
-} from "@speakeasy-api/bluesky/react-query/ozoneSignaturesFindRelatedAccounts.js";
+} from "@speakeasy-sdks/bluesky/react-query/ozoneSignaturesFindRelatedAccounts.js";
 ```
 
 ### Parameters

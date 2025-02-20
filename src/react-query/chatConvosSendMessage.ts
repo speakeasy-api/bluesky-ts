@@ -49,7 +49,7 @@ export function useChatConvosSendMessageMutation(
 }
 
 export function mutationKeyChatConvosSendMessage(): MutationKey {
-  return ["@speakeasy-api/bluesky", "chatConvos", "sendMessage"];
+  return ["@speakeasy-sdks/bluesky", "chatConvos", "sendMessage"];
 }
 
 export function buildChatConvosSendMessageMutation(

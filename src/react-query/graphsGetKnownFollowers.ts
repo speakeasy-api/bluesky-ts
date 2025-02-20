@@ -213,7 +213,7 @@ export function invalidateGraphsGetKnownFollowers(
   return client.invalidateQueries({
     ...filters,
     queryKey: [
-      "@speakeasy-api/bluesky",
+      "@speakeasy-sdks/bluesky",
       "graphs",
       "getKnownFollowers",
       ...queryKeyBase,
@@ -227,7 +227,7 @@ export function invalidateAllGraphsGetKnownFollowers(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["@speakeasy-api/bluesky", "graphs", "getKnownFollowers"],
+    queryKey: ["@speakeasy-sdks/bluesky", "graphs", "getKnownFollowers"],
   });
 }
 
@@ -317,5 +317,5 @@ export function queryKeyGraphsGetKnownFollowers(
     cursor?: string | undefined;
   },
 ): QueryKey {
-  return ["@speakeasy-api/bluesky", "graphs", "getKnownFollowers", parameters];
+  return ["@speakeasy-sdks/bluesky", "graphs", "getKnownFollowers", parameters];
 }

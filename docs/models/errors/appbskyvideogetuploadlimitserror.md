@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { AppBskyVideoGetUploadLimitsError } from "@speakeasy-api/bluesky/models/errors";
+import { AppBskyVideoGetUploadLimitsError } from "@speakeasy-sdks/bluesky/models/errors";
 
 let value: AppBskyVideoGetUploadLimitsError = "InvalidRequest";
 ```

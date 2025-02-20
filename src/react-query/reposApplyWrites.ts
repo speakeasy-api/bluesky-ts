@@ -50,7 +50,7 @@ export function useReposApplyWritesMutation(
 }
 
 export function mutationKeyReposApplyWrites(): MutationKey {
-  return ["@speakeasy-api/bluesky", "repos", "applyWrites"];
+  return ["@speakeasy-sdks/bluesky", "repos", "applyWrites"];
 }
 
 export function buildReposApplyWritesMutation(

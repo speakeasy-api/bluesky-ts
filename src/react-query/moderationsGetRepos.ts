@@ -103,7 +103,7 @@ export function invalidateModerationsGetRepos(
   return client.invalidateQueries({
     ...filters,
     queryKey: [
-      "@speakeasy-api/bluesky",
+      "@speakeasy-sdks/bluesky",
       "moderations",
       "getRepos",
       ...queryKeyBase,
@@ -117,7 +117,7 @@ export function invalidateAllModerationsGetRepos(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["@speakeasy-api/bluesky", "moderations", "getRepos"],
+    queryKey: ["@speakeasy-sdks/bluesky", "moderations", "getRepos"],
   });
 }
 
@@ -154,5 +154,5 @@ export function buildModerationsGetReposQuery(
 export function queryKeyModerationsGetRepos(
   parameters: { dids: Array<string> },
 ): QueryKey {
-  return ["@speakeasy-api/bluesky", "moderations", "getRepos", parameters];
+  return ["@speakeasy-sdks/bluesky", "moderations", "getRepos", parameters];
 }

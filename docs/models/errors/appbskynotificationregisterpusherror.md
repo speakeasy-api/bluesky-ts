@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { AppBskyNotificationRegisterPushError } from "@speakeasy-api/bluesky/models/errors";
+import { AppBskyNotificationRegisterPushError } from "@speakeasy-sdks/bluesky/models/errors";
 
 let value: AppBskyNotificationRegisterPushError = "InvalidRequest";
 ```

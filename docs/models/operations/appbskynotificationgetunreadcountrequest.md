@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { AppBskyNotificationGetUnreadCountRequest } from "@speakeasy-api/bluesky/models/operations";
+import { AppBskyNotificationGetUnreadCountRequest } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: AppBskyNotificationGetUnreadCountRequest = {};
 ```

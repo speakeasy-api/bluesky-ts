@@ -5,7 +5,7 @@ lists the bi-directional graph relationships between one actor (not indicated in
 ## Example Usage
 
 ```typescript
-import { AppBskyGraphDefsRelationship } from "@speakeasy-api/bluesky/models/components";
+import { AppBskyGraphDefsRelationship } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: AppBskyGraphDefsRelationship = {
   did: "<id>",

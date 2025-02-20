@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { AppBskyGraphSearchStarterPacksRequest } from "@speakeasy-api/bluesky/models/operations";
+import { AppBskyGraphSearchStarterPacksRequest } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: AppBskyGraphSearchStarterPacksRequest = {
   q: "<value>",

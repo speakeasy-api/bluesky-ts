@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { AppBskyNotificationPutPreferencesBody } from "@speakeasy-api/bluesky/models/operations";
+import { AppBskyNotificationPutPreferencesBody } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: AppBskyNotificationPutPreferencesBody = {
   priority: false,

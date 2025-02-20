@@ -37,7 +37,7 @@ Get data blocks from a given repo, by CID. For example, intermediate MST nodes, 
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -62,8 +62,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { syncsGetBlocks } from "@speakeasy-api/bluesky/funcs/syncsGetBlocks.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { syncsGetBlocks } from "@speakeasy-sdks/bluesky/funcs/syncsGetBlocks.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -116,7 +116,7 @@ import {
   // mutations and other user actions.
   invalidateSyncsGetBlocks,
   invalidateAllSyncsGetBlocks,
-} from "@speakeasy-api/bluesky/react-query/syncsGetBlocks.js";
+} from "@speakeasy-sdks/bluesky/react-query/syncsGetBlocks.js";
 ```
 
 ### Parameters
@@ -161,7 +161,7 @@ Get the current commit CID & revision of the specified repo. Does not require au
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -184,8 +184,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { syncsGetLatestCommit } from "@speakeasy-api/bluesky/funcs/syncsGetLatestCommit.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { syncsGetLatestCommit } from "@speakeasy-sdks/bluesky/funcs/syncsGetLatestCommit.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -236,7 +236,7 @@ import {
   // mutations and other user actions.
   invalidateSyncsGetLatestCommit,
   invalidateAllSyncsGetLatestCommit,
-} from "@speakeasy-api/bluesky/react-query/syncsGetLatestCommit.js";
+} from "@speakeasy-sdks/bluesky/react-query/syncsGetLatestCommit.js";
 ```
 
 ### Parameters
@@ -281,7 +281,7 @@ Get the hosting status for a repository, on this server. Expected to be implemen
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -304,8 +304,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { syncsGetRepoStatus } from "@speakeasy-api/bluesky/funcs/syncsGetRepoStatus.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { syncsGetRepoStatus } from "@speakeasy-sdks/bluesky/funcs/syncsGetRepoStatus.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -356,7 +356,7 @@ import {
   // mutations and other user actions.
   invalidateSyncsGetRepoStatus,
   invalidateAllSyncsGetRepoStatus,
-} from "@speakeasy-api/bluesky/react-query/syncsGetRepoStatus.js";
+} from "@speakeasy-sdks/bluesky/react-query/syncsGetRepoStatus.js";
 ```
 
 ### Parameters
@@ -401,7 +401,7 @@ Request a service to persistently crawl hosted repos. Expected use is new PDS in
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -423,8 +423,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { syncsRequestCrawl } from "@speakeasy-api/bluesky/funcs/syncsRequestCrawl.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { syncsRequestCrawl } from "@speakeasy-sdks/bluesky/funcs/syncsRequestCrawl.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -463,7 +463,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useSyncsRequestCrawlMutation
-} from "@speakeasy-api/bluesky/react-query/syncsRequestCrawl.js";
+} from "@speakeasy-sdks/bluesky/react-query/syncsRequestCrawl.js";
 ```
 
 ### Parameters

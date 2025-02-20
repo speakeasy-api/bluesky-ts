@@ -50,7 +50,7 @@ export function useServersReserveSigningKeyMutation(
 }
 
 export function mutationKeyServersReserveSigningKey(): MutationKey {
-  return ["@speakeasy-api/bluesky", "servers", "reserveSigningKey"];
+  return ["@speakeasy-sdks/bluesky", "servers", "reserveSigningKey"];
 }
 
 export function buildServersReserveSigningKeyMutation(

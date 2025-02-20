@@ -199,7 +199,7 @@ export function invalidateFeedsGetLikes(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["@speakeasy-api/bluesky", "feeds", "getLikes", ...queryKeyBase],
+    queryKey: ["@speakeasy-sdks/bluesky", "feeds", "getLikes", ...queryKeyBase],
   });
 }
 
@@ -209,7 +209,7 @@ export function invalidateAllFeedsGetLikes(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["@speakeasy-api/bluesky", "feeds", "getLikes"],
+    queryKey: ["@speakeasy-sdks/bluesky", "feeds", "getLikes"],
   });
 }
 
@@ -300,5 +300,5 @@ export function queryKeyFeedsGetLikes(
     cursor?: string | undefined;
   },
 ): QueryKey {
-  return ["@speakeasy-api/bluesky", "feeds", "getLikes", parameters];
+  return ["@speakeasy-sdks/bluesky", "feeds", "getLikes", parameters];
 }

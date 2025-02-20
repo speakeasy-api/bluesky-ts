@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComAtprotoServerActivateAccountError } from "@speakeasy-api/bluesky/models/errors";
+import { ComAtprotoServerActivateAccountError } from "@speakeasy-sdks/bluesky/models/errors";
 
 let value: ComAtprotoServerActivateAccountError = "InvalidToken";
 ```

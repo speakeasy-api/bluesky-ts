@@ -113,7 +113,7 @@ export function invalidateChatsGetMessageContext(
   return client.invalidateQueries({
     ...filters,
     queryKey: [
-      "@speakeasy-api/bluesky",
+      "@speakeasy-sdks/bluesky",
       "chats",
       "getMessageContext",
       ...queryKeyBase,
@@ -127,7 +127,7 @@ export function invalidateAllChatsGetMessageContext(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["@speakeasy-api/bluesky", "chats", "getMessageContext"],
+    queryKey: ["@speakeasy-sdks/bluesky", "chats", "getMessageContext"],
   });
 }
 
@@ -174,5 +174,5 @@ export function queryKeyChatsGetMessageContext(
     after?: number | undefined;
   },
 ): QueryKey {
-  return ["@speakeasy-api/bluesky", "chats", "getMessageContext", parameters];
+  return ["@speakeasy-sdks/bluesky", "chats", "getMessageContext", parameters];
 }

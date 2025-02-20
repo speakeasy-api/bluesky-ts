@@ -49,7 +49,7 @@ export function useServerDeactivateAccountMutation(
 }
 
 export function mutationKeyServerDeactivateAccount(): MutationKey {
-  return ["@speakeasy-api/bluesky", "server", "deactivateAccount"];
+  return ["@speakeasy-sdks/bluesky", "server", "deactivateAccount"];
 }
 
 export function buildServerDeactivateAccountMutation(

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComAtprotoSyncGetRecordError } from "@speakeasy-api/bluesky/models/errors";
+import { ComAtprotoSyncGetRecordError } from "@speakeasy-sdks/bluesky/models/errors";
 
 let value: ComAtprotoSyncGetRecordError = "RecordNotFound";
 ```

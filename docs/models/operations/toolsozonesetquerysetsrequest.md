@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ToolsOzoneSetQuerySetsRequest } from "@speakeasy-api/bluesky/models/operations";
+import { ToolsOzoneSetQuerySetsRequest } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: ToolsOzoneSetQuerySetsRequest = {};
 ```

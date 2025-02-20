@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { ComAtprotoRepoCreateRecordResponseBody } from "@speakeasy-api/bluesky/models/operations";
+import { ComAtprotoRepoCreateRecordResponseBody } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: ComAtprotoRepoCreateRecordResponseBody = {
   uri: "https://creamy-wedding.info/",

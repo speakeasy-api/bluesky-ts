@@ -21,7 +21,7 @@
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -42,8 +42,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { accountDelete } from "@speakeasy-api/bluesky/funcs/accountDelete.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { accountDelete } from "@speakeasy-sdks/bluesky/funcs/accountDelete.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -81,7 +81,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useAccountDeleteMutation
-} from "@speakeasy-api/bluesky/react-query/accountDelete.js";
+} from "@speakeasy-sdks/bluesky/react-query/accountDelete.js";
 ```
 
 ### Parameters
@@ -123,7 +123,7 @@ import {
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -143,8 +143,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { accountExportData } from "@speakeasy-api/bluesky/funcs/accountExportData.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { accountExportData } from "@speakeasy-sdks/bluesky/funcs/accountExportData.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -191,7 +191,7 @@ import {
   // Utility to invalidate the query cache for this query in response to
   // mutations and other user actions.
   invalidateAllAccountExportData,
-} from "@speakeasy-api/bluesky/react-query/accountExportData.js";
+} from "@speakeasy-sdks/bluesky/react-query/accountExportData.js";
 ```
 
 ### Parameters

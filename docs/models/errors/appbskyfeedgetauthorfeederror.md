@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { AppBskyFeedGetAuthorFeedError } from "@speakeasy-api/bluesky/models/errors";
+import { AppBskyFeedGetAuthorFeedError } from "@speakeasy-sdks/bluesky/models/errors";
 
 let value: AppBskyFeedGetAuthorFeedError = "BlockedByActor";
 ```

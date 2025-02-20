@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ToolsOzoneModerationDefsRecordViewNotFound } from "@speakeasy-api/bluesky/models/components";
+import { ToolsOzoneModerationDefsRecordViewNotFound } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: ToolsOzoneModerationDefsRecordViewNotFound = {
   uri: "https://soggy-planula.biz",

@@ -5,7 +5,7 @@ Declares a label value and its expected interpretations and behaviors.
 ## Example Usage
 
 ```typescript
-import { ComAtprotoLabelDefsLabelValueDefinition } from "@speakeasy-api/bluesky/models/components";
+import { ComAtprotoLabelDefsLabelValueDefinition } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: ComAtprotoLabelDefsLabelValueDefinition = {
   identifier: "<value>",

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComAtprotoAdminDefsThreatSignature } from "@speakeasy-api/bluesky/models/components";
+import { ComAtprotoAdminDefsThreatSignature } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: ComAtprotoAdminDefsThreatSignature = {
   property: "<value>",

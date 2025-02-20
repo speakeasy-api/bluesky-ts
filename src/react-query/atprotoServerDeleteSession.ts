@@ -47,7 +47,7 @@ export function useAtprotoServerDeleteSessionMutation(
 }
 
 export function mutationKeyAtprotoServerDeleteSession(): MutationKey {
-  return ["@speakeasy-api/bluesky", "atprotoServer", "deleteSession"];
+  return ["@speakeasy-sdks/bluesky", "atprotoServer", "deleteSession"];
 }
 
 export function buildAtprotoServerDeleteSessionMutation(

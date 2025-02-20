@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { AppBskyGraphGetFollowersResponse } from "@speakeasy-api/bluesky/models/operations";
+import { AppBskyGraphGetFollowersResponse } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: AppBskyGraphGetFollowersResponse = {
   result: {

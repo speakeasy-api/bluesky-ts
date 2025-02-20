@@ -193,7 +193,7 @@ export function invalidateConversationsGetLog(
   return client.invalidateQueries({
     ...filters,
     queryKey: [
-      "@speakeasy-api/bluesky",
+      "@speakeasy-sdks/bluesky",
       "conversations",
       "getLog",
       ...queryKeyBase,
@@ -207,7 +207,7 @@ export function invalidateAllConversationsGetLog(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["@speakeasy-api/bluesky", "conversations", "getLog"],
+    queryKey: ["@speakeasy-sdks/bluesky", "conversations", "getLog"],
   });
 }
 
@@ -285,5 +285,5 @@ export function buildConversationsGetLogInfiniteQuery(
 export function queryKeyConversationsGetLog(
   parameters: { cursor?: string | undefined },
 ): QueryKey {
-  return ["@speakeasy-api/bluesky", "conversations", "getLog", parameters];
+  return ["@speakeasy-sdks/bluesky", "conversations", "getLog", parameters];
 }

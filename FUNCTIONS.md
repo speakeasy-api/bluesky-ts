@@ -19,9 +19,9 @@ specific category of applications.
 ## Example
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { actorsGetProfile } from "@speakeasy-api/bluesky/funcs/actorsGetProfile.js";
-import { SDKValidationError } from "@speakeasy-api/bluesky/models/errors/sdkvalidationerror.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { actorsGetProfile } from "@speakeasy-sdks/bluesky/funcs/actorsGetProfile.js";
+import { SDKValidationError } from "@speakeasy-sdks/bluesky/models/errors/sdkvalidationerror.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.

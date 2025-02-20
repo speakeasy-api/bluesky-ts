@@ -199,7 +199,7 @@ export function invalidateGraphGetListMutes(
   return client.invalidateQueries({
     ...filters,
     queryKey: [
-      "@speakeasy-api/bluesky",
+      "@speakeasy-sdks/bluesky",
       "graph",
       "getListMutes",
       ...queryKeyBase,
@@ -213,7 +213,7 @@ export function invalidateAllGraphGetListMutes(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["@speakeasy-api/bluesky", "graph", "getListMutes"],
+    queryKey: ["@speakeasy-sdks/bluesky", "graph", "getListMutes"],
   });
 }
 
@@ -297,5 +297,5 @@ export function buildGraphGetListMutesInfiniteQuery(
 export function queryKeyGraphGetListMutes(
   parameters: { limit?: number | undefined; cursor?: string | undefined },
 ): QueryKey {
-  return ["@speakeasy-api/bluesky", "graph", "getListMutes", parameters];
+  return ["@speakeasy-sdks/bluesky", "graph", "getListMutes", parameters];
 }

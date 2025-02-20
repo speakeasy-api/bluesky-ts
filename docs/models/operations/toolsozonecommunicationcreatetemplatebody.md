@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ToolsOzoneCommunicationCreateTemplateBody } from "@speakeasy-api/bluesky/models/operations";
+import { ToolsOzoneCommunicationCreateTemplateBody } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: ToolsOzoneCommunicationCreateTemplateBody = {
   name: "<value>",

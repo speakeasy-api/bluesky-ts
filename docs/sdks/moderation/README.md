@@ -27,7 +27,7 @@ Get details about a moderation event.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -50,8 +50,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { moderationGetEvent } from "@speakeasy-api/bluesky/funcs/moderationGetEvent.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { moderationGetEvent } from "@speakeasy-sdks/bluesky/funcs/moderationGetEvent.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -102,7 +102,7 @@ import {
   // mutations and other user actions.
   invalidateModerationGetEvent,
   invalidateAllModerationGetEvent,
-} from "@speakeasy-api/bluesky/react-query/moderationGetEvent.js";
+} from "@speakeasy-sdks/bluesky/react-query/moderationGetEvent.js";
 ```
 
 ### Parameters
@@ -147,7 +147,7 @@ List moderation events related to a subject.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -170,8 +170,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { moderationQueryEvents } from "@speakeasy-api/bluesky/funcs/moderationQueryEvents.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { moderationQueryEvents } from "@speakeasy-sdks/bluesky/funcs/moderationQueryEvents.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -225,7 +225,7 @@ import {
   // mutations and other user actions.
   invalidateModerationQueryEvents,
   invalidateAllModerationQueryEvents,
-} from "@speakeasy-api/bluesky/react-query/moderationQueryEvents.js";
+} from "@speakeasy-sdks/bluesky/react-query/moderationQueryEvents.js";
 ```
 
 ### Parameters

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComAtprotoSyncGetLatestCommitRequest } from "@speakeasy-api/bluesky/models/operations";
+import { ComAtprotoSyncGetLatestCommitRequest } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: ComAtprotoSyncGetLatestCommitRequest = {
   did: "<id>",

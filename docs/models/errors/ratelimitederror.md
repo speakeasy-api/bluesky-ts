@@ -5,7 +5,7 @@ Status codes relating to the client being rate limited by the server
 ## Example Usage
 
 ```typescript
-import { RateLimitedError } from "@speakeasy-api/bluesky/models/errors";
+import { RateLimitedError } from "@speakeasy-sdks/bluesky/models/errors";
 
 // No examples available for this model
 ```

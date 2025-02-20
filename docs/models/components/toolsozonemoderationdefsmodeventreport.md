@@ -5,7 +5,7 @@ Report a subject
 ## Example Usage
 
 ```typescript
-import { ToolsOzoneModerationDefsModEventReport } from "@speakeasy-api/bluesky/models/components";
+import { ToolsOzoneModerationDefsModEventReport } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: ToolsOzoneModerationDefsModEventReport = {
   reportType: "<value>",

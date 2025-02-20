@@ -27,7 +27,7 @@ Get a list of suggested actors. Expected use is discovery of accounts to follow 
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -50,8 +50,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { actorGetSuggestions } from "@speakeasy-api/bluesky/funcs/actorGetSuggestions.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { actorGetSuggestions } from "@speakeasy-sdks/bluesky/funcs/actorGetSuggestions.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -105,7 +105,7 @@ import {
   // mutations and other user actions.
   invalidateActorGetSuggestions,
   invalidateAllActorGetSuggestions,
-} from "@speakeasy-api/bluesky/react-query/actorGetSuggestions.js";
+} from "@speakeasy-sdks/bluesky/react-query/actorGetSuggestions.js";
 ```
 
 ### Parameters
@@ -150,7 +150,7 @@ Find actor suggestions for a prefix search term. Expected use is for auto-comple
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -171,8 +171,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { actorSearchTypeahead } from "@speakeasy-api/bluesky/funcs/actorSearchTypeahead.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { actorSearchTypeahead } from "@speakeasy-sdks/bluesky/funcs/actorSearchTypeahead.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -221,7 +221,7 @@ import {
   // mutations and other user actions.
   invalidateActorSearchTypeahead,
   invalidateAllActorSearchTypeahead,
-} from "@speakeasy-api/bluesky/react-query/actorSearchTypeahead.js";
+} from "@speakeasy-sdks/bluesky/react-query/actorSearchTypeahead.js";
 ```
 
 ### Parameters

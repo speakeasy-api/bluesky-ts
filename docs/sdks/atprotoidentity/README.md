@@ -24,7 +24,7 @@ Request an email with a code to in order to request a signed PLC operation. Requ
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -44,8 +44,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { atprotoIdentityRequestPlcOperationSignature } from "@speakeasy-api/bluesky/funcs/atprotoIdentityRequestPlcOperationSignature.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { atprotoIdentityRequestPlcOperationSignature } from "@speakeasy-sdks/bluesky/funcs/atprotoIdentityRequestPlcOperationSignature.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -82,7 +82,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useAtprotoIdentityRequestPlcOperationSignatureMutation
-} from "@speakeasy-api/bluesky/react-query/atprotoIdentityRequestPlcOperationSignature.js";
+} from "@speakeasy-sdks/bluesky/react-query/atprotoIdentityRequestPlcOperationSignature.js";
 ```
 
 ### Parameters
@@ -124,7 +124,7 @@ Resolves a handle (domain name) to a DID.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -147,8 +147,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { atprotoIdentityResolveHandle } from "@speakeasy-api/bluesky/funcs/atprotoIdentityResolveHandle.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { atprotoIdentityResolveHandle } from "@speakeasy-sdks/bluesky/funcs/atprotoIdentityResolveHandle.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -199,7 +199,7 @@ import {
   // mutations and other user actions.
   invalidateDidForProfile,
   invalidateAllDidForProfile,
-} from "@speakeasy-api/bluesky/react-query/atprotoIdentityResolveHandle.js";
+} from "@speakeasy-sdks/bluesky/react-query/atprotoIdentityResolveHandle.js";
 ```
 
 ### Parameters
@@ -242,7 +242,7 @@ Signs a PLC operation to update some value(s) in the requesting DID's document.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -263,8 +263,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { atprotoIdentitySignPlcOperation } from "@speakeasy-api/bluesky/funcs/atprotoIdentitySignPlcOperation.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { atprotoIdentitySignPlcOperation } from "@speakeasy-sdks/bluesky/funcs/atprotoIdentitySignPlcOperation.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -302,7 +302,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useAtprotoIdentitySignPlcOperationMutation
-} from "@speakeasy-api/bluesky/react-query/atprotoIdentitySignPlcOperation.js";
+} from "@speakeasy-sdks/bluesky/react-query/atprotoIdentitySignPlcOperation.js";
 ```
 
 ### Parameters

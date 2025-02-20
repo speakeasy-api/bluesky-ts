@@ -5,7 +5,7 @@ Combinations of post/repost types to include in response.
 ## Example Usage
 
 ```typescript
-import { Filter } from "@speakeasy-api/bluesky/models/operations";
+import { Filter } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: Filter = "posts_with_media";
 ```

@@ -5,7 +5,7 @@ A collection of codes that generally means the end user got something wrong in m
 ## Example Usage
 
 ```typescript
-import { BadRequestError } from "@speakeasy-api/bluesky/models/errors";
+import { BadRequestError } from "@speakeasy-sdks/bluesky/models/errors";
 
 // No examples available for this model
 ```

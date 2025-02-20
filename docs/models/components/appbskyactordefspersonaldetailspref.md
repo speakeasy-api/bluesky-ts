@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { AppBskyActorDefsPersonalDetailsPref } from "@speakeasy-api/bluesky/models/components";
+import { AppBskyActorDefsPersonalDetailsPref } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: AppBskyActorDefsPersonalDetailsPref = {};
 ```

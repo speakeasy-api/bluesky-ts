@@ -90,7 +90,7 @@ export function invalidateAllServersGetSession(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["@speakeasy-api/bluesky", "servers", "getSession"],
+    queryKey: ["@speakeasy-sdks/bluesky", "servers", "getSession"],
   });
 }
 
@@ -123,5 +123,5 @@ export function buildServersGetSessionQuery(
 }
 
 export function queryKeyServersGetSession(): QueryKey {
-  return ["@speakeasy-api/bluesky", "servers", "getSession"];
+  return ["@speakeasy-sdks/bluesky", "servers", "getSession"];
 }

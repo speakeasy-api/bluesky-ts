@@ -42,7 +42,7 @@ Get private preferences attached to the current account. Expected use is synchro
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -63,8 +63,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { actorsGetPreferences } from "@speakeasy-api/bluesky/funcs/actorsGetPreferences.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { actorsGetPreferences } from "@speakeasy-sdks/bluesky/funcs/actorsGetPreferences.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -112,7 +112,7 @@ import {
   // Utility to invalidate the query cache for this query in response to
   // mutations and other user actions.
   invalidateAllActorsGetPreferences,
-} from "@speakeasy-api/bluesky/react-query/actorsGetPreferences.js";
+} from "@speakeasy-sdks/bluesky/react-query/actorsGetPreferences.js";
 ```
 
 ### Parameters
@@ -156,7 +156,7 @@ Get detailed profile view of an actor. Does not require auth, but contains relev
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -179,8 +179,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { actorsGetProfile } from "@speakeasy-api/bluesky/funcs/actorsGetProfile.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { actorsGetProfile } from "@speakeasy-sdks/bluesky/funcs/actorsGetProfile.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -231,7 +231,7 @@ import {
   // mutations and other user actions.
   invalidateActorProfile,
   invalidateAllActorProfile,
-} from "@speakeasy-api/bluesky/react-query/actorsGetProfile.js";
+} from "@speakeasy-sdks/bluesky/react-query/actorsGetProfile.js";
 ```
 
 ### Parameters
@@ -276,7 +276,7 @@ Get detailed profile views of multiple actors.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -301,8 +301,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { actorsGetProfiles } from "@speakeasy-api/bluesky/funcs/actorsGetProfiles.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { actorsGetProfiles } from "@speakeasy-sdks/bluesky/funcs/actorsGetProfiles.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -355,7 +355,7 @@ import {
   // mutations and other user actions.
   invalidateActorsGetProfiles,
   invalidateAllActorsGetProfiles,
-} from "@speakeasy-api/bluesky/react-query/actorsGetProfiles.js";
+} from "@speakeasy-sdks/bluesky/react-query/actorsGetProfiles.js";
 ```
 
 ### Parameters
@@ -400,7 +400,7 @@ Set the private preferences attached to the account.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -431,8 +431,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { actorsPutPreferences } from "@speakeasy-api/bluesky/funcs/actorsPutPreferences.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { actorsPutPreferences } from "@speakeasy-sdks/bluesky/funcs/actorsPutPreferences.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -480,7 +480,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useActorsPutPreferencesMutation
-} from "@speakeasy-api/bluesky/react-query/actorsPutPreferences.js";
+} from "@speakeasy-sdks/bluesky/react-query/actorsPutPreferences.js";
 ```
 
 ### Parameters
@@ -525,7 +525,7 @@ Find actors (profiles) matching search criteria. Does not require auth.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -548,8 +548,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { actorsSearch } from "@speakeasy-api/bluesky/funcs/actorsSearch.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { actorsSearch } from "@speakeasy-sdks/bluesky/funcs/actorsSearch.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -603,7 +603,7 @@ import {
   // mutations and other user actions.
   invalidateSearchActors,
   invalidateAllSearchActors,
-} from "@speakeasy-api/bluesky/react-query/actorsSearch.js";
+} from "@speakeasy-sdks/bluesky/react-query/actorsSearch.js";
 ```
 
 ### Parameters

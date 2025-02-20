@@ -215,7 +215,7 @@ export function invalidateOzoneSignatureSearchAccounts(
   return client.invalidateQueries({
     ...filters,
     queryKey: [
-      "@speakeasy-api/bluesky",
+      "@speakeasy-sdks/bluesky",
       "ozoneSignature",
       "searchAccounts",
       ...queryKeyBase,
@@ -229,7 +229,7 @@ export function invalidateAllOzoneSignatureSearchAccounts(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["@speakeasy-api/bluesky", "ozoneSignature", "searchAccounts"],
+    queryKey: ["@speakeasy-sdks/bluesky", "ozoneSignature", "searchAccounts"],
   });
 }
 
@@ -323,7 +323,7 @@ export function queryKeyOzoneSignatureSearchAccounts(
   },
 ): QueryKey {
   return [
-    "@speakeasy-api/bluesky",
+    "@speakeasy-sdks/bluesky",
     "ozoneSignature",
     "searchAccounts",
     parameters,

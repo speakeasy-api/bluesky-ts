@@ -199,7 +199,7 @@ export function invalidateFeedGetTimeline(
   return client.invalidateQueries({
     ...filters,
     queryKey: [
-      "@speakeasy-api/bluesky",
+      "@speakeasy-sdks/bluesky",
       "feed",
       "getTimeline",
       ...queryKeyBase,
@@ -213,7 +213,7 @@ export function invalidateAllFeedGetTimeline(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["@speakeasy-api/bluesky", "feed", "getTimeline"],
+    queryKey: ["@speakeasy-sdks/bluesky", "feed", "getTimeline"],
   });
 }
 
@@ -301,5 +301,5 @@ export function queryKeyFeedGetTimeline(
     cursor?: string | undefined;
   },
 ): QueryKey {
-  return ["@speakeasy-api/bluesky", "feed", "getTimeline", parameters];
+  return ["@speakeasy-sdks/bluesky", "feed", "getTimeline", parameters];
 }

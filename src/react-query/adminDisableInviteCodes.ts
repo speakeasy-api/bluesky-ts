@@ -49,7 +49,7 @@ export function useAdminDisableInviteCodesMutation(
 }
 
 export function mutationKeyAdminDisableInviteCodes(): MutationKey {
-  return ["@speakeasy-api/bluesky", "admin", "disableInviteCodes"];
+  return ["@speakeasy-sdks/bluesky", "admin", "disableInviteCodes"];
 }
 
 export function buildAdminDisableInviteCodesMutation(

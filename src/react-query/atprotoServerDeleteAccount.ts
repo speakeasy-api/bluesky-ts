@@ -49,7 +49,7 @@ export function useAtprotoServerDeleteAccountMutation(
 }
 
 export function mutationKeyAtprotoServerDeleteAccount(): MutationKey {
-  return ["@speakeasy-api/bluesky", "atprotoServer", "deleteAccount"];
+  return ["@speakeasy-sdks/bluesky", "atprotoServer", "deleteAccount"];
 }
 
 export function buildAtprotoServerDeleteAccountMutation(

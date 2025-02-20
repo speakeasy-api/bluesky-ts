@@ -49,7 +49,7 @@ export function useUsersUnmuteMutation(
 }
 
 export function mutationKeyUsersUnmute(): MutationKey {
-  return ["@speakeasy-api/bluesky", "users", "unmute"];
+  return ["@speakeasy-sdks/bluesky", "users", "unmute"];
 }
 
 export function buildUsersUnmuteMutation(

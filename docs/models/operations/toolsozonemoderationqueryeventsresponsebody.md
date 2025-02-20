@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { ToolsOzoneModerationQueryEventsResponseBody } from "@speakeasy-api/bluesky/models/operations";
+import { ToolsOzoneModerationQueryEventsResponseBody } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: ToolsOzoneModerationQueryEventsResponseBody = {
   events: [

@@ -5,7 +5,7 @@ Specifies the ranking order of results.
 ## Example Usage
 
 ```typescript
-import { AppBskyFeedSearchPostsSort } from "@speakeasy-api/bluesky/models/operations";
+import { AppBskyFeedSearchPostsSort } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: AppBskyFeedSearchPostsSort = "latest";
 ```

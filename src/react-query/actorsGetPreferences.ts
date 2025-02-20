@@ -90,7 +90,7 @@ export function invalidateAllActorsGetPreferences(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["@speakeasy-api/bluesky", "actors", "getPreferences"],
+    queryKey: ["@speakeasy-sdks/bluesky", "actors", "getPreferences"],
   });
 }
 
@@ -123,5 +123,5 @@ export function buildActorsGetPreferencesQuery(
 }
 
 export function queryKeyActorsGetPreferences(): QueryKey {
-  return ["@speakeasy-api/bluesky", "actors", "getPreferences"];
+  return ["@speakeasy-sdks/bluesky", "actors", "getPreferences"];
 }

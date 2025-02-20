@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { ComAtprotoAdminSendEmailResponseBody } from "@speakeasy-api/bluesky/models/operations";
+import { ComAtprotoAdminSendEmailResponseBody } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: ComAtprotoAdminSendEmailResponseBody = {
   sent: false,

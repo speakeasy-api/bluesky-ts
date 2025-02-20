@@ -5,7 +5,7 @@ Operation which updates an existing record.
 ## Example Usage
 
 ```typescript
-import { ComAtprotoRepoApplyWritesUpdate } from "@speakeasy-api/bluesky/models/components";
+import { ComAtprotoRepoApplyWritesUpdate } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: ComAtprotoRepoApplyWritesUpdate = {
   collection: "<id>",
