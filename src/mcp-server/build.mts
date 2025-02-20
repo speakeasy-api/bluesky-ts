@@ -10,6 +10,5 @@ await build({
   sourcemap: "linked",
   target: "node",
   format: "esm",
-  minify: true,
   throw: true,
 });
