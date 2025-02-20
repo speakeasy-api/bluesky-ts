@@ -11,4 +11,5 @@ await build({
   target: "node",
   format: "esm",
   throw: true,
+  banner: "#!/usr/bin/env node",
 });
