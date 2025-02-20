@@ -186,7 +186,7 @@ export function createMCPServer(deps: {
 }) {
   const server = new McpServer({
     name: "Bluesky",
-    version: "0.11.2",
+    version: "0.11.3",
   });
 
   const client = new BlueskyCore({

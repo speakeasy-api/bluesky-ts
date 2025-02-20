@@ -34,8 +34,6 @@ Set the private preferences attached to the account.`,
       };
     }
 
-    const value = result.value;
-
-    return formatResult(value, apiCall);
+    return formatResult(void 0, apiCall);
   },
 };

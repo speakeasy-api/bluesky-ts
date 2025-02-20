@@ -32,8 +32,6 @@ Validates a PLC operation to ensure that it doesn't violate a service's constrai
       };
     }
 
-    const value = result.value;
-
-    return formatResult(value, apiCall);
+    return formatResult(void 0, apiCall);
   },
 };

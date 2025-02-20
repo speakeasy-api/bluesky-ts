@@ -34,8 +34,6 @@ Unmutes the specified list of accounts. Requires auth.`,
       };
     }
 
-    const value = result.value;
-
-    return formatResult(value, apiCall);
+    return formatResult(void 0, apiCall);
   },
 };

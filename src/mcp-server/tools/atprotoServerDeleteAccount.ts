@@ -34,8 +34,6 @@ Delete an actor's account with a token and password. Can only be called after re
       };
     }
 
-    const value = result.value;
-
-    return formatResult(value, apiCall);
+    return formatResult(void 0, apiCall);
   },
 };

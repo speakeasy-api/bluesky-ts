@@ -34,8 +34,6 @@ Register to receive push notifications, via a specified service, for the request
       };
     }
 
-    const value = result.value;
-
-    return formatResult(value, apiCall);
+    return formatResult(void 0, apiCall);
   },
 };

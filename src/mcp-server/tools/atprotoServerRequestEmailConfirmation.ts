@@ -27,8 +27,6 @@ Request an email with a code to confirm ownership of email.`,
       };
     }
 
-    const value = result.value;
-
-    return formatResult(value, apiCall);
+    return formatResult(void 0, apiCall);
   },
 };

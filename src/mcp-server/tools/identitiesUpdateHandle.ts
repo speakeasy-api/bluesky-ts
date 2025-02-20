@@ -32,8 +32,6 @@ Updates the current account's handle. Verifies handle validity, and updates did:
       };
     }
 
-    const value = result.value;
-
-    return formatResult(value, apiCall);
+    return formatResult(void 0, apiCall);
   },
 };

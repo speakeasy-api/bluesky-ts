@@ -34,8 +34,6 @@ Delete values from a specific set. Attempting to delete values that are not in t
       };
     }
 
-    const value = result.value;
-
-    return formatResult(value, apiCall);
+    return formatResult(void 0, apiCall);
   },
 };

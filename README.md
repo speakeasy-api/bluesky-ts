@@ -98,10 +98,7 @@ Add the following server definition to your `claude_desktop_config.json` file:
   "mcpServers": {
     "Bluesky": {
       "command": "npx",
-      "args": ["-y", "--", "@speakeasy-api/bluesky", "mcp", "start"],
-      "env": {
-        "BLUESKY_BEARER": "..."
-      }
+      "args": ["-y", "--", "@speakeasy-api/bluesky", "mcp", "start", "--server", "public"]
     }
   }
 }

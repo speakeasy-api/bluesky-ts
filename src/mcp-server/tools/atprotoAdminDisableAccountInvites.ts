@@ -36,8 +36,6 @@ Disable an account from receiving new invite codes, but does not invalidate exis
       };
     }
 
-    const value = result.value;
-
-    return formatResult(value, apiCall);
+    return formatResult(void 0, apiCall);
   },
 };

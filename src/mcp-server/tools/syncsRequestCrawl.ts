@@ -34,8 +34,6 @@ Request a service to persistently crawl hosted repos. Expected use is new PDS in
       };
     }
 
-    const value = result.value;
-
-    return formatResult(value, apiCall);
+    return formatResult(void 0, apiCall);
   },
 };

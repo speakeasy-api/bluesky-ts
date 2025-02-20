@@ -36,8 +36,6 @@ Initiate a user account password reset via email.`,
       };
     }
 
-    const value = result.value;
-
-    return formatResult(value, apiCall);
+    return formatResult(void 0, apiCall);
   },
 };

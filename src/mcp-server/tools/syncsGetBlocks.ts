@@ -34,8 +34,6 @@ Get data blocks from a given repo, by CID. For example, intermediate MST nodes, 
       };
     }
 
-    const value = result.value;
-
-    return formatResult(value, apiCall);
+    return formatResult(void 0, apiCall);
   },
 };

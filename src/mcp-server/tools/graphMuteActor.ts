@@ -34,8 +34,6 @@ Creates a mute relationship for the specified account. Mutes are private in Blue
       };
     }
 
-    const value = result.value;
-
-    return formatResult(value, apiCall);
+    return formatResult(void 0, apiCall);
   },
 };

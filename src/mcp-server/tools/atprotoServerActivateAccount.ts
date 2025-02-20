@@ -27,8 +27,6 @@ Activates a currently deactivated account. Used to finalize account migration af
       };
     }
 
-    const value = result.value;
-
-    return formatResult(value, apiCall);
+    return formatResult(void 0, apiCall);
   },
 };

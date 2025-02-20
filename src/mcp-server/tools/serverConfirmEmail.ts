@@ -34,8 +34,6 @@ Confirm an email using a token from com.atproto.server.requestEmailConfirmation.
       };
     }
 
-    const value = result.value;
-
-    return formatResult(value, apiCall);
+    return formatResult(void 0, apiCall);
   },
 };

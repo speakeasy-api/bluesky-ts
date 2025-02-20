@@ -34,8 +34,6 @@ Update the password for a user account as an administrator.`,
       };
     }
 
-    const value = result.value;
-
-    return formatResult(value, apiCall);
+    return formatResult(void 0, apiCall);
   },
 };

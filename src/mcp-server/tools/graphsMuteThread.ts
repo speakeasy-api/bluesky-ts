@@ -34,8 +34,6 @@ Mutes a thread preventing notifications from the thread and any of its children.
       };
     }
 
-    const value = result.value;
-
-    return formatResult(value, apiCall);
+    return formatResult(void 0, apiCall);
   },
 };

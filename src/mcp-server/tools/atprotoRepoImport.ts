@@ -39,8 +39,6 @@ Import a repo in the form of a CAR file. Requires Content-Length HTTP header to 
       };
     }
 
-    const value = result.value;
-
-    return formatResult(value, apiCall);
+    return formatResult(void 0, apiCall);
   },
 };

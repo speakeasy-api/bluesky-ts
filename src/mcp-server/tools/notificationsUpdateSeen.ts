@@ -34,8 +34,6 @@ Notify server that the requesting account has seen notifications. Requires auth.
       };
     }
 
-    const value = result.value;
-
-    return formatResult(value, apiCall);
+    return formatResult(void 0, apiCall);
   },
 };

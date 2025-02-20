@@ -35,8 +35,6 @@ Disable some set of codes and/or all codes associated with a set of users.`,
       };
     }
 
-    const value = result.value;
-
-    return formatResult(value, apiCall);
+    return formatResult(void 0, apiCall);
   },
 };

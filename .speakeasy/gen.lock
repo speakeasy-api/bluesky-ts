@@ -3,10 +3,10 @@ id: 8ee5821f-25ad-41d5-94bd-080f4048f5d5
 management:
   docChecksum: 65a8cad189779a50db0e3beea8a6a0f1
   docVersion: 0.0.0
-  speakeasyVersion: internal
-  generationVersion: internal
-  releaseVersion: 0.11.2
-  configChecksum: f1f8d3e5cf9d94cea678167ef5fd1c4d
+  speakeasyVersion: 1.498.0
+  generationVersion: 2.518.0
+  releaseVersion: 0.11.3
+  configChecksum: 4fed8632508b65b980720fc6bdf3dccc
   repoURL: https://github.com/speakeasy-api/bluesky-ts.git
   installationURL: https://github.com/speakeasy-api/bluesky-ts
 features:

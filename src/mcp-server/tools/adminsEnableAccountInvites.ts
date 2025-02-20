@@ -34,8 +34,6 @@ Re-enable an account's ability to receive invite codes.`,
       };
     }
 
-    const value = result.value;
-
-    return formatResult(value, apiCall);
+    return formatResult(void 0, apiCall);
   },
 };

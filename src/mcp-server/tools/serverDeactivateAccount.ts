@@ -35,8 +35,6 @@ Deactivates a currently active account. Stops serving of repo, and future writes
       };
     }
 
-    const value = result.value;
-
-    return formatResult(value, apiCall);
+    return formatResult(void 0, apiCall);
   },
 };

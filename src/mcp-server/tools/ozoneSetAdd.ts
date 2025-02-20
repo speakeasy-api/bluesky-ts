@@ -34,8 +34,6 @@ Add values to a specific set. Attempting to add values to a set that does not ex
       };
     }
 
-    const value = result.value;
-
-    return formatResult(value, apiCall);
+    return formatResult(void 0, apiCall);
   },
 };

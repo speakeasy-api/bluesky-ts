@@ -34,8 +34,6 @@ Download a repository export as CAR file. Optionally only a 'diff' since a previ
       };
     }
 
-    const value = result.value;
-
-    return formatResult(value, apiCall);
+    return formatResult(void 0, apiCall);
   },
 };

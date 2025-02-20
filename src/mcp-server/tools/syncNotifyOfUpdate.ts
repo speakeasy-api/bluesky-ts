@@ -34,8 +34,6 @@ Notify a crawling service of a recent update, and that crawling should resume. I
       };
     }
 
-    const value = result.value;
-
-    return formatResult(value, apiCall);
+    return formatResult(void 0, apiCall);
   },
 };

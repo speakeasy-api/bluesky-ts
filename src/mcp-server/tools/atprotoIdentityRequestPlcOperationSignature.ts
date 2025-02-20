@@ -27,8 +27,6 @@ Request an email with a code to in order to request a signed PLC operation. Requ
         };
       }
 
-      const value = result.value;
-
-      return formatResult(value, apiCall);
+      return formatResult(void 0, apiCall);
     },
   };
