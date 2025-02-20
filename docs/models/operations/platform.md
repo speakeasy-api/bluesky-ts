@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { Platform } from "@speakeasy-api/bluesky/models/operations";
+import { Platform } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: Platform = "ios";
 ```

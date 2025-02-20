@@ -5,7 +5,7 @@ indicates that a handle or DID could not be resolved
 ## Example Usage
 
 ```typescript
-import { AppBskyGraphDefsNotFoundActor } from "@speakeasy-api/bluesky/models/components";
+import { AppBskyGraphDefsNotFoundActor } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: AppBskyGraphDefsNotFoundActor = {
   actor: "<value>",

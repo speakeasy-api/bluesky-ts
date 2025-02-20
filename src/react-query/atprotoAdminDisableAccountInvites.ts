@@ -49,7 +49,7 @@ export function useAtprotoAdminDisableAccountInvitesMutation(
 }
 
 export function mutationKeyAtprotoAdminDisableAccountInvites(): MutationKey {
-  return ["@speakeasy-api/bluesky", "atprotoAdmin", "disableAccountInvites"];
+  return ["@speakeasy-sdks/bluesky", "atprotoAdmin", "disableAccountInvites"];
 }
 
 export function buildAtprotoAdminDisableAccountInvitesMutation(

@@ -5,7 +5,7 @@ The subject's followers whom you also follow
 ## Example Usage
 
 ```typescript
-import { AppBskyActorDefsKnownFollowers } from "@speakeasy-api/bluesky/models/components";
+import { AppBskyActorDefsKnownFollowers } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: AppBskyActorDefsKnownFollowers = {
   count: 979527,

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { AppBskyFeedDefsBlockedAuthor } from "@speakeasy-api/bluesky/models/components";
+import { AppBskyFeedDefsBlockedAuthor } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: AppBskyFeedDefsBlockedAuthor = {
   did: "<id>",

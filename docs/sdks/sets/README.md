@@ -27,7 +27,7 @@ Delete values from a specific set. Attempting to delete values that are not in t
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -54,8 +54,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { setsDeleteValues } from "@speakeasy-api/bluesky/funcs/setsDeleteValues.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { setsDeleteValues } from "@speakeasy-sdks/bluesky/funcs/setsDeleteValues.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -99,7 +99,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useSetsDeleteValuesMutation
-} from "@speakeasy-api/bluesky/react-query/setsDeleteValues.js";
+} from "@speakeasy-sdks/bluesky/react-query/setsDeleteValues.js";
 ```
 
 ### Parameters
@@ -144,7 +144,7 @@ Get a specific set and its values
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -169,8 +169,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { setsGetValues } from "@speakeasy-api/bluesky/funcs/setsGetValues.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { setsGetValues } from "@speakeasy-sdks/bluesky/funcs/setsGetValues.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -226,7 +226,7 @@ import {
   // mutations and other user actions.
   invalidateSetsGetValues,
   invalidateAllSetsGetValues,
-} from "@speakeasy-api/bluesky/react-query/setsGetValues.js";
+} from "@speakeasy-sdks/bluesky/react-query/setsGetValues.js";
 ```
 
 ### Parameters

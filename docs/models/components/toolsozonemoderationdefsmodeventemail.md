@@ -5,7 +5,7 @@ Keep a log of outgoing email to a user
 ## Example Usage
 
 ```typescript
-import { ToolsOzoneModerationDefsModEventEmail } from "@speakeasy-api/bluesky/models/components";
+import { ToolsOzoneModerationDefsModEventEmail } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: ToolsOzoneModerationDefsModEventEmail = {
   subjectLine: "<value>",

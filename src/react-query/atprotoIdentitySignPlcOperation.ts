@@ -48,7 +48,7 @@ export function useAtprotoIdentitySignPlcOperationMutation(
 }
 
 export function mutationKeyAtprotoIdentitySignPlcOperation(): MutationKey {
-  return ["@speakeasy-api/bluesky", "atprotoIdentity", "signPlcOperation"];
+  return ["@speakeasy-sdks/bluesky", "atprotoIdentity", "signPlcOperation"];
 }
 
 export function buildAtprotoIdentitySignPlcOperationMutation(

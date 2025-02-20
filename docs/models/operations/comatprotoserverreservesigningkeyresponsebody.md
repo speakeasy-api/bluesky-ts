@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { ComAtprotoServerReserveSigningKeyResponseBody } from "@speakeasy-api/bluesky/models/operations";
+import { ComAtprotoServerReserveSigningKeyResponseBody } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: ComAtprotoServerReserveSigningKeyResponseBody = {
   signingKey: "<value>",

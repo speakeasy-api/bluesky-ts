@@ -48,7 +48,7 @@ export function useAtprotoServerRequestEmailConfirmationMutation(
 
 export function mutationKeyAtprotoServerRequestEmailConfirmation(): MutationKey {
   return [
-    "@speakeasy-api/bluesky",
+    "@speakeasy-sdks/bluesky",
     "atprotoServer",
     "requestEmailConfirmation",
   ];

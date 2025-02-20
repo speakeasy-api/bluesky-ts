@@ -199,7 +199,7 @@ export function invalidateFeedGetSkeleton(
   return client.invalidateQueries({
     ...filters,
     queryKey: [
-      "@speakeasy-api/bluesky",
+      "@speakeasy-sdks/bluesky",
       "feed",
       "getSkeleton",
       ...queryKeyBase,
@@ -213,7 +213,7 @@ export function invalidateAllFeedGetSkeleton(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["@speakeasy-api/bluesky", "feed", "getSkeleton"],
+    queryKey: ["@speakeasy-sdks/bluesky", "feed", "getSkeleton"],
   });
 }
 
@@ -301,5 +301,5 @@ export function queryKeyFeedGetSkeleton(
     cursor?: string | undefined;
   },
 ): QueryKey {
-  return ["@speakeasy-api/bluesky", "feed", "getSkeleton", parameters];
+  return ["@speakeasy-sdks/bluesky", "feed", "getSkeleton", parameters];
 }

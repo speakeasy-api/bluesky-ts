@@ -49,7 +49,7 @@ export function useServerRequestEmailUpdateMutation(
 }
 
 export function mutationKeyServerRequestEmailUpdate(): MutationKey {
-  return ["@speakeasy-api/bluesky", "server", "requestEmailUpdate"];
+  return ["@speakeasy-sdks/bluesky", "server", "requestEmailUpdate"];
 }
 
 export function buildServerRequestEmailUpdateMutation(

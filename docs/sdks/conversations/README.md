@@ -21,7 +21,7 @@
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -44,8 +44,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { conversationsGetLog } from "@speakeasy-api/bluesky/funcs/conversationsGetLog.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { conversationsGetLog } from "@speakeasy-sdks/bluesky/funcs/conversationsGetLog.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -99,7 +99,7 @@ import {
   // mutations and other user actions.
   invalidateConversationsGetLog,
   invalidateAllConversationsGetLog,
-} from "@speakeasy-api/bluesky/react-query/conversationsGetLog.js";
+} from "@speakeasy-sdks/bluesky/react-query/conversationsGetLog.js";
 ```
 
 ### Parameters
@@ -142,7 +142,7 @@ import {
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -165,8 +165,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { conversationsLeave } from "@speakeasy-api/bluesky/funcs/conversationsLeave.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { conversationsLeave } from "@speakeasy-sdks/bluesky/funcs/conversationsLeave.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -206,7 +206,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useConversationsLeaveMutation
-} from "@speakeasy-api/bluesky/react-query/conversationsLeave.js";
+} from "@speakeasy-sdks/bluesky/react-query/conversationsLeave.js";
 ```
 
 ### Parameters

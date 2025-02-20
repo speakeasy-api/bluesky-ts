@@ -49,7 +49,7 @@ export function useAdminUpdateAccountEmailMutation(
 }
 
 export function mutationKeyAdminUpdateAccountEmail(): MutationKey {
-  return ["@speakeasy-api/bluesky", "admin", "updateAccountEmail"];
+  return ["@speakeasy-sdks/bluesky", "admin", "updateAccountEmail"];
 }
 
 export function buildAdminUpdateAccountEmailMutation(

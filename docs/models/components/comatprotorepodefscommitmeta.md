@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComAtprotoRepoDefsCommitMeta } from "@speakeasy-api/bluesky/models/components";
+import { ComAtprotoRepoDefsCommitMeta } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: ComAtprotoRepoDefsCommitMeta = {
   cid: "<id>",

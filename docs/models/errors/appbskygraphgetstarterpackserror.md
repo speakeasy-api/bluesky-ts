@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { AppBskyGraphGetStarterPacksError } from "@speakeasy-api/bluesky/models/errors";
+import { AppBskyGraphGetStarterPacksError } from "@speakeasy-sdks/bluesky/models/errors";
 
 let value: AppBskyGraphGetStarterPacksError = "InvalidToken";
 ```

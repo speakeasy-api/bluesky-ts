@@ -5,7 +5,7 @@ What should this label hide in the UI, if applied? 'content' hides all of the ta
 ## Example Usage
 
 ```typescript
-import { Blurs } from "@speakeasy-api/bluesky/models/components";
+import { Blurs } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: Blurs = "none";
 ```

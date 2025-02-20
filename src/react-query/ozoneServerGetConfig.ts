@@ -90,7 +90,7 @@ export function invalidateAllOzoneServerGetConfig(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["@speakeasy-api/bluesky", "ozoneServer", "getConfig"],
+    queryKey: ["@speakeasy-sdks/bluesky", "ozoneServer", "getConfig"],
   });
 }
 
@@ -123,5 +123,5 @@ export function buildOzoneServerGetConfigQuery(
 }
 
 export function queryKeyOzoneServerGetConfig(): QueryKey {
-  return ["@speakeasy-api/bluesky", "ozoneServer", "getConfig"];
+  return ["@speakeasy-sdks/bluesky", "ozoneServer", "getConfig"];
 }

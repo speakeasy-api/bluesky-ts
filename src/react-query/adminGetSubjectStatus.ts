@@ -115,7 +115,7 @@ export function invalidateAdminGetSubjectStatus(
   return client.invalidateQueries({
     ...filters,
     queryKey: [
-      "@speakeasy-api/bluesky",
+      "@speakeasy-sdks/bluesky",
       "admin",
       "getSubjectStatus",
       ...queryKeyBase,
@@ -129,7 +129,7 @@ export function invalidateAllAdminGetSubjectStatus(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["@speakeasy-api/bluesky", "admin", "getSubjectStatus"],
+    queryKey: ["@speakeasy-sdks/bluesky", "admin", "getSubjectStatus"],
   });
 }
 
@@ -174,5 +174,5 @@ export function queryKeyAdminGetSubjectStatus(
     blob?: string | undefined;
   },
 ): QueryKey {
-  return ["@speakeasy-api/bluesky", "admin", "getSubjectStatus", parameters];
+  return ["@speakeasy-sdks/bluesky", "admin", "getSubjectStatus", parameters];
 }

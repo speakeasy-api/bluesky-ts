@@ -95,7 +95,7 @@ export function invalidateAllIdentityGetRecommendedDidCredentials(
   return client.invalidateQueries({
     ...filters,
     queryKey: [
-      "@speakeasy-api/bluesky",
+      "@speakeasy-sdks/bluesky",
       "identity",
       "getRecommendedDidCredentials",
     ],
@@ -131,5 +131,9 @@ export function buildIdentityGetRecommendedDidCredentialsQuery(
 }
 
 export function queryKeyIdentityGetRecommendedDidCredentials(): QueryKey {
-  return ["@speakeasy-api/bluesky", "identity", "getRecommendedDidCredentials"];
+  return [
+    "@speakeasy-sdks/bluesky",
+    "identity",
+    "getRecommendedDidCredentials",
+  ];
 }

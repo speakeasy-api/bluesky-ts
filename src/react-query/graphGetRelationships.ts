@@ -107,7 +107,7 @@ export function invalidateGraphGetRelationships(
   return client.invalidateQueries({
     ...filters,
     queryKey: [
-      "@speakeasy-api/bluesky",
+      "@speakeasy-sdks/bluesky",
       "graph",
       "getRelationships",
       ...queryKeyBase,
@@ -121,7 +121,7 @@ export function invalidateAllGraphGetRelationships(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["@speakeasy-api/bluesky", "graph", "getRelationships"],
+    queryKey: ["@speakeasy-sdks/bluesky", "graph", "getRelationships"],
   });
 }
 
@@ -161,5 +161,5 @@ export function buildGraphGetRelationshipsQuery(
 export function queryKeyGraphGetRelationships(
   parameters: { actor: string; others?: Array<string> | undefined },
 ): QueryKey {
-  return ["@speakeasy-api/bluesky", "graph", "getRelationships", parameters];
+  return ["@speakeasy-sdks/bluesky", "graph", "getRelationships", parameters];
 }

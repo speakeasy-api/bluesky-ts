@@ -5,7 +5,7 @@ Mute incoming reports from an account
 ## Example Usage
 
 ```typescript
-import { ToolsOzoneModerationDefsModEventMuteReporter } from "@speakeasy-api/bluesky/models/components";
+import { ToolsOzoneModerationDefsModEventMuteReporter } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: ToolsOzoneModerationDefsModEventMuteReporter = {};
 ```

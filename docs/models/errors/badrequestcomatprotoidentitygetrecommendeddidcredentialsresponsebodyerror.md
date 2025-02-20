@@ -5,7 +5,7 @@ Bad Request
 ## Example Usage
 
 ```typescript
-import { BadRequestComAtprotoIdentityGetRecommendedDidCredentialsResponseBodyError } from "@speakeasy-api/bluesky/models/errors";
+import { BadRequestComAtprotoIdentityGetRecommendedDidCredentialsResponseBodyError } from "@speakeasy-sdks/bluesky/models/errors";
 
 // No examples available for this model
 ```

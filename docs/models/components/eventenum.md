@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { EventEnum } from "@speakeasy-api/bluesky/models/components";
+import { EventEnum } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: EventEnum = "app.bsky.feed.defs#clickthroughReposter";
 ```

@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { ComAtprotoServerDescribeServerResponseBody } from "@speakeasy-api/bluesky/models/operations";
+import { ComAtprotoServerDescribeServerResponseBody } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: ComAtprotoServerDescribeServerResponseBody = {
   availableUserDomains: [

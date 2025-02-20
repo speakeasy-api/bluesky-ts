@@ -5,7 +5,7 @@ Divert a record's blobs to a 3rd party service for further scanning/tagging
 ## Example Usage
 
 ```typescript
-import { ToolsOzoneModerationDefsModEventDivert } from "@speakeasy-api/bluesky/models/components";
+import { ToolsOzoneModerationDefsModEventDivert } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: ToolsOzoneModerationDefsModEventDivert = {};
 ```

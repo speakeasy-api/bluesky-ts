@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ToolsOzoneModerationDefsRecordHostingStatus } from "@speakeasy-api/bluesky/models/components";
+import { ToolsOzoneModerationDefsRecordHostingStatus } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: ToolsOzoneModerationDefsRecordHostingStatus = "deleted";
 ```

@@ -5,7 +5,7 @@ Annotation of a sub-string within rich text.
 ## Example Usage
 
 ```typescript
-import { AppBskyRichtextFacet } from "@speakeasy-api/bluesky/models/components";
+import { AppBskyRichtextFacet } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: AppBskyRichtextFacet = {
   index: {

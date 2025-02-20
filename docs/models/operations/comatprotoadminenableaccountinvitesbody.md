@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComAtprotoAdminEnableAccountInvitesBody } from "@speakeasy-api/bluesky/models/operations";
+import { ComAtprotoAdminEnableAccountInvitesBody } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: ComAtprotoAdminEnableAccountInvitesBody = {
   account: "<id>",

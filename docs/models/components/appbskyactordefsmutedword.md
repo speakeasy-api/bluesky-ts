@@ -5,7 +5,7 @@ A word that the account owner has muted.
 ## Example Usage
 
 ```typescript
-import { AppBskyActorDefsMutedWord } from "@speakeasy-api/bluesky/models/components";
+import { AppBskyActorDefsMutedWord } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: AppBskyActorDefsMutedWord = {
   value: "<value>",

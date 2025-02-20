@@ -5,7 +5,7 @@ Facet feature for mention of another account. The text is usually a handle, incl
 ## Example Usage
 
 ```typescript
-import { AppBskyRichtextFacetMention } from "@speakeasy-api/bluesky/models/components";
+import { AppBskyRichtextFacetMention } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: AppBskyRichtextFacetMention = {
   did: "<id>",

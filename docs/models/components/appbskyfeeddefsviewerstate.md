@@ -5,7 +5,7 @@ Metadata about the requesting account's relationship with the subject content. O
 ## Example Usage
 
 ```typescript
-import { AppBskyFeedDefsViewerState } from "@speakeasy-api/bluesky/models/components";
+import { AppBskyFeedDefsViewerState } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: AppBskyFeedDefsViewerState = {};
 ```

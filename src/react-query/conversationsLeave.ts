@@ -48,7 +48,7 @@ export function useConversationsLeaveMutation(
 }
 
 export function mutationKeyConversationsLeave(): MutationKey {
-  return ["@speakeasy-api/bluesky", "conversations", "leave"];
+  return ["@speakeasy-sdks/bluesky", "conversations", "leave"];
 }
 
 export function buildConversationsLeaveMutation(

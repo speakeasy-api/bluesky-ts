@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComAtprotoModerationCreateReportBody } from "@speakeasy-api/bluesky/models/operations";
+import { ComAtprotoModerationCreateReportBody } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: ComAtprotoModerationCreateReportBody = {
   reasonType: "<value>",

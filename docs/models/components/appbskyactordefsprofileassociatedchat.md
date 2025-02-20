@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { AppBskyActorDefsProfileAssociatedChat } from "@speakeasy-api/bluesky/models/components";
+import { AppBskyActorDefsProfileAssociatedChat } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: AppBskyActorDefsProfileAssociatedChat = {
   allowIncoming: "all",

@@ -47,7 +47,7 @@ export function useAccountDeleteMutation(
 }
 
 export function mutationKeyAccountDelete(): MutationKey {
-  return ["@speakeasy-api/bluesky", "account", "delete"];
+  return ["@speakeasy-sdks/bluesky", "account", "delete"];
 }
 
 export function buildAccountDeleteMutation(

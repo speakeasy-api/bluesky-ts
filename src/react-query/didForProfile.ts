@@ -99,7 +99,7 @@ export function invalidateDidForProfile(
   return client.invalidateQueries({
     ...filters,
     queryKey: [
-      "@speakeasy-api/bluesky",
+      "@speakeasy-sdks/bluesky",
       "atprotoIdentity",
       "resolveHandle",
       ...queryKeyBase,
@@ -113,7 +113,7 @@ export function invalidateAllDidForProfile(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["@speakeasy-api/bluesky", "atprotoIdentity", "resolveHandle"],
+    queryKey: ["@speakeasy-sdks/bluesky", "atprotoIdentity", "resolveHandle"],
   });
 }
 
@@ -149,7 +149,7 @@ export function queryKeyDidForProfile(
   parameters: { handle: string },
 ): QueryKey {
   return [
-    "@speakeasy-api/bluesky",
+    "@speakeasy-sdks/bluesky",
     "atprotoIdentity",
     "resolveHandle",
     parameters,

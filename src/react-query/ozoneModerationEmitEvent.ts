@@ -51,7 +51,7 @@ export function useOzoneModerationEmitEventMutation(
 }
 
 export function mutationKeyOzoneModerationEmitEvent(): MutationKey {
-  return ["@speakeasy-api/bluesky", "ozoneModeration", "emitEvent"];
+  return ["@speakeasy-sdks/bluesky", "ozoneModeration", "emitEvent"];
 }
 
 export function buildOzoneModerationEmitEventMutation(

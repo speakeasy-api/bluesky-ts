@@ -5,7 +5,7 @@ If specified, only events where the subject is of the given type (account or rec
 ## Example Usage
 
 ```typescript
-import { ToolsOzoneModerationQueryEventsSubjectType } from "@speakeasy-api/bluesky/models/operations";
+import { ToolsOzoneModerationQueryEventsSubjectType } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: ToolsOzoneModerationQueryEventsSubjectType = "record";
 ```

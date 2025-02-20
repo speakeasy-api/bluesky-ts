@@ -205,7 +205,7 @@ export function invalidateGraphsGetListBlocks(
   return client.invalidateQueries({
     ...filters,
     queryKey: [
-      "@speakeasy-api/bluesky",
+      "@speakeasy-sdks/bluesky",
       "graphs",
       "getListBlocks",
       ...queryKeyBase,
@@ -219,7 +219,7 @@ export function invalidateAllGraphsGetListBlocks(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["@speakeasy-api/bluesky", "graphs", "getListBlocks"],
+    queryKey: ["@speakeasy-sdks/bluesky", "graphs", "getListBlocks"],
   });
 }
 
@@ -303,5 +303,5 @@ export function buildGraphsGetListBlocksInfiniteQuery(
 export function queryKeyGraphsGetListBlocks(
   parameters: { limit?: number | undefined; cursor?: string | undefined },
 ): QueryKey {
-  return ["@speakeasy-api/bluesky", "graphs", "getListBlocks", parameters];
+  return ["@speakeasy-sdks/bluesky", "graphs", "getListBlocks", parameters];
 }

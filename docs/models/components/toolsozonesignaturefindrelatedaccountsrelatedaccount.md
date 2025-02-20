@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ToolsOzoneSignatureFindRelatedAccountsRelatedAccount } from "@speakeasy-api/bluesky/models/components";
+import { ToolsOzoneSignatureFindRelatedAccountsRelatedAccount } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: ToolsOzoneSignatureFindRelatedAccountsRelatedAccount = {
   account: {

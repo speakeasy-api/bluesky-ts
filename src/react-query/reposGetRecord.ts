@@ -116,7 +116,12 @@ export function invalidateReposGetRecord(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["@speakeasy-api/bluesky", "repos", "getRecord", ...queryKeyBase],
+    queryKey: [
+      "@speakeasy-sdks/bluesky",
+      "repos",
+      "getRecord",
+      ...queryKeyBase,
+    ],
   });
 }
 
@@ -126,7 +131,7 @@ export function invalidateAllReposGetRecord(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["@speakeasy-api/bluesky", "repos", "getRecord"],
+    queryKey: ["@speakeasy-sdks/bluesky", "repos", "getRecord"],
   });
 }
 
@@ -171,5 +176,5 @@ export function queryKeyReposGetRecord(
     cid?: string | undefined;
   },
 ): QueryKey {
-  return ["@speakeasy-api/bluesky", "repos", "getRecord", parameters];
+  return ["@speakeasy-sdks/bluesky", "repos", "getRecord", parameters];
 }

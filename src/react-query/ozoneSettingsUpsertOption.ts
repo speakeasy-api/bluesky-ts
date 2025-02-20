@@ -50,7 +50,7 @@ export function useOzoneSettingsUpsertOptionMutation(
 }
 
 export function mutationKeyOzoneSettingsUpsertOption(): MutationKey {
-  return ["@speakeasy-api/bluesky", "ozoneSettings", "upsertOption"];
+  return ["@speakeasy-sdks/bluesky", "ozoneSettings", "upsertOption"];
 }
 
 export function buildOzoneSettingsUpsertOptionMutation(

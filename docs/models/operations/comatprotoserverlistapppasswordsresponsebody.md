@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { ComAtprotoServerListAppPasswordsResponseBody } from "@speakeasy-api/bluesky/models/operations";
+import { ComAtprotoServerListAppPasswordsResponseBody } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: ComAtprotoServerListAppPasswordsResponseBody = {
   passwords: [

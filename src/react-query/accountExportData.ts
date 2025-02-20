@@ -84,7 +84,7 @@ export function invalidateAllAccountExportData(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["@speakeasy-api/bluesky", "account", "exportData"],
+    queryKey: ["@speakeasy-sdks/bluesky", "account", "exportData"],
   });
 }
 
@@ -117,5 +117,5 @@ export function buildAccountExportDataQuery(
 }
 
 export function queryKeyAccountExportData(): QueryKey {
-  return ["@speakeasy-api/bluesky", "account", "exportData"];
+  return ["@speakeasy-sdks/bluesky", "account", "exportData"];
 }

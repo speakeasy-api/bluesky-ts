@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { ToolsOzoneModerationQueryStatusesResponseBody } from "@speakeasy-api/bluesky/models/operations";
+import { ToolsOzoneModerationQueryStatusesResponseBody } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: ToolsOzoneModerationQueryStatusesResponseBody = {
   subjectStatuses: [

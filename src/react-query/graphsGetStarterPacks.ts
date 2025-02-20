@@ -103,7 +103,7 @@ export function invalidateGraphsGetStarterPacks(
   return client.invalidateQueries({
     ...filters,
     queryKey: [
-      "@speakeasy-api/bluesky",
+      "@speakeasy-sdks/bluesky",
       "graphs",
       "getStarterPacks",
       ...queryKeyBase,
@@ -117,7 +117,7 @@ export function invalidateAllGraphsGetStarterPacks(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["@speakeasy-api/bluesky", "graphs", "getStarterPacks"],
+    queryKey: ["@speakeasy-sdks/bluesky", "graphs", "getStarterPacks"],
   });
 }
 
@@ -154,5 +154,5 @@ export function buildGraphsGetStarterPacksQuery(
 export function queryKeyGraphsGetStarterPacks(
   parameters: { uris: Array<string> },
 ): QueryKey {
-  return ["@speakeasy-api/bluesky", "graphs", "getStarterPacks", parameters];
+  return ["@speakeasy-sdks/bluesky", "graphs", "getStarterPacks", parameters];
 }

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { Visibility } from "@speakeasy-api/bluesky/models/components";
+import { Visibility } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: Visibility = "hide";
 ```

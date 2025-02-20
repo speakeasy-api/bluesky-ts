@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ToolsOzoneModerationDefsVideoDetails } from "@speakeasy-api/bluesky/models/components";
+import { ToolsOzoneModerationDefsVideoDetails } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: ToolsOzoneModerationDefsVideoDetails = {
   width: 750537,

@@ -5,7 +5,7 @@ Bad Request
 ## Example Usage
 
 ```typescript
-import { BadRequestChatBskyConvoSendMessageBatchResponseBodyError } from "@speakeasy-api/bluesky/models/errors";
+import { BadRequestChatBskyConvoSendMessageBatchResponseBodyError } from "@speakeasy-sdks/bluesky/models/errors";
 
 // No examples available for this model
 ```

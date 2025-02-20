@@ -5,7 +5,7 @@ If active=false, this optional field indicates a possible reason for why the acc
 ## Example Usage
 
 ```typescript
-import { ComAtprotoSyncListReposRepoStatus } from "@speakeasy-api/bluesky/models/components";
+import { ComAtprotoSyncListReposRepoStatus } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: ComAtprotoSyncListReposRepoStatus = "suspended";
 ```

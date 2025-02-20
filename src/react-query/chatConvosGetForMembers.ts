@@ -99,7 +99,7 @@ export function invalidateChatConvosGetForMembers(
   return client.invalidateQueries({
     ...filters,
     queryKey: [
-      "@speakeasy-api/bluesky",
+      "@speakeasy-sdks/bluesky",
       "chatConvos",
       "getForMembers",
       ...queryKeyBase,
@@ -113,7 +113,7 @@ export function invalidateAllChatConvosGetForMembers(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["@speakeasy-api/bluesky", "chatConvos", "getForMembers"],
+    queryKey: ["@speakeasy-sdks/bluesky", "chatConvos", "getForMembers"],
   });
 }
 
@@ -150,5 +150,5 @@ export function buildChatConvosGetForMembersQuery(
 export function queryKeyChatConvosGetForMembers(
   parameters: { members: Array<string> },
 ): QueryKey {
-  return ["@speakeasy-api/bluesky", "chatConvos", "getForMembers", parameters];
+  return ["@speakeasy-sdks/bluesky", "chatConvos", "getForMembers", parameters];
 }

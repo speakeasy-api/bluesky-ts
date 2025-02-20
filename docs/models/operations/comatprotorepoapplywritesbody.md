@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComAtprotoRepoApplyWritesBody } from "@speakeasy-api/bluesky/models/operations";
+import { ComAtprotoRepoApplyWritesBody } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: ComAtprotoRepoApplyWritesBody = {
   repo: "<value>",

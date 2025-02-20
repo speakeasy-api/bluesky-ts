@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComAtprotoRepoApplyWritesUpdateResult } from "@speakeasy-api/bluesky/models/components";
+import { ComAtprotoRepoApplyWritesUpdateResult } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: ComAtprotoRepoApplyWritesUpdateResult = {
   uri: "https://aged-flint.net/",

@@ -50,7 +50,7 @@ export function useAtprotoRepoDeleteMutation(
 }
 
 export function mutationKeyAtprotoRepoDelete(): MutationKey {
-  return ["@speakeasy-api/bluesky", "atprotoRepo", "delete"];
+  return ["@speakeasy-sdks/bluesky", "atprotoRepo", "delete"];
 }
 
 export function buildAtprotoRepoDeleteMutation(

@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { ComAtprotoServerCheckAccountStatusResponseBody } from "@speakeasy-api/bluesky/models/operations";
+import { ComAtprotoServerCheckAccountStatusResponseBody } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: ComAtprotoServerCheckAccountStatusResponseBody = {
   activated: false,

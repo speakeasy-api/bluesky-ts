@@ -103,7 +103,7 @@ export function invalidateSignatureFindCorrelation(
   return client.invalidateQueries({
     ...filters,
     queryKey: [
-      "@speakeasy-api/bluesky",
+      "@speakeasy-sdks/bluesky",
       "signature",
       "findCorrelation",
       ...queryKeyBase,
@@ -117,7 +117,7 @@ export function invalidateAllSignatureFindCorrelation(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["@speakeasy-api/bluesky", "signature", "findCorrelation"],
+    queryKey: ["@speakeasy-sdks/bluesky", "signature", "findCorrelation"],
   });
 }
 
@@ -154,5 +154,10 @@ export function buildSignatureFindCorrelationQuery(
 export function queryKeySignatureFindCorrelation(
   parameters: { dids: Array<string> },
 ): QueryKey {
-  return ["@speakeasy-api/bluesky", "signature", "findCorrelation", parameters];
+  return [
+    "@speakeasy-sdks/bluesky",
+    "signature",
+    "findCorrelation",
+    parameters,
+  ];
 }

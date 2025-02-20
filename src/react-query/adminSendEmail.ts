@@ -50,7 +50,7 @@ export function useAdminSendEmailMutation(
 }
 
 export function mutationKeyAdminSendEmail(): MutationKey {
-  return ["@speakeasy-api/bluesky", "admin", "sendEmail"];
+  return ["@speakeasy-sdks/bluesky", "admin", "sendEmail"];
 }
 
 export function buildAdminSendEmailMutation(

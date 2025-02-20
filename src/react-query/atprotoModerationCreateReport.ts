@@ -48,7 +48,7 @@ export function useAtprotoModerationCreateReportMutation(
 }
 
 export function mutationKeyAtprotoModerationCreateReport(): MutationKey {
-  return ["@speakeasy-api/bluesky", "atprotoModeration", "createReport"];
+  return ["@speakeasy-sdks/bluesky", "atprotoModeration", "createReport"];
 }
 
 export function buildAtprotoModerationCreateReportMutation(

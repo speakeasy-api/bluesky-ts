@@ -50,7 +50,7 @@ export function useVideosUploadMutation(
 }
 
 export function mutationKeyVideosUpload(): MutationKey {
-  return ["@speakeasy-api/bluesky", "videos", "upload"];
+  return ["@speakeasy-sdks/bluesky", "videos", "upload"];
 }
 
 export function buildVideosUploadMutation(

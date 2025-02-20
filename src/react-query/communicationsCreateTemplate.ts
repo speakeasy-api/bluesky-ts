@@ -51,7 +51,7 @@ export function useCommunicationsCreateTemplateMutation(
 }
 
 export function mutationKeyCommunicationsCreateTemplate(): MutationKey {
-  return ["@speakeasy-api/bluesky", "communications", "createTemplate"];
+  return ["@speakeasy-sdks/bluesky", "communications", "createTemplate"];
 }
 
 export function buildCommunicationsCreateTemplateMutation(

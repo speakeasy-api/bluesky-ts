@@ -32,7 +32,7 @@ Take a moderation action on an actor.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -59,8 +59,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { ozoneModerationEmitEvent } from "@speakeasy-api/bluesky/funcs/ozoneModerationEmitEvent.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { ozoneModerationEmitEvent } from "@speakeasy-sdks/bluesky/funcs/ozoneModerationEmitEvent.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -104,7 +104,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useOzoneModerationEmitEventMutation
-} from "@speakeasy-api/bluesky/react-query/ozoneModerationEmitEvent.js";
+} from "@speakeasy-sdks/bluesky/react-query/ozoneModerationEmitEvent.js";
 ```
 
 ### Parameters
@@ -149,7 +149,7 @@ Get details about a record.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -172,8 +172,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { ozoneModerationGetRecord } from "@speakeasy-api/bluesky/funcs/ozoneModerationGetRecord.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { ozoneModerationGetRecord } from "@speakeasy-sdks/bluesky/funcs/ozoneModerationGetRecord.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -224,7 +224,7 @@ import {
   // mutations and other user actions.
   invalidateOzoneModerationGetRecord,
   invalidateAllOzoneModerationGetRecord,
-} from "@speakeasy-api/bluesky/react-query/ozoneModerationGetRecord.js";
+} from "@speakeasy-sdks/bluesky/react-query/ozoneModerationGetRecord.js";
 ```
 
 ### Parameters
@@ -269,7 +269,7 @@ Get details about a repository.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -292,8 +292,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { ozoneModerationGet } from "@speakeasy-api/bluesky/funcs/ozoneModerationGet.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { ozoneModerationGet } from "@speakeasy-sdks/bluesky/funcs/ozoneModerationGet.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -344,7 +344,7 @@ import {
   // mutations and other user actions.
   invalidateOzoneModerationGet,
   invalidateAllOzoneModerationGet,
-} from "@speakeasy-api/bluesky/react-query/ozoneModerationGet.js";
+} from "@speakeasy-sdks/bluesky/react-query/ozoneModerationGet.js";
 ```
 
 ### Parameters

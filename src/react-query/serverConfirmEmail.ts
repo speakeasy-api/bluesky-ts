@@ -49,7 +49,7 @@ export function useServerConfirmEmailMutation(
 }
 
 export function mutationKeyServerConfirmEmail(): MutationKey {
-  return ["@speakeasy-api/bluesky", "server", "confirmEmail"];
+  return ["@speakeasy-sdks/bluesky", "server", "confirmEmail"];
 }
 
 export function buildServerConfirmEmailMutation(

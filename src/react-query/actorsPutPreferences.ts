@@ -49,7 +49,7 @@ export function useActorsPutPreferencesMutation(
 }
 
 export function mutationKeyActorsPutPreferences(): MutationKey {
-  return ["@speakeasy-api/bluesky", "actors", "putPreferences"];
+  return ["@speakeasy-sdks/bluesky", "actors", "putPreferences"];
 }
 
 export function buildActorsPutPreferencesMutation(

@@ -205,7 +205,7 @@ export function invalidateAtprotoSyncListRepos(
   return client.invalidateQueries({
     ...filters,
     queryKey: [
-      "@speakeasy-api/bluesky",
+      "@speakeasy-sdks/bluesky",
       "atprotoSync",
       "listRepos",
       ...queryKeyBase,
@@ -219,7 +219,7 @@ export function invalidateAllAtprotoSyncListRepos(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["@speakeasy-api/bluesky", "atprotoSync", "listRepos"],
+    queryKey: ["@speakeasy-sdks/bluesky", "atprotoSync", "listRepos"],
   });
 }
 
@@ -303,5 +303,5 @@ export function buildAtprotoSyncListReposInfiniteQuery(
 export function queryKeyAtprotoSyncListRepos(
   parameters: { limit?: number | undefined; cursor?: string | undefined },
 ): QueryKey {
-  return ["@speakeasy-api/bluesky", "atprotoSync", "listRepos", parameters];
+  return ["@speakeasy-sdks/bluesky", "atprotoSync", "listRepos", parameters];
 }

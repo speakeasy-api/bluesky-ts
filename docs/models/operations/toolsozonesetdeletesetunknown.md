@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ToolsOzoneSetDeleteSetUnknown } from "@speakeasy-api/bluesky/models/operations";
+import { ToolsOzoneSetDeleteSetUnknown } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: ToolsOzoneSetDeleteSetUnknown = {};
 ```

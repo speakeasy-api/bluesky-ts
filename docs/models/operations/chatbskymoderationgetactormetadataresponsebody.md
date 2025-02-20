@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { ChatBskyModerationGetActorMetadataResponseBody } from "@speakeasy-api/bluesky/models/operations";
+import { ChatBskyModerationGetActorMetadataResponseBody } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: ChatBskyModerationGetActorMetadataResponseBody = {
   day: {

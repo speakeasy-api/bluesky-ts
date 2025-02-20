@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ToolsOzoneSettingListOptionsScope } from "@speakeasy-api/bluesky/models/operations";
+import { ToolsOzoneSettingListOptionsScope } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: ToolsOzoneSettingListOptionsScope = "personal";
 ```

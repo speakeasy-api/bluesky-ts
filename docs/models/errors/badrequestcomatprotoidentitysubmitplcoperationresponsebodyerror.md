@@ -5,7 +5,7 @@ Bad Request
 ## Example Usage
 
 ```typescript
-import { BadRequestComAtprotoIdentitySubmitPlcOperationResponseBodyError } from "@speakeasy-api/bluesky/models/errors";
+import { BadRequestComAtprotoIdentitySubmitPlcOperationResponseBodyError } from "@speakeasy-sdks/bluesky/models/errors";
 
 // No examples available for this model
 ```

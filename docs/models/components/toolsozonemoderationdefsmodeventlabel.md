@@ -5,7 +5,7 @@ Apply/Negate labels on a subject
 ## Example Usage
 
 ```typescript
-import { ToolsOzoneModerationDefsModEventLabel } from "@speakeasy-api/bluesky/models/components";
+import { ToolsOzoneModerationDefsModEventLabel } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: ToolsOzoneModerationDefsModEventLabel = {
   createLabelVals: [

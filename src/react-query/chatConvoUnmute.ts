@@ -48,7 +48,7 @@ export function useChatConvoUnmuteMutation(
 }
 
 export function mutationKeyChatConvoUnmute(): MutationKey {
-  return ["@speakeasy-api/bluesky", "chatConvo", "unmute"];
+  return ["@speakeasy-sdks/bluesky", "chatConvo", "unmute"];
 }
 
 export function buildChatConvoUnmuteMutation(

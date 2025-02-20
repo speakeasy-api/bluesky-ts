@@ -202,7 +202,7 @@ export function invalidateSettingsList(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["@speakeasy-api/bluesky", "settings", "list", ...queryKeyBase],
+    queryKey: ["@speakeasy-sdks/bluesky", "settings", "list", ...queryKeyBase],
   });
 }
 
@@ -212,7 +212,7 @@ export function invalidateAllSettingsList(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["@speakeasy-api/bluesky", "settings", "list"],
+    queryKey: ["@speakeasy-sdks/bluesky", "settings", "list"],
   });
 }
 
@@ -306,5 +306,5 @@ export function queryKeySettingsList(
     keys?: Array<string> | undefined;
   },
 ): QueryKey {
-  return ["@speakeasy-api/bluesky", "settings", "list", parameters];
+  return ["@speakeasy-sdks/bluesky", "settings", "list", parameters];
 }

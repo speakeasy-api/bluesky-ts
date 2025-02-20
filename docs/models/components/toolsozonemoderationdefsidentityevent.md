@@ -5,7 +5,7 @@ Logs identity related events on a repo subject. Normally captured by automod fro
 ## Example Usage
 
 ```typescript
-import { ToolsOzoneModerationDefsIdentityEvent } from "@speakeasy-api/bluesky/models/components";
+import { ToolsOzoneModerationDefsIdentityEvent } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: ToolsOzoneModerationDefsIdentityEvent = {
   timestamp: new Date("2024-07-04T14:57:11.531Z"),

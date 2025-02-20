@@ -21,7 +21,7 @@
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -44,8 +44,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { chatModerationGetActorMetadata } from "@speakeasy-api/bluesky/funcs/chatModerationGetActorMetadata.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { chatModerationGetActorMetadata } from "@speakeasy-sdks/bluesky/funcs/chatModerationGetActorMetadata.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -96,7 +96,7 @@ import {
   // mutations and other user actions.
   invalidateChatModerationGetActorMetadata,
   invalidateAllChatModerationGetActorMetadata,
-} from "@speakeasy-api/bluesky/react-query/chatModerationGetActorMetadata.js";
+} from "@speakeasy-sdks/bluesky/react-query/chatModerationGetActorMetadata.js";
 ```
 
 ### Parameters
@@ -139,7 +139,7 @@ import {
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -162,8 +162,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { chatModerationUpdateActorAccess } from "@speakeasy-api/bluesky/funcs/chatModerationUpdateActorAccess.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { chatModerationUpdateActorAccess } from "@speakeasy-sdks/bluesky/funcs/chatModerationUpdateActorAccess.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -203,7 +203,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useChatModerationUpdateActorAccessMutation
-} from "@speakeasy-api/bluesky/react-query/chatModerationUpdateActorAccess.js";
+} from "@speakeasy-sdks/bluesky/react-query/chatModerationUpdateActorAccess.js";
 ```
 
 ### Parameters

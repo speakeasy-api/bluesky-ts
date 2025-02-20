@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComAtprotoSyncRequestCrawlBody } from "@speakeasy-api/bluesky/models/operations";
+import { ComAtprotoSyncRequestCrawlBody } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: ComAtprotoSyncRequestCrawlBody = {
   hostname: "forceful-printer.info",

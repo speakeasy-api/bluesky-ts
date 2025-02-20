@@ -47,7 +47,7 @@ Apply a batch transaction of repository creates, updates, and deletes. Requires 
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -77,8 +77,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { reposApplyWrites } from "@speakeasy-api/bluesky/funcs/reposApplyWrites.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { reposApplyWrites } from "@speakeasy-sdks/bluesky/funcs/reposApplyWrites.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -125,7 +125,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useReposApplyWritesMutation
-} from "@speakeasy-api/bluesky/react-query/reposApplyWrites.js";
+} from "@speakeasy-sdks/bluesky/react-query/reposApplyWrites.js";
 ```
 
 ### Parameters
@@ -170,7 +170,7 @@ Create a single new repository record. Requires auth, implemented by PDS.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -195,8 +195,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { reposCreateRecord } from "@speakeasy-api/bluesky/funcs/reposCreateRecord.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { reposCreateRecord } from "@speakeasy-sdks/bluesky/funcs/reposCreateRecord.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -238,7 +238,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useReposCreateRecordMutation
-} from "@speakeasy-api/bluesky/react-query/reposCreateRecord.js";
+} from "@speakeasy-sdks/bluesky/react-query/reposCreateRecord.js";
 ```
 
 ### Parameters
@@ -283,7 +283,7 @@ Get information about an account and repository, including the list of collectio
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -306,8 +306,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { reposDescribe } from "@speakeasy-api/bluesky/funcs/reposDescribe.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { reposDescribe } from "@speakeasy-sdks/bluesky/funcs/reposDescribe.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -358,7 +358,7 @@ import {
   // mutations and other user actions.
   invalidateReposDescribe,
   invalidateAllReposDescribe,
-} from "@speakeasy-api/bluesky/react-query/reposDescribe.js";
+} from "@speakeasy-sdks/bluesky/react-query/reposDescribe.js";
 ```
 
 ### Parameters
@@ -403,7 +403,7 @@ Get a single record from a repository. Does not require auth.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -428,8 +428,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { reposGetRecord } from "@speakeasy-api/bluesky/funcs/reposGetRecord.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { reposGetRecord } from "@speakeasy-sdks/bluesky/funcs/reposGetRecord.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -482,7 +482,7 @@ import {
   // mutations and other user actions.
   invalidateReposGetRecord,
   invalidateAllReposGetRecord,
-} from "@speakeasy-api/bluesky/react-query/reposGetRecord.js";
+} from "@speakeasy-sdks/bluesky/react-query/reposGetRecord.js";
 ```
 
 ### Parameters
@@ -527,7 +527,7 @@ Returns a list of missing blobs for the requesting account. Intended to be used 
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -550,8 +550,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { reposListMissingBlobs } from "@speakeasy-api/bluesky/funcs/reposListMissingBlobs.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { reposListMissingBlobs } from "@speakeasy-sdks/bluesky/funcs/reposListMissingBlobs.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -605,7 +605,7 @@ import {
   // mutations and other user actions.
   invalidateReposListMissingBlobs,
   invalidateAllReposListMissingBlobs,
-} from "@speakeasy-api/bluesky/react-query/reposListMissingBlobs.js";
+} from "@speakeasy-sdks/bluesky/react-query/reposListMissingBlobs.js";
 ```
 
 ### Parameters
@@ -650,7 +650,7 @@ List a range of records in a repository, matching a specific collection. Does no
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -676,8 +676,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { reposList } from "@speakeasy-api/bluesky/funcs/reposList.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { reposList } from "@speakeasy-sdks/bluesky/funcs/reposList.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -734,7 +734,7 @@ import {
   // mutations and other user actions.
   invalidateReposList,
   invalidateAllReposList,
-} from "@speakeasy-api/bluesky/react-query/reposList.js";
+} from "@speakeasy-sdks/bluesky/react-query/reposList.js";
 ```
 
 ### Parameters

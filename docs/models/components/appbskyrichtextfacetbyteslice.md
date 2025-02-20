@@ -5,7 +5,7 @@ Specifies the sub-string range a facet feature applies to. Start index is inclus
 ## Example Usage
 
 ```typescript
-import { AppBskyRichtextFacetByteSlice } from "@speakeasy-api/bluesky/models/components";
+import { AppBskyRichtextFacetByteSlice } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: AppBskyRichtextFacetByteSlice = {
   byteStart: 552581,

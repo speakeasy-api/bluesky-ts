@@ -5,7 +5,7 @@ Operation which creates a new record.
 ## Example Usage
 
 ```typescript
-import { ComAtprotoRepoApplyWritesCreate } from "@speakeasy-api/bluesky/models/components";
+import { ComAtprotoRepoApplyWritesCreate } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: ComAtprotoRepoApplyWritesCreate = {
   collection: "<id>",

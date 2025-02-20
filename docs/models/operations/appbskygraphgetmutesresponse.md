@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { AppBskyGraphGetMutesResponse } from "@speakeasy-api/bluesky/models/operations";
+import { AppBskyGraphGetMutesResponse } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: AppBskyGraphGetMutesResponse = {
   result: {

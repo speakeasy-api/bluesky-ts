@@ -103,7 +103,7 @@ export function invalidateSyncsGetLatestCommit(
   return client.invalidateQueries({
     ...filters,
     queryKey: [
-      "@speakeasy-api/bluesky",
+      "@speakeasy-sdks/bluesky",
       "syncs",
       "getLatestCommit",
       ...queryKeyBase,
@@ -117,7 +117,7 @@ export function invalidateAllSyncsGetLatestCommit(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["@speakeasy-api/bluesky", "syncs", "getLatestCommit"],
+    queryKey: ["@speakeasy-sdks/bluesky", "syncs", "getLatestCommit"],
   });
 }
 
@@ -154,5 +154,5 @@ export function buildSyncsGetLatestCommitQuery(
 export function queryKeySyncsGetLatestCommit(
   parameters: { did: string },
 ): QueryKey {
-  return ["@speakeasy-api/bluesky", "syncs", "getLatestCommit", parameters];
+  return ["@speakeasy-sdks/bluesky", "syncs", "getLatestCommit", parameters];
 }

@@ -5,7 +5,7 @@ Logs account status related events on a repo subject. Normally captured by autom
 ## Example Usage
 
 ```typescript
-import { ToolsOzoneModerationDefsAccountEvent } from "@speakeasy-api/bluesky/models/components";
+import { ToolsOzoneModerationDefsAccountEvent } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: ToolsOzoneModerationDefsAccountEvent = {
   active: false,

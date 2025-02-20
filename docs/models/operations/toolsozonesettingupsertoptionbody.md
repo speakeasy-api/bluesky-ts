@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ToolsOzoneSettingUpsertOptionBody } from "@speakeasy-api/bluesky/models/operations";
+import { ToolsOzoneSettingUpsertOptionBody } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: ToolsOzoneSettingUpsertOptionBody = {
   key: "<id>",

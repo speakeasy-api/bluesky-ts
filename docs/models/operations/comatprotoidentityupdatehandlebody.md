@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComAtprotoIdentityUpdateHandleBody } from "@speakeasy-api/bluesky/models/operations";
+import { ComAtprotoIdentityUpdateHandleBody } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: ComAtprotoIdentityUpdateHandleBody = {
   handle: "<value>",

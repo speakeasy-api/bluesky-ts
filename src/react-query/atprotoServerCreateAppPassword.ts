@@ -51,7 +51,7 @@ export function useAtprotoServerCreateAppPasswordMutation(
 }
 
 export function mutationKeyAtprotoServerCreateAppPassword(): MutationKey {
-  return ["@speakeasy-api/bluesky", "atprotoServer", "createAppPassword"];
+  return ["@speakeasy-sdks/bluesky", "atprotoServer", "createAppPassword"];
 }
 
 export function buildAtprotoServerCreateAppPasswordMutation(

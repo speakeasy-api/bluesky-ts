@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { ToolsOzoneSettingUpsertOptionResponseBody } from "@speakeasy-api/bluesky/models/operations";
+import { ToolsOzoneSettingUpsertOptionResponseBody } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: ToolsOzoneSettingUpsertOptionResponseBody = {
   option: {

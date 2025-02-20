@@ -47,7 +47,7 @@ export function useServerRequestAccountDeleteMutation(
 }
 
 export function mutationKeyServerRequestAccountDelete(): MutationKey {
-  return ["@speakeasy-api/bluesky", "server", "requestAccountDelete"];
+  return ["@speakeasy-sdks/bluesky", "server", "requestAccountDelete"];
 }
 
 export function buildServerRequestAccountDeleteMutation(

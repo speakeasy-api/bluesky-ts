@@ -72,7 +72,7 @@ Get a list of starter packs created by the actor.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -97,8 +97,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { graphGetActorStarterPacks } from "@speakeasy-api/bluesky/funcs/graphGetActorStarterPacks.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { graphGetActorStarterPacks } from "@speakeasy-sdks/bluesky/funcs/graphGetActorStarterPacks.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -154,7 +154,7 @@ import {
   // mutations and other user actions.
   invalidateGraphGetActorStarterPacks,
   invalidateAllGraphGetActorStarterPacks,
-} from "@speakeasy-api/bluesky/react-query/graphGetActorStarterPacks.js";
+} from "@speakeasy-sdks/bluesky/react-query/graphGetActorStarterPacks.js";
 ```
 
 ### Parameters
@@ -199,7 +199,7 @@ Enumerates accounts which a specified account (actor) follows.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -224,8 +224,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { graphGetFollows } from "@speakeasy-api/bluesky/funcs/graphGetFollows.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { graphGetFollows } from "@speakeasy-sdks/bluesky/funcs/graphGetFollows.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -281,7 +281,7 @@ import {
   // mutations and other user actions.
   invalidateFollows,
   invalidateAllFollows,
-} from "@speakeasy-api/bluesky/react-query/graphGetFollows.js";
+} from "@speakeasy-sdks/bluesky/react-query/graphGetFollows.js";
 ```
 
 ### Parameters
@@ -326,7 +326,7 @@ Gets a 'view' (with additional context) of a specified list.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -351,8 +351,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { graphGetList } from "@speakeasy-api/bluesky/funcs/graphGetList.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { graphGetList } from "@speakeasy-sdks/bluesky/funcs/graphGetList.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -408,7 +408,7 @@ import {
   // mutations and other user actions.
   invalidateGraphGetList,
   invalidateAllGraphGetList,
-} from "@speakeasy-api/bluesky/react-query/graphGetList.js";
+} from "@speakeasy-sdks/bluesky/react-query/graphGetList.js";
 ```
 
 ### Parameters
@@ -453,7 +453,7 @@ Enumerates mod lists that the requesting account (actor) currently has muted. Re
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -476,8 +476,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { graphGetListMutes } from "@speakeasy-api/bluesky/funcs/graphGetListMutes.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { graphGetListMutes } from "@speakeasy-sdks/bluesky/funcs/graphGetListMutes.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -531,7 +531,7 @@ import {
   // mutations and other user actions.
   invalidateGraphGetListMutes,
   invalidateAllGraphGetListMutes,
-} from "@speakeasy-api/bluesky/react-query/graphGetListMutes.js";
+} from "@speakeasy-sdks/bluesky/react-query/graphGetListMutes.js";
 ```
 
 ### Parameters
@@ -576,7 +576,7 @@ Enumerates the lists created by a specified account (actor).
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -601,8 +601,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { graphGetLists } from "@speakeasy-api/bluesky/funcs/graphGetLists.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { graphGetLists } from "@speakeasy-sdks/bluesky/funcs/graphGetLists.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -658,7 +658,7 @@ import {
   // mutations and other user actions.
   invalidateGraphGetLists,
   invalidateAllGraphGetLists,
-} from "@speakeasy-api/bluesky/react-query/graphGetLists.js";
+} from "@speakeasy-sdks/bluesky/react-query/graphGetLists.js";
 ```
 
 ### Parameters
@@ -703,7 +703,7 @@ Enumerates public relationships between one account, and a list of other account
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -726,8 +726,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { graphGetRelationships } from "@speakeasy-api/bluesky/funcs/graphGetRelationships.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { graphGetRelationships } from "@speakeasy-sdks/bluesky/funcs/graphGetRelationships.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -778,7 +778,7 @@ import {
   // mutations and other user actions.
   invalidateGraphGetRelationships,
   invalidateAllGraphGetRelationships,
-} from "@speakeasy-api/bluesky/react-query/graphGetRelationships.js";
+} from "@speakeasy-sdks/bluesky/react-query/graphGetRelationships.js";
 ```
 
 ### Parameters
@@ -823,7 +823,7 @@ Gets a view of a starter pack.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -846,8 +846,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { graphGetStarterPack } from "@speakeasy-api/bluesky/funcs/graphGetStarterPack.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { graphGetStarterPack } from "@speakeasy-sdks/bluesky/funcs/graphGetStarterPack.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -898,7 +898,7 @@ import {
   // mutations and other user actions.
   invalidateGraphGetStarterPack,
   invalidateAllGraphGetStarterPack,
-} from "@speakeasy-api/bluesky/react-query/graphGetStarterPack.js";
+} from "@speakeasy-sdks/bluesky/react-query/graphGetStarterPack.js";
 ```
 
 ### Parameters
@@ -943,7 +943,7 @@ Creates a mute relationship for the specified account. Mutes are private in Blue
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -965,8 +965,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { graphMuteActor } from "@speakeasy-api/bluesky/funcs/graphMuteActor.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { graphMuteActor } from "@speakeasy-sdks/bluesky/funcs/graphMuteActor.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1005,7 +1005,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useGraphMuteActorMutation
-} from "@speakeasy-api/bluesky/react-query/graphMuteActor.js";
+} from "@speakeasy-sdks/bluesky/react-query/graphMuteActor.js";
 ```
 
 ### Parameters
@@ -1050,7 +1050,7 @@ Creates a mute relationship for the specified list of accounts. Mutes are privat
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -1072,8 +1072,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { graphMuteActorList } from "@speakeasy-api/bluesky/funcs/graphMuteActorList.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { graphMuteActorList } from "@speakeasy-sdks/bluesky/funcs/graphMuteActorList.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1112,7 +1112,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useGraphMuteActorListMutation
-} from "@speakeasy-api/bluesky/react-query/graphMuteActorList.js";
+} from "@speakeasy-sdks/bluesky/react-query/graphMuteActorList.js";
 ```
 
 ### Parameters
@@ -1157,7 +1157,7 @@ Find starter packs matching search criteria. Does not require auth.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -1182,8 +1182,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { graphSearchStarterPacks } from "@speakeasy-api/bluesky/funcs/graphSearchStarterPacks.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { graphSearchStarterPacks } from "@speakeasy-sdks/bluesky/funcs/graphSearchStarterPacks.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1239,7 +1239,7 @@ import {
   // mutations and other user actions.
   invalidateGraphSearchStarterPacks,
   invalidateAllGraphSearchStarterPacks,
-} from "@speakeasy-api/bluesky/react-query/graphSearchStarterPacks.js";
+} from "@speakeasy-sdks/bluesky/react-query/graphSearchStarterPacks.js";
 ```
 
 ### Parameters
@@ -1284,7 +1284,7 @@ Unmutes the specified thread. Requires auth.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -1306,8 +1306,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { graphUnmuteThread } from "@speakeasy-api/bluesky/funcs/graphUnmuteThread.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { graphUnmuteThread } from "@speakeasy-sdks/bluesky/funcs/graphUnmuteThread.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1346,7 +1346,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useGraphUnmuteThreadMutation
-} from "@speakeasy-api/bluesky/react-query/graphUnmuteThread.js";
+} from "@speakeasy-sdks/bluesky/react-query/graphUnmuteThread.js";
 ```
 
 ### Parameters

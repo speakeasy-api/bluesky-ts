@@ -57,7 +57,7 @@ Get information about a feed generator, including policies and offered feed URIs
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -78,8 +78,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { feedsDescribeGenerator } from "@speakeasy-api/bluesky/funcs/feedsDescribeGenerator.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { feedsDescribeGenerator } from "@speakeasy-sdks/bluesky/funcs/feedsDescribeGenerator.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -127,7 +127,7 @@ import {
   // Utility to invalidate the query cache for this query in response to
   // mutations and other user actions.
   invalidateAllFeedsDescribeGenerator,
-} from "@speakeasy-api/bluesky/react-query/feedsDescribeGenerator.js";
+} from "@speakeasy-sdks/bluesky/react-query/feedsDescribeGenerator.js";
 ```
 
 ### Parameters
@@ -171,7 +171,7 @@ Get like records which reference a subject (by AT-URI and CID).
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -196,8 +196,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { feedsGetLikes } from "@speakeasy-api/bluesky/funcs/feedsGetLikes.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { feedsGetLikes } from "@speakeasy-sdks/bluesky/funcs/feedsGetLikes.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -253,7 +253,7 @@ import {
   // mutations and other user actions.
   invalidateFeedsGetLikes,
   invalidateAllFeedsGetLikes,
-} from "@speakeasy-api/bluesky/react-query/feedsGetLikes.js";
+} from "@speakeasy-sdks/bluesky/react-query/feedsGetLikes.js";
 ```
 
 ### Parameters
@@ -298,7 +298,7 @@ Get a feed of recent posts from a list (posts and reposts from any actors on the
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -323,8 +323,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { feedsGetList } from "@speakeasy-api/bluesky/funcs/feedsGetList.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { feedsGetList } from "@speakeasy-sdks/bluesky/funcs/feedsGetList.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -380,7 +380,7 @@ import {
   // mutations and other user actions.
   invalidateFeedsGetList,
   invalidateAllFeedsGetList,
-} from "@speakeasy-api/bluesky/react-query/feedsGetList.js";
+} from "@speakeasy-sdks/bluesky/react-query/feedsGetList.js";
 ```
 
 ### Parameters
@@ -425,7 +425,7 @@ Get posts in a thread. Does not require auth, but additional metadata and filter
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -448,8 +448,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { feedsGetPostThread } from "@speakeasy-api/bluesky/funcs/feedsGetPostThread.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { feedsGetPostThread } from "@speakeasy-sdks/bluesky/funcs/feedsGetPostThread.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -500,7 +500,7 @@ import {
   // mutations and other user actions.
   invalidateFeedsGetPostThread,
   invalidateAllFeedsGetPostThread,
-} from "@speakeasy-api/bluesky/react-query/feedsGetPostThread.js";
+} from "@speakeasy-sdks/bluesky/react-query/feedsGetPostThread.js";
 ```
 
 ### Parameters
@@ -545,7 +545,7 @@ Gets post views for a specified list of posts (by AT-URI). This is sometimes ref
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -571,8 +571,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { feedsGet } from "@speakeasy-api/bluesky/funcs/feedsGet.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { feedsGet } from "@speakeasy-sdks/bluesky/funcs/feedsGet.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -626,7 +626,7 @@ import {
   // mutations and other user actions.
   invalidateFeedsGet,
   invalidateAllFeedsGet,
-} from "@speakeasy-api/bluesky/react-query/feedsGet.js";
+} from "@speakeasy-sdks/bluesky/react-query/feedsGet.js";
 ```
 
 ### Parameters
@@ -671,7 +671,7 @@ Get a list of quotes for a given post.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -696,8 +696,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { feedsGetQuotes } from "@speakeasy-api/bluesky/funcs/feedsGetQuotes.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { feedsGetQuotes } from "@speakeasy-sdks/bluesky/funcs/feedsGetQuotes.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -753,7 +753,7 @@ import {
   // mutations and other user actions.
   invalidateFeedsGetQuotes,
   invalidateAllFeedsGetQuotes,
-} from "@speakeasy-api/bluesky/react-query/feedsGetQuotes.js";
+} from "@speakeasy-sdks/bluesky/react-query/feedsGetQuotes.js";
 ```
 
 ### Parameters
@@ -798,7 +798,7 @@ Get a list of reposts for a given post.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -823,8 +823,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { feedsGetRepostedBy } from "@speakeasy-api/bluesky/funcs/feedsGetRepostedBy.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { feedsGetRepostedBy } from "@speakeasy-sdks/bluesky/funcs/feedsGetRepostedBy.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -880,7 +880,7 @@ import {
   // mutations and other user actions.
   invalidateFeedsGetRepostedBy,
   invalidateAllFeedsGetRepostedBy,
-} from "@speakeasy-api/bluesky/react-query/feedsGetRepostedBy.js";
+} from "@speakeasy-sdks/bluesky/react-query/feedsGetRepostedBy.js";
 ```
 
 ### Parameters
@@ -925,7 +925,7 @@ Send information about interactions with feed items back to the feed generator t
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -952,8 +952,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { feedsSendInteractions } from "@speakeasy-api/bluesky/funcs/feedsSendInteractions.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { feedsSendInteractions } from "@speakeasy-sdks/bluesky/funcs/feedsSendInteractions.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -997,7 +997,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useFeedsSendInteractionsMutation
-} from "@speakeasy-api/bluesky/react-query/feedsSendInteractions.js";
+} from "@speakeasy-sdks/bluesky/react-query/feedsSendInteractions.js";
 ```
 
 ### Parameters

@@ -103,7 +103,7 @@ export function invalidateSyncGetRepo(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["@speakeasy-api/bluesky", "sync", "getRepo", ...queryKeyBase],
+    queryKey: ["@speakeasy-sdks/bluesky", "sync", "getRepo", ...queryKeyBase],
   });
 }
 
@@ -113,7 +113,7 @@ export function invalidateAllSyncGetRepo(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["@speakeasy-api/bluesky", "sync", "getRepo"],
+    queryKey: ["@speakeasy-sdks/bluesky", "sync", "getRepo"],
   });
 }
 
@@ -148,5 +148,5 @@ export function buildSyncGetRepoQuery(
 export function queryKeySyncGetRepo(
   parameters: { did: string; since?: string | undefined },
 ): QueryKey {
-  return ["@speakeasy-api/bluesky", "sync", "getRepo", parameters];
+  return ["@speakeasy-sdks/bluesky", "sync", "getRepo", parameters];
 }

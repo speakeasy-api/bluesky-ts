@@ -5,7 +5,7 @@ Bad Request
 ## Example Usage
 
 ```typescript
-import { BadRequestComAtprotoAdminSearchAccountsResponseBodyError } from "@speakeasy-api/bluesky/models/errors";
+import { BadRequestComAtprotoAdminSearchAccountsResponseBodyError } from "@speakeasy-sdks/bluesky/models/errors";
 
 // No examples available for this model
 ```

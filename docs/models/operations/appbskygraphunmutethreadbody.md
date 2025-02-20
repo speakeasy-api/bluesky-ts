@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { AppBskyGraphUnmuteThreadBody } from "@speakeasy-api/bluesky/models/operations";
+import { AppBskyGraphUnmuteThreadBody } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: AppBskyGraphUnmuteThreadBody = {
   root: "https://intrepid-technician.info",

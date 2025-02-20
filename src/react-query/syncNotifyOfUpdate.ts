@@ -49,7 +49,7 @@ export function useSyncNotifyOfUpdateMutation(
 }
 
 export function mutationKeySyncNotifyOfUpdate(): MutationKey {
-  return ["@speakeasy-api/bluesky", "sync", "notifyOfUpdate"];
+  return ["@speakeasy-sdks/bluesky", "sync", "notifyOfUpdate"];
 }
 
 export function buildSyncNotifyOfUpdateMutation(

@@ -5,7 +5,7 @@ If active=false, this optional field indicates a possible reason for why the acc
 ## Example Usage
 
 ```typescript
-import { ComAtprotoServerGetSessionStatus } from "@speakeasy-api/bluesky/models/operations";
+import { ComAtprotoServerGetSessionStatus } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: ComAtprotoServerGetSessionStatus = "deactivated";
 ```

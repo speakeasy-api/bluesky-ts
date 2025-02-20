@@ -27,7 +27,7 @@
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -53,8 +53,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { chatConvosGetForMembers } from "@speakeasy-api/bluesky/funcs/chatConvosGetForMembers.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { chatConvosGetForMembers } from "@speakeasy-sdks/bluesky/funcs/chatConvosGetForMembers.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -108,7 +108,7 @@ import {
   // mutations and other user actions.
   invalidateChatConvosGetForMembers,
   invalidateAllChatConvosGetForMembers,
-} from "@speakeasy-api/bluesky/react-query/chatConvosGetForMembers.js";
+} from "@speakeasy-sdks/bluesky/react-query/chatConvosGetForMembers.js";
 ```
 
 ### Parameters
@@ -151,7 +151,7 @@ import {
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -176,8 +176,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { chatConvosGetMessages } from "@speakeasy-api/bluesky/funcs/chatConvosGetMessages.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { chatConvosGetMessages } from "@speakeasy-sdks/bluesky/funcs/chatConvosGetMessages.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -233,7 +233,7 @@ import {
   // mutations and other user actions.
   invalidateChatConvosGetMessages,
   invalidateAllChatConvosGetMessages,
-} from "@speakeasy-api/bluesky/react-query/chatConvosGetMessages.js";
+} from "@speakeasy-sdks/bluesky/react-query/chatConvosGetMessages.js";
 ```
 
 ### Parameters
@@ -276,7 +276,7 @@ import {
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -302,8 +302,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { chatConvosSendMessage } from "@speakeasy-api/bluesky/funcs/chatConvosSendMessage.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { chatConvosSendMessage } from "@speakeasy-sdks/bluesky/funcs/chatConvosSendMessage.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -346,7 +346,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useChatConvosSendMessageMutation
-} from "@speakeasy-api/bluesky/react-query/chatConvosSendMessage.js";
+} from "@speakeasy-sdks/bluesky/react-query/chatConvosSendMessage.js";
 ```
 
 ### Parameters
@@ -389,7 +389,7 @@ import {
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -412,8 +412,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { chatConvosUpdateRead } from "@speakeasy-api/bluesky/funcs/chatConvosUpdateRead.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { chatConvosUpdateRead } from "@speakeasy-sdks/bluesky/funcs/chatConvosUpdateRead.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -453,7 +453,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useChatConvosUpdateReadMutation
-} from "@speakeasy-api/bluesky/react-query/chatConvosUpdateRead.js";
+} from "@speakeasy-sdks/bluesky/react-query/chatConvosUpdateRead.js";
 ```
 
 ### Parameters

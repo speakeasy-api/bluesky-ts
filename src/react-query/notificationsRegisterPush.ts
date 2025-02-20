@@ -49,7 +49,7 @@ export function useNotificationsRegisterPushMutation(
 }
 
 export function mutationKeyNotificationsRegisterPush(): MutationKey {
-  return ["@speakeasy-api/bluesky", "notifications", "registerPush"];
+  return ["@speakeasy-sdks/bluesky", "notifications", "registerPush"];
 }
 
 export function buildNotificationsRegisterPushMutation(

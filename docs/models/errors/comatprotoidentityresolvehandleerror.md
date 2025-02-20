@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComAtprotoIdentityResolveHandleError } from "@speakeasy-api/bluesky/models/errors";
+import { ComAtprotoIdentityResolveHandleError } from "@speakeasy-sdks/bluesky/models/errors";
 
 let value: ComAtprotoIdentityResolveHandleError = "InvalidRequest";
 ```

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComAtprotoLabelDefsLabelValue } from "@speakeasy-api/bluesky/models/components";
+import { ComAtprotoLabelDefsLabelValue } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: ComAtprotoLabelDefsLabelValue = "dmca-violation";
 ```

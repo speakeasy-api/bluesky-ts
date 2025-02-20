@@ -32,7 +32,7 @@ Disable an account from receiving new invite codes, but does not invalidate exis
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -54,8 +54,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { atprotoAdminDisableAccountInvites } from "@speakeasy-api/bluesky/funcs/atprotoAdminDisableAccountInvites.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { atprotoAdminDisableAccountInvites } from "@speakeasy-sdks/bluesky/funcs/atprotoAdminDisableAccountInvites.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -94,7 +94,7 @@ associated utilities.
 import {
   // Mutation hook for triggering the API call.
   useAtprotoAdminDisableAccountInvitesMutation
-} from "@speakeasy-api/bluesky/react-query/atprotoAdminDisableAccountInvites.js";
+} from "@speakeasy-sdks/bluesky/react-query/atprotoAdminDisableAccountInvites.js";
 ```
 
 ### Parameters
@@ -139,7 +139,7 @@ Get an admin view of invite codes.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -162,8 +162,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { atprotoAdminGetInviteCodes } from "@speakeasy-api/bluesky/funcs/atprotoAdminGetInviteCodes.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { atprotoAdminGetInviteCodes } from "@speakeasy-sdks/bluesky/funcs/atprotoAdminGetInviteCodes.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -217,7 +217,7 @@ import {
   // mutations and other user actions.
   invalidateAtprotoAdminGetInviteCodes,
   invalidateAllAtprotoAdminGetInviteCodes,
-} from "@speakeasy-api/bluesky/react-query/atprotoAdminGetInviteCodes.js";
+} from "@speakeasy-sdks/bluesky/react-query/atprotoAdminGetInviteCodes.js";
 ```
 
 ### Parameters
@@ -262,7 +262,7 @@ Get list of accounts that matches your search query.
 ### Example Usage
 
 ```typescript
-import { Bluesky } from "@speakeasy-api/bluesky";
+import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
@@ -285,8 +285,8 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { BlueskyCore } from "@speakeasy-api/bluesky/core.js";
-import { atprotoAdminSearchAccounts } from "@speakeasy-api/bluesky/funcs/atprotoAdminSearchAccounts.js";
+import { BlueskyCore } from "@speakeasy-sdks/bluesky/core.js";
+import { atprotoAdminSearchAccounts } from "@speakeasy-sdks/bluesky/funcs/atprotoAdminSearchAccounts.js";
 
 // Use `BlueskyCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -340,7 +340,7 @@ import {
   // mutations and other user actions.
   invalidateAtprotoAdminSearchAccounts,
   invalidateAllAtprotoAdminSearchAccounts,
-} from "@speakeasy-api/bluesky/react-query/atprotoAdminSearchAccounts.js";
+} from "@speakeasy-sdks/bluesky/react-query/atprotoAdminSearchAccounts.js";
 ```
 
 ### Parameters

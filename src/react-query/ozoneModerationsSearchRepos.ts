@@ -215,7 +215,7 @@ export function invalidateOzoneModerationsSearchRepos(
   return client.invalidateQueries({
     ...filters,
     queryKey: [
-      "@speakeasy-api/bluesky",
+      "@speakeasy-sdks/bluesky",
       "ozoneModerations",
       "searchRepos",
       ...queryKeyBase,
@@ -229,7 +229,7 @@ export function invalidateAllOzoneModerationsSearchRepos(
 ): Promise<void> {
   return client.invalidateQueries({
     ...filters,
-    queryKey: ["@speakeasy-api/bluesky", "ozoneModerations", "searchRepos"],
+    queryKey: ["@speakeasy-sdks/bluesky", "ozoneModerations", "searchRepos"],
   });
 }
 
@@ -323,7 +323,7 @@ export function queryKeyOzoneModerationsSearchRepos(
   },
 ): QueryKey {
   return [
-    "@speakeasy-api/bluesky",
+    "@speakeasy-sdks/bluesky",
     "ozoneModerations",
     "searchRepos",
     parameters,

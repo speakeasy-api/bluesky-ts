@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ToolsOzoneServerGetConfigViewerConfigRole } from "@speakeasy-api/bluesky/models/components";
+import { ToolsOzoneServerGetConfigViewerConfigRole } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: ToolsOzoneServerGetConfigViewerConfigRole =
   "tools.ozone.team.defs#roleAdmin";

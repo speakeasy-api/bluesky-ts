@@ -5,7 +5,7 @@ Unmute action on a subject
 ## Example Usage
 
 ```typescript
-import { ToolsOzoneModerationDefsModEventUnmute } from "@speakeasy-api/bluesky/models/components";
+import { ToolsOzoneModerationDefsModEventUnmute } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: ToolsOzoneModerationDefsModEventUnmute = {};
 ```
