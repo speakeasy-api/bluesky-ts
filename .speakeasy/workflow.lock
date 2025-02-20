@@ -17,7 +17,7 @@ workflow:
                 - location: .speakeasy/speakeasy-mcp.yaml
             output: scratch/openapi.yaml
             registry:
-                location: registry.speakeasyapi.dev/bluesky/bluesky/-oas
+                location: registry.speakeasyapi.dev/speakeasy-self/bluesky/oas
     targets:
         bluesky:
             target: typescript
@@ -27,5 +27,5 @@ workflow:
                     token: $npm_token
             codeSamples:
                 registry:
-                    location: registry.speakeasyapi.dev/bluesky/bluesky/-oas-typescript-code-samples
+                    location: registry.speakeasyapi.dev/speakeasy-self/bluesky/oas-typescript-code-samples
                 blocking: false

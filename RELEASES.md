@@ -33,3 +33,13 @@ Based on:
 - [typescript v0.1.0] .
 ### Releases
 - [NPM v0.1.0] https://www.npmjs.com/package/@speakeasy-sdks/bluesky/v/0.1.0 - .
+
+## 2025-02-20 15:52:08
+### Changes
+Based on:
+- OpenAPI Doc  
+- Speakeasy CLI 1.498.0 (2.518.0) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [typescript v0.1.1] .
+### Releases
+- [NPM v0.1.1] https://www.npmjs.com/package/@speakeasy-sdks/bluesky/v/0.1.1 - .

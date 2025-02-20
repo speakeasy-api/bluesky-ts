@@ -5,8 +5,8 @@ management:
   docVersion: 0.0.0
   speakeasyVersion: 1.498.0
   generationVersion: 2.518.0
-  releaseVersion: 0.1.0
-  configChecksum: 47ae9481d14f02f92a88ef8be0d9297e
+  releaseVersion: 0.1.1
+  configChecksum: 1844f35361ce5ed4f5705a456d15c7ed
   repoURL: https://github.com/speakeasy-api/bluesky-ts.git
   installationURL: https://github.com/speakeasy-api/bluesky-ts
   published: true
