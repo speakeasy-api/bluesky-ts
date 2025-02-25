@@ -15,15 +15,21 @@ import { MCPScope } from "../../scopes.js";
 import { createMCPServer } from "../../server.js";
 
 interface StartCommandFlags {
-  readonly "log-level": ConsoleLoggerLevel;
   readonly transport: "stdio" | "sse";
   readonly port: number;
   readonly scope?: MCPScope[];
+  readonly bearer?: string | undefined;
   readonly "server-url"?: string;
   readonly server?: SDKOptions["server"];
+  readonly "log-level": ConsoleLoggerLevel;
+  readonly env?: [string, string][];
 }
 
 export async function main(this: LocalContext, flags: StartCommandFlags) {
+  flags.env?.forEach(([key, value]) => {
+    process.env[key] = value;
+  });
+
   switch (flags.transport) {
     case "stdio":
       await startStdio(flags);
@@ -42,8 +48,9 @@ async function startStdio(flags: StartCommandFlags) {
   const server = createMCPServer({
     logger,
     scopes: flags.scope,
+    ...{ bearer: flags.bearer },
     serverURL: flags["server-url"],
-    server: flags["server"],
+    server: flags.server,
   });
   await server.connect(transport);
 
@@ -61,8 +68,9 @@ async function startSSE(flags: StartCommandFlags) {
   const mcpServer = createMCPServer({
     logger,
     scopes: flags.scope,
+    ...{ bearer: flags.bearer },
     serverURL: flags["server-url"],
-    server: flags["server"],
+    server: flags.server,
   });
   let transport: SSEServerTransport | undefined;
   const controller = new AbortController();

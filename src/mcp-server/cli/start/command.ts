@@ -15,12 +15,6 @@ export const startCommand = buildCommand({
   },
   parameters: {
     flags: {
-      "log-level": {
-        kind: "enum",
-        brief: "The log level to use for the server",
-        default: "info",
-        values: consoleLoggerLevels,
-      },
       transport: {
         kind: "enum",
         brief: "The transport to use for communicating with the server",
@@ -46,7 +40,14 @@ export const startCommand = buildCommand({
           },
         }
         : {}),
-
+      bearer: {
+        kind: "parsed",
+        brief: "Sets the bearer auth field for the API",
+        optional: true,
+        parse: (value) => {
+          return z.string().parse(value);
+        },
+      },
       "server-url": {
         kind: "parsed",
         brief: "Overrides the default server URL used by the SDK",
@@ -58,6 +59,36 @@ export const startCommand = buildCommand({
         brief: "Selects a predefined server used by the SDK",
         optional: true,
         values: Object.keys(ServerList) as Array<keyof typeof ServerList>,
+      },
+      "log-level": {
+        kind: "enum",
+        brief: "The log level to use for the server",
+        default: "info",
+        values: consoleLoggerLevels,
+      },
+      env: {
+        kind: "parsed",
+        brief: "Environment variables made available to the server",
+        optional: true,
+        variadic: true,
+        parse: (val: string) => {
+          const sepIdx = val.indexOf("=");
+          if (sepIdx === -1) {
+            throw new Error("Invalid environment variable format");
+          }
+
+          const key = val.slice(0, sepIdx);
+          const value = val.slice(sepIdx + 1);
+
+          return [
+            z.string().nonempty({
+              message: "Environment variable key must be a non-empty string",
+            }).parse(key),
+            z.string().nonempty({
+              message: "Environment variable value must be a non-empty string",
+            }).parse(value),
+          ] satisfies [string, string];
+        },
       },
     },
   },
