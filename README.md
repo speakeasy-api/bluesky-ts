@@ -27,6 +27,19 @@ This section contains HTTP API reference docs for Bluesky and AT Protocol lexico
 <!-- $toc-max-depth=2 -->
 * [@speakeasy-api/bluesky](#speakeasy-apibluesky)
   * [SDK Installation](#sdk-installation)
+  * [Requirements](#requirements)
+  * [SDK Example Usage](#sdk-example-usage)
+  * [Authentication](#authentication)
+  * [Available Resources and Operations](#available-resources-and-operations)
+  * [Standalone functions](#standalone-functions)
+  * [React hooks with TanStack Query](#react-hooks-with-tanstack-query)
+  * [Pagination](#pagination)
+  * [File uploads](#file-uploads)
+  * [Retries](#retries)
+  * [Error Handling](#error-handling)
+  * [Server Selection](#server-selection)
+  * [Custom HTTP Client](#custom-http-client)
+  * [Debugging](#debugging)
 * [Development](#development)
   * [Maturity](#maturity)
   * [Contributions](#contributions)
@@ -94,10 +107,12 @@ Add the following server definition to your `claude_desktop_config.json` file:
   "mcpServers": {
     "Bluesky": {
       "command": "npx",
-      "args": ["-y", "--package", "@speakeasy-sdks/bluesky", "--", "mcp", "start"],
-      "env": {
-        "BLUESKY_BEARER": "..."
-      }
+      "args": [
+        "-y", "--package", "@speakeasy-sdks/bluesky",
+        "--",
+        "mcp", "start",
+        "--bearer", "..."
+      ]
     }
   }
 }
@@ -108,29 +123,14 @@ Add the following server definition to your `claude_desktop_config.json` file:
 <details>
 <summary>Cursor installation steps</summary>
 
-1. Create a shell script called `mcp-bluesky.sh` with the following content:
+Go to `Cursor Settings > Features > MCP Servers > Add new MCP server` and use the following settings:
 
-    ```sh
-    #!/bin/sh
-     
-    export BLUESKY_BEARER="..."
-
-    exec npx -y --package @speakeasy-sdks/bluesky -- mcp start "$@"
-    ```
-
-2. Then make it executable with the following command:
-
-    ```sh
-    chmod +x mcp-bluesky.sh
-    ```
-
-3. In Cursor, `Cursor Settings > Features > MCP Servers > Add new MCP server` and use the following settings:
-
-    | Field   | Value |
-    | ------- | ----- |
-    | Name    | Bluesky |
-    | Type    | `command` |
-    | Command | `/path/to/mcp-bluesky.sh` |
+- Name: Bluesky
+- Type: `command`
+- Command:
+```sh
+npx -y --package @speakeasy-sdks/bluesky -- mcp start --bearer ... 
+```
 
 </details>
 

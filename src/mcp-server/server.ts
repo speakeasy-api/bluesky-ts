@@ -182,14 +182,16 @@ export function createMCPServer(deps: {
   logger: ConsoleLogger;
   scopes?: MCPScope[] | undefined;
   serverURL?: string | undefined;
-  server?: SDKOptions["server"];
+  bearer?: SDKOptions["bearer"] | undefined;
+  server?: SDKOptions["server"] | undefined;
 }) {
   const server = new McpServer({
     name: "Bluesky",
-    version: "0.1.3",
+    version: "0.2.0",
   });
 
   const client = new BlueskyCore({
+    bearer: deps.bearer,
     serverURL: deps.serverURL,
     server: deps.server,
   });
