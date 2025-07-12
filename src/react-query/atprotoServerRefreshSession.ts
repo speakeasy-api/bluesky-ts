@@ -21,7 +21,7 @@ export type AtprotoServerRefreshSessionMutationVariables = {
 };
 
 export type AtprotoServerRefreshSessionMutationData =
-  operations.ComAtprotoServerRefreshSessionResponseBody;
+  operations.ComAtprotoServerRefreshSessionResponse;
 
 /**
  * *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*

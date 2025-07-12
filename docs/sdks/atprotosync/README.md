@@ -64,14 +64,12 @@ async function run() {
     did: "<id>",
     cid: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    
+  } else {
+    console.log("atprotoSyncGetBlob failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  
 }
 
 run();
@@ -120,21 +118,21 @@ import {
 
 ### Errors
 
-| Error Type                                                | Status Code                                               | Content Type                                              |
-| --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
-| errors.BadRequestComAtprotoSyncGetBlobResponseBodyError   | 400                                                       | application/json                                          |
-| errors.UnauthorizedComAtprotoSyncGetBlobResponseBodyError | 401                                                       | application/json                                          |
-| errors.NotFoundError                                      | 404                                                       | application/json                                          |
-| errors.UnauthorizedError                                  | 403, 407                                                  | application/json                                          |
-| errors.TimeoutError                                       | 408                                                       | application/json                                          |
-| errors.RateLimitedError                                   | 429                                                       | application/json                                          |
-| errors.BadRequestError                                    | 413, 414, 415, 422, 431                                   | application/json                                          |
-| errors.TimeoutError                                       | 504                                                       | application/json                                          |
-| errors.NotFoundError                                      | 501, 505                                                  | application/json                                          |
-| errors.InternalServerError                                | 500, 502, 503, 506, 507, 508                              | application/json                                          |
-| errors.BadRequestError                                    | 510                                                       | application/json                                          |
-| errors.UnauthorizedError                                  | 511                                                       | application/json                                          |
-| errors.APIError                                           | 4XX, 5XX                                                  | \*/\*                                                     |
+| Error Type                                   | Status Code                                  | Content Type                                 |
+| -------------------------------------------- | -------------------------------------------- | -------------------------------------------- |
+| errors.ComAtprotoSyncGetBlobBadRequestError  | 400                                          | application/json                             |
+| errors.ComAtprotoSyncGetBlobAuthMissingError | 401                                          | application/json                             |
+| errors.NotFoundError                         | 404                                          | application/json                             |
+| errors.UnauthorizedError                     | 403, 407                                     | application/json                             |
+| errors.TimeoutError                          | 408                                          | application/json                             |
+| errors.RateLimitedError                      | 429                                          | application/json                             |
+| errors.BadRequestError                       | 413, 414, 415, 422, 431                      | application/json                             |
+| errors.TimeoutError                          | 504                                          | application/json                             |
+| errors.NotFoundError                         | 501, 505                                     | application/json                             |
+| errors.InternalServerError                   | 500, 502, 503, 506, 507, 508                 | application/json                             |
+| errors.BadRequestError                       | 510                                          | application/json                             |
+| errors.UnauthorizedError                     | 511                                          | application/json                             |
+| errors.APIError                              | 4XX, 5XX                                     | \*/\*                                        |
 
 ## listRepos
 
@@ -157,7 +155,6 @@ async function run() {
   const result = await bluesky.atprotoSync.listRepos({});
 
   for await (const page of result) {
-    // Handle the page
     console.log(page);
   }
 }
@@ -181,16 +178,13 @@ const bluesky = new BlueskyCore({
 
 async function run() {
   const res = await atprotoSyncListRepos(bluesky, {});
-
-  if (!res.ok) {
-    throw res.error;
-  }
-
-  const { value: result } = res;
-
-  for await (const page of result) {
-    // Handle the page
+  if (res.ok) {
+    const { value: result } = res;
+    for await (const page of result) {
     console.log(page);
+  }
+  } else {
+    console.log("atprotoSyncListRepos failed:", res.error);
   }
 }
 
@@ -243,18 +237,18 @@ import {
 
 ### Errors
 
-| Error Type                                                  | Status Code                                                 | Content Type                                                |
-| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
-| errors.BadRequestComAtprotoSyncListReposResponseBodyError   | 400                                                         | application/json                                            |
-| errors.UnauthorizedComAtprotoSyncListReposResponseBodyError | 401                                                         | application/json                                            |
-| errors.NotFoundError                                        | 404                                                         | application/json                                            |
-| errors.UnauthorizedError                                    | 403, 407                                                    | application/json                                            |
-| errors.TimeoutError                                         | 408                                                         | application/json                                            |
-| errors.RateLimitedError                                     | 429                                                         | application/json                                            |
-| errors.BadRequestError                                      | 413, 414, 415, 422, 431                                     | application/json                                            |
-| errors.TimeoutError                                         | 504                                                         | application/json                                            |
-| errors.NotFoundError                                        | 501, 505                                                    | application/json                                            |
-| errors.InternalServerError                                  | 500, 502, 503, 506, 507, 508                                | application/json                                            |
-| errors.BadRequestError                                      | 510                                                         | application/json                                            |
-| errors.UnauthorizedError                                    | 511                                                         | application/json                                            |
-| errors.APIError                                             | 4XX, 5XX                                                    | \*/\*                                                       |
+| Error Type                                     | Status Code                                    | Content Type                                   |
+| ---------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- |
+| errors.ComAtprotoSyncListReposBadRequestError  | 400                                            | application/json                               |
+| errors.ComAtprotoSyncListReposAuthMissingError | 401                                            | application/json                               |
+| errors.NotFoundError                           | 404                                            | application/json                               |
+| errors.UnauthorizedError                       | 403, 407                                       | application/json                               |
+| errors.TimeoutError                            | 408                                            | application/json                               |
+| errors.RateLimitedError                        | 429                                            | application/json                               |
+| errors.BadRequestError                         | 413, 414, 415, 422, 431                        | application/json                               |
+| errors.TimeoutError                            | 504                                            | application/json                               |
+| errors.NotFoundError                           | 501, 505                                       | application/json                               |
+| errors.InternalServerError                     | 500, 502, 503, 506, 507, 508                   | application/json                               |
+| errors.BadRequestError                         | 510                                            | application/json                               |
+| errors.UnauthorizedError                       | 511                                            | application/json                               |
+| errors.APIError                                | 4XX, 5XX                                       | \*/\*                                          |

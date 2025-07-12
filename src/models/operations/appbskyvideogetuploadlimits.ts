@@ -10,7 +10,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 /**
  * OK
  */
-export type AppBskyVideoGetUploadLimitsResponseBody = {
+export type AppBskyVideoGetUploadLimitsResponse = {
   canUpload: boolean;
   remainingDailyVideos?: number | undefined;
   remainingDailyBytes?: number | undefined;
@@ -19,8 +19,8 @@ export type AppBskyVideoGetUploadLimitsResponseBody = {
 };
 
 /** @internal */
-export const AppBskyVideoGetUploadLimitsResponseBody$inboundSchema: z.ZodType<
-  AppBskyVideoGetUploadLimitsResponseBody,
+export const AppBskyVideoGetUploadLimitsResponse$inboundSchema: z.ZodType<
+  AppBskyVideoGetUploadLimitsResponse,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -32,7 +32,7 @@ export const AppBskyVideoGetUploadLimitsResponseBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type AppBskyVideoGetUploadLimitsResponseBody$Outbound = {
+export type AppBskyVideoGetUploadLimitsResponse$Outbound = {
   canUpload: boolean;
   remainingDailyVideos?: number | undefined;
   remainingDailyBytes?: number | undefined;
@@ -41,10 +41,10 @@ export type AppBskyVideoGetUploadLimitsResponseBody$Outbound = {
 };
 
 /** @internal */
-export const AppBskyVideoGetUploadLimitsResponseBody$outboundSchema: z.ZodType<
-  AppBskyVideoGetUploadLimitsResponseBody$Outbound,
+export const AppBskyVideoGetUploadLimitsResponse$outboundSchema: z.ZodType<
+  AppBskyVideoGetUploadLimitsResponse$Outbound,
   z.ZodTypeDef,
-  AppBskyVideoGetUploadLimitsResponseBody
+  AppBskyVideoGetUploadLimitsResponse
 > = z.object({
   canUpload: z.boolean(),
   remainingDailyVideos: z.number().int().optional(),
@@ -57,40 +57,34 @@ export const AppBskyVideoGetUploadLimitsResponseBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyVideoGetUploadLimitsResponseBody$ {
-  /** @deprecated use `AppBskyVideoGetUploadLimitsResponseBody$inboundSchema` instead. */
+export namespace AppBskyVideoGetUploadLimitsResponse$ {
+  /** @deprecated use `AppBskyVideoGetUploadLimitsResponse$inboundSchema` instead. */
   export const inboundSchema =
-    AppBskyVideoGetUploadLimitsResponseBody$inboundSchema;
-  /** @deprecated use `AppBskyVideoGetUploadLimitsResponseBody$outboundSchema` instead. */
+    AppBskyVideoGetUploadLimitsResponse$inboundSchema;
+  /** @deprecated use `AppBskyVideoGetUploadLimitsResponse$outboundSchema` instead. */
   export const outboundSchema =
-    AppBskyVideoGetUploadLimitsResponseBody$outboundSchema;
-  /** @deprecated use `AppBskyVideoGetUploadLimitsResponseBody$Outbound` instead. */
-  export type Outbound = AppBskyVideoGetUploadLimitsResponseBody$Outbound;
+    AppBskyVideoGetUploadLimitsResponse$outboundSchema;
+  /** @deprecated use `AppBskyVideoGetUploadLimitsResponse$Outbound` instead. */
+  export type Outbound = AppBskyVideoGetUploadLimitsResponse$Outbound;
 }
 
-export function appBskyVideoGetUploadLimitsResponseBodyToJSON(
-  appBskyVideoGetUploadLimitsResponseBody:
-    AppBskyVideoGetUploadLimitsResponseBody,
+export function appBskyVideoGetUploadLimitsResponseToJSON(
+  appBskyVideoGetUploadLimitsResponse: AppBskyVideoGetUploadLimitsResponse,
 ): string {
   return JSON.stringify(
-    AppBskyVideoGetUploadLimitsResponseBody$outboundSchema.parse(
-      appBskyVideoGetUploadLimitsResponseBody,
+    AppBskyVideoGetUploadLimitsResponse$outboundSchema.parse(
+      appBskyVideoGetUploadLimitsResponse,
     ),
   );
 }
 
-export function appBskyVideoGetUploadLimitsResponseBodyFromJSON(
+export function appBskyVideoGetUploadLimitsResponseFromJSON(
   jsonString: string,
-): SafeParseResult<
-  AppBskyVideoGetUploadLimitsResponseBody,
-  SDKValidationError
-> {
+): SafeParseResult<AppBskyVideoGetUploadLimitsResponse, SDKValidationError> {
   return safeParse(
     jsonString,
     (x) =>
-      AppBskyVideoGetUploadLimitsResponseBody$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'AppBskyVideoGetUploadLimitsResponseBody' from JSON`,
+      AppBskyVideoGetUploadLimitsResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AppBskyVideoGetUploadLimitsResponse' from JSON`,
   );
 }

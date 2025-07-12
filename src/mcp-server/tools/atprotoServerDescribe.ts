@@ -6,7 +6,7 @@ import { atprotoServerDescribe } from "../../funcs/atprotoServerDescribe.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
 export const tool$atprotoServerDescribe: ToolDefinition = {
-  name: "atproto-server_describe",
+  name: "atproto-server-describe",
   description:
     `*This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 

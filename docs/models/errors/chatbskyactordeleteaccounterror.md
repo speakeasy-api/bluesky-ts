@@ -5,7 +5,7 @@
 ```typescript
 import { ChatBskyActorDeleteAccountError } from "@speakeasy-sdks/bluesky/models/errors";
 
-let value: ChatBskyActorDeleteAccountError = "InvalidToken";
+let value: ChatBskyActorDeleteAccountError = "ExpiredToken";
 ```
 
 ## Values

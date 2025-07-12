@@ -11,7 +11,12 @@ let value: AppBskyGraphGetFollowersResponse = {
       did: "<id>",
       handle: "<value>",
     },
-    followers: [],
+    followers: [
+      {
+        did: "<id>",
+        handle: "<value>",
+      },
+    ],
   },
 };
 ```

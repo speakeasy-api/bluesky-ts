@@ -7,7 +7,7 @@ How should a client visually convey this label? 'inform' means neutral and infor
 ```typescript
 import { Severity } from "@speakeasy-sdks/bluesky/models/components";
 
-let value: Severity = "inform";
+let value: Severity = "none";
 ```
 
 ## Values

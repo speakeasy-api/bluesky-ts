@@ -5,7 +5,7 @@
 ```typescript
 import { AppBskyActorSearchActorsTypeaheadError } from "@speakeasy-sdks/bluesky/models/errors";
 
-let value: AppBskyActorSearchActorsTypeaheadError = "InvalidToken";
+let value: AppBskyActorSearchActorsTypeaheadError = "InvalidRequest";
 ```
 
 ## Values

@@ -6,7 +6,7 @@
 import { ToolsOzoneModerationDefsRecordHosting } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: ToolsOzoneModerationDefsRecordHosting = {
-  status: "deleted",
+  status: "unknown",
 };
 ```
 

@@ -5,7 +5,7 @@
 ```typescript
 import { ToolsOzoneCommunicationCreateTemplateError } from "@speakeasy-sdks/bluesky/models/errors";
 
-let value: ToolsOzoneCommunicationCreateTemplateError = "DuplicateTemplateName";
+let value: ToolsOzoneCommunicationCreateTemplateError = "InvalidToken";
 ```
 
 ## Values

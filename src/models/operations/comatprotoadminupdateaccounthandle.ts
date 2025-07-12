@@ -7,14 +7,14 @@ import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ComAtprotoAdminUpdateAccountHandleBody = {
+export type ComAtprotoAdminUpdateAccountHandleRequest = {
   did: string;
   handle: string;
 };
 
 /** @internal */
-export const ComAtprotoAdminUpdateAccountHandleBody$inboundSchema: z.ZodType<
-  ComAtprotoAdminUpdateAccountHandleBody,
+export const ComAtprotoAdminUpdateAccountHandleRequest$inboundSchema: z.ZodType<
+  ComAtprotoAdminUpdateAccountHandleRequest,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -23,54 +23,60 @@ export const ComAtprotoAdminUpdateAccountHandleBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type ComAtprotoAdminUpdateAccountHandleBody$Outbound = {
+export type ComAtprotoAdminUpdateAccountHandleRequest$Outbound = {
   did: string;
   handle: string;
 };
 
 /** @internal */
-export const ComAtprotoAdminUpdateAccountHandleBody$outboundSchema: z.ZodType<
-  ComAtprotoAdminUpdateAccountHandleBody$Outbound,
-  z.ZodTypeDef,
-  ComAtprotoAdminUpdateAccountHandleBody
-> = z.object({
-  did: z.string(),
-  handle: z.string(),
-});
+export const ComAtprotoAdminUpdateAccountHandleRequest$outboundSchema:
+  z.ZodType<
+    ComAtprotoAdminUpdateAccountHandleRequest$Outbound,
+    z.ZodTypeDef,
+    ComAtprotoAdminUpdateAccountHandleRequest
+  > = z.object({
+    did: z.string(),
+    handle: z.string(),
+  });
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoAdminUpdateAccountHandleBody$ {
-  /** @deprecated use `ComAtprotoAdminUpdateAccountHandleBody$inboundSchema` instead. */
+export namespace ComAtprotoAdminUpdateAccountHandleRequest$ {
+  /** @deprecated use `ComAtprotoAdminUpdateAccountHandleRequest$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoAdminUpdateAccountHandleBody$inboundSchema;
-  /** @deprecated use `ComAtprotoAdminUpdateAccountHandleBody$outboundSchema` instead. */
+    ComAtprotoAdminUpdateAccountHandleRequest$inboundSchema;
+  /** @deprecated use `ComAtprotoAdminUpdateAccountHandleRequest$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoAdminUpdateAccountHandleBody$outboundSchema;
-  /** @deprecated use `ComAtprotoAdminUpdateAccountHandleBody$Outbound` instead. */
-  export type Outbound = ComAtprotoAdminUpdateAccountHandleBody$Outbound;
+    ComAtprotoAdminUpdateAccountHandleRequest$outboundSchema;
+  /** @deprecated use `ComAtprotoAdminUpdateAccountHandleRequest$Outbound` instead. */
+  export type Outbound = ComAtprotoAdminUpdateAccountHandleRequest$Outbound;
 }
 
-export function comAtprotoAdminUpdateAccountHandleBodyToJSON(
-  comAtprotoAdminUpdateAccountHandleBody:
-    ComAtprotoAdminUpdateAccountHandleBody,
+export function comAtprotoAdminUpdateAccountHandleRequestToJSON(
+  comAtprotoAdminUpdateAccountHandleRequest:
+    ComAtprotoAdminUpdateAccountHandleRequest,
 ): string {
   return JSON.stringify(
-    ComAtprotoAdminUpdateAccountHandleBody$outboundSchema.parse(
-      comAtprotoAdminUpdateAccountHandleBody,
+    ComAtprotoAdminUpdateAccountHandleRequest$outboundSchema.parse(
+      comAtprotoAdminUpdateAccountHandleRequest,
     ),
   );
 }
 
-export function comAtprotoAdminUpdateAccountHandleBodyFromJSON(
+export function comAtprotoAdminUpdateAccountHandleRequestFromJSON(
   jsonString: string,
-): SafeParseResult<ComAtprotoAdminUpdateAccountHandleBody, SDKValidationError> {
+): SafeParseResult<
+  ComAtprotoAdminUpdateAccountHandleRequest,
+  SDKValidationError
+> {
   return safeParse(
     jsonString,
     (x) =>
-      ComAtprotoAdminUpdateAccountHandleBody$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ComAtprotoAdminUpdateAccountHandleBody' from JSON`,
+      ComAtprotoAdminUpdateAccountHandleRequest$inboundSchema.parse(
+        JSON.parse(x),
+      ),
+    `Failed to parse 'ComAtprotoAdminUpdateAccountHandleRequest' from JSON`,
   );
 }

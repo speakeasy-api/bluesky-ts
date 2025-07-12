@@ -11,7 +11,6 @@ async function run() {
     actor: "did:plc:z72i7hdynmk6r22z27h6tvur",
   });
 
-  // Handle the result
   console.log(result);
 }
 

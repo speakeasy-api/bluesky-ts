@@ -7,12 +7,11 @@ import * as operations from "../../models/operations/index.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
 const args = {
-  request: operations.ComAtprotoServerReserveSigningKeyBody$inboundSchema
-    .optional(),
+  request: operations.ComAtprotoServerReserveSigningKeyRequest$inboundSchema,
 };
 
 export const tool$serversReserveSigningKey: ToolDefinition<typeof args> = {
-  name: "servers_reserve-signing-key",
+  name: "servers-reserve-signing-key",
   description:
     `*This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 

@@ -31,7 +31,7 @@ import {
   AppBskyRichtextFacetTag$outboundSchema,
 } from "./appbskyrichtextfacettag.js";
 
-export type Features =
+export type Feature =
   | AppBskyRichtextFacetMention
   | AppBskyRichtextFacetLink
   | AppBskyRichtextFacetTag;
@@ -52,27 +52,24 @@ export type AppBskyRichtextFacet = {
 };
 
 /** @internal */
-export const Features$inboundSchema: z.ZodType<
-  Features,
-  z.ZodTypeDef,
-  unknown
-> = z.union([
-  AppBskyRichtextFacetMention$inboundSchema,
-  AppBskyRichtextFacetLink$inboundSchema,
-  AppBskyRichtextFacetTag$inboundSchema,
-]);
+export const Feature$inboundSchema: z.ZodType<Feature, z.ZodTypeDef, unknown> =
+  z.union([
+    AppBskyRichtextFacetMention$inboundSchema,
+    AppBskyRichtextFacetLink$inboundSchema,
+    AppBskyRichtextFacetTag$inboundSchema,
+  ]);
 
 /** @internal */
-export type Features$Outbound =
+export type Feature$Outbound =
   | AppBskyRichtextFacetMention$Outbound
   | AppBskyRichtextFacetLink$Outbound
   | AppBskyRichtextFacetTag$Outbound;
 
 /** @internal */
-export const Features$outboundSchema: z.ZodType<
-  Features$Outbound,
+export const Feature$outboundSchema: z.ZodType<
+  Feature$Outbound,
   z.ZodTypeDef,
-  Features
+  Feature
 > = z.union([
   AppBskyRichtextFacetMention$outboundSchema,
   AppBskyRichtextFacetLink$outboundSchema,
@@ -83,26 +80,26 @@ export const Features$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace Features$ {
-  /** @deprecated use `Features$inboundSchema` instead. */
-  export const inboundSchema = Features$inboundSchema;
-  /** @deprecated use `Features$outboundSchema` instead. */
-  export const outboundSchema = Features$outboundSchema;
-  /** @deprecated use `Features$Outbound` instead. */
-  export type Outbound = Features$Outbound;
+export namespace Feature$ {
+  /** @deprecated use `Feature$inboundSchema` instead. */
+  export const inboundSchema = Feature$inboundSchema;
+  /** @deprecated use `Feature$outboundSchema` instead. */
+  export const outboundSchema = Feature$outboundSchema;
+  /** @deprecated use `Feature$Outbound` instead. */
+  export type Outbound = Feature$Outbound;
 }
 
-export function featuresToJSON(features: Features): string {
-  return JSON.stringify(Features$outboundSchema.parse(features));
+export function featureToJSON(feature: Feature): string {
+  return JSON.stringify(Feature$outboundSchema.parse(feature));
 }
 
-export function featuresFromJSON(
+export function featureFromJSON(
   jsonString: string,
-): SafeParseResult<Features, SDKValidationError> {
+): SafeParseResult<Feature, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => Features$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'Features' from JSON`,
+    (x) => Feature$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'Feature' from JSON`,
   );
 }
 

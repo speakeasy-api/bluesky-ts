@@ -5,7 +5,7 @@
 ```typescript
 import { AppBskyVideoUploadVideoError } from "@speakeasy-sdks/bluesky/models/errors";
 
-let value: AppBskyVideoUploadVideoError = "InvalidToken";
+let value: AppBskyVideoUploadVideoError = "InvalidRequest";
 ```
 
 ## Values

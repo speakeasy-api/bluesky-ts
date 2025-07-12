@@ -15,7 +15,7 @@ export type ComAtprotoAdminGetAccountInfosRequest = {
 /**
  * OK
  */
-export type ComAtprotoAdminGetAccountInfosResponseBody = {
+export type ComAtprotoAdminGetAccountInfosResponse = {
   infos: Array<components.ComAtprotoAdminDefsAccountView>;
 };
 
@@ -79,65 +79,61 @@ export function comAtprotoAdminGetAccountInfosRequestFromJSON(
 }
 
 /** @internal */
-export const ComAtprotoAdminGetAccountInfosResponseBody$inboundSchema:
-  z.ZodType<ComAtprotoAdminGetAccountInfosResponseBody, z.ZodTypeDef, unknown> =
-    z.object({
-      infos: z.array(components.ComAtprotoAdminDefsAccountView$inboundSchema),
-    });
+export const ComAtprotoAdminGetAccountInfosResponse$inboundSchema: z.ZodType<
+  ComAtprotoAdminGetAccountInfosResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  infos: z.array(components.ComAtprotoAdminDefsAccountView$inboundSchema),
+});
 
 /** @internal */
-export type ComAtprotoAdminGetAccountInfosResponseBody$Outbound = {
+export type ComAtprotoAdminGetAccountInfosResponse$Outbound = {
   infos: Array<components.ComAtprotoAdminDefsAccountView$Outbound>;
 };
 
 /** @internal */
-export const ComAtprotoAdminGetAccountInfosResponseBody$outboundSchema:
-  z.ZodType<
-    ComAtprotoAdminGetAccountInfosResponseBody$Outbound,
-    z.ZodTypeDef,
-    ComAtprotoAdminGetAccountInfosResponseBody
-  > = z.object({
-    infos: z.array(components.ComAtprotoAdminDefsAccountView$outboundSchema),
-  });
+export const ComAtprotoAdminGetAccountInfosResponse$outboundSchema: z.ZodType<
+  ComAtprotoAdminGetAccountInfosResponse$Outbound,
+  z.ZodTypeDef,
+  ComAtprotoAdminGetAccountInfosResponse
+> = z.object({
+  infos: z.array(components.ComAtprotoAdminDefsAccountView$outboundSchema),
+});
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoAdminGetAccountInfosResponseBody$ {
-  /** @deprecated use `ComAtprotoAdminGetAccountInfosResponseBody$inboundSchema` instead. */
+export namespace ComAtprotoAdminGetAccountInfosResponse$ {
+  /** @deprecated use `ComAtprotoAdminGetAccountInfosResponse$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoAdminGetAccountInfosResponseBody$inboundSchema;
-  /** @deprecated use `ComAtprotoAdminGetAccountInfosResponseBody$outboundSchema` instead. */
+    ComAtprotoAdminGetAccountInfosResponse$inboundSchema;
+  /** @deprecated use `ComAtprotoAdminGetAccountInfosResponse$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoAdminGetAccountInfosResponseBody$outboundSchema;
-  /** @deprecated use `ComAtprotoAdminGetAccountInfosResponseBody$Outbound` instead. */
-  export type Outbound = ComAtprotoAdminGetAccountInfosResponseBody$Outbound;
+    ComAtprotoAdminGetAccountInfosResponse$outboundSchema;
+  /** @deprecated use `ComAtprotoAdminGetAccountInfosResponse$Outbound` instead. */
+  export type Outbound = ComAtprotoAdminGetAccountInfosResponse$Outbound;
 }
 
-export function comAtprotoAdminGetAccountInfosResponseBodyToJSON(
-  comAtprotoAdminGetAccountInfosResponseBody:
-    ComAtprotoAdminGetAccountInfosResponseBody,
+export function comAtprotoAdminGetAccountInfosResponseToJSON(
+  comAtprotoAdminGetAccountInfosResponse:
+    ComAtprotoAdminGetAccountInfosResponse,
 ): string {
   return JSON.stringify(
-    ComAtprotoAdminGetAccountInfosResponseBody$outboundSchema.parse(
-      comAtprotoAdminGetAccountInfosResponseBody,
+    ComAtprotoAdminGetAccountInfosResponse$outboundSchema.parse(
+      comAtprotoAdminGetAccountInfosResponse,
     ),
   );
 }
 
-export function comAtprotoAdminGetAccountInfosResponseBodyFromJSON(
+export function comAtprotoAdminGetAccountInfosResponseFromJSON(
   jsonString: string,
-): SafeParseResult<
-  ComAtprotoAdminGetAccountInfosResponseBody,
-  SDKValidationError
-> {
+): SafeParseResult<ComAtprotoAdminGetAccountInfosResponse, SDKValidationError> {
   return safeParse(
     jsonString,
     (x) =>
-      ComAtprotoAdminGetAccountInfosResponseBody$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'ComAtprotoAdminGetAccountInfosResponseBody' from JSON`,
+      ComAtprotoAdminGetAccountInfosResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ComAtprotoAdminGetAccountInfosResponse' from JSON`,
   );
 }

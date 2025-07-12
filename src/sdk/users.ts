@@ -44,7 +44,7 @@ export class Users extends ClientSDK {
   async getSuggestedFollows(
     request: operations.AppBskyGraphGetSuggestedFollowsByActorRequest,
     options?: RequestOptions,
-  ): Promise<operations.AppBskyGraphGetSuggestedFollowsByActorResponseBody> {
+  ): Promise<operations.AppBskyGraphGetSuggestedFollowsByActorResponse> {
     return unwrapAsync(usersGetSuggestedFollows(
       this,
       request,
@@ -60,7 +60,7 @@ export class Users extends ClientSDK {
    * Unmutes the specified account. Requires auth.
    */
   async unmute(
-    request: operations.AppBskyGraphUnmuteActorBody,
+    request: operations.AppBskyGraphUnmuteActorRequest,
     options?: RequestOptions,
   ): Promise<void> {
     return unwrapAsync(usersUnmute(

@@ -17,7 +17,7 @@ import { useBlueskyContext } from "./_context.js";
 import { MutationHookOptions } from "./_types.js";
 
 export type AdminsDeleteAccountMutationVariables = {
-  request: operations.ComAtprotoAdminDeleteAccountBody;
+  request: operations.ComAtprotoAdminDeleteAccountRequest;
   options?: RequestOptions;
 };
 

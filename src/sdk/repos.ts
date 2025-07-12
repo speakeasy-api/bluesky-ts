@@ -22,9 +22,9 @@ export class Repos extends ClientSDK {
    * Apply a batch transaction of repository creates, updates, and deletes. Requires auth, implemented by PDS.
    */
   async applyWrites(
-    request: operations.ComAtprotoRepoApplyWritesBody,
+    request: operations.ComAtprotoRepoApplyWritesRequest,
     options?: RequestOptions,
-  ): Promise<operations.ComAtprotoRepoApplyWritesResponseBody> {
+  ): Promise<operations.ComAtprotoRepoApplyWritesResponse> {
     return unwrapAsync(reposApplyWrites(
       this,
       request,
@@ -40,9 +40,9 @@ export class Repos extends ClientSDK {
    * Create a single new repository record. Requires auth, implemented by PDS.
    */
   async createRecord(
-    request: operations.ComAtprotoRepoCreateRecordBody,
+    request: operations.ComAtprotoRepoCreateRecordRequest,
     options?: RequestOptions,
-  ): Promise<operations.ComAtprotoRepoCreateRecordResponseBody> {
+  ): Promise<operations.ComAtprotoRepoCreateRecordResponse> {
     return unwrapAsync(reposCreateRecord(
       this,
       request,
@@ -60,7 +60,7 @@ export class Repos extends ClientSDK {
   async describe(
     request: operations.ComAtprotoRepoDescribeRepoRequest,
     options?: RequestOptions,
-  ): Promise<operations.ComAtprotoRepoDescribeRepoResponseBody> {
+  ): Promise<operations.ComAtprotoRepoDescribeRepoResponse> {
     return unwrapAsync(reposDescribe(
       this,
       request,
@@ -78,7 +78,7 @@ export class Repos extends ClientSDK {
   async getRecord(
     request: operations.ComAtprotoRepoGetRecordRequest,
     options?: RequestOptions,
-  ): Promise<operations.ComAtprotoRepoGetRecordResponseBody> {
+  ): Promise<operations.ComAtprotoRepoGetRecordResponse> {
     return unwrapAsync(reposGetRecord(
       this,
       request,

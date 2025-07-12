@@ -18,7 +18,7 @@ export type AppBskyGraphGetStarterPackRequest = {
 /**
  * OK
  */
-export type AppBskyGraphGetStarterPackResponseBody = {
+export type AppBskyGraphGetStarterPackResponse = {
   starterPack: components.AppBskyGraphDefsStarterPackView;
 };
 
@@ -80,8 +80,8 @@ export function appBskyGraphGetStarterPackRequestFromJSON(
 }
 
 /** @internal */
-export const AppBskyGraphGetStarterPackResponseBody$inboundSchema: z.ZodType<
-  AppBskyGraphGetStarterPackResponseBody,
+export const AppBskyGraphGetStarterPackResponse$inboundSchema: z.ZodType<
+  AppBskyGraphGetStarterPackResponse,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -89,15 +89,15 @@ export const AppBskyGraphGetStarterPackResponseBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type AppBskyGraphGetStarterPackResponseBody$Outbound = {
+export type AppBskyGraphGetStarterPackResponse$Outbound = {
   starterPack: components.AppBskyGraphDefsStarterPackView$Outbound;
 };
 
 /** @internal */
-export const AppBskyGraphGetStarterPackResponseBody$outboundSchema: z.ZodType<
-  AppBskyGraphGetStarterPackResponseBody$Outbound,
+export const AppBskyGraphGetStarterPackResponse$outboundSchema: z.ZodType<
+  AppBskyGraphGetStarterPackResponse$Outbound,
   z.ZodTypeDef,
-  AppBskyGraphGetStarterPackResponseBody
+  AppBskyGraphGetStarterPackResponse
 > = z.object({
   starterPack: components.AppBskyGraphDefsStarterPackView$outboundSchema,
 });
@@ -106,35 +106,33 @@ export const AppBskyGraphGetStarterPackResponseBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyGraphGetStarterPackResponseBody$ {
-  /** @deprecated use `AppBskyGraphGetStarterPackResponseBody$inboundSchema` instead. */
-  export const inboundSchema =
-    AppBskyGraphGetStarterPackResponseBody$inboundSchema;
-  /** @deprecated use `AppBskyGraphGetStarterPackResponseBody$outboundSchema` instead. */
+export namespace AppBskyGraphGetStarterPackResponse$ {
+  /** @deprecated use `AppBskyGraphGetStarterPackResponse$inboundSchema` instead. */
+  export const inboundSchema = AppBskyGraphGetStarterPackResponse$inboundSchema;
+  /** @deprecated use `AppBskyGraphGetStarterPackResponse$outboundSchema` instead. */
   export const outboundSchema =
-    AppBskyGraphGetStarterPackResponseBody$outboundSchema;
-  /** @deprecated use `AppBskyGraphGetStarterPackResponseBody$Outbound` instead. */
-  export type Outbound = AppBskyGraphGetStarterPackResponseBody$Outbound;
+    AppBskyGraphGetStarterPackResponse$outboundSchema;
+  /** @deprecated use `AppBskyGraphGetStarterPackResponse$Outbound` instead. */
+  export type Outbound = AppBskyGraphGetStarterPackResponse$Outbound;
 }
 
-export function appBskyGraphGetStarterPackResponseBodyToJSON(
-  appBskyGraphGetStarterPackResponseBody:
-    AppBskyGraphGetStarterPackResponseBody,
+export function appBskyGraphGetStarterPackResponseToJSON(
+  appBskyGraphGetStarterPackResponse: AppBskyGraphGetStarterPackResponse,
 ): string {
   return JSON.stringify(
-    AppBskyGraphGetStarterPackResponseBody$outboundSchema.parse(
-      appBskyGraphGetStarterPackResponseBody,
+    AppBskyGraphGetStarterPackResponse$outboundSchema.parse(
+      appBskyGraphGetStarterPackResponse,
     ),
   );
 }
 
-export function appBskyGraphGetStarterPackResponseBodyFromJSON(
+export function appBskyGraphGetStarterPackResponseFromJSON(
   jsonString: string,
-): SafeParseResult<AppBskyGraphGetStarterPackResponseBody, SDKValidationError> {
+): SafeParseResult<AppBskyGraphGetStarterPackResponse, SDKValidationError> {
   return safeParse(
     jsonString,
     (x) =>
-      AppBskyGraphGetStarterPackResponseBody$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'AppBskyGraphGetStarterPackResponseBody' from JSON`,
+      AppBskyGraphGetStarterPackResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AppBskyGraphGetStarterPackResponse' from JSON`,
   );
 }

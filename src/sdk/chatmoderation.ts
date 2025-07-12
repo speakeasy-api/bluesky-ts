@@ -17,7 +17,7 @@ export class ChatModeration extends ClientSDK {
   async getActorMetadata(
     request: operations.ChatBskyModerationGetActorMetadataRequest,
     options?: RequestOptions,
-  ): Promise<operations.ChatBskyModerationGetActorMetadataResponseBody> {
+  ): Promise<operations.ChatBskyModerationGetActorMetadataResponse> {
     return unwrapAsync(chatModerationGetActorMetadata(
       this,
       request,
@@ -31,7 +31,7 @@ export class ChatModeration extends ClientSDK {
    * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
    */
   async updateActorAccess(
-    request: operations.ChatBskyModerationUpdateActorAccessBody,
+    request: operations.ChatBskyModerationUpdateActorAccessRequest,
     options?: RequestOptions,
   ): Promise<void> {
     return unwrapAsync(chatModerationUpdateActorAccess(

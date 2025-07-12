@@ -6,7 +6,7 @@
 import { AppBskyFeedGetListFeedRequest } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: AppBskyFeedGetListFeedRequest = {
-  list: "https://wonderful-sediment.info",
+  list: "https://all-strait.name",
 };
 ```
 

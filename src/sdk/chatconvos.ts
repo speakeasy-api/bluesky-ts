@@ -21,7 +21,7 @@ export class ChatConvos extends ClientSDK {
   async getForMembers(
     request: operations.ChatBskyConvoGetConvoForMembersRequest,
     options?: RequestOptions,
-  ): Promise<operations.ChatBskyConvoGetConvoForMembersResponseBody> {
+  ): Promise<operations.ChatBskyConvoGetConvoForMembersResponse> {
     return unwrapAsync(chatConvosGetForMembers(
       this,
       request,
@@ -56,7 +56,7 @@ export class ChatConvos extends ClientSDK {
    * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
    */
   async sendMessage(
-    request: operations.ChatBskyConvoSendMessageBody,
+    request: operations.ChatBskyConvoSendMessageRequest,
     options?: RequestOptions,
   ): Promise<components.ChatBskyConvoDefsMessageView> {
     return unwrapAsync(chatConvosSendMessage(
@@ -72,9 +72,9 @@ export class ChatConvos extends ClientSDK {
    * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
    */
   async updateRead(
-    request: operations.ChatBskyConvoUpdateReadBody,
+    request: operations.ChatBskyConvoUpdateReadRequest,
     options?: RequestOptions,
-  ): Promise<operations.ChatBskyConvoUpdateReadResponseBody> {
+  ): Promise<operations.ChatBskyConvoUpdateReadResponse> {
     return unwrapAsync(chatConvosUpdateRead(
       this,
       request,

@@ -8,7 +8,12 @@ OK
 import { AppBskyGraphGetMutesResponseBody } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: AppBskyGraphGetMutesResponseBody = {
-  mutes: [],
+  mutes: [
+    {
+      did: "<id>",
+      handle: "<value>",
+    },
+  ],
 };
 ```
 

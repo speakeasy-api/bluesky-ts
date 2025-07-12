@@ -7,11 +7,11 @@ import * as operations from "../../models/operations/index.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
 const args = {
-  request: operations.ComAtprotoRepoPutRecordBody$inboundSchema,
+  request: operations.ComAtprotoRepoPutRecordRequest$inboundSchema,
 };
 
 export const tool$repoPutRecord: ToolDefinition<typeof args> = {
-  name: "repo_put-record",
+  name: "repo-put-record",
   description:
     `*This endpoint is part of the atproto PDS repository management APIs. Requests usually require authentication (unlike the \`com.atproto.sync.*\` endpoints), and are made directly to the user's own PDS instance.*
 

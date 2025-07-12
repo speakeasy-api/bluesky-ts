@@ -6,14 +6,14 @@
 import { AppBskyGraphDefsStarterPackView } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: AppBskyGraphDefsStarterPackView = {
-  uri: "https://tricky-skean.org",
+  uri: "https://baggy-overheard.info",
   cid: "<id>",
   record: "<value>",
   creator: {
     did: "<id>",
     handle: "<value>",
   },
-  indexedAt: new Date("2023-10-30T20:46:20.876Z"),
+  indexedAt: new Date("2023-12-17T08:10:03.061Z"),
 };
 ```
 

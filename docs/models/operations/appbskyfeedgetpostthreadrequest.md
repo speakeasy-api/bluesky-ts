@@ -6,7 +6,7 @@
 import { AppBskyFeedGetPostThreadRequest } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: AppBskyFeedGetPostThreadRequest = {
-  uri: "https://close-paintwork.com",
+  uri: "https://new-repeat.name/",
 };
 ```
 

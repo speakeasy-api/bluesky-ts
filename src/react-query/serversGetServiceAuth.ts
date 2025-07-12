@@ -26,7 +26,7 @@ import {
 } from "./_types.js";
 
 export type ServersGetServiceAuthQueryData =
-  operations.ComAtprotoServerGetServiceAuthResponseBody;
+  operations.ComAtprotoServerGetServiceAuthResponse;
 
 /**
  * *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*

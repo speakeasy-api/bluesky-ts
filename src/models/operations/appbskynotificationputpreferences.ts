@@ -7,13 +7,13 @@ import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type AppBskyNotificationPutPreferencesBody = {
+export type AppBskyNotificationPutPreferencesRequest = {
   priority: boolean;
 };
 
 /** @internal */
-export const AppBskyNotificationPutPreferencesBody$inboundSchema: z.ZodType<
-  AppBskyNotificationPutPreferencesBody,
+export const AppBskyNotificationPutPreferencesRequest$inboundSchema: z.ZodType<
+  AppBskyNotificationPutPreferencesRequest,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -21,15 +21,15 @@ export const AppBskyNotificationPutPreferencesBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type AppBskyNotificationPutPreferencesBody$Outbound = {
+export type AppBskyNotificationPutPreferencesRequest$Outbound = {
   priority: boolean;
 };
 
 /** @internal */
-export const AppBskyNotificationPutPreferencesBody$outboundSchema: z.ZodType<
-  AppBskyNotificationPutPreferencesBody$Outbound,
+export const AppBskyNotificationPutPreferencesRequest$outboundSchema: z.ZodType<
+  AppBskyNotificationPutPreferencesRequest$Outbound,
   z.ZodTypeDef,
-  AppBskyNotificationPutPreferencesBody
+  AppBskyNotificationPutPreferencesRequest
 > = z.object({
   priority: z.boolean(),
 });
@@ -38,34 +38,40 @@ export const AppBskyNotificationPutPreferencesBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyNotificationPutPreferencesBody$ {
-  /** @deprecated use `AppBskyNotificationPutPreferencesBody$inboundSchema` instead. */
+export namespace AppBskyNotificationPutPreferencesRequest$ {
+  /** @deprecated use `AppBskyNotificationPutPreferencesRequest$inboundSchema` instead. */
   export const inboundSchema =
-    AppBskyNotificationPutPreferencesBody$inboundSchema;
-  /** @deprecated use `AppBskyNotificationPutPreferencesBody$outboundSchema` instead. */
+    AppBskyNotificationPutPreferencesRequest$inboundSchema;
+  /** @deprecated use `AppBskyNotificationPutPreferencesRequest$outboundSchema` instead. */
   export const outboundSchema =
-    AppBskyNotificationPutPreferencesBody$outboundSchema;
-  /** @deprecated use `AppBskyNotificationPutPreferencesBody$Outbound` instead. */
-  export type Outbound = AppBskyNotificationPutPreferencesBody$Outbound;
+    AppBskyNotificationPutPreferencesRequest$outboundSchema;
+  /** @deprecated use `AppBskyNotificationPutPreferencesRequest$Outbound` instead. */
+  export type Outbound = AppBskyNotificationPutPreferencesRequest$Outbound;
 }
 
-export function appBskyNotificationPutPreferencesBodyToJSON(
-  appBskyNotificationPutPreferencesBody: AppBskyNotificationPutPreferencesBody,
+export function appBskyNotificationPutPreferencesRequestToJSON(
+  appBskyNotificationPutPreferencesRequest:
+    AppBskyNotificationPutPreferencesRequest,
 ): string {
   return JSON.stringify(
-    AppBskyNotificationPutPreferencesBody$outboundSchema.parse(
-      appBskyNotificationPutPreferencesBody,
+    AppBskyNotificationPutPreferencesRequest$outboundSchema.parse(
+      appBskyNotificationPutPreferencesRequest,
     ),
   );
 }
 
-export function appBskyNotificationPutPreferencesBodyFromJSON(
+export function appBskyNotificationPutPreferencesRequestFromJSON(
   jsonString: string,
-): SafeParseResult<AppBskyNotificationPutPreferencesBody, SDKValidationError> {
+): SafeParseResult<
+  AppBskyNotificationPutPreferencesRequest,
+  SDKValidationError
+> {
   return safeParse(
     jsonString,
     (x) =>
-      AppBskyNotificationPutPreferencesBody$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'AppBskyNotificationPutPreferencesBody' from JSON`,
+      AppBskyNotificationPutPreferencesRequest$inboundSchema.parse(
+        JSON.parse(x),
+      ),
+    `Failed to parse 'AppBskyNotificationPutPreferencesRequest' from JSON`,
   );
 }

@@ -5,7 +5,7 @@
 ```typescript
 import { AppBskyNotificationRegisterPushError } from "@speakeasy-sdks/bluesky/models/errors";
 
-let value: AppBskyNotificationRegisterPushError = "InvalidRequest";
+let value: AppBskyNotificationRegisterPushError = "InvalidToken";
 ```
 
 ## Values

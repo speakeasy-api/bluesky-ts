@@ -8,7 +8,12 @@ OK
 import { AppBskyActorSearchActorsResponseBody } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: AppBskyActorSearchActorsResponseBody = {
-  actors: [],
+  actors: [
+    {
+      did: "<id>",
+      handle: "<value>",
+    },
+  ],
 };
 ```
 

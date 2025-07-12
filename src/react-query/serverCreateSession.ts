@@ -17,12 +17,12 @@ import { useBlueskyContext } from "./_context.js";
 import { MutationHookOptions } from "./_types.js";
 
 export type ServerCreateSessionMutationVariables = {
-  request: operations.ComAtprotoServerCreateSessionBody;
+  request: operations.ComAtprotoServerCreateSessionRequest;
   options?: RequestOptions;
 };
 
 export type ServerCreateSessionMutationData =
-  operations.ComAtprotoServerCreateSessionResponseBody;
+  operations.ComAtprotoServerCreateSessionResponse;
 
 /**
  * *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*

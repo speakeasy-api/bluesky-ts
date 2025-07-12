@@ -15,7 +15,7 @@ export type ChatBskyModerationGetActorMetadataRequest = {
 /**
  * OK
  */
-export type ChatBskyModerationGetActorMetadataResponseBody = {
+export type ChatBskyModerationGetActorMetadataResponse = {
   day: components.ChatBskyModerationGetActorMetadataMetadata;
   month: components.ChatBskyModerationGetActorMetadataMetadata;
   all: components.ChatBskyModerationGetActorMetadataMetadata;
@@ -88,30 +88,28 @@ export function chatBskyModerationGetActorMetadataRequestFromJSON(
 }
 
 /** @internal */
-export const ChatBskyModerationGetActorMetadataResponseBody$inboundSchema:
-  z.ZodType<
-    ChatBskyModerationGetActorMetadataResponseBody,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    day: components.ChatBskyModerationGetActorMetadataMetadata$inboundSchema,
-    month: components.ChatBskyModerationGetActorMetadataMetadata$inboundSchema,
-    all: components.ChatBskyModerationGetActorMetadataMetadata$inboundSchema,
-  });
+export const ChatBskyModerationGetActorMetadataResponse$inboundSchema:
+  z.ZodType<ChatBskyModerationGetActorMetadataResponse, z.ZodTypeDef, unknown> =
+    z.object({
+      day: components.ChatBskyModerationGetActorMetadataMetadata$inboundSchema,
+      month:
+        components.ChatBskyModerationGetActorMetadataMetadata$inboundSchema,
+      all: components.ChatBskyModerationGetActorMetadataMetadata$inboundSchema,
+    });
 
 /** @internal */
-export type ChatBskyModerationGetActorMetadataResponseBody$Outbound = {
+export type ChatBskyModerationGetActorMetadataResponse$Outbound = {
   day: components.ChatBskyModerationGetActorMetadataMetadata$Outbound;
   month: components.ChatBskyModerationGetActorMetadataMetadata$Outbound;
   all: components.ChatBskyModerationGetActorMetadataMetadata$Outbound;
 };
 
 /** @internal */
-export const ChatBskyModerationGetActorMetadataResponseBody$outboundSchema:
+export const ChatBskyModerationGetActorMetadataResponse$outboundSchema:
   z.ZodType<
-    ChatBskyModerationGetActorMetadataResponseBody$Outbound,
+    ChatBskyModerationGetActorMetadataResponse$Outbound,
     z.ZodTypeDef,
-    ChatBskyModerationGetActorMetadataResponseBody
+    ChatBskyModerationGetActorMetadataResponse
   > = z.object({
     day: components.ChatBskyModerationGetActorMetadataMetadata$outboundSchema,
     month: components.ChatBskyModerationGetActorMetadataMetadata$outboundSchema,
@@ -122,41 +120,40 @@ export const ChatBskyModerationGetActorMetadataResponseBody$outboundSchema:
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ChatBskyModerationGetActorMetadataResponseBody$ {
-  /** @deprecated use `ChatBskyModerationGetActorMetadataResponseBody$inboundSchema` instead. */
+export namespace ChatBskyModerationGetActorMetadataResponse$ {
+  /** @deprecated use `ChatBskyModerationGetActorMetadataResponse$inboundSchema` instead. */
   export const inboundSchema =
-    ChatBskyModerationGetActorMetadataResponseBody$inboundSchema;
-  /** @deprecated use `ChatBskyModerationGetActorMetadataResponseBody$outboundSchema` instead. */
+    ChatBskyModerationGetActorMetadataResponse$inboundSchema;
+  /** @deprecated use `ChatBskyModerationGetActorMetadataResponse$outboundSchema` instead. */
   export const outboundSchema =
-    ChatBskyModerationGetActorMetadataResponseBody$outboundSchema;
-  /** @deprecated use `ChatBskyModerationGetActorMetadataResponseBody$Outbound` instead. */
-  export type Outbound =
-    ChatBskyModerationGetActorMetadataResponseBody$Outbound;
+    ChatBskyModerationGetActorMetadataResponse$outboundSchema;
+  /** @deprecated use `ChatBskyModerationGetActorMetadataResponse$Outbound` instead. */
+  export type Outbound = ChatBskyModerationGetActorMetadataResponse$Outbound;
 }
 
-export function chatBskyModerationGetActorMetadataResponseBodyToJSON(
-  chatBskyModerationGetActorMetadataResponseBody:
-    ChatBskyModerationGetActorMetadataResponseBody,
+export function chatBskyModerationGetActorMetadataResponseToJSON(
+  chatBskyModerationGetActorMetadataResponse:
+    ChatBskyModerationGetActorMetadataResponse,
 ): string {
   return JSON.stringify(
-    ChatBskyModerationGetActorMetadataResponseBody$outboundSchema.parse(
-      chatBskyModerationGetActorMetadataResponseBody,
+    ChatBskyModerationGetActorMetadataResponse$outboundSchema.parse(
+      chatBskyModerationGetActorMetadataResponse,
     ),
   );
 }
 
-export function chatBskyModerationGetActorMetadataResponseBodyFromJSON(
+export function chatBskyModerationGetActorMetadataResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
-  ChatBskyModerationGetActorMetadataResponseBody,
+  ChatBskyModerationGetActorMetadataResponse,
   SDKValidationError
 > {
   return safeParse(
     jsonString,
     (x) =>
-      ChatBskyModerationGetActorMetadataResponseBody$inboundSchema.parse(
+      ChatBskyModerationGetActorMetadataResponse$inboundSchema.parse(
         JSON.parse(x),
       ),
-    `Failed to parse 'ChatBskyModerationGetActorMetadataResponseBody' from JSON`,
+    `Failed to parse 'ChatBskyModerationGetActorMetadataResponse' from JSON`,
   );
 }

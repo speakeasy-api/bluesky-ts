@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoSyncGetBlobError } from "@speakeasy-sdks/bluesky/models/errors";
 
-let value: ComAtprotoSyncGetBlobError = "RepoTakendown";
+let value: ComAtprotoSyncGetBlobError = "InvalidToken";
 ```
 
 ## Values

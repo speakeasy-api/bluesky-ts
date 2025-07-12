@@ -6,8 +6,8 @@
 import { ToolsOzoneModerationDefsImageDetails } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: ToolsOzoneModerationDefsImageDetails = {
-  width: 298750,
-  height: 255064,
+  width: 26813,
+  height: 238337,
 };
 ```
 

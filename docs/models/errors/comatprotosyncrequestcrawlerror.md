@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoSyncRequestCrawlError } from "@speakeasy-sdks/bluesky/models/errors";
 
-let value: ComAtprotoSyncRequestCrawlError = "ExpiredToken";
+let value: ComAtprotoSyncRequestCrawlError = "InvalidRequest";
 ```
 
 ## Values

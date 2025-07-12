@@ -7,8 +7,8 @@ import { ComAtprotoServerCreateAppPasswordAppPassword } from "@speakeasy-sdks/bl
 
 let value: ComAtprotoServerCreateAppPasswordAppPassword = {
   name: "<value>",
-  password: "GGiS79Scbk1DHbB",
-  createdAt: new Date("2025-06-07T02:11:09.431Z"),
+  password: "DTmGTtiVA6_lvPx",
+  createdAt: new Date("2025-05-22T12:13:50.376Z"),
 };
 ```
 

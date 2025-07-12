@@ -49,12 +49,12 @@ import {
   ComAtprotoLabelDefsLabel$outboundSchema,
 } from "./comatprotolabeldefslabel.js";
 
-export type Embeds =
+export type AppBskyEmbedRecordViewRecordEmbed =
+  | AppBskyEmbedVideoView
+  | AppBskyEmbedRecordWithMediaView
   | AppBskyEmbedImagesView
   | AppBskyEmbedExternalView
-  | AppBskyEmbedRecordView
-  | AppBskyEmbedRecordWithMediaView
-  | AppBskyEmbedVideoView;
+  | AppBskyEmbedRecordView;
 
 export type AppBskyEmbedRecordViewRecord = {
   uri: string;
@@ -68,71 +68,81 @@ export type AppBskyEmbedRecordViewRecord = {
   quoteCount?: number | undefined;
   embeds?:
     | Array<
+      | AppBskyEmbedVideoView
+      | AppBskyEmbedRecordWithMediaView
       | AppBskyEmbedImagesView
       | AppBskyEmbedExternalView
       | AppBskyEmbedRecordView
-      | AppBskyEmbedRecordWithMediaView
-      | AppBskyEmbedVideoView
     >
     | undefined;
   indexedAt: Date;
 };
 
 /** @internal */
-export const Embeds$inboundSchema: z.ZodType<Embeds, z.ZodTypeDef, unknown> = z
-  .union([
-    AppBskyEmbedImagesView$inboundSchema,
-    AppBskyEmbedExternalView$inboundSchema,
-    z.lazy(() => AppBskyEmbedRecordView$inboundSchema),
-    z.lazy(() => AppBskyEmbedRecordWithMediaView$inboundSchema),
-    AppBskyEmbedVideoView$inboundSchema,
-  ]);
+export const AppBskyEmbedRecordViewRecordEmbed$inboundSchema: z.ZodType<
+  AppBskyEmbedRecordViewRecordEmbed,
+  z.ZodTypeDef,
+  unknown
+> = z.union([
+  AppBskyEmbedVideoView$inboundSchema,
+  z.lazy(() => AppBskyEmbedRecordWithMediaView$inboundSchema),
+  AppBskyEmbedImagesView$inboundSchema,
+  AppBskyEmbedExternalView$inboundSchema,
+  z.lazy(() => AppBskyEmbedRecordView$inboundSchema),
+]);
 
 /** @internal */
-export type Embeds$Outbound =
+export type AppBskyEmbedRecordViewRecordEmbed$Outbound =
+  | AppBskyEmbedVideoView$Outbound
+  | AppBskyEmbedRecordWithMediaView$Outbound
   | AppBskyEmbedImagesView$Outbound
   | AppBskyEmbedExternalView$Outbound
-  | AppBskyEmbedRecordView$Outbound
-  | AppBskyEmbedRecordWithMediaView$Outbound
-  | AppBskyEmbedVideoView$Outbound;
+  | AppBskyEmbedRecordView$Outbound;
 
 /** @internal */
-export const Embeds$outboundSchema: z.ZodType<
-  Embeds$Outbound,
+export const AppBskyEmbedRecordViewRecordEmbed$outboundSchema: z.ZodType<
+  AppBskyEmbedRecordViewRecordEmbed$Outbound,
   z.ZodTypeDef,
-  Embeds
+  AppBskyEmbedRecordViewRecordEmbed
 > = z.union([
+  AppBskyEmbedVideoView$outboundSchema,
+  z.lazy(() => AppBskyEmbedRecordWithMediaView$outboundSchema),
   AppBskyEmbedImagesView$outboundSchema,
   AppBskyEmbedExternalView$outboundSchema,
   z.lazy(() => AppBskyEmbedRecordView$outboundSchema),
-  z.lazy(() => AppBskyEmbedRecordWithMediaView$outboundSchema),
-  AppBskyEmbedVideoView$outboundSchema,
 ]);
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace Embeds$ {
-  /** @deprecated use `Embeds$inboundSchema` instead. */
-  export const inboundSchema = Embeds$inboundSchema;
-  /** @deprecated use `Embeds$outboundSchema` instead. */
-  export const outboundSchema = Embeds$outboundSchema;
-  /** @deprecated use `Embeds$Outbound` instead. */
-  export type Outbound = Embeds$Outbound;
+export namespace AppBskyEmbedRecordViewRecordEmbed$ {
+  /** @deprecated use `AppBskyEmbedRecordViewRecordEmbed$inboundSchema` instead. */
+  export const inboundSchema = AppBskyEmbedRecordViewRecordEmbed$inboundSchema;
+  /** @deprecated use `AppBskyEmbedRecordViewRecordEmbed$outboundSchema` instead. */
+  export const outboundSchema =
+    AppBskyEmbedRecordViewRecordEmbed$outboundSchema;
+  /** @deprecated use `AppBskyEmbedRecordViewRecordEmbed$Outbound` instead. */
+  export type Outbound = AppBskyEmbedRecordViewRecordEmbed$Outbound;
 }
 
-export function embedsToJSON(embeds: Embeds): string {
-  return JSON.stringify(Embeds$outboundSchema.parse(embeds));
+export function appBskyEmbedRecordViewRecordEmbedToJSON(
+  appBskyEmbedRecordViewRecordEmbed: AppBskyEmbedRecordViewRecordEmbed,
+): string {
+  return JSON.stringify(
+    AppBskyEmbedRecordViewRecordEmbed$outboundSchema.parse(
+      appBskyEmbedRecordViewRecordEmbed,
+    ),
+  );
 }
 
-export function embedsFromJSON(
+export function appBskyEmbedRecordViewRecordEmbedFromJSON(
   jsonString: string,
-): SafeParseResult<Embeds, SDKValidationError> {
+): SafeParseResult<AppBskyEmbedRecordViewRecordEmbed, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => Embeds$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'Embeds' from JSON`,
+    (x) => AppBskyEmbedRecordViewRecordEmbed$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AppBskyEmbedRecordViewRecordEmbed' from JSON`,
   );
 }
 
@@ -153,11 +163,11 @@ export const AppBskyEmbedRecordViewRecord$inboundSchema: z.ZodType<
   quoteCount: z.number().int().optional(),
   embeds: z.array(
     z.union([
+      AppBskyEmbedVideoView$inboundSchema,
+      z.lazy(() => AppBskyEmbedRecordWithMediaView$inboundSchema),
       AppBskyEmbedImagesView$inboundSchema,
       AppBskyEmbedExternalView$inboundSchema,
       z.lazy(() => AppBskyEmbedRecordView$inboundSchema),
-      z.lazy(() => AppBskyEmbedRecordWithMediaView$inboundSchema),
-      AppBskyEmbedVideoView$inboundSchema,
     ]),
   ).optional(),
   indexedAt: z.string().datetime({ offset: true }).transform(v => new Date(v)),
@@ -176,11 +186,11 @@ export type AppBskyEmbedRecordViewRecord$Outbound = {
   quoteCount?: number | undefined;
   embeds?:
     | Array<
+      | AppBskyEmbedVideoView$Outbound
+      | AppBskyEmbedRecordWithMediaView$Outbound
       | AppBskyEmbedImagesView$Outbound
       | AppBskyEmbedExternalView$Outbound
       | AppBskyEmbedRecordView$Outbound
-      | AppBskyEmbedRecordWithMediaView$Outbound
-      | AppBskyEmbedVideoView$Outbound
     >
     | undefined;
   indexedAt: string;
@@ -203,11 +213,11 @@ export const AppBskyEmbedRecordViewRecord$outboundSchema: z.ZodType<
   quoteCount: z.number().int().optional(),
   embeds: z.array(
     z.union([
+      AppBskyEmbedVideoView$outboundSchema,
+      z.lazy(() => AppBskyEmbedRecordWithMediaView$outboundSchema),
       AppBskyEmbedImagesView$outboundSchema,
       AppBskyEmbedExternalView$outboundSchema,
       z.lazy(() => AppBskyEmbedRecordView$outboundSchema),
-      z.lazy(() => AppBskyEmbedRecordWithMediaView$outboundSchema),
-      AppBskyEmbedVideoView$outboundSchema,
     ]),
   ).optional(),
   indexedAt: z.date().transform(v => v.toISOString()),

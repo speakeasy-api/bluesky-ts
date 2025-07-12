@@ -4,11 +4,12 @@
 
 import * as z from "zod";
 import { ClosedEnum } from "../../types/enums.js";
+import { BlueskyError } from "./blueskyerror.js";
 
 /**
  * Unauthorized
  */
-export type UnauthorizedComAtprotoServerGetServiceAuthResponseBodyErrorData = {
+export type ComAtprotoServerGetServiceAuthAuthMissingErrorData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,26 +17,24 @@ export type UnauthorizedComAtprotoServerGetServiceAuthResponseBodyErrorData = {
 /**
  * Unauthorized
  */
-export class UnauthorizedComAtprotoServerGetServiceAuthResponseBodyError
-  extends Error
+export class ComAtprotoServerGetServiceAuthAuthMissingError
+  extends BlueskyError
 {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: UnauthorizedComAtprotoServerGetServiceAuthResponseBodyErrorData;
+  data$: ComAtprotoServerGetServiceAuthAuthMissingErrorData;
 
   constructor(
-    err: UnauthorizedComAtprotoServerGetServiceAuthResponseBodyErrorData,
+    err: ComAtprotoServerGetServiceAuthAuthMissingErrorData,
+    httpMeta: { response: Response; request: Request; body: string },
   ) {
-    const message = "message" in err && typeof err.message === "string"
-      ? err.message
-      : `API error occurred: ${JSON.stringify(err)}`;
-    super(message);
+    const message = err.message || `API error occurred: ${JSON.stringify(err)}`;
+    super(message, httpMeta);
     this.data$ = err;
-
     this.error = err.error;
 
-    this.name = "UnauthorizedComAtprotoServerGetServiceAuthResponseBodyError";
+    this.name = "ComAtprotoServerGetServiceAuthAuthMissingError";
   }
 }
 
@@ -52,7 +51,7 @@ export type ComAtprotoServerGetServiceAuthError = ClosedEnum<
 /**
  * Bad Request
  */
-export type BadRequestComAtprotoServerGetServiceAuthResponseBodyErrorData = {
+export type ComAtprotoServerGetServiceAuthBadRequestErrorData = {
   error: ComAtprotoServerGetServiceAuthError;
   message: string;
 };
@@ -60,57 +59,61 @@ export type BadRequestComAtprotoServerGetServiceAuthResponseBodyErrorData = {
 /**
  * Bad Request
  */
-export class BadRequestComAtprotoServerGetServiceAuthResponseBodyError
-  extends Error
+export class ComAtprotoServerGetServiceAuthBadRequestError
+  extends BlueskyError
 {
   error: ComAtprotoServerGetServiceAuthError;
 
   /** The original data that was passed to this error instance. */
-  data$: BadRequestComAtprotoServerGetServiceAuthResponseBodyErrorData;
+  data$: ComAtprotoServerGetServiceAuthBadRequestErrorData;
 
   constructor(
-    err: BadRequestComAtprotoServerGetServiceAuthResponseBodyErrorData,
+    err: ComAtprotoServerGetServiceAuthBadRequestErrorData,
+    httpMeta: { response: Response; request: Request; body: string },
   ) {
-    const message = "message" in err && typeof err.message === "string"
-      ? err.message
-      : `API error occurred: ${JSON.stringify(err)}`;
-    super(message);
+    const message = err.message || `API error occurred: ${JSON.stringify(err)}`;
+    super(message, httpMeta);
     this.data$ = err;
-
     this.error = err.error;
 
-    this.name = "BadRequestComAtprotoServerGetServiceAuthResponseBodyError";
+    this.name = "ComAtprotoServerGetServiceAuthBadRequestError";
   }
 }
 
 /** @internal */
-export const UnauthorizedComAtprotoServerGetServiceAuthResponseBodyError$inboundSchema:
+export const ComAtprotoServerGetServiceAuthAuthMissingError$inboundSchema:
   z.ZodType<
-    UnauthorizedComAtprotoServerGetServiceAuthResponseBodyError,
+    ComAtprotoServerGetServiceAuthAuthMissingError,
     z.ZodTypeDef,
     unknown
   > = z.object({
-    error: z.literal("AuthMissing"),
+    error: z.literal("AuthMissing").default("AuthMissing"),
     message: z.string(),
+    request$: z.instanceof(Request),
+    response$: z.instanceof(Response),
+    body$: z.string(),
   })
     .transform((v) => {
-      return new UnauthorizedComAtprotoServerGetServiceAuthResponseBodyError(v);
+      return new ComAtprotoServerGetServiceAuthAuthMissingError(v, {
+        request: v.request$,
+        response: v.response$,
+        body: v.body$,
+      });
     });
 
 /** @internal */
-export type UnauthorizedComAtprotoServerGetServiceAuthResponseBodyError$Outbound =
-  {
-    error: "AuthMissing";
-    message: string;
-  };
+export type ComAtprotoServerGetServiceAuthAuthMissingError$Outbound = {
+  error: "AuthMissing";
+  message: string;
+};
 
 /** @internal */
-export const UnauthorizedComAtprotoServerGetServiceAuthResponseBodyError$outboundSchema:
+export const ComAtprotoServerGetServiceAuthAuthMissingError$outboundSchema:
   z.ZodType<
-    UnauthorizedComAtprotoServerGetServiceAuthResponseBodyError$Outbound,
+    ComAtprotoServerGetServiceAuthAuthMissingError$Outbound,
     z.ZodTypeDef,
-    UnauthorizedComAtprotoServerGetServiceAuthResponseBodyError
-  > = z.instanceof(UnauthorizedComAtprotoServerGetServiceAuthResponseBodyError)
+    ComAtprotoServerGetServiceAuthAuthMissingError
+  > = z.instanceof(ComAtprotoServerGetServiceAuthAuthMissingError)
     .transform(v => v.data$)
     .pipe(z.object({
       error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -121,16 +124,16 @@ export const UnauthorizedComAtprotoServerGetServiceAuthResponseBodyError$outboun
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace UnauthorizedComAtprotoServerGetServiceAuthResponseBodyError$ {
-  /** @deprecated use `UnauthorizedComAtprotoServerGetServiceAuthResponseBodyError$inboundSchema` instead. */
+export namespace ComAtprotoServerGetServiceAuthAuthMissingError$ {
+  /** @deprecated use `ComAtprotoServerGetServiceAuthAuthMissingError$inboundSchema` instead. */
   export const inboundSchema =
-    UnauthorizedComAtprotoServerGetServiceAuthResponseBodyError$inboundSchema;
-  /** @deprecated use `UnauthorizedComAtprotoServerGetServiceAuthResponseBodyError$outboundSchema` instead. */
+    ComAtprotoServerGetServiceAuthAuthMissingError$inboundSchema;
+  /** @deprecated use `ComAtprotoServerGetServiceAuthAuthMissingError$outboundSchema` instead. */
   export const outboundSchema =
-    UnauthorizedComAtprotoServerGetServiceAuthResponseBodyError$outboundSchema;
-  /** @deprecated use `UnauthorizedComAtprotoServerGetServiceAuthResponseBodyError$Outbound` instead. */
+    ComAtprotoServerGetServiceAuthAuthMissingError$outboundSchema;
+  /** @deprecated use `ComAtprotoServerGetServiceAuthAuthMissingError$Outbound` instead. */
   export type Outbound =
-    UnauthorizedComAtprotoServerGetServiceAuthResponseBodyError$Outbound;
+    ComAtprotoServerGetServiceAuthAuthMissingError$Outbound;
 }
 
 /** @internal */
@@ -157,33 +160,39 @@ export namespace ComAtprotoServerGetServiceAuthError$ {
 }
 
 /** @internal */
-export const BadRequestComAtprotoServerGetServiceAuthResponseBodyError$inboundSchema:
+export const ComAtprotoServerGetServiceAuthBadRequestError$inboundSchema:
   z.ZodType<
-    BadRequestComAtprotoServerGetServiceAuthResponseBodyError,
+    ComAtprotoServerGetServiceAuthBadRequestError,
     z.ZodTypeDef,
     unknown
   > = z.object({
     error: ComAtprotoServerGetServiceAuthError$inboundSchema,
     message: z.string(),
+    request$: z.instanceof(Request),
+    response$: z.instanceof(Response),
+    body$: z.string(),
   })
     .transform((v) => {
-      return new BadRequestComAtprotoServerGetServiceAuthResponseBodyError(v);
+      return new ComAtprotoServerGetServiceAuthBadRequestError(v, {
+        request: v.request$,
+        response: v.response$,
+        body: v.body$,
+      });
     });
 
 /** @internal */
-export type BadRequestComAtprotoServerGetServiceAuthResponseBodyError$Outbound =
-  {
-    error: string;
-    message: string;
-  };
+export type ComAtprotoServerGetServiceAuthBadRequestError$Outbound = {
+  error: string;
+  message: string;
+};
 
 /** @internal */
-export const BadRequestComAtprotoServerGetServiceAuthResponseBodyError$outboundSchema:
+export const ComAtprotoServerGetServiceAuthBadRequestError$outboundSchema:
   z.ZodType<
-    BadRequestComAtprotoServerGetServiceAuthResponseBodyError$Outbound,
+    ComAtprotoServerGetServiceAuthBadRequestError$Outbound,
     z.ZodTypeDef,
-    BadRequestComAtprotoServerGetServiceAuthResponseBodyError
-  > = z.instanceof(BadRequestComAtprotoServerGetServiceAuthResponseBodyError)
+    ComAtprotoServerGetServiceAuthBadRequestError
+  > = z.instanceof(ComAtprotoServerGetServiceAuthBadRequestError)
     .transform(v => v.data$)
     .pipe(z.object({
       error: ComAtprotoServerGetServiceAuthError$outboundSchema,
@@ -194,14 +203,13 @@ export const BadRequestComAtprotoServerGetServiceAuthResponseBodyError$outboundS
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace BadRequestComAtprotoServerGetServiceAuthResponseBodyError$ {
-  /** @deprecated use `BadRequestComAtprotoServerGetServiceAuthResponseBodyError$inboundSchema` instead. */
+export namespace ComAtprotoServerGetServiceAuthBadRequestError$ {
+  /** @deprecated use `ComAtprotoServerGetServiceAuthBadRequestError$inboundSchema` instead. */
   export const inboundSchema =
-    BadRequestComAtprotoServerGetServiceAuthResponseBodyError$inboundSchema;
-  /** @deprecated use `BadRequestComAtprotoServerGetServiceAuthResponseBodyError$outboundSchema` instead. */
+    ComAtprotoServerGetServiceAuthBadRequestError$inboundSchema;
+  /** @deprecated use `ComAtprotoServerGetServiceAuthBadRequestError$outboundSchema` instead. */
   export const outboundSchema =
-    BadRequestComAtprotoServerGetServiceAuthResponseBodyError$outboundSchema;
-  /** @deprecated use `BadRequestComAtprotoServerGetServiceAuthResponseBodyError$Outbound` instead. */
-  export type Outbound =
-    BadRequestComAtprotoServerGetServiceAuthResponseBodyError$Outbound;
+    ComAtprotoServerGetServiceAuthBadRequestError$outboundSchema;
+  /** @deprecated use `ComAtprotoServerGetServiceAuthBadRequestError$Outbound` instead. */
+  export type Outbound = ComAtprotoServerGetServiceAuthBadRequestError$Outbound;
 }

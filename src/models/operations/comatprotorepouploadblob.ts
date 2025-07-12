@@ -11,13 +11,13 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 /**
  * OK
  */
-export type ComAtprotoRepoUploadBlobResponseBody = {
+export type ComAtprotoRepoUploadBlobResponse = {
   blob: Uint8Array | string;
 };
 
 /** @internal */
-export const ComAtprotoRepoUploadBlobResponseBody$inboundSchema: z.ZodType<
-  ComAtprotoRepoUploadBlobResponseBody,
+export const ComAtprotoRepoUploadBlobResponse$inboundSchema: z.ZodType<
+  ComAtprotoRepoUploadBlobResponse,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -25,15 +25,15 @@ export const ComAtprotoRepoUploadBlobResponseBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type ComAtprotoRepoUploadBlobResponseBody$Outbound = {
+export type ComAtprotoRepoUploadBlobResponse$Outbound = {
   blob: Uint8Array;
 };
 
 /** @internal */
-export const ComAtprotoRepoUploadBlobResponseBody$outboundSchema: z.ZodType<
-  ComAtprotoRepoUploadBlobResponseBody$Outbound,
+export const ComAtprotoRepoUploadBlobResponse$outboundSchema: z.ZodType<
+  ComAtprotoRepoUploadBlobResponse$Outbound,
   z.ZodTypeDef,
-  ComAtprotoRepoUploadBlobResponseBody
+  ComAtprotoRepoUploadBlobResponse
 > = z.object({
   blob: b64$.zodOutbound,
 });
@@ -42,34 +42,31 @@ export const ComAtprotoRepoUploadBlobResponseBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoRepoUploadBlobResponseBody$ {
-  /** @deprecated use `ComAtprotoRepoUploadBlobResponseBody$inboundSchema` instead. */
-  export const inboundSchema =
-    ComAtprotoRepoUploadBlobResponseBody$inboundSchema;
-  /** @deprecated use `ComAtprotoRepoUploadBlobResponseBody$outboundSchema` instead. */
-  export const outboundSchema =
-    ComAtprotoRepoUploadBlobResponseBody$outboundSchema;
-  /** @deprecated use `ComAtprotoRepoUploadBlobResponseBody$Outbound` instead. */
-  export type Outbound = ComAtprotoRepoUploadBlobResponseBody$Outbound;
+export namespace ComAtprotoRepoUploadBlobResponse$ {
+  /** @deprecated use `ComAtprotoRepoUploadBlobResponse$inboundSchema` instead. */
+  export const inboundSchema = ComAtprotoRepoUploadBlobResponse$inboundSchema;
+  /** @deprecated use `ComAtprotoRepoUploadBlobResponse$outboundSchema` instead. */
+  export const outboundSchema = ComAtprotoRepoUploadBlobResponse$outboundSchema;
+  /** @deprecated use `ComAtprotoRepoUploadBlobResponse$Outbound` instead. */
+  export type Outbound = ComAtprotoRepoUploadBlobResponse$Outbound;
 }
 
-export function comAtprotoRepoUploadBlobResponseBodyToJSON(
-  comAtprotoRepoUploadBlobResponseBody: ComAtprotoRepoUploadBlobResponseBody,
+export function comAtprotoRepoUploadBlobResponseToJSON(
+  comAtprotoRepoUploadBlobResponse: ComAtprotoRepoUploadBlobResponse,
 ): string {
   return JSON.stringify(
-    ComAtprotoRepoUploadBlobResponseBody$outboundSchema.parse(
-      comAtprotoRepoUploadBlobResponseBody,
+    ComAtprotoRepoUploadBlobResponse$outboundSchema.parse(
+      comAtprotoRepoUploadBlobResponse,
     ),
   );
 }
 
-export function comAtprotoRepoUploadBlobResponseBodyFromJSON(
+export function comAtprotoRepoUploadBlobResponseFromJSON(
   jsonString: string,
-): SafeParseResult<ComAtprotoRepoUploadBlobResponseBody, SDKValidationError> {
+): SafeParseResult<ComAtprotoRepoUploadBlobResponse, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) =>
-      ComAtprotoRepoUploadBlobResponseBody$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ComAtprotoRepoUploadBlobResponseBody' from JSON`,
+    (x) => ComAtprotoRepoUploadBlobResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ComAtprotoRepoUploadBlobResponse' from JSON`,
   );
 }

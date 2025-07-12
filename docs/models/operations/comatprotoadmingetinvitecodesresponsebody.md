@@ -11,17 +11,12 @@ let value: ComAtprotoAdminGetInviteCodesResponseBody = {
   codes: [
     {
       code: "<value>",
-      available: 58029,
+      available: 202196,
       disabled: false,
       forAccount: "<value>",
       createdBy: "<value>",
-      createdAt: new Date("2024-04-21T02:53:41.707Z"),
-      uses: [
-        {
-          usedBy: "<id>",
-          usedAt: new Date("2023-12-08T17:28:43.968Z"),
-        },
-      ],
+      createdAt: new Date("2024-05-05T18:43:20.817Z"),
+      uses: [],
     },
   ],
 };

@@ -7,15 +7,15 @@ import { AppBskyEmbedRecordView } from "@speakeasy-sdks/bluesky/models/component
 
 let value: AppBskyEmbedRecordView = {
   record: {
-    uri: "https://shabby-singing.biz/",
+    uri: "https://possible-disconnection.com",
     cid: "<id>",
+    did: "<id>",
     creator: {
       did: "<id>",
       handle: "<value>",
     },
-    name: "<value>",
-    purpose: "<value>",
-    indexedAt: new Date("2025-12-03T07:19:37.207Z"),
+    displayName: "Jeanie.Bauch91",
+    indexedAt: new Date("2024-01-07T23:48:39.193Z"),
   },
 };
 ```

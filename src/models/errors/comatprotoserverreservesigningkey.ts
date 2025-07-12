@@ -4,40 +4,37 @@
 
 import * as z from "zod";
 import { ClosedEnum } from "../../types/enums.js";
+import { BlueskyError } from "./blueskyerror.js";
 
 /**
  * Unauthorized
  */
-export type UnauthorizedComAtprotoServerReserveSigningKeyResponseBodyErrorData =
-  {
-    error: "AuthMissing";
-    message: string;
-  };
+export type ComAtprotoServerReserveSigningKeyAuthMissingErrorData = {
+  error: "AuthMissing";
+  message: string;
+};
 
 /**
  * Unauthorized
  */
-export class UnauthorizedComAtprotoServerReserveSigningKeyResponseBodyError
-  extends Error
+export class ComAtprotoServerReserveSigningKeyAuthMissingError
+  extends BlueskyError
 {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: UnauthorizedComAtprotoServerReserveSigningKeyResponseBodyErrorData;
+  data$: ComAtprotoServerReserveSigningKeyAuthMissingErrorData;
 
   constructor(
-    err: UnauthorizedComAtprotoServerReserveSigningKeyResponseBodyErrorData,
+    err: ComAtprotoServerReserveSigningKeyAuthMissingErrorData,
+    httpMeta: { response: Response; request: Request; body: string },
   ) {
-    const message = "message" in err && typeof err.message === "string"
-      ? err.message
-      : `API error occurred: ${JSON.stringify(err)}`;
-    super(message);
+    const message = err.message || `API error occurred: ${JSON.stringify(err)}`;
+    super(message, httpMeta);
     this.data$ = err;
-
     this.error = err.error;
 
-    this.name =
-      "UnauthorizedComAtprotoServerReserveSigningKeyResponseBodyError";
+    this.name = "ComAtprotoServerReserveSigningKeyAuthMissingError";
   }
 }
 
@@ -53,7 +50,7 @@ export type ComAtprotoServerReserveSigningKeyError = ClosedEnum<
 /**
  * Bad Request
  */
-export type BadRequestComAtprotoServerReserveSigningKeyResponseBodyErrorData = {
+export type ComAtprotoServerReserveSigningKeyBadRequestErrorData = {
   error: ComAtprotoServerReserveSigningKeyError;
   message: string;
 };
@@ -61,61 +58,61 @@ export type BadRequestComAtprotoServerReserveSigningKeyResponseBodyErrorData = {
 /**
  * Bad Request
  */
-export class BadRequestComAtprotoServerReserveSigningKeyResponseBodyError
-  extends Error
+export class ComAtprotoServerReserveSigningKeyBadRequestError
+  extends BlueskyError
 {
   error: ComAtprotoServerReserveSigningKeyError;
 
   /** The original data that was passed to this error instance. */
-  data$: BadRequestComAtprotoServerReserveSigningKeyResponseBodyErrorData;
+  data$: ComAtprotoServerReserveSigningKeyBadRequestErrorData;
 
   constructor(
-    err: BadRequestComAtprotoServerReserveSigningKeyResponseBodyErrorData,
+    err: ComAtprotoServerReserveSigningKeyBadRequestErrorData,
+    httpMeta: { response: Response; request: Request; body: string },
   ) {
-    const message = "message" in err && typeof err.message === "string"
-      ? err.message
-      : `API error occurred: ${JSON.stringify(err)}`;
-    super(message);
+    const message = err.message || `API error occurred: ${JSON.stringify(err)}`;
+    super(message, httpMeta);
     this.data$ = err;
-
     this.error = err.error;
 
-    this.name = "BadRequestComAtprotoServerReserveSigningKeyResponseBodyError";
+    this.name = "ComAtprotoServerReserveSigningKeyBadRequestError";
   }
 }
 
 /** @internal */
-export const UnauthorizedComAtprotoServerReserveSigningKeyResponseBodyError$inboundSchema:
+export const ComAtprotoServerReserveSigningKeyAuthMissingError$inboundSchema:
   z.ZodType<
-    UnauthorizedComAtprotoServerReserveSigningKeyResponseBodyError,
+    ComAtprotoServerReserveSigningKeyAuthMissingError,
     z.ZodTypeDef,
     unknown
   > = z.object({
-    error: z.literal("AuthMissing"),
+    error: z.literal("AuthMissing").default("AuthMissing"),
     message: z.string(),
+    request$: z.instanceof(Request),
+    response$: z.instanceof(Response),
+    body$: z.string(),
   })
     .transform((v) => {
-      return new UnauthorizedComAtprotoServerReserveSigningKeyResponseBodyError(
-        v,
-      );
+      return new ComAtprotoServerReserveSigningKeyAuthMissingError(v, {
+        request: v.request$,
+        response: v.response$,
+        body: v.body$,
+      });
     });
 
 /** @internal */
-export type UnauthorizedComAtprotoServerReserveSigningKeyResponseBodyError$Outbound =
-  {
-    error: "AuthMissing";
-    message: string;
-  };
+export type ComAtprotoServerReserveSigningKeyAuthMissingError$Outbound = {
+  error: "AuthMissing";
+  message: string;
+};
 
 /** @internal */
-export const UnauthorizedComAtprotoServerReserveSigningKeyResponseBodyError$outboundSchema:
+export const ComAtprotoServerReserveSigningKeyAuthMissingError$outboundSchema:
   z.ZodType<
-    UnauthorizedComAtprotoServerReserveSigningKeyResponseBodyError$Outbound,
+    ComAtprotoServerReserveSigningKeyAuthMissingError$Outbound,
     z.ZodTypeDef,
-    UnauthorizedComAtprotoServerReserveSigningKeyResponseBodyError
-  > = z.instanceof(
-    UnauthorizedComAtprotoServerReserveSigningKeyResponseBodyError,
-  )
+    ComAtprotoServerReserveSigningKeyAuthMissingError
+  > = z.instanceof(ComAtprotoServerReserveSigningKeyAuthMissingError)
     .transform(v => v.data$)
     .pipe(z.object({
       error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -126,16 +123,16 @@ export const UnauthorizedComAtprotoServerReserveSigningKeyResponseBodyError$outb
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace UnauthorizedComAtprotoServerReserveSigningKeyResponseBodyError$ {
-  /** @deprecated use `UnauthorizedComAtprotoServerReserveSigningKeyResponseBodyError$inboundSchema` instead. */
+export namespace ComAtprotoServerReserveSigningKeyAuthMissingError$ {
+  /** @deprecated use `ComAtprotoServerReserveSigningKeyAuthMissingError$inboundSchema` instead. */
   export const inboundSchema =
-    UnauthorizedComAtprotoServerReserveSigningKeyResponseBodyError$inboundSchema;
-  /** @deprecated use `UnauthorizedComAtprotoServerReserveSigningKeyResponseBodyError$outboundSchema` instead. */
+    ComAtprotoServerReserveSigningKeyAuthMissingError$inboundSchema;
+  /** @deprecated use `ComAtprotoServerReserveSigningKeyAuthMissingError$outboundSchema` instead. */
   export const outboundSchema =
-    UnauthorizedComAtprotoServerReserveSigningKeyResponseBodyError$outboundSchema;
-  /** @deprecated use `UnauthorizedComAtprotoServerReserveSigningKeyResponseBodyError$Outbound` instead. */
+    ComAtprotoServerReserveSigningKeyAuthMissingError$outboundSchema;
+  /** @deprecated use `ComAtprotoServerReserveSigningKeyAuthMissingError$Outbound` instead. */
   export type Outbound =
-    UnauthorizedComAtprotoServerReserveSigningKeyResponseBodyError$Outbound;
+    ComAtprotoServerReserveSigningKeyAuthMissingError$Outbound;
 }
 
 /** @internal */
@@ -163,35 +160,39 @@ export namespace ComAtprotoServerReserveSigningKeyError$ {
 }
 
 /** @internal */
-export const BadRequestComAtprotoServerReserveSigningKeyResponseBodyError$inboundSchema:
+export const ComAtprotoServerReserveSigningKeyBadRequestError$inboundSchema:
   z.ZodType<
-    BadRequestComAtprotoServerReserveSigningKeyResponseBodyError,
+    ComAtprotoServerReserveSigningKeyBadRequestError,
     z.ZodTypeDef,
     unknown
   > = z.object({
     error: ComAtprotoServerReserveSigningKeyError$inboundSchema,
     message: z.string(),
+    request$: z.instanceof(Request),
+    response$: z.instanceof(Response),
+    body$: z.string(),
   })
     .transform((v) => {
-      return new BadRequestComAtprotoServerReserveSigningKeyResponseBodyError(
-        v,
-      );
+      return new ComAtprotoServerReserveSigningKeyBadRequestError(v, {
+        request: v.request$,
+        response: v.response$,
+        body: v.body$,
+      });
     });
 
 /** @internal */
-export type BadRequestComAtprotoServerReserveSigningKeyResponseBodyError$Outbound =
-  {
-    error: string;
-    message: string;
-  };
+export type ComAtprotoServerReserveSigningKeyBadRequestError$Outbound = {
+  error: string;
+  message: string;
+};
 
 /** @internal */
-export const BadRequestComAtprotoServerReserveSigningKeyResponseBodyError$outboundSchema:
+export const ComAtprotoServerReserveSigningKeyBadRequestError$outboundSchema:
   z.ZodType<
-    BadRequestComAtprotoServerReserveSigningKeyResponseBodyError$Outbound,
+    ComAtprotoServerReserveSigningKeyBadRequestError$Outbound,
     z.ZodTypeDef,
-    BadRequestComAtprotoServerReserveSigningKeyResponseBodyError
-  > = z.instanceof(BadRequestComAtprotoServerReserveSigningKeyResponseBodyError)
+    ComAtprotoServerReserveSigningKeyBadRequestError
+  > = z.instanceof(ComAtprotoServerReserveSigningKeyBadRequestError)
     .transform(v => v.data$)
     .pipe(z.object({
       error: ComAtprotoServerReserveSigningKeyError$outboundSchema,
@@ -202,14 +203,14 @@ export const BadRequestComAtprotoServerReserveSigningKeyResponseBodyError$outbou
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace BadRequestComAtprotoServerReserveSigningKeyResponseBodyError$ {
-  /** @deprecated use `BadRequestComAtprotoServerReserveSigningKeyResponseBodyError$inboundSchema` instead. */
+export namespace ComAtprotoServerReserveSigningKeyBadRequestError$ {
+  /** @deprecated use `ComAtprotoServerReserveSigningKeyBadRequestError$inboundSchema` instead. */
   export const inboundSchema =
-    BadRequestComAtprotoServerReserveSigningKeyResponseBodyError$inboundSchema;
-  /** @deprecated use `BadRequestComAtprotoServerReserveSigningKeyResponseBodyError$outboundSchema` instead. */
+    ComAtprotoServerReserveSigningKeyBadRequestError$inboundSchema;
+  /** @deprecated use `ComAtprotoServerReserveSigningKeyBadRequestError$outboundSchema` instead. */
   export const outboundSchema =
-    BadRequestComAtprotoServerReserveSigningKeyResponseBodyError$outboundSchema;
-  /** @deprecated use `BadRequestComAtprotoServerReserveSigningKeyResponseBodyError$Outbound` instead. */
+    ComAtprotoServerReserveSigningKeyBadRequestError$outboundSchema;
+  /** @deprecated use `ComAtprotoServerReserveSigningKeyBadRequestError$Outbound` instead. */
   export type Outbound =
-    BadRequestComAtprotoServerReserveSigningKeyResponseBodyError$Outbound;
+    ComAtprotoServerReserveSigningKeyBadRequestError$Outbound;
 }

@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoSyncGetRecordError } from "@speakeasy-sdks/bluesky/models/errors";
 
-let value: ComAtprotoSyncGetRecordError = "RecordNotFound";
+let value: ComAtprotoSyncGetRecordError = "RepoDeactivated";
 ```
 
 ## Values

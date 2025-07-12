@@ -15,7 +15,7 @@ export type AppBskyGraphGetSuggestedFollowsByActorRequest = {
 /**
  * OK
  */
-export type AppBskyGraphGetSuggestedFollowsByActorResponseBody = {
+export type AppBskyGraphGetSuggestedFollowsByActorResponse = {
   suggestions: Array<components.AppBskyActorDefsProfileView>;
   /**
    * If true, response has fallen-back to generic results, and is not scoped using relativeToDid
@@ -91,9 +91,9 @@ export function appBskyGraphGetSuggestedFollowsByActorRequestFromJSON(
 }
 
 /** @internal */
-export const AppBskyGraphGetSuggestedFollowsByActorResponseBody$inboundSchema:
+export const AppBskyGraphGetSuggestedFollowsByActorResponse$inboundSchema:
   z.ZodType<
-    AppBskyGraphGetSuggestedFollowsByActorResponseBody,
+    AppBskyGraphGetSuggestedFollowsByActorResponse,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -102,17 +102,17 @@ export const AppBskyGraphGetSuggestedFollowsByActorResponseBody$inboundSchema:
   });
 
 /** @internal */
-export type AppBskyGraphGetSuggestedFollowsByActorResponseBody$Outbound = {
+export type AppBskyGraphGetSuggestedFollowsByActorResponse$Outbound = {
   suggestions: Array<components.AppBskyActorDefsProfileView$Outbound>;
   isFallback?: boolean | undefined;
 };
 
 /** @internal */
-export const AppBskyGraphGetSuggestedFollowsByActorResponseBody$outboundSchema:
+export const AppBskyGraphGetSuggestedFollowsByActorResponse$outboundSchema:
   z.ZodType<
-    AppBskyGraphGetSuggestedFollowsByActorResponseBody$Outbound,
+    AppBskyGraphGetSuggestedFollowsByActorResponse$Outbound,
     z.ZodTypeDef,
-    AppBskyGraphGetSuggestedFollowsByActorResponseBody
+    AppBskyGraphGetSuggestedFollowsByActorResponse
   > = z.object({
     suggestions: z.array(components.AppBskyActorDefsProfileView$outboundSchema),
     isFallback: z.boolean().optional(),
@@ -122,41 +122,41 @@ export const AppBskyGraphGetSuggestedFollowsByActorResponseBody$outboundSchema:
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyGraphGetSuggestedFollowsByActorResponseBody$ {
-  /** @deprecated use `AppBskyGraphGetSuggestedFollowsByActorResponseBody$inboundSchema` instead. */
+export namespace AppBskyGraphGetSuggestedFollowsByActorResponse$ {
+  /** @deprecated use `AppBskyGraphGetSuggestedFollowsByActorResponse$inboundSchema` instead. */
   export const inboundSchema =
-    AppBskyGraphGetSuggestedFollowsByActorResponseBody$inboundSchema;
-  /** @deprecated use `AppBskyGraphGetSuggestedFollowsByActorResponseBody$outboundSchema` instead. */
+    AppBskyGraphGetSuggestedFollowsByActorResponse$inboundSchema;
+  /** @deprecated use `AppBskyGraphGetSuggestedFollowsByActorResponse$outboundSchema` instead. */
   export const outboundSchema =
-    AppBskyGraphGetSuggestedFollowsByActorResponseBody$outboundSchema;
-  /** @deprecated use `AppBskyGraphGetSuggestedFollowsByActorResponseBody$Outbound` instead. */
+    AppBskyGraphGetSuggestedFollowsByActorResponse$outboundSchema;
+  /** @deprecated use `AppBskyGraphGetSuggestedFollowsByActorResponse$Outbound` instead. */
   export type Outbound =
-    AppBskyGraphGetSuggestedFollowsByActorResponseBody$Outbound;
+    AppBskyGraphGetSuggestedFollowsByActorResponse$Outbound;
 }
 
-export function appBskyGraphGetSuggestedFollowsByActorResponseBodyToJSON(
-  appBskyGraphGetSuggestedFollowsByActorResponseBody:
-    AppBskyGraphGetSuggestedFollowsByActorResponseBody,
+export function appBskyGraphGetSuggestedFollowsByActorResponseToJSON(
+  appBskyGraphGetSuggestedFollowsByActorResponse:
+    AppBskyGraphGetSuggestedFollowsByActorResponse,
 ): string {
   return JSON.stringify(
-    AppBskyGraphGetSuggestedFollowsByActorResponseBody$outboundSchema.parse(
-      appBskyGraphGetSuggestedFollowsByActorResponseBody,
+    AppBskyGraphGetSuggestedFollowsByActorResponse$outboundSchema.parse(
+      appBskyGraphGetSuggestedFollowsByActorResponse,
     ),
   );
 }
 
-export function appBskyGraphGetSuggestedFollowsByActorResponseBodyFromJSON(
+export function appBskyGraphGetSuggestedFollowsByActorResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
-  AppBskyGraphGetSuggestedFollowsByActorResponseBody,
+  AppBskyGraphGetSuggestedFollowsByActorResponse,
   SDKValidationError
 > {
   return safeParse(
     jsonString,
     (x) =>
-      AppBskyGraphGetSuggestedFollowsByActorResponseBody$inboundSchema.parse(
+      AppBskyGraphGetSuggestedFollowsByActorResponse$inboundSchema.parse(
         JSON.parse(x),
       ),
-    `Failed to parse 'AppBskyGraphGetSuggestedFollowsByActorResponseBody' from JSON`,
+    `Failed to parse 'AppBskyGraphGetSuggestedFollowsByActorResponse' from JSON`,
   );
 }

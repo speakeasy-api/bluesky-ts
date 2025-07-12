@@ -7,12 +7,12 @@ import * as operations from "../../models/operations/index.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
 const args = {
-  request: operations.ComAtprotoServerCreateAppPasswordBody$inboundSchema,
+  request: operations.ComAtprotoServerCreateAppPasswordRequest$inboundSchema,
 };
 
 export const tool$atprotoServerCreateAppPassword: ToolDefinition<typeof args> =
   {
-    name: "atproto-server_create-app-password",
+    name: "atproto-server-create-app-password",
     description:
       `*This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 

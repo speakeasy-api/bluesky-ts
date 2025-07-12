@@ -7,11 +7,11 @@ import * as operations from "../../models/operations/index.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
 const args = {
-  request: operations.ComAtprotoServerConfirmEmailBody$inboundSchema,
+  request: operations.ComAtprotoServerConfirmEmailRequest$inboundSchema,
 };
 
 export const tool$serverConfirmEmail: ToolDefinition<typeof args> = {
-  name: "server_confirm-email",
+  name: "server-confirm-email",
   description:
     `*This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 

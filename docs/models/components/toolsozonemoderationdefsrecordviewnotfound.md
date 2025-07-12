@@ -6,7 +6,7 @@
 import { ToolsOzoneModerationDefsRecordViewNotFound } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: ToolsOzoneModerationDefsRecordViewNotFound = {
-  uri: "https://soggy-planula.biz",
+  uri: "https://frightened-swine.name/",
 };
 ```
 

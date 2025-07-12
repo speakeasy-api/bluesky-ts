@@ -6,7 +6,7 @@
 import { AppBskyActorDefsProfileAssociatedChat } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: AppBskyActorDefsProfileAssociatedChat = {
-  allowIncoming: "all",
+  allowIncoming: "none",
 };
 ```
 

@@ -7,11 +7,7 @@ import { AppBskyFeedGetFeedSkeletonResponse } from "@speakeasy-sdks/bluesky/mode
 
 let value: AppBskyFeedGetFeedSkeletonResponse = {
   result: {
-    feed: [
-      {
-        post: "https://pale-milestone.biz",
-      },
-    ],
+    feed: [],
   },
 };
 ```

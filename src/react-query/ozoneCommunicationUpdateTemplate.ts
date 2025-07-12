@@ -18,7 +18,7 @@ import { useBlueskyContext } from "./_context.js";
 import { MutationHookOptions } from "./_types.js";
 
 export type OzoneCommunicationUpdateTemplateMutationVariables = {
-  request: operations.ToolsOzoneCommunicationUpdateTemplateBody;
+  request: operations.ToolsOzoneCommunicationUpdateTemplateRequest;
   options?: RequestOptions;
 };
 

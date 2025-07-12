@@ -24,7 +24,7 @@ export class Admin extends ClientSDK {
    * Disable some set of codes and/or all codes associated with a set of users.
    */
   async disableInviteCodes(
-    request?: operations.ComAtprotoAdminDisableInviteCodesBody | undefined,
+    request: operations.ComAtprotoAdminDisableInviteCodesRequest,
     options?: RequestOptions,
   ): Promise<void> {
     return unwrapAsync(adminDisableInviteCodes(
@@ -62,7 +62,7 @@ export class Admin extends ClientSDK {
   async getSubjectStatus(
     request?: operations.ComAtprotoAdminGetSubjectStatusRequest | undefined,
     options?: RequestOptions,
-  ): Promise<operations.ComAtprotoAdminGetSubjectStatusResponseBody> {
+  ): Promise<operations.ComAtprotoAdminGetSubjectStatusResponse> {
     return unwrapAsync(adminGetSubjectStatus(
       this,
       request,
@@ -78,9 +78,9 @@ export class Admin extends ClientSDK {
    * Send email to a user's account email address.
    */
   async sendEmail(
-    request: operations.ComAtprotoAdminSendEmailBody,
+    request: operations.ComAtprotoAdminSendEmailRequest,
     options?: RequestOptions,
-  ): Promise<operations.ComAtprotoAdminSendEmailResponseBody> {
+  ): Promise<operations.ComAtprotoAdminSendEmailResponse> {
     return unwrapAsync(adminSendEmail(
       this,
       request,
@@ -96,7 +96,7 @@ export class Admin extends ClientSDK {
    * Administrative action to update an account's email.
    */
   async updateAccountEmail(
-    request: operations.ComAtprotoAdminUpdateAccountEmailBody,
+    request: operations.ComAtprotoAdminUpdateAccountEmailRequest,
     options?: RequestOptions,
   ): Promise<void> {
     return unwrapAsync(adminUpdateAccountEmail(
@@ -114,7 +114,7 @@ export class Admin extends ClientSDK {
    * Administrative action to update an account's handle.
    */
   async updateAccountHandle(
-    request: operations.ComAtprotoAdminUpdateAccountHandleBody,
+    request: operations.ComAtprotoAdminUpdateAccountHandleRequest,
     options?: RequestOptions,
   ): Promise<void> {
     return unwrapAsync(adminUpdateAccountHandle(
@@ -132,7 +132,7 @@ export class Admin extends ClientSDK {
    * Update the password for a user account as an administrator.
    */
   async updateAccountPassword(
-    request: operations.ComAtprotoAdminUpdateAccountPasswordBody,
+    request: operations.ComAtprotoAdminUpdateAccountPasswordRequest,
     options?: RequestOptions,
   ): Promise<void> {
     return unwrapAsync(adminUpdateAccountPassword(
@@ -150,9 +150,9 @@ export class Admin extends ClientSDK {
    * Update the service-specific admin status of a subject (account, record, or blob).
    */
   async updateSubjectStatus(
-    request: operations.ComAtprotoAdminUpdateSubjectStatusBody,
+    request: operations.ComAtprotoAdminUpdateSubjectStatusRequest,
     options?: RequestOptions,
-  ): Promise<operations.ComAtprotoAdminUpdateSubjectStatusResponseBody> {
+  ): Promise<operations.ComAtprotoAdminUpdateSubjectStatusResponse> {
     return unwrapAsync(adminUpdateSubjectStatus(
       this,
       request,

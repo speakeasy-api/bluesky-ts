@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoSyncNotifyOfUpdateError } from "@speakeasy-sdks/bluesky/models/errors";
 
-let value: ComAtprotoSyncNotifyOfUpdateError = "InvalidToken";
+let value: ComAtprotoSyncNotifyOfUpdateError = "InvalidRequest";
 ```
 
 ## Values

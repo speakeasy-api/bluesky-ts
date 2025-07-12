@@ -8,8 +8,8 @@ Specifies the sub-string range a facet feature applies to. Start index is inclus
 import { AppBskyRichtextFacetByteSlice } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: AppBskyRichtextFacetByteSlice = {
-  byteStart: 552581,
-  byteEnd: 851809,
+  byteStart: 128095,
+  byteEnd: 79346,
 };
 ```
 

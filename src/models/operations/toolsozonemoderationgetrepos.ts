@@ -12,17 +12,17 @@ export type ToolsOzoneModerationGetReposRequest = {
   dids: Array<string>;
 };
 
-export type Repos =
-  | components.ToolsOzoneModerationDefsRepoViewNotFound
-  | components.ToolsOzoneModerationDefsRepoViewDetail;
+export type Repo =
+  | components.ToolsOzoneModerationDefsRepoViewDetail
+  | components.ToolsOzoneModerationDefsRepoViewNotFound;
 
 /**
  * OK
  */
-export type ToolsOzoneModerationGetReposResponseBody = {
+export type ToolsOzoneModerationGetReposResponse = {
   repos: Array<
-    | components.ToolsOzoneModerationDefsRepoViewNotFound
     | components.ToolsOzoneModerationDefsRepoViewDetail
+    | components.ToolsOzoneModerationDefsRepoViewNotFound
   >;
 };
 
@@ -86,86 +86,83 @@ export function toolsOzoneModerationGetReposRequestFromJSON(
 }
 
 /** @internal */
-export const Repos$inboundSchema: z.ZodType<Repos, z.ZodTypeDef, unknown> = z
+export const Repo$inboundSchema: z.ZodType<Repo, z.ZodTypeDef, unknown> = z
   .union([
-    components.ToolsOzoneModerationDefsRepoViewNotFound$inboundSchema,
     components.ToolsOzoneModerationDefsRepoViewDetail$inboundSchema,
+    components.ToolsOzoneModerationDefsRepoViewNotFound$inboundSchema,
   ]);
 
 /** @internal */
-export type Repos$Outbound =
-  | components.ToolsOzoneModerationDefsRepoViewNotFound$Outbound
-  | components.ToolsOzoneModerationDefsRepoViewDetail$Outbound;
+export type Repo$Outbound =
+  | components.ToolsOzoneModerationDefsRepoViewDetail$Outbound
+  | components.ToolsOzoneModerationDefsRepoViewNotFound$Outbound;
 
 /** @internal */
-export const Repos$outboundSchema: z.ZodType<
-  Repos$Outbound,
-  z.ZodTypeDef,
-  Repos
-> = z.union([
-  components.ToolsOzoneModerationDefsRepoViewNotFound$outboundSchema,
-  components.ToolsOzoneModerationDefsRepoViewDetail$outboundSchema,
-]);
+export const Repo$outboundSchema: z.ZodType<Repo$Outbound, z.ZodTypeDef, Repo> =
+  z.union([
+    components.ToolsOzoneModerationDefsRepoViewDetail$outboundSchema,
+    components.ToolsOzoneModerationDefsRepoViewNotFound$outboundSchema,
+  ]);
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace Repos$ {
-  /** @deprecated use `Repos$inboundSchema` instead. */
-  export const inboundSchema = Repos$inboundSchema;
-  /** @deprecated use `Repos$outboundSchema` instead. */
-  export const outboundSchema = Repos$outboundSchema;
-  /** @deprecated use `Repos$Outbound` instead. */
-  export type Outbound = Repos$Outbound;
+export namespace Repo$ {
+  /** @deprecated use `Repo$inboundSchema` instead. */
+  export const inboundSchema = Repo$inboundSchema;
+  /** @deprecated use `Repo$outboundSchema` instead. */
+  export const outboundSchema = Repo$outboundSchema;
+  /** @deprecated use `Repo$Outbound` instead. */
+  export type Outbound = Repo$Outbound;
 }
 
-export function reposToJSON(repos: Repos): string {
-  return JSON.stringify(Repos$outboundSchema.parse(repos));
+export function repoToJSON(repo: Repo): string {
+  return JSON.stringify(Repo$outboundSchema.parse(repo));
 }
 
-export function reposFromJSON(
+export function repoFromJSON(
   jsonString: string,
-): SafeParseResult<Repos, SDKValidationError> {
+): SafeParseResult<Repo, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => Repos$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'Repos' from JSON`,
+    (x) => Repo$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'Repo' from JSON`,
   );
 }
 
 /** @internal */
-export const ToolsOzoneModerationGetReposResponseBody$inboundSchema: z.ZodType<
-  ToolsOzoneModerationGetReposResponseBody,
+export const ToolsOzoneModerationGetReposResponse$inboundSchema: z.ZodType<
+  ToolsOzoneModerationGetReposResponse,
   z.ZodTypeDef,
   unknown
 > = z.object({
   repos: z.array(
     z.union([
-      components.ToolsOzoneModerationDefsRepoViewNotFound$inboundSchema,
       components.ToolsOzoneModerationDefsRepoViewDetail$inboundSchema,
+      components.ToolsOzoneModerationDefsRepoViewNotFound$inboundSchema,
     ]),
   ),
 });
 
 /** @internal */
-export type ToolsOzoneModerationGetReposResponseBody$Outbound = {
+export type ToolsOzoneModerationGetReposResponse$Outbound = {
   repos: Array<
-    | components.ToolsOzoneModerationDefsRepoViewNotFound$Outbound
     | components.ToolsOzoneModerationDefsRepoViewDetail$Outbound
+    | components.ToolsOzoneModerationDefsRepoViewNotFound$Outbound
   >;
 };
 
 /** @internal */
-export const ToolsOzoneModerationGetReposResponseBody$outboundSchema: z.ZodType<
-  ToolsOzoneModerationGetReposResponseBody$Outbound,
+export const ToolsOzoneModerationGetReposResponse$outboundSchema: z.ZodType<
+  ToolsOzoneModerationGetReposResponse$Outbound,
   z.ZodTypeDef,
-  ToolsOzoneModerationGetReposResponseBody
+  ToolsOzoneModerationGetReposResponse
 > = z.object({
   repos: z.array(
     z.union([
-      components.ToolsOzoneModerationDefsRepoViewNotFound$outboundSchema,
       components.ToolsOzoneModerationDefsRepoViewDetail$outboundSchema,
+      components.ToolsOzoneModerationDefsRepoViewNotFound$outboundSchema,
     ]),
   ),
 });
@@ -174,40 +171,34 @@ export const ToolsOzoneModerationGetReposResponseBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ToolsOzoneModerationGetReposResponseBody$ {
-  /** @deprecated use `ToolsOzoneModerationGetReposResponseBody$inboundSchema` instead. */
+export namespace ToolsOzoneModerationGetReposResponse$ {
+  /** @deprecated use `ToolsOzoneModerationGetReposResponse$inboundSchema` instead. */
   export const inboundSchema =
-    ToolsOzoneModerationGetReposResponseBody$inboundSchema;
-  /** @deprecated use `ToolsOzoneModerationGetReposResponseBody$outboundSchema` instead. */
+    ToolsOzoneModerationGetReposResponse$inboundSchema;
+  /** @deprecated use `ToolsOzoneModerationGetReposResponse$outboundSchema` instead. */
   export const outboundSchema =
-    ToolsOzoneModerationGetReposResponseBody$outboundSchema;
-  /** @deprecated use `ToolsOzoneModerationGetReposResponseBody$Outbound` instead. */
-  export type Outbound = ToolsOzoneModerationGetReposResponseBody$Outbound;
+    ToolsOzoneModerationGetReposResponse$outboundSchema;
+  /** @deprecated use `ToolsOzoneModerationGetReposResponse$Outbound` instead. */
+  export type Outbound = ToolsOzoneModerationGetReposResponse$Outbound;
 }
 
-export function toolsOzoneModerationGetReposResponseBodyToJSON(
-  toolsOzoneModerationGetReposResponseBody:
-    ToolsOzoneModerationGetReposResponseBody,
+export function toolsOzoneModerationGetReposResponseToJSON(
+  toolsOzoneModerationGetReposResponse: ToolsOzoneModerationGetReposResponse,
 ): string {
   return JSON.stringify(
-    ToolsOzoneModerationGetReposResponseBody$outboundSchema.parse(
-      toolsOzoneModerationGetReposResponseBody,
+    ToolsOzoneModerationGetReposResponse$outboundSchema.parse(
+      toolsOzoneModerationGetReposResponse,
     ),
   );
 }
 
-export function toolsOzoneModerationGetReposResponseBodyFromJSON(
+export function toolsOzoneModerationGetReposResponseFromJSON(
   jsonString: string,
-): SafeParseResult<
-  ToolsOzoneModerationGetReposResponseBody,
-  SDKValidationError
-> {
+): SafeParseResult<ToolsOzoneModerationGetReposResponse, SDKValidationError> {
   return safeParse(
     jsonString,
     (x) =>
-      ToolsOzoneModerationGetReposResponseBody$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'ToolsOzoneModerationGetReposResponseBody' from JSON`,
+      ToolsOzoneModerationGetReposResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ToolsOzoneModerationGetReposResponse' from JSON`,
   );
 }

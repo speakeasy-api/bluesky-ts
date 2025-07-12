@@ -7,7 +7,7 @@ import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ComAtprotoServerReserveSigningKeyBody = {
+export type ComAtprotoServerReserveSigningKeyRequest = {
   /**
    * The DID to reserve a key for.
    */
@@ -17,7 +17,7 @@ export type ComAtprotoServerReserveSigningKeyBody = {
 /**
  * OK
  */
-export type ComAtprotoServerReserveSigningKeyResponseBody = {
+export type ComAtprotoServerReserveSigningKeyResponse = {
   /**
    * The public key for the reserved signing key, in did:key serialization.
    */
@@ -25,8 +25,8 @@ export type ComAtprotoServerReserveSigningKeyResponseBody = {
 };
 
 /** @internal */
-export const ComAtprotoServerReserveSigningKeyBody$inboundSchema: z.ZodType<
-  ComAtprotoServerReserveSigningKeyBody,
+export const ComAtprotoServerReserveSigningKeyRequest$inboundSchema: z.ZodType<
+  ComAtprotoServerReserveSigningKeyRequest,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -34,15 +34,15 @@ export const ComAtprotoServerReserveSigningKeyBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type ComAtprotoServerReserveSigningKeyBody$Outbound = {
+export type ComAtprotoServerReserveSigningKeyRequest$Outbound = {
   did?: string | undefined;
 };
 
 /** @internal */
-export const ComAtprotoServerReserveSigningKeyBody$outboundSchema: z.ZodType<
-  ComAtprotoServerReserveSigningKeyBody$Outbound,
+export const ComAtprotoServerReserveSigningKeyRequest$outboundSchema: z.ZodType<
+  ComAtprotoServerReserveSigningKeyRequest$Outbound,
   z.ZodTypeDef,
-  ComAtprotoServerReserveSigningKeyBody
+  ComAtprotoServerReserveSigningKeyRequest
 > = z.object({
   did: z.string().optional(),
 });
@@ -51,59 +51,64 @@ export const ComAtprotoServerReserveSigningKeyBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoServerReserveSigningKeyBody$ {
-  /** @deprecated use `ComAtprotoServerReserveSigningKeyBody$inboundSchema` instead. */
+export namespace ComAtprotoServerReserveSigningKeyRequest$ {
+  /** @deprecated use `ComAtprotoServerReserveSigningKeyRequest$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoServerReserveSigningKeyBody$inboundSchema;
-  /** @deprecated use `ComAtprotoServerReserveSigningKeyBody$outboundSchema` instead. */
+    ComAtprotoServerReserveSigningKeyRequest$inboundSchema;
+  /** @deprecated use `ComAtprotoServerReserveSigningKeyRequest$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoServerReserveSigningKeyBody$outboundSchema;
-  /** @deprecated use `ComAtprotoServerReserveSigningKeyBody$Outbound` instead. */
-  export type Outbound = ComAtprotoServerReserveSigningKeyBody$Outbound;
+    ComAtprotoServerReserveSigningKeyRequest$outboundSchema;
+  /** @deprecated use `ComAtprotoServerReserveSigningKeyRequest$Outbound` instead. */
+  export type Outbound = ComAtprotoServerReserveSigningKeyRequest$Outbound;
 }
 
-export function comAtprotoServerReserveSigningKeyBodyToJSON(
-  comAtprotoServerReserveSigningKeyBody: ComAtprotoServerReserveSigningKeyBody,
+export function comAtprotoServerReserveSigningKeyRequestToJSON(
+  comAtprotoServerReserveSigningKeyRequest:
+    ComAtprotoServerReserveSigningKeyRequest,
 ): string {
   return JSON.stringify(
-    ComAtprotoServerReserveSigningKeyBody$outboundSchema.parse(
-      comAtprotoServerReserveSigningKeyBody,
+    ComAtprotoServerReserveSigningKeyRequest$outboundSchema.parse(
+      comAtprotoServerReserveSigningKeyRequest,
     ),
   );
 }
 
-export function comAtprotoServerReserveSigningKeyBodyFromJSON(
+export function comAtprotoServerReserveSigningKeyRequestFromJSON(
   jsonString: string,
-): SafeParseResult<ComAtprotoServerReserveSigningKeyBody, SDKValidationError> {
+): SafeParseResult<
+  ComAtprotoServerReserveSigningKeyRequest,
+  SDKValidationError
+> {
   return safeParse(
     jsonString,
     (x) =>
-      ComAtprotoServerReserveSigningKeyBody$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ComAtprotoServerReserveSigningKeyBody' from JSON`,
+      ComAtprotoServerReserveSigningKeyRequest$inboundSchema.parse(
+        JSON.parse(x),
+      ),
+    `Failed to parse 'ComAtprotoServerReserveSigningKeyRequest' from JSON`,
   );
 }
 
 /** @internal */
-export const ComAtprotoServerReserveSigningKeyResponseBody$inboundSchema:
-  z.ZodType<
-    ComAtprotoServerReserveSigningKeyResponseBody,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    signingKey: z.string(),
-  });
+export const ComAtprotoServerReserveSigningKeyResponse$inboundSchema: z.ZodType<
+  ComAtprotoServerReserveSigningKeyResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  signingKey: z.string(),
+});
 
 /** @internal */
-export type ComAtprotoServerReserveSigningKeyResponseBody$Outbound = {
+export type ComAtprotoServerReserveSigningKeyResponse$Outbound = {
   signingKey: string;
 };
 
 /** @internal */
-export const ComAtprotoServerReserveSigningKeyResponseBody$outboundSchema:
+export const ComAtprotoServerReserveSigningKeyResponse$outboundSchema:
   z.ZodType<
-    ComAtprotoServerReserveSigningKeyResponseBody$Outbound,
+    ComAtprotoServerReserveSigningKeyResponse$Outbound,
     z.ZodTypeDef,
-    ComAtprotoServerReserveSigningKeyResponseBody
+    ComAtprotoServerReserveSigningKeyResponse
   > = z.object({
     signingKey: z.string(),
   });
@@ -112,40 +117,40 @@ export const ComAtprotoServerReserveSigningKeyResponseBody$outboundSchema:
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoServerReserveSigningKeyResponseBody$ {
-  /** @deprecated use `ComAtprotoServerReserveSigningKeyResponseBody$inboundSchema` instead. */
+export namespace ComAtprotoServerReserveSigningKeyResponse$ {
+  /** @deprecated use `ComAtprotoServerReserveSigningKeyResponse$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoServerReserveSigningKeyResponseBody$inboundSchema;
-  /** @deprecated use `ComAtprotoServerReserveSigningKeyResponseBody$outboundSchema` instead. */
+    ComAtprotoServerReserveSigningKeyResponse$inboundSchema;
+  /** @deprecated use `ComAtprotoServerReserveSigningKeyResponse$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoServerReserveSigningKeyResponseBody$outboundSchema;
-  /** @deprecated use `ComAtprotoServerReserveSigningKeyResponseBody$Outbound` instead. */
-  export type Outbound = ComAtprotoServerReserveSigningKeyResponseBody$Outbound;
+    ComAtprotoServerReserveSigningKeyResponse$outboundSchema;
+  /** @deprecated use `ComAtprotoServerReserveSigningKeyResponse$Outbound` instead. */
+  export type Outbound = ComAtprotoServerReserveSigningKeyResponse$Outbound;
 }
 
-export function comAtprotoServerReserveSigningKeyResponseBodyToJSON(
-  comAtprotoServerReserveSigningKeyResponseBody:
-    ComAtprotoServerReserveSigningKeyResponseBody,
+export function comAtprotoServerReserveSigningKeyResponseToJSON(
+  comAtprotoServerReserveSigningKeyResponse:
+    ComAtprotoServerReserveSigningKeyResponse,
 ): string {
   return JSON.stringify(
-    ComAtprotoServerReserveSigningKeyResponseBody$outboundSchema.parse(
-      comAtprotoServerReserveSigningKeyResponseBody,
+    ComAtprotoServerReserveSigningKeyResponse$outboundSchema.parse(
+      comAtprotoServerReserveSigningKeyResponse,
     ),
   );
 }
 
-export function comAtprotoServerReserveSigningKeyResponseBodyFromJSON(
+export function comAtprotoServerReserveSigningKeyResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
-  ComAtprotoServerReserveSigningKeyResponseBody,
+  ComAtprotoServerReserveSigningKeyResponse,
   SDKValidationError
 > {
   return safeParse(
     jsonString,
     (x) =>
-      ComAtprotoServerReserveSigningKeyResponseBody$inboundSchema.parse(
+      ComAtprotoServerReserveSigningKeyResponse$inboundSchema.parse(
         JSON.parse(x),
       ),
-    `Failed to parse 'ComAtprotoServerReserveSigningKeyResponseBody' from JSON`,
+    `Failed to parse 'ComAtprotoServerReserveSigningKeyResponse' from JSON`,
   );
 }

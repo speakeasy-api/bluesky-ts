@@ -12,17 +12,17 @@ export type ToolsOzoneModerationGetRecordsRequest = {
   uris: Array<string>;
 };
 
-export type Records =
-  | components.ToolsOzoneModerationDefsRecordViewNotFound
-  | components.ToolsOzoneModerationDefsRecordViewDetail;
+export type RecordT =
+  | components.ToolsOzoneModerationDefsRecordViewDetail
+  | components.ToolsOzoneModerationDefsRecordViewNotFound;
 
 /**
  * OK
  */
-export type ToolsOzoneModerationGetRecordsResponseBody = {
+export type ToolsOzoneModerationGetRecordsResponse = {
   records: Array<
-    | components.ToolsOzoneModerationDefsRecordViewNotFound
     | components.ToolsOzoneModerationDefsRecordViewDetail
+    | components.ToolsOzoneModerationDefsRecordViewNotFound
   >;
 };
 
@@ -86,127 +86,123 @@ export function toolsOzoneModerationGetRecordsRequestFromJSON(
 }
 
 /** @internal */
-export const Records$inboundSchema: z.ZodType<Records, z.ZodTypeDef, unknown> =
+export const RecordT$inboundSchema: z.ZodType<RecordT, z.ZodTypeDef, unknown> =
   z.union([
-    components.ToolsOzoneModerationDefsRecordViewNotFound$inboundSchema,
     components.ToolsOzoneModerationDefsRecordViewDetail$inboundSchema,
+    components.ToolsOzoneModerationDefsRecordViewNotFound$inboundSchema,
   ]);
 
 /** @internal */
-export type Records$Outbound =
-  | components.ToolsOzoneModerationDefsRecordViewNotFound$Outbound
-  | components.ToolsOzoneModerationDefsRecordViewDetail$Outbound;
+export type RecordT$Outbound =
+  | components.ToolsOzoneModerationDefsRecordViewDetail$Outbound
+  | components.ToolsOzoneModerationDefsRecordViewNotFound$Outbound;
 
 /** @internal */
-export const Records$outboundSchema: z.ZodType<
-  Records$Outbound,
+export const RecordT$outboundSchema: z.ZodType<
+  RecordT$Outbound,
   z.ZodTypeDef,
-  Records
+  RecordT
 > = z.union([
-  components.ToolsOzoneModerationDefsRecordViewNotFound$outboundSchema,
   components.ToolsOzoneModerationDefsRecordViewDetail$outboundSchema,
+  components.ToolsOzoneModerationDefsRecordViewNotFound$outboundSchema,
 ]);
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace Records$ {
-  /** @deprecated use `Records$inboundSchema` instead. */
-  export const inboundSchema = Records$inboundSchema;
-  /** @deprecated use `Records$outboundSchema` instead. */
-  export const outboundSchema = Records$outboundSchema;
-  /** @deprecated use `Records$Outbound` instead. */
-  export type Outbound = Records$Outbound;
+export namespace RecordT$ {
+  /** @deprecated use `RecordT$inboundSchema` instead. */
+  export const inboundSchema = RecordT$inboundSchema;
+  /** @deprecated use `RecordT$outboundSchema` instead. */
+  export const outboundSchema = RecordT$outboundSchema;
+  /** @deprecated use `RecordT$Outbound` instead. */
+  export type Outbound = RecordT$Outbound;
 }
 
-export function recordsToJSON(records: Records): string {
-  return JSON.stringify(Records$outboundSchema.parse(records));
+export function recordToJSON(recordT: RecordT): string {
+  return JSON.stringify(RecordT$outboundSchema.parse(recordT));
 }
 
-export function recordsFromJSON(
+export function recordFromJSON(
   jsonString: string,
-): SafeParseResult<Records, SDKValidationError> {
+): SafeParseResult<RecordT, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => Records$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'Records' from JSON`,
+    (x) => RecordT$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RecordT' from JSON`,
   );
 }
 
 /** @internal */
-export const ToolsOzoneModerationGetRecordsResponseBody$inboundSchema:
-  z.ZodType<ToolsOzoneModerationGetRecordsResponseBody, z.ZodTypeDef, unknown> =
-    z.object({
-      records: z.array(
-        z.union([
-          components.ToolsOzoneModerationDefsRecordViewNotFound$inboundSchema,
-          components.ToolsOzoneModerationDefsRecordViewDetail$inboundSchema,
-        ]),
-      ),
-    });
+export const ToolsOzoneModerationGetRecordsResponse$inboundSchema: z.ZodType<
+  ToolsOzoneModerationGetRecordsResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  records: z.array(
+    z.union([
+      components.ToolsOzoneModerationDefsRecordViewDetail$inboundSchema,
+      components.ToolsOzoneModerationDefsRecordViewNotFound$inboundSchema,
+    ]),
+  ),
+});
 
 /** @internal */
-export type ToolsOzoneModerationGetRecordsResponseBody$Outbound = {
+export type ToolsOzoneModerationGetRecordsResponse$Outbound = {
   records: Array<
-    | components.ToolsOzoneModerationDefsRecordViewNotFound$Outbound
     | components.ToolsOzoneModerationDefsRecordViewDetail$Outbound
+    | components.ToolsOzoneModerationDefsRecordViewNotFound$Outbound
   >;
 };
 
 /** @internal */
-export const ToolsOzoneModerationGetRecordsResponseBody$outboundSchema:
-  z.ZodType<
-    ToolsOzoneModerationGetRecordsResponseBody$Outbound,
-    z.ZodTypeDef,
-    ToolsOzoneModerationGetRecordsResponseBody
-  > = z.object({
-    records: z.array(
-      z.union([
-        components.ToolsOzoneModerationDefsRecordViewNotFound$outboundSchema,
-        components.ToolsOzoneModerationDefsRecordViewDetail$outboundSchema,
-      ]),
-    ),
-  });
+export const ToolsOzoneModerationGetRecordsResponse$outboundSchema: z.ZodType<
+  ToolsOzoneModerationGetRecordsResponse$Outbound,
+  z.ZodTypeDef,
+  ToolsOzoneModerationGetRecordsResponse
+> = z.object({
+  records: z.array(
+    z.union([
+      components.ToolsOzoneModerationDefsRecordViewDetail$outboundSchema,
+      components.ToolsOzoneModerationDefsRecordViewNotFound$outboundSchema,
+    ]),
+  ),
+});
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ToolsOzoneModerationGetRecordsResponseBody$ {
-  /** @deprecated use `ToolsOzoneModerationGetRecordsResponseBody$inboundSchema` instead. */
+export namespace ToolsOzoneModerationGetRecordsResponse$ {
+  /** @deprecated use `ToolsOzoneModerationGetRecordsResponse$inboundSchema` instead. */
   export const inboundSchema =
-    ToolsOzoneModerationGetRecordsResponseBody$inboundSchema;
-  /** @deprecated use `ToolsOzoneModerationGetRecordsResponseBody$outboundSchema` instead. */
+    ToolsOzoneModerationGetRecordsResponse$inboundSchema;
+  /** @deprecated use `ToolsOzoneModerationGetRecordsResponse$outboundSchema` instead. */
   export const outboundSchema =
-    ToolsOzoneModerationGetRecordsResponseBody$outboundSchema;
-  /** @deprecated use `ToolsOzoneModerationGetRecordsResponseBody$Outbound` instead. */
-  export type Outbound = ToolsOzoneModerationGetRecordsResponseBody$Outbound;
+    ToolsOzoneModerationGetRecordsResponse$outboundSchema;
+  /** @deprecated use `ToolsOzoneModerationGetRecordsResponse$Outbound` instead. */
+  export type Outbound = ToolsOzoneModerationGetRecordsResponse$Outbound;
 }
 
-export function toolsOzoneModerationGetRecordsResponseBodyToJSON(
-  toolsOzoneModerationGetRecordsResponseBody:
-    ToolsOzoneModerationGetRecordsResponseBody,
+export function toolsOzoneModerationGetRecordsResponseToJSON(
+  toolsOzoneModerationGetRecordsResponse:
+    ToolsOzoneModerationGetRecordsResponse,
 ): string {
   return JSON.stringify(
-    ToolsOzoneModerationGetRecordsResponseBody$outboundSchema.parse(
-      toolsOzoneModerationGetRecordsResponseBody,
+    ToolsOzoneModerationGetRecordsResponse$outboundSchema.parse(
+      toolsOzoneModerationGetRecordsResponse,
     ),
   );
 }
 
-export function toolsOzoneModerationGetRecordsResponseBodyFromJSON(
+export function toolsOzoneModerationGetRecordsResponseFromJSON(
   jsonString: string,
-): SafeParseResult<
-  ToolsOzoneModerationGetRecordsResponseBody,
-  SDKValidationError
-> {
+): SafeParseResult<ToolsOzoneModerationGetRecordsResponse, SDKValidationError> {
   return safeParse(
     jsonString,
     (x) =>
-      ToolsOzoneModerationGetRecordsResponseBody$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'ToolsOzoneModerationGetRecordsResponseBody' from JSON`,
+      ToolsOzoneModerationGetRecordsResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ToolsOzoneModerationGetRecordsResponse' from JSON`,
   );
 }

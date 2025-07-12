@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoAdminUpdateAccountHandleError } from "@speakeasy-sdks/bluesky/models/errors";
 
-let value: ComAtprotoAdminUpdateAccountHandleError = "ExpiredToken";
+let value: ComAtprotoAdminUpdateAccountHandleError = "InvalidToken";
 ```
 
 ## Values

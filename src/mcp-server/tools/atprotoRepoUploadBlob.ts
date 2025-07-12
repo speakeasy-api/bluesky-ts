@@ -16,7 +16,7 @@ const args = {
 };
 
 export const tool$atprotoRepoUploadBlob: ToolDefinition<typeof args> = {
-  name: "atproto-repo_upload-blob",
+  name: "atproto-repo-upload-blob",
   description:
     `*This endpoint is part of the atproto PDS repository management APIs. Requests usually require authentication (unlike the \`com.atproto.sync.*\` endpoints), and are made directly to the user's own PDS instance.*
 

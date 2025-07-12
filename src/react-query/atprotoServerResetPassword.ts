@@ -17,7 +17,7 @@ import { useBlueskyContext } from "./_context.js";
 import { MutationHookOptions } from "./_types.js";
 
 export type AtprotoServerResetPasswordMutationVariables = {
-  request: operations.ComAtprotoServerResetPasswordBody;
+  request: operations.ComAtprotoServerResetPasswordRequest;
   options?: RequestOptions;
 };
 

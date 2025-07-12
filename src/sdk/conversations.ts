@@ -34,9 +34,9 @@ export class Conversations extends ClientSDK {
    * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
    */
   async leave(
-    request: operations.ChatBskyConvoLeaveConvoBody,
+    request: operations.ChatBskyConvoLeaveConvoRequest,
     options?: RequestOptions,
-  ): Promise<operations.ChatBskyConvoLeaveConvoResponseBody> {
+  ): Promise<operations.ChatBskyConvoLeaveConvoResponse> {
     return unwrapAsync(conversationsLeave(
       this,
       request,

@@ -26,7 +26,7 @@ export type ComAtprotoServerRefreshSessionStatus = ClosedEnum<
 /**
  * OK
  */
-export type ComAtprotoServerRefreshSessionResponseBody = {
+export type ComAtprotoServerRefreshSessionResponse = {
   accessJwt: string;
   refreshJwt: string;
   handle: string;
@@ -64,20 +64,22 @@ export namespace ComAtprotoServerRefreshSessionStatus$ {
 }
 
 /** @internal */
-export const ComAtprotoServerRefreshSessionResponseBody$inboundSchema:
-  z.ZodType<ComAtprotoServerRefreshSessionResponseBody, z.ZodTypeDef, unknown> =
-    z.object({
-      accessJwt: z.string(),
-      refreshJwt: z.string(),
-      handle: z.string(),
-      did: z.string(),
-      didDoc: z.any().optional(),
-      active: z.boolean().optional(),
-      status: ComAtprotoServerRefreshSessionStatus$inboundSchema.optional(),
-    });
+export const ComAtprotoServerRefreshSessionResponse$inboundSchema: z.ZodType<
+  ComAtprotoServerRefreshSessionResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  accessJwt: z.string(),
+  refreshJwt: z.string(),
+  handle: z.string(),
+  did: z.string(),
+  didDoc: z.any().optional(),
+  active: z.boolean().optional(),
+  status: ComAtprotoServerRefreshSessionStatus$inboundSchema.optional(),
+});
 
 /** @internal */
-export type ComAtprotoServerRefreshSessionResponseBody$Outbound = {
+export type ComAtprotoServerRefreshSessionResponse$Outbound = {
   accessJwt: string;
   refreshJwt: string;
   handle: string;
@@ -88,59 +90,53 @@ export type ComAtprotoServerRefreshSessionResponseBody$Outbound = {
 };
 
 /** @internal */
-export const ComAtprotoServerRefreshSessionResponseBody$outboundSchema:
-  z.ZodType<
-    ComAtprotoServerRefreshSessionResponseBody$Outbound,
-    z.ZodTypeDef,
-    ComAtprotoServerRefreshSessionResponseBody
-  > = z.object({
-    accessJwt: z.string(),
-    refreshJwt: z.string(),
-    handle: z.string(),
-    did: z.string(),
-    didDoc: z.any().optional(),
-    active: z.boolean().optional(),
-    status: ComAtprotoServerRefreshSessionStatus$outboundSchema.optional(),
-  });
+export const ComAtprotoServerRefreshSessionResponse$outboundSchema: z.ZodType<
+  ComAtprotoServerRefreshSessionResponse$Outbound,
+  z.ZodTypeDef,
+  ComAtprotoServerRefreshSessionResponse
+> = z.object({
+  accessJwt: z.string(),
+  refreshJwt: z.string(),
+  handle: z.string(),
+  did: z.string(),
+  didDoc: z.any().optional(),
+  active: z.boolean().optional(),
+  status: ComAtprotoServerRefreshSessionStatus$outboundSchema.optional(),
+});
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoServerRefreshSessionResponseBody$ {
-  /** @deprecated use `ComAtprotoServerRefreshSessionResponseBody$inboundSchema` instead. */
+export namespace ComAtprotoServerRefreshSessionResponse$ {
+  /** @deprecated use `ComAtprotoServerRefreshSessionResponse$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoServerRefreshSessionResponseBody$inboundSchema;
-  /** @deprecated use `ComAtprotoServerRefreshSessionResponseBody$outboundSchema` instead. */
+    ComAtprotoServerRefreshSessionResponse$inboundSchema;
+  /** @deprecated use `ComAtprotoServerRefreshSessionResponse$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoServerRefreshSessionResponseBody$outboundSchema;
-  /** @deprecated use `ComAtprotoServerRefreshSessionResponseBody$Outbound` instead. */
-  export type Outbound = ComAtprotoServerRefreshSessionResponseBody$Outbound;
+    ComAtprotoServerRefreshSessionResponse$outboundSchema;
+  /** @deprecated use `ComAtprotoServerRefreshSessionResponse$Outbound` instead. */
+  export type Outbound = ComAtprotoServerRefreshSessionResponse$Outbound;
 }
 
-export function comAtprotoServerRefreshSessionResponseBodyToJSON(
-  comAtprotoServerRefreshSessionResponseBody:
-    ComAtprotoServerRefreshSessionResponseBody,
+export function comAtprotoServerRefreshSessionResponseToJSON(
+  comAtprotoServerRefreshSessionResponse:
+    ComAtprotoServerRefreshSessionResponse,
 ): string {
   return JSON.stringify(
-    ComAtprotoServerRefreshSessionResponseBody$outboundSchema.parse(
-      comAtprotoServerRefreshSessionResponseBody,
+    ComAtprotoServerRefreshSessionResponse$outboundSchema.parse(
+      comAtprotoServerRefreshSessionResponse,
     ),
   );
 }
 
-export function comAtprotoServerRefreshSessionResponseBodyFromJSON(
+export function comAtprotoServerRefreshSessionResponseFromJSON(
   jsonString: string,
-): SafeParseResult<
-  ComAtprotoServerRefreshSessionResponseBody,
-  SDKValidationError
-> {
+): SafeParseResult<ComAtprotoServerRefreshSessionResponse, SDKValidationError> {
   return safeParse(
     jsonString,
     (x) =>
-      ComAtprotoServerRefreshSessionResponseBody$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'ComAtprotoServerRefreshSessionResponseBody' from JSON`,
+      ComAtprotoServerRefreshSessionResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ComAtprotoServerRefreshSessionResponse' from JSON`,
   );
 }

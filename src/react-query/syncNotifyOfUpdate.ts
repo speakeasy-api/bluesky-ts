@@ -17,7 +17,7 @@ import { useBlueskyContext } from "./_context.js";
 import { MutationHookOptions } from "./_types.js";
 
 export type SyncNotifyOfUpdateMutationVariables = {
-  request: operations.ComAtprotoSyncNotifyOfUpdateBody;
+  request: operations.ComAtprotoSyncNotifyOfUpdateRequest;
   options?: RequestOptions;
 };
 

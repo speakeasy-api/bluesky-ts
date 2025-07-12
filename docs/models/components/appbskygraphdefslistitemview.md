@@ -6,7 +6,7 @@
 import { AppBskyGraphDefsListItemView } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: AppBskyGraphDefsListItemView = {
-  uri: "https://hidden-printer.name/",
+  uri: "https://polished-vibration.net/",
   subject: {
     did: "<id>",
     handle: "<value>",

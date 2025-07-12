@@ -4,40 +4,37 @@
 
 import * as z from "zod";
 import { ClosedEnum } from "../../types/enums.js";
+import { BlueskyError } from "./blueskyerror.js";
 
 /**
  * Unauthorized
  */
-export type UnauthorizedChatBskyModerationGetMessageContextResponseBodyErrorData =
-  {
-    error: "AuthMissing";
-    message: string;
-  };
+export type ChatBskyModerationGetMessageContextAuthMissingErrorData = {
+  error: "AuthMissing";
+  message: string;
+};
 
 /**
  * Unauthorized
  */
-export class UnauthorizedChatBskyModerationGetMessageContextResponseBodyError
-  extends Error
+export class ChatBskyModerationGetMessageContextAuthMissingError
+  extends BlueskyError
 {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: UnauthorizedChatBskyModerationGetMessageContextResponseBodyErrorData;
+  data$: ChatBskyModerationGetMessageContextAuthMissingErrorData;
 
   constructor(
-    err: UnauthorizedChatBskyModerationGetMessageContextResponseBodyErrorData,
+    err: ChatBskyModerationGetMessageContextAuthMissingErrorData,
+    httpMeta: { response: Response; request: Request; body: string },
   ) {
-    const message = "message" in err && typeof err.message === "string"
-      ? err.message
-      : `API error occurred: ${JSON.stringify(err)}`;
-    super(message);
+    const message = err.message || `API error occurred: ${JSON.stringify(err)}`;
+    super(message, httpMeta);
     this.data$ = err;
-
     this.error = err.error;
 
-    this.name =
-      "UnauthorizedChatBskyModerationGetMessageContextResponseBodyError";
+    this.name = "ChatBskyModerationGetMessageContextAuthMissingError";
   }
 }
 
@@ -53,71 +50,69 @@ export type ChatBskyModerationGetMessageContextError = ClosedEnum<
 /**
  * Bad Request
  */
-export type BadRequestChatBskyModerationGetMessageContextResponseBodyErrorData =
-  {
-    error: ChatBskyModerationGetMessageContextError;
-    message: string;
-  };
+export type ChatBskyModerationGetMessageContextBadRequestErrorData = {
+  error: ChatBskyModerationGetMessageContextError;
+  message: string;
+};
 
 /**
  * Bad Request
  */
-export class BadRequestChatBskyModerationGetMessageContextResponseBodyError
-  extends Error
+export class ChatBskyModerationGetMessageContextBadRequestError
+  extends BlueskyError
 {
   error: ChatBskyModerationGetMessageContextError;
 
   /** The original data that was passed to this error instance. */
-  data$: BadRequestChatBskyModerationGetMessageContextResponseBodyErrorData;
+  data$: ChatBskyModerationGetMessageContextBadRequestErrorData;
 
   constructor(
-    err: BadRequestChatBskyModerationGetMessageContextResponseBodyErrorData,
+    err: ChatBskyModerationGetMessageContextBadRequestErrorData,
+    httpMeta: { response: Response; request: Request; body: string },
   ) {
-    const message = "message" in err && typeof err.message === "string"
-      ? err.message
-      : `API error occurred: ${JSON.stringify(err)}`;
-    super(message);
+    const message = err.message || `API error occurred: ${JSON.stringify(err)}`;
+    super(message, httpMeta);
     this.data$ = err;
-
     this.error = err.error;
 
-    this.name =
-      "BadRequestChatBskyModerationGetMessageContextResponseBodyError";
+    this.name = "ChatBskyModerationGetMessageContextBadRequestError";
   }
 }
 
 /** @internal */
-export const UnauthorizedChatBskyModerationGetMessageContextResponseBodyError$inboundSchema:
+export const ChatBskyModerationGetMessageContextAuthMissingError$inboundSchema:
   z.ZodType<
-    UnauthorizedChatBskyModerationGetMessageContextResponseBodyError,
+    ChatBskyModerationGetMessageContextAuthMissingError,
     z.ZodTypeDef,
     unknown
   > = z.object({
-    error: z.literal("AuthMissing"),
+    error: z.literal("AuthMissing").default("AuthMissing"),
     message: z.string(),
+    request$: z.instanceof(Request),
+    response$: z.instanceof(Response),
+    body$: z.string(),
   })
     .transform((v) => {
-      return new UnauthorizedChatBskyModerationGetMessageContextResponseBodyError(
-        v,
-      );
+      return new ChatBskyModerationGetMessageContextAuthMissingError(v, {
+        request: v.request$,
+        response: v.response$,
+        body: v.body$,
+      });
     });
 
 /** @internal */
-export type UnauthorizedChatBskyModerationGetMessageContextResponseBodyError$Outbound =
-  {
-    error: "AuthMissing";
-    message: string;
-  };
+export type ChatBskyModerationGetMessageContextAuthMissingError$Outbound = {
+  error: "AuthMissing";
+  message: string;
+};
 
 /** @internal */
-export const UnauthorizedChatBskyModerationGetMessageContextResponseBodyError$outboundSchema:
+export const ChatBskyModerationGetMessageContextAuthMissingError$outboundSchema:
   z.ZodType<
-    UnauthorizedChatBskyModerationGetMessageContextResponseBodyError$Outbound,
+    ChatBskyModerationGetMessageContextAuthMissingError$Outbound,
     z.ZodTypeDef,
-    UnauthorizedChatBskyModerationGetMessageContextResponseBodyError
-  > = z.instanceof(
-    UnauthorizedChatBskyModerationGetMessageContextResponseBodyError,
-  )
+    ChatBskyModerationGetMessageContextAuthMissingError
+  > = z.instanceof(ChatBskyModerationGetMessageContextAuthMissingError)
     .transform(v => v.data$)
     .pipe(z.object({
       error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -128,16 +123,16 @@ export const UnauthorizedChatBskyModerationGetMessageContextResponseBodyError$ou
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace UnauthorizedChatBskyModerationGetMessageContextResponseBodyError$ {
-  /** @deprecated use `UnauthorizedChatBskyModerationGetMessageContextResponseBodyError$inboundSchema` instead. */
+export namespace ChatBskyModerationGetMessageContextAuthMissingError$ {
+  /** @deprecated use `ChatBskyModerationGetMessageContextAuthMissingError$inboundSchema` instead. */
   export const inboundSchema =
-    UnauthorizedChatBskyModerationGetMessageContextResponseBodyError$inboundSchema;
-  /** @deprecated use `UnauthorizedChatBskyModerationGetMessageContextResponseBodyError$outboundSchema` instead. */
+    ChatBskyModerationGetMessageContextAuthMissingError$inboundSchema;
+  /** @deprecated use `ChatBskyModerationGetMessageContextAuthMissingError$outboundSchema` instead. */
   export const outboundSchema =
-    UnauthorizedChatBskyModerationGetMessageContextResponseBodyError$outboundSchema;
-  /** @deprecated use `UnauthorizedChatBskyModerationGetMessageContextResponseBodyError$Outbound` instead. */
+    ChatBskyModerationGetMessageContextAuthMissingError$outboundSchema;
+  /** @deprecated use `ChatBskyModerationGetMessageContextAuthMissingError$Outbound` instead. */
   export type Outbound =
-    UnauthorizedChatBskyModerationGetMessageContextResponseBodyError$Outbound;
+    ChatBskyModerationGetMessageContextAuthMissingError$Outbound;
 }
 
 /** @internal */
@@ -164,37 +159,39 @@ export namespace ChatBskyModerationGetMessageContextError$ {
 }
 
 /** @internal */
-export const BadRequestChatBskyModerationGetMessageContextResponseBodyError$inboundSchema:
+export const ChatBskyModerationGetMessageContextBadRequestError$inboundSchema:
   z.ZodType<
-    BadRequestChatBskyModerationGetMessageContextResponseBodyError,
+    ChatBskyModerationGetMessageContextBadRequestError,
     z.ZodTypeDef,
     unknown
   > = z.object({
     error: ChatBskyModerationGetMessageContextError$inboundSchema,
     message: z.string(),
+    request$: z.instanceof(Request),
+    response$: z.instanceof(Response),
+    body$: z.string(),
   })
     .transform((v) => {
-      return new BadRequestChatBskyModerationGetMessageContextResponseBodyError(
-        v,
-      );
+      return new ChatBskyModerationGetMessageContextBadRequestError(v, {
+        request: v.request$,
+        response: v.response$,
+        body: v.body$,
+      });
     });
 
 /** @internal */
-export type BadRequestChatBskyModerationGetMessageContextResponseBodyError$Outbound =
-  {
-    error: string;
-    message: string;
-  };
+export type ChatBskyModerationGetMessageContextBadRequestError$Outbound = {
+  error: string;
+  message: string;
+};
 
 /** @internal */
-export const BadRequestChatBskyModerationGetMessageContextResponseBodyError$outboundSchema:
+export const ChatBskyModerationGetMessageContextBadRequestError$outboundSchema:
   z.ZodType<
-    BadRequestChatBskyModerationGetMessageContextResponseBodyError$Outbound,
+    ChatBskyModerationGetMessageContextBadRequestError$Outbound,
     z.ZodTypeDef,
-    BadRequestChatBskyModerationGetMessageContextResponseBodyError
-  > = z.instanceof(
-    BadRequestChatBskyModerationGetMessageContextResponseBodyError,
-  )
+    ChatBskyModerationGetMessageContextBadRequestError
+  > = z.instanceof(ChatBskyModerationGetMessageContextBadRequestError)
     .transform(v => v.data$)
     .pipe(z.object({
       error: ChatBskyModerationGetMessageContextError$outboundSchema,
@@ -205,14 +202,14 @@ export const BadRequestChatBskyModerationGetMessageContextResponseBodyError$outb
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace BadRequestChatBskyModerationGetMessageContextResponseBodyError$ {
-  /** @deprecated use `BadRequestChatBskyModerationGetMessageContextResponseBodyError$inboundSchema` instead. */
+export namespace ChatBskyModerationGetMessageContextBadRequestError$ {
+  /** @deprecated use `ChatBskyModerationGetMessageContextBadRequestError$inboundSchema` instead. */
   export const inboundSchema =
-    BadRequestChatBskyModerationGetMessageContextResponseBodyError$inboundSchema;
-  /** @deprecated use `BadRequestChatBskyModerationGetMessageContextResponseBodyError$outboundSchema` instead. */
+    ChatBskyModerationGetMessageContextBadRequestError$inboundSchema;
+  /** @deprecated use `ChatBskyModerationGetMessageContextBadRequestError$outboundSchema` instead. */
   export const outboundSchema =
-    BadRequestChatBskyModerationGetMessageContextResponseBodyError$outboundSchema;
-  /** @deprecated use `BadRequestChatBskyModerationGetMessageContextResponseBodyError$Outbound` instead. */
+    ChatBskyModerationGetMessageContextBadRequestError$outboundSchema;
+  /** @deprecated use `ChatBskyModerationGetMessageContextBadRequestError$Outbound` instead. */
   export type Outbound =
-    BadRequestChatBskyModerationGetMessageContextResponseBodyError$Outbound;
+    ChatBskyModerationGetMessageContextBadRequestError$Outbound;
 }

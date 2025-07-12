@@ -6,7 +6,7 @@
 import { AppBskyFeedGetFeedRequest } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: AppBskyFeedGetFeedRequest = {
-  feed: "https://appropriate-ecliptic.com",
+  feed: "https://giving-joy.com",
 };
 ```
 

@@ -5,7 +5,7 @@
 ```typescript
 import { ToolsOzoneSetDeleteSetError } from "@speakeasy-sdks/bluesky/models/errors";
 
-let value: ToolsOzoneSetDeleteSetError = "InvalidRequest";
+let value: ToolsOzoneSetDeleteSetError = "SetNotFound";
 ```
 
 ## Values

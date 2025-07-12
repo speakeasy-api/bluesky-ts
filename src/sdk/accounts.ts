@@ -20,7 +20,7 @@ export class Accounts extends ClientSDK {
       | operations.ComAtprotoServerGetAccountInviteCodesRequest
       | undefined,
     options?: RequestOptions,
-  ): Promise<operations.ComAtprotoServerGetAccountInviteCodesResponseBody> {
+  ): Promise<operations.ComAtprotoServerGetAccountInviteCodesResponse> {
     return unwrapAsync(accountsGetInviteCodes(
       this,
       request,

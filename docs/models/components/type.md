@@ -5,7 +5,7 @@
 ```typescript
 import { Type } from "@speakeasy-sdks/bluesky/models/components";
 
-let value: Type = "timeline";
+let value: Type = "feed";
 ```
 
 ## Values

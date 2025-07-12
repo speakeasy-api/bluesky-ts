@@ -17,7 +17,7 @@ export type ComAtprotoIdentityResolveHandleRequest = {
 /**
  * OK
  */
-export type ComAtprotoIdentityResolveHandleResponseBody = {
+export type ComAtprotoIdentityResolveHandleResponse = {
   did: string;
 };
 
@@ -82,68 +82,66 @@ export function comAtprotoIdentityResolveHandleRequestFromJSON(
 }
 
 /** @internal */
-export const ComAtprotoIdentityResolveHandleResponseBody$inboundSchema:
-  z.ZodType<
-    ComAtprotoIdentityResolveHandleResponseBody,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    did: z.string(),
-  });
+export const ComAtprotoIdentityResolveHandleResponse$inboundSchema: z.ZodType<
+  ComAtprotoIdentityResolveHandleResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  did: z.string(),
+});
 
 /** @internal */
-export type ComAtprotoIdentityResolveHandleResponseBody$Outbound = {
+export type ComAtprotoIdentityResolveHandleResponse$Outbound = {
   did: string;
 };
 
 /** @internal */
-export const ComAtprotoIdentityResolveHandleResponseBody$outboundSchema:
-  z.ZodType<
-    ComAtprotoIdentityResolveHandleResponseBody$Outbound,
-    z.ZodTypeDef,
-    ComAtprotoIdentityResolveHandleResponseBody
-  > = z.object({
-    did: z.string(),
-  });
+export const ComAtprotoIdentityResolveHandleResponse$outboundSchema: z.ZodType<
+  ComAtprotoIdentityResolveHandleResponse$Outbound,
+  z.ZodTypeDef,
+  ComAtprotoIdentityResolveHandleResponse
+> = z.object({
+  did: z.string(),
+});
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoIdentityResolveHandleResponseBody$ {
-  /** @deprecated use `ComAtprotoIdentityResolveHandleResponseBody$inboundSchema` instead. */
+export namespace ComAtprotoIdentityResolveHandleResponse$ {
+  /** @deprecated use `ComAtprotoIdentityResolveHandleResponse$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoIdentityResolveHandleResponseBody$inboundSchema;
-  /** @deprecated use `ComAtprotoIdentityResolveHandleResponseBody$outboundSchema` instead. */
+    ComAtprotoIdentityResolveHandleResponse$inboundSchema;
+  /** @deprecated use `ComAtprotoIdentityResolveHandleResponse$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoIdentityResolveHandleResponseBody$outboundSchema;
-  /** @deprecated use `ComAtprotoIdentityResolveHandleResponseBody$Outbound` instead. */
-  export type Outbound = ComAtprotoIdentityResolveHandleResponseBody$Outbound;
+    ComAtprotoIdentityResolveHandleResponse$outboundSchema;
+  /** @deprecated use `ComAtprotoIdentityResolveHandleResponse$Outbound` instead. */
+  export type Outbound = ComAtprotoIdentityResolveHandleResponse$Outbound;
 }
 
-export function comAtprotoIdentityResolveHandleResponseBodyToJSON(
-  comAtprotoIdentityResolveHandleResponseBody:
-    ComAtprotoIdentityResolveHandleResponseBody,
+export function comAtprotoIdentityResolveHandleResponseToJSON(
+  comAtprotoIdentityResolveHandleResponse:
+    ComAtprotoIdentityResolveHandleResponse,
 ): string {
   return JSON.stringify(
-    ComAtprotoIdentityResolveHandleResponseBody$outboundSchema.parse(
-      comAtprotoIdentityResolveHandleResponseBody,
+    ComAtprotoIdentityResolveHandleResponse$outboundSchema.parse(
+      comAtprotoIdentityResolveHandleResponse,
     ),
   );
 }
 
-export function comAtprotoIdentityResolveHandleResponseBodyFromJSON(
+export function comAtprotoIdentityResolveHandleResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
-  ComAtprotoIdentityResolveHandleResponseBody,
+  ComAtprotoIdentityResolveHandleResponse,
   SDKValidationError
 > {
   return safeParse(
     jsonString,
     (x) =>
-      ComAtprotoIdentityResolveHandleResponseBody$inboundSchema.parse(
+      ComAtprotoIdentityResolveHandleResponse$inboundSchema.parse(
         JSON.parse(x),
       ),
-    `Failed to parse 'ComAtprotoIdentityResolveHandleResponseBody' from JSON`,
+    `Failed to parse 'ComAtprotoIdentityResolveHandleResponse' from JSON`,
   );
 }

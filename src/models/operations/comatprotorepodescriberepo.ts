@@ -17,7 +17,7 @@ export type ComAtprotoRepoDescribeRepoRequest = {
 /**
  * OK
  */
-export type ComAtprotoRepoDescribeRepoResponseBody = {
+export type ComAtprotoRepoDescribeRepoResponse = {
   handle: string;
   did: string;
   didDoc?: any | undefined;
@@ -86,8 +86,8 @@ export function comAtprotoRepoDescribeRepoRequestFromJSON(
 }
 
 /** @internal */
-export const ComAtprotoRepoDescribeRepoResponseBody$inboundSchema: z.ZodType<
-  ComAtprotoRepoDescribeRepoResponseBody,
+export const ComAtprotoRepoDescribeRepoResponse$inboundSchema: z.ZodType<
+  ComAtprotoRepoDescribeRepoResponse,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -99,7 +99,7 @@ export const ComAtprotoRepoDescribeRepoResponseBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type ComAtprotoRepoDescribeRepoResponseBody$Outbound = {
+export type ComAtprotoRepoDescribeRepoResponse$Outbound = {
   handle: string;
   did: string;
   didDoc?: any | undefined;
@@ -108,10 +108,10 @@ export type ComAtprotoRepoDescribeRepoResponseBody$Outbound = {
 };
 
 /** @internal */
-export const ComAtprotoRepoDescribeRepoResponseBody$outboundSchema: z.ZodType<
-  ComAtprotoRepoDescribeRepoResponseBody$Outbound,
+export const ComAtprotoRepoDescribeRepoResponse$outboundSchema: z.ZodType<
+  ComAtprotoRepoDescribeRepoResponse$Outbound,
   z.ZodTypeDef,
-  ComAtprotoRepoDescribeRepoResponseBody
+  ComAtprotoRepoDescribeRepoResponse
 > = z.object({
   handle: z.string(),
   did: z.string(),
@@ -124,35 +124,33 @@ export const ComAtprotoRepoDescribeRepoResponseBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoRepoDescribeRepoResponseBody$ {
-  /** @deprecated use `ComAtprotoRepoDescribeRepoResponseBody$inboundSchema` instead. */
-  export const inboundSchema =
-    ComAtprotoRepoDescribeRepoResponseBody$inboundSchema;
-  /** @deprecated use `ComAtprotoRepoDescribeRepoResponseBody$outboundSchema` instead. */
+export namespace ComAtprotoRepoDescribeRepoResponse$ {
+  /** @deprecated use `ComAtprotoRepoDescribeRepoResponse$inboundSchema` instead. */
+  export const inboundSchema = ComAtprotoRepoDescribeRepoResponse$inboundSchema;
+  /** @deprecated use `ComAtprotoRepoDescribeRepoResponse$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoRepoDescribeRepoResponseBody$outboundSchema;
-  /** @deprecated use `ComAtprotoRepoDescribeRepoResponseBody$Outbound` instead. */
-  export type Outbound = ComAtprotoRepoDescribeRepoResponseBody$Outbound;
+    ComAtprotoRepoDescribeRepoResponse$outboundSchema;
+  /** @deprecated use `ComAtprotoRepoDescribeRepoResponse$Outbound` instead. */
+  export type Outbound = ComAtprotoRepoDescribeRepoResponse$Outbound;
 }
 
-export function comAtprotoRepoDescribeRepoResponseBodyToJSON(
-  comAtprotoRepoDescribeRepoResponseBody:
-    ComAtprotoRepoDescribeRepoResponseBody,
+export function comAtprotoRepoDescribeRepoResponseToJSON(
+  comAtprotoRepoDescribeRepoResponse: ComAtprotoRepoDescribeRepoResponse,
 ): string {
   return JSON.stringify(
-    ComAtprotoRepoDescribeRepoResponseBody$outboundSchema.parse(
-      comAtprotoRepoDescribeRepoResponseBody,
+    ComAtprotoRepoDescribeRepoResponse$outboundSchema.parse(
+      comAtprotoRepoDescribeRepoResponse,
     ),
   );
 }
 
-export function comAtprotoRepoDescribeRepoResponseBodyFromJSON(
+export function comAtprotoRepoDescribeRepoResponseFromJSON(
   jsonString: string,
-): SafeParseResult<ComAtprotoRepoDescribeRepoResponseBody, SDKValidationError> {
+): SafeParseResult<ComAtprotoRepoDescribeRepoResponse, SDKValidationError> {
   return safeParse(
     jsonString,
     (x) =>
-      ComAtprotoRepoDescribeRepoResponseBody$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ComAtprotoRepoDescribeRepoResponseBody' from JSON`,
+      ComAtprotoRepoDescribeRepoResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ComAtprotoRepoDescribeRepoResponse' from JSON`,
   );
 }

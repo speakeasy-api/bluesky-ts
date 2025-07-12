@@ -10,7 +10,7 @@ import { AppBskyFeedGetFeedSkeletonResponseBody } from "@speakeasy-sdks/bluesky/
 let value: AppBskyFeedGetFeedSkeletonResponseBody = {
   feed: [
     {
-      post: "https://shocked-vestment.biz/",
+      post: "https://lighthearted-avalanche.info",
     },
   ],
 };

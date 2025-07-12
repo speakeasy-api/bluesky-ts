@@ -7,11 +7,11 @@ import * as operations from "../../models/operations/index.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
 const args = {
-  request: operations.ComAtprotoServerCreateAccountBody$inboundSchema,
+  request: operations.ComAtprotoServerCreateAccountRequest$inboundSchema,
 };
 
 export const tool$atprotoServerCreateAccount: ToolDefinition<typeof args> = {
-  name: "atproto-server_create-account",
+  name: "atproto-server-create-account",
   description:
     `*This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 

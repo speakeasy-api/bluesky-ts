@@ -6,7 +6,7 @@ import { ozoneServerGetConfig } from "../../funcs/ozoneServerGetConfig.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
 export const tool$ozoneServerGetConfig: ToolDefinition = {
-  name: "ozone-server_get-config",
+  name: "ozone-server-get-config",
   description:
     `*This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 

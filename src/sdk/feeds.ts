@@ -25,7 +25,7 @@ export class Feeds extends ClientSDK {
    */
   async describeGenerator(
     options?: RequestOptions,
-  ): Promise<operations.AppBskyFeedDescribeFeedGeneratorResponseBody> {
+  ): Promise<operations.AppBskyFeedDescribeFeedGeneratorResponse> {
     return unwrapAsync(feedsDescribeGenerator(
       this,
       options,
@@ -82,7 +82,7 @@ export class Feeds extends ClientSDK {
   async getPostThread(
     request: operations.AppBskyFeedGetPostThreadRequest,
     options?: RequestOptions,
-  ): Promise<operations.AppBskyFeedGetPostThreadResponseBody> {
+  ): Promise<operations.AppBskyFeedGetPostThreadResponse> {
     return unwrapAsync(feedsGetPostThread(
       this,
       request,
@@ -100,7 +100,7 @@ export class Feeds extends ClientSDK {
   async get(
     request: operations.AppBskyFeedGetPostsRequest,
     options?: RequestOptions,
-  ): Promise<operations.AppBskyFeedGetPostsResponseBody> {
+  ): Promise<operations.AppBskyFeedGetPostsResponse> {
     return unwrapAsync(feedsGet(
       this,
       request,
@@ -159,9 +159,9 @@ export class Feeds extends ClientSDK {
    * Send information about interactions with feed items back to the feed generator that served them.
    */
   async sendInteractions(
-    request: operations.AppBskyFeedSendInteractionsBody,
+    request: operations.AppBskyFeedSendInteractionsRequest,
     options?: RequestOptions,
-  ): Promise<operations.AppBskyFeedSendInteractionsResponseBody> {
+  ): Promise<operations.AppBskyFeedSendInteractionsResponse> {
     return unwrapAsync(feedsSendInteractions(
       this,
       request,

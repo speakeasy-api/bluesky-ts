@@ -14,7 +14,7 @@ export class Identities extends ClientSDK {
    * Updates the current account's handle. Verifies handle validity, and updates did:plc document if necessary. Implemented by PDS, and requires auth.
    */
   async updateHandle(
-    request: operations.ComAtprotoIdentityUpdateHandleBody,
+    request: operations.ComAtprotoIdentityUpdateHandleRequest,
     options?: RequestOptions,
   ): Promise<void> {
     return unwrapAsync(identitiesUpdateHandle(

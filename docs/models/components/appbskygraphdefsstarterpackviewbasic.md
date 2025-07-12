@@ -6,14 +6,14 @@
 import { AppBskyGraphDefsStarterPackViewBasic } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: AppBskyGraphDefsStarterPackViewBasic = {
-  uri: "https://every-lawmaker.info/",
+  uri: "https://growing-video.com",
   cid: "<id>",
   record: "<value>",
   creator: {
     did: "<id>",
     handle: "<value>",
   },
-  indexedAt: new Date("2024-05-15T08:17:57.191Z"),
+  indexedAt: new Date("2025-09-27T10:15:49.386Z"),
 };
 ```
 

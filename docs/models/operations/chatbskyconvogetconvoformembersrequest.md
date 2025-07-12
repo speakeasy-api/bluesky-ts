@@ -7,7 +7,9 @@ import { ChatBskyConvoGetConvoForMembersRequest } from "@speakeasy-sdks/bluesky/
 
 let value: ChatBskyConvoGetConvoForMembersRequest = {
   members: [
-    "<id>",
+    "<id 1>",
+    "<id 2>",
+    "<id 3>",
   ],
 };
 ```

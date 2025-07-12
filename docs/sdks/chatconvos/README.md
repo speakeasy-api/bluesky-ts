@@ -36,12 +36,10 @@ const bluesky = new Bluesky({
 async function run() {
   const result = await bluesky.chatConvos.getForMembers({
     members: [
-      "<id>",
-      "<id>",
+      "<id 1>",
     ],
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -65,19 +63,15 @@ const bluesky = new BlueskyCore({
 async function run() {
   const res = await chatConvosGetForMembers(bluesky, {
     members: [
-      "<id>",
-      "<id>",
+      "<id 1>",
     ],
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("chatConvosGetForMembers failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -122,25 +116,25 @@ import {
 
 ### Response
 
-**Promise\<[operations.ChatBskyConvoGetConvoForMembersResponseBody](../../models/operations/chatbskyconvogetconvoformembersresponsebody.md)\>**
+**Promise\<[operations.ChatBskyConvoGetConvoForMembersResponse](../../models/operations/chatbskyconvogetconvoformembersresponse.md)\>**
 
 ### Errors
 
-| Error Type                                                          | Status Code                                                         | Content Type                                                        |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| errors.BadRequestChatBskyConvoGetConvoForMembersResponseBodyError   | 400                                                                 | application/json                                                    |
-| errors.UnauthorizedChatBskyConvoGetConvoForMembersResponseBodyError | 401                                                                 | application/json                                                    |
-| errors.NotFoundError                                                | 404                                                                 | application/json                                                    |
-| errors.UnauthorizedError                                            | 403, 407                                                            | application/json                                                    |
-| errors.TimeoutError                                                 | 408                                                                 | application/json                                                    |
-| errors.RateLimitedError                                             | 429                                                                 | application/json                                                    |
-| errors.BadRequestError                                              | 413, 414, 415, 422, 431                                             | application/json                                                    |
-| errors.TimeoutError                                                 | 504                                                                 | application/json                                                    |
-| errors.NotFoundError                                                | 501, 505                                                            | application/json                                                    |
-| errors.InternalServerError                                          | 500, 502, 503, 506, 507, 508                                        | application/json                                                    |
-| errors.BadRequestError                                              | 510                                                                 | application/json                                                    |
-| errors.UnauthorizedError                                            | 511                                                                 | application/json                                                    |
-| errors.APIError                                                     | 4XX, 5XX                                                            | \*/\*                                                               |
+| Error Type                                             | Status Code                                            | Content Type                                           |
+| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
+| errors.ChatBskyConvoGetConvoForMembersBadRequestError  | 400                                                    | application/json                                       |
+| errors.ChatBskyConvoGetConvoForMembersAuthMissingError | 401                                                    | application/json                                       |
+| errors.NotFoundError                                   | 404                                                    | application/json                                       |
+| errors.UnauthorizedError                               | 403, 407                                               | application/json                                       |
+| errors.TimeoutError                                    | 408                                                    | application/json                                       |
+| errors.RateLimitedError                                | 429                                                    | application/json                                       |
+| errors.BadRequestError                                 | 413, 414, 415, 422, 431                                | application/json                                       |
+| errors.TimeoutError                                    | 504                                                    | application/json                                       |
+| errors.NotFoundError                                   | 501, 505                                               | application/json                                       |
+| errors.InternalServerError                             | 500, 502, 503, 506, 507, 508                           | application/json                                       |
+| errors.BadRequestError                                 | 510                                                    | application/json                                       |
+| errors.UnauthorizedError                               | 511                                                    | application/json                                       |
+| errors.APIError                                        | 4XX, 5XX                                               | \*/\*                                                  |
 
 ## getMessages
 
@@ -163,7 +157,6 @@ async function run() {
   });
 
   for await (const page of result) {
-    // Handle the page
     console.log(page);
   }
 }
@@ -189,16 +182,13 @@ async function run() {
   const res = await chatConvosGetMessages(bluesky, {
     convoId: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
-  }
-
-  const { value: result } = res;
-
-  for await (const page of result) {
-    // Handle the page
+  if (res.ok) {
+    const { value: result } = res;
+    for await (const page of result) {
     console.log(page);
+  }
+  } else {
+    console.log("chatConvosGetMessages failed:", res.error);
   }
 }
 
@@ -251,21 +241,21 @@ import {
 
 ### Errors
 
-| Error Type                                                   | Status Code                                                  | Content Type                                                 |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| errors.BadRequestChatBskyConvoGetMessagesResponseBodyError   | 400                                                          | application/json                                             |
-| errors.UnauthorizedChatBskyConvoGetMessagesResponseBodyError | 401                                                          | application/json                                             |
-| errors.NotFoundError                                         | 404                                                          | application/json                                             |
-| errors.UnauthorizedError                                     | 403, 407                                                     | application/json                                             |
-| errors.TimeoutError                                          | 408                                                          | application/json                                             |
-| errors.RateLimitedError                                      | 429                                                          | application/json                                             |
-| errors.BadRequestError                                       | 413, 414, 415, 422, 431                                      | application/json                                             |
-| errors.TimeoutError                                          | 504                                                          | application/json                                             |
-| errors.NotFoundError                                         | 501, 505                                                     | application/json                                             |
-| errors.InternalServerError                                   | 500, 502, 503, 506, 507, 508                                 | application/json                                             |
-| errors.BadRequestError                                       | 510                                                          | application/json                                             |
-| errors.UnauthorizedError                                     | 511                                                          | application/json                                             |
-| errors.APIError                                              | 4XX, 5XX                                                     | \*/\*                                                        |
+| Error Type                                      | Status Code                                     | Content Type                                    |
+| ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
+| errors.ChatBskyConvoGetMessagesBadRequestError  | 400                                             | application/json                                |
+| errors.ChatBskyConvoGetMessagesAuthMissingError | 401                                             | application/json                                |
+| errors.NotFoundError                            | 404                                             | application/json                                |
+| errors.UnauthorizedError                        | 403, 407                                        | application/json                                |
+| errors.TimeoutError                             | 408                                             | application/json                                |
+| errors.RateLimitedError                         | 429                                             | application/json                                |
+| errors.BadRequestError                          | 413, 414, 415, 422, 431                         | application/json                                |
+| errors.TimeoutError                             | 504                                             | application/json                                |
+| errors.NotFoundError                            | 501, 505                                        | application/json                                |
+| errors.InternalServerError                      | 500, 502, 503, 506, 507, 508                    | application/json                                |
+| errors.BadRequestError                          | 510                                             | application/json                                |
+| errors.UnauthorizedError                        | 511                                             | application/json                                |
+| errors.APIError                                 | 4XX, 5XX                                        | \*/\*                                           |
 
 ## sendMessage
 
@@ -290,7 +280,6 @@ async function run() {
     },
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -318,15 +307,12 @@ async function run() {
       text: "<value>",
     },
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("chatConvosSendMessage failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -353,7 +339,7 @@ import {
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ChatBskyConvoSendMessageBody](../../models/operations/chatbskyconvosendmessagebody.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ChatBskyConvoSendMessageRequest](../../models/operations/chatbskyconvosendmessagerequest.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -364,21 +350,21 @@ import {
 
 ### Errors
 
-| Error Type                                                   | Status Code                                                  | Content Type                                                 |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| errors.BadRequestChatBskyConvoSendMessageResponseBodyError   | 400                                                          | application/json                                             |
-| errors.UnauthorizedChatBskyConvoSendMessageResponseBodyError | 401                                                          | application/json                                             |
-| errors.NotFoundError                                         | 404                                                          | application/json                                             |
-| errors.UnauthorizedError                                     | 403, 407                                                     | application/json                                             |
-| errors.TimeoutError                                          | 408                                                          | application/json                                             |
-| errors.RateLimitedError                                      | 429                                                          | application/json                                             |
-| errors.BadRequestError                                       | 413, 414, 415, 422, 431                                      | application/json                                             |
-| errors.TimeoutError                                          | 504                                                          | application/json                                             |
-| errors.NotFoundError                                         | 501, 505                                                     | application/json                                             |
-| errors.InternalServerError                                   | 500, 502, 503, 506, 507, 508                                 | application/json                                             |
-| errors.BadRequestError                                       | 510                                                          | application/json                                             |
-| errors.UnauthorizedError                                     | 511                                                          | application/json                                             |
-| errors.APIError                                              | 4XX, 5XX                                                     | \*/\*                                                        |
+| Error Type                                      | Status Code                                     | Content Type                                    |
+| ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
+| errors.ChatBskyConvoSendMessageBadRequestError  | 400                                             | application/json                                |
+| errors.ChatBskyConvoSendMessageAuthMissingError | 401                                             | application/json                                |
+| errors.NotFoundError                            | 404                                             | application/json                                |
+| errors.UnauthorizedError                        | 403, 407                                        | application/json                                |
+| errors.TimeoutError                             | 408                                             | application/json                                |
+| errors.RateLimitedError                         | 429                                             | application/json                                |
+| errors.BadRequestError                          | 413, 414, 415, 422, 431                         | application/json                                |
+| errors.TimeoutError                             | 504                                             | application/json                                |
+| errors.NotFoundError                            | 501, 505                                        | application/json                                |
+| errors.InternalServerError                      | 500, 502, 503, 506, 507, 508                    | application/json                                |
+| errors.BadRequestError                          | 510                                             | application/json                                |
+| errors.UnauthorizedError                        | 511                                             | application/json                                |
+| errors.APIError                                 | 4XX, 5XX                                        | \*/\*                                           |
 
 ## updateRead
 
@@ -400,7 +386,6 @@ async function run() {
     convoId: "<id>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -425,15 +410,12 @@ async function run() {
   const res = await chatConvosUpdateRead(bluesky, {
     convoId: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("chatConvosUpdateRead failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -460,29 +442,29 @@ import {
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ChatBskyConvoUpdateReadBody](../../models/operations/chatbskyconvoupdatereadbody.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ChatBskyConvoUpdateReadRequest](../../models/operations/chatbskyconvoupdatereadrequest.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.ChatBskyConvoUpdateReadResponseBody](../../models/operations/chatbskyconvoupdatereadresponsebody.md)\>**
+**Promise\<[operations.ChatBskyConvoUpdateReadResponse](../../models/operations/chatbskyconvoupdatereadresponse.md)\>**
 
 ### Errors
 
-| Error Type                                                  | Status Code                                                 | Content Type                                                |
-| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
-| errors.BadRequestChatBskyConvoUpdateReadResponseBodyError   | 400                                                         | application/json                                            |
-| errors.UnauthorizedChatBskyConvoUpdateReadResponseBodyError | 401                                                         | application/json                                            |
-| errors.NotFoundError                                        | 404                                                         | application/json                                            |
-| errors.UnauthorizedError                                    | 403, 407                                                    | application/json                                            |
-| errors.TimeoutError                                         | 408                                                         | application/json                                            |
-| errors.RateLimitedError                                     | 429                                                         | application/json                                            |
-| errors.BadRequestError                                      | 413, 414, 415, 422, 431                                     | application/json                                            |
-| errors.TimeoutError                                         | 504                                                         | application/json                                            |
-| errors.NotFoundError                                        | 501, 505                                                    | application/json                                            |
-| errors.InternalServerError                                  | 500, 502, 503, 506, 507, 508                                | application/json                                            |
-| errors.BadRequestError                                      | 510                                                         | application/json                                            |
-| errors.UnauthorizedError                                    | 511                                                         | application/json                                            |
-| errors.APIError                                             | 4XX, 5XX                                                    | \*/\*                                                       |
+| Error Type                                     | Status Code                                    | Content Type                                   |
+| ---------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- |
+| errors.ChatBskyConvoUpdateReadBadRequestError  | 400                                            | application/json                               |
+| errors.ChatBskyConvoUpdateReadAuthMissingError | 401                                            | application/json                               |
+| errors.NotFoundError                           | 404                                            | application/json                               |
+| errors.UnauthorizedError                       | 403, 407                                       | application/json                               |
+| errors.TimeoutError                            | 408                                            | application/json                               |
+| errors.RateLimitedError                        | 429                                            | application/json                               |
+| errors.BadRequestError                         | 413, 414, 415, 422, 431                        | application/json                               |
+| errors.TimeoutError                            | 504                                            | application/json                               |
+| errors.NotFoundError                           | 501, 505                                       | application/json                               |
+| errors.InternalServerError                     | 500, 502, 503, 506, 507, 508                   | application/json                               |
+| errors.BadRequestError                         | 510                                            | application/json                               |
+| errors.UnauthorizedError                       | 511                                            | application/json                               |
+| errors.APIError                                | 4XX, 5XX                                       | \*/\*                                          |

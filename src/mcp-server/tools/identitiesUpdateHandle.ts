@@ -7,11 +7,11 @@ import * as operations from "../../models/operations/index.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
 const args = {
-  request: operations.ComAtprotoIdentityUpdateHandleBody$inboundSchema,
+  request: operations.ComAtprotoIdentityUpdateHandleRequest$inboundSchema,
 };
 
 export const tool$identitiesUpdateHandle: ToolDefinition<typeof args> = {
-  name: "identities_update-handle",
+  name: "identities-update-handle",
   description:
     `*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 

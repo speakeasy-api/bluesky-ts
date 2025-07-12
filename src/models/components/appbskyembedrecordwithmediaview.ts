@@ -32,31 +32,31 @@ import {
 } from "./appbskyembedvideoview.js";
 
 export type Media =
+  | AppBskyEmbedVideoView
   | AppBskyEmbedImagesView
-  | AppBskyEmbedExternalView
-  | AppBskyEmbedVideoView;
+  | AppBskyEmbedExternalView;
 
 export type AppBskyEmbedRecordWithMediaView = {
   record: AppBskyEmbedRecordView;
   media:
+    | AppBskyEmbedVideoView
     | AppBskyEmbedImagesView
-    | AppBskyEmbedExternalView
-    | AppBskyEmbedVideoView;
+    | AppBskyEmbedExternalView;
 };
 
 /** @internal */
 export const Media$inboundSchema: z.ZodType<Media, z.ZodTypeDef, unknown> = z
   .union([
+    AppBskyEmbedVideoView$inboundSchema,
     AppBskyEmbedImagesView$inboundSchema,
     AppBskyEmbedExternalView$inboundSchema,
-    AppBskyEmbedVideoView$inboundSchema,
   ]);
 
 /** @internal */
 export type Media$Outbound =
+  | AppBskyEmbedVideoView$Outbound
   | AppBskyEmbedImagesView$Outbound
-  | AppBskyEmbedExternalView$Outbound
-  | AppBskyEmbedVideoView$Outbound;
+  | AppBskyEmbedExternalView$Outbound;
 
 /** @internal */
 export const Media$outboundSchema: z.ZodType<
@@ -64,9 +64,9 @@ export const Media$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   Media
 > = z.union([
+  AppBskyEmbedVideoView$outboundSchema,
   AppBskyEmbedImagesView$outboundSchema,
   AppBskyEmbedExternalView$outboundSchema,
-  AppBskyEmbedVideoView$outboundSchema,
 ]);
 
 /**
@@ -104,9 +104,9 @@ export const AppBskyEmbedRecordWithMediaView$inboundSchema: z.ZodType<
 > = z.object({
   record: z.lazy(() => AppBskyEmbedRecordView$inboundSchema),
   media: z.union([
+    AppBskyEmbedVideoView$inboundSchema,
     AppBskyEmbedImagesView$inboundSchema,
     AppBskyEmbedExternalView$inboundSchema,
-    AppBskyEmbedVideoView$inboundSchema,
   ]),
 });
 
@@ -114,9 +114,9 @@ export const AppBskyEmbedRecordWithMediaView$inboundSchema: z.ZodType<
 export type AppBskyEmbedRecordWithMediaView$Outbound = {
   record: AppBskyEmbedRecordView$Outbound;
   media:
+    | AppBskyEmbedVideoView$Outbound
     | AppBskyEmbedImagesView$Outbound
-    | AppBskyEmbedExternalView$Outbound
-    | AppBskyEmbedVideoView$Outbound;
+    | AppBskyEmbedExternalView$Outbound;
 };
 
 /** @internal */
@@ -127,9 +127,9 @@ export const AppBskyEmbedRecordWithMediaView$outboundSchema: z.ZodType<
 > = z.object({
   record: z.lazy(() => AppBskyEmbedRecordView$outboundSchema),
   media: z.union([
+    AppBskyEmbedVideoView$outboundSchema,
     AppBskyEmbedImagesView$outboundSchema,
     AppBskyEmbedExternalView$outboundSchema,
-    AppBskyEmbedVideoView$outboundSchema,
   ]),
 });
 

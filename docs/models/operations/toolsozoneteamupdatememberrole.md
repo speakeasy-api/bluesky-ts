@@ -5,8 +5,7 @@
 ```typescript
 import { ToolsOzoneTeamUpdateMemberRole } from "@speakeasy-sdks/bluesky/models/operations";
 
-let value: ToolsOzoneTeamUpdateMemberRole =
-  "tools.ozone.team.defs#roleModerator";
+let value: ToolsOzoneTeamUpdateMemberRole = "tools.ozone.team.defs#roleAdmin";
 ```
 
 ## Values

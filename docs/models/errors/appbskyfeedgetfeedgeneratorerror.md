@@ -5,7 +5,7 @@
 ```typescript
 import { AppBskyFeedGetFeedGeneratorError } from "@speakeasy-sdks/bluesky/models/errors";
 
-let value: AppBskyFeedGetFeedGeneratorError = "InvalidRequest";
+let value: AppBskyFeedGetFeedGeneratorError = "ExpiredToken";
 ```
 
 ## Values

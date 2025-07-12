@@ -10,31 +10,28 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 /**
  * OK
  */
-export type ComAtprotoServerRequestEmailUpdateResponseBody = {
+export type ComAtprotoServerRequestEmailUpdateResponse = {
   tokenRequired: boolean;
 };
 
 /** @internal */
-export const ComAtprotoServerRequestEmailUpdateResponseBody$inboundSchema:
-  z.ZodType<
-    ComAtprotoServerRequestEmailUpdateResponseBody,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    tokenRequired: z.boolean(),
-  });
+export const ComAtprotoServerRequestEmailUpdateResponse$inboundSchema:
+  z.ZodType<ComAtprotoServerRequestEmailUpdateResponse, z.ZodTypeDef, unknown> =
+    z.object({
+      tokenRequired: z.boolean(),
+    });
 
 /** @internal */
-export type ComAtprotoServerRequestEmailUpdateResponseBody$Outbound = {
+export type ComAtprotoServerRequestEmailUpdateResponse$Outbound = {
   tokenRequired: boolean;
 };
 
 /** @internal */
-export const ComAtprotoServerRequestEmailUpdateResponseBody$outboundSchema:
+export const ComAtprotoServerRequestEmailUpdateResponse$outboundSchema:
   z.ZodType<
-    ComAtprotoServerRequestEmailUpdateResponseBody$Outbound,
+    ComAtprotoServerRequestEmailUpdateResponse$Outbound,
     z.ZodTypeDef,
-    ComAtprotoServerRequestEmailUpdateResponseBody
+    ComAtprotoServerRequestEmailUpdateResponse
   > = z.object({
     tokenRequired: z.boolean(),
   });
@@ -43,41 +40,40 @@ export const ComAtprotoServerRequestEmailUpdateResponseBody$outboundSchema:
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoServerRequestEmailUpdateResponseBody$ {
-  /** @deprecated use `ComAtprotoServerRequestEmailUpdateResponseBody$inboundSchema` instead. */
+export namespace ComAtprotoServerRequestEmailUpdateResponse$ {
+  /** @deprecated use `ComAtprotoServerRequestEmailUpdateResponse$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoServerRequestEmailUpdateResponseBody$inboundSchema;
-  /** @deprecated use `ComAtprotoServerRequestEmailUpdateResponseBody$outboundSchema` instead. */
+    ComAtprotoServerRequestEmailUpdateResponse$inboundSchema;
+  /** @deprecated use `ComAtprotoServerRequestEmailUpdateResponse$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoServerRequestEmailUpdateResponseBody$outboundSchema;
-  /** @deprecated use `ComAtprotoServerRequestEmailUpdateResponseBody$Outbound` instead. */
-  export type Outbound =
-    ComAtprotoServerRequestEmailUpdateResponseBody$Outbound;
+    ComAtprotoServerRequestEmailUpdateResponse$outboundSchema;
+  /** @deprecated use `ComAtprotoServerRequestEmailUpdateResponse$Outbound` instead. */
+  export type Outbound = ComAtprotoServerRequestEmailUpdateResponse$Outbound;
 }
 
-export function comAtprotoServerRequestEmailUpdateResponseBodyToJSON(
-  comAtprotoServerRequestEmailUpdateResponseBody:
-    ComAtprotoServerRequestEmailUpdateResponseBody,
+export function comAtprotoServerRequestEmailUpdateResponseToJSON(
+  comAtprotoServerRequestEmailUpdateResponse:
+    ComAtprotoServerRequestEmailUpdateResponse,
 ): string {
   return JSON.stringify(
-    ComAtprotoServerRequestEmailUpdateResponseBody$outboundSchema.parse(
-      comAtprotoServerRequestEmailUpdateResponseBody,
+    ComAtprotoServerRequestEmailUpdateResponse$outboundSchema.parse(
+      comAtprotoServerRequestEmailUpdateResponse,
     ),
   );
 }
 
-export function comAtprotoServerRequestEmailUpdateResponseBodyFromJSON(
+export function comAtprotoServerRequestEmailUpdateResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
-  ComAtprotoServerRequestEmailUpdateResponseBody,
+  ComAtprotoServerRequestEmailUpdateResponse,
   SDKValidationError
 > {
   return safeParse(
     jsonString,
     (x) =>
-      ComAtprotoServerRequestEmailUpdateResponseBody$inboundSchema.parse(
+      ComAtprotoServerRequestEmailUpdateResponse$inboundSchema.parse(
         JSON.parse(x),
       ),
-    `Failed to parse 'ComAtprotoServerRequestEmailUpdateResponseBody' from JSON`,
+    `Failed to parse 'ComAtprotoServerRequestEmailUpdateResponse' from JSON`,
   );
 }

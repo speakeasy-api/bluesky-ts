@@ -7,11 +7,11 @@ import * as operations from "../../models/operations/index.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
 const args = {
-  request: operations.ComAtprotoAdminUpdateSubjectStatusBody$inboundSchema,
+  request: operations.ComAtprotoAdminUpdateSubjectStatusRequest$inboundSchema,
 };
 
 export const tool$adminUpdateSubjectStatus: ToolDefinition<typeof args> = {
-  name: "admin_update-subject-status",
+  name: "admin-update-subject-status",
   description:
     `*This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
 

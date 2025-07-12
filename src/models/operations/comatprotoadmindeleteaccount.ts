@@ -7,13 +7,13 @@ import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ComAtprotoAdminDeleteAccountBody = {
+export type ComAtprotoAdminDeleteAccountRequest = {
   did: string;
 };
 
 /** @internal */
-export const ComAtprotoAdminDeleteAccountBody$inboundSchema: z.ZodType<
-  ComAtprotoAdminDeleteAccountBody,
+export const ComAtprotoAdminDeleteAccountRequest$inboundSchema: z.ZodType<
+  ComAtprotoAdminDeleteAccountRequest,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -21,15 +21,15 @@ export const ComAtprotoAdminDeleteAccountBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type ComAtprotoAdminDeleteAccountBody$Outbound = {
+export type ComAtprotoAdminDeleteAccountRequest$Outbound = {
   did: string;
 };
 
 /** @internal */
-export const ComAtprotoAdminDeleteAccountBody$outboundSchema: z.ZodType<
-  ComAtprotoAdminDeleteAccountBody$Outbound,
+export const ComAtprotoAdminDeleteAccountRequest$outboundSchema: z.ZodType<
+  ComAtprotoAdminDeleteAccountRequest$Outbound,
   z.ZodTypeDef,
-  ComAtprotoAdminDeleteAccountBody
+  ComAtprotoAdminDeleteAccountRequest
 > = z.object({
   did: z.string(),
 });
@@ -38,31 +38,34 @@ export const ComAtprotoAdminDeleteAccountBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoAdminDeleteAccountBody$ {
-  /** @deprecated use `ComAtprotoAdminDeleteAccountBody$inboundSchema` instead. */
-  export const inboundSchema = ComAtprotoAdminDeleteAccountBody$inboundSchema;
-  /** @deprecated use `ComAtprotoAdminDeleteAccountBody$outboundSchema` instead. */
-  export const outboundSchema = ComAtprotoAdminDeleteAccountBody$outboundSchema;
-  /** @deprecated use `ComAtprotoAdminDeleteAccountBody$Outbound` instead. */
-  export type Outbound = ComAtprotoAdminDeleteAccountBody$Outbound;
+export namespace ComAtprotoAdminDeleteAccountRequest$ {
+  /** @deprecated use `ComAtprotoAdminDeleteAccountRequest$inboundSchema` instead. */
+  export const inboundSchema =
+    ComAtprotoAdminDeleteAccountRequest$inboundSchema;
+  /** @deprecated use `ComAtprotoAdminDeleteAccountRequest$outboundSchema` instead. */
+  export const outboundSchema =
+    ComAtprotoAdminDeleteAccountRequest$outboundSchema;
+  /** @deprecated use `ComAtprotoAdminDeleteAccountRequest$Outbound` instead. */
+  export type Outbound = ComAtprotoAdminDeleteAccountRequest$Outbound;
 }
 
-export function comAtprotoAdminDeleteAccountBodyToJSON(
-  comAtprotoAdminDeleteAccountBody: ComAtprotoAdminDeleteAccountBody,
+export function comAtprotoAdminDeleteAccountRequestToJSON(
+  comAtprotoAdminDeleteAccountRequest: ComAtprotoAdminDeleteAccountRequest,
 ): string {
   return JSON.stringify(
-    ComAtprotoAdminDeleteAccountBody$outboundSchema.parse(
-      comAtprotoAdminDeleteAccountBody,
+    ComAtprotoAdminDeleteAccountRequest$outboundSchema.parse(
+      comAtprotoAdminDeleteAccountRequest,
     ),
   );
 }
 
-export function comAtprotoAdminDeleteAccountBodyFromJSON(
+export function comAtprotoAdminDeleteAccountRequestFromJSON(
   jsonString: string,
-): SafeParseResult<ComAtprotoAdminDeleteAccountBody, SDKValidationError> {
+): SafeParseResult<ComAtprotoAdminDeleteAccountRequest, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => ComAtprotoAdminDeleteAccountBody$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ComAtprotoAdminDeleteAccountBody' from JSON`,
+    (x) =>
+      ComAtprotoAdminDeleteAccountRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ComAtprotoAdminDeleteAccountRequest' from JSON`,
   );
 }

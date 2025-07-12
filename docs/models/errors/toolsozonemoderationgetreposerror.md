@@ -5,7 +5,7 @@
 ```typescript
 import { ToolsOzoneModerationGetReposError } from "@speakeasy-sdks/bluesky/models/errors";
 
-let value: ToolsOzoneModerationGetReposError = "InvalidToken";
+let value: ToolsOzoneModerationGetReposError = "InvalidRequest";
 ```
 
 ## Values

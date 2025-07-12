@@ -7,13 +7,13 @@ import * as operations from "../../models/operations/index.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
 const args = {
-  request: operations.ComAtprotoServerRequestPasswordResetBody$inboundSchema,
+  request: operations.ComAtprotoServerRequestPasswordResetRequest$inboundSchema,
 };
 
 export const tool$atprotoServerRequestPasswordReset: ToolDefinition<
   typeof args
 > = {
-  name: "atproto-server_request-password-reset",
+  name: "atproto-server-request-password-reset",
   description:
     `*This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 

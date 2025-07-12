@@ -6,7 +6,7 @@
 import { AppBskyFeedDefsNotFoundPost } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: AppBskyFeedDefsNotFoundPost = {
-  uri: "https://gracious-packaging.biz",
+  uri: "https://old-fashioned-vein.org",
 };
 ```
 

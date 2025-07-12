@@ -7,7 +7,9 @@ import { ComAtprotoAdminGetAccountInfosRequest } from "@speakeasy-sdks/bluesky/m
 
 let value: ComAtprotoAdminGetAccountInfosRequest = {
   dids: [
-    "<id>",
+    "<id 1>",
+    "<id 2>",
+    "<id 3>",
   ],
 };
 ```

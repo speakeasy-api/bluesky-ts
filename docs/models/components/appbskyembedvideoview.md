@@ -7,7 +7,7 @@ import { AppBskyEmbedVideoView } from "@speakeasy-sdks/bluesky/models/components
 
 let value: AppBskyEmbedVideoView = {
   cid: "<id>",
-  playlist: "https://exhausted-cycle.com",
+  playlist: "https://paltry-hyphenation.biz/",
 };
 ```
 

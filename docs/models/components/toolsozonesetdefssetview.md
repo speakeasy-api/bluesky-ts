@@ -7,9 +7,9 @@ import { ToolsOzoneSetDefsSetView } from "@speakeasy-sdks/bluesky/models/compone
 
 let value: ToolsOzoneSetDefsSetView = {
   name: "<value>",
-  setSize: 671528,
-  createdAt: new Date("2025-07-12T21:34:10.519Z"),
-  updatedAt: new Date("2023-01-18T19:30:48.072Z"),
+  setSize: 574243,
+  createdAt: new Date("2025-02-26T08:44:50.887Z"),
+  updatedAt: new Date("2024-06-17T08:14:18.037Z"),
 };
 ```
 

@@ -7,7 +7,7 @@ import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ToolsOzoneCommunicationCreateTemplateBody = {
+export type ToolsOzoneCommunicationCreateTemplateRequest = {
   /**
    * Name of the template.
    */
@@ -31,20 +31,21 @@ export type ToolsOzoneCommunicationCreateTemplateBody = {
 };
 
 /** @internal */
-export const ToolsOzoneCommunicationCreateTemplateBody$inboundSchema: z.ZodType<
-  ToolsOzoneCommunicationCreateTemplateBody,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  name: z.string(),
-  contentMarkdown: z.string(),
-  subject: z.string(),
-  lang: z.string().optional(),
-  createdBy: z.string().optional(),
-});
+export const ToolsOzoneCommunicationCreateTemplateRequest$inboundSchema:
+  z.ZodType<
+    ToolsOzoneCommunicationCreateTemplateRequest,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    name: z.string(),
+    contentMarkdown: z.string(),
+    subject: z.string(),
+    lang: z.string().optional(),
+    createdBy: z.string().optional(),
+  });
 
 /** @internal */
-export type ToolsOzoneCommunicationCreateTemplateBody$Outbound = {
+export type ToolsOzoneCommunicationCreateTemplateRequest$Outbound = {
   name: string;
   contentMarkdown: string;
   subject: string;
@@ -53,11 +54,11 @@ export type ToolsOzoneCommunicationCreateTemplateBody$Outbound = {
 };
 
 /** @internal */
-export const ToolsOzoneCommunicationCreateTemplateBody$outboundSchema:
+export const ToolsOzoneCommunicationCreateTemplateRequest$outboundSchema:
   z.ZodType<
-    ToolsOzoneCommunicationCreateTemplateBody$Outbound,
+    ToolsOzoneCommunicationCreateTemplateRequest$Outbound,
     z.ZodTypeDef,
-    ToolsOzoneCommunicationCreateTemplateBody
+    ToolsOzoneCommunicationCreateTemplateRequest
   > = z.object({
     name: z.string(),
     contentMarkdown: z.string(),
@@ -70,40 +71,40 @@ export const ToolsOzoneCommunicationCreateTemplateBody$outboundSchema:
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ToolsOzoneCommunicationCreateTemplateBody$ {
-  /** @deprecated use `ToolsOzoneCommunicationCreateTemplateBody$inboundSchema` instead. */
+export namespace ToolsOzoneCommunicationCreateTemplateRequest$ {
+  /** @deprecated use `ToolsOzoneCommunicationCreateTemplateRequest$inboundSchema` instead. */
   export const inboundSchema =
-    ToolsOzoneCommunicationCreateTemplateBody$inboundSchema;
-  /** @deprecated use `ToolsOzoneCommunicationCreateTemplateBody$outboundSchema` instead. */
+    ToolsOzoneCommunicationCreateTemplateRequest$inboundSchema;
+  /** @deprecated use `ToolsOzoneCommunicationCreateTemplateRequest$outboundSchema` instead. */
   export const outboundSchema =
-    ToolsOzoneCommunicationCreateTemplateBody$outboundSchema;
-  /** @deprecated use `ToolsOzoneCommunicationCreateTemplateBody$Outbound` instead. */
-  export type Outbound = ToolsOzoneCommunicationCreateTemplateBody$Outbound;
+    ToolsOzoneCommunicationCreateTemplateRequest$outboundSchema;
+  /** @deprecated use `ToolsOzoneCommunicationCreateTemplateRequest$Outbound` instead. */
+  export type Outbound = ToolsOzoneCommunicationCreateTemplateRequest$Outbound;
 }
 
-export function toolsOzoneCommunicationCreateTemplateBodyToJSON(
-  toolsOzoneCommunicationCreateTemplateBody:
-    ToolsOzoneCommunicationCreateTemplateBody,
+export function toolsOzoneCommunicationCreateTemplateRequestToJSON(
+  toolsOzoneCommunicationCreateTemplateRequest:
+    ToolsOzoneCommunicationCreateTemplateRequest,
 ): string {
   return JSON.stringify(
-    ToolsOzoneCommunicationCreateTemplateBody$outboundSchema.parse(
-      toolsOzoneCommunicationCreateTemplateBody,
+    ToolsOzoneCommunicationCreateTemplateRequest$outboundSchema.parse(
+      toolsOzoneCommunicationCreateTemplateRequest,
     ),
   );
 }
 
-export function toolsOzoneCommunicationCreateTemplateBodyFromJSON(
+export function toolsOzoneCommunicationCreateTemplateRequestFromJSON(
   jsonString: string,
 ): SafeParseResult<
-  ToolsOzoneCommunicationCreateTemplateBody,
+  ToolsOzoneCommunicationCreateTemplateRequest,
   SDKValidationError
 > {
   return safeParse(
     jsonString,
     (x) =>
-      ToolsOzoneCommunicationCreateTemplateBody$inboundSchema.parse(
+      ToolsOzoneCommunicationCreateTemplateRequest$inboundSchema.parse(
         JSON.parse(x),
       ),
-    `Failed to parse 'ToolsOzoneCommunicationCreateTemplateBody' from JSON`,
+    `Failed to parse 'ToolsOzoneCommunicationCreateTemplateRequest' from JSON`,
   );
 }

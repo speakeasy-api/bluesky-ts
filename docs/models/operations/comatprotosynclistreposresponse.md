@@ -7,13 +7,7 @@ import { ComAtprotoSyncListReposResponse } from "@speakeasy-sdks/bluesky/models/
 
 let value: ComAtprotoSyncListReposResponse = {
   result: {
-    repos: [
-      {
-        did: "<id>",
-        head: "<id>",
-        rev: "<value>",
-      },
-    ],
+    repos: [],
   },
 };
 ```

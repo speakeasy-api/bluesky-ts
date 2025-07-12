@@ -8,7 +8,7 @@ import { AppBskyVideoDefsJobStatus } from "@speakeasy-sdks/bluesky/models/compon
 let value: AppBskyVideoDefsJobStatus = {
   jobId: "<id>",
   did: "<id>",
-  state: "JOB_STATE_FAILED",
+  state: "JOB_STATE_COMPLETED",
 };
 ```
 

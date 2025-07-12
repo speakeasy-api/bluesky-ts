@@ -21,7 +21,7 @@ export class Moderations extends ClientSDK {
   async getRecords(
     request: operations.ToolsOzoneModerationGetRecordsRequest,
     options?: RequestOptions,
-  ): Promise<operations.ToolsOzoneModerationGetRecordsResponseBody> {
+  ): Promise<operations.ToolsOzoneModerationGetRecordsResponse> {
     return unwrapAsync(moderationsGetRecords(
       this,
       request,
@@ -39,7 +39,7 @@ export class Moderations extends ClientSDK {
   async getRepos(
     request: operations.ToolsOzoneModerationGetReposRequest,
     options?: RequestOptions,
-  ): Promise<operations.ToolsOzoneModerationGetReposResponseBody> {
+  ): Promise<operations.ToolsOzoneModerationGetReposResponse> {
     return unwrapAsync(moderationsGetRepos(
       this,
       request,
