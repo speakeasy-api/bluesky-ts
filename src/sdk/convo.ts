@@ -17,7 +17,7 @@ export class Convo extends ClientSDK {
    * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
    */
   async deleteMessageForSelf(
-    request: operations.ChatBskyConvoDeleteMessageForSelfBody,
+    request: operations.ChatBskyConvoDeleteMessageForSelfRequest,
     options?: RequestOptions,
   ): Promise<components.ChatBskyConvoDefsDeletedMessageView> {
     return unwrapAsync(convoDeleteMessageForSelf(

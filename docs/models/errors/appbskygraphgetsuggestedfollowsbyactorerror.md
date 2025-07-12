@@ -5,7 +5,7 @@
 ```typescript
 import { AppBskyGraphGetSuggestedFollowsByActorError } from "@speakeasy-sdks/bluesky/models/errors";
 
-let value: AppBskyGraphGetSuggestedFollowsByActorError = "InvalidToken";
+let value: AppBskyGraphGetSuggestedFollowsByActorError = "ExpiredToken";
 ```
 
 ## Values

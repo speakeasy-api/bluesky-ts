@@ -7,7 +7,8 @@ import { ToolsOzoneSignatureSearchAccountsRequest } from "@speakeasy-sdks/bluesk
 
 let value: ToolsOzoneSignatureSearchAccountsRequest = {
   values: [
-    "<value>",
+    "<value 1>",
+    "<value 2>",
   ],
 };
 ```

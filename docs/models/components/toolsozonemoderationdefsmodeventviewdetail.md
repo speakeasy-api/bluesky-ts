@@ -6,23 +6,24 @@
 import { ToolsOzoneModerationDefsModEventViewDetail } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: ToolsOzoneModerationDefsModEventViewDetail = {
-  id: 709051,
+  id: 551657,
   event: {
-    subjectLine: "<value>",
+    op: "delete",
+    timestamp: new Date("2023-08-13T11:08:30.188Z"),
   },
   subject: {
-    uri: "https://lost-swine.org",
+    uri: "https://warm-larva.org",
   },
   subjectBlobs: [
     {
       cid: "<id>",
       mimeType: "<value>",
-      size: 271551,
-      createdAt: new Date("2024-10-27T20:52:23.318Z"),
+      size: 125267,
+      createdAt: new Date("2023-01-15T02:49:30.055Z"),
     },
   ],
   createdBy: "<id>",
-  createdAt: new Date("2024-07-31T03:15:58.659Z"),
+  createdAt: new Date("2025-01-16T16:22:41.424Z"),
 };
 ```
 

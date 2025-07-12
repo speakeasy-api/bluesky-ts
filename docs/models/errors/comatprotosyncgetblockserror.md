@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoSyncGetBlocksError } from "@speakeasy-sdks/bluesky/models/errors";
 
-let value: ComAtprotoSyncGetBlocksError = "RepoTakendown";
+let value: ComAtprotoSyncGetBlocksError = "RepoDeactivated";
 ```
 
 ## Values

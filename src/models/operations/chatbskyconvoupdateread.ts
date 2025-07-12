@@ -8,7 +8,7 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ChatBskyConvoUpdateReadBody = {
+export type ChatBskyConvoUpdateReadRequest = {
   convoId: string;
   messageId?: string | undefined;
 };
@@ -16,13 +16,13 @@ export type ChatBskyConvoUpdateReadBody = {
 /**
  * OK
  */
-export type ChatBskyConvoUpdateReadResponseBody = {
+export type ChatBskyConvoUpdateReadResponse = {
   convo: components.ChatBskyConvoDefsConvoView;
 };
 
 /** @internal */
-export const ChatBskyConvoUpdateReadBody$inboundSchema: z.ZodType<
-  ChatBskyConvoUpdateReadBody,
+export const ChatBskyConvoUpdateReadRequest$inboundSchema: z.ZodType<
+  ChatBskyConvoUpdateReadRequest,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -31,16 +31,16 @@ export const ChatBskyConvoUpdateReadBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type ChatBskyConvoUpdateReadBody$Outbound = {
+export type ChatBskyConvoUpdateReadRequest$Outbound = {
   convoId: string;
   messageId?: string | undefined;
 };
 
 /** @internal */
-export const ChatBskyConvoUpdateReadBody$outboundSchema: z.ZodType<
-  ChatBskyConvoUpdateReadBody$Outbound,
+export const ChatBskyConvoUpdateReadRequest$outboundSchema: z.ZodType<
+  ChatBskyConvoUpdateReadRequest$Outbound,
   z.ZodTypeDef,
-  ChatBskyConvoUpdateReadBody
+  ChatBskyConvoUpdateReadRequest
 > = z.object({
   convoId: z.string(),
   messageId: z.string().optional(),
@@ -50,38 +50,38 @@ export const ChatBskyConvoUpdateReadBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ChatBskyConvoUpdateReadBody$ {
-  /** @deprecated use `ChatBskyConvoUpdateReadBody$inboundSchema` instead. */
-  export const inboundSchema = ChatBskyConvoUpdateReadBody$inboundSchema;
-  /** @deprecated use `ChatBskyConvoUpdateReadBody$outboundSchema` instead. */
-  export const outboundSchema = ChatBskyConvoUpdateReadBody$outboundSchema;
-  /** @deprecated use `ChatBskyConvoUpdateReadBody$Outbound` instead. */
-  export type Outbound = ChatBskyConvoUpdateReadBody$Outbound;
+export namespace ChatBskyConvoUpdateReadRequest$ {
+  /** @deprecated use `ChatBskyConvoUpdateReadRequest$inboundSchema` instead. */
+  export const inboundSchema = ChatBskyConvoUpdateReadRequest$inboundSchema;
+  /** @deprecated use `ChatBskyConvoUpdateReadRequest$outboundSchema` instead. */
+  export const outboundSchema = ChatBskyConvoUpdateReadRequest$outboundSchema;
+  /** @deprecated use `ChatBskyConvoUpdateReadRequest$Outbound` instead. */
+  export type Outbound = ChatBskyConvoUpdateReadRequest$Outbound;
 }
 
-export function chatBskyConvoUpdateReadBodyToJSON(
-  chatBskyConvoUpdateReadBody: ChatBskyConvoUpdateReadBody,
+export function chatBskyConvoUpdateReadRequestToJSON(
+  chatBskyConvoUpdateReadRequest: ChatBskyConvoUpdateReadRequest,
 ): string {
   return JSON.stringify(
-    ChatBskyConvoUpdateReadBody$outboundSchema.parse(
-      chatBskyConvoUpdateReadBody,
+    ChatBskyConvoUpdateReadRequest$outboundSchema.parse(
+      chatBskyConvoUpdateReadRequest,
     ),
   );
 }
 
-export function chatBskyConvoUpdateReadBodyFromJSON(
+export function chatBskyConvoUpdateReadRequestFromJSON(
   jsonString: string,
-): SafeParseResult<ChatBskyConvoUpdateReadBody, SDKValidationError> {
+): SafeParseResult<ChatBskyConvoUpdateReadRequest, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => ChatBskyConvoUpdateReadBody$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ChatBskyConvoUpdateReadBody' from JSON`,
+    (x) => ChatBskyConvoUpdateReadRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ChatBskyConvoUpdateReadRequest' from JSON`,
   );
 }
 
 /** @internal */
-export const ChatBskyConvoUpdateReadResponseBody$inboundSchema: z.ZodType<
-  ChatBskyConvoUpdateReadResponseBody,
+export const ChatBskyConvoUpdateReadResponse$inboundSchema: z.ZodType<
+  ChatBskyConvoUpdateReadResponse,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -89,15 +89,15 @@ export const ChatBskyConvoUpdateReadResponseBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type ChatBskyConvoUpdateReadResponseBody$Outbound = {
+export type ChatBskyConvoUpdateReadResponse$Outbound = {
   convo: components.ChatBskyConvoDefsConvoView$Outbound;
 };
 
 /** @internal */
-export const ChatBskyConvoUpdateReadResponseBody$outboundSchema: z.ZodType<
-  ChatBskyConvoUpdateReadResponseBody$Outbound,
+export const ChatBskyConvoUpdateReadResponse$outboundSchema: z.ZodType<
+  ChatBskyConvoUpdateReadResponse$Outbound,
   z.ZodTypeDef,
-  ChatBskyConvoUpdateReadResponseBody
+  ChatBskyConvoUpdateReadResponse
 > = z.object({
   convo: components.ChatBskyConvoDefsConvoView$outboundSchema,
 });
@@ -106,34 +106,31 @@ export const ChatBskyConvoUpdateReadResponseBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ChatBskyConvoUpdateReadResponseBody$ {
-  /** @deprecated use `ChatBskyConvoUpdateReadResponseBody$inboundSchema` instead. */
-  export const inboundSchema =
-    ChatBskyConvoUpdateReadResponseBody$inboundSchema;
-  /** @deprecated use `ChatBskyConvoUpdateReadResponseBody$outboundSchema` instead. */
-  export const outboundSchema =
-    ChatBskyConvoUpdateReadResponseBody$outboundSchema;
-  /** @deprecated use `ChatBskyConvoUpdateReadResponseBody$Outbound` instead. */
-  export type Outbound = ChatBskyConvoUpdateReadResponseBody$Outbound;
+export namespace ChatBskyConvoUpdateReadResponse$ {
+  /** @deprecated use `ChatBskyConvoUpdateReadResponse$inboundSchema` instead. */
+  export const inboundSchema = ChatBskyConvoUpdateReadResponse$inboundSchema;
+  /** @deprecated use `ChatBskyConvoUpdateReadResponse$outboundSchema` instead. */
+  export const outboundSchema = ChatBskyConvoUpdateReadResponse$outboundSchema;
+  /** @deprecated use `ChatBskyConvoUpdateReadResponse$Outbound` instead. */
+  export type Outbound = ChatBskyConvoUpdateReadResponse$Outbound;
 }
 
-export function chatBskyConvoUpdateReadResponseBodyToJSON(
-  chatBskyConvoUpdateReadResponseBody: ChatBskyConvoUpdateReadResponseBody,
+export function chatBskyConvoUpdateReadResponseToJSON(
+  chatBskyConvoUpdateReadResponse: ChatBskyConvoUpdateReadResponse,
 ): string {
   return JSON.stringify(
-    ChatBskyConvoUpdateReadResponseBody$outboundSchema.parse(
-      chatBskyConvoUpdateReadResponseBody,
+    ChatBskyConvoUpdateReadResponse$outboundSchema.parse(
+      chatBskyConvoUpdateReadResponse,
     ),
   );
 }
 
-export function chatBskyConvoUpdateReadResponseBodyFromJSON(
+export function chatBskyConvoUpdateReadResponseFromJSON(
   jsonString: string,
-): SafeParseResult<ChatBskyConvoUpdateReadResponseBody, SDKValidationError> {
+): SafeParseResult<ChatBskyConvoUpdateReadResponse, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) =>
-      ChatBskyConvoUpdateReadResponseBody$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ChatBskyConvoUpdateReadResponseBody' from JSON`,
+    (x) => ChatBskyConvoUpdateReadResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ChatBskyConvoUpdateReadResponse' from JSON`,
   );
 }

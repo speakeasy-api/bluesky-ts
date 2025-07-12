@@ -4,11 +4,12 @@
 
 import * as z from "zod";
 import { ClosedEnum } from "../../types/enums.js";
+import { BlueskyError } from "./blueskyerror.js";
 
 /**
  * Unauthorized
  */
-export type UnauthorizedComAtprotoServerUpdateEmailResponseBodyErrorData = {
+export type ComAtprotoServerUpdateEmailAuthMissingErrorData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,26 +17,22 @@ export type UnauthorizedComAtprotoServerUpdateEmailResponseBodyErrorData = {
 /**
  * Unauthorized
  */
-export class UnauthorizedComAtprotoServerUpdateEmailResponseBodyError
-  extends Error
-{
+export class ComAtprotoServerUpdateEmailAuthMissingError extends BlueskyError {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: UnauthorizedComAtprotoServerUpdateEmailResponseBodyErrorData;
+  data$: ComAtprotoServerUpdateEmailAuthMissingErrorData;
 
   constructor(
-    err: UnauthorizedComAtprotoServerUpdateEmailResponseBodyErrorData,
+    err: ComAtprotoServerUpdateEmailAuthMissingErrorData,
+    httpMeta: { response: Response; request: Request; body: string },
   ) {
-    const message = "message" in err && typeof err.message === "string"
-      ? err.message
-      : `API error occurred: ${JSON.stringify(err)}`;
-    super(message);
+    const message = err.message || `API error occurred: ${JSON.stringify(err)}`;
+    super(message, httpMeta);
     this.data$ = err;
-
     this.error = err.error;
 
-    this.name = "UnauthorizedComAtprotoServerUpdateEmailResponseBodyError";
+    this.name = "ComAtprotoServerUpdateEmailAuthMissingError";
   }
 }
 
@@ -52,7 +49,7 @@ export type ComAtprotoServerUpdateEmailError = ClosedEnum<
 /**
  * Bad Request
  */
-export type BadRequestComAtprotoServerUpdateEmailResponseBodyErrorData = {
+export type ComAtprotoServerUpdateEmailBadRequestErrorData = {
   error: ComAtprotoServerUpdateEmailError;
   message: string;
 };
@@ -60,55 +57,59 @@ export type BadRequestComAtprotoServerUpdateEmailResponseBodyErrorData = {
 /**
  * Bad Request
  */
-export class BadRequestComAtprotoServerUpdateEmailResponseBodyError
-  extends Error
-{
+export class ComAtprotoServerUpdateEmailBadRequestError extends BlueskyError {
   error: ComAtprotoServerUpdateEmailError;
 
   /** The original data that was passed to this error instance. */
-  data$: BadRequestComAtprotoServerUpdateEmailResponseBodyErrorData;
+  data$: ComAtprotoServerUpdateEmailBadRequestErrorData;
 
-  constructor(err: BadRequestComAtprotoServerUpdateEmailResponseBodyErrorData) {
-    const message = "message" in err && typeof err.message === "string"
-      ? err.message
-      : `API error occurred: ${JSON.stringify(err)}`;
-    super(message);
+  constructor(
+    err: ComAtprotoServerUpdateEmailBadRequestErrorData,
+    httpMeta: { response: Response; request: Request; body: string },
+  ) {
+    const message = err.message || `API error occurred: ${JSON.stringify(err)}`;
+    super(message, httpMeta);
     this.data$ = err;
-
     this.error = err.error;
 
-    this.name = "BadRequestComAtprotoServerUpdateEmailResponseBodyError";
+    this.name = "ComAtprotoServerUpdateEmailBadRequestError";
   }
 }
 
 /** @internal */
-export const UnauthorizedComAtprotoServerUpdateEmailResponseBodyError$inboundSchema:
+export const ComAtprotoServerUpdateEmailAuthMissingError$inboundSchema:
   z.ZodType<
-    UnauthorizedComAtprotoServerUpdateEmailResponseBodyError,
+    ComAtprotoServerUpdateEmailAuthMissingError,
     z.ZodTypeDef,
     unknown
   > = z.object({
-    error: z.literal("AuthMissing"),
+    error: z.literal("AuthMissing").default("AuthMissing"),
     message: z.string(),
+    request$: z.instanceof(Request),
+    response$: z.instanceof(Response),
+    body$: z.string(),
   })
     .transform((v) => {
-      return new UnauthorizedComAtprotoServerUpdateEmailResponseBodyError(v);
+      return new ComAtprotoServerUpdateEmailAuthMissingError(v, {
+        request: v.request$,
+        response: v.response$,
+        body: v.body$,
+      });
     });
 
 /** @internal */
-export type UnauthorizedComAtprotoServerUpdateEmailResponseBodyError$Outbound =
-  {
-    error: "AuthMissing";
-    message: string;
-  };
+export type ComAtprotoServerUpdateEmailAuthMissingError$Outbound = {
+  error: "AuthMissing";
+  message: string;
+};
 
 /** @internal */
-export const UnauthorizedComAtprotoServerUpdateEmailResponseBodyError$outboundSchema:
+export const ComAtprotoServerUpdateEmailAuthMissingError$outboundSchema:
   z.ZodType<
-    UnauthorizedComAtprotoServerUpdateEmailResponseBodyError$Outbound,
+    ComAtprotoServerUpdateEmailAuthMissingError$Outbound,
     z.ZodTypeDef,
-    UnauthorizedComAtprotoServerUpdateEmailResponseBodyError
-  > = z.instanceof(UnauthorizedComAtprotoServerUpdateEmailResponseBodyError)
+    ComAtprotoServerUpdateEmailAuthMissingError
+  > = z.instanceof(ComAtprotoServerUpdateEmailAuthMissingError)
     .transform(v => v.data$)
     .pipe(z.object({
       error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -119,16 +120,15 @@ export const UnauthorizedComAtprotoServerUpdateEmailResponseBodyError$outboundSc
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace UnauthorizedComAtprotoServerUpdateEmailResponseBodyError$ {
-  /** @deprecated use `UnauthorizedComAtprotoServerUpdateEmailResponseBodyError$inboundSchema` instead. */
+export namespace ComAtprotoServerUpdateEmailAuthMissingError$ {
+  /** @deprecated use `ComAtprotoServerUpdateEmailAuthMissingError$inboundSchema` instead. */
   export const inboundSchema =
-    UnauthorizedComAtprotoServerUpdateEmailResponseBodyError$inboundSchema;
-  /** @deprecated use `UnauthorizedComAtprotoServerUpdateEmailResponseBodyError$outboundSchema` instead. */
+    ComAtprotoServerUpdateEmailAuthMissingError$inboundSchema;
+  /** @deprecated use `ComAtprotoServerUpdateEmailAuthMissingError$outboundSchema` instead. */
   export const outboundSchema =
-    UnauthorizedComAtprotoServerUpdateEmailResponseBodyError$outboundSchema;
-  /** @deprecated use `UnauthorizedComAtprotoServerUpdateEmailResponseBodyError$Outbound` instead. */
-  export type Outbound =
-    UnauthorizedComAtprotoServerUpdateEmailResponseBodyError$Outbound;
+    ComAtprotoServerUpdateEmailAuthMissingError$outboundSchema;
+  /** @deprecated use `ComAtprotoServerUpdateEmailAuthMissingError$Outbound` instead. */
+  export type Outbound = ComAtprotoServerUpdateEmailAuthMissingError$Outbound;
 }
 
 /** @internal */
@@ -153,32 +153,36 @@ export namespace ComAtprotoServerUpdateEmailError$ {
 }
 
 /** @internal */
-export const BadRequestComAtprotoServerUpdateEmailResponseBodyError$inboundSchema:
-  z.ZodType<
-    BadRequestComAtprotoServerUpdateEmailResponseBodyError,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    error: ComAtprotoServerUpdateEmailError$inboundSchema,
-    message: z.string(),
-  })
-    .transform((v) => {
-      return new BadRequestComAtprotoServerUpdateEmailResponseBodyError(v);
-    });
+export const ComAtprotoServerUpdateEmailBadRequestError$inboundSchema:
+  z.ZodType<ComAtprotoServerUpdateEmailBadRequestError, z.ZodTypeDef, unknown> =
+    z.object({
+      error: ComAtprotoServerUpdateEmailError$inboundSchema,
+      message: z.string(),
+      request$: z.instanceof(Request),
+      response$: z.instanceof(Response),
+      body$: z.string(),
+    })
+      .transform((v) => {
+        return new ComAtprotoServerUpdateEmailBadRequestError(v, {
+          request: v.request$,
+          response: v.response$,
+          body: v.body$,
+        });
+      });
 
 /** @internal */
-export type BadRequestComAtprotoServerUpdateEmailResponseBodyError$Outbound = {
+export type ComAtprotoServerUpdateEmailBadRequestError$Outbound = {
   error: string;
   message: string;
 };
 
 /** @internal */
-export const BadRequestComAtprotoServerUpdateEmailResponseBodyError$outboundSchema:
+export const ComAtprotoServerUpdateEmailBadRequestError$outboundSchema:
   z.ZodType<
-    BadRequestComAtprotoServerUpdateEmailResponseBodyError$Outbound,
+    ComAtprotoServerUpdateEmailBadRequestError$Outbound,
     z.ZodTypeDef,
-    BadRequestComAtprotoServerUpdateEmailResponseBodyError
-  > = z.instanceof(BadRequestComAtprotoServerUpdateEmailResponseBodyError)
+    ComAtprotoServerUpdateEmailBadRequestError
+  > = z.instanceof(ComAtprotoServerUpdateEmailBadRequestError)
     .transform(v => v.data$)
     .pipe(z.object({
       error: ComAtprotoServerUpdateEmailError$outboundSchema,
@@ -189,14 +193,13 @@ export const BadRequestComAtprotoServerUpdateEmailResponseBodyError$outboundSche
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace BadRequestComAtprotoServerUpdateEmailResponseBodyError$ {
-  /** @deprecated use `BadRequestComAtprotoServerUpdateEmailResponseBodyError$inboundSchema` instead. */
+export namespace ComAtprotoServerUpdateEmailBadRequestError$ {
+  /** @deprecated use `ComAtprotoServerUpdateEmailBadRequestError$inboundSchema` instead. */
   export const inboundSchema =
-    BadRequestComAtprotoServerUpdateEmailResponseBodyError$inboundSchema;
-  /** @deprecated use `BadRequestComAtprotoServerUpdateEmailResponseBodyError$outboundSchema` instead. */
+    ComAtprotoServerUpdateEmailBadRequestError$inboundSchema;
+  /** @deprecated use `ComAtprotoServerUpdateEmailBadRequestError$outboundSchema` instead. */
   export const outboundSchema =
-    BadRequestComAtprotoServerUpdateEmailResponseBodyError$outboundSchema;
-  /** @deprecated use `BadRequestComAtprotoServerUpdateEmailResponseBodyError$Outbound` instead. */
-  export type Outbound =
-    BadRequestComAtprotoServerUpdateEmailResponseBodyError$Outbound;
+    ComAtprotoServerUpdateEmailBadRequestError$outboundSchema;
+  /** @deprecated use `ComAtprotoServerUpdateEmailBadRequestError$Outbound` instead. */
+  export type Outbound = ComAtprotoServerUpdateEmailBadRequestError$Outbound;
 }

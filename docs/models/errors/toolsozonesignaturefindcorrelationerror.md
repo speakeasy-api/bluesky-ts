@@ -5,7 +5,7 @@
 ```typescript
 import { ToolsOzoneSignatureFindCorrelationError } from "@speakeasy-sdks/bluesky/models/errors";
 
-let value: ToolsOzoneSignatureFindCorrelationError = "InvalidToken";
+let value: ToolsOzoneSignatureFindCorrelationError = "ExpiredToken";
 ```
 
 ## Values

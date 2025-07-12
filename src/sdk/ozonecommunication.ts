@@ -19,7 +19,7 @@ export class OzoneCommunication extends ClientSDK {
    * Delete a communication template.
    */
   async delete(
-    request: operations.ToolsOzoneCommunicationDeleteTemplateBody,
+    request: operations.ToolsOzoneCommunicationDeleteTemplateRequest,
     options?: RequestOptions,
   ): Promise<void> {
     return unwrapAsync(ozoneCommunicationDelete(
@@ -38,7 +38,7 @@ export class OzoneCommunication extends ClientSDK {
    */
   async listTemplates(
     options?: RequestOptions,
-  ): Promise<operations.ToolsOzoneCommunicationListTemplatesResponseBody> {
+  ): Promise<operations.ToolsOzoneCommunicationListTemplatesResponse> {
     return unwrapAsync(ozoneCommunicationListTemplates(
       this,
       options,
@@ -53,7 +53,7 @@ export class OzoneCommunication extends ClientSDK {
    * Administrative action to update an existing communication template. Allows passing partial fields to patch specific fields only.
    */
   async updateTemplate(
-    request: operations.ToolsOzoneCommunicationUpdateTemplateBody,
+    request: operations.ToolsOzoneCommunicationUpdateTemplateRequest,
     options?: RequestOptions,
   ): Promise<components.ToolsOzoneCommunicationDefsTemplateView> {
     return unwrapAsync(ozoneCommunicationUpdateTemplate(

@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoServerReserveSigningKeyError } from "@speakeasy-sdks/bluesky/models/errors";
 
-let value: ComAtprotoServerReserveSigningKeyError = "InvalidToken";
+let value: ComAtprotoServerReserveSigningKeyError = "InvalidRequest";
 ```
 
 ## Values

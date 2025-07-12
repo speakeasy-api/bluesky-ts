@@ -7,13 +7,7 @@
 
 ```typescript
 const value: components.AppBskyEmbedImagesView = {
-  images: [
-    {
-      thumb: "https://clear-cut-dredger.info",
-      fullsize: "https://reckless-flu.net/",
-      alt: "<value>",
-    },
-  ],
+  images: [],
 };
 ```
 
@@ -22,7 +16,7 @@ const value: components.AppBskyEmbedImagesView = {
 ```typescript
 const value: components.AppBskyEmbedVideoView = {
   cid: "<id>",
-  playlist: "https://impish-hose.name",
+  playlist: "https://paltry-hyphenation.biz/",
 };
 ```
 
@@ -31,9 +25,9 @@ const value: components.AppBskyEmbedVideoView = {
 ```typescript
 const value: components.AppBskyEmbedExternalView = {
   external: {
-    uri: "https://super-pendant.net/",
+    uri: "https://weary-cinder.org",
     title: "<value>",
-    description: "cake although misfire breastplate whenever whenever pomelo",
+    description: "whereas madly phooey exploration joyously gadzooks",
   },
 };
 ```
@@ -43,14 +37,15 @@ const value: components.AppBskyEmbedExternalView = {
 ```typescript
 const value: components.AppBskyEmbedRecordView = {
   record: {
-    uri: "https://hefty-knight.info",
+    uri: "https://possible-disconnection.com",
     cid: "<id>",
-    record: "<value>",
+    did: "<id>",
     creator: {
       did: "<id>",
       handle: "<value>",
     },
-    indexedAt: new Date("2024-02-04T22:38:27.365Z"),
+    displayName: "Jeanie.Bauch91",
+    indexedAt: new Date("2024-01-07T23:48:39.193Z"),
   },
 };
 ```
@@ -61,21 +56,16 @@ const value: components.AppBskyEmbedRecordView = {
 const value: components.AppBskyEmbedRecordWithMediaView = {
   record: {
     record: {
-      uri: "https://responsible-dusk.name/",
-      blocked: true,
-      author: {
-        did: "<id>",
-      },
+      uri: "https://immediate-developmental.biz/",
+      notFound: true,
     },
   },
   media: {
-    images: [
-      {
-        thumb: "https://athletic-vision.com/",
-        fullsize: "https://pleasant-birdcage.org/",
-        alt: "<value>",
-      },
-    ],
+    external: {
+      uri: "https://weary-cinder.org",
+      title: "<value>",
+      description: "whereas madly phooey exploration joyously gadzooks",
+    },
   },
 };
 ```

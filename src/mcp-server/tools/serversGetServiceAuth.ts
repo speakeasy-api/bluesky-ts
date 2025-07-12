@@ -11,7 +11,7 @@ const args = {
 };
 
 export const tool$serversGetServiceAuth: ToolDefinition<typeof args> = {
-  name: "servers_get-service-auth",
+  name: "servers-get-service-auth",
   description:
     `*This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 

@@ -6,8 +6,8 @@
 import { AppBskyEmbedImagesViewImage } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: AppBskyEmbedImagesViewImage = {
-  thumb: "https://lavish-hydrocarbon.info",
-  fullsize: "https://weary-worth.info",
+  thumb: "https://flimsy-cafe.org/",
+  fullsize: "https://monstrous-marksman.biz",
   alt: "<value>",
 };
 ```

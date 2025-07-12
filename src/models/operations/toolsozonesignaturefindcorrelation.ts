@@ -15,7 +15,7 @@ export type ToolsOzoneSignatureFindCorrelationRequest = {
 /**
  * OK
  */
-export type ToolsOzoneSignatureFindCorrelationResponseBody = {
+export type ToolsOzoneSignatureFindCorrelationResponse = {
   details: Array<components.ToolsOzoneSignatureDefsSigDetail>;
 };
 
@@ -86,26 +86,25 @@ export function toolsOzoneSignatureFindCorrelationRequestFromJSON(
 }
 
 /** @internal */
-export const ToolsOzoneSignatureFindCorrelationResponseBody$inboundSchema:
-  z.ZodType<
-    ToolsOzoneSignatureFindCorrelationResponseBody,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    details: z.array(components.ToolsOzoneSignatureDefsSigDetail$inboundSchema),
-  });
+export const ToolsOzoneSignatureFindCorrelationResponse$inboundSchema:
+  z.ZodType<ToolsOzoneSignatureFindCorrelationResponse, z.ZodTypeDef, unknown> =
+    z.object({
+      details: z.array(
+        components.ToolsOzoneSignatureDefsSigDetail$inboundSchema,
+      ),
+    });
 
 /** @internal */
-export type ToolsOzoneSignatureFindCorrelationResponseBody$Outbound = {
+export type ToolsOzoneSignatureFindCorrelationResponse$Outbound = {
   details: Array<components.ToolsOzoneSignatureDefsSigDetail$Outbound>;
 };
 
 /** @internal */
-export const ToolsOzoneSignatureFindCorrelationResponseBody$outboundSchema:
+export const ToolsOzoneSignatureFindCorrelationResponse$outboundSchema:
   z.ZodType<
-    ToolsOzoneSignatureFindCorrelationResponseBody$Outbound,
+    ToolsOzoneSignatureFindCorrelationResponse$Outbound,
     z.ZodTypeDef,
-    ToolsOzoneSignatureFindCorrelationResponseBody
+    ToolsOzoneSignatureFindCorrelationResponse
   > = z.object({
     details: z.array(
       components.ToolsOzoneSignatureDefsSigDetail$outboundSchema,
@@ -116,41 +115,40 @@ export const ToolsOzoneSignatureFindCorrelationResponseBody$outboundSchema:
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ToolsOzoneSignatureFindCorrelationResponseBody$ {
-  /** @deprecated use `ToolsOzoneSignatureFindCorrelationResponseBody$inboundSchema` instead. */
+export namespace ToolsOzoneSignatureFindCorrelationResponse$ {
+  /** @deprecated use `ToolsOzoneSignatureFindCorrelationResponse$inboundSchema` instead. */
   export const inboundSchema =
-    ToolsOzoneSignatureFindCorrelationResponseBody$inboundSchema;
-  /** @deprecated use `ToolsOzoneSignatureFindCorrelationResponseBody$outboundSchema` instead. */
+    ToolsOzoneSignatureFindCorrelationResponse$inboundSchema;
+  /** @deprecated use `ToolsOzoneSignatureFindCorrelationResponse$outboundSchema` instead. */
   export const outboundSchema =
-    ToolsOzoneSignatureFindCorrelationResponseBody$outboundSchema;
-  /** @deprecated use `ToolsOzoneSignatureFindCorrelationResponseBody$Outbound` instead. */
-  export type Outbound =
-    ToolsOzoneSignatureFindCorrelationResponseBody$Outbound;
+    ToolsOzoneSignatureFindCorrelationResponse$outboundSchema;
+  /** @deprecated use `ToolsOzoneSignatureFindCorrelationResponse$Outbound` instead. */
+  export type Outbound = ToolsOzoneSignatureFindCorrelationResponse$Outbound;
 }
 
-export function toolsOzoneSignatureFindCorrelationResponseBodyToJSON(
-  toolsOzoneSignatureFindCorrelationResponseBody:
-    ToolsOzoneSignatureFindCorrelationResponseBody,
+export function toolsOzoneSignatureFindCorrelationResponseToJSON(
+  toolsOzoneSignatureFindCorrelationResponse:
+    ToolsOzoneSignatureFindCorrelationResponse,
 ): string {
   return JSON.stringify(
-    ToolsOzoneSignatureFindCorrelationResponseBody$outboundSchema.parse(
-      toolsOzoneSignatureFindCorrelationResponseBody,
+    ToolsOzoneSignatureFindCorrelationResponse$outboundSchema.parse(
+      toolsOzoneSignatureFindCorrelationResponse,
     ),
   );
 }
 
-export function toolsOzoneSignatureFindCorrelationResponseBodyFromJSON(
+export function toolsOzoneSignatureFindCorrelationResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
-  ToolsOzoneSignatureFindCorrelationResponseBody,
+  ToolsOzoneSignatureFindCorrelationResponse,
   SDKValidationError
 > {
   return safeParse(
     jsonString,
     (x) =>
-      ToolsOzoneSignatureFindCorrelationResponseBody$inboundSchema.parse(
+      ToolsOzoneSignatureFindCorrelationResponse$inboundSchema.parse(
         JSON.parse(x),
       ),
-    `Failed to parse 'ToolsOzoneSignatureFindCorrelationResponseBody' from JSON`,
+    `Failed to parse 'ToolsOzoneSignatureFindCorrelationResponse' from JSON`,
   );
 }

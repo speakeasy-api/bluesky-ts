@@ -10,13 +10,12 @@ import { ToolsOzoneModerationQueryStatusesResponseBody } from "@speakeasy-sdks/b
 let value: ToolsOzoneModerationQueryStatusesResponseBody = {
   subjectStatuses: [
     {
-      id: 924159,
+      id: 344525,
       subject: {
-        uri: "https://fair-hydrolyze.com/",
-        cid: "<id>",
+        did: "<id>",
       },
-      updatedAt: new Date("2024-01-17T22:18:44.696Z"),
-      createdAt: new Date("2025-03-22T03:31:31.130Z"),
+      updatedAt: new Date("2025-11-12T23:29:58.309Z"),
+      createdAt: new Date("2025-10-22T17:01:28.275Z"),
       reviewState: "#reviewClosed",
     },
   ],

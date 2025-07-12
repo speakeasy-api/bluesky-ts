@@ -6,7 +6,7 @@
 import { AppBskyFeedGetQuotesRequest } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: AppBskyFeedGetQuotesRequest = {
-  uri: "https://oily-hundred.org/",
+  uri: "https://firsthand-minor.name",
 };
 ```
 

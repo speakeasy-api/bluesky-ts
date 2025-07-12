@@ -16,9 +16,9 @@ export class Repo extends ClientSDK {
    * Write a repository record, creating or updating it as needed. Requires auth, implemented by PDS.
    */
   async putRecord(
-    request: operations.ComAtprotoRepoPutRecordBody,
+    request: operations.ComAtprotoRepoPutRecordRequest,
     options?: RequestOptions,
-  ): Promise<operations.ComAtprotoRepoPutRecordResponseBody> {
+  ): Promise<operations.ComAtprotoRepoPutRecordResponse> {
     return unwrapAsync(repoPutRecord(
       this,
       request,

@@ -9,9 +9,11 @@ let value: ToolsOzoneModerationDefsRepoView = {
   did: "<id>",
   handle: "<value>",
   relatedRecords: [
-    "<value>",
+    "<value 1>",
+    "<value 2>",
+    "<value 3>",
   ],
-  indexedAt: new Date("2024-11-07T18:38:53.264Z"),
+  indexedAt: new Date("2023-07-25T22:04:36.167Z"),
   moderation: {},
 };
 ```

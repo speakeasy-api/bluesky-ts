@@ -5,7 +5,7 @@
 ```typescript
 import { AppBskyGraphGetRelationshipsError } from "@speakeasy-sdks/bluesky/models/errors";
 
-let value: AppBskyGraphGetRelationshipsError = "InvalidToken";
+let value: AppBskyGraphGetRelationshipsError = "ExpiredToken";
 ```
 
 ## Values

@@ -11,7 +11,7 @@ const args = {
 };
 
 export const tool$atprotoLabelsQuery: ToolDefinition<typeof args> = {
-  name: "atproto-labels_query",
+  name: "atproto-labels-query",
   description:
     `*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 

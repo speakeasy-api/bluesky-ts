@@ -18,17 +18,17 @@ export type ChatBskyModerationGetMessageContextRequest = {
   after?: number | undefined;
 };
 
-export type ChatBskyModerationGetMessageContextMessages =
-  | components.ChatBskyConvoDefsDeletedMessageView
-  | components.ChatBskyConvoDefsMessageView;
+export type ChatBskyModerationGetMessageContextMessage =
+  | components.ChatBskyConvoDefsMessageView
+  | components.ChatBskyConvoDefsDeletedMessageView;
 
 /**
  * OK
  */
-export type ChatBskyModerationGetMessageContextResponseBody = {
+export type ChatBskyModerationGetMessageContextResponse = {
   messages: Array<
-    | components.ChatBskyConvoDefsDeletedMessageView
     | components.ChatBskyConvoDefsMessageView
+    | components.ChatBskyConvoDefsDeletedMessageView
   >;
 };
 
@@ -106,108 +106,105 @@ export function chatBskyModerationGetMessageContextRequestFromJSON(
 }
 
 /** @internal */
-export const ChatBskyModerationGetMessageContextMessages$inboundSchema:
-  z.ZodType<
-    ChatBskyModerationGetMessageContextMessages,
-    z.ZodTypeDef,
-    unknown
-  > = z.union([
-    components.ChatBskyConvoDefsDeletedMessageView$inboundSchema,
-    components.ChatBskyConvoDefsMessageView$inboundSchema,
-  ]);
+export const ChatBskyModerationGetMessageContextMessage$inboundSchema:
+  z.ZodType<ChatBskyModerationGetMessageContextMessage, z.ZodTypeDef, unknown> =
+    z.union([
+      components.ChatBskyConvoDefsMessageView$inboundSchema,
+      components.ChatBskyConvoDefsDeletedMessageView$inboundSchema,
+    ]);
 
 /** @internal */
-export type ChatBskyModerationGetMessageContextMessages$Outbound =
-  | components.ChatBskyConvoDefsDeletedMessageView$Outbound
-  | components.ChatBskyConvoDefsMessageView$Outbound;
+export type ChatBskyModerationGetMessageContextMessage$Outbound =
+  | components.ChatBskyConvoDefsMessageView$Outbound
+  | components.ChatBskyConvoDefsDeletedMessageView$Outbound;
 
 /** @internal */
-export const ChatBskyModerationGetMessageContextMessages$outboundSchema:
+export const ChatBskyModerationGetMessageContextMessage$outboundSchema:
   z.ZodType<
-    ChatBskyModerationGetMessageContextMessages$Outbound,
+    ChatBskyModerationGetMessageContextMessage$Outbound,
     z.ZodTypeDef,
-    ChatBskyModerationGetMessageContextMessages
+    ChatBskyModerationGetMessageContextMessage
   > = z.union([
-    components.ChatBskyConvoDefsDeletedMessageView$outboundSchema,
     components.ChatBskyConvoDefsMessageView$outboundSchema,
+    components.ChatBskyConvoDefsDeletedMessageView$outboundSchema,
   ]);
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ChatBskyModerationGetMessageContextMessages$ {
-  /** @deprecated use `ChatBskyModerationGetMessageContextMessages$inboundSchema` instead. */
+export namespace ChatBskyModerationGetMessageContextMessage$ {
+  /** @deprecated use `ChatBskyModerationGetMessageContextMessage$inboundSchema` instead. */
   export const inboundSchema =
-    ChatBskyModerationGetMessageContextMessages$inboundSchema;
-  /** @deprecated use `ChatBskyModerationGetMessageContextMessages$outboundSchema` instead. */
+    ChatBskyModerationGetMessageContextMessage$inboundSchema;
+  /** @deprecated use `ChatBskyModerationGetMessageContextMessage$outboundSchema` instead. */
   export const outboundSchema =
-    ChatBskyModerationGetMessageContextMessages$outboundSchema;
-  /** @deprecated use `ChatBskyModerationGetMessageContextMessages$Outbound` instead. */
-  export type Outbound = ChatBskyModerationGetMessageContextMessages$Outbound;
+    ChatBskyModerationGetMessageContextMessage$outboundSchema;
+  /** @deprecated use `ChatBskyModerationGetMessageContextMessage$Outbound` instead. */
+  export type Outbound = ChatBskyModerationGetMessageContextMessage$Outbound;
 }
 
-export function chatBskyModerationGetMessageContextMessagesToJSON(
-  chatBskyModerationGetMessageContextMessages:
-    ChatBskyModerationGetMessageContextMessages,
+export function chatBskyModerationGetMessageContextMessageToJSON(
+  chatBskyModerationGetMessageContextMessage:
+    ChatBskyModerationGetMessageContextMessage,
 ): string {
   return JSON.stringify(
-    ChatBskyModerationGetMessageContextMessages$outboundSchema.parse(
-      chatBskyModerationGetMessageContextMessages,
+    ChatBskyModerationGetMessageContextMessage$outboundSchema.parse(
+      chatBskyModerationGetMessageContextMessage,
     ),
   );
 }
 
-export function chatBskyModerationGetMessageContextMessagesFromJSON(
+export function chatBskyModerationGetMessageContextMessageFromJSON(
   jsonString: string,
 ): SafeParseResult<
-  ChatBskyModerationGetMessageContextMessages,
+  ChatBskyModerationGetMessageContextMessage,
   SDKValidationError
 > {
   return safeParse(
     jsonString,
     (x) =>
-      ChatBskyModerationGetMessageContextMessages$inboundSchema.parse(
+      ChatBskyModerationGetMessageContextMessage$inboundSchema.parse(
         JSON.parse(x),
       ),
-    `Failed to parse 'ChatBskyModerationGetMessageContextMessages' from JSON`,
+    `Failed to parse 'ChatBskyModerationGetMessageContextMessage' from JSON`,
   );
 }
 
 /** @internal */
-export const ChatBskyModerationGetMessageContextResponseBody$inboundSchema:
+export const ChatBskyModerationGetMessageContextResponse$inboundSchema:
   z.ZodType<
-    ChatBskyModerationGetMessageContextResponseBody,
+    ChatBskyModerationGetMessageContextResponse,
     z.ZodTypeDef,
     unknown
   > = z.object({
     messages: z.array(
       z.union([
-        components.ChatBskyConvoDefsDeletedMessageView$inboundSchema,
         components.ChatBskyConvoDefsMessageView$inboundSchema,
+        components.ChatBskyConvoDefsDeletedMessageView$inboundSchema,
       ]),
     ),
   });
 
 /** @internal */
-export type ChatBskyModerationGetMessageContextResponseBody$Outbound = {
+export type ChatBskyModerationGetMessageContextResponse$Outbound = {
   messages: Array<
-    | components.ChatBskyConvoDefsDeletedMessageView$Outbound
     | components.ChatBskyConvoDefsMessageView$Outbound
+    | components.ChatBskyConvoDefsDeletedMessageView$Outbound
   >;
 };
 
 /** @internal */
-export const ChatBskyModerationGetMessageContextResponseBody$outboundSchema:
+export const ChatBskyModerationGetMessageContextResponse$outboundSchema:
   z.ZodType<
-    ChatBskyModerationGetMessageContextResponseBody$Outbound,
+    ChatBskyModerationGetMessageContextResponse$Outbound,
     z.ZodTypeDef,
-    ChatBskyModerationGetMessageContextResponseBody
+    ChatBskyModerationGetMessageContextResponse
   > = z.object({
     messages: z.array(
       z.union([
-        components.ChatBskyConvoDefsDeletedMessageView$outboundSchema,
         components.ChatBskyConvoDefsMessageView$outboundSchema,
+        components.ChatBskyConvoDefsDeletedMessageView$outboundSchema,
       ]),
     ),
   });
@@ -216,41 +213,40 @@ export const ChatBskyModerationGetMessageContextResponseBody$outboundSchema:
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ChatBskyModerationGetMessageContextResponseBody$ {
-  /** @deprecated use `ChatBskyModerationGetMessageContextResponseBody$inboundSchema` instead. */
+export namespace ChatBskyModerationGetMessageContextResponse$ {
+  /** @deprecated use `ChatBskyModerationGetMessageContextResponse$inboundSchema` instead. */
   export const inboundSchema =
-    ChatBskyModerationGetMessageContextResponseBody$inboundSchema;
-  /** @deprecated use `ChatBskyModerationGetMessageContextResponseBody$outboundSchema` instead. */
+    ChatBskyModerationGetMessageContextResponse$inboundSchema;
+  /** @deprecated use `ChatBskyModerationGetMessageContextResponse$outboundSchema` instead. */
   export const outboundSchema =
-    ChatBskyModerationGetMessageContextResponseBody$outboundSchema;
-  /** @deprecated use `ChatBskyModerationGetMessageContextResponseBody$Outbound` instead. */
-  export type Outbound =
-    ChatBskyModerationGetMessageContextResponseBody$Outbound;
+    ChatBskyModerationGetMessageContextResponse$outboundSchema;
+  /** @deprecated use `ChatBskyModerationGetMessageContextResponse$Outbound` instead. */
+  export type Outbound = ChatBskyModerationGetMessageContextResponse$Outbound;
 }
 
-export function chatBskyModerationGetMessageContextResponseBodyToJSON(
-  chatBskyModerationGetMessageContextResponseBody:
-    ChatBskyModerationGetMessageContextResponseBody,
+export function chatBskyModerationGetMessageContextResponseToJSON(
+  chatBskyModerationGetMessageContextResponse:
+    ChatBskyModerationGetMessageContextResponse,
 ): string {
   return JSON.stringify(
-    ChatBskyModerationGetMessageContextResponseBody$outboundSchema.parse(
-      chatBskyModerationGetMessageContextResponseBody,
+    ChatBskyModerationGetMessageContextResponse$outboundSchema.parse(
+      chatBskyModerationGetMessageContextResponse,
     ),
   );
 }
 
-export function chatBskyModerationGetMessageContextResponseBodyFromJSON(
+export function chatBskyModerationGetMessageContextResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
-  ChatBskyModerationGetMessageContextResponseBody,
+  ChatBskyModerationGetMessageContextResponse,
   SDKValidationError
 > {
   return safeParse(
     jsonString,
     (x) =>
-      ChatBskyModerationGetMessageContextResponseBody$inboundSchema.parse(
+      ChatBskyModerationGetMessageContextResponse$inboundSchema.parse(
         JSON.parse(x),
       ),
-    `Failed to parse 'ChatBskyModerationGetMessageContextResponseBody' from JSON`,
+    `Failed to parse 'ChatBskyModerationGetMessageContextResponse' from JSON`,
   );
 }

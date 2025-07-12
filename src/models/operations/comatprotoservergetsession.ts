@@ -26,7 +26,7 @@ export type ComAtprotoServerGetSessionStatus = ClosedEnum<
 /**
  * OK
  */
-export type ComAtprotoServerGetSessionResponseBody = {
+export type ComAtprotoServerGetSessionResponse = {
   handle: string;
   did: string;
   email?: string | undefined;
@@ -62,8 +62,8 @@ export namespace ComAtprotoServerGetSessionStatus$ {
 }
 
 /** @internal */
-export const ComAtprotoServerGetSessionResponseBody$inboundSchema: z.ZodType<
-  ComAtprotoServerGetSessionResponseBody,
+export const ComAtprotoServerGetSessionResponse$inboundSchema: z.ZodType<
+  ComAtprotoServerGetSessionResponse,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -78,7 +78,7 @@ export const ComAtprotoServerGetSessionResponseBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type ComAtprotoServerGetSessionResponseBody$Outbound = {
+export type ComAtprotoServerGetSessionResponse$Outbound = {
   handle: string;
   did: string;
   email?: string | undefined;
@@ -90,10 +90,10 @@ export type ComAtprotoServerGetSessionResponseBody$Outbound = {
 };
 
 /** @internal */
-export const ComAtprotoServerGetSessionResponseBody$outboundSchema: z.ZodType<
-  ComAtprotoServerGetSessionResponseBody$Outbound,
+export const ComAtprotoServerGetSessionResponse$outboundSchema: z.ZodType<
+  ComAtprotoServerGetSessionResponse$Outbound,
   z.ZodTypeDef,
-  ComAtprotoServerGetSessionResponseBody
+  ComAtprotoServerGetSessionResponse
 > = z.object({
   handle: z.string(),
   did: z.string(),
@@ -109,35 +109,33 @@ export const ComAtprotoServerGetSessionResponseBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoServerGetSessionResponseBody$ {
-  /** @deprecated use `ComAtprotoServerGetSessionResponseBody$inboundSchema` instead. */
-  export const inboundSchema =
-    ComAtprotoServerGetSessionResponseBody$inboundSchema;
-  /** @deprecated use `ComAtprotoServerGetSessionResponseBody$outboundSchema` instead. */
+export namespace ComAtprotoServerGetSessionResponse$ {
+  /** @deprecated use `ComAtprotoServerGetSessionResponse$inboundSchema` instead. */
+  export const inboundSchema = ComAtprotoServerGetSessionResponse$inboundSchema;
+  /** @deprecated use `ComAtprotoServerGetSessionResponse$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoServerGetSessionResponseBody$outboundSchema;
-  /** @deprecated use `ComAtprotoServerGetSessionResponseBody$Outbound` instead. */
-  export type Outbound = ComAtprotoServerGetSessionResponseBody$Outbound;
+    ComAtprotoServerGetSessionResponse$outboundSchema;
+  /** @deprecated use `ComAtprotoServerGetSessionResponse$Outbound` instead. */
+  export type Outbound = ComAtprotoServerGetSessionResponse$Outbound;
 }
 
-export function comAtprotoServerGetSessionResponseBodyToJSON(
-  comAtprotoServerGetSessionResponseBody:
-    ComAtprotoServerGetSessionResponseBody,
+export function comAtprotoServerGetSessionResponseToJSON(
+  comAtprotoServerGetSessionResponse: ComAtprotoServerGetSessionResponse,
 ): string {
   return JSON.stringify(
-    ComAtprotoServerGetSessionResponseBody$outboundSchema.parse(
-      comAtprotoServerGetSessionResponseBody,
+    ComAtprotoServerGetSessionResponse$outboundSchema.parse(
+      comAtprotoServerGetSessionResponse,
     ),
   );
 }
 
-export function comAtprotoServerGetSessionResponseBodyFromJSON(
+export function comAtprotoServerGetSessionResponseFromJSON(
   jsonString: string,
-): SafeParseResult<ComAtprotoServerGetSessionResponseBody, SDKValidationError> {
+): SafeParseResult<ComAtprotoServerGetSessionResponse, SDKValidationError> {
   return safeParse(
     jsonString,
     (x) =>
-      ComAtprotoServerGetSessionResponseBody$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ComAtprotoServerGetSessionResponseBody' from JSON`,
+      ComAtprotoServerGetSessionResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ComAtprotoServerGetSessionResponse' from JSON`,
   );
 }

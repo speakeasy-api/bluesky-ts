@@ -7,79 +7,78 @@ import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ChatBskyModerationUpdateActorAccessBody = {
+export type ChatBskyModerationUpdateActorAccessRequest = {
   actor: string;
   allowAccess: boolean;
   ref?: string | undefined;
 };
 
 /** @internal */
-export const ChatBskyModerationUpdateActorAccessBody$inboundSchema: z.ZodType<
-  ChatBskyModerationUpdateActorAccessBody,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  actor: z.string(),
-  allowAccess: z.boolean(),
-  ref: z.string().optional(),
-});
+export const ChatBskyModerationUpdateActorAccessRequest$inboundSchema:
+  z.ZodType<ChatBskyModerationUpdateActorAccessRequest, z.ZodTypeDef, unknown> =
+    z.object({
+      actor: z.string(),
+      allowAccess: z.boolean(),
+      ref: z.string().optional(),
+    });
 
 /** @internal */
-export type ChatBskyModerationUpdateActorAccessBody$Outbound = {
+export type ChatBskyModerationUpdateActorAccessRequest$Outbound = {
   actor: string;
   allowAccess: boolean;
   ref?: string | undefined;
 };
 
 /** @internal */
-export const ChatBskyModerationUpdateActorAccessBody$outboundSchema: z.ZodType<
-  ChatBskyModerationUpdateActorAccessBody$Outbound,
-  z.ZodTypeDef,
-  ChatBskyModerationUpdateActorAccessBody
-> = z.object({
-  actor: z.string(),
-  allowAccess: z.boolean(),
-  ref: z.string().optional(),
-});
+export const ChatBskyModerationUpdateActorAccessRequest$outboundSchema:
+  z.ZodType<
+    ChatBskyModerationUpdateActorAccessRequest$Outbound,
+    z.ZodTypeDef,
+    ChatBskyModerationUpdateActorAccessRequest
+  > = z.object({
+    actor: z.string(),
+    allowAccess: z.boolean(),
+    ref: z.string().optional(),
+  });
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ChatBskyModerationUpdateActorAccessBody$ {
-  /** @deprecated use `ChatBskyModerationUpdateActorAccessBody$inboundSchema` instead. */
+export namespace ChatBskyModerationUpdateActorAccessRequest$ {
+  /** @deprecated use `ChatBskyModerationUpdateActorAccessRequest$inboundSchema` instead. */
   export const inboundSchema =
-    ChatBskyModerationUpdateActorAccessBody$inboundSchema;
-  /** @deprecated use `ChatBskyModerationUpdateActorAccessBody$outboundSchema` instead. */
+    ChatBskyModerationUpdateActorAccessRequest$inboundSchema;
+  /** @deprecated use `ChatBskyModerationUpdateActorAccessRequest$outboundSchema` instead. */
   export const outboundSchema =
-    ChatBskyModerationUpdateActorAccessBody$outboundSchema;
-  /** @deprecated use `ChatBskyModerationUpdateActorAccessBody$Outbound` instead. */
-  export type Outbound = ChatBskyModerationUpdateActorAccessBody$Outbound;
+    ChatBskyModerationUpdateActorAccessRequest$outboundSchema;
+  /** @deprecated use `ChatBskyModerationUpdateActorAccessRequest$Outbound` instead. */
+  export type Outbound = ChatBskyModerationUpdateActorAccessRequest$Outbound;
 }
 
-export function chatBskyModerationUpdateActorAccessBodyToJSON(
-  chatBskyModerationUpdateActorAccessBody:
-    ChatBskyModerationUpdateActorAccessBody,
+export function chatBskyModerationUpdateActorAccessRequestToJSON(
+  chatBskyModerationUpdateActorAccessRequest:
+    ChatBskyModerationUpdateActorAccessRequest,
 ): string {
   return JSON.stringify(
-    ChatBskyModerationUpdateActorAccessBody$outboundSchema.parse(
-      chatBskyModerationUpdateActorAccessBody,
+    ChatBskyModerationUpdateActorAccessRequest$outboundSchema.parse(
+      chatBskyModerationUpdateActorAccessRequest,
     ),
   );
 }
 
-export function chatBskyModerationUpdateActorAccessBodyFromJSON(
+export function chatBskyModerationUpdateActorAccessRequestFromJSON(
   jsonString: string,
 ): SafeParseResult<
-  ChatBskyModerationUpdateActorAccessBody,
+  ChatBskyModerationUpdateActorAccessRequest,
   SDKValidationError
 > {
   return safeParse(
     jsonString,
     (x) =>
-      ChatBskyModerationUpdateActorAccessBody$inboundSchema.parse(
+      ChatBskyModerationUpdateActorAccessRequest$inboundSchema.parse(
         JSON.parse(x),
       ),
-    `Failed to parse 'ChatBskyModerationUpdateActorAccessBody' from JSON`,
+    `Failed to parse 'ChatBskyModerationUpdateActorAccessRequest' from JSON`,
   );
 }

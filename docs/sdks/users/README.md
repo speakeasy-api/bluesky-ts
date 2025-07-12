@@ -44,7 +44,6 @@ async function run() {
   });
 
   for await (const page of result) {
-    // Handle the page
     console.log(page);
   }
 }
@@ -70,16 +69,13 @@ async function run() {
   const res = await usersGetFollowers(bluesky, {
     actor: "<value>",
   });
-
-  if (!res.ok) {
-    throw res.error;
-  }
-
-  const { value: result } = res;
-
-  for await (const page of result) {
-    // Handle the page
+  if (res.ok) {
+    const { value: result } = res;
+    for await (const page of result) {
     console.log(page);
+  }
+  } else {
+    console.log("usersGetFollowers failed:", res.error);
   }
 }
 
@@ -132,21 +128,21 @@ import {
 
 ### Errors
 
-| Error Type                                                   | Status Code                                                  | Content Type                                                 |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| errors.BadRequestAppBskyGraphGetFollowersResponseBodyError   | 400                                                          | application/json                                             |
-| errors.UnauthorizedAppBskyGraphGetFollowersResponseBodyError | 401                                                          | application/json                                             |
-| errors.NotFoundError                                         | 404                                                          | application/json                                             |
-| errors.UnauthorizedError                                     | 403, 407                                                     | application/json                                             |
-| errors.TimeoutError                                          | 408                                                          | application/json                                             |
-| errors.RateLimitedError                                      | 429                                                          | application/json                                             |
-| errors.BadRequestError                                       | 413, 414, 415, 422, 431                                      | application/json                                             |
-| errors.TimeoutError                                          | 504                                                          | application/json                                             |
-| errors.NotFoundError                                         | 501, 505                                                     | application/json                                             |
-| errors.InternalServerError                                   | 500, 502, 503, 506, 507, 508                                 | application/json                                             |
-| errors.BadRequestError                                       | 510                                                          | application/json                                             |
-| errors.UnauthorizedError                                     | 511                                                          | application/json                                             |
-| errors.APIError                                              | 4XX, 5XX                                                     | \*/\*                                                        |
+| Error Type                                      | Status Code                                     | Content Type                                    |
+| ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
+| errors.AppBskyGraphGetFollowersBadRequestError  | 400                                             | application/json                                |
+| errors.AppBskyGraphGetFollowersAuthMissingError | 401                                             | application/json                                |
+| errors.NotFoundError                            | 404                                             | application/json                                |
+| errors.UnauthorizedError                        | 403, 407                                        | application/json                                |
+| errors.TimeoutError                             | 408                                             | application/json                                |
+| errors.RateLimitedError                         | 429                                             | application/json                                |
+| errors.BadRequestError                          | 413, 414, 415, 422, 431                         | application/json                                |
+| errors.TimeoutError                             | 504                                             | application/json                                |
+| errors.NotFoundError                            | 501, 505                                        | application/json                                |
+| errors.InternalServerError                      | 500, 502, 503, 506, 507, 508                    | application/json                                |
+| errors.BadRequestError                          | 510                                             | application/json                                |
+| errors.UnauthorizedError                        | 511                                             | application/json                                |
+| errors.APIError                                 | 4XX, 5XX                                        | \*/\*                                           |
 
 ## getSuggestedFollows
 
@@ -170,7 +166,6 @@ async function run() {
     actor: "<value>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -195,15 +190,12 @@ async function run() {
   const res = await usersGetSuggestedFollows(bluesky, {
     actor: "<value>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("usersGetSuggestedFollows failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -248,25 +240,25 @@ import {
 
 ### Response
 
-**Promise\<[operations.AppBskyGraphGetSuggestedFollowsByActorResponseBody](../../models/operations/appbskygraphgetsuggestedfollowsbyactorresponsebody.md)\>**
+**Promise\<[operations.AppBskyGraphGetSuggestedFollowsByActorResponse](../../models/operations/appbskygraphgetsuggestedfollowsbyactorresponse.md)\>**
 
 ### Errors
 
-| Error Type                                                                 | Status Code                                                                | Content Type                                                               |
-| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| errors.BadRequestAppBskyGraphGetSuggestedFollowsByActorResponseBodyError   | 400                                                                        | application/json                                                           |
-| errors.UnauthorizedAppBskyGraphGetSuggestedFollowsByActorResponseBodyError | 401                                                                        | application/json                                                           |
-| errors.NotFoundError                                                       | 404                                                                        | application/json                                                           |
-| errors.UnauthorizedError                                                   | 403, 407                                                                   | application/json                                                           |
-| errors.TimeoutError                                                        | 408                                                                        | application/json                                                           |
-| errors.RateLimitedError                                                    | 429                                                                        | application/json                                                           |
-| errors.BadRequestError                                                     | 413, 414, 415, 422, 431                                                    | application/json                                                           |
-| errors.TimeoutError                                                        | 504                                                                        | application/json                                                           |
-| errors.NotFoundError                                                       | 501, 505                                                                   | application/json                                                           |
-| errors.InternalServerError                                                 | 500, 502, 503, 506, 507, 508                                               | application/json                                                           |
-| errors.BadRequestError                                                     | 510                                                                        | application/json                                                           |
-| errors.UnauthorizedError                                                   | 511                                                                        | application/json                                                           |
-| errors.APIError                                                            | 4XX, 5XX                                                                   | \*/\*                                                                      |
+| Error Type                                                    | Status Code                                                   | Content Type                                                  |
+| ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
+| errors.AppBskyGraphGetSuggestedFollowsByActorBadRequestError  | 400                                                           | application/json                                              |
+| errors.AppBskyGraphGetSuggestedFollowsByActorAuthMissingError | 401                                                           | application/json                                              |
+| errors.NotFoundError                                          | 404                                                           | application/json                                              |
+| errors.UnauthorizedError                                      | 403, 407                                                      | application/json                                              |
+| errors.TimeoutError                                           | 408                                                           | application/json                                              |
+| errors.RateLimitedError                                       | 429                                                           | application/json                                              |
+| errors.BadRequestError                                        | 413, 414, 415, 422, 431                                       | application/json                                              |
+| errors.TimeoutError                                           | 504                                                           | application/json                                              |
+| errors.NotFoundError                                          | 501, 505                                                      | application/json                                              |
+| errors.InternalServerError                                    | 500, 502, 503, 506, 507, 508                                  | application/json                                              |
+| errors.BadRequestError                                        | 510                                                           | application/json                                              |
+| errors.UnauthorizedError                                      | 511                                                           | application/json                                              |
+| errors.APIError                                               | 4XX, 5XX                                                      | \*/\*                                                         |
 
 ## unmute
 
@@ -314,14 +306,12 @@ async function run() {
   const res = await usersUnmute(bluesky, {
     actor: "<value>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    
+  } else {
+    console.log("usersUnmute failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  
 }
 
 run();
@@ -348,7 +338,7 @@ import {
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.AppBskyGraphUnmuteActorBody](../../models/operations/appbskygraphunmuteactorbody.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.AppBskyGraphUnmuteActorRequest](../../models/operations/appbskygraphunmuteactorrequest.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -359,18 +349,18 @@ import {
 
 ### Errors
 
-| Error Type                                                  | Status Code                                                 | Content Type                                                |
-| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
-| errors.BadRequestAppBskyGraphUnmuteActorResponseBodyError   | 400                                                         | application/json                                            |
-| errors.UnauthorizedAppBskyGraphUnmuteActorResponseBodyError | 401                                                         | application/json                                            |
-| errors.NotFoundError                                        | 404                                                         | application/json                                            |
-| errors.UnauthorizedError                                    | 403, 407                                                    | application/json                                            |
-| errors.TimeoutError                                         | 408                                                         | application/json                                            |
-| errors.RateLimitedError                                     | 429                                                         | application/json                                            |
-| errors.BadRequestError                                      | 413, 414, 415, 422, 431                                     | application/json                                            |
-| errors.TimeoutError                                         | 504                                                         | application/json                                            |
-| errors.NotFoundError                                        | 501, 505                                                    | application/json                                            |
-| errors.InternalServerError                                  | 500, 502, 503, 506, 507, 508                                | application/json                                            |
-| errors.BadRequestError                                      | 510                                                         | application/json                                            |
-| errors.UnauthorizedError                                    | 511                                                         | application/json                                            |
-| errors.APIError                                             | 4XX, 5XX                                                    | \*/\*                                                       |
+| Error Type                                     | Status Code                                    | Content Type                                   |
+| ---------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- |
+| errors.AppBskyGraphUnmuteActorBadRequestError  | 400                                            | application/json                               |
+| errors.AppBskyGraphUnmuteActorAuthMissingError | 401                                            | application/json                               |
+| errors.NotFoundError                           | 404                                            | application/json                               |
+| errors.UnauthorizedError                       | 403, 407                                       | application/json                               |
+| errors.TimeoutError                            | 408                                            | application/json                               |
+| errors.RateLimitedError                        | 429                                            | application/json                               |
+| errors.BadRequestError                         | 413, 414, 415, 422, 431                        | application/json                               |
+| errors.TimeoutError                            | 504                                            | application/json                               |
+| errors.NotFoundError                           | 501, 505                                       | application/json                               |
+| errors.InternalServerError                     | 500, 502, 503, 506, 507, 508                   | application/json                               |
+| errors.BadRequestError                         | 510                                            | application/json                               |
+| errors.UnauthorizedError                       | 511                                            | application/json                               |
+| errors.APIError                                | 4XX, 5XX                                       | \*/\*                                          |

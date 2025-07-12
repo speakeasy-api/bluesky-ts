@@ -4,11 +4,12 @@
 
 import * as z from "zod";
 import { ClosedEnum } from "../../types/enums.js";
+import { BlueskyError } from "./blueskyerror.js";
 
 /**
  * Unauthorized
  */
-export type UnauthorizedComAtprotoSyncGetRepoResponseBodyErrorData = {
+export type ComAtprotoSyncGetRepoAuthMissingErrorData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,22 +17,22 @@ export type UnauthorizedComAtprotoSyncGetRepoResponseBodyErrorData = {
 /**
  * Unauthorized
  */
-export class UnauthorizedComAtprotoSyncGetRepoResponseBodyError extends Error {
+export class ComAtprotoSyncGetRepoAuthMissingError extends BlueskyError {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: UnauthorizedComAtprotoSyncGetRepoResponseBodyErrorData;
+  data$: ComAtprotoSyncGetRepoAuthMissingErrorData;
 
-  constructor(err: UnauthorizedComAtprotoSyncGetRepoResponseBodyErrorData) {
-    const message = "message" in err && typeof err.message === "string"
-      ? err.message
-      : `API error occurred: ${JSON.stringify(err)}`;
-    super(message);
+  constructor(
+    err: ComAtprotoSyncGetRepoAuthMissingErrorData,
+    httpMeta: { response: Response; request: Request; body: string },
+  ) {
+    const message = err.message || `API error occurred: ${JSON.stringify(err)}`;
+    super(message, httpMeta);
     this.data$ = err;
-
     this.error = err.error;
 
-    this.name = "UnauthorizedComAtprotoSyncGetRepoResponseBodyError";
+    this.name = "ComAtprotoSyncGetRepoAuthMissingError";
   }
 }
 
@@ -51,7 +52,7 @@ export type ComAtprotoSyncGetRepoError = ClosedEnum<
 /**
  * Bad Request
  */
-export type BadRequestComAtprotoSyncGetRepoResponseBodyErrorData = {
+export type ComAtprotoSyncGetRepoBadRequestErrorData = {
   error: ComAtprotoSyncGetRepoError;
   message: string;
 };
@@ -59,72 +60,76 @@ export type BadRequestComAtprotoSyncGetRepoResponseBodyErrorData = {
 /**
  * Bad Request
  */
-export class BadRequestComAtprotoSyncGetRepoResponseBodyError extends Error {
+export class ComAtprotoSyncGetRepoBadRequestError extends BlueskyError {
   error: ComAtprotoSyncGetRepoError;
 
   /** The original data that was passed to this error instance. */
-  data$: BadRequestComAtprotoSyncGetRepoResponseBodyErrorData;
+  data$: ComAtprotoSyncGetRepoBadRequestErrorData;
 
-  constructor(err: BadRequestComAtprotoSyncGetRepoResponseBodyErrorData) {
-    const message = "message" in err && typeof err.message === "string"
-      ? err.message
-      : `API error occurred: ${JSON.stringify(err)}`;
-    super(message);
+  constructor(
+    err: ComAtprotoSyncGetRepoBadRequestErrorData,
+    httpMeta: { response: Response; request: Request; body: string },
+  ) {
+    const message = err.message || `API error occurred: ${JSON.stringify(err)}`;
+    super(message, httpMeta);
     this.data$ = err;
-
     this.error = err.error;
 
-    this.name = "BadRequestComAtprotoSyncGetRepoResponseBodyError";
+    this.name = "ComAtprotoSyncGetRepoBadRequestError";
   }
 }
 
 /** @internal */
-export const UnauthorizedComAtprotoSyncGetRepoResponseBodyError$inboundSchema:
-  z.ZodType<
-    UnauthorizedComAtprotoSyncGetRepoResponseBodyError,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    error: z.literal("AuthMissing"),
-    message: z.string(),
-  })
-    .transform((v) => {
-      return new UnauthorizedComAtprotoSyncGetRepoResponseBodyError(v);
+export const ComAtprotoSyncGetRepoAuthMissingError$inboundSchema: z.ZodType<
+  ComAtprotoSyncGetRepoAuthMissingError,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  error: z.literal("AuthMissing").default("AuthMissing"),
+  message: z.string(),
+  request$: z.instanceof(Request),
+  response$: z.instanceof(Response),
+  body$: z.string(),
+})
+  .transform((v) => {
+    return new ComAtprotoSyncGetRepoAuthMissingError(v, {
+      request: v.request$,
+      response: v.response$,
+      body: v.body$,
     });
+  });
 
 /** @internal */
-export type UnauthorizedComAtprotoSyncGetRepoResponseBodyError$Outbound = {
+export type ComAtprotoSyncGetRepoAuthMissingError$Outbound = {
   error: "AuthMissing";
   message: string;
 };
 
 /** @internal */
-export const UnauthorizedComAtprotoSyncGetRepoResponseBodyError$outboundSchema:
-  z.ZodType<
-    UnauthorizedComAtprotoSyncGetRepoResponseBodyError$Outbound,
-    z.ZodTypeDef,
-    UnauthorizedComAtprotoSyncGetRepoResponseBodyError
-  > = z.instanceof(UnauthorizedComAtprotoSyncGetRepoResponseBodyError)
-    .transform(v => v.data$)
-    .pipe(z.object({
-      error: z.literal("AuthMissing").default("AuthMissing" as const),
-      message: z.string(),
-    }));
+export const ComAtprotoSyncGetRepoAuthMissingError$outboundSchema: z.ZodType<
+  ComAtprotoSyncGetRepoAuthMissingError$Outbound,
+  z.ZodTypeDef,
+  ComAtprotoSyncGetRepoAuthMissingError
+> = z.instanceof(ComAtprotoSyncGetRepoAuthMissingError)
+  .transform(v => v.data$)
+  .pipe(z.object({
+    error: z.literal("AuthMissing").default("AuthMissing" as const),
+    message: z.string(),
+  }));
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace UnauthorizedComAtprotoSyncGetRepoResponseBodyError$ {
-  /** @deprecated use `UnauthorizedComAtprotoSyncGetRepoResponseBodyError$inboundSchema` instead. */
+export namespace ComAtprotoSyncGetRepoAuthMissingError$ {
+  /** @deprecated use `ComAtprotoSyncGetRepoAuthMissingError$inboundSchema` instead. */
   export const inboundSchema =
-    UnauthorizedComAtprotoSyncGetRepoResponseBodyError$inboundSchema;
-  /** @deprecated use `UnauthorizedComAtprotoSyncGetRepoResponseBodyError$outboundSchema` instead. */
+    ComAtprotoSyncGetRepoAuthMissingError$inboundSchema;
+  /** @deprecated use `ComAtprotoSyncGetRepoAuthMissingError$outboundSchema` instead. */
   export const outboundSchema =
-    UnauthorizedComAtprotoSyncGetRepoResponseBodyError$outboundSchema;
-  /** @deprecated use `UnauthorizedComAtprotoSyncGetRepoResponseBodyError$Outbound` instead. */
-  export type Outbound =
-    UnauthorizedComAtprotoSyncGetRepoResponseBodyError$Outbound;
+    ComAtprotoSyncGetRepoAuthMissingError$outboundSchema;
+  /** @deprecated use `ComAtprotoSyncGetRepoAuthMissingError$Outbound` instead. */
+  export type Outbound = ComAtprotoSyncGetRepoAuthMissingError$Outbound;
 }
 
 /** @internal */
@@ -149,50 +154,54 @@ export namespace ComAtprotoSyncGetRepoError$ {
 }
 
 /** @internal */
-export const BadRequestComAtprotoSyncGetRepoResponseBodyError$inboundSchema:
-  z.ZodType<
-    BadRequestComAtprotoSyncGetRepoResponseBodyError,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    error: ComAtprotoSyncGetRepoError$inboundSchema,
-    message: z.string(),
-  })
-    .transform((v) => {
-      return new BadRequestComAtprotoSyncGetRepoResponseBodyError(v);
+export const ComAtprotoSyncGetRepoBadRequestError$inboundSchema: z.ZodType<
+  ComAtprotoSyncGetRepoBadRequestError,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  error: ComAtprotoSyncGetRepoError$inboundSchema,
+  message: z.string(),
+  request$: z.instanceof(Request),
+  response$: z.instanceof(Response),
+  body$: z.string(),
+})
+  .transform((v) => {
+    return new ComAtprotoSyncGetRepoBadRequestError(v, {
+      request: v.request$,
+      response: v.response$,
+      body: v.body$,
     });
+  });
 
 /** @internal */
-export type BadRequestComAtprotoSyncGetRepoResponseBodyError$Outbound = {
+export type ComAtprotoSyncGetRepoBadRequestError$Outbound = {
   error: string;
   message: string;
 };
 
 /** @internal */
-export const BadRequestComAtprotoSyncGetRepoResponseBodyError$outboundSchema:
-  z.ZodType<
-    BadRequestComAtprotoSyncGetRepoResponseBodyError$Outbound,
-    z.ZodTypeDef,
-    BadRequestComAtprotoSyncGetRepoResponseBodyError
-  > = z.instanceof(BadRequestComAtprotoSyncGetRepoResponseBodyError)
-    .transform(v => v.data$)
-    .pipe(z.object({
-      error: ComAtprotoSyncGetRepoError$outboundSchema,
-      message: z.string(),
-    }));
+export const ComAtprotoSyncGetRepoBadRequestError$outboundSchema: z.ZodType<
+  ComAtprotoSyncGetRepoBadRequestError$Outbound,
+  z.ZodTypeDef,
+  ComAtprotoSyncGetRepoBadRequestError
+> = z.instanceof(ComAtprotoSyncGetRepoBadRequestError)
+  .transform(v => v.data$)
+  .pipe(z.object({
+    error: ComAtprotoSyncGetRepoError$outboundSchema,
+    message: z.string(),
+  }));
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace BadRequestComAtprotoSyncGetRepoResponseBodyError$ {
-  /** @deprecated use `BadRequestComAtprotoSyncGetRepoResponseBodyError$inboundSchema` instead. */
+export namespace ComAtprotoSyncGetRepoBadRequestError$ {
+  /** @deprecated use `ComAtprotoSyncGetRepoBadRequestError$inboundSchema` instead. */
   export const inboundSchema =
-    BadRequestComAtprotoSyncGetRepoResponseBodyError$inboundSchema;
-  /** @deprecated use `BadRequestComAtprotoSyncGetRepoResponseBodyError$outboundSchema` instead. */
+    ComAtprotoSyncGetRepoBadRequestError$inboundSchema;
+  /** @deprecated use `ComAtprotoSyncGetRepoBadRequestError$outboundSchema` instead. */
   export const outboundSchema =
-    BadRequestComAtprotoSyncGetRepoResponseBodyError$outboundSchema;
-  /** @deprecated use `BadRequestComAtprotoSyncGetRepoResponseBodyError$Outbound` instead. */
-  export type Outbound =
-    BadRequestComAtprotoSyncGetRepoResponseBodyError$Outbound;
+    ComAtprotoSyncGetRepoBadRequestError$outboundSchema;
+  /** @deprecated use `ComAtprotoSyncGetRepoBadRequestError$Outbound` instead. */
+  export type Outbound = ComAtprotoSyncGetRepoBadRequestError$Outbound;
 }

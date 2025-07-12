@@ -5,7 +5,7 @@
 ```typescript
 import { ToolsOzoneModerationDefsAccountEventStatus } from "@speakeasy-sdks/bluesky/models/components";
 
-let value: ToolsOzoneModerationDefsAccountEventStatus = "tombstoned";
+let value: ToolsOzoneModerationDefsAccountEventStatus = "deleted";
 ```
 
 ## Values

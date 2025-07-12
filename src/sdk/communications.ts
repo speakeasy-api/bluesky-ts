@@ -17,7 +17,7 @@ export class Communications extends ClientSDK {
    * Administrative action to create a new, re-usable communication (email for now) template.
    */
   async createTemplate(
-    request: operations.ToolsOzoneCommunicationCreateTemplateBody,
+    request: operations.ToolsOzoneCommunicationCreateTemplateRequest,
     options?: RequestOptions,
   ): Promise<components.ToolsOzoneCommunicationDefsTemplateView> {
     return unwrapAsync(communicationsCreateTemplate(

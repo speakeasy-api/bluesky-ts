@@ -6,7 +6,7 @@
 import { ToolsOzoneModerationGetEventRequest } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: ToolsOzoneModerationGetEventRequest = {
-  id: 374296,
+  id: 405965,
 };
 ```
 

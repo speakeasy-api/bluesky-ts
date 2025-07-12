@@ -6,7 +6,12 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { BlueskyCore } from "../core.js";
 import { SDKOptions } from "../lib/config.js";
 import type { ConsoleLogger } from "./console-logger.js";
-import { MCPScope, mcpScopes } from "./scopes.js";
+import { createRegisterPrompt } from "./prompts.js";
+import {
+  createRegisterResource,
+  createRegisterResourceTemplate,
+} from "./resources.js";
+import { MCPScope } from "./scopes.js";
 import { createRegisterTool } from "./tools.js";
 import { tool$accountDelete } from "./tools/accountDelete.js";
 import { tool$accountExportData } from "./tools/accountExportData.js";
@@ -180,6 +185,7 @@ import { tool$videosUpload } from "./tools/videosUpload.js";
 
 export function createMCPServer(deps: {
   logger: ConsoleLogger;
+  allowedTools?: string[] | undefined;
   scopes?: MCPScope[] | undefined;
   serverURL?: string | undefined;
   bearer?: SDKOptions["bearer"] | undefined;
@@ -187,7 +193,7 @@ export function createMCPServer(deps: {
 }) {
   const server = new McpServer({
     name: "Bluesky",
-    version: "0.2.0",
+    version: "0.3.0",
   });
 
   const client = new BlueskyCore({
@@ -195,8 +201,27 @@ export function createMCPServer(deps: {
     serverURL: deps.serverURL,
     server: deps.server,
   });
-  const scopes = new Set(deps.scopes ?? mcpScopes);
-  const tool = createRegisterTool(deps.logger, server, client, scopes);
+
+  const scopes = new Set(deps.scopes);
+
+  const allowedTools = deps.allowedTools && new Set(deps.allowedTools);
+  const tool = createRegisterTool(
+    deps.logger,
+    server,
+    client,
+    scopes,
+    allowedTools,
+  );
+  const resource = createRegisterResource(deps.logger, server, client, scopes);
+  const resourceTemplate = createRegisterResourceTemplate(
+    deps.logger,
+    server,
+    client,
+    scopes,
+  );
+  const prompt = createRegisterPrompt(deps.logger, server, client, scopes);
+  const register = { tool, resource, resourceTemplate, prompt };
+  void register; // suppress unused warnings
 
   tool(tool$actorsGetPreferences);
   tool(tool$actorsGetProfile);

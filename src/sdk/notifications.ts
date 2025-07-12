@@ -21,7 +21,7 @@ export class Notifications extends ClientSDK {
   async getUnreadCount(
     request?: operations.AppBskyNotificationGetUnreadCountRequest | undefined,
     options?: RequestOptions,
-  ): Promise<operations.AppBskyNotificationGetUnreadCountResponseBody> {
+  ): Promise<operations.AppBskyNotificationGetUnreadCountResponse> {
     return unwrapAsync(notificationsGetUnreadCount(
       this,
       request,
@@ -37,7 +37,7 @@ export class Notifications extends ClientSDK {
    * Set notification-related preferences for an account. Requires auth.
    */
   async putPreferences(
-    request: operations.AppBskyNotificationPutPreferencesBody,
+    request: operations.AppBskyNotificationPutPreferencesRequest,
     options?: RequestOptions,
   ): Promise<void> {
     return unwrapAsync(notificationsPutPreferences(
@@ -55,7 +55,7 @@ export class Notifications extends ClientSDK {
    * Register to receive push notifications, via a specified service, for the requesting account. Requires auth.
    */
   async registerPush(
-    request: operations.AppBskyNotificationRegisterPushBody,
+    request: operations.AppBskyNotificationRegisterPushRequest,
     options?: RequestOptions,
   ): Promise<void> {
     return unwrapAsync(notificationsRegisterPush(
@@ -73,7 +73,7 @@ export class Notifications extends ClientSDK {
    * Notify server that the requesting account has seen notifications. Requires auth.
    */
   async updateSeen(
-    request: operations.AppBskyNotificationUpdateSeenBody,
+    request: operations.AppBskyNotificationUpdateSeenRequest,
     options?: RequestOptions,
   ): Promise<void> {
     return unwrapAsync(notificationsUpdateSeen(

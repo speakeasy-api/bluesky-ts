@@ -20,7 +20,7 @@ const value: components.ToolsOzoneModerationDefsModEventReverseTakedown = {};
 ```typescript
 const value: components.ToolsOzoneModerationDefsModEventComment = {
   comment:
-    "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
+    "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
 };
 ```
 
@@ -37,10 +37,12 @@ const value: components.ToolsOzoneModerationDefsModEventReport = {
 ```typescript
 const value: components.ToolsOzoneModerationDefsModEventLabel = {
   createLabelVals: [
-    "<value>",
+    "<value 1>",
   ],
   negateLabelVals: [
-    "<value>",
+    "<value 1>",
+    "<value 2>",
+    "<value 3>",
   ],
 };
 ```
@@ -61,7 +63,7 @@ const value: components.ToolsOzoneModerationDefsModEventEscalate = {};
 
 ```typescript
 const value: components.ToolsOzoneModerationDefsModEventMute = {
-  durationInHours: 106682,
+  durationInHours: 946554,
 };
 ```
 
@@ -108,11 +110,9 @@ const value: components.ToolsOzoneModerationDefsModEventDivert = {};
 ```typescript
 const value: components.ToolsOzoneModerationDefsModEventTag = {
   add: [
-    "<value>",
+    "<value 1>",
   ],
-  remove: [
-    "<value>",
-  ],
+  remove: [],
 };
 ```
 
@@ -121,7 +121,7 @@ const value: components.ToolsOzoneModerationDefsModEventTag = {
 ```typescript
 const value: components.ToolsOzoneModerationDefsAccountEvent = {
   active: false,
-  timestamp: new Date("2024-03-24T00:23:12.517Z"),
+  timestamp: new Date("2025-03-24T06:28:37.550Z"),
 };
 ```
 
@@ -129,7 +129,7 @@ const value: components.ToolsOzoneModerationDefsAccountEvent = {
 
 ```typescript
 const value: components.ToolsOzoneModerationDefsIdentityEvent = {
-  timestamp: new Date("2023-11-21T13:20:41.827Z"),
+  timestamp: new Date("2024-01-25T17:35:17.871Z"),
 };
 ```
 
@@ -137,8 +137,8 @@ const value: components.ToolsOzoneModerationDefsIdentityEvent = {
 
 ```typescript
 const value: components.ToolsOzoneModerationDefsRecordEvent = {
-  op: "update",
-  timestamp: new Date("2024-12-21T02:52:36.760Z"),
+  op: "create",
+  timestamp: new Date("2023-09-22T15:18:25.819Z"),
 };
 ```
 

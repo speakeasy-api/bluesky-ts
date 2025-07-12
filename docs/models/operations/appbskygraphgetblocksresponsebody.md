@@ -8,7 +8,12 @@ OK
 import { AppBskyGraphGetBlocksResponseBody } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: AppBskyGraphGetBlocksResponseBody = {
-  blocks: [],
+  blocks: [
+    {
+      did: "<id>",
+      handle: "<value>",
+    },
+  ],
 };
 ```
 

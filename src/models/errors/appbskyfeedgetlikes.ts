@@ -4,11 +4,12 @@
 
 import * as z from "zod";
 import { ClosedEnum } from "../../types/enums.js";
+import { BlueskyError } from "./blueskyerror.js";
 
 /**
  * Unauthorized
  */
-export type UnauthorizedAppBskyFeedGetLikesResponseBodyErrorData = {
+export type AppBskyFeedGetLikesAuthMissingErrorData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,22 +17,22 @@ export type UnauthorizedAppBskyFeedGetLikesResponseBodyErrorData = {
 /**
  * Unauthorized
  */
-export class UnauthorizedAppBskyFeedGetLikesResponseBodyError extends Error {
+export class AppBskyFeedGetLikesAuthMissingError extends BlueskyError {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: UnauthorizedAppBskyFeedGetLikesResponseBodyErrorData;
+  data$: AppBskyFeedGetLikesAuthMissingErrorData;
 
-  constructor(err: UnauthorizedAppBskyFeedGetLikesResponseBodyErrorData) {
-    const message = "message" in err && typeof err.message === "string"
-      ? err.message
-      : `API error occurred: ${JSON.stringify(err)}`;
-    super(message);
+  constructor(
+    err: AppBskyFeedGetLikesAuthMissingErrorData,
+    httpMeta: { response: Response; request: Request; body: string },
+  ) {
+    const message = err.message || `API error occurred: ${JSON.stringify(err)}`;
+    super(message, httpMeta);
     this.data$ = err;
-
     this.error = err.error;
 
-    this.name = "UnauthorizedAppBskyFeedGetLikesResponseBodyError";
+    this.name = "AppBskyFeedGetLikesAuthMissingError";
   }
 }
 
@@ -47,7 +48,7 @@ export type AppBskyFeedGetLikesError = ClosedEnum<
 /**
  * Bad Request
  */
-export type BadRequestAppBskyFeedGetLikesResponseBodyErrorData = {
+export type AppBskyFeedGetLikesBadRequestErrorData = {
   error: AppBskyFeedGetLikesError;
   message: string;
 };
@@ -55,72 +56,76 @@ export type BadRequestAppBskyFeedGetLikesResponseBodyErrorData = {
 /**
  * Bad Request
  */
-export class BadRequestAppBskyFeedGetLikesResponseBodyError extends Error {
+export class AppBskyFeedGetLikesBadRequestError extends BlueskyError {
   error: AppBskyFeedGetLikesError;
 
   /** The original data that was passed to this error instance. */
-  data$: BadRequestAppBskyFeedGetLikesResponseBodyErrorData;
+  data$: AppBskyFeedGetLikesBadRequestErrorData;
 
-  constructor(err: BadRequestAppBskyFeedGetLikesResponseBodyErrorData) {
-    const message = "message" in err && typeof err.message === "string"
-      ? err.message
-      : `API error occurred: ${JSON.stringify(err)}`;
-    super(message);
+  constructor(
+    err: AppBskyFeedGetLikesBadRequestErrorData,
+    httpMeta: { response: Response; request: Request; body: string },
+  ) {
+    const message = err.message || `API error occurred: ${JSON.stringify(err)}`;
+    super(message, httpMeta);
     this.data$ = err;
-
     this.error = err.error;
 
-    this.name = "BadRequestAppBskyFeedGetLikesResponseBodyError";
+    this.name = "AppBskyFeedGetLikesBadRequestError";
   }
 }
 
 /** @internal */
-export const UnauthorizedAppBskyFeedGetLikesResponseBodyError$inboundSchema:
-  z.ZodType<
-    UnauthorizedAppBskyFeedGetLikesResponseBodyError,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    error: z.literal("AuthMissing"),
-    message: z.string(),
-  })
-    .transform((v) => {
-      return new UnauthorizedAppBskyFeedGetLikesResponseBodyError(v);
+export const AppBskyFeedGetLikesAuthMissingError$inboundSchema: z.ZodType<
+  AppBskyFeedGetLikesAuthMissingError,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  error: z.literal("AuthMissing").default("AuthMissing"),
+  message: z.string(),
+  request$: z.instanceof(Request),
+  response$: z.instanceof(Response),
+  body$: z.string(),
+})
+  .transform((v) => {
+    return new AppBskyFeedGetLikesAuthMissingError(v, {
+      request: v.request$,
+      response: v.response$,
+      body: v.body$,
     });
+  });
 
 /** @internal */
-export type UnauthorizedAppBskyFeedGetLikesResponseBodyError$Outbound = {
+export type AppBskyFeedGetLikesAuthMissingError$Outbound = {
   error: "AuthMissing";
   message: string;
 };
 
 /** @internal */
-export const UnauthorizedAppBskyFeedGetLikesResponseBodyError$outboundSchema:
-  z.ZodType<
-    UnauthorizedAppBskyFeedGetLikesResponseBodyError$Outbound,
-    z.ZodTypeDef,
-    UnauthorizedAppBskyFeedGetLikesResponseBodyError
-  > = z.instanceof(UnauthorizedAppBskyFeedGetLikesResponseBodyError)
-    .transform(v => v.data$)
-    .pipe(z.object({
-      error: z.literal("AuthMissing").default("AuthMissing" as const),
-      message: z.string(),
-    }));
+export const AppBskyFeedGetLikesAuthMissingError$outboundSchema: z.ZodType<
+  AppBskyFeedGetLikesAuthMissingError$Outbound,
+  z.ZodTypeDef,
+  AppBskyFeedGetLikesAuthMissingError
+> = z.instanceof(AppBskyFeedGetLikesAuthMissingError)
+  .transform(v => v.data$)
+  .pipe(z.object({
+    error: z.literal("AuthMissing").default("AuthMissing" as const),
+    message: z.string(),
+  }));
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace UnauthorizedAppBskyFeedGetLikesResponseBodyError$ {
-  /** @deprecated use `UnauthorizedAppBskyFeedGetLikesResponseBodyError$inboundSchema` instead. */
+export namespace AppBskyFeedGetLikesAuthMissingError$ {
+  /** @deprecated use `AppBskyFeedGetLikesAuthMissingError$inboundSchema` instead. */
   export const inboundSchema =
-    UnauthorizedAppBskyFeedGetLikesResponseBodyError$inboundSchema;
-  /** @deprecated use `UnauthorizedAppBskyFeedGetLikesResponseBodyError$outboundSchema` instead. */
+    AppBskyFeedGetLikesAuthMissingError$inboundSchema;
+  /** @deprecated use `AppBskyFeedGetLikesAuthMissingError$outboundSchema` instead. */
   export const outboundSchema =
-    UnauthorizedAppBskyFeedGetLikesResponseBodyError$outboundSchema;
-  /** @deprecated use `UnauthorizedAppBskyFeedGetLikesResponseBodyError$Outbound` instead. */
-  export type Outbound =
-    UnauthorizedAppBskyFeedGetLikesResponseBodyError$Outbound;
+    AppBskyFeedGetLikesAuthMissingError$outboundSchema;
+  /** @deprecated use `AppBskyFeedGetLikesAuthMissingError$Outbound` instead. */
+  export type Outbound = AppBskyFeedGetLikesAuthMissingError$Outbound;
 }
 
 /** @internal */
@@ -145,50 +150,53 @@ export namespace AppBskyFeedGetLikesError$ {
 }
 
 /** @internal */
-export const BadRequestAppBskyFeedGetLikesResponseBodyError$inboundSchema:
-  z.ZodType<
-    BadRequestAppBskyFeedGetLikesResponseBodyError,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    error: AppBskyFeedGetLikesError$inboundSchema,
-    message: z.string(),
-  })
-    .transform((v) => {
-      return new BadRequestAppBskyFeedGetLikesResponseBodyError(v);
+export const AppBskyFeedGetLikesBadRequestError$inboundSchema: z.ZodType<
+  AppBskyFeedGetLikesBadRequestError,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  error: AppBskyFeedGetLikesError$inboundSchema,
+  message: z.string(),
+  request$: z.instanceof(Request),
+  response$: z.instanceof(Response),
+  body$: z.string(),
+})
+  .transform((v) => {
+    return new AppBskyFeedGetLikesBadRequestError(v, {
+      request: v.request$,
+      response: v.response$,
+      body: v.body$,
     });
+  });
 
 /** @internal */
-export type BadRequestAppBskyFeedGetLikesResponseBodyError$Outbound = {
+export type AppBskyFeedGetLikesBadRequestError$Outbound = {
   error: string;
   message: string;
 };
 
 /** @internal */
-export const BadRequestAppBskyFeedGetLikesResponseBodyError$outboundSchema:
-  z.ZodType<
-    BadRequestAppBskyFeedGetLikesResponseBodyError$Outbound,
-    z.ZodTypeDef,
-    BadRequestAppBskyFeedGetLikesResponseBodyError
-  > = z.instanceof(BadRequestAppBskyFeedGetLikesResponseBodyError)
-    .transform(v => v.data$)
-    .pipe(z.object({
-      error: AppBskyFeedGetLikesError$outboundSchema,
-      message: z.string(),
-    }));
+export const AppBskyFeedGetLikesBadRequestError$outboundSchema: z.ZodType<
+  AppBskyFeedGetLikesBadRequestError$Outbound,
+  z.ZodTypeDef,
+  AppBskyFeedGetLikesBadRequestError
+> = z.instanceof(AppBskyFeedGetLikesBadRequestError)
+  .transform(v => v.data$)
+  .pipe(z.object({
+    error: AppBskyFeedGetLikesError$outboundSchema,
+    message: z.string(),
+  }));
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace BadRequestAppBskyFeedGetLikesResponseBodyError$ {
-  /** @deprecated use `BadRequestAppBskyFeedGetLikesResponseBodyError$inboundSchema` instead. */
-  export const inboundSchema =
-    BadRequestAppBskyFeedGetLikesResponseBodyError$inboundSchema;
-  /** @deprecated use `BadRequestAppBskyFeedGetLikesResponseBodyError$outboundSchema` instead. */
+export namespace AppBskyFeedGetLikesBadRequestError$ {
+  /** @deprecated use `AppBskyFeedGetLikesBadRequestError$inboundSchema` instead. */
+  export const inboundSchema = AppBskyFeedGetLikesBadRequestError$inboundSchema;
+  /** @deprecated use `AppBskyFeedGetLikesBadRequestError$outboundSchema` instead. */
   export const outboundSchema =
-    BadRequestAppBskyFeedGetLikesResponseBodyError$outboundSchema;
-  /** @deprecated use `BadRequestAppBskyFeedGetLikesResponseBodyError$Outbound` instead. */
-  export type Outbound =
-    BadRequestAppBskyFeedGetLikesResponseBodyError$Outbound;
+    AppBskyFeedGetLikesBadRequestError$outboundSchema;
+  /** @deprecated use `AppBskyFeedGetLikesBadRequestError$Outbound` instead. */
+  export type Outbound = AppBskyFeedGetLikesBadRequestError$Outbound;
 }

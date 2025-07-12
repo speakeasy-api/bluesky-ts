@@ -26,27 +26,27 @@ import {
 } from "./appbskyfeeddefspostview.js";
 
 export type AppBskyFeedDefsThreadViewPostParent =
-  | AppBskyFeedDefsNotFoundPost
+  | AppBskyFeedDefsBlockedPost
   | AppBskyFeedDefsThreadViewPost
-  | AppBskyFeedDefsBlockedPost;
+  | AppBskyFeedDefsNotFoundPost;
 
-export type Replies =
-  | AppBskyFeedDefsNotFoundPost
+export type Reply =
+  | AppBskyFeedDefsBlockedPost
   | AppBskyFeedDefsThreadViewPost
-  | AppBskyFeedDefsBlockedPost;
+  | AppBskyFeedDefsNotFoundPost;
 
 export type AppBskyFeedDefsThreadViewPost = {
   post: AppBskyFeedDefsPostView;
   parent?:
-    | AppBskyFeedDefsNotFoundPost
-    | AppBskyFeedDefsThreadViewPost
     | AppBskyFeedDefsBlockedPost
+    | AppBskyFeedDefsThreadViewPost
+    | AppBskyFeedDefsNotFoundPost
     | undefined;
   replies?:
     | Array<
-      | AppBskyFeedDefsNotFoundPost
-      | AppBskyFeedDefsThreadViewPost
       | AppBskyFeedDefsBlockedPost
+      | AppBskyFeedDefsThreadViewPost
+      | AppBskyFeedDefsNotFoundPost
     >
     | undefined;
 };
@@ -57,16 +57,16 @@ export const AppBskyFeedDefsThreadViewPostParent$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.union([
-  AppBskyFeedDefsNotFoundPost$inboundSchema,
-  z.lazy(() => AppBskyFeedDefsThreadViewPost$inboundSchema),
   AppBskyFeedDefsBlockedPost$inboundSchema,
+  z.lazy(() => AppBskyFeedDefsThreadViewPost$inboundSchema),
+  AppBskyFeedDefsNotFoundPost$inboundSchema,
 ]);
 
 /** @internal */
 export type AppBskyFeedDefsThreadViewPostParent$Outbound =
-  | AppBskyFeedDefsNotFoundPost$Outbound
+  | AppBskyFeedDefsBlockedPost$Outbound
   | AppBskyFeedDefsThreadViewPost$Outbound
-  | AppBskyFeedDefsBlockedPost$Outbound;
+  | AppBskyFeedDefsNotFoundPost$Outbound;
 
 /** @internal */
 export const AppBskyFeedDefsThreadViewPostParent$outboundSchema: z.ZodType<
@@ -74,9 +74,9 @@ export const AppBskyFeedDefsThreadViewPostParent$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   AppBskyFeedDefsThreadViewPostParent
 > = z.union([
-  AppBskyFeedDefsNotFoundPost$outboundSchema,
-  z.lazy(() => AppBskyFeedDefsThreadViewPost$outboundSchema),
   AppBskyFeedDefsBlockedPost$outboundSchema,
+  z.lazy(() => AppBskyFeedDefsThreadViewPost$outboundSchema),
+  AppBskyFeedDefsNotFoundPost$outboundSchema,
 ]);
 
 /**
@@ -116,54 +116,54 @@ export function appBskyFeedDefsThreadViewPostParentFromJSON(
 }
 
 /** @internal */
-export const Replies$inboundSchema: z.ZodType<Replies, z.ZodTypeDef, unknown> =
-  z.union([
-    AppBskyFeedDefsNotFoundPost$inboundSchema,
-    z.lazy(() => AppBskyFeedDefsThreadViewPost$inboundSchema),
+export const Reply$inboundSchema: z.ZodType<Reply, z.ZodTypeDef, unknown> = z
+  .union([
     AppBskyFeedDefsBlockedPost$inboundSchema,
+    z.lazy(() => AppBskyFeedDefsThreadViewPost$inboundSchema),
+    AppBskyFeedDefsNotFoundPost$inboundSchema,
   ]);
 
 /** @internal */
-export type Replies$Outbound =
-  | AppBskyFeedDefsNotFoundPost$Outbound
+export type Reply$Outbound =
+  | AppBskyFeedDefsBlockedPost$Outbound
   | AppBskyFeedDefsThreadViewPost$Outbound
-  | AppBskyFeedDefsBlockedPost$Outbound;
+  | AppBskyFeedDefsNotFoundPost$Outbound;
 
 /** @internal */
-export const Replies$outboundSchema: z.ZodType<
-  Replies$Outbound,
+export const Reply$outboundSchema: z.ZodType<
+  Reply$Outbound,
   z.ZodTypeDef,
-  Replies
+  Reply
 > = z.union([
-  AppBskyFeedDefsNotFoundPost$outboundSchema,
-  z.lazy(() => AppBskyFeedDefsThreadViewPost$outboundSchema),
   AppBskyFeedDefsBlockedPost$outboundSchema,
+  z.lazy(() => AppBskyFeedDefsThreadViewPost$outboundSchema),
+  AppBskyFeedDefsNotFoundPost$outboundSchema,
 ]);
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace Replies$ {
-  /** @deprecated use `Replies$inboundSchema` instead. */
-  export const inboundSchema = Replies$inboundSchema;
-  /** @deprecated use `Replies$outboundSchema` instead. */
-  export const outboundSchema = Replies$outboundSchema;
-  /** @deprecated use `Replies$Outbound` instead. */
-  export type Outbound = Replies$Outbound;
+export namespace Reply$ {
+  /** @deprecated use `Reply$inboundSchema` instead. */
+  export const inboundSchema = Reply$inboundSchema;
+  /** @deprecated use `Reply$outboundSchema` instead. */
+  export const outboundSchema = Reply$outboundSchema;
+  /** @deprecated use `Reply$Outbound` instead. */
+  export type Outbound = Reply$Outbound;
 }
 
-export function repliesToJSON(replies: Replies): string {
-  return JSON.stringify(Replies$outboundSchema.parse(replies));
+export function replyToJSON(reply: Reply): string {
+  return JSON.stringify(Reply$outboundSchema.parse(reply));
 }
 
-export function repliesFromJSON(
+export function replyFromJSON(
   jsonString: string,
-): SafeParseResult<Replies, SDKValidationError> {
+): SafeParseResult<Reply, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => Replies$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'Replies' from JSON`,
+    (x) => Reply$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'Reply' from JSON`,
   );
 }
 
@@ -175,15 +175,15 @@ export const AppBskyFeedDefsThreadViewPost$inboundSchema: z.ZodType<
 > = z.object({
   post: AppBskyFeedDefsPostView$inboundSchema,
   parent: z.union([
-    AppBskyFeedDefsNotFoundPost$inboundSchema,
-    z.lazy(() => AppBskyFeedDefsThreadViewPost$inboundSchema),
     AppBskyFeedDefsBlockedPost$inboundSchema,
+    z.lazy(() => AppBskyFeedDefsThreadViewPost$inboundSchema),
+    AppBskyFeedDefsNotFoundPost$inboundSchema,
   ]).optional(),
   replies: z.array(
     z.union([
-      AppBskyFeedDefsNotFoundPost$inboundSchema,
-      z.lazy(() => AppBskyFeedDefsThreadViewPost$inboundSchema),
       AppBskyFeedDefsBlockedPost$inboundSchema,
+      z.lazy(() => AppBskyFeedDefsThreadViewPost$inboundSchema),
+      AppBskyFeedDefsNotFoundPost$inboundSchema,
     ]),
   ).optional(),
 });
@@ -192,15 +192,15 @@ export const AppBskyFeedDefsThreadViewPost$inboundSchema: z.ZodType<
 export type AppBskyFeedDefsThreadViewPost$Outbound = {
   post: AppBskyFeedDefsPostView$Outbound;
   parent?:
-    | AppBskyFeedDefsNotFoundPost$Outbound
-    | AppBskyFeedDefsThreadViewPost$Outbound
     | AppBskyFeedDefsBlockedPost$Outbound
+    | AppBskyFeedDefsThreadViewPost$Outbound
+    | AppBskyFeedDefsNotFoundPost$Outbound
     | undefined;
   replies?:
     | Array<
-      | AppBskyFeedDefsNotFoundPost$Outbound
-      | AppBskyFeedDefsThreadViewPost$Outbound
       | AppBskyFeedDefsBlockedPost$Outbound
+      | AppBskyFeedDefsThreadViewPost$Outbound
+      | AppBskyFeedDefsNotFoundPost$Outbound
     >
     | undefined;
 };
@@ -213,15 +213,15 @@ export const AppBskyFeedDefsThreadViewPost$outboundSchema: z.ZodType<
 > = z.object({
   post: AppBskyFeedDefsPostView$outboundSchema,
   parent: z.union([
-    AppBskyFeedDefsNotFoundPost$outboundSchema,
-    z.lazy(() => AppBskyFeedDefsThreadViewPost$outboundSchema),
     AppBskyFeedDefsBlockedPost$outboundSchema,
+    z.lazy(() => AppBskyFeedDefsThreadViewPost$outboundSchema),
+    AppBskyFeedDefsNotFoundPost$outboundSchema,
   ]).optional(),
   replies: z.array(
     z.union([
-      AppBskyFeedDefsNotFoundPost$outboundSchema,
-      z.lazy(() => AppBskyFeedDefsThreadViewPost$outboundSchema),
       AppBskyFeedDefsBlockedPost$outboundSchema,
+      z.lazy(() => AppBskyFeedDefsThreadViewPost$outboundSchema),
+      AppBskyFeedDefsNotFoundPost$outboundSchema,
     ]),
   ).optional(),
 });

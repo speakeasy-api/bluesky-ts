@@ -13,11 +13,11 @@ export type ChatBskyConvoGetLogRequest = {
   cursor?: string | undefined;
 };
 
-export type Logs =
-  | components.ChatBskyConvoDefsLogBeginConvo
-  | components.ChatBskyConvoDefsLogLeaveConvo
+export type Log =
   | components.ChatBskyConvoDefsLogCreateMessage
-  | components.ChatBskyConvoDefsLogDeleteMessage;
+  | components.ChatBskyConvoDefsLogDeleteMessage
+  | components.ChatBskyConvoDefsLogBeginConvo
+  | components.ChatBskyConvoDefsLogLeaveConvo;
 
 /**
  * OK
@@ -25,10 +25,10 @@ export type Logs =
 export type ChatBskyConvoGetLogResponseBody = {
   cursor?: string | undefined;
   logs: Array<
-    | components.ChatBskyConvoDefsLogBeginConvo
-    | components.ChatBskyConvoDefsLogLeaveConvo
     | components.ChatBskyConvoDefsLogCreateMessage
     | components.ChatBskyConvoDefsLogDeleteMessage
+    | components.ChatBskyConvoDefsLogBeginConvo
+    | components.ChatBskyConvoDefsLogLeaveConvo
   >;
 };
 
@@ -91,54 +91,55 @@ export function chatBskyConvoGetLogRequestFromJSON(
 }
 
 /** @internal */
-export const Logs$inboundSchema: z.ZodType<Logs, z.ZodTypeDef, unknown> = z
-  .union([
-    components.ChatBskyConvoDefsLogBeginConvo$inboundSchema,
-    components.ChatBskyConvoDefsLogLeaveConvo$inboundSchema,
+export const Log$inboundSchema: z.ZodType<Log, z.ZodTypeDef, unknown> = z.union(
+  [
     components.ChatBskyConvoDefsLogCreateMessage$inboundSchema,
     components.ChatBskyConvoDefsLogDeleteMessage$inboundSchema,
-  ]);
+    components.ChatBskyConvoDefsLogBeginConvo$inboundSchema,
+    components.ChatBskyConvoDefsLogLeaveConvo$inboundSchema,
+  ],
+);
 
 /** @internal */
-export type Logs$Outbound =
-  | components.ChatBskyConvoDefsLogBeginConvo$Outbound
-  | components.ChatBskyConvoDefsLogLeaveConvo$Outbound
+export type Log$Outbound =
   | components.ChatBskyConvoDefsLogCreateMessage$Outbound
-  | components.ChatBskyConvoDefsLogDeleteMessage$Outbound;
+  | components.ChatBskyConvoDefsLogDeleteMessage$Outbound
+  | components.ChatBskyConvoDefsLogBeginConvo$Outbound
+  | components.ChatBskyConvoDefsLogLeaveConvo$Outbound;
 
 /** @internal */
-export const Logs$outboundSchema: z.ZodType<Logs$Outbound, z.ZodTypeDef, Logs> =
-  z.union([
-    components.ChatBskyConvoDefsLogBeginConvo$outboundSchema,
-    components.ChatBskyConvoDefsLogLeaveConvo$outboundSchema,
+export const Log$outboundSchema: z.ZodType<Log$Outbound, z.ZodTypeDef, Log> = z
+  .union([
     components.ChatBskyConvoDefsLogCreateMessage$outboundSchema,
     components.ChatBskyConvoDefsLogDeleteMessage$outboundSchema,
+    components.ChatBskyConvoDefsLogBeginConvo$outboundSchema,
+    components.ChatBskyConvoDefsLogLeaveConvo$outboundSchema,
   ]);
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace Logs$ {
-  /** @deprecated use `Logs$inboundSchema` instead. */
-  export const inboundSchema = Logs$inboundSchema;
-  /** @deprecated use `Logs$outboundSchema` instead. */
-  export const outboundSchema = Logs$outboundSchema;
-  /** @deprecated use `Logs$Outbound` instead. */
-  export type Outbound = Logs$Outbound;
+export namespace Log$ {
+  /** @deprecated use `Log$inboundSchema` instead. */
+  export const inboundSchema = Log$inboundSchema;
+  /** @deprecated use `Log$outboundSchema` instead. */
+  export const outboundSchema = Log$outboundSchema;
+  /** @deprecated use `Log$Outbound` instead. */
+  export type Outbound = Log$Outbound;
 }
 
-export function logsToJSON(logs: Logs): string {
-  return JSON.stringify(Logs$outboundSchema.parse(logs));
+export function logToJSON(log: Log): string {
+  return JSON.stringify(Log$outboundSchema.parse(log));
 }
 
-export function logsFromJSON(
+export function logFromJSON(
   jsonString: string,
-): SafeParseResult<Logs, SDKValidationError> {
+): SafeParseResult<Log, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => Logs$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'Logs' from JSON`,
+    (x) => Log$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'Log' from JSON`,
   );
 }
 
@@ -151,10 +152,10 @@ export const ChatBskyConvoGetLogResponseBody$inboundSchema: z.ZodType<
   cursor: z.string().optional(),
   logs: z.array(
     z.union([
-      components.ChatBskyConvoDefsLogBeginConvo$inboundSchema,
-      components.ChatBskyConvoDefsLogLeaveConvo$inboundSchema,
       components.ChatBskyConvoDefsLogCreateMessage$inboundSchema,
       components.ChatBskyConvoDefsLogDeleteMessage$inboundSchema,
+      components.ChatBskyConvoDefsLogBeginConvo$inboundSchema,
+      components.ChatBskyConvoDefsLogLeaveConvo$inboundSchema,
     ]),
   ),
 });
@@ -163,10 +164,10 @@ export const ChatBskyConvoGetLogResponseBody$inboundSchema: z.ZodType<
 export type ChatBskyConvoGetLogResponseBody$Outbound = {
   cursor?: string | undefined;
   logs: Array<
-    | components.ChatBskyConvoDefsLogBeginConvo$Outbound
-    | components.ChatBskyConvoDefsLogLeaveConvo$Outbound
     | components.ChatBskyConvoDefsLogCreateMessage$Outbound
     | components.ChatBskyConvoDefsLogDeleteMessage$Outbound
+    | components.ChatBskyConvoDefsLogBeginConvo$Outbound
+    | components.ChatBskyConvoDefsLogLeaveConvo$Outbound
   >;
 };
 
@@ -179,10 +180,10 @@ export const ChatBskyConvoGetLogResponseBody$outboundSchema: z.ZodType<
   cursor: z.string().optional(),
   logs: z.array(
     z.union([
-      components.ChatBskyConvoDefsLogBeginConvo$outboundSchema,
-      components.ChatBskyConvoDefsLogLeaveConvo$outboundSchema,
       components.ChatBskyConvoDefsLogCreateMessage$outboundSchema,
       components.ChatBskyConvoDefsLogDeleteMessage$outboundSchema,
+      components.ChatBskyConvoDefsLogBeginConvo$outboundSchema,
+      components.ChatBskyConvoDefsLogLeaveConvo$outboundSchema,
     ]),
   ),
 });

@@ -15,7 +15,7 @@ export type ChatBskyConvoGetConvoForMembersRequest = {
 /**
  * OK
  */
-export type ChatBskyConvoGetConvoForMembersResponseBody = {
+export type ChatBskyConvoGetConvoForMembersResponse = {
   convo: components.ChatBskyConvoDefsConvoView;
 };
 
@@ -80,68 +80,66 @@ export function chatBskyConvoGetConvoForMembersRequestFromJSON(
 }
 
 /** @internal */
-export const ChatBskyConvoGetConvoForMembersResponseBody$inboundSchema:
-  z.ZodType<
-    ChatBskyConvoGetConvoForMembersResponseBody,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    convo: components.ChatBskyConvoDefsConvoView$inboundSchema,
-  });
+export const ChatBskyConvoGetConvoForMembersResponse$inboundSchema: z.ZodType<
+  ChatBskyConvoGetConvoForMembersResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  convo: components.ChatBskyConvoDefsConvoView$inboundSchema,
+});
 
 /** @internal */
-export type ChatBskyConvoGetConvoForMembersResponseBody$Outbound = {
+export type ChatBskyConvoGetConvoForMembersResponse$Outbound = {
   convo: components.ChatBskyConvoDefsConvoView$Outbound;
 };
 
 /** @internal */
-export const ChatBskyConvoGetConvoForMembersResponseBody$outboundSchema:
-  z.ZodType<
-    ChatBskyConvoGetConvoForMembersResponseBody$Outbound,
-    z.ZodTypeDef,
-    ChatBskyConvoGetConvoForMembersResponseBody
-  > = z.object({
-    convo: components.ChatBskyConvoDefsConvoView$outboundSchema,
-  });
+export const ChatBskyConvoGetConvoForMembersResponse$outboundSchema: z.ZodType<
+  ChatBskyConvoGetConvoForMembersResponse$Outbound,
+  z.ZodTypeDef,
+  ChatBskyConvoGetConvoForMembersResponse
+> = z.object({
+  convo: components.ChatBskyConvoDefsConvoView$outboundSchema,
+});
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ChatBskyConvoGetConvoForMembersResponseBody$ {
-  /** @deprecated use `ChatBskyConvoGetConvoForMembersResponseBody$inboundSchema` instead. */
+export namespace ChatBskyConvoGetConvoForMembersResponse$ {
+  /** @deprecated use `ChatBskyConvoGetConvoForMembersResponse$inboundSchema` instead. */
   export const inboundSchema =
-    ChatBskyConvoGetConvoForMembersResponseBody$inboundSchema;
-  /** @deprecated use `ChatBskyConvoGetConvoForMembersResponseBody$outboundSchema` instead. */
+    ChatBskyConvoGetConvoForMembersResponse$inboundSchema;
+  /** @deprecated use `ChatBskyConvoGetConvoForMembersResponse$outboundSchema` instead. */
   export const outboundSchema =
-    ChatBskyConvoGetConvoForMembersResponseBody$outboundSchema;
-  /** @deprecated use `ChatBskyConvoGetConvoForMembersResponseBody$Outbound` instead. */
-  export type Outbound = ChatBskyConvoGetConvoForMembersResponseBody$Outbound;
+    ChatBskyConvoGetConvoForMembersResponse$outboundSchema;
+  /** @deprecated use `ChatBskyConvoGetConvoForMembersResponse$Outbound` instead. */
+  export type Outbound = ChatBskyConvoGetConvoForMembersResponse$Outbound;
 }
 
-export function chatBskyConvoGetConvoForMembersResponseBodyToJSON(
-  chatBskyConvoGetConvoForMembersResponseBody:
-    ChatBskyConvoGetConvoForMembersResponseBody,
+export function chatBskyConvoGetConvoForMembersResponseToJSON(
+  chatBskyConvoGetConvoForMembersResponse:
+    ChatBskyConvoGetConvoForMembersResponse,
 ): string {
   return JSON.stringify(
-    ChatBskyConvoGetConvoForMembersResponseBody$outboundSchema.parse(
-      chatBskyConvoGetConvoForMembersResponseBody,
+    ChatBskyConvoGetConvoForMembersResponse$outboundSchema.parse(
+      chatBskyConvoGetConvoForMembersResponse,
     ),
   );
 }
 
-export function chatBskyConvoGetConvoForMembersResponseBodyFromJSON(
+export function chatBskyConvoGetConvoForMembersResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
-  ChatBskyConvoGetConvoForMembersResponseBody,
+  ChatBskyConvoGetConvoForMembersResponse,
   SDKValidationError
 > {
   return safeParse(
     jsonString,
     (x) =>
-      ChatBskyConvoGetConvoForMembersResponseBody$inboundSchema.parse(
+      ChatBskyConvoGetConvoForMembersResponse$inboundSchema.parse(
         JSON.parse(x),
       ),
-    `Failed to parse 'ChatBskyConvoGetConvoForMembersResponseBody' from JSON`,
+    `Failed to parse 'ChatBskyConvoGetConvoForMembersResponse' from JSON`,
   );
 }

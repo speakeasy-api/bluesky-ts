@@ -7,7 +7,7 @@ import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ComAtprotoServerUpdateEmailBody = {
+export type ComAtprotoServerUpdateEmailRequest = {
   email: string;
   emailAuthFactor?: boolean | undefined;
   /**
@@ -17,8 +17,8 @@ export type ComAtprotoServerUpdateEmailBody = {
 };
 
 /** @internal */
-export const ComAtprotoServerUpdateEmailBody$inboundSchema: z.ZodType<
-  ComAtprotoServerUpdateEmailBody,
+export const ComAtprotoServerUpdateEmailRequest$inboundSchema: z.ZodType<
+  ComAtprotoServerUpdateEmailRequest,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -28,17 +28,17 @@ export const ComAtprotoServerUpdateEmailBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type ComAtprotoServerUpdateEmailBody$Outbound = {
+export type ComAtprotoServerUpdateEmailRequest$Outbound = {
   email: string;
   emailAuthFactor?: boolean | undefined;
   token?: string | undefined;
 };
 
 /** @internal */
-export const ComAtprotoServerUpdateEmailBody$outboundSchema: z.ZodType<
-  ComAtprotoServerUpdateEmailBody$Outbound,
+export const ComAtprotoServerUpdateEmailRequest$outboundSchema: z.ZodType<
+  ComAtprotoServerUpdateEmailRequest$Outbound,
   z.ZodTypeDef,
-  ComAtprotoServerUpdateEmailBody
+  ComAtprotoServerUpdateEmailRequest
 > = z.object({
   email: z.string(),
   emailAuthFactor: z.boolean().optional(),
@@ -49,31 +49,33 @@ export const ComAtprotoServerUpdateEmailBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoServerUpdateEmailBody$ {
-  /** @deprecated use `ComAtprotoServerUpdateEmailBody$inboundSchema` instead. */
-  export const inboundSchema = ComAtprotoServerUpdateEmailBody$inboundSchema;
-  /** @deprecated use `ComAtprotoServerUpdateEmailBody$outboundSchema` instead. */
-  export const outboundSchema = ComAtprotoServerUpdateEmailBody$outboundSchema;
-  /** @deprecated use `ComAtprotoServerUpdateEmailBody$Outbound` instead. */
-  export type Outbound = ComAtprotoServerUpdateEmailBody$Outbound;
+export namespace ComAtprotoServerUpdateEmailRequest$ {
+  /** @deprecated use `ComAtprotoServerUpdateEmailRequest$inboundSchema` instead. */
+  export const inboundSchema = ComAtprotoServerUpdateEmailRequest$inboundSchema;
+  /** @deprecated use `ComAtprotoServerUpdateEmailRequest$outboundSchema` instead. */
+  export const outboundSchema =
+    ComAtprotoServerUpdateEmailRequest$outboundSchema;
+  /** @deprecated use `ComAtprotoServerUpdateEmailRequest$Outbound` instead. */
+  export type Outbound = ComAtprotoServerUpdateEmailRequest$Outbound;
 }
 
-export function comAtprotoServerUpdateEmailBodyToJSON(
-  comAtprotoServerUpdateEmailBody: ComAtprotoServerUpdateEmailBody,
+export function comAtprotoServerUpdateEmailRequestToJSON(
+  comAtprotoServerUpdateEmailRequest: ComAtprotoServerUpdateEmailRequest,
 ): string {
   return JSON.stringify(
-    ComAtprotoServerUpdateEmailBody$outboundSchema.parse(
-      comAtprotoServerUpdateEmailBody,
+    ComAtprotoServerUpdateEmailRequest$outboundSchema.parse(
+      comAtprotoServerUpdateEmailRequest,
     ),
   );
 }
 
-export function comAtprotoServerUpdateEmailBodyFromJSON(
+export function comAtprotoServerUpdateEmailRequestFromJSON(
   jsonString: string,
-): SafeParseResult<ComAtprotoServerUpdateEmailBody, SDKValidationError> {
+): SafeParseResult<ComAtprotoServerUpdateEmailRequest, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => ComAtprotoServerUpdateEmailBody$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ComAtprotoServerUpdateEmailBody' from JSON`,
+    (x) =>
+      ComAtprotoServerUpdateEmailRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ComAtprotoServerUpdateEmailRequest' from JSON`,
   );
 }

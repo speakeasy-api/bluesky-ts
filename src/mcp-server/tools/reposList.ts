@@ -11,7 +11,7 @@ const args = {
 };
 
 export const tool$reposList: ToolDefinition<typeof args> = {
-  name: "repos_list",
+  name: "repos-list",
   description:
     `*This endpoint is part of the atproto PDS repository management APIs. Requests usually require authentication (unlike the \`com.atproto.sync.*\` endpoints), and are made directly to the user's own PDS instance.*
 

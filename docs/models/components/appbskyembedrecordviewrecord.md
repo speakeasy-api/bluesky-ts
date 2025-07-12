@@ -6,14 +6,14 @@
 import { AppBskyEmbedRecordViewRecord } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: AppBskyEmbedRecordViewRecord = {
-  uri: "https://oval-resource.biz/",
+  uri: "https://round-numeric.com/",
   cid: "<id>",
   author: {
     did: "<id>",
     handle: "<value>",
   },
   value: "<value>",
-  indexedAt: new Date("2024-11-11T01:37:45.757Z"),
+  indexedAt: new Date("2024-07-03T07:49:54.463Z"),
 };
 ```
 
@@ -30,5 +30,5 @@ let value: AppBskyEmbedRecordViewRecord = {
 | `repostCount`                                                                                              | *number*                                                                                                   | :heavy_minus_sign:                                                                                         | N/A                                                                                                        |
 | `likeCount`                                                                                                | *number*                                                                                                   | :heavy_minus_sign:                                                                                         | N/A                                                                                                        |
 | `quoteCount`                                                                                               | *number*                                                                                                   | :heavy_minus_sign:                                                                                         | N/A                                                                                                        |
-| `embeds`                                                                                                   | *components.Embeds*[]                                                                                      | :heavy_minus_sign:                                                                                         | N/A                                                                                                        |
+| `embeds`                                                                                                   | *components.AppBskyEmbedRecordViewRecordEmbed*[]                                                           | :heavy_minus_sign:                                                                                         | N/A                                                                                                        |
 | `indexedAt`                                                                                                | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)              | :heavy_check_mark:                                                                                         | N/A                                                                                                        |

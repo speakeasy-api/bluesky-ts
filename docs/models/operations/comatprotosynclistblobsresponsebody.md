@@ -9,7 +9,9 @@ import { ComAtprotoSyncListBlobsResponseBody } from "@speakeasy-sdks/bluesky/mod
 
 let value: ComAtprotoSyncListBlobsResponseBody = {
   cids: [
-    "<id>",
+    "<id 1>",
+    "<id 2>",
+    "<id 3>",
   ],
 };
 ```

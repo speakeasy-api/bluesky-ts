@@ -6,7 +6,7 @@ import { atprotoServerActivateAccount } from "../../funcs/atprotoServerActivateA
 import { formatResult, ToolDefinition } from "../tools.js";
 
 export const tool$atprotoServerActivateAccount: ToolDefinition = {
-  name: "atproto-server_activate-account",
+  name: "atproto-server-activate-account",
   description:
     `*This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 

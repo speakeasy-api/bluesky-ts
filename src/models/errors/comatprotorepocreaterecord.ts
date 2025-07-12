@@ -4,11 +4,12 @@
 
 import * as z from "zod";
 import { ClosedEnum } from "../../types/enums.js";
+import { BlueskyError } from "./blueskyerror.js";
 
 /**
  * Unauthorized
  */
-export type UnauthorizedComAtprotoRepoCreateRecordResponseBodyErrorData = {
+export type ComAtprotoRepoCreateRecordAuthMissingErrorData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,26 +17,22 @@ export type UnauthorizedComAtprotoRepoCreateRecordResponseBodyErrorData = {
 /**
  * Unauthorized
  */
-export class UnauthorizedComAtprotoRepoCreateRecordResponseBodyError
-  extends Error
-{
+export class ComAtprotoRepoCreateRecordAuthMissingError extends BlueskyError {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: UnauthorizedComAtprotoRepoCreateRecordResponseBodyErrorData;
+  data$: ComAtprotoRepoCreateRecordAuthMissingErrorData;
 
   constructor(
-    err: UnauthorizedComAtprotoRepoCreateRecordResponseBodyErrorData,
+    err: ComAtprotoRepoCreateRecordAuthMissingErrorData,
+    httpMeta: { response: Response; request: Request; body: string },
   ) {
-    const message = "message" in err && typeof err.message === "string"
-      ? err.message
-      : `API error occurred: ${JSON.stringify(err)}`;
-    super(message);
+    const message = err.message || `API error occurred: ${JSON.stringify(err)}`;
+    super(message, httpMeta);
     this.data$ = err;
-
     this.error = err.error;
 
-    this.name = "UnauthorizedComAtprotoRepoCreateRecordResponseBodyError";
+    this.name = "ComAtprotoRepoCreateRecordAuthMissingError";
   }
 }
 
@@ -52,7 +49,7 @@ export type ComAtprotoRepoCreateRecordError = ClosedEnum<
 /**
  * Bad Request
  */
-export type BadRequestComAtprotoRepoCreateRecordResponseBodyErrorData = {
+export type ComAtprotoRepoCreateRecordBadRequestErrorData = {
   error: ComAtprotoRepoCreateRecordError;
   message: string;
 };
@@ -60,54 +57,56 @@ export type BadRequestComAtprotoRepoCreateRecordResponseBodyErrorData = {
 /**
  * Bad Request
  */
-export class BadRequestComAtprotoRepoCreateRecordResponseBodyError
-  extends Error
-{
+export class ComAtprotoRepoCreateRecordBadRequestError extends BlueskyError {
   error: ComAtprotoRepoCreateRecordError;
 
   /** The original data that was passed to this error instance. */
-  data$: BadRequestComAtprotoRepoCreateRecordResponseBodyErrorData;
+  data$: ComAtprotoRepoCreateRecordBadRequestErrorData;
 
-  constructor(err: BadRequestComAtprotoRepoCreateRecordResponseBodyErrorData) {
-    const message = "message" in err && typeof err.message === "string"
-      ? err.message
-      : `API error occurred: ${JSON.stringify(err)}`;
-    super(message);
+  constructor(
+    err: ComAtprotoRepoCreateRecordBadRequestErrorData,
+    httpMeta: { response: Response; request: Request; body: string },
+  ) {
+    const message = err.message || `API error occurred: ${JSON.stringify(err)}`;
+    super(message, httpMeta);
     this.data$ = err;
-
     this.error = err.error;
 
-    this.name = "BadRequestComAtprotoRepoCreateRecordResponseBodyError";
+    this.name = "ComAtprotoRepoCreateRecordBadRequestError";
   }
 }
 
 /** @internal */
-export const UnauthorizedComAtprotoRepoCreateRecordResponseBodyError$inboundSchema:
-  z.ZodType<
-    UnauthorizedComAtprotoRepoCreateRecordResponseBodyError,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    error: z.literal("AuthMissing"),
-    message: z.string(),
-  })
-    .transform((v) => {
-      return new UnauthorizedComAtprotoRepoCreateRecordResponseBodyError(v);
-    });
+export const ComAtprotoRepoCreateRecordAuthMissingError$inboundSchema:
+  z.ZodType<ComAtprotoRepoCreateRecordAuthMissingError, z.ZodTypeDef, unknown> =
+    z.object({
+      error: z.literal("AuthMissing").default("AuthMissing"),
+      message: z.string(),
+      request$: z.instanceof(Request),
+      response$: z.instanceof(Response),
+      body$: z.string(),
+    })
+      .transform((v) => {
+        return new ComAtprotoRepoCreateRecordAuthMissingError(v, {
+          request: v.request$,
+          response: v.response$,
+          body: v.body$,
+        });
+      });
 
 /** @internal */
-export type UnauthorizedComAtprotoRepoCreateRecordResponseBodyError$Outbound = {
+export type ComAtprotoRepoCreateRecordAuthMissingError$Outbound = {
   error: "AuthMissing";
   message: string;
 };
 
 /** @internal */
-export const UnauthorizedComAtprotoRepoCreateRecordResponseBodyError$outboundSchema:
+export const ComAtprotoRepoCreateRecordAuthMissingError$outboundSchema:
   z.ZodType<
-    UnauthorizedComAtprotoRepoCreateRecordResponseBodyError$Outbound,
+    ComAtprotoRepoCreateRecordAuthMissingError$Outbound,
     z.ZodTypeDef,
-    UnauthorizedComAtprotoRepoCreateRecordResponseBodyError
-  > = z.instanceof(UnauthorizedComAtprotoRepoCreateRecordResponseBodyError)
+    ComAtprotoRepoCreateRecordAuthMissingError
+  > = z.instanceof(ComAtprotoRepoCreateRecordAuthMissingError)
     .transform(v => v.data$)
     .pipe(z.object({
       error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -118,16 +117,15 @@ export const UnauthorizedComAtprotoRepoCreateRecordResponseBodyError$outboundSch
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace UnauthorizedComAtprotoRepoCreateRecordResponseBodyError$ {
-  /** @deprecated use `UnauthorizedComAtprotoRepoCreateRecordResponseBodyError$inboundSchema` instead. */
+export namespace ComAtprotoRepoCreateRecordAuthMissingError$ {
+  /** @deprecated use `ComAtprotoRepoCreateRecordAuthMissingError$inboundSchema` instead. */
   export const inboundSchema =
-    UnauthorizedComAtprotoRepoCreateRecordResponseBodyError$inboundSchema;
-  /** @deprecated use `UnauthorizedComAtprotoRepoCreateRecordResponseBodyError$outboundSchema` instead. */
+    ComAtprotoRepoCreateRecordAuthMissingError$inboundSchema;
+  /** @deprecated use `ComAtprotoRepoCreateRecordAuthMissingError$outboundSchema` instead. */
   export const outboundSchema =
-    UnauthorizedComAtprotoRepoCreateRecordResponseBodyError$outboundSchema;
-  /** @deprecated use `UnauthorizedComAtprotoRepoCreateRecordResponseBodyError$Outbound` instead. */
-  export type Outbound =
-    UnauthorizedComAtprotoRepoCreateRecordResponseBodyError$Outbound;
+    ComAtprotoRepoCreateRecordAuthMissingError$outboundSchema;
+  /** @deprecated use `ComAtprotoRepoCreateRecordAuthMissingError$Outbound` instead. */
+  export type Outbound = ComAtprotoRepoCreateRecordAuthMissingError$Outbound;
 }
 
 /** @internal */
@@ -152,32 +150,38 @@ export namespace ComAtprotoRepoCreateRecordError$ {
 }
 
 /** @internal */
-export const BadRequestComAtprotoRepoCreateRecordResponseBodyError$inboundSchema:
-  z.ZodType<
-    BadRequestComAtprotoRepoCreateRecordResponseBodyError,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    error: ComAtprotoRepoCreateRecordError$inboundSchema,
-    message: z.string(),
-  })
-    .transform((v) => {
-      return new BadRequestComAtprotoRepoCreateRecordResponseBodyError(v);
+export const ComAtprotoRepoCreateRecordBadRequestError$inboundSchema: z.ZodType<
+  ComAtprotoRepoCreateRecordBadRequestError,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  error: ComAtprotoRepoCreateRecordError$inboundSchema,
+  message: z.string(),
+  request$: z.instanceof(Request),
+  response$: z.instanceof(Response),
+  body$: z.string(),
+})
+  .transform((v) => {
+    return new ComAtprotoRepoCreateRecordBadRequestError(v, {
+      request: v.request$,
+      response: v.response$,
+      body: v.body$,
     });
+  });
 
 /** @internal */
-export type BadRequestComAtprotoRepoCreateRecordResponseBodyError$Outbound = {
+export type ComAtprotoRepoCreateRecordBadRequestError$Outbound = {
   error: string;
   message: string;
 };
 
 /** @internal */
-export const BadRequestComAtprotoRepoCreateRecordResponseBodyError$outboundSchema:
+export const ComAtprotoRepoCreateRecordBadRequestError$outboundSchema:
   z.ZodType<
-    BadRequestComAtprotoRepoCreateRecordResponseBodyError$Outbound,
+    ComAtprotoRepoCreateRecordBadRequestError$Outbound,
     z.ZodTypeDef,
-    BadRequestComAtprotoRepoCreateRecordResponseBodyError
-  > = z.instanceof(BadRequestComAtprotoRepoCreateRecordResponseBodyError)
+    ComAtprotoRepoCreateRecordBadRequestError
+  > = z.instanceof(ComAtprotoRepoCreateRecordBadRequestError)
     .transform(v => v.data$)
     .pipe(z.object({
       error: ComAtprotoRepoCreateRecordError$outboundSchema,
@@ -188,14 +192,13 @@ export const BadRequestComAtprotoRepoCreateRecordResponseBodyError$outboundSchem
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace BadRequestComAtprotoRepoCreateRecordResponseBodyError$ {
-  /** @deprecated use `BadRequestComAtprotoRepoCreateRecordResponseBodyError$inboundSchema` instead. */
+export namespace ComAtprotoRepoCreateRecordBadRequestError$ {
+  /** @deprecated use `ComAtprotoRepoCreateRecordBadRequestError$inboundSchema` instead. */
   export const inboundSchema =
-    BadRequestComAtprotoRepoCreateRecordResponseBodyError$inboundSchema;
-  /** @deprecated use `BadRequestComAtprotoRepoCreateRecordResponseBodyError$outboundSchema` instead. */
+    ComAtprotoRepoCreateRecordBadRequestError$inboundSchema;
+  /** @deprecated use `ComAtprotoRepoCreateRecordBadRequestError$outboundSchema` instead. */
   export const outboundSchema =
-    BadRequestComAtprotoRepoCreateRecordResponseBodyError$outboundSchema;
-  /** @deprecated use `BadRequestComAtprotoRepoCreateRecordResponseBodyError$Outbound` instead. */
-  export type Outbound =
-    BadRequestComAtprotoRepoCreateRecordResponseBodyError$Outbound;
+    ComAtprotoRepoCreateRecordBadRequestError$outboundSchema;
+  /** @deprecated use `ComAtprotoRepoCreateRecordBadRequestError$Outbound` instead. */
+  export type Outbound = ComAtprotoRepoCreateRecordBadRequestError$Outbound;
 }

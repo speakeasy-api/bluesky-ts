@@ -4,11 +4,12 @@
 
 import * as z from "zod";
 import { ClosedEnum } from "../../types/enums.js";
+import { BlueskyError } from "./blueskyerror.js";
 
 /**
  * Unauthorized
  */
-export type UnauthorizedComAtprotoLabelQueryLabelsResponseBodyErrorData = {
+export type ComAtprotoLabelQueryLabelsAuthMissingErrorData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,26 +17,22 @@ export type UnauthorizedComAtprotoLabelQueryLabelsResponseBodyErrorData = {
 /**
  * Unauthorized
  */
-export class UnauthorizedComAtprotoLabelQueryLabelsResponseBodyError
-  extends Error
-{
+export class ComAtprotoLabelQueryLabelsAuthMissingError extends BlueskyError {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: UnauthorizedComAtprotoLabelQueryLabelsResponseBodyErrorData;
+  data$: ComAtprotoLabelQueryLabelsAuthMissingErrorData;
 
   constructor(
-    err: UnauthorizedComAtprotoLabelQueryLabelsResponseBodyErrorData,
+    err: ComAtprotoLabelQueryLabelsAuthMissingErrorData,
+    httpMeta: { response: Response; request: Request; body: string },
   ) {
-    const message = "message" in err && typeof err.message === "string"
-      ? err.message
-      : `API error occurred: ${JSON.stringify(err)}`;
-    super(message);
+    const message = err.message || `API error occurred: ${JSON.stringify(err)}`;
+    super(message, httpMeta);
     this.data$ = err;
-
     this.error = err.error;
 
-    this.name = "UnauthorizedComAtprotoLabelQueryLabelsResponseBodyError";
+    this.name = "ComAtprotoLabelQueryLabelsAuthMissingError";
   }
 }
 
@@ -51,7 +48,7 @@ export type ComAtprotoLabelQueryLabelsError = ClosedEnum<
 /**
  * Bad Request
  */
-export type BadRequestComAtprotoLabelQueryLabelsResponseBodyErrorData = {
+export type ComAtprotoLabelQueryLabelsBadRequestErrorData = {
   error: ComAtprotoLabelQueryLabelsError;
   message: string;
 };
@@ -59,54 +56,56 @@ export type BadRequestComAtprotoLabelQueryLabelsResponseBodyErrorData = {
 /**
  * Bad Request
  */
-export class BadRequestComAtprotoLabelQueryLabelsResponseBodyError
-  extends Error
-{
+export class ComAtprotoLabelQueryLabelsBadRequestError extends BlueskyError {
   error: ComAtprotoLabelQueryLabelsError;
 
   /** The original data that was passed to this error instance. */
-  data$: BadRequestComAtprotoLabelQueryLabelsResponseBodyErrorData;
+  data$: ComAtprotoLabelQueryLabelsBadRequestErrorData;
 
-  constructor(err: BadRequestComAtprotoLabelQueryLabelsResponseBodyErrorData) {
-    const message = "message" in err && typeof err.message === "string"
-      ? err.message
-      : `API error occurred: ${JSON.stringify(err)}`;
-    super(message);
+  constructor(
+    err: ComAtprotoLabelQueryLabelsBadRequestErrorData,
+    httpMeta: { response: Response; request: Request; body: string },
+  ) {
+    const message = err.message || `API error occurred: ${JSON.stringify(err)}`;
+    super(message, httpMeta);
     this.data$ = err;
-
     this.error = err.error;
 
-    this.name = "BadRequestComAtprotoLabelQueryLabelsResponseBodyError";
+    this.name = "ComAtprotoLabelQueryLabelsBadRequestError";
   }
 }
 
 /** @internal */
-export const UnauthorizedComAtprotoLabelQueryLabelsResponseBodyError$inboundSchema:
-  z.ZodType<
-    UnauthorizedComAtprotoLabelQueryLabelsResponseBodyError,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    error: z.literal("AuthMissing"),
-    message: z.string(),
-  })
-    .transform((v) => {
-      return new UnauthorizedComAtprotoLabelQueryLabelsResponseBodyError(v);
-    });
+export const ComAtprotoLabelQueryLabelsAuthMissingError$inboundSchema:
+  z.ZodType<ComAtprotoLabelQueryLabelsAuthMissingError, z.ZodTypeDef, unknown> =
+    z.object({
+      error: z.literal("AuthMissing").default("AuthMissing"),
+      message: z.string(),
+      request$: z.instanceof(Request),
+      response$: z.instanceof(Response),
+      body$: z.string(),
+    })
+      .transform((v) => {
+        return new ComAtprotoLabelQueryLabelsAuthMissingError(v, {
+          request: v.request$,
+          response: v.response$,
+          body: v.body$,
+        });
+      });
 
 /** @internal */
-export type UnauthorizedComAtprotoLabelQueryLabelsResponseBodyError$Outbound = {
+export type ComAtprotoLabelQueryLabelsAuthMissingError$Outbound = {
   error: "AuthMissing";
   message: string;
 };
 
 /** @internal */
-export const UnauthorizedComAtprotoLabelQueryLabelsResponseBodyError$outboundSchema:
+export const ComAtprotoLabelQueryLabelsAuthMissingError$outboundSchema:
   z.ZodType<
-    UnauthorizedComAtprotoLabelQueryLabelsResponseBodyError$Outbound,
+    ComAtprotoLabelQueryLabelsAuthMissingError$Outbound,
     z.ZodTypeDef,
-    UnauthorizedComAtprotoLabelQueryLabelsResponseBodyError
-  > = z.instanceof(UnauthorizedComAtprotoLabelQueryLabelsResponseBodyError)
+    ComAtprotoLabelQueryLabelsAuthMissingError
+  > = z.instanceof(ComAtprotoLabelQueryLabelsAuthMissingError)
     .transform(v => v.data$)
     .pipe(z.object({
       error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -117,16 +116,15 @@ export const UnauthorizedComAtprotoLabelQueryLabelsResponseBodyError$outboundSch
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace UnauthorizedComAtprotoLabelQueryLabelsResponseBodyError$ {
-  /** @deprecated use `UnauthorizedComAtprotoLabelQueryLabelsResponseBodyError$inboundSchema` instead. */
+export namespace ComAtprotoLabelQueryLabelsAuthMissingError$ {
+  /** @deprecated use `ComAtprotoLabelQueryLabelsAuthMissingError$inboundSchema` instead. */
   export const inboundSchema =
-    UnauthorizedComAtprotoLabelQueryLabelsResponseBodyError$inboundSchema;
-  /** @deprecated use `UnauthorizedComAtprotoLabelQueryLabelsResponseBodyError$outboundSchema` instead. */
+    ComAtprotoLabelQueryLabelsAuthMissingError$inboundSchema;
+  /** @deprecated use `ComAtprotoLabelQueryLabelsAuthMissingError$outboundSchema` instead. */
   export const outboundSchema =
-    UnauthorizedComAtprotoLabelQueryLabelsResponseBodyError$outboundSchema;
-  /** @deprecated use `UnauthorizedComAtprotoLabelQueryLabelsResponseBodyError$Outbound` instead. */
-  export type Outbound =
-    UnauthorizedComAtprotoLabelQueryLabelsResponseBodyError$Outbound;
+    ComAtprotoLabelQueryLabelsAuthMissingError$outboundSchema;
+  /** @deprecated use `ComAtprotoLabelQueryLabelsAuthMissingError$Outbound` instead. */
+  export type Outbound = ComAtprotoLabelQueryLabelsAuthMissingError$Outbound;
 }
 
 /** @internal */
@@ -151,32 +149,38 @@ export namespace ComAtprotoLabelQueryLabelsError$ {
 }
 
 /** @internal */
-export const BadRequestComAtprotoLabelQueryLabelsResponseBodyError$inboundSchema:
-  z.ZodType<
-    BadRequestComAtprotoLabelQueryLabelsResponseBodyError,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    error: ComAtprotoLabelQueryLabelsError$inboundSchema,
-    message: z.string(),
-  })
-    .transform((v) => {
-      return new BadRequestComAtprotoLabelQueryLabelsResponseBodyError(v);
+export const ComAtprotoLabelQueryLabelsBadRequestError$inboundSchema: z.ZodType<
+  ComAtprotoLabelQueryLabelsBadRequestError,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  error: ComAtprotoLabelQueryLabelsError$inboundSchema,
+  message: z.string(),
+  request$: z.instanceof(Request),
+  response$: z.instanceof(Response),
+  body$: z.string(),
+})
+  .transform((v) => {
+    return new ComAtprotoLabelQueryLabelsBadRequestError(v, {
+      request: v.request$,
+      response: v.response$,
+      body: v.body$,
     });
+  });
 
 /** @internal */
-export type BadRequestComAtprotoLabelQueryLabelsResponseBodyError$Outbound = {
+export type ComAtprotoLabelQueryLabelsBadRequestError$Outbound = {
   error: string;
   message: string;
 };
 
 /** @internal */
-export const BadRequestComAtprotoLabelQueryLabelsResponseBodyError$outboundSchema:
+export const ComAtprotoLabelQueryLabelsBadRequestError$outboundSchema:
   z.ZodType<
-    BadRequestComAtprotoLabelQueryLabelsResponseBodyError$Outbound,
+    ComAtprotoLabelQueryLabelsBadRequestError$Outbound,
     z.ZodTypeDef,
-    BadRequestComAtprotoLabelQueryLabelsResponseBodyError
-  > = z.instanceof(BadRequestComAtprotoLabelQueryLabelsResponseBodyError)
+    ComAtprotoLabelQueryLabelsBadRequestError
+  > = z.instanceof(ComAtprotoLabelQueryLabelsBadRequestError)
     .transform(v => v.data$)
     .pipe(z.object({
       error: ComAtprotoLabelQueryLabelsError$outboundSchema,
@@ -187,14 +191,13 @@ export const BadRequestComAtprotoLabelQueryLabelsResponseBodyError$outboundSchem
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace BadRequestComAtprotoLabelQueryLabelsResponseBodyError$ {
-  /** @deprecated use `BadRequestComAtprotoLabelQueryLabelsResponseBodyError$inboundSchema` instead. */
+export namespace ComAtprotoLabelQueryLabelsBadRequestError$ {
+  /** @deprecated use `ComAtprotoLabelQueryLabelsBadRequestError$inboundSchema` instead. */
   export const inboundSchema =
-    BadRequestComAtprotoLabelQueryLabelsResponseBodyError$inboundSchema;
-  /** @deprecated use `BadRequestComAtprotoLabelQueryLabelsResponseBodyError$outboundSchema` instead. */
+    ComAtprotoLabelQueryLabelsBadRequestError$inboundSchema;
+  /** @deprecated use `ComAtprotoLabelQueryLabelsBadRequestError$outboundSchema` instead. */
   export const outboundSchema =
-    BadRequestComAtprotoLabelQueryLabelsResponseBodyError$outboundSchema;
-  /** @deprecated use `BadRequestComAtprotoLabelQueryLabelsResponseBodyError$Outbound` instead. */
-  export type Outbound =
-    BadRequestComAtprotoLabelQueryLabelsResponseBodyError$Outbound;
+    ComAtprotoLabelQueryLabelsBadRequestError$outboundSchema;
+  /** @deprecated use `ComAtprotoLabelQueryLabelsBadRequestError$Outbound` instead. */
+  export type Outbound = ComAtprotoLabelQueryLabelsBadRequestError$Outbound;
 }

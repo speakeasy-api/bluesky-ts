@@ -4,42 +4,37 @@
 
 import * as z from "zod";
 import { ClosedEnum } from "../../types/enums.js";
+import { BlueskyError } from "./blueskyerror.js";
 
 /**
  * Unauthorized
  */
-export type UnauthorizedToolsOzoneSignatureFindRelatedAccountsResponseBodyErrorData =
-  {
-    error: "AuthMissing";
-    message: string;
-  };
+export type ToolsOzoneSignatureFindRelatedAccountsAuthMissingErrorData = {
+  error: "AuthMissing";
+  message: string;
+};
 
 /**
  * Unauthorized
  */
-export class UnauthorizedToolsOzoneSignatureFindRelatedAccountsResponseBodyError
-  extends Error
+export class ToolsOzoneSignatureFindRelatedAccountsAuthMissingError
+  extends BlueskyError
 {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$:
-    UnauthorizedToolsOzoneSignatureFindRelatedAccountsResponseBodyErrorData;
+  data$: ToolsOzoneSignatureFindRelatedAccountsAuthMissingErrorData;
 
   constructor(
-    err:
-      UnauthorizedToolsOzoneSignatureFindRelatedAccountsResponseBodyErrorData,
+    err: ToolsOzoneSignatureFindRelatedAccountsAuthMissingErrorData,
+    httpMeta: { response: Response; request: Request; body: string },
   ) {
-    const message = "message" in err && typeof err.message === "string"
-      ? err.message
-      : `API error occurred: ${JSON.stringify(err)}`;
-    super(message);
+    const message = err.message || `API error occurred: ${JSON.stringify(err)}`;
+    super(message, httpMeta);
     this.data$ = err;
-
     this.error = err.error;
 
-    this.name =
-      "UnauthorizedToolsOzoneSignatureFindRelatedAccountsResponseBodyError";
+    this.name = "ToolsOzoneSignatureFindRelatedAccountsAuthMissingError";
   }
 }
 
@@ -55,71 +50,69 @@ export type ToolsOzoneSignatureFindRelatedAccountsError = ClosedEnum<
 /**
  * Bad Request
  */
-export type BadRequestToolsOzoneSignatureFindRelatedAccountsResponseBodyErrorData =
-  {
-    error: ToolsOzoneSignatureFindRelatedAccountsError;
-    message: string;
-  };
+export type ToolsOzoneSignatureFindRelatedAccountsBadRequestErrorData = {
+  error: ToolsOzoneSignatureFindRelatedAccountsError;
+  message: string;
+};
 
 /**
  * Bad Request
  */
-export class BadRequestToolsOzoneSignatureFindRelatedAccountsResponseBodyError
-  extends Error
+export class ToolsOzoneSignatureFindRelatedAccountsBadRequestError
+  extends BlueskyError
 {
   error: ToolsOzoneSignatureFindRelatedAccountsError;
 
   /** The original data that was passed to this error instance. */
-  data$: BadRequestToolsOzoneSignatureFindRelatedAccountsResponseBodyErrorData;
+  data$: ToolsOzoneSignatureFindRelatedAccountsBadRequestErrorData;
 
   constructor(
-    err: BadRequestToolsOzoneSignatureFindRelatedAccountsResponseBodyErrorData,
+    err: ToolsOzoneSignatureFindRelatedAccountsBadRequestErrorData,
+    httpMeta: { response: Response; request: Request; body: string },
   ) {
-    const message = "message" in err && typeof err.message === "string"
-      ? err.message
-      : `API error occurred: ${JSON.stringify(err)}`;
-    super(message);
+    const message = err.message || `API error occurred: ${JSON.stringify(err)}`;
+    super(message, httpMeta);
     this.data$ = err;
-
     this.error = err.error;
 
-    this.name =
-      "BadRequestToolsOzoneSignatureFindRelatedAccountsResponseBodyError";
+    this.name = "ToolsOzoneSignatureFindRelatedAccountsBadRequestError";
   }
 }
 
 /** @internal */
-export const UnauthorizedToolsOzoneSignatureFindRelatedAccountsResponseBodyError$inboundSchema:
+export const ToolsOzoneSignatureFindRelatedAccountsAuthMissingError$inboundSchema:
   z.ZodType<
-    UnauthorizedToolsOzoneSignatureFindRelatedAccountsResponseBodyError,
+    ToolsOzoneSignatureFindRelatedAccountsAuthMissingError,
     z.ZodTypeDef,
     unknown
   > = z.object({
-    error: z.literal("AuthMissing"),
+    error: z.literal("AuthMissing").default("AuthMissing"),
     message: z.string(),
+    request$: z.instanceof(Request),
+    response$: z.instanceof(Response),
+    body$: z.string(),
   })
     .transform((v) => {
-      return new UnauthorizedToolsOzoneSignatureFindRelatedAccountsResponseBodyError(
-        v,
-      );
+      return new ToolsOzoneSignatureFindRelatedAccountsAuthMissingError(v, {
+        request: v.request$,
+        response: v.response$,
+        body: v.body$,
+      });
     });
 
 /** @internal */
-export type UnauthorizedToolsOzoneSignatureFindRelatedAccountsResponseBodyError$Outbound =
-  {
-    error: "AuthMissing";
-    message: string;
-  };
+export type ToolsOzoneSignatureFindRelatedAccountsAuthMissingError$Outbound = {
+  error: "AuthMissing";
+  message: string;
+};
 
 /** @internal */
-export const UnauthorizedToolsOzoneSignatureFindRelatedAccountsResponseBodyError$outboundSchema:
+export const ToolsOzoneSignatureFindRelatedAccountsAuthMissingError$outboundSchema:
   z.ZodType<
-    UnauthorizedToolsOzoneSignatureFindRelatedAccountsResponseBodyError$Outbound,
+    ToolsOzoneSignatureFindRelatedAccountsAuthMissingError$Outbound,
     z.ZodTypeDef,
-    UnauthorizedToolsOzoneSignatureFindRelatedAccountsResponseBodyError
-  > = z.instanceof(
-    UnauthorizedToolsOzoneSignatureFindRelatedAccountsResponseBodyError,
-  )
+    ToolsOzoneSignatureFindRelatedAccountsAuthMissingError
+  > = z.instanceof(ToolsOzoneSignatureFindRelatedAccountsAuthMissingError)
     .transform(v => v.data$)
     .pipe(z.object({
       error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -130,16 +123,16 @@ export const UnauthorizedToolsOzoneSignatureFindRelatedAccountsResponseBodyError
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace UnauthorizedToolsOzoneSignatureFindRelatedAccountsResponseBodyError$ {
-  /** @deprecated use `UnauthorizedToolsOzoneSignatureFindRelatedAccountsResponseBodyError$inboundSchema` instead. */
+export namespace ToolsOzoneSignatureFindRelatedAccountsAuthMissingError$ {
+  /** @deprecated use `ToolsOzoneSignatureFindRelatedAccountsAuthMissingError$inboundSchema` instead. */
   export const inboundSchema =
-    UnauthorizedToolsOzoneSignatureFindRelatedAccountsResponseBodyError$inboundSchema;
-  /** @deprecated use `UnauthorizedToolsOzoneSignatureFindRelatedAccountsResponseBodyError$outboundSchema` instead. */
+    ToolsOzoneSignatureFindRelatedAccountsAuthMissingError$inboundSchema;
+  /** @deprecated use `ToolsOzoneSignatureFindRelatedAccountsAuthMissingError$outboundSchema` instead. */
   export const outboundSchema =
-    UnauthorizedToolsOzoneSignatureFindRelatedAccountsResponseBodyError$outboundSchema;
-  /** @deprecated use `UnauthorizedToolsOzoneSignatureFindRelatedAccountsResponseBodyError$Outbound` instead. */
+    ToolsOzoneSignatureFindRelatedAccountsAuthMissingError$outboundSchema;
+  /** @deprecated use `ToolsOzoneSignatureFindRelatedAccountsAuthMissingError$Outbound` instead. */
   export type Outbound =
-    UnauthorizedToolsOzoneSignatureFindRelatedAccountsResponseBodyError$Outbound;
+    ToolsOzoneSignatureFindRelatedAccountsAuthMissingError$Outbound;
 }
 
 /** @internal */
@@ -166,37 +159,39 @@ export namespace ToolsOzoneSignatureFindRelatedAccountsError$ {
 }
 
 /** @internal */
-export const BadRequestToolsOzoneSignatureFindRelatedAccountsResponseBodyError$inboundSchema:
+export const ToolsOzoneSignatureFindRelatedAccountsBadRequestError$inboundSchema:
   z.ZodType<
-    BadRequestToolsOzoneSignatureFindRelatedAccountsResponseBodyError,
+    ToolsOzoneSignatureFindRelatedAccountsBadRequestError,
     z.ZodTypeDef,
     unknown
   > = z.object({
     error: ToolsOzoneSignatureFindRelatedAccountsError$inboundSchema,
     message: z.string(),
+    request$: z.instanceof(Request),
+    response$: z.instanceof(Response),
+    body$: z.string(),
   })
     .transform((v) => {
-      return new BadRequestToolsOzoneSignatureFindRelatedAccountsResponseBodyError(
-        v,
-      );
+      return new ToolsOzoneSignatureFindRelatedAccountsBadRequestError(v, {
+        request: v.request$,
+        response: v.response$,
+        body: v.body$,
+      });
     });
 
 /** @internal */
-export type BadRequestToolsOzoneSignatureFindRelatedAccountsResponseBodyError$Outbound =
-  {
-    error: string;
-    message: string;
-  };
+export type ToolsOzoneSignatureFindRelatedAccountsBadRequestError$Outbound = {
+  error: string;
+  message: string;
+};
 
 /** @internal */
-export const BadRequestToolsOzoneSignatureFindRelatedAccountsResponseBodyError$outboundSchema:
+export const ToolsOzoneSignatureFindRelatedAccountsBadRequestError$outboundSchema:
   z.ZodType<
-    BadRequestToolsOzoneSignatureFindRelatedAccountsResponseBodyError$Outbound,
+    ToolsOzoneSignatureFindRelatedAccountsBadRequestError$Outbound,
     z.ZodTypeDef,
-    BadRequestToolsOzoneSignatureFindRelatedAccountsResponseBodyError
-  > = z.instanceof(
-    BadRequestToolsOzoneSignatureFindRelatedAccountsResponseBodyError,
-  )
+    ToolsOzoneSignatureFindRelatedAccountsBadRequestError
+  > = z.instanceof(ToolsOzoneSignatureFindRelatedAccountsBadRequestError)
     .transform(v => v.data$)
     .pipe(z.object({
       error: ToolsOzoneSignatureFindRelatedAccountsError$outboundSchema,
@@ -207,14 +202,14 @@ export const BadRequestToolsOzoneSignatureFindRelatedAccountsResponseBodyError$o
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace BadRequestToolsOzoneSignatureFindRelatedAccountsResponseBodyError$ {
-  /** @deprecated use `BadRequestToolsOzoneSignatureFindRelatedAccountsResponseBodyError$inboundSchema` instead. */
+export namespace ToolsOzoneSignatureFindRelatedAccountsBadRequestError$ {
+  /** @deprecated use `ToolsOzoneSignatureFindRelatedAccountsBadRequestError$inboundSchema` instead. */
   export const inboundSchema =
-    BadRequestToolsOzoneSignatureFindRelatedAccountsResponseBodyError$inboundSchema;
-  /** @deprecated use `BadRequestToolsOzoneSignatureFindRelatedAccountsResponseBodyError$outboundSchema` instead. */
+    ToolsOzoneSignatureFindRelatedAccountsBadRequestError$inboundSchema;
+  /** @deprecated use `ToolsOzoneSignatureFindRelatedAccountsBadRequestError$outboundSchema` instead. */
   export const outboundSchema =
-    BadRequestToolsOzoneSignatureFindRelatedAccountsResponseBodyError$outboundSchema;
-  /** @deprecated use `BadRequestToolsOzoneSignatureFindRelatedAccountsResponseBodyError$Outbound` instead. */
+    ToolsOzoneSignatureFindRelatedAccountsBadRequestError$outboundSchema;
+  /** @deprecated use `ToolsOzoneSignatureFindRelatedAccountsBadRequestError$Outbound` instead. */
   export type Outbound =
-    BadRequestToolsOzoneSignatureFindRelatedAccountsResponseBodyError$Outbound;
+    ToolsOzoneSignatureFindRelatedAccountsBadRequestError$Outbound;
 }

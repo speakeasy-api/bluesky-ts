@@ -6,7 +6,7 @@
 import { AppBskyEmbedRecordViewDetached } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: AppBskyEmbedRecordViewDetached = {
-  uri: "https://cloudy-responsibility.org/",
+  uri: "https://unwelcome-cassava.org",
 };
 ```
 

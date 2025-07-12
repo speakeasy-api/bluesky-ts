@@ -8,7 +8,20 @@ OK
 import { AppBskyNotificationListNotificationsResponseBody } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: AppBskyNotificationListNotificationsResponseBody = {
-  notifications: [],
+  notifications: [
+    {
+      uri: "https://accurate-substitution.biz",
+      cid: "<id>",
+      author: {
+        did: "<id>",
+        handle: "<value>",
+      },
+      reason: "mention",
+      record: "<value>",
+      isRead: true,
+      indexedAt: new Date("2025-10-23T02:45:08.468Z"),
+    },
+  ],
 };
 ```
 

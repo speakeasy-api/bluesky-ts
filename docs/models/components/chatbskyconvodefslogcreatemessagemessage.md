@@ -13,7 +13,7 @@ const value: components.ChatBskyConvoDefsMessageView = {
   sender: {
     did: "<id>",
   },
-  sentAt: new Date("2025-12-27T16:39:31.366Z"),
+  sentAt: new Date("2024-08-29T00:58:43.067Z"),
 };
 ```
 
@@ -26,7 +26,7 @@ const value: components.ChatBskyConvoDefsDeletedMessageView = {
   sender: {
     did: "<id>",
   },
-  sentAt: new Date("2023-04-20T20:32:25.216Z"),
+  sentAt: new Date("2024-06-04T10:46:14.270Z"),
 };
 ```
 

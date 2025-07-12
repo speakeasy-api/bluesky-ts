@@ -7,7 +7,7 @@ import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ComAtprotoServerCreateAccountBody = {
+export type ComAtprotoServerCreateAccountRequest = {
   email?: string | undefined;
   /**
    * Requested handle for the account.
@@ -34,7 +34,7 @@ export type ComAtprotoServerCreateAccountBody = {
 /**
  * Account login session returned on successful account creation.
  */
-export type ComAtprotoServerCreateAccountResponseBody = {
+export type ComAtprotoServerCreateAccountResponse = {
   accessJwt: string;
   refreshJwt: string;
   handle: string;
@@ -46,8 +46,8 @@ export type ComAtprotoServerCreateAccountResponseBody = {
 };
 
 /** @internal */
-export const ComAtprotoServerCreateAccountBody$inboundSchema: z.ZodType<
-  ComAtprotoServerCreateAccountBody,
+export const ComAtprotoServerCreateAccountRequest$inboundSchema: z.ZodType<
+  ComAtprotoServerCreateAccountRequest,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -63,7 +63,7 @@ export const ComAtprotoServerCreateAccountBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type ComAtprotoServerCreateAccountBody$Outbound = {
+export type ComAtprotoServerCreateAccountRequest$Outbound = {
   email?: string | undefined;
   handle: string;
   did?: string | undefined;
@@ -76,10 +76,10 @@ export type ComAtprotoServerCreateAccountBody$Outbound = {
 };
 
 /** @internal */
-export const ComAtprotoServerCreateAccountBody$outboundSchema: z.ZodType<
-  ComAtprotoServerCreateAccountBody$Outbound,
+export const ComAtprotoServerCreateAccountRequest$outboundSchema: z.ZodType<
+  ComAtprotoServerCreateAccountRequest$Outbound,
   z.ZodTypeDef,
-  ComAtprotoServerCreateAccountBody
+  ComAtprotoServerCreateAccountRequest
 > = z.object({
   email: z.string().optional(),
   handle: z.string(),
@@ -96,39 +96,41 @@ export const ComAtprotoServerCreateAccountBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoServerCreateAccountBody$ {
-  /** @deprecated use `ComAtprotoServerCreateAccountBody$inboundSchema` instead. */
-  export const inboundSchema = ComAtprotoServerCreateAccountBody$inboundSchema;
-  /** @deprecated use `ComAtprotoServerCreateAccountBody$outboundSchema` instead. */
+export namespace ComAtprotoServerCreateAccountRequest$ {
+  /** @deprecated use `ComAtprotoServerCreateAccountRequest$inboundSchema` instead. */
+  export const inboundSchema =
+    ComAtprotoServerCreateAccountRequest$inboundSchema;
+  /** @deprecated use `ComAtprotoServerCreateAccountRequest$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoServerCreateAccountBody$outboundSchema;
-  /** @deprecated use `ComAtprotoServerCreateAccountBody$Outbound` instead. */
-  export type Outbound = ComAtprotoServerCreateAccountBody$Outbound;
+    ComAtprotoServerCreateAccountRequest$outboundSchema;
+  /** @deprecated use `ComAtprotoServerCreateAccountRequest$Outbound` instead. */
+  export type Outbound = ComAtprotoServerCreateAccountRequest$Outbound;
 }
 
-export function comAtprotoServerCreateAccountBodyToJSON(
-  comAtprotoServerCreateAccountBody: ComAtprotoServerCreateAccountBody,
+export function comAtprotoServerCreateAccountRequestToJSON(
+  comAtprotoServerCreateAccountRequest: ComAtprotoServerCreateAccountRequest,
 ): string {
   return JSON.stringify(
-    ComAtprotoServerCreateAccountBody$outboundSchema.parse(
-      comAtprotoServerCreateAccountBody,
+    ComAtprotoServerCreateAccountRequest$outboundSchema.parse(
+      comAtprotoServerCreateAccountRequest,
     ),
   );
 }
 
-export function comAtprotoServerCreateAccountBodyFromJSON(
+export function comAtprotoServerCreateAccountRequestFromJSON(
   jsonString: string,
-): SafeParseResult<ComAtprotoServerCreateAccountBody, SDKValidationError> {
+): SafeParseResult<ComAtprotoServerCreateAccountRequest, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => ComAtprotoServerCreateAccountBody$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ComAtprotoServerCreateAccountBody' from JSON`,
+    (x) =>
+      ComAtprotoServerCreateAccountRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ComAtprotoServerCreateAccountRequest' from JSON`,
   );
 }
 
 /** @internal */
-export const ComAtprotoServerCreateAccountResponseBody$inboundSchema: z.ZodType<
-  ComAtprotoServerCreateAccountResponseBody,
+export const ComAtprotoServerCreateAccountResponse$inboundSchema: z.ZodType<
+  ComAtprotoServerCreateAccountResponse,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -140,7 +142,7 @@ export const ComAtprotoServerCreateAccountResponseBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type ComAtprotoServerCreateAccountResponseBody$Outbound = {
+export type ComAtprotoServerCreateAccountResponse$Outbound = {
   accessJwt: string;
   refreshJwt: string;
   handle: string;
@@ -149,57 +151,50 @@ export type ComAtprotoServerCreateAccountResponseBody$Outbound = {
 };
 
 /** @internal */
-export const ComAtprotoServerCreateAccountResponseBody$outboundSchema:
-  z.ZodType<
-    ComAtprotoServerCreateAccountResponseBody$Outbound,
-    z.ZodTypeDef,
-    ComAtprotoServerCreateAccountResponseBody
-  > = z.object({
-    accessJwt: z.string(),
-    refreshJwt: z.string(),
-    handle: z.string(),
-    did: z.string(),
-    didDoc: z.any().optional(),
-  });
+export const ComAtprotoServerCreateAccountResponse$outboundSchema: z.ZodType<
+  ComAtprotoServerCreateAccountResponse$Outbound,
+  z.ZodTypeDef,
+  ComAtprotoServerCreateAccountResponse
+> = z.object({
+  accessJwt: z.string(),
+  refreshJwt: z.string(),
+  handle: z.string(),
+  did: z.string(),
+  didDoc: z.any().optional(),
+});
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoServerCreateAccountResponseBody$ {
-  /** @deprecated use `ComAtprotoServerCreateAccountResponseBody$inboundSchema` instead. */
+export namespace ComAtprotoServerCreateAccountResponse$ {
+  /** @deprecated use `ComAtprotoServerCreateAccountResponse$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoServerCreateAccountResponseBody$inboundSchema;
-  /** @deprecated use `ComAtprotoServerCreateAccountResponseBody$outboundSchema` instead. */
+    ComAtprotoServerCreateAccountResponse$inboundSchema;
+  /** @deprecated use `ComAtprotoServerCreateAccountResponse$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoServerCreateAccountResponseBody$outboundSchema;
-  /** @deprecated use `ComAtprotoServerCreateAccountResponseBody$Outbound` instead. */
-  export type Outbound = ComAtprotoServerCreateAccountResponseBody$Outbound;
+    ComAtprotoServerCreateAccountResponse$outboundSchema;
+  /** @deprecated use `ComAtprotoServerCreateAccountResponse$Outbound` instead. */
+  export type Outbound = ComAtprotoServerCreateAccountResponse$Outbound;
 }
 
-export function comAtprotoServerCreateAccountResponseBodyToJSON(
-  comAtprotoServerCreateAccountResponseBody:
-    ComAtprotoServerCreateAccountResponseBody,
+export function comAtprotoServerCreateAccountResponseToJSON(
+  comAtprotoServerCreateAccountResponse: ComAtprotoServerCreateAccountResponse,
 ): string {
   return JSON.stringify(
-    ComAtprotoServerCreateAccountResponseBody$outboundSchema.parse(
-      comAtprotoServerCreateAccountResponseBody,
+    ComAtprotoServerCreateAccountResponse$outboundSchema.parse(
+      comAtprotoServerCreateAccountResponse,
     ),
   );
 }
 
-export function comAtprotoServerCreateAccountResponseBodyFromJSON(
+export function comAtprotoServerCreateAccountResponseFromJSON(
   jsonString: string,
-): SafeParseResult<
-  ComAtprotoServerCreateAccountResponseBody,
-  SDKValidationError
-> {
+): SafeParseResult<ComAtprotoServerCreateAccountResponse, SDKValidationError> {
   return safeParse(
     jsonString,
     (x) =>
-      ComAtprotoServerCreateAccountResponseBody$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'ComAtprotoServerCreateAccountResponseBody' from JSON`,
+      ComAtprotoServerCreateAccountResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ComAtprotoServerCreateAccountResponse' from JSON`,
   );
 }

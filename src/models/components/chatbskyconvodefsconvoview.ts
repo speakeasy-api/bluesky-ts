@@ -26,16 +26,16 @@ import {
 } from "./chatbskyconvodefsmessageview.js";
 
 export type LastMessage =
-  | ChatBskyConvoDefsDeletedMessageView
-  | ChatBskyConvoDefsMessageView;
+  | ChatBskyConvoDefsMessageView
+  | ChatBskyConvoDefsDeletedMessageView;
 
 export type ChatBskyConvoDefsConvoView = {
   id: string;
   rev: string;
   members: Array<ChatBskyActorDefsProfileViewBasic>;
   lastMessage?:
-    | ChatBskyConvoDefsDeletedMessageView
     | ChatBskyConvoDefsMessageView
+    | ChatBskyConvoDefsDeletedMessageView
     | undefined;
   muted: boolean;
   opened?: boolean | undefined;
@@ -48,14 +48,14 @@ export const LastMessage$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.union([
-  ChatBskyConvoDefsDeletedMessageView$inboundSchema,
   ChatBskyConvoDefsMessageView$inboundSchema,
+  ChatBskyConvoDefsDeletedMessageView$inboundSchema,
 ]);
 
 /** @internal */
 export type LastMessage$Outbound =
-  | ChatBskyConvoDefsDeletedMessageView$Outbound
-  | ChatBskyConvoDefsMessageView$Outbound;
+  | ChatBskyConvoDefsMessageView$Outbound
+  | ChatBskyConvoDefsDeletedMessageView$Outbound;
 
 /** @internal */
 export const LastMessage$outboundSchema: z.ZodType<
@@ -63,8 +63,8 @@ export const LastMessage$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   LastMessage
 > = z.union([
-  ChatBskyConvoDefsDeletedMessageView$outboundSchema,
   ChatBskyConvoDefsMessageView$outboundSchema,
+  ChatBskyConvoDefsDeletedMessageView$outboundSchema,
 ]);
 
 /**
@@ -104,8 +104,8 @@ export const ChatBskyConvoDefsConvoView$inboundSchema: z.ZodType<
   rev: z.string(),
   members: z.array(ChatBskyActorDefsProfileViewBasic$inboundSchema),
   lastMessage: z.union([
-    ChatBskyConvoDefsDeletedMessageView$inboundSchema,
     ChatBskyConvoDefsMessageView$inboundSchema,
+    ChatBskyConvoDefsDeletedMessageView$inboundSchema,
   ]).optional(),
   muted: z.boolean(),
   opened: z.boolean().optional(),
@@ -118,8 +118,8 @@ export type ChatBskyConvoDefsConvoView$Outbound = {
   rev: string;
   members: Array<ChatBskyActorDefsProfileViewBasic$Outbound>;
   lastMessage?:
-    | ChatBskyConvoDefsDeletedMessageView$Outbound
     | ChatBskyConvoDefsMessageView$Outbound
+    | ChatBskyConvoDefsDeletedMessageView$Outbound
     | undefined;
   muted: boolean;
   opened?: boolean | undefined;
@@ -136,8 +136,8 @@ export const ChatBskyConvoDefsConvoView$outboundSchema: z.ZodType<
   rev: z.string(),
   members: z.array(ChatBskyActorDefsProfileViewBasic$outboundSchema),
   lastMessage: z.union([
-    ChatBskyConvoDefsDeletedMessageView$outboundSchema,
     ChatBskyConvoDefsMessageView$outboundSchema,
+    ChatBskyConvoDefsDeletedMessageView$outboundSchema,
   ]).optional(),
   muted: z.boolean(),
   opened: z.boolean().optional(),

@@ -18,7 +18,7 @@ export class Signature extends ClientSDK {
   async findCorrelation(
     request: operations.ToolsOzoneSignatureFindCorrelationRequest,
     options?: RequestOptions,
-  ): Promise<operations.ToolsOzoneSignatureFindCorrelationResponseBody> {
+  ): Promise<operations.ToolsOzoneSignatureFindCorrelationResponse> {
     return unwrapAsync(signatureFindCorrelation(
       this,
       request,

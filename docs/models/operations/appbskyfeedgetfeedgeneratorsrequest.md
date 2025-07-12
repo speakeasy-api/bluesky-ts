@@ -7,7 +7,7 @@ import { AppBskyFeedGetFeedGeneratorsRequest } from "@speakeasy-sdks/bluesky/mod
 
 let value: AppBskyFeedGetFeedGeneratorsRequest = {
   feeds: [
-    "https://forsaken-contractor.name",
+    "https://favorite-numeracy.info",
   ],
 };
 ```

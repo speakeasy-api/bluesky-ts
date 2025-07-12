@@ -7,14 +7,14 @@ import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ComAtprotoAdminDisableInviteCodesBody = {
+export type ComAtprotoAdminDisableInviteCodesRequest = {
   codes?: Array<string> | undefined;
   accounts?: Array<string> | undefined;
 };
 
 /** @internal */
-export const ComAtprotoAdminDisableInviteCodesBody$inboundSchema: z.ZodType<
-  ComAtprotoAdminDisableInviteCodesBody,
+export const ComAtprotoAdminDisableInviteCodesRequest$inboundSchema: z.ZodType<
+  ComAtprotoAdminDisableInviteCodesRequest,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -23,16 +23,16 @@ export const ComAtprotoAdminDisableInviteCodesBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type ComAtprotoAdminDisableInviteCodesBody$Outbound = {
+export type ComAtprotoAdminDisableInviteCodesRequest$Outbound = {
   codes?: Array<string> | undefined;
   accounts?: Array<string> | undefined;
 };
 
 /** @internal */
-export const ComAtprotoAdminDisableInviteCodesBody$outboundSchema: z.ZodType<
-  ComAtprotoAdminDisableInviteCodesBody$Outbound,
+export const ComAtprotoAdminDisableInviteCodesRequest$outboundSchema: z.ZodType<
+  ComAtprotoAdminDisableInviteCodesRequest$Outbound,
   z.ZodTypeDef,
-  ComAtprotoAdminDisableInviteCodesBody
+  ComAtprotoAdminDisableInviteCodesRequest
 > = z.object({
   codes: z.array(z.string()).optional(),
   accounts: z.array(z.string()).optional(),
@@ -42,34 +42,40 @@ export const ComAtprotoAdminDisableInviteCodesBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoAdminDisableInviteCodesBody$ {
-  /** @deprecated use `ComAtprotoAdminDisableInviteCodesBody$inboundSchema` instead. */
+export namespace ComAtprotoAdminDisableInviteCodesRequest$ {
+  /** @deprecated use `ComAtprotoAdminDisableInviteCodesRequest$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoAdminDisableInviteCodesBody$inboundSchema;
-  /** @deprecated use `ComAtprotoAdminDisableInviteCodesBody$outboundSchema` instead. */
+    ComAtprotoAdminDisableInviteCodesRequest$inboundSchema;
+  /** @deprecated use `ComAtprotoAdminDisableInviteCodesRequest$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoAdminDisableInviteCodesBody$outboundSchema;
-  /** @deprecated use `ComAtprotoAdminDisableInviteCodesBody$Outbound` instead. */
-  export type Outbound = ComAtprotoAdminDisableInviteCodesBody$Outbound;
+    ComAtprotoAdminDisableInviteCodesRequest$outboundSchema;
+  /** @deprecated use `ComAtprotoAdminDisableInviteCodesRequest$Outbound` instead. */
+  export type Outbound = ComAtprotoAdminDisableInviteCodesRequest$Outbound;
 }
 
-export function comAtprotoAdminDisableInviteCodesBodyToJSON(
-  comAtprotoAdminDisableInviteCodesBody: ComAtprotoAdminDisableInviteCodesBody,
+export function comAtprotoAdminDisableInviteCodesRequestToJSON(
+  comAtprotoAdminDisableInviteCodesRequest:
+    ComAtprotoAdminDisableInviteCodesRequest,
 ): string {
   return JSON.stringify(
-    ComAtprotoAdminDisableInviteCodesBody$outboundSchema.parse(
-      comAtprotoAdminDisableInviteCodesBody,
+    ComAtprotoAdminDisableInviteCodesRequest$outboundSchema.parse(
+      comAtprotoAdminDisableInviteCodesRequest,
     ),
   );
 }
 
-export function comAtprotoAdminDisableInviteCodesBodyFromJSON(
+export function comAtprotoAdminDisableInviteCodesRequestFromJSON(
   jsonString: string,
-): SafeParseResult<ComAtprotoAdminDisableInviteCodesBody, SDKValidationError> {
+): SafeParseResult<
+  ComAtprotoAdminDisableInviteCodesRequest,
+  SDKValidationError
+> {
   return safeParse(
     jsonString,
     (x) =>
-      ComAtprotoAdminDisableInviteCodesBody$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ComAtprotoAdminDisableInviteCodesBody' from JSON`,
+      ComAtprotoAdminDisableInviteCodesRequest$inboundSchema.parse(
+        JSON.parse(x),
+      ),
+    `Failed to parse 'ComAtprotoAdminDisableInviteCodesRequest' from JSON`,
   );
 }

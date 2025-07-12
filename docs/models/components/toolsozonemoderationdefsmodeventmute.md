@@ -8,7 +8,7 @@ Mute incoming reports on a subject
 import { ToolsOzoneModerationDefsModEventMute } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: ToolsOzoneModerationDefsModEventMute = {
-  durationInHours: 30192,
+  durationInHours: 946554,
 };
 ```
 

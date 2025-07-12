@@ -21,7 +21,7 @@ export class Servers extends ClientSDK {
   async getServiceAuth(
     request: operations.ComAtprotoServerGetServiceAuthRequest,
     options?: RequestOptions,
-  ): Promise<operations.ComAtprotoServerGetServiceAuthResponseBody> {
+  ): Promise<operations.ComAtprotoServerGetServiceAuthResponse> {
     return unwrapAsync(serversGetServiceAuth(
       this,
       request,
@@ -38,7 +38,7 @@ export class Servers extends ClientSDK {
    */
   async getSession(
     options?: RequestOptions,
-  ): Promise<operations.ComAtprotoServerGetSessionResponseBody> {
+  ): Promise<operations.ComAtprotoServerGetSessionResponse> {
     return unwrapAsync(serversGetSession(
       this,
       options,
@@ -53,9 +53,9 @@ export class Servers extends ClientSDK {
    * Reserve a repo signing key, for use with account creation. Necessary so that a DID PLC update operation can be constructed during an account migraiton. Public and does not require auth; implemented by PDS. NOTE: this endpoint may change when full account migration is implemented.
    */
   async reserveSigningKey(
-    request?: operations.ComAtprotoServerReserveSigningKeyBody | undefined,
+    request: operations.ComAtprotoServerReserveSigningKeyRequest,
     options?: RequestOptions,
-  ): Promise<operations.ComAtprotoServerReserveSigningKeyResponseBody> {
+  ): Promise<operations.ComAtprotoServerReserveSigningKeyResponse> {
     return unwrapAsync(serversReserveSigningKey(
       this,
       request,
@@ -71,7 +71,7 @@ export class Servers extends ClientSDK {
    * Update an account's email.
    */
   async updateEmail(
-    request: operations.ComAtprotoServerUpdateEmailBody,
+    request: operations.ComAtprotoServerUpdateEmailRequest,
     options?: RequestOptions,
   ): Promise<void> {
     return unwrapAsync(serversUpdateEmail(

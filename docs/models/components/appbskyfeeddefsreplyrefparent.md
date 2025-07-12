@@ -7,14 +7,14 @@
 
 ```typescript
 const value: components.AppBskyFeedDefsPostView = {
-  uri: "https://overcooked-replacement.org/",
+  uri: "https://avaricious-heartache.info",
   cid: "<id>",
   author: {
     did: "<id>",
     handle: "<value>",
   },
   record: "<value>",
-  indexedAt: new Date("2025-10-22T16:07:37.337Z"),
+  indexedAt: new Date("2025-09-23T16:24:11.262Z"),
 };
 ```
 
@@ -22,7 +22,7 @@ const value: components.AppBskyFeedDefsPostView = {
 
 ```typescript
 const value: components.AppBskyFeedDefsNotFoundPost = {
-  uri: "https://impish-gloom.com",
+  uri: "https://old-fashioned-vein.org",
 };
 ```
 
@@ -30,7 +30,7 @@ const value: components.AppBskyFeedDefsNotFoundPost = {
 
 ```typescript
 const value: components.AppBskyFeedDefsBlockedPost = {
-  uri: "https://querulous-stump.com",
+  uri: "https://silent-travel.biz",
   author: {
     did: "<id>",
   },

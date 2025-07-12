@@ -5,7 +5,7 @@
 ```typescript
 import { ChatBskyConvoMuteConvoError } from "@speakeasy-sdks/bluesky/models/errors";
 
-let value: ChatBskyConvoMuteConvoError = "ExpiredToken";
+let value: ChatBskyConvoMuteConvoError = "InvalidRequest";
 ```
 
 ## Values

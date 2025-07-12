@@ -26,7 +26,7 @@ import {
 } from "./_types.js";
 
 export type DidForProfileQueryData =
-  operations.ComAtprotoIdentityResolveHandleResponseBody;
+  operations.ComAtprotoIdentityResolveHandleResponse;
 
 /**
  * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*

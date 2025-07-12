@@ -7,7 +7,9 @@ import { ToolsOzoneSignatureFindCorrelationRequest } from "@speakeasy-sdks/blues
 
 let value: ToolsOzoneSignatureFindCorrelationRequest = {
   dids: [
-    "<id>",
+    "<id 1>",
+    "<id 2>",
+    "<id 3>",
   ],
 };
 ```

@@ -5,7 +5,7 @@
 ```typescript
 import { AppBskyGraphGetKnownFollowersError } from "@speakeasy-sdks/bluesky/models/errors";
 
-let value: AppBskyGraphGetKnownFollowersError = "InvalidToken";
+let value: AppBskyGraphGetKnownFollowersError = "ExpiredToken";
 ```
 
 ## Values

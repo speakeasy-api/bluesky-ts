@@ -18,7 +18,7 @@ export class Admins extends ClientSDK {
    * Delete a user account as an administrator.
    */
   async deleteAccount(
-    request: operations.ComAtprotoAdminDeleteAccountBody,
+    request: operations.ComAtprotoAdminDeleteAccountRequest,
     options?: RequestOptions,
   ): Promise<void> {
     return unwrapAsync(adminsDeleteAccount(
@@ -36,7 +36,7 @@ export class Admins extends ClientSDK {
    * Re-enable an account's ability to receive invite codes.
    */
   async enableAccountInvites(
-    request: operations.ComAtprotoAdminEnableAccountInvitesBody,
+    request: operations.ComAtprotoAdminEnableAccountInvitesRequest,
     options?: RequestOptions,
   ): Promise<void> {
     return unwrapAsync(adminsEnableAccountInvites(
@@ -56,7 +56,7 @@ export class Admins extends ClientSDK {
   async getAccountInfos(
     request: operations.ComAtprotoAdminGetAccountInfosRequest,
     options?: RequestOptions,
-  ): Promise<operations.ComAtprotoAdminGetAccountInfosResponseBody> {
+  ): Promise<operations.ComAtprotoAdminGetAccountInfosResponse> {
     return unwrapAsync(adminsGetAccountInfos(
       this,
       request,

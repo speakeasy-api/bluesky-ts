@@ -5,7 +5,7 @@
 ```typescript
 import { AppBskyActorGetProfilesError } from "@speakeasy-sdks/bluesky/models/errors";
 
-let value: AppBskyActorGetProfilesError = "InvalidToken";
+let value: AppBskyActorGetProfilesError = "InvalidRequest";
 ```
 
 ## Values

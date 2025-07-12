@@ -7,7 +7,7 @@
 
 ```typescript
 const value: components.AppBskyFeedDefsSkeletonReasonRepost = {
-  repost: "https://oval-whale.net/",
+  repost: "https://shy-worth.info",
 };
 ```
 

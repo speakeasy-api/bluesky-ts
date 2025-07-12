@@ -135,7 +135,7 @@ export class Graph extends ClientSDK {
   async getRelationships(
     request: operations.AppBskyGraphGetRelationshipsRequest,
     options?: RequestOptions,
-  ): Promise<operations.AppBskyGraphGetRelationshipsResponseBody> {
+  ): Promise<operations.AppBskyGraphGetRelationshipsResponse> {
     return unwrapAsync(graphGetRelationships(
       this,
       request,
@@ -153,7 +153,7 @@ export class Graph extends ClientSDK {
   async getStarterPack(
     request: operations.AppBskyGraphGetStarterPackRequest,
     options?: RequestOptions,
-  ): Promise<operations.AppBskyGraphGetStarterPackResponseBody> {
+  ): Promise<operations.AppBskyGraphGetStarterPackResponse> {
     return unwrapAsync(graphGetStarterPack(
       this,
       request,
@@ -169,7 +169,7 @@ export class Graph extends ClientSDK {
    * Creates a mute relationship for the specified account. Mutes are private in Bluesky. Requires auth.
    */
   async muteActor(
-    request: operations.AppBskyGraphMuteActorBody,
+    request: operations.AppBskyGraphMuteActorRequest,
     options?: RequestOptions,
   ): Promise<void> {
     return unwrapAsync(graphMuteActor(
@@ -187,7 +187,7 @@ export class Graph extends ClientSDK {
    * Creates a mute relationship for the specified list of accounts. Mutes are private in Bluesky. Requires auth.
    */
   async muteActorList(
-    request: operations.AppBskyGraphMuteActorListBody,
+    request: operations.AppBskyGraphMuteActorListRequest,
     options?: RequestOptions,
   ): Promise<void> {
     return unwrapAsync(graphMuteActorList(
@@ -228,7 +228,7 @@ export class Graph extends ClientSDK {
    * Unmutes the specified thread. Requires auth.
    */
   async unmuteThread(
-    request: operations.AppBskyGraphUnmuteThreadBody,
+    request: operations.AppBskyGraphUnmuteThreadRequest,
     options?: RequestOptions,
   ): Promise<void> {
     return unwrapAsync(graphUnmuteThread(

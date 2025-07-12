@@ -7,7 +7,7 @@ import { ComAtprotoServerDefsInviteCodeUse } from "@speakeasy-sdks/bluesky/model
 
 let value: ComAtprotoServerDefsInviteCodeUse = {
   usedBy: "<id>",
-  usedAt: new Date("2025-06-19T19:21:37.465Z"),
+  usedAt: new Date("2025-07-28T22:05:52.026Z"),
 };
 ```
 

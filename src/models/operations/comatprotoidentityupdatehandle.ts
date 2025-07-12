@@ -7,7 +7,7 @@ import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ComAtprotoIdentityUpdateHandleBody = {
+export type ComAtprotoIdentityUpdateHandleRequest = {
   /**
    * The new handle.
    */
@@ -15,8 +15,8 @@ export type ComAtprotoIdentityUpdateHandleBody = {
 };
 
 /** @internal */
-export const ComAtprotoIdentityUpdateHandleBody$inboundSchema: z.ZodType<
-  ComAtprotoIdentityUpdateHandleBody,
+export const ComAtprotoIdentityUpdateHandleRequest$inboundSchema: z.ZodType<
+  ComAtprotoIdentityUpdateHandleRequest,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -24,15 +24,15 @@ export const ComAtprotoIdentityUpdateHandleBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type ComAtprotoIdentityUpdateHandleBody$Outbound = {
+export type ComAtprotoIdentityUpdateHandleRequest$Outbound = {
   handle: string;
 };
 
 /** @internal */
-export const ComAtprotoIdentityUpdateHandleBody$outboundSchema: z.ZodType<
-  ComAtprotoIdentityUpdateHandleBody$Outbound,
+export const ComAtprotoIdentityUpdateHandleRequest$outboundSchema: z.ZodType<
+  ComAtprotoIdentityUpdateHandleRequest$Outbound,
   z.ZodTypeDef,
-  ComAtprotoIdentityUpdateHandleBody
+  ComAtprotoIdentityUpdateHandleRequest
 > = z.object({
   handle: z.string(),
 });
@@ -41,33 +41,34 @@ export const ComAtprotoIdentityUpdateHandleBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoIdentityUpdateHandleBody$ {
-  /** @deprecated use `ComAtprotoIdentityUpdateHandleBody$inboundSchema` instead. */
-  export const inboundSchema = ComAtprotoIdentityUpdateHandleBody$inboundSchema;
-  /** @deprecated use `ComAtprotoIdentityUpdateHandleBody$outboundSchema` instead. */
+export namespace ComAtprotoIdentityUpdateHandleRequest$ {
+  /** @deprecated use `ComAtprotoIdentityUpdateHandleRequest$inboundSchema` instead. */
+  export const inboundSchema =
+    ComAtprotoIdentityUpdateHandleRequest$inboundSchema;
+  /** @deprecated use `ComAtprotoIdentityUpdateHandleRequest$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoIdentityUpdateHandleBody$outboundSchema;
-  /** @deprecated use `ComAtprotoIdentityUpdateHandleBody$Outbound` instead. */
-  export type Outbound = ComAtprotoIdentityUpdateHandleBody$Outbound;
+    ComAtprotoIdentityUpdateHandleRequest$outboundSchema;
+  /** @deprecated use `ComAtprotoIdentityUpdateHandleRequest$Outbound` instead. */
+  export type Outbound = ComAtprotoIdentityUpdateHandleRequest$Outbound;
 }
 
-export function comAtprotoIdentityUpdateHandleBodyToJSON(
-  comAtprotoIdentityUpdateHandleBody: ComAtprotoIdentityUpdateHandleBody,
+export function comAtprotoIdentityUpdateHandleRequestToJSON(
+  comAtprotoIdentityUpdateHandleRequest: ComAtprotoIdentityUpdateHandleRequest,
 ): string {
   return JSON.stringify(
-    ComAtprotoIdentityUpdateHandleBody$outboundSchema.parse(
-      comAtprotoIdentityUpdateHandleBody,
+    ComAtprotoIdentityUpdateHandleRequest$outboundSchema.parse(
+      comAtprotoIdentityUpdateHandleRequest,
     ),
   );
 }
 
-export function comAtprotoIdentityUpdateHandleBodyFromJSON(
+export function comAtprotoIdentityUpdateHandleRequestFromJSON(
   jsonString: string,
-): SafeParseResult<ComAtprotoIdentityUpdateHandleBody, SDKValidationError> {
+): SafeParseResult<ComAtprotoIdentityUpdateHandleRequest, SDKValidationError> {
   return safeParse(
     jsonString,
     (x) =>
-      ComAtprotoIdentityUpdateHandleBody$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ComAtprotoIdentityUpdateHandleBody' from JSON`,
+      ComAtprotoIdentityUpdateHandleRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ComAtprotoIdentityUpdateHandleRequest' from JSON`,
   );
 }

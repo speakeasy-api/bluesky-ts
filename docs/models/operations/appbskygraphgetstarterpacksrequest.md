@@ -7,7 +7,9 @@ import { AppBskyGraphGetStarterPacksRequest } from "@speakeasy-sdks/bluesky/mode
 
 let value: AppBskyGraphGetStarterPacksRequest = {
   uris: [
-    "https://unique-shipper.net/",
+    "https://tepid-attraction.net",
+    "https://plain-outlaw.net",
+    "https://jagged-tuba.biz",
   ],
 };
 ```

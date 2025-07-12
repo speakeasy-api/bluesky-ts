@@ -17,7 +17,7 @@ export type ComAtprotoSyncGetLatestCommitRequest = {
 /**
  * OK
  */
-export type ComAtprotoSyncGetLatestCommitResponseBody = {
+export type ComAtprotoSyncGetLatestCommitResponse = {
   cid: string;
   rev: string;
 };
@@ -82,8 +82,8 @@ export function comAtprotoSyncGetLatestCommitRequestFromJSON(
 }
 
 /** @internal */
-export const ComAtprotoSyncGetLatestCommitResponseBody$inboundSchema: z.ZodType<
-  ComAtprotoSyncGetLatestCommitResponseBody,
+export const ComAtprotoSyncGetLatestCommitResponse$inboundSchema: z.ZodType<
+  ComAtprotoSyncGetLatestCommitResponse,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -92,60 +92,53 @@ export const ComAtprotoSyncGetLatestCommitResponseBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type ComAtprotoSyncGetLatestCommitResponseBody$Outbound = {
+export type ComAtprotoSyncGetLatestCommitResponse$Outbound = {
   cid: string;
   rev: string;
 };
 
 /** @internal */
-export const ComAtprotoSyncGetLatestCommitResponseBody$outboundSchema:
-  z.ZodType<
-    ComAtprotoSyncGetLatestCommitResponseBody$Outbound,
-    z.ZodTypeDef,
-    ComAtprotoSyncGetLatestCommitResponseBody
-  > = z.object({
-    cid: z.string(),
-    rev: z.string(),
-  });
+export const ComAtprotoSyncGetLatestCommitResponse$outboundSchema: z.ZodType<
+  ComAtprotoSyncGetLatestCommitResponse$Outbound,
+  z.ZodTypeDef,
+  ComAtprotoSyncGetLatestCommitResponse
+> = z.object({
+  cid: z.string(),
+  rev: z.string(),
+});
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoSyncGetLatestCommitResponseBody$ {
-  /** @deprecated use `ComAtprotoSyncGetLatestCommitResponseBody$inboundSchema` instead. */
+export namespace ComAtprotoSyncGetLatestCommitResponse$ {
+  /** @deprecated use `ComAtprotoSyncGetLatestCommitResponse$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoSyncGetLatestCommitResponseBody$inboundSchema;
-  /** @deprecated use `ComAtprotoSyncGetLatestCommitResponseBody$outboundSchema` instead. */
+    ComAtprotoSyncGetLatestCommitResponse$inboundSchema;
+  /** @deprecated use `ComAtprotoSyncGetLatestCommitResponse$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoSyncGetLatestCommitResponseBody$outboundSchema;
-  /** @deprecated use `ComAtprotoSyncGetLatestCommitResponseBody$Outbound` instead. */
-  export type Outbound = ComAtprotoSyncGetLatestCommitResponseBody$Outbound;
+    ComAtprotoSyncGetLatestCommitResponse$outboundSchema;
+  /** @deprecated use `ComAtprotoSyncGetLatestCommitResponse$Outbound` instead. */
+  export type Outbound = ComAtprotoSyncGetLatestCommitResponse$Outbound;
 }
 
-export function comAtprotoSyncGetLatestCommitResponseBodyToJSON(
-  comAtprotoSyncGetLatestCommitResponseBody:
-    ComAtprotoSyncGetLatestCommitResponseBody,
+export function comAtprotoSyncGetLatestCommitResponseToJSON(
+  comAtprotoSyncGetLatestCommitResponse: ComAtprotoSyncGetLatestCommitResponse,
 ): string {
   return JSON.stringify(
-    ComAtprotoSyncGetLatestCommitResponseBody$outboundSchema.parse(
-      comAtprotoSyncGetLatestCommitResponseBody,
+    ComAtprotoSyncGetLatestCommitResponse$outboundSchema.parse(
+      comAtprotoSyncGetLatestCommitResponse,
     ),
   );
 }
 
-export function comAtprotoSyncGetLatestCommitResponseBodyFromJSON(
+export function comAtprotoSyncGetLatestCommitResponseFromJSON(
   jsonString: string,
-): SafeParseResult<
-  ComAtprotoSyncGetLatestCommitResponseBody,
-  SDKValidationError
-> {
+): SafeParseResult<ComAtprotoSyncGetLatestCommitResponse, SDKValidationError> {
   return safeParse(
     jsonString,
     (x) =>
-      ComAtprotoSyncGetLatestCommitResponseBody$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'ComAtprotoSyncGetLatestCommitResponseBody' from JSON`,
+      ComAtprotoSyncGetLatestCommitResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ComAtprotoSyncGetLatestCommitResponse' from JSON`,
   );
 }

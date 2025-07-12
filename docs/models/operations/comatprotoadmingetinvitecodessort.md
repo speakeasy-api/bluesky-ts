@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoAdminGetInviteCodesSort } from "@speakeasy-sdks/bluesky/models/operations";
 
-let value: ComAtprotoAdminGetInviteCodesSort = "recent";
+let value: ComAtprotoAdminGetInviteCodesSort = "usage";
 ```
 
 ## Values

@@ -8,13 +8,13 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type AppBskyActorPutPreferencesBody = {
+export type AppBskyActorPutPreferencesRequest = {
   preferences: Array<components.AppBskyActorDefsPreferences>;
 };
 
 /** @internal */
-export const AppBskyActorPutPreferencesBody$inboundSchema: z.ZodType<
-  AppBskyActorPutPreferencesBody,
+export const AppBskyActorPutPreferencesRequest$inboundSchema: z.ZodType<
+  AppBskyActorPutPreferencesRequest,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -22,15 +22,15 @@ export const AppBskyActorPutPreferencesBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type AppBskyActorPutPreferencesBody$Outbound = {
+export type AppBskyActorPutPreferencesRequest$Outbound = {
   preferences: Array<components.AppBskyActorDefsPreferences$Outbound>;
 };
 
 /** @internal */
-export const AppBskyActorPutPreferencesBody$outboundSchema: z.ZodType<
-  AppBskyActorPutPreferencesBody$Outbound,
+export const AppBskyActorPutPreferencesRequest$outboundSchema: z.ZodType<
+  AppBskyActorPutPreferencesRequest$Outbound,
   z.ZodTypeDef,
-  AppBskyActorPutPreferencesBody
+  AppBskyActorPutPreferencesRequest
 > = z.object({
   preferences: z.array(components.AppBskyActorDefsPreferences$outboundSchema),
 });
@@ -39,31 +39,32 @@ export const AppBskyActorPutPreferencesBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyActorPutPreferencesBody$ {
-  /** @deprecated use `AppBskyActorPutPreferencesBody$inboundSchema` instead. */
-  export const inboundSchema = AppBskyActorPutPreferencesBody$inboundSchema;
-  /** @deprecated use `AppBskyActorPutPreferencesBody$outboundSchema` instead. */
-  export const outboundSchema = AppBskyActorPutPreferencesBody$outboundSchema;
-  /** @deprecated use `AppBskyActorPutPreferencesBody$Outbound` instead. */
-  export type Outbound = AppBskyActorPutPreferencesBody$Outbound;
+export namespace AppBskyActorPutPreferencesRequest$ {
+  /** @deprecated use `AppBskyActorPutPreferencesRequest$inboundSchema` instead. */
+  export const inboundSchema = AppBskyActorPutPreferencesRequest$inboundSchema;
+  /** @deprecated use `AppBskyActorPutPreferencesRequest$outboundSchema` instead. */
+  export const outboundSchema =
+    AppBskyActorPutPreferencesRequest$outboundSchema;
+  /** @deprecated use `AppBskyActorPutPreferencesRequest$Outbound` instead. */
+  export type Outbound = AppBskyActorPutPreferencesRequest$Outbound;
 }
 
-export function appBskyActorPutPreferencesBodyToJSON(
-  appBskyActorPutPreferencesBody: AppBskyActorPutPreferencesBody,
+export function appBskyActorPutPreferencesRequestToJSON(
+  appBskyActorPutPreferencesRequest: AppBskyActorPutPreferencesRequest,
 ): string {
   return JSON.stringify(
-    AppBskyActorPutPreferencesBody$outboundSchema.parse(
-      appBskyActorPutPreferencesBody,
+    AppBskyActorPutPreferencesRequest$outboundSchema.parse(
+      appBskyActorPutPreferencesRequest,
     ),
   );
 }
 
-export function appBskyActorPutPreferencesBodyFromJSON(
+export function appBskyActorPutPreferencesRequestFromJSON(
   jsonString: string,
-): SafeParseResult<AppBskyActorPutPreferencesBody, SDKValidationError> {
+): SafeParseResult<AppBskyActorPutPreferencesRequest, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => AppBskyActorPutPreferencesBody$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'AppBskyActorPutPreferencesBody' from JSON`,
+    (x) => AppBskyActorPutPreferencesRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AppBskyActorPutPreferencesRequest' from JSON`,
   );
 }

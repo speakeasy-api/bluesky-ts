@@ -11,10 +11,11 @@ let value: ChatBskyConvoDefsLogCreateMessage = {
   message: {
     id: "<id>",
     rev: "<value>",
+    text: "<value>",
     sender: {
       did: "<id>",
     },
-    sentAt: new Date("2023-11-19T12:22:37.852Z"),
+    sentAt: new Date("2024-12-15T12:06:50.393Z"),
   },
 };
 ```

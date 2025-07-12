@@ -5,7 +5,7 @@
 ```typescript
 import { EventEnum } from "@speakeasy-sdks/bluesky/models/components";
 
-let value: EventEnum = "app.bsky.feed.defs#clickthroughReposter";
+let value: EventEnum = "app.bsky.feed.defs#interactionLike";
 ```
 
 ## Values

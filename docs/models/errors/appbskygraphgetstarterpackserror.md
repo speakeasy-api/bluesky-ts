@@ -5,7 +5,7 @@
 ```typescript
 import { AppBskyGraphGetStarterPacksError } from "@speakeasy-sdks/bluesky/models/errors";
 
-let value: AppBskyGraphGetStarterPacksError = "InvalidToken";
+let value: AppBskyGraphGetStarterPacksError = "ExpiredToken";
 ```
 
 ## Values

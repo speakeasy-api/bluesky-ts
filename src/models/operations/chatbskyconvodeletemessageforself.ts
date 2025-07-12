@@ -7,14 +7,14 @@ import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ChatBskyConvoDeleteMessageForSelfBody = {
+export type ChatBskyConvoDeleteMessageForSelfRequest = {
   convoId: string;
   messageId: string;
 };
 
 /** @internal */
-export const ChatBskyConvoDeleteMessageForSelfBody$inboundSchema: z.ZodType<
-  ChatBskyConvoDeleteMessageForSelfBody,
+export const ChatBskyConvoDeleteMessageForSelfRequest$inboundSchema: z.ZodType<
+  ChatBskyConvoDeleteMessageForSelfRequest,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -23,16 +23,16 @@ export const ChatBskyConvoDeleteMessageForSelfBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type ChatBskyConvoDeleteMessageForSelfBody$Outbound = {
+export type ChatBskyConvoDeleteMessageForSelfRequest$Outbound = {
   convoId: string;
   messageId: string;
 };
 
 /** @internal */
-export const ChatBskyConvoDeleteMessageForSelfBody$outboundSchema: z.ZodType<
-  ChatBskyConvoDeleteMessageForSelfBody$Outbound,
+export const ChatBskyConvoDeleteMessageForSelfRequest$outboundSchema: z.ZodType<
+  ChatBskyConvoDeleteMessageForSelfRequest$Outbound,
   z.ZodTypeDef,
-  ChatBskyConvoDeleteMessageForSelfBody
+  ChatBskyConvoDeleteMessageForSelfRequest
 > = z.object({
   convoId: z.string(),
   messageId: z.string(),
@@ -42,34 +42,40 @@ export const ChatBskyConvoDeleteMessageForSelfBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ChatBskyConvoDeleteMessageForSelfBody$ {
-  /** @deprecated use `ChatBskyConvoDeleteMessageForSelfBody$inboundSchema` instead. */
+export namespace ChatBskyConvoDeleteMessageForSelfRequest$ {
+  /** @deprecated use `ChatBskyConvoDeleteMessageForSelfRequest$inboundSchema` instead. */
   export const inboundSchema =
-    ChatBskyConvoDeleteMessageForSelfBody$inboundSchema;
-  /** @deprecated use `ChatBskyConvoDeleteMessageForSelfBody$outboundSchema` instead. */
+    ChatBskyConvoDeleteMessageForSelfRequest$inboundSchema;
+  /** @deprecated use `ChatBskyConvoDeleteMessageForSelfRequest$outboundSchema` instead. */
   export const outboundSchema =
-    ChatBskyConvoDeleteMessageForSelfBody$outboundSchema;
-  /** @deprecated use `ChatBskyConvoDeleteMessageForSelfBody$Outbound` instead. */
-  export type Outbound = ChatBskyConvoDeleteMessageForSelfBody$Outbound;
+    ChatBskyConvoDeleteMessageForSelfRequest$outboundSchema;
+  /** @deprecated use `ChatBskyConvoDeleteMessageForSelfRequest$Outbound` instead. */
+  export type Outbound = ChatBskyConvoDeleteMessageForSelfRequest$Outbound;
 }
 
-export function chatBskyConvoDeleteMessageForSelfBodyToJSON(
-  chatBskyConvoDeleteMessageForSelfBody: ChatBskyConvoDeleteMessageForSelfBody,
+export function chatBskyConvoDeleteMessageForSelfRequestToJSON(
+  chatBskyConvoDeleteMessageForSelfRequest:
+    ChatBskyConvoDeleteMessageForSelfRequest,
 ): string {
   return JSON.stringify(
-    ChatBskyConvoDeleteMessageForSelfBody$outboundSchema.parse(
-      chatBskyConvoDeleteMessageForSelfBody,
+    ChatBskyConvoDeleteMessageForSelfRequest$outboundSchema.parse(
+      chatBskyConvoDeleteMessageForSelfRequest,
     ),
   );
 }
 
-export function chatBskyConvoDeleteMessageForSelfBodyFromJSON(
+export function chatBskyConvoDeleteMessageForSelfRequestFromJSON(
   jsonString: string,
-): SafeParseResult<ChatBskyConvoDeleteMessageForSelfBody, SDKValidationError> {
+): SafeParseResult<
+  ChatBskyConvoDeleteMessageForSelfRequest,
+  SDKValidationError
+> {
   return safeParse(
     jsonString,
     (x) =>
-      ChatBskyConvoDeleteMessageForSelfBody$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ChatBskyConvoDeleteMessageForSelfBody' from JSON`,
+      ChatBskyConvoDeleteMessageForSelfRequest$inboundSchema.parse(
+        JSON.parse(x),
+      ),
+    `Failed to parse 'ChatBskyConvoDeleteMessageForSelfRequest' from JSON`,
   );
 }

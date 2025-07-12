@@ -6,7 +6,7 @@
 import { AppBskyGraphGetStarterPackRequest } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: AppBskyGraphGetStarterPackRequest = {
-  starterPack: "https://agreeable-ethyl.name",
+  starterPack: "https://lone-premium.biz/",
 };
 ```
 

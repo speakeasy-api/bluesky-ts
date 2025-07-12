@@ -6,14 +6,7 @@
 import { AppBskyActorDefsSavedFeedsPrefV2 } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: AppBskyActorDefsSavedFeedsPrefV2 = {
-  items: [
-    {
-      id: "<id>",
-      type: "list",
-      value: "<value>",
-      pinned: false,
-    },
-  ],
+  items: [],
 };
 ```
 

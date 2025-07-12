@@ -17,6 +17,7 @@ import { createMCPServer } from "../../server.js";
 interface StartCommandFlags {
   readonly transport: "stdio" | "sse";
   readonly port: number;
+  readonly tool?: string[];
   readonly scope?: MCPScope[];
   readonly bearer?: string | undefined;
   readonly "server-url"?: string;
@@ -47,8 +48,9 @@ async function startStdio(flags: StartCommandFlags) {
   const transport = new StdioServerTransport();
   const server = createMCPServer({
     logger,
+    allowedTools: flags.tool,
     scopes: flags.scope,
-    ...{ bearer: flags.bearer },
+    ...{ bearer: flags.bearer ?? "" },
     serverURL: flags["server-url"],
     server: flags.server,
   });
@@ -67,8 +69,9 @@ async function startSSE(flags: StartCommandFlags) {
   const app = express();
   const mcpServer = createMCPServer({
     logger,
+    allowedTools: flags.tool,
     scopes: flags.scope,
-    ...{ bearer: flags.bearer },
+    ...{ bearer: flags.bearer ?? "" },
     serverURL: flags["server-url"],
     server: flags.server,
   });

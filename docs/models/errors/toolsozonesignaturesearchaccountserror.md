@@ -5,7 +5,7 @@
 ```typescript
 import { ToolsOzoneSignatureSearchAccountsError } from "@speakeasy-sdks/bluesky/models/errors";
 
-let value: ToolsOzoneSignatureSearchAccountsError = "ExpiredToken";
+let value: ToolsOzoneSignatureSearchAccountsError = "InvalidRequest";
 ```
 
 ## Values

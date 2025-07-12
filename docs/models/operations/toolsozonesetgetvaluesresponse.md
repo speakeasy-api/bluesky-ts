@@ -9,12 +9,14 @@ let value: ToolsOzoneSetGetValuesResponse = {
   result: {
     set: {
       name: "<value>",
-      setSize: 209750,
-      createdAt: new Date("2023-05-07T19:27:28.258Z"),
-      updatedAt: new Date("2024-09-24T13:05:49.123Z"),
+      setSize: 498953,
+      createdAt: new Date("2025-06-19T02:32:34.391Z"),
+      updatedAt: new Date("2023-05-11T12:11:29.237Z"),
     },
     values: [
-      "<value>",
+      "<value 1>",
+      "<value 2>",
+      "<value 3>",
     ],
   },
 };

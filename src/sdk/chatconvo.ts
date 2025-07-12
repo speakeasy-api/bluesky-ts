@@ -15,9 +15,9 @@ export class ChatConvo extends ClientSDK {
    * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
    */
   async sendMessageBatch(
-    request: operations.ChatBskyConvoSendMessageBatchBody,
+    request: operations.ChatBskyConvoSendMessageBatchRequest,
     options?: RequestOptions,
-  ): Promise<operations.ChatBskyConvoSendMessageBatchResponseBody> {
+  ): Promise<operations.ChatBskyConvoSendMessageBatchResponse> {
     return unwrapAsync(chatConvoSendMessageBatch(
       this,
       request,
@@ -31,9 +31,9 @@ export class ChatConvo extends ClientSDK {
    * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
    */
   async unmute(
-    request: operations.ChatBskyConvoUnmuteConvoBody,
+    request: operations.ChatBskyConvoUnmuteConvoRequest,
     options?: RequestOptions,
-  ): Promise<operations.ChatBskyConvoUnmuteConvoResponseBody> {
+  ): Promise<operations.ChatBskyConvoUnmuteConvoResponse> {
     return unwrapAsync(chatConvoUnmute(
       this,
       request,

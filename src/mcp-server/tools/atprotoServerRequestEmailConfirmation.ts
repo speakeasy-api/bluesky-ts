@@ -6,7 +6,7 @@ import { atprotoServerRequestEmailConfirmation } from "../../funcs/atprotoServer
 import { formatResult, ToolDefinition } from "../tools.js";
 
 export const tool$atprotoServerRequestEmailConfirmation: ToolDefinition = {
-  name: "atproto-server_request-email-confirmation",
+  name: "atproto-server-request-email-confirmation",
   description:
     `*This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 

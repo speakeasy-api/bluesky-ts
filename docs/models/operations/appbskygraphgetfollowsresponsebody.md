@@ -12,7 +12,12 @@ let value: AppBskyGraphGetFollowsResponseBody = {
     did: "<id>",
     handle: "<value>",
   },
-  follows: [],
+  follows: [
+    {
+      did: "<id>",
+      handle: "<value>",
+    },
+  ],
 };
 ```
 

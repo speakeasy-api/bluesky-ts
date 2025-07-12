@@ -5,7 +5,7 @@
 ```typescript
 import { ToolsOzoneSetDeleteValuesError } from "@speakeasy-sdks/bluesky/models/errors";
 
-let value: ToolsOzoneSetDeleteValuesError = "ExpiredToken";
+let value: ToolsOzoneSetDeleteValuesError = "InvalidToken";
 ```
 
 ## Values

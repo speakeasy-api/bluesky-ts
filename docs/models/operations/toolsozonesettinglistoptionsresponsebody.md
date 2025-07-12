@@ -8,16 +8,7 @@ OK
 import { ToolsOzoneSettingListOptionsResponseBody } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: ToolsOzoneSettingListOptionsResponseBody = {
-  options: [
-    {
-      key: "<id>",
-      did: "<id>",
-      value: "<value>",
-      scope: "personal",
-      createdBy: "<id>",
-      lastUpdatedBy: "<id>",
-    },
-  ],
+  options: [],
 };
 ```
 

@@ -7,7 +7,8 @@ import { AppBskyFeedGetPostsRequest } from "@speakeasy-sdks/bluesky/models/opera
 
 let value: AppBskyFeedGetPostsRequest = {
   uris: [
-    "https://dutiful-cellar.biz",
+    "https://criminal-pharmacopoeia.biz/",
+    "https://juvenile-scale.info",
   ],
 };
 ```

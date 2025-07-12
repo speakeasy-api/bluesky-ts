@@ -55,14 +55,12 @@ const bluesky = new BlueskyCore({
 
 async function run() {
   const res = await atprotoIdentityRequestPlcOperationSignature(bluesky);
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    
+  } else {
+    console.log("atprotoIdentityRequestPlcOperationSignature failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  
 }
 
 run();
@@ -99,21 +97,21 @@ import {
 
 ### Errors
 
-| Error Type                                                                         | Status Code                                                                        | Content Type                                                                       |
-| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| errors.BadRequestComAtprotoIdentityRequestPlcOperationSignatureResponseBodyError   | 400                                                                                | application/json                                                                   |
-| errors.UnauthorizedComAtprotoIdentityRequestPlcOperationSignatureResponseBodyError | 401                                                                                | application/json                                                                   |
-| errors.NotFoundError                                                               | 404                                                                                | application/json                                                                   |
-| errors.UnauthorizedError                                                           | 403, 407                                                                           | application/json                                                                   |
-| errors.TimeoutError                                                                | 408                                                                                | application/json                                                                   |
-| errors.RateLimitedError                                                            | 429                                                                                | application/json                                                                   |
-| errors.BadRequestError                                                             | 413, 414, 415, 422, 431                                                            | application/json                                                                   |
-| errors.TimeoutError                                                                | 504                                                                                | application/json                                                                   |
-| errors.NotFoundError                                                               | 501, 505                                                                           | application/json                                                                   |
-| errors.InternalServerError                                                         | 500, 502, 503, 506, 507, 508                                                       | application/json                                                                   |
-| errors.BadRequestError                                                             | 510                                                                                | application/json                                                                   |
-| errors.UnauthorizedError                                                           | 511                                                                                | application/json                                                                   |
-| errors.APIError                                                                    | 4XX, 5XX                                                                           | \*/\*                                                                              |
+| Error Type                                                            | Status Code                                                           | Content Type                                                          |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| errors.ComAtprotoIdentityRequestPlcOperationSignatureBadRequestError  | 400                                                                   | application/json                                                      |
+| errors.ComAtprotoIdentityRequestPlcOperationSignatureAuthMissingError | 401                                                                   | application/json                                                      |
+| errors.NotFoundError                                                  | 404                                                                   | application/json                                                      |
+| errors.UnauthorizedError                                              | 403, 407                                                              | application/json                                                      |
+| errors.TimeoutError                                                   | 408                                                                   | application/json                                                      |
+| errors.RateLimitedError                                               | 429                                                                   | application/json                                                      |
+| errors.BadRequestError                                                | 413, 414, 415, 422, 431                                               | application/json                                                      |
+| errors.TimeoutError                                                   | 504                                                                   | application/json                                                      |
+| errors.NotFoundError                                                  | 501, 505                                                              | application/json                                                      |
+| errors.InternalServerError                                            | 500, 502, 503, 506, 507, 508                                          | application/json                                                      |
+| errors.BadRequestError                                                | 510                                                                   | application/json                                                      |
+| errors.UnauthorizedError                                              | 511                                                                   | application/json                                                      |
+| errors.APIError                                                       | 4XX, 5XX                                                              | \*/\*                                                                 |
 
 ## resolveHandle
 
@@ -135,7 +133,6 @@ async function run() {
     handle: "<value>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -160,15 +157,12 @@ async function run() {
   const res = await atprotoIdentityResolveHandle(bluesky, {
     handle: "<value>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("atprotoIdentityResolveHandle failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -213,25 +207,25 @@ import {
 
 ### Response
 
-**Promise\<[operations.ComAtprotoIdentityResolveHandleResponseBody](../../models/operations/comatprotoidentityresolvehandleresponsebody.md)\>**
+**Promise\<[operations.ComAtprotoIdentityResolveHandleResponse](../../models/operations/comatprotoidentityresolvehandleresponse.md)\>**
 
 ### Errors
 
-| Error Type                                                          | Status Code                                                         | Content Type                                                        |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| errors.BadRequestComAtprotoIdentityResolveHandleResponseBodyError   | 400                                                                 | application/json                                                    |
-| errors.UnauthorizedComAtprotoIdentityResolveHandleResponseBodyError | 401                                                                 | application/json                                                    |
-| errors.NotFoundError                                                | 404                                                                 | application/json                                                    |
-| errors.UnauthorizedError                                            | 403, 407                                                            | application/json                                                    |
-| errors.TimeoutError                                                 | 408                                                                 | application/json                                                    |
-| errors.RateLimitedError                                             | 429                                                                 | application/json                                                    |
-| errors.BadRequestError                                              | 413, 414, 415, 422, 431                                             | application/json                                                    |
-| errors.TimeoutError                                                 | 504                                                                 | application/json                                                    |
-| errors.NotFoundError                                                | 501, 505                                                            | application/json                                                    |
-| errors.InternalServerError                                          | 500, 502, 503, 506, 507, 508                                        | application/json                                                    |
-| errors.BadRequestError                                              | 510                                                                 | application/json                                                    |
-| errors.UnauthorizedError                                            | 511                                                                 | application/json                                                    |
-| errors.APIError                                                     | 4XX, 5XX                                                            | \*/\*                                                               |
+| Error Type                                             | Status Code                                            | Content Type                                           |
+| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
+| errors.ComAtprotoIdentityResolveHandleBadRequestError  | 400                                                    | application/json                                       |
+| errors.ComAtprotoIdentityResolveHandleAuthMissingError | 401                                                    | application/json                                       |
+| errors.NotFoundError                                   | 404                                                    | application/json                                       |
+| errors.UnauthorizedError                               | 403, 407                                               | application/json                                       |
+| errors.TimeoutError                                    | 408                                                    | application/json                                       |
+| errors.RateLimitedError                                | 429                                                    | application/json                                       |
+| errors.BadRequestError                                 | 413, 414, 415, 422, 431                                | application/json                                       |
+| errors.TimeoutError                                    | 504                                                    | application/json                                       |
+| errors.NotFoundError                                   | 501, 505                                               | application/json                                       |
+| errors.InternalServerError                             | 500, 502, 503, 506, 507, 508                           | application/json                                       |
+| errors.BadRequestError                                 | 510                                                    | application/json                                       |
+| errors.UnauthorizedError                               | 511                                                    | application/json                                       |
+| errors.APIError                                        | 4XX, 5XX                                               | \*/\*                                                  |
 
 ## signPlcOperation
 
@@ -249,9 +243,8 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.atprotoIdentity.signPlcOperation();
+  const result = await bluesky.atprotoIdentity.signPlcOperation({});
 
-  // Handle the result
   console.log(result);
 }
 
@@ -273,16 +266,13 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await atprotoIdentitySignPlcOperation(bluesky);
-
-  if (!res.ok) {
-    throw res.error;
+  const res = await atprotoIdentitySignPlcOperation(bluesky, {});
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("atprotoIdentitySignPlcOperation failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -309,29 +299,29 @@ import {
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ComAtprotoIdentitySignPlcOperationBody](../../models/operations/comatprotoidentitysignplcoperationbody.md)                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ComAtprotoIdentitySignPlcOperationRequest](../../models/operations/comatprotoidentitysignplcoperationrequest.md)                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.ComAtprotoIdentitySignPlcOperationResponseBody](../../models/operations/comatprotoidentitysignplcoperationresponsebody.md)\>**
+**Promise\<[operations.ComAtprotoIdentitySignPlcOperationResponse](../../models/operations/comatprotoidentitysignplcoperationresponse.md)\>**
 
 ### Errors
 
-| Error Type                                                             | Status Code                                                            | Content Type                                                           |
-| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| errors.BadRequestComAtprotoIdentitySignPlcOperationResponseBodyError   | 400                                                                    | application/json                                                       |
-| errors.UnauthorizedComAtprotoIdentitySignPlcOperationResponseBodyError | 401                                                                    | application/json                                                       |
-| errors.NotFoundError                                                   | 404                                                                    | application/json                                                       |
-| errors.UnauthorizedError                                               | 403, 407                                                               | application/json                                                       |
-| errors.TimeoutError                                                    | 408                                                                    | application/json                                                       |
-| errors.RateLimitedError                                                | 429                                                                    | application/json                                                       |
-| errors.BadRequestError                                                 | 413, 414, 415, 422, 431                                                | application/json                                                       |
-| errors.TimeoutError                                                    | 504                                                                    | application/json                                                       |
-| errors.NotFoundError                                                   | 501, 505                                                               | application/json                                                       |
-| errors.InternalServerError                                             | 500, 502, 503, 506, 507, 508                                           | application/json                                                       |
-| errors.BadRequestError                                                 | 510                                                                    | application/json                                                       |
-| errors.UnauthorizedError                                               | 511                                                                    | application/json                                                       |
-| errors.APIError                                                        | 4XX, 5XX                                                               | \*/\*                                                                  |
+| Error Type                                                | Status Code                                               | Content Type                                              |
+| --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
+| errors.ComAtprotoIdentitySignPlcOperationBadRequestError  | 400                                                       | application/json                                          |
+| errors.ComAtprotoIdentitySignPlcOperationAuthMissingError | 401                                                       | application/json                                          |
+| errors.NotFoundError                                      | 404                                                       | application/json                                          |
+| errors.UnauthorizedError                                  | 403, 407                                                  | application/json                                          |
+| errors.TimeoutError                                       | 408                                                       | application/json                                          |
+| errors.RateLimitedError                                   | 429                                                       | application/json                                          |
+| errors.BadRequestError                                    | 413, 414, 415, 422, 431                                   | application/json                                          |
+| errors.TimeoutError                                       | 504                                                       | application/json                                          |
+| errors.NotFoundError                                      | 501, 505                                                  | application/json                                          |
+| errors.InternalServerError                                | 500, 502, 503, 506, 507, 508                              | application/json                                          |
+| errors.BadRequestError                                    | 510                                                       | application/json                                          |
+| errors.UnauthorizedError                                  | 511                                                       | application/json                                          |
+| errors.APIError                                           | 4XX, 5XX                                                  | \*/\*                                                     |

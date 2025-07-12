@@ -17,12 +17,11 @@ import { useBlueskyContext } from "./_context.js";
 import { MutationHookOptions } from "./_types.js";
 
 export type ConvosMuteMutationVariables = {
-  request: operations.ChatBskyConvoMuteConvoBody;
+  request: operations.ChatBskyConvoMuteConvoRequest;
   options?: RequestOptions;
 };
 
-export type ConvosMuteMutationData =
-  operations.ChatBskyConvoMuteConvoResponseBody;
+export type ConvosMuteMutationData = operations.ChatBskyConvoMuteConvoResponse;
 
 /**
  * *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*

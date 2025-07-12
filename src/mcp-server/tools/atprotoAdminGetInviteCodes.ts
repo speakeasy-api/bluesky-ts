@@ -12,7 +12,7 @@ const args = {
 };
 
 export const tool$atprotoAdminGetInviteCodes: ToolDefinition<typeof args> = {
-  name: "atproto-admin_get-invite-codes",
+  name: "atproto-admin-get-invite-codes",
   description:
     `*This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
 

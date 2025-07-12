@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoServerListAppPasswordsError } from "@speakeasy-sdks/bluesky/models/errors";
 
-let value: ComAtprotoServerListAppPasswordsError = "AccountTakedown";
+let value: ComAtprotoServerListAppPasswordsError = "InvalidRequest";
 ```
 
 ## Values

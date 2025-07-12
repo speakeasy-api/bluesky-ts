@@ -7,7 +7,7 @@ import { ToolsOzoneTeamDefsMember } from "@speakeasy-sdks/bluesky/models/compone
 
 let value: ToolsOzoneTeamDefsMember = {
   did: "<id>",
-  role: "#roleModerator",
+  role: "#roleAdmin",
 };
 ```
 

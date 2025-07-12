@@ -17,7 +17,7 @@ export class Chats extends ClientSDK {
   async getConvo(
     request: operations.ChatBskyConvoGetConvoRequest,
     options?: RequestOptions,
-  ): Promise<operations.ChatBskyConvoGetConvoResponseBody> {
+  ): Promise<operations.ChatBskyConvoGetConvoResponse> {
     return unwrapAsync(chatsGetConvo(
       this,
       request,
@@ -33,7 +33,7 @@ export class Chats extends ClientSDK {
   async getMessageContext(
     request: operations.ChatBskyModerationGetMessageContextRequest,
     options?: RequestOptions,
-  ): Promise<operations.ChatBskyModerationGetMessageContextResponseBody> {
+  ): Promise<operations.ChatBskyModerationGetMessageContextResponse> {
     return unwrapAsync(chatsGetMessageContext(
       this,
       request,

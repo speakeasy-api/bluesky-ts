@@ -5,7 +5,7 @@
 ```typescript
 import { AppBskyVideoGetJobStatusError } from "@speakeasy-sdks/bluesky/models/errors";
 
-let value: AppBskyVideoGetJobStatusError = "InvalidToken";
+let value: AppBskyVideoGetJobStatusError = "InvalidRequest";
 ```
 
 ## Values

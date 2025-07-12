@@ -4,40 +4,37 @@
 
 import * as z from "zod";
 import { ClosedEnum } from "../../types/enums.js";
+import { BlueskyError } from "./blueskyerror.js";
 
 /**
  * Unauthorized
  */
-export type UnauthorizedComAtprotoIdentitySubmitPlcOperationResponseBodyErrorData =
-  {
-    error: "AuthMissing";
-    message: string;
-  };
+export type ComAtprotoIdentitySubmitPlcOperationAuthMissingErrorData = {
+  error: "AuthMissing";
+  message: string;
+};
 
 /**
  * Unauthorized
  */
-export class UnauthorizedComAtprotoIdentitySubmitPlcOperationResponseBodyError
-  extends Error
+export class ComAtprotoIdentitySubmitPlcOperationAuthMissingError
+  extends BlueskyError
 {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: UnauthorizedComAtprotoIdentitySubmitPlcOperationResponseBodyErrorData;
+  data$: ComAtprotoIdentitySubmitPlcOperationAuthMissingErrorData;
 
   constructor(
-    err: UnauthorizedComAtprotoIdentitySubmitPlcOperationResponseBodyErrorData,
+    err: ComAtprotoIdentitySubmitPlcOperationAuthMissingErrorData,
+    httpMeta: { response: Response; request: Request; body: string },
   ) {
-    const message = "message" in err && typeof err.message === "string"
-      ? err.message
-      : `API error occurred: ${JSON.stringify(err)}`;
-    super(message);
+    const message = err.message || `API error occurred: ${JSON.stringify(err)}`;
+    super(message, httpMeta);
     this.data$ = err;
-
     this.error = err.error;
 
-    this.name =
-      "UnauthorizedComAtprotoIdentitySubmitPlcOperationResponseBodyError";
+    this.name = "ComAtprotoIdentitySubmitPlcOperationAuthMissingError";
   }
 }
 
@@ -53,71 +50,69 @@ export type ComAtprotoIdentitySubmitPlcOperationError = ClosedEnum<
 /**
  * Bad Request
  */
-export type BadRequestComAtprotoIdentitySubmitPlcOperationResponseBodyErrorData =
-  {
-    error: ComAtprotoIdentitySubmitPlcOperationError;
-    message: string;
-  };
+export type ComAtprotoIdentitySubmitPlcOperationBadRequestErrorData = {
+  error: ComAtprotoIdentitySubmitPlcOperationError;
+  message: string;
+};
 
 /**
  * Bad Request
  */
-export class BadRequestComAtprotoIdentitySubmitPlcOperationResponseBodyError
-  extends Error
+export class ComAtprotoIdentitySubmitPlcOperationBadRequestError
+  extends BlueskyError
 {
   error: ComAtprotoIdentitySubmitPlcOperationError;
 
   /** The original data that was passed to this error instance. */
-  data$: BadRequestComAtprotoIdentitySubmitPlcOperationResponseBodyErrorData;
+  data$: ComAtprotoIdentitySubmitPlcOperationBadRequestErrorData;
 
   constructor(
-    err: BadRequestComAtprotoIdentitySubmitPlcOperationResponseBodyErrorData,
+    err: ComAtprotoIdentitySubmitPlcOperationBadRequestErrorData,
+    httpMeta: { response: Response; request: Request; body: string },
   ) {
-    const message = "message" in err && typeof err.message === "string"
-      ? err.message
-      : `API error occurred: ${JSON.stringify(err)}`;
-    super(message);
+    const message = err.message || `API error occurred: ${JSON.stringify(err)}`;
+    super(message, httpMeta);
     this.data$ = err;
-
     this.error = err.error;
 
-    this.name =
-      "BadRequestComAtprotoIdentitySubmitPlcOperationResponseBodyError";
+    this.name = "ComAtprotoIdentitySubmitPlcOperationBadRequestError";
   }
 }
 
 /** @internal */
-export const UnauthorizedComAtprotoIdentitySubmitPlcOperationResponseBodyError$inboundSchema:
+export const ComAtprotoIdentitySubmitPlcOperationAuthMissingError$inboundSchema:
   z.ZodType<
-    UnauthorizedComAtprotoIdentitySubmitPlcOperationResponseBodyError,
+    ComAtprotoIdentitySubmitPlcOperationAuthMissingError,
     z.ZodTypeDef,
     unknown
   > = z.object({
-    error: z.literal("AuthMissing"),
+    error: z.literal("AuthMissing").default("AuthMissing"),
     message: z.string(),
+    request$: z.instanceof(Request),
+    response$: z.instanceof(Response),
+    body$: z.string(),
   })
     .transform((v) => {
-      return new UnauthorizedComAtprotoIdentitySubmitPlcOperationResponseBodyError(
-        v,
-      );
+      return new ComAtprotoIdentitySubmitPlcOperationAuthMissingError(v, {
+        request: v.request$,
+        response: v.response$,
+        body: v.body$,
+      });
     });
 
 /** @internal */
-export type UnauthorizedComAtprotoIdentitySubmitPlcOperationResponseBodyError$Outbound =
-  {
-    error: "AuthMissing";
-    message: string;
-  };
+export type ComAtprotoIdentitySubmitPlcOperationAuthMissingError$Outbound = {
+  error: "AuthMissing";
+  message: string;
+};
 
 /** @internal */
-export const UnauthorizedComAtprotoIdentitySubmitPlcOperationResponseBodyError$outboundSchema:
+export const ComAtprotoIdentitySubmitPlcOperationAuthMissingError$outboundSchema:
   z.ZodType<
-    UnauthorizedComAtprotoIdentitySubmitPlcOperationResponseBodyError$Outbound,
+    ComAtprotoIdentitySubmitPlcOperationAuthMissingError$Outbound,
     z.ZodTypeDef,
-    UnauthorizedComAtprotoIdentitySubmitPlcOperationResponseBodyError
-  > = z.instanceof(
-    UnauthorizedComAtprotoIdentitySubmitPlcOperationResponseBodyError,
-  )
+    ComAtprotoIdentitySubmitPlcOperationAuthMissingError
+  > = z.instanceof(ComAtprotoIdentitySubmitPlcOperationAuthMissingError)
     .transform(v => v.data$)
     .pipe(z.object({
       error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -128,16 +123,16 @@ export const UnauthorizedComAtprotoIdentitySubmitPlcOperationResponseBodyError$o
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace UnauthorizedComAtprotoIdentitySubmitPlcOperationResponseBodyError$ {
-  /** @deprecated use `UnauthorizedComAtprotoIdentitySubmitPlcOperationResponseBodyError$inboundSchema` instead. */
+export namespace ComAtprotoIdentitySubmitPlcOperationAuthMissingError$ {
+  /** @deprecated use `ComAtprotoIdentitySubmitPlcOperationAuthMissingError$inboundSchema` instead. */
   export const inboundSchema =
-    UnauthorizedComAtprotoIdentitySubmitPlcOperationResponseBodyError$inboundSchema;
-  /** @deprecated use `UnauthorizedComAtprotoIdentitySubmitPlcOperationResponseBodyError$outboundSchema` instead. */
+    ComAtprotoIdentitySubmitPlcOperationAuthMissingError$inboundSchema;
+  /** @deprecated use `ComAtprotoIdentitySubmitPlcOperationAuthMissingError$outboundSchema` instead. */
   export const outboundSchema =
-    UnauthorizedComAtprotoIdentitySubmitPlcOperationResponseBodyError$outboundSchema;
-  /** @deprecated use `UnauthorizedComAtprotoIdentitySubmitPlcOperationResponseBodyError$Outbound` instead. */
+    ComAtprotoIdentitySubmitPlcOperationAuthMissingError$outboundSchema;
+  /** @deprecated use `ComAtprotoIdentitySubmitPlcOperationAuthMissingError$Outbound` instead. */
   export type Outbound =
-    UnauthorizedComAtprotoIdentitySubmitPlcOperationResponseBodyError$Outbound;
+    ComAtprotoIdentitySubmitPlcOperationAuthMissingError$Outbound;
 }
 
 /** @internal */
@@ -164,37 +159,39 @@ export namespace ComAtprotoIdentitySubmitPlcOperationError$ {
 }
 
 /** @internal */
-export const BadRequestComAtprotoIdentitySubmitPlcOperationResponseBodyError$inboundSchema:
+export const ComAtprotoIdentitySubmitPlcOperationBadRequestError$inboundSchema:
   z.ZodType<
-    BadRequestComAtprotoIdentitySubmitPlcOperationResponseBodyError,
+    ComAtprotoIdentitySubmitPlcOperationBadRequestError,
     z.ZodTypeDef,
     unknown
   > = z.object({
     error: ComAtprotoIdentitySubmitPlcOperationError$inboundSchema,
     message: z.string(),
+    request$: z.instanceof(Request),
+    response$: z.instanceof(Response),
+    body$: z.string(),
   })
     .transform((v) => {
-      return new BadRequestComAtprotoIdentitySubmitPlcOperationResponseBodyError(
-        v,
-      );
+      return new ComAtprotoIdentitySubmitPlcOperationBadRequestError(v, {
+        request: v.request$,
+        response: v.response$,
+        body: v.body$,
+      });
     });
 
 /** @internal */
-export type BadRequestComAtprotoIdentitySubmitPlcOperationResponseBodyError$Outbound =
-  {
-    error: string;
-    message: string;
-  };
+export type ComAtprotoIdentitySubmitPlcOperationBadRequestError$Outbound = {
+  error: string;
+  message: string;
+};
 
 /** @internal */
-export const BadRequestComAtprotoIdentitySubmitPlcOperationResponseBodyError$outboundSchema:
+export const ComAtprotoIdentitySubmitPlcOperationBadRequestError$outboundSchema:
   z.ZodType<
-    BadRequestComAtprotoIdentitySubmitPlcOperationResponseBodyError$Outbound,
+    ComAtprotoIdentitySubmitPlcOperationBadRequestError$Outbound,
     z.ZodTypeDef,
-    BadRequestComAtprotoIdentitySubmitPlcOperationResponseBodyError
-  > = z.instanceof(
-    BadRequestComAtprotoIdentitySubmitPlcOperationResponseBodyError,
-  )
+    ComAtprotoIdentitySubmitPlcOperationBadRequestError
+  > = z.instanceof(ComAtprotoIdentitySubmitPlcOperationBadRequestError)
     .transform(v => v.data$)
     .pipe(z.object({
       error: ComAtprotoIdentitySubmitPlcOperationError$outboundSchema,
@@ -205,14 +202,14 @@ export const BadRequestComAtprotoIdentitySubmitPlcOperationResponseBodyError$out
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace BadRequestComAtprotoIdentitySubmitPlcOperationResponseBodyError$ {
-  /** @deprecated use `BadRequestComAtprotoIdentitySubmitPlcOperationResponseBodyError$inboundSchema` instead. */
+export namespace ComAtprotoIdentitySubmitPlcOperationBadRequestError$ {
+  /** @deprecated use `ComAtprotoIdentitySubmitPlcOperationBadRequestError$inboundSchema` instead. */
   export const inboundSchema =
-    BadRequestComAtprotoIdentitySubmitPlcOperationResponseBodyError$inboundSchema;
-  /** @deprecated use `BadRequestComAtprotoIdentitySubmitPlcOperationResponseBodyError$outboundSchema` instead. */
+    ComAtprotoIdentitySubmitPlcOperationBadRequestError$inboundSchema;
+  /** @deprecated use `ComAtprotoIdentitySubmitPlcOperationBadRequestError$outboundSchema` instead. */
   export const outboundSchema =
-    BadRequestComAtprotoIdentitySubmitPlcOperationResponseBodyError$outboundSchema;
-  /** @deprecated use `BadRequestComAtprotoIdentitySubmitPlcOperationResponseBodyError$Outbound` instead. */
+    ComAtprotoIdentitySubmitPlcOperationBadRequestError$outboundSchema;
+  /** @deprecated use `ComAtprotoIdentitySubmitPlcOperationBadRequestError$Outbound` instead. */
   export type Outbound =
-    BadRequestComAtprotoIdentitySubmitPlcOperationResponseBodyError$Outbound;
+    ComAtprotoIdentitySubmitPlcOperationBadRequestError$Outbound;
 }

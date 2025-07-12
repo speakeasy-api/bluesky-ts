@@ -6,7 +6,7 @@
 import { AppBskyNotificationListNotificationsNotification } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: AppBskyNotificationListNotificationsNotification = {
-  uri: "https://meager-scholarship.net",
+  uri: "https://lively-yin.info/",
   cid: "<id>",
   author: {
     did: "<id>",
@@ -15,7 +15,7 @@ let value: AppBskyNotificationListNotificationsNotification = {
   reason: "quote",
   record: "<value>",
   isRead: false,
-  indexedAt: new Date("2023-11-26T12:19:41.082Z"),
+  indexedAt: new Date("2024-08-31T15:50:02.595Z"),
 };
 ```
 

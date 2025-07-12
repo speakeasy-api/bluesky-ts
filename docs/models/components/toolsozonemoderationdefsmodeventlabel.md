@@ -9,10 +9,12 @@ import { ToolsOzoneModerationDefsModEventLabel } from "@speakeasy-sdks/bluesky/m
 
 let value: ToolsOzoneModerationDefsModEventLabel = {
   createLabelVals: [
-    "<value>",
+    "<value 1>",
   ],
   negateLabelVals: [
-    "<value>",
+    "<value 1>",
+    "<value 2>",
+    "<value 3>",
   ],
 };
 ```

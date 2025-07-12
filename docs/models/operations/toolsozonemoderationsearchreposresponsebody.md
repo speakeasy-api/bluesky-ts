@@ -8,17 +8,7 @@ OK
 import { ToolsOzoneModerationSearchReposResponseBody } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: ToolsOzoneModerationSearchReposResponseBody = {
-  repos: [
-    {
-      did: "<id>",
-      handle: "<value>",
-      relatedRecords: [
-        "<value>",
-      ],
-      indexedAt: new Date("2025-02-17T12:41:59.818Z"),
-      moderation: {},
-    },
-  ],
+  repos: [],
 };
 ```
 

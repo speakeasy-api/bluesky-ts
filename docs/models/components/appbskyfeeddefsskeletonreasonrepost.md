@@ -6,7 +6,7 @@
 import { AppBskyFeedDefsSkeletonReasonRepost } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: AppBskyFeedDefsSkeletonReasonRepost = {
-  repost: "https://valuable-phrase.info",
+  repost: "https://shy-worth.info",
 };
 ```
 

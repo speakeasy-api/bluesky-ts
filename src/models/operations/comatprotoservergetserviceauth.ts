@@ -25,7 +25,7 @@ export type ComAtprotoServerGetServiceAuthRequest = {
 /**
  * OK
  */
-export type ComAtprotoServerGetServiceAuthResponseBody = {
+export type ComAtprotoServerGetServiceAuthResponse = {
   token: string;
 };
 
@@ -95,65 +95,61 @@ export function comAtprotoServerGetServiceAuthRequestFromJSON(
 }
 
 /** @internal */
-export const ComAtprotoServerGetServiceAuthResponseBody$inboundSchema:
-  z.ZodType<ComAtprotoServerGetServiceAuthResponseBody, z.ZodTypeDef, unknown> =
-    z.object({
-      token: z.string(),
-    });
+export const ComAtprotoServerGetServiceAuthResponse$inboundSchema: z.ZodType<
+  ComAtprotoServerGetServiceAuthResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  token: z.string(),
+});
 
 /** @internal */
-export type ComAtprotoServerGetServiceAuthResponseBody$Outbound = {
+export type ComAtprotoServerGetServiceAuthResponse$Outbound = {
   token: string;
 };
 
 /** @internal */
-export const ComAtprotoServerGetServiceAuthResponseBody$outboundSchema:
-  z.ZodType<
-    ComAtprotoServerGetServiceAuthResponseBody$Outbound,
-    z.ZodTypeDef,
-    ComAtprotoServerGetServiceAuthResponseBody
-  > = z.object({
-    token: z.string(),
-  });
+export const ComAtprotoServerGetServiceAuthResponse$outboundSchema: z.ZodType<
+  ComAtprotoServerGetServiceAuthResponse$Outbound,
+  z.ZodTypeDef,
+  ComAtprotoServerGetServiceAuthResponse
+> = z.object({
+  token: z.string(),
+});
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoServerGetServiceAuthResponseBody$ {
-  /** @deprecated use `ComAtprotoServerGetServiceAuthResponseBody$inboundSchema` instead. */
+export namespace ComAtprotoServerGetServiceAuthResponse$ {
+  /** @deprecated use `ComAtprotoServerGetServiceAuthResponse$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoServerGetServiceAuthResponseBody$inboundSchema;
-  /** @deprecated use `ComAtprotoServerGetServiceAuthResponseBody$outboundSchema` instead. */
+    ComAtprotoServerGetServiceAuthResponse$inboundSchema;
+  /** @deprecated use `ComAtprotoServerGetServiceAuthResponse$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoServerGetServiceAuthResponseBody$outboundSchema;
-  /** @deprecated use `ComAtprotoServerGetServiceAuthResponseBody$Outbound` instead. */
-  export type Outbound = ComAtprotoServerGetServiceAuthResponseBody$Outbound;
+    ComAtprotoServerGetServiceAuthResponse$outboundSchema;
+  /** @deprecated use `ComAtprotoServerGetServiceAuthResponse$Outbound` instead. */
+  export type Outbound = ComAtprotoServerGetServiceAuthResponse$Outbound;
 }
 
-export function comAtprotoServerGetServiceAuthResponseBodyToJSON(
-  comAtprotoServerGetServiceAuthResponseBody:
-    ComAtprotoServerGetServiceAuthResponseBody,
+export function comAtprotoServerGetServiceAuthResponseToJSON(
+  comAtprotoServerGetServiceAuthResponse:
+    ComAtprotoServerGetServiceAuthResponse,
 ): string {
   return JSON.stringify(
-    ComAtprotoServerGetServiceAuthResponseBody$outboundSchema.parse(
-      comAtprotoServerGetServiceAuthResponseBody,
+    ComAtprotoServerGetServiceAuthResponse$outboundSchema.parse(
+      comAtprotoServerGetServiceAuthResponse,
     ),
   );
 }
 
-export function comAtprotoServerGetServiceAuthResponseBodyFromJSON(
+export function comAtprotoServerGetServiceAuthResponseFromJSON(
   jsonString: string,
-): SafeParseResult<
-  ComAtprotoServerGetServiceAuthResponseBody,
-  SDKValidationError
-> {
+): SafeParseResult<ComAtprotoServerGetServiceAuthResponse, SDKValidationError> {
   return safeParse(
     jsonString,
     (x) =>
-      ComAtprotoServerGetServiceAuthResponseBody$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'ComAtprotoServerGetServiceAuthResponseBody' from JSON`,
+      ComAtprotoServerGetServiceAuthResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ComAtprotoServerGetServiceAuthResponse' from JSON`,
   );
 }

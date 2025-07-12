@@ -6,7 +6,7 @@
 import { ToolsOzoneModerationGetRecordRequest } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: ToolsOzoneModerationGetRecordRequest = {
-  uri: "https://unconscious-dress.info",
+  uri: "https://humiliating-object.name",
 };
 ```
 

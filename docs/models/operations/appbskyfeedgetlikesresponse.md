@@ -7,8 +7,17 @@ import { AppBskyFeedGetLikesResponse } from "@speakeasy-sdks/bluesky/models/oper
 
 let value: AppBskyFeedGetLikesResponse = {
   result: {
-    uri: "https://ajar-sonnet.net/",
-    likes: [],
+    uri: "https://superficial-pinstripe.org",
+    likes: [
+      {
+        indexedAt: new Date("2023-12-02T10:21:26.984Z"),
+        createdAt: new Date("2024-03-04T08:47:35.916Z"),
+        actor: {
+          did: "<id>",
+          handle: "<value>",
+        },
+      },
+    ],
   },
 };
 ```

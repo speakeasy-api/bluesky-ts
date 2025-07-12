@@ -10,7 +10,7 @@ import { ComAtprotoLabelDefsLabelValueDefinitionStrings } from "@speakeasy-sdks/
 let value: ComAtprotoLabelDefsLabelValueDefinitionStrings = {
   lang: "<value>",
   name: "<value>",
-  description: "with close jeopardise probable",
+  description: "instead whoever eek oddly",
 };
 ```
 

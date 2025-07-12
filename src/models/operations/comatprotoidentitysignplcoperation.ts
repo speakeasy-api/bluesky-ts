@@ -7,7 +7,7 @@ import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ComAtprotoIdentitySignPlcOperationBody = {
+export type ComAtprotoIdentitySignPlcOperationRequest = {
   /**
    * A token received through com.atproto.identity.requestPlcOperationSignature
    */
@@ -21,13 +21,13 @@ export type ComAtprotoIdentitySignPlcOperationBody = {
 /**
  * OK
  */
-export type ComAtprotoIdentitySignPlcOperationResponseBody = {
+export type ComAtprotoIdentitySignPlcOperationResponse = {
   operation?: any | undefined;
 };
 
 /** @internal */
-export const ComAtprotoIdentitySignPlcOperationBody$inboundSchema: z.ZodType<
-  ComAtprotoIdentitySignPlcOperationBody,
+export const ComAtprotoIdentitySignPlcOperationRequest$inboundSchema: z.ZodType<
+  ComAtprotoIdentitySignPlcOperationRequest,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -39,7 +39,7 @@ export const ComAtprotoIdentitySignPlcOperationBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type ComAtprotoIdentitySignPlcOperationBody$Outbound = {
+export type ComAtprotoIdentitySignPlcOperationRequest$Outbound = {
   token?: string | undefined;
   rotationKeys?: Array<string> | undefined;
   alsoKnownAs?: Array<string> | undefined;
@@ -48,119 +48,121 @@ export type ComAtprotoIdentitySignPlcOperationBody$Outbound = {
 };
 
 /** @internal */
-export const ComAtprotoIdentitySignPlcOperationBody$outboundSchema: z.ZodType<
-  ComAtprotoIdentitySignPlcOperationBody$Outbound,
-  z.ZodTypeDef,
-  ComAtprotoIdentitySignPlcOperationBody
-> = z.object({
-  token: z.string().optional(),
-  rotationKeys: z.array(z.string()).optional(),
-  alsoKnownAs: z.array(z.string()).optional(),
-  verificationMethods: z.any().optional(),
-  services: z.any().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ComAtprotoIdentitySignPlcOperationBody$ {
-  /** @deprecated use `ComAtprotoIdentitySignPlcOperationBody$inboundSchema` instead. */
-  export const inboundSchema =
-    ComAtprotoIdentitySignPlcOperationBody$inboundSchema;
-  /** @deprecated use `ComAtprotoIdentitySignPlcOperationBody$outboundSchema` instead. */
-  export const outboundSchema =
-    ComAtprotoIdentitySignPlcOperationBody$outboundSchema;
-  /** @deprecated use `ComAtprotoIdentitySignPlcOperationBody$Outbound` instead. */
-  export type Outbound = ComAtprotoIdentitySignPlcOperationBody$Outbound;
-}
-
-export function comAtprotoIdentitySignPlcOperationBodyToJSON(
-  comAtprotoIdentitySignPlcOperationBody:
-    ComAtprotoIdentitySignPlcOperationBody,
-): string {
-  return JSON.stringify(
-    ComAtprotoIdentitySignPlcOperationBody$outboundSchema.parse(
-      comAtprotoIdentitySignPlcOperationBody,
-    ),
-  );
-}
-
-export function comAtprotoIdentitySignPlcOperationBodyFromJSON(
-  jsonString: string,
-): SafeParseResult<ComAtprotoIdentitySignPlcOperationBody, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      ComAtprotoIdentitySignPlcOperationBody$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ComAtprotoIdentitySignPlcOperationBody' from JSON`,
-  );
-}
-
-/** @internal */
-export const ComAtprotoIdentitySignPlcOperationResponseBody$inboundSchema:
+export const ComAtprotoIdentitySignPlcOperationRequest$outboundSchema:
   z.ZodType<
-    ComAtprotoIdentitySignPlcOperationResponseBody,
+    ComAtprotoIdentitySignPlcOperationRequest$Outbound,
     z.ZodTypeDef,
-    unknown
+    ComAtprotoIdentitySignPlcOperationRequest
   > = z.object({
-    operation: z.any().optional(),
-  });
-
-/** @internal */
-export type ComAtprotoIdentitySignPlcOperationResponseBody$Outbound = {
-  operation?: any | undefined;
-};
-
-/** @internal */
-export const ComAtprotoIdentitySignPlcOperationResponseBody$outboundSchema:
-  z.ZodType<
-    ComAtprotoIdentitySignPlcOperationResponseBody$Outbound,
-    z.ZodTypeDef,
-    ComAtprotoIdentitySignPlcOperationResponseBody
-  > = z.object({
-    operation: z.any().optional(),
+    token: z.string().optional(),
+    rotationKeys: z.array(z.string()).optional(),
+    alsoKnownAs: z.array(z.string()).optional(),
+    verificationMethods: z.any().optional(),
+    services: z.any().optional(),
   });
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoIdentitySignPlcOperationResponseBody$ {
-  /** @deprecated use `ComAtprotoIdentitySignPlcOperationResponseBody$inboundSchema` instead. */
+export namespace ComAtprotoIdentitySignPlcOperationRequest$ {
+  /** @deprecated use `ComAtprotoIdentitySignPlcOperationRequest$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoIdentitySignPlcOperationResponseBody$inboundSchema;
-  /** @deprecated use `ComAtprotoIdentitySignPlcOperationResponseBody$outboundSchema` instead. */
+    ComAtprotoIdentitySignPlcOperationRequest$inboundSchema;
+  /** @deprecated use `ComAtprotoIdentitySignPlcOperationRequest$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoIdentitySignPlcOperationResponseBody$outboundSchema;
-  /** @deprecated use `ComAtprotoIdentitySignPlcOperationResponseBody$Outbound` instead. */
-  export type Outbound =
-    ComAtprotoIdentitySignPlcOperationResponseBody$Outbound;
+    ComAtprotoIdentitySignPlcOperationRequest$outboundSchema;
+  /** @deprecated use `ComAtprotoIdentitySignPlcOperationRequest$Outbound` instead. */
+  export type Outbound = ComAtprotoIdentitySignPlcOperationRequest$Outbound;
 }
 
-export function comAtprotoIdentitySignPlcOperationResponseBodyToJSON(
-  comAtprotoIdentitySignPlcOperationResponseBody:
-    ComAtprotoIdentitySignPlcOperationResponseBody,
+export function comAtprotoIdentitySignPlcOperationRequestToJSON(
+  comAtprotoIdentitySignPlcOperationRequest:
+    ComAtprotoIdentitySignPlcOperationRequest,
 ): string {
   return JSON.stringify(
-    ComAtprotoIdentitySignPlcOperationResponseBody$outboundSchema.parse(
-      comAtprotoIdentitySignPlcOperationResponseBody,
+    ComAtprotoIdentitySignPlcOperationRequest$outboundSchema.parse(
+      comAtprotoIdentitySignPlcOperationRequest,
     ),
   );
 }
 
-export function comAtprotoIdentitySignPlcOperationResponseBodyFromJSON(
+export function comAtprotoIdentitySignPlcOperationRequestFromJSON(
   jsonString: string,
 ): SafeParseResult<
-  ComAtprotoIdentitySignPlcOperationResponseBody,
+  ComAtprotoIdentitySignPlcOperationRequest,
   SDKValidationError
 > {
   return safeParse(
     jsonString,
     (x) =>
-      ComAtprotoIdentitySignPlcOperationResponseBody$inboundSchema.parse(
+      ComAtprotoIdentitySignPlcOperationRequest$inboundSchema.parse(
         JSON.parse(x),
       ),
-    `Failed to parse 'ComAtprotoIdentitySignPlcOperationResponseBody' from JSON`,
+    `Failed to parse 'ComAtprotoIdentitySignPlcOperationRequest' from JSON`,
+  );
+}
+
+/** @internal */
+export const ComAtprotoIdentitySignPlcOperationResponse$inboundSchema:
+  z.ZodType<ComAtprotoIdentitySignPlcOperationResponse, z.ZodTypeDef, unknown> =
+    z.object({
+      operation: z.any().optional(),
+    });
+
+/** @internal */
+export type ComAtprotoIdentitySignPlcOperationResponse$Outbound = {
+  operation?: any | undefined;
+};
+
+/** @internal */
+export const ComAtprotoIdentitySignPlcOperationResponse$outboundSchema:
+  z.ZodType<
+    ComAtprotoIdentitySignPlcOperationResponse$Outbound,
+    z.ZodTypeDef,
+    ComAtprotoIdentitySignPlcOperationResponse
+  > = z.object({
+    operation: z.any().optional(),
+  });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace ComAtprotoIdentitySignPlcOperationResponse$ {
+  /** @deprecated use `ComAtprotoIdentitySignPlcOperationResponse$inboundSchema` instead. */
+  export const inboundSchema =
+    ComAtprotoIdentitySignPlcOperationResponse$inboundSchema;
+  /** @deprecated use `ComAtprotoIdentitySignPlcOperationResponse$outboundSchema` instead. */
+  export const outboundSchema =
+    ComAtprotoIdentitySignPlcOperationResponse$outboundSchema;
+  /** @deprecated use `ComAtprotoIdentitySignPlcOperationResponse$Outbound` instead. */
+  export type Outbound = ComAtprotoIdentitySignPlcOperationResponse$Outbound;
+}
+
+export function comAtprotoIdentitySignPlcOperationResponseToJSON(
+  comAtprotoIdentitySignPlcOperationResponse:
+    ComAtprotoIdentitySignPlcOperationResponse,
+): string {
+  return JSON.stringify(
+    ComAtprotoIdentitySignPlcOperationResponse$outboundSchema.parse(
+      comAtprotoIdentitySignPlcOperationResponse,
+    ),
+  );
+}
+
+export function comAtprotoIdentitySignPlcOperationResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  ComAtprotoIdentitySignPlcOperationResponse,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      ComAtprotoIdentitySignPlcOperationResponse$inboundSchema.parse(
+        JSON.parse(x),
+      ),
+    `Failed to parse 'ComAtprotoIdentitySignPlcOperationResponse' from JSON`,
   );
 }

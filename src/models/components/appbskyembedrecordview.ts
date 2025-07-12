@@ -56,50 +56,50 @@ import {
 } from "./appbskylabelerdefslabelerview.js";
 
 export type RecordT =
-  | AppBskyEmbedRecordViewNotFound
-  | AppBskyEmbedRecordViewDetached
-  | AppBskyEmbedRecordViewBlocked
-  | AppBskyLabelerDefsLabelerView
-  | AppBskyGraphDefsStarterPackViewBasic
-  | AppBskyEmbedRecordViewRecord
+  | AppBskyFeedDefsGeneratorView
   | AppBskyGraphDefsListView
-  | AppBskyFeedDefsGeneratorView;
+  | AppBskyEmbedRecordViewRecord
+  | AppBskyGraphDefsStarterPackViewBasic
+  | AppBskyLabelerDefsLabelerView
+  | AppBskyEmbedRecordViewBlocked
+  | AppBskyEmbedRecordViewNotFound
+  | AppBskyEmbedRecordViewDetached;
 
 export type AppBskyEmbedRecordView = {
   record:
-    | AppBskyEmbedRecordViewNotFound
-    | AppBskyEmbedRecordViewDetached
-    | AppBskyEmbedRecordViewBlocked
-    | AppBskyLabelerDefsLabelerView
-    | AppBskyGraphDefsStarterPackViewBasic
-    | AppBskyEmbedRecordViewRecord
+    | AppBskyFeedDefsGeneratorView
     | AppBskyGraphDefsListView
-    | AppBskyFeedDefsGeneratorView;
+    | AppBskyEmbedRecordViewRecord
+    | AppBskyGraphDefsStarterPackViewBasic
+    | AppBskyLabelerDefsLabelerView
+    | AppBskyEmbedRecordViewBlocked
+    | AppBskyEmbedRecordViewNotFound
+    | AppBskyEmbedRecordViewDetached;
 };
 
 /** @internal */
 export const RecordT$inboundSchema: z.ZodType<RecordT, z.ZodTypeDef, unknown> =
   z.union([
+    AppBskyFeedDefsGeneratorView$inboundSchema,
+    AppBskyGraphDefsListView$inboundSchema,
+    z.lazy(() => AppBskyEmbedRecordViewRecord$inboundSchema),
+    AppBskyGraphDefsStarterPackViewBasic$inboundSchema,
+    AppBskyLabelerDefsLabelerView$inboundSchema,
+    AppBskyEmbedRecordViewBlocked$inboundSchema,
     AppBskyEmbedRecordViewNotFound$inboundSchema,
     AppBskyEmbedRecordViewDetached$inboundSchema,
-    AppBskyEmbedRecordViewBlocked$inboundSchema,
-    AppBskyLabelerDefsLabelerView$inboundSchema,
-    AppBskyGraphDefsStarterPackViewBasic$inboundSchema,
-    z.lazy(() => AppBskyEmbedRecordViewRecord$inboundSchema),
-    AppBskyGraphDefsListView$inboundSchema,
-    AppBskyFeedDefsGeneratorView$inboundSchema,
   ]);
 
 /** @internal */
 export type RecordT$Outbound =
-  | AppBskyEmbedRecordViewNotFound$Outbound
-  | AppBskyEmbedRecordViewDetached$Outbound
-  | AppBskyEmbedRecordViewBlocked$Outbound
-  | AppBskyLabelerDefsLabelerView$Outbound
-  | AppBskyGraphDefsStarterPackViewBasic$Outbound
-  | AppBskyEmbedRecordViewRecord$Outbound
+  | AppBskyFeedDefsGeneratorView$Outbound
   | AppBskyGraphDefsListView$Outbound
-  | AppBskyFeedDefsGeneratorView$Outbound;
+  | AppBskyEmbedRecordViewRecord$Outbound
+  | AppBskyGraphDefsStarterPackViewBasic$Outbound
+  | AppBskyLabelerDefsLabelerView$Outbound
+  | AppBskyEmbedRecordViewBlocked$Outbound
+  | AppBskyEmbedRecordViewNotFound$Outbound
+  | AppBskyEmbedRecordViewDetached$Outbound;
 
 /** @internal */
 export const RecordT$outboundSchema: z.ZodType<
@@ -107,14 +107,14 @@ export const RecordT$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   RecordT
 > = z.union([
+  AppBskyFeedDefsGeneratorView$outboundSchema,
+  AppBskyGraphDefsListView$outboundSchema,
+  z.lazy(() => AppBskyEmbedRecordViewRecord$outboundSchema),
+  AppBskyGraphDefsStarterPackViewBasic$outboundSchema,
+  AppBskyLabelerDefsLabelerView$outboundSchema,
+  AppBskyEmbedRecordViewBlocked$outboundSchema,
   AppBskyEmbedRecordViewNotFound$outboundSchema,
   AppBskyEmbedRecordViewDetached$outboundSchema,
-  AppBskyEmbedRecordViewBlocked$outboundSchema,
-  AppBskyLabelerDefsLabelerView$outboundSchema,
-  AppBskyGraphDefsStarterPackViewBasic$outboundSchema,
-  z.lazy(() => AppBskyEmbedRecordViewRecord$outboundSchema),
-  AppBskyGraphDefsListView$outboundSchema,
-  AppBskyFeedDefsGeneratorView$outboundSchema,
 ]);
 
 /**
@@ -151,28 +151,28 @@ export const AppBskyEmbedRecordView$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   record: z.union([
+    AppBskyFeedDefsGeneratorView$inboundSchema,
+    AppBskyGraphDefsListView$inboundSchema,
+    z.lazy(() => AppBskyEmbedRecordViewRecord$inboundSchema),
+    AppBskyGraphDefsStarterPackViewBasic$inboundSchema,
+    AppBskyLabelerDefsLabelerView$inboundSchema,
+    AppBskyEmbedRecordViewBlocked$inboundSchema,
     AppBskyEmbedRecordViewNotFound$inboundSchema,
     AppBskyEmbedRecordViewDetached$inboundSchema,
-    AppBskyEmbedRecordViewBlocked$inboundSchema,
-    AppBskyLabelerDefsLabelerView$inboundSchema,
-    AppBskyGraphDefsStarterPackViewBasic$inboundSchema,
-    z.lazy(() => AppBskyEmbedRecordViewRecord$inboundSchema),
-    AppBskyGraphDefsListView$inboundSchema,
-    AppBskyFeedDefsGeneratorView$inboundSchema,
   ]),
 });
 
 /** @internal */
 export type AppBskyEmbedRecordView$Outbound = {
   record:
-    | AppBskyEmbedRecordViewNotFound$Outbound
-    | AppBskyEmbedRecordViewDetached$Outbound
-    | AppBskyEmbedRecordViewBlocked$Outbound
-    | AppBskyLabelerDefsLabelerView$Outbound
-    | AppBskyGraphDefsStarterPackViewBasic$Outbound
-    | AppBskyEmbedRecordViewRecord$Outbound
+    | AppBskyFeedDefsGeneratorView$Outbound
     | AppBskyGraphDefsListView$Outbound
-    | AppBskyFeedDefsGeneratorView$Outbound;
+    | AppBskyEmbedRecordViewRecord$Outbound
+    | AppBskyGraphDefsStarterPackViewBasic$Outbound
+    | AppBskyLabelerDefsLabelerView$Outbound
+    | AppBskyEmbedRecordViewBlocked$Outbound
+    | AppBskyEmbedRecordViewNotFound$Outbound
+    | AppBskyEmbedRecordViewDetached$Outbound;
 };
 
 /** @internal */
@@ -182,14 +182,14 @@ export const AppBskyEmbedRecordView$outboundSchema: z.ZodType<
   AppBskyEmbedRecordView
 > = z.object({
   record: z.union([
+    AppBskyFeedDefsGeneratorView$outboundSchema,
+    AppBskyGraphDefsListView$outboundSchema,
+    z.lazy(() => AppBskyEmbedRecordViewRecord$outboundSchema),
+    AppBskyGraphDefsStarterPackViewBasic$outboundSchema,
+    AppBskyLabelerDefsLabelerView$outboundSchema,
+    AppBskyEmbedRecordViewBlocked$outboundSchema,
     AppBskyEmbedRecordViewNotFound$outboundSchema,
     AppBskyEmbedRecordViewDetached$outboundSchema,
-    AppBskyEmbedRecordViewBlocked$outboundSchema,
-    AppBskyLabelerDefsLabelerView$outboundSchema,
-    AppBskyGraphDefsStarterPackViewBasic$outboundSchema,
-    z.lazy(() => AppBskyEmbedRecordViewRecord$outboundSchema),
-    AppBskyGraphDefsListView$outboundSchema,
-    AppBskyFeedDefsGeneratorView$outboundSchema,
   ]),
 });
 

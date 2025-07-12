@@ -5,7 +5,7 @@
 ```typescript
 import { AppBskyFeedGetLikesError } from "@speakeasy-sdks/bluesky/models/errors";
 
-let value: AppBskyFeedGetLikesError = "InvalidToken";
+let value: AppBskyFeedGetLikesError = "InvalidRequest";
 ```
 
 ## Values

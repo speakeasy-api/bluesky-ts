@@ -10,13 +10,11 @@ import { ToolsOzoneSetGetValuesResponseBody } from "@speakeasy-sdks/bluesky/mode
 let value: ToolsOzoneSetGetValuesResponseBody = {
   set: {
     name: "<value>",
-    setSize: 342611,
-    createdAt: new Date("2024-11-12T23:09:56.778Z"),
-    updatedAt: new Date("2023-11-02T20:36:11.917Z"),
+    setSize: 498953,
+    createdAt: new Date("2025-06-19T02:32:34.391Z"),
+    updatedAt: new Date("2023-05-11T12:11:29.237Z"),
   },
-  values: [
-    "<value>",
-  ],
+  values: [],
 };
 ```
 

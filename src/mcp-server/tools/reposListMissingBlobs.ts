@@ -12,7 +12,7 @@ const args = {
 };
 
 export const tool$reposListMissingBlobs: ToolDefinition<typeof args> = {
-  name: "repos_list-missing-blobs",
+  name: "repos-list-missing-blobs",
   description:
     `*This endpoint is part of the atproto PDS repository management APIs. Requests usually require authentication (unlike the \`com.atproto.sync.*\` endpoints), and are made directly to the user's own PDS instance.*
 

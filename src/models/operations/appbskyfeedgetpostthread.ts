@@ -24,18 +24,18 @@ export type AppBskyFeedGetPostThreadRequest = {
 };
 
 export type Thread =
-  | components.AppBskyFeedDefsNotFoundPost
+  | components.AppBskyFeedDefsBlockedPost
   | components.AppBskyFeedDefsThreadViewPost
-  | components.AppBskyFeedDefsBlockedPost;
+  | components.AppBskyFeedDefsNotFoundPost;
 
 /**
  * OK
  */
-export type AppBskyFeedGetPostThreadResponseBody = {
+export type AppBskyFeedGetPostThreadResponse = {
   thread:
-    | components.AppBskyFeedDefsNotFoundPost
+    | components.AppBskyFeedDefsBlockedPost
     | components.AppBskyFeedDefsThreadViewPost
-    | components.AppBskyFeedDefsBlockedPost;
+    | components.AppBskyFeedDefsNotFoundPost;
   threadgate?: components.AppBskyFeedDefsThreadgateView | undefined;
 };
 
@@ -104,16 +104,16 @@ export function appBskyFeedGetPostThreadRequestFromJSON(
 /** @internal */
 export const Thread$inboundSchema: z.ZodType<Thread, z.ZodTypeDef, unknown> = z
   .union([
-    components.AppBskyFeedDefsNotFoundPost$inboundSchema,
-    components.AppBskyFeedDefsThreadViewPost$inboundSchema,
     components.AppBskyFeedDefsBlockedPost$inboundSchema,
+    components.AppBskyFeedDefsThreadViewPost$inboundSchema,
+    components.AppBskyFeedDefsNotFoundPost$inboundSchema,
   ]);
 
 /** @internal */
 export type Thread$Outbound =
-  | components.AppBskyFeedDefsNotFoundPost$Outbound
+  | components.AppBskyFeedDefsBlockedPost$Outbound
   | components.AppBskyFeedDefsThreadViewPost$Outbound
-  | components.AppBskyFeedDefsBlockedPost$Outbound;
+  | components.AppBskyFeedDefsNotFoundPost$Outbound;
 
 /** @internal */
 export const Thread$outboundSchema: z.ZodType<
@@ -121,9 +121,9 @@ export const Thread$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   Thread
 > = z.union([
-  components.AppBskyFeedDefsNotFoundPost$outboundSchema,
-  components.AppBskyFeedDefsThreadViewPost$outboundSchema,
   components.AppBskyFeedDefsBlockedPost$outboundSchema,
+  components.AppBskyFeedDefsThreadViewPost$outboundSchema,
+  components.AppBskyFeedDefsNotFoundPost$outboundSchema,
 ]);
 
 /**
@@ -154,38 +154,38 @@ export function threadFromJSON(
 }
 
 /** @internal */
-export const AppBskyFeedGetPostThreadResponseBody$inboundSchema: z.ZodType<
-  AppBskyFeedGetPostThreadResponseBody,
+export const AppBskyFeedGetPostThreadResponse$inboundSchema: z.ZodType<
+  AppBskyFeedGetPostThreadResponse,
   z.ZodTypeDef,
   unknown
 > = z.object({
   thread: z.union([
-    components.AppBskyFeedDefsNotFoundPost$inboundSchema,
-    components.AppBskyFeedDefsThreadViewPost$inboundSchema,
     components.AppBskyFeedDefsBlockedPost$inboundSchema,
+    components.AppBskyFeedDefsThreadViewPost$inboundSchema,
+    components.AppBskyFeedDefsNotFoundPost$inboundSchema,
   ]),
   threadgate: components.AppBskyFeedDefsThreadgateView$inboundSchema.optional(),
 });
 
 /** @internal */
-export type AppBskyFeedGetPostThreadResponseBody$Outbound = {
+export type AppBskyFeedGetPostThreadResponse$Outbound = {
   thread:
-    | components.AppBskyFeedDefsNotFoundPost$Outbound
+    | components.AppBskyFeedDefsBlockedPost$Outbound
     | components.AppBskyFeedDefsThreadViewPost$Outbound
-    | components.AppBskyFeedDefsBlockedPost$Outbound;
+    | components.AppBskyFeedDefsNotFoundPost$Outbound;
   threadgate?: components.AppBskyFeedDefsThreadgateView$Outbound | undefined;
 };
 
 /** @internal */
-export const AppBskyFeedGetPostThreadResponseBody$outboundSchema: z.ZodType<
-  AppBskyFeedGetPostThreadResponseBody$Outbound,
+export const AppBskyFeedGetPostThreadResponse$outboundSchema: z.ZodType<
+  AppBskyFeedGetPostThreadResponse$Outbound,
   z.ZodTypeDef,
-  AppBskyFeedGetPostThreadResponseBody
+  AppBskyFeedGetPostThreadResponse
 > = z.object({
   thread: z.union([
-    components.AppBskyFeedDefsNotFoundPost$outboundSchema,
-    components.AppBskyFeedDefsThreadViewPost$outboundSchema,
     components.AppBskyFeedDefsBlockedPost$outboundSchema,
+    components.AppBskyFeedDefsThreadViewPost$outboundSchema,
+    components.AppBskyFeedDefsNotFoundPost$outboundSchema,
   ]),
   threadgate: components.AppBskyFeedDefsThreadgateView$outboundSchema
     .optional(),
@@ -195,34 +195,31 @@ export const AppBskyFeedGetPostThreadResponseBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyFeedGetPostThreadResponseBody$ {
-  /** @deprecated use `AppBskyFeedGetPostThreadResponseBody$inboundSchema` instead. */
-  export const inboundSchema =
-    AppBskyFeedGetPostThreadResponseBody$inboundSchema;
-  /** @deprecated use `AppBskyFeedGetPostThreadResponseBody$outboundSchema` instead. */
-  export const outboundSchema =
-    AppBskyFeedGetPostThreadResponseBody$outboundSchema;
-  /** @deprecated use `AppBskyFeedGetPostThreadResponseBody$Outbound` instead. */
-  export type Outbound = AppBskyFeedGetPostThreadResponseBody$Outbound;
+export namespace AppBskyFeedGetPostThreadResponse$ {
+  /** @deprecated use `AppBskyFeedGetPostThreadResponse$inboundSchema` instead. */
+  export const inboundSchema = AppBskyFeedGetPostThreadResponse$inboundSchema;
+  /** @deprecated use `AppBskyFeedGetPostThreadResponse$outboundSchema` instead. */
+  export const outboundSchema = AppBskyFeedGetPostThreadResponse$outboundSchema;
+  /** @deprecated use `AppBskyFeedGetPostThreadResponse$Outbound` instead. */
+  export type Outbound = AppBskyFeedGetPostThreadResponse$Outbound;
 }
 
-export function appBskyFeedGetPostThreadResponseBodyToJSON(
-  appBskyFeedGetPostThreadResponseBody: AppBskyFeedGetPostThreadResponseBody,
+export function appBskyFeedGetPostThreadResponseToJSON(
+  appBskyFeedGetPostThreadResponse: AppBskyFeedGetPostThreadResponse,
 ): string {
   return JSON.stringify(
-    AppBskyFeedGetPostThreadResponseBody$outboundSchema.parse(
-      appBskyFeedGetPostThreadResponseBody,
+    AppBskyFeedGetPostThreadResponse$outboundSchema.parse(
+      appBskyFeedGetPostThreadResponse,
     ),
   );
 }
 
-export function appBskyFeedGetPostThreadResponseBodyFromJSON(
+export function appBskyFeedGetPostThreadResponseFromJSON(
   jsonString: string,
-): SafeParseResult<AppBskyFeedGetPostThreadResponseBody, SDKValidationError> {
+): SafeParseResult<AppBskyFeedGetPostThreadResponse, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) =>
-      AppBskyFeedGetPostThreadResponseBody$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'AppBskyFeedGetPostThreadResponseBody' from JSON`,
+    (x) => AppBskyFeedGetPostThreadResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AppBskyFeedGetPostThreadResponse' from JSON`,
   );
 }

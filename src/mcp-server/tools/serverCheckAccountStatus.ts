@@ -6,7 +6,7 @@ import { serverCheckAccountStatus } from "../../funcs/serverCheckAccountStatus.j
 import { formatResult, ToolDefinition } from "../tools.js";
 
 export const tool$serverCheckAccountStatus: ToolDefinition = {
-  name: "server_check-account-status",
+  name: "server-check-account-status",
   description:
     `*This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 

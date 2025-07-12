@@ -7,9 +7,9 @@ import { AppBskyActorDefsSavedFeed } from "@speakeasy-sdks/bluesky/models/compon
 
 let value: AppBskyActorDefsSavedFeed = {
   id: "<id>",
-  type: "feed",
+  type: "list",
   value: "<value>",
-  pinned: false,
+  pinned: true,
 };
 ```
 

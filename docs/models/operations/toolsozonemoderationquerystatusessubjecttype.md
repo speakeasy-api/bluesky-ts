@@ -7,7 +7,7 @@ If specified, subjects of the given type (account or record) will be returned. W
 ```typescript
 import { ToolsOzoneModerationQueryStatusesSubjectType } from "@speakeasy-sdks/bluesky/models/operations";
 
-let value: ToolsOzoneModerationQueryStatusesSubjectType = "account";
+let value: ToolsOzoneModerationQueryStatusesSubjectType = "record";
 ```
 
 ## Values

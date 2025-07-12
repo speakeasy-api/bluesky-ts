@@ -7,7 +7,7 @@ import { AppBskyActorDefsHiddenPostsPref } from "@speakeasy-sdks/bluesky/models/
 
 let value: AppBskyActorDefsHiddenPostsPref = {
   items: [
-    "https://bare-bar.org/",
+    "https://utilized-hubris.name",
   ],
 };
 ```

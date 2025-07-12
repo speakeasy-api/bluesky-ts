@@ -6,14 +6,14 @@
 import { ToolsOzoneModerationDefsSubjectStatusView } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: ToolsOzoneModerationDefsSubjectStatusView = {
-  id: 487148,
+  id: 596882,
   subject: {
-    uri: "https://close-airman.org",
+    uri: "https://reflecting-outlaw.org",
     cid: "<id>",
   },
-  updatedAt: new Date("2024-08-11T17:43:22.964Z"),
-  createdAt: new Date("2023-08-08T09:47:41.350Z"),
-  reviewState: "#reviewClosed",
+  updatedAt: new Date("2024-02-18T06:36:09.760Z"),
+  createdAt: new Date("2025-03-03T01:15:44.379Z"),
+  reviewState: "#reviewOpen",
 };
 ```
 

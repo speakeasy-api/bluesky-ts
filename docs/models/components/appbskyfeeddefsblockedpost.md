@@ -6,7 +6,7 @@
 import { AppBskyFeedDefsBlockedPost } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: AppBskyFeedDefsBlockedPost = {
-  uri: "https://shadowy-filter.net",
+  uri: "https://silent-travel.biz",
   author: {
     did: "<id>",
   },

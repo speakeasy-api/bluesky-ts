@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoServerGetSessionError } from "@speakeasy-sdks/bluesky/models/errors";
 
-let value: ComAtprotoServerGetSessionError = "InvalidToken";
+let value: ComAtprotoServerGetSessionError = "ExpiredToken";
 ```
 
 ## Values

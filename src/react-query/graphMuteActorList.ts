@@ -17,7 +17,7 @@ import { useBlueskyContext } from "./_context.js";
 import { MutationHookOptions } from "./_types.js";
 
 export type GraphMuteActorListMutationVariables = {
-  request: operations.AppBskyGraphMuteActorListBody;
+  request: operations.AppBskyGraphMuteActorListRequest;
   options?: RequestOptions;
 };
 

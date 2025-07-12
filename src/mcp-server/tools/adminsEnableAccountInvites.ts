@@ -7,11 +7,11 @@ import * as operations from "../../models/operations/index.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
 const args = {
-  request: operations.ComAtprotoAdminEnableAccountInvitesBody$inboundSchema,
+  request: operations.ComAtprotoAdminEnableAccountInvitesRequest$inboundSchema,
 };
 
 export const tool$adminsEnableAccountInvites: ToolDefinition<typeof args> = {
-  name: "admins_enable-account-invites",
+  name: "admins-enable-account-invites",
   description:
     `*This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
 

@@ -5,7 +5,7 @@
 ```typescript
 import { ToolsOzoneSettingRemoveOptionsScope } from "@speakeasy-sdks/bluesky/models/operations";
 
-let value: ToolsOzoneSettingRemoveOptionsScope = "instance";
+let value: ToolsOzoneSettingRemoveOptionsScope = "personal";
 ```
 
 ## Values

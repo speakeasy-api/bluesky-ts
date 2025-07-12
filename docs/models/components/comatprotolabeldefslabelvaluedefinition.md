@@ -9,13 +9,14 @@ import { ComAtprotoLabelDefsLabelValueDefinition } from "@speakeasy-sdks/bluesky
 
 let value: ComAtprotoLabelDefsLabelValueDefinition = {
   identifier: "<value>",
-  severity: "none",
-  blurs: "media",
+  severity: "inform",
+  blurs: "none",
   locales: [
     {
       lang: "<value>",
       name: "<value>",
-      description: "whereas merit loosely fumigate duster",
+      description:
+        "vice via below misappropriate custody reorient what ha needily hmph",
     },
   ],
 };

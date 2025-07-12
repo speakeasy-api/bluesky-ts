@@ -8,10 +8,8 @@ import { ToolsOzoneModerationDefsRepoViewDetail } from "@speakeasy-sdks/bluesky/
 let value: ToolsOzoneModerationDefsRepoViewDetail = {
   did: "<id>",
   handle: "<value>",
-  relatedRecords: [
-    "<value>",
-  ],
-  indexedAt: new Date("2025-10-31T20:18:29.852Z"),
+  relatedRecords: [],
+  indexedAt: new Date("2025-03-15T03:13:30.911Z"),
   moderation: {},
 };
 ```

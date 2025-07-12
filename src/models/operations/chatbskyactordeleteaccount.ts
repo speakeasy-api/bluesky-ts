@@ -13,7 +13,7 @@ export type ChatBskyActorDeleteAccountUnknown = {};
 /**
  * OK
  */
-export type ChatBskyActorDeleteAccountResponseBody = {
+export type ChatBskyActorDeleteAccountResponse = {
   unknown?: ChatBskyActorDeleteAccountUnknown | undefined;
 };
 
@@ -69,8 +69,8 @@ export function chatBskyActorDeleteAccountUnknownFromJSON(
 }
 
 /** @internal */
-export const ChatBskyActorDeleteAccountResponseBody$inboundSchema: z.ZodType<
-  ChatBskyActorDeleteAccountResponseBody,
+export const ChatBskyActorDeleteAccountResponse$inboundSchema: z.ZodType<
+  ChatBskyActorDeleteAccountResponse,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -83,15 +83,15 @@ export const ChatBskyActorDeleteAccountResponseBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type ChatBskyActorDeleteAccountResponseBody$Outbound = {
+export type ChatBskyActorDeleteAccountResponse$Outbound = {
   _unknown_?: ChatBskyActorDeleteAccountUnknown$Outbound | undefined;
 };
 
 /** @internal */
-export const ChatBskyActorDeleteAccountResponseBody$outboundSchema: z.ZodType<
-  ChatBskyActorDeleteAccountResponseBody$Outbound,
+export const ChatBskyActorDeleteAccountResponse$outboundSchema: z.ZodType<
+  ChatBskyActorDeleteAccountResponse$Outbound,
   z.ZodTypeDef,
-  ChatBskyActorDeleteAccountResponseBody
+  ChatBskyActorDeleteAccountResponse
 > = z.object({
   unknown: z.lazy(() => ChatBskyActorDeleteAccountUnknown$outboundSchema)
     .optional(),
@@ -105,35 +105,33 @@ export const ChatBskyActorDeleteAccountResponseBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ChatBskyActorDeleteAccountResponseBody$ {
-  /** @deprecated use `ChatBskyActorDeleteAccountResponseBody$inboundSchema` instead. */
-  export const inboundSchema =
-    ChatBskyActorDeleteAccountResponseBody$inboundSchema;
-  /** @deprecated use `ChatBskyActorDeleteAccountResponseBody$outboundSchema` instead. */
+export namespace ChatBskyActorDeleteAccountResponse$ {
+  /** @deprecated use `ChatBskyActorDeleteAccountResponse$inboundSchema` instead. */
+  export const inboundSchema = ChatBskyActorDeleteAccountResponse$inboundSchema;
+  /** @deprecated use `ChatBskyActorDeleteAccountResponse$outboundSchema` instead. */
   export const outboundSchema =
-    ChatBskyActorDeleteAccountResponseBody$outboundSchema;
-  /** @deprecated use `ChatBskyActorDeleteAccountResponseBody$Outbound` instead. */
-  export type Outbound = ChatBskyActorDeleteAccountResponseBody$Outbound;
+    ChatBskyActorDeleteAccountResponse$outboundSchema;
+  /** @deprecated use `ChatBskyActorDeleteAccountResponse$Outbound` instead. */
+  export type Outbound = ChatBskyActorDeleteAccountResponse$Outbound;
 }
 
-export function chatBskyActorDeleteAccountResponseBodyToJSON(
-  chatBskyActorDeleteAccountResponseBody:
-    ChatBskyActorDeleteAccountResponseBody,
+export function chatBskyActorDeleteAccountResponseToJSON(
+  chatBskyActorDeleteAccountResponse: ChatBskyActorDeleteAccountResponse,
 ): string {
   return JSON.stringify(
-    ChatBskyActorDeleteAccountResponseBody$outboundSchema.parse(
-      chatBskyActorDeleteAccountResponseBody,
+    ChatBskyActorDeleteAccountResponse$outboundSchema.parse(
+      chatBskyActorDeleteAccountResponse,
     ),
   );
 }
 
-export function chatBskyActorDeleteAccountResponseBodyFromJSON(
+export function chatBskyActorDeleteAccountResponseFromJSON(
   jsonString: string,
-): SafeParseResult<ChatBskyActorDeleteAccountResponseBody, SDKValidationError> {
+): SafeParseResult<ChatBskyActorDeleteAccountResponse, SDKValidationError> {
   return safeParse(
     jsonString,
     (x) =>
-      ChatBskyActorDeleteAccountResponseBody$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ChatBskyActorDeleteAccountResponseBody' from JSON`,
+      ChatBskyActorDeleteAccountResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ChatBskyActorDeleteAccountResponse' from JSON`,
   );
 }

@@ -7,71 +7,73 @@ import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ComAtprotoServerRequestPasswordResetBody = {
+export type ComAtprotoServerRequestPasswordResetRequest = {
   email: string;
 };
 
 /** @internal */
-export const ComAtprotoServerRequestPasswordResetBody$inboundSchema: z.ZodType<
-  ComAtprotoServerRequestPasswordResetBody,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  email: z.string(),
-});
+export const ComAtprotoServerRequestPasswordResetRequest$inboundSchema:
+  z.ZodType<
+    ComAtprotoServerRequestPasswordResetRequest,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    email: z.string(),
+  });
 
 /** @internal */
-export type ComAtprotoServerRequestPasswordResetBody$Outbound = {
+export type ComAtprotoServerRequestPasswordResetRequest$Outbound = {
   email: string;
 };
 
 /** @internal */
-export const ComAtprotoServerRequestPasswordResetBody$outboundSchema: z.ZodType<
-  ComAtprotoServerRequestPasswordResetBody$Outbound,
-  z.ZodTypeDef,
-  ComAtprotoServerRequestPasswordResetBody
-> = z.object({
-  email: z.string(),
-});
+export const ComAtprotoServerRequestPasswordResetRequest$outboundSchema:
+  z.ZodType<
+    ComAtprotoServerRequestPasswordResetRequest$Outbound,
+    z.ZodTypeDef,
+    ComAtprotoServerRequestPasswordResetRequest
+  > = z.object({
+    email: z.string(),
+  });
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoServerRequestPasswordResetBody$ {
-  /** @deprecated use `ComAtprotoServerRequestPasswordResetBody$inboundSchema` instead. */
+export namespace ComAtprotoServerRequestPasswordResetRequest$ {
+  /** @deprecated use `ComAtprotoServerRequestPasswordResetRequest$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoServerRequestPasswordResetBody$inboundSchema;
-  /** @deprecated use `ComAtprotoServerRequestPasswordResetBody$outboundSchema` instead. */
+    ComAtprotoServerRequestPasswordResetRequest$inboundSchema;
+  /** @deprecated use `ComAtprotoServerRequestPasswordResetRequest$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoServerRequestPasswordResetBody$outboundSchema;
-  /** @deprecated use `ComAtprotoServerRequestPasswordResetBody$Outbound` instead. */
-  export type Outbound = ComAtprotoServerRequestPasswordResetBody$Outbound;
+    ComAtprotoServerRequestPasswordResetRequest$outboundSchema;
+  /** @deprecated use `ComAtprotoServerRequestPasswordResetRequest$Outbound` instead. */
+  export type Outbound = ComAtprotoServerRequestPasswordResetRequest$Outbound;
 }
 
-export function comAtprotoServerRequestPasswordResetBodyToJSON(
-  comAtprotoServerRequestPasswordResetBody:
-    ComAtprotoServerRequestPasswordResetBody,
+export function comAtprotoServerRequestPasswordResetRequestToJSON(
+  comAtprotoServerRequestPasswordResetRequest:
+    ComAtprotoServerRequestPasswordResetRequest,
 ): string {
   return JSON.stringify(
-    ComAtprotoServerRequestPasswordResetBody$outboundSchema.parse(
-      comAtprotoServerRequestPasswordResetBody,
+    ComAtprotoServerRequestPasswordResetRequest$outboundSchema.parse(
+      comAtprotoServerRequestPasswordResetRequest,
     ),
   );
 }
 
-export function comAtprotoServerRequestPasswordResetBodyFromJSON(
+export function comAtprotoServerRequestPasswordResetRequestFromJSON(
   jsonString: string,
 ): SafeParseResult<
-  ComAtprotoServerRequestPasswordResetBody,
+  ComAtprotoServerRequestPasswordResetRequest,
   SDKValidationError
 > {
   return safeParse(
     jsonString,
     (x) =>
-      ComAtprotoServerRequestPasswordResetBody$inboundSchema.parse(
+      ComAtprotoServerRequestPasswordResetRequest$inboundSchema.parse(
         JSON.parse(x),
       ),
-    `Failed to parse 'ComAtprotoServerRequestPasswordResetBody' from JSON`,
+    `Failed to parse 'ComAtprotoServerRequestPasswordResetRequest' from JSON`,
   );
 }

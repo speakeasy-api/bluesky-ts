@@ -62,11 +62,11 @@ import {
 } from "./comatprotolabeldefslabel.js";
 
 export type AppBskyFeedDefsPostViewEmbed =
+  | AppBskyEmbedVideoView
+  | AppBskyEmbedRecordWithMediaView
   | AppBskyEmbedImagesView
   | AppBskyEmbedExternalView
-  | AppBskyEmbedRecordView
-  | AppBskyEmbedRecordWithMediaView
-  | AppBskyEmbedVideoView;
+  | AppBskyEmbedRecordView;
 
 export type AppBskyFeedDefsPostView = {
   uri: string;
@@ -74,11 +74,11 @@ export type AppBskyFeedDefsPostView = {
   author: AppBskyActorDefsProfileViewBasic;
   record?: any | undefined;
   embed?:
+    | AppBskyEmbedVideoView
+    | AppBskyEmbedRecordWithMediaView
     | AppBskyEmbedImagesView
     | AppBskyEmbedExternalView
     | AppBskyEmbedRecordView
-    | AppBskyEmbedRecordWithMediaView
-    | AppBskyEmbedVideoView
     | undefined;
   replyCount?: number | undefined;
   repostCount?: number | undefined;
@@ -99,20 +99,20 @@ export const AppBskyFeedDefsPostViewEmbed$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.union([
+  AppBskyEmbedVideoView$inboundSchema,
+  AppBskyEmbedRecordWithMediaView$inboundSchema,
   AppBskyEmbedImagesView$inboundSchema,
   AppBskyEmbedExternalView$inboundSchema,
   AppBskyEmbedRecordView$inboundSchema,
-  AppBskyEmbedRecordWithMediaView$inboundSchema,
-  AppBskyEmbedVideoView$inboundSchema,
 ]);
 
 /** @internal */
 export type AppBskyFeedDefsPostViewEmbed$Outbound =
+  | AppBskyEmbedVideoView$Outbound
+  | AppBskyEmbedRecordWithMediaView$Outbound
   | AppBskyEmbedImagesView$Outbound
   | AppBskyEmbedExternalView$Outbound
-  | AppBskyEmbedRecordView$Outbound
-  | AppBskyEmbedRecordWithMediaView$Outbound
-  | AppBskyEmbedVideoView$Outbound;
+  | AppBskyEmbedRecordView$Outbound;
 
 /** @internal */
 export const AppBskyFeedDefsPostViewEmbed$outboundSchema: z.ZodType<
@@ -120,11 +120,11 @@ export const AppBskyFeedDefsPostViewEmbed$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   AppBskyFeedDefsPostViewEmbed
 > = z.union([
+  AppBskyEmbedVideoView$outboundSchema,
+  AppBskyEmbedRecordWithMediaView$outboundSchema,
   AppBskyEmbedImagesView$outboundSchema,
   AppBskyEmbedExternalView$outboundSchema,
   AppBskyEmbedRecordView$outboundSchema,
-  AppBskyEmbedRecordWithMediaView$outboundSchema,
-  AppBskyEmbedVideoView$outboundSchema,
 ]);
 
 /**
@@ -171,11 +171,11 @@ export const AppBskyFeedDefsPostView$inboundSchema: z.ZodType<
   author: AppBskyActorDefsProfileViewBasic$inboundSchema,
   record: z.any().optional(),
   embed: z.union([
+    AppBskyEmbedVideoView$inboundSchema,
+    AppBskyEmbedRecordWithMediaView$inboundSchema,
     AppBskyEmbedImagesView$inboundSchema,
     AppBskyEmbedExternalView$inboundSchema,
     AppBskyEmbedRecordView$inboundSchema,
-    AppBskyEmbedRecordWithMediaView$inboundSchema,
-    AppBskyEmbedVideoView$inboundSchema,
   ]).optional(),
   replyCount: z.number().int().optional(),
   repostCount: z.number().int().optional(),
@@ -194,11 +194,11 @@ export type AppBskyFeedDefsPostView$Outbound = {
   author: AppBskyActorDefsProfileViewBasic$Outbound;
   record?: any | undefined;
   embed?:
+    | AppBskyEmbedVideoView$Outbound
+    | AppBskyEmbedRecordWithMediaView$Outbound
     | AppBskyEmbedImagesView$Outbound
     | AppBskyEmbedExternalView$Outbound
     | AppBskyEmbedRecordView$Outbound
-    | AppBskyEmbedRecordWithMediaView$Outbound
-    | AppBskyEmbedVideoView$Outbound
     | undefined;
   replyCount?: number | undefined;
   repostCount?: number | undefined;
@@ -221,11 +221,11 @@ export const AppBskyFeedDefsPostView$outboundSchema: z.ZodType<
   author: AppBskyActorDefsProfileViewBasic$outboundSchema,
   record: z.any().optional(),
   embed: z.union([
+    AppBskyEmbedVideoView$outboundSchema,
+    AppBskyEmbedRecordWithMediaView$outboundSchema,
     AppBskyEmbedImagesView$outboundSchema,
     AppBskyEmbedExternalView$outboundSchema,
     AppBskyEmbedRecordView$outboundSchema,
-    AppBskyEmbedRecordWithMediaView$outboundSchema,
-    AppBskyEmbedVideoView$outboundSchema,
   ]).optional(),
   replyCount: z.number().int().optional(),
   repostCount: z.number().int().optional(),

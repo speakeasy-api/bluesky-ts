@@ -6,7 +6,7 @@
 import { AppBskyGraphGetListRequest } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: AppBskyGraphGetListRequest = {
-  list: "https://that-premeditation.biz/",
+  list: "https://parched-alliance.biz",
 };
 ```
 

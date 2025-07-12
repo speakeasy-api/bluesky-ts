@@ -18,9 +18,9 @@ export class AtprotoRepo extends ClientSDK {
    * Delete a repository record, or ensure it doesn't exist. Requires auth, implemented by PDS.
    */
   async delete(
-    request: operations.ComAtprotoRepoDeleteRecordBody,
+    request: operations.ComAtprotoRepoDeleteRecordRequest,
     options?: RequestOptions,
-  ): Promise<operations.ComAtprotoRepoDeleteRecordResponseBody> {
+  ): Promise<operations.ComAtprotoRepoDeleteRecordResponse> {
     return unwrapAsync(atprotoRepoDelete(
       this,
       request,
@@ -56,7 +56,7 @@ export class AtprotoRepo extends ClientSDK {
   async uploadBlob(
     request: ReadableStream<Uint8Array> | Blob | ArrayBuffer | Uint8Array,
     options?: RequestOptions,
-  ): Promise<operations.ComAtprotoRepoUploadBlobResponseBody> {
+  ): Promise<operations.ComAtprotoRepoUploadBlobResponse> {
     return unwrapAsync(atprotoRepoUploadBlob(
       this,
       request,

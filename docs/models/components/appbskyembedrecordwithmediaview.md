@@ -8,24 +8,16 @@ import { AppBskyEmbedRecordWithMediaView } from "@speakeasy-sdks/bluesky/models/
 let value: AppBskyEmbedRecordWithMediaView = {
   record: {
     record: {
-      uri: "https://crooked-cd.org",
-      cid: "<id>",
-      record: "<value>",
-      creator: {
-        did: "<id>",
-        handle: "<value>",
-      },
-      indexedAt: new Date("2023-11-02T01:04:07.129Z"),
+      uri: "https://immediate-developmental.biz/",
+      notFound: true,
     },
   },
   media: {
-    images: [
-      {
-        thumb: "https://charming-divine.org",
-        fullsize: "https://miserly-grouper.net",
-        alt: "<value>",
-      },
-    ],
+    external: {
+      uri: "https://weary-cinder.org",
+      title: "<value>",
+      description: "whereas madly phooey exploration joyously gadzooks",
+    },
   },
 };
 ```

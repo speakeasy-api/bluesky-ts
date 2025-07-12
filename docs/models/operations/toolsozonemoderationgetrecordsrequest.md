@@ -7,7 +7,7 @@ import { ToolsOzoneModerationGetRecordsRequest } from "@speakeasy-sdks/bluesky/m
 
 let value: ToolsOzoneModerationGetRecordsRequest = {
   uris: [
-    "https://young-icebreaker.com",
+    "https://dreary-bob.com",
   ],
 };
 ```

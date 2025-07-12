@@ -11,87 +11,83 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 /**
  * OK
  */
-export type AppBskyFeedDescribeFeedGeneratorResponseBody = {
+export type AppBskyFeedDescribeFeedGeneratorResponse = {
   did: string;
   feeds: Array<components.AppBskyFeedDescribeFeedGeneratorFeed>;
   links?: components.AppBskyFeedDescribeFeedGeneratorLinks | undefined;
 };
 
 /** @internal */
-export const AppBskyFeedDescribeFeedGeneratorResponseBody$inboundSchema:
-  z.ZodType<
-    AppBskyFeedDescribeFeedGeneratorResponseBody,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    did: z.string(),
-    feeds: z.array(
-      components.AppBskyFeedDescribeFeedGeneratorFeed$inboundSchema,
-    ),
-    links: components.AppBskyFeedDescribeFeedGeneratorLinks$inboundSchema
-      .optional(),
-  });
+export const AppBskyFeedDescribeFeedGeneratorResponse$inboundSchema: z.ZodType<
+  AppBskyFeedDescribeFeedGeneratorResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  did: z.string(),
+  feeds: z.array(components.AppBskyFeedDescribeFeedGeneratorFeed$inboundSchema),
+  links: components.AppBskyFeedDescribeFeedGeneratorLinks$inboundSchema
+    .optional(),
+});
 
 /** @internal */
-export type AppBskyFeedDescribeFeedGeneratorResponseBody$Outbound = {
+export type AppBskyFeedDescribeFeedGeneratorResponse$Outbound = {
   did: string;
   feeds: Array<components.AppBskyFeedDescribeFeedGeneratorFeed$Outbound>;
   links?: components.AppBskyFeedDescribeFeedGeneratorLinks$Outbound | undefined;
 };
 
 /** @internal */
-export const AppBskyFeedDescribeFeedGeneratorResponseBody$outboundSchema:
-  z.ZodType<
-    AppBskyFeedDescribeFeedGeneratorResponseBody$Outbound,
-    z.ZodTypeDef,
-    AppBskyFeedDescribeFeedGeneratorResponseBody
-  > = z.object({
-    did: z.string(),
-    feeds: z.array(
-      components.AppBskyFeedDescribeFeedGeneratorFeed$outboundSchema,
-    ),
-    links: components.AppBskyFeedDescribeFeedGeneratorLinks$outboundSchema
-      .optional(),
-  });
+export const AppBskyFeedDescribeFeedGeneratorResponse$outboundSchema: z.ZodType<
+  AppBskyFeedDescribeFeedGeneratorResponse$Outbound,
+  z.ZodTypeDef,
+  AppBskyFeedDescribeFeedGeneratorResponse
+> = z.object({
+  did: z.string(),
+  feeds: z.array(
+    components.AppBskyFeedDescribeFeedGeneratorFeed$outboundSchema,
+  ),
+  links: components.AppBskyFeedDescribeFeedGeneratorLinks$outboundSchema
+    .optional(),
+});
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyFeedDescribeFeedGeneratorResponseBody$ {
-  /** @deprecated use `AppBskyFeedDescribeFeedGeneratorResponseBody$inboundSchema` instead. */
+export namespace AppBskyFeedDescribeFeedGeneratorResponse$ {
+  /** @deprecated use `AppBskyFeedDescribeFeedGeneratorResponse$inboundSchema` instead. */
   export const inboundSchema =
-    AppBskyFeedDescribeFeedGeneratorResponseBody$inboundSchema;
-  /** @deprecated use `AppBskyFeedDescribeFeedGeneratorResponseBody$outboundSchema` instead. */
+    AppBskyFeedDescribeFeedGeneratorResponse$inboundSchema;
+  /** @deprecated use `AppBskyFeedDescribeFeedGeneratorResponse$outboundSchema` instead. */
   export const outboundSchema =
-    AppBskyFeedDescribeFeedGeneratorResponseBody$outboundSchema;
-  /** @deprecated use `AppBskyFeedDescribeFeedGeneratorResponseBody$Outbound` instead. */
-  export type Outbound = AppBskyFeedDescribeFeedGeneratorResponseBody$Outbound;
+    AppBskyFeedDescribeFeedGeneratorResponse$outboundSchema;
+  /** @deprecated use `AppBskyFeedDescribeFeedGeneratorResponse$Outbound` instead. */
+  export type Outbound = AppBskyFeedDescribeFeedGeneratorResponse$Outbound;
 }
 
-export function appBskyFeedDescribeFeedGeneratorResponseBodyToJSON(
-  appBskyFeedDescribeFeedGeneratorResponseBody:
-    AppBskyFeedDescribeFeedGeneratorResponseBody,
+export function appBskyFeedDescribeFeedGeneratorResponseToJSON(
+  appBskyFeedDescribeFeedGeneratorResponse:
+    AppBskyFeedDescribeFeedGeneratorResponse,
 ): string {
   return JSON.stringify(
-    AppBskyFeedDescribeFeedGeneratorResponseBody$outboundSchema.parse(
-      appBskyFeedDescribeFeedGeneratorResponseBody,
+    AppBskyFeedDescribeFeedGeneratorResponse$outboundSchema.parse(
+      appBskyFeedDescribeFeedGeneratorResponse,
     ),
   );
 }
 
-export function appBskyFeedDescribeFeedGeneratorResponseBodyFromJSON(
+export function appBskyFeedDescribeFeedGeneratorResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
-  AppBskyFeedDescribeFeedGeneratorResponseBody,
+  AppBskyFeedDescribeFeedGeneratorResponse,
   SDKValidationError
 > {
   return safeParse(
     jsonString,
     (x) =>
-      AppBskyFeedDescribeFeedGeneratorResponseBody$inboundSchema.parse(
+      AppBskyFeedDescribeFeedGeneratorResponse$inboundSchema.parse(
         JSON.parse(x),
       ),
-    `Failed to parse 'AppBskyFeedDescribeFeedGeneratorResponseBody' from JSON`,
+    `Failed to parse 'AppBskyFeedDescribeFeedGeneratorResponse' from JSON`,
   );
 }

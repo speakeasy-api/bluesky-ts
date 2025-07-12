@@ -6,7 +6,7 @@
 import { AppBskyEmbedRecordViewBlocked } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: AppBskyEmbedRecordViewBlocked = {
-  uri: "https://rural-tinderbox.name/",
+  uri: "https://imaginary-safe.com/",
   author: {
     did: "<id>",
   },
