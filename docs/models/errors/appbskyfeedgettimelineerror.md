@@ -5,7 +5,7 @@
 ```typescript
 import { AppBskyFeedGetTimelineError } from "@speakeasy-sdks/bluesky/models/errors";
 
-let value: AppBskyFeedGetTimelineError = "ExpiredToken";
+let value: AppBskyFeedGetTimelineError = "InvalidToken";
 ```
 
 ## Values

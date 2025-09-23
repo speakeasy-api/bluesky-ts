@@ -5,7 +5,7 @@
 ```typescript
 import { ToolsOzoneServerGetConfigError } from "@speakeasy-sdks/bluesky/models/errors";
 
-let value: ToolsOzoneServerGetConfigError = "InvalidToken";
+let value: ToolsOzoneServerGetConfigError = "InvalidRequest";
 ```
 
 ## Values

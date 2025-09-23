@@ -7,11 +7,11 @@ import * as operations from "../../models/operations/index.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
 const args = {
-  request: operations.ComAtprotoIdentitySubmitPlcOperationBody$inboundSchema,
+  request: operations.ComAtprotoIdentitySubmitPlcOperationRequest$inboundSchema,
 };
 
 export const tool$identitySubmitPlcOperation: ToolDefinition<typeof args> = {
-  name: "identity_submit-plc-operation",
+  name: "identity-submit-plc-operation",
   description:
     `*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 

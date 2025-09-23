@@ -26,6 +26,7 @@ Get a list of suggested actors. Expected use is discovery of accounts to follow 
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="app.bsky.actor.getSuggestions" method="get" path="/xrpc/app.bsky.actor.getSuggestions" -->
 ```typescript
 import { Bluesky } from "@speakeasy-sdks/bluesky";
 
@@ -37,7 +38,6 @@ async function run() {
   const result = await bluesky.actor.getSuggestions({});
 
   for await (const page of result) {
-    // Handle the page
     console.log(page);
   }
 }
@@ -61,16 +61,13 @@ const bluesky = new BlueskyCore({
 
 async function run() {
   const res = await actorGetSuggestions(bluesky, {});
-
-  if (!res.ok) {
-    throw res.error;
-  }
-
-  const { value: result } = res;
-
-  for await (const page of result) {
-    // Handle the page
+  if (res.ok) {
+    const { value: result } = res;
+    for await (const page of result) {
     console.log(page);
+  }
+  } else {
+    console.log("actorGetSuggestions failed:", res.error);
   }
 }
 
@@ -123,21 +120,21 @@ import {
 
 ### Errors
 
-| Error Type                                                     | Status Code                                                    | Content Type                                                   |
-| -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
-| errors.BadRequestAppBskyActorGetSuggestionsResponseBodyError   | 400                                                            | application/json                                               |
-| errors.UnauthorizedAppBskyActorGetSuggestionsResponseBodyError | 401                                                            | application/json                                               |
-| errors.NotFoundError                                           | 404                                                            | application/json                                               |
-| errors.UnauthorizedError                                       | 403, 407                                                       | application/json                                               |
-| errors.TimeoutError                                            | 408                                                            | application/json                                               |
-| errors.RateLimitedError                                        | 429                                                            | application/json                                               |
-| errors.BadRequestError                                         | 413, 414, 415, 422, 431                                        | application/json                                               |
-| errors.TimeoutError                                            | 504                                                            | application/json                                               |
-| errors.NotFoundError                                           | 501, 505                                                       | application/json                                               |
-| errors.InternalServerError                                     | 500, 502, 503, 506, 507, 508                                   | application/json                                               |
-| errors.BadRequestError                                         | 510                                                            | application/json                                               |
-| errors.UnauthorizedError                                       | 511                                                            | application/json                                               |
-| errors.APIError                                                | 4XX, 5XX                                                       | \*/\*                                                          |
+| Error Type                                        | Status Code                                       | Content Type                                      |
+| ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
+| errors.AppBskyActorGetSuggestionsBadRequestError  | 400                                               | application/json                                  |
+| errors.AppBskyActorGetSuggestionsAuthMissingError | 401                                               | application/json                                  |
+| errors.NotFoundError                              | 404                                               | application/json                                  |
+| errors.UnauthorizedError                          | 403, 407                                          | application/json                                  |
+| errors.TimeoutError                               | 408                                               | application/json                                  |
+| errors.RateLimitedError                           | 429                                               | application/json                                  |
+| errors.BadRequestError                            | 413, 414, 415, 422, 431                           | application/json                                  |
+| errors.TimeoutError                               | 504                                               | application/json                                  |
+| errors.NotFoundError                              | 501, 505                                          | application/json                                  |
+| errors.InternalServerError                        | 500, 502, 503, 506, 507, 508                      | application/json                                  |
+| errors.BadRequestError                            | 510                                               | application/json                                  |
+| errors.UnauthorizedError                          | 511                                               | application/json                                  |
+| errors.APIError                                   | 4XX, 5XX                                          | \*/\*                                             |
 
 ## searchTypeahead
 
@@ -149,6 +146,7 @@ Find actor suggestions for a prefix search term. Expected use is for auto-comple
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="app.bsky.actor.searchActorsTypeahead" method="get" path="/xrpc/app.bsky.actor.searchActorsTypeahead" -->
 ```typescript
 import { Bluesky } from "@speakeasy-sdks/bluesky";
 
@@ -159,7 +157,6 @@ const bluesky = new Bluesky({
 async function run() {
   const result = await bluesky.actor.searchTypeahead({});
 
-  // Handle the result
   console.log(result);
 }
 
@@ -182,15 +179,12 @@ const bluesky = new BlueskyCore({
 
 async function run() {
   const res = await actorSearchTypeahead(bluesky, {});
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("actorSearchTypeahead failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -235,22 +229,22 @@ import {
 
 ### Response
 
-**Promise\<[operations.AppBskyActorSearchActorsTypeaheadResponseBody](../../models/operations/appbskyactorsearchactorstypeaheadresponsebody.md)\>**
+**Promise\<[operations.AppBskyActorSearchActorsTypeaheadResponse](../../models/operations/appbskyactorsearchactorstypeaheadresponse.md)\>**
 
 ### Errors
 
-| Error Type                                                            | Status Code                                                           | Content Type                                                          |
-| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
-| errors.BadRequestAppBskyActorSearchActorsTypeaheadResponseBodyError   | 400                                                                   | application/json                                                      |
-| errors.UnauthorizedAppBskyActorSearchActorsTypeaheadResponseBodyError | 401                                                                   | application/json                                                      |
-| errors.NotFoundError                                                  | 404                                                                   | application/json                                                      |
-| errors.UnauthorizedError                                              | 403, 407                                                              | application/json                                                      |
-| errors.TimeoutError                                                   | 408                                                                   | application/json                                                      |
-| errors.RateLimitedError                                               | 429                                                                   | application/json                                                      |
-| errors.BadRequestError                                                | 413, 414, 415, 422, 431                                               | application/json                                                      |
-| errors.TimeoutError                                                   | 504                                                                   | application/json                                                      |
-| errors.NotFoundError                                                  | 501, 505                                                              | application/json                                                      |
-| errors.InternalServerError                                            | 500, 502, 503, 506, 507, 508                                          | application/json                                                      |
-| errors.BadRequestError                                                | 510                                                                   | application/json                                                      |
-| errors.UnauthorizedError                                              | 511                                                                   | application/json                                                      |
-| errors.APIError                                                       | 4XX, 5XX                                                              | \*/\*                                                                 |
+| Error Type                                               | Status Code                                              | Content Type                                             |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| errors.AppBskyActorSearchActorsTypeaheadBadRequestError  | 400                                                      | application/json                                         |
+| errors.AppBskyActorSearchActorsTypeaheadAuthMissingError | 401                                                      | application/json                                         |
+| errors.NotFoundError                                     | 404                                                      | application/json                                         |
+| errors.UnauthorizedError                                 | 403, 407                                                 | application/json                                         |
+| errors.TimeoutError                                      | 408                                                      | application/json                                         |
+| errors.RateLimitedError                                  | 429                                                      | application/json                                         |
+| errors.BadRequestError                                   | 413, 414, 415, 422, 431                                  | application/json                                         |
+| errors.TimeoutError                                      | 504                                                      | application/json                                         |
+| errors.NotFoundError                                     | 501, 505                                                 | application/json                                         |
+| errors.InternalServerError                               | 500, 502, 503, 506, 507, 508                             | application/json                                         |
+| errors.BadRequestError                                   | 510                                                      | application/json                                         |
+| errors.UnauthorizedError                                 | 511                                                      | application/json                                         |
+| errors.APIError                                          | 4XX, 5XX                                                 | \*/\*                                                    |

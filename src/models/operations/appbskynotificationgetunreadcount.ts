@@ -15,7 +15,7 @@ export type AppBskyNotificationGetUnreadCountRequest = {
 /**
  * OK
  */
-export type AppBskyNotificationGetUnreadCountResponseBody = {
+export type AppBskyNotificationGetUnreadCountResponse = {
   count: number;
 };
 
@@ -89,26 +89,25 @@ export function appBskyNotificationGetUnreadCountRequestFromJSON(
 }
 
 /** @internal */
-export const AppBskyNotificationGetUnreadCountResponseBody$inboundSchema:
-  z.ZodType<
-    AppBskyNotificationGetUnreadCountResponseBody,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    count: z.number().int(),
-  });
+export const AppBskyNotificationGetUnreadCountResponse$inboundSchema: z.ZodType<
+  AppBskyNotificationGetUnreadCountResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  count: z.number().int(),
+});
 
 /** @internal */
-export type AppBskyNotificationGetUnreadCountResponseBody$Outbound = {
+export type AppBskyNotificationGetUnreadCountResponse$Outbound = {
   count: number;
 };
 
 /** @internal */
-export const AppBskyNotificationGetUnreadCountResponseBody$outboundSchema:
+export const AppBskyNotificationGetUnreadCountResponse$outboundSchema:
   z.ZodType<
-    AppBskyNotificationGetUnreadCountResponseBody$Outbound,
+    AppBskyNotificationGetUnreadCountResponse$Outbound,
     z.ZodTypeDef,
-    AppBskyNotificationGetUnreadCountResponseBody
+    AppBskyNotificationGetUnreadCountResponse
   > = z.object({
     count: z.number().int(),
   });
@@ -117,40 +116,40 @@ export const AppBskyNotificationGetUnreadCountResponseBody$outboundSchema:
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyNotificationGetUnreadCountResponseBody$ {
-  /** @deprecated use `AppBskyNotificationGetUnreadCountResponseBody$inboundSchema` instead. */
+export namespace AppBskyNotificationGetUnreadCountResponse$ {
+  /** @deprecated use `AppBskyNotificationGetUnreadCountResponse$inboundSchema` instead. */
   export const inboundSchema =
-    AppBskyNotificationGetUnreadCountResponseBody$inboundSchema;
-  /** @deprecated use `AppBskyNotificationGetUnreadCountResponseBody$outboundSchema` instead. */
+    AppBskyNotificationGetUnreadCountResponse$inboundSchema;
+  /** @deprecated use `AppBskyNotificationGetUnreadCountResponse$outboundSchema` instead. */
   export const outboundSchema =
-    AppBskyNotificationGetUnreadCountResponseBody$outboundSchema;
-  /** @deprecated use `AppBskyNotificationGetUnreadCountResponseBody$Outbound` instead. */
-  export type Outbound = AppBskyNotificationGetUnreadCountResponseBody$Outbound;
+    AppBskyNotificationGetUnreadCountResponse$outboundSchema;
+  /** @deprecated use `AppBskyNotificationGetUnreadCountResponse$Outbound` instead. */
+  export type Outbound = AppBskyNotificationGetUnreadCountResponse$Outbound;
 }
 
-export function appBskyNotificationGetUnreadCountResponseBodyToJSON(
-  appBskyNotificationGetUnreadCountResponseBody:
-    AppBskyNotificationGetUnreadCountResponseBody,
+export function appBskyNotificationGetUnreadCountResponseToJSON(
+  appBskyNotificationGetUnreadCountResponse:
+    AppBskyNotificationGetUnreadCountResponse,
 ): string {
   return JSON.stringify(
-    AppBskyNotificationGetUnreadCountResponseBody$outboundSchema.parse(
-      appBskyNotificationGetUnreadCountResponseBody,
+    AppBskyNotificationGetUnreadCountResponse$outboundSchema.parse(
+      appBskyNotificationGetUnreadCountResponse,
     ),
   );
 }
 
-export function appBskyNotificationGetUnreadCountResponseBodyFromJSON(
+export function appBskyNotificationGetUnreadCountResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
-  AppBskyNotificationGetUnreadCountResponseBody,
+  AppBskyNotificationGetUnreadCountResponse,
   SDKValidationError
 > {
   return safeParse(
     jsonString,
     (x) =>
-      AppBskyNotificationGetUnreadCountResponseBody$inboundSchema.parse(
+      AppBskyNotificationGetUnreadCountResponse$inboundSchema.parse(
         JSON.parse(x),
       ),
-    `Failed to parse 'AppBskyNotificationGetUnreadCountResponseBody' from JSON`,
+    `Failed to parse 'AppBskyNotificationGetUnreadCountResponse' from JSON`,
   );
 }

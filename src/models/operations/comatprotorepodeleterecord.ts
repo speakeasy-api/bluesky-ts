@@ -8,7 +8,7 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import * as components from "../components/index.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ComAtprotoRepoDeleteRecordBody = {
+export type ComAtprotoRepoDeleteRecordRequest = {
   /**
    * The handle or DID of the repo (aka, current account).
    */
@@ -34,13 +34,13 @@ export type ComAtprotoRepoDeleteRecordBody = {
 /**
  * OK
  */
-export type ComAtprotoRepoDeleteRecordResponseBody = {
+export type ComAtprotoRepoDeleteRecordResponse = {
   commit?: components.ComAtprotoRepoDefsCommitMeta | undefined;
 };
 
 /** @internal */
-export const ComAtprotoRepoDeleteRecordBody$inboundSchema: z.ZodType<
-  ComAtprotoRepoDeleteRecordBody,
+export const ComAtprotoRepoDeleteRecordRequest$inboundSchema: z.ZodType<
+  ComAtprotoRepoDeleteRecordRequest,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -52,7 +52,7 @@ export const ComAtprotoRepoDeleteRecordBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type ComAtprotoRepoDeleteRecordBody$Outbound = {
+export type ComAtprotoRepoDeleteRecordRequest$Outbound = {
   repo: string;
   collection: string;
   rkey: string;
@@ -61,10 +61,10 @@ export type ComAtprotoRepoDeleteRecordBody$Outbound = {
 };
 
 /** @internal */
-export const ComAtprotoRepoDeleteRecordBody$outboundSchema: z.ZodType<
-  ComAtprotoRepoDeleteRecordBody$Outbound,
+export const ComAtprotoRepoDeleteRecordRequest$outboundSchema: z.ZodType<
+  ComAtprotoRepoDeleteRecordRequest$Outbound,
   z.ZodTypeDef,
-  ComAtprotoRepoDeleteRecordBody
+  ComAtprotoRepoDeleteRecordRequest
 > = z.object({
   repo: z.string(),
   collection: z.string(),
@@ -77,38 +77,39 @@ export const ComAtprotoRepoDeleteRecordBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoRepoDeleteRecordBody$ {
-  /** @deprecated use `ComAtprotoRepoDeleteRecordBody$inboundSchema` instead. */
-  export const inboundSchema = ComAtprotoRepoDeleteRecordBody$inboundSchema;
-  /** @deprecated use `ComAtprotoRepoDeleteRecordBody$outboundSchema` instead. */
-  export const outboundSchema = ComAtprotoRepoDeleteRecordBody$outboundSchema;
-  /** @deprecated use `ComAtprotoRepoDeleteRecordBody$Outbound` instead. */
-  export type Outbound = ComAtprotoRepoDeleteRecordBody$Outbound;
+export namespace ComAtprotoRepoDeleteRecordRequest$ {
+  /** @deprecated use `ComAtprotoRepoDeleteRecordRequest$inboundSchema` instead. */
+  export const inboundSchema = ComAtprotoRepoDeleteRecordRequest$inboundSchema;
+  /** @deprecated use `ComAtprotoRepoDeleteRecordRequest$outboundSchema` instead. */
+  export const outboundSchema =
+    ComAtprotoRepoDeleteRecordRequest$outboundSchema;
+  /** @deprecated use `ComAtprotoRepoDeleteRecordRequest$Outbound` instead. */
+  export type Outbound = ComAtprotoRepoDeleteRecordRequest$Outbound;
 }
 
-export function comAtprotoRepoDeleteRecordBodyToJSON(
-  comAtprotoRepoDeleteRecordBody: ComAtprotoRepoDeleteRecordBody,
+export function comAtprotoRepoDeleteRecordRequestToJSON(
+  comAtprotoRepoDeleteRecordRequest: ComAtprotoRepoDeleteRecordRequest,
 ): string {
   return JSON.stringify(
-    ComAtprotoRepoDeleteRecordBody$outboundSchema.parse(
-      comAtprotoRepoDeleteRecordBody,
+    ComAtprotoRepoDeleteRecordRequest$outboundSchema.parse(
+      comAtprotoRepoDeleteRecordRequest,
     ),
   );
 }
 
-export function comAtprotoRepoDeleteRecordBodyFromJSON(
+export function comAtprotoRepoDeleteRecordRequestFromJSON(
   jsonString: string,
-): SafeParseResult<ComAtprotoRepoDeleteRecordBody, SDKValidationError> {
+): SafeParseResult<ComAtprotoRepoDeleteRecordRequest, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => ComAtprotoRepoDeleteRecordBody$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ComAtprotoRepoDeleteRecordBody' from JSON`,
+    (x) => ComAtprotoRepoDeleteRecordRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ComAtprotoRepoDeleteRecordRequest' from JSON`,
   );
 }
 
 /** @internal */
-export const ComAtprotoRepoDeleteRecordResponseBody$inboundSchema: z.ZodType<
-  ComAtprotoRepoDeleteRecordResponseBody,
+export const ComAtprotoRepoDeleteRecordResponse$inboundSchema: z.ZodType<
+  ComAtprotoRepoDeleteRecordResponse,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -116,15 +117,15 @@ export const ComAtprotoRepoDeleteRecordResponseBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type ComAtprotoRepoDeleteRecordResponseBody$Outbound = {
+export type ComAtprotoRepoDeleteRecordResponse$Outbound = {
   commit?: components.ComAtprotoRepoDefsCommitMeta$Outbound | undefined;
 };
 
 /** @internal */
-export const ComAtprotoRepoDeleteRecordResponseBody$outboundSchema: z.ZodType<
-  ComAtprotoRepoDeleteRecordResponseBody$Outbound,
+export const ComAtprotoRepoDeleteRecordResponse$outboundSchema: z.ZodType<
+  ComAtprotoRepoDeleteRecordResponse$Outbound,
   z.ZodTypeDef,
-  ComAtprotoRepoDeleteRecordResponseBody
+  ComAtprotoRepoDeleteRecordResponse
 > = z.object({
   commit: components.ComAtprotoRepoDefsCommitMeta$outboundSchema.optional(),
 });
@@ -133,35 +134,33 @@ export const ComAtprotoRepoDeleteRecordResponseBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoRepoDeleteRecordResponseBody$ {
-  /** @deprecated use `ComAtprotoRepoDeleteRecordResponseBody$inboundSchema` instead. */
-  export const inboundSchema =
-    ComAtprotoRepoDeleteRecordResponseBody$inboundSchema;
-  /** @deprecated use `ComAtprotoRepoDeleteRecordResponseBody$outboundSchema` instead. */
+export namespace ComAtprotoRepoDeleteRecordResponse$ {
+  /** @deprecated use `ComAtprotoRepoDeleteRecordResponse$inboundSchema` instead. */
+  export const inboundSchema = ComAtprotoRepoDeleteRecordResponse$inboundSchema;
+  /** @deprecated use `ComAtprotoRepoDeleteRecordResponse$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoRepoDeleteRecordResponseBody$outboundSchema;
-  /** @deprecated use `ComAtprotoRepoDeleteRecordResponseBody$Outbound` instead. */
-  export type Outbound = ComAtprotoRepoDeleteRecordResponseBody$Outbound;
+    ComAtprotoRepoDeleteRecordResponse$outboundSchema;
+  /** @deprecated use `ComAtprotoRepoDeleteRecordResponse$Outbound` instead. */
+  export type Outbound = ComAtprotoRepoDeleteRecordResponse$Outbound;
 }
 
-export function comAtprotoRepoDeleteRecordResponseBodyToJSON(
-  comAtprotoRepoDeleteRecordResponseBody:
-    ComAtprotoRepoDeleteRecordResponseBody,
+export function comAtprotoRepoDeleteRecordResponseToJSON(
+  comAtprotoRepoDeleteRecordResponse: ComAtprotoRepoDeleteRecordResponse,
 ): string {
   return JSON.stringify(
-    ComAtprotoRepoDeleteRecordResponseBody$outboundSchema.parse(
-      comAtprotoRepoDeleteRecordResponseBody,
+    ComAtprotoRepoDeleteRecordResponse$outboundSchema.parse(
+      comAtprotoRepoDeleteRecordResponse,
     ),
   );
 }
 
-export function comAtprotoRepoDeleteRecordResponseBodyFromJSON(
+export function comAtprotoRepoDeleteRecordResponseFromJSON(
   jsonString: string,
-): SafeParseResult<ComAtprotoRepoDeleteRecordResponseBody, SDKValidationError> {
+): SafeParseResult<ComAtprotoRepoDeleteRecordResponse, SDKValidationError> {
   return safeParse(
     jsonString,
     (x) =>
-      ComAtprotoRepoDeleteRecordResponseBody$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ComAtprotoRepoDeleteRecordResponseBody' from JSON`,
+      ComAtprotoRepoDeleteRecordResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ComAtprotoRepoDeleteRecordResponse' from JSON`,
   );
 }

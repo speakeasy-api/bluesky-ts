@@ -7,13 +7,7 @@ import { ToolsOzoneSignatureSearchAccountsResponse } from "@speakeasy-sdks/blues
 
 let value: ToolsOzoneSignatureSearchAccountsResponse = {
   result: {
-    accounts: [
-      {
-        did: "<id>",
-        handle: "<value>",
-        indexedAt: new Date("2024-01-02T00:36:42.947Z"),
-      },
-    ],
+    accounts: [],
   },
 };
 ```

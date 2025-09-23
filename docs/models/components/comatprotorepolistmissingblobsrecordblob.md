@@ -7,7 +7,7 @@ import { ComAtprotoRepoListMissingBlobsRecordBlob } from "@speakeasy-sdks/bluesk
 
 let value: ComAtprotoRepoListMissingBlobsRecordBlob = {
   cid: "<id>",
-  recordUri: "https://whirlwind-baseboard.com",
+  recordUri: "https://legal-giggle.info",
 };
 ```
 

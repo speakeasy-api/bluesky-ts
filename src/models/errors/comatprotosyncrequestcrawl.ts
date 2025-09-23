@@ -4,11 +4,12 @@
 
 import * as z from "zod";
 import { ClosedEnum } from "../../types/enums.js";
+import { BlueskyError } from "./blueskyerror.js";
 
 /**
  * Unauthorized
  */
-export type UnauthorizedComAtprotoSyncRequestCrawlResponseBodyErrorData = {
+export type ComAtprotoSyncRequestCrawlAuthMissingErrorData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,26 +17,22 @@ export type UnauthorizedComAtprotoSyncRequestCrawlResponseBodyErrorData = {
 /**
  * Unauthorized
  */
-export class UnauthorizedComAtprotoSyncRequestCrawlResponseBodyError
-  extends Error
-{
+export class ComAtprotoSyncRequestCrawlAuthMissingError extends BlueskyError {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: UnauthorizedComAtprotoSyncRequestCrawlResponseBodyErrorData;
+  data$: ComAtprotoSyncRequestCrawlAuthMissingErrorData;
 
   constructor(
-    err: UnauthorizedComAtprotoSyncRequestCrawlResponseBodyErrorData,
+    err: ComAtprotoSyncRequestCrawlAuthMissingErrorData,
+    httpMeta: { response: Response; request: Request; body: string },
   ) {
-    const message = "message" in err && typeof err.message === "string"
-      ? err.message
-      : `API error occurred: ${JSON.stringify(err)}`;
-    super(message);
+    const message = err.message || `API error occurred: ${JSON.stringify(err)}`;
+    super(message, httpMeta);
     this.data$ = err;
-
     this.error = err.error;
 
-    this.name = "UnauthorizedComAtprotoSyncRequestCrawlResponseBodyError";
+    this.name = "ComAtprotoSyncRequestCrawlAuthMissingError";
   }
 }
 
@@ -51,7 +48,7 @@ export type ComAtprotoSyncRequestCrawlError = ClosedEnum<
 /**
  * Bad Request
  */
-export type BadRequestComAtprotoSyncRequestCrawlResponseBodyErrorData = {
+export type ComAtprotoSyncRequestCrawlBadRequestErrorData = {
   error: ComAtprotoSyncRequestCrawlError;
   message: string;
 };
@@ -59,54 +56,56 @@ export type BadRequestComAtprotoSyncRequestCrawlResponseBodyErrorData = {
 /**
  * Bad Request
  */
-export class BadRequestComAtprotoSyncRequestCrawlResponseBodyError
-  extends Error
-{
+export class ComAtprotoSyncRequestCrawlBadRequestError extends BlueskyError {
   error: ComAtprotoSyncRequestCrawlError;
 
   /** The original data that was passed to this error instance. */
-  data$: BadRequestComAtprotoSyncRequestCrawlResponseBodyErrorData;
+  data$: ComAtprotoSyncRequestCrawlBadRequestErrorData;
 
-  constructor(err: BadRequestComAtprotoSyncRequestCrawlResponseBodyErrorData) {
-    const message = "message" in err && typeof err.message === "string"
-      ? err.message
-      : `API error occurred: ${JSON.stringify(err)}`;
-    super(message);
+  constructor(
+    err: ComAtprotoSyncRequestCrawlBadRequestErrorData,
+    httpMeta: { response: Response; request: Request; body: string },
+  ) {
+    const message = err.message || `API error occurred: ${JSON.stringify(err)}`;
+    super(message, httpMeta);
     this.data$ = err;
-
     this.error = err.error;
 
-    this.name = "BadRequestComAtprotoSyncRequestCrawlResponseBodyError";
+    this.name = "ComAtprotoSyncRequestCrawlBadRequestError";
   }
 }
 
 /** @internal */
-export const UnauthorizedComAtprotoSyncRequestCrawlResponseBodyError$inboundSchema:
-  z.ZodType<
-    UnauthorizedComAtprotoSyncRequestCrawlResponseBodyError,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    error: z.literal("AuthMissing"),
-    message: z.string(),
-  })
-    .transform((v) => {
-      return new UnauthorizedComAtprotoSyncRequestCrawlResponseBodyError(v);
-    });
+export const ComAtprotoSyncRequestCrawlAuthMissingError$inboundSchema:
+  z.ZodType<ComAtprotoSyncRequestCrawlAuthMissingError, z.ZodTypeDef, unknown> =
+    z.object({
+      error: z.literal("AuthMissing").default("AuthMissing"),
+      message: z.string(),
+      request$: z.instanceof(Request),
+      response$: z.instanceof(Response),
+      body$: z.string(),
+    })
+      .transform((v) => {
+        return new ComAtprotoSyncRequestCrawlAuthMissingError(v, {
+          request: v.request$,
+          response: v.response$,
+          body: v.body$,
+        });
+      });
 
 /** @internal */
-export type UnauthorizedComAtprotoSyncRequestCrawlResponseBodyError$Outbound = {
+export type ComAtprotoSyncRequestCrawlAuthMissingError$Outbound = {
   error: "AuthMissing";
   message: string;
 };
 
 /** @internal */
-export const UnauthorizedComAtprotoSyncRequestCrawlResponseBodyError$outboundSchema:
+export const ComAtprotoSyncRequestCrawlAuthMissingError$outboundSchema:
   z.ZodType<
-    UnauthorizedComAtprotoSyncRequestCrawlResponseBodyError$Outbound,
+    ComAtprotoSyncRequestCrawlAuthMissingError$Outbound,
     z.ZodTypeDef,
-    UnauthorizedComAtprotoSyncRequestCrawlResponseBodyError
-  > = z.instanceof(UnauthorizedComAtprotoSyncRequestCrawlResponseBodyError)
+    ComAtprotoSyncRequestCrawlAuthMissingError
+  > = z.instanceof(ComAtprotoSyncRequestCrawlAuthMissingError)
     .transform(v => v.data$)
     .pipe(z.object({
       error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -117,16 +116,15 @@ export const UnauthorizedComAtprotoSyncRequestCrawlResponseBodyError$outboundSch
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace UnauthorizedComAtprotoSyncRequestCrawlResponseBodyError$ {
-  /** @deprecated use `UnauthorizedComAtprotoSyncRequestCrawlResponseBodyError$inboundSchema` instead. */
+export namespace ComAtprotoSyncRequestCrawlAuthMissingError$ {
+  /** @deprecated use `ComAtprotoSyncRequestCrawlAuthMissingError$inboundSchema` instead. */
   export const inboundSchema =
-    UnauthorizedComAtprotoSyncRequestCrawlResponseBodyError$inboundSchema;
-  /** @deprecated use `UnauthorizedComAtprotoSyncRequestCrawlResponseBodyError$outboundSchema` instead. */
+    ComAtprotoSyncRequestCrawlAuthMissingError$inboundSchema;
+  /** @deprecated use `ComAtprotoSyncRequestCrawlAuthMissingError$outboundSchema` instead. */
   export const outboundSchema =
-    UnauthorizedComAtprotoSyncRequestCrawlResponseBodyError$outboundSchema;
-  /** @deprecated use `UnauthorizedComAtprotoSyncRequestCrawlResponseBodyError$Outbound` instead. */
-  export type Outbound =
-    UnauthorizedComAtprotoSyncRequestCrawlResponseBodyError$Outbound;
+    ComAtprotoSyncRequestCrawlAuthMissingError$outboundSchema;
+  /** @deprecated use `ComAtprotoSyncRequestCrawlAuthMissingError$Outbound` instead. */
+  export type Outbound = ComAtprotoSyncRequestCrawlAuthMissingError$Outbound;
 }
 
 /** @internal */
@@ -151,32 +149,38 @@ export namespace ComAtprotoSyncRequestCrawlError$ {
 }
 
 /** @internal */
-export const BadRequestComAtprotoSyncRequestCrawlResponseBodyError$inboundSchema:
-  z.ZodType<
-    BadRequestComAtprotoSyncRequestCrawlResponseBodyError,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    error: ComAtprotoSyncRequestCrawlError$inboundSchema,
-    message: z.string(),
-  })
-    .transform((v) => {
-      return new BadRequestComAtprotoSyncRequestCrawlResponseBodyError(v);
+export const ComAtprotoSyncRequestCrawlBadRequestError$inboundSchema: z.ZodType<
+  ComAtprotoSyncRequestCrawlBadRequestError,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  error: ComAtprotoSyncRequestCrawlError$inboundSchema,
+  message: z.string(),
+  request$: z.instanceof(Request),
+  response$: z.instanceof(Response),
+  body$: z.string(),
+})
+  .transform((v) => {
+    return new ComAtprotoSyncRequestCrawlBadRequestError(v, {
+      request: v.request$,
+      response: v.response$,
+      body: v.body$,
     });
+  });
 
 /** @internal */
-export type BadRequestComAtprotoSyncRequestCrawlResponseBodyError$Outbound = {
+export type ComAtprotoSyncRequestCrawlBadRequestError$Outbound = {
   error: string;
   message: string;
 };
 
 /** @internal */
-export const BadRequestComAtprotoSyncRequestCrawlResponseBodyError$outboundSchema:
+export const ComAtprotoSyncRequestCrawlBadRequestError$outboundSchema:
   z.ZodType<
-    BadRequestComAtprotoSyncRequestCrawlResponseBodyError$Outbound,
+    ComAtprotoSyncRequestCrawlBadRequestError$Outbound,
     z.ZodTypeDef,
-    BadRequestComAtprotoSyncRequestCrawlResponseBodyError
-  > = z.instanceof(BadRequestComAtprotoSyncRequestCrawlResponseBodyError)
+    ComAtprotoSyncRequestCrawlBadRequestError
+  > = z.instanceof(ComAtprotoSyncRequestCrawlBadRequestError)
     .transform(v => v.data$)
     .pipe(z.object({
       error: ComAtprotoSyncRequestCrawlError$outboundSchema,
@@ -187,14 +191,13 @@ export const BadRequestComAtprotoSyncRequestCrawlResponseBodyError$outboundSchem
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace BadRequestComAtprotoSyncRequestCrawlResponseBodyError$ {
-  /** @deprecated use `BadRequestComAtprotoSyncRequestCrawlResponseBodyError$inboundSchema` instead. */
+export namespace ComAtprotoSyncRequestCrawlBadRequestError$ {
+  /** @deprecated use `ComAtprotoSyncRequestCrawlBadRequestError$inboundSchema` instead. */
   export const inboundSchema =
-    BadRequestComAtprotoSyncRequestCrawlResponseBodyError$inboundSchema;
-  /** @deprecated use `BadRequestComAtprotoSyncRequestCrawlResponseBodyError$outboundSchema` instead. */
+    ComAtprotoSyncRequestCrawlBadRequestError$inboundSchema;
+  /** @deprecated use `ComAtprotoSyncRequestCrawlBadRequestError$outboundSchema` instead. */
   export const outboundSchema =
-    BadRequestComAtprotoSyncRequestCrawlResponseBodyError$outboundSchema;
-  /** @deprecated use `BadRequestComAtprotoSyncRequestCrawlResponseBodyError$Outbound` instead. */
-  export type Outbound =
-    BadRequestComAtprotoSyncRequestCrawlResponseBodyError$Outbound;
+    ComAtprotoSyncRequestCrawlBadRequestError$outboundSchema;
+  /** @deprecated use `ComAtprotoSyncRequestCrawlBadRequestError$Outbound` instead. */
+  export type Outbound = ComAtprotoSyncRequestCrawlBadRequestError$Outbound;
 }

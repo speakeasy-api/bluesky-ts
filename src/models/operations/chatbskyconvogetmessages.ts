@@ -15,9 +15,9 @@ export type ChatBskyConvoGetMessagesRequest = {
   cursor?: string | undefined;
 };
 
-export type ChatBskyConvoGetMessagesMessages =
-  | components.ChatBskyConvoDefsDeletedMessageView
-  | components.ChatBskyConvoDefsMessageView;
+export type ChatBskyConvoGetMessagesMessage =
+  | components.ChatBskyConvoDefsMessageView
+  | components.ChatBskyConvoDefsDeletedMessageView;
 
 /**
  * OK
@@ -25,8 +25,8 @@ export type ChatBskyConvoGetMessagesMessages =
 export type ChatBskyConvoGetMessagesResponseBody = {
   cursor?: string | undefined;
   messages: Array<
-    | components.ChatBskyConvoDefsDeletedMessageView
     | components.ChatBskyConvoDefsMessageView
+    | components.ChatBskyConvoDefsDeletedMessageView
   >;
 };
 
@@ -97,60 +97,60 @@ export function chatBskyConvoGetMessagesRequestFromJSON(
 }
 
 /** @internal */
-export const ChatBskyConvoGetMessagesMessages$inboundSchema: z.ZodType<
-  ChatBskyConvoGetMessagesMessages,
+export const ChatBskyConvoGetMessagesMessage$inboundSchema: z.ZodType<
+  ChatBskyConvoGetMessagesMessage,
   z.ZodTypeDef,
   unknown
 > = z.union([
-  components.ChatBskyConvoDefsDeletedMessageView$inboundSchema,
   components.ChatBskyConvoDefsMessageView$inboundSchema,
+  components.ChatBskyConvoDefsDeletedMessageView$inboundSchema,
 ]);
 
 /** @internal */
-export type ChatBskyConvoGetMessagesMessages$Outbound =
-  | components.ChatBskyConvoDefsDeletedMessageView$Outbound
-  | components.ChatBskyConvoDefsMessageView$Outbound;
+export type ChatBskyConvoGetMessagesMessage$Outbound =
+  | components.ChatBskyConvoDefsMessageView$Outbound
+  | components.ChatBskyConvoDefsDeletedMessageView$Outbound;
 
 /** @internal */
-export const ChatBskyConvoGetMessagesMessages$outboundSchema: z.ZodType<
-  ChatBskyConvoGetMessagesMessages$Outbound,
+export const ChatBskyConvoGetMessagesMessage$outboundSchema: z.ZodType<
+  ChatBskyConvoGetMessagesMessage$Outbound,
   z.ZodTypeDef,
-  ChatBskyConvoGetMessagesMessages
+  ChatBskyConvoGetMessagesMessage
 > = z.union([
-  components.ChatBskyConvoDefsDeletedMessageView$outboundSchema,
   components.ChatBskyConvoDefsMessageView$outboundSchema,
+  components.ChatBskyConvoDefsDeletedMessageView$outboundSchema,
 ]);
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ChatBskyConvoGetMessagesMessages$ {
-  /** @deprecated use `ChatBskyConvoGetMessagesMessages$inboundSchema` instead. */
-  export const inboundSchema = ChatBskyConvoGetMessagesMessages$inboundSchema;
-  /** @deprecated use `ChatBskyConvoGetMessagesMessages$outboundSchema` instead. */
-  export const outboundSchema = ChatBskyConvoGetMessagesMessages$outboundSchema;
-  /** @deprecated use `ChatBskyConvoGetMessagesMessages$Outbound` instead. */
-  export type Outbound = ChatBskyConvoGetMessagesMessages$Outbound;
+export namespace ChatBskyConvoGetMessagesMessage$ {
+  /** @deprecated use `ChatBskyConvoGetMessagesMessage$inboundSchema` instead. */
+  export const inboundSchema = ChatBskyConvoGetMessagesMessage$inboundSchema;
+  /** @deprecated use `ChatBskyConvoGetMessagesMessage$outboundSchema` instead. */
+  export const outboundSchema = ChatBskyConvoGetMessagesMessage$outboundSchema;
+  /** @deprecated use `ChatBskyConvoGetMessagesMessage$Outbound` instead. */
+  export type Outbound = ChatBskyConvoGetMessagesMessage$Outbound;
 }
 
-export function chatBskyConvoGetMessagesMessagesToJSON(
-  chatBskyConvoGetMessagesMessages: ChatBskyConvoGetMessagesMessages,
+export function chatBskyConvoGetMessagesMessageToJSON(
+  chatBskyConvoGetMessagesMessage: ChatBskyConvoGetMessagesMessage,
 ): string {
   return JSON.stringify(
-    ChatBskyConvoGetMessagesMessages$outboundSchema.parse(
-      chatBskyConvoGetMessagesMessages,
+    ChatBskyConvoGetMessagesMessage$outboundSchema.parse(
+      chatBskyConvoGetMessagesMessage,
     ),
   );
 }
 
-export function chatBskyConvoGetMessagesMessagesFromJSON(
+export function chatBskyConvoGetMessagesMessageFromJSON(
   jsonString: string,
-): SafeParseResult<ChatBskyConvoGetMessagesMessages, SDKValidationError> {
+): SafeParseResult<ChatBskyConvoGetMessagesMessage, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => ChatBskyConvoGetMessagesMessages$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ChatBskyConvoGetMessagesMessages' from JSON`,
+    (x) => ChatBskyConvoGetMessagesMessage$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ChatBskyConvoGetMessagesMessage' from JSON`,
   );
 }
 
@@ -163,8 +163,8 @@ export const ChatBskyConvoGetMessagesResponseBody$inboundSchema: z.ZodType<
   cursor: z.string().optional(),
   messages: z.array(
     z.union([
-      components.ChatBskyConvoDefsDeletedMessageView$inboundSchema,
       components.ChatBskyConvoDefsMessageView$inboundSchema,
+      components.ChatBskyConvoDefsDeletedMessageView$inboundSchema,
     ]),
   ),
 });
@@ -173,8 +173,8 @@ export const ChatBskyConvoGetMessagesResponseBody$inboundSchema: z.ZodType<
 export type ChatBskyConvoGetMessagesResponseBody$Outbound = {
   cursor?: string | undefined;
   messages: Array<
-    | components.ChatBskyConvoDefsDeletedMessageView$Outbound
     | components.ChatBskyConvoDefsMessageView$Outbound
+    | components.ChatBskyConvoDefsDeletedMessageView$Outbound
   >;
 };
 
@@ -187,8 +187,8 @@ export const ChatBskyConvoGetMessagesResponseBody$outboundSchema: z.ZodType<
   cursor: z.string().optional(),
   messages: z.array(
     z.union([
-      components.ChatBskyConvoDefsDeletedMessageView$outboundSchema,
       components.ChatBskyConvoDefsMessageView$outboundSchema,
+      components.ChatBskyConvoDefsDeletedMessageView$outboundSchema,
     ]),
   ),
 });

@@ -31,6 +31,7 @@ Delete a communication template.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="tools.ozone.communication.deleteTemplate" method="post" path="/xrpc/tools.ozone.communication.deleteTemplate" -->
 ```typescript
 import { Bluesky } from "@speakeasy-sdks/bluesky";
 
@@ -67,14 +68,12 @@ async function run() {
   const res = await ozoneCommunicationDelete(bluesky, {
     id: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    
+  } else {
+    console.log("ozoneCommunicationDelete failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  
 }
 
 run();
@@ -101,7 +100,7 @@ import {
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ToolsOzoneCommunicationDeleteTemplateBody](../../models/operations/toolsozonecommunicationdeletetemplatebody.md)                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ToolsOzoneCommunicationDeleteTemplateRequest](../../models/operations/toolsozonecommunicationdeletetemplaterequest.md)                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -112,21 +111,21 @@ import {
 
 ### Errors
 
-| Error Type                                                                | Status Code                                                               | Content Type                                                              |
-| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| errors.BadRequestToolsOzoneCommunicationDeleteTemplateResponseBodyError   | 400                                                                       | application/json                                                          |
-| errors.UnauthorizedToolsOzoneCommunicationDeleteTemplateResponseBodyError | 401                                                                       | application/json                                                          |
-| errors.NotFoundError                                                      | 404                                                                       | application/json                                                          |
-| errors.UnauthorizedError                                                  | 403, 407                                                                  | application/json                                                          |
-| errors.TimeoutError                                                       | 408                                                                       | application/json                                                          |
-| errors.RateLimitedError                                                   | 429                                                                       | application/json                                                          |
-| errors.BadRequestError                                                    | 413, 414, 415, 422, 431                                                   | application/json                                                          |
-| errors.TimeoutError                                                       | 504                                                                       | application/json                                                          |
-| errors.NotFoundError                                                      | 501, 505                                                                  | application/json                                                          |
-| errors.InternalServerError                                                | 500, 502, 503, 506, 507, 508                                              | application/json                                                          |
-| errors.BadRequestError                                                    | 510                                                                       | application/json                                                          |
-| errors.UnauthorizedError                                                  | 511                                                                       | application/json                                                          |
-| errors.APIError                                                           | 4XX, 5XX                                                                  | \*/\*                                                                     |
+| Error Type                                                   | Status Code                                                  | Content Type                                                 |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| errors.ToolsOzoneCommunicationDeleteTemplateBadRequestError  | 400                                                          | application/json                                             |
+| errors.ToolsOzoneCommunicationDeleteTemplateAuthMissingError | 401                                                          | application/json                                             |
+| errors.NotFoundError                                         | 404                                                          | application/json                                             |
+| errors.UnauthorizedError                                     | 403, 407                                                     | application/json                                             |
+| errors.TimeoutError                                          | 408                                                          | application/json                                             |
+| errors.RateLimitedError                                      | 429                                                          | application/json                                             |
+| errors.BadRequestError                                       | 413, 414, 415, 422, 431                                      | application/json                                             |
+| errors.TimeoutError                                          | 504                                                          | application/json                                             |
+| errors.NotFoundError                                         | 501, 505                                                     | application/json                                             |
+| errors.InternalServerError                                   | 500, 502, 503, 506, 507, 508                                 | application/json                                             |
+| errors.BadRequestError                                       | 510                                                          | application/json                                             |
+| errors.UnauthorizedError                                     | 511                                                          | application/json                                             |
+| errors.APIError                                              | 4XX, 5XX                                                     | \*/\*                                                        |
 
 ## listTemplates
 
@@ -138,6 +137,7 @@ Get list of all communication templates.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="tools.ozone.communication.listTemplates" method="get" path="/xrpc/tools.ozone.communication.listTemplates" -->
 ```typescript
 import { Bluesky } from "@speakeasy-sdks/bluesky";
 
@@ -148,7 +148,6 @@ const bluesky = new Bluesky({
 async function run() {
   const result = await bluesky.ozoneCommunication.listTemplates();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -171,15 +170,12 @@ const bluesky = new BlueskyCore({
 
 async function run() {
   const res = await ozoneCommunicationListTemplates(bluesky);
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("ozoneCommunicationListTemplates failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -222,25 +218,25 @@ import {
 
 ### Response
 
-**Promise\<[operations.ToolsOzoneCommunicationListTemplatesResponseBody](../../models/operations/toolsozonecommunicationlisttemplatesresponsebody.md)\>**
+**Promise\<[operations.ToolsOzoneCommunicationListTemplatesResponse](../../models/operations/toolsozonecommunicationlisttemplatesresponse.md)\>**
 
 ### Errors
 
-| Error Type                                                               | Status Code                                                              | Content Type                                                             |
-| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
-| errors.BadRequestToolsOzoneCommunicationListTemplatesResponseBodyError   | 400                                                                      | application/json                                                         |
-| errors.UnauthorizedToolsOzoneCommunicationListTemplatesResponseBodyError | 401                                                                      | application/json                                                         |
-| errors.NotFoundError                                                     | 404                                                                      | application/json                                                         |
-| errors.UnauthorizedError                                                 | 403, 407                                                                 | application/json                                                         |
-| errors.TimeoutError                                                      | 408                                                                      | application/json                                                         |
-| errors.RateLimitedError                                                  | 429                                                                      | application/json                                                         |
-| errors.BadRequestError                                                   | 413, 414, 415, 422, 431                                                  | application/json                                                         |
-| errors.TimeoutError                                                      | 504                                                                      | application/json                                                         |
-| errors.NotFoundError                                                     | 501, 505                                                                 | application/json                                                         |
-| errors.InternalServerError                                               | 500, 502, 503, 506, 507, 508                                             | application/json                                                         |
-| errors.BadRequestError                                                   | 510                                                                      | application/json                                                         |
-| errors.UnauthorizedError                                                 | 511                                                                      | application/json                                                         |
-| errors.APIError                                                          | 4XX, 5XX                                                                 | \*/\*                                                                    |
+| Error Type                                                  | Status Code                                                 | Content Type                                                |
+| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
+| errors.ToolsOzoneCommunicationListTemplatesBadRequestError  | 400                                                         | application/json                                            |
+| errors.ToolsOzoneCommunicationListTemplatesAuthMissingError | 401                                                         | application/json                                            |
+| errors.NotFoundError                                        | 404                                                         | application/json                                            |
+| errors.UnauthorizedError                                    | 403, 407                                                    | application/json                                            |
+| errors.TimeoutError                                         | 408                                                         | application/json                                            |
+| errors.RateLimitedError                                     | 429                                                         | application/json                                            |
+| errors.BadRequestError                                      | 413, 414, 415, 422, 431                                     | application/json                                            |
+| errors.TimeoutError                                         | 504                                                         | application/json                                            |
+| errors.NotFoundError                                        | 501, 505                                                    | application/json                                            |
+| errors.InternalServerError                                  | 500, 502, 503, 506, 507, 508                                | application/json                                            |
+| errors.BadRequestError                                      | 510                                                         | application/json                                            |
+| errors.UnauthorizedError                                    | 511                                                         | application/json                                            |
+| errors.APIError                                             | 4XX, 5XX                                                    | \*/\*                                                       |
 
 ## updateTemplate
 
@@ -252,6 +248,7 @@ Administrative action to update an existing communication template. Allows passi
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="tools.ozone.communication.updateTemplate" method="post" path="/xrpc/tools.ozone.communication.updateTemplate" -->
 ```typescript
 import { Bluesky } from "@speakeasy-sdks/bluesky";
 
@@ -264,7 +261,6 @@ async function run() {
     id: "<id>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -289,15 +285,12 @@ async function run() {
   const res = await ozoneCommunicationUpdateTemplate(bluesky, {
     id: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("ozoneCommunicationUpdateTemplate failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -324,7 +317,7 @@ import {
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ToolsOzoneCommunicationUpdateTemplateBody](../../models/operations/toolsozonecommunicationupdatetemplatebody.md)                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ToolsOzoneCommunicationUpdateTemplateRequest](../../models/operations/toolsozonecommunicationupdatetemplaterequest.md)                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -335,18 +328,18 @@ import {
 
 ### Errors
 
-| Error Type                                                                | Status Code                                                               | Content Type                                                              |
-| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| errors.BadRequestToolsOzoneCommunicationUpdateTemplateResponseBodyError   | 400                                                                       | application/json                                                          |
-| errors.UnauthorizedToolsOzoneCommunicationUpdateTemplateResponseBodyError | 401                                                                       | application/json                                                          |
-| errors.NotFoundError                                                      | 404                                                                       | application/json                                                          |
-| errors.UnauthorizedError                                                  | 403, 407                                                                  | application/json                                                          |
-| errors.TimeoutError                                                       | 408                                                                       | application/json                                                          |
-| errors.RateLimitedError                                                   | 429                                                                       | application/json                                                          |
-| errors.BadRequestError                                                    | 413, 414, 415, 422, 431                                                   | application/json                                                          |
-| errors.TimeoutError                                                       | 504                                                                       | application/json                                                          |
-| errors.NotFoundError                                                      | 501, 505                                                                  | application/json                                                          |
-| errors.InternalServerError                                                | 500, 502, 503, 506, 507, 508                                              | application/json                                                          |
-| errors.BadRequestError                                                    | 510                                                                       | application/json                                                          |
-| errors.UnauthorizedError                                                  | 511                                                                       | application/json                                                          |
-| errors.APIError                                                           | 4XX, 5XX                                                                  | \*/\*                                                                     |
+| Error Type                                                   | Status Code                                                  | Content Type                                                 |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| errors.ToolsOzoneCommunicationUpdateTemplateBadRequestError  | 400                                                          | application/json                                             |
+| errors.ToolsOzoneCommunicationUpdateTemplateAuthMissingError | 401                                                          | application/json                                             |
+| errors.NotFoundError                                         | 404                                                          | application/json                                             |
+| errors.UnauthorizedError                                     | 403, 407                                                     | application/json                                             |
+| errors.TimeoutError                                          | 408                                                          | application/json                                             |
+| errors.RateLimitedError                                      | 429                                                          | application/json                                             |
+| errors.BadRequestError                                       | 413, 414, 415, 422, 431                                      | application/json                                             |
+| errors.TimeoutError                                          | 504                                                          | application/json                                             |
+| errors.NotFoundError                                         | 501, 505                                                     | application/json                                             |
+| errors.InternalServerError                                   | 500, 502, 503, 506, 507, 508                                 | application/json                                             |
+| errors.BadRequestError                                       | 510                                                          | application/json                                             |
+| errors.UnauthorizedError                                     | 511                                                          | application/json                                             |
+| errors.APIError                                              | 4XX, 5XX                                                     | \*/\*                                                        |

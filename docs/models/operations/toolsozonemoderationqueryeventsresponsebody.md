@@ -10,19 +10,17 @@ import { ToolsOzoneModerationQueryEventsResponseBody } from "@speakeasy-sdks/blu
 let value: ToolsOzoneModerationQueryEventsResponseBody = {
   events: [
     {
-      id: 237807,
+      id: 499587,
       event: {
-        reportType: "<value>",
+        subjectLine: "<value>",
       },
       subject: {
-        uri: "https://tedious-descendant.name/",
+        uri: "https://reflecting-outlaw.org",
         cid: "<id>",
       },
-      subjectBlobCids: [
-        "<value>",
-      ],
+      subjectBlobCids: [],
       createdBy: "<id>",
-      createdAt: new Date("2025-10-30T01:43:08.424Z"),
+      createdAt: new Date("2024-09-02T21:34:29.055Z"),
     },
   ],
 };

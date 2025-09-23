@@ -21,6 +21,7 @@ Write a repository record, creating or updating it as needed. Requires auth, imp
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="com.atproto.repo.putRecord" method="post" path="/xrpc/com.atproto.repo.putRecord" -->
 ```typescript
 import { Bluesky } from "@speakeasy-sdks/bluesky";
 
@@ -36,7 +37,6 @@ async function run() {
     record: "<value>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -64,15 +64,12 @@ async function run() {
     rkey: "<value>",
     record: "<value>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("repoPutRecord failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -99,29 +96,29 @@ import {
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ComAtprotoRepoPutRecordBody](../../models/operations/comatprotorepoputrecordbody.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ComAtprotoRepoPutRecordRequest](../../models/operations/comatprotorepoputrecordrequest.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.ComAtprotoRepoPutRecordResponseBody](../../models/operations/comatprotorepoputrecordresponsebody.md)\>**
+**Promise\<[operations.ComAtprotoRepoPutRecordResponse](../../models/operations/comatprotorepoputrecordresponse.md)\>**
 
 ### Errors
 
-| Error Type                                                  | Status Code                                                 | Content Type                                                |
-| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
-| errors.BadRequestComAtprotoRepoPutRecordResponseBodyError   | 400                                                         | application/json                                            |
-| errors.UnauthorizedComAtprotoRepoPutRecordResponseBodyError | 401                                                         | application/json                                            |
-| errors.NotFoundError                                        | 404                                                         | application/json                                            |
-| errors.UnauthorizedError                                    | 403, 407                                                    | application/json                                            |
-| errors.TimeoutError                                         | 408                                                         | application/json                                            |
-| errors.RateLimitedError                                     | 429                                                         | application/json                                            |
-| errors.BadRequestError                                      | 413, 414, 415, 422, 431                                     | application/json                                            |
-| errors.TimeoutError                                         | 504                                                         | application/json                                            |
-| errors.NotFoundError                                        | 501, 505                                                    | application/json                                            |
-| errors.InternalServerError                                  | 500, 502, 503, 506, 507, 508                                | application/json                                            |
-| errors.BadRequestError                                      | 510                                                         | application/json                                            |
-| errors.UnauthorizedError                                    | 511                                                         | application/json                                            |
-| errors.APIError                                             | 4XX, 5XX                                                    | \*/\*                                                       |
+| Error Type                                     | Status Code                                    | Content Type                                   |
+| ---------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- |
+| errors.ComAtprotoRepoPutRecordBadRequestError  | 400                                            | application/json                               |
+| errors.ComAtprotoRepoPutRecordAuthMissingError | 401                                            | application/json                               |
+| errors.NotFoundError                           | 404                                            | application/json                               |
+| errors.UnauthorizedError                       | 403, 407                                       | application/json                               |
+| errors.TimeoutError                            | 408                                            | application/json                               |
+| errors.RateLimitedError                        | 429                                            | application/json                               |
+| errors.BadRequestError                         | 413, 414, 415, 422, 431                        | application/json                               |
+| errors.TimeoutError                            | 504                                            | application/json                               |
+| errors.NotFoundError                           | 501, 505                                       | application/json                               |
+| errors.InternalServerError                     | 500, 502, 503, 506, 507, 508                   | application/json                               |
+| errors.BadRequestError                         | 510                                            | application/json                               |
+| errors.UnauthorizedError                       | 511                                            | application/json                               |
+| errors.APIError                                | 4XX, 5XX                                       | \*/\*                                          |

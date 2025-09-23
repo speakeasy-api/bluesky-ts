@@ -7,11 +7,11 @@ import * as operations from "../../models/operations/index.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
 const args = {
-  request: operations.AppBskyGraphUnmuteThreadBody$inboundSchema,
+  request: operations.AppBskyGraphUnmuteThreadRequest$inboundSchema,
 };
 
 export const tool$graphUnmuteThread: ToolDefinition<typeof args> = {
-  name: "graph_unmute-thread",
+  name: "graph-unmute-thread",
   description:
     `*This endpoint is part of the Bluesky application Lexicon APIs (\`app.bsky.*\`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 

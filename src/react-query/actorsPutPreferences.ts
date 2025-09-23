@@ -17,7 +17,7 @@ import { useBlueskyContext } from "./_context.js";
 import { MutationHookOptions } from "./_types.js";
 
 export type ActorsPutPreferencesMutationVariables = {
-  request: operations.AppBskyActorPutPreferencesBody;
+  request: operations.AppBskyActorPutPreferencesRequest;
   options?: RequestOptions;
 };
 

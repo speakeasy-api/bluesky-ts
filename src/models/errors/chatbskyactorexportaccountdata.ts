@@ -4,11 +4,12 @@
 
 import * as z from "zod";
 import { ClosedEnum } from "../../types/enums.js";
+import { BlueskyError } from "./blueskyerror.js";
 
 /**
  * Unauthorized
  */
-export type UnauthorizedChatBskyActorExportAccountDataResponseBodyErrorData = {
+export type ChatBskyActorExportAccountDataAuthMissingErrorData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,26 +17,24 @@ export type UnauthorizedChatBskyActorExportAccountDataResponseBodyErrorData = {
 /**
  * Unauthorized
  */
-export class UnauthorizedChatBskyActorExportAccountDataResponseBodyError
-  extends Error
+export class ChatBskyActorExportAccountDataAuthMissingError
+  extends BlueskyError
 {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: UnauthorizedChatBskyActorExportAccountDataResponseBodyErrorData;
+  data$: ChatBskyActorExportAccountDataAuthMissingErrorData;
 
   constructor(
-    err: UnauthorizedChatBskyActorExportAccountDataResponseBodyErrorData,
+    err: ChatBskyActorExportAccountDataAuthMissingErrorData,
+    httpMeta: { response: Response; request: Request; body: string },
   ) {
-    const message = "message" in err && typeof err.message === "string"
-      ? err.message
-      : `API error occurred: ${JSON.stringify(err)}`;
-    super(message);
+    const message = err.message || `API error occurred: ${JSON.stringify(err)}`;
+    super(message, httpMeta);
     this.data$ = err;
-
     this.error = err.error;
 
-    this.name = "UnauthorizedChatBskyActorExportAccountDataResponseBodyError";
+    this.name = "ChatBskyActorExportAccountDataAuthMissingError";
   }
 }
 
@@ -51,7 +50,7 @@ export type ChatBskyActorExportAccountDataError = ClosedEnum<
 /**
  * Bad Request
  */
-export type BadRequestChatBskyActorExportAccountDataResponseBodyErrorData = {
+export type ChatBskyActorExportAccountDataBadRequestErrorData = {
   error: ChatBskyActorExportAccountDataError;
   message: string;
 };
@@ -59,57 +58,61 @@ export type BadRequestChatBskyActorExportAccountDataResponseBodyErrorData = {
 /**
  * Bad Request
  */
-export class BadRequestChatBskyActorExportAccountDataResponseBodyError
-  extends Error
+export class ChatBskyActorExportAccountDataBadRequestError
+  extends BlueskyError
 {
   error: ChatBskyActorExportAccountDataError;
 
   /** The original data that was passed to this error instance. */
-  data$: BadRequestChatBskyActorExportAccountDataResponseBodyErrorData;
+  data$: ChatBskyActorExportAccountDataBadRequestErrorData;
 
   constructor(
-    err: BadRequestChatBskyActorExportAccountDataResponseBodyErrorData,
+    err: ChatBskyActorExportAccountDataBadRequestErrorData,
+    httpMeta: { response: Response; request: Request; body: string },
   ) {
-    const message = "message" in err && typeof err.message === "string"
-      ? err.message
-      : `API error occurred: ${JSON.stringify(err)}`;
-    super(message);
+    const message = err.message || `API error occurred: ${JSON.stringify(err)}`;
+    super(message, httpMeta);
     this.data$ = err;
-
     this.error = err.error;
 
-    this.name = "BadRequestChatBskyActorExportAccountDataResponseBodyError";
+    this.name = "ChatBskyActorExportAccountDataBadRequestError";
   }
 }
 
 /** @internal */
-export const UnauthorizedChatBskyActorExportAccountDataResponseBodyError$inboundSchema:
+export const ChatBskyActorExportAccountDataAuthMissingError$inboundSchema:
   z.ZodType<
-    UnauthorizedChatBskyActorExportAccountDataResponseBodyError,
+    ChatBskyActorExportAccountDataAuthMissingError,
     z.ZodTypeDef,
     unknown
   > = z.object({
-    error: z.literal("AuthMissing"),
+    error: z.literal("AuthMissing").default("AuthMissing"),
     message: z.string(),
+    request$: z.instanceof(Request),
+    response$: z.instanceof(Response),
+    body$: z.string(),
   })
     .transform((v) => {
-      return new UnauthorizedChatBskyActorExportAccountDataResponseBodyError(v);
+      return new ChatBskyActorExportAccountDataAuthMissingError(v, {
+        request: v.request$,
+        response: v.response$,
+        body: v.body$,
+      });
     });
 
 /** @internal */
-export type UnauthorizedChatBskyActorExportAccountDataResponseBodyError$Outbound =
-  {
-    error: "AuthMissing";
-    message: string;
-  };
+export type ChatBskyActorExportAccountDataAuthMissingError$Outbound = {
+  error: "AuthMissing";
+  message: string;
+};
 
 /** @internal */
-export const UnauthorizedChatBskyActorExportAccountDataResponseBodyError$outboundSchema:
+export const ChatBskyActorExportAccountDataAuthMissingError$outboundSchema:
   z.ZodType<
-    UnauthorizedChatBskyActorExportAccountDataResponseBodyError$Outbound,
+    ChatBskyActorExportAccountDataAuthMissingError$Outbound,
     z.ZodTypeDef,
-    UnauthorizedChatBskyActorExportAccountDataResponseBodyError
-  > = z.instanceof(UnauthorizedChatBskyActorExportAccountDataResponseBodyError)
+    ChatBskyActorExportAccountDataAuthMissingError
+  > = z.instanceof(ChatBskyActorExportAccountDataAuthMissingError)
     .transform(v => v.data$)
     .pipe(z.object({
       error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -120,16 +123,16 @@ export const UnauthorizedChatBskyActorExportAccountDataResponseBodyError$outboun
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace UnauthorizedChatBskyActorExportAccountDataResponseBodyError$ {
-  /** @deprecated use `UnauthorizedChatBskyActorExportAccountDataResponseBodyError$inboundSchema` instead. */
+export namespace ChatBskyActorExportAccountDataAuthMissingError$ {
+  /** @deprecated use `ChatBskyActorExportAccountDataAuthMissingError$inboundSchema` instead. */
   export const inboundSchema =
-    UnauthorizedChatBskyActorExportAccountDataResponseBodyError$inboundSchema;
-  /** @deprecated use `UnauthorizedChatBskyActorExportAccountDataResponseBodyError$outboundSchema` instead. */
+    ChatBskyActorExportAccountDataAuthMissingError$inboundSchema;
+  /** @deprecated use `ChatBskyActorExportAccountDataAuthMissingError$outboundSchema` instead. */
   export const outboundSchema =
-    UnauthorizedChatBskyActorExportAccountDataResponseBodyError$outboundSchema;
-  /** @deprecated use `UnauthorizedChatBskyActorExportAccountDataResponseBodyError$Outbound` instead. */
+    ChatBskyActorExportAccountDataAuthMissingError$outboundSchema;
+  /** @deprecated use `ChatBskyActorExportAccountDataAuthMissingError$Outbound` instead. */
   export type Outbound =
-    UnauthorizedChatBskyActorExportAccountDataResponseBodyError$Outbound;
+    ChatBskyActorExportAccountDataAuthMissingError$Outbound;
 }
 
 /** @internal */
@@ -156,33 +159,39 @@ export namespace ChatBskyActorExportAccountDataError$ {
 }
 
 /** @internal */
-export const BadRequestChatBskyActorExportAccountDataResponseBodyError$inboundSchema:
+export const ChatBskyActorExportAccountDataBadRequestError$inboundSchema:
   z.ZodType<
-    BadRequestChatBskyActorExportAccountDataResponseBodyError,
+    ChatBskyActorExportAccountDataBadRequestError,
     z.ZodTypeDef,
     unknown
   > = z.object({
     error: ChatBskyActorExportAccountDataError$inboundSchema,
     message: z.string(),
+    request$: z.instanceof(Request),
+    response$: z.instanceof(Response),
+    body$: z.string(),
   })
     .transform((v) => {
-      return new BadRequestChatBskyActorExportAccountDataResponseBodyError(v);
+      return new ChatBskyActorExportAccountDataBadRequestError(v, {
+        request: v.request$,
+        response: v.response$,
+        body: v.body$,
+      });
     });
 
 /** @internal */
-export type BadRequestChatBskyActorExportAccountDataResponseBodyError$Outbound =
-  {
-    error: string;
-    message: string;
-  };
+export type ChatBskyActorExportAccountDataBadRequestError$Outbound = {
+  error: string;
+  message: string;
+};
 
 /** @internal */
-export const BadRequestChatBskyActorExportAccountDataResponseBodyError$outboundSchema:
+export const ChatBskyActorExportAccountDataBadRequestError$outboundSchema:
   z.ZodType<
-    BadRequestChatBskyActorExportAccountDataResponseBodyError$Outbound,
+    ChatBskyActorExportAccountDataBadRequestError$Outbound,
     z.ZodTypeDef,
-    BadRequestChatBskyActorExportAccountDataResponseBodyError
-  > = z.instanceof(BadRequestChatBskyActorExportAccountDataResponseBodyError)
+    ChatBskyActorExportAccountDataBadRequestError
+  > = z.instanceof(ChatBskyActorExportAccountDataBadRequestError)
     .transform(v => v.data$)
     .pipe(z.object({
       error: ChatBskyActorExportAccountDataError$outboundSchema,
@@ -193,14 +202,13 @@ export const BadRequestChatBskyActorExportAccountDataResponseBodyError$outboundS
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace BadRequestChatBskyActorExportAccountDataResponseBodyError$ {
-  /** @deprecated use `BadRequestChatBskyActorExportAccountDataResponseBodyError$inboundSchema` instead. */
+export namespace ChatBskyActorExportAccountDataBadRequestError$ {
+  /** @deprecated use `ChatBskyActorExportAccountDataBadRequestError$inboundSchema` instead. */
   export const inboundSchema =
-    BadRequestChatBskyActorExportAccountDataResponseBodyError$inboundSchema;
-  /** @deprecated use `BadRequestChatBskyActorExportAccountDataResponseBodyError$outboundSchema` instead. */
+    ChatBskyActorExportAccountDataBadRequestError$inboundSchema;
+  /** @deprecated use `ChatBskyActorExportAccountDataBadRequestError$outboundSchema` instead. */
   export const outboundSchema =
-    BadRequestChatBskyActorExportAccountDataResponseBodyError$outboundSchema;
-  /** @deprecated use `BadRequestChatBskyActorExportAccountDataResponseBodyError$Outbound` instead. */
-  export type Outbound =
-    BadRequestChatBskyActorExportAccountDataResponseBodyError$Outbound;
+    ChatBskyActorExportAccountDataBadRequestError$outboundSchema;
+  /** @deprecated use `ChatBskyActorExportAccountDataBadRequestError$Outbound` instead. */
+  export type Outbound = ChatBskyActorExportAccountDataBadRequestError$Outbound;
 }

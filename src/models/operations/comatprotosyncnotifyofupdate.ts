@@ -7,7 +7,7 @@ import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ComAtprotoSyncNotifyOfUpdateBody = {
+export type ComAtprotoSyncNotifyOfUpdateRequest = {
   /**
    * Hostname of the current service (usually a PDS) that is notifying of update.
    */
@@ -15,8 +15,8 @@ export type ComAtprotoSyncNotifyOfUpdateBody = {
 };
 
 /** @internal */
-export const ComAtprotoSyncNotifyOfUpdateBody$inboundSchema: z.ZodType<
-  ComAtprotoSyncNotifyOfUpdateBody,
+export const ComAtprotoSyncNotifyOfUpdateRequest$inboundSchema: z.ZodType<
+  ComAtprotoSyncNotifyOfUpdateRequest,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -24,15 +24,15 @@ export const ComAtprotoSyncNotifyOfUpdateBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type ComAtprotoSyncNotifyOfUpdateBody$Outbound = {
+export type ComAtprotoSyncNotifyOfUpdateRequest$Outbound = {
   hostname: string;
 };
 
 /** @internal */
-export const ComAtprotoSyncNotifyOfUpdateBody$outboundSchema: z.ZodType<
-  ComAtprotoSyncNotifyOfUpdateBody$Outbound,
+export const ComAtprotoSyncNotifyOfUpdateRequest$outboundSchema: z.ZodType<
+  ComAtprotoSyncNotifyOfUpdateRequest$Outbound,
   z.ZodTypeDef,
-  ComAtprotoSyncNotifyOfUpdateBody
+  ComAtprotoSyncNotifyOfUpdateRequest
 > = z.object({
   hostname: z.string(),
 });
@@ -41,31 +41,34 @@ export const ComAtprotoSyncNotifyOfUpdateBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoSyncNotifyOfUpdateBody$ {
-  /** @deprecated use `ComAtprotoSyncNotifyOfUpdateBody$inboundSchema` instead. */
-  export const inboundSchema = ComAtprotoSyncNotifyOfUpdateBody$inboundSchema;
-  /** @deprecated use `ComAtprotoSyncNotifyOfUpdateBody$outboundSchema` instead. */
-  export const outboundSchema = ComAtprotoSyncNotifyOfUpdateBody$outboundSchema;
-  /** @deprecated use `ComAtprotoSyncNotifyOfUpdateBody$Outbound` instead. */
-  export type Outbound = ComAtprotoSyncNotifyOfUpdateBody$Outbound;
+export namespace ComAtprotoSyncNotifyOfUpdateRequest$ {
+  /** @deprecated use `ComAtprotoSyncNotifyOfUpdateRequest$inboundSchema` instead. */
+  export const inboundSchema =
+    ComAtprotoSyncNotifyOfUpdateRequest$inboundSchema;
+  /** @deprecated use `ComAtprotoSyncNotifyOfUpdateRequest$outboundSchema` instead. */
+  export const outboundSchema =
+    ComAtprotoSyncNotifyOfUpdateRequest$outboundSchema;
+  /** @deprecated use `ComAtprotoSyncNotifyOfUpdateRequest$Outbound` instead. */
+  export type Outbound = ComAtprotoSyncNotifyOfUpdateRequest$Outbound;
 }
 
-export function comAtprotoSyncNotifyOfUpdateBodyToJSON(
-  comAtprotoSyncNotifyOfUpdateBody: ComAtprotoSyncNotifyOfUpdateBody,
+export function comAtprotoSyncNotifyOfUpdateRequestToJSON(
+  comAtprotoSyncNotifyOfUpdateRequest: ComAtprotoSyncNotifyOfUpdateRequest,
 ): string {
   return JSON.stringify(
-    ComAtprotoSyncNotifyOfUpdateBody$outboundSchema.parse(
-      comAtprotoSyncNotifyOfUpdateBody,
+    ComAtprotoSyncNotifyOfUpdateRequest$outboundSchema.parse(
+      comAtprotoSyncNotifyOfUpdateRequest,
     ),
   );
 }
 
-export function comAtprotoSyncNotifyOfUpdateBodyFromJSON(
+export function comAtprotoSyncNotifyOfUpdateRequestFromJSON(
   jsonString: string,
-): SafeParseResult<ComAtprotoSyncNotifyOfUpdateBody, SDKValidationError> {
+): SafeParseResult<ComAtprotoSyncNotifyOfUpdateRequest, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => ComAtprotoSyncNotifyOfUpdateBody$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ComAtprotoSyncNotifyOfUpdateBody' from JSON`,
+    (x) =>
+      ComAtprotoSyncNotifyOfUpdateRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ComAtprotoSyncNotifyOfUpdateRequest' from JSON`,
   );
 }

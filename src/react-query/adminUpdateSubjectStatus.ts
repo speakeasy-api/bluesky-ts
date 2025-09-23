@@ -17,12 +17,12 @@ import { useBlueskyContext } from "./_context.js";
 import { MutationHookOptions } from "./_types.js";
 
 export type AdminUpdateSubjectStatusMutationVariables = {
-  request: operations.ComAtprotoAdminUpdateSubjectStatusBody;
+  request: operations.ComAtprotoAdminUpdateSubjectStatusRequest;
   options?: RequestOptions;
 };
 
 export type AdminUpdateSubjectStatusMutationData =
-  operations.ComAtprotoAdminUpdateSubjectStatusResponseBody;
+  operations.ComAtprotoAdminUpdateSubjectStatusResponse;
 
 /**
  * *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*

@@ -26,7 +26,7 @@ const value: components.ToolsOzoneModerationDefsModEventEscalate = {};
 ```typescript
 const value: components.ToolsOzoneModerationDefsModEventComment = {
   comment:
-    "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
+    "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
 };
 ```
 
@@ -35,10 +35,12 @@ const value: components.ToolsOzoneModerationDefsModEventComment = {
 ```typescript
 const value: components.ToolsOzoneModerationDefsModEventLabel = {
   createLabelVals: [
-    "<value>",
+    "<value 1>",
   ],
   negateLabelVals: [
-    "<value>",
+    "<value 1>",
+    "<value 2>",
+    "<value 3>",
   ],
 };
 ```
@@ -55,7 +57,7 @@ const value: components.ToolsOzoneModerationDefsModEventReport = {
 
 ```typescript
 const value: components.ToolsOzoneModerationDefsModEventMute = {
-  durationInHours: 814967,
+  durationInHours: 946554,
 };
 ```
 
@@ -102,11 +104,9 @@ const value: components.ToolsOzoneModerationDefsModEventEmail = {
 ```typescript
 const value: components.ToolsOzoneModerationDefsModEventTag = {
   add: [
-    "<value>",
+    "<value 1>",
   ],
-  remove: [
-    "<value>",
-  ],
+  remove: [],
 };
 ```
 
@@ -115,7 +115,7 @@ const value: components.ToolsOzoneModerationDefsModEventTag = {
 ```typescript
 const value: components.ToolsOzoneModerationDefsAccountEvent = {
   active: false,
-  timestamp: new Date("2025-12-16T02:21:59.446Z"),
+  timestamp: new Date("2025-03-24T06:28:37.550Z"),
 };
 ```
 
@@ -123,7 +123,7 @@ const value: components.ToolsOzoneModerationDefsAccountEvent = {
 
 ```typescript
 const value: components.ToolsOzoneModerationDefsIdentityEvent = {
-  timestamp: new Date("2025-11-27T23:49:54.191Z"),
+  timestamp: new Date("2024-01-25T17:35:17.871Z"),
 };
 ```
 
@@ -131,8 +131,8 @@ const value: components.ToolsOzoneModerationDefsIdentityEvent = {
 
 ```typescript
 const value: components.ToolsOzoneModerationDefsRecordEvent = {
-  op: "delete",
-  timestamp: new Date("2023-11-22T00:36:57.586Z"),
+  op: "create",
+  timestamp: new Date("2023-09-22T15:18:25.819Z"),
 };
 ```
 

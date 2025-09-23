@@ -8,7 +8,7 @@ import { AppBskyGraphGetListResponse } from "@speakeasy-sdks/bluesky/models/oper
 let value: AppBskyGraphGetListResponse = {
   result: {
     list: {
-      uri: "https://serpentine-knight.org",
+      uri: "https://moist-silk.com/",
       cid: "<id>",
       creator: {
         did: "<id>",
@@ -16,9 +16,17 @@ let value: AppBskyGraphGetListResponse = {
       },
       name: "<value>",
       purpose: "<value>",
-      indexedAt: new Date("2024-12-06T19:31:05.522Z"),
+      indexedAt: new Date("2025-08-28T03:04:04.412Z"),
     },
-    items: [],
+    items: [
+      {
+        uri: "https://gaseous-metal.com/",
+        subject: {
+          did: "<id>",
+          handle: "<value>",
+        },
+      },
+    ],
   },
 };
 ```

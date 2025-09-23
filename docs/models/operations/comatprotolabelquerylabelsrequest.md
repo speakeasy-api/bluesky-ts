@@ -6,9 +6,7 @@
 import { ComAtprotoLabelQueryLabelsRequest } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: ComAtprotoLabelQueryLabelsRequest = {
-  uriPatterns: [
-    "<value>",
-  ],
+  uriPatterns: [],
 };
 ```
 

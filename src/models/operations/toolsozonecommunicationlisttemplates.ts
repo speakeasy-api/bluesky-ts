@@ -11,16 +11,16 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 /**
  * OK
  */
-export type ToolsOzoneCommunicationListTemplatesResponseBody = {
+export type ToolsOzoneCommunicationListTemplatesResponse = {
   communicationTemplates: Array<
     components.ToolsOzoneCommunicationDefsTemplateView
   >;
 };
 
 /** @internal */
-export const ToolsOzoneCommunicationListTemplatesResponseBody$inboundSchema:
+export const ToolsOzoneCommunicationListTemplatesResponse$inboundSchema:
   z.ZodType<
-    ToolsOzoneCommunicationListTemplatesResponseBody,
+    ToolsOzoneCommunicationListTemplatesResponse,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -30,18 +30,18 @@ export const ToolsOzoneCommunicationListTemplatesResponseBody$inboundSchema:
   });
 
 /** @internal */
-export type ToolsOzoneCommunicationListTemplatesResponseBody$Outbound = {
+export type ToolsOzoneCommunicationListTemplatesResponse$Outbound = {
   communicationTemplates: Array<
     components.ToolsOzoneCommunicationDefsTemplateView$Outbound
   >;
 };
 
 /** @internal */
-export const ToolsOzoneCommunicationListTemplatesResponseBody$outboundSchema:
+export const ToolsOzoneCommunicationListTemplatesResponse$outboundSchema:
   z.ZodType<
-    ToolsOzoneCommunicationListTemplatesResponseBody$Outbound,
+    ToolsOzoneCommunicationListTemplatesResponse$Outbound,
     z.ZodTypeDef,
-    ToolsOzoneCommunicationListTemplatesResponseBody
+    ToolsOzoneCommunicationListTemplatesResponse
   > = z.object({
     communicationTemplates: z.array(
       components.ToolsOzoneCommunicationDefsTemplateView$outboundSchema,
@@ -52,41 +52,40 @@ export const ToolsOzoneCommunicationListTemplatesResponseBody$outboundSchema:
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ToolsOzoneCommunicationListTemplatesResponseBody$ {
-  /** @deprecated use `ToolsOzoneCommunicationListTemplatesResponseBody$inboundSchema` instead. */
+export namespace ToolsOzoneCommunicationListTemplatesResponse$ {
+  /** @deprecated use `ToolsOzoneCommunicationListTemplatesResponse$inboundSchema` instead. */
   export const inboundSchema =
-    ToolsOzoneCommunicationListTemplatesResponseBody$inboundSchema;
-  /** @deprecated use `ToolsOzoneCommunicationListTemplatesResponseBody$outboundSchema` instead. */
+    ToolsOzoneCommunicationListTemplatesResponse$inboundSchema;
+  /** @deprecated use `ToolsOzoneCommunicationListTemplatesResponse$outboundSchema` instead. */
   export const outboundSchema =
-    ToolsOzoneCommunicationListTemplatesResponseBody$outboundSchema;
-  /** @deprecated use `ToolsOzoneCommunicationListTemplatesResponseBody$Outbound` instead. */
-  export type Outbound =
-    ToolsOzoneCommunicationListTemplatesResponseBody$Outbound;
+    ToolsOzoneCommunicationListTemplatesResponse$outboundSchema;
+  /** @deprecated use `ToolsOzoneCommunicationListTemplatesResponse$Outbound` instead. */
+  export type Outbound = ToolsOzoneCommunicationListTemplatesResponse$Outbound;
 }
 
-export function toolsOzoneCommunicationListTemplatesResponseBodyToJSON(
-  toolsOzoneCommunicationListTemplatesResponseBody:
-    ToolsOzoneCommunicationListTemplatesResponseBody,
+export function toolsOzoneCommunicationListTemplatesResponseToJSON(
+  toolsOzoneCommunicationListTemplatesResponse:
+    ToolsOzoneCommunicationListTemplatesResponse,
 ): string {
   return JSON.stringify(
-    ToolsOzoneCommunicationListTemplatesResponseBody$outboundSchema.parse(
-      toolsOzoneCommunicationListTemplatesResponseBody,
+    ToolsOzoneCommunicationListTemplatesResponse$outboundSchema.parse(
+      toolsOzoneCommunicationListTemplatesResponse,
     ),
   );
 }
 
-export function toolsOzoneCommunicationListTemplatesResponseBodyFromJSON(
+export function toolsOzoneCommunicationListTemplatesResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
-  ToolsOzoneCommunicationListTemplatesResponseBody,
+  ToolsOzoneCommunicationListTemplatesResponse,
   SDKValidationError
 > {
   return safeParse(
     jsonString,
     (x) =>
-      ToolsOzoneCommunicationListTemplatesResponseBody$inboundSchema.parse(
+      ToolsOzoneCommunicationListTemplatesResponse$inboundSchema.parse(
         JSON.parse(x),
       ),
-    `Failed to parse 'ToolsOzoneCommunicationListTemplatesResponseBody' from JSON`,
+    `Failed to parse 'ToolsOzoneCommunicationListTemplatesResponse' from JSON`,
   );
 }

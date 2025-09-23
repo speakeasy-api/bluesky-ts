@@ -17,6 +17,7 @@ Find labels relevant to the provided AT-URI patterns. Public endpoint for modera
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="com.atproto.label.queryLabels" method="get" path="/xrpc/com.atproto.label.queryLabels" -->
 ```typescript
 import { Bluesky } from "@speakeasy-sdks/bluesky";
 
@@ -27,14 +28,12 @@ const bluesky = new Bluesky({
 async function run() {
   const result = await bluesky.atprotoLabels.query({
     uriPatterns: [
-      "<value>",
-      "<value>",
-      "<value>",
+      "<value 1>",
+      "<value 2>",
     ],
   });
 
   for await (const page of result) {
-    // Handle the page
     console.log(page);
   }
 }
@@ -59,21 +58,17 @@ const bluesky = new BlueskyCore({
 async function run() {
   const res = await atprotoLabelsQuery(bluesky, {
     uriPatterns: [
-      "<value>",
-      "<value>",
-      "<value>",
+      "<value 1>",
+      "<value 2>",
     ],
   });
-
-  if (!res.ok) {
-    throw res.error;
-  }
-
-  const { value: result } = res;
-
-  for await (const page of result) {
-    // Handle the page
+  if (res.ok) {
+    const { value: result } = res;
+    for await (const page of result) {
     console.log(page);
+  }
+  } else {
+    console.log("atprotoLabelsQuery failed:", res.error);
   }
 }
 
@@ -126,18 +121,18 @@ import {
 
 ### Errors
 
-| Error Type                                                     | Status Code                                                    | Content Type                                                   |
-| -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
-| errors.BadRequestComAtprotoLabelQueryLabelsResponseBodyError   | 400                                                            | application/json                                               |
-| errors.UnauthorizedComAtprotoLabelQueryLabelsResponseBodyError | 401                                                            | application/json                                               |
-| errors.NotFoundError                                           | 404                                                            | application/json                                               |
-| errors.UnauthorizedError                                       | 403, 407                                                       | application/json                                               |
-| errors.TimeoutError                                            | 408                                                            | application/json                                               |
-| errors.RateLimitedError                                        | 429                                                            | application/json                                               |
-| errors.BadRequestError                                         | 413, 414, 415, 422, 431                                        | application/json                                               |
-| errors.TimeoutError                                            | 504                                                            | application/json                                               |
-| errors.NotFoundError                                           | 501, 505                                                       | application/json                                               |
-| errors.InternalServerError                                     | 500, 502, 503, 506, 507, 508                                   | application/json                                               |
-| errors.BadRequestError                                         | 510                                                            | application/json                                               |
-| errors.UnauthorizedError                                       | 511                                                            | application/json                                               |
-| errors.APIError                                                | 4XX, 5XX                                                       | \*/\*                                                          |
+| Error Type                                        | Status Code                                       | Content Type                                      |
+| ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
+| errors.ComAtprotoLabelQueryLabelsBadRequestError  | 400                                               | application/json                                  |
+| errors.ComAtprotoLabelQueryLabelsAuthMissingError | 401                                               | application/json                                  |
+| errors.NotFoundError                              | 404                                               | application/json                                  |
+| errors.UnauthorizedError                          | 403, 407                                          | application/json                                  |
+| errors.TimeoutError                               | 408                                               | application/json                                  |
+| errors.RateLimitedError                           | 429                                               | application/json                                  |
+| errors.BadRequestError                            | 413, 414, 415, 422, 431                           | application/json                                  |
+| errors.TimeoutError                               | 504                                               | application/json                                  |
+| errors.NotFoundError                              | 501, 505                                          | application/json                                  |
+| errors.InternalServerError                        | 500, 502, 503, 506, 507, 508                      | application/json                                  |
+| errors.BadRequestError                            | 510                                               | application/json                                  |
+| errors.UnauthorizedError                          | 511                                               | application/json                                  |
+| errors.APIError                                   | 4XX, 5XX                                          | \*/\*                                             |

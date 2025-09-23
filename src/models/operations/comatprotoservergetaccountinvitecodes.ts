@@ -19,7 +19,7 @@ export type ComAtprotoServerGetAccountInviteCodesRequest = {
 /**
  * OK
  */
-export type ComAtprotoServerGetAccountInviteCodesResponseBody = {
+export type ComAtprotoServerGetAccountInviteCodesResponse = {
   codes: Array<components.ComAtprotoServerDefsInviteCode>;
 };
 
@@ -94,9 +94,9 @@ export function comAtprotoServerGetAccountInviteCodesRequestFromJSON(
 }
 
 /** @internal */
-export const ComAtprotoServerGetAccountInviteCodesResponseBody$inboundSchema:
+export const ComAtprotoServerGetAccountInviteCodesResponse$inboundSchema:
   z.ZodType<
-    ComAtprotoServerGetAccountInviteCodesResponseBody,
+    ComAtprotoServerGetAccountInviteCodesResponse,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -104,16 +104,16 @@ export const ComAtprotoServerGetAccountInviteCodesResponseBody$inboundSchema:
   });
 
 /** @internal */
-export type ComAtprotoServerGetAccountInviteCodesResponseBody$Outbound = {
+export type ComAtprotoServerGetAccountInviteCodesResponse$Outbound = {
   codes: Array<components.ComAtprotoServerDefsInviteCode$Outbound>;
 };
 
 /** @internal */
-export const ComAtprotoServerGetAccountInviteCodesResponseBody$outboundSchema:
+export const ComAtprotoServerGetAccountInviteCodesResponse$outboundSchema:
   z.ZodType<
-    ComAtprotoServerGetAccountInviteCodesResponseBody$Outbound,
+    ComAtprotoServerGetAccountInviteCodesResponse$Outbound,
     z.ZodTypeDef,
-    ComAtprotoServerGetAccountInviteCodesResponseBody
+    ComAtprotoServerGetAccountInviteCodesResponse
   > = z.object({
     codes: z.array(components.ComAtprotoServerDefsInviteCode$outboundSchema),
   });
@@ -122,41 +122,40 @@ export const ComAtprotoServerGetAccountInviteCodesResponseBody$outboundSchema:
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoServerGetAccountInviteCodesResponseBody$ {
-  /** @deprecated use `ComAtprotoServerGetAccountInviteCodesResponseBody$inboundSchema` instead. */
+export namespace ComAtprotoServerGetAccountInviteCodesResponse$ {
+  /** @deprecated use `ComAtprotoServerGetAccountInviteCodesResponse$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoServerGetAccountInviteCodesResponseBody$inboundSchema;
-  /** @deprecated use `ComAtprotoServerGetAccountInviteCodesResponseBody$outboundSchema` instead. */
+    ComAtprotoServerGetAccountInviteCodesResponse$inboundSchema;
+  /** @deprecated use `ComAtprotoServerGetAccountInviteCodesResponse$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoServerGetAccountInviteCodesResponseBody$outboundSchema;
-  /** @deprecated use `ComAtprotoServerGetAccountInviteCodesResponseBody$Outbound` instead. */
-  export type Outbound =
-    ComAtprotoServerGetAccountInviteCodesResponseBody$Outbound;
+    ComAtprotoServerGetAccountInviteCodesResponse$outboundSchema;
+  /** @deprecated use `ComAtprotoServerGetAccountInviteCodesResponse$Outbound` instead. */
+  export type Outbound = ComAtprotoServerGetAccountInviteCodesResponse$Outbound;
 }
 
-export function comAtprotoServerGetAccountInviteCodesResponseBodyToJSON(
-  comAtprotoServerGetAccountInviteCodesResponseBody:
-    ComAtprotoServerGetAccountInviteCodesResponseBody,
+export function comAtprotoServerGetAccountInviteCodesResponseToJSON(
+  comAtprotoServerGetAccountInviteCodesResponse:
+    ComAtprotoServerGetAccountInviteCodesResponse,
 ): string {
   return JSON.stringify(
-    ComAtprotoServerGetAccountInviteCodesResponseBody$outboundSchema.parse(
-      comAtprotoServerGetAccountInviteCodesResponseBody,
+    ComAtprotoServerGetAccountInviteCodesResponse$outboundSchema.parse(
+      comAtprotoServerGetAccountInviteCodesResponse,
     ),
   );
 }
 
-export function comAtprotoServerGetAccountInviteCodesResponseBodyFromJSON(
+export function comAtprotoServerGetAccountInviteCodesResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
-  ComAtprotoServerGetAccountInviteCodesResponseBody,
+  ComAtprotoServerGetAccountInviteCodesResponse,
   SDKValidationError
 > {
   return safeParse(
     jsonString,
     (x) =>
-      ComAtprotoServerGetAccountInviteCodesResponseBody$inboundSchema.parse(
+      ComAtprotoServerGetAccountInviteCodesResponse$inboundSchema.parse(
         JSON.parse(x),
       ),
-    `Failed to parse 'ComAtprotoServerGetAccountInviteCodesResponseBody' from JSON`,
+    `Failed to parse 'ComAtprotoServerGetAccountInviteCodesResponse' from JSON`,
   );
 }

@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoAdminUpdateSubjectStatusError } from "@speakeasy-sdks/bluesky/models/errors";
 
-let value: ComAtprotoAdminUpdateSubjectStatusError = "InvalidRequest";
+let value: ComAtprotoAdminUpdateSubjectStatusError = "InvalidToken";
 ```
 
 ## Values

@@ -20,14 +20,14 @@ import {
 } from "./appbskyfeeddefsskeletonreasonrepost.js";
 
 export type AppBskyFeedDefsSkeletonFeedPostReason =
-  | AppBskyFeedDefsSkeletonReasonPin
-  | AppBskyFeedDefsSkeletonReasonRepost;
+  | AppBskyFeedDefsSkeletonReasonRepost
+  | AppBskyFeedDefsSkeletonReasonPin;
 
 export type AppBskyFeedDefsSkeletonFeedPost = {
   post: string;
   reason?:
-    | AppBskyFeedDefsSkeletonReasonPin
     | AppBskyFeedDefsSkeletonReasonRepost
+    | AppBskyFeedDefsSkeletonReasonPin
     | undefined;
   /**
    * Context that will be passed through to client and may be passed to feed generator back alongside interactions.
@@ -41,14 +41,14 @@ export const AppBskyFeedDefsSkeletonFeedPostReason$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.union([
-  AppBskyFeedDefsSkeletonReasonPin$inboundSchema,
   AppBskyFeedDefsSkeletonReasonRepost$inboundSchema,
+  AppBskyFeedDefsSkeletonReasonPin$inboundSchema,
 ]);
 
 /** @internal */
 export type AppBskyFeedDefsSkeletonFeedPostReason$Outbound =
-  | AppBskyFeedDefsSkeletonReasonPin$Outbound
-  | AppBskyFeedDefsSkeletonReasonRepost$Outbound;
+  | AppBskyFeedDefsSkeletonReasonRepost$Outbound
+  | AppBskyFeedDefsSkeletonReasonPin$Outbound;
 
 /** @internal */
 export const AppBskyFeedDefsSkeletonFeedPostReason$outboundSchema: z.ZodType<
@@ -56,8 +56,8 @@ export const AppBskyFeedDefsSkeletonFeedPostReason$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   AppBskyFeedDefsSkeletonFeedPostReason
 > = z.union([
-  AppBskyFeedDefsSkeletonReasonPin$outboundSchema,
   AppBskyFeedDefsSkeletonReasonRepost$outboundSchema,
+  AppBskyFeedDefsSkeletonReasonPin$outboundSchema,
 ]);
 
 /**
@@ -104,8 +104,8 @@ export const AppBskyFeedDefsSkeletonFeedPost$inboundSchema: z.ZodType<
 > = z.object({
   post: z.string(),
   reason: z.union([
-    AppBskyFeedDefsSkeletonReasonPin$inboundSchema,
     AppBskyFeedDefsSkeletonReasonRepost$inboundSchema,
+    AppBskyFeedDefsSkeletonReasonPin$inboundSchema,
   ]).optional(),
   feedContext: z.string().optional(),
 });
@@ -114,8 +114,8 @@ export const AppBskyFeedDefsSkeletonFeedPost$inboundSchema: z.ZodType<
 export type AppBskyFeedDefsSkeletonFeedPost$Outbound = {
   post: string;
   reason?:
-    | AppBskyFeedDefsSkeletonReasonPin$Outbound
     | AppBskyFeedDefsSkeletonReasonRepost$Outbound
+    | AppBskyFeedDefsSkeletonReasonPin$Outbound
     | undefined;
   feedContext?: string | undefined;
 };
@@ -128,8 +128,8 @@ export const AppBskyFeedDefsSkeletonFeedPost$outboundSchema: z.ZodType<
 > = z.object({
   post: z.string(),
   reason: z.union([
-    AppBskyFeedDefsSkeletonReasonPin$outboundSchema,
     AppBskyFeedDefsSkeletonReasonRepost$outboundSchema,
+    AppBskyFeedDefsSkeletonReasonPin$outboundSchema,
   ]).optional(),
   feedContext: z.string().optional(),
 });

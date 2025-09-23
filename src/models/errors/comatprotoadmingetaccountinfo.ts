@@ -4,11 +4,12 @@
 
 import * as z from "zod";
 import { ClosedEnum } from "../../types/enums.js";
+import { BlueskyError } from "./blueskyerror.js";
 
 /**
  * Unauthorized
  */
-export type UnauthorizedComAtprotoAdminGetAccountInfoResponseBodyErrorData = {
+export type ComAtprotoAdminGetAccountInfoAuthMissingErrorData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,26 +17,24 @@ export type UnauthorizedComAtprotoAdminGetAccountInfoResponseBodyErrorData = {
 /**
  * Unauthorized
  */
-export class UnauthorizedComAtprotoAdminGetAccountInfoResponseBodyError
-  extends Error
+export class ComAtprotoAdminGetAccountInfoAuthMissingError
+  extends BlueskyError
 {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: UnauthorizedComAtprotoAdminGetAccountInfoResponseBodyErrorData;
+  data$: ComAtprotoAdminGetAccountInfoAuthMissingErrorData;
 
   constructor(
-    err: UnauthorizedComAtprotoAdminGetAccountInfoResponseBodyErrorData,
+    err: ComAtprotoAdminGetAccountInfoAuthMissingErrorData,
+    httpMeta: { response: Response; request: Request; body: string },
   ) {
-    const message = "message" in err && typeof err.message === "string"
-      ? err.message
-      : `API error occurred: ${JSON.stringify(err)}`;
-    super(message);
+    const message = err.message || `API error occurred: ${JSON.stringify(err)}`;
+    super(message, httpMeta);
     this.data$ = err;
-
     this.error = err.error;
 
-    this.name = "UnauthorizedComAtprotoAdminGetAccountInfoResponseBodyError";
+    this.name = "ComAtprotoAdminGetAccountInfoAuthMissingError";
   }
 }
 
@@ -51,7 +50,7 @@ export type ComAtprotoAdminGetAccountInfoError = ClosedEnum<
 /**
  * Bad Request
  */
-export type BadRequestComAtprotoAdminGetAccountInfoResponseBodyErrorData = {
+export type ComAtprotoAdminGetAccountInfoBadRequestErrorData = {
   error: ComAtprotoAdminGetAccountInfoError;
   message: string;
 };
@@ -59,57 +58,59 @@ export type BadRequestComAtprotoAdminGetAccountInfoResponseBodyErrorData = {
 /**
  * Bad Request
  */
-export class BadRequestComAtprotoAdminGetAccountInfoResponseBodyError
-  extends Error
-{
+export class ComAtprotoAdminGetAccountInfoBadRequestError extends BlueskyError {
   error: ComAtprotoAdminGetAccountInfoError;
 
   /** The original data that was passed to this error instance. */
-  data$: BadRequestComAtprotoAdminGetAccountInfoResponseBodyErrorData;
+  data$: ComAtprotoAdminGetAccountInfoBadRequestErrorData;
 
   constructor(
-    err: BadRequestComAtprotoAdminGetAccountInfoResponseBodyErrorData,
+    err: ComAtprotoAdminGetAccountInfoBadRequestErrorData,
+    httpMeta: { response: Response; request: Request; body: string },
   ) {
-    const message = "message" in err && typeof err.message === "string"
-      ? err.message
-      : `API error occurred: ${JSON.stringify(err)}`;
-    super(message);
+    const message = err.message || `API error occurred: ${JSON.stringify(err)}`;
+    super(message, httpMeta);
     this.data$ = err;
-
     this.error = err.error;
 
-    this.name = "BadRequestComAtprotoAdminGetAccountInfoResponseBodyError";
+    this.name = "ComAtprotoAdminGetAccountInfoBadRequestError";
   }
 }
 
 /** @internal */
-export const UnauthorizedComAtprotoAdminGetAccountInfoResponseBodyError$inboundSchema:
+export const ComAtprotoAdminGetAccountInfoAuthMissingError$inboundSchema:
   z.ZodType<
-    UnauthorizedComAtprotoAdminGetAccountInfoResponseBodyError,
+    ComAtprotoAdminGetAccountInfoAuthMissingError,
     z.ZodTypeDef,
     unknown
   > = z.object({
-    error: z.literal("AuthMissing"),
+    error: z.literal("AuthMissing").default("AuthMissing"),
     message: z.string(),
+    request$: z.instanceof(Request),
+    response$: z.instanceof(Response),
+    body$: z.string(),
   })
     .transform((v) => {
-      return new UnauthorizedComAtprotoAdminGetAccountInfoResponseBodyError(v);
+      return new ComAtprotoAdminGetAccountInfoAuthMissingError(v, {
+        request: v.request$,
+        response: v.response$,
+        body: v.body$,
+      });
     });
 
 /** @internal */
-export type UnauthorizedComAtprotoAdminGetAccountInfoResponseBodyError$Outbound =
-  {
-    error: "AuthMissing";
-    message: string;
-  };
+export type ComAtprotoAdminGetAccountInfoAuthMissingError$Outbound = {
+  error: "AuthMissing";
+  message: string;
+};
 
 /** @internal */
-export const UnauthorizedComAtprotoAdminGetAccountInfoResponseBodyError$outboundSchema:
+export const ComAtprotoAdminGetAccountInfoAuthMissingError$outboundSchema:
   z.ZodType<
-    UnauthorizedComAtprotoAdminGetAccountInfoResponseBodyError$Outbound,
+    ComAtprotoAdminGetAccountInfoAuthMissingError$Outbound,
     z.ZodTypeDef,
-    UnauthorizedComAtprotoAdminGetAccountInfoResponseBodyError
-  > = z.instanceof(UnauthorizedComAtprotoAdminGetAccountInfoResponseBodyError)
+    ComAtprotoAdminGetAccountInfoAuthMissingError
+  > = z.instanceof(ComAtprotoAdminGetAccountInfoAuthMissingError)
     .transform(v => v.data$)
     .pipe(z.object({
       error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -120,16 +121,15 @@ export const UnauthorizedComAtprotoAdminGetAccountInfoResponseBodyError$outbound
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace UnauthorizedComAtprotoAdminGetAccountInfoResponseBodyError$ {
-  /** @deprecated use `UnauthorizedComAtprotoAdminGetAccountInfoResponseBodyError$inboundSchema` instead. */
+export namespace ComAtprotoAdminGetAccountInfoAuthMissingError$ {
+  /** @deprecated use `ComAtprotoAdminGetAccountInfoAuthMissingError$inboundSchema` instead. */
   export const inboundSchema =
-    UnauthorizedComAtprotoAdminGetAccountInfoResponseBodyError$inboundSchema;
-  /** @deprecated use `UnauthorizedComAtprotoAdminGetAccountInfoResponseBodyError$outboundSchema` instead. */
+    ComAtprotoAdminGetAccountInfoAuthMissingError$inboundSchema;
+  /** @deprecated use `ComAtprotoAdminGetAccountInfoAuthMissingError$outboundSchema` instead. */
   export const outboundSchema =
-    UnauthorizedComAtprotoAdminGetAccountInfoResponseBodyError$outboundSchema;
-  /** @deprecated use `UnauthorizedComAtprotoAdminGetAccountInfoResponseBodyError$Outbound` instead. */
-  export type Outbound =
-    UnauthorizedComAtprotoAdminGetAccountInfoResponseBodyError$Outbound;
+    ComAtprotoAdminGetAccountInfoAuthMissingError$outboundSchema;
+  /** @deprecated use `ComAtprotoAdminGetAccountInfoAuthMissingError$Outbound` instead. */
+  export type Outbound = ComAtprotoAdminGetAccountInfoAuthMissingError$Outbound;
 }
 
 /** @internal */
@@ -155,33 +155,39 @@ export namespace ComAtprotoAdminGetAccountInfoError$ {
 }
 
 /** @internal */
-export const BadRequestComAtprotoAdminGetAccountInfoResponseBodyError$inboundSchema:
+export const ComAtprotoAdminGetAccountInfoBadRequestError$inboundSchema:
   z.ZodType<
-    BadRequestComAtprotoAdminGetAccountInfoResponseBodyError,
+    ComAtprotoAdminGetAccountInfoBadRequestError,
     z.ZodTypeDef,
     unknown
   > = z.object({
     error: ComAtprotoAdminGetAccountInfoError$inboundSchema,
     message: z.string(),
+    request$: z.instanceof(Request),
+    response$: z.instanceof(Response),
+    body$: z.string(),
   })
     .transform((v) => {
-      return new BadRequestComAtprotoAdminGetAccountInfoResponseBodyError(v);
+      return new ComAtprotoAdminGetAccountInfoBadRequestError(v, {
+        request: v.request$,
+        response: v.response$,
+        body: v.body$,
+      });
     });
 
 /** @internal */
-export type BadRequestComAtprotoAdminGetAccountInfoResponseBodyError$Outbound =
-  {
-    error: string;
-    message: string;
-  };
+export type ComAtprotoAdminGetAccountInfoBadRequestError$Outbound = {
+  error: string;
+  message: string;
+};
 
 /** @internal */
-export const BadRequestComAtprotoAdminGetAccountInfoResponseBodyError$outboundSchema:
+export const ComAtprotoAdminGetAccountInfoBadRequestError$outboundSchema:
   z.ZodType<
-    BadRequestComAtprotoAdminGetAccountInfoResponseBodyError$Outbound,
+    ComAtprotoAdminGetAccountInfoBadRequestError$Outbound,
     z.ZodTypeDef,
-    BadRequestComAtprotoAdminGetAccountInfoResponseBodyError
-  > = z.instanceof(BadRequestComAtprotoAdminGetAccountInfoResponseBodyError)
+    ComAtprotoAdminGetAccountInfoBadRequestError
+  > = z.instanceof(ComAtprotoAdminGetAccountInfoBadRequestError)
     .transform(v => v.data$)
     .pipe(z.object({
       error: ComAtprotoAdminGetAccountInfoError$outboundSchema,
@@ -192,14 +198,13 @@ export const BadRequestComAtprotoAdminGetAccountInfoResponseBodyError$outboundSc
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace BadRequestComAtprotoAdminGetAccountInfoResponseBodyError$ {
-  /** @deprecated use `BadRequestComAtprotoAdminGetAccountInfoResponseBodyError$inboundSchema` instead. */
+export namespace ComAtprotoAdminGetAccountInfoBadRequestError$ {
+  /** @deprecated use `ComAtprotoAdminGetAccountInfoBadRequestError$inboundSchema` instead. */
   export const inboundSchema =
-    BadRequestComAtprotoAdminGetAccountInfoResponseBodyError$inboundSchema;
-  /** @deprecated use `BadRequestComAtprotoAdminGetAccountInfoResponseBodyError$outboundSchema` instead. */
+    ComAtprotoAdminGetAccountInfoBadRequestError$inboundSchema;
+  /** @deprecated use `ComAtprotoAdminGetAccountInfoBadRequestError$outboundSchema` instead. */
   export const outboundSchema =
-    BadRequestComAtprotoAdminGetAccountInfoResponseBodyError$outboundSchema;
-  /** @deprecated use `BadRequestComAtprotoAdminGetAccountInfoResponseBodyError$Outbound` instead. */
-  export type Outbound =
-    BadRequestComAtprotoAdminGetAccountInfoResponseBodyError$Outbound;
+    ComAtprotoAdminGetAccountInfoBadRequestError$outboundSchema;
+  /** @deprecated use `ComAtprotoAdminGetAccountInfoBadRequestError$Outbound` instead. */
+  export type Outbound = ComAtprotoAdminGetAccountInfoBadRequestError$Outbound;
 }

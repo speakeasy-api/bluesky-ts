@@ -19,18 +19,18 @@ export type AppBskyGraphGetRelationshipsRequest = {
   others?: Array<string> | undefined;
 };
 
-export type Relationships =
-  | components.AppBskyGraphDefsNotFoundActor
-  | components.AppBskyGraphDefsRelationship;
+export type Relationship =
+  | components.AppBskyGraphDefsRelationship
+  | components.AppBskyGraphDefsNotFoundActor;
 
 /**
  * OK
  */
-export type AppBskyGraphGetRelationshipsResponseBody = {
+export type AppBskyGraphGetRelationshipsResponse = {
   actor?: string | undefined;
   relationships: Array<
-    | components.AppBskyGraphDefsNotFoundActor
     | components.AppBskyGraphDefsRelationship
+    | components.AppBskyGraphDefsNotFoundActor
   >;
 };
 
@@ -97,92 +97,92 @@ export function appBskyGraphGetRelationshipsRequestFromJSON(
 }
 
 /** @internal */
-export const Relationships$inboundSchema: z.ZodType<
-  Relationships,
+export const Relationship$inboundSchema: z.ZodType<
+  Relationship,
   z.ZodTypeDef,
   unknown
 > = z.union([
-  components.AppBskyGraphDefsNotFoundActor$inboundSchema,
   components.AppBskyGraphDefsRelationship$inboundSchema,
+  components.AppBskyGraphDefsNotFoundActor$inboundSchema,
 ]);
 
 /** @internal */
-export type Relationships$Outbound =
-  | components.AppBskyGraphDefsNotFoundActor$Outbound
-  | components.AppBskyGraphDefsRelationship$Outbound;
+export type Relationship$Outbound =
+  | components.AppBskyGraphDefsRelationship$Outbound
+  | components.AppBskyGraphDefsNotFoundActor$Outbound;
 
 /** @internal */
-export const Relationships$outboundSchema: z.ZodType<
-  Relationships$Outbound,
+export const Relationship$outboundSchema: z.ZodType<
+  Relationship$Outbound,
   z.ZodTypeDef,
-  Relationships
+  Relationship
 > = z.union([
-  components.AppBskyGraphDefsNotFoundActor$outboundSchema,
   components.AppBskyGraphDefsRelationship$outboundSchema,
+  components.AppBskyGraphDefsNotFoundActor$outboundSchema,
 ]);
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace Relationships$ {
-  /** @deprecated use `Relationships$inboundSchema` instead. */
-  export const inboundSchema = Relationships$inboundSchema;
-  /** @deprecated use `Relationships$outboundSchema` instead. */
-  export const outboundSchema = Relationships$outboundSchema;
-  /** @deprecated use `Relationships$Outbound` instead. */
-  export type Outbound = Relationships$Outbound;
+export namespace Relationship$ {
+  /** @deprecated use `Relationship$inboundSchema` instead. */
+  export const inboundSchema = Relationship$inboundSchema;
+  /** @deprecated use `Relationship$outboundSchema` instead. */
+  export const outboundSchema = Relationship$outboundSchema;
+  /** @deprecated use `Relationship$Outbound` instead. */
+  export type Outbound = Relationship$Outbound;
 }
 
-export function relationshipsToJSON(relationships: Relationships): string {
-  return JSON.stringify(Relationships$outboundSchema.parse(relationships));
+export function relationshipToJSON(relationship: Relationship): string {
+  return JSON.stringify(Relationship$outboundSchema.parse(relationship));
 }
 
-export function relationshipsFromJSON(
+export function relationshipFromJSON(
   jsonString: string,
-): SafeParseResult<Relationships, SDKValidationError> {
+): SafeParseResult<Relationship, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => Relationships$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'Relationships' from JSON`,
+    (x) => Relationship$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'Relationship' from JSON`,
   );
 }
 
 /** @internal */
-export const AppBskyGraphGetRelationshipsResponseBody$inboundSchema: z.ZodType<
-  AppBskyGraphGetRelationshipsResponseBody,
+export const AppBskyGraphGetRelationshipsResponse$inboundSchema: z.ZodType<
+  AppBskyGraphGetRelationshipsResponse,
   z.ZodTypeDef,
   unknown
 > = z.object({
   actor: z.string().optional(),
   relationships: z.array(
     z.union([
-      components.AppBskyGraphDefsNotFoundActor$inboundSchema,
       components.AppBskyGraphDefsRelationship$inboundSchema,
+      components.AppBskyGraphDefsNotFoundActor$inboundSchema,
     ]),
   ),
 });
 
 /** @internal */
-export type AppBskyGraphGetRelationshipsResponseBody$Outbound = {
+export type AppBskyGraphGetRelationshipsResponse$Outbound = {
   actor?: string | undefined;
   relationships: Array<
-    | components.AppBskyGraphDefsNotFoundActor$Outbound
     | components.AppBskyGraphDefsRelationship$Outbound
+    | components.AppBskyGraphDefsNotFoundActor$Outbound
   >;
 };
 
 /** @internal */
-export const AppBskyGraphGetRelationshipsResponseBody$outboundSchema: z.ZodType<
-  AppBskyGraphGetRelationshipsResponseBody$Outbound,
+export const AppBskyGraphGetRelationshipsResponse$outboundSchema: z.ZodType<
+  AppBskyGraphGetRelationshipsResponse$Outbound,
   z.ZodTypeDef,
-  AppBskyGraphGetRelationshipsResponseBody
+  AppBskyGraphGetRelationshipsResponse
 > = z.object({
   actor: z.string().optional(),
   relationships: z.array(
     z.union([
-      components.AppBskyGraphDefsNotFoundActor$outboundSchema,
       components.AppBskyGraphDefsRelationship$outboundSchema,
+      components.AppBskyGraphDefsNotFoundActor$outboundSchema,
     ]),
   ),
 });
@@ -191,40 +191,34 @@ export const AppBskyGraphGetRelationshipsResponseBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyGraphGetRelationshipsResponseBody$ {
-  /** @deprecated use `AppBskyGraphGetRelationshipsResponseBody$inboundSchema` instead. */
+export namespace AppBskyGraphGetRelationshipsResponse$ {
+  /** @deprecated use `AppBskyGraphGetRelationshipsResponse$inboundSchema` instead. */
   export const inboundSchema =
-    AppBskyGraphGetRelationshipsResponseBody$inboundSchema;
-  /** @deprecated use `AppBskyGraphGetRelationshipsResponseBody$outboundSchema` instead. */
+    AppBskyGraphGetRelationshipsResponse$inboundSchema;
+  /** @deprecated use `AppBskyGraphGetRelationshipsResponse$outboundSchema` instead. */
   export const outboundSchema =
-    AppBskyGraphGetRelationshipsResponseBody$outboundSchema;
-  /** @deprecated use `AppBskyGraphGetRelationshipsResponseBody$Outbound` instead. */
-  export type Outbound = AppBskyGraphGetRelationshipsResponseBody$Outbound;
+    AppBskyGraphGetRelationshipsResponse$outboundSchema;
+  /** @deprecated use `AppBskyGraphGetRelationshipsResponse$Outbound` instead. */
+  export type Outbound = AppBskyGraphGetRelationshipsResponse$Outbound;
 }
 
-export function appBskyGraphGetRelationshipsResponseBodyToJSON(
-  appBskyGraphGetRelationshipsResponseBody:
-    AppBskyGraphGetRelationshipsResponseBody,
+export function appBskyGraphGetRelationshipsResponseToJSON(
+  appBskyGraphGetRelationshipsResponse: AppBskyGraphGetRelationshipsResponse,
 ): string {
   return JSON.stringify(
-    AppBskyGraphGetRelationshipsResponseBody$outboundSchema.parse(
-      appBskyGraphGetRelationshipsResponseBody,
+    AppBskyGraphGetRelationshipsResponse$outboundSchema.parse(
+      appBskyGraphGetRelationshipsResponse,
     ),
   );
 }
 
-export function appBskyGraphGetRelationshipsResponseBodyFromJSON(
+export function appBskyGraphGetRelationshipsResponseFromJSON(
   jsonString: string,
-): SafeParseResult<
-  AppBskyGraphGetRelationshipsResponseBody,
-  SDKValidationError
-> {
+): SafeParseResult<AppBskyGraphGetRelationshipsResponse, SDKValidationError> {
   return safeParse(
     jsonString,
     (x) =>
-      AppBskyGraphGetRelationshipsResponseBody$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'AppBskyGraphGetRelationshipsResponseBody' from JSON`,
+      AppBskyGraphGetRelationshipsResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AppBskyGraphGetRelationshipsResponse' from JSON`,
   );
 }

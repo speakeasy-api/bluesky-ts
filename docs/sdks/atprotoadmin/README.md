@@ -31,6 +31,7 @@ Disable an account from receiving new invite codes, but does not invalidate exis
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="com.atproto.admin.disableAccountInvites" method="post" path="/xrpc/com.atproto.admin.disableAccountInvites" -->
 ```typescript
 import { Bluesky } from "@speakeasy-sdks/bluesky";
 
@@ -67,14 +68,12 @@ async function run() {
   const res = await atprotoAdminDisableAccountInvites(bluesky, {
     account: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    
+  } else {
+    console.log("atprotoAdminDisableAccountInvites failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  
 }
 
 run();
@@ -101,7 +100,7 @@ import {
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ComAtprotoAdminDisableAccountInvitesBody](../../models/operations/comatprotoadmindisableaccountinvitesbody.md)                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ComAtprotoAdminDisableAccountInvitesRequest](../../models/operations/comatprotoadmindisableaccountinvitesrequest.md)                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -112,21 +111,21 @@ import {
 
 ### Errors
 
-| Error Type                                                               | Status Code                                                              | Content Type                                                             |
-| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
-| errors.BadRequestComAtprotoAdminDisableAccountInvitesResponseBodyError   | 400                                                                      | application/json                                                         |
-| errors.UnauthorizedComAtprotoAdminDisableAccountInvitesResponseBodyError | 401                                                                      | application/json                                                         |
-| errors.NotFoundError                                                     | 404                                                                      | application/json                                                         |
-| errors.UnauthorizedError                                                 | 403, 407                                                                 | application/json                                                         |
-| errors.TimeoutError                                                      | 408                                                                      | application/json                                                         |
-| errors.RateLimitedError                                                  | 429                                                                      | application/json                                                         |
-| errors.BadRequestError                                                   | 413, 414, 415, 422, 431                                                  | application/json                                                         |
-| errors.TimeoutError                                                      | 504                                                                      | application/json                                                         |
-| errors.NotFoundError                                                     | 501, 505                                                                 | application/json                                                         |
-| errors.InternalServerError                                               | 500, 502, 503, 506, 507, 508                                             | application/json                                                         |
-| errors.BadRequestError                                                   | 510                                                                      | application/json                                                         |
-| errors.UnauthorizedError                                                 | 511                                                                      | application/json                                                         |
-| errors.APIError                                                          | 4XX, 5XX                                                                 | \*/\*                                                                    |
+| Error Type                                                  | Status Code                                                 | Content Type                                                |
+| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
+| errors.ComAtprotoAdminDisableAccountInvitesBadRequestError  | 400                                                         | application/json                                            |
+| errors.ComAtprotoAdminDisableAccountInvitesAuthMissingError | 401                                                         | application/json                                            |
+| errors.NotFoundError                                        | 404                                                         | application/json                                            |
+| errors.UnauthorizedError                                    | 403, 407                                                    | application/json                                            |
+| errors.TimeoutError                                         | 408                                                         | application/json                                            |
+| errors.RateLimitedError                                     | 429                                                         | application/json                                            |
+| errors.BadRequestError                                      | 413, 414, 415, 422, 431                                     | application/json                                            |
+| errors.TimeoutError                                         | 504                                                         | application/json                                            |
+| errors.NotFoundError                                        | 501, 505                                                    | application/json                                            |
+| errors.InternalServerError                                  | 500, 502, 503, 506, 507, 508                                | application/json                                            |
+| errors.BadRequestError                                      | 510                                                         | application/json                                            |
+| errors.UnauthorizedError                                    | 511                                                         | application/json                                            |
+| errors.APIError                                             | 4XX, 5XX                                                    | \*/\*                                                       |
 
 ## getInviteCodes
 
@@ -138,6 +137,7 @@ Get an admin view of invite codes.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="com.atproto.admin.getInviteCodes" method="get" path="/xrpc/com.atproto.admin.getInviteCodes" -->
 ```typescript
 import { Bluesky } from "@speakeasy-sdks/bluesky";
 
@@ -149,7 +149,6 @@ async function run() {
   const result = await bluesky.atprotoAdmin.getInviteCodes({});
 
   for await (const page of result) {
-    // Handle the page
     console.log(page);
   }
 }
@@ -173,16 +172,13 @@ const bluesky = new BlueskyCore({
 
 async function run() {
   const res = await atprotoAdminGetInviteCodes(bluesky, {});
-
-  if (!res.ok) {
-    throw res.error;
-  }
-
-  const { value: result } = res;
-
-  for await (const page of result) {
-    // Handle the page
+  if (res.ok) {
+    const { value: result } = res;
+    for await (const page of result) {
     console.log(page);
+  }
+  } else {
+    console.log("atprotoAdminGetInviteCodes failed:", res.error);
   }
 }
 
@@ -235,21 +231,21 @@ import {
 
 ### Errors
 
-| Error Type                                                        | Status Code                                                       | Content Type                                                      |
-| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
-| errors.BadRequestComAtprotoAdminGetInviteCodesResponseBodyError   | 400                                                               | application/json                                                  |
-| errors.UnauthorizedComAtprotoAdminGetInviteCodesResponseBodyError | 401                                                               | application/json                                                  |
-| errors.NotFoundError                                              | 404                                                               | application/json                                                  |
-| errors.UnauthorizedError                                          | 403, 407                                                          | application/json                                                  |
-| errors.TimeoutError                                               | 408                                                               | application/json                                                  |
-| errors.RateLimitedError                                           | 429                                                               | application/json                                                  |
-| errors.BadRequestError                                            | 413, 414, 415, 422, 431                                           | application/json                                                  |
-| errors.TimeoutError                                               | 504                                                               | application/json                                                  |
-| errors.NotFoundError                                              | 501, 505                                                          | application/json                                                  |
-| errors.InternalServerError                                        | 500, 502, 503, 506, 507, 508                                      | application/json                                                  |
-| errors.BadRequestError                                            | 510                                                               | application/json                                                  |
-| errors.UnauthorizedError                                          | 511                                                               | application/json                                                  |
-| errors.APIError                                                   | 4XX, 5XX                                                          | \*/\*                                                             |
+| Error Type                                           | Status Code                                          | Content Type                                         |
+| ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
+| errors.ComAtprotoAdminGetInviteCodesBadRequestError  | 400                                                  | application/json                                     |
+| errors.ComAtprotoAdminGetInviteCodesAuthMissingError | 401                                                  | application/json                                     |
+| errors.NotFoundError                                 | 404                                                  | application/json                                     |
+| errors.UnauthorizedError                             | 403, 407                                             | application/json                                     |
+| errors.TimeoutError                                  | 408                                                  | application/json                                     |
+| errors.RateLimitedError                              | 429                                                  | application/json                                     |
+| errors.BadRequestError                               | 413, 414, 415, 422, 431                              | application/json                                     |
+| errors.TimeoutError                                  | 504                                                  | application/json                                     |
+| errors.NotFoundError                                 | 501, 505                                             | application/json                                     |
+| errors.InternalServerError                           | 500, 502, 503, 506, 507, 508                         | application/json                                     |
+| errors.BadRequestError                               | 510                                                  | application/json                                     |
+| errors.UnauthorizedError                             | 511                                                  | application/json                                     |
+| errors.APIError                                      | 4XX, 5XX                                             | \*/\*                                                |
 
 ## searchAccounts
 
@@ -261,6 +257,7 @@ Get list of accounts that matches your search query.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="com.atproto.admin.searchAccounts" method="get" path="/xrpc/com.atproto.admin.searchAccounts" -->
 ```typescript
 import { Bluesky } from "@speakeasy-sdks/bluesky";
 
@@ -272,7 +269,6 @@ async function run() {
   const result = await bluesky.atprotoAdmin.searchAccounts({});
 
   for await (const page of result) {
-    // Handle the page
     console.log(page);
   }
 }
@@ -296,16 +292,13 @@ const bluesky = new BlueskyCore({
 
 async function run() {
   const res = await atprotoAdminSearchAccounts(bluesky, {});
-
-  if (!res.ok) {
-    throw res.error;
-  }
-
-  const { value: result } = res;
-
-  for await (const page of result) {
-    // Handle the page
+  if (res.ok) {
+    const { value: result } = res;
+    for await (const page of result) {
     console.log(page);
+  }
+  } else {
+    console.log("atprotoAdminSearchAccounts failed:", res.error);
   }
 }
 
@@ -358,18 +351,18 @@ import {
 
 ### Errors
 
-| Error Type                                                        | Status Code                                                       | Content Type                                                      |
-| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
-| errors.BadRequestComAtprotoAdminSearchAccountsResponseBodyError   | 400                                                               | application/json                                                  |
-| errors.UnauthorizedComAtprotoAdminSearchAccountsResponseBodyError | 401                                                               | application/json                                                  |
-| errors.NotFoundError                                              | 404                                                               | application/json                                                  |
-| errors.UnauthorizedError                                          | 403, 407                                                          | application/json                                                  |
-| errors.TimeoutError                                               | 408                                                               | application/json                                                  |
-| errors.RateLimitedError                                           | 429                                                               | application/json                                                  |
-| errors.BadRequestError                                            | 413, 414, 415, 422, 431                                           | application/json                                                  |
-| errors.TimeoutError                                               | 504                                                               | application/json                                                  |
-| errors.NotFoundError                                              | 501, 505                                                          | application/json                                                  |
-| errors.InternalServerError                                        | 500, 502, 503, 506, 507, 508                                      | application/json                                                  |
-| errors.BadRequestError                                            | 510                                                               | application/json                                                  |
-| errors.UnauthorizedError                                          | 511                                                               | application/json                                                  |
-| errors.APIError                                                   | 4XX, 5XX                                                          | \*/\*                                                             |
+| Error Type                                           | Status Code                                          | Content Type                                         |
+| ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
+| errors.ComAtprotoAdminSearchAccountsBadRequestError  | 400                                                  | application/json                                     |
+| errors.ComAtprotoAdminSearchAccountsAuthMissingError | 401                                                  | application/json                                     |
+| errors.NotFoundError                                 | 404                                                  | application/json                                     |
+| errors.UnauthorizedError                             | 403, 407                                             | application/json                                     |
+| errors.TimeoutError                                  | 408                                                  | application/json                                     |
+| errors.RateLimitedError                              | 429                                                  | application/json                                     |
+| errors.BadRequestError                               | 413, 414, 415, 422, 431                              | application/json                                     |
+| errors.TimeoutError                                  | 504                                                  | application/json                                     |
+| errors.NotFoundError                                 | 501, 505                                             | application/json                                     |
+| errors.InternalServerError                           | 500, 502, 503, 506, 507, 508                         | application/json                                     |
+| errors.BadRequestError                               | 510                                                  | application/json                                     |
+| errors.UnauthorizedError                             | 511                                                  | application/json                                     |
+| errors.APIError                                      | 4XX, 5XX                                             | \*/\*                                                |

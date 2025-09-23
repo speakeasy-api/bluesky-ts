@@ -15,7 +15,7 @@ export type AppBskyGraphGetStarterPacksRequest = {
 /**
  * OK
  */
-export type AppBskyGraphGetStarterPacksResponseBody = {
+export type AppBskyGraphGetStarterPacksResponse = {
   starterPacks: Array<components.AppBskyGraphDefsStarterPackViewBasic>;
 };
 
@@ -78,8 +78,8 @@ export function appBskyGraphGetStarterPacksRequestFromJSON(
 }
 
 /** @internal */
-export const AppBskyGraphGetStarterPacksResponseBody$inboundSchema: z.ZodType<
-  AppBskyGraphGetStarterPacksResponseBody,
+export const AppBskyGraphGetStarterPacksResponse$inboundSchema: z.ZodType<
+  AppBskyGraphGetStarterPacksResponse,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -89,15 +89,15 @@ export const AppBskyGraphGetStarterPacksResponseBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type AppBskyGraphGetStarterPacksResponseBody$Outbound = {
+export type AppBskyGraphGetStarterPacksResponse$Outbound = {
   starterPacks: Array<components.AppBskyGraphDefsStarterPackViewBasic$Outbound>;
 };
 
 /** @internal */
-export const AppBskyGraphGetStarterPacksResponseBody$outboundSchema: z.ZodType<
-  AppBskyGraphGetStarterPacksResponseBody$Outbound,
+export const AppBskyGraphGetStarterPacksResponse$outboundSchema: z.ZodType<
+  AppBskyGraphGetStarterPacksResponse$Outbound,
   z.ZodTypeDef,
-  AppBskyGraphGetStarterPacksResponseBody
+  AppBskyGraphGetStarterPacksResponse
 > = z.object({
   starterPacks: z.array(
     components.AppBskyGraphDefsStarterPackViewBasic$outboundSchema,
@@ -108,40 +108,34 @@ export const AppBskyGraphGetStarterPacksResponseBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyGraphGetStarterPacksResponseBody$ {
-  /** @deprecated use `AppBskyGraphGetStarterPacksResponseBody$inboundSchema` instead. */
+export namespace AppBskyGraphGetStarterPacksResponse$ {
+  /** @deprecated use `AppBskyGraphGetStarterPacksResponse$inboundSchema` instead. */
   export const inboundSchema =
-    AppBskyGraphGetStarterPacksResponseBody$inboundSchema;
-  /** @deprecated use `AppBskyGraphGetStarterPacksResponseBody$outboundSchema` instead. */
+    AppBskyGraphGetStarterPacksResponse$inboundSchema;
+  /** @deprecated use `AppBskyGraphGetStarterPacksResponse$outboundSchema` instead. */
   export const outboundSchema =
-    AppBskyGraphGetStarterPacksResponseBody$outboundSchema;
-  /** @deprecated use `AppBskyGraphGetStarterPacksResponseBody$Outbound` instead. */
-  export type Outbound = AppBskyGraphGetStarterPacksResponseBody$Outbound;
+    AppBskyGraphGetStarterPacksResponse$outboundSchema;
+  /** @deprecated use `AppBskyGraphGetStarterPacksResponse$Outbound` instead. */
+  export type Outbound = AppBskyGraphGetStarterPacksResponse$Outbound;
 }
 
-export function appBskyGraphGetStarterPacksResponseBodyToJSON(
-  appBskyGraphGetStarterPacksResponseBody:
-    AppBskyGraphGetStarterPacksResponseBody,
+export function appBskyGraphGetStarterPacksResponseToJSON(
+  appBskyGraphGetStarterPacksResponse: AppBskyGraphGetStarterPacksResponse,
 ): string {
   return JSON.stringify(
-    AppBskyGraphGetStarterPacksResponseBody$outboundSchema.parse(
-      appBskyGraphGetStarterPacksResponseBody,
+    AppBskyGraphGetStarterPacksResponse$outboundSchema.parse(
+      appBskyGraphGetStarterPacksResponse,
     ),
   );
 }
 
-export function appBskyGraphGetStarterPacksResponseBodyFromJSON(
+export function appBskyGraphGetStarterPacksResponseFromJSON(
   jsonString: string,
-): SafeParseResult<
-  AppBskyGraphGetStarterPacksResponseBody,
-  SDKValidationError
-> {
+): SafeParseResult<AppBskyGraphGetStarterPacksResponse, SDKValidationError> {
   return safeParse(
     jsonString,
     (x) =>
-      AppBskyGraphGetStarterPacksResponseBody$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'AppBskyGraphGetStarterPacksResponseBody' from JSON`,
+      AppBskyGraphGetStarterPacksResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AppBskyGraphGetStarterPacksResponse' from JSON`,
   );
 }

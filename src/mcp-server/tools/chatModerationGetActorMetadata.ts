@@ -12,7 +12,7 @@ const args = {
 
 export const tool$chatModerationGetActorMetadata: ToolDefinition<typeof args> =
   {
-    name: "chat-moderation_get-actor-metadata",
+    name: "chat-moderation-get-actor-metadata",
     description:
       `*This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (\`did:web:api.bsky.chat\`) in the service proxying header.*
 

@@ -7,10 +7,12 @@ import { AppBskyActorDefsSavedFeedsPref } from "@speakeasy-sdks/bluesky/models/c
 
 let value: AppBskyActorDefsSavedFeedsPref = {
   pinned: [
-    "https://antique-completion.info",
+    "https://little-sauerkraut.name",
+    "https://striking-procurement.info",
   ],
   saved: [
-    "https://frivolous-coast.org",
+    "https://cheap-overheard.name",
+    "https://unsightly-vein.info/",
   ],
 };
 ```

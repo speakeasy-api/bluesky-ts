@@ -10,7 +10,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 /**
  * OK
  */
-export type ComAtprotoIdentityGetRecommendedDidCredentialsResponseBody = {
+export type ComAtprotoIdentityGetRecommendedDidCredentialsResponse = {
   rotationKeys?: Array<string> | undefined;
   alsoKnownAs?: Array<string> | undefined;
   verificationMethods?: any | undefined;
@@ -18,9 +18,9 @@ export type ComAtprotoIdentityGetRecommendedDidCredentialsResponseBody = {
 };
 
 /** @internal */
-export const ComAtprotoIdentityGetRecommendedDidCredentialsResponseBody$inboundSchema:
+export const ComAtprotoIdentityGetRecommendedDidCredentialsResponse$inboundSchema:
   z.ZodType<
-    ComAtprotoIdentityGetRecommendedDidCredentialsResponseBody,
+    ComAtprotoIdentityGetRecommendedDidCredentialsResponse,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -31,20 +31,19 @@ export const ComAtprotoIdentityGetRecommendedDidCredentialsResponseBody$inboundS
   });
 
 /** @internal */
-export type ComAtprotoIdentityGetRecommendedDidCredentialsResponseBody$Outbound =
-  {
-    rotationKeys?: Array<string> | undefined;
-    alsoKnownAs?: Array<string> | undefined;
-    verificationMethods?: any | undefined;
-    services?: any | undefined;
-  };
+export type ComAtprotoIdentityGetRecommendedDidCredentialsResponse$Outbound = {
+  rotationKeys?: Array<string> | undefined;
+  alsoKnownAs?: Array<string> | undefined;
+  verificationMethods?: any | undefined;
+  services?: any | undefined;
+};
 
 /** @internal */
-export const ComAtprotoIdentityGetRecommendedDidCredentialsResponseBody$outboundSchema:
+export const ComAtprotoIdentityGetRecommendedDidCredentialsResponse$outboundSchema:
   z.ZodType<
-    ComAtprotoIdentityGetRecommendedDidCredentialsResponseBody$Outbound,
+    ComAtprotoIdentityGetRecommendedDidCredentialsResponse$Outbound,
     z.ZodTypeDef,
-    ComAtprotoIdentityGetRecommendedDidCredentialsResponseBody
+    ComAtprotoIdentityGetRecommendedDidCredentialsResponse
   > = z.object({
     rotationKeys: z.array(z.string()).optional(),
     alsoKnownAs: z.array(z.string()).optional(),
@@ -56,39 +55,40 @@ export const ComAtprotoIdentityGetRecommendedDidCredentialsResponseBody$outbound
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoIdentityGetRecommendedDidCredentialsResponseBody$ {
-  /** @deprecated use `ComAtprotoIdentityGetRecommendedDidCredentialsResponseBody$inboundSchema` instead. */
+export namespace ComAtprotoIdentityGetRecommendedDidCredentialsResponse$ {
+  /** @deprecated use `ComAtprotoIdentityGetRecommendedDidCredentialsResponse$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoIdentityGetRecommendedDidCredentialsResponseBody$inboundSchema;
-  /** @deprecated use `ComAtprotoIdentityGetRecommendedDidCredentialsResponseBody$outboundSchema` instead. */
+    ComAtprotoIdentityGetRecommendedDidCredentialsResponse$inboundSchema;
+  /** @deprecated use `ComAtprotoIdentityGetRecommendedDidCredentialsResponse$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoIdentityGetRecommendedDidCredentialsResponseBody$outboundSchema;
-  /** @deprecated use `ComAtprotoIdentityGetRecommendedDidCredentialsResponseBody$Outbound` instead. */
+    ComAtprotoIdentityGetRecommendedDidCredentialsResponse$outboundSchema;
+  /** @deprecated use `ComAtprotoIdentityGetRecommendedDidCredentialsResponse$Outbound` instead. */
   export type Outbound =
-    ComAtprotoIdentityGetRecommendedDidCredentialsResponseBody$Outbound;
+    ComAtprotoIdentityGetRecommendedDidCredentialsResponse$Outbound;
 }
 
-export function comAtprotoIdentityGetRecommendedDidCredentialsResponseBodyToJSON(
-  comAtprotoIdentityGetRecommendedDidCredentialsResponseBody:
-    ComAtprotoIdentityGetRecommendedDidCredentialsResponseBody,
+export function comAtprotoIdentityGetRecommendedDidCredentialsResponseToJSON(
+  comAtprotoIdentityGetRecommendedDidCredentialsResponse:
+    ComAtprotoIdentityGetRecommendedDidCredentialsResponse,
 ): string {
   return JSON.stringify(
-    ComAtprotoIdentityGetRecommendedDidCredentialsResponseBody$outboundSchema
-      .parse(comAtprotoIdentityGetRecommendedDidCredentialsResponseBody),
+    ComAtprotoIdentityGetRecommendedDidCredentialsResponse$outboundSchema.parse(
+      comAtprotoIdentityGetRecommendedDidCredentialsResponse,
+    ),
   );
 }
 
-export function comAtprotoIdentityGetRecommendedDidCredentialsResponseBodyFromJSON(
+export function comAtprotoIdentityGetRecommendedDidCredentialsResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
-  ComAtprotoIdentityGetRecommendedDidCredentialsResponseBody,
+  ComAtprotoIdentityGetRecommendedDidCredentialsResponse,
   SDKValidationError
 > {
   return safeParse(
     jsonString,
     (x) =>
-      ComAtprotoIdentityGetRecommendedDidCredentialsResponseBody$inboundSchema
+      ComAtprotoIdentityGetRecommendedDidCredentialsResponse$inboundSchema
         .parse(JSON.parse(x)),
-    `Failed to parse 'ComAtprotoIdentityGetRecommendedDidCredentialsResponseBody' from JSON`,
+    `Failed to parse 'ComAtprotoIdentityGetRecommendedDidCredentialsResponse' from JSON`,
   );
 }

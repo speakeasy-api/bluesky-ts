@@ -7,14 +7,14 @@ import { AppBskyFeedDefsFeedViewPost } from "@speakeasy-sdks/bluesky/models/comp
 
 let value: AppBskyFeedDefsFeedViewPost = {
   post: {
-    uri: "https://zesty-footrest.net/",
+    uri: "https://amused-fedora.biz",
     cid: "<id>",
     author: {
       did: "<id>",
       handle: "<value>",
     },
     record: "<value>",
-    indexedAt: new Date("2024-11-29T18:58:30.709Z"),
+    indexedAt: new Date("2025-01-02T09:02:47.505Z"),
   },
 };
 ```

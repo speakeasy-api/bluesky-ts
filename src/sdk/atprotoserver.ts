@@ -45,9 +45,9 @@ export class AtprotoServer extends ClientSDK {
    * Create an account. Implemented by PDS.
    */
   async createAccount(
-    request: operations.ComAtprotoServerCreateAccountBody,
+    request: operations.ComAtprotoServerCreateAccountRequest,
     options?: RequestOptions,
-  ): Promise<operations.ComAtprotoServerCreateAccountResponseBody> {
+  ): Promise<operations.ComAtprotoServerCreateAccountResponse> {
     return unwrapAsync(atprotoServerCreateAccount(
       this,
       request,
@@ -63,7 +63,7 @@ export class AtprotoServer extends ClientSDK {
    * Create an App Password.
    */
   async createAppPassword(
-    request: operations.ComAtprotoServerCreateAppPasswordBody,
+    request: operations.ComAtprotoServerCreateAppPasswordRequest,
     options?: RequestOptions,
   ): Promise<components.ComAtprotoServerCreateAppPasswordAppPassword> {
     return unwrapAsync(atprotoServerCreateAppPassword(
@@ -81,9 +81,9 @@ export class AtprotoServer extends ClientSDK {
    * Create an invite code.
    */
   async createInviteCode(
-    request: operations.ComAtprotoServerCreateInviteCodeBody,
+    request: operations.ComAtprotoServerCreateInviteCodeRequest,
     options?: RequestOptions,
-  ): Promise<operations.ComAtprotoServerCreateInviteCodeResponseBody> {
+  ): Promise<operations.ComAtprotoServerCreateInviteCodeResponse> {
     return unwrapAsync(atprotoServerCreateInviteCode(
       this,
       request,
@@ -99,9 +99,9 @@ export class AtprotoServer extends ClientSDK {
    * Create invite codes.
    */
   async createInviteCodes(
-    request: operations.ComAtprotoServerCreateInviteCodesBody,
+    request: operations.ComAtprotoServerCreateInviteCodesRequest,
     options?: RequestOptions,
-  ): Promise<operations.ComAtprotoServerCreateInviteCodesResponseBody> {
+  ): Promise<operations.ComAtprotoServerCreateInviteCodesResponse> {
     return unwrapAsync(atprotoServerCreateInviteCodes(
       this,
       request,
@@ -117,7 +117,7 @@ export class AtprotoServer extends ClientSDK {
    * Delete an actor's account with a token and password. Can only be called after requesting a deletion token. Requires auth.
    */
   async deleteAccount(
-    request: operations.ComAtprotoServerDeleteAccountBody,
+    request: operations.ComAtprotoServerDeleteAccountRequest,
     options?: RequestOptions,
   ): Promise<void> {
     return unwrapAsync(atprotoServerDeleteAccount(
@@ -152,7 +152,7 @@ export class AtprotoServer extends ClientSDK {
    */
   async describe(
     options?: RequestOptions,
-  ): Promise<operations.ComAtprotoServerDescribeServerResponseBody> {
+  ): Promise<operations.ComAtprotoServerDescribeServerResponse> {
     return unwrapAsync(atprotoServerDescribe(
       this,
       options,
@@ -168,7 +168,7 @@ export class AtprotoServer extends ClientSDK {
    */
   async refreshSession(
     options?: RequestOptions,
-  ): Promise<operations.ComAtprotoServerRefreshSessionResponseBody> {
+  ): Promise<operations.ComAtprotoServerRefreshSessionResponse> {
     return unwrapAsync(atprotoServerRefreshSession(
       this,
       options,
@@ -199,7 +199,7 @@ export class AtprotoServer extends ClientSDK {
    * Initiate a user account password reset via email.
    */
   async requestPasswordReset(
-    request: operations.ComAtprotoServerRequestPasswordResetBody,
+    request: operations.ComAtprotoServerRequestPasswordResetRequest,
     options?: RequestOptions,
   ): Promise<void> {
     return unwrapAsync(atprotoServerRequestPasswordReset(
@@ -217,7 +217,7 @@ export class AtprotoServer extends ClientSDK {
    * Reset a user account password using a token.
    */
   async resetPassword(
-    request: operations.ComAtprotoServerResetPasswordBody,
+    request: operations.ComAtprotoServerResetPasswordRequest,
     options?: RequestOptions,
   ): Promise<void> {
     return unwrapAsync(atprotoServerResetPassword(
@@ -235,7 +235,7 @@ export class AtprotoServer extends ClientSDK {
    * Revoke an App Password by name.
    */
   async revokeAppPassword(
-    request: operations.ComAtprotoServerRevokeAppPasswordBody,
+    request: operations.ComAtprotoServerRevokeAppPasswordRequest,
     options?: RequestOptions,
   ): Promise<void> {
     return unwrapAsync(atprotoServerRevokeAppPassword(

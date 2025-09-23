@@ -6,7 +6,7 @@
 import { AppBskyFeedGetFeedGeneratorRequest } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: AppBskyFeedGetFeedGeneratorRequest = {
-  feed: "https://close-farm.info/",
+  feed: "https://some-clamp.org/",
 };
 ```
 

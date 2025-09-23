@@ -15,7 +15,7 @@ export type AppBskyActorGetProfilesRequest = {
 /**
  * OK
  */
-export type AppBskyActorGetProfilesResponseBody = {
+export type AppBskyActorGetProfilesResponse = {
   profiles: Array<components.AppBskyActorDefsProfileViewDetailed>;
 };
 
@@ -76,8 +76,8 @@ export function appBskyActorGetProfilesRequestFromJSON(
 }
 
 /** @internal */
-export const AppBskyActorGetProfilesResponseBody$inboundSchema: z.ZodType<
-  AppBskyActorGetProfilesResponseBody,
+export const AppBskyActorGetProfilesResponse$inboundSchema: z.ZodType<
+  AppBskyActorGetProfilesResponse,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -87,15 +87,15 @@ export const AppBskyActorGetProfilesResponseBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type AppBskyActorGetProfilesResponseBody$Outbound = {
+export type AppBskyActorGetProfilesResponse$Outbound = {
   profiles: Array<components.AppBskyActorDefsProfileViewDetailed$Outbound>;
 };
 
 /** @internal */
-export const AppBskyActorGetProfilesResponseBody$outboundSchema: z.ZodType<
-  AppBskyActorGetProfilesResponseBody$Outbound,
+export const AppBskyActorGetProfilesResponse$outboundSchema: z.ZodType<
+  AppBskyActorGetProfilesResponse$Outbound,
   z.ZodTypeDef,
-  AppBskyActorGetProfilesResponseBody
+  AppBskyActorGetProfilesResponse
 > = z.object({
   profiles: z.array(
     components.AppBskyActorDefsProfileViewDetailed$outboundSchema,
@@ -106,34 +106,31 @@ export const AppBskyActorGetProfilesResponseBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyActorGetProfilesResponseBody$ {
-  /** @deprecated use `AppBskyActorGetProfilesResponseBody$inboundSchema` instead. */
-  export const inboundSchema =
-    AppBskyActorGetProfilesResponseBody$inboundSchema;
-  /** @deprecated use `AppBskyActorGetProfilesResponseBody$outboundSchema` instead. */
-  export const outboundSchema =
-    AppBskyActorGetProfilesResponseBody$outboundSchema;
-  /** @deprecated use `AppBskyActorGetProfilesResponseBody$Outbound` instead. */
-  export type Outbound = AppBskyActorGetProfilesResponseBody$Outbound;
+export namespace AppBskyActorGetProfilesResponse$ {
+  /** @deprecated use `AppBskyActorGetProfilesResponse$inboundSchema` instead. */
+  export const inboundSchema = AppBskyActorGetProfilesResponse$inboundSchema;
+  /** @deprecated use `AppBskyActorGetProfilesResponse$outboundSchema` instead. */
+  export const outboundSchema = AppBskyActorGetProfilesResponse$outboundSchema;
+  /** @deprecated use `AppBskyActorGetProfilesResponse$Outbound` instead. */
+  export type Outbound = AppBskyActorGetProfilesResponse$Outbound;
 }
 
-export function appBskyActorGetProfilesResponseBodyToJSON(
-  appBskyActorGetProfilesResponseBody: AppBskyActorGetProfilesResponseBody,
+export function appBskyActorGetProfilesResponseToJSON(
+  appBskyActorGetProfilesResponse: AppBskyActorGetProfilesResponse,
 ): string {
   return JSON.stringify(
-    AppBskyActorGetProfilesResponseBody$outboundSchema.parse(
-      appBskyActorGetProfilesResponseBody,
+    AppBskyActorGetProfilesResponse$outboundSchema.parse(
+      appBskyActorGetProfilesResponse,
     ),
   );
 }
 
-export function appBskyActorGetProfilesResponseBodyFromJSON(
+export function appBskyActorGetProfilesResponseFromJSON(
   jsonString: string,
-): SafeParseResult<AppBskyActorGetProfilesResponseBody, SDKValidationError> {
+): SafeParseResult<AppBskyActorGetProfilesResponse, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) =>
-      AppBskyActorGetProfilesResponseBody$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'AppBskyActorGetProfilesResponseBody' from JSON`,
+    (x) => AppBskyActorGetProfilesResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AppBskyActorGetProfilesResponse' from JSON`,
   );
 }

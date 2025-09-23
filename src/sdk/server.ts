@@ -23,7 +23,7 @@ export class Server extends ClientSDK {
    */
   async checkAccountStatus(
     options?: RequestOptions,
-  ): Promise<operations.ComAtprotoServerCheckAccountStatusResponseBody> {
+  ): Promise<operations.ComAtprotoServerCheckAccountStatusResponse> {
     return unwrapAsync(serverCheckAccountStatus(
       this,
       options,
@@ -38,7 +38,7 @@ export class Server extends ClientSDK {
    * Confirm an email using a token from com.atproto.server.requestEmailConfirmation.
    */
   async confirmEmail(
-    request: operations.ComAtprotoServerConfirmEmailBody,
+    request: operations.ComAtprotoServerConfirmEmailRequest,
     options?: RequestOptions,
   ): Promise<void> {
     return unwrapAsync(serverConfirmEmail(
@@ -56,9 +56,9 @@ export class Server extends ClientSDK {
    * Create an authentication session.
    */
   async createSession(
-    request: operations.ComAtprotoServerCreateSessionBody,
+    request: operations.ComAtprotoServerCreateSessionRequest,
     options?: RequestOptions,
-  ): Promise<operations.ComAtprotoServerCreateSessionResponseBody> {
+  ): Promise<operations.ComAtprotoServerCreateSessionResponse> {
     return unwrapAsync(serverCreateSession(
       this,
       request,
@@ -74,7 +74,7 @@ export class Server extends ClientSDK {
    * Deactivates a currently active account. Stops serving of repo, and future writes to repo until reactivated. Used to finalize account migration with the old host after the account has been activated on the new host.
    */
   async deactivateAccount(
-    request?: operations.ComAtprotoServerDeactivateAccountBody | undefined,
+    request: operations.ComAtprotoServerDeactivateAccountRequest,
     options?: RequestOptions,
   ): Promise<void> {
     return unwrapAsync(serverDeactivateAccount(
@@ -93,7 +93,7 @@ export class Server extends ClientSDK {
    */
   async listAppPasswords(
     options?: RequestOptions,
-  ): Promise<operations.ComAtprotoServerListAppPasswordsResponseBody> {
+  ): Promise<operations.ComAtprotoServerListAppPasswordsResponse> {
     return unwrapAsync(serverListAppPasswords(
       this,
       options,
@@ -125,7 +125,7 @@ export class Server extends ClientSDK {
    */
   async requestEmailUpdate(
     options?: RequestOptions,
-  ): Promise<operations.ComAtprotoServerRequestEmailUpdateResponseBody> {
+  ): Promise<operations.ComAtprotoServerRequestEmailUpdateResponse> {
     return unwrapAsync(serverRequestEmailUpdate(
       this,
       options,

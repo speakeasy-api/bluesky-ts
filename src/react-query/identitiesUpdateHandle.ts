@@ -17,7 +17,7 @@ import { useBlueskyContext } from "./_context.js";
 import { MutationHookOptions } from "./_types.js";
 
 export type IdentitiesUpdateHandleMutationVariables = {
-  request: operations.ComAtprotoIdentityUpdateHandleBody;
+  request: operations.ComAtprotoIdentityUpdateHandleRequest;
   options?: RequestOptions;
 };
 

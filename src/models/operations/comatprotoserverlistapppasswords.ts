@@ -11,79 +11,77 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 /**
  * OK
  */
-export type ComAtprotoServerListAppPasswordsResponseBody = {
+export type ComAtprotoServerListAppPasswordsResponse = {
   passwords: Array<components.ComAtprotoServerListAppPasswordsAppPassword>;
 };
 
 /** @internal */
-export const ComAtprotoServerListAppPasswordsResponseBody$inboundSchema:
-  z.ZodType<
-    ComAtprotoServerListAppPasswordsResponseBody,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    passwords: z.array(
-      components.ComAtprotoServerListAppPasswordsAppPassword$inboundSchema,
-    ),
-  });
+export const ComAtprotoServerListAppPasswordsResponse$inboundSchema: z.ZodType<
+  ComAtprotoServerListAppPasswordsResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  passwords: z.array(
+    components.ComAtprotoServerListAppPasswordsAppPassword$inboundSchema,
+  ),
+});
 
 /** @internal */
-export type ComAtprotoServerListAppPasswordsResponseBody$Outbound = {
+export type ComAtprotoServerListAppPasswordsResponse$Outbound = {
   passwords: Array<
     components.ComAtprotoServerListAppPasswordsAppPassword$Outbound
   >;
 };
 
 /** @internal */
-export const ComAtprotoServerListAppPasswordsResponseBody$outboundSchema:
-  z.ZodType<
-    ComAtprotoServerListAppPasswordsResponseBody$Outbound,
-    z.ZodTypeDef,
-    ComAtprotoServerListAppPasswordsResponseBody
-  > = z.object({
-    passwords: z.array(
-      components.ComAtprotoServerListAppPasswordsAppPassword$outboundSchema,
-    ),
-  });
+export const ComAtprotoServerListAppPasswordsResponse$outboundSchema: z.ZodType<
+  ComAtprotoServerListAppPasswordsResponse$Outbound,
+  z.ZodTypeDef,
+  ComAtprotoServerListAppPasswordsResponse
+> = z.object({
+  passwords: z.array(
+    components.ComAtprotoServerListAppPasswordsAppPassword$outboundSchema,
+  ),
+});
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoServerListAppPasswordsResponseBody$ {
-  /** @deprecated use `ComAtprotoServerListAppPasswordsResponseBody$inboundSchema` instead. */
+export namespace ComAtprotoServerListAppPasswordsResponse$ {
+  /** @deprecated use `ComAtprotoServerListAppPasswordsResponse$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoServerListAppPasswordsResponseBody$inboundSchema;
-  /** @deprecated use `ComAtprotoServerListAppPasswordsResponseBody$outboundSchema` instead. */
+    ComAtprotoServerListAppPasswordsResponse$inboundSchema;
+  /** @deprecated use `ComAtprotoServerListAppPasswordsResponse$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoServerListAppPasswordsResponseBody$outboundSchema;
-  /** @deprecated use `ComAtprotoServerListAppPasswordsResponseBody$Outbound` instead. */
-  export type Outbound = ComAtprotoServerListAppPasswordsResponseBody$Outbound;
+    ComAtprotoServerListAppPasswordsResponse$outboundSchema;
+  /** @deprecated use `ComAtprotoServerListAppPasswordsResponse$Outbound` instead. */
+  export type Outbound = ComAtprotoServerListAppPasswordsResponse$Outbound;
 }
 
-export function comAtprotoServerListAppPasswordsResponseBodyToJSON(
-  comAtprotoServerListAppPasswordsResponseBody:
-    ComAtprotoServerListAppPasswordsResponseBody,
+export function comAtprotoServerListAppPasswordsResponseToJSON(
+  comAtprotoServerListAppPasswordsResponse:
+    ComAtprotoServerListAppPasswordsResponse,
 ): string {
   return JSON.stringify(
-    ComAtprotoServerListAppPasswordsResponseBody$outboundSchema.parse(
-      comAtprotoServerListAppPasswordsResponseBody,
+    ComAtprotoServerListAppPasswordsResponse$outboundSchema.parse(
+      comAtprotoServerListAppPasswordsResponse,
     ),
   );
 }
 
-export function comAtprotoServerListAppPasswordsResponseBodyFromJSON(
+export function comAtprotoServerListAppPasswordsResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
-  ComAtprotoServerListAppPasswordsResponseBody,
+  ComAtprotoServerListAppPasswordsResponse,
   SDKValidationError
 > {
   return safeParse(
     jsonString,
     (x) =>
-      ComAtprotoServerListAppPasswordsResponseBody$inboundSchema.parse(
+      ComAtprotoServerListAppPasswordsResponse$inboundSchema.parse(
         JSON.parse(x),
       ),
-    `Failed to parse 'ComAtprotoServerListAppPasswordsResponseBody' from JSON`,
+    `Failed to parse 'ComAtprotoServerListAppPasswordsResponse' from JSON`,
   );
 }

@@ -6,7 +6,7 @@
 import { AppBskyGraphDefsListViewBasic } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: AppBskyGraphDefsListViewBasic = {
-  uri: "https://best-nougat.info",
+  uri: "https://needy-sideboard.info/",
   cid: "<id>",
   name: "<value>",
   purpose: "<value>",

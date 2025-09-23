@@ -11,7 +11,7 @@ const args = {
 };
 
 export const tool$atprotoSyncGetBlob: ToolDefinition<typeof args> = {
-  name: "atproto-sync_get-blob",
+  name: "atproto-sync-get-blob",
   description:
     `This endpoint is part of the atproto repository synchronization APIs. Requests usually do not require authentication, and can be made to PDS intances or Relay instances.*
 

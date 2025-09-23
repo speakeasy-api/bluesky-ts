@@ -7,13 +7,13 @@ import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type AppBskyGraphMuteActorBody = {
+export type AppBskyGraphMuteActorRequest = {
   actor: string;
 };
 
 /** @internal */
-export const AppBskyGraphMuteActorBody$inboundSchema: z.ZodType<
-  AppBskyGraphMuteActorBody,
+export const AppBskyGraphMuteActorRequest$inboundSchema: z.ZodType<
+  AppBskyGraphMuteActorRequest,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -21,15 +21,15 @@ export const AppBskyGraphMuteActorBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type AppBskyGraphMuteActorBody$Outbound = {
+export type AppBskyGraphMuteActorRequest$Outbound = {
   actor: string;
 };
 
 /** @internal */
-export const AppBskyGraphMuteActorBody$outboundSchema: z.ZodType<
-  AppBskyGraphMuteActorBody$Outbound,
+export const AppBskyGraphMuteActorRequest$outboundSchema: z.ZodType<
+  AppBskyGraphMuteActorRequest$Outbound,
   z.ZodTypeDef,
-  AppBskyGraphMuteActorBody
+  AppBskyGraphMuteActorRequest
 > = z.object({
   actor: z.string(),
 });
@@ -38,29 +38,31 @@ export const AppBskyGraphMuteActorBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyGraphMuteActorBody$ {
-  /** @deprecated use `AppBskyGraphMuteActorBody$inboundSchema` instead. */
-  export const inboundSchema = AppBskyGraphMuteActorBody$inboundSchema;
-  /** @deprecated use `AppBskyGraphMuteActorBody$outboundSchema` instead. */
-  export const outboundSchema = AppBskyGraphMuteActorBody$outboundSchema;
-  /** @deprecated use `AppBskyGraphMuteActorBody$Outbound` instead. */
-  export type Outbound = AppBskyGraphMuteActorBody$Outbound;
+export namespace AppBskyGraphMuteActorRequest$ {
+  /** @deprecated use `AppBskyGraphMuteActorRequest$inboundSchema` instead. */
+  export const inboundSchema = AppBskyGraphMuteActorRequest$inboundSchema;
+  /** @deprecated use `AppBskyGraphMuteActorRequest$outboundSchema` instead. */
+  export const outboundSchema = AppBskyGraphMuteActorRequest$outboundSchema;
+  /** @deprecated use `AppBskyGraphMuteActorRequest$Outbound` instead. */
+  export type Outbound = AppBskyGraphMuteActorRequest$Outbound;
 }
 
-export function appBskyGraphMuteActorBodyToJSON(
-  appBskyGraphMuteActorBody: AppBskyGraphMuteActorBody,
+export function appBskyGraphMuteActorRequestToJSON(
+  appBskyGraphMuteActorRequest: AppBskyGraphMuteActorRequest,
 ): string {
   return JSON.stringify(
-    AppBskyGraphMuteActorBody$outboundSchema.parse(appBskyGraphMuteActorBody),
+    AppBskyGraphMuteActorRequest$outboundSchema.parse(
+      appBskyGraphMuteActorRequest,
+    ),
   );
 }
 
-export function appBskyGraphMuteActorBodyFromJSON(
+export function appBskyGraphMuteActorRequestFromJSON(
   jsonString: string,
-): SafeParseResult<AppBskyGraphMuteActorBody, SDKValidationError> {
+): SafeParseResult<AppBskyGraphMuteActorRequest, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => AppBskyGraphMuteActorBody$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'AppBskyGraphMuteActorBody' from JSON`,
+    (x) => AppBskyGraphMuteActorRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AppBskyGraphMuteActorRequest' from JSON`,
   );
 }

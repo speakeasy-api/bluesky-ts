@@ -8,7 +8,7 @@ OK
 import { AppBskyFeedGetLikesResponseBody } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: AppBskyFeedGetLikesResponseBody = {
-  uri: "https://oddball-translation.com",
+  uri: "https://key-scorn.org/",
   likes: [],
 };
 ```

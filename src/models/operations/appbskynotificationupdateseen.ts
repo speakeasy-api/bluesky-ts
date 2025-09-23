@@ -7,13 +7,13 @@ import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type AppBskyNotificationUpdateSeenBody = {
+export type AppBskyNotificationUpdateSeenRequest = {
   seenAt: Date;
 };
 
 /** @internal */
-export const AppBskyNotificationUpdateSeenBody$inboundSchema: z.ZodType<
-  AppBskyNotificationUpdateSeenBody,
+export const AppBskyNotificationUpdateSeenRequest$inboundSchema: z.ZodType<
+  AppBskyNotificationUpdateSeenRequest,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -21,15 +21,15 @@ export const AppBskyNotificationUpdateSeenBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type AppBskyNotificationUpdateSeenBody$Outbound = {
+export type AppBskyNotificationUpdateSeenRequest$Outbound = {
   seenAt: string;
 };
 
 /** @internal */
-export const AppBskyNotificationUpdateSeenBody$outboundSchema: z.ZodType<
-  AppBskyNotificationUpdateSeenBody$Outbound,
+export const AppBskyNotificationUpdateSeenRequest$outboundSchema: z.ZodType<
+  AppBskyNotificationUpdateSeenRequest$Outbound,
   z.ZodTypeDef,
-  AppBskyNotificationUpdateSeenBody
+  AppBskyNotificationUpdateSeenRequest
 > = z.object({
   seenAt: z.date().transform(v => v.toISOString()),
 });
@@ -38,32 +38,34 @@ export const AppBskyNotificationUpdateSeenBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyNotificationUpdateSeenBody$ {
-  /** @deprecated use `AppBskyNotificationUpdateSeenBody$inboundSchema` instead. */
-  export const inboundSchema = AppBskyNotificationUpdateSeenBody$inboundSchema;
-  /** @deprecated use `AppBskyNotificationUpdateSeenBody$outboundSchema` instead. */
+export namespace AppBskyNotificationUpdateSeenRequest$ {
+  /** @deprecated use `AppBskyNotificationUpdateSeenRequest$inboundSchema` instead. */
+  export const inboundSchema =
+    AppBskyNotificationUpdateSeenRequest$inboundSchema;
+  /** @deprecated use `AppBskyNotificationUpdateSeenRequest$outboundSchema` instead. */
   export const outboundSchema =
-    AppBskyNotificationUpdateSeenBody$outboundSchema;
-  /** @deprecated use `AppBskyNotificationUpdateSeenBody$Outbound` instead. */
-  export type Outbound = AppBskyNotificationUpdateSeenBody$Outbound;
+    AppBskyNotificationUpdateSeenRequest$outboundSchema;
+  /** @deprecated use `AppBskyNotificationUpdateSeenRequest$Outbound` instead. */
+  export type Outbound = AppBskyNotificationUpdateSeenRequest$Outbound;
 }
 
-export function appBskyNotificationUpdateSeenBodyToJSON(
-  appBskyNotificationUpdateSeenBody: AppBskyNotificationUpdateSeenBody,
+export function appBskyNotificationUpdateSeenRequestToJSON(
+  appBskyNotificationUpdateSeenRequest: AppBskyNotificationUpdateSeenRequest,
 ): string {
   return JSON.stringify(
-    AppBskyNotificationUpdateSeenBody$outboundSchema.parse(
-      appBskyNotificationUpdateSeenBody,
+    AppBskyNotificationUpdateSeenRequest$outboundSchema.parse(
+      appBskyNotificationUpdateSeenRequest,
     ),
   );
 }
 
-export function appBskyNotificationUpdateSeenBodyFromJSON(
+export function appBskyNotificationUpdateSeenRequestFromJSON(
   jsonString: string,
-): SafeParseResult<AppBskyNotificationUpdateSeenBody, SDKValidationError> {
+): SafeParseResult<AppBskyNotificationUpdateSeenRequest, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => AppBskyNotificationUpdateSeenBody$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'AppBskyNotificationUpdateSeenBody' from JSON`,
+    (x) =>
+      AppBskyNotificationUpdateSeenRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AppBskyNotificationUpdateSeenRequest' from JSON`,
   );
 }

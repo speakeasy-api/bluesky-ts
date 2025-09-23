@@ -10,7 +10,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 /**
  * OK
  */
-export type ComAtprotoServerCheckAccountStatusResponseBody = {
+export type ComAtprotoServerCheckAccountStatusResponse = {
   activated: boolean;
   validDid: boolean;
   repoCommit: string;
@@ -23,25 +23,22 @@ export type ComAtprotoServerCheckAccountStatusResponseBody = {
 };
 
 /** @internal */
-export const ComAtprotoServerCheckAccountStatusResponseBody$inboundSchema:
-  z.ZodType<
-    ComAtprotoServerCheckAccountStatusResponseBody,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    activated: z.boolean(),
-    validDid: z.boolean(),
-    repoCommit: z.string(),
-    repoRev: z.string(),
-    repoBlocks: z.number().int(),
-    indexedRecords: z.number().int(),
-    privateStateValues: z.number().int(),
-    expectedBlobs: z.number().int(),
-    importedBlobs: z.number().int(),
-  });
+export const ComAtprotoServerCheckAccountStatusResponse$inboundSchema:
+  z.ZodType<ComAtprotoServerCheckAccountStatusResponse, z.ZodTypeDef, unknown> =
+    z.object({
+      activated: z.boolean(),
+      validDid: z.boolean(),
+      repoCommit: z.string(),
+      repoRev: z.string(),
+      repoBlocks: z.number().int(),
+      indexedRecords: z.number().int(),
+      privateStateValues: z.number().int(),
+      expectedBlobs: z.number().int(),
+      importedBlobs: z.number().int(),
+    });
 
 /** @internal */
-export type ComAtprotoServerCheckAccountStatusResponseBody$Outbound = {
+export type ComAtprotoServerCheckAccountStatusResponse$Outbound = {
   activated: boolean;
   validDid: boolean;
   repoCommit: string;
@@ -54,11 +51,11 @@ export type ComAtprotoServerCheckAccountStatusResponseBody$Outbound = {
 };
 
 /** @internal */
-export const ComAtprotoServerCheckAccountStatusResponseBody$outboundSchema:
+export const ComAtprotoServerCheckAccountStatusResponse$outboundSchema:
   z.ZodType<
-    ComAtprotoServerCheckAccountStatusResponseBody$Outbound,
+    ComAtprotoServerCheckAccountStatusResponse$Outbound,
     z.ZodTypeDef,
-    ComAtprotoServerCheckAccountStatusResponseBody
+    ComAtprotoServerCheckAccountStatusResponse
   > = z.object({
     activated: z.boolean(),
     validDid: z.boolean(),
@@ -75,41 +72,40 @@ export const ComAtprotoServerCheckAccountStatusResponseBody$outboundSchema:
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoServerCheckAccountStatusResponseBody$ {
-  /** @deprecated use `ComAtprotoServerCheckAccountStatusResponseBody$inboundSchema` instead. */
+export namespace ComAtprotoServerCheckAccountStatusResponse$ {
+  /** @deprecated use `ComAtprotoServerCheckAccountStatusResponse$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoServerCheckAccountStatusResponseBody$inboundSchema;
-  /** @deprecated use `ComAtprotoServerCheckAccountStatusResponseBody$outboundSchema` instead. */
+    ComAtprotoServerCheckAccountStatusResponse$inboundSchema;
+  /** @deprecated use `ComAtprotoServerCheckAccountStatusResponse$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoServerCheckAccountStatusResponseBody$outboundSchema;
-  /** @deprecated use `ComAtprotoServerCheckAccountStatusResponseBody$Outbound` instead. */
-  export type Outbound =
-    ComAtprotoServerCheckAccountStatusResponseBody$Outbound;
+    ComAtprotoServerCheckAccountStatusResponse$outboundSchema;
+  /** @deprecated use `ComAtprotoServerCheckAccountStatusResponse$Outbound` instead. */
+  export type Outbound = ComAtprotoServerCheckAccountStatusResponse$Outbound;
 }
 
-export function comAtprotoServerCheckAccountStatusResponseBodyToJSON(
-  comAtprotoServerCheckAccountStatusResponseBody:
-    ComAtprotoServerCheckAccountStatusResponseBody,
+export function comAtprotoServerCheckAccountStatusResponseToJSON(
+  comAtprotoServerCheckAccountStatusResponse:
+    ComAtprotoServerCheckAccountStatusResponse,
 ): string {
   return JSON.stringify(
-    ComAtprotoServerCheckAccountStatusResponseBody$outboundSchema.parse(
-      comAtprotoServerCheckAccountStatusResponseBody,
+    ComAtprotoServerCheckAccountStatusResponse$outboundSchema.parse(
+      comAtprotoServerCheckAccountStatusResponse,
     ),
   );
 }
 
-export function comAtprotoServerCheckAccountStatusResponseBodyFromJSON(
+export function comAtprotoServerCheckAccountStatusResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
-  ComAtprotoServerCheckAccountStatusResponseBody,
+  ComAtprotoServerCheckAccountStatusResponse,
   SDKValidationError
 > {
   return safeParse(
     jsonString,
     (x) =>
-      ComAtprotoServerCheckAccountStatusResponseBody$inboundSchema.parse(
+      ComAtprotoServerCheckAccountStatusResponse$inboundSchema.parse(
         JSON.parse(x),
       ),
-    `Failed to parse 'ComAtprotoServerCheckAccountStatusResponseBody' from JSON`,
+    `Failed to parse 'ComAtprotoServerCheckAccountStatusResponse' from JSON`,
   );
 }

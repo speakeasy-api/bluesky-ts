@@ -18,7 +18,7 @@ export type AppBskyFeedGetFeedGeneratorRequest = {
 /**
  * OK
  */
-export type AppBskyFeedGetFeedGeneratorResponseBody = {
+export type AppBskyFeedGetFeedGeneratorResponse = {
   view: components.AppBskyFeedDefsGeneratorView;
   /**
    * Indicates whether the feed generator service has been online recently, or else seems to be inactive.
@@ -89,8 +89,8 @@ export function appBskyFeedGetFeedGeneratorRequestFromJSON(
 }
 
 /** @internal */
-export const AppBskyFeedGetFeedGeneratorResponseBody$inboundSchema: z.ZodType<
-  AppBskyFeedGetFeedGeneratorResponseBody,
+export const AppBskyFeedGetFeedGeneratorResponse$inboundSchema: z.ZodType<
+  AppBskyFeedGetFeedGeneratorResponse,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -100,17 +100,17 @@ export const AppBskyFeedGetFeedGeneratorResponseBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type AppBskyFeedGetFeedGeneratorResponseBody$Outbound = {
+export type AppBskyFeedGetFeedGeneratorResponse$Outbound = {
   view: components.AppBskyFeedDefsGeneratorView$Outbound;
   isOnline: boolean;
   isValid: boolean;
 };
 
 /** @internal */
-export const AppBskyFeedGetFeedGeneratorResponseBody$outboundSchema: z.ZodType<
-  AppBskyFeedGetFeedGeneratorResponseBody$Outbound,
+export const AppBskyFeedGetFeedGeneratorResponse$outboundSchema: z.ZodType<
+  AppBskyFeedGetFeedGeneratorResponse$Outbound,
   z.ZodTypeDef,
-  AppBskyFeedGetFeedGeneratorResponseBody
+  AppBskyFeedGetFeedGeneratorResponse
 > = z.object({
   view: components.AppBskyFeedDefsGeneratorView$outboundSchema,
   isOnline: z.boolean(),
@@ -121,40 +121,34 @@ export const AppBskyFeedGetFeedGeneratorResponseBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyFeedGetFeedGeneratorResponseBody$ {
-  /** @deprecated use `AppBskyFeedGetFeedGeneratorResponseBody$inboundSchema` instead. */
+export namespace AppBskyFeedGetFeedGeneratorResponse$ {
+  /** @deprecated use `AppBskyFeedGetFeedGeneratorResponse$inboundSchema` instead. */
   export const inboundSchema =
-    AppBskyFeedGetFeedGeneratorResponseBody$inboundSchema;
-  /** @deprecated use `AppBskyFeedGetFeedGeneratorResponseBody$outboundSchema` instead. */
+    AppBskyFeedGetFeedGeneratorResponse$inboundSchema;
+  /** @deprecated use `AppBskyFeedGetFeedGeneratorResponse$outboundSchema` instead. */
   export const outboundSchema =
-    AppBskyFeedGetFeedGeneratorResponseBody$outboundSchema;
-  /** @deprecated use `AppBskyFeedGetFeedGeneratorResponseBody$Outbound` instead. */
-  export type Outbound = AppBskyFeedGetFeedGeneratorResponseBody$Outbound;
+    AppBskyFeedGetFeedGeneratorResponse$outboundSchema;
+  /** @deprecated use `AppBskyFeedGetFeedGeneratorResponse$Outbound` instead. */
+  export type Outbound = AppBskyFeedGetFeedGeneratorResponse$Outbound;
 }
 
-export function appBskyFeedGetFeedGeneratorResponseBodyToJSON(
-  appBskyFeedGetFeedGeneratorResponseBody:
-    AppBskyFeedGetFeedGeneratorResponseBody,
+export function appBskyFeedGetFeedGeneratorResponseToJSON(
+  appBskyFeedGetFeedGeneratorResponse: AppBskyFeedGetFeedGeneratorResponse,
 ): string {
   return JSON.stringify(
-    AppBskyFeedGetFeedGeneratorResponseBody$outboundSchema.parse(
-      appBskyFeedGetFeedGeneratorResponseBody,
+    AppBskyFeedGetFeedGeneratorResponse$outboundSchema.parse(
+      appBskyFeedGetFeedGeneratorResponse,
     ),
   );
 }
 
-export function appBskyFeedGetFeedGeneratorResponseBodyFromJSON(
+export function appBskyFeedGetFeedGeneratorResponseFromJSON(
   jsonString: string,
-): SafeParseResult<
-  AppBskyFeedGetFeedGeneratorResponseBody,
-  SDKValidationError
-> {
+): SafeParseResult<AppBskyFeedGetFeedGeneratorResponse, SDKValidationError> {
   return safeParse(
     jsonString,
     (x) =>
-      AppBskyFeedGetFeedGeneratorResponseBody$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'AppBskyFeedGetFeedGeneratorResponseBody' from JSON`,
+      AppBskyFeedGetFeedGeneratorResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AppBskyFeedGetFeedGeneratorResponse' from JSON`,
   );
 }

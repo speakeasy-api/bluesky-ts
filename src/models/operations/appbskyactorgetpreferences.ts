@@ -11,13 +11,13 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 /**
  * OK
  */
-export type AppBskyActorGetPreferencesResponseBody = {
+export type AppBskyActorGetPreferencesResponse = {
   preferences: Array<components.AppBskyActorDefsPreferences>;
 };
 
 /** @internal */
-export const AppBskyActorGetPreferencesResponseBody$inboundSchema: z.ZodType<
-  AppBskyActorGetPreferencesResponseBody,
+export const AppBskyActorGetPreferencesResponse$inboundSchema: z.ZodType<
+  AppBskyActorGetPreferencesResponse,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -25,15 +25,15 @@ export const AppBskyActorGetPreferencesResponseBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type AppBskyActorGetPreferencesResponseBody$Outbound = {
+export type AppBskyActorGetPreferencesResponse$Outbound = {
   preferences: Array<components.AppBskyActorDefsPreferences$Outbound>;
 };
 
 /** @internal */
-export const AppBskyActorGetPreferencesResponseBody$outboundSchema: z.ZodType<
-  AppBskyActorGetPreferencesResponseBody$Outbound,
+export const AppBskyActorGetPreferencesResponse$outboundSchema: z.ZodType<
+  AppBskyActorGetPreferencesResponse$Outbound,
   z.ZodTypeDef,
-  AppBskyActorGetPreferencesResponseBody
+  AppBskyActorGetPreferencesResponse
 > = z.object({
   preferences: z.array(components.AppBskyActorDefsPreferences$outboundSchema),
 });
@@ -42,35 +42,33 @@ export const AppBskyActorGetPreferencesResponseBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyActorGetPreferencesResponseBody$ {
-  /** @deprecated use `AppBskyActorGetPreferencesResponseBody$inboundSchema` instead. */
-  export const inboundSchema =
-    AppBskyActorGetPreferencesResponseBody$inboundSchema;
-  /** @deprecated use `AppBskyActorGetPreferencesResponseBody$outboundSchema` instead. */
+export namespace AppBskyActorGetPreferencesResponse$ {
+  /** @deprecated use `AppBskyActorGetPreferencesResponse$inboundSchema` instead. */
+  export const inboundSchema = AppBskyActorGetPreferencesResponse$inboundSchema;
+  /** @deprecated use `AppBskyActorGetPreferencesResponse$outboundSchema` instead. */
   export const outboundSchema =
-    AppBskyActorGetPreferencesResponseBody$outboundSchema;
-  /** @deprecated use `AppBskyActorGetPreferencesResponseBody$Outbound` instead. */
-  export type Outbound = AppBskyActorGetPreferencesResponseBody$Outbound;
+    AppBskyActorGetPreferencesResponse$outboundSchema;
+  /** @deprecated use `AppBskyActorGetPreferencesResponse$Outbound` instead. */
+  export type Outbound = AppBskyActorGetPreferencesResponse$Outbound;
 }
 
-export function appBskyActorGetPreferencesResponseBodyToJSON(
-  appBskyActorGetPreferencesResponseBody:
-    AppBskyActorGetPreferencesResponseBody,
+export function appBskyActorGetPreferencesResponseToJSON(
+  appBskyActorGetPreferencesResponse: AppBskyActorGetPreferencesResponse,
 ): string {
   return JSON.stringify(
-    AppBskyActorGetPreferencesResponseBody$outboundSchema.parse(
-      appBskyActorGetPreferencesResponseBody,
+    AppBskyActorGetPreferencesResponse$outboundSchema.parse(
+      appBskyActorGetPreferencesResponse,
     ),
   );
 }
 
-export function appBskyActorGetPreferencesResponseBodyFromJSON(
+export function appBskyActorGetPreferencesResponseFromJSON(
   jsonString: string,
-): SafeParseResult<AppBskyActorGetPreferencesResponseBody, SDKValidationError> {
+): SafeParseResult<AppBskyActorGetPreferencesResponse, SDKValidationError> {
   return safeParse(
     jsonString,
     (x) =>
-      AppBskyActorGetPreferencesResponseBody$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'AppBskyActorGetPreferencesResponseBody' from JSON`,
+      AppBskyActorGetPreferencesResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AppBskyActorGetPreferencesResponse' from JSON`,
   );
 }

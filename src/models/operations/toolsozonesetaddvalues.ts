@@ -7,7 +7,7 @@ import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ToolsOzoneSetAddValuesBody = {
+export type ToolsOzoneSetAddValuesRequest = {
   /**
    * Name of the set to add values to
    */
@@ -16,8 +16,8 @@ export type ToolsOzoneSetAddValuesBody = {
 };
 
 /** @internal */
-export const ToolsOzoneSetAddValuesBody$inboundSchema: z.ZodType<
-  ToolsOzoneSetAddValuesBody,
+export const ToolsOzoneSetAddValuesRequest$inboundSchema: z.ZodType<
+  ToolsOzoneSetAddValuesRequest,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -26,16 +26,16 @@ export const ToolsOzoneSetAddValuesBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type ToolsOzoneSetAddValuesBody$Outbound = {
+export type ToolsOzoneSetAddValuesRequest$Outbound = {
   name: string;
   values: Array<string>;
 };
 
 /** @internal */
-export const ToolsOzoneSetAddValuesBody$outboundSchema: z.ZodType<
-  ToolsOzoneSetAddValuesBody$Outbound,
+export const ToolsOzoneSetAddValuesRequest$outboundSchema: z.ZodType<
+  ToolsOzoneSetAddValuesRequest$Outbound,
   z.ZodTypeDef,
-  ToolsOzoneSetAddValuesBody
+  ToolsOzoneSetAddValuesRequest
 > = z.object({
   name: z.string(),
   values: z.array(z.string()),
@@ -45,29 +45,31 @@ export const ToolsOzoneSetAddValuesBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ToolsOzoneSetAddValuesBody$ {
-  /** @deprecated use `ToolsOzoneSetAddValuesBody$inboundSchema` instead. */
-  export const inboundSchema = ToolsOzoneSetAddValuesBody$inboundSchema;
-  /** @deprecated use `ToolsOzoneSetAddValuesBody$outboundSchema` instead. */
-  export const outboundSchema = ToolsOzoneSetAddValuesBody$outboundSchema;
-  /** @deprecated use `ToolsOzoneSetAddValuesBody$Outbound` instead. */
-  export type Outbound = ToolsOzoneSetAddValuesBody$Outbound;
+export namespace ToolsOzoneSetAddValuesRequest$ {
+  /** @deprecated use `ToolsOzoneSetAddValuesRequest$inboundSchema` instead. */
+  export const inboundSchema = ToolsOzoneSetAddValuesRequest$inboundSchema;
+  /** @deprecated use `ToolsOzoneSetAddValuesRequest$outboundSchema` instead. */
+  export const outboundSchema = ToolsOzoneSetAddValuesRequest$outboundSchema;
+  /** @deprecated use `ToolsOzoneSetAddValuesRequest$Outbound` instead. */
+  export type Outbound = ToolsOzoneSetAddValuesRequest$Outbound;
 }
 
-export function toolsOzoneSetAddValuesBodyToJSON(
-  toolsOzoneSetAddValuesBody: ToolsOzoneSetAddValuesBody,
+export function toolsOzoneSetAddValuesRequestToJSON(
+  toolsOzoneSetAddValuesRequest: ToolsOzoneSetAddValuesRequest,
 ): string {
   return JSON.stringify(
-    ToolsOzoneSetAddValuesBody$outboundSchema.parse(toolsOzoneSetAddValuesBody),
+    ToolsOzoneSetAddValuesRequest$outboundSchema.parse(
+      toolsOzoneSetAddValuesRequest,
+    ),
   );
 }
 
-export function toolsOzoneSetAddValuesBodyFromJSON(
+export function toolsOzoneSetAddValuesRequestFromJSON(
   jsonString: string,
-): SafeParseResult<ToolsOzoneSetAddValuesBody, SDKValidationError> {
+): SafeParseResult<ToolsOzoneSetAddValuesRequest, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => ToolsOzoneSetAddValuesBody$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ToolsOzoneSetAddValuesBody' from JSON`,
+    (x) => ToolsOzoneSetAddValuesRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ToolsOzoneSetAddValuesRequest' from JSON`,
   );
 }

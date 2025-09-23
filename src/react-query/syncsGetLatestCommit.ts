@@ -26,7 +26,7 @@ import {
 } from "./_types.js";
 
 export type SyncsGetLatestCommitQueryData =
-  operations.ComAtprotoSyncGetLatestCommitResponseBody;
+  operations.ComAtprotoSyncGetLatestCommitResponse;
 
 /**
  * This endpoint is part of the atproto repository synchronization APIs. Requests usually do not require authentication, and can be made to PDS intances or Relay instances.*

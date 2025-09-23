@@ -7,7 +7,7 @@ import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ComAtprotoSyncRequestCrawlBody = {
+export type ComAtprotoSyncRequestCrawlRequest = {
   /**
    * Hostname of the current service (eg, PDS) that is requesting to be crawled.
    */
@@ -15,8 +15,8 @@ export type ComAtprotoSyncRequestCrawlBody = {
 };
 
 /** @internal */
-export const ComAtprotoSyncRequestCrawlBody$inboundSchema: z.ZodType<
-  ComAtprotoSyncRequestCrawlBody,
+export const ComAtprotoSyncRequestCrawlRequest$inboundSchema: z.ZodType<
+  ComAtprotoSyncRequestCrawlRequest,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -24,15 +24,15 @@ export const ComAtprotoSyncRequestCrawlBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type ComAtprotoSyncRequestCrawlBody$Outbound = {
+export type ComAtprotoSyncRequestCrawlRequest$Outbound = {
   hostname: string;
 };
 
 /** @internal */
-export const ComAtprotoSyncRequestCrawlBody$outboundSchema: z.ZodType<
-  ComAtprotoSyncRequestCrawlBody$Outbound,
+export const ComAtprotoSyncRequestCrawlRequest$outboundSchema: z.ZodType<
+  ComAtprotoSyncRequestCrawlRequest$Outbound,
   z.ZodTypeDef,
-  ComAtprotoSyncRequestCrawlBody
+  ComAtprotoSyncRequestCrawlRequest
 > = z.object({
   hostname: z.string(),
 });
@@ -41,31 +41,32 @@ export const ComAtprotoSyncRequestCrawlBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoSyncRequestCrawlBody$ {
-  /** @deprecated use `ComAtprotoSyncRequestCrawlBody$inboundSchema` instead. */
-  export const inboundSchema = ComAtprotoSyncRequestCrawlBody$inboundSchema;
-  /** @deprecated use `ComAtprotoSyncRequestCrawlBody$outboundSchema` instead. */
-  export const outboundSchema = ComAtprotoSyncRequestCrawlBody$outboundSchema;
-  /** @deprecated use `ComAtprotoSyncRequestCrawlBody$Outbound` instead. */
-  export type Outbound = ComAtprotoSyncRequestCrawlBody$Outbound;
+export namespace ComAtprotoSyncRequestCrawlRequest$ {
+  /** @deprecated use `ComAtprotoSyncRequestCrawlRequest$inboundSchema` instead. */
+  export const inboundSchema = ComAtprotoSyncRequestCrawlRequest$inboundSchema;
+  /** @deprecated use `ComAtprotoSyncRequestCrawlRequest$outboundSchema` instead. */
+  export const outboundSchema =
+    ComAtprotoSyncRequestCrawlRequest$outboundSchema;
+  /** @deprecated use `ComAtprotoSyncRequestCrawlRequest$Outbound` instead. */
+  export type Outbound = ComAtprotoSyncRequestCrawlRequest$Outbound;
 }
 
-export function comAtprotoSyncRequestCrawlBodyToJSON(
-  comAtprotoSyncRequestCrawlBody: ComAtprotoSyncRequestCrawlBody,
+export function comAtprotoSyncRequestCrawlRequestToJSON(
+  comAtprotoSyncRequestCrawlRequest: ComAtprotoSyncRequestCrawlRequest,
 ): string {
   return JSON.stringify(
-    ComAtprotoSyncRequestCrawlBody$outboundSchema.parse(
-      comAtprotoSyncRequestCrawlBody,
+    ComAtprotoSyncRequestCrawlRequest$outboundSchema.parse(
+      comAtprotoSyncRequestCrawlRequest,
     ),
   );
 }
 
-export function comAtprotoSyncRequestCrawlBodyFromJSON(
+export function comAtprotoSyncRequestCrawlRequestFromJSON(
   jsonString: string,
-): SafeParseResult<ComAtprotoSyncRequestCrawlBody, SDKValidationError> {
+): SafeParseResult<ComAtprotoSyncRequestCrawlRequest, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => ComAtprotoSyncRequestCrawlBody$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ComAtprotoSyncRequestCrawlBody' from JSON`,
+    (x) => ComAtprotoSyncRequestCrawlRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ComAtprotoSyncRequestCrawlRequest' from JSON`,
   );
 }

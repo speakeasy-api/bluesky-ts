@@ -11,7 +11,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 /**
  * OK
  */
-export type ToolsOzoneServerGetConfigResponseBody = {
+export type ToolsOzoneServerGetConfigResponse = {
   appview?: components.ToolsOzoneServerGetConfigServiceConfig | undefined;
   pds?: components.ToolsOzoneServerGetConfigServiceConfig | undefined;
   blobDivert?: components.ToolsOzoneServerGetConfigServiceConfig | undefined;
@@ -20,8 +20,8 @@ export type ToolsOzoneServerGetConfigResponseBody = {
 };
 
 /** @internal */
-export const ToolsOzoneServerGetConfigResponseBody$inboundSchema: z.ZodType<
-  ToolsOzoneServerGetConfigResponseBody,
+export const ToolsOzoneServerGetConfigResponse$inboundSchema: z.ZodType<
+  ToolsOzoneServerGetConfigResponse,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -38,7 +38,7 @@ export const ToolsOzoneServerGetConfigResponseBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type ToolsOzoneServerGetConfigResponseBody$Outbound = {
+export type ToolsOzoneServerGetConfigResponse$Outbound = {
   appview?:
     | components.ToolsOzoneServerGetConfigServiceConfig$Outbound
     | undefined;
@@ -53,10 +53,10 @@ export type ToolsOzoneServerGetConfigResponseBody$Outbound = {
 };
 
 /** @internal */
-export const ToolsOzoneServerGetConfigResponseBody$outboundSchema: z.ZodType<
-  ToolsOzoneServerGetConfigResponseBody$Outbound,
+export const ToolsOzoneServerGetConfigResponse$outboundSchema: z.ZodType<
+  ToolsOzoneServerGetConfigResponse$Outbound,
   z.ZodTypeDef,
-  ToolsOzoneServerGetConfigResponseBody
+  ToolsOzoneServerGetConfigResponse
 > = z.object({
   appview: components.ToolsOzoneServerGetConfigServiceConfig$outboundSchema
     .optional(),
@@ -74,34 +74,32 @@ export const ToolsOzoneServerGetConfigResponseBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ToolsOzoneServerGetConfigResponseBody$ {
-  /** @deprecated use `ToolsOzoneServerGetConfigResponseBody$inboundSchema` instead. */
-  export const inboundSchema =
-    ToolsOzoneServerGetConfigResponseBody$inboundSchema;
-  /** @deprecated use `ToolsOzoneServerGetConfigResponseBody$outboundSchema` instead. */
+export namespace ToolsOzoneServerGetConfigResponse$ {
+  /** @deprecated use `ToolsOzoneServerGetConfigResponse$inboundSchema` instead. */
+  export const inboundSchema = ToolsOzoneServerGetConfigResponse$inboundSchema;
+  /** @deprecated use `ToolsOzoneServerGetConfigResponse$outboundSchema` instead. */
   export const outboundSchema =
-    ToolsOzoneServerGetConfigResponseBody$outboundSchema;
-  /** @deprecated use `ToolsOzoneServerGetConfigResponseBody$Outbound` instead. */
-  export type Outbound = ToolsOzoneServerGetConfigResponseBody$Outbound;
+    ToolsOzoneServerGetConfigResponse$outboundSchema;
+  /** @deprecated use `ToolsOzoneServerGetConfigResponse$Outbound` instead. */
+  export type Outbound = ToolsOzoneServerGetConfigResponse$Outbound;
 }
 
-export function toolsOzoneServerGetConfigResponseBodyToJSON(
-  toolsOzoneServerGetConfigResponseBody: ToolsOzoneServerGetConfigResponseBody,
+export function toolsOzoneServerGetConfigResponseToJSON(
+  toolsOzoneServerGetConfigResponse: ToolsOzoneServerGetConfigResponse,
 ): string {
   return JSON.stringify(
-    ToolsOzoneServerGetConfigResponseBody$outboundSchema.parse(
-      toolsOzoneServerGetConfigResponseBody,
+    ToolsOzoneServerGetConfigResponse$outboundSchema.parse(
+      toolsOzoneServerGetConfigResponse,
     ),
   );
 }
 
-export function toolsOzoneServerGetConfigResponseBodyFromJSON(
+export function toolsOzoneServerGetConfigResponseFromJSON(
   jsonString: string,
-): SafeParseResult<ToolsOzoneServerGetConfigResponseBody, SDKValidationError> {
+): SafeParseResult<ToolsOzoneServerGetConfigResponse, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) =>
-      ToolsOzoneServerGetConfigResponseBody$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ToolsOzoneServerGetConfigResponseBody' from JSON`,
+    (x) => ToolsOzoneServerGetConfigResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ToolsOzoneServerGetConfigResponse' from JSON`,
   );
 }

@@ -7,12 +7,11 @@ import * as operations from "../../models/operations/index.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
 const args = {
-  request: operations.ComAtprotoServerDeactivateAccountBody$inboundSchema
-    .optional(),
+  request: operations.ComAtprotoServerDeactivateAccountRequest$inboundSchema,
 };
 
 export const tool$serverDeactivateAccount: ToolDefinition<typeof args> = {
-  name: "server_deactivate-account",
+  name: "server-deactivate-account",
   description:
     `*This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 

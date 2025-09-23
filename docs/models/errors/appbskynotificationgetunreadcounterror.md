@@ -5,7 +5,7 @@
 ```typescript
 import { AppBskyNotificationGetUnreadCountError } from "@speakeasy-sdks/bluesky/models/errors";
 
-let value: AppBskyNotificationGetUnreadCountError = "InvalidToken";
+let value: AppBskyNotificationGetUnreadCountError = "InvalidRequest";
 ```
 
 ## Values

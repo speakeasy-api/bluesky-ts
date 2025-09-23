@@ -8,7 +8,12 @@ OK
 import { ToolsOzoneTeamListMembersResponseBody } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: ToolsOzoneTeamListMembersResponseBody = {
-  members: [],
+  members: [
+    {
+      did: "<id>",
+      role: "#roleModerator",
+    },
+  ],
 };
 ```
 

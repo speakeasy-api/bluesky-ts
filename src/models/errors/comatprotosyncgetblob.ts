@@ -4,11 +4,12 @@
 
 import * as z from "zod";
 import { ClosedEnum } from "../../types/enums.js";
+import { BlueskyError } from "./blueskyerror.js";
 
 /**
  * Unauthorized
  */
-export type UnauthorizedComAtprotoSyncGetBlobResponseBodyErrorData = {
+export type ComAtprotoSyncGetBlobAuthMissingErrorData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,22 +17,22 @@ export type UnauthorizedComAtprotoSyncGetBlobResponseBodyErrorData = {
 /**
  * Unauthorized
  */
-export class UnauthorizedComAtprotoSyncGetBlobResponseBodyError extends Error {
+export class ComAtprotoSyncGetBlobAuthMissingError extends BlueskyError {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: UnauthorizedComAtprotoSyncGetBlobResponseBodyErrorData;
+  data$: ComAtprotoSyncGetBlobAuthMissingErrorData;
 
-  constructor(err: UnauthorizedComAtprotoSyncGetBlobResponseBodyErrorData) {
-    const message = "message" in err && typeof err.message === "string"
-      ? err.message
-      : `API error occurred: ${JSON.stringify(err)}`;
-    super(message);
+  constructor(
+    err: ComAtprotoSyncGetBlobAuthMissingErrorData,
+    httpMeta: { response: Response; request: Request; body: string },
+  ) {
+    const message = err.message || `API error occurred: ${JSON.stringify(err)}`;
+    super(message, httpMeta);
     this.data$ = err;
-
     this.error = err.error;
 
-    this.name = "UnauthorizedComAtprotoSyncGetBlobResponseBodyError";
+    this.name = "ComAtprotoSyncGetBlobAuthMissingError";
   }
 }
 
@@ -52,7 +53,7 @@ export type ComAtprotoSyncGetBlobError = ClosedEnum<
 /**
  * Bad Request
  */
-export type BadRequestComAtprotoSyncGetBlobResponseBodyErrorData = {
+export type ComAtprotoSyncGetBlobBadRequestErrorData = {
   error: ComAtprotoSyncGetBlobError;
   message: string;
 };
@@ -60,72 +61,76 @@ export type BadRequestComAtprotoSyncGetBlobResponseBodyErrorData = {
 /**
  * Bad Request
  */
-export class BadRequestComAtprotoSyncGetBlobResponseBodyError extends Error {
+export class ComAtprotoSyncGetBlobBadRequestError extends BlueskyError {
   error: ComAtprotoSyncGetBlobError;
 
   /** The original data that was passed to this error instance. */
-  data$: BadRequestComAtprotoSyncGetBlobResponseBodyErrorData;
+  data$: ComAtprotoSyncGetBlobBadRequestErrorData;
 
-  constructor(err: BadRequestComAtprotoSyncGetBlobResponseBodyErrorData) {
-    const message = "message" in err && typeof err.message === "string"
-      ? err.message
-      : `API error occurred: ${JSON.stringify(err)}`;
-    super(message);
+  constructor(
+    err: ComAtprotoSyncGetBlobBadRequestErrorData,
+    httpMeta: { response: Response; request: Request; body: string },
+  ) {
+    const message = err.message || `API error occurred: ${JSON.stringify(err)}`;
+    super(message, httpMeta);
     this.data$ = err;
-
     this.error = err.error;
 
-    this.name = "BadRequestComAtprotoSyncGetBlobResponseBodyError";
+    this.name = "ComAtprotoSyncGetBlobBadRequestError";
   }
 }
 
 /** @internal */
-export const UnauthorizedComAtprotoSyncGetBlobResponseBodyError$inboundSchema:
-  z.ZodType<
-    UnauthorizedComAtprotoSyncGetBlobResponseBodyError,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    error: z.literal("AuthMissing"),
-    message: z.string(),
-  })
-    .transform((v) => {
-      return new UnauthorizedComAtprotoSyncGetBlobResponseBodyError(v);
+export const ComAtprotoSyncGetBlobAuthMissingError$inboundSchema: z.ZodType<
+  ComAtprotoSyncGetBlobAuthMissingError,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  error: z.literal("AuthMissing").default("AuthMissing"),
+  message: z.string(),
+  request$: z.instanceof(Request),
+  response$: z.instanceof(Response),
+  body$: z.string(),
+})
+  .transform((v) => {
+    return new ComAtprotoSyncGetBlobAuthMissingError(v, {
+      request: v.request$,
+      response: v.response$,
+      body: v.body$,
     });
+  });
 
 /** @internal */
-export type UnauthorizedComAtprotoSyncGetBlobResponseBodyError$Outbound = {
+export type ComAtprotoSyncGetBlobAuthMissingError$Outbound = {
   error: "AuthMissing";
   message: string;
 };
 
 /** @internal */
-export const UnauthorizedComAtprotoSyncGetBlobResponseBodyError$outboundSchema:
-  z.ZodType<
-    UnauthorizedComAtprotoSyncGetBlobResponseBodyError$Outbound,
-    z.ZodTypeDef,
-    UnauthorizedComAtprotoSyncGetBlobResponseBodyError
-  > = z.instanceof(UnauthorizedComAtprotoSyncGetBlobResponseBodyError)
-    .transform(v => v.data$)
-    .pipe(z.object({
-      error: z.literal("AuthMissing").default("AuthMissing" as const),
-      message: z.string(),
-    }));
+export const ComAtprotoSyncGetBlobAuthMissingError$outboundSchema: z.ZodType<
+  ComAtprotoSyncGetBlobAuthMissingError$Outbound,
+  z.ZodTypeDef,
+  ComAtprotoSyncGetBlobAuthMissingError
+> = z.instanceof(ComAtprotoSyncGetBlobAuthMissingError)
+  .transform(v => v.data$)
+  .pipe(z.object({
+    error: z.literal("AuthMissing").default("AuthMissing" as const),
+    message: z.string(),
+  }));
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace UnauthorizedComAtprotoSyncGetBlobResponseBodyError$ {
-  /** @deprecated use `UnauthorizedComAtprotoSyncGetBlobResponseBodyError$inboundSchema` instead. */
+export namespace ComAtprotoSyncGetBlobAuthMissingError$ {
+  /** @deprecated use `ComAtprotoSyncGetBlobAuthMissingError$inboundSchema` instead. */
   export const inboundSchema =
-    UnauthorizedComAtprotoSyncGetBlobResponseBodyError$inboundSchema;
-  /** @deprecated use `UnauthorizedComAtprotoSyncGetBlobResponseBodyError$outboundSchema` instead. */
+    ComAtprotoSyncGetBlobAuthMissingError$inboundSchema;
+  /** @deprecated use `ComAtprotoSyncGetBlobAuthMissingError$outboundSchema` instead. */
   export const outboundSchema =
-    UnauthorizedComAtprotoSyncGetBlobResponseBodyError$outboundSchema;
-  /** @deprecated use `UnauthorizedComAtprotoSyncGetBlobResponseBodyError$Outbound` instead. */
-  export type Outbound =
-    UnauthorizedComAtprotoSyncGetBlobResponseBodyError$Outbound;
+    ComAtprotoSyncGetBlobAuthMissingError$outboundSchema;
+  /** @deprecated use `ComAtprotoSyncGetBlobAuthMissingError$Outbound` instead. */
+  export type Outbound = ComAtprotoSyncGetBlobAuthMissingError$Outbound;
 }
 
 /** @internal */
@@ -150,50 +155,54 @@ export namespace ComAtprotoSyncGetBlobError$ {
 }
 
 /** @internal */
-export const BadRequestComAtprotoSyncGetBlobResponseBodyError$inboundSchema:
-  z.ZodType<
-    BadRequestComAtprotoSyncGetBlobResponseBodyError,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    error: ComAtprotoSyncGetBlobError$inboundSchema,
-    message: z.string(),
-  })
-    .transform((v) => {
-      return new BadRequestComAtprotoSyncGetBlobResponseBodyError(v);
+export const ComAtprotoSyncGetBlobBadRequestError$inboundSchema: z.ZodType<
+  ComAtprotoSyncGetBlobBadRequestError,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  error: ComAtprotoSyncGetBlobError$inboundSchema,
+  message: z.string(),
+  request$: z.instanceof(Request),
+  response$: z.instanceof(Response),
+  body$: z.string(),
+})
+  .transform((v) => {
+    return new ComAtprotoSyncGetBlobBadRequestError(v, {
+      request: v.request$,
+      response: v.response$,
+      body: v.body$,
     });
+  });
 
 /** @internal */
-export type BadRequestComAtprotoSyncGetBlobResponseBodyError$Outbound = {
+export type ComAtprotoSyncGetBlobBadRequestError$Outbound = {
   error: string;
   message: string;
 };
 
 /** @internal */
-export const BadRequestComAtprotoSyncGetBlobResponseBodyError$outboundSchema:
-  z.ZodType<
-    BadRequestComAtprotoSyncGetBlobResponseBodyError$Outbound,
-    z.ZodTypeDef,
-    BadRequestComAtprotoSyncGetBlobResponseBodyError
-  > = z.instanceof(BadRequestComAtprotoSyncGetBlobResponseBodyError)
-    .transform(v => v.data$)
-    .pipe(z.object({
-      error: ComAtprotoSyncGetBlobError$outboundSchema,
-      message: z.string(),
-    }));
+export const ComAtprotoSyncGetBlobBadRequestError$outboundSchema: z.ZodType<
+  ComAtprotoSyncGetBlobBadRequestError$Outbound,
+  z.ZodTypeDef,
+  ComAtprotoSyncGetBlobBadRequestError
+> = z.instanceof(ComAtprotoSyncGetBlobBadRequestError)
+  .transform(v => v.data$)
+  .pipe(z.object({
+    error: ComAtprotoSyncGetBlobError$outboundSchema,
+    message: z.string(),
+  }));
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace BadRequestComAtprotoSyncGetBlobResponseBodyError$ {
-  /** @deprecated use `BadRequestComAtprotoSyncGetBlobResponseBodyError$inboundSchema` instead. */
+export namespace ComAtprotoSyncGetBlobBadRequestError$ {
+  /** @deprecated use `ComAtprotoSyncGetBlobBadRequestError$inboundSchema` instead. */
   export const inboundSchema =
-    BadRequestComAtprotoSyncGetBlobResponseBodyError$inboundSchema;
-  /** @deprecated use `BadRequestComAtprotoSyncGetBlobResponseBodyError$outboundSchema` instead. */
+    ComAtprotoSyncGetBlobBadRequestError$inboundSchema;
+  /** @deprecated use `ComAtprotoSyncGetBlobBadRequestError$outboundSchema` instead. */
   export const outboundSchema =
-    BadRequestComAtprotoSyncGetBlobResponseBodyError$outboundSchema;
-  /** @deprecated use `BadRequestComAtprotoSyncGetBlobResponseBodyError$Outbound` instead. */
-  export type Outbound =
-    BadRequestComAtprotoSyncGetBlobResponseBodyError$Outbound;
+    ComAtprotoSyncGetBlobBadRequestError$outboundSchema;
+  /** @deprecated use `ComAtprotoSyncGetBlobBadRequestError$Outbound` instead. */
+  export type Outbound = ComAtprotoSyncGetBlobBadRequestError$Outbound;
 }

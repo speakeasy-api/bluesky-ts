@@ -19,7 +19,7 @@ export type AppBskyActorSearchActorsTypeaheadRequest = {
 /**
  * OK
  */
-export type AppBskyActorSearchActorsTypeaheadResponseBody = {
+export type AppBskyActorSearchActorsTypeaheadResponse = {
   actors: Array<components.AppBskyActorDefsProfileViewBasic>;
 };
 
@@ -92,26 +92,25 @@ export function appBskyActorSearchActorsTypeaheadRequestFromJSON(
 }
 
 /** @internal */
-export const AppBskyActorSearchActorsTypeaheadResponseBody$inboundSchema:
-  z.ZodType<
-    AppBskyActorSearchActorsTypeaheadResponseBody,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    actors: z.array(components.AppBskyActorDefsProfileViewBasic$inboundSchema),
-  });
+export const AppBskyActorSearchActorsTypeaheadResponse$inboundSchema: z.ZodType<
+  AppBskyActorSearchActorsTypeaheadResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  actors: z.array(components.AppBskyActorDefsProfileViewBasic$inboundSchema),
+});
 
 /** @internal */
-export type AppBskyActorSearchActorsTypeaheadResponseBody$Outbound = {
+export type AppBskyActorSearchActorsTypeaheadResponse$Outbound = {
   actors: Array<components.AppBskyActorDefsProfileViewBasic$Outbound>;
 };
 
 /** @internal */
-export const AppBskyActorSearchActorsTypeaheadResponseBody$outboundSchema:
+export const AppBskyActorSearchActorsTypeaheadResponse$outboundSchema:
   z.ZodType<
-    AppBskyActorSearchActorsTypeaheadResponseBody$Outbound,
+    AppBskyActorSearchActorsTypeaheadResponse$Outbound,
     z.ZodTypeDef,
-    AppBskyActorSearchActorsTypeaheadResponseBody
+    AppBskyActorSearchActorsTypeaheadResponse
   > = z.object({
     actors: z.array(components.AppBskyActorDefsProfileViewBasic$outboundSchema),
   });
@@ -120,40 +119,40 @@ export const AppBskyActorSearchActorsTypeaheadResponseBody$outboundSchema:
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyActorSearchActorsTypeaheadResponseBody$ {
-  /** @deprecated use `AppBskyActorSearchActorsTypeaheadResponseBody$inboundSchema` instead. */
+export namespace AppBskyActorSearchActorsTypeaheadResponse$ {
+  /** @deprecated use `AppBskyActorSearchActorsTypeaheadResponse$inboundSchema` instead. */
   export const inboundSchema =
-    AppBskyActorSearchActorsTypeaheadResponseBody$inboundSchema;
-  /** @deprecated use `AppBskyActorSearchActorsTypeaheadResponseBody$outboundSchema` instead. */
+    AppBskyActorSearchActorsTypeaheadResponse$inboundSchema;
+  /** @deprecated use `AppBskyActorSearchActorsTypeaheadResponse$outboundSchema` instead. */
   export const outboundSchema =
-    AppBskyActorSearchActorsTypeaheadResponseBody$outboundSchema;
-  /** @deprecated use `AppBskyActorSearchActorsTypeaheadResponseBody$Outbound` instead. */
-  export type Outbound = AppBskyActorSearchActorsTypeaheadResponseBody$Outbound;
+    AppBskyActorSearchActorsTypeaheadResponse$outboundSchema;
+  /** @deprecated use `AppBskyActorSearchActorsTypeaheadResponse$Outbound` instead. */
+  export type Outbound = AppBskyActorSearchActorsTypeaheadResponse$Outbound;
 }
 
-export function appBskyActorSearchActorsTypeaheadResponseBodyToJSON(
-  appBskyActorSearchActorsTypeaheadResponseBody:
-    AppBskyActorSearchActorsTypeaheadResponseBody,
+export function appBskyActorSearchActorsTypeaheadResponseToJSON(
+  appBskyActorSearchActorsTypeaheadResponse:
+    AppBskyActorSearchActorsTypeaheadResponse,
 ): string {
   return JSON.stringify(
-    AppBskyActorSearchActorsTypeaheadResponseBody$outboundSchema.parse(
-      appBskyActorSearchActorsTypeaheadResponseBody,
+    AppBskyActorSearchActorsTypeaheadResponse$outboundSchema.parse(
+      appBskyActorSearchActorsTypeaheadResponse,
     ),
   );
 }
 
-export function appBskyActorSearchActorsTypeaheadResponseBodyFromJSON(
+export function appBskyActorSearchActorsTypeaheadResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
-  AppBskyActorSearchActorsTypeaheadResponseBody,
+  AppBskyActorSearchActorsTypeaheadResponse,
   SDKValidationError
 > {
   return safeParse(
     jsonString,
     (x) =>
-      AppBskyActorSearchActorsTypeaheadResponseBody$inboundSchema.parse(
+      AppBskyActorSearchActorsTypeaheadResponse$inboundSchema.parse(
         JSON.parse(x),
       ),
-    `Failed to parse 'AppBskyActorSearchActorsTypeaheadResponseBody' from JSON`,
+    `Failed to parse 'AppBskyActorSearchActorsTypeaheadResponse' from JSON`,
   );
 }

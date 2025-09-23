@@ -7,7 +7,8 @@ import { AppBskyLabelerGetServicesRequest } from "@speakeasy-sdks/bluesky/models
 
 let value: AppBskyLabelerGetServicesRequest = {
   dids: [
-    "<id>",
+    "<id 1>",
+    "<id 2>",
   ],
 };
 ```

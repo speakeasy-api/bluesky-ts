@@ -5,7 +5,7 @@
 ```typescript
 import { AppBskyFeedGetActorLikesError } from "@speakeasy-sdks/bluesky/models/errors";
 
-let value: AppBskyFeedGetActorLikesError = "BlockedByActor";
+let value: AppBskyFeedGetActorLikesError = "BlockedActor";
 ```
 
 ## Values

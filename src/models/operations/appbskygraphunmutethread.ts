@@ -7,13 +7,13 @@ import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type AppBskyGraphUnmuteThreadBody = {
+export type AppBskyGraphUnmuteThreadRequest = {
   root: string;
 };
 
 /** @internal */
-export const AppBskyGraphUnmuteThreadBody$inboundSchema: z.ZodType<
-  AppBskyGraphUnmuteThreadBody,
+export const AppBskyGraphUnmuteThreadRequest$inboundSchema: z.ZodType<
+  AppBskyGraphUnmuteThreadRequest,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -21,15 +21,15 @@ export const AppBskyGraphUnmuteThreadBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type AppBskyGraphUnmuteThreadBody$Outbound = {
+export type AppBskyGraphUnmuteThreadRequest$Outbound = {
   root: string;
 };
 
 /** @internal */
-export const AppBskyGraphUnmuteThreadBody$outboundSchema: z.ZodType<
-  AppBskyGraphUnmuteThreadBody$Outbound,
+export const AppBskyGraphUnmuteThreadRequest$outboundSchema: z.ZodType<
+  AppBskyGraphUnmuteThreadRequest$Outbound,
   z.ZodTypeDef,
-  AppBskyGraphUnmuteThreadBody
+  AppBskyGraphUnmuteThreadRequest
 > = z.object({
   root: z.string(),
 });
@@ -38,31 +38,31 @@ export const AppBskyGraphUnmuteThreadBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyGraphUnmuteThreadBody$ {
-  /** @deprecated use `AppBskyGraphUnmuteThreadBody$inboundSchema` instead. */
-  export const inboundSchema = AppBskyGraphUnmuteThreadBody$inboundSchema;
-  /** @deprecated use `AppBskyGraphUnmuteThreadBody$outboundSchema` instead. */
-  export const outboundSchema = AppBskyGraphUnmuteThreadBody$outboundSchema;
-  /** @deprecated use `AppBskyGraphUnmuteThreadBody$Outbound` instead. */
-  export type Outbound = AppBskyGraphUnmuteThreadBody$Outbound;
+export namespace AppBskyGraphUnmuteThreadRequest$ {
+  /** @deprecated use `AppBskyGraphUnmuteThreadRequest$inboundSchema` instead. */
+  export const inboundSchema = AppBskyGraphUnmuteThreadRequest$inboundSchema;
+  /** @deprecated use `AppBskyGraphUnmuteThreadRequest$outboundSchema` instead. */
+  export const outboundSchema = AppBskyGraphUnmuteThreadRequest$outboundSchema;
+  /** @deprecated use `AppBskyGraphUnmuteThreadRequest$Outbound` instead. */
+  export type Outbound = AppBskyGraphUnmuteThreadRequest$Outbound;
 }
 
-export function appBskyGraphUnmuteThreadBodyToJSON(
-  appBskyGraphUnmuteThreadBody: AppBskyGraphUnmuteThreadBody,
+export function appBskyGraphUnmuteThreadRequestToJSON(
+  appBskyGraphUnmuteThreadRequest: AppBskyGraphUnmuteThreadRequest,
 ): string {
   return JSON.stringify(
-    AppBskyGraphUnmuteThreadBody$outboundSchema.parse(
-      appBskyGraphUnmuteThreadBody,
+    AppBskyGraphUnmuteThreadRequest$outboundSchema.parse(
+      appBskyGraphUnmuteThreadRequest,
     ),
   );
 }
 
-export function appBskyGraphUnmuteThreadBodyFromJSON(
+export function appBskyGraphUnmuteThreadRequestFromJSON(
   jsonString: string,
-): SafeParseResult<AppBskyGraphUnmuteThreadBody, SDKValidationError> {
+): SafeParseResult<AppBskyGraphUnmuteThreadRequest, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => AppBskyGraphUnmuteThreadBody$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'AppBskyGraphUnmuteThreadBody' from JSON`,
+    (x) => AppBskyGraphUnmuteThreadRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AppBskyGraphUnmuteThreadRequest' from JSON`,
   );
 }

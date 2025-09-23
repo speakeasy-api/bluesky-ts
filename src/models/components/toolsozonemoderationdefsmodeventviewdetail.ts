@@ -146,57 +146,57 @@ import {
 } from "./toolsozonemoderationdefsrepoviewnotfound.js";
 
 export type ToolsOzoneModerationDefsModEventViewDetailEvent =
+  | ToolsOzoneModerationDefsModEventLabel
+  | ToolsOzoneModerationDefsModEventTag
+  | ToolsOzoneModerationDefsAccountEvent
+  | ToolsOzoneModerationDefsRecordEvent
+  | ToolsOzoneModerationDefsModEventComment
+  | ToolsOzoneModerationDefsModEventReport
+  | ToolsOzoneModerationDefsModEventMute
+  | ToolsOzoneModerationDefsModEventEmail
+  | ToolsOzoneModerationDefsIdentityEvent
+  | ToolsOzoneModerationDefsModEventTakedown
   | ToolsOzoneModerationDefsModEventReverseTakedown
   | ToolsOzoneModerationDefsModEventAcknowledge
   | ToolsOzoneModerationDefsModEventEscalate
   | ToolsOzoneModerationDefsModEventUnmute
+  | ToolsOzoneModerationDefsModEventMuteReporter
   | ToolsOzoneModerationDefsModEventUnmuteReporter
   | ToolsOzoneModerationDefsModEventResolveAppeal
-  | ToolsOzoneModerationDefsModEventDivert
-  | ToolsOzoneModerationDefsModEventComment
-  | ToolsOzoneModerationDefsModEventMute
-  | ToolsOzoneModerationDefsModEventMuteReporter
-  | ToolsOzoneModerationDefsModEventTakedown
-  | ToolsOzoneModerationDefsModEventReport
-  | ToolsOzoneModerationDefsModEventLabel
-  | ToolsOzoneModerationDefsModEventEmail
-  | ToolsOzoneModerationDefsModEventTag
-  | ToolsOzoneModerationDefsAccountEvent
-  | ToolsOzoneModerationDefsRecordEvent
-  | ToolsOzoneModerationDefsIdentityEvent;
+  | ToolsOzoneModerationDefsModEventDivert;
 
 export type ToolsOzoneModerationDefsModEventViewDetailSubject =
-  | ToolsOzoneModerationDefsRepoViewNotFound
-  | ToolsOzoneModerationDefsRecordViewNotFound
   | ToolsOzoneModerationDefsRecordView
-  | ToolsOzoneModerationDefsRepoView;
+  | ToolsOzoneModerationDefsRepoView
+  | ToolsOzoneModerationDefsRepoViewNotFound
+  | ToolsOzoneModerationDefsRecordViewNotFound;
 
 export type ToolsOzoneModerationDefsModEventViewDetail = {
   id: number;
   event:
+    | ToolsOzoneModerationDefsModEventLabel
+    | ToolsOzoneModerationDefsModEventTag
+    | ToolsOzoneModerationDefsAccountEvent
+    | ToolsOzoneModerationDefsRecordEvent
+    | ToolsOzoneModerationDefsModEventComment
+    | ToolsOzoneModerationDefsModEventReport
+    | ToolsOzoneModerationDefsModEventMute
+    | ToolsOzoneModerationDefsModEventEmail
+    | ToolsOzoneModerationDefsIdentityEvent
+    | ToolsOzoneModerationDefsModEventTakedown
     | ToolsOzoneModerationDefsModEventReverseTakedown
     | ToolsOzoneModerationDefsModEventAcknowledge
     | ToolsOzoneModerationDefsModEventEscalate
     | ToolsOzoneModerationDefsModEventUnmute
+    | ToolsOzoneModerationDefsModEventMuteReporter
     | ToolsOzoneModerationDefsModEventUnmuteReporter
     | ToolsOzoneModerationDefsModEventResolveAppeal
-    | ToolsOzoneModerationDefsModEventDivert
-    | ToolsOzoneModerationDefsModEventComment
-    | ToolsOzoneModerationDefsModEventMute
-    | ToolsOzoneModerationDefsModEventMuteReporter
-    | ToolsOzoneModerationDefsModEventTakedown
-    | ToolsOzoneModerationDefsModEventReport
-    | ToolsOzoneModerationDefsModEventLabel
-    | ToolsOzoneModerationDefsModEventEmail
-    | ToolsOzoneModerationDefsModEventTag
-    | ToolsOzoneModerationDefsAccountEvent
-    | ToolsOzoneModerationDefsRecordEvent
-    | ToolsOzoneModerationDefsIdentityEvent;
+    | ToolsOzoneModerationDefsModEventDivert;
   subject:
-    | ToolsOzoneModerationDefsRepoViewNotFound
-    | ToolsOzoneModerationDefsRecordViewNotFound
     | ToolsOzoneModerationDefsRecordView
-    | ToolsOzoneModerationDefsRepoView;
+    | ToolsOzoneModerationDefsRepoView
+    | ToolsOzoneModerationDefsRepoViewNotFound
+    | ToolsOzoneModerationDefsRecordViewNotFound;
   subjectBlobs: Array<ToolsOzoneModerationDefsBlobView>;
   createdBy: string;
   createdAt: Date;
@@ -209,46 +209,46 @@ export const ToolsOzoneModerationDefsModEventViewDetailEvent$inboundSchema:
     z.ZodTypeDef,
     unknown
   > = z.union([
+    ToolsOzoneModerationDefsModEventLabel$inboundSchema,
+    ToolsOzoneModerationDefsModEventTag$inboundSchema,
+    ToolsOzoneModerationDefsAccountEvent$inboundSchema,
+    ToolsOzoneModerationDefsRecordEvent$inboundSchema,
+    ToolsOzoneModerationDefsModEventComment$inboundSchema,
+    ToolsOzoneModerationDefsModEventReport$inboundSchema,
+    ToolsOzoneModerationDefsModEventMute$inboundSchema,
+    ToolsOzoneModerationDefsModEventEmail$inboundSchema,
+    ToolsOzoneModerationDefsIdentityEvent$inboundSchema,
+    ToolsOzoneModerationDefsModEventTakedown$inboundSchema,
     ToolsOzoneModerationDefsModEventReverseTakedown$inboundSchema,
     ToolsOzoneModerationDefsModEventAcknowledge$inboundSchema,
     ToolsOzoneModerationDefsModEventEscalate$inboundSchema,
     ToolsOzoneModerationDefsModEventUnmute$inboundSchema,
+    ToolsOzoneModerationDefsModEventMuteReporter$inboundSchema,
     ToolsOzoneModerationDefsModEventUnmuteReporter$inboundSchema,
     ToolsOzoneModerationDefsModEventResolveAppeal$inboundSchema,
     ToolsOzoneModerationDefsModEventDivert$inboundSchema,
-    ToolsOzoneModerationDefsModEventComment$inboundSchema,
-    ToolsOzoneModerationDefsModEventMute$inboundSchema,
-    ToolsOzoneModerationDefsModEventMuteReporter$inboundSchema,
-    ToolsOzoneModerationDefsModEventTakedown$inboundSchema,
-    ToolsOzoneModerationDefsModEventReport$inboundSchema,
-    ToolsOzoneModerationDefsModEventLabel$inboundSchema,
-    ToolsOzoneModerationDefsModEventEmail$inboundSchema,
-    ToolsOzoneModerationDefsModEventTag$inboundSchema,
-    ToolsOzoneModerationDefsAccountEvent$inboundSchema,
-    ToolsOzoneModerationDefsRecordEvent$inboundSchema,
-    ToolsOzoneModerationDefsIdentityEvent$inboundSchema,
   ]);
 
 /** @internal */
 export type ToolsOzoneModerationDefsModEventViewDetailEvent$Outbound =
+  | ToolsOzoneModerationDefsModEventLabel$Outbound
+  | ToolsOzoneModerationDefsModEventTag$Outbound
+  | ToolsOzoneModerationDefsAccountEvent$Outbound
+  | ToolsOzoneModerationDefsRecordEvent$Outbound
+  | ToolsOzoneModerationDefsModEventComment$Outbound
+  | ToolsOzoneModerationDefsModEventReport$Outbound
+  | ToolsOzoneModerationDefsModEventMute$Outbound
+  | ToolsOzoneModerationDefsModEventEmail$Outbound
+  | ToolsOzoneModerationDefsIdentityEvent$Outbound
+  | ToolsOzoneModerationDefsModEventTakedown$Outbound
   | ToolsOzoneModerationDefsModEventReverseTakedown$Outbound
   | ToolsOzoneModerationDefsModEventAcknowledge$Outbound
   | ToolsOzoneModerationDefsModEventEscalate$Outbound
   | ToolsOzoneModerationDefsModEventUnmute$Outbound
+  | ToolsOzoneModerationDefsModEventMuteReporter$Outbound
   | ToolsOzoneModerationDefsModEventUnmuteReporter$Outbound
   | ToolsOzoneModerationDefsModEventResolveAppeal$Outbound
-  | ToolsOzoneModerationDefsModEventDivert$Outbound
-  | ToolsOzoneModerationDefsModEventComment$Outbound
-  | ToolsOzoneModerationDefsModEventMute$Outbound
-  | ToolsOzoneModerationDefsModEventMuteReporter$Outbound
-  | ToolsOzoneModerationDefsModEventTakedown$Outbound
-  | ToolsOzoneModerationDefsModEventReport$Outbound
-  | ToolsOzoneModerationDefsModEventLabel$Outbound
-  | ToolsOzoneModerationDefsModEventEmail$Outbound
-  | ToolsOzoneModerationDefsModEventTag$Outbound
-  | ToolsOzoneModerationDefsAccountEvent$Outbound
-  | ToolsOzoneModerationDefsRecordEvent$Outbound
-  | ToolsOzoneModerationDefsIdentityEvent$Outbound;
+  | ToolsOzoneModerationDefsModEventDivert$Outbound;
 
 /** @internal */
 export const ToolsOzoneModerationDefsModEventViewDetailEvent$outboundSchema:
@@ -257,24 +257,24 @@ export const ToolsOzoneModerationDefsModEventViewDetailEvent$outboundSchema:
     z.ZodTypeDef,
     ToolsOzoneModerationDefsModEventViewDetailEvent
   > = z.union([
+    ToolsOzoneModerationDefsModEventLabel$outboundSchema,
+    ToolsOzoneModerationDefsModEventTag$outboundSchema,
+    ToolsOzoneModerationDefsAccountEvent$outboundSchema,
+    ToolsOzoneModerationDefsRecordEvent$outboundSchema,
+    ToolsOzoneModerationDefsModEventComment$outboundSchema,
+    ToolsOzoneModerationDefsModEventReport$outboundSchema,
+    ToolsOzoneModerationDefsModEventMute$outboundSchema,
+    ToolsOzoneModerationDefsModEventEmail$outboundSchema,
+    ToolsOzoneModerationDefsIdentityEvent$outboundSchema,
+    ToolsOzoneModerationDefsModEventTakedown$outboundSchema,
     ToolsOzoneModerationDefsModEventReverseTakedown$outboundSchema,
     ToolsOzoneModerationDefsModEventAcknowledge$outboundSchema,
     ToolsOzoneModerationDefsModEventEscalate$outboundSchema,
     ToolsOzoneModerationDefsModEventUnmute$outboundSchema,
+    ToolsOzoneModerationDefsModEventMuteReporter$outboundSchema,
     ToolsOzoneModerationDefsModEventUnmuteReporter$outboundSchema,
     ToolsOzoneModerationDefsModEventResolveAppeal$outboundSchema,
     ToolsOzoneModerationDefsModEventDivert$outboundSchema,
-    ToolsOzoneModerationDefsModEventComment$outboundSchema,
-    ToolsOzoneModerationDefsModEventMute$outboundSchema,
-    ToolsOzoneModerationDefsModEventMuteReporter$outboundSchema,
-    ToolsOzoneModerationDefsModEventTakedown$outboundSchema,
-    ToolsOzoneModerationDefsModEventReport$outboundSchema,
-    ToolsOzoneModerationDefsModEventLabel$outboundSchema,
-    ToolsOzoneModerationDefsModEventEmail$outboundSchema,
-    ToolsOzoneModerationDefsModEventTag$outboundSchema,
-    ToolsOzoneModerationDefsAccountEvent$outboundSchema,
-    ToolsOzoneModerationDefsRecordEvent$outboundSchema,
-    ToolsOzoneModerationDefsIdentityEvent$outboundSchema,
   ]);
 
 /**
@@ -327,18 +327,18 @@ export const ToolsOzoneModerationDefsModEventViewDetailSubject$inboundSchema:
     z.ZodTypeDef,
     unknown
   > = z.union([
-    ToolsOzoneModerationDefsRepoViewNotFound$inboundSchema,
-    ToolsOzoneModerationDefsRecordViewNotFound$inboundSchema,
     ToolsOzoneModerationDefsRecordView$inboundSchema,
     ToolsOzoneModerationDefsRepoView$inboundSchema,
+    ToolsOzoneModerationDefsRepoViewNotFound$inboundSchema,
+    ToolsOzoneModerationDefsRecordViewNotFound$inboundSchema,
   ]);
 
 /** @internal */
 export type ToolsOzoneModerationDefsModEventViewDetailSubject$Outbound =
-  | ToolsOzoneModerationDefsRepoViewNotFound$Outbound
-  | ToolsOzoneModerationDefsRecordViewNotFound$Outbound
   | ToolsOzoneModerationDefsRecordView$Outbound
-  | ToolsOzoneModerationDefsRepoView$Outbound;
+  | ToolsOzoneModerationDefsRepoView$Outbound
+  | ToolsOzoneModerationDefsRepoViewNotFound$Outbound
+  | ToolsOzoneModerationDefsRecordViewNotFound$Outbound;
 
 /** @internal */
 export const ToolsOzoneModerationDefsModEventViewDetailSubject$outboundSchema:
@@ -347,10 +347,10 @@ export const ToolsOzoneModerationDefsModEventViewDetailSubject$outboundSchema:
     z.ZodTypeDef,
     ToolsOzoneModerationDefsModEventViewDetailSubject
   > = z.union([
-    ToolsOzoneModerationDefsRepoViewNotFound$outboundSchema,
-    ToolsOzoneModerationDefsRecordViewNotFound$outboundSchema,
     ToolsOzoneModerationDefsRecordView$outboundSchema,
     ToolsOzoneModerationDefsRepoView$outboundSchema,
+    ToolsOzoneModerationDefsRepoViewNotFound$outboundSchema,
+    ToolsOzoneModerationDefsRecordViewNotFound$outboundSchema,
   ]);
 
 /**
@@ -402,30 +402,30 @@ export const ToolsOzoneModerationDefsModEventViewDetail$inboundSchema:
     z.object({
       id: z.number().int(),
       event: z.union([
+        ToolsOzoneModerationDefsModEventLabel$inboundSchema,
+        ToolsOzoneModerationDefsModEventTag$inboundSchema,
+        ToolsOzoneModerationDefsAccountEvent$inboundSchema,
+        ToolsOzoneModerationDefsRecordEvent$inboundSchema,
+        ToolsOzoneModerationDefsModEventComment$inboundSchema,
+        ToolsOzoneModerationDefsModEventReport$inboundSchema,
+        ToolsOzoneModerationDefsModEventMute$inboundSchema,
+        ToolsOzoneModerationDefsModEventEmail$inboundSchema,
+        ToolsOzoneModerationDefsIdentityEvent$inboundSchema,
+        ToolsOzoneModerationDefsModEventTakedown$inboundSchema,
         ToolsOzoneModerationDefsModEventReverseTakedown$inboundSchema,
         ToolsOzoneModerationDefsModEventAcknowledge$inboundSchema,
         ToolsOzoneModerationDefsModEventEscalate$inboundSchema,
         ToolsOzoneModerationDefsModEventUnmute$inboundSchema,
+        ToolsOzoneModerationDefsModEventMuteReporter$inboundSchema,
         ToolsOzoneModerationDefsModEventUnmuteReporter$inboundSchema,
         ToolsOzoneModerationDefsModEventResolveAppeal$inboundSchema,
         ToolsOzoneModerationDefsModEventDivert$inboundSchema,
-        ToolsOzoneModerationDefsModEventComment$inboundSchema,
-        ToolsOzoneModerationDefsModEventMute$inboundSchema,
-        ToolsOzoneModerationDefsModEventMuteReporter$inboundSchema,
-        ToolsOzoneModerationDefsModEventTakedown$inboundSchema,
-        ToolsOzoneModerationDefsModEventReport$inboundSchema,
-        ToolsOzoneModerationDefsModEventLabel$inboundSchema,
-        ToolsOzoneModerationDefsModEventEmail$inboundSchema,
-        ToolsOzoneModerationDefsModEventTag$inboundSchema,
-        ToolsOzoneModerationDefsAccountEvent$inboundSchema,
-        ToolsOzoneModerationDefsRecordEvent$inboundSchema,
-        ToolsOzoneModerationDefsIdentityEvent$inboundSchema,
       ]),
       subject: z.union([
-        ToolsOzoneModerationDefsRepoViewNotFound$inboundSchema,
-        ToolsOzoneModerationDefsRecordViewNotFound$inboundSchema,
         ToolsOzoneModerationDefsRecordView$inboundSchema,
         ToolsOzoneModerationDefsRepoView$inboundSchema,
+        ToolsOzoneModerationDefsRepoViewNotFound$inboundSchema,
+        ToolsOzoneModerationDefsRecordViewNotFound$inboundSchema,
       ]),
       subjectBlobs: z.array(ToolsOzoneModerationDefsBlobView$inboundSchema),
       createdBy: z.string(),
@@ -438,29 +438,29 @@ export const ToolsOzoneModerationDefsModEventViewDetail$inboundSchema:
 export type ToolsOzoneModerationDefsModEventViewDetail$Outbound = {
   id: number;
   event:
+    | ToolsOzoneModerationDefsModEventLabel$Outbound
+    | ToolsOzoneModerationDefsModEventTag$Outbound
+    | ToolsOzoneModerationDefsAccountEvent$Outbound
+    | ToolsOzoneModerationDefsRecordEvent$Outbound
+    | ToolsOzoneModerationDefsModEventComment$Outbound
+    | ToolsOzoneModerationDefsModEventReport$Outbound
+    | ToolsOzoneModerationDefsModEventMute$Outbound
+    | ToolsOzoneModerationDefsModEventEmail$Outbound
+    | ToolsOzoneModerationDefsIdentityEvent$Outbound
+    | ToolsOzoneModerationDefsModEventTakedown$Outbound
     | ToolsOzoneModerationDefsModEventReverseTakedown$Outbound
     | ToolsOzoneModerationDefsModEventAcknowledge$Outbound
     | ToolsOzoneModerationDefsModEventEscalate$Outbound
     | ToolsOzoneModerationDefsModEventUnmute$Outbound
+    | ToolsOzoneModerationDefsModEventMuteReporter$Outbound
     | ToolsOzoneModerationDefsModEventUnmuteReporter$Outbound
     | ToolsOzoneModerationDefsModEventResolveAppeal$Outbound
-    | ToolsOzoneModerationDefsModEventDivert$Outbound
-    | ToolsOzoneModerationDefsModEventComment$Outbound
-    | ToolsOzoneModerationDefsModEventMute$Outbound
-    | ToolsOzoneModerationDefsModEventMuteReporter$Outbound
-    | ToolsOzoneModerationDefsModEventTakedown$Outbound
-    | ToolsOzoneModerationDefsModEventReport$Outbound
-    | ToolsOzoneModerationDefsModEventLabel$Outbound
-    | ToolsOzoneModerationDefsModEventEmail$Outbound
-    | ToolsOzoneModerationDefsModEventTag$Outbound
-    | ToolsOzoneModerationDefsAccountEvent$Outbound
-    | ToolsOzoneModerationDefsRecordEvent$Outbound
-    | ToolsOzoneModerationDefsIdentityEvent$Outbound;
+    | ToolsOzoneModerationDefsModEventDivert$Outbound;
   subject:
-    | ToolsOzoneModerationDefsRepoViewNotFound$Outbound
-    | ToolsOzoneModerationDefsRecordViewNotFound$Outbound
     | ToolsOzoneModerationDefsRecordView$Outbound
-    | ToolsOzoneModerationDefsRepoView$Outbound;
+    | ToolsOzoneModerationDefsRepoView$Outbound
+    | ToolsOzoneModerationDefsRepoViewNotFound$Outbound
+    | ToolsOzoneModerationDefsRecordViewNotFound$Outbound;
   subjectBlobs: Array<ToolsOzoneModerationDefsBlobView$Outbound>;
   createdBy: string;
   createdAt: string;
@@ -475,30 +475,30 @@ export const ToolsOzoneModerationDefsModEventViewDetail$outboundSchema:
   > = z.object({
     id: z.number().int(),
     event: z.union([
+      ToolsOzoneModerationDefsModEventLabel$outboundSchema,
+      ToolsOzoneModerationDefsModEventTag$outboundSchema,
+      ToolsOzoneModerationDefsAccountEvent$outboundSchema,
+      ToolsOzoneModerationDefsRecordEvent$outboundSchema,
+      ToolsOzoneModerationDefsModEventComment$outboundSchema,
+      ToolsOzoneModerationDefsModEventReport$outboundSchema,
+      ToolsOzoneModerationDefsModEventMute$outboundSchema,
+      ToolsOzoneModerationDefsModEventEmail$outboundSchema,
+      ToolsOzoneModerationDefsIdentityEvent$outboundSchema,
+      ToolsOzoneModerationDefsModEventTakedown$outboundSchema,
       ToolsOzoneModerationDefsModEventReverseTakedown$outboundSchema,
       ToolsOzoneModerationDefsModEventAcknowledge$outboundSchema,
       ToolsOzoneModerationDefsModEventEscalate$outboundSchema,
       ToolsOzoneModerationDefsModEventUnmute$outboundSchema,
+      ToolsOzoneModerationDefsModEventMuteReporter$outboundSchema,
       ToolsOzoneModerationDefsModEventUnmuteReporter$outboundSchema,
       ToolsOzoneModerationDefsModEventResolveAppeal$outboundSchema,
       ToolsOzoneModerationDefsModEventDivert$outboundSchema,
-      ToolsOzoneModerationDefsModEventComment$outboundSchema,
-      ToolsOzoneModerationDefsModEventMute$outboundSchema,
-      ToolsOzoneModerationDefsModEventMuteReporter$outboundSchema,
-      ToolsOzoneModerationDefsModEventTakedown$outboundSchema,
-      ToolsOzoneModerationDefsModEventReport$outboundSchema,
-      ToolsOzoneModerationDefsModEventLabel$outboundSchema,
-      ToolsOzoneModerationDefsModEventEmail$outboundSchema,
-      ToolsOzoneModerationDefsModEventTag$outboundSchema,
-      ToolsOzoneModerationDefsAccountEvent$outboundSchema,
-      ToolsOzoneModerationDefsRecordEvent$outboundSchema,
-      ToolsOzoneModerationDefsIdentityEvent$outboundSchema,
     ]),
     subject: z.union([
-      ToolsOzoneModerationDefsRepoViewNotFound$outboundSchema,
-      ToolsOzoneModerationDefsRecordViewNotFound$outboundSchema,
       ToolsOzoneModerationDefsRecordView$outboundSchema,
       ToolsOzoneModerationDefsRepoView$outboundSchema,
+      ToolsOzoneModerationDefsRepoViewNotFound$outboundSchema,
+      ToolsOzoneModerationDefsRecordViewNotFound$outboundSchema,
     ]),
     subjectBlobs: z.array(ToolsOzoneModerationDefsBlobView$outboundSchema),
     createdBy: z.string(),

@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoModerationCreateReportError } from "@speakeasy-sdks/bluesky/models/errors";
 
-let value: ComAtprotoModerationCreateReportError = "ExpiredToken";
+let value: ComAtprotoModerationCreateReportError = "InvalidToken";
 ```
 
 ## Values

@@ -20,6 +20,7 @@
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="chat.bsky.actor.deleteAccount" method="post" path="/xrpc/chat.bsky.actor.deleteAccount" -->
 ```typescript
 import { Bluesky } from "@speakeasy-sdks/bluesky";
 
@@ -30,7 +31,6 @@ const bluesky = new Bluesky({
 async function run() {
   const result = await bluesky.account.delete();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -53,15 +53,12 @@ const bluesky = new BlueskyCore({
 
 async function run() {
   const res = await accountDelete(bluesky);
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountDelete failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -94,25 +91,25 @@ import {
 
 ### Response
 
-**Promise\<[operations.ChatBskyActorDeleteAccountResponseBody](../../models/operations/chatbskyactordeleteaccountresponsebody.md)\>**
+**Promise\<[operations.ChatBskyActorDeleteAccountResponse](../../models/operations/chatbskyactordeleteaccountresponse.md)\>**
 
 ### Errors
 
-| Error Type                                                     | Status Code                                                    | Content Type                                                   |
-| -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
-| errors.BadRequestChatBskyActorDeleteAccountResponseBodyError   | 400                                                            | application/json                                               |
-| errors.UnauthorizedChatBskyActorDeleteAccountResponseBodyError | 401                                                            | application/json                                               |
-| errors.NotFoundError                                           | 404                                                            | application/json                                               |
-| errors.UnauthorizedError                                       | 403, 407                                                       | application/json                                               |
-| errors.TimeoutError                                            | 408                                                            | application/json                                               |
-| errors.RateLimitedError                                        | 429                                                            | application/json                                               |
-| errors.BadRequestError                                         | 413, 414, 415, 422, 431                                        | application/json                                               |
-| errors.TimeoutError                                            | 504                                                            | application/json                                               |
-| errors.NotFoundError                                           | 501, 505                                                       | application/json                                               |
-| errors.InternalServerError                                     | 500, 502, 503, 506, 507, 508                                   | application/json                                               |
-| errors.BadRequestError                                         | 510                                                            | application/json                                               |
-| errors.UnauthorizedError                                       | 511                                                            | application/json                                               |
-| errors.APIError                                                | 4XX, 5XX                                                       | \*/\*                                                          |
+| Error Type                                        | Status Code                                       | Content Type                                      |
+| ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
+| errors.ChatBskyActorDeleteAccountBadRequestError  | 400                                               | application/json                                  |
+| errors.ChatBskyActorDeleteAccountAuthMissingError | 401                                               | application/json                                  |
+| errors.NotFoundError                              | 404                                               | application/json                                  |
+| errors.UnauthorizedError                          | 403, 407                                          | application/json                                  |
+| errors.TimeoutError                               | 408                                               | application/json                                  |
+| errors.RateLimitedError                           | 429                                               | application/json                                  |
+| errors.BadRequestError                            | 413, 414, 415, 422, 431                           | application/json                                  |
+| errors.TimeoutError                               | 504                                               | application/json                                  |
+| errors.NotFoundError                              | 501, 505                                          | application/json                                  |
+| errors.InternalServerError                        | 500, 502, 503, 506, 507, 508                      | application/json                                  |
+| errors.BadRequestError                            | 510                                               | application/json                                  |
+| errors.UnauthorizedError                          | 511                                               | application/json                                  |
+| errors.APIError                                   | 4XX, 5XX                                          | \*/\*                                             |
 
 ## exportData
 
@@ -122,6 +119,7 @@ import {
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="chat.bsky.actor.exportAccountData" method="get" path="/xrpc/chat.bsky.actor.exportAccountData" -->
 ```typescript
 import { Bluesky } from "@speakeasy-sdks/bluesky";
 
@@ -154,14 +152,12 @@ const bluesky = new BlueskyCore({
 
 async function run() {
   const res = await accountExportData(bluesky);
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    
+  } else {
+    console.log("accountExportData failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  
 }
 
 run();
@@ -208,18 +204,18 @@ import {
 
 ### Errors
 
-| Error Type                                                         | Status Code                                                        | Content Type                                                       |
-| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| errors.BadRequestChatBskyActorExportAccountDataResponseBodyError   | 400                                                                | application/json                                                   |
-| errors.UnauthorizedChatBskyActorExportAccountDataResponseBodyError | 401                                                                | application/json                                                   |
-| errors.NotFoundError                                               | 404                                                                | application/json                                                   |
-| errors.UnauthorizedError                                           | 403, 407                                                           | application/json                                                   |
-| errors.TimeoutError                                                | 408                                                                | application/json                                                   |
-| errors.RateLimitedError                                            | 429                                                                | application/json                                                   |
-| errors.BadRequestError                                             | 413, 414, 415, 422, 431                                            | application/json                                                   |
-| errors.TimeoutError                                                | 504                                                                | application/json                                                   |
-| errors.NotFoundError                                               | 501, 505                                                           | application/json                                                   |
-| errors.InternalServerError                                         | 500, 502, 503, 506, 507, 508                                       | application/json                                                   |
-| errors.BadRequestError                                             | 510                                                                | application/json                                                   |
-| errors.UnauthorizedError                                           | 511                                                                | application/json                                                   |
-| errors.APIError                                                    | 4XX, 5XX                                                           | \*/\*                                                              |
+| Error Type                                            | Status Code                                           | Content Type                                          |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| errors.ChatBskyActorExportAccountDataBadRequestError  | 400                                                   | application/json                                      |
+| errors.ChatBskyActorExportAccountDataAuthMissingError | 401                                                   | application/json                                      |
+| errors.NotFoundError                                  | 404                                                   | application/json                                      |
+| errors.UnauthorizedError                              | 403, 407                                              | application/json                                      |
+| errors.TimeoutError                                   | 408                                                   | application/json                                      |
+| errors.RateLimitedError                               | 429                                                   | application/json                                      |
+| errors.BadRequestError                                | 413, 414, 415, 422, 431                               | application/json                                      |
+| errors.TimeoutError                                   | 504                                                   | application/json                                      |
+| errors.NotFoundError                                  | 501, 505                                              | application/json                                      |
+| errors.InternalServerError                            | 500, 502, 503, 506, 507, 508                          | application/json                                      |
+| errors.BadRequestError                                | 510                                                   | application/json                                      |
+| errors.UnauthorizedError                              | 511                                                   | application/json                                      |
+| errors.APIError                                       | 4XX, 5XX                                              | \*/\*                                                 |

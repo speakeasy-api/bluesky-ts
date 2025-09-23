@@ -26,6 +26,7 @@ Delete an entire set. Attempting to delete a set that does not exist will result
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="tools.ozone.set.deleteSet" method="post" path="/xrpc/tools.ozone.set.deleteSet" -->
 ```typescript
 import { Bluesky } from "@speakeasy-sdks/bluesky";
 
@@ -38,7 +39,6 @@ async function run() {
     name: "<value>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -63,15 +63,12 @@ async function run() {
   const res = await setDelete(bluesky, {
     name: "<value>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("setDelete failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -98,32 +95,32 @@ import {
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ToolsOzoneSetDeleteSetBody](../../models/operations/toolsozonesetdeletesetbody.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ToolsOzoneSetDeleteSetRequest](../../models/operations/toolsozonesetdeletesetrequest.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.ToolsOzoneSetDeleteSetResponseBody](../../models/operations/toolsozonesetdeletesetresponsebody.md)\>**
+**Promise\<[operations.ToolsOzoneSetDeleteSetResponse](../../models/operations/toolsozonesetdeletesetresponse.md)\>**
 
 ### Errors
 
-| Error Type                                                 | Status Code                                                | Content Type                                               |
-| ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
-| errors.BadRequestToolsOzoneSetDeleteSetResponseBodyError   | 400                                                        | application/json                                           |
-| errors.UnauthorizedToolsOzoneSetDeleteSetResponseBodyError | 401                                                        | application/json                                           |
-| errors.NotFoundError                                       | 404                                                        | application/json                                           |
-| errors.UnauthorizedError                                   | 403, 407                                                   | application/json                                           |
-| errors.TimeoutError                                        | 408                                                        | application/json                                           |
-| errors.RateLimitedError                                    | 429                                                        | application/json                                           |
-| errors.BadRequestError                                     | 413, 414, 415, 422, 431                                    | application/json                                           |
-| errors.TimeoutError                                        | 504                                                        | application/json                                           |
-| errors.NotFoundError                                       | 501, 505                                                   | application/json                                           |
-| errors.InternalServerError                                 | 500, 502, 503, 506, 507, 508                               | application/json                                           |
-| errors.BadRequestError                                     | 510                                                        | application/json                                           |
-| errors.UnauthorizedError                                   | 511                                                        | application/json                                           |
-| errors.APIError                                            | 4XX, 5XX                                                   | \*/\*                                                      |
+| Error Type                                    | Status Code                                   | Content Type                                  |
+| --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
+| errors.ToolsOzoneSetDeleteSetBadRequestError  | 400                                           | application/json                              |
+| errors.ToolsOzoneSetDeleteSetAuthMissingError | 401                                           | application/json                              |
+| errors.NotFoundError                          | 404                                           | application/json                              |
+| errors.UnauthorizedError                      | 403, 407                                      | application/json                              |
+| errors.TimeoutError                           | 408                                           | application/json                              |
+| errors.RateLimitedError                       | 429                                           | application/json                              |
+| errors.BadRequestError                        | 413, 414, 415, 422, 431                       | application/json                              |
+| errors.TimeoutError                           | 504                                           | application/json                              |
+| errors.NotFoundError                          | 501, 505                                      | application/json                              |
+| errors.InternalServerError                    | 500, 502, 503, 506, 507, 508                  | application/json                              |
+| errors.BadRequestError                        | 510                                           | application/json                              |
+| errors.UnauthorizedError                      | 511                                           | application/json                              |
+| errors.APIError                               | 4XX, 5XX                                      | \*/\*                                         |
 
 ## query
 
@@ -135,6 +132,7 @@ Query available sets
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="tools.ozone.set.querySets" method="get" path="/xrpc/tools.ozone.set.querySets" -->
 ```typescript
 import { Bluesky } from "@speakeasy-sdks/bluesky";
 
@@ -146,7 +144,6 @@ async function run() {
   const result = await bluesky.set.query({});
 
   for await (const page of result) {
-    // Handle the page
     console.log(page);
   }
 }
@@ -170,16 +167,13 @@ const bluesky = new BlueskyCore({
 
 async function run() {
   const res = await setQuery(bluesky, {});
-
-  if (!res.ok) {
-    throw res.error;
-  }
-
-  const { value: result } = res;
-
-  for await (const page of result) {
-    // Handle the page
+  if (res.ok) {
+    const { value: result } = res;
+    for await (const page of result) {
     console.log(page);
+  }
+  } else {
+    console.log("setQuery failed:", res.error);
   }
 }
 
@@ -232,18 +226,18 @@ import {
 
 ### Errors
 
-| Error Type                                                 | Status Code                                                | Content Type                                               |
-| ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
-| errors.BadRequestToolsOzoneSetQuerySetsResponseBodyError   | 400                                                        | application/json                                           |
-| errors.UnauthorizedToolsOzoneSetQuerySetsResponseBodyError | 401                                                        | application/json                                           |
-| errors.NotFoundError                                       | 404                                                        | application/json                                           |
-| errors.UnauthorizedError                                   | 403, 407                                                   | application/json                                           |
-| errors.TimeoutError                                        | 408                                                        | application/json                                           |
-| errors.RateLimitedError                                    | 429                                                        | application/json                                           |
-| errors.BadRequestError                                     | 413, 414, 415, 422, 431                                    | application/json                                           |
-| errors.TimeoutError                                        | 504                                                        | application/json                                           |
-| errors.NotFoundError                                       | 501, 505                                                   | application/json                                           |
-| errors.InternalServerError                                 | 500, 502, 503, 506, 507, 508                               | application/json                                           |
-| errors.BadRequestError                                     | 510                                                        | application/json                                           |
-| errors.UnauthorizedError                                   | 511                                                        | application/json                                           |
-| errors.APIError                                            | 4XX, 5XX                                                   | \*/\*                                                      |
+| Error Type                                    | Status Code                                   | Content Type                                  |
+| --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
+| errors.ToolsOzoneSetQuerySetsBadRequestError  | 400                                           | application/json                              |
+| errors.ToolsOzoneSetQuerySetsAuthMissingError | 401                                           | application/json                              |
+| errors.NotFoundError                          | 404                                           | application/json                              |
+| errors.UnauthorizedError                      | 403, 407                                      | application/json                              |
+| errors.TimeoutError                           | 408                                           | application/json                              |
+| errors.RateLimitedError                       | 429                                           | application/json                              |
+| errors.BadRequestError                        | 413, 414, 415, 422, 431                       | application/json                              |
+| errors.TimeoutError                           | 504                                           | application/json                              |
+| errors.NotFoundError                          | 501, 505                                      | application/json                              |
+| errors.InternalServerError                    | 500, 502, 503, 506, 507, 508                  | application/json                              |
+| errors.BadRequestError                        | 510                                           | application/json                              |
+| errors.UnauthorizedError                      | 511                                           | application/json                              |
+| errors.APIError                               | 4XX, 5XX                                      | \*/\*                                         |

@@ -7,7 +7,7 @@ import { AppBskyFeedGetRepostedByResponse } from "@speakeasy-sdks/bluesky/models
 
 let value: AppBskyFeedGetRepostedByResponse = {
   result: {
-    uri: "https://wobbly-instance.org/",
+    uri: "https://lost-desk.org/",
     repostedBy: [],
   },
 };

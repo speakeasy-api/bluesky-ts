@@ -5,7 +5,7 @@
 ```typescript
 import { AppBskyGraphGetMutesError } from "@speakeasy-sdks/bluesky/models/errors";
 
-let value: AppBskyGraphGetMutesError = "InvalidToken";
+let value: AppBskyGraphGetMutesError = "InvalidRequest";
 ```
 
 ## Values

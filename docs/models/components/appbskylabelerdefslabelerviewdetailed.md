@@ -6,18 +6,16 @@
 import { AppBskyLabelerDefsLabelerViewDetailed } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: AppBskyLabelerDefsLabelerViewDetailed = {
-  uri: "https://hungry-meal.net/",
+  uri: "https://self-assured-pasta.name",
   cid: "<id>",
   creator: {
     did: "<id>",
     handle: "<value>",
   },
   policies: {
-    labelValues: [
-      "!no-unauthenticated",
-    ],
+    labelValues: [],
   },
-  indexedAt: new Date("2023-01-22T07:56:26.664Z"),
+  indexedAt: new Date("2024-03-06T23:49:37.895Z"),
 };
 ```
 

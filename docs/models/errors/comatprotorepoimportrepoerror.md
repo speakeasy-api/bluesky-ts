@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoRepoImportRepoError } from "@speakeasy-sdks/bluesky/models/errors";
 
-let value: ComAtprotoRepoImportRepoError = "ExpiredToken";
+let value: ComAtprotoRepoImportRepoError = "InvalidToken";
 ```
 
 ## Values

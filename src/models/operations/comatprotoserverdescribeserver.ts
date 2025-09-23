@@ -11,7 +11,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 /**
  * OK
  */
-export type ComAtprotoServerDescribeServerResponseBody = {
+export type ComAtprotoServerDescribeServerResponse = {
   /**
    * If true, an invite code must be supplied to create an account on this instance.
    */
@@ -27,21 +27,23 @@ export type ComAtprotoServerDescribeServerResponseBody = {
 };
 
 /** @internal */
-export const ComAtprotoServerDescribeServerResponseBody$inboundSchema:
-  z.ZodType<ComAtprotoServerDescribeServerResponseBody, z.ZodTypeDef, unknown> =
-    z.object({
-      inviteCodeRequired: z.boolean().optional(),
-      phoneVerificationRequired: z.boolean().optional(),
-      availableUserDomains: z.array(z.string()),
-      links: components.ComAtprotoServerDescribeServerLinks$inboundSchema
-        .optional(),
-      contact: components.ComAtprotoServerDescribeServerContact$inboundSchema
-        .optional(),
-      did: z.string(),
-    });
+export const ComAtprotoServerDescribeServerResponse$inboundSchema: z.ZodType<
+  ComAtprotoServerDescribeServerResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  inviteCodeRequired: z.boolean().optional(),
+  phoneVerificationRequired: z.boolean().optional(),
+  availableUserDomains: z.array(z.string()),
+  links: components.ComAtprotoServerDescribeServerLinks$inboundSchema
+    .optional(),
+  contact: components.ComAtprotoServerDescribeServerContact$inboundSchema
+    .optional(),
+  did: z.string(),
+});
 
 /** @internal */
-export type ComAtprotoServerDescribeServerResponseBody$Outbound = {
+export type ComAtprotoServerDescribeServerResponse$Outbound = {
   inviteCodeRequired?: boolean | undefined;
   phoneVerificationRequired?: boolean | undefined;
   availableUserDomains: Array<string>;
@@ -53,60 +55,54 @@ export type ComAtprotoServerDescribeServerResponseBody$Outbound = {
 };
 
 /** @internal */
-export const ComAtprotoServerDescribeServerResponseBody$outboundSchema:
-  z.ZodType<
-    ComAtprotoServerDescribeServerResponseBody$Outbound,
-    z.ZodTypeDef,
-    ComAtprotoServerDescribeServerResponseBody
-  > = z.object({
-    inviteCodeRequired: z.boolean().optional(),
-    phoneVerificationRequired: z.boolean().optional(),
-    availableUserDomains: z.array(z.string()),
-    links: components.ComAtprotoServerDescribeServerLinks$outboundSchema
-      .optional(),
-    contact: components.ComAtprotoServerDescribeServerContact$outboundSchema
-      .optional(),
-    did: z.string(),
-  });
+export const ComAtprotoServerDescribeServerResponse$outboundSchema: z.ZodType<
+  ComAtprotoServerDescribeServerResponse$Outbound,
+  z.ZodTypeDef,
+  ComAtprotoServerDescribeServerResponse
+> = z.object({
+  inviteCodeRequired: z.boolean().optional(),
+  phoneVerificationRequired: z.boolean().optional(),
+  availableUserDomains: z.array(z.string()),
+  links: components.ComAtprotoServerDescribeServerLinks$outboundSchema
+    .optional(),
+  contact: components.ComAtprotoServerDescribeServerContact$outboundSchema
+    .optional(),
+  did: z.string(),
+});
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoServerDescribeServerResponseBody$ {
-  /** @deprecated use `ComAtprotoServerDescribeServerResponseBody$inboundSchema` instead. */
+export namespace ComAtprotoServerDescribeServerResponse$ {
+  /** @deprecated use `ComAtprotoServerDescribeServerResponse$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoServerDescribeServerResponseBody$inboundSchema;
-  /** @deprecated use `ComAtprotoServerDescribeServerResponseBody$outboundSchema` instead. */
+    ComAtprotoServerDescribeServerResponse$inboundSchema;
+  /** @deprecated use `ComAtprotoServerDescribeServerResponse$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoServerDescribeServerResponseBody$outboundSchema;
-  /** @deprecated use `ComAtprotoServerDescribeServerResponseBody$Outbound` instead. */
-  export type Outbound = ComAtprotoServerDescribeServerResponseBody$Outbound;
+    ComAtprotoServerDescribeServerResponse$outboundSchema;
+  /** @deprecated use `ComAtprotoServerDescribeServerResponse$Outbound` instead. */
+  export type Outbound = ComAtprotoServerDescribeServerResponse$Outbound;
 }
 
-export function comAtprotoServerDescribeServerResponseBodyToJSON(
-  comAtprotoServerDescribeServerResponseBody:
-    ComAtprotoServerDescribeServerResponseBody,
+export function comAtprotoServerDescribeServerResponseToJSON(
+  comAtprotoServerDescribeServerResponse:
+    ComAtprotoServerDescribeServerResponse,
 ): string {
   return JSON.stringify(
-    ComAtprotoServerDescribeServerResponseBody$outboundSchema.parse(
-      comAtprotoServerDescribeServerResponseBody,
+    ComAtprotoServerDescribeServerResponse$outboundSchema.parse(
+      comAtprotoServerDescribeServerResponse,
     ),
   );
 }
 
-export function comAtprotoServerDescribeServerResponseBodyFromJSON(
+export function comAtprotoServerDescribeServerResponseFromJSON(
   jsonString: string,
-): SafeParseResult<
-  ComAtprotoServerDescribeServerResponseBody,
-  SDKValidationError
-> {
+): SafeParseResult<ComAtprotoServerDescribeServerResponse, SDKValidationError> {
   return safeParse(
     jsonString,
     (x) =>
-      ComAtprotoServerDescribeServerResponseBody$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'ComAtprotoServerDescribeServerResponseBody' from JSON`,
+      ComAtprotoServerDescribeServerResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ComAtprotoServerDescribeServerResponse' from JSON`,
   );
 }

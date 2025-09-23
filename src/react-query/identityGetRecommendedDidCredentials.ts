@@ -22,7 +22,7 @@ import { useBlueskyContext } from "./_context.js";
 import { QueryHookOptions, SuspenseQueryHookOptions } from "./_types.js";
 
 export type IdentityGetRecommendedDidCredentialsQueryData =
-  operations.ComAtprotoIdentityGetRecommendedDidCredentialsResponseBody;
+  operations.ComAtprotoIdentityGetRecommendedDidCredentialsResponse;
 
 /**
  * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*

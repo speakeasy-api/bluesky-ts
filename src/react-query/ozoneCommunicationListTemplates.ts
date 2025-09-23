@@ -22,7 +22,7 @@ import { useBlueskyContext } from "./_context.js";
 import { QueryHookOptions, SuspenseQueryHookOptions } from "./_types.js";
 
 export type OzoneCommunicationListTemplatesQueryData =
-  operations.ToolsOzoneCommunicationListTemplatesResponseBody;
+  operations.ToolsOzoneCommunicationListTemplatesResponse;
 
 /**
  * *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*

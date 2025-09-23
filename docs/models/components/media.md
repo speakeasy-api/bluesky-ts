@@ -7,13 +7,7 @@
 
 ```typescript
 const value: components.AppBskyEmbedImagesView = {
-  images: [
-    {
-      thumb: "https://weekly-sauerkraut.org",
-      fullsize: "https://dependent-yeast.com/",
-      alt: "<value>",
-    },
-  ],
+  images: [],
 };
 ```
 
@@ -22,7 +16,7 @@ const value: components.AppBskyEmbedImagesView = {
 ```typescript
 const value: components.AppBskyEmbedVideoView = {
   cid: "<id>",
-  playlist: "https://black-typewriter.org/",
+  playlist: "https://paltry-hyphenation.biz/",
 };
 ```
 
@@ -31,9 +25,9 @@ const value: components.AppBskyEmbedVideoView = {
 ```typescript
 const value: components.AppBskyEmbedExternalView = {
   external: {
-    uri: "https://gullible-disclosure.biz",
+    uri: "https://weary-cinder.org",
     title: "<value>",
-    description: "horst miserably normal absent",
+    description: "whereas madly phooey exploration joyously gadzooks",
   },
 };
 ```

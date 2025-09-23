@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoRepoGetRecordError } from "@speakeasy-sdks/bluesky/models/errors";
 
-let value: ComAtprotoRepoGetRecordError = "InvalidRequest";
+let value: ComAtprotoRepoGetRecordError = "InvalidToken";
 ```
 
 ## Values

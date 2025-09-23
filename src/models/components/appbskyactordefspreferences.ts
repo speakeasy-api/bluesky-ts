@@ -80,18 +80,18 @@ import {
 } from "./appbskyactordefsthreadviewpref.js";
 
 export type AppBskyActorDefsPreferences =
+  | AppBskyActorDefsContentLabelPref
+  | AppBskyActorDefsSavedFeedsPref
   | AppBskyActorDefsAdultContentPref
   | AppBskyActorDefsSavedFeedsPrefV2
-  | AppBskyActorDefsPersonalDetailsPref
+  | AppBskyActorDefsFeedViewPref
   | AppBskyActorDefsInterestsPref
   | AppBskyActorDefsMutedWordsPref
   | AppBskyActorDefsHiddenPostsPref
   | AppBskyActorDefsLabelersPref
+  | AppBskyActorDefsPersonalDetailsPref
   | AppBskyActorDefsThreadViewPref
-  | AppBskyActorDefsContentLabelPref
-  | AppBskyActorDefsSavedFeedsPref
-  | AppBskyActorDefsBskyAppStatePref
-  | AppBskyActorDefsFeedViewPref;
+  | AppBskyActorDefsBskyAppStatePref;
 
 /** @internal */
 export const AppBskyActorDefsPreferences$inboundSchema: z.ZodType<
@@ -99,34 +99,34 @@ export const AppBskyActorDefsPreferences$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.union([
+  AppBskyActorDefsContentLabelPref$inboundSchema,
+  AppBskyActorDefsSavedFeedsPref$inboundSchema,
   AppBskyActorDefsAdultContentPref$inboundSchema,
   AppBskyActorDefsSavedFeedsPrefV2$inboundSchema,
-  AppBskyActorDefsPersonalDetailsPref$inboundSchema,
+  AppBskyActorDefsFeedViewPref$inboundSchema,
   AppBskyActorDefsInterestsPref$inboundSchema,
   AppBskyActorDefsMutedWordsPref$inboundSchema,
   AppBskyActorDefsHiddenPostsPref$inboundSchema,
   AppBskyActorDefsLabelersPref$inboundSchema,
+  AppBskyActorDefsPersonalDetailsPref$inboundSchema,
   AppBskyActorDefsThreadViewPref$inboundSchema,
-  AppBskyActorDefsContentLabelPref$inboundSchema,
-  AppBskyActorDefsSavedFeedsPref$inboundSchema,
   AppBskyActorDefsBskyAppStatePref$inboundSchema,
-  AppBskyActorDefsFeedViewPref$inboundSchema,
 ]);
 
 /** @internal */
 export type AppBskyActorDefsPreferences$Outbound =
+  | AppBskyActorDefsContentLabelPref$Outbound
+  | AppBskyActorDefsSavedFeedsPref$Outbound
   | AppBskyActorDefsAdultContentPref$Outbound
   | AppBskyActorDefsSavedFeedsPrefV2$Outbound
-  | AppBskyActorDefsPersonalDetailsPref$Outbound
+  | AppBskyActorDefsFeedViewPref$Outbound
   | AppBskyActorDefsInterestsPref$Outbound
   | AppBskyActorDefsMutedWordsPref$Outbound
   | AppBskyActorDefsHiddenPostsPref$Outbound
   | AppBskyActorDefsLabelersPref$Outbound
+  | AppBskyActorDefsPersonalDetailsPref$Outbound
   | AppBskyActorDefsThreadViewPref$Outbound
-  | AppBskyActorDefsContentLabelPref$Outbound
-  | AppBskyActorDefsSavedFeedsPref$Outbound
-  | AppBskyActorDefsBskyAppStatePref$Outbound
-  | AppBskyActorDefsFeedViewPref$Outbound;
+  | AppBskyActorDefsBskyAppStatePref$Outbound;
 
 /** @internal */
 export const AppBskyActorDefsPreferences$outboundSchema: z.ZodType<
@@ -134,18 +134,18 @@ export const AppBskyActorDefsPreferences$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   AppBskyActorDefsPreferences
 > = z.union([
+  AppBskyActorDefsContentLabelPref$outboundSchema,
+  AppBskyActorDefsSavedFeedsPref$outboundSchema,
   AppBskyActorDefsAdultContentPref$outboundSchema,
   AppBskyActorDefsSavedFeedsPrefV2$outboundSchema,
-  AppBskyActorDefsPersonalDetailsPref$outboundSchema,
+  AppBskyActorDefsFeedViewPref$outboundSchema,
   AppBskyActorDefsInterestsPref$outboundSchema,
   AppBskyActorDefsMutedWordsPref$outboundSchema,
   AppBskyActorDefsHiddenPostsPref$outboundSchema,
   AppBskyActorDefsLabelersPref$outboundSchema,
+  AppBskyActorDefsPersonalDetailsPref$outboundSchema,
   AppBskyActorDefsThreadViewPref$outboundSchema,
-  AppBskyActorDefsContentLabelPref$outboundSchema,
-  AppBskyActorDefsSavedFeedsPref$outboundSchema,
   AppBskyActorDefsBskyAppStatePref$outboundSchema,
-  AppBskyActorDefsFeedViewPref$outboundSchema,
 ]);
 
 /**

@@ -6,7 +6,7 @@
 import { AppBskyFeedGetFeedSkeletonRequest } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: AppBskyFeedGetFeedSkeletonRequest = {
-  feed: "https://surprised-accelerator.net/",
+  feed: "https://qualified-mixture.com",
 };
 ```
 

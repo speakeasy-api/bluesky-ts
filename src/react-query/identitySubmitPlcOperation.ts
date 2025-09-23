@@ -17,7 +17,7 @@ import { useBlueskyContext } from "./_context.js";
 import { MutationHookOptions } from "./_types.js";
 
 export type IdentitySubmitPlcOperationMutationVariables = {
-  request: operations.ComAtprotoIdentitySubmitPlcOperationBody;
+  request: operations.ComAtprotoIdentitySubmitPlcOperationRequest;
   options?: RequestOptions;
 };
 

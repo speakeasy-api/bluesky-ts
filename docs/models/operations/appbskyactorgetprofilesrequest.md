@@ -7,7 +7,8 @@ import { AppBskyActorGetProfilesRequest } from "@speakeasy-sdks/bluesky/models/o
 
 let value: AppBskyActorGetProfilesRequest = {
   actors: [
-    "<value>",
+    "<value 1>",
+    "<value 2>",
   ],
 };
 ```

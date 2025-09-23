@@ -21,6 +21,7 @@ Get information about a list of labeler services.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="app.bsky.labeler.getServices" method="get" path="/xrpc/app.bsky.labeler.getServices" -->
 ```typescript
 import { Bluesky } from "@speakeasy-sdks/bluesky";
 
@@ -31,11 +32,12 @@ const bluesky = new Bluesky({
 async function run() {
   const result = await bluesky.labelers.getServices({
     dids: [
-
+      "<id 1>",
+      "<id 2>",
+      "<id 3>",
     ],
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -59,18 +61,17 @@ const bluesky = new BlueskyCore({
 async function run() {
   const res = await labelersGetServices(bluesky, {
     dids: [
-  
+      "<id 1>",
+      "<id 2>",
+      "<id 3>",
     ],
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("labelersGetServices failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -115,22 +116,22 @@ import {
 
 ### Response
 
-**Promise\<[operations.AppBskyLabelerGetServicesResponseBody](../../models/operations/appbskylabelergetservicesresponsebody.md)\>**
+**Promise\<[operations.AppBskyLabelerGetServicesResponse](../../models/operations/appbskylabelergetservicesresponse.md)\>**
 
 ### Errors
 
-| Error Type                                                    | Status Code                                                   | Content Type                                                  |
-| ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
-| errors.BadRequestAppBskyLabelerGetServicesResponseBodyError   | 400                                                           | application/json                                              |
-| errors.UnauthorizedAppBskyLabelerGetServicesResponseBodyError | 401                                                           | application/json                                              |
-| errors.NotFoundError                                          | 404                                                           | application/json                                              |
-| errors.UnauthorizedError                                      | 403, 407                                                      | application/json                                              |
-| errors.TimeoutError                                           | 408                                                           | application/json                                              |
-| errors.RateLimitedError                                       | 429                                                           | application/json                                              |
-| errors.BadRequestError                                        | 413, 414, 415, 422, 431                                       | application/json                                              |
-| errors.TimeoutError                                           | 504                                                           | application/json                                              |
-| errors.NotFoundError                                          | 501, 505                                                      | application/json                                              |
-| errors.InternalServerError                                    | 500, 502, 503, 506, 507, 508                                  | application/json                                              |
-| errors.BadRequestError                                        | 510                                                           | application/json                                              |
-| errors.UnauthorizedError                                      | 511                                                           | application/json                                              |
-| errors.APIError                                               | 4XX, 5XX                                                      | \*/\*                                                         |
+| Error Type                                       | Status Code                                      | Content Type                                     |
+| ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ |
+| errors.AppBskyLabelerGetServicesBadRequestError  | 400                                              | application/json                                 |
+| errors.AppBskyLabelerGetServicesAuthMissingError | 401                                              | application/json                                 |
+| errors.NotFoundError                             | 404                                              | application/json                                 |
+| errors.UnauthorizedError                         | 403, 407                                         | application/json                                 |
+| errors.TimeoutError                              | 408                                              | application/json                                 |
+| errors.RateLimitedError                          | 429                                              | application/json                                 |
+| errors.BadRequestError                           | 413, 414, 415, 422, 431                          | application/json                                 |
+| errors.TimeoutError                              | 504                                              | application/json                                 |
+| errors.NotFoundError                             | 501, 505                                         | application/json                                 |
+| errors.InternalServerError                       | 500, 502, 503, 506, 507, 508                     | application/json                                 |
+| errors.BadRequestError                           | 510                                              | application/json                                 |
+| errors.UnauthorizedError                         | 511                                              | application/json                                 |
+| errors.APIError                                  | 4XX, 5XX                                         | \*/\*                                            |

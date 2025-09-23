@@ -33,7 +33,7 @@ export type ComAtprotoSyncGetRepoStatusStatus = ClosedEnum<
 /**
  * OK
  */
-export type ComAtprotoSyncGetRepoStatusResponseBody = {
+export type ComAtprotoSyncGetRepoStatusResponse = {
   did: string;
   active: boolean;
   /**
@@ -127,8 +127,8 @@ export namespace ComAtprotoSyncGetRepoStatusStatus$ {
 }
 
 /** @internal */
-export const ComAtprotoSyncGetRepoStatusResponseBody$inboundSchema: z.ZodType<
-  ComAtprotoSyncGetRepoStatusResponseBody,
+export const ComAtprotoSyncGetRepoStatusResponse$inboundSchema: z.ZodType<
+  ComAtprotoSyncGetRepoStatusResponse,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -139,7 +139,7 @@ export const ComAtprotoSyncGetRepoStatusResponseBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type ComAtprotoSyncGetRepoStatusResponseBody$Outbound = {
+export type ComAtprotoSyncGetRepoStatusResponse$Outbound = {
   did: string;
   active: boolean;
   status?: string | undefined;
@@ -147,10 +147,10 @@ export type ComAtprotoSyncGetRepoStatusResponseBody$Outbound = {
 };
 
 /** @internal */
-export const ComAtprotoSyncGetRepoStatusResponseBody$outboundSchema: z.ZodType<
-  ComAtprotoSyncGetRepoStatusResponseBody$Outbound,
+export const ComAtprotoSyncGetRepoStatusResponse$outboundSchema: z.ZodType<
+  ComAtprotoSyncGetRepoStatusResponse$Outbound,
   z.ZodTypeDef,
-  ComAtprotoSyncGetRepoStatusResponseBody
+  ComAtprotoSyncGetRepoStatusResponse
 > = z.object({
   did: z.string(),
   active: z.boolean(),
@@ -162,40 +162,34 @@ export const ComAtprotoSyncGetRepoStatusResponseBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoSyncGetRepoStatusResponseBody$ {
-  /** @deprecated use `ComAtprotoSyncGetRepoStatusResponseBody$inboundSchema` instead. */
+export namespace ComAtprotoSyncGetRepoStatusResponse$ {
+  /** @deprecated use `ComAtprotoSyncGetRepoStatusResponse$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoSyncGetRepoStatusResponseBody$inboundSchema;
-  /** @deprecated use `ComAtprotoSyncGetRepoStatusResponseBody$outboundSchema` instead. */
+    ComAtprotoSyncGetRepoStatusResponse$inboundSchema;
+  /** @deprecated use `ComAtprotoSyncGetRepoStatusResponse$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoSyncGetRepoStatusResponseBody$outboundSchema;
-  /** @deprecated use `ComAtprotoSyncGetRepoStatusResponseBody$Outbound` instead. */
-  export type Outbound = ComAtprotoSyncGetRepoStatusResponseBody$Outbound;
+    ComAtprotoSyncGetRepoStatusResponse$outboundSchema;
+  /** @deprecated use `ComAtprotoSyncGetRepoStatusResponse$Outbound` instead. */
+  export type Outbound = ComAtprotoSyncGetRepoStatusResponse$Outbound;
 }
 
-export function comAtprotoSyncGetRepoStatusResponseBodyToJSON(
-  comAtprotoSyncGetRepoStatusResponseBody:
-    ComAtprotoSyncGetRepoStatusResponseBody,
+export function comAtprotoSyncGetRepoStatusResponseToJSON(
+  comAtprotoSyncGetRepoStatusResponse: ComAtprotoSyncGetRepoStatusResponse,
 ): string {
   return JSON.stringify(
-    ComAtprotoSyncGetRepoStatusResponseBody$outboundSchema.parse(
-      comAtprotoSyncGetRepoStatusResponseBody,
+    ComAtprotoSyncGetRepoStatusResponse$outboundSchema.parse(
+      comAtprotoSyncGetRepoStatusResponse,
     ),
   );
 }
 
-export function comAtprotoSyncGetRepoStatusResponseBodyFromJSON(
+export function comAtprotoSyncGetRepoStatusResponseFromJSON(
   jsonString: string,
-): SafeParseResult<
-  ComAtprotoSyncGetRepoStatusResponseBody,
-  SDKValidationError
-> {
+): SafeParseResult<ComAtprotoSyncGetRepoStatusResponse, SDKValidationError> {
   return safeParse(
     jsonString,
     (x) =>
-      ComAtprotoSyncGetRepoStatusResponseBody$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'ComAtprotoSyncGetRepoStatusResponseBody' from JSON`,
+      ComAtprotoSyncGetRepoStatusResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ComAtprotoSyncGetRepoStatusResponse' from JSON`,
   );
 }

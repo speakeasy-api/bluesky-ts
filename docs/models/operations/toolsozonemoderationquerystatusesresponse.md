@@ -9,14 +9,13 @@ let value: ToolsOzoneModerationQueryStatusesResponse = {
   result: {
     subjectStatuses: [
       {
-        id: 622385,
+        id: 344525,
         subject: {
-          uri: "https://grouchy-plain.org/",
-          cid: "<id>",
+          did: "<id>",
         },
-        updatedAt: new Date("2024-08-18T20:54:27.100Z"),
-        createdAt: new Date("2023-11-06T20:07:53.826Z"),
-        reviewState: "#reviewOpen",
+        updatedAt: new Date("2025-11-12T23:29:58.309Z"),
+        createdAt: new Date("2025-10-22T17:01:28.275Z"),
+        reviewState: "#reviewClosed",
       },
     ],
   },

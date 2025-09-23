@@ -6,7 +6,7 @@ import { serverRequestAccountDelete } from "../../funcs/serverRequestAccountDele
 import { formatResult, ToolDefinition } from "../tools.js";
 
 export const tool$serverRequestAccountDelete: ToolDefinition = {
-  name: "server_request-account-delete",
+  name: "server-request-account-delete",
   description:
     `*This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 

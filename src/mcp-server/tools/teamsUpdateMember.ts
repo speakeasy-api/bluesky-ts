@@ -7,11 +7,11 @@ import * as operations from "../../models/operations/index.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
 const args = {
-  request: operations.ToolsOzoneTeamUpdateMemberBody$inboundSchema,
+  request: operations.ToolsOzoneTeamUpdateMemberRequest$inboundSchema,
 };
 
 export const tool$teamsUpdateMember: ToolDefinition<typeof args> = {
-  name: "teams_update-member",
+  name: "teams-update-member",
   description:
     `*This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 

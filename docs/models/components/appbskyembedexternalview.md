@@ -7,10 +7,9 @@ import { AppBskyEmbedExternalView } from "@speakeasy-sdks/bluesky/models/compone
 
 let value: AppBskyEmbedExternalView = {
   external: {
-    uri: "https://free-ignorance.info",
+    uri: "https://weary-cinder.org",
     title: "<value>",
-    description:
-      "dearly necklace meh uproot storyboard joy unexpectedly sightseeing contravene",
+    description: "whereas madly phooey exploration joyously gadzooks",
   },
 };
 ```

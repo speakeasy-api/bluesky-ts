@@ -15,18 +15,18 @@ export type ComAtprotoAdminGetSubjectStatusRequest = {
 };
 
 export type ComAtprotoAdminGetSubjectStatusSubject =
-  | components.ComAtprotoAdminDefsRepoRef
   | components.ComAtprotoRepoStrongRef
-  | components.ComAtprotoAdminDefsRepoBlobRef;
+  | components.ComAtprotoAdminDefsRepoBlobRef
+  | components.ComAtprotoAdminDefsRepoRef;
 
 /**
  * OK
  */
-export type ComAtprotoAdminGetSubjectStatusResponseBody = {
+export type ComAtprotoAdminGetSubjectStatusResponse = {
   subject:
-    | components.ComAtprotoAdminDefsRepoRef
     | components.ComAtprotoRepoStrongRef
-    | components.ComAtprotoAdminDefsRepoBlobRef;
+    | components.ComAtprotoAdminDefsRepoBlobRef
+    | components.ComAtprotoAdminDefsRepoRef;
   takedown?: components.ComAtprotoAdminDefsStatusAttr | undefined;
   deactivated?: components.ComAtprotoAdminDefsStatusAttr | undefined;
 };
@@ -103,16 +103,16 @@ export const ComAtprotoAdminGetSubjectStatusSubject$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.union([
-  components.ComAtprotoAdminDefsRepoRef$inboundSchema,
   components.ComAtprotoRepoStrongRef$inboundSchema,
   components.ComAtprotoAdminDefsRepoBlobRef$inboundSchema,
+  components.ComAtprotoAdminDefsRepoRef$inboundSchema,
 ]);
 
 /** @internal */
 export type ComAtprotoAdminGetSubjectStatusSubject$Outbound =
-  | components.ComAtprotoAdminDefsRepoRef$Outbound
   | components.ComAtprotoRepoStrongRef$Outbound
-  | components.ComAtprotoAdminDefsRepoBlobRef$Outbound;
+  | components.ComAtprotoAdminDefsRepoBlobRef$Outbound
+  | components.ComAtprotoAdminDefsRepoRef$Outbound;
 
 /** @internal */
 export const ComAtprotoAdminGetSubjectStatusSubject$outboundSchema: z.ZodType<
@@ -120,9 +120,9 @@ export const ComAtprotoAdminGetSubjectStatusSubject$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   ComAtprotoAdminGetSubjectStatusSubject
 > = z.union([
-  components.ComAtprotoAdminDefsRepoRef$outboundSchema,
   components.ComAtprotoRepoStrongRef$outboundSchema,
   components.ComAtprotoAdminDefsRepoBlobRef$outboundSchema,
+  components.ComAtprotoAdminDefsRepoRef$outboundSchema,
 ]);
 
 /**
@@ -163,88 +163,85 @@ export function comAtprotoAdminGetSubjectStatusSubjectFromJSON(
 }
 
 /** @internal */
-export const ComAtprotoAdminGetSubjectStatusResponseBody$inboundSchema:
-  z.ZodType<
-    ComAtprotoAdminGetSubjectStatusResponseBody,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    subject: z.union([
-      components.ComAtprotoAdminDefsRepoRef$inboundSchema,
-      components.ComAtprotoRepoStrongRef$inboundSchema,
-      components.ComAtprotoAdminDefsRepoBlobRef$inboundSchema,
-    ]),
-    takedown: components.ComAtprotoAdminDefsStatusAttr$inboundSchema.optional(),
-    deactivated: components.ComAtprotoAdminDefsStatusAttr$inboundSchema
-      .optional(),
-  });
+export const ComAtprotoAdminGetSubjectStatusResponse$inboundSchema: z.ZodType<
+  ComAtprotoAdminGetSubjectStatusResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  subject: z.union([
+    components.ComAtprotoRepoStrongRef$inboundSchema,
+    components.ComAtprotoAdminDefsRepoBlobRef$inboundSchema,
+    components.ComAtprotoAdminDefsRepoRef$inboundSchema,
+  ]),
+  takedown: components.ComAtprotoAdminDefsStatusAttr$inboundSchema.optional(),
+  deactivated: components.ComAtprotoAdminDefsStatusAttr$inboundSchema
+    .optional(),
+});
 
 /** @internal */
-export type ComAtprotoAdminGetSubjectStatusResponseBody$Outbound = {
+export type ComAtprotoAdminGetSubjectStatusResponse$Outbound = {
   subject:
-    | components.ComAtprotoAdminDefsRepoRef$Outbound
     | components.ComAtprotoRepoStrongRef$Outbound
-    | components.ComAtprotoAdminDefsRepoBlobRef$Outbound;
+    | components.ComAtprotoAdminDefsRepoBlobRef$Outbound
+    | components.ComAtprotoAdminDefsRepoRef$Outbound;
   takedown?: components.ComAtprotoAdminDefsStatusAttr$Outbound | undefined;
   deactivated?: components.ComAtprotoAdminDefsStatusAttr$Outbound | undefined;
 };
 
 /** @internal */
-export const ComAtprotoAdminGetSubjectStatusResponseBody$outboundSchema:
-  z.ZodType<
-    ComAtprotoAdminGetSubjectStatusResponseBody$Outbound,
-    z.ZodTypeDef,
-    ComAtprotoAdminGetSubjectStatusResponseBody
-  > = z.object({
-    subject: z.union([
-      components.ComAtprotoAdminDefsRepoRef$outboundSchema,
-      components.ComAtprotoRepoStrongRef$outboundSchema,
-      components.ComAtprotoAdminDefsRepoBlobRef$outboundSchema,
-    ]),
-    takedown: components.ComAtprotoAdminDefsStatusAttr$outboundSchema
-      .optional(),
-    deactivated: components.ComAtprotoAdminDefsStatusAttr$outboundSchema
-      .optional(),
-  });
+export const ComAtprotoAdminGetSubjectStatusResponse$outboundSchema: z.ZodType<
+  ComAtprotoAdminGetSubjectStatusResponse$Outbound,
+  z.ZodTypeDef,
+  ComAtprotoAdminGetSubjectStatusResponse
+> = z.object({
+  subject: z.union([
+    components.ComAtprotoRepoStrongRef$outboundSchema,
+    components.ComAtprotoAdminDefsRepoBlobRef$outboundSchema,
+    components.ComAtprotoAdminDefsRepoRef$outboundSchema,
+  ]),
+  takedown: components.ComAtprotoAdminDefsStatusAttr$outboundSchema.optional(),
+  deactivated: components.ComAtprotoAdminDefsStatusAttr$outboundSchema
+    .optional(),
+});
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoAdminGetSubjectStatusResponseBody$ {
-  /** @deprecated use `ComAtprotoAdminGetSubjectStatusResponseBody$inboundSchema` instead. */
+export namespace ComAtprotoAdminGetSubjectStatusResponse$ {
+  /** @deprecated use `ComAtprotoAdminGetSubjectStatusResponse$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoAdminGetSubjectStatusResponseBody$inboundSchema;
-  /** @deprecated use `ComAtprotoAdminGetSubjectStatusResponseBody$outboundSchema` instead. */
+    ComAtprotoAdminGetSubjectStatusResponse$inboundSchema;
+  /** @deprecated use `ComAtprotoAdminGetSubjectStatusResponse$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoAdminGetSubjectStatusResponseBody$outboundSchema;
-  /** @deprecated use `ComAtprotoAdminGetSubjectStatusResponseBody$Outbound` instead. */
-  export type Outbound = ComAtprotoAdminGetSubjectStatusResponseBody$Outbound;
+    ComAtprotoAdminGetSubjectStatusResponse$outboundSchema;
+  /** @deprecated use `ComAtprotoAdminGetSubjectStatusResponse$Outbound` instead. */
+  export type Outbound = ComAtprotoAdminGetSubjectStatusResponse$Outbound;
 }
 
-export function comAtprotoAdminGetSubjectStatusResponseBodyToJSON(
-  comAtprotoAdminGetSubjectStatusResponseBody:
-    ComAtprotoAdminGetSubjectStatusResponseBody,
+export function comAtprotoAdminGetSubjectStatusResponseToJSON(
+  comAtprotoAdminGetSubjectStatusResponse:
+    ComAtprotoAdminGetSubjectStatusResponse,
 ): string {
   return JSON.stringify(
-    ComAtprotoAdminGetSubjectStatusResponseBody$outboundSchema.parse(
-      comAtprotoAdminGetSubjectStatusResponseBody,
+    ComAtprotoAdminGetSubjectStatusResponse$outboundSchema.parse(
+      comAtprotoAdminGetSubjectStatusResponse,
     ),
   );
 }
 
-export function comAtprotoAdminGetSubjectStatusResponseBodyFromJSON(
+export function comAtprotoAdminGetSubjectStatusResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
-  ComAtprotoAdminGetSubjectStatusResponseBody,
+  ComAtprotoAdminGetSubjectStatusResponse,
   SDKValidationError
 > {
   return safeParse(
     jsonString,
     (x) =>
-      ComAtprotoAdminGetSubjectStatusResponseBody$inboundSchema.parse(
+      ComAtprotoAdminGetSubjectStatusResponse$inboundSchema.parse(
         JSON.parse(x),
       ),
-    `Failed to parse 'ComAtprotoAdminGetSubjectStatusResponseBody' from JSON`,
+    `Failed to parse 'ComAtprotoAdminGetSubjectStatusResponse' from JSON`,
   );
 }

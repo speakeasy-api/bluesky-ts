@@ -15,7 +15,7 @@ export type AppBskyFeedGetFeedGeneratorsRequest = {
 /**
  * OK
  */
-export type AppBskyFeedGetFeedGeneratorsResponseBody = {
+export type AppBskyFeedGetFeedGeneratorsResponse = {
   feeds: Array<components.AppBskyFeedDefsGeneratorView>;
 };
 
@@ -79,8 +79,8 @@ export function appBskyFeedGetFeedGeneratorsRequestFromJSON(
 }
 
 /** @internal */
-export const AppBskyFeedGetFeedGeneratorsResponseBody$inboundSchema: z.ZodType<
-  AppBskyFeedGetFeedGeneratorsResponseBody,
+export const AppBskyFeedGetFeedGeneratorsResponse$inboundSchema: z.ZodType<
+  AppBskyFeedGetFeedGeneratorsResponse,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -88,15 +88,15 @@ export const AppBskyFeedGetFeedGeneratorsResponseBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type AppBskyFeedGetFeedGeneratorsResponseBody$Outbound = {
+export type AppBskyFeedGetFeedGeneratorsResponse$Outbound = {
   feeds: Array<components.AppBskyFeedDefsGeneratorView$Outbound>;
 };
 
 /** @internal */
-export const AppBskyFeedGetFeedGeneratorsResponseBody$outboundSchema: z.ZodType<
-  AppBskyFeedGetFeedGeneratorsResponseBody$Outbound,
+export const AppBskyFeedGetFeedGeneratorsResponse$outboundSchema: z.ZodType<
+  AppBskyFeedGetFeedGeneratorsResponse$Outbound,
   z.ZodTypeDef,
-  AppBskyFeedGetFeedGeneratorsResponseBody
+  AppBskyFeedGetFeedGeneratorsResponse
 > = z.object({
   feeds: z.array(components.AppBskyFeedDefsGeneratorView$outboundSchema),
 });
@@ -105,40 +105,34 @@ export const AppBskyFeedGetFeedGeneratorsResponseBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyFeedGetFeedGeneratorsResponseBody$ {
-  /** @deprecated use `AppBskyFeedGetFeedGeneratorsResponseBody$inboundSchema` instead. */
+export namespace AppBskyFeedGetFeedGeneratorsResponse$ {
+  /** @deprecated use `AppBskyFeedGetFeedGeneratorsResponse$inboundSchema` instead. */
   export const inboundSchema =
-    AppBskyFeedGetFeedGeneratorsResponseBody$inboundSchema;
-  /** @deprecated use `AppBskyFeedGetFeedGeneratorsResponseBody$outboundSchema` instead. */
+    AppBskyFeedGetFeedGeneratorsResponse$inboundSchema;
+  /** @deprecated use `AppBskyFeedGetFeedGeneratorsResponse$outboundSchema` instead. */
   export const outboundSchema =
-    AppBskyFeedGetFeedGeneratorsResponseBody$outboundSchema;
-  /** @deprecated use `AppBskyFeedGetFeedGeneratorsResponseBody$Outbound` instead. */
-  export type Outbound = AppBskyFeedGetFeedGeneratorsResponseBody$Outbound;
+    AppBskyFeedGetFeedGeneratorsResponse$outboundSchema;
+  /** @deprecated use `AppBskyFeedGetFeedGeneratorsResponse$Outbound` instead. */
+  export type Outbound = AppBskyFeedGetFeedGeneratorsResponse$Outbound;
 }
 
-export function appBskyFeedGetFeedGeneratorsResponseBodyToJSON(
-  appBskyFeedGetFeedGeneratorsResponseBody:
-    AppBskyFeedGetFeedGeneratorsResponseBody,
+export function appBskyFeedGetFeedGeneratorsResponseToJSON(
+  appBskyFeedGetFeedGeneratorsResponse: AppBskyFeedGetFeedGeneratorsResponse,
 ): string {
   return JSON.stringify(
-    AppBskyFeedGetFeedGeneratorsResponseBody$outboundSchema.parse(
-      appBskyFeedGetFeedGeneratorsResponseBody,
+    AppBskyFeedGetFeedGeneratorsResponse$outboundSchema.parse(
+      appBskyFeedGetFeedGeneratorsResponse,
     ),
   );
 }
 
-export function appBskyFeedGetFeedGeneratorsResponseBodyFromJSON(
+export function appBskyFeedGetFeedGeneratorsResponseFromJSON(
   jsonString: string,
-): SafeParseResult<
-  AppBskyFeedGetFeedGeneratorsResponseBody,
-  SDKValidationError
-> {
+): SafeParseResult<AppBskyFeedGetFeedGeneratorsResponse, SDKValidationError> {
   return safeParse(
     jsonString,
     (x) =>
-      AppBskyFeedGetFeedGeneratorsResponseBody$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'AppBskyFeedGetFeedGeneratorsResponseBody' from JSON`,
+      AppBskyFeedGetFeedGeneratorsResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AppBskyFeedGetFeedGeneratorsResponse' from JSON`,
   );
 }

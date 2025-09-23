@@ -7,12 +7,12 @@ import * as operations from "../../models/operations/index.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
 const args = {
-  request: operations.ComAtprotoServerCreateInviteCodesBody$inboundSchema,
+  request: operations.ComAtprotoServerCreateInviteCodesRequest$inboundSchema,
 };
 
 export const tool$atprotoServerCreateInviteCodes: ToolDefinition<typeof args> =
   {
-    name: "atproto-server_create-invite-codes",
+    name: "atproto-server-create-invite-codes",
     description:
       `*This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 

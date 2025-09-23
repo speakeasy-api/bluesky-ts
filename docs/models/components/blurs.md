@@ -7,7 +7,7 @@ What should this label hide in the UI, if applied? 'content' hides all of the ta
 ```typescript
 import { Blurs } from "@speakeasy-sdks/bluesky/models/components";
 
-let value: Blurs = "none";
+let value: Blurs = "content";
 ```
 
 ## Values

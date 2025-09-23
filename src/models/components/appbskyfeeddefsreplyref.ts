@@ -32,47 +32,47 @@ import {
 } from "./appbskyfeeddefspostview.js";
 
 export type Root =
-  | AppBskyFeedDefsNotFoundPost
+  | AppBskyFeedDefsPostView
   | AppBskyFeedDefsBlockedPost
-  | AppBskyFeedDefsPostView;
+  | AppBskyFeedDefsNotFoundPost;
 
 export type AppBskyFeedDefsReplyRefParent =
-  | AppBskyFeedDefsNotFoundPost
+  | AppBskyFeedDefsPostView
   | AppBskyFeedDefsBlockedPost
-  | AppBskyFeedDefsPostView;
+  | AppBskyFeedDefsNotFoundPost;
 
 export type AppBskyFeedDefsReplyRef = {
   root:
-    | AppBskyFeedDefsNotFoundPost
+    | AppBskyFeedDefsPostView
     | AppBskyFeedDefsBlockedPost
-    | AppBskyFeedDefsPostView;
+    | AppBskyFeedDefsNotFoundPost;
   parent:
-    | AppBskyFeedDefsNotFoundPost
+    | AppBskyFeedDefsPostView
     | AppBskyFeedDefsBlockedPost
-    | AppBskyFeedDefsPostView;
+    | AppBskyFeedDefsNotFoundPost;
   grandparentAuthor?: AppBskyActorDefsProfileViewBasic | undefined;
 };
 
 /** @internal */
 export const Root$inboundSchema: z.ZodType<Root, z.ZodTypeDef, unknown> = z
   .union([
-    AppBskyFeedDefsNotFoundPost$inboundSchema,
-    AppBskyFeedDefsBlockedPost$inboundSchema,
     AppBskyFeedDefsPostView$inboundSchema,
+    AppBskyFeedDefsBlockedPost$inboundSchema,
+    AppBskyFeedDefsNotFoundPost$inboundSchema,
   ]);
 
 /** @internal */
 export type Root$Outbound =
-  | AppBskyFeedDefsNotFoundPost$Outbound
+  | AppBskyFeedDefsPostView$Outbound
   | AppBskyFeedDefsBlockedPost$Outbound
-  | AppBskyFeedDefsPostView$Outbound;
+  | AppBskyFeedDefsNotFoundPost$Outbound;
 
 /** @internal */
 export const Root$outboundSchema: z.ZodType<Root$Outbound, z.ZodTypeDef, Root> =
   z.union([
-    AppBskyFeedDefsNotFoundPost$outboundSchema,
-    AppBskyFeedDefsBlockedPost$outboundSchema,
     AppBskyFeedDefsPostView$outboundSchema,
+    AppBskyFeedDefsBlockedPost$outboundSchema,
+    AppBskyFeedDefsNotFoundPost$outboundSchema,
   ]);
 
 /**
@@ -108,16 +108,16 @@ export const AppBskyFeedDefsReplyRefParent$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.union([
-  AppBskyFeedDefsNotFoundPost$inboundSchema,
-  AppBskyFeedDefsBlockedPost$inboundSchema,
   AppBskyFeedDefsPostView$inboundSchema,
+  AppBskyFeedDefsBlockedPost$inboundSchema,
+  AppBskyFeedDefsNotFoundPost$inboundSchema,
 ]);
 
 /** @internal */
 export type AppBskyFeedDefsReplyRefParent$Outbound =
-  | AppBskyFeedDefsNotFoundPost$Outbound
+  | AppBskyFeedDefsPostView$Outbound
   | AppBskyFeedDefsBlockedPost$Outbound
-  | AppBskyFeedDefsPostView$Outbound;
+  | AppBskyFeedDefsNotFoundPost$Outbound;
 
 /** @internal */
 export const AppBskyFeedDefsReplyRefParent$outboundSchema: z.ZodType<
@@ -125,9 +125,9 @@ export const AppBskyFeedDefsReplyRefParent$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   AppBskyFeedDefsReplyRefParent
 > = z.union([
-  AppBskyFeedDefsNotFoundPost$outboundSchema,
-  AppBskyFeedDefsBlockedPost$outboundSchema,
   AppBskyFeedDefsPostView$outboundSchema,
+  AppBskyFeedDefsBlockedPost$outboundSchema,
+  AppBskyFeedDefsNotFoundPost$outboundSchema,
 ]);
 
 /**
@@ -170,14 +170,14 @@ export const AppBskyFeedDefsReplyRef$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   root: z.union([
-    AppBskyFeedDefsNotFoundPost$inboundSchema,
-    AppBskyFeedDefsBlockedPost$inboundSchema,
     AppBskyFeedDefsPostView$inboundSchema,
+    AppBskyFeedDefsBlockedPost$inboundSchema,
+    AppBskyFeedDefsNotFoundPost$inboundSchema,
   ]),
   parent: z.union([
-    AppBskyFeedDefsNotFoundPost$inboundSchema,
-    AppBskyFeedDefsBlockedPost$inboundSchema,
     AppBskyFeedDefsPostView$inboundSchema,
+    AppBskyFeedDefsBlockedPost$inboundSchema,
+    AppBskyFeedDefsNotFoundPost$inboundSchema,
   ]),
   grandparentAuthor: AppBskyActorDefsProfileViewBasic$inboundSchema.optional(),
 });
@@ -185,13 +185,13 @@ export const AppBskyFeedDefsReplyRef$inboundSchema: z.ZodType<
 /** @internal */
 export type AppBskyFeedDefsReplyRef$Outbound = {
   root:
-    | AppBskyFeedDefsNotFoundPost$Outbound
+    | AppBskyFeedDefsPostView$Outbound
     | AppBskyFeedDefsBlockedPost$Outbound
-    | AppBskyFeedDefsPostView$Outbound;
+    | AppBskyFeedDefsNotFoundPost$Outbound;
   parent:
-    | AppBskyFeedDefsNotFoundPost$Outbound
+    | AppBskyFeedDefsPostView$Outbound
     | AppBskyFeedDefsBlockedPost$Outbound
-    | AppBskyFeedDefsPostView$Outbound;
+    | AppBskyFeedDefsNotFoundPost$Outbound;
   grandparentAuthor?: AppBskyActorDefsProfileViewBasic$Outbound | undefined;
 };
 
@@ -202,14 +202,14 @@ export const AppBskyFeedDefsReplyRef$outboundSchema: z.ZodType<
   AppBskyFeedDefsReplyRef
 > = z.object({
   root: z.union([
-    AppBskyFeedDefsNotFoundPost$outboundSchema,
-    AppBskyFeedDefsBlockedPost$outboundSchema,
     AppBskyFeedDefsPostView$outboundSchema,
+    AppBskyFeedDefsBlockedPost$outboundSchema,
+    AppBskyFeedDefsNotFoundPost$outboundSchema,
   ]),
   parent: z.union([
-    AppBskyFeedDefsNotFoundPost$outboundSchema,
-    AppBskyFeedDefsBlockedPost$outboundSchema,
     AppBskyFeedDefsPostView$outboundSchema,
+    AppBskyFeedDefsBlockedPost$outboundSchema,
+    AppBskyFeedDefsNotFoundPost$outboundSchema,
   ]),
   grandparentAuthor: AppBskyActorDefsProfileViewBasic$outboundSchema.optional(),
 });

@@ -4,11 +4,12 @@
 
 import * as z from "zod";
 import { ClosedEnum } from "../../types/enums.js";
+import { BlueskyError } from "./blueskyerror.js";
 
 /**
  * Unauthorized
  */
-export type UnauthorizedComAtprotoIdentityGetRecommendedDidCredentialsResponseBodyErrorData =
+export type ComAtprotoIdentityGetRecommendedDidCredentialsAuthMissingErrorData =
   {
     error: "AuthMissing";
     message: string;
@@ -17,29 +18,25 @@ export type UnauthorizedComAtprotoIdentityGetRecommendedDidCredentialsResponseBo
 /**
  * Unauthorized
  */
-export class UnauthorizedComAtprotoIdentityGetRecommendedDidCredentialsResponseBodyError
-  extends Error
+export class ComAtprotoIdentityGetRecommendedDidCredentialsAuthMissingError
+  extends BlueskyError
 {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$:
-    UnauthorizedComAtprotoIdentityGetRecommendedDidCredentialsResponseBodyErrorData;
+  data$: ComAtprotoIdentityGetRecommendedDidCredentialsAuthMissingErrorData;
 
   constructor(
-    err:
-      UnauthorizedComAtprotoIdentityGetRecommendedDidCredentialsResponseBodyErrorData,
+    err: ComAtprotoIdentityGetRecommendedDidCredentialsAuthMissingErrorData,
+    httpMeta: { response: Response; request: Request; body: string },
   ) {
-    const message = "message" in err && typeof err.message === "string"
-      ? err.message
-      : `API error occurred: ${JSON.stringify(err)}`;
-    super(message);
+    const message = err.message || `API error occurred: ${JSON.stringify(err)}`;
+    super(message, httpMeta);
     this.data$ = err;
-
     this.error = err.error;
 
     this.name =
-      "UnauthorizedComAtprotoIdentityGetRecommendedDidCredentialsResponseBodyError";
+      "ComAtprotoIdentityGetRecommendedDidCredentialsAuthMissingError";
   }
 }
 
@@ -55,7 +52,7 @@ export type ComAtprotoIdentityGetRecommendedDidCredentialsError = ClosedEnum<
 /**
  * Bad Request
  */
-export type BadRequestComAtprotoIdentityGetRecommendedDidCredentialsResponseBodyErrorData =
+export type ComAtprotoIdentityGetRecommendedDidCredentialsBadRequestErrorData =
   {
     error: ComAtprotoIdentityGetRecommendedDidCredentialsError;
     message: string;
@@ -64,63 +61,62 @@ export type BadRequestComAtprotoIdentityGetRecommendedDidCredentialsResponseBody
 /**
  * Bad Request
  */
-export class BadRequestComAtprotoIdentityGetRecommendedDidCredentialsResponseBodyError
-  extends Error
+export class ComAtprotoIdentityGetRecommendedDidCredentialsBadRequestError
+  extends BlueskyError
 {
   error: ComAtprotoIdentityGetRecommendedDidCredentialsError;
 
   /** The original data that was passed to this error instance. */
-  data$:
-    BadRequestComAtprotoIdentityGetRecommendedDidCredentialsResponseBodyErrorData;
+  data$: ComAtprotoIdentityGetRecommendedDidCredentialsBadRequestErrorData;
 
   constructor(
-    err:
-      BadRequestComAtprotoIdentityGetRecommendedDidCredentialsResponseBodyErrorData,
+    err: ComAtprotoIdentityGetRecommendedDidCredentialsBadRequestErrorData,
+    httpMeta: { response: Response; request: Request; body: string },
   ) {
-    const message = "message" in err && typeof err.message === "string"
-      ? err.message
-      : `API error occurred: ${JSON.stringify(err)}`;
-    super(message);
+    const message = err.message || `API error occurred: ${JSON.stringify(err)}`;
+    super(message, httpMeta);
     this.data$ = err;
-
     this.error = err.error;
 
-    this.name =
-      "BadRequestComAtprotoIdentityGetRecommendedDidCredentialsResponseBodyError";
+    this.name = "ComAtprotoIdentityGetRecommendedDidCredentialsBadRequestError";
   }
 }
 
 /** @internal */
-export const UnauthorizedComAtprotoIdentityGetRecommendedDidCredentialsResponseBodyError$inboundSchema:
+export const ComAtprotoIdentityGetRecommendedDidCredentialsAuthMissingError$inboundSchema:
   z.ZodType<
-    UnauthorizedComAtprotoIdentityGetRecommendedDidCredentialsResponseBodyError,
+    ComAtprotoIdentityGetRecommendedDidCredentialsAuthMissingError,
     z.ZodTypeDef,
     unknown
   > = z.object({
-    error: z.literal("AuthMissing"),
+    error: z.literal("AuthMissing").default("AuthMissing"),
     message: z.string(),
+    request$: z.instanceof(Request),
+    response$: z.instanceof(Response),
+    body$: z.string(),
   })
     .transform((v) => {
-      return new UnauthorizedComAtprotoIdentityGetRecommendedDidCredentialsResponseBodyError(
+      return new ComAtprotoIdentityGetRecommendedDidCredentialsAuthMissingError(
         v,
+        { request: v.request$, response: v.response$, body: v.body$ },
       );
     });
 
 /** @internal */
-export type UnauthorizedComAtprotoIdentityGetRecommendedDidCredentialsResponseBodyError$Outbound =
+export type ComAtprotoIdentityGetRecommendedDidCredentialsAuthMissingError$Outbound =
   {
     error: "AuthMissing";
     message: string;
   };
 
 /** @internal */
-export const UnauthorizedComAtprotoIdentityGetRecommendedDidCredentialsResponseBodyError$outboundSchema:
+export const ComAtprotoIdentityGetRecommendedDidCredentialsAuthMissingError$outboundSchema:
   z.ZodType<
-    UnauthorizedComAtprotoIdentityGetRecommendedDidCredentialsResponseBodyError$Outbound,
+    ComAtprotoIdentityGetRecommendedDidCredentialsAuthMissingError$Outbound,
     z.ZodTypeDef,
-    UnauthorizedComAtprotoIdentityGetRecommendedDidCredentialsResponseBodyError
+    ComAtprotoIdentityGetRecommendedDidCredentialsAuthMissingError
   > = z.instanceof(
-    UnauthorizedComAtprotoIdentityGetRecommendedDidCredentialsResponseBodyError,
+    ComAtprotoIdentityGetRecommendedDidCredentialsAuthMissingError,
   )
     .transform(v => v.data$)
     .pipe(z.object({
@@ -132,16 +128,16 @@ export const UnauthorizedComAtprotoIdentityGetRecommendedDidCredentialsResponseB
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace UnauthorizedComAtprotoIdentityGetRecommendedDidCredentialsResponseBodyError$ {
-  /** @deprecated use `UnauthorizedComAtprotoIdentityGetRecommendedDidCredentialsResponseBodyError$inboundSchema` instead. */
+export namespace ComAtprotoIdentityGetRecommendedDidCredentialsAuthMissingError$ {
+  /** @deprecated use `ComAtprotoIdentityGetRecommendedDidCredentialsAuthMissingError$inboundSchema` instead. */
   export const inboundSchema =
-    UnauthorizedComAtprotoIdentityGetRecommendedDidCredentialsResponseBodyError$inboundSchema;
-  /** @deprecated use `UnauthorizedComAtprotoIdentityGetRecommendedDidCredentialsResponseBodyError$outboundSchema` instead. */
+    ComAtprotoIdentityGetRecommendedDidCredentialsAuthMissingError$inboundSchema;
+  /** @deprecated use `ComAtprotoIdentityGetRecommendedDidCredentialsAuthMissingError$outboundSchema` instead. */
   export const outboundSchema =
-    UnauthorizedComAtprotoIdentityGetRecommendedDidCredentialsResponseBodyError$outboundSchema;
-  /** @deprecated use `UnauthorizedComAtprotoIdentityGetRecommendedDidCredentialsResponseBodyError$Outbound` instead. */
+    ComAtprotoIdentityGetRecommendedDidCredentialsAuthMissingError$outboundSchema;
+  /** @deprecated use `ComAtprotoIdentityGetRecommendedDidCredentialsAuthMissingError$Outbound` instead. */
   export type Outbound =
-    UnauthorizedComAtprotoIdentityGetRecommendedDidCredentialsResponseBodyError$Outbound;
+    ComAtprotoIdentityGetRecommendedDidCredentialsAuthMissingError$Outbound;
 }
 
 /** @internal */
@@ -168,36 +164,40 @@ export namespace ComAtprotoIdentityGetRecommendedDidCredentialsError$ {
 }
 
 /** @internal */
-export const BadRequestComAtprotoIdentityGetRecommendedDidCredentialsResponseBodyError$inboundSchema:
+export const ComAtprotoIdentityGetRecommendedDidCredentialsBadRequestError$inboundSchema:
   z.ZodType<
-    BadRequestComAtprotoIdentityGetRecommendedDidCredentialsResponseBodyError,
+    ComAtprotoIdentityGetRecommendedDidCredentialsBadRequestError,
     z.ZodTypeDef,
     unknown
   > = z.object({
     error: ComAtprotoIdentityGetRecommendedDidCredentialsError$inboundSchema,
     message: z.string(),
+    request$: z.instanceof(Request),
+    response$: z.instanceof(Response),
+    body$: z.string(),
   })
     .transform((v) => {
-      return new BadRequestComAtprotoIdentityGetRecommendedDidCredentialsResponseBodyError(
+      return new ComAtprotoIdentityGetRecommendedDidCredentialsBadRequestError(
         v,
+        { request: v.request$, response: v.response$, body: v.body$ },
       );
     });
 
 /** @internal */
-export type BadRequestComAtprotoIdentityGetRecommendedDidCredentialsResponseBodyError$Outbound =
+export type ComAtprotoIdentityGetRecommendedDidCredentialsBadRequestError$Outbound =
   {
     error: string;
     message: string;
   };
 
 /** @internal */
-export const BadRequestComAtprotoIdentityGetRecommendedDidCredentialsResponseBodyError$outboundSchema:
+export const ComAtprotoIdentityGetRecommendedDidCredentialsBadRequestError$outboundSchema:
   z.ZodType<
-    BadRequestComAtprotoIdentityGetRecommendedDidCredentialsResponseBodyError$Outbound,
+    ComAtprotoIdentityGetRecommendedDidCredentialsBadRequestError$Outbound,
     z.ZodTypeDef,
-    BadRequestComAtprotoIdentityGetRecommendedDidCredentialsResponseBodyError
+    ComAtprotoIdentityGetRecommendedDidCredentialsBadRequestError
   > = z.instanceof(
-    BadRequestComAtprotoIdentityGetRecommendedDidCredentialsResponseBodyError,
+    ComAtprotoIdentityGetRecommendedDidCredentialsBadRequestError,
   )
     .transform(v => v.data$)
     .pipe(z.object({
@@ -209,14 +209,14 @@ export const BadRequestComAtprotoIdentityGetRecommendedDidCredentialsResponseBod
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace BadRequestComAtprotoIdentityGetRecommendedDidCredentialsResponseBodyError$ {
-  /** @deprecated use `BadRequestComAtprotoIdentityGetRecommendedDidCredentialsResponseBodyError$inboundSchema` instead. */
+export namespace ComAtprotoIdentityGetRecommendedDidCredentialsBadRequestError$ {
+  /** @deprecated use `ComAtprotoIdentityGetRecommendedDidCredentialsBadRequestError$inboundSchema` instead. */
   export const inboundSchema =
-    BadRequestComAtprotoIdentityGetRecommendedDidCredentialsResponseBodyError$inboundSchema;
-  /** @deprecated use `BadRequestComAtprotoIdentityGetRecommendedDidCredentialsResponseBodyError$outboundSchema` instead. */
+    ComAtprotoIdentityGetRecommendedDidCredentialsBadRequestError$inboundSchema;
+  /** @deprecated use `ComAtprotoIdentityGetRecommendedDidCredentialsBadRequestError$outboundSchema` instead. */
   export const outboundSchema =
-    BadRequestComAtprotoIdentityGetRecommendedDidCredentialsResponseBodyError$outboundSchema;
-  /** @deprecated use `BadRequestComAtprotoIdentityGetRecommendedDidCredentialsResponseBodyError$Outbound` instead. */
+    ComAtprotoIdentityGetRecommendedDidCredentialsBadRequestError$outboundSchema;
+  /** @deprecated use `ComAtprotoIdentityGetRecommendedDidCredentialsBadRequestError$Outbound` instead. */
   export type Outbound =
-    BadRequestComAtprotoIdentityGetRecommendedDidCredentialsResponseBodyError$Outbound;
+    ComAtprotoIdentityGetRecommendedDidCredentialsBadRequestError$Outbound;
 }

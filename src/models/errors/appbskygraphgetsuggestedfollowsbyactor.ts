@@ -4,42 +4,37 @@
 
 import * as z from "zod";
 import { ClosedEnum } from "../../types/enums.js";
+import { BlueskyError } from "./blueskyerror.js";
 
 /**
  * Unauthorized
  */
-export type UnauthorizedAppBskyGraphGetSuggestedFollowsByActorResponseBodyErrorData =
-  {
-    error: "AuthMissing";
-    message: string;
-  };
+export type AppBskyGraphGetSuggestedFollowsByActorAuthMissingErrorData = {
+  error: "AuthMissing";
+  message: string;
+};
 
 /**
  * Unauthorized
  */
-export class UnauthorizedAppBskyGraphGetSuggestedFollowsByActorResponseBodyError
-  extends Error
+export class AppBskyGraphGetSuggestedFollowsByActorAuthMissingError
+  extends BlueskyError
 {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$:
-    UnauthorizedAppBskyGraphGetSuggestedFollowsByActorResponseBodyErrorData;
+  data$: AppBskyGraphGetSuggestedFollowsByActorAuthMissingErrorData;
 
   constructor(
-    err:
-      UnauthorizedAppBskyGraphGetSuggestedFollowsByActorResponseBodyErrorData,
+    err: AppBskyGraphGetSuggestedFollowsByActorAuthMissingErrorData,
+    httpMeta: { response: Response; request: Request; body: string },
   ) {
-    const message = "message" in err && typeof err.message === "string"
-      ? err.message
-      : `API error occurred: ${JSON.stringify(err)}`;
-    super(message);
+    const message = err.message || `API error occurred: ${JSON.stringify(err)}`;
+    super(message, httpMeta);
     this.data$ = err;
-
     this.error = err.error;
 
-    this.name =
-      "UnauthorizedAppBskyGraphGetSuggestedFollowsByActorResponseBodyError";
+    this.name = "AppBskyGraphGetSuggestedFollowsByActorAuthMissingError";
   }
 }
 
@@ -55,71 +50,69 @@ export type AppBskyGraphGetSuggestedFollowsByActorError = ClosedEnum<
 /**
  * Bad Request
  */
-export type BadRequestAppBskyGraphGetSuggestedFollowsByActorResponseBodyErrorData =
-  {
-    error: AppBskyGraphGetSuggestedFollowsByActorError;
-    message: string;
-  };
+export type AppBskyGraphGetSuggestedFollowsByActorBadRequestErrorData = {
+  error: AppBskyGraphGetSuggestedFollowsByActorError;
+  message: string;
+};
 
 /**
  * Bad Request
  */
-export class BadRequestAppBskyGraphGetSuggestedFollowsByActorResponseBodyError
-  extends Error
+export class AppBskyGraphGetSuggestedFollowsByActorBadRequestError
+  extends BlueskyError
 {
   error: AppBskyGraphGetSuggestedFollowsByActorError;
 
   /** The original data that was passed to this error instance. */
-  data$: BadRequestAppBskyGraphGetSuggestedFollowsByActorResponseBodyErrorData;
+  data$: AppBskyGraphGetSuggestedFollowsByActorBadRequestErrorData;
 
   constructor(
-    err: BadRequestAppBskyGraphGetSuggestedFollowsByActorResponseBodyErrorData,
+    err: AppBskyGraphGetSuggestedFollowsByActorBadRequestErrorData,
+    httpMeta: { response: Response; request: Request; body: string },
   ) {
-    const message = "message" in err && typeof err.message === "string"
-      ? err.message
-      : `API error occurred: ${JSON.stringify(err)}`;
-    super(message);
+    const message = err.message || `API error occurred: ${JSON.stringify(err)}`;
+    super(message, httpMeta);
     this.data$ = err;
-
     this.error = err.error;
 
-    this.name =
-      "BadRequestAppBskyGraphGetSuggestedFollowsByActorResponseBodyError";
+    this.name = "AppBskyGraphGetSuggestedFollowsByActorBadRequestError";
   }
 }
 
 /** @internal */
-export const UnauthorizedAppBskyGraphGetSuggestedFollowsByActorResponseBodyError$inboundSchema:
+export const AppBskyGraphGetSuggestedFollowsByActorAuthMissingError$inboundSchema:
   z.ZodType<
-    UnauthorizedAppBskyGraphGetSuggestedFollowsByActorResponseBodyError,
+    AppBskyGraphGetSuggestedFollowsByActorAuthMissingError,
     z.ZodTypeDef,
     unknown
   > = z.object({
-    error: z.literal("AuthMissing"),
+    error: z.literal("AuthMissing").default("AuthMissing"),
     message: z.string(),
+    request$: z.instanceof(Request),
+    response$: z.instanceof(Response),
+    body$: z.string(),
   })
     .transform((v) => {
-      return new UnauthorizedAppBskyGraphGetSuggestedFollowsByActorResponseBodyError(
-        v,
-      );
+      return new AppBskyGraphGetSuggestedFollowsByActorAuthMissingError(v, {
+        request: v.request$,
+        response: v.response$,
+        body: v.body$,
+      });
     });
 
 /** @internal */
-export type UnauthorizedAppBskyGraphGetSuggestedFollowsByActorResponseBodyError$Outbound =
-  {
-    error: "AuthMissing";
-    message: string;
-  };
+export type AppBskyGraphGetSuggestedFollowsByActorAuthMissingError$Outbound = {
+  error: "AuthMissing";
+  message: string;
+};
 
 /** @internal */
-export const UnauthorizedAppBskyGraphGetSuggestedFollowsByActorResponseBodyError$outboundSchema:
+export const AppBskyGraphGetSuggestedFollowsByActorAuthMissingError$outboundSchema:
   z.ZodType<
-    UnauthorizedAppBskyGraphGetSuggestedFollowsByActorResponseBodyError$Outbound,
+    AppBskyGraphGetSuggestedFollowsByActorAuthMissingError$Outbound,
     z.ZodTypeDef,
-    UnauthorizedAppBskyGraphGetSuggestedFollowsByActorResponseBodyError
-  > = z.instanceof(
-    UnauthorizedAppBskyGraphGetSuggestedFollowsByActorResponseBodyError,
-  )
+    AppBskyGraphGetSuggestedFollowsByActorAuthMissingError
+  > = z.instanceof(AppBskyGraphGetSuggestedFollowsByActorAuthMissingError)
     .transform(v => v.data$)
     .pipe(z.object({
       error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -130,16 +123,16 @@ export const UnauthorizedAppBskyGraphGetSuggestedFollowsByActorResponseBodyError
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace UnauthorizedAppBskyGraphGetSuggestedFollowsByActorResponseBodyError$ {
-  /** @deprecated use `UnauthorizedAppBskyGraphGetSuggestedFollowsByActorResponseBodyError$inboundSchema` instead. */
+export namespace AppBskyGraphGetSuggestedFollowsByActorAuthMissingError$ {
+  /** @deprecated use `AppBskyGraphGetSuggestedFollowsByActorAuthMissingError$inboundSchema` instead. */
   export const inboundSchema =
-    UnauthorizedAppBskyGraphGetSuggestedFollowsByActorResponseBodyError$inboundSchema;
-  /** @deprecated use `UnauthorizedAppBskyGraphGetSuggestedFollowsByActorResponseBodyError$outboundSchema` instead. */
+    AppBskyGraphGetSuggestedFollowsByActorAuthMissingError$inboundSchema;
+  /** @deprecated use `AppBskyGraphGetSuggestedFollowsByActorAuthMissingError$outboundSchema` instead. */
   export const outboundSchema =
-    UnauthorizedAppBskyGraphGetSuggestedFollowsByActorResponseBodyError$outboundSchema;
-  /** @deprecated use `UnauthorizedAppBskyGraphGetSuggestedFollowsByActorResponseBodyError$Outbound` instead. */
+    AppBskyGraphGetSuggestedFollowsByActorAuthMissingError$outboundSchema;
+  /** @deprecated use `AppBskyGraphGetSuggestedFollowsByActorAuthMissingError$Outbound` instead. */
   export type Outbound =
-    UnauthorizedAppBskyGraphGetSuggestedFollowsByActorResponseBodyError$Outbound;
+    AppBskyGraphGetSuggestedFollowsByActorAuthMissingError$Outbound;
 }
 
 /** @internal */
@@ -166,37 +159,39 @@ export namespace AppBskyGraphGetSuggestedFollowsByActorError$ {
 }
 
 /** @internal */
-export const BadRequestAppBskyGraphGetSuggestedFollowsByActorResponseBodyError$inboundSchema:
+export const AppBskyGraphGetSuggestedFollowsByActorBadRequestError$inboundSchema:
   z.ZodType<
-    BadRequestAppBskyGraphGetSuggestedFollowsByActorResponseBodyError,
+    AppBskyGraphGetSuggestedFollowsByActorBadRequestError,
     z.ZodTypeDef,
     unknown
   > = z.object({
     error: AppBskyGraphGetSuggestedFollowsByActorError$inboundSchema,
     message: z.string(),
+    request$: z.instanceof(Request),
+    response$: z.instanceof(Response),
+    body$: z.string(),
   })
     .transform((v) => {
-      return new BadRequestAppBskyGraphGetSuggestedFollowsByActorResponseBodyError(
-        v,
-      );
+      return new AppBskyGraphGetSuggestedFollowsByActorBadRequestError(v, {
+        request: v.request$,
+        response: v.response$,
+        body: v.body$,
+      });
     });
 
 /** @internal */
-export type BadRequestAppBskyGraphGetSuggestedFollowsByActorResponseBodyError$Outbound =
-  {
-    error: string;
-    message: string;
-  };
+export type AppBskyGraphGetSuggestedFollowsByActorBadRequestError$Outbound = {
+  error: string;
+  message: string;
+};
 
 /** @internal */
-export const BadRequestAppBskyGraphGetSuggestedFollowsByActorResponseBodyError$outboundSchema:
+export const AppBskyGraphGetSuggestedFollowsByActorBadRequestError$outboundSchema:
   z.ZodType<
-    BadRequestAppBskyGraphGetSuggestedFollowsByActorResponseBodyError$Outbound,
+    AppBskyGraphGetSuggestedFollowsByActorBadRequestError$Outbound,
     z.ZodTypeDef,
-    BadRequestAppBskyGraphGetSuggestedFollowsByActorResponseBodyError
-  > = z.instanceof(
-    BadRequestAppBskyGraphGetSuggestedFollowsByActorResponseBodyError,
-  )
+    AppBskyGraphGetSuggestedFollowsByActorBadRequestError
+  > = z.instanceof(AppBskyGraphGetSuggestedFollowsByActorBadRequestError)
     .transform(v => v.data$)
     .pipe(z.object({
       error: AppBskyGraphGetSuggestedFollowsByActorError$outboundSchema,
@@ -207,14 +202,14 @@ export const BadRequestAppBskyGraphGetSuggestedFollowsByActorResponseBodyError$o
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace BadRequestAppBskyGraphGetSuggestedFollowsByActorResponseBodyError$ {
-  /** @deprecated use `BadRequestAppBskyGraphGetSuggestedFollowsByActorResponseBodyError$inboundSchema` instead. */
+export namespace AppBskyGraphGetSuggestedFollowsByActorBadRequestError$ {
+  /** @deprecated use `AppBskyGraphGetSuggestedFollowsByActorBadRequestError$inboundSchema` instead. */
   export const inboundSchema =
-    BadRequestAppBskyGraphGetSuggestedFollowsByActorResponseBodyError$inboundSchema;
-  /** @deprecated use `BadRequestAppBskyGraphGetSuggestedFollowsByActorResponseBodyError$outboundSchema` instead. */
+    AppBskyGraphGetSuggestedFollowsByActorBadRequestError$inboundSchema;
+  /** @deprecated use `AppBskyGraphGetSuggestedFollowsByActorBadRequestError$outboundSchema` instead. */
   export const outboundSchema =
-    BadRequestAppBskyGraphGetSuggestedFollowsByActorResponseBodyError$outboundSchema;
-  /** @deprecated use `BadRequestAppBskyGraphGetSuggestedFollowsByActorResponseBodyError$Outbound` instead. */
+    AppBskyGraphGetSuggestedFollowsByActorBadRequestError$outboundSchema;
+  /** @deprecated use `AppBskyGraphGetSuggestedFollowsByActorBadRequestError$Outbound` instead. */
   export type Outbound =
-    BadRequestAppBskyGraphGetSuggestedFollowsByActorResponseBodyError$Outbound;
+    AppBskyGraphGetSuggestedFollowsByActorBadRequestError$Outbound;
 }

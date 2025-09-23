@@ -15,7 +15,7 @@ export type AppBskyVideoGetJobStatusRequest = {
 /**
  * OK
  */
-export type AppBskyVideoGetJobStatusResponseBody = {
+export type AppBskyVideoGetJobStatusResponse = {
   jobStatus: components.AppBskyVideoDefsJobStatus;
 };
 
@@ -76,8 +76,8 @@ export function appBskyVideoGetJobStatusRequestFromJSON(
 }
 
 /** @internal */
-export const AppBskyVideoGetJobStatusResponseBody$inboundSchema: z.ZodType<
-  AppBskyVideoGetJobStatusResponseBody,
+export const AppBskyVideoGetJobStatusResponse$inboundSchema: z.ZodType<
+  AppBskyVideoGetJobStatusResponse,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -85,15 +85,15 @@ export const AppBskyVideoGetJobStatusResponseBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type AppBskyVideoGetJobStatusResponseBody$Outbound = {
+export type AppBskyVideoGetJobStatusResponse$Outbound = {
   jobStatus: components.AppBskyVideoDefsJobStatus$Outbound;
 };
 
 /** @internal */
-export const AppBskyVideoGetJobStatusResponseBody$outboundSchema: z.ZodType<
-  AppBskyVideoGetJobStatusResponseBody$Outbound,
+export const AppBskyVideoGetJobStatusResponse$outboundSchema: z.ZodType<
+  AppBskyVideoGetJobStatusResponse$Outbound,
   z.ZodTypeDef,
-  AppBskyVideoGetJobStatusResponseBody
+  AppBskyVideoGetJobStatusResponse
 > = z.object({
   jobStatus: components.AppBskyVideoDefsJobStatus$outboundSchema,
 });
@@ -102,34 +102,31 @@ export const AppBskyVideoGetJobStatusResponseBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyVideoGetJobStatusResponseBody$ {
-  /** @deprecated use `AppBskyVideoGetJobStatusResponseBody$inboundSchema` instead. */
-  export const inboundSchema =
-    AppBskyVideoGetJobStatusResponseBody$inboundSchema;
-  /** @deprecated use `AppBskyVideoGetJobStatusResponseBody$outboundSchema` instead. */
-  export const outboundSchema =
-    AppBskyVideoGetJobStatusResponseBody$outboundSchema;
-  /** @deprecated use `AppBskyVideoGetJobStatusResponseBody$Outbound` instead. */
-  export type Outbound = AppBskyVideoGetJobStatusResponseBody$Outbound;
+export namespace AppBskyVideoGetJobStatusResponse$ {
+  /** @deprecated use `AppBskyVideoGetJobStatusResponse$inboundSchema` instead. */
+  export const inboundSchema = AppBskyVideoGetJobStatusResponse$inboundSchema;
+  /** @deprecated use `AppBskyVideoGetJobStatusResponse$outboundSchema` instead. */
+  export const outboundSchema = AppBskyVideoGetJobStatusResponse$outboundSchema;
+  /** @deprecated use `AppBskyVideoGetJobStatusResponse$Outbound` instead. */
+  export type Outbound = AppBskyVideoGetJobStatusResponse$Outbound;
 }
 
-export function appBskyVideoGetJobStatusResponseBodyToJSON(
-  appBskyVideoGetJobStatusResponseBody: AppBskyVideoGetJobStatusResponseBody,
+export function appBskyVideoGetJobStatusResponseToJSON(
+  appBskyVideoGetJobStatusResponse: AppBskyVideoGetJobStatusResponse,
 ): string {
   return JSON.stringify(
-    AppBskyVideoGetJobStatusResponseBody$outboundSchema.parse(
-      appBskyVideoGetJobStatusResponseBody,
+    AppBskyVideoGetJobStatusResponse$outboundSchema.parse(
+      appBskyVideoGetJobStatusResponse,
     ),
   );
 }
 
-export function appBskyVideoGetJobStatusResponseBodyFromJSON(
+export function appBskyVideoGetJobStatusResponseFromJSON(
   jsonString: string,
-): SafeParseResult<AppBskyVideoGetJobStatusResponseBody, SDKValidationError> {
+): SafeParseResult<AppBskyVideoGetJobStatusResponse, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) =>
-      AppBskyVideoGetJobStatusResponseBody$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'AppBskyVideoGetJobStatusResponseBody' from JSON`,
+    (x) => AppBskyVideoGetJobStatusResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AppBskyVideoGetJobStatusResponse' from JSON`,
   );
 }

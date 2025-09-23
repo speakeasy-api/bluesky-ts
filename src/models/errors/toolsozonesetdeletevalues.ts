@@ -4,11 +4,12 @@
 
 import * as z from "zod";
 import { ClosedEnum } from "../../types/enums.js";
+import { BlueskyError } from "./blueskyerror.js";
 
 /**
  * Unauthorized
  */
-export type UnauthorizedToolsOzoneSetDeleteValuesResponseBodyErrorData = {
+export type ToolsOzoneSetDeleteValuesAuthMissingErrorData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,24 +17,22 @@ export type UnauthorizedToolsOzoneSetDeleteValuesResponseBodyErrorData = {
 /**
  * Unauthorized
  */
-export class UnauthorizedToolsOzoneSetDeleteValuesResponseBodyError
-  extends Error
-{
+export class ToolsOzoneSetDeleteValuesAuthMissingError extends BlueskyError {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: UnauthorizedToolsOzoneSetDeleteValuesResponseBodyErrorData;
+  data$: ToolsOzoneSetDeleteValuesAuthMissingErrorData;
 
-  constructor(err: UnauthorizedToolsOzoneSetDeleteValuesResponseBodyErrorData) {
-    const message = "message" in err && typeof err.message === "string"
-      ? err.message
-      : `API error occurred: ${JSON.stringify(err)}`;
-    super(message);
+  constructor(
+    err: ToolsOzoneSetDeleteValuesAuthMissingErrorData,
+    httpMeta: { response: Response; request: Request; body: string },
+  ) {
+    const message = err.message || `API error occurred: ${JSON.stringify(err)}`;
+    super(message, httpMeta);
     this.data$ = err;
-
     this.error = err.error;
 
-    this.name = "UnauthorizedToolsOzoneSetDeleteValuesResponseBodyError";
+    this.name = "ToolsOzoneSetDeleteValuesAuthMissingError";
   }
 }
 
@@ -50,7 +49,7 @@ export type ToolsOzoneSetDeleteValuesError = ClosedEnum<
 /**
  * Bad Request
  */
-export type BadRequestToolsOzoneSetDeleteValuesResponseBodyErrorData = {
+export type ToolsOzoneSetDeleteValuesBadRequestErrorData = {
   error: ToolsOzoneSetDeleteValuesError;
   message: string;
 };
@@ -58,54 +57,58 @@ export type BadRequestToolsOzoneSetDeleteValuesResponseBodyErrorData = {
 /**
  * Bad Request
  */
-export class BadRequestToolsOzoneSetDeleteValuesResponseBodyError
-  extends Error
-{
+export class ToolsOzoneSetDeleteValuesBadRequestError extends BlueskyError {
   error: ToolsOzoneSetDeleteValuesError;
 
   /** The original data that was passed to this error instance. */
-  data$: BadRequestToolsOzoneSetDeleteValuesResponseBodyErrorData;
+  data$: ToolsOzoneSetDeleteValuesBadRequestErrorData;
 
-  constructor(err: BadRequestToolsOzoneSetDeleteValuesResponseBodyErrorData) {
-    const message = "message" in err && typeof err.message === "string"
-      ? err.message
-      : `API error occurred: ${JSON.stringify(err)}`;
-    super(message);
+  constructor(
+    err: ToolsOzoneSetDeleteValuesBadRequestErrorData,
+    httpMeta: { response: Response; request: Request; body: string },
+  ) {
+    const message = err.message || `API error occurred: ${JSON.stringify(err)}`;
+    super(message, httpMeta);
     this.data$ = err;
-
     this.error = err.error;
 
-    this.name = "BadRequestToolsOzoneSetDeleteValuesResponseBodyError";
+    this.name = "ToolsOzoneSetDeleteValuesBadRequestError";
   }
 }
 
 /** @internal */
-export const UnauthorizedToolsOzoneSetDeleteValuesResponseBodyError$inboundSchema:
-  z.ZodType<
-    UnauthorizedToolsOzoneSetDeleteValuesResponseBodyError,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    error: z.literal("AuthMissing"),
-    message: z.string(),
-  })
-    .transform((v) => {
-      return new UnauthorizedToolsOzoneSetDeleteValuesResponseBodyError(v);
+export const ToolsOzoneSetDeleteValuesAuthMissingError$inboundSchema: z.ZodType<
+  ToolsOzoneSetDeleteValuesAuthMissingError,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  error: z.literal("AuthMissing").default("AuthMissing"),
+  message: z.string(),
+  request$: z.instanceof(Request),
+  response$: z.instanceof(Response),
+  body$: z.string(),
+})
+  .transform((v) => {
+    return new ToolsOzoneSetDeleteValuesAuthMissingError(v, {
+      request: v.request$,
+      response: v.response$,
+      body: v.body$,
     });
+  });
 
 /** @internal */
-export type UnauthorizedToolsOzoneSetDeleteValuesResponseBodyError$Outbound = {
+export type ToolsOzoneSetDeleteValuesAuthMissingError$Outbound = {
   error: "AuthMissing";
   message: string;
 };
 
 /** @internal */
-export const UnauthorizedToolsOzoneSetDeleteValuesResponseBodyError$outboundSchema:
+export const ToolsOzoneSetDeleteValuesAuthMissingError$outboundSchema:
   z.ZodType<
-    UnauthorizedToolsOzoneSetDeleteValuesResponseBodyError$Outbound,
+    ToolsOzoneSetDeleteValuesAuthMissingError$Outbound,
     z.ZodTypeDef,
-    UnauthorizedToolsOzoneSetDeleteValuesResponseBodyError
-  > = z.instanceof(UnauthorizedToolsOzoneSetDeleteValuesResponseBodyError)
+    ToolsOzoneSetDeleteValuesAuthMissingError
+  > = z.instanceof(ToolsOzoneSetDeleteValuesAuthMissingError)
     .transform(v => v.data$)
     .pipe(z.object({
       error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -116,16 +119,15 @@ export const UnauthorizedToolsOzoneSetDeleteValuesResponseBodyError$outboundSche
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace UnauthorizedToolsOzoneSetDeleteValuesResponseBodyError$ {
-  /** @deprecated use `UnauthorizedToolsOzoneSetDeleteValuesResponseBodyError$inboundSchema` instead. */
+export namespace ToolsOzoneSetDeleteValuesAuthMissingError$ {
+  /** @deprecated use `ToolsOzoneSetDeleteValuesAuthMissingError$inboundSchema` instead. */
   export const inboundSchema =
-    UnauthorizedToolsOzoneSetDeleteValuesResponseBodyError$inboundSchema;
-  /** @deprecated use `UnauthorizedToolsOzoneSetDeleteValuesResponseBodyError$outboundSchema` instead. */
+    ToolsOzoneSetDeleteValuesAuthMissingError$inboundSchema;
+  /** @deprecated use `ToolsOzoneSetDeleteValuesAuthMissingError$outboundSchema` instead. */
   export const outboundSchema =
-    UnauthorizedToolsOzoneSetDeleteValuesResponseBodyError$outboundSchema;
-  /** @deprecated use `UnauthorizedToolsOzoneSetDeleteValuesResponseBodyError$Outbound` instead. */
-  export type Outbound =
-    UnauthorizedToolsOzoneSetDeleteValuesResponseBodyError$Outbound;
+    ToolsOzoneSetDeleteValuesAuthMissingError$outboundSchema;
+  /** @deprecated use `ToolsOzoneSetDeleteValuesAuthMissingError$Outbound` instead. */
+  export type Outbound = ToolsOzoneSetDeleteValuesAuthMissingError$Outbound;
 }
 
 /** @internal */
@@ -150,50 +152,54 @@ export namespace ToolsOzoneSetDeleteValuesError$ {
 }
 
 /** @internal */
-export const BadRequestToolsOzoneSetDeleteValuesResponseBodyError$inboundSchema:
-  z.ZodType<
-    BadRequestToolsOzoneSetDeleteValuesResponseBodyError,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    error: ToolsOzoneSetDeleteValuesError$inboundSchema,
-    message: z.string(),
-  })
-    .transform((v) => {
-      return new BadRequestToolsOzoneSetDeleteValuesResponseBodyError(v);
+export const ToolsOzoneSetDeleteValuesBadRequestError$inboundSchema: z.ZodType<
+  ToolsOzoneSetDeleteValuesBadRequestError,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  error: ToolsOzoneSetDeleteValuesError$inboundSchema,
+  message: z.string(),
+  request$: z.instanceof(Request),
+  response$: z.instanceof(Response),
+  body$: z.string(),
+})
+  .transform((v) => {
+    return new ToolsOzoneSetDeleteValuesBadRequestError(v, {
+      request: v.request$,
+      response: v.response$,
+      body: v.body$,
     });
+  });
 
 /** @internal */
-export type BadRequestToolsOzoneSetDeleteValuesResponseBodyError$Outbound = {
+export type ToolsOzoneSetDeleteValuesBadRequestError$Outbound = {
   error: string;
   message: string;
 };
 
 /** @internal */
-export const BadRequestToolsOzoneSetDeleteValuesResponseBodyError$outboundSchema:
-  z.ZodType<
-    BadRequestToolsOzoneSetDeleteValuesResponseBodyError$Outbound,
-    z.ZodTypeDef,
-    BadRequestToolsOzoneSetDeleteValuesResponseBodyError
-  > = z.instanceof(BadRequestToolsOzoneSetDeleteValuesResponseBodyError)
-    .transform(v => v.data$)
-    .pipe(z.object({
-      error: ToolsOzoneSetDeleteValuesError$outboundSchema,
-      message: z.string(),
-    }));
+export const ToolsOzoneSetDeleteValuesBadRequestError$outboundSchema: z.ZodType<
+  ToolsOzoneSetDeleteValuesBadRequestError$Outbound,
+  z.ZodTypeDef,
+  ToolsOzoneSetDeleteValuesBadRequestError
+> = z.instanceof(ToolsOzoneSetDeleteValuesBadRequestError)
+  .transform(v => v.data$)
+  .pipe(z.object({
+    error: ToolsOzoneSetDeleteValuesError$outboundSchema,
+    message: z.string(),
+  }));
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace BadRequestToolsOzoneSetDeleteValuesResponseBodyError$ {
-  /** @deprecated use `BadRequestToolsOzoneSetDeleteValuesResponseBodyError$inboundSchema` instead. */
+export namespace ToolsOzoneSetDeleteValuesBadRequestError$ {
+  /** @deprecated use `ToolsOzoneSetDeleteValuesBadRequestError$inboundSchema` instead. */
   export const inboundSchema =
-    BadRequestToolsOzoneSetDeleteValuesResponseBodyError$inboundSchema;
-  /** @deprecated use `BadRequestToolsOzoneSetDeleteValuesResponseBodyError$outboundSchema` instead. */
+    ToolsOzoneSetDeleteValuesBadRequestError$inboundSchema;
+  /** @deprecated use `ToolsOzoneSetDeleteValuesBadRequestError$outboundSchema` instead. */
   export const outboundSchema =
-    BadRequestToolsOzoneSetDeleteValuesResponseBodyError$outboundSchema;
-  /** @deprecated use `BadRequestToolsOzoneSetDeleteValuesResponseBodyError$Outbound` instead. */
-  export type Outbound =
-    BadRequestToolsOzoneSetDeleteValuesResponseBodyError$Outbound;
+    ToolsOzoneSetDeleteValuesBadRequestError$outboundSchema;
+  /** @deprecated use `ToolsOzoneSetDeleteValuesBadRequestError$Outbound` instead. */
+  export type Outbound = ToolsOzoneSetDeleteValuesBadRequestError$Outbound;
 }

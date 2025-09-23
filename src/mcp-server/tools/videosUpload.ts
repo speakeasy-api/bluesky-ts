@@ -16,7 +16,7 @@ const args = {
 };
 
 export const tool$videosUpload: ToolDefinition<typeof args> = {
-  name: "videos_upload",
+  name: "videos-upload",
   description:
     `*This endpoint is part of the Bluesky application Lexicon APIs (\`app.bsky.*\`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 

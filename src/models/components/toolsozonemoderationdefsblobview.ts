@@ -26,8 +26,8 @@ import {
 } from "./toolsozonemoderationdefsvideodetails.js";
 
 export type Details =
-  | ToolsOzoneModerationDefsImageDetails
-  | ToolsOzoneModerationDefsVideoDetails;
+  | ToolsOzoneModerationDefsVideoDetails
+  | ToolsOzoneModerationDefsImageDetails;
 
 export type ToolsOzoneModerationDefsBlobView = {
   cid: string;
@@ -35,8 +35,8 @@ export type ToolsOzoneModerationDefsBlobView = {
   size: number;
   createdAt: Date;
   details?:
-    | ToolsOzoneModerationDefsImageDetails
     | ToolsOzoneModerationDefsVideoDetails
+    | ToolsOzoneModerationDefsImageDetails
     | undefined;
   moderation?: ToolsOzoneModerationDefsModeration | undefined;
 };
@@ -44,14 +44,14 @@ export type ToolsOzoneModerationDefsBlobView = {
 /** @internal */
 export const Details$inboundSchema: z.ZodType<Details, z.ZodTypeDef, unknown> =
   z.union([
-    ToolsOzoneModerationDefsImageDetails$inboundSchema,
     ToolsOzoneModerationDefsVideoDetails$inboundSchema,
+    ToolsOzoneModerationDefsImageDetails$inboundSchema,
   ]);
 
 /** @internal */
 export type Details$Outbound =
-  | ToolsOzoneModerationDefsImageDetails$Outbound
-  | ToolsOzoneModerationDefsVideoDetails$Outbound;
+  | ToolsOzoneModerationDefsVideoDetails$Outbound
+  | ToolsOzoneModerationDefsImageDetails$Outbound;
 
 /** @internal */
 export const Details$outboundSchema: z.ZodType<
@@ -59,8 +59,8 @@ export const Details$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   Details
 > = z.union([
-  ToolsOzoneModerationDefsImageDetails$outboundSchema,
   ToolsOzoneModerationDefsVideoDetails$outboundSchema,
+  ToolsOzoneModerationDefsImageDetails$outboundSchema,
 ]);
 
 /**
@@ -101,8 +101,8 @@ export const ToolsOzoneModerationDefsBlobView$inboundSchema: z.ZodType<
   size: z.number().int(),
   createdAt: z.string().datetime({ offset: true }).transform(v => new Date(v)),
   details: z.union([
-    ToolsOzoneModerationDefsImageDetails$inboundSchema,
     ToolsOzoneModerationDefsVideoDetails$inboundSchema,
+    ToolsOzoneModerationDefsImageDetails$inboundSchema,
   ]).optional(),
   moderation: ToolsOzoneModerationDefsModeration$inboundSchema.optional(),
 });
@@ -114,8 +114,8 @@ export type ToolsOzoneModerationDefsBlobView$Outbound = {
   size: number;
   createdAt: string;
   details?:
-    | ToolsOzoneModerationDefsImageDetails$Outbound
     | ToolsOzoneModerationDefsVideoDetails$Outbound
+    | ToolsOzoneModerationDefsImageDetails$Outbound
     | undefined;
   moderation?: ToolsOzoneModerationDefsModeration$Outbound | undefined;
 };
@@ -131,8 +131,8 @@ export const ToolsOzoneModerationDefsBlobView$outboundSchema: z.ZodType<
   size: z.number().int(),
   createdAt: z.date().transform(v => v.toISOString()),
   details: z.union([
-    ToolsOzoneModerationDefsImageDetails$outboundSchema,
     ToolsOzoneModerationDefsVideoDetails$outboundSchema,
+    ToolsOzoneModerationDefsImageDetails$outboundSchema,
   ]).optional(),
   moderation: ToolsOzoneModerationDefsModeration$outboundSchema.optional(),
 });

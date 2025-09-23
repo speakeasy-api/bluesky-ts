@@ -11,7 +11,7 @@ const args = {
 };
 
 export const tool$chatsGetMessageContext: ToolDefinition<typeof args> = {
-  name: "chats_get-message-context",
+  name: "chats-get-message-context",
   description:
     `*This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (\`did:web:api.bsky.chat\`) in the service proxying header.*
 

@@ -6,7 +6,7 @@
 import { AppBskyFeedDescribeFeedGeneratorFeed } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: AppBskyFeedDescribeFeedGeneratorFeed = {
-  uri: "https://wilted-certification.com/",
+  uri: "https://silent-summer.info/",
 };
 ```
 

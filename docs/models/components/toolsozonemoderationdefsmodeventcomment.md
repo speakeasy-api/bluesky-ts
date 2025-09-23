@@ -9,7 +9,7 @@ import { ToolsOzoneModerationDefsModEventComment } from "@speakeasy-sdks/bluesky
 
 let value: ToolsOzoneModerationDefsModEventComment = {
   comment:
-    "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
+    "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
 };
 ```
 

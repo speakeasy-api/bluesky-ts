@@ -32,13 +32,13 @@ import {
 } from "./appbskyfeeddefsreplyref.js";
 
 export type AppBskyFeedDefsFeedViewPostReason =
-  | AppBskyFeedDefsReasonPin
-  | AppBskyFeedDefsReasonRepost;
+  | AppBskyFeedDefsReasonRepost
+  | AppBskyFeedDefsReasonPin;
 
 export type AppBskyFeedDefsFeedViewPost = {
   post: AppBskyFeedDefsPostView;
   reply?: AppBskyFeedDefsReplyRef | undefined;
-  reason?: AppBskyFeedDefsReasonPin | AppBskyFeedDefsReasonRepost | undefined;
+  reason?: AppBskyFeedDefsReasonRepost | AppBskyFeedDefsReasonPin | undefined;
   /**
    * Context provided by feed generator that may be passed back alongside interactions.
    */
@@ -51,14 +51,14 @@ export const AppBskyFeedDefsFeedViewPostReason$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.union([
-  AppBskyFeedDefsReasonPin$inboundSchema,
   AppBskyFeedDefsReasonRepost$inboundSchema,
+  AppBskyFeedDefsReasonPin$inboundSchema,
 ]);
 
 /** @internal */
 export type AppBskyFeedDefsFeedViewPostReason$Outbound =
-  | AppBskyFeedDefsReasonPin$Outbound
-  | AppBskyFeedDefsReasonRepost$Outbound;
+  | AppBskyFeedDefsReasonRepost$Outbound
+  | AppBskyFeedDefsReasonPin$Outbound;
 
 /** @internal */
 export const AppBskyFeedDefsFeedViewPostReason$outboundSchema: z.ZodType<
@@ -66,8 +66,8 @@ export const AppBskyFeedDefsFeedViewPostReason$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   AppBskyFeedDefsFeedViewPostReason
 > = z.union([
-  AppBskyFeedDefsReasonPin$outboundSchema,
   AppBskyFeedDefsReasonRepost$outboundSchema,
+  AppBskyFeedDefsReasonPin$outboundSchema,
 ]);
 
 /**
@@ -113,8 +113,8 @@ export const AppBskyFeedDefsFeedViewPost$inboundSchema: z.ZodType<
   post: AppBskyFeedDefsPostView$inboundSchema,
   reply: AppBskyFeedDefsReplyRef$inboundSchema.optional(),
   reason: z.union([
-    AppBskyFeedDefsReasonPin$inboundSchema,
     AppBskyFeedDefsReasonRepost$inboundSchema,
+    AppBskyFeedDefsReasonPin$inboundSchema,
   ]).optional(),
   feedContext: z.string().optional(),
 });
@@ -124,8 +124,8 @@ export type AppBskyFeedDefsFeedViewPost$Outbound = {
   post: AppBskyFeedDefsPostView$Outbound;
   reply?: AppBskyFeedDefsReplyRef$Outbound | undefined;
   reason?:
-    | AppBskyFeedDefsReasonPin$Outbound
     | AppBskyFeedDefsReasonRepost$Outbound
+    | AppBskyFeedDefsReasonPin$Outbound
     | undefined;
   feedContext?: string | undefined;
 };
@@ -139,8 +139,8 @@ export const AppBskyFeedDefsFeedViewPost$outboundSchema: z.ZodType<
   post: AppBskyFeedDefsPostView$outboundSchema,
   reply: AppBskyFeedDefsReplyRef$outboundSchema.optional(),
   reason: z.union([
-    AppBskyFeedDefsReasonPin$outboundSchema,
     AppBskyFeedDefsReasonRepost$outboundSchema,
+    AppBskyFeedDefsReasonPin$outboundSchema,
   ]).optional(),
   feedContext: z.string().optional(),
 });

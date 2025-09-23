@@ -7,71 +7,73 @@ import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ComAtprotoIdentitySubmitPlcOperationBody = {
+export type ComAtprotoIdentitySubmitPlcOperationRequest = {
   operation?: any | undefined;
 };
 
 /** @internal */
-export const ComAtprotoIdentitySubmitPlcOperationBody$inboundSchema: z.ZodType<
-  ComAtprotoIdentitySubmitPlcOperationBody,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  operation: z.any().optional(),
-});
+export const ComAtprotoIdentitySubmitPlcOperationRequest$inboundSchema:
+  z.ZodType<
+    ComAtprotoIdentitySubmitPlcOperationRequest,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    operation: z.any().optional(),
+  });
 
 /** @internal */
-export type ComAtprotoIdentitySubmitPlcOperationBody$Outbound = {
+export type ComAtprotoIdentitySubmitPlcOperationRequest$Outbound = {
   operation?: any | undefined;
 };
 
 /** @internal */
-export const ComAtprotoIdentitySubmitPlcOperationBody$outboundSchema: z.ZodType<
-  ComAtprotoIdentitySubmitPlcOperationBody$Outbound,
-  z.ZodTypeDef,
-  ComAtprotoIdentitySubmitPlcOperationBody
-> = z.object({
-  operation: z.any().optional(),
-});
+export const ComAtprotoIdentitySubmitPlcOperationRequest$outboundSchema:
+  z.ZodType<
+    ComAtprotoIdentitySubmitPlcOperationRequest$Outbound,
+    z.ZodTypeDef,
+    ComAtprotoIdentitySubmitPlcOperationRequest
+  > = z.object({
+    operation: z.any().optional(),
+  });
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoIdentitySubmitPlcOperationBody$ {
-  /** @deprecated use `ComAtprotoIdentitySubmitPlcOperationBody$inboundSchema` instead. */
+export namespace ComAtprotoIdentitySubmitPlcOperationRequest$ {
+  /** @deprecated use `ComAtprotoIdentitySubmitPlcOperationRequest$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoIdentitySubmitPlcOperationBody$inboundSchema;
-  /** @deprecated use `ComAtprotoIdentitySubmitPlcOperationBody$outboundSchema` instead. */
+    ComAtprotoIdentitySubmitPlcOperationRequest$inboundSchema;
+  /** @deprecated use `ComAtprotoIdentitySubmitPlcOperationRequest$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoIdentitySubmitPlcOperationBody$outboundSchema;
-  /** @deprecated use `ComAtprotoIdentitySubmitPlcOperationBody$Outbound` instead. */
-  export type Outbound = ComAtprotoIdentitySubmitPlcOperationBody$Outbound;
+    ComAtprotoIdentitySubmitPlcOperationRequest$outboundSchema;
+  /** @deprecated use `ComAtprotoIdentitySubmitPlcOperationRequest$Outbound` instead. */
+  export type Outbound = ComAtprotoIdentitySubmitPlcOperationRequest$Outbound;
 }
 
-export function comAtprotoIdentitySubmitPlcOperationBodyToJSON(
-  comAtprotoIdentitySubmitPlcOperationBody:
-    ComAtprotoIdentitySubmitPlcOperationBody,
+export function comAtprotoIdentitySubmitPlcOperationRequestToJSON(
+  comAtprotoIdentitySubmitPlcOperationRequest:
+    ComAtprotoIdentitySubmitPlcOperationRequest,
 ): string {
   return JSON.stringify(
-    ComAtprotoIdentitySubmitPlcOperationBody$outboundSchema.parse(
-      comAtprotoIdentitySubmitPlcOperationBody,
+    ComAtprotoIdentitySubmitPlcOperationRequest$outboundSchema.parse(
+      comAtprotoIdentitySubmitPlcOperationRequest,
     ),
   );
 }
 
-export function comAtprotoIdentitySubmitPlcOperationBodyFromJSON(
+export function comAtprotoIdentitySubmitPlcOperationRequestFromJSON(
   jsonString: string,
 ): SafeParseResult<
-  ComAtprotoIdentitySubmitPlcOperationBody,
+  ComAtprotoIdentitySubmitPlcOperationRequest,
   SDKValidationError
 > {
   return safeParse(
     jsonString,
     (x) =>
-      ComAtprotoIdentitySubmitPlcOperationBody$inboundSchema.parse(
+      ComAtprotoIdentitySubmitPlcOperationRequest$inboundSchema.parse(
         JSON.parse(x),
       ),
-    `Failed to parse 'ComAtprotoIdentitySubmitPlcOperationBody' from JSON`,
+    `Failed to parse 'ComAtprotoIdentitySubmitPlcOperationRequest' from JSON`,
   );
 }

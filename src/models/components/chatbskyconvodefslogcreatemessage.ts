@@ -20,13 +20,13 @@ import {
 } from "./chatbskyconvodefsmessageview.js";
 
 export type ChatBskyConvoDefsLogCreateMessageMessage =
-  | ChatBskyConvoDefsDeletedMessageView
-  | ChatBskyConvoDefsMessageView;
+  | ChatBskyConvoDefsMessageView
+  | ChatBskyConvoDefsDeletedMessageView;
 
 export type ChatBskyConvoDefsLogCreateMessage = {
   rev: string;
   convoId: string;
-  message: ChatBskyConvoDefsDeletedMessageView | ChatBskyConvoDefsMessageView;
+  message: ChatBskyConvoDefsMessageView | ChatBskyConvoDefsDeletedMessageView;
 };
 
 /** @internal */
@@ -35,14 +35,14 @@ export const ChatBskyConvoDefsLogCreateMessageMessage$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.union([
-  ChatBskyConvoDefsDeletedMessageView$inboundSchema,
   ChatBskyConvoDefsMessageView$inboundSchema,
+  ChatBskyConvoDefsDeletedMessageView$inboundSchema,
 ]);
 
 /** @internal */
 export type ChatBskyConvoDefsLogCreateMessageMessage$Outbound =
-  | ChatBskyConvoDefsDeletedMessageView$Outbound
-  | ChatBskyConvoDefsMessageView$Outbound;
+  | ChatBskyConvoDefsMessageView$Outbound
+  | ChatBskyConvoDefsDeletedMessageView$Outbound;
 
 /** @internal */
 export const ChatBskyConvoDefsLogCreateMessageMessage$outboundSchema: z.ZodType<
@@ -50,8 +50,8 @@ export const ChatBskyConvoDefsLogCreateMessageMessage$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   ChatBskyConvoDefsLogCreateMessageMessage
 > = z.union([
-  ChatBskyConvoDefsDeletedMessageView$outboundSchema,
   ChatBskyConvoDefsMessageView$outboundSchema,
+  ChatBskyConvoDefsDeletedMessageView$outboundSchema,
 ]);
 
 /**
@@ -105,8 +105,8 @@ export const ChatBskyConvoDefsLogCreateMessage$inboundSchema: z.ZodType<
   rev: z.string(),
   convoId: z.string(),
   message: z.union([
-    ChatBskyConvoDefsDeletedMessageView$inboundSchema,
     ChatBskyConvoDefsMessageView$inboundSchema,
+    ChatBskyConvoDefsDeletedMessageView$inboundSchema,
   ]),
 });
 
@@ -115,8 +115,8 @@ export type ChatBskyConvoDefsLogCreateMessage$Outbound = {
   rev: string;
   convoId: string;
   message:
-    | ChatBskyConvoDefsDeletedMessageView$Outbound
-    | ChatBskyConvoDefsMessageView$Outbound;
+    | ChatBskyConvoDefsMessageView$Outbound
+    | ChatBskyConvoDefsDeletedMessageView$Outbound;
 };
 
 /** @internal */
@@ -128,8 +128,8 @@ export const ChatBskyConvoDefsLogCreateMessage$outboundSchema: z.ZodType<
   rev: z.string(),
   convoId: z.string(),
   message: z.union([
-    ChatBskyConvoDefsDeletedMessageView$outboundSchema,
     ChatBskyConvoDefsMessageView$outboundSchema,
+    ChatBskyConvoDefsDeletedMessageView$outboundSchema,
   ]),
 });
 

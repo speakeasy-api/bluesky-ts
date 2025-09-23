@@ -7,11 +7,11 @@ import * as operations from "../../models/operations/index.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
 const args = {
-  request: operations.ChatBskyConvoDeleteMessageForSelfBody$inboundSchema,
+  request: operations.ChatBskyConvoDeleteMessageForSelfRequest$inboundSchema,
 };
 
 export const tool$convoDeleteMessageForSelf: ToolDefinition<typeof args> = {
-  name: "convo_delete-message-for-self",
+  name: "convo-delete-message-for-self",
   description:
     `*This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (\`did:web:api.bsky.chat\`) in the service proxying header.*
 

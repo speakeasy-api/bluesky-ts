@@ -16,9 +16,9 @@ export class Setting extends ClientSDK {
    * Delete settings by key
    */
   async removeOptions(
-    request: operations.ToolsOzoneSettingRemoveOptionsBody,
+    request: operations.ToolsOzoneSettingRemoveOptionsRequest,
     options?: RequestOptions,
-  ): Promise<operations.ToolsOzoneSettingRemoveOptionsResponseBody> {
+  ): Promise<operations.ToolsOzoneSettingRemoveOptionsResponse> {
     return unwrapAsync(settingRemoveOptions(
       this,
       request,

@@ -8,7 +8,20 @@ OK
 import { AppBskyFeedGetListFeedResponseBody } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: AppBskyFeedGetListFeedResponseBody = {
-  feed: [],
+  feed: [
+    {
+      post: {
+        uri: "https://amused-fedora.biz",
+        cid: "<id>",
+        author: {
+          did: "<id>",
+          handle: "<value>",
+        },
+        record: "<value>",
+        indexedAt: new Date("2025-01-02T09:02:47.505Z"),
+      },
+    },
+  ],
 };
 ```
 

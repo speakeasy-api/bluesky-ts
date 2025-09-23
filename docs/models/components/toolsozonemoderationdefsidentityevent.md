@@ -8,7 +8,7 @@ Logs identity related events on a repo subject. Normally captured by automod fro
 import { ToolsOzoneModerationDefsIdentityEvent } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: ToolsOzoneModerationDefsIdentityEvent = {
-  timestamp: new Date("2024-07-04T14:57:11.531Z"),
+  timestamp: new Date("2024-01-25T17:35:17.871Z"),
 };
 ```
 

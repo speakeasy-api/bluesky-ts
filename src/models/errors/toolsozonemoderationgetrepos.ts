@@ -4,11 +4,12 @@
 
 import * as z from "zod";
 import { ClosedEnum } from "../../types/enums.js";
+import { BlueskyError } from "./blueskyerror.js";
 
 /**
  * Unauthorized
  */
-export type UnauthorizedToolsOzoneModerationGetReposResponseBodyErrorData = {
+export type ToolsOzoneModerationGetReposAuthMissingErrorData = {
   error: "AuthMissing";
   message: string;
 };
@@ -16,26 +17,22 @@ export type UnauthorizedToolsOzoneModerationGetReposResponseBodyErrorData = {
 /**
  * Unauthorized
  */
-export class UnauthorizedToolsOzoneModerationGetReposResponseBodyError
-  extends Error
-{
+export class ToolsOzoneModerationGetReposAuthMissingError extends BlueskyError {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: UnauthorizedToolsOzoneModerationGetReposResponseBodyErrorData;
+  data$: ToolsOzoneModerationGetReposAuthMissingErrorData;
 
   constructor(
-    err: UnauthorizedToolsOzoneModerationGetReposResponseBodyErrorData,
+    err: ToolsOzoneModerationGetReposAuthMissingErrorData,
+    httpMeta: { response: Response; request: Request; body: string },
   ) {
-    const message = "message" in err && typeof err.message === "string"
-      ? err.message
-      : `API error occurred: ${JSON.stringify(err)}`;
-    super(message);
+    const message = err.message || `API error occurred: ${JSON.stringify(err)}`;
+    super(message, httpMeta);
     this.data$ = err;
-
     this.error = err.error;
 
-    this.name = "UnauthorizedToolsOzoneModerationGetReposResponseBodyError";
+    this.name = "ToolsOzoneModerationGetReposAuthMissingError";
   }
 }
 
@@ -51,7 +48,7 @@ export type ToolsOzoneModerationGetReposError = ClosedEnum<
 /**
  * Bad Request
  */
-export type BadRequestToolsOzoneModerationGetReposResponseBodyErrorData = {
+export type ToolsOzoneModerationGetReposBadRequestErrorData = {
   error: ToolsOzoneModerationGetReposError;
   message: string;
 };
@@ -59,57 +56,59 @@ export type BadRequestToolsOzoneModerationGetReposResponseBodyErrorData = {
 /**
  * Bad Request
  */
-export class BadRequestToolsOzoneModerationGetReposResponseBodyError
-  extends Error
-{
+export class ToolsOzoneModerationGetReposBadRequestError extends BlueskyError {
   error: ToolsOzoneModerationGetReposError;
 
   /** The original data that was passed to this error instance. */
-  data$: BadRequestToolsOzoneModerationGetReposResponseBodyErrorData;
+  data$: ToolsOzoneModerationGetReposBadRequestErrorData;
 
   constructor(
-    err: BadRequestToolsOzoneModerationGetReposResponseBodyErrorData,
+    err: ToolsOzoneModerationGetReposBadRequestErrorData,
+    httpMeta: { response: Response; request: Request; body: string },
   ) {
-    const message = "message" in err && typeof err.message === "string"
-      ? err.message
-      : `API error occurred: ${JSON.stringify(err)}`;
-    super(message);
+    const message = err.message || `API error occurred: ${JSON.stringify(err)}`;
+    super(message, httpMeta);
     this.data$ = err;
-
     this.error = err.error;
 
-    this.name = "BadRequestToolsOzoneModerationGetReposResponseBodyError";
+    this.name = "ToolsOzoneModerationGetReposBadRequestError";
   }
 }
 
 /** @internal */
-export const UnauthorizedToolsOzoneModerationGetReposResponseBodyError$inboundSchema:
+export const ToolsOzoneModerationGetReposAuthMissingError$inboundSchema:
   z.ZodType<
-    UnauthorizedToolsOzoneModerationGetReposResponseBodyError,
+    ToolsOzoneModerationGetReposAuthMissingError,
     z.ZodTypeDef,
     unknown
   > = z.object({
-    error: z.literal("AuthMissing"),
+    error: z.literal("AuthMissing").default("AuthMissing"),
     message: z.string(),
+    request$: z.instanceof(Request),
+    response$: z.instanceof(Response),
+    body$: z.string(),
   })
     .transform((v) => {
-      return new UnauthorizedToolsOzoneModerationGetReposResponseBodyError(v);
+      return new ToolsOzoneModerationGetReposAuthMissingError(v, {
+        request: v.request$,
+        response: v.response$,
+        body: v.body$,
+      });
     });
 
 /** @internal */
-export type UnauthorizedToolsOzoneModerationGetReposResponseBodyError$Outbound =
-  {
-    error: "AuthMissing";
-    message: string;
-  };
+export type ToolsOzoneModerationGetReposAuthMissingError$Outbound = {
+  error: "AuthMissing";
+  message: string;
+};
 
 /** @internal */
-export const UnauthorizedToolsOzoneModerationGetReposResponseBodyError$outboundSchema:
+export const ToolsOzoneModerationGetReposAuthMissingError$outboundSchema:
   z.ZodType<
-    UnauthorizedToolsOzoneModerationGetReposResponseBodyError$Outbound,
+    ToolsOzoneModerationGetReposAuthMissingError$Outbound,
     z.ZodTypeDef,
-    UnauthorizedToolsOzoneModerationGetReposResponseBodyError
-  > = z.instanceof(UnauthorizedToolsOzoneModerationGetReposResponseBodyError)
+    ToolsOzoneModerationGetReposAuthMissingError
+  > = z.instanceof(ToolsOzoneModerationGetReposAuthMissingError)
     .transform(v => v.data$)
     .pipe(z.object({
       error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -120,16 +119,15 @@ export const UnauthorizedToolsOzoneModerationGetReposResponseBodyError$outboundS
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace UnauthorizedToolsOzoneModerationGetReposResponseBodyError$ {
-  /** @deprecated use `UnauthorizedToolsOzoneModerationGetReposResponseBodyError$inboundSchema` instead. */
+export namespace ToolsOzoneModerationGetReposAuthMissingError$ {
+  /** @deprecated use `ToolsOzoneModerationGetReposAuthMissingError$inboundSchema` instead. */
   export const inboundSchema =
-    UnauthorizedToolsOzoneModerationGetReposResponseBodyError$inboundSchema;
-  /** @deprecated use `UnauthorizedToolsOzoneModerationGetReposResponseBodyError$outboundSchema` instead. */
+    ToolsOzoneModerationGetReposAuthMissingError$inboundSchema;
+  /** @deprecated use `ToolsOzoneModerationGetReposAuthMissingError$outboundSchema` instead. */
   export const outboundSchema =
-    UnauthorizedToolsOzoneModerationGetReposResponseBodyError$outboundSchema;
-  /** @deprecated use `UnauthorizedToolsOzoneModerationGetReposResponseBodyError$Outbound` instead. */
-  export type Outbound =
-    UnauthorizedToolsOzoneModerationGetReposResponseBodyError$Outbound;
+    ToolsOzoneModerationGetReposAuthMissingError$outboundSchema;
+  /** @deprecated use `ToolsOzoneModerationGetReposAuthMissingError$Outbound` instead. */
+  export type Outbound = ToolsOzoneModerationGetReposAuthMissingError$Outbound;
 }
 
 /** @internal */
@@ -155,32 +153,39 @@ export namespace ToolsOzoneModerationGetReposError$ {
 }
 
 /** @internal */
-export const BadRequestToolsOzoneModerationGetReposResponseBodyError$inboundSchema:
+export const ToolsOzoneModerationGetReposBadRequestError$inboundSchema:
   z.ZodType<
-    BadRequestToolsOzoneModerationGetReposResponseBodyError,
+    ToolsOzoneModerationGetReposBadRequestError,
     z.ZodTypeDef,
     unknown
   > = z.object({
     error: ToolsOzoneModerationGetReposError$inboundSchema,
     message: z.string(),
+    request$: z.instanceof(Request),
+    response$: z.instanceof(Response),
+    body$: z.string(),
   })
     .transform((v) => {
-      return new BadRequestToolsOzoneModerationGetReposResponseBodyError(v);
+      return new ToolsOzoneModerationGetReposBadRequestError(v, {
+        request: v.request$,
+        response: v.response$,
+        body: v.body$,
+      });
     });
 
 /** @internal */
-export type BadRequestToolsOzoneModerationGetReposResponseBodyError$Outbound = {
+export type ToolsOzoneModerationGetReposBadRequestError$Outbound = {
   error: string;
   message: string;
 };
 
 /** @internal */
-export const BadRequestToolsOzoneModerationGetReposResponseBodyError$outboundSchema:
+export const ToolsOzoneModerationGetReposBadRequestError$outboundSchema:
   z.ZodType<
-    BadRequestToolsOzoneModerationGetReposResponseBodyError$Outbound,
+    ToolsOzoneModerationGetReposBadRequestError$Outbound,
     z.ZodTypeDef,
-    BadRequestToolsOzoneModerationGetReposResponseBodyError
-  > = z.instanceof(BadRequestToolsOzoneModerationGetReposResponseBodyError)
+    ToolsOzoneModerationGetReposBadRequestError
+  > = z.instanceof(ToolsOzoneModerationGetReposBadRequestError)
     .transform(v => v.data$)
     .pipe(z.object({
       error: ToolsOzoneModerationGetReposError$outboundSchema,
@@ -191,14 +196,13 @@ export const BadRequestToolsOzoneModerationGetReposResponseBodyError$outboundSch
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace BadRequestToolsOzoneModerationGetReposResponseBodyError$ {
-  /** @deprecated use `BadRequestToolsOzoneModerationGetReposResponseBodyError$inboundSchema` instead. */
+export namespace ToolsOzoneModerationGetReposBadRequestError$ {
+  /** @deprecated use `ToolsOzoneModerationGetReposBadRequestError$inboundSchema` instead. */
   export const inboundSchema =
-    BadRequestToolsOzoneModerationGetReposResponseBodyError$inboundSchema;
-  /** @deprecated use `BadRequestToolsOzoneModerationGetReposResponseBodyError$outboundSchema` instead. */
+    ToolsOzoneModerationGetReposBadRequestError$inboundSchema;
+  /** @deprecated use `ToolsOzoneModerationGetReposBadRequestError$outboundSchema` instead. */
   export const outboundSchema =
-    BadRequestToolsOzoneModerationGetReposResponseBodyError$outboundSchema;
-  /** @deprecated use `BadRequestToolsOzoneModerationGetReposResponseBodyError$Outbound` instead. */
-  export type Outbound =
-    BadRequestToolsOzoneModerationGetReposResponseBodyError$Outbound;
+    ToolsOzoneModerationGetReposBadRequestError$outboundSchema;
+  /** @deprecated use `ToolsOzoneModerationGetReposBadRequestError$Outbound` instead. */
+  export type Outbound = ToolsOzoneModerationGetReposBadRequestError$Outbound;
 }

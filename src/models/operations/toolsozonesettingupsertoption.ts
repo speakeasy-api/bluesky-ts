@@ -24,7 +24,7 @@ export const ManagerRole = {
 } as const;
 export type ManagerRole = ClosedEnum<typeof ManagerRole>;
 
-export type ToolsOzoneSettingUpsertOptionBody = {
+export type ToolsOzoneSettingUpsertOptionRequest = {
   key: string;
   scope: ToolsOzoneSettingUpsertOptionScope;
   value?: any | undefined;
@@ -35,7 +35,7 @@ export type ToolsOzoneSettingUpsertOptionBody = {
 /**
  * OK
  */
-export type ToolsOzoneSettingUpsertOptionResponseBody = {
+export type ToolsOzoneSettingUpsertOptionResponse = {
   option: components.ToolsOzoneSettingDefsOption;
 };
 
@@ -81,8 +81,8 @@ export namespace ManagerRole$ {
 }
 
 /** @internal */
-export const ToolsOzoneSettingUpsertOptionBody$inboundSchema: z.ZodType<
-  ToolsOzoneSettingUpsertOptionBody,
+export const ToolsOzoneSettingUpsertOptionRequest$inboundSchema: z.ZodType<
+  ToolsOzoneSettingUpsertOptionRequest,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -94,7 +94,7 @@ export const ToolsOzoneSettingUpsertOptionBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type ToolsOzoneSettingUpsertOptionBody$Outbound = {
+export type ToolsOzoneSettingUpsertOptionRequest$Outbound = {
   key: string;
   scope: string;
   value?: any | undefined;
@@ -103,10 +103,10 @@ export type ToolsOzoneSettingUpsertOptionBody$Outbound = {
 };
 
 /** @internal */
-export const ToolsOzoneSettingUpsertOptionBody$outboundSchema: z.ZodType<
-  ToolsOzoneSettingUpsertOptionBody$Outbound,
+export const ToolsOzoneSettingUpsertOptionRequest$outboundSchema: z.ZodType<
+  ToolsOzoneSettingUpsertOptionRequest$Outbound,
   z.ZodTypeDef,
-  ToolsOzoneSettingUpsertOptionBody
+  ToolsOzoneSettingUpsertOptionRequest
 > = z.object({
   key: z.string(),
   scope: ToolsOzoneSettingUpsertOptionScope$outboundSchema,
@@ -119,39 +119,41 @@ export const ToolsOzoneSettingUpsertOptionBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ToolsOzoneSettingUpsertOptionBody$ {
-  /** @deprecated use `ToolsOzoneSettingUpsertOptionBody$inboundSchema` instead. */
-  export const inboundSchema = ToolsOzoneSettingUpsertOptionBody$inboundSchema;
-  /** @deprecated use `ToolsOzoneSettingUpsertOptionBody$outboundSchema` instead. */
+export namespace ToolsOzoneSettingUpsertOptionRequest$ {
+  /** @deprecated use `ToolsOzoneSettingUpsertOptionRequest$inboundSchema` instead. */
+  export const inboundSchema =
+    ToolsOzoneSettingUpsertOptionRequest$inboundSchema;
+  /** @deprecated use `ToolsOzoneSettingUpsertOptionRequest$outboundSchema` instead. */
   export const outboundSchema =
-    ToolsOzoneSettingUpsertOptionBody$outboundSchema;
-  /** @deprecated use `ToolsOzoneSettingUpsertOptionBody$Outbound` instead. */
-  export type Outbound = ToolsOzoneSettingUpsertOptionBody$Outbound;
+    ToolsOzoneSettingUpsertOptionRequest$outboundSchema;
+  /** @deprecated use `ToolsOzoneSettingUpsertOptionRequest$Outbound` instead. */
+  export type Outbound = ToolsOzoneSettingUpsertOptionRequest$Outbound;
 }
 
-export function toolsOzoneSettingUpsertOptionBodyToJSON(
-  toolsOzoneSettingUpsertOptionBody: ToolsOzoneSettingUpsertOptionBody,
+export function toolsOzoneSettingUpsertOptionRequestToJSON(
+  toolsOzoneSettingUpsertOptionRequest: ToolsOzoneSettingUpsertOptionRequest,
 ): string {
   return JSON.stringify(
-    ToolsOzoneSettingUpsertOptionBody$outboundSchema.parse(
-      toolsOzoneSettingUpsertOptionBody,
+    ToolsOzoneSettingUpsertOptionRequest$outboundSchema.parse(
+      toolsOzoneSettingUpsertOptionRequest,
     ),
   );
 }
 
-export function toolsOzoneSettingUpsertOptionBodyFromJSON(
+export function toolsOzoneSettingUpsertOptionRequestFromJSON(
   jsonString: string,
-): SafeParseResult<ToolsOzoneSettingUpsertOptionBody, SDKValidationError> {
+): SafeParseResult<ToolsOzoneSettingUpsertOptionRequest, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => ToolsOzoneSettingUpsertOptionBody$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ToolsOzoneSettingUpsertOptionBody' from JSON`,
+    (x) =>
+      ToolsOzoneSettingUpsertOptionRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ToolsOzoneSettingUpsertOptionRequest' from JSON`,
   );
 }
 
 /** @internal */
-export const ToolsOzoneSettingUpsertOptionResponseBody$inboundSchema: z.ZodType<
-  ToolsOzoneSettingUpsertOptionResponseBody,
+export const ToolsOzoneSettingUpsertOptionResponse$inboundSchema: z.ZodType<
+  ToolsOzoneSettingUpsertOptionResponse,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -159,58 +161,51 @@ export const ToolsOzoneSettingUpsertOptionResponseBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type ToolsOzoneSettingUpsertOptionResponseBody$Outbound = {
+export type ToolsOzoneSettingUpsertOptionResponse$Outbound = {
   option: components.ToolsOzoneSettingDefsOption$Outbound;
 };
 
 /** @internal */
-export const ToolsOzoneSettingUpsertOptionResponseBody$outboundSchema:
-  z.ZodType<
-    ToolsOzoneSettingUpsertOptionResponseBody$Outbound,
-    z.ZodTypeDef,
-    ToolsOzoneSettingUpsertOptionResponseBody
-  > = z.object({
-    option: components.ToolsOzoneSettingDefsOption$outboundSchema,
-  });
+export const ToolsOzoneSettingUpsertOptionResponse$outboundSchema: z.ZodType<
+  ToolsOzoneSettingUpsertOptionResponse$Outbound,
+  z.ZodTypeDef,
+  ToolsOzoneSettingUpsertOptionResponse
+> = z.object({
+  option: components.ToolsOzoneSettingDefsOption$outboundSchema,
+});
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ToolsOzoneSettingUpsertOptionResponseBody$ {
-  /** @deprecated use `ToolsOzoneSettingUpsertOptionResponseBody$inboundSchema` instead. */
+export namespace ToolsOzoneSettingUpsertOptionResponse$ {
+  /** @deprecated use `ToolsOzoneSettingUpsertOptionResponse$inboundSchema` instead. */
   export const inboundSchema =
-    ToolsOzoneSettingUpsertOptionResponseBody$inboundSchema;
-  /** @deprecated use `ToolsOzoneSettingUpsertOptionResponseBody$outboundSchema` instead. */
+    ToolsOzoneSettingUpsertOptionResponse$inboundSchema;
+  /** @deprecated use `ToolsOzoneSettingUpsertOptionResponse$outboundSchema` instead. */
   export const outboundSchema =
-    ToolsOzoneSettingUpsertOptionResponseBody$outboundSchema;
-  /** @deprecated use `ToolsOzoneSettingUpsertOptionResponseBody$Outbound` instead. */
-  export type Outbound = ToolsOzoneSettingUpsertOptionResponseBody$Outbound;
+    ToolsOzoneSettingUpsertOptionResponse$outboundSchema;
+  /** @deprecated use `ToolsOzoneSettingUpsertOptionResponse$Outbound` instead. */
+  export type Outbound = ToolsOzoneSettingUpsertOptionResponse$Outbound;
 }
 
-export function toolsOzoneSettingUpsertOptionResponseBodyToJSON(
-  toolsOzoneSettingUpsertOptionResponseBody:
-    ToolsOzoneSettingUpsertOptionResponseBody,
+export function toolsOzoneSettingUpsertOptionResponseToJSON(
+  toolsOzoneSettingUpsertOptionResponse: ToolsOzoneSettingUpsertOptionResponse,
 ): string {
   return JSON.stringify(
-    ToolsOzoneSettingUpsertOptionResponseBody$outboundSchema.parse(
-      toolsOzoneSettingUpsertOptionResponseBody,
+    ToolsOzoneSettingUpsertOptionResponse$outboundSchema.parse(
+      toolsOzoneSettingUpsertOptionResponse,
     ),
   );
 }
 
-export function toolsOzoneSettingUpsertOptionResponseBodyFromJSON(
+export function toolsOzoneSettingUpsertOptionResponseFromJSON(
   jsonString: string,
-): SafeParseResult<
-  ToolsOzoneSettingUpsertOptionResponseBody,
-  SDKValidationError
-> {
+): SafeParseResult<ToolsOzoneSettingUpsertOptionResponse, SDKValidationError> {
   return safeParse(
     jsonString,
     (x) =>
-      ToolsOzoneSettingUpsertOptionResponseBody$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'ToolsOzoneSettingUpsertOptionResponseBody' from JSON`,
+      ToolsOzoneSettingUpsertOptionResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ToolsOzoneSettingUpsertOptionResponse' from JSON`,
   );
 }

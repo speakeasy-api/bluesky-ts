@@ -37,19 +37,19 @@ import {
 } from "./toolsozonemoderationdefssubjectreviewstate.js";
 
 export type ToolsOzoneModerationDefsSubjectStatusViewSubject =
-  | ComAtprotoAdminDefsRepoRef
-  | ComAtprotoRepoStrongRef;
+  | ComAtprotoRepoStrongRef
+  | ComAtprotoAdminDefsRepoRef;
 
 export type Hosting =
-  | ToolsOzoneModerationDefsRecordHosting
-  | ToolsOzoneModerationDefsAccountHosting;
+  | ToolsOzoneModerationDefsAccountHosting
+  | ToolsOzoneModerationDefsRecordHosting;
 
 export type ToolsOzoneModerationDefsSubjectStatusView = {
   id: number;
-  subject: ComAtprotoAdminDefsRepoRef | ComAtprotoRepoStrongRef;
+  subject: ComAtprotoRepoStrongRef | ComAtprotoAdminDefsRepoRef;
   hosting?:
-    | ToolsOzoneModerationDefsRecordHosting
     | ToolsOzoneModerationDefsAccountHosting
+    | ToolsOzoneModerationDefsRecordHosting
     | undefined;
   subjectBlobCids?: Array<string> | undefined;
   subjectRepoHandle?: string | undefined;
@@ -91,14 +91,14 @@ export const ToolsOzoneModerationDefsSubjectStatusViewSubject$inboundSchema:
     z.ZodTypeDef,
     unknown
   > = z.union([
-    ComAtprotoAdminDefsRepoRef$inboundSchema,
     ComAtprotoRepoStrongRef$inboundSchema,
+    ComAtprotoAdminDefsRepoRef$inboundSchema,
   ]);
 
 /** @internal */
 export type ToolsOzoneModerationDefsSubjectStatusViewSubject$Outbound =
-  | ComAtprotoAdminDefsRepoRef$Outbound
-  | ComAtprotoRepoStrongRef$Outbound;
+  | ComAtprotoRepoStrongRef$Outbound
+  | ComAtprotoAdminDefsRepoRef$Outbound;
 
 /** @internal */
 export const ToolsOzoneModerationDefsSubjectStatusViewSubject$outboundSchema:
@@ -107,8 +107,8 @@ export const ToolsOzoneModerationDefsSubjectStatusViewSubject$outboundSchema:
     z.ZodTypeDef,
     ToolsOzoneModerationDefsSubjectStatusViewSubject
   > = z.union([
-    ComAtprotoAdminDefsRepoRef$outboundSchema,
     ComAtprotoRepoStrongRef$outboundSchema,
+    ComAtprotoAdminDefsRepoRef$outboundSchema,
   ]);
 
 /**
@@ -157,14 +157,14 @@ export function toolsOzoneModerationDefsSubjectStatusViewSubjectFromJSON(
 /** @internal */
 export const Hosting$inboundSchema: z.ZodType<Hosting, z.ZodTypeDef, unknown> =
   z.union([
-    ToolsOzoneModerationDefsRecordHosting$inboundSchema,
     ToolsOzoneModerationDefsAccountHosting$inboundSchema,
+    ToolsOzoneModerationDefsRecordHosting$inboundSchema,
   ]);
 
 /** @internal */
 export type Hosting$Outbound =
-  | ToolsOzoneModerationDefsRecordHosting$Outbound
-  | ToolsOzoneModerationDefsAccountHosting$Outbound;
+  | ToolsOzoneModerationDefsAccountHosting$Outbound
+  | ToolsOzoneModerationDefsRecordHosting$Outbound;
 
 /** @internal */
 export const Hosting$outboundSchema: z.ZodType<
@@ -172,8 +172,8 @@ export const Hosting$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   Hosting
 > = z.union([
-  ToolsOzoneModerationDefsRecordHosting$outboundSchema,
   ToolsOzoneModerationDefsAccountHosting$outboundSchema,
+  ToolsOzoneModerationDefsRecordHosting$outboundSchema,
 ]);
 
 /**
@@ -211,12 +211,12 @@ export const ToolsOzoneModerationDefsSubjectStatusView$inboundSchema: z.ZodType<
 > = z.object({
   id: z.number().int(),
   subject: z.union([
-    ComAtprotoAdminDefsRepoRef$inboundSchema,
     ComAtprotoRepoStrongRef$inboundSchema,
+    ComAtprotoAdminDefsRepoRef$inboundSchema,
   ]),
   hosting: z.union([
-    ToolsOzoneModerationDefsRecordHosting$inboundSchema,
     ToolsOzoneModerationDefsAccountHosting$inboundSchema,
+    ToolsOzoneModerationDefsRecordHosting$inboundSchema,
   ]).optional(),
   subjectBlobCids: z.array(z.string()).optional(),
   subjectRepoHandle: z.string().optional(),
@@ -251,11 +251,11 @@ export const ToolsOzoneModerationDefsSubjectStatusView$inboundSchema: z.ZodType<
 export type ToolsOzoneModerationDefsSubjectStatusView$Outbound = {
   id: number;
   subject:
-    | ComAtprotoAdminDefsRepoRef$Outbound
-    | ComAtprotoRepoStrongRef$Outbound;
+    | ComAtprotoRepoStrongRef$Outbound
+    | ComAtprotoAdminDefsRepoRef$Outbound;
   hosting?:
-    | ToolsOzoneModerationDefsRecordHosting$Outbound
     | ToolsOzoneModerationDefsAccountHosting$Outbound
+    | ToolsOzoneModerationDefsRecordHosting$Outbound
     | undefined;
   subjectBlobCids?: Array<string> | undefined;
   subjectRepoHandle?: string | undefined;
@@ -284,12 +284,12 @@ export const ToolsOzoneModerationDefsSubjectStatusView$outboundSchema:
   > = z.object({
     id: z.number().int(),
     subject: z.union([
-      ComAtprotoAdminDefsRepoRef$outboundSchema,
       ComAtprotoRepoStrongRef$outboundSchema,
+      ComAtprotoAdminDefsRepoRef$outboundSchema,
     ]),
     hosting: z.union([
-      ToolsOzoneModerationDefsRecordHosting$outboundSchema,
       ToolsOzoneModerationDefsAccountHosting$outboundSchema,
+      ToolsOzoneModerationDefsRecordHosting$outboundSchema,
     ]).optional(),
     subjectBlobCids: z.array(z.string()).optional(),
     subjectRepoHandle: z.string().optional(),

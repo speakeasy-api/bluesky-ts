@@ -8,7 +8,7 @@ import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ComAtprotoServerCreateSessionBody = {
+export type ComAtprotoServerCreateSessionRequest = {
   /**
    * Handle or other identifier supported by the server for the authenticating user.
    */
@@ -35,7 +35,7 @@ export type ComAtprotoServerCreateSessionStatus = ClosedEnum<
 /**
  * OK
  */
-export type ComAtprotoServerCreateSessionResponseBody = {
+export type ComAtprotoServerCreateSessionResponse = {
   accessJwt: string;
   refreshJwt: string;
   handle: string;
@@ -52,8 +52,8 @@ export type ComAtprotoServerCreateSessionResponseBody = {
 };
 
 /** @internal */
-export const ComAtprotoServerCreateSessionBody$inboundSchema: z.ZodType<
-  ComAtprotoServerCreateSessionBody,
+export const ComAtprotoServerCreateSessionRequest$inboundSchema: z.ZodType<
+  ComAtprotoServerCreateSessionRequest,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -63,17 +63,17 @@ export const ComAtprotoServerCreateSessionBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type ComAtprotoServerCreateSessionBody$Outbound = {
+export type ComAtprotoServerCreateSessionRequest$Outbound = {
   identifier: string;
   password: string;
   authFactorToken?: string | undefined;
 };
 
 /** @internal */
-export const ComAtprotoServerCreateSessionBody$outboundSchema: z.ZodType<
-  ComAtprotoServerCreateSessionBody$Outbound,
+export const ComAtprotoServerCreateSessionRequest$outboundSchema: z.ZodType<
+  ComAtprotoServerCreateSessionRequest$Outbound,
   z.ZodTypeDef,
-  ComAtprotoServerCreateSessionBody
+  ComAtprotoServerCreateSessionRequest
 > = z.object({
   identifier: z.string(),
   password: z.string(),
@@ -84,33 +84,35 @@ export const ComAtprotoServerCreateSessionBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoServerCreateSessionBody$ {
-  /** @deprecated use `ComAtprotoServerCreateSessionBody$inboundSchema` instead. */
-  export const inboundSchema = ComAtprotoServerCreateSessionBody$inboundSchema;
-  /** @deprecated use `ComAtprotoServerCreateSessionBody$outboundSchema` instead. */
+export namespace ComAtprotoServerCreateSessionRequest$ {
+  /** @deprecated use `ComAtprotoServerCreateSessionRequest$inboundSchema` instead. */
+  export const inboundSchema =
+    ComAtprotoServerCreateSessionRequest$inboundSchema;
+  /** @deprecated use `ComAtprotoServerCreateSessionRequest$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoServerCreateSessionBody$outboundSchema;
-  /** @deprecated use `ComAtprotoServerCreateSessionBody$Outbound` instead. */
-  export type Outbound = ComAtprotoServerCreateSessionBody$Outbound;
+    ComAtprotoServerCreateSessionRequest$outboundSchema;
+  /** @deprecated use `ComAtprotoServerCreateSessionRequest$Outbound` instead. */
+  export type Outbound = ComAtprotoServerCreateSessionRequest$Outbound;
 }
 
-export function comAtprotoServerCreateSessionBodyToJSON(
-  comAtprotoServerCreateSessionBody: ComAtprotoServerCreateSessionBody,
+export function comAtprotoServerCreateSessionRequestToJSON(
+  comAtprotoServerCreateSessionRequest: ComAtprotoServerCreateSessionRequest,
 ): string {
   return JSON.stringify(
-    ComAtprotoServerCreateSessionBody$outboundSchema.parse(
-      comAtprotoServerCreateSessionBody,
+    ComAtprotoServerCreateSessionRequest$outboundSchema.parse(
+      comAtprotoServerCreateSessionRequest,
     ),
   );
 }
 
-export function comAtprotoServerCreateSessionBodyFromJSON(
+export function comAtprotoServerCreateSessionRequestFromJSON(
   jsonString: string,
-): SafeParseResult<ComAtprotoServerCreateSessionBody, SDKValidationError> {
+): SafeParseResult<ComAtprotoServerCreateSessionRequest, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => ComAtprotoServerCreateSessionBody$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ComAtprotoServerCreateSessionBody' from JSON`,
+    (x) =>
+      ComAtprotoServerCreateSessionRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ComAtprotoServerCreateSessionRequest' from JSON`,
   );
 }
 
@@ -138,8 +140,8 @@ export namespace ComAtprotoServerCreateSessionStatus$ {
 }
 
 /** @internal */
-export const ComAtprotoServerCreateSessionResponseBody$inboundSchema: z.ZodType<
-  ComAtprotoServerCreateSessionResponseBody,
+export const ComAtprotoServerCreateSessionResponse$inboundSchema: z.ZodType<
+  ComAtprotoServerCreateSessionResponse,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -156,7 +158,7 @@ export const ComAtprotoServerCreateSessionResponseBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type ComAtprotoServerCreateSessionResponseBody$Outbound = {
+export type ComAtprotoServerCreateSessionResponse$Outbound = {
   accessJwt: string;
   refreshJwt: string;
   handle: string;
@@ -170,62 +172,55 @@ export type ComAtprotoServerCreateSessionResponseBody$Outbound = {
 };
 
 /** @internal */
-export const ComAtprotoServerCreateSessionResponseBody$outboundSchema:
-  z.ZodType<
-    ComAtprotoServerCreateSessionResponseBody$Outbound,
-    z.ZodTypeDef,
-    ComAtprotoServerCreateSessionResponseBody
-  > = z.object({
-    accessJwt: z.string(),
-    refreshJwt: z.string(),
-    handle: z.string(),
-    did: z.string(),
-    didDoc: z.any().optional(),
-    email: z.string().optional(),
-    emailConfirmed: z.boolean().optional(),
-    emailAuthFactor: z.boolean().optional(),
-    active: z.boolean().optional(),
-    status: ComAtprotoServerCreateSessionStatus$outboundSchema.optional(),
-  });
+export const ComAtprotoServerCreateSessionResponse$outboundSchema: z.ZodType<
+  ComAtprotoServerCreateSessionResponse$Outbound,
+  z.ZodTypeDef,
+  ComAtprotoServerCreateSessionResponse
+> = z.object({
+  accessJwt: z.string(),
+  refreshJwt: z.string(),
+  handle: z.string(),
+  did: z.string(),
+  didDoc: z.any().optional(),
+  email: z.string().optional(),
+  emailConfirmed: z.boolean().optional(),
+  emailAuthFactor: z.boolean().optional(),
+  active: z.boolean().optional(),
+  status: ComAtprotoServerCreateSessionStatus$outboundSchema.optional(),
+});
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ComAtprotoServerCreateSessionResponseBody$ {
-  /** @deprecated use `ComAtprotoServerCreateSessionResponseBody$inboundSchema` instead. */
+export namespace ComAtprotoServerCreateSessionResponse$ {
+  /** @deprecated use `ComAtprotoServerCreateSessionResponse$inboundSchema` instead. */
   export const inboundSchema =
-    ComAtprotoServerCreateSessionResponseBody$inboundSchema;
-  /** @deprecated use `ComAtprotoServerCreateSessionResponseBody$outboundSchema` instead. */
+    ComAtprotoServerCreateSessionResponse$inboundSchema;
+  /** @deprecated use `ComAtprotoServerCreateSessionResponse$outboundSchema` instead. */
   export const outboundSchema =
-    ComAtprotoServerCreateSessionResponseBody$outboundSchema;
-  /** @deprecated use `ComAtprotoServerCreateSessionResponseBody$Outbound` instead. */
-  export type Outbound = ComAtprotoServerCreateSessionResponseBody$Outbound;
+    ComAtprotoServerCreateSessionResponse$outboundSchema;
+  /** @deprecated use `ComAtprotoServerCreateSessionResponse$Outbound` instead. */
+  export type Outbound = ComAtprotoServerCreateSessionResponse$Outbound;
 }
 
-export function comAtprotoServerCreateSessionResponseBodyToJSON(
-  comAtprotoServerCreateSessionResponseBody:
-    ComAtprotoServerCreateSessionResponseBody,
+export function comAtprotoServerCreateSessionResponseToJSON(
+  comAtprotoServerCreateSessionResponse: ComAtprotoServerCreateSessionResponse,
 ): string {
   return JSON.stringify(
-    ComAtprotoServerCreateSessionResponseBody$outboundSchema.parse(
-      comAtprotoServerCreateSessionResponseBody,
+    ComAtprotoServerCreateSessionResponse$outboundSchema.parse(
+      comAtprotoServerCreateSessionResponse,
     ),
   );
 }
 
-export function comAtprotoServerCreateSessionResponseBodyFromJSON(
+export function comAtprotoServerCreateSessionResponseFromJSON(
   jsonString: string,
-): SafeParseResult<
-  ComAtprotoServerCreateSessionResponseBody,
-  SDKValidationError
-> {
+): SafeParseResult<ComAtprotoServerCreateSessionResponse, SDKValidationError> {
   return safeParse(
     jsonString,
     (x) =>
-      ComAtprotoServerCreateSessionResponseBody$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'ComAtprotoServerCreateSessionResponseBody' from JSON`,
+      ComAtprotoServerCreateSessionResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ComAtprotoServerCreateSessionResponse' from JSON`,
   );
 }

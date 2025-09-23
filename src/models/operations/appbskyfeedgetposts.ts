@@ -18,7 +18,7 @@ export type AppBskyFeedGetPostsRequest = {
 /**
  * OK
  */
-export type AppBskyFeedGetPostsResponseBody = {
+export type AppBskyFeedGetPostsResponse = {
   posts: Array<components.AppBskyFeedDefsPostView>;
 };
 
@@ -77,8 +77,8 @@ export function appBskyFeedGetPostsRequestFromJSON(
 }
 
 /** @internal */
-export const AppBskyFeedGetPostsResponseBody$inboundSchema: z.ZodType<
-  AppBskyFeedGetPostsResponseBody,
+export const AppBskyFeedGetPostsResponse$inboundSchema: z.ZodType<
+  AppBskyFeedGetPostsResponse,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -86,15 +86,15 @@ export const AppBskyFeedGetPostsResponseBody$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type AppBskyFeedGetPostsResponseBody$Outbound = {
+export type AppBskyFeedGetPostsResponse$Outbound = {
   posts: Array<components.AppBskyFeedDefsPostView$Outbound>;
 };
 
 /** @internal */
-export const AppBskyFeedGetPostsResponseBody$outboundSchema: z.ZodType<
-  AppBskyFeedGetPostsResponseBody$Outbound,
+export const AppBskyFeedGetPostsResponse$outboundSchema: z.ZodType<
+  AppBskyFeedGetPostsResponse$Outbound,
   z.ZodTypeDef,
-  AppBskyFeedGetPostsResponseBody
+  AppBskyFeedGetPostsResponse
 > = z.object({
   posts: z.array(components.AppBskyFeedDefsPostView$outboundSchema),
 });
@@ -103,31 +103,31 @@ export const AppBskyFeedGetPostsResponseBody$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AppBskyFeedGetPostsResponseBody$ {
-  /** @deprecated use `AppBskyFeedGetPostsResponseBody$inboundSchema` instead. */
-  export const inboundSchema = AppBskyFeedGetPostsResponseBody$inboundSchema;
-  /** @deprecated use `AppBskyFeedGetPostsResponseBody$outboundSchema` instead. */
-  export const outboundSchema = AppBskyFeedGetPostsResponseBody$outboundSchema;
-  /** @deprecated use `AppBskyFeedGetPostsResponseBody$Outbound` instead. */
-  export type Outbound = AppBskyFeedGetPostsResponseBody$Outbound;
+export namespace AppBskyFeedGetPostsResponse$ {
+  /** @deprecated use `AppBskyFeedGetPostsResponse$inboundSchema` instead. */
+  export const inboundSchema = AppBskyFeedGetPostsResponse$inboundSchema;
+  /** @deprecated use `AppBskyFeedGetPostsResponse$outboundSchema` instead. */
+  export const outboundSchema = AppBskyFeedGetPostsResponse$outboundSchema;
+  /** @deprecated use `AppBskyFeedGetPostsResponse$Outbound` instead. */
+  export type Outbound = AppBskyFeedGetPostsResponse$Outbound;
 }
 
-export function appBskyFeedGetPostsResponseBodyToJSON(
-  appBskyFeedGetPostsResponseBody: AppBskyFeedGetPostsResponseBody,
+export function appBskyFeedGetPostsResponseToJSON(
+  appBskyFeedGetPostsResponse: AppBskyFeedGetPostsResponse,
 ): string {
   return JSON.stringify(
-    AppBskyFeedGetPostsResponseBody$outboundSchema.parse(
-      appBskyFeedGetPostsResponseBody,
+    AppBskyFeedGetPostsResponse$outboundSchema.parse(
+      appBskyFeedGetPostsResponse,
     ),
   );
 }
 
-export function appBskyFeedGetPostsResponseBodyFromJSON(
+export function appBskyFeedGetPostsResponseFromJSON(
   jsonString: string,
-): SafeParseResult<AppBskyFeedGetPostsResponseBody, SDKValidationError> {
+): SafeParseResult<AppBskyFeedGetPostsResponse, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => AppBskyFeedGetPostsResponseBody$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'AppBskyFeedGetPostsResponseBody' from JSON`,
+    (x) => AppBskyFeedGetPostsResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AppBskyFeedGetPostsResponse' from JSON`,
   );
 }

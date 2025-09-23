@@ -4,40 +4,37 @@
 
 import * as z from "zod";
 import { ClosedEnum } from "../../types/enums.js";
+import { BlueskyError } from "./blueskyerror.js";
 
 /**
  * Unauthorized
  */
-export type UnauthorizedAppBskyActorSearchActorsTypeaheadResponseBodyErrorData =
-  {
-    error: "AuthMissing";
-    message: string;
-  };
+export type AppBskyActorSearchActorsTypeaheadAuthMissingErrorData = {
+  error: "AuthMissing";
+  message: string;
+};
 
 /**
  * Unauthorized
  */
-export class UnauthorizedAppBskyActorSearchActorsTypeaheadResponseBodyError
-  extends Error
+export class AppBskyActorSearchActorsTypeaheadAuthMissingError
+  extends BlueskyError
 {
   error: "AuthMissing";
 
   /** The original data that was passed to this error instance. */
-  data$: UnauthorizedAppBskyActorSearchActorsTypeaheadResponseBodyErrorData;
+  data$: AppBskyActorSearchActorsTypeaheadAuthMissingErrorData;
 
   constructor(
-    err: UnauthorizedAppBskyActorSearchActorsTypeaheadResponseBodyErrorData,
+    err: AppBskyActorSearchActorsTypeaheadAuthMissingErrorData,
+    httpMeta: { response: Response; request: Request; body: string },
   ) {
-    const message = "message" in err && typeof err.message === "string"
-      ? err.message
-      : `API error occurred: ${JSON.stringify(err)}`;
-    super(message);
+    const message = err.message || `API error occurred: ${JSON.stringify(err)}`;
+    super(message, httpMeta);
     this.data$ = err;
-
     this.error = err.error;
 
-    this.name =
-      "UnauthorizedAppBskyActorSearchActorsTypeaheadResponseBodyError";
+    this.name = "AppBskyActorSearchActorsTypeaheadAuthMissingError";
   }
 }
 
@@ -53,7 +50,7 @@ export type AppBskyActorSearchActorsTypeaheadError = ClosedEnum<
 /**
  * Bad Request
  */
-export type BadRequestAppBskyActorSearchActorsTypeaheadResponseBodyErrorData = {
+export type AppBskyActorSearchActorsTypeaheadBadRequestErrorData = {
   error: AppBskyActorSearchActorsTypeaheadError;
   message: string;
 };
@@ -61,61 +58,61 @@ export type BadRequestAppBskyActorSearchActorsTypeaheadResponseBodyErrorData = {
 /**
  * Bad Request
  */
-export class BadRequestAppBskyActorSearchActorsTypeaheadResponseBodyError
-  extends Error
+export class AppBskyActorSearchActorsTypeaheadBadRequestError
+  extends BlueskyError
 {
   error: AppBskyActorSearchActorsTypeaheadError;
 
   /** The original data that was passed to this error instance. */
-  data$: BadRequestAppBskyActorSearchActorsTypeaheadResponseBodyErrorData;
+  data$: AppBskyActorSearchActorsTypeaheadBadRequestErrorData;
 
   constructor(
-    err: BadRequestAppBskyActorSearchActorsTypeaheadResponseBodyErrorData,
+    err: AppBskyActorSearchActorsTypeaheadBadRequestErrorData,
+    httpMeta: { response: Response; request: Request; body: string },
   ) {
-    const message = "message" in err && typeof err.message === "string"
-      ? err.message
-      : `API error occurred: ${JSON.stringify(err)}`;
-    super(message);
+    const message = err.message || `API error occurred: ${JSON.stringify(err)}`;
+    super(message, httpMeta);
     this.data$ = err;
-
     this.error = err.error;
 
-    this.name = "BadRequestAppBskyActorSearchActorsTypeaheadResponseBodyError";
+    this.name = "AppBskyActorSearchActorsTypeaheadBadRequestError";
   }
 }
 
 /** @internal */
-export const UnauthorizedAppBskyActorSearchActorsTypeaheadResponseBodyError$inboundSchema:
+export const AppBskyActorSearchActorsTypeaheadAuthMissingError$inboundSchema:
   z.ZodType<
-    UnauthorizedAppBskyActorSearchActorsTypeaheadResponseBodyError,
+    AppBskyActorSearchActorsTypeaheadAuthMissingError,
     z.ZodTypeDef,
     unknown
   > = z.object({
-    error: z.literal("AuthMissing"),
+    error: z.literal("AuthMissing").default("AuthMissing"),
     message: z.string(),
+    request$: z.instanceof(Request),
+    response$: z.instanceof(Response),
+    body$: z.string(),
   })
     .transform((v) => {
-      return new UnauthorizedAppBskyActorSearchActorsTypeaheadResponseBodyError(
-        v,
-      );
+      return new AppBskyActorSearchActorsTypeaheadAuthMissingError(v, {
+        request: v.request$,
+        response: v.response$,
+        body: v.body$,
+      });
     });
 
 /** @internal */
-export type UnauthorizedAppBskyActorSearchActorsTypeaheadResponseBodyError$Outbound =
-  {
-    error: "AuthMissing";
-    message: string;
-  };
+export type AppBskyActorSearchActorsTypeaheadAuthMissingError$Outbound = {
+  error: "AuthMissing";
+  message: string;
+};
 
 /** @internal */
-export const UnauthorizedAppBskyActorSearchActorsTypeaheadResponseBodyError$outboundSchema:
+export const AppBskyActorSearchActorsTypeaheadAuthMissingError$outboundSchema:
   z.ZodType<
-    UnauthorizedAppBskyActorSearchActorsTypeaheadResponseBodyError$Outbound,
+    AppBskyActorSearchActorsTypeaheadAuthMissingError$Outbound,
     z.ZodTypeDef,
-    UnauthorizedAppBskyActorSearchActorsTypeaheadResponseBodyError
-  > = z.instanceof(
-    UnauthorizedAppBskyActorSearchActorsTypeaheadResponseBodyError,
-  )
+    AppBskyActorSearchActorsTypeaheadAuthMissingError
+  > = z.instanceof(AppBskyActorSearchActorsTypeaheadAuthMissingError)
     .transform(v => v.data$)
     .pipe(z.object({
       error: z.literal("AuthMissing").default("AuthMissing" as const),
@@ -126,16 +123,16 @@ export const UnauthorizedAppBskyActorSearchActorsTypeaheadResponseBodyError$outb
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace UnauthorizedAppBskyActorSearchActorsTypeaheadResponseBodyError$ {
-  /** @deprecated use `UnauthorizedAppBskyActorSearchActorsTypeaheadResponseBodyError$inboundSchema` instead. */
+export namespace AppBskyActorSearchActorsTypeaheadAuthMissingError$ {
+  /** @deprecated use `AppBskyActorSearchActorsTypeaheadAuthMissingError$inboundSchema` instead. */
   export const inboundSchema =
-    UnauthorizedAppBskyActorSearchActorsTypeaheadResponseBodyError$inboundSchema;
-  /** @deprecated use `UnauthorizedAppBskyActorSearchActorsTypeaheadResponseBodyError$outboundSchema` instead. */
+    AppBskyActorSearchActorsTypeaheadAuthMissingError$inboundSchema;
+  /** @deprecated use `AppBskyActorSearchActorsTypeaheadAuthMissingError$outboundSchema` instead. */
   export const outboundSchema =
-    UnauthorizedAppBskyActorSearchActorsTypeaheadResponseBodyError$outboundSchema;
-  /** @deprecated use `UnauthorizedAppBskyActorSearchActorsTypeaheadResponseBodyError$Outbound` instead. */
+    AppBskyActorSearchActorsTypeaheadAuthMissingError$outboundSchema;
+  /** @deprecated use `AppBskyActorSearchActorsTypeaheadAuthMissingError$Outbound` instead. */
   export type Outbound =
-    UnauthorizedAppBskyActorSearchActorsTypeaheadResponseBodyError$Outbound;
+    AppBskyActorSearchActorsTypeaheadAuthMissingError$Outbound;
 }
 
 /** @internal */
@@ -163,35 +160,39 @@ export namespace AppBskyActorSearchActorsTypeaheadError$ {
 }
 
 /** @internal */
-export const BadRequestAppBskyActorSearchActorsTypeaheadResponseBodyError$inboundSchema:
+export const AppBskyActorSearchActorsTypeaheadBadRequestError$inboundSchema:
   z.ZodType<
-    BadRequestAppBskyActorSearchActorsTypeaheadResponseBodyError,
+    AppBskyActorSearchActorsTypeaheadBadRequestError,
     z.ZodTypeDef,
     unknown
   > = z.object({
     error: AppBskyActorSearchActorsTypeaheadError$inboundSchema,
     message: z.string(),
+    request$: z.instanceof(Request),
+    response$: z.instanceof(Response),
+    body$: z.string(),
   })
     .transform((v) => {
-      return new BadRequestAppBskyActorSearchActorsTypeaheadResponseBodyError(
-        v,
-      );
+      return new AppBskyActorSearchActorsTypeaheadBadRequestError(v, {
+        request: v.request$,
+        response: v.response$,
+        body: v.body$,
+      });
     });
 
 /** @internal */
-export type BadRequestAppBskyActorSearchActorsTypeaheadResponseBodyError$Outbound =
-  {
-    error: string;
-    message: string;
-  };
+export type AppBskyActorSearchActorsTypeaheadBadRequestError$Outbound = {
+  error: string;
+  message: string;
+};
 
 /** @internal */
-export const BadRequestAppBskyActorSearchActorsTypeaheadResponseBodyError$outboundSchema:
+export const AppBskyActorSearchActorsTypeaheadBadRequestError$outboundSchema:
   z.ZodType<
-    BadRequestAppBskyActorSearchActorsTypeaheadResponseBodyError$Outbound,
+    AppBskyActorSearchActorsTypeaheadBadRequestError$Outbound,
     z.ZodTypeDef,
-    BadRequestAppBskyActorSearchActorsTypeaheadResponseBodyError
-  > = z.instanceof(BadRequestAppBskyActorSearchActorsTypeaheadResponseBodyError)
+    AppBskyActorSearchActorsTypeaheadBadRequestError
+  > = z.instanceof(AppBskyActorSearchActorsTypeaheadBadRequestError)
     .transform(v => v.data$)
     .pipe(z.object({
       error: AppBskyActorSearchActorsTypeaheadError$outboundSchema,
@@ -202,14 +203,14 @@ export const BadRequestAppBskyActorSearchActorsTypeaheadResponseBodyError$outbou
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace BadRequestAppBskyActorSearchActorsTypeaheadResponseBodyError$ {
-  /** @deprecated use `BadRequestAppBskyActorSearchActorsTypeaheadResponseBodyError$inboundSchema` instead. */
+export namespace AppBskyActorSearchActorsTypeaheadBadRequestError$ {
+  /** @deprecated use `AppBskyActorSearchActorsTypeaheadBadRequestError$inboundSchema` instead. */
   export const inboundSchema =
-    BadRequestAppBskyActorSearchActorsTypeaheadResponseBodyError$inboundSchema;
-  /** @deprecated use `BadRequestAppBskyActorSearchActorsTypeaheadResponseBodyError$outboundSchema` instead. */
+    AppBskyActorSearchActorsTypeaheadBadRequestError$inboundSchema;
+  /** @deprecated use `AppBskyActorSearchActorsTypeaheadBadRequestError$outboundSchema` instead. */
   export const outboundSchema =
-    BadRequestAppBskyActorSearchActorsTypeaheadResponseBodyError$outboundSchema;
-  /** @deprecated use `BadRequestAppBskyActorSearchActorsTypeaheadResponseBodyError$Outbound` instead. */
+    AppBskyActorSearchActorsTypeaheadBadRequestError$outboundSchema;
+  /** @deprecated use `AppBskyActorSearchActorsTypeaheadBadRequestError$Outbound` instead. */
   export type Outbound =
-    BadRequestAppBskyActorSearchActorsTypeaheadResponseBodyError$Outbound;
+    AppBskyActorSearchActorsTypeaheadBadRequestError$Outbound;
 }
