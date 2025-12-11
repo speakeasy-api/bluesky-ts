@@ -17,12 +17,12 @@ import { useBlueskyContext } from "./_context.js";
 import { MutationHookOptions } from "./_types.js";
 
 export type AtprotoModerationCreateReportMutationVariables = {
-  request: operations.ComAtprotoModerationCreateReportBody;
+  request: operations.ComAtprotoModerationCreateReportRequest;
   options?: RequestOptions;
 };
 
 export type AtprotoModerationCreateReportMutationData =
-  operations.ComAtprotoModerationCreateReportResponseBody;
+  operations.ComAtprotoModerationCreateReportResponse;
 
 /**
  * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*

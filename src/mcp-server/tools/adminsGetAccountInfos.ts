@@ -11,7 +11,7 @@ const args = {
 };
 
 export const tool$adminsGetAccountInfos: ToolDefinition<typeof args> = {
-  name: "admins_get-account-infos",
+  name: "admins-get-account-infos",
   description:
     `*This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
 

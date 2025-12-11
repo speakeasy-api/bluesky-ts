@@ -8,7 +8,7 @@ import { ComAtprotoSyncListBlobsResponse } from "@speakeasy-sdks/bluesky/models/
 let value: ComAtprotoSyncListBlobsResponse = {
   result: {
     cids: [
-      "<id>",
+      "<id 1>",
     ],
   },
 };

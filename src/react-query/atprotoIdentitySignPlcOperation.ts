@@ -17,12 +17,12 @@ import { useBlueskyContext } from "./_context.js";
 import { MutationHookOptions } from "./_types.js";
 
 export type AtprotoIdentitySignPlcOperationMutationVariables = {
-  request?: operations.ComAtprotoIdentitySignPlcOperationBody | undefined;
+  request: operations.ComAtprotoIdentitySignPlcOperationRequest;
   options?: RequestOptions;
 };
 
 export type AtprotoIdentitySignPlcOperationMutationData =
-  operations.ComAtprotoIdentitySignPlcOperationResponseBody;
+  operations.ComAtprotoIdentitySignPlcOperationResponse;
 
 /**
  * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*

@@ -8,8 +8,13 @@ OK
 import { AppBskyFeedGetRepostedByResponseBody } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: AppBskyFeedGetRepostedByResponseBody = {
-  uri: "https://sugary-brace.org/",
-  repostedBy: [],
+  uri: "https://mealy-bowling.name/",
+  repostedBy: [
+    {
+      did: "<id>",
+      handle: "<value>",
+    },
+  ],
 };
 ```
 

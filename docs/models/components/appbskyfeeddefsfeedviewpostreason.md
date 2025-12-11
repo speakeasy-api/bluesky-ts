@@ -11,7 +11,7 @@ const value: components.AppBskyFeedDefsReasonRepost = {
     did: "<id>",
     handle: "<value>",
   },
-  indexedAt: new Date("2024-12-23T10:58:40.496Z"),
+  indexedAt: new Date("2025-07-22T23:41:05.439Z"),
 };
 ```
 

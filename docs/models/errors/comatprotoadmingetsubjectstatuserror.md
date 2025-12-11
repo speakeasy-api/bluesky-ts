@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoAdminGetSubjectStatusError } from "@speakeasy-sdks/bluesky/models/errors";
 
-let value: ComAtprotoAdminGetSubjectStatusError = "ExpiredToken";
+let value: ComAtprotoAdminGetSubjectStatusError = "InvalidRequest";
 ```
 
 ## Values

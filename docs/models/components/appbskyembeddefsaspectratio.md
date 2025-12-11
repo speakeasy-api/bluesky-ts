@@ -8,8 +8,8 @@ width:height represents an aspect ratio. It may be approximate, and may not corr
 import { AppBskyEmbedDefsAspectRatio } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: AppBskyEmbedDefsAspectRatio = {
-  width: 966148,
-  height: 791880,
+  width: 819075,
+  height: 723073,
 };
 ```
 

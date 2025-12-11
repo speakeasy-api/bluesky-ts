@@ -6,7 +6,7 @@ import { identityGetRecommendedDidCredentials } from "../../funcs/identityGetRec
 import { formatResult, ToolDefinition } from "../tools.js";
 
 export const tool$identityGetRecommendedDidCredentials: ToolDefinition = {
-  name: "identity_get-recommended-did-credentials",
+  name: "identity-get-recommended-did-credentials",
   description:
     `*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 

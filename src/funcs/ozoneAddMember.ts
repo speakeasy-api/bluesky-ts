@@ -11,7 +11,7 @@ import { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
 import * as components from "../models/components/index.js";
-import { APIError } from "../models/errors/apierror.js";
+import { BlueskyError } from "../models/errors/blueskyerror.js";
 import {
   ConnectionError,
   InvalidRequestError,
@@ -20,6 +20,7 @@ import {
   UnexpectedClientError,
 } from "../models/errors/httpclienterrors.js";
 import * as errors from "../models/errors/index.js";
+import { ResponseValidationError } from "../models/errors/responsevalidationerror.js";
 import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import * as operations from "../models/operations/index.js";
 import { APICall, APIPromise } from "../types/async.js";
@@ -34,30 +35,27 @@ import { Result } from "../types/fp.js";
  */
 export function ozoneAddMember(
   client: BlueskyCore,
-  request: operations.ToolsOzoneTeamAddMemberBody,
+  request: operations.ToolsOzoneTeamAddMemberRequest,
   options?: RequestOptions,
 ): APIPromise<
   Result<
     components.ToolsOzoneTeamDefsMember,
-    | errors.BadRequestToolsOzoneTeamAddMemberResponseBodyError
-    | errors.UnauthorizedToolsOzoneTeamAddMemberResponseBodyError
+    | errors.ToolsOzoneTeamAddMemberBadRequestError
+    | errors.ToolsOzoneTeamAddMemberAuthMissingError
     | errors.NotFoundError
     | errors.UnauthorizedError
     | errors.TimeoutError
     | errors.RateLimitedError
     | errors.BadRequestError
-    | errors.TimeoutError
-    | errors.NotFoundError
     | errors.InternalServerError
-    | errors.BadRequestError
-    | errors.UnauthorizedError
-    | APIError
-    | SDKValidationError
-    | UnexpectedClientError
-    | InvalidRequestError
+    | BlueskyError
+    | ResponseValidationError
+    | ConnectionError
     | RequestAbortedError
     | RequestTimeoutError
-    | ConnectionError
+    | InvalidRequestError
+    | UnexpectedClientError
+    | SDKValidationError
   >
 > {
   return new APIPromise($do(
@@ -69,31 +67,28 @@ export function ozoneAddMember(
 
 async function $do(
   client: BlueskyCore,
-  request: operations.ToolsOzoneTeamAddMemberBody,
+  request: operations.ToolsOzoneTeamAddMemberRequest,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
       components.ToolsOzoneTeamDefsMember,
-      | errors.BadRequestToolsOzoneTeamAddMemberResponseBodyError
-      | errors.UnauthorizedToolsOzoneTeamAddMemberResponseBodyError
+      | errors.ToolsOzoneTeamAddMemberBadRequestError
+      | errors.ToolsOzoneTeamAddMemberAuthMissingError
       | errors.NotFoundError
       | errors.UnauthorizedError
       | errors.TimeoutError
       | errors.RateLimitedError
       | errors.BadRequestError
-      | errors.TimeoutError
-      | errors.NotFoundError
       | errors.InternalServerError
-      | errors.BadRequestError
-      | errors.UnauthorizedError
-      | APIError
-      | SDKValidationError
-      | UnexpectedClientError
-      | InvalidRequestError
+      | BlueskyError
+      | ResponseValidationError
+      | ConnectionError
       | RequestAbortedError
       | RequestTimeoutError
-      | ConnectionError
+      | InvalidRequestError
+      | UnexpectedClientError
+      | SDKValidationError
     >,
     APICall,
   ]
@@ -101,7 +96,7 @@ async function $do(
   const parsed = safeParse(
     request,
     (value) =>
-      operations.ToolsOzoneTeamAddMemberBody$outboundSchema.parse(value),
+      operations.ToolsOzoneTeamAddMemberRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -122,9 +117,10 @@ async function $do(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
+    options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
     operationID: "tools.ozone.team.addMember",
-    oAuth2Scopes: [],
+    oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
 
@@ -142,6 +138,7 @@ async function $do(
     path: path,
     headers: headers,
     body: body,
+    userAgent: client._options.userAgent,
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
   }, options);
   if (!requestRes.ok) {
@@ -192,34 +189,28 @@ async function $do(
 
   const [result] = await M.match<
     components.ToolsOzoneTeamDefsMember,
-    | errors.BadRequestToolsOzoneTeamAddMemberResponseBodyError
-    | errors.UnauthorizedToolsOzoneTeamAddMemberResponseBodyError
+    | errors.ToolsOzoneTeamAddMemberBadRequestError
+    | errors.ToolsOzoneTeamAddMemberAuthMissingError
     | errors.NotFoundError
     | errors.UnauthorizedError
     | errors.TimeoutError
     | errors.RateLimitedError
     | errors.BadRequestError
-    | errors.TimeoutError
-    | errors.NotFoundError
     | errors.InternalServerError
-    | errors.BadRequestError
-    | errors.UnauthorizedError
-    | APIError
-    | SDKValidationError
-    | UnexpectedClientError
-    | InvalidRequestError
+    | BlueskyError
+    | ResponseValidationError
+    | ConnectionError
     | RequestAbortedError
     | RequestTimeoutError
-    | ConnectionError
+    | InvalidRequestError
+    | UnexpectedClientError
+    | SDKValidationError
   >(
     M.json(200, components.ToolsOzoneTeamDefsMember$inboundSchema),
-    M.jsonErr(
-      400,
-      errors.BadRequestToolsOzoneTeamAddMemberResponseBodyError$inboundSchema,
-    ),
+    M.jsonErr(400, errors.ToolsOzoneTeamAddMemberBadRequestError$inboundSchema),
     M.jsonErr(
       401,
-      errors.UnauthorizedToolsOzoneTeamAddMemberResponseBodyError$inboundSchema,
+      errors.ToolsOzoneTeamAddMemberAuthMissingError$inboundSchema,
     ),
     M.jsonErr(404, errors.NotFoundError$inboundSchema),
     M.jsonErr([403, 407], errors.UnauthorizedError$inboundSchema),
@@ -236,7 +227,7 @@ async function $do(
     M.jsonErr(511, errors.UnauthorizedError$inboundSchema),
     M.fail("4XX"),
     M.fail("5XX"),
-  )(response, { extraFields: responseFields });
+  )(response, req, { extraFields: responseFields });
   if (!result.ok) {
     return [result, { status: "complete", request: req, response }];
   }

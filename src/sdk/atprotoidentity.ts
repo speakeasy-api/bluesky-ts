@@ -32,7 +32,7 @@ export class AtprotoIdentity extends ClientSDK {
   async resolveHandle(
     request: operations.ComAtprotoIdentityResolveHandleRequest,
     options?: RequestOptions,
-  ): Promise<operations.ComAtprotoIdentityResolveHandleResponseBody> {
+  ): Promise<operations.ComAtprotoIdentityResolveHandleResponse> {
     return unwrapAsync(atprotoIdentityResolveHandle(
       this,
       request,
@@ -46,9 +46,9 @@ export class AtprotoIdentity extends ClientSDK {
    * Signs a PLC operation to update some value(s) in the requesting DID's document.
    */
   async signPlcOperation(
-    request?: operations.ComAtprotoIdentitySignPlcOperationBody | undefined,
+    request: operations.ComAtprotoIdentitySignPlcOperationRequest,
     options?: RequestOptions,
-  ): Promise<operations.ComAtprotoIdentitySignPlcOperationResponseBody> {
+  ): Promise<operations.ComAtprotoIdentitySignPlcOperationResponse> {
     return unwrapAsync(atprotoIdentitySignPlcOperation(
       this,
       request,

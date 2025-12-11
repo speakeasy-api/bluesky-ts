@@ -6,8 +6,8 @@
 import { AppBskyFeedGetLikesLike } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: AppBskyFeedGetLikesLike = {
-  indexedAt: new Date("2024-01-12T08:34:33.723Z"),
-  createdAt: new Date("2024-10-09T18:22:17.762Z"),
+  indexedAt: new Date("2025-05-18T18:21:26.381Z"),
+  createdAt: new Date("2025-03-30T20:23:29.117Z"),
   actor: {
     did: "<id>",
     handle: "<value>",

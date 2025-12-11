@@ -5,7 +5,7 @@
 ```typescript
 import { AppBskyVideoGetUploadLimitsError } from "@speakeasy-sdks/bluesky/models/errors";
 
-let value: AppBskyVideoGetUploadLimitsError = "InvalidRequest";
+let value: AppBskyVideoGetUploadLimitsError = "ExpiredToken";
 ```
 
 ## Values

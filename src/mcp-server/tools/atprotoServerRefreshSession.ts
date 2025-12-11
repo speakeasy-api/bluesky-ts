@@ -6,7 +6,7 @@ import { atprotoServerRefreshSession } from "../../funcs/atprotoServerRefreshSes
 import { formatResult, ToolDefinition } from "../tools.js";
 
 export const tool$atprotoServerRefreshSession: ToolDefinition = {
-  name: "atproto-server_refresh-session",
+  name: "atproto-server-refresh-session",
   description:
     `*This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 

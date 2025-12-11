@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoServerCreateAccountError } from "@speakeasy-sdks/bluesky/models/errors";
 
-let value: ComAtprotoServerCreateAccountError = "UnsupportedDomain";
+let value: ComAtprotoServerCreateAccountError = "InvalidPassword";
 ```
 
 ## Values

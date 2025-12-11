@@ -7,7 +7,7 @@ Sorting mode for threads.
 ```typescript
 import { Sort } from "@speakeasy-sdks/bluesky/models/components";
 
-let value: Sort = "most-likes";
+let value: Sort = "newest";
 ```
 
 ## Values

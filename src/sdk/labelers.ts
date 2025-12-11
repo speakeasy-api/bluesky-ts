@@ -18,7 +18,7 @@ export class Labelers extends ClientSDK {
   async getServices(
     request: operations.AppBskyLabelerGetServicesRequest,
     options?: RequestOptions,
-  ): Promise<operations.AppBskyLabelerGetServicesResponseBody> {
+  ): Promise<operations.AppBskyLabelerGetServicesResponse> {
     return unwrapAsync(labelersGetServices(
       this,
       request,

@@ -7,7 +7,7 @@ Expected values are 'like', 'repost', 'follow', 'mention', 'reply', 'quote', and
 ```typescript
 import { ReasonEnum } from "@speakeasy-sdks/bluesky/models/components";
 
-let value: ReasonEnum = "like";
+let value: ReasonEnum = "repost";
 ```
 
 ## Values

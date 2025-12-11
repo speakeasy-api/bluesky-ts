@@ -7,18 +7,21 @@ import { AppBskyFeedDefsReplyRef } from "@speakeasy-sdks/bluesky/models/componen
 
 let value: AppBskyFeedDefsReplyRef = {
   root: {
-    uri: "https://excellent-comestible.org",
-    notFound: true,
-  },
-  parent: {
-    uri: "https://clean-importance.org/",
+    uri: "https://definitive-mom.biz",
     cid: "<id>",
     author: {
       did: "<id>",
       handle: "<value>",
     },
     record: "<value>",
-    indexedAt: new Date("2024-04-09T09:10:18.917Z"),
+    indexedAt: new Date("2025-11-09T11:19:14.275Z"),
+  },
+  parent: {
+    uri: "https://dirty-chapel.name",
+    blocked: true,
+    author: {
+      did: "<id>",
+    },
   },
 };
 ```

@@ -10,7 +10,7 @@ import { ComAtprotoRepoListRecordsResponseBody } from "@speakeasy-sdks/bluesky/m
 let value: ComAtprotoRepoListRecordsResponseBody = {
   records: [
     {
-      uri: "https://sorrowful-finger.com",
+      uri: "https://yummy-swing.com/",
       cid: "<id>",
       value: "<value>",
     },

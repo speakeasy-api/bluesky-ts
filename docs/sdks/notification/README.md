@@ -1,5 +1,4 @@
 # Notification
-(*notification*)
 
 ## Overview
 
@@ -21,6 +20,7 @@ Enumerate notifications for the requesting account. Requires auth.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="app.bsky.notification.listNotifications" method="get" path="/xrpc/app.bsky.notification.listNotifications" -->
 ```typescript
 import { Bluesky } from "@speakeasy-sdks/bluesky";
 
@@ -32,7 +32,6 @@ async function run() {
   const result = await bluesky.notification.list({});
 
   for await (const page of result) {
-    // Handle the page
     console.log(page);
   }
 }
@@ -56,16 +55,13 @@ const bluesky = new BlueskyCore({
 
 async function run() {
   const res = await notificationList(bluesky, {});
-
-  if (!res.ok) {
-    throw res.error;
-  }
-
-  const { value: result } = res;
-
-  for await (const page of result) {
-    // Handle the page
+  if (res.ok) {
+    const { value: result } = res;
+    for await (const page of result) {
     console.log(page);
+  }
+  } else {
+    console.log("notificationList failed:", res.error);
   }
 }
 
@@ -118,18 +114,18 @@ import {
 
 ### Errors
 
-| Error Type                                                               | Status Code                                                              | Content Type                                                             |
-| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
-| errors.BadRequestAppBskyNotificationListNotificationsResponseBodyError   | 400                                                                      | application/json                                                         |
-| errors.UnauthorizedAppBskyNotificationListNotificationsResponseBodyError | 401                                                                      | application/json                                                         |
-| errors.NotFoundError                                                     | 404                                                                      | application/json                                                         |
-| errors.UnauthorizedError                                                 | 403, 407                                                                 | application/json                                                         |
-| errors.TimeoutError                                                      | 408                                                                      | application/json                                                         |
-| errors.RateLimitedError                                                  | 429                                                                      | application/json                                                         |
-| errors.BadRequestError                                                   | 413, 414, 415, 422, 431                                                  | application/json                                                         |
-| errors.TimeoutError                                                      | 504                                                                      | application/json                                                         |
-| errors.NotFoundError                                                     | 501, 505                                                                 | application/json                                                         |
-| errors.InternalServerError                                               | 500, 502, 503, 506, 507, 508                                             | application/json                                                         |
-| errors.BadRequestError                                                   | 510                                                                      | application/json                                                         |
-| errors.UnauthorizedError                                                 | 511                                                                      | application/json                                                         |
-| errors.APIError                                                          | 4XX, 5XX                                                                 | \*/\*                                                                    |
+| Error Type                                                  | Status Code                                                 | Content Type                                                |
+| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
+| errors.AppBskyNotificationListNotificationsBadRequestError  | 400                                                         | application/json                                            |
+| errors.AppBskyNotificationListNotificationsAuthMissingError | 401                                                         | application/json                                            |
+| errors.NotFoundError                                        | 404                                                         | application/json                                            |
+| errors.UnauthorizedError                                    | 403, 407                                                    | application/json                                            |
+| errors.TimeoutError                                         | 408                                                         | application/json                                            |
+| errors.RateLimitedError                                     | 429                                                         | application/json                                            |
+| errors.BadRequestError                                      | 413, 414, 415, 422, 431                                     | application/json                                            |
+| errors.TimeoutError                                         | 504                                                         | application/json                                            |
+| errors.NotFoundError                                        | 501, 505                                                    | application/json                                            |
+| errors.InternalServerError                                  | 500, 502, 503, 506, 507, 508                                | application/json                                            |
+| errors.BadRequestError                                      | 510                                                         | application/json                                            |
+| errors.UnauthorizedError                                    | 511                                                         | application/json                                            |
+| errors.APIError                                             | 4XX, 5XX                                                    | \*/\*                                                       |

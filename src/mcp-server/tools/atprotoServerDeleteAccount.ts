@@ -7,11 +7,11 @@ import * as operations from "../../models/operations/index.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
 const args = {
-  request: operations.ComAtprotoServerDeleteAccountBody$inboundSchema,
+  request: operations.ComAtprotoServerDeleteAccountRequest$inboundSchema,
 };
 
 export const tool$atprotoServerDeleteAccount: ToolDefinition<typeof args> = {
-  name: "atproto-server_delete-account",
+  name: "atproto-server-delete-account",
   description:
     `*This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 

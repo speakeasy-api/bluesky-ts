@@ -6,9 +6,10 @@
 import { ComAtprotoServerCreateInviteCodesAccountCodes } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: ComAtprotoServerCreateInviteCodesAccountCodes = {
-  account: "50037677",
+  account: "78770122",
   codes: [
-    "<value>",
+    "<value 1>",
+    "<value 2>",
   ],
 };
 ```

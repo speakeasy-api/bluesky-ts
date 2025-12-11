@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoServerCreateAppPasswordError } from "@speakeasy-sdks/bluesky/models/errors";
 
-let value: ComAtprotoServerCreateAppPasswordError = "AccountTakedown";
+let value: ComAtprotoServerCreateAppPasswordError = "ExpiredToken";
 ```
 
 ## Values

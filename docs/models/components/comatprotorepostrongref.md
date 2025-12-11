@@ -6,7 +6,7 @@
 import { ComAtprotoRepoStrongRef } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: ComAtprotoRepoStrongRef = {
-  uri: "https://unrealistic-pilot.name",
+  uri: "https://handy-lawmaker.org",
   cid: "<id>",
 };
 ```

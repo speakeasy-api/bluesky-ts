@@ -17,12 +17,12 @@ import { useBlueskyContext } from "./_context.js";
 import { MutationHookOptions } from "./_types.js";
 
 export type ReposCreateRecordMutationVariables = {
-  request: operations.ComAtprotoRepoCreateRecordBody;
+  request: operations.ComAtprotoRepoCreateRecordRequest;
   options?: RequestOptions;
 };
 
 export type ReposCreateRecordMutationData =
-  operations.ComAtprotoRepoCreateRecordResponseBody;
+  operations.ComAtprotoRepoCreateRecordResponse;
 
 /**
  * *This endpoint is part of the atproto PDS repository management APIs. Requests usually require authentication (unlike the `com.atproto.sync.*` endpoints), and are made directly to the user's own PDS instance.*

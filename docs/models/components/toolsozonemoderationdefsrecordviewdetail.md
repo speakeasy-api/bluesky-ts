@@ -6,26 +6,21 @@
 import { ToolsOzoneModerationDefsRecordViewDetail } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: ToolsOzoneModerationDefsRecordViewDetail = {
-  uri: "https://glass-colonialism.name/",
+  uri: "https://fantastic-fowl.biz",
   cid: "<id>",
   value: "<value>",
-  blobs: [
-    {
-      cid: "<id>",
-      mimeType: "<value>",
-      size: 318028,
-      createdAt: new Date("2025-11-16T00:59:56.580Z"),
-    },
-  ],
-  indexedAt: new Date("2025-11-24T10:40:28.013Z"),
+  blobs: [],
+  indexedAt: new Date("2023-03-01T23:15:04.148Z"),
   moderation: {},
   repo: {
     did: "<id>",
     handle: "<value>",
     relatedRecords: [
-      "<value>",
+      "<value 1>",
+      "<value 2>",
+      "<value 3>",
     ],
-    indexedAt: new Date("2024-11-10T15:47:28.185Z"),
+    indexedAt: new Date("2024-06-24T11:12:34.140Z"),
     moderation: {},
   },
 };

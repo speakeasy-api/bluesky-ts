@@ -20,7 +20,7 @@ export class Videos extends ClientSDK {
   async getJobStatus(
     request: operations.AppBskyVideoGetJobStatusRequest,
     options?: RequestOptions,
-  ): Promise<operations.AppBskyVideoGetJobStatusResponseBody> {
+  ): Promise<operations.AppBskyVideoGetJobStatusResponse> {
     return unwrapAsync(videosGetJobStatus(
       this,
       request,
@@ -37,7 +37,7 @@ export class Videos extends ClientSDK {
    */
   async getUploadLimits(
     options?: RequestOptions,
-  ): Promise<operations.AppBskyVideoGetUploadLimitsResponseBody> {
+  ): Promise<operations.AppBskyVideoGetUploadLimitsResponse> {
     return unwrapAsync(videosGetUploadLimits(
       this,
       options,
@@ -54,7 +54,7 @@ export class Videos extends ClientSDK {
   async upload(
     request: ReadableStream<Uint8Array> | Blob | ArrayBuffer | Uint8Array,
     options?: RequestOptions,
-  ): Promise<operations.AppBskyVideoUploadVideoResponseBody> {
+  ): Promise<operations.AppBskyVideoUploadVideoResponse> {
     return unwrapAsync(videosUpload(
       this,
       request,

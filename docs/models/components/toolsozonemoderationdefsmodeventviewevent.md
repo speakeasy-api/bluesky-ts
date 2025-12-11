@@ -20,7 +20,7 @@ const value: components.ToolsOzoneModerationDefsModEventReverseTakedown = {};
 ```typescript
 const value: components.ToolsOzoneModerationDefsModEventComment = {
   comment:
-    "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
+    "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
 };
 ```
 
@@ -37,10 +37,12 @@ const value: components.ToolsOzoneModerationDefsModEventReport = {
 ```typescript
 const value: components.ToolsOzoneModerationDefsModEventLabel = {
   createLabelVals: [
-    "<value>",
+    "<value 1>",
   ],
   negateLabelVals: [
-    "<value>",
+    "<value 1>",
+    "<value 2>",
+    "<value 3>",
   ],
 };
 ```
@@ -61,7 +63,7 @@ const value: components.ToolsOzoneModerationDefsModEventEscalate = {};
 
 ```typescript
 const value: components.ToolsOzoneModerationDefsModEventMute = {
-  durationInHours: 277990,
+  durationInHours: 946554,
 };
 ```
 
@@ -108,11 +110,9 @@ const value: components.ToolsOzoneModerationDefsModEventDivert = {};
 ```typescript
 const value: components.ToolsOzoneModerationDefsModEventTag = {
   add: [
-    "<value>",
+    "<value 1>",
   ],
-  remove: [
-    "<value>",
-  ],
+  remove: [],
 };
 ```
 
@@ -121,7 +121,7 @@ const value: components.ToolsOzoneModerationDefsModEventTag = {
 ```typescript
 const value: components.ToolsOzoneModerationDefsAccountEvent = {
   active: false,
-  timestamp: new Date("2025-05-19T10:28:52.033Z"),
+  timestamp: new Date("2025-03-24T06:28:37.550Z"),
 };
 ```
 
@@ -129,7 +129,7 @@ const value: components.ToolsOzoneModerationDefsAccountEvent = {
 
 ```typescript
 const value: components.ToolsOzoneModerationDefsIdentityEvent = {
-  timestamp: new Date("2024-12-24T07:51:55.110Z"),
+  timestamp: new Date("2024-01-25T17:35:17.871Z"),
 };
 ```
 
@@ -137,8 +137,8 @@ const value: components.ToolsOzoneModerationDefsIdentityEvent = {
 
 ```typescript
 const value: components.ToolsOzoneModerationDefsRecordEvent = {
-  op: "update",
-  timestamp: new Date("2025-04-29T06:26:15.778Z"),
+  op: "create",
+  timestamp: new Date("2023-09-22T15:18:25.819Z"),
 };
 ```
 

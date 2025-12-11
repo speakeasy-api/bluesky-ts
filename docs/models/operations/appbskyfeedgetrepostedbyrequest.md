@@ -6,7 +6,7 @@
 import { AppBskyFeedGetRepostedByRequest } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: AppBskyFeedGetRepostedByRequest = {
-  uri: "https://querulous-chap.biz/",
+  uri: "https://emotional-iridescence.info",
 };
 ```
 

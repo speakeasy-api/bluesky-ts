@@ -1,5 +1,4 @@
 # Servers
-(*servers*)
 
 ## Overview
 
@@ -36,6 +35,7 @@ Get a signed token on behalf of the requesting DID for the requested service.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="com.atproto.server.getServiceAuth" method="get" path="/xrpc/com.atproto.server.getServiceAuth" -->
 ```typescript
 import { Bluesky } from "@speakeasy-sdks/bluesky";
 
@@ -48,7 +48,6 @@ async function run() {
     aud: "<id>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -73,15 +72,12 @@ async function run() {
   const res = await serversGetServiceAuth(bluesky, {
     aud: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("serversGetServiceAuth failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -126,25 +122,25 @@ import {
 
 ### Response
 
-**Promise\<[operations.ComAtprotoServerGetServiceAuthResponseBody](../../models/operations/comatprotoservergetserviceauthresponsebody.md)\>**
+**Promise\<[operations.ComAtprotoServerGetServiceAuthResponse](../../models/operations/comatprotoservergetserviceauthresponse.md)\>**
 
 ### Errors
 
-| Error Type                                                         | Status Code                                                        | Content Type                                                       |
-| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| errors.BadRequestComAtprotoServerGetServiceAuthResponseBodyError   | 400                                                                | application/json                                                   |
-| errors.UnauthorizedComAtprotoServerGetServiceAuthResponseBodyError | 401                                                                | application/json                                                   |
-| errors.NotFoundError                                               | 404                                                                | application/json                                                   |
-| errors.UnauthorizedError                                           | 403, 407                                                           | application/json                                                   |
-| errors.TimeoutError                                                | 408                                                                | application/json                                                   |
-| errors.RateLimitedError                                            | 429                                                                | application/json                                                   |
-| errors.BadRequestError                                             | 413, 414, 415, 422, 431                                            | application/json                                                   |
-| errors.TimeoutError                                                | 504                                                                | application/json                                                   |
-| errors.NotFoundError                                               | 501, 505                                                           | application/json                                                   |
-| errors.InternalServerError                                         | 500, 502, 503, 506, 507, 508                                       | application/json                                                   |
-| errors.BadRequestError                                             | 510                                                                | application/json                                                   |
-| errors.UnauthorizedError                                           | 511                                                                | application/json                                                   |
-| errors.APIError                                                    | 4XX, 5XX                                                           | \*/\*                                                              |
+| Error Type                                            | Status Code                                           | Content Type                                          |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| errors.ComAtprotoServerGetServiceAuthBadRequestError  | 400                                                   | application/json                                      |
+| errors.ComAtprotoServerGetServiceAuthAuthMissingError | 401                                                   | application/json                                      |
+| errors.NotFoundError                                  | 404                                                   | application/json                                      |
+| errors.UnauthorizedError                              | 403, 407                                              | application/json                                      |
+| errors.TimeoutError                                   | 408                                                   | application/json                                      |
+| errors.RateLimitedError                               | 429                                                   | application/json                                      |
+| errors.BadRequestError                                | 413, 414, 415, 422, 431                               | application/json                                      |
+| errors.TimeoutError                                   | 504                                                   | application/json                                      |
+| errors.NotFoundError                                  | 501, 505                                              | application/json                                      |
+| errors.InternalServerError                            | 500, 502, 503, 506, 507, 508                          | application/json                                      |
+| errors.BadRequestError                                | 510                                                   | application/json                                      |
+| errors.UnauthorizedError                              | 511                                                   | application/json                                      |
+| errors.APIError                                       | 4XX, 5XX                                              | \*/\*                                                 |
 
 ## getSession
 
@@ -156,6 +152,7 @@ Get information about the current auth session. Requires auth.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="com.atproto.server.getSession" method="get" path="/xrpc/com.atproto.server.getSession" -->
 ```typescript
 import { Bluesky } from "@speakeasy-sdks/bluesky";
 
@@ -166,7 +163,6 @@ const bluesky = new Bluesky({
 async function run() {
   const result = await bluesky.servers.getSession();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -189,15 +185,12 @@ const bluesky = new BlueskyCore({
 
 async function run() {
   const res = await serversGetSession(bluesky);
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("serversGetSession failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -240,25 +233,25 @@ import {
 
 ### Response
 
-**Promise\<[operations.ComAtprotoServerGetSessionResponseBody](../../models/operations/comatprotoservergetsessionresponsebody.md)\>**
+**Promise\<[operations.ComAtprotoServerGetSessionResponse](../../models/operations/comatprotoservergetsessionresponse.md)\>**
 
 ### Errors
 
-| Error Type                                                     | Status Code                                                    | Content Type                                                   |
-| -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
-| errors.BadRequestComAtprotoServerGetSessionResponseBodyError   | 400                                                            | application/json                                               |
-| errors.UnauthorizedComAtprotoServerGetSessionResponseBodyError | 401                                                            | application/json                                               |
-| errors.NotFoundError                                           | 404                                                            | application/json                                               |
-| errors.UnauthorizedError                                       | 403, 407                                                       | application/json                                               |
-| errors.TimeoutError                                            | 408                                                            | application/json                                               |
-| errors.RateLimitedError                                        | 429                                                            | application/json                                               |
-| errors.BadRequestError                                         | 413, 414, 415, 422, 431                                        | application/json                                               |
-| errors.TimeoutError                                            | 504                                                            | application/json                                               |
-| errors.NotFoundError                                           | 501, 505                                                       | application/json                                               |
-| errors.InternalServerError                                     | 500, 502, 503, 506, 507, 508                                   | application/json                                               |
-| errors.BadRequestError                                         | 510                                                            | application/json                                               |
-| errors.UnauthorizedError                                       | 511                                                            | application/json                                               |
-| errors.APIError                                                | 4XX, 5XX                                                       | \*/\*                                                          |
+| Error Type                                        | Status Code                                       | Content Type                                      |
+| ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
+| errors.ComAtprotoServerGetSessionBadRequestError  | 400                                               | application/json                                  |
+| errors.ComAtprotoServerGetSessionAuthMissingError | 401                                               | application/json                                  |
+| errors.NotFoundError                              | 404                                               | application/json                                  |
+| errors.UnauthorizedError                          | 403, 407                                          | application/json                                  |
+| errors.TimeoutError                               | 408                                               | application/json                                  |
+| errors.RateLimitedError                           | 429                                               | application/json                                  |
+| errors.BadRequestError                            | 413, 414, 415, 422, 431                           | application/json                                  |
+| errors.TimeoutError                               | 504                                               | application/json                                  |
+| errors.NotFoundError                              | 501, 505                                          | application/json                                  |
+| errors.InternalServerError                        | 500, 502, 503, 506, 507, 508                      | application/json                                  |
+| errors.BadRequestError                            | 510                                               | application/json                                  |
+| errors.UnauthorizedError                          | 511                                               | application/json                                  |
+| errors.APIError                                   | 4XX, 5XX                                          | \*/\*                                             |
 
 ## reserveSigningKey
 
@@ -270,6 +263,7 @@ Reserve a repo signing key, for use with account creation. Necessary so that a D
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="com.atproto.server.reserveSigningKey" method="post" path="/xrpc/com.atproto.server.reserveSigningKey" -->
 ```typescript
 import { Bluesky } from "@speakeasy-sdks/bluesky";
 
@@ -278,9 +272,8 @@ const bluesky = new Bluesky({
 });
 
 async function run() {
-  const result = await bluesky.servers.reserveSigningKey();
+  const result = await bluesky.servers.reserveSigningKey({});
 
-  // Handle the result
   console.log(result);
 }
 
@@ -302,16 +295,13 @@ const bluesky = new BlueskyCore({
 });
 
 async function run() {
-  const res = await serversReserveSigningKey(bluesky);
-
-  if (!res.ok) {
-    throw res.error;
+  const res = await serversReserveSigningKey(bluesky, {});
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("serversReserveSigningKey failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -338,32 +328,32 @@ import {
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ComAtprotoServerReserveSigningKeyBody](../../models/operations/comatprotoserverreservesigningkeybody.md)                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ComAtprotoServerReserveSigningKeyRequest](../../models/operations/comatprotoserverreservesigningkeyrequest.md)                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.ComAtprotoServerReserveSigningKeyResponseBody](../../models/operations/comatprotoserverreservesigningkeyresponsebody.md)\>**
+**Promise\<[operations.ComAtprotoServerReserveSigningKeyResponse](../../models/operations/comatprotoserverreservesigningkeyresponse.md)\>**
 
 ### Errors
 
-| Error Type                                                            | Status Code                                                           | Content Type                                                          |
-| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
-| errors.BadRequestComAtprotoServerReserveSigningKeyResponseBodyError   | 400                                                                   | application/json                                                      |
-| errors.UnauthorizedComAtprotoServerReserveSigningKeyResponseBodyError | 401                                                                   | application/json                                                      |
-| errors.NotFoundError                                                  | 404                                                                   | application/json                                                      |
-| errors.UnauthorizedError                                              | 403, 407                                                              | application/json                                                      |
-| errors.TimeoutError                                                   | 408                                                                   | application/json                                                      |
-| errors.RateLimitedError                                               | 429                                                                   | application/json                                                      |
-| errors.BadRequestError                                                | 413, 414, 415, 422, 431                                               | application/json                                                      |
-| errors.TimeoutError                                                   | 504                                                                   | application/json                                                      |
-| errors.NotFoundError                                                  | 501, 505                                                              | application/json                                                      |
-| errors.InternalServerError                                            | 500, 502, 503, 506, 507, 508                                          | application/json                                                      |
-| errors.BadRequestError                                                | 510                                                                   | application/json                                                      |
-| errors.UnauthorizedError                                              | 511                                                                   | application/json                                                      |
-| errors.APIError                                                       | 4XX, 5XX                                                              | \*/\*                                                                 |
+| Error Type                                               | Status Code                                              | Content Type                                             |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| errors.ComAtprotoServerReserveSigningKeyBadRequestError  | 400                                                      | application/json                                         |
+| errors.ComAtprotoServerReserveSigningKeyAuthMissingError | 401                                                      | application/json                                         |
+| errors.NotFoundError                                     | 404                                                      | application/json                                         |
+| errors.UnauthorizedError                                 | 403, 407                                                 | application/json                                         |
+| errors.TimeoutError                                      | 408                                                      | application/json                                         |
+| errors.RateLimitedError                                  | 429                                                      | application/json                                         |
+| errors.BadRequestError                                   | 413, 414, 415, 422, 431                                  | application/json                                         |
+| errors.TimeoutError                                      | 504                                                      | application/json                                         |
+| errors.NotFoundError                                     | 501, 505                                                 | application/json                                         |
+| errors.InternalServerError                               | 500, 502, 503, 506, 507, 508                             | application/json                                         |
+| errors.BadRequestError                                   | 510                                                      | application/json                                         |
+| errors.UnauthorizedError                                 | 511                                                      | application/json                                         |
+| errors.APIError                                          | 4XX, 5XX                                                 | \*/\*                                                    |
 
 ## updateEmail
 
@@ -375,6 +365,7 @@ Update an account's email.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="com.atproto.server.updateEmail" method="post" path="/xrpc/com.atproto.server.updateEmail" -->
 ```typescript
 import { Bluesky } from "@speakeasy-sdks/bluesky";
 
@@ -384,7 +375,7 @@ const bluesky = new Bluesky({
 
 async function run() {
   await bluesky.servers.updateEmail({
-    email: "Milton.Schulist65@yahoo.com",
+    email: "Keyshawn_Emmerich@hotmail.com",
   });
 
 
@@ -409,16 +400,14 @@ const bluesky = new BlueskyCore({
 
 async function run() {
   const res = await serversUpdateEmail(bluesky, {
-    email: "Milton.Schulist65@yahoo.com",
+    email: "Keyshawn_Emmerich@hotmail.com",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    
+  } else {
+    console.log("serversUpdateEmail failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  
 }
 
 run();
@@ -445,7 +434,7 @@ import {
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ComAtprotoServerUpdateEmailBody](../../models/operations/comatprotoserverupdateemailbody.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ComAtprotoServerUpdateEmailRequest](../../models/operations/comatprotoserverupdateemailrequest.md)                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -456,18 +445,18 @@ import {
 
 ### Errors
 
-| Error Type                                                      | Status Code                                                     | Content Type                                                    |
-| --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
-| errors.BadRequestComAtprotoServerUpdateEmailResponseBodyError   | 400                                                             | application/json                                                |
-| errors.UnauthorizedComAtprotoServerUpdateEmailResponseBodyError | 401                                                             | application/json                                                |
-| errors.NotFoundError                                            | 404                                                             | application/json                                                |
-| errors.UnauthorizedError                                        | 403, 407                                                        | application/json                                                |
-| errors.TimeoutError                                             | 408                                                             | application/json                                                |
-| errors.RateLimitedError                                         | 429                                                             | application/json                                                |
-| errors.BadRequestError                                          | 413, 414, 415, 422, 431                                         | application/json                                                |
-| errors.TimeoutError                                             | 504                                                             | application/json                                                |
-| errors.NotFoundError                                            | 501, 505                                                        | application/json                                                |
-| errors.InternalServerError                                      | 500, 502, 503, 506, 507, 508                                    | application/json                                                |
-| errors.BadRequestError                                          | 510                                                             | application/json                                                |
-| errors.UnauthorizedError                                        | 511                                                             | application/json                                                |
-| errors.APIError                                                 | 4XX, 5XX                                                        | \*/\*                                                           |
+| Error Type                                         | Status Code                                        | Content Type                                       |
+| -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
+| errors.ComAtprotoServerUpdateEmailBadRequestError  | 400                                                | application/json                                   |
+| errors.ComAtprotoServerUpdateEmailAuthMissingError | 401                                                | application/json                                   |
+| errors.NotFoundError                               | 404                                                | application/json                                   |
+| errors.UnauthorizedError                           | 403, 407                                           | application/json                                   |
+| errors.TimeoutError                                | 408                                                | application/json                                   |
+| errors.RateLimitedError                            | 429                                                | application/json                                   |
+| errors.BadRequestError                             | 413, 414, 415, 422, 431                            | application/json                                   |
+| errors.TimeoutError                                | 504                                                | application/json                                   |
+| errors.NotFoundError                               | 501, 505                                           | application/json                                   |
+| errors.InternalServerError                         | 500, 502, 503, 506, 507, 508                       | application/json                                   |
+| errors.BadRequestError                             | 510                                                | application/json                                   |
+| errors.UnauthorizedError                           | 511                                                | application/json                                   |
+| errors.APIError                                    | 4XX, 5XX                                           | \*/\*                                              |

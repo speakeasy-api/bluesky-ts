@@ -10,7 +10,7 @@ import { AppBskyActorDefsMutedWord } from "@speakeasy-sdks/bluesky/models/compon
 let value: AppBskyActorDefsMutedWord = {
   value: "<value>",
   targets: [
-    "tag",
+    "content",
   ],
 };
 ```

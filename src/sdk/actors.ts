@@ -23,7 +23,7 @@ export class Actors extends ClientSDK {
    */
   async getPreferences(
     options?: RequestOptions,
-  ): Promise<operations.AppBskyActorGetPreferencesResponseBody> {
+  ): Promise<operations.AppBskyActorGetPreferencesResponse> {
     return unwrapAsync(actorsGetPreferences(
       this,
       options,
@@ -58,7 +58,7 @@ export class Actors extends ClientSDK {
   async getProfiles(
     request: operations.AppBskyActorGetProfilesRequest,
     options?: RequestOptions,
-  ): Promise<operations.AppBskyActorGetProfilesResponseBody> {
+  ): Promise<operations.AppBskyActorGetProfilesResponse> {
     return unwrapAsync(actorsGetProfiles(
       this,
       request,
@@ -74,7 +74,7 @@ export class Actors extends ClientSDK {
    * Set the private preferences attached to the account.
    */
   async putPreferences(
-    request: operations.AppBskyActorPutPreferencesBody,
+    request: operations.AppBskyActorPutPreferencesRequest,
     options?: RequestOptions,
   ): Promise<void> {
     return unwrapAsync(actorsPutPreferences(

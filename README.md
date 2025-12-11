@@ -78,12 +78,9 @@ bun add @tanstack/react-query react react-dom
 ### Yarn
 
 ```bash
-yarn add @speakeasy-sdks/bluesky zod
+yarn add @speakeasy-sdks/bluesky
 # Install optional peer dependencies if you plan to use React hooks
 yarn add @tanstack/react-query react react-dom
-
-# Note that Yarn does not install peer dependencies automatically. You will need
-# to install zod as shown above.
 ```
 
 > [!NOTE]
@@ -95,7 +92,7 @@ yarn add @tanstack/react-query react react-dom
 This SDK is also an installable MCP server where the various SDK methods are
 exposed as tools that can be invoked by AI applications.
 
-> Node.js v20 or greater is required to run the MCP server.
+> Node.js v20 or greater is required to run the MCP server from npm.
 
 <details>
 <summary>Claude installation steps</summary>
@@ -123,16 +120,49 @@ Add the following server definition to your `claude_desktop_config.json` file:
 <details>
 <summary>Cursor installation steps</summary>
 
-Go to `Cursor Settings > Features > MCP Servers > Add new MCP server` and use the following settings:
+Create a `.cursor/mcp.json` file in your project root with the following content:
 
-- Name: Bluesky
-- Type: `command`
-- Command:
-```sh
-npx -y --package @speakeasy-sdks/bluesky -- mcp start --bearer ... 
+```json
+{
+  "mcpServers": {
+    "Bluesky": {
+      "command": "npx",
+      "args": [
+        "-y", "--package", "@speakeasy-sdks/bluesky",
+        "--",
+        "mcp", "start",
+        "--bearer", "..."
+      ]
+    }
+  }
+}
 ```
 
 </details>
+
+You can also run MCP servers as a standalone binary with no additional dependencies. You must pull these binaries from available Github releases:
+
+```bash
+curl -L -o mcp-server \
+    https://github.com/{org}/{repo}/releases/download/{tag}/mcp-server-bun-darwin-arm64 && \
+chmod +x mcp-server
+```
+
+If the repo is a private repo you must add your Github PAT to download a release `-H "Authorization: Bearer {GITHUB_PAT}"`.
+
+
+```json
+{
+  "mcpServers": {
+    "Todos": {
+      "command": "./DOWNLOAD/PATH/mcp-server",
+      "args": [
+        "start"
+      ]
+    }
+  }
+}
+```
 
 For a full list of server arguments, run:
 
@@ -164,7 +194,6 @@ async function run() {
     actor: "did:plc:z72i7hdynmk6r22z27h6tvur",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -195,7 +224,6 @@ const bluesky = new Bluesky({
 async function run() {
   const result = await bluesky.actors.getPreferences();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -210,7 +238,7 @@ run();
 <details open>
 <summary>Available methods</summary>
 
-### [account](docs/sdks/account/README.md)
+### [Account](docs/sdks/account/README.md)
 
 * [delete](docs/sdks/account/README.md#delete) - *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
 
@@ -219,7 +247,7 @@ run();
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
-### [accounts](docs/sdks/accounts/README.md)
+### [Accounts](docs/sdks/accounts/README.md)
 
 * [getInviteCodes](docs/sdks/accounts/README.md#getinvitecodes) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
@@ -227,7 +255,7 @@ run();
 
 Get all invite codes for the current account. Requires auth.
 
-### [actor](docs/sdks/actor/README.md)
+### [Actor](docs/sdks/actor/README.md)
 
 * [getSuggestions](docs/sdks/actor/README.md#getsuggestions) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -240,7 +268,7 @@ Get a list of suggested actors. Expected use is discovery of accounts to follow 
 
 Find actor suggestions for a prefix search term. Expected use is for auto-completion during text field entry. Does not require auth.
 
-### [actors](docs/sdks/actors/README.md)
+### [Actors](docs/sdks/actors/README.md)
 
 * [getPreferences](docs/sdks/actors/README.md#getpreferences) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -268,7 +296,7 @@ Set the private preferences attached to the account.
 
 Find actors (profiles) matching search criteria. Does not require auth.
 
-### [admin](docs/sdks/admin/README.md)
+### [Admin](docs/sdks/admin/README.md)
 
 * [disableInviteCodes](docs/sdks/admin/README.md#disableinvitecodes) - *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
 
@@ -311,7 +339,7 @@ Update the password for a user account as an administrator.
 
 Update the service-specific admin status of a subject (account, record, or blob).
 
-### [admins](docs/sdks/admins/README.md)
+### [Admins](docs/sdks/admins/README.md)
 
 * [deleteAccount](docs/sdks/admins/README.md#deleteaccount) - *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
 
@@ -329,7 +357,7 @@ Re-enable an account's ability to receive invite codes.
 
 Get details about some accounts.
 
-### [atprotoAdmin](docs/sdks/atprotoadmin/README.md)
+### [AtprotoAdmin](docs/sdks/atprotoadmin/README.md)
 
 * [disableAccountInvites](docs/sdks/atprotoadmin/README.md#disableaccountinvites) - *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*
 
@@ -347,7 +375,7 @@ Get an admin view of invite codes.
 
 Get list of accounts that matches your search query.
 
-### [atprotoIdentity](docs/sdks/atprotoidentity/README.md)
+### [AtprotoIdentity](docs/sdks/atprotoidentity/README.md)
 
 * [requestPlcOperationSignature](docs/sdks/atprotoidentity/README.md#requestplcoperationsignature) - *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
@@ -359,19 +387,19 @@ Resolves a handle (domain name) to a DID.
 
 Signs a PLC operation to update some value(s) in the requesting DID's document.
 
-### [atprotoLabels](docs/sdks/atprotolabels/README.md)
+### [AtprotoLabels](docs/sdks/atprotolabels/README.md)
 
 * [query](docs/sdks/atprotolabels/README.md#query) - *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Find labels relevant to the provided AT-URI patterns. Public endpoint for moderation services, though may return different or additional results with auth.
 
-### [atprotoModeration](docs/sdks/atprotomoderation/README.md)
+### [AtprotoModeration](docs/sdks/atprotomoderation/README.md)
 
 * [createReport](docs/sdks/atprotomoderation/README.md#createreport) - *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Submit a moderation report regarding an atproto account or record. Implemented by moderation services (with PDS proxying), and requires auth.
 
-### [atprotoRepo](docs/sdks/atprotorepo/README.md)
+### [AtprotoRepo](docs/sdks/atprotorepo/README.md)
 
 * [delete](docs/sdks/atprotorepo/README.md#delete) - *This endpoint is part of the atproto PDS repository management APIs. Requests usually require authentication (unlike the `com.atproto.sync.*` endpoints), and are made directly to the user's own PDS instance.*
 
@@ -389,7 +417,7 @@ Import a repo in the form of a CAR file. Requires Content-Length HTTP header to 
 
 Upload a new blob, to be referenced from a repository record. The blob will be deleted if it is not referenced within a time window (eg, minutes). Blob restrictions (mimetype, size, etc) are enforced when the reference is created. Requires auth, implemented by PDS.
 
-### [atprotoServer](docs/sdks/atprotoserver/README.md)
+### [AtprotoServer](docs/sdks/atprotoserver/README.md)
 
 * [activateAccount](docs/sdks/atprotoserver/README.md#activateaccount) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
@@ -457,7 +485,7 @@ Reset a user account password using a token.
 
 Revoke an App Password by name.
 
-### [atprotoSync](docs/sdks/atprotosync/README.md)
+### [AtprotoSync](docs/sdks/atprotosync/README.md)
 
 * [getBlob](docs/sdks/atprotosync/README.md#getblob) - This endpoint is part of the atproto repository synchronization APIs. Requests usually do not require authentication, and can be made to PDS intances or Relay instances.*
 
@@ -470,7 +498,7 @@ Get a blob associated with a given account. Returns the full blob as originally 
 
 Enumerates all the DID, rev, and commit CID for all repos hosted by this service. Does not require auth; implemented by PDS and Relay.
 
-### [atprotoSyncs](docs/sdks/atprotosyncs/README.md)
+### [AtprotoSyncs](docs/sdks/atprotosyncs/README.md)
 
 * [getRecord](docs/sdks/atprotosyncs/README.md#getrecord) - This endpoint is part of the atproto repository synchronization APIs. Requests usually do not require authentication, and can be made to PDS intances or Relay instances.*
 
@@ -478,8 +506,7 @@ Enumerates all the DID, rev, and commit CID for all repos hosted by this service
 
 Get data blocks needed to prove the existence or non-existence of record in the current version of repo. Does not require auth.
 
-
-### [chatConvo](docs/sdks/chatconvo/README.md)
+### [ChatConvo](docs/sdks/chatconvo/README.md)
 
 * [sendMessageBatch](docs/sdks/chatconvo/README.md#sendmessagebatch) - *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
 
@@ -488,7 +515,7 @@ Get data blocks needed to prove the existence or non-existence of record in the 
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
-### [chatConvos](docs/sdks/chatconvos/README.md)
+### [ChatConvos](docs/sdks/chatconvos/README.md)
 
 * [getForMembers](docs/sdks/chatconvos/README.md#getformembers) - *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
 
@@ -503,7 +530,7 @@ Get data blocks needed to prove the existence or non-existence of record in the 
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
-### [chatModeration](docs/sdks/chatmoderation/README.md)
+### [ChatModeration](docs/sdks/chatmoderation/README.md)
 
 * [getActorMetadata](docs/sdks/chatmoderation/README.md#getactormetadata) - *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
 
@@ -512,7 +539,7 @@ Get data blocks needed to prove the existence or non-existence of record in the 
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
-### [chats](docs/sdks/chats/README.md)
+### [Chats](docs/sdks/chats/README.md)
 
 * [getConvo](docs/sdks/chats/README.md#getconvo) - *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
 
@@ -521,7 +548,7 @@ Get data blocks needed to prove the existence or non-existence of record in the 
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
-### [communications](docs/sdks/communications/README.md)
+### [Communications](docs/sdks/communications/README.md)
 
 * [createTemplate](docs/sdks/communications/README.md#createtemplate) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
@@ -529,7 +556,7 @@ Get data blocks needed to prove the existence or non-existence of record in the 
 
 Administrative action to create a new, re-usable communication (email for now) template.
 
-### [conversations](docs/sdks/conversations/README.md)
+### [Conversations](docs/sdks/conversations/README.md)
 
 * [getLog](docs/sdks/conversations/README.md#getlog) - *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
 
@@ -538,7 +565,7 @@ Administrative action to create a new, re-usable communication (email for now) t
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
-### [convo](docs/sdks/convo/README.md)
+### [Convo](docs/sdks/convo/README.md)
 
 * [deleteMessageForSelf](docs/sdks/convo/README.md#deletemessageforself) - *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
 
@@ -547,13 +574,13 @@ Administrative action to create a new, re-usable communication (email for now) t
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
-### [convos](docs/sdks/convos/README.md)
+### [Convos](docs/sdks/convos/README.md)
 
 * [mute](docs/sdks/convos/README.md#mute) - *This endpoint is part of the Bluesky Chat (DMs) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the single central chat service by setting the appropriate service DID (`did:web:api.bsky.chat`) in the service proxying header.*
 
 *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
-### [feed](docs/sdks/feed/README.md)
+### [Feed](docs/sdks/feed/README.md)
 
 * [getActor](docs/sdks/feed/README.md#getactor) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -606,7 +633,7 @@ Get a view of the requesting account's home timeline. This is expected to be som
 
 Find posts matching search criteria, returning views of those posts.
 
-### [feeds](docs/sdks/feeds/README.md)
+### [Feeds](docs/sdks/feeds/README.md)
 
 * [describeGenerator](docs/sdks/feeds/README.md#describegenerator) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -649,7 +676,7 @@ Get a list of reposts for a given post.
 
 Send information about interactions with feed items back to the feed generator that served them.
 
-### [graph](docs/sdks/graph/README.md)
+### [Graph](docs/sdks/graph/README.md)
 
 * [getActorStarterPacks](docs/sdks/graph/README.md#getactorstarterpacks) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -707,7 +734,7 @@ Find starter packs matching search criteria. Does not require auth.
 
 Unmutes the specified thread. Requires auth.
 
-### [graphs](docs/sdks/graphs/README.md)
+### [Graphs](docs/sdks/graphs/README.md)
 
 * [getBlocks](docs/sdks/graphs/README.md#getblocks) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -745,13 +772,13 @@ Mutes a thread preventing notifications from the thread and any of its children.
 
 Unmutes the specified list of accounts. Requires auth.
 
-### [identities](docs/sdks/identities/README.md)
+### [Identities](docs/sdks/identities/README.md)
 
 * [updateHandle](docs/sdks/identities/README.md#updatehandle) - *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
 Updates the current account's handle. Verifies handle validity, and updates did:plc document if necessary. Implemented by PDS, and requires auth.
 
-### [identity](docs/sdks/identity/README.md)
+### [Identity](docs/sdks/identity/README.md)
 
 * [getRecommendedDidCredentials](docs/sdks/identity/README.md#getrecommendeddidcredentials) - *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 
@@ -760,7 +787,7 @@ Describe the credentials that should be included in the DID doc of an account th
 
 Validates a PLC operation to ensure that it doesn't violate a service's constraints or get the identity into a bad state, then submits it to the PLC registry
 
-### [labelers](docs/sdks/labelers/README.md)
+### [Labelers](docs/sdks/labelers/README.md)
 
 * [getServices](docs/sdks/labelers/README.md#getservices) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -768,7 +795,7 @@ Validates a PLC operation to ensure that it doesn't violate a service's constrai
 
 Get information about a list of labeler services.
 
-### [moderation](docs/sdks/moderation/README.md)
+### [Moderation](docs/sdks/moderation/README.md)
 
 * [getEvent](docs/sdks/moderation/README.md#getevent) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
@@ -781,7 +808,7 @@ Get details about a moderation event.
 
 List moderation events related to a subject.
 
-### [moderations](docs/sdks/moderations/README.md)
+### [Moderations](docs/sdks/moderations/README.md)
 
 * [getRecords](docs/sdks/moderations/README.md#getrecords) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
@@ -799,7 +826,7 @@ Get details about some repositories.
 
 View moderation statuses of subjects (record or repo).
 
-### [notification](docs/sdks/notification/README.md)
+### [Notification](docs/sdks/notification/README.md)
 
 * [list](docs/sdks/notification/README.md#list) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -807,7 +834,7 @@ View moderation statuses of subjects (record or repo).
 
 Enumerate notifications for the requesting account. Requires auth.
 
-### [notifications](docs/sdks/notifications/README.md)
+### [Notifications](docs/sdks/notifications/README.md)
 
 * [getUnreadCount](docs/sdks/notifications/README.md#getunreadcount) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -830,7 +857,7 @@ Register to receive push notifications, via a specified service, for the request
 
 Notify server that the requesting account has seen notifications. Requires auth.
 
-### [ozone](docs/sdks/ozone/README.md)
+### [Ozone](docs/sdks/ozone/README.md)
 
 * [addMember](docs/sdks/ozone/README.md#addmember) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
@@ -838,7 +865,7 @@ Notify server that the requesting account has seen notifications. Requires auth.
 
 Add a member to the ozone team. Requires admin role.
 
-### [ozoneCommunication](docs/sdks/ozonecommunication/README.md)
+### [OzoneCommunication](docs/sdks/ozonecommunication/README.md)
 
 * [delete](docs/sdks/ozonecommunication/README.md#delete) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
@@ -856,7 +883,7 @@ Get list of all communication templates.
 
 Administrative action to update an existing communication template. Allows passing partial fields to patch specific fields only.
 
-### [ozoneModeration](docs/sdks/ozonemoderation/README.md)
+### [OzoneModeration](docs/sdks/ozonemoderation/README.md)
 
 * [emitEvent](docs/sdks/ozonemoderation/README.md#emitevent) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
@@ -874,7 +901,7 @@ Get details about a record.
 
 Get details about a repository.
 
-### [ozoneModerations](docs/sdks/ozonemoderations/README.md)
+### [OzoneModerations](docs/sdks/ozonemoderations/README.md)
 
 * [searchRepos](docs/sdks/ozonemoderations/README.md#searchrepos) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
@@ -882,7 +909,7 @@ Get details about a repository.
 
 Find repositories based on a search term.
 
-### [ozoneServer](docs/sdks/ozoneserver/README.md)
+### [OzoneServer](docs/sdks/ozoneserver/README.md)
 
 * [getConfig](docs/sdks/ozoneserver/README.md#getconfig) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
@@ -890,7 +917,7 @@ Find repositories based on a search term.
 
 Get details about ozone's server configuration.
 
-### [ozoneSet](docs/sdks/ozoneset/README.md)
+### [OzoneSet](docs/sdks/ozoneset/README.md)
 
 * [add](docs/sdks/ozoneset/README.md#add) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
@@ -903,7 +930,7 @@ Add values to a specific set. Attempting to add values to a set that does not ex
 
 Create or update set metadata
 
-### [ozoneSettings](docs/sdks/ozonesettings/README.md)
+### [OzoneSettings](docs/sdks/ozonesettings/README.md)
 
 * [upsertOption](docs/sdks/ozonesettings/README.md#upsertoption) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
@@ -911,7 +938,7 @@ Create or update set metadata
 
 Create or update setting option
 
-### [ozoneSignature](docs/sdks/ozonesignature/README.md)
+### [OzoneSignature](docs/sdks/ozonesignature/README.md)
 
 * [searchAccounts](docs/sdks/ozonesignature/README.md#searchaccounts) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
@@ -919,7 +946,7 @@ Create or update setting option
 
 Search for accounts that match one or more threat signature values.
 
-### [ozoneSignatures](docs/sdks/ozonesignatures/README.md)
+### [OzoneSignatures](docs/sdks/ozonesignatures/README.md)
 
 * [findRelatedAccounts](docs/sdks/ozonesignatures/README.md#findrelatedaccounts) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
@@ -927,7 +954,7 @@ Search for accounts that match one or more threat signature values.
 
 Get accounts that share some matching threat signatures with the root account.
 
-### [repo](docs/sdks/repo/README.md)
+### [Repo](docs/sdks/repo/README.md)
 
 * [putRecord](docs/sdks/repo/README.md#putrecord) - *This endpoint is part of the atproto PDS repository management APIs. Requests usually require authentication (unlike the `com.atproto.sync.*` endpoints), and are made directly to the user's own PDS instance.*
 
@@ -935,7 +962,7 @@ Get accounts that share some matching threat signatures with the root account.
 
 Write a repository record, creating or updating it as needed. Requires auth, implemented by PDS.
 
-### [repos](docs/sdks/repos/README.md)
+### [Repos](docs/sdks/repos/README.md)
 
 * [applyWrites](docs/sdks/repos/README.md#applywrites) - *This endpoint is part of the atproto PDS repository management APIs. Requests usually require authentication (unlike the `com.atproto.sync.*` endpoints), and are made directly to the user's own PDS instance.*
 
@@ -968,7 +995,7 @@ Returns a list of missing blobs for the requesting account. Intended to be used 
 
 List a range of records in a repository, matching a specific collection. Does not require auth.
 
-### [server](docs/sdks/server/README.md)
+### [Server](docs/sdks/server/README.md)
 
 * [checkAccountStatus](docs/sdks/server/README.md#checkaccountstatus) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
@@ -1006,7 +1033,7 @@ Initiate a user account deletion via email.
 
 Request a token in order to update email.
 
-### [servers](docs/sdks/servers/README.md)
+### [Servers](docs/sdks/servers/README.md)
 
 * [getServiceAuth](docs/sdks/servers/README.md#getserviceauth) - *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 
@@ -1029,7 +1056,7 @@ Reserve a repo signing key, for use with account creation. Necessary so that a D
 
 Update an account's email.
 
-### [set](docs/sdks/set/README.md)
+### [Set](docs/sdks/set/README.md)
 
 * [delete](docs/sdks/set/README.md#delete) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
@@ -1042,7 +1069,7 @@ Delete an entire set. Attempting to delete a set that does not exist will result
 
 Query available sets
 
-### [sets](docs/sdks/sets/README.md)
+### [Sets](docs/sdks/sets/README.md)
 
 * [deleteValues](docs/sdks/sets/README.md#deletevalues) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
@@ -1055,7 +1082,7 @@ Delete values from a specific set. Attempting to delete values that are not in t
 
 Get a specific set and its values
 
-### [setting](docs/sdks/setting/README.md)
+### [Setting](docs/sdks/setting/README.md)
 
 * [removeOptions](docs/sdks/setting/README.md#removeoptions) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
@@ -1063,7 +1090,7 @@ Get a specific set and its values
 
 Delete settings by key
 
-### [settings](docs/sdks/settings/README.md)
+### [Settings](docs/sdks/settings/README.md)
 
 * [list](docs/sdks/settings/README.md#list) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
@@ -1071,7 +1098,7 @@ Delete settings by key
 
 List settings with optional filtering
 
-### [signature](docs/sdks/signature/README.md)
+### [Signature](docs/sdks/signature/README.md)
 
 * [findCorrelation](docs/sdks/signature/README.md#findcorrelation) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
@@ -1079,7 +1106,7 @@ List settings with optional filtering
 
 Find all correlated threat signatures between 2 or more accounts.
 
-### [sync](docs/sdks/sync/README.md)
+### [Sync](docs/sdks/sync/README.md)
 
 * [getRepo](docs/sdks/sync/README.md#getrepo) - This endpoint is part of the atproto repository synchronization APIs. Requests usually do not require authentication, and can be made to PDS intances or Relay instances.*
 
@@ -1097,7 +1124,7 @@ List blob CIDs for an account, since some repo revision. Does not require auth; 
 
 Notify a crawling service of a recent update, and that crawling should resume. Intended use is after a gap between repo stream events caused the crawling service to disconnect. Does not require auth; implemented by Relay.
 
-### [syncs](docs/sdks/syncs/README.md)
+### [Syncs](docs/sdks/syncs/README.md)
 
 * [getBlocks](docs/sdks/syncs/README.md#getblocks) - This endpoint is part of the atproto repository synchronization APIs. Requests usually do not require authentication, and can be made to PDS intances or Relay instances.*
 
@@ -1120,7 +1147,7 @@ Get the hosting status for a repository, on this server. Expected to be implemen
 
 Request a service to persistently crawl hosted repos. Expected use is new PDS instances declaring their existence to Relays. Does not require auth.
 
-### [team](docs/sdks/team/README.md)
+### [Team](docs/sdks/team/README.md)
 
 * [listMembers](docs/sdks/team/README.md#listmembers) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
@@ -1128,7 +1155,7 @@ Request a service to persistently crawl hosted repos. Expected use is new PDS in
 
 List all members with access to the ozone service.
 
-### [teams](docs/sdks/teams/README.md)
+### [Teams](docs/sdks/teams/README.md)
 
 * [deleteMember](docs/sdks/teams/README.md#deletemember) - *This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 
@@ -1141,7 +1168,7 @@ Delete a member from ozone team. Requires admin role.
 
 Update a member in the ozone service. Requires admin role.
 
-### [users](docs/sdks/users/README.md)
+### [Users](docs/sdks/users/README.md)
 
 * [getFollowers](docs/sdks/users/README.md#getfollowers) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -1159,7 +1186,7 @@ Enumerates follows similar to a given account (actor). Expected use is to recomm
 
 Unmutes the specified account. Requires auth.
 
-### [videos](docs/sdks/videos/README.md)
+### [Videos](docs/sdks/videos/README.md)
 
 * [getJobStatus](docs/sdks/videos/README.md#getjobstatus) - *This endpoint is part of the Bluesky application Lexicon APIs (`app.bsky.*`). Public endpoints which don't require authentication can be made directly against the public Bluesky AppView API: https://public.api.bsky.app. Authenticated requests are usually made to the user's PDS, with automatic service proxying. Authenticated requests can be used for both public and non-public endpoints.*
 
@@ -2838,7 +2865,6 @@ async function run() {
   const result = await bluesky.actors.search({});
 
   for await (const page of result) {
-    // Handle the page
     console.log(page);
   }
 }
@@ -2873,7 +2899,6 @@ const bluesky = new Bluesky({
 async function run() {
   const result = await bluesky.videos.upload(await openAsBlob("example.file"));
 
-  // Handle the result
   console.log(result);
 }
 
@@ -2909,7 +2934,6 @@ async function run() {
     },
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -2938,7 +2962,6 @@ const bluesky = new Bluesky({
 async function run() {
   const result = await bluesky.actors.getPreferences();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -2950,126 +2973,43 @@ run();
 <!-- Start Error Handling [errors] -->
 ## Error Handling
 
-Some methods specify known errors which can be thrown. All the known errors are enumerated in the `models/errors/errors.ts` module. The known errors for a method are documented under the *Errors* tables in SDK docs. For example, the `getPreferences` method may throw the following errors:
+[`BlueskyError`](./src/models/errors/blueskyerror.ts) is the base class for all HTTP error responses. It has the following properties:
 
-| Error Type                                                     | Status Code                  | Content Type     |
-| -------------------------------------------------------------- | ---------------------------- | ---------------- |
-| errors.BadRequestAppBskyActorGetPreferencesResponseBodyError   | 400                          | application/json |
-| errors.UnauthorizedAppBskyActorGetPreferencesResponseBodyError | 401                          | application/json |
-| errors.NotFoundError                                           | 404                          | application/json |
-| errors.UnauthorizedError                                       | 403, 407                     | application/json |
-| errors.TimeoutError                                            | 408                          | application/json |
-| errors.RateLimitedError                                        | 429                          | application/json |
-| errors.BadRequestError                                         | 413, 414, 415, 422, 431      | application/json |
-| errors.TimeoutError                                            | 504                          | application/json |
-| errors.NotFoundError                                           | 501, 505                     | application/json |
-| errors.InternalServerError                                     | 500, 502, 503, 506, 507, 508 | application/json |
-| errors.BadRequestError                                         | 510                          | application/json |
-| errors.UnauthorizedError                                       | 511                          | application/json |
-| errors.APIError                                                | 4XX, 5XX                     | \*/\*            |
+| Property            | Type       | Description                                                                             |
+| ------------------- | ---------- | --------------------------------------------------------------------------------------- |
+| `error.message`     | `string`   | Error message                                                                           |
+| `error.statusCode`  | `number`   | HTTP response status code eg `404`                                                      |
+| `error.headers`     | `Headers`  | HTTP response headers                                                                   |
+| `error.body`        | `string`   | HTTP body. Can be empty string if no body is returned.                                  |
+| `error.rawResponse` | `Response` | Raw HTTP response                                                                       |
+| `error.data$`       |            | Optional. Some errors may contain structured data. [See Error Classes](#error-classes). |
 
-If the method throws an error and it is not captured by the known errors, it will default to throwing a `APIError`.
-
+### Example
 ```typescript
 import { Bluesky } from "@speakeasy-sdks/bluesky";
-import {
-  BadRequestAppBskyActorGetPreferencesResponseBodyError,
-  BadRequestError,
-  InternalServerError,
-  NotFoundError,
-  RateLimitedError,
-  SDKValidationError,
-  TimeoutError,
-  UnauthorizedAppBskyActorGetPreferencesResponseBodyError,
-  UnauthorizedError,
-} from "@speakeasy-sdks/bluesky/models/errors";
+import * as errors from "@speakeasy-sdks/bluesky/models/errors";
 
 const bluesky = new Bluesky({
   bearer: process.env["BLUESKY_BEARER"] ?? "",
 });
 
 async function run() {
-  let result;
   try {
-    result = await bluesky.actors.getPreferences();
+    const result = await bluesky.actors.getPreferences();
 
-    // Handle the result
     console.log(result);
-  } catch (err) {
-    switch (true) {
-      // The server response does not match the expected SDK schema
-      case (err instanceof SDKValidationError): {
-        // Pretty-print will provide a human-readable multi-line error message
-        console.error(err.pretty());
-        // Raw value may also be inspected
-        console.error(err.rawValue);
-        return;
-      }
-      case (err
-        instanceof BadRequestAppBskyActorGetPreferencesResponseBodyError): {
-        // Handle err.data$: BadRequestAppBskyActorGetPreferencesResponseBodyErrorData
-        console.error(err);
-        return;
-      }
-      case (err
-        instanceof UnauthorizedAppBskyActorGetPreferencesResponseBodyError): {
-        // Handle err.data$: UnauthorizedAppBskyActorGetPreferencesResponseBodyErrorData
-        console.error(err);
-        return;
-      }
-      case (err instanceof NotFoundError): {
-        // Handle err.data$: NotFoundErrorData
-        console.error(err);
-        return;
-      }
-      case (err instanceof UnauthorizedError): {
-        // Handle err.data$: UnauthorizedErrorData
-        console.error(err);
-        return;
-      }
-      case (err instanceof TimeoutError): {
-        // Handle err.data$: TimeoutErrorData
-        console.error(err);
-        return;
-      }
-      case (err instanceof RateLimitedError): {
-        // Handle err.data$: RateLimitedErrorData
-        console.error(err);
-        return;
-      }
-      case (err instanceof BadRequestError): {
-        // Handle err.data$: BadRequestErrorData
-        console.error(err);
-        return;
-      }
-      case (err instanceof TimeoutError): {
-        // Handle err.data$: TimeoutErrorData
-        console.error(err);
-        return;
-      }
-      case (err instanceof NotFoundError): {
-        // Handle err.data$: NotFoundErrorData
-        console.error(err);
-        return;
-      }
-      case (err instanceof InternalServerError): {
-        // Handle err.data$: InternalServerErrorData
-        console.error(err);
-        return;
-      }
-      case (err instanceof BadRequestError): {
-        // Handle err.data$: BadRequestErrorData
-        console.error(err);
-        return;
-      }
-      case (err instanceof UnauthorizedError): {
-        // Handle err.data$: UnauthorizedErrorData
-        console.error(err);
-        return;
-      }
-      default: {
-        // Other errors such as network errors, see HTTPClientErrors for more details
-        throw err;
+  } catch (error) {
+    // The base class for HTTP error responses
+    if (error instanceof errors.BlueskyError) {
+      console.log(error.message);
+      console.log(error.statusCode);
+      console.log(error.body);
+      console.log(error.headers);
+
+      // Depending on the method different errors may be thrown
+      if (error instanceof errors.AppBskyActorGetPreferencesBadRequestError) {
+        console.log(error.data$.error); // errors.AppBskyActorGetPreferencesError
+        console.log(error.data$.message); // string
       }
     }
   }
@@ -3079,17 +3019,372 @@ run();
 
 ```
 
-Validation errors can also occur when either method arguments or data returned from the server do not match the expected format. The `SDKValidationError` that is thrown as a result will capture the raw value that failed validation in an attribute called `rawValue`. Additionally, a `pretty()` method is available on this error that can be used to log a nicely formatted multi-line string since validation errors can list many issues and the plain error string may be difficult read when debugging.
+### Error Classes
+**Primary errors:**
+* [`BlueskyError`](./src/models/errors/blueskyerror.ts): The base class for HTTP error responses.
+  * [`UnauthorizedError`](./src/models/errors/unauthorizederror.ts): A collection of codes that generally means the client was not authenticated correctly for the request they want to make.
+  * [`NotFoundError`](./src/models/errors/notfounderror.ts): Status codes relating to the resource/entity they are requesting not being found or endpoints/routes not existing.
+  * [`TimeoutError`](./src/models/errors/timeouterror.ts): Timeouts occurred with the request.
+  * [`BadRequestError`](./src/models/errors/badrequesterror.ts): A collection of codes that generally means the end user got something wrong in making the request.
+  * [`RateLimitedError`](./src/models/errors/ratelimitederror.ts): Status codes relating to the client being rate limited by the server. Status code `429`.
+  * [`InternalServerError`](./src/models/errors/internalservererror.ts): A collection of status codes that generally mean the server failed in an unexpected way.
 
-In some rare cases, the SDK can fail to get a response from the server or even make the request due to unexpected circumstances such as network conditions. These types of errors are captured in the `models/errors/httpclienterrors.ts` module:
+<details><summary>Less common errors (344)</summary>
 
-| HTTP Client Error                                    | Description                                          |
-| ---------------------------------------------------- | ---------------------------------------------------- |
-| RequestAbortedError                                  | HTTP request was aborted by the client               |
-| RequestTimeoutError                                  | HTTP request timed out due to an AbortSignal signal  |
-| ConnectionError                                      | HTTP client was unable to make a request to a server |
-| InvalidRequestError                                  | Any input used to create a request is invalid        |
-| UnexpectedClientError                                | Unrecognised or unexpected error                     |
+<br />
+
+**Network errors:**
+* [`ConnectionError`](./src/models/errors/httpclienterrors.ts): HTTP client was unable to make a request to a server.
+* [`RequestTimeoutError`](./src/models/errors/httpclienterrors.ts): HTTP request timed out due to an AbortSignal signal.
+* [`RequestAbortedError`](./src/models/errors/httpclienterrors.ts): HTTP request was aborted by the client.
+* [`InvalidRequestError`](./src/models/errors/httpclienterrors.ts): Any input used to create a request is invalid.
+* [`UnexpectedClientError`](./src/models/errors/httpclienterrors.ts): Unrecognised or unexpected error.
+
+
+**Inherit from [`BlueskyError`](./src/models/errors/blueskyerror.ts)**:
+* [`AppBskyActorGetPreferencesBadRequestError`](./src/models/errors/appbskyactorgetpreferencesbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyActorGetProfileBadRequestError`](./src/models/errors/appbskyactorgetprofilebadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyActorGetProfilesBadRequestError`](./src/models/errors/appbskyactorgetprofilesbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyActorPutPreferencesBadRequestError`](./src/models/errors/appbskyactorputpreferencesbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyActorSearchActorsBadRequestError`](./src/models/errors/appbskyactorsearchactorsbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyActorGetSuggestionsBadRequestError`](./src/models/errors/appbskyactorgetsuggestionsbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyActorSearchActorsTypeaheadBadRequestError`](./src/models/errors/appbskyactorsearchactorstypeaheadbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyFeedDescribeFeedGeneratorBadRequestError`](./src/models/errors/appbskyfeeddescribefeedgeneratorbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyFeedGetLikesBadRequestError`](./src/models/errors/appbskyfeedgetlikesbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyFeedGetListFeedBadRequestError`](./src/models/errors/appbskyfeedgetlistfeedbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyFeedGetPostThreadBadRequestError`](./src/models/errors/appbskyfeedgetpostthreadbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyFeedGetPostsBadRequestError`](./src/models/errors/appbskyfeedgetpostsbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyFeedGetQuotesBadRequestError`](./src/models/errors/appbskyfeedgetquotesbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyFeedGetRepostedByBadRequestError`](./src/models/errors/appbskyfeedgetrepostedbybadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyFeedSendInteractionsBadRequestError`](./src/models/errors/appbskyfeedsendinteractionsbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyFeedGetActorFeedsBadRequestError`](./src/models/errors/appbskyfeedgetactorfeedsbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyFeedGetActorLikesBadRequestError`](./src/models/errors/appbskyfeedgetactorlikesbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyFeedGetAuthorFeedBadRequestError`](./src/models/errors/appbskyfeedgetauthorfeedbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyFeedGetFeedBadRequestError`](./src/models/errors/appbskyfeedgetfeedbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyFeedGetFeedGeneratorBadRequestError`](./src/models/errors/appbskyfeedgetfeedgeneratorbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyFeedGetFeedGeneratorsBadRequestError`](./src/models/errors/appbskyfeedgetfeedgeneratorsbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyFeedGetFeedSkeletonBadRequestError`](./src/models/errors/appbskyfeedgetfeedskeletonbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyFeedGetSuggestedFeedsBadRequestError`](./src/models/errors/appbskyfeedgetsuggestedfeedsbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyFeedGetTimelineBadRequestError`](./src/models/errors/appbskyfeedgettimelinebadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyFeedSearchPostsBadRequestError`](./src/models/errors/appbskyfeedsearchpostsbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyGraphGetActorStarterPacksBadRequestError`](./src/models/errors/appbskygraphgetactorstarterpacksbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyGraphGetFollowsBadRequestError`](./src/models/errors/appbskygraphgetfollowsbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyGraphGetListBadRequestError`](./src/models/errors/appbskygraphgetlistbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyGraphGetListMutesBadRequestError`](./src/models/errors/appbskygraphgetlistmutesbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyGraphGetListsBadRequestError`](./src/models/errors/appbskygraphgetlistsbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyGraphGetRelationshipsBadRequestError`](./src/models/errors/appbskygraphgetrelationshipsbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyGraphGetStarterPackBadRequestError`](./src/models/errors/appbskygraphgetstarterpackbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyGraphMuteActorBadRequestError`](./src/models/errors/appbskygraphmuteactorbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyGraphMuteActorListBadRequestError`](./src/models/errors/appbskygraphmuteactorlistbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyGraphSearchStarterPacksBadRequestError`](./src/models/errors/appbskygraphsearchstarterpacksbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyGraphUnmuteThreadBadRequestError`](./src/models/errors/appbskygraphunmutethreadbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyGraphGetBlocksBadRequestError`](./src/models/errors/appbskygraphgetblocksbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyGraphGetKnownFollowersBadRequestError`](./src/models/errors/appbskygraphgetknownfollowersbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyGraphGetListBlocksBadRequestError`](./src/models/errors/appbskygraphgetlistblocksbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyGraphGetMutesBadRequestError`](./src/models/errors/appbskygraphgetmutesbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyGraphGetStarterPacksBadRequestError`](./src/models/errors/appbskygraphgetstarterpacksbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyGraphMuteThreadBadRequestError`](./src/models/errors/appbskygraphmutethreadbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyGraphUnmuteActorListBadRequestError`](./src/models/errors/appbskygraphunmuteactorlistbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyGraphGetFollowersBadRequestError`](./src/models/errors/appbskygraphgetfollowersbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyGraphGetSuggestedFollowsByActorBadRequestError`](./src/models/errors/appbskygraphgetsuggestedfollowsbyactorbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyGraphUnmuteActorBadRequestError`](./src/models/errors/appbskygraphunmuteactorbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyLabelerGetServicesBadRequestError`](./src/models/errors/appbskylabelergetservicesbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyNotificationGetUnreadCountBadRequestError`](./src/models/errors/appbskynotificationgetunreadcountbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyNotificationPutPreferencesBadRequestError`](./src/models/errors/appbskynotificationputpreferencesbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyNotificationRegisterPushBadRequestError`](./src/models/errors/appbskynotificationregisterpushbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyNotificationUpdateSeenBadRequestError`](./src/models/errors/appbskynotificationupdateseenbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyNotificationListNotificationsBadRequestError`](./src/models/errors/appbskynotificationlistnotificationsbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyVideoGetJobStatusBadRequestError`](./src/models/errors/appbskyvideogetjobstatusbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyVideoGetUploadLimitsBadRequestError`](./src/models/errors/appbskyvideogetuploadlimitsbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyVideoUploadVideoBadRequestError`](./src/models/errors/appbskyvideouploadvideobadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ChatBskyActorDeleteAccountBadRequestError`](./src/models/errors/chatbskyactordeleteaccountbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ChatBskyActorExportAccountDataBadRequestError`](./src/models/errors/chatbskyactorexportaccountdatabadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ChatBskyConvoDeleteMessageForSelfBadRequestError`](./src/models/errors/chatbskyconvodeletemessageforselfbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ChatBskyConvoListConvosBadRequestError`](./src/models/errors/chatbskyconvolistconvosbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ChatBskyConvoGetConvoBadRequestError`](./src/models/errors/chatbskyconvogetconvobadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ChatBskyModerationGetMessageContextBadRequestError`](./src/models/errors/chatbskymoderationgetmessagecontextbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ChatBskyConvoGetConvoForMembersBadRequestError`](./src/models/errors/chatbskyconvogetconvoformembersbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ChatBskyConvoGetMessagesBadRequestError`](./src/models/errors/chatbskyconvogetmessagesbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ChatBskyConvoSendMessageBadRequestError`](./src/models/errors/chatbskyconvosendmessagebadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ChatBskyConvoUpdateReadBadRequestError`](./src/models/errors/chatbskyconvoupdatereadbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ChatBskyConvoGetLogBadRequestError`](./src/models/errors/chatbskyconvogetlogbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ChatBskyConvoLeaveConvoBadRequestError`](./src/models/errors/chatbskyconvoleaveconvobadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ChatBskyConvoMuteConvoBadRequestError`](./src/models/errors/chatbskyconvomuteconvobadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ChatBskyConvoSendMessageBatchBadRequestError`](./src/models/errors/chatbskyconvosendmessagebatchbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ChatBskyConvoUnmuteConvoBadRequestError`](./src/models/errors/chatbskyconvounmuteconvobadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ChatBskyModerationGetActorMetadataBadRequestError`](./src/models/errors/chatbskymoderationgetactormetadatabadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ChatBskyModerationUpdateActorAccessBadRequestError`](./src/models/errors/chatbskymoderationupdateactoraccessbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoAdminDeleteAccountBadRequestError`](./src/models/errors/comatprotoadmindeleteaccountbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoAdminEnableAccountInvitesBadRequestError`](./src/models/errors/comatprotoadminenableaccountinvitesbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoAdminGetAccountInfosBadRequestError`](./src/models/errors/comatprotoadmingetaccountinfosbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoAdminDisableAccountInvitesBadRequestError`](./src/models/errors/comatprotoadmindisableaccountinvitesbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoAdminGetInviteCodesBadRequestError`](./src/models/errors/comatprotoadmingetinvitecodesbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoAdminSearchAccountsBadRequestError`](./src/models/errors/comatprotoadminsearchaccountsbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoAdminDisableInviteCodesBadRequestError`](./src/models/errors/comatprotoadmindisableinvitecodesbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoAdminGetAccountInfoBadRequestError`](./src/models/errors/comatprotoadmingetaccountinfobadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoAdminGetSubjectStatusBadRequestError`](./src/models/errors/comatprotoadmingetsubjectstatusbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoAdminSendEmailBadRequestError`](./src/models/errors/comatprotoadminsendemailbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoAdminUpdateAccountEmailBadRequestError`](./src/models/errors/comatprotoadminupdateaccountemailbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoAdminUpdateAccountHandleBadRequestError`](./src/models/errors/comatprotoadminupdateaccounthandlebadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoAdminUpdateAccountPasswordBadRequestError`](./src/models/errors/comatprotoadminupdateaccountpasswordbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoAdminUpdateSubjectStatusBadRequestError`](./src/models/errors/comatprotoadminupdatesubjectstatusbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoIdentityGetRecommendedDidCredentialsBadRequestError`](./src/models/errors/comatprotoidentitygetrecommendeddidcredentialsbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoIdentitySubmitPlcOperationBadRequestError`](./src/models/errors/comatprotoidentitysubmitplcoperationbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoIdentityRequestPlcOperationSignatureBadRequestError`](./src/models/errors/comatprotoidentityrequestplcoperationsignaturebadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoIdentityResolveHandleBadRequestError`](./src/models/errors/comatprotoidentityresolvehandlebadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoIdentitySignPlcOperationBadRequestError`](./src/models/errors/comatprotoidentitysignplcoperationbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoIdentityUpdateHandleBadRequestError`](./src/models/errors/comatprotoidentityupdatehandlebadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoLabelQueryLabelsBadRequestError`](./src/models/errors/comatprotolabelquerylabelsbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoModerationCreateReportBadRequestError`](./src/models/errors/comatprotomoderationcreatereportbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoRepoApplyWritesBadRequestError`](./src/models/errors/comatprotorepoapplywritesbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoRepoCreateRecordBadRequestError`](./src/models/errors/comatprotorepocreaterecordbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoRepoDescribeRepoBadRequestError`](./src/models/errors/comatprotorepodescriberepobadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoRepoGetRecordBadRequestError`](./src/models/errors/comatprotorepogetrecordbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoRepoListMissingBlobsBadRequestError`](./src/models/errors/comatprotorepolistmissingblobsbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoRepoListRecordsBadRequestError`](./src/models/errors/comatprotorepolistrecordsbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoRepoDeleteRecordBadRequestError`](./src/models/errors/comatprotorepodeleterecordbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoRepoImportRepoBadRequestError`](./src/models/errors/comatprotorepoimportrepobadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoRepoUploadBlobBadRequestError`](./src/models/errors/comatprotorepouploadblobbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoRepoPutRecordBadRequestError`](./src/models/errors/comatprotorepoputrecordbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoServerActivateAccountBadRequestError`](./src/models/errors/comatprotoserveractivateaccountbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoServerCreateAccountBadRequestError`](./src/models/errors/comatprotoservercreateaccountbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoServerCreateAppPasswordBadRequestError`](./src/models/errors/comatprotoservercreateapppasswordbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoServerCreateInviteCodeBadRequestError`](./src/models/errors/comatprotoservercreateinvitecodebadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoServerCreateInviteCodesBadRequestError`](./src/models/errors/comatprotoservercreateinvitecodesbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoServerDeleteAccountBadRequestError`](./src/models/errors/comatprotoserverdeleteaccountbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoServerDeleteSessionBadRequestError`](./src/models/errors/comatprotoserverdeletesessionbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoServerDescribeServerBadRequestError`](./src/models/errors/comatprotoserverdescribeserverbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoServerRefreshSessionBadRequestError`](./src/models/errors/comatprotoserverrefreshsessionbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoServerRequestEmailConfirmationBadRequestError`](./src/models/errors/comatprotoserverrequestemailconfirmationbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoServerRequestPasswordResetBadRequestError`](./src/models/errors/comatprotoserverrequestpasswordresetbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoServerResetPasswordBadRequestError`](./src/models/errors/comatprotoserverresetpasswordbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoServerRevokeAppPasswordBadRequestError`](./src/models/errors/comatprotoserverrevokeapppasswordbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoServerCheckAccountStatusBadRequestError`](./src/models/errors/comatprotoservercheckaccountstatusbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoServerConfirmEmailBadRequestError`](./src/models/errors/comatprotoserverconfirmemailbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoServerCreateSessionBadRequestError`](./src/models/errors/comatprotoservercreatesessionbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoServerDeactivateAccountBadRequestError`](./src/models/errors/comatprotoserverdeactivateaccountbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoServerListAppPasswordsBadRequestError`](./src/models/errors/comatprotoserverlistapppasswordsbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoServerRequestAccountDeleteBadRequestError`](./src/models/errors/comatprotoserverrequestaccountdeletebadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoServerRequestEmailUpdateBadRequestError`](./src/models/errors/comatprotoserverrequestemailupdatebadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoServerGetAccountInviteCodesBadRequestError`](./src/models/errors/comatprotoservergetaccountinvitecodesbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoServerGetServiceAuthBadRequestError`](./src/models/errors/comatprotoservergetserviceauthbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoServerGetSessionBadRequestError`](./src/models/errors/comatprotoservergetsessionbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoServerReserveSigningKeyBadRequestError`](./src/models/errors/comatprotoserverreservesigningkeybadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoServerUpdateEmailBadRequestError`](./src/models/errors/comatprotoserverupdateemailbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoSyncGetBlobBadRequestError`](./src/models/errors/comatprotosyncgetblobbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoSyncListReposBadRequestError`](./src/models/errors/comatprotosynclistreposbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoSyncGetBlocksBadRequestError`](./src/models/errors/comatprotosyncgetblocksbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoSyncGetLatestCommitBadRequestError`](./src/models/errors/comatprotosyncgetlatestcommitbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoSyncGetRepoStatusBadRequestError`](./src/models/errors/comatprotosyncgetrepostatusbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoSyncRequestCrawlBadRequestError`](./src/models/errors/comatprotosyncrequestcrawlbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoSyncGetRecordBadRequestError`](./src/models/errors/comatprotosyncgetrecordbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoSyncGetRepoBadRequestError`](./src/models/errors/comatprotosyncgetrepobadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoSyncListBlobsBadRequestError`](./src/models/errors/comatprotosynclistblobsbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoSyncNotifyOfUpdateBadRequestError`](./src/models/errors/comatprotosyncnotifyofupdatebadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneCommunicationCreateTemplateBadRequestError`](./src/models/errors/toolsozonecommunicationcreatetemplatebadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneCommunicationDeleteTemplateBadRequestError`](./src/models/errors/toolsozonecommunicationdeletetemplatebadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneCommunicationListTemplatesBadRequestError`](./src/models/errors/toolsozonecommunicationlisttemplatesbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneCommunicationUpdateTemplateBadRequestError`](./src/models/errors/toolsozonecommunicationupdatetemplatebadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneModerationEmitEventBadRequestError`](./src/models/errors/toolsozonemoderationemiteventbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneModerationGetRecordBadRequestError`](./src/models/errors/toolsozonemoderationgetrecordbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneModerationGetRepoBadRequestError`](./src/models/errors/toolsozonemoderationgetrepobadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneModerationGetEventBadRequestError`](./src/models/errors/toolsozonemoderationgeteventbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneModerationQueryEventsBadRequestError`](./src/models/errors/toolsozonemoderationqueryeventsbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneModerationGetRecordsBadRequestError`](./src/models/errors/toolsozonemoderationgetrecordsbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneModerationGetReposBadRequestError`](./src/models/errors/toolsozonemoderationgetreposbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneModerationQueryStatusesBadRequestError`](./src/models/errors/toolsozonemoderationquerystatusesbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneModerationSearchReposBadRequestError`](./src/models/errors/toolsozonemoderationsearchreposbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneServerGetConfigBadRequestError`](./src/models/errors/toolsozoneservergetconfigbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneSetAddValuesBadRequestError`](./src/models/errors/toolsozonesetaddvaluesbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneSetUpsertSetBadRequestError`](./src/models/errors/toolsozonesetupsertsetbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneSetDeleteSetBadRequestError`](./src/models/errors/toolsozonesetdeletesetbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneSetQuerySetsBadRequestError`](./src/models/errors/toolsozonesetquerysetsbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneSetDeleteValuesBadRequestError`](./src/models/errors/toolsozonesetdeletevaluesbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneSetGetValuesBadRequestError`](./src/models/errors/toolsozonesetgetvaluesbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneSettingListOptionsBadRequestError`](./src/models/errors/toolsozonesettinglistoptionsbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneSettingRemoveOptionsBadRequestError`](./src/models/errors/toolsozonesettingremoveoptionsbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneSettingUpsertOptionBadRequestError`](./src/models/errors/toolsozonesettingupsertoptionbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneSignatureFindCorrelationBadRequestError`](./src/models/errors/toolsozonesignaturefindcorrelationbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneSignatureFindRelatedAccountsBadRequestError`](./src/models/errors/toolsozonesignaturefindrelatedaccountsbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneSignatureSearchAccountsBadRequestError`](./src/models/errors/toolsozonesignaturesearchaccountsbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneTeamAddMemberBadRequestError`](./src/models/errors/toolsozoneteamaddmemberbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneTeamDeleteMemberBadRequestError`](./src/models/errors/toolsozoneteamdeletememberbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneTeamUpdateMemberBadRequestError`](./src/models/errors/toolsozoneteamupdatememberbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneTeamListMembersBadRequestError`](./src/models/errors/toolsozoneteamlistmembersbadrequesterror.ts): Bad Request. Status code `400`. Applicable to 1 of 169 methods.*
+* [`AppBskyActorGetPreferencesAuthMissingError`](./src/models/errors/appbskyactorgetpreferencesauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyActorGetProfileAuthMissingError`](./src/models/errors/appbskyactorgetprofileauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyActorGetProfilesAuthMissingError`](./src/models/errors/appbskyactorgetprofilesauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyActorPutPreferencesAuthMissingError`](./src/models/errors/appbskyactorputpreferencesauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyActorSearchActorsAuthMissingError`](./src/models/errors/appbskyactorsearchactorsauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyActorGetSuggestionsAuthMissingError`](./src/models/errors/appbskyactorgetsuggestionsauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyActorSearchActorsTypeaheadAuthMissingError`](./src/models/errors/appbskyactorsearchactorstypeaheadauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyFeedDescribeFeedGeneratorAuthMissingError`](./src/models/errors/appbskyfeeddescribefeedgeneratorauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyFeedGetLikesAuthMissingError`](./src/models/errors/appbskyfeedgetlikesauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyFeedGetListFeedAuthMissingError`](./src/models/errors/appbskyfeedgetlistfeedauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyFeedGetPostThreadAuthMissingError`](./src/models/errors/appbskyfeedgetpostthreadauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyFeedGetPostsAuthMissingError`](./src/models/errors/appbskyfeedgetpostsauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyFeedGetQuotesAuthMissingError`](./src/models/errors/appbskyfeedgetquotesauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyFeedGetRepostedByAuthMissingError`](./src/models/errors/appbskyfeedgetrepostedbyauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyFeedSendInteractionsAuthMissingError`](./src/models/errors/appbskyfeedsendinteractionsauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyFeedGetActorFeedsAuthMissingError`](./src/models/errors/appbskyfeedgetactorfeedsauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyFeedGetActorLikesAuthMissingError`](./src/models/errors/appbskyfeedgetactorlikesauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyFeedGetAuthorFeedAuthMissingError`](./src/models/errors/appbskyfeedgetauthorfeedauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyFeedGetFeedAuthMissingError`](./src/models/errors/appbskyfeedgetfeedauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyFeedGetFeedGeneratorAuthMissingError`](./src/models/errors/appbskyfeedgetfeedgeneratorauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyFeedGetFeedGeneratorsAuthMissingError`](./src/models/errors/appbskyfeedgetfeedgeneratorsauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyFeedGetFeedSkeletonAuthMissingError`](./src/models/errors/appbskyfeedgetfeedskeletonauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyFeedGetSuggestedFeedsAuthMissingError`](./src/models/errors/appbskyfeedgetsuggestedfeedsauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyFeedGetTimelineAuthMissingError`](./src/models/errors/appbskyfeedgettimelineauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyFeedSearchPostsAuthMissingError`](./src/models/errors/appbskyfeedsearchpostsauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyGraphGetActorStarterPacksAuthMissingError`](./src/models/errors/appbskygraphgetactorstarterpacksauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyGraphGetFollowsAuthMissingError`](./src/models/errors/appbskygraphgetfollowsauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyGraphGetListAuthMissingError`](./src/models/errors/appbskygraphgetlistauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyGraphGetListMutesAuthMissingError`](./src/models/errors/appbskygraphgetlistmutesauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyGraphGetListsAuthMissingError`](./src/models/errors/appbskygraphgetlistsauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyGraphGetRelationshipsAuthMissingError`](./src/models/errors/appbskygraphgetrelationshipsauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyGraphGetStarterPackAuthMissingError`](./src/models/errors/appbskygraphgetstarterpackauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyGraphMuteActorAuthMissingError`](./src/models/errors/appbskygraphmuteactorauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyGraphMuteActorListAuthMissingError`](./src/models/errors/appbskygraphmuteactorlistauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyGraphSearchStarterPacksAuthMissingError`](./src/models/errors/appbskygraphsearchstarterpacksauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyGraphUnmuteThreadAuthMissingError`](./src/models/errors/appbskygraphunmutethreadauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyGraphGetBlocksAuthMissingError`](./src/models/errors/appbskygraphgetblocksauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyGraphGetKnownFollowersAuthMissingError`](./src/models/errors/appbskygraphgetknownfollowersauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyGraphGetListBlocksAuthMissingError`](./src/models/errors/appbskygraphgetlistblocksauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyGraphGetMutesAuthMissingError`](./src/models/errors/appbskygraphgetmutesauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyGraphGetStarterPacksAuthMissingError`](./src/models/errors/appbskygraphgetstarterpacksauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyGraphMuteThreadAuthMissingError`](./src/models/errors/appbskygraphmutethreadauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyGraphUnmuteActorListAuthMissingError`](./src/models/errors/appbskygraphunmuteactorlistauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyGraphGetFollowersAuthMissingError`](./src/models/errors/appbskygraphgetfollowersauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyGraphGetSuggestedFollowsByActorAuthMissingError`](./src/models/errors/appbskygraphgetsuggestedfollowsbyactorauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyGraphUnmuteActorAuthMissingError`](./src/models/errors/appbskygraphunmuteactorauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyLabelerGetServicesAuthMissingError`](./src/models/errors/appbskylabelergetservicesauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyNotificationGetUnreadCountAuthMissingError`](./src/models/errors/appbskynotificationgetunreadcountauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyNotificationPutPreferencesAuthMissingError`](./src/models/errors/appbskynotificationputpreferencesauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyNotificationRegisterPushAuthMissingError`](./src/models/errors/appbskynotificationregisterpushauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyNotificationUpdateSeenAuthMissingError`](./src/models/errors/appbskynotificationupdateseenauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyNotificationListNotificationsAuthMissingError`](./src/models/errors/appbskynotificationlistnotificationsauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyVideoGetJobStatusAuthMissingError`](./src/models/errors/appbskyvideogetjobstatusauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyVideoGetUploadLimitsAuthMissingError`](./src/models/errors/appbskyvideogetuploadlimitsauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`AppBskyVideoUploadVideoAuthMissingError`](./src/models/errors/appbskyvideouploadvideoauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ChatBskyActorDeleteAccountAuthMissingError`](./src/models/errors/chatbskyactordeleteaccountauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ChatBskyActorExportAccountDataAuthMissingError`](./src/models/errors/chatbskyactorexportaccountdataauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ChatBskyConvoDeleteMessageForSelfAuthMissingError`](./src/models/errors/chatbskyconvodeletemessageforselfauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ChatBskyConvoListConvosAuthMissingError`](./src/models/errors/chatbskyconvolistconvosauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ChatBskyConvoGetConvoAuthMissingError`](./src/models/errors/chatbskyconvogetconvoauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ChatBskyModerationGetMessageContextAuthMissingError`](./src/models/errors/chatbskymoderationgetmessagecontextauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ChatBskyConvoGetConvoForMembersAuthMissingError`](./src/models/errors/chatbskyconvogetconvoformembersauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ChatBskyConvoGetMessagesAuthMissingError`](./src/models/errors/chatbskyconvogetmessagesauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ChatBskyConvoSendMessageAuthMissingError`](./src/models/errors/chatbskyconvosendmessageauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ChatBskyConvoUpdateReadAuthMissingError`](./src/models/errors/chatbskyconvoupdatereadauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ChatBskyConvoGetLogAuthMissingError`](./src/models/errors/chatbskyconvogetlogauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ChatBskyConvoLeaveConvoAuthMissingError`](./src/models/errors/chatbskyconvoleaveconvoauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ChatBskyConvoMuteConvoAuthMissingError`](./src/models/errors/chatbskyconvomuteconvoauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ChatBskyConvoSendMessageBatchAuthMissingError`](./src/models/errors/chatbskyconvosendmessagebatchauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ChatBskyConvoUnmuteConvoAuthMissingError`](./src/models/errors/chatbskyconvounmuteconvoauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ChatBskyModerationGetActorMetadataAuthMissingError`](./src/models/errors/chatbskymoderationgetactormetadataauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ChatBskyModerationUpdateActorAccessAuthMissingError`](./src/models/errors/chatbskymoderationupdateactoraccessauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoAdminDeleteAccountAuthMissingError`](./src/models/errors/comatprotoadmindeleteaccountauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoAdminEnableAccountInvitesAuthMissingError`](./src/models/errors/comatprotoadminenableaccountinvitesauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoAdminGetAccountInfosAuthMissingError`](./src/models/errors/comatprotoadmingetaccountinfosauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoAdminDisableAccountInvitesAuthMissingError`](./src/models/errors/comatprotoadmindisableaccountinvitesauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoAdminGetInviteCodesAuthMissingError`](./src/models/errors/comatprotoadmingetinvitecodesauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoAdminSearchAccountsAuthMissingError`](./src/models/errors/comatprotoadminsearchaccountsauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoAdminDisableInviteCodesAuthMissingError`](./src/models/errors/comatprotoadmindisableinvitecodesauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoAdminGetAccountInfoAuthMissingError`](./src/models/errors/comatprotoadmingetaccountinfoauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoAdminGetSubjectStatusAuthMissingError`](./src/models/errors/comatprotoadmingetsubjectstatusauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoAdminSendEmailAuthMissingError`](./src/models/errors/comatprotoadminsendemailauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoAdminUpdateAccountEmailAuthMissingError`](./src/models/errors/comatprotoadminupdateaccountemailauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoAdminUpdateAccountHandleAuthMissingError`](./src/models/errors/comatprotoadminupdateaccounthandleauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoAdminUpdateAccountPasswordAuthMissingError`](./src/models/errors/comatprotoadminupdateaccountpasswordauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoAdminUpdateSubjectStatusAuthMissingError`](./src/models/errors/comatprotoadminupdatesubjectstatusauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoIdentityGetRecommendedDidCredentialsAuthMissingError`](./src/models/errors/comatprotoidentitygetrecommendeddidcredentialsauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoIdentitySubmitPlcOperationAuthMissingError`](./src/models/errors/comatprotoidentitysubmitplcoperationauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoIdentityRequestPlcOperationSignatureAuthMissingError`](./src/models/errors/comatprotoidentityrequestplcoperationsignatureauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoIdentityResolveHandleAuthMissingError`](./src/models/errors/comatprotoidentityresolvehandleauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoIdentitySignPlcOperationAuthMissingError`](./src/models/errors/comatprotoidentitysignplcoperationauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoIdentityUpdateHandleAuthMissingError`](./src/models/errors/comatprotoidentityupdatehandleauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoLabelQueryLabelsAuthMissingError`](./src/models/errors/comatprotolabelquerylabelsauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoModerationCreateReportAuthMissingError`](./src/models/errors/comatprotomoderationcreatereportauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoRepoApplyWritesAuthMissingError`](./src/models/errors/comatprotorepoapplywritesauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoRepoCreateRecordAuthMissingError`](./src/models/errors/comatprotorepocreaterecordauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoRepoDescribeRepoAuthMissingError`](./src/models/errors/comatprotorepodescriberepoauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoRepoGetRecordAuthMissingError`](./src/models/errors/comatprotorepogetrecordauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoRepoListMissingBlobsAuthMissingError`](./src/models/errors/comatprotorepolistmissingblobsauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoRepoListRecordsAuthMissingError`](./src/models/errors/comatprotorepolistrecordsauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoRepoDeleteRecordAuthMissingError`](./src/models/errors/comatprotorepodeleterecordauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoRepoImportRepoAuthMissingError`](./src/models/errors/comatprotorepoimportrepoauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoRepoUploadBlobAuthMissingError`](./src/models/errors/comatprotorepouploadblobauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoRepoPutRecordAuthMissingError`](./src/models/errors/comatprotorepoputrecordauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoServerActivateAccountAuthMissingError`](./src/models/errors/comatprotoserveractivateaccountauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoServerCreateAccountAuthMissingError`](./src/models/errors/comatprotoservercreateaccountauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoServerCreateAppPasswordAuthMissingError`](./src/models/errors/comatprotoservercreateapppasswordauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoServerCreateInviteCodeAuthMissingError`](./src/models/errors/comatprotoservercreateinvitecodeauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoServerCreateInviteCodesAuthMissingError`](./src/models/errors/comatprotoservercreateinvitecodesauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoServerDeleteAccountAuthMissingError`](./src/models/errors/comatprotoserverdeleteaccountauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoServerDeleteSessionAuthMissingError`](./src/models/errors/comatprotoserverdeletesessionauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoServerDescribeServerAuthMissingError`](./src/models/errors/comatprotoserverdescribeserverauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoServerRefreshSessionAuthMissingError`](./src/models/errors/comatprotoserverrefreshsessionauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoServerRequestEmailConfirmationAuthMissingError`](./src/models/errors/comatprotoserverrequestemailconfirmationauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoServerRequestPasswordResetAuthMissingError`](./src/models/errors/comatprotoserverrequestpasswordresetauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoServerResetPasswordAuthMissingError`](./src/models/errors/comatprotoserverresetpasswordauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoServerRevokeAppPasswordAuthMissingError`](./src/models/errors/comatprotoserverrevokeapppasswordauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoServerCheckAccountStatusAuthMissingError`](./src/models/errors/comatprotoservercheckaccountstatusauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoServerConfirmEmailAuthMissingError`](./src/models/errors/comatprotoserverconfirmemailauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoServerCreateSessionAuthMissingError`](./src/models/errors/comatprotoservercreatesessionauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoServerDeactivateAccountAuthMissingError`](./src/models/errors/comatprotoserverdeactivateaccountauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoServerListAppPasswordsAuthMissingError`](./src/models/errors/comatprotoserverlistapppasswordsauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoServerRequestAccountDeleteAuthMissingError`](./src/models/errors/comatprotoserverrequestaccountdeleteauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoServerRequestEmailUpdateAuthMissingError`](./src/models/errors/comatprotoserverrequestemailupdateauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoServerGetAccountInviteCodesAuthMissingError`](./src/models/errors/comatprotoservergetaccountinvitecodesauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoServerGetServiceAuthAuthMissingError`](./src/models/errors/comatprotoservergetserviceauthauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoServerGetSessionAuthMissingError`](./src/models/errors/comatprotoservergetsessionauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoServerReserveSigningKeyAuthMissingError`](./src/models/errors/comatprotoserverreservesigningkeyauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoServerUpdateEmailAuthMissingError`](./src/models/errors/comatprotoserverupdateemailauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoSyncGetBlobAuthMissingError`](./src/models/errors/comatprotosyncgetblobauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoSyncListReposAuthMissingError`](./src/models/errors/comatprotosynclistreposauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoSyncGetBlocksAuthMissingError`](./src/models/errors/comatprotosyncgetblocksauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoSyncGetLatestCommitAuthMissingError`](./src/models/errors/comatprotosyncgetlatestcommitauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoSyncGetRepoStatusAuthMissingError`](./src/models/errors/comatprotosyncgetrepostatusauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoSyncRequestCrawlAuthMissingError`](./src/models/errors/comatprotosyncrequestcrawlauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoSyncGetRecordAuthMissingError`](./src/models/errors/comatprotosyncgetrecordauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoSyncGetRepoAuthMissingError`](./src/models/errors/comatprotosyncgetrepoauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoSyncListBlobsAuthMissingError`](./src/models/errors/comatprotosynclistblobsauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ComAtprotoSyncNotifyOfUpdateAuthMissingError`](./src/models/errors/comatprotosyncnotifyofupdateauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneCommunicationCreateTemplateAuthMissingError`](./src/models/errors/toolsozonecommunicationcreatetemplateauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneCommunicationDeleteTemplateAuthMissingError`](./src/models/errors/toolsozonecommunicationdeletetemplateauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneCommunicationListTemplatesAuthMissingError`](./src/models/errors/toolsozonecommunicationlisttemplatesauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneCommunicationUpdateTemplateAuthMissingError`](./src/models/errors/toolsozonecommunicationupdatetemplateauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneModerationEmitEventAuthMissingError`](./src/models/errors/toolsozonemoderationemiteventauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneModerationGetRecordAuthMissingError`](./src/models/errors/toolsozonemoderationgetrecordauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneModerationGetRepoAuthMissingError`](./src/models/errors/toolsozonemoderationgetrepoauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneModerationGetEventAuthMissingError`](./src/models/errors/toolsozonemoderationgeteventauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneModerationQueryEventsAuthMissingError`](./src/models/errors/toolsozonemoderationqueryeventsauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneModerationGetRecordsAuthMissingError`](./src/models/errors/toolsozonemoderationgetrecordsauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneModerationGetReposAuthMissingError`](./src/models/errors/toolsozonemoderationgetreposauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneModerationQueryStatusesAuthMissingError`](./src/models/errors/toolsozonemoderationquerystatusesauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneModerationSearchReposAuthMissingError`](./src/models/errors/toolsozonemoderationsearchreposauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneServerGetConfigAuthMissingError`](./src/models/errors/toolsozoneservergetconfigauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneSetAddValuesAuthMissingError`](./src/models/errors/toolsozonesetaddvaluesauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneSetUpsertSetAuthMissingError`](./src/models/errors/toolsozonesetupsertsetauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneSetDeleteSetAuthMissingError`](./src/models/errors/toolsozonesetdeletesetauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneSetQuerySetsAuthMissingError`](./src/models/errors/toolsozonesetquerysetsauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneSetDeleteValuesAuthMissingError`](./src/models/errors/toolsozonesetdeletevaluesauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneSetGetValuesAuthMissingError`](./src/models/errors/toolsozonesetgetvaluesauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneSettingListOptionsAuthMissingError`](./src/models/errors/toolsozonesettinglistoptionsauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneSettingRemoveOptionsAuthMissingError`](./src/models/errors/toolsozonesettingremoveoptionsauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneSettingUpsertOptionAuthMissingError`](./src/models/errors/toolsozonesettingupsertoptionauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneSignatureFindCorrelationAuthMissingError`](./src/models/errors/toolsozonesignaturefindcorrelationauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneSignatureFindRelatedAccountsAuthMissingError`](./src/models/errors/toolsozonesignaturefindrelatedaccountsauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneSignatureSearchAccountsAuthMissingError`](./src/models/errors/toolsozonesignaturesearchaccountsauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneTeamAddMemberAuthMissingError`](./src/models/errors/toolsozoneteamaddmemberauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneTeamDeleteMemberAuthMissingError`](./src/models/errors/toolsozoneteamdeletememberauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneTeamUpdateMemberAuthMissingError`](./src/models/errors/toolsozoneteamupdatememberauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ToolsOzoneTeamListMembersAuthMissingError`](./src/models/errors/toolsozoneteamlistmembersauthmissingerror.ts): Unauthorized. Status code `401`. Applicable to 1 of 169 methods.*
+* [`ResponseValidationError`](./src/models/errors/responsevalidationerror.ts): Type mismatch between the data returned from the server and the structure expected by the SDK. See `error.rawValue` for the raw value and `error.pretty()` for a nicely formatted multi-line string.
+
+</details>
+
+\* Check [the method documentation](#available-resources-and-operations) to see if the error is applicable.
 <!-- End Error Handling [errors] -->
 
 <!-- Start Server Selection [server] -->
@@ -3110,14 +3405,13 @@ You can override the default server globally by passing a server name to the `se
 import { Bluesky } from "@speakeasy-sdks/bluesky";
 
 const bluesky = new Bluesky({
-  server: "public",
+  server: "privileged",
   bearer: process.env["BLUESKY_BEARER"] ?? "",
 });
 
 async function run() {
   const result = await bluesky.actors.getPreferences();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -3139,7 +3433,6 @@ const bluesky = new Bluesky({
 async function run() {
   const result = await bluesky.actors.getPreferences();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -3193,7 +3486,7 @@ httpClient.addHook("requestError", (error, request) => {
   console.groupEnd();
 });
 
-const sdk = new Bluesky({ httpClient });
+const sdk = new Bluesky({ httpClient: httpClient });
 ```
 <!-- End Custom HTTP Client [http-client] -->
 

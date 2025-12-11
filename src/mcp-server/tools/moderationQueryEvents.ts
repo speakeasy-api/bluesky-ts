@@ -12,7 +12,7 @@ const args = {
 };
 
 export const tool$moderationQueryEvents: ToolDefinition<typeof args> = {
-  name: "moderation_query-events",
+  name: "moderation-query-events",
   description:
     `*This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 

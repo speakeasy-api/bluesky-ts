@@ -7,7 +7,9 @@ import { ToolsOzoneModerationGetReposRequest } from "@speakeasy-sdks/bluesky/mod
 
 let value: ToolsOzoneModerationGetReposRequest = {
   dids: [
-    "<id>",
+    "<id 1>",
+    "<id 2>",
+    "<id 3>",
   ],
 };
 ```

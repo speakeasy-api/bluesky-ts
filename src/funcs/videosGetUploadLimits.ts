@@ -8,7 +8,7 @@ import { compactMap } from "../lib/primitives.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
-import { APIError } from "../models/errors/apierror.js";
+import { BlueskyError } from "../models/errors/blueskyerror.js";
 import {
   ConnectionError,
   InvalidRequestError,
@@ -17,6 +17,7 @@ import {
   UnexpectedClientError,
 } from "../models/errors/httpclienterrors.js";
 import * as errors from "../models/errors/index.js";
+import { ResponseValidationError } from "../models/errors/responsevalidationerror.js";
 import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import * as operations from "../models/operations/index.js";
 import { APICall, APIPromise } from "../types/async.js";
@@ -34,26 +35,23 @@ export function videosGetUploadLimits(
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.AppBskyVideoGetUploadLimitsResponseBody,
-    | errors.BadRequestAppBskyVideoGetUploadLimitsResponseBodyError
-    | errors.UnauthorizedAppBskyVideoGetUploadLimitsResponseBodyError
+    operations.AppBskyVideoGetUploadLimitsResponse,
+    | errors.AppBskyVideoGetUploadLimitsBadRequestError
+    | errors.AppBskyVideoGetUploadLimitsAuthMissingError
     | errors.NotFoundError
     | errors.UnauthorizedError
     | errors.TimeoutError
     | errors.RateLimitedError
     | errors.BadRequestError
-    | errors.TimeoutError
-    | errors.NotFoundError
     | errors.InternalServerError
-    | errors.BadRequestError
-    | errors.UnauthorizedError
-    | APIError
-    | SDKValidationError
-    | UnexpectedClientError
-    | InvalidRequestError
+    | BlueskyError
+    | ResponseValidationError
+    | ConnectionError
     | RequestAbortedError
     | RequestTimeoutError
-    | ConnectionError
+    | InvalidRequestError
+    | UnexpectedClientError
+    | SDKValidationError
   >
 > {
   return new APIPromise($do(
@@ -68,26 +66,23 @@ async function $do(
 ): Promise<
   [
     Result<
-      operations.AppBskyVideoGetUploadLimitsResponseBody,
-      | errors.BadRequestAppBskyVideoGetUploadLimitsResponseBodyError
-      | errors.UnauthorizedAppBskyVideoGetUploadLimitsResponseBodyError
+      operations.AppBskyVideoGetUploadLimitsResponse,
+      | errors.AppBskyVideoGetUploadLimitsBadRequestError
+      | errors.AppBskyVideoGetUploadLimitsAuthMissingError
       | errors.NotFoundError
       | errors.UnauthorizedError
       | errors.TimeoutError
       | errors.RateLimitedError
       | errors.BadRequestError
-      | errors.TimeoutError
-      | errors.NotFoundError
       | errors.InternalServerError
-      | errors.BadRequestError
-      | errors.UnauthorizedError
-      | APIError
-      | SDKValidationError
-      | UnexpectedClientError
-      | InvalidRequestError
+      | BlueskyError
+      | ResponseValidationError
+      | ConnectionError
       | RequestAbortedError
       | RequestTimeoutError
-      | ConnectionError
+      | InvalidRequestError
+      | UnexpectedClientError
+      | SDKValidationError
     >,
     APICall,
   ]
@@ -103,9 +98,10 @@ async function $do(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
+    options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
     operationID: "app.bsky.video.getUploadLimits",
-    oAuth2Scopes: [],
+    oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
 
@@ -122,6 +118,7 @@ async function $do(
     baseURL: options?.serverURL,
     path: path,
     headers: headers,
+    userAgent: client._options.userAgent,
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
   }, options);
   if (!requestRes.ok) {
@@ -171,40 +168,32 @@ async function $do(
   };
 
   const [result] = await M.match<
-    operations.AppBskyVideoGetUploadLimitsResponseBody,
-    | errors.BadRequestAppBskyVideoGetUploadLimitsResponseBodyError
-    | errors.UnauthorizedAppBskyVideoGetUploadLimitsResponseBodyError
+    operations.AppBskyVideoGetUploadLimitsResponse,
+    | errors.AppBskyVideoGetUploadLimitsBadRequestError
+    | errors.AppBskyVideoGetUploadLimitsAuthMissingError
     | errors.NotFoundError
     | errors.UnauthorizedError
     | errors.TimeoutError
     | errors.RateLimitedError
     | errors.BadRequestError
-    | errors.TimeoutError
-    | errors.NotFoundError
     | errors.InternalServerError
-    | errors.BadRequestError
-    | errors.UnauthorizedError
-    | APIError
-    | SDKValidationError
-    | UnexpectedClientError
-    | InvalidRequestError
+    | BlueskyError
+    | ResponseValidationError
+    | ConnectionError
     | RequestAbortedError
     | RequestTimeoutError
-    | ConnectionError
+    | InvalidRequestError
+    | UnexpectedClientError
+    | SDKValidationError
   >(
-    M.json(
-      200,
-      operations.AppBskyVideoGetUploadLimitsResponseBody$inboundSchema,
-    ),
+    M.json(200, operations.AppBskyVideoGetUploadLimitsResponse$inboundSchema),
     M.jsonErr(
       400,
-      errors
-        .BadRequestAppBskyVideoGetUploadLimitsResponseBodyError$inboundSchema,
+      errors.AppBskyVideoGetUploadLimitsBadRequestError$inboundSchema,
     ),
     M.jsonErr(
       401,
-      errors
-        .UnauthorizedAppBskyVideoGetUploadLimitsResponseBodyError$inboundSchema,
+      errors.AppBskyVideoGetUploadLimitsAuthMissingError$inboundSchema,
     ),
     M.jsonErr(404, errors.NotFoundError$inboundSchema),
     M.jsonErr([403, 407], errors.UnauthorizedError$inboundSchema),
@@ -221,7 +210,7 @@ async function $do(
     M.jsonErr(511, errors.UnauthorizedError$inboundSchema),
     M.fail("4XX"),
     M.fail("5XX"),
-  )(response, { extraFields: responseFields });
+  )(response, req, { extraFields: responseFields });
   if (!result.ok) {
     return [result, { status: "complete", request: req, response }];
   }

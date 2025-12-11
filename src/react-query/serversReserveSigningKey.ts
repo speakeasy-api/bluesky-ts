@@ -17,12 +17,12 @@ import { useBlueskyContext } from "./_context.js";
 import { MutationHookOptions } from "./_types.js";
 
 export type ServersReserveSigningKeyMutationVariables = {
-  request?: operations.ComAtprotoServerReserveSigningKeyBody | undefined;
+  request: operations.ComAtprotoServerReserveSigningKeyRequest;
   options?: RequestOptions;
 };
 
 export type ServersReserveSigningKeyMutationData =
-  operations.ComAtprotoServerReserveSigningKeyResponseBody;
+  operations.ComAtprotoServerReserveSigningKeyResponse;
 
 /**
  * *This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*

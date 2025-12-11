@@ -7,11 +7,11 @@ import * as operations from "../../models/operations/index.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
 const args = {
-  request: operations.ComAtprotoSyncRequestCrawlBody$inboundSchema,
+  request: operations.ComAtprotoSyncRequestCrawlRequest$inboundSchema,
 };
 
 export const tool$syncsRequestCrawl: ToolDefinition<typeof args> = {
-  name: "syncs_request-crawl",
+  name: "syncs-request-crawl",
   description:
     `This endpoint is part of the atproto repository synchronization APIs. Requests usually do not require authentication, and can be made to PDS intances or Relay instances.*
 

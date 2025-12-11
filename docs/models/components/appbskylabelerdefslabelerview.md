@@ -6,13 +6,13 @@
 import { AppBskyLabelerDefsLabelerView } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: AppBskyLabelerDefsLabelerView = {
-  uri: "https://comfortable-monasticism.com",
+  uri: "https://pink-tabletop.name/",
   cid: "<id>",
   creator: {
     did: "<id>",
     handle: "<value>",
   },
-  indexedAt: new Date("2023-08-07T00:09:49.489Z"),
+  indexedAt: new Date("2024-11-01T19:36:11.145Z"),
 };
 ```
 

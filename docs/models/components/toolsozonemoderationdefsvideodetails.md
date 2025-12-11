@@ -6,9 +6,9 @@
 import { ToolsOzoneModerationDefsVideoDetails } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: ToolsOzoneModerationDefsVideoDetails = {
-  width: 750537,
-  height: 998023,
-  length: 533978,
+  width: 929652,
+  height: 205314,
+  length: 575076,
 };
 ```
 

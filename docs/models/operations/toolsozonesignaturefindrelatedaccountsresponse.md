@@ -7,15 +7,7 @@ import { ToolsOzoneSignatureFindRelatedAccountsResponse } from "@speakeasy-sdks/
 
 let value: ToolsOzoneSignatureFindRelatedAccountsResponse = {
   result: {
-    accounts: [
-      {
-        account: {
-          did: "<id>",
-          handle: "<value>",
-          indexedAt: new Date("2025-06-10T19:00:11.527Z"),
-        },
-      },
-    ],
+    accounts: [],
   },
 };
 ```

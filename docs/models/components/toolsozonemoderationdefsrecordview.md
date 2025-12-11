@@ -6,21 +6,24 @@
 import { ToolsOzoneModerationDefsRecordView } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: ToolsOzoneModerationDefsRecordView = {
-  uri: "https://warm-excess.org",
+  uri: "https://wordy-scout.com",
   cid: "<id>",
   value: "<value>",
   blobCids: [
-    "<id>",
+    "<id 1>",
+    "<id 2>",
   ],
-  indexedAt: new Date("2025-09-15T17:39:34.108Z"),
+  indexedAt: new Date("2025-12-06T20:49:52.605Z"),
   moderation: {},
   repo: {
     did: "<id>",
     handle: "<value>",
     relatedRecords: [
-      "<value>",
+      "<value 1>",
+      "<value 2>",
+      "<value 3>",
     ],
-    indexedAt: new Date("2024-05-17T18:14:48.703Z"),
+    indexedAt: new Date("2024-06-24T11:12:34.140Z"),
     moderation: {},
   },
 };

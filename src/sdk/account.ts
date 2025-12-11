@@ -16,7 +16,7 @@ export class Account extends ClientSDK {
    */
   async delete(
     options?: RequestOptions,
-  ): Promise<operations.ChatBskyActorDeleteAccountResponseBody> {
+  ): Promise<operations.ChatBskyActorDeleteAccountResponse> {
     return unwrapAsync(accountDelete(
       this,
       options,

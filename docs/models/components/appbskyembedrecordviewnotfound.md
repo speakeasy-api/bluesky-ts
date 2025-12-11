@@ -6,7 +6,7 @@
 import { AppBskyEmbedRecordViewNotFound } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: AppBskyEmbedRecordViewNotFound = {
-  uri: "https://wide-eyed-straw.name/",
+  uri: "https://subtle-omelet.info/",
 };
 ```
 

@@ -1,5 +1,4 @@
 # Feeds
-(*feeds*)
 
 ## Overview
 
@@ -56,6 +55,7 @@ Get information about a feed generator, including policies and offered feed URIs
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="app.bsky.feed.describeFeedGenerator" method="get" path="/xrpc/app.bsky.feed.describeFeedGenerator" -->
 ```typescript
 import { Bluesky } from "@speakeasy-sdks/bluesky";
 
@@ -66,7 +66,6 @@ const bluesky = new Bluesky({
 async function run() {
   const result = await bluesky.feeds.describeGenerator();
 
-  // Handle the result
   console.log(result);
 }
 
@@ -89,15 +88,12 @@ const bluesky = new BlueskyCore({
 
 async function run() {
   const res = await feedsDescribeGenerator(bluesky);
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("feedsDescribeGenerator failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -140,25 +136,25 @@ import {
 
 ### Response
 
-**Promise\<[operations.AppBskyFeedDescribeFeedGeneratorResponseBody](../../models/operations/appbskyfeeddescribefeedgeneratorresponsebody.md)\>**
+**Promise\<[operations.AppBskyFeedDescribeFeedGeneratorResponse](../../models/operations/appbskyfeeddescribefeedgeneratorresponse.md)\>**
 
 ### Errors
 
-| Error Type                                                           | Status Code                                                          | Content Type                                                         |
-| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| errors.BadRequestAppBskyFeedDescribeFeedGeneratorResponseBodyError   | 400                                                                  | application/json                                                     |
-| errors.UnauthorizedAppBskyFeedDescribeFeedGeneratorResponseBodyError | 401                                                                  | application/json                                                     |
-| errors.NotFoundError                                                 | 404                                                                  | application/json                                                     |
-| errors.UnauthorizedError                                             | 403, 407                                                             | application/json                                                     |
-| errors.TimeoutError                                                  | 408                                                                  | application/json                                                     |
-| errors.RateLimitedError                                              | 429                                                                  | application/json                                                     |
-| errors.BadRequestError                                               | 413, 414, 415, 422, 431                                              | application/json                                                     |
-| errors.TimeoutError                                                  | 504                                                                  | application/json                                                     |
-| errors.NotFoundError                                                 | 501, 505                                                             | application/json                                                     |
-| errors.InternalServerError                                           | 500, 502, 503, 506, 507, 508                                         | application/json                                                     |
-| errors.BadRequestError                                               | 510                                                                  | application/json                                                     |
-| errors.UnauthorizedError                                             | 511                                                                  | application/json                                                     |
-| errors.APIError                                                      | 4XX, 5XX                                                             | \*/\*                                                                |
+| Error Type                                              | Status Code                                             | Content Type                                            |
+| ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
+| errors.AppBskyFeedDescribeFeedGeneratorBadRequestError  | 400                                                     | application/json                                        |
+| errors.AppBskyFeedDescribeFeedGeneratorAuthMissingError | 401                                                     | application/json                                        |
+| errors.NotFoundError                                    | 404                                                     | application/json                                        |
+| errors.UnauthorizedError                                | 403, 407                                                | application/json                                        |
+| errors.TimeoutError                                     | 408                                                     | application/json                                        |
+| errors.RateLimitedError                                 | 429                                                     | application/json                                        |
+| errors.BadRequestError                                  | 413, 414, 415, 422, 431                                 | application/json                                        |
+| errors.TimeoutError                                     | 504                                                     | application/json                                        |
+| errors.NotFoundError                                    | 501, 505                                                | application/json                                        |
+| errors.InternalServerError                              | 500, 502, 503, 506, 507, 508                            | application/json                                        |
+| errors.BadRequestError                                  | 510                                                     | application/json                                        |
+| errors.UnauthorizedError                                | 511                                                     | application/json                                        |
+| errors.APIError                                         | 4XX, 5XX                                                | \*/\*                                                   |
 
 ## getLikes
 
@@ -170,6 +166,7 @@ Get like records which reference a subject (by AT-URI and CID).
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="app.bsky.feed.getLikes" method="get" path="/xrpc/app.bsky.feed.getLikes" -->
 ```typescript
 import { Bluesky } from "@speakeasy-sdks/bluesky";
 
@@ -179,11 +176,10 @@ const bluesky = new Bluesky({
 
 async function run() {
   const result = await bluesky.feeds.getLikes({
-    uri: "https://warlike-bakeware.biz/",
+    uri: "https://immaculate-thorn.biz",
   });
 
   for await (const page of result) {
-    // Handle the page
     console.log(page);
   }
 }
@@ -207,18 +203,15 @@ const bluesky = new BlueskyCore({
 
 async function run() {
   const res = await feedsGetLikes(bluesky, {
-    uri: "https://warlike-bakeware.biz/",
+    uri: "https://immaculate-thorn.biz",
   });
-
-  if (!res.ok) {
-    throw res.error;
-  }
-
-  const { value: result } = res;
-
-  for await (const page of result) {
-    // Handle the page
+  if (res.ok) {
+    const { value: result } = res;
+    for await (const page of result) {
     console.log(page);
+  }
+  } else {
+    console.log("feedsGetLikes failed:", res.error);
   }
 }
 
@@ -271,21 +264,21 @@ import {
 
 ### Errors
 
-| Error Type                                              | Status Code                                             | Content Type                                            |
-| ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
-| errors.BadRequestAppBskyFeedGetLikesResponseBodyError   | 400                                                     | application/json                                        |
-| errors.UnauthorizedAppBskyFeedGetLikesResponseBodyError | 401                                                     | application/json                                        |
-| errors.NotFoundError                                    | 404                                                     | application/json                                        |
-| errors.UnauthorizedError                                | 403, 407                                                | application/json                                        |
-| errors.TimeoutError                                     | 408                                                     | application/json                                        |
-| errors.RateLimitedError                                 | 429                                                     | application/json                                        |
-| errors.BadRequestError                                  | 413, 414, 415, 422, 431                                 | application/json                                        |
-| errors.TimeoutError                                     | 504                                                     | application/json                                        |
-| errors.NotFoundError                                    | 501, 505                                                | application/json                                        |
-| errors.InternalServerError                              | 500, 502, 503, 506, 507, 508                            | application/json                                        |
-| errors.BadRequestError                                  | 510                                                     | application/json                                        |
-| errors.UnauthorizedError                                | 511                                                     | application/json                                        |
-| errors.APIError                                         | 4XX, 5XX                                                | \*/\*                                                   |
+| Error Type                                 | Status Code                                | Content Type                               |
+| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
+| errors.AppBskyFeedGetLikesBadRequestError  | 400                                        | application/json                           |
+| errors.AppBskyFeedGetLikesAuthMissingError | 401                                        | application/json                           |
+| errors.NotFoundError                       | 404                                        | application/json                           |
+| errors.UnauthorizedError                   | 403, 407                                   | application/json                           |
+| errors.TimeoutError                        | 408                                        | application/json                           |
+| errors.RateLimitedError                    | 429                                        | application/json                           |
+| errors.BadRequestError                     | 413, 414, 415, 422, 431                    | application/json                           |
+| errors.TimeoutError                        | 504                                        | application/json                           |
+| errors.NotFoundError                       | 501, 505                                   | application/json                           |
+| errors.InternalServerError                 | 500, 502, 503, 506, 507, 508               | application/json                           |
+| errors.BadRequestError                     | 510                                        | application/json                           |
+| errors.UnauthorizedError                   | 511                                        | application/json                           |
+| errors.APIError                            | 4XX, 5XX                                   | \*/\*                                      |
 
 ## getList
 
@@ -297,6 +290,7 @@ Get a feed of recent posts from a list (posts and reposts from any actors on the
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="app.bsky.feed.getListFeed" method="get" path="/xrpc/app.bsky.feed.getListFeed" -->
 ```typescript
 import { Bluesky } from "@speakeasy-sdks/bluesky";
 
@@ -306,11 +300,10 @@ const bluesky = new Bluesky({
 
 async function run() {
   const result = await bluesky.feeds.getList({
-    list: "https://prickly-caption.info/",
+    list: "https://quiet-ignorance.biz/",
   });
 
   for await (const page of result) {
-    // Handle the page
     console.log(page);
   }
 }
@@ -334,18 +327,15 @@ const bluesky = new BlueskyCore({
 
 async function run() {
   const res = await feedsGetList(bluesky, {
-    list: "https://prickly-caption.info/",
+    list: "https://quiet-ignorance.biz/",
   });
-
-  if (!res.ok) {
-    throw res.error;
-  }
-
-  const { value: result } = res;
-
-  for await (const page of result) {
-    // Handle the page
+  if (res.ok) {
+    const { value: result } = res;
+    for await (const page of result) {
     console.log(page);
+  }
+  } else {
+    console.log("feedsGetList failed:", res.error);
   }
 }
 
@@ -398,21 +388,21 @@ import {
 
 ### Errors
 
-| Error Type                                                 | Status Code                                                | Content Type                                               |
-| ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
-| errors.BadRequestAppBskyFeedGetListFeedResponseBodyError   | 400                                                        | application/json                                           |
-| errors.UnauthorizedAppBskyFeedGetListFeedResponseBodyError | 401                                                        | application/json                                           |
-| errors.NotFoundError                                       | 404                                                        | application/json                                           |
-| errors.UnauthorizedError                                   | 403, 407                                                   | application/json                                           |
-| errors.TimeoutError                                        | 408                                                        | application/json                                           |
-| errors.RateLimitedError                                    | 429                                                        | application/json                                           |
-| errors.BadRequestError                                     | 413, 414, 415, 422, 431                                    | application/json                                           |
-| errors.TimeoutError                                        | 504                                                        | application/json                                           |
-| errors.NotFoundError                                       | 501, 505                                                   | application/json                                           |
-| errors.InternalServerError                                 | 500, 502, 503, 506, 507, 508                               | application/json                                           |
-| errors.BadRequestError                                     | 510                                                        | application/json                                           |
-| errors.UnauthorizedError                                   | 511                                                        | application/json                                           |
-| errors.APIError                                            | 4XX, 5XX                                                   | \*/\*                                                      |
+| Error Type                                    | Status Code                                   | Content Type                                  |
+| --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
+| errors.AppBskyFeedGetListFeedBadRequestError  | 400                                           | application/json                              |
+| errors.AppBskyFeedGetListFeedAuthMissingError | 401                                           | application/json                              |
+| errors.NotFoundError                          | 404                                           | application/json                              |
+| errors.UnauthorizedError                      | 403, 407                                      | application/json                              |
+| errors.TimeoutError                           | 408                                           | application/json                              |
+| errors.RateLimitedError                       | 429                                           | application/json                              |
+| errors.BadRequestError                        | 413, 414, 415, 422, 431                       | application/json                              |
+| errors.TimeoutError                           | 504                                           | application/json                              |
+| errors.NotFoundError                          | 501, 505                                      | application/json                              |
+| errors.InternalServerError                    | 500, 502, 503, 506, 507, 508                  | application/json                              |
+| errors.BadRequestError                        | 510                                           | application/json                              |
+| errors.UnauthorizedError                      | 511                                           | application/json                              |
+| errors.APIError                               | 4XX, 5XX                                      | \*/\*                                         |
 
 ## getPostThread
 
@@ -424,6 +414,7 @@ Get posts in a thread. Does not require auth, but additional metadata and filter
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="app.bsky.feed.getPostThread" method="get" path="/xrpc/app.bsky.feed.getPostThread" -->
 ```typescript
 import { Bluesky } from "@speakeasy-sdks/bluesky";
 
@@ -433,10 +424,9 @@ const bluesky = new Bluesky({
 
 async function run() {
   const result = await bluesky.feeds.getPostThread({
-    uri: "https://black-and-white-charlatan.org",
+    uri: "https://well-to-do-brush.net/",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -459,17 +449,14 @@ const bluesky = new BlueskyCore({
 
 async function run() {
   const res = await feedsGetPostThread(bluesky, {
-    uri: "https://black-and-white-charlatan.org",
+    uri: "https://well-to-do-brush.net/",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("feedsGetPostThread failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -514,25 +501,25 @@ import {
 
 ### Response
 
-**Promise\<[operations.AppBskyFeedGetPostThreadResponseBody](../../models/operations/appbskyfeedgetpostthreadresponsebody.md)\>**
+**Promise\<[operations.AppBskyFeedGetPostThreadResponse](../../models/operations/appbskyfeedgetpostthreadresponse.md)\>**
 
 ### Errors
 
-| Error Type                                                   | Status Code                                                  | Content Type                                                 |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| errors.BadRequestAppBskyFeedGetPostThreadResponseBodyError   | 400                                                          | application/json                                             |
-| errors.UnauthorizedAppBskyFeedGetPostThreadResponseBodyError | 401                                                          | application/json                                             |
-| errors.NotFoundError                                         | 404                                                          | application/json                                             |
-| errors.UnauthorizedError                                     | 403, 407                                                     | application/json                                             |
-| errors.TimeoutError                                          | 408                                                          | application/json                                             |
-| errors.RateLimitedError                                      | 429                                                          | application/json                                             |
-| errors.BadRequestError                                       | 413, 414, 415, 422, 431                                      | application/json                                             |
-| errors.TimeoutError                                          | 504                                                          | application/json                                             |
-| errors.NotFoundError                                         | 501, 505                                                     | application/json                                             |
-| errors.InternalServerError                                   | 500, 502, 503, 506, 507, 508                                 | application/json                                             |
-| errors.BadRequestError                                       | 510                                                          | application/json                                             |
-| errors.UnauthorizedError                                     | 511                                                          | application/json                                             |
-| errors.APIError                                              | 4XX, 5XX                                                     | \*/\*                                                        |
+| Error Type                                      | Status Code                                     | Content Type                                    |
+| ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
+| errors.AppBskyFeedGetPostThreadBadRequestError  | 400                                             | application/json                                |
+| errors.AppBskyFeedGetPostThreadAuthMissingError | 401                                             | application/json                                |
+| errors.NotFoundError                            | 404                                             | application/json                                |
+| errors.UnauthorizedError                        | 403, 407                                        | application/json                                |
+| errors.TimeoutError                             | 408                                             | application/json                                |
+| errors.RateLimitedError                         | 429                                             | application/json                                |
+| errors.BadRequestError                          | 413, 414, 415, 422, 431                         | application/json                                |
+| errors.TimeoutError                             | 504                                             | application/json                                |
+| errors.NotFoundError                            | 501, 505                                        | application/json                                |
+| errors.InternalServerError                      | 500, 502, 503, 506, 507, 508                    | application/json                                |
+| errors.BadRequestError                          | 510                                             | application/json                                |
+| errors.UnauthorizedError                        | 511                                             | application/json                                |
+| errors.APIError                                 | 4XX, 5XX                                        | \*/\*                                           |
 
 ## get
 
@@ -544,6 +531,7 @@ Gets post views for a specified list of posts (by AT-URI). This is sometimes ref
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="app.bsky.feed.getPosts" method="get" path="/xrpc/app.bsky.feed.getPosts" -->
 ```typescript
 import { Bluesky } from "@speakeasy-sdks/bluesky";
 
@@ -554,12 +542,12 @@ const bluesky = new Bluesky({
 async function run() {
   const result = await bluesky.feeds.get({
     uris: [
-      "https://necessary-lender.org",
-      "https://knowledgeable-diversity.biz/",
+      "https://scented-labourer.com/",
+      "https://querulous-partridge.biz",
+      "https://youthful-eternity.org/",
     ],
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -583,19 +571,17 @@ const bluesky = new BlueskyCore({
 async function run() {
   const res = await feedsGet(bluesky, {
     uris: [
-      "https://necessary-lender.org",
-      "https://knowledgeable-diversity.biz/",
+      "https://scented-labourer.com/",
+      "https://querulous-partridge.biz",
+      "https://youthful-eternity.org/",
     ],
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("feedsGet failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -640,25 +626,25 @@ import {
 
 ### Response
 
-**Promise\<[operations.AppBskyFeedGetPostsResponseBody](../../models/operations/appbskyfeedgetpostsresponsebody.md)\>**
+**Promise\<[operations.AppBskyFeedGetPostsResponse](../../models/operations/appbskyfeedgetpostsresponse.md)\>**
 
 ### Errors
 
-| Error Type                                              | Status Code                                             | Content Type                                            |
-| ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
-| errors.BadRequestAppBskyFeedGetPostsResponseBodyError   | 400                                                     | application/json                                        |
-| errors.UnauthorizedAppBskyFeedGetPostsResponseBodyError | 401                                                     | application/json                                        |
-| errors.NotFoundError                                    | 404                                                     | application/json                                        |
-| errors.UnauthorizedError                                | 403, 407                                                | application/json                                        |
-| errors.TimeoutError                                     | 408                                                     | application/json                                        |
-| errors.RateLimitedError                                 | 429                                                     | application/json                                        |
-| errors.BadRequestError                                  | 413, 414, 415, 422, 431                                 | application/json                                        |
-| errors.TimeoutError                                     | 504                                                     | application/json                                        |
-| errors.NotFoundError                                    | 501, 505                                                | application/json                                        |
-| errors.InternalServerError                              | 500, 502, 503, 506, 507, 508                            | application/json                                        |
-| errors.BadRequestError                                  | 510                                                     | application/json                                        |
-| errors.UnauthorizedError                                | 511                                                     | application/json                                        |
-| errors.APIError                                         | 4XX, 5XX                                                | \*/\*                                                   |
+| Error Type                                 | Status Code                                | Content Type                               |
+| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
+| errors.AppBskyFeedGetPostsBadRequestError  | 400                                        | application/json                           |
+| errors.AppBskyFeedGetPostsAuthMissingError | 401                                        | application/json                           |
+| errors.NotFoundError                       | 404                                        | application/json                           |
+| errors.UnauthorizedError                   | 403, 407                                   | application/json                           |
+| errors.TimeoutError                        | 408                                        | application/json                           |
+| errors.RateLimitedError                    | 429                                        | application/json                           |
+| errors.BadRequestError                     | 413, 414, 415, 422, 431                    | application/json                           |
+| errors.TimeoutError                        | 504                                        | application/json                           |
+| errors.NotFoundError                       | 501, 505                                   | application/json                           |
+| errors.InternalServerError                 | 500, 502, 503, 506, 507, 508               | application/json                           |
+| errors.BadRequestError                     | 510                                        | application/json                           |
+| errors.UnauthorizedError                   | 511                                        | application/json                           |
+| errors.APIError                            | 4XX, 5XX                                   | \*/\*                                      |
 
 ## getQuotes
 
@@ -670,6 +656,7 @@ Get a list of quotes for a given post.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="app.bsky.feed.getQuotes" method="get" path="/xrpc/app.bsky.feed.getQuotes" -->
 ```typescript
 import { Bluesky } from "@speakeasy-sdks/bluesky";
 
@@ -679,11 +666,10 @@ const bluesky = new Bluesky({
 
 async function run() {
   const result = await bluesky.feeds.getQuotes({
-    uri: "https://honorable-suv.net/",
+    uri: "https://dazzling-sand.com/",
   });
 
   for await (const page of result) {
-    // Handle the page
     console.log(page);
   }
 }
@@ -707,18 +693,15 @@ const bluesky = new BlueskyCore({
 
 async function run() {
   const res = await feedsGetQuotes(bluesky, {
-    uri: "https://honorable-suv.net/",
+    uri: "https://dazzling-sand.com/",
   });
-
-  if (!res.ok) {
-    throw res.error;
-  }
-
-  const { value: result } = res;
-
-  for await (const page of result) {
-    // Handle the page
+  if (res.ok) {
+    const { value: result } = res;
+    for await (const page of result) {
     console.log(page);
+  }
+  } else {
+    console.log("feedsGetQuotes failed:", res.error);
   }
 }
 
@@ -771,21 +754,21 @@ import {
 
 ### Errors
 
-| Error Type                                               | Status Code                                              | Content Type                                             |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| errors.BadRequestAppBskyFeedGetQuotesResponseBodyError   | 400                                                      | application/json                                         |
-| errors.UnauthorizedAppBskyFeedGetQuotesResponseBodyError | 401                                                      | application/json                                         |
-| errors.NotFoundError                                     | 404                                                      | application/json                                         |
-| errors.UnauthorizedError                                 | 403, 407                                                 | application/json                                         |
-| errors.TimeoutError                                      | 408                                                      | application/json                                         |
-| errors.RateLimitedError                                  | 429                                                      | application/json                                         |
-| errors.BadRequestError                                   | 413, 414, 415, 422, 431                                  | application/json                                         |
-| errors.TimeoutError                                      | 504                                                      | application/json                                         |
-| errors.NotFoundError                                     | 501, 505                                                 | application/json                                         |
-| errors.InternalServerError                               | 500, 502, 503, 506, 507, 508                             | application/json                                         |
-| errors.BadRequestError                                   | 510                                                      | application/json                                         |
-| errors.UnauthorizedError                                 | 511                                                      | application/json                                         |
-| errors.APIError                                          | 4XX, 5XX                                                 | \*/\*                                                    |
+| Error Type                                  | Status Code                                 | Content Type                                |
+| ------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
+| errors.AppBskyFeedGetQuotesBadRequestError  | 400                                         | application/json                            |
+| errors.AppBskyFeedGetQuotesAuthMissingError | 401                                         | application/json                            |
+| errors.NotFoundError                        | 404                                         | application/json                            |
+| errors.UnauthorizedError                    | 403, 407                                    | application/json                            |
+| errors.TimeoutError                         | 408                                         | application/json                            |
+| errors.RateLimitedError                     | 429                                         | application/json                            |
+| errors.BadRequestError                      | 413, 414, 415, 422, 431                     | application/json                            |
+| errors.TimeoutError                         | 504                                         | application/json                            |
+| errors.NotFoundError                        | 501, 505                                    | application/json                            |
+| errors.InternalServerError                  | 500, 502, 503, 506, 507, 508                | application/json                            |
+| errors.BadRequestError                      | 510                                         | application/json                            |
+| errors.UnauthorizedError                    | 511                                         | application/json                            |
+| errors.APIError                             | 4XX, 5XX                                    | \*/\*                                       |
 
 ## getRepostedBy
 
@@ -797,6 +780,7 @@ Get a list of reposts for a given post.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="app.bsky.feed.getRepostedBy" method="get" path="/xrpc/app.bsky.feed.getRepostedBy" -->
 ```typescript
 import { Bluesky } from "@speakeasy-sdks/bluesky";
 
@@ -806,11 +790,10 @@ const bluesky = new Bluesky({
 
 async function run() {
   const result = await bluesky.feeds.getRepostedBy({
-    uri: "https://merry-mousse.net/",
+    uri: "https://foolhardy-cycle.name",
   });
 
   for await (const page of result) {
-    // Handle the page
     console.log(page);
   }
 }
@@ -834,18 +817,15 @@ const bluesky = new BlueskyCore({
 
 async function run() {
   const res = await feedsGetRepostedBy(bluesky, {
-    uri: "https://merry-mousse.net/",
+    uri: "https://foolhardy-cycle.name",
   });
-
-  if (!res.ok) {
-    throw res.error;
-  }
-
-  const { value: result } = res;
-
-  for await (const page of result) {
-    // Handle the page
+  if (res.ok) {
+    const { value: result } = res;
+    for await (const page of result) {
     console.log(page);
+  }
+  } else {
+    console.log("feedsGetRepostedBy failed:", res.error);
   }
 }
 
@@ -898,21 +878,21 @@ import {
 
 ### Errors
 
-| Error Type                                                   | Status Code                                                  | Content Type                                                 |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| errors.BadRequestAppBskyFeedGetRepostedByResponseBodyError   | 400                                                          | application/json                                             |
-| errors.UnauthorizedAppBskyFeedGetRepostedByResponseBodyError | 401                                                          | application/json                                             |
-| errors.NotFoundError                                         | 404                                                          | application/json                                             |
-| errors.UnauthorizedError                                     | 403, 407                                                     | application/json                                             |
-| errors.TimeoutError                                          | 408                                                          | application/json                                             |
-| errors.RateLimitedError                                      | 429                                                          | application/json                                             |
-| errors.BadRequestError                                       | 413, 414, 415, 422, 431                                      | application/json                                             |
-| errors.TimeoutError                                          | 504                                                          | application/json                                             |
-| errors.NotFoundError                                         | 501, 505                                                     | application/json                                             |
-| errors.InternalServerError                                   | 500, 502, 503, 506, 507, 508                                 | application/json                                             |
-| errors.BadRequestError                                       | 510                                                          | application/json                                             |
-| errors.UnauthorizedError                                     | 511                                                          | application/json                                             |
-| errors.APIError                                              | 4XX, 5XX                                                     | \*/\*                                                        |
+| Error Type                                      | Status Code                                     | Content Type                                    |
+| ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
+| errors.AppBskyFeedGetRepostedByBadRequestError  | 400                                             | application/json                                |
+| errors.AppBskyFeedGetRepostedByAuthMissingError | 401                                             | application/json                                |
+| errors.NotFoundError                            | 404                                             | application/json                                |
+| errors.UnauthorizedError                        | 403, 407                                        | application/json                                |
+| errors.TimeoutError                             | 408                                             | application/json                                |
+| errors.RateLimitedError                         | 429                                             | application/json                                |
+| errors.BadRequestError                          | 413, 414, 415, 422, 431                         | application/json                                |
+| errors.TimeoutError                             | 504                                             | application/json                                |
+| errors.NotFoundError                            | 501, 505                                        | application/json                                |
+| errors.InternalServerError                      | 500, 502, 503, 506, 507, 508                    | application/json                                |
+| errors.BadRequestError                          | 510                                             | application/json                                |
+| errors.UnauthorizedError                        | 511                                             | application/json                                |
+| errors.APIError                                 | 4XX, 5XX                                        | \*/\*                                           |
 
 ## sendInteractions
 
@@ -924,6 +904,7 @@ Send information about interactions with feed items back to the feed generator t
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="app.bsky.feed.sendInteractions" method="post" path="/xrpc/app.bsky.feed.sendInteractions" -->
 ```typescript
 import { Bluesky } from "@speakeasy-sdks/bluesky";
 
@@ -933,14 +914,9 @@ const bluesky = new Bluesky({
 
 async function run() {
   const result = await bluesky.feeds.sendInteractions({
-    interactions: [
-      {},
-      {},
-      {},
-    ],
+    interactions: [],
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -963,21 +939,14 @@ const bluesky = new BlueskyCore({
 
 async function run() {
   const res = await feedsSendInteractions(bluesky, {
-    interactions: [
-      {},
-      {},
-      {},
-    ],
+    interactions: [],
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("feedsSendInteractions failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -1004,29 +973,29 @@ import {
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.AppBskyFeedSendInteractionsBody](../../models/operations/appbskyfeedsendinteractionsbody.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.AppBskyFeedSendInteractionsRequest](../../models/operations/appbskyfeedsendinteractionsrequest.md)                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<[operations.AppBskyFeedSendInteractionsResponseBody](../../models/operations/appbskyfeedsendinteractionsresponsebody.md)\>**
+**Promise\<[operations.AppBskyFeedSendInteractionsResponse](../../models/operations/appbskyfeedsendinteractionsresponse.md)\>**
 
 ### Errors
 
-| Error Type                                                      | Status Code                                                     | Content Type                                                    |
-| --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
-| errors.BadRequestAppBskyFeedSendInteractionsResponseBodyError   | 400                                                             | application/json                                                |
-| errors.UnauthorizedAppBskyFeedSendInteractionsResponseBodyError | 401                                                             | application/json                                                |
-| errors.NotFoundError                                            | 404                                                             | application/json                                                |
-| errors.UnauthorizedError                                        | 403, 407                                                        | application/json                                                |
-| errors.TimeoutError                                             | 408                                                             | application/json                                                |
-| errors.RateLimitedError                                         | 429                                                             | application/json                                                |
-| errors.BadRequestError                                          | 413, 414, 415, 422, 431                                         | application/json                                                |
-| errors.TimeoutError                                             | 504                                                             | application/json                                                |
-| errors.NotFoundError                                            | 501, 505                                                        | application/json                                                |
-| errors.InternalServerError                                      | 500, 502, 503, 506, 507, 508                                    | application/json                                                |
-| errors.BadRequestError                                          | 510                                                             | application/json                                                |
-| errors.UnauthorizedError                                        | 511                                                             | application/json                                                |
-| errors.APIError                                                 | 4XX, 5XX                                                        | \*/\*                                                           |
+| Error Type                                         | Status Code                                        | Content Type                                       |
+| -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
+| errors.AppBskyFeedSendInteractionsBadRequestError  | 400                                                | application/json                                   |
+| errors.AppBskyFeedSendInteractionsAuthMissingError | 401                                                | application/json                                   |
+| errors.NotFoundError                               | 404                                                | application/json                                   |
+| errors.UnauthorizedError                           | 403, 407                                           | application/json                                   |
+| errors.TimeoutError                                | 408                                                | application/json                                   |
+| errors.RateLimitedError                            | 429                                                | application/json                                   |
+| errors.BadRequestError                             | 413, 414, 415, 422, 431                            | application/json                                   |
+| errors.TimeoutError                                | 504                                                | application/json                                   |
+| errors.NotFoundError                               | 501, 505                                           | application/json                                   |
+| errors.InternalServerError                         | 500, 502, 503, 506, 507, 508                       | application/json                                   |
+| errors.BadRequestError                             | 510                                                | application/json                                   |
+| errors.UnauthorizedError                           | 511                                                | application/json                                   |
+| errors.APIError                                    | 4XX, 5XX                                           | \*/\*                                              |

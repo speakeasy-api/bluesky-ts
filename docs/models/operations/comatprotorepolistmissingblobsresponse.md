@@ -7,12 +7,7 @@ import { ComAtprotoRepoListMissingBlobsResponse } from "@speakeasy-sdks/bluesky/
 
 let value: ComAtprotoRepoListMissingBlobsResponse = {
   result: {
-    blobs: [
-      {
-        cid: "<id>",
-        recordUri: "https://tough-vol.org/",
-      },
-    ],
+    blobs: [],
   },
 };
 ```

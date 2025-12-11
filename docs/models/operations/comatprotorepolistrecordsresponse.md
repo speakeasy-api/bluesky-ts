@@ -9,7 +9,7 @@ let value: ComAtprotoRepoListRecordsResponse = {
   result: {
     records: [
       {
-        uri: "https://entire-ceramics.com/",
+        uri: "https://yummy-swing.com/",
         cid: "<id>",
         value: "<value>",
       },

@@ -8,7 +8,20 @@ OK
 import { ChatBskyConvoListConvosResponseBody } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: ChatBskyConvoListConvosResponseBody = {
-  convos: [],
+  convos: [
+    {
+      id: "<id>",
+      rev: "<value>",
+      members: [
+        {
+          did: "<id>",
+          handle: "<value>",
+        },
+      ],
+      muted: false,
+      unreadCount: 846,
+    },
+  ],
 };
 ```
 

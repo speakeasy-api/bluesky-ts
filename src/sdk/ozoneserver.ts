@@ -17,7 +17,7 @@ export class OzoneServer extends ClientSDK {
    */
   async getConfig(
     options?: RequestOptions,
-  ): Promise<operations.ToolsOzoneServerGetConfigResponseBody> {
+  ): Promise<operations.ToolsOzoneServerGetConfigResponse> {
     return unwrapAsync(ozoneServerGetConfig(
       this,
       options,

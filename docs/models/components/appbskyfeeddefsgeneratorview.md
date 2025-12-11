@@ -6,15 +6,15 @@
 import { AppBskyFeedDefsGeneratorView } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: AppBskyFeedDefsGeneratorView = {
-  uri: "https://smart-affect.org/",
+  uri: "https://shocked-monster.info/",
   cid: "<id>",
   did: "<id>",
   creator: {
     did: "<id>",
     handle: "<value>",
   },
-  displayName: "Letitia26",
-  indexedAt: new Date("2025-12-15T16:17:55.325Z"),
+  displayName: "Richie_Grant40",
+  indexedAt: new Date("2023-08-14T04:58:23.265Z"),
 };
 ```
 

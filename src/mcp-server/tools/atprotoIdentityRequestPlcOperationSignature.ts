@@ -7,7 +7,7 @@ import { formatResult, ToolDefinition } from "../tools.js";
 
 export const tool$atprotoIdentityRequestPlcOperationSignature: ToolDefinition =
   {
-    name: "atproto-identity_request-plc-operation-signature",
+    name: "atproto-identity-request-plc-operation-signature",
     description:
       `*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 

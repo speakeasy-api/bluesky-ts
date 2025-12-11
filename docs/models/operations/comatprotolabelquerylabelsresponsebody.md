@@ -8,14 +8,7 @@ OK
 import { ComAtprotoLabelQueryLabelsResponseBody } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: ComAtprotoLabelQueryLabelsResponseBody = {
-  labels: [
-    {
-      src: "<id>",
-      uri: "https://simplistic-teriyaki.com",
-      val: "<value>",
-      cts: new Date("2024-08-28T04:52:14.624Z"),
-    },
-  ],
+  labels: [],
 };
 ```
 

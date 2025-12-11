@@ -6,10 +6,10 @@
 import { AppBskyEmbedExternalViewExternal } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: AppBskyEmbedExternalViewExternal = {
-  uri: "https://subtle-intellect.org/",
+  uri: "https://snarling-cash.name/",
   title: "<value>",
   description:
-    "safely ick discourse besides forsaken coordinated married aside",
+    "scrutinise tag reflate chap unless astride brr mixture obnoxiously ouch",
 };
 ```
 
