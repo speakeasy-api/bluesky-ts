@@ -5,7 +5,7 @@
 ```typescript
 import { AppBskyActorGetPreferencesError } from "@speakeasy-sdks/bluesky/models/errors";
 
-let value: AppBskyActorGetPreferencesError = "InvalidRequest";
+let value: AppBskyActorGetPreferencesError = "InvalidToken";
 ```
 
 ## Values

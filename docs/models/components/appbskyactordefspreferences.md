@@ -7,7 +7,7 @@
 
 ```typescript
 const value: components.AppBskyActorDefsAdultContentPref = {
-  enabled: false,
+  enabled: true,
 };
 ```
 
@@ -16,7 +16,7 @@ const value: components.AppBskyActorDefsAdultContentPref = {
 ```typescript
 const value: components.AppBskyActorDefsContentLabelPref = {
   label: "<value>",
-  visibility: "warn",
+  visibility: "hide",
 };
 ```
 
@@ -25,10 +25,12 @@ const value: components.AppBskyActorDefsContentLabelPref = {
 ```typescript
 const value: components.AppBskyActorDefsSavedFeedsPref = {
   pinned: [
-    "https://broken-deduction.info",
+    "https://little-sauerkraut.name",
+    "https://striking-procurement.info",
   ],
   saved: [
-    "https://unfortunate-octave.com",
+    "https://cheap-overheard.name",
+    "https://unsightly-vein.info/",
   ],
 };
 ```
@@ -37,14 +39,7 @@ const value: components.AppBskyActorDefsSavedFeedsPref = {
 
 ```typescript
 const value: components.AppBskyActorDefsSavedFeedsPrefV2 = {
-  items: [
-    {
-      id: "<id>",
-      type: "timeline",
-      value: "<value>",
-      pinned: false,
-    },
-  ],
+  items: [],
 };
 ```
 
@@ -72,9 +67,7 @@ const value: components.AppBskyActorDefsThreadViewPref = {};
 
 ```typescript
 const value: components.AppBskyActorDefsInterestsPref = {
-  tags: [
-    "<value>",
-  ],
+  tags: [],
 };
 ```
 
@@ -82,14 +75,7 @@ const value: components.AppBskyActorDefsInterestsPref = {
 
 ```typescript
 const value: components.AppBskyActorDefsMutedWordsPref = {
-  items: [
-    {
-      value: "<value>",
-      targets: [
-        "tag",
-      ],
-    },
-  ],
+  items: [],
 };
 ```
 
@@ -98,7 +84,7 @@ const value: components.AppBskyActorDefsMutedWordsPref = {
 ```typescript
 const value: components.AppBskyActorDefsHiddenPostsPref = {
   items: [
-    "https://utter-maintainer.org",
+    "https://utilized-hubris.name",
   ],
 };
 ```

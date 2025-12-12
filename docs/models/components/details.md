@@ -7,8 +7,8 @@
 
 ```typescript
 const value: components.ToolsOzoneModerationDefsImageDetails = {
-  width: 132305,
-  height: 193236,
+  width: 26813,
+  height: 238337,
 };
 ```
 
@@ -16,9 +16,9 @@ const value: components.ToolsOzoneModerationDefsImageDetails = {
 
 ```typescript
 const value: components.ToolsOzoneModerationDefsVideoDetails = {
-  width: 685467,
-  height: 49499,
-  length: 101854,
+  width: 929652,
+  height: 205314,
+  length: 575076,
 };
 ```
 

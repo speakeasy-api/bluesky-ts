@@ -7,14 +7,14 @@
 
 ```typescript
 const value: components.AppBskyEmbedRecordViewRecord = {
-  uri: "https://ugly-tool.com/",
+  uri: "https://round-numeric.com/",
   cid: "<id>",
   author: {
     did: "<id>",
     handle: "<value>",
   },
   value: "<value>",
-  indexedAt: new Date("2024-01-02T13:59:50.267Z"),
+  indexedAt: new Date("2024-07-03T07:49:54.463Z"),
 };
 ```
 
@@ -22,7 +22,7 @@ const value: components.AppBskyEmbedRecordViewRecord = {
 
 ```typescript
 const value: components.AppBskyEmbedRecordViewNotFound = {
-  uri: "https://clean-tenant.com/",
+  uri: "https://subtle-omelet.info/",
 };
 ```
 
@@ -30,7 +30,7 @@ const value: components.AppBskyEmbedRecordViewNotFound = {
 
 ```typescript
 const value: components.AppBskyEmbedRecordViewBlocked = {
-  uri: "https://bustling-subexpression.name",
+  uri: "https://imaginary-safe.com/",
   author: {
     did: "<id>",
   },
@@ -41,7 +41,7 @@ const value: components.AppBskyEmbedRecordViewBlocked = {
 
 ```typescript
 const value: components.AppBskyEmbedRecordViewDetached = {
-  uri: "https://grounded-retrospectivity.biz/",
+  uri: "https://unwelcome-cassava.org",
 };
 ```
 
@@ -49,15 +49,15 @@ const value: components.AppBskyEmbedRecordViewDetached = {
 
 ```typescript
 const value: components.AppBskyFeedDefsGeneratorView = {
-  uri: "https://minor-jellyfish.org",
+  uri: "https://shocked-monster.info/",
   cid: "<id>",
   did: "<id>",
   creator: {
     did: "<id>",
     handle: "<value>",
   },
-  displayName: "Kayla.Reinger77",
-  indexedAt: new Date("2025-09-16T20:26:53.919Z"),
+  displayName: "Richie_Grant40",
+  indexedAt: new Date("2023-08-14T04:58:23.265Z"),
 };
 ```
 
@@ -65,7 +65,7 @@ const value: components.AppBskyFeedDefsGeneratorView = {
 
 ```typescript
 const value: components.AppBskyGraphDefsListView = {
-  uri: "https://grave-bran.info/",
+  uri: "https://torn-edge.org/",
   cid: "<id>",
   creator: {
     did: "<id>",
@@ -73,7 +73,7 @@ const value: components.AppBskyGraphDefsListView = {
   },
   name: "<value>",
   purpose: "<value>",
-  indexedAt: new Date("2025-06-17T17:52:12.552Z"),
+  indexedAt: new Date("2025-10-30T00:14:53.669Z"),
 };
 ```
 
@@ -81,13 +81,13 @@ const value: components.AppBskyGraphDefsListView = {
 
 ```typescript
 const value: components.AppBskyLabelerDefsLabelerView = {
-  uri: "https://criminal-final.net/",
+  uri: "https://pink-tabletop.name/",
   cid: "<id>",
   creator: {
     did: "<id>",
     handle: "<value>",
   },
-  indexedAt: new Date("2023-06-03T20:39:34.653Z"),
+  indexedAt: new Date("2024-11-01T19:36:11.145Z"),
 };
 ```
 
@@ -95,14 +95,14 @@ const value: components.AppBskyLabelerDefsLabelerView = {
 
 ```typescript
 const value: components.AppBskyGraphDefsStarterPackViewBasic = {
-  uri: "https://black-priesthood.info/",
+  uri: "https://growing-video.com",
   cid: "<id>",
   record: "<value>",
   creator: {
     did: "<id>",
     handle: "<value>",
   },
-  indexedAt: new Date("2023-12-07T16:20:05.131Z"),
+  indexedAt: new Date("2025-09-27T10:15:49.386Z"),
 };
 ```
 

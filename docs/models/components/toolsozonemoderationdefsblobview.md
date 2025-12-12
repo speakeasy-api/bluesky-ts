@@ -8,8 +8,8 @@ import { ToolsOzoneModerationDefsBlobView } from "@speakeasy-sdks/bluesky/models
 let value: ToolsOzoneModerationDefsBlobView = {
   cid: "<id>",
   mimeType: "<value>",
-  size: 134173,
-  createdAt: new Date("2023-12-13T22:17:51.524Z"),
+  size: 82646,
+  createdAt: new Date("2024-04-09T04:06:52.010Z"),
 };
 ```
 

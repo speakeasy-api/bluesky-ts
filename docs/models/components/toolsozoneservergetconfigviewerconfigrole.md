@@ -6,7 +6,7 @@
 import { ToolsOzoneServerGetConfigViewerConfigRole } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: ToolsOzoneServerGetConfigViewerConfigRole =
-  "tools.ozone.team.defs#roleAdmin";
+  "tools.ozone.team.defs#roleModerator";
 ```
 
 ## Values

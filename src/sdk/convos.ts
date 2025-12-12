@@ -14,9 +14,9 @@ export class Convos extends ClientSDK {
    * *To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
    */
   async mute(
-    request: operations.ChatBskyConvoMuteConvoBody,
+    request: operations.ChatBskyConvoMuteConvoRequest,
     options?: RequestOptions,
-  ): Promise<operations.ChatBskyConvoMuteConvoResponseBody> {
+  ): Promise<operations.ChatBskyConvoMuteConvoResponse> {
     return unwrapAsync(convosMute(
       this,
       request,

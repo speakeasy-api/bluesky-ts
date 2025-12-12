@@ -1,5 +1,4 @@
 # Sync
-(*sync*)
 
 ## Overview
 
@@ -31,6 +30,7 @@ Download a repository export as CAR file. Optionally only a 'diff' since a previ
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="com.atproto.sync.getRepo" method="get" path="/xrpc/com.atproto.sync.getRepo" -->
 ```typescript
 import { Bluesky } from "@speakeasy-sdks/bluesky";
 
@@ -67,14 +67,12 @@ async function run() {
   const res = await syncGetRepo(bluesky, {
     did: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    
+  } else {
+    console.log("syncGetRepo failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  
 }
 
 run();
@@ -123,21 +121,21 @@ import {
 
 ### Errors
 
-| Error Type                                                | Status Code                                               | Content Type                                              |
-| --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
-| errors.BadRequestComAtprotoSyncGetRepoResponseBodyError   | 400                                                       | application/json                                          |
-| errors.UnauthorizedComAtprotoSyncGetRepoResponseBodyError | 401                                                       | application/json                                          |
-| errors.NotFoundError                                      | 404                                                       | application/json                                          |
-| errors.UnauthorizedError                                  | 403, 407                                                  | application/json                                          |
-| errors.TimeoutError                                       | 408                                                       | application/json                                          |
-| errors.RateLimitedError                                   | 429                                                       | application/json                                          |
-| errors.BadRequestError                                    | 413, 414, 415, 422, 431                                   | application/json                                          |
-| errors.TimeoutError                                       | 504                                                       | application/json                                          |
-| errors.NotFoundError                                      | 501, 505                                                  | application/json                                          |
-| errors.InternalServerError                                | 500, 502, 503, 506, 507, 508                              | application/json                                          |
-| errors.BadRequestError                                    | 510                                                       | application/json                                          |
-| errors.UnauthorizedError                                  | 511                                                       | application/json                                          |
-| errors.APIError                                           | 4XX, 5XX                                                  | \*/\*                                                     |
+| Error Type                                   | Status Code                                  | Content Type                                 |
+| -------------------------------------------- | -------------------------------------------- | -------------------------------------------- |
+| errors.ComAtprotoSyncGetRepoBadRequestError  | 400                                          | application/json                             |
+| errors.ComAtprotoSyncGetRepoAuthMissingError | 401                                          | application/json                             |
+| errors.NotFoundError                         | 404                                          | application/json                             |
+| errors.UnauthorizedError                     | 403, 407                                     | application/json                             |
+| errors.TimeoutError                          | 408                                          | application/json                             |
+| errors.RateLimitedError                      | 429                                          | application/json                             |
+| errors.BadRequestError                       | 413, 414, 415, 422, 431                      | application/json                             |
+| errors.TimeoutError                          | 504                                          | application/json                             |
+| errors.NotFoundError                         | 501, 505                                     | application/json                             |
+| errors.InternalServerError                   | 500, 502, 503, 506, 507, 508                 | application/json                             |
+| errors.BadRequestError                       | 510                                          | application/json                             |
+| errors.UnauthorizedError                     | 511                                          | application/json                             |
+| errors.APIError                              | 4XX, 5XX                                     | \*/\*                                        |
 
 ## listBlobs
 
@@ -149,6 +147,7 @@ List blob CIDs for an account, since some repo revision. Does not require auth; 
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="com.atproto.sync.listBlobs" method="get" path="/xrpc/com.atproto.sync.listBlobs" -->
 ```typescript
 import { Bluesky } from "@speakeasy-sdks/bluesky";
 
@@ -162,7 +161,6 @@ async function run() {
   });
 
   for await (const page of result) {
-    // Handle the page
     console.log(page);
   }
 }
@@ -188,16 +186,13 @@ async function run() {
   const res = await syncListBlobs(bluesky, {
     did: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
-  }
-
-  const { value: result } = res;
-
-  for await (const page of result) {
-    // Handle the page
+  if (res.ok) {
+    const { value: result } = res;
+    for await (const page of result) {
     console.log(page);
+  }
+  } else {
+    console.log("syncListBlobs failed:", res.error);
   }
 }
 
@@ -250,21 +245,21 @@ import {
 
 ### Errors
 
-| Error Type                                                  | Status Code                                                 | Content Type                                                |
-| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
-| errors.BadRequestComAtprotoSyncListBlobsResponseBodyError   | 400                                                         | application/json                                            |
-| errors.UnauthorizedComAtprotoSyncListBlobsResponseBodyError | 401                                                         | application/json                                            |
-| errors.NotFoundError                                        | 404                                                         | application/json                                            |
-| errors.UnauthorizedError                                    | 403, 407                                                    | application/json                                            |
-| errors.TimeoutError                                         | 408                                                         | application/json                                            |
-| errors.RateLimitedError                                     | 429                                                         | application/json                                            |
-| errors.BadRequestError                                      | 413, 414, 415, 422, 431                                     | application/json                                            |
-| errors.TimeoutError                                         | 504                                                         | application/json                                            |
-| errors.NotFoundError                                        | 501, 505                                                    | application/json                                            |
-| errors.InternalServerError                                  | 500, 502, 503, 506, 507, 508                                | application/json                                            |
-| errors.BadRequestError                                      | 510                                                         | application/json                                            |
-| errors.UnauthorizedError                                    | 511                                                         | application/json                                            |
-| errors.APIError                                             | 4XX, 5XX                                                    | \*/\*                                                       |
+| Error Type                                     | Status Code                                    | Content Type                                   |
+| ---------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- |
+| errors.ComAtprotoSyncListBlobsBadRequestError  | 400                                            | application/json                               |
+| errors.ComAtprotoSyncListBlobsAuthMissingError | 401                                            | application/json                               |
+| errors.NotFoundError                           | 404                                            | application/json                               |
+| errors.UnauthorizedError                       | 403, 407                                       | application/json                               |
+| errors.TimeoutError                            | 408                                            | application/json                               |
+| errors.RateLimitedError                        | 429                                            | application/json                               |
+| errors.BadRequestError                         | 413, 414, 415, 422, 431                        | application/json                               |
+| errors.TimeoutError                            | 504                                            | application/json                               |
+| errors.NotFoundError                           | 501, 505                                       | application/json                               |
+| errors.InternalServerError                     | 500, 502, 503, 506, 507, 508                   | application/json                               |
+| errors.BadRequestError                         | 510                                            | application/json                               |
+| errors.UnauthorizedError                       | 511                                            | application/json                               |
+| errors.APIError                                | 4XX, 5XX                                       | \*/\*                                          |
 
 ## notifyOfUpdate
 
@@ -276,6 +271,7 @@ Notify a crawling service of a recent update, and that crawling should resume. I
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="com.atproto.sync.notifyOfUpdate" method="post" path="/xrpc/com.atproto.sync.notifyOfUpdate" -->
 ```typescript
 import { Bluesky } from "@speakeasy-sdks/bluesky";
 
@@ -285,7 +281,7 @@ const bluesky = new Bluesky({
 
 async function run() {
   await bluesky.sync.notifyOfUpdate({
-    hostname: "pretty-scrap.info",
+    hostname: "monstrous-reach.com",
   });
 
 
@@ -310,16 +306,14 @@ const bluesky = new BlueskyCore({
 
 async function run() {
   const res = await syncNotifyOfUpdate(bluesky, {
-    hostname: "pretty-scrap.info",
+    hostname: "monstrous-reach.com",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    
+  } else {
+    console.log("syncNotifyOfUpdate failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  
 }
 
 run();
@@ -346,7 +340,7 @@ import {
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ComAtprotoSyncNotifyOfUpdateBody](../../models/operations/comatprotosyncnotifyofupdatebody.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.ComAtprotoSyncNotifyOfUpdateRequest](../../models/operations/comatprotosyncnotifyofupdaterequest.md)                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
@@ -357,18 +351,18 @@ import {
 
 ### Errors
 
-| Error Type                                                       | Status Code                                                      | Content Type                                                     |
-| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
-| errors.BadRequestComAtprotoSyncNotifyOfUpdateResponseBodyError   | 400                                                              | application/json                                                 |
-| errors.UnauthorizedComAtprotoSyncNotifyOfUpdateResponseBodyError | 401                                                              | application/json                                                 |
-| errors.NotFoundError                                             | 404                                                              | application/json                                                 |
-| errors.UnauthorizedError                                         | 403, 407                                                         | application/json                                                 |
-| errors.TimeoutError                                              | 408                                                              | application/json                                                 |
-| errors.RateLimitedError                                          | 429                                                              | application/json                                                 |
-| errors.BadRequestError                                           | 413, 414, 415, 422, 431                                          | application/json                                                 |
-| errors.TimeoutError                                              | 504                                                              | application/json                                                 |
-| errors.NotFoundError                                             | 501, 505                                                         | application/json                                                 |
-| errors.InternalServerError                                       | 500, 502, 503, 506, 507, 508                                     | application/json                                                 |
-| errors.BadRequestError                                           | 510                                                              | application/json                                                 |
-| errors.UnauthorizedError                                         | 511                                                              | application/json                                                 |
-| errors.APIError                                                  | 4XX, 5XX                                                         | \*/\*                                                            |
+| Error Type                                          | Status Code                                         | Content Type                                        |
+| --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| errors.ComAtprotoSyncNotifyOfUpdateBadRequestError  | 400                                                 | application/json                                    |
+| errors.ComAtprotoSyncNotifyOfUpdateAuthMissingError | 401                                                 | application/json                                    |
+| errors.NotFoundError                                | 404                                                 | application/json                                    |
+| errors.UnauthorizedError                            | 403, 407                                            | application/json                                    |
+| errors.TimeoutError                                 | 408                                                 | application/json                                    |
+| errors.RateLimitedError                             | 429                                                 | application/json                                    |
+| errors.BadRequestError                              | 413, 414, 415, 422, 431                             | application/json                                    |
+| errors.TimeoutError                                 | 504                                                 | application/json                                    |
+| errors.NotFoundError                                | 501, 505                                            | application/json                                    |
+| errors.InternalServerError                          | 500, 502, 503, 506, 507, 508                        | application/json                                    |
+| errors.BadRequestError                              | 510                                                 | application/json                                    |
+| errors.UnauthorizedError                            | 511                                                 | application/json                                    |
+| errors.APIError                                     | 4XX, 5XX                                            | \*/\*                                               |

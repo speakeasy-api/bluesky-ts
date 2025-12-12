@@ -7,16 +7,7 @@ import { ToolsOzoneSettingListOptionsResponse } from "@speakeasy-sdks/bluesky/mo
 
 let value: ToolsOzoneSettingListOptionsResponse = {
   result: {
-    options: [
-      {
-        key: "<id>",
-        did: "<id>",
-        value: "<value>",
-        scope: "personal",
-        createdBy: "<id>",
-        lastUpdatedBy: "<id>",
-      },
-    ],
+    options: [],
   },
 };
 ```

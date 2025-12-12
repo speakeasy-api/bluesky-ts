@@ -5,7 +5,7 @@
 ```typescript
 import { AppBskyGraphGetListBlocksError } from "@speakeasy-sdks/bluesky/models/errors";
 
-let value: AppBskyGraphGetListBlocksError = "ExpiredToken";
+let value: AppBskyGraphGetListBlocksError = "InvalidRequest";
 ```
 
 ## Values

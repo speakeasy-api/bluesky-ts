@@ -1,5 +1,4 @@
 # Accounts
-(*accounts*)
 
 ## Overview
 
@@ -21,6 +20,7 @@ Get all invite codes for the current account. Requires auth.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="com.atproto.server.getAccountInviteCodes" method="get" path="/xrpc/com.atproto.server.getAccountInviteCodes" -->
 ```typescript
 import { Bluesky } from "@speakeasy-sdks/bluesky";
 
@@ -31,7 +31,6 @@ const bluesky = new Bluesky({
 async function run() {
   const result = await bluesky.accounts.getInviteCodes({});
 
-  // Handle the result
   console.log(result);
 }
 
@@ -54,15 +53,12 @@ const bluesky = new BlueskyCore({
 
 async function run() {
   const res = await accountsGetInviteCodes(bluesky, {});
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountsGetInviteCodes failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -107,22 +103,22 @@ import {
 
 ### Response
 
-**Promise\<[operations.ComAtprotoServerGetAccountInviteCodesResponseBody](../../models/operations/comatprotoservergetaccountinvitecodesresponsebody.md)\>**
+**Promise\<[operations.ComAtprotoServerGetAccountInviteCodesResponse](../../models/operations/comatprotoservergetaccountinvitecodesresponse.md)\>**
 
 ### Errors
 
-| Error Type                                                                | Status Code                                                               | Content Type                                                              |
-| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| errors.BadRequestComAtprotoServerGetAccountInviteCodesResponseBodyError   | 400                                                                       | application/json                                                          |
-| errors.UnauthorizedComAtprotoServerGetAccountInviteCodesResponseBodyError | 401                                                                       | application/json                                                          |
-| errors.NotFoundError                                                      | 404                                                                       | application/json                                                          |
-| errors.UnauthorizedError                                                  | 403, 407                                                                  | application/json                                                          |
-| errors.TimeoutError                                                       | 408                                                                       | application/json                                                          |
-| errors.RateLimitedError                                                   | 429                                                                       | application/json                                                          |
-| errors.BadRequestError                                                    | 413, 414, 415, 422, 431                                                   | application/json                                                          |
-| errors.TimeoutError                                                       | 504                                                                       | application/json                                                          |
-| errors.NotFoundError                                                      | 501, 505                                                                  | application/json                                                          |
-| errors.InternalServerError                                                | 500, 502, 503, 506, 507, 508                                              | application/json                                                          |
-| errors.BadRequestError                                                    | 510                                                                       | application/json                                                          |
-| errors.UnauthorizedError                                                  | 511                                                                       | application/json                                                          |
-| errors.APIError                                                           | 4XX, 5XX                                                                  | \*/\*                                                                     |
+| Error Type                                                   | Status Code                                                  | Content Type                                                 |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| errors.ComAtprotoServerGetAccountInviteCodesBadRequestError  | 400                                                          | application/json                                             |
+| errors.ComAtprotoServerGetAccountInviteCodesAuthMissingError | 401                                                          | application/json                                             |
+| errors.NotFoundError                                         | 404                                                          | application/json                                             |
+| errors.UnauthorizedError                                     | 403, 407                                                     | application/json                                             |
+| errors.TimeoutError                                          | 408                                                          | application/json                                             |
+| errors.RateLimitedError                                      | 429                                                          | application/json                                             |
+| errors.BadRequestError                                       | 413, 414, 415, 422, 431                                      | application/json                                             |
+| errors.TimeoutError                                          | 504                                                          | application/json                                             |
+| errors.NotFoundError                                         | 501, 505                                                     | application/json                                             |
+| errors.InternalServerError                                   | 500, 502, 503, 506, 507, 508                                 | application/json                                             |
+| errors.BadRequestError                                       | 510                                                          | application/json                                             |
+| errors.UnauthorizedError                                     | 511                                                          | application/json                                             |
+| errors.APIError                                              | 4XX, 5XX                                                     | \*/\*                                                        |

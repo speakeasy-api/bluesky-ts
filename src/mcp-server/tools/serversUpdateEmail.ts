@@ -7,11 +7,11 @@ import * as operations from "../../models/operations/index.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
 const args = {
-  request: operations.ComAtprotoServerUpdateEmailBody$inboundSchema,
+  request: operations.ComAtprotoServerUpdateEmailRequest$inboundSchema,
 };
 
 export const tool$serversUpdateEmail: ToolDefinition<typeof args> = {
-  name: "servers_update-email",
+  name: "servers-update-email",
   description:
     `*This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 

@@ -11,7 +11,7 @@ const args = {
 };
 
 export const tool$syncsGetLatestCommit: ToolDefinition<typeof args> = {
-  name: "syncs_get-latest-commit",
+  name: "syncs-get-latest-commit",
   description:
     `This endpoint is part of the atproto repository synchronization APIs. Requests usually do not require authentication, and can be made to PDS intances or Relay instances.*
 

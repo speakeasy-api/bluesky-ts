@@ -6,14 +6,14 @@
 import { AppBskyFeedDefsPostView } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: AppBskyFeedDefsPostView = {
-  uri: "https://wide-lady.biz",
+  uri: "https://avaricious-heartache.info",
   cid: "<id>",
   author: {
     did: "<id>",
     handle: "<value>",
   },
   record: "<value>",
-  indexedAt: new Date("2024-08-25T06:03:47.041Z"),
+  indexedAt: new Date("2025-09-23T16:24:11.262Z"),
 };
 ```
 

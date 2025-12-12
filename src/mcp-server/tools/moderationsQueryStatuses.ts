@@ -12,7 +12,7 @@ const args = {
 };
 
 export const tool$moderationsQueryStatuses: ToolDefinition<typeof args> = {
-  name: "moderations_query-statuses",
+  name: "moderations-query-statuses",
   description:
     `*This endpoint is part of the [Ozone moderation service](https://ozone.tools/) APIs. Requests usually require authentication, are directed to the user's PDS intance, and proxied to the Ozone instance indicated by the DID in the service proxying header. Admin authenentication may also be possible, with request sent directly to the Ozone instance.*
 

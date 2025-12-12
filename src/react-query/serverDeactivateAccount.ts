@@ -17,7 +17,7 @@ import { useBlueskyContext } from "./_context.js";
 import { MutationHookOptions } from "./_types.js";
 
 export type ServerDeactivateAccountMutationVariables = {
-  request?: operations.ComAtprotoServerDeactivateAccountBody | undefined;
+  request: operations.ComAtprotoServerDeactivateAccountRequest;
   options?: RequestOptions;
 };
 

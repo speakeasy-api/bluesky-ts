@@ -5,7 +5,7 @@
 ```typescript
 import { ChatBskyConvoGetConvoForMembersError } from "@speakeasy-sdks/bluesky/models/errors";
 
-let value: ChatBskyConvoGetConvoForMembersError = "InvalidToken";
+let value: ChatBskyConvoGetConvoForMembersError = "InvalidRequest";
 ```
 
 ## Values

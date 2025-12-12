@@ -14,7 +14,7 @@ let value: ChatBskyConvoGetMessagesResponseBody = {
 
 ## Fields
 
-| Field                                           | Type                                            | Required                                        | Description                                     |
-| ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
-| `cursor`                                        | *string*                                        | :heavy_minus_sign:                              | N/A                                             |
-| `messages`                                      | *operations.ChatBskyConvoGetMessagesMessages*[] | :heavy_check_mark:                              | N/A                                             |
+| Field                                          | Type                                           | Required                                       | Description                                    |
+| ---------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- |
+| `cursor`                                       | *string*                                       | :heavy_minus_sign:                             | N/A                                            |
+| `messages`                                     | *operations.ChatBskyConvoGetMessagesMessage*[] | :heavy_check_mark:                             | N/A                                            |

@@ -6,14 +6,7 @@
 import { AppBskyActorDefsMutedWordsPref } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: AppBskyActorDefsMutedWordsPref = {
-  items: [
-    {
-      value: "<value>",
-      targets: [
-        "content",
-      ],
-    },
-  ],
+  items: [],
 };
 ```
 

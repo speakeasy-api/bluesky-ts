@@ -5,7 +5,7 @@
 ```typescript
 import { Platform } from "@speakeasy-sdks/bluesky/models/operations";
 
-let value: Platform = "ios";
+let value: Platform = "android";
 ```
 
 ## Values

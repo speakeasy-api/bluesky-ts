@@ -6,7 +6,7 @@
 import { ComAtprotoAdminDefsStatusAttr } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: ComAtprotoAdminDefsStatusAttr = {
-  applied: false,
+  applied: true,
 };
 ```
 

@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoIdentitySignPlcOperationError } from "@speakeasy-sdks/bluesky/models/errors";
 
-let value: ComAtprotoIdentitySignPlcOperationError = "InvalidRequest";
+let value: ComAtprotoIdentitySignPlcOperationError = "ExpiredToken";
 ```
 
 ## Values

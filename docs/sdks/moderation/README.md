@@ -1,5 +1,4 @@
 # Moderation
-(*moderation*)
 
 ## Overview
 
@@ -26,6 +25,7 @@ Get details about a moderation event.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="tools.ozone.moderation.getEvent" method="get" path="/xrpc/tools.ozone.moderation.getEvent" -->
 ```typescript
 import { Bluesky } from "@speakeasy-sdks/bluesky";
 
@@ -35,10 +35,9 @@ const bluesky = new Bluesky({
 
 async function run() {
   const result = await bluesky.moderation.getEvent({
-    id: 537836,
+    id: 989727,
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -61,17 +60,14 @@ const bluesky = new BlueskyCore({
 
 async function run() {
   const res = await moderationGetEvent(bluesky, {
-    id: 537836,
+    id: 989727,
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("moderationGetEvent failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -120,21 +116,21 @@ import {
 
 ### Errors
 
-| Error Type                                                       | Status Code                                                      | Content Type                                                     |
-| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
-| errors.BadRequestToolsOzoneModerationGetEventResponseBodyError   | 400                                                              | application/json                                                 |
-| errors.UnauthorizedToolsOzoneModerationGetEventResponseBodyError | 401                                                              | application/json                                                 |
-| errors.NotFoundError                                             | 404                                                              | application/json                                                 |
-| errors.UnauthorizedError                                         | 403, 407                                                         | application/json                                                 |
-| errors.TimeoutError                                              | 408                                                              | application/json                                                 |
-| errors.RateLimitedError                                          | 429                                                              | application/json                                                 |
-| errors.BadRequestError                                           | 413, 414, 415, 422, 431                                          | application/json                                                 |
-| errors.TimeoutError                                              | 504                                                              | application/json                                                 |
-| errors.NotFoundError                                             | 501, 505                                                         | application/json                                                 |
-| errors.InternalServerError                                       | 500, 502, 503, 506, 507, 508                                     | application/json                                                 |
-| errors.BadRequestError                                           | 510                                                              | application/json                                                 |
-| errors.UnauthorizedError                                         | 511                                                              | application/json                                                 |
-| errors.APIError                                                  | 4XX, 5XX                                                         | \*/\*                                                            |
+| Error Type                                          | Status Code                                         | Content Type                                        |
+| --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| errors.ToolsOzoneModerationGetEventBadRequestError  | 400                                                 | application/json                                    |
+| errors.ToolsOzoneModerationGetEventAuthMissingError | 401                                                 | application/json                                    |
+| errors.NotFoundError                                | 404                                                 | application/json                                    |
+| errors.UnauthorizedError                            | 403, 407                                            | application/json                                    |
+| errors.TimeoutError                                 | 408                                                 | application/json                                    |
+| errors.RateLimitedError                             | 429                                                 | application/json                                    |
+| errors.BadRequestError                              | 413, 414, 415, 422, 431                             | application/json                                    |
+| errors.TimeoutError                                 | 504                                                 | application/json                                    |
+| errors.NotFoundError                                | 501, 505                                            | application/json                                    |
+| errors.InternalServerError                          | 500, 502, 503, 506, 507, 508                        | application/json                                    |
+| errors.BadRequestError                              | 510                                                 | application/json                                    |
+| errors.UnauthorizedError                            | 511                                                 | application/json                                    |
+| errors.APIError                                     | 4XX, 5XX                                            | \*/\*                                               |
 
 ## queryEvents
 
@@ -146,6 +142,7 @@ List moderation events related to a subject.
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="tools.ozone.moderation.queryEvents" method="get" path="/xrpc/tools.ozone.moderation.queryEvents" -->
 ```typescript
 import { Bluesky } from "@speakeasy-sdks/bluesky";
 
@@ -157,7 +154,6 @@ async function run() {
   const result = await bluesky.moderation.queryEvents({});
 
   for await (const page of result) {
-    // Handle the page
     console.log(page);
   }
 }
@@ -181,16 +177,13 @@ const bluesky = new BlueskyCore({
 
 async function run() {
   const res = await moderationQueryEvents(bluesky, {});
-
-  if (!res.ok) {
-    throw res.error;
-  }
-
-  const { value: result } = res;
-
-  for await (const page of result) {
-    // Handle the page
+  if (res.ok) {
+    const { value: result } = res;
+    for await (const page of result) {
     console.log(page);
+  }
+  } else {
+    console.log("moderationQueryEvents failed:", res.error);
   }
 }
 
@@ -243,18 +236,18 @@ import {
 
 ### Errors
 
-| Error Type                                                          | Status Code                                                         | Content Type                                                        |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| errors.BadRequestToolsOzoneModerationQueryEventsResponseBodyError   | 400                                                                 | application/json                                                    |
-| errors.UnauthorizedToolsOzoneModerationQueryEventsResponseBodyError | 401                                                                 | application/json                                                    |
-| errors.NotFoundError                                                | 404                                                                 | application/json                                                    |
-| errors.UnauthorizedError                                            | 403, 407                                                            | application/json                                                    |
-| errors.TimeoutError                                                 | 408                                                                 | application/json                                                    |
-| errors.RateLimitedError                                             | 429                                                                 | application/json                                                    |
-| errors.BadRequestError                                              | 413, 414, 415, 422, 431                                             | application/json                                                    |
-| errors.TimeoutError                                                 | 504                                                                 | application/json                                                    |
-| errors.NotFoundError                                                | 501, 505                                                            | application/json                                                    |
-| errors.InternalServerError                                          | 500, 502, 503, 506, 507, 508                                        | application/json                                                    |
-| errors.BadRequestError                                              | 510                                                                 | application/json                                                    |
-| errors.UnauthorizedError                                            | 511                                                                 | application/json                                                    |
-| errors.APIError                                                     | 4XX, 5XX                                                            | \*/\*                                                               |
+| Error Type                                             | Status Code                                            | Content Type                                           |
+| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
+| errors.ToolsOzoneModerationQueryEventsBadRequestError  | 400                                                    | application/json                                       |
+| errors.ToolsOzoneModerationQueryEventsAuthMissingError | 401                                                    | application/json                                       |
+| errors.NotFoundError                                   | 404                                                    | application/json                                       |
+| errors.UnauthorizedError                               | 403, 407                                               | application/json                                       |
+| errors.TimeoutError                                    | 408                                                    | application/json                                       |
+| errors.RateLimitedError                                | 429                                                    | application/json                                       |
+| errors.BadRequestError                                 | 413, 414, 415, 422, 431                                | application/json                                       |
+| errors.TimeoutError                                    | 504                                                    | application/json                                       |
+| errors.NotFoundError                                   | 501, 505                                               | application/json                                       |
+| errors.InternalServerError                             | 500, 502, 503, 506, 507, 508                           | application/json                                       |
+| errors.BadRequestError                                 | 510                                                    | application/json                                       |
+| errors.UnauthorizedError                               | 511                                                    | application/json                                       |
+| errors.APIError                                        | 4XX, 5XX                                               | \*/\*                                                  |

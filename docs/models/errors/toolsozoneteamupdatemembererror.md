@@ -5,7 +5,7 @@
 ```typescript
 import { ToolsOzoneTeamUpdateMemberError } from "@speakeasy-sdks/bluesky/models/errors";
 
-let value: ToolsOzoneTeamUpdateMemberError = "MemberNotFound";
+let value: ToolsOzoneTeamUpdateMemberError = "ExpiredToken";
 ```
 
 ## Values

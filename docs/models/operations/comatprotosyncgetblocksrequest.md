@@ -7,9 +7,7 @@ import { ComAtprotoSyncGetBlocksRequest } from "@speakeasy-sdks/bluesky/models/o
 
 let value: ComAtprotoSyncGetBlocksRequest = {
   did: "<id>",
-  cids: [
-    "<id>",
-  ],
+  cids: [],
 };
 ```
 

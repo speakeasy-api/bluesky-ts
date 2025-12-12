@@ -43,7 +43,7 @@ export class Actor extends ClientSDK {
   async searchTypeahead(
     request?: operations.AppBskyActorSearchActorsTypeaheadRequest | undefined,
     options?: RequestOptions,
-  ): Promise<operations.AppBskyActorSearchActorsTypeaheadResponseBody> {
+  ): Promise<operations.AppBskyActorSearchActorsTypeaheadResponse> {
     return unwrapAsync(actorSearchTypeahead(
       this,
       request,

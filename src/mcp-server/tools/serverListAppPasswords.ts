@@ -6,7 +6,7 @@ import { serverListAppPasswords } from "../../funcs/serverListAppPasswords.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
 export const tool$serverListAppPasswords: ToolDefinition = {
-  name: "server_list-app-passwords",
+  name: "server-list-app-passwords",
   description:
     `*This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 

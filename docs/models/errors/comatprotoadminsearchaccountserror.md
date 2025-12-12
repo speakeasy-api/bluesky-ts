@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoAdminSearchAccountsError } from "@speakeasy-sdks/bluesky/models/errors";
 
-let value: ComAtprotoAdminSearchAccountsError = "InvalidRequest";
+let value: ComAtprotoAdminSearchAccountsError = "InvalidToken";
 ```
 
 ## Values

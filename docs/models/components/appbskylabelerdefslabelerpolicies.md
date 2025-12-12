@@ -6,9 +6,7 @@
 import { AppBskyLabelerDefsLabelerPolicies } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: AppBskyLabelerDefsLabelerPolicies = {
-  labelValues: [
-    "dmca-violation",
-  ],
+  labelValues: [],
 };
 ```
 

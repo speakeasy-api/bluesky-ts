@@ -18,7 +18,7 @@ export class Teams extends ClientSDK {
    * Delete a member from ozone team. Requires admin role.
    */
   async deleteMember(
-    request: operations.ToolsOzoneTeamDeleteMemberBody,
+    request: operations.ToolsOzoneTeamDeleteMemberRequest,
     options?: RequestOptions,
   ): Promise<void> {
     return unwrapAsync(teamsDeleteMember(
@@ -36,7 +36,7 @@ export class Teams extends ClientSDK {
    * Update a member in the ozone service. Requires admin role.
    */
   async updateMember(
-    request: operations.ToolsOzoneTeamUpdateMemberBody,
+    request: operations.ToolsOzoneTeamUpdateMemberRequest,
     options?: RequestOptions,
   ): Promise<components.ToolsOzoneTeamDefsMember> {
     return unwrapAsync(teamsUpdateMember(

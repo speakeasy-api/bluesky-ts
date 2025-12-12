@@ -122,13 +122,6 @@ export function Example() {
         mutate({
           preferences: [
             {},
-            {
-              labelers: [
-                {
-                  did: "<id>",
-                },
-              ],
-            },
           ],
         });
       }}

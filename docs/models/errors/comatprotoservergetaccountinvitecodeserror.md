@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoServerGetAccountInviteCodesError } from "@speakeasy-sdks/bluesky/models/errors";
 
-let value: ComAtprotoServerGetAccountInviteCodesError = "ExpiredToken";
+let value: ComAtprotoServerGetAccountInviteCodesError = "InvalidToken";
 ```
 
 ## Values

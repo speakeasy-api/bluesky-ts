@@ -6,7 +6,7 @@
 import { AppBskyFeedGetLikesRequest } from "@speakeasy-sdks/bluesky/models/operations";
 
 let value: AppBskyFeedGetLikesRequest = {
-  uri: "https://whole-godparent.net",
+  uri: "https://dual-hutch.info",
 };
 ```
 

@@ -9,9 +9,9 @@ import { ComAtprotoLabelDefsLabel } from "@speakeasy-sdks/bluesky/models/compone
 
 let value: ComAtprotoLabelDefsLabel = {
   src: "<id>",
-  uri: "https://zany-freckle.info/",
+  uri: "https://spiffy-commercial.org/",
   val: "<value>",
-  cts: new Date("2024-02-19T13:21:39.892Z"),
+  cts: new Date("2024-11-14T09:10:57.796Z"),
 };
 ```
 

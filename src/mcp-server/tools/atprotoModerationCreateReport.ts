@@ -7,11 +7,11 @@ import * as operations from "../../models/operations/index.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
 const args = {
-  request: operations.ComAtprotoModerationCreateReportBody$inboundSchema,
+  request: operations.ComAtprotoModerationCreateReportRequest$inboundSchema,
 };
 
 export const tool$atprotoModerationCreateReport: ToolDefinition<typeof args> = {
-  name: "atproto-moderation_create-report",
+  name: "atproto-moderation-create-report",
   description:
     `*To learn more about calling atproto API endpoints like this one, see the [API Hosts and Auth](/docs/advanced-guides/api-directory) guide.*
 

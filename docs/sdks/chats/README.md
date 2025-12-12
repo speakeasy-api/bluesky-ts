@@ -1,5 +1,4 @@
 # Chats
-(*chats*)
 
 ## Overview
 
@@ -20,6 +19,7 @@
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="chat.bsky.convo.getConvo" method="get" path="/xrpc/chat.bsky.convo.getConvo" -->
 ```typescript
 import { Bluesky } from "@speakeasy-sdks/bluesky";
 
@@ -32,7 +32,6 @@ async function run() {
     convoId: "<id>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -57,15 +56,12 @@ async function run() {
   const res = await chatsGetConvo(bluesky, {
     convoId: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("chatsGetConvo failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -110,25 +106,25 @@ import {
 
 ### Response
 
-**Promise\<[operations.ChatBskyConvoGetConvoResponseBody](../../models/operations/chatbskyconvogetconvoresponsebody.md)\>**
+**Promise\<[operations.ChatBskyConvoGetConvoResponse](../../models/operations/chatbskyconvogetconvoresponse.md)\>**
 
 ### Errors
 
-| Error Type                                                | Status Code                                               | Content Type                                              |
-| --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
-| errors.BadRequestChatBskyConvoGetConvoResponseBodyError   | 400                                                       | application/json                                          |
-| errors.UnauthorizedChatBskyConvoGetConvoResponseBodyError | 401                                                       | application/json                                          |
-| errors.NotFoundError                                      | 404                                                       | application/json                                          |
-| errors.UnauthorizedError                                  | 403, 407                                                  | application/json                                          |
-| errors.TimeoutError                                       | 408                                                       | application/json                                          |
-| errors.RateLimitedError                                   | 429                                                       | application/json                                          |
-| errors.BadRequestError                                    | 413, 414, 415, 422, 431                                   | application/json                                          |
-| errors.TimeoutError                                       | 504                                                       | application/json                                          |
-| errors.NotFoundError                                      | 501, 505                                                  | application/json                                          |
-| errors.InternalServerError                                | 500, 502, 503, 506, 507, 508                              | application/json                                          |
-| errors.BadRequestError                                    | 510                                                       | application/json                                          |
-| errors.UnauthorizedError                                  | 511                                                       | application/json                                          |
-| errors.APIError                                           | 4XX, 5XX                                                  | \*/\*                                                     |
+| Error Type                                   | Status Code                                  | Content Type                                 |
+| -------------------------------------------- | -------------------------------------------- | -------------------------------------------- |
+| errors.ChatBskyConvoGetConvoBadRequestError  | 400                                          | application/json                             |
+| errors.ChatBskyConvoGetConvoAuthMissingError | 401                                          | application/json                             |
+| errors.NotFoundError                         | 404                                          | application/json                             |
+| errors.UnauthorizedError                     | 403, 407                                     | application/json                             |
+| errors.TimeoutError                          | 408                                          | application/json                             |
+| errors.RateLimitedError                      | 429                                          | application/json                             |
+| errors.BadRequestError                       | 413, 414, 415, 422, 431                      | application/json                             |
+| errors.TimeoutError                          | 504                                          | application/json                             |
+| errors.NotFoundError                         | 501, 505                                     | application/json                             |
+| errors.InternalServerError                   | 500, 502, 503, 506, 507, 508                 | application/json                             |
+| errors.BadRequestError                       | 510                                          | application/json                             |
+| errors.UnauthorizedError                     | 511                                          | application/json                             |
+| errors.APIError                              | 4XX, 5XX                                     | \*/\*                                        |
 
 ## getMessageContext
 
@@ -138,6 +134,7 @@ import {
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="chat.bsky.moderation.getMessageContext" method="get" path="/xrpc/chat.bsky.moderation.getMessageContext" -->
 ```typescript
 import { Bluesky } from "@speakeasy-sdks/bluesky";
 
@@ -150,7 +147,6 @@ async function run() {
     messageId: "<id>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -175,15 +171,12 @@ async function run() {
   const res = await chatsGetMessageContext(bluesky, {
     messageId: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("chatsGetMessageContext failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -228,22 +221,22 @@ import {
 
 ### Response
 
-**Promise\<[operations.ChatBskyModerationGetMessageContextResponseBody](../../models/operations/chatbskymoderationgetmessagecontextresponsebody.md)\>**
+**Promise\<[operations.ChatBskyModerationGetMessageContextResponse](../../models/operations/chatbskymoderationgetmessagecontextresponse.md)\>**
 
 ### Errors
 
-| Error Type                                                              | Status Code                                                             | Content Type                                                            |
-| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| errors.BadRequestChatBskyModerationGetMessageContextResponseBodyError   | 400                                                                     | application/json                                                        |
-| errors.UnauthorizedChatBskyModerationGetMessageContextResponseBodyError | 401                                                                     | application/json                                                        |
-| errors.NotFoundError                                                    | 404                                                                     | application/json                                                        |
-| errors.UnauthorizedError                                                | 403, 407                                                                | application/json                                                        |
-| errors.TimeoutError                                                     | 408                                                                     | application/json                                                        |
-| errors.RateLimitedError                                                 | 429                                                                     | application/json                                                        |
-| errors.BadRequestError                                                  | 413, 414, 415, 422, 431                                                 | application/json                                                        |
-| errors.TimeoutError                                                     | 504                                                                     | application/json                                                        |
-| errors.NotFoundError                                                    | 501, 505                                                                | application/json                                                        |
-| errors.InternalServerError                                              | 500, 502, 503, 506, 507, 508                                            | application/json                                                        |
-| errors.BadRequestError                                                  | 510                                                                     | application/json                                                        |
-| errors.UnauthorizedError                                                | 511                                                                     | application/json                                                        |
-| errors.APIError                                                         | 4XX, 5XX                                                                | \*/\*                                                                   |
+| Error Type                                                 | Status Code                                                | Content Type                                               |
+| ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
+| errors.ChatBskyModerationGetMessageContextBadRequestError  | 400                                                        | application/json                                           |
+| errors.ChatBskyModerationGetMessageContextAuthMissingError | 401                                                        | application/json                                           |
+| errors.NotFoundError                                       | 404                                                        | application/json                                           |
+| errors.UnauthorizedError                                   | 403, 407                                                   | application/json                                           |
+| errors.TimeoutError                                        | 408                                                        | application/json                                           |
+| errors.RateLimitedError                                    | 429                                                        | application/json                                           |
+| errors.BadRequestError                                     | 413, 414, 415, 422, 431                                    | application/json                                           |
+| errors.TimeoutError                                        | 504                                                        | application/json                                           |
+| errors.NotFoundError                                       | 501, 505                                                   | application/json                                           |
+| errors.InternalServerError                                 | 500, 502, 503, 506, 507, 508                               | application/json                                           |
+| errors.BadRequestError                                     | 510                                                        | application/json                                           |
+| errors.UnauthorizedError                                   | 511                                                        | application/json                                           |
+| errors.APIError                                            | 4XX, 5XX                                                   | \*/\*                                                      |

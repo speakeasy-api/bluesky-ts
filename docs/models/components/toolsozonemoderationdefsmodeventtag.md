@@ -9,11 +9,9 @@ import { ToolsOzoneModerationDefsModEventTag } from "@speakeasy-sdks/bluesky/mod
 
 let value: ToolsOzoneModerationDefsModEventTag = {
   add: [
-    "<value>",
+    "<value 1>",
   ],
-  remove: [
-    "<value>",
-  ],
+  remove: [],
 };
 ```
 

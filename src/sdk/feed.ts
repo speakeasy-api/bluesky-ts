@@ -117,7 +117,7 @@ export class Feed extends ClientSDK {
   async getGenerator(
     request: operations.AppBskyFeedGetFeedGeneratorRequest,
     options?: RequestOptions,
-  ): Promise<operations.AppBskyFeedGetFeedGeneratorResponseBody> {
+  ): Promise<operations.AppBskyFeedGetFeedGeneratorResponse> {
     return unwrapAsync(feedGetGenerator(
       this,
       request,
@@ -135,7 +135,7 @@ export class Feed extends ClientSDK {
   async getGenerators(
     request: operations.AppBskyFeedGetFeedGeneratorsRequest,
     options?: RequestOptions,
-  ): Promise<operations.AppBskyFeedGetFeedGeneratorsResponseBody> {
+  ): Promise<operations.AppBskyFeedGetFeedGeneratorsResponse> {
     return unwrapAsync(feedGetGenerators(
       this,
       request,

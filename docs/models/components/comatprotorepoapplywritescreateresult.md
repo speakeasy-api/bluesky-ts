@@ -6,7 +6,7 @@
 import { ComAtprotoRepoApplyWritesCreateResult } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: ComAtprotoRepoApplyWritesCreateResult = {
-  uri: "https://wide-sand.org",
+  uri: "https://thorny-replacement.net",
   cid: "<id>",
 };
 ```

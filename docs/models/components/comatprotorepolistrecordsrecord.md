@@ -6,7 +6,7 @@
 import { ComAtprotoRepoListRecordsRecord } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: ComAtprotoRepoListRecordsRecord = {
-  uri: "https://fruitful-masterpiece.org",
+  uri: "https://tempting-perp.info",
   cid: "<id>",
   value: "<value>",
 };

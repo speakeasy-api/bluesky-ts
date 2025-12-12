@@ -5,7 +5,7 @@
 ```typescript
 import { AppBskyFeedSearchPostsError } from "@speakeasy-sdks/bluesky/models/errors";
 
-let value: AppBskyFeedSearchPostsError = "BadQueryString";
+let value: AppBskyFeedSearchPostsError = "ExpiredToken";
 ```
 
 ## Values

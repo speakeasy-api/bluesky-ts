@@ -5,7 +5,7 @@
 ```typescript
 import { AppBskyGraphUnmuteThreadError } from "@speakeasy-sdks/bluesky/models/errors";
 
-let value: AppBskyGraphUnmuteThreadError = "ExpiredToken";
+let value: AppBskyGraphUnmuteThreadError = "InvalidRequest";
 ```
 
 ## Values

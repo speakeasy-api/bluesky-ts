@@ -5,7 +5,7 @@
 ```typescript
 import { AppBskyGraphSearchStarterPacksError } from "@speakeasy-sdks/bluesky/models/errors";
 
-let value: AppBskyGraphSearchStarterPacksError = "InvalidRequest";
+let value: AppBskyGraphSearchStarterPacksError = "ExpiredToken";
 ```
 
 ## Values

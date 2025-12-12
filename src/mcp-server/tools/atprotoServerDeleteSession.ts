@@ -6,7 +6,7 @@ import { atprotoServerDeleteSession } from "../../funcs/atprotoServerDeleteSessi
 import { formatResult, ToolDefinition } from "../tools.js";
 
 export const tool$atprotoServerDeleteSession: ToolDefinition = {
-  name: "atproto-server_delete-session",
+  name: "atproto-server-delete-session",
   description:
     `*This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 

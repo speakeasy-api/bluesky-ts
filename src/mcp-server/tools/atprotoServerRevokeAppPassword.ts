@@ -7,12 +7,12 @@ import * as operations from "../../models/operations/index.js";
 import { formatResult, ToolDefinition } from "../tools.js";
 
 const args = {
-  request: operations.ComAtprotoServerRevokeAppPasswordBody$inboundSchema,
+  request: operations.ComAtprotoServerRevokeAppPasswordRequest$inboundSchema,
 };
 
 export const tool$atprotoServerRevokeAppPassword: ToolDefinition<typeof args> =
   {
-    name: "atproto-server_revoke-app-password",
+    name: "atproto-server-revoke-app-password",
     description:
       `*This endpoint is part of the atproto PDS server and account management APIs. Requests often require authentication and are made directly to the user's own PDS instance.*
 

@@ -5,7 +5,7 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { RequestHandlerExtra } from "@modelcontextprotocol/sdk/shared/protocol.js";
 import { CallToolResult } from "@modelcontextprotocol/sdk/types.js";
-import { objectOutputType, ZodRawShape, ZodTypeAny } from "zod";
+import { objectOutputType, ZodRawShape, ZodTypeAny } from "zod/v3";
 import { BlueskyCore } from "../core.js";
 import { ConsoleLogger } from "./console-logger.js";
 import { MCPScope } from "./scopes.js";
@@ -34,6 +34,7 @@ export type ToolDefinition<Args extends undefined | ZodRawShape = undefined> =
       ) => CallToolResult | Promise<CallToolResult>;
     };
 
+// Optional function to assist with formatting tool results
 export async function formatResult(
   value: unknown,
   init: { response?: Response | undefined },
@@ -94,10 +95,22 @@ export function createRegisterTool(
   server: McpServer,
   sdk: BlueskyCore,
   allowedScopes: Set<MCPScope>,
+  allowedTools?: Set<string>,
 ): <A extends ZodRawShape | undefined>(tool: ToolDefinition<A>) => void {
   return <A extends ZodRawShape | undefined>(tool: ToolDefinition<A>): void => {
-    const toolScopes = tool.scopes ?? [];
-    if (!toolScopes.every((s) => allowedScopes.has(s))) {
+    if (allowedTools && !allowedTools.has(tool.name)) {
+      return;
+    }
+
+    const scopes = tool.scopes ?? [];
+    if (allowedScopes.size > 0 && scopes.length === 0) {
+      return;
+    }
+
+    if (
+      allowedScopes.size > 0
+      && !scopes.every((s: MCPScope) => allowedScopes.has(s))
+    ) {
       return;
     }
 

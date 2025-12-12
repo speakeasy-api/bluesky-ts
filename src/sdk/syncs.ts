@@ -39,7 +39,7 @@ export class Syncs extends ClientSDK {
   async getLatestCommit(
     request: operations.ComAtprotoSyncGetLatestCommitRequest,
     options?: RequestOptions,
-  ): Promise<operations.ComAtprotoSyncGetLatestCommitResponseBody> {
+  ): Promise<operations.ComAtprotoSyncGetLatestCommitResponse> {
     return unwrapAsync(syncsGetLatestCommit(
       this,
       request,
@@ -57,7 +57,7 @@ export class Syncs extends ClientSDK {
   async getRepoStatus(
     request: operations.ComAtprotoSyncGetRepoStatusRequest,
     options?: RequestOptions,
-  ): Promise<operations.ComAtprotoSyncGetRepoStatusResponseBody> {
+  ): Promise<operations.ComAtprotoSyncGetRepoStatusResponse> {
     return unwrapAsync(syncsGetRepoStatus(
       this,
       request,
@@ -73,7 +73,7 @@ export class Syncs extends ClientSDK {
    * Request a service to persistently crawl hosted repos. Expected use is new PDS instances declaring their existence to Relays. Does not require auth.
    */
   async requestCrawl(
-    request: operations.ComAtprotoSyncRequestCrawlBody,
+    request: operations.ComAtprotoSyncRequestCrawlRequest,
     options?: RequestOptions,
   ): Promise<void> {
     return unwrapAsync(syncsRequestCrawl(

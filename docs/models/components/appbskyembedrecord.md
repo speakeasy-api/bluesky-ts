@@ -7,7 +7,7 @@ import { AppBskyEmbedRecord } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: AppBskyEmbedRecord = {
   record: {
-    uri: "https://swift-perp.com/",
+    uri: "https://untidy-distinction.org/",
     cid: "<id>",
   },
 };

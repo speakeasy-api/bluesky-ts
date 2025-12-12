@@ -6,7 +6,7 @@
 import { AppBskyActorDefsAdultContentPref } from "@speakeasy-sdks/bluesky/models/components";
 
 let value: AppBskyActorDefsAdultContentPref = {
-  enabled: false,
+  enabled: true,
 };
 ```
 

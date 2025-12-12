@@ -5,7 +5,7 @@
 ```typescript
 import { ComAtprotoIdentityUpdateHandleError } from "@speakeasy-sdks/bluesky/models/errors";
 
-let value: ComAtprotoIdentityUpdateHandleError = "ExpiredToken";
+let value: ComAtprotoIdentityUpdateHandleError = "InvalidRequest";
 ```
 
 ## Values

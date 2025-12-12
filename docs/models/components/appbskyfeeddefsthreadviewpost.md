@@ -7,14 +7,14 @@ import { AppBskyFeedDefsThreadViewPost } from "@speakeasy-sdks/bluesky/models/co
 
 let value: AppBskyFeedDefsThreadViewPost = {
   post: {
-    uri: "https://jam-packed-section.org",
+    uri: "https://amused-fedora.biz",
     cid: "<id>",
     author: {
       did: "<id>",
       handle: "<value>",
     },
     record: "<value>",
-    indexedAt: new Date("2023-11-24T20:56:14.878Z"),
+    indexedAt: new Date("2025-01-02T09:02:47.505Z"),
   },
 };
 ```
@@ -25,4 +25,4 @@ let value: AppBskyFeedDefsThreadViewPost = {
 | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
 | `post`                                                                                   | [components.AppBskyFeedDefsPostView](../../models/components/appbskyfeeddefspostview.md) | :heavy_check_mark:                                                                       | N/A                                                                                      |
 | `parent`                                                                                 | *components.AppBskyFeedDefsThreadViewPostParent*                                         | :heavy_minus_sign:                                                                       | N/A                                                                                      |
-| `replies`                                                                                | *components.Replies*[]                                                                   | :heavy_minus_sign:                                                                       | N/A                                                                                      |
+| `replies`                                                                                | *components.Reply*[]                                                                     | :heavy_minus_sign:                                                                       | N/A                                                                                      |

@@ -26,7 +26,7 @@ import {
 } from "./_types.js";
 
 export type AdminGetSubjectStatusQueryData =
-  operations.ComAtprotoAdminGetSubjectStatusResponseBody;
+  operations.ComAtprotoAdminGetSubjectStatusResponse;
 
 /**
  * *This endpoint is part of the atproto PDS management APIs. Requests usually require admin authentication and are made directly to the PDS instance.*

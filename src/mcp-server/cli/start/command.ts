@@ -3,7 +3,7 @@
  */
 
 import { buildCommand } from "@stricli/core";
-import * as z from "zod";
+import * as z from "zod/v3";
 import { ServerList } from "../../../lib/config.js";
 import { consoleLoggerLevels } from "../../console-logger.js";
 import { mcpScopes } from "../../scopes.js";
@@ -28,18 +28,22 @@ export const startCommand = buildCommand({
         parse: (val: string) =>
           z.coerce.number().int().gte(0).lt(65536).parse(val),
       },
-      ...(mcpScopes.length
-        ? {
-          scope: {
-            kind: "enum",
-            brief:
-              "Mount tools/resources that match given scope (repeatable flag)",
-            values: mcpScopes,
-            variadic: true,
-            optional: true,
-          },
-        }
-        : {}),
+      tool: {
+        kind: "parsed",
+        brief: "Specify tools to mount on the server",
+        optional: true,
+        variadic: true,
+        parse: (value) => {
+          return z.string().parse(value);
+        },
+      },
+      scope: {
+        kind: "enum",
+        brief: "Mount tools/resources that match given scope (repeatable flag)",
+        values: mcpScopes,
+        variadic: true,
+        optional: true,
+      },
       bearer: {
         kind: "parsed",
         brief: "Sets the bearer auth field for the API",
