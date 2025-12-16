@@ -14,7 +14,7 @@ permissions:
   workflow_dispatch: {}
 jobs:
   publish:
-    uses: speakeasy-api/sdk-generation-action/.github/workflows/sdk-publish.yaml@07e238f9193dcf3873c90504b4aa00dfcb609d84
+    uses: speakeasy-api/sdk-generation-action/.github/workflows/sdk-publish.yaml@f5e996243387e0ce557b94fa78350d0a5111e61a
     with:
       target: bluesky
     secrets:
